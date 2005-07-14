@@ -1,0 +1,25 @@
+<?
+/********************************
+* ISPConfig Dictionary File
+* Version 1.0
+*********************************/
+
+// License Manager
+$wb["Es wurde keine g&uuml;ltige Lizenzdatei gefunden."] = "Geen geldige licentie bestand gevonden.";
+$wb["Hier k&ouml;nnen Sie ihre Lizenzdatei einspielen."] = "U kunt uw licentie bestand hier laden.";
+
+$wb["Passwort"] = "Wachtwoord";
+$wb["Lizenzdatei"] = "Licentie bestand";
+$wb["Weiter"] = "Volgende";
+$wb["Die Lizenzdatei wurde eingespielt.<br>Sie k&ouml;nnen sich jetzt einloggen."] = "Het licentie bestand is geladen.<br> U  kunt nu inloggen.";
+$wb["Ihre Nutzersitzung wurde beendet."] = " Uw sessie is verlopen.";
+$wb["Hier können Sie sich neu einloggen"] = "Hier kunt u opnieuw inloggen";
+
+$wb["FEHLER 101: Username oder Passwort Falsch."] = "ERROR 101: verkeerde gebruikersnaam of wachtwoord.";
+$wb["FEHLER 102: Account inaktiv."] = "ERROR 102: Account inactief.";
+$wb["FEHLER 103: Es wurde kein Username oder Passwort angegeben."] = "ERROR 103: geen gebruikersnaam of wachtwoord ingevuld.";
+$wb["FEHLER 104: Die Nutzersession wurde beendet."] = "ERROR 104: Sessie verlopen.";
+$wb["<br>&nbsp;<br>Hier können Sie sich erneut einloggen:"] = "<br>&nbsp;<br>Hier kunt u opnieuw inloggen:";
+$wb["Hier können Sie sich einloggen:"] = "Hier kunt u inloggen:";
+
+?>

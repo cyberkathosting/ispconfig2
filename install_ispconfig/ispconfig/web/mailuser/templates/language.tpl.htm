@@ -1,0 +1,23 @@
+<link href="../style.css" rel="stylesheet" type="text/css">
+ <form name="form1" method="post" action="language.php">
+<table border="0" cellspacing="0" cellpadding="2">
+  <tr>
+    <td height="42">&nbsp;</td>
+    <td colspan="2">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="50">&nbsp;</td>
+    <td width="120" class="TxtForm"><strong><tmpl_var name='txt_language'>:</strong></td>
+    <td class="TxtForm"><select name="user_lang">{tmpl_var name='user_lang'}</select></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td colspan="2">&nbsp;</td>
+    </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><input type="submit" name="Submit" value="{tmpl_var name='txt_speichern'}"> <input type="button" name="Abbrechen" value="{tmpl_var name='txt_abbrechen'}" onClick="location.href='index.php'"></td>
+  </tr>
+</table>
+</form>

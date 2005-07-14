@@ -1,0 +1,20 @@
+#
+# procmail configuration for TrashScan: ZapCoded by Trashware; 13.10.2002
+#
+
+# [ ... ]
+
+# ------------------------------------------------------------------------------------- #
+# Virus scan section ...                                                                #
+# ------------------------------------------------------------------------------------- #
+
+# 1. Run TrashScan
+:0
+* multipart
+* !^X-Virus-Scan:
+| /home/admispconfig/ispconfig/tools/clamav/bin/trashscan
+
+# 2. Filter tagged virus mails
+:0:
+* ^X-Virus-Scan: Suspicious
+/dev/null

@@ -1,0 +1,40 @@
+<form method="post" action="web.php" name="form1">
+  <table border="0" width="100%" cellspacing="0" cellpadding="4"bgcolor="#FFFFFF">
+    <tr> 
+      <td colspan="2" height="18"> <p align="center" class="normal_bold">&nbsp; </td>
+    </tr>
+    <tr bgcolor="#EEEEEE"> 
+      <td width="28%" class="normal">{TXTANBIETER}:</td>
+      <td width="72%" class="normal"> <div align="left"> 
+          <select name="anbieter" onChange="document.form1.submit()">
+		{ANBIETER}  
+          </select>
+        </div></td>
+    </tr>
+    <tr bgcolor="#EEEEEE"> 
+      <td width="28%" class="normal">{TXTKUNDE}:</td>
+      <td width="72%" class="normal"> <div align="left"> 
+          <select name="kunde">
+		{KUNDEN}  
+          </select>
+        </div></td>
+    </tr>
+	<tr bgcolor="#EEEEEE"> 
+      <td width="28%" class="normal">{TXTWEBVORLAGE}:</td>
+      <td width="72%" class="normal"> <div align="left"> 
+          <select name="vorlage">
+		{VORLAGEN}  
+          </select>
+        </div></td>
+    </tr>
+    <tr bgcolor="#EEEEEE">
+      <td class="normal">&nbsp;</td>
+      <td class="normal"><input type="submit" name="Abschicken" value="{TXTWEITER} &gt;&gt;"></td>
+    </tr>
+    <tr> 
+      <td colspan="2" height="18"> <p align="center" class="normal_bold"> 
+          <input type="hidden" name="s" value="{S}">
+      </td>
+    </tr>
+  </table>
+	  </form>

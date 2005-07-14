@@ -1,0 +1,25 @@
+<?
+/**********************************************
+* ISPConfig Help File
+* Version 1.2
+* Syntax: $hlp["FieldName"] = "HelpText";
+************************************************/
+
+$hlp["user_username"] = "Vul een gebruikersnaam in. U kunt elke naam invullen zolang er maar geen speciale karakters in zitten zoals @, %, spaties etc. De maximale lengte is 26 karakters.";
+$hlp["user_passwort"] = "Vul een wachtwoord in.";
+$hlp["user_speicher"] = "Vul de ruimte voor de gebruiker in.";
+$hlp["user_admin"] = "Maakt deze gebruiker administrator van deze website. Er kan maar 1 gebruiker per website administrator zijn!";
+$hlp["user_shell"] = "Geef gebruiker secure shell toegang.";
+$hlp["user_emailalias"] = "Hier kunt u email aliases aanmaken (bijv. verschillende spellings van namen). Vul 1 alias voor de \"@\"!";
+$hlp["user_name"] = "Vul de echte naam van de gebruiker in.";
+$hlp["user_autoresponder"] = "Activeert de email auto-beantwoorder voor deze gebruiker.";
+$hlp["user_autoresponder_text"] = "Vul hier de text in die de auto-beantwoorder moet terug sturen naar de zender.";
+$hlp["user_mailquota"] = "Specifeer de grootte van de mailbox quota (in MBs).";
+$hlp["user_catchallemail"] = "Als deze box is aangevinkt zal ALLE mail die bestemd is voor onbekende gebruikers naar dit email adres worden gestuurd. Er kan echter maar een gebruiker zijn met een catch-all email adres.";
+$hlp["user_mailscan"] = "Activeer de mail scanner voor dit account. Attachments met bijv. .exe/.pif/.scr bestanden zullen worden hernoemd naar een niet uitvoerbare bestands naam.";
+$hlp["user_spamfilter"] = "Activeer de spam filter voor dit mail account.";
+$hlp["user_emailweiterleitung_local_copy"] = "Als deze box is aangevinkt zullen ALLE inkomende mails lokaal worden bewaard (inc. forward mail).";
+$hlp["user_email"] = "Vul hier de naam in die u voor de de \"@\" wilt hebben. U kunt elke naam invullen zolang er maar geen speciale karakters in zitten zoals @, %, spaties etc.";
+$hlp["user_emailweiterleitung"] = "Dit is het email adres waar inkomende mails automatisch naar door worden doorgestuurd (forwarding).";
+
+?>

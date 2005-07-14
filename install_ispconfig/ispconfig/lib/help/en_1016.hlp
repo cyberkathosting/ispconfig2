@@ -1,0 +1,19 @@
+<?
+
+/**********************************************
+* ISPConfig Help File
+* Version 1.2
+* Syntax: $hlp["FieldName"] = "HelpText";
+************************************************/
+
+$hlp["dns_soa"] = "Domain (Start of Authority). Please enter the domain (without www).";
+$hlp["dns_refresh"] = "DNS Refresh in seconds.";
+$hlp["dns_retry"] = "DNS Retry in seconds.";
+$hlp["dns_expire"] = "DNS Expire in seconds.";
+$hlp["dns_ttl"] = "DNS TTL in seconds.";
+$hlp["dns_ns1"] = "Please enter the primary nameserver.";
+$hlp["dns_ns2"] = "Please enter the secondary nameserver.";
+$hlp["dns_adminmail"] = "Please enter the email address of the zone administrator.";
+$hlp["server_id"] = "Please select the server.";
+$hlp["dns_soa_ip"] = "IP address of the domain.";
+?>

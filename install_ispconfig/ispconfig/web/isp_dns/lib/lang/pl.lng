@@ -1,0 +1,68 @@
+<?
+/********************************
+* ISPConfig Dictionary File
+* Version 1.0
+*
+* T³umaczenie wersji polskiej
+* Digital Gospel http://www.digital-gospel.com
+* Wersja 1.0
+* Ostatnie zmiany 2004.06.21
+*********************************/
+
+//////////////// DNS Manager ////////////////
+$wb["Optionen"]     = "Ustawienia";
+$wb["Ziel"]         = "Target";
+$wb["Priorität"]   = "Priorytet";
+$wb["DNS Eintrag"]  = "Wpis do DNS";
+$wb["Ordner neu"]   = "Sortuj w/g";
+$wb["Suchen"]       = "Szukaj";
+$wb["DNS-Manager"]       = "Manager DNS";
+$wb["Domain (SOA)"]         = "Domena (SOA)";
+$wb["Email Admin"]         = "Adres E-mail Administratora";
+$wb["Nameserver 1"]         = "Serwer nazw 1";
+$wb["Nameserver 2"]         = "Serwer nazw 2";
+$wb["Refresh"]         = "Refresh";
+$wb["Retry"]         = "Retry";
+$wb["Expire"]         = "Expire";
+$wb["TTL"]         = "TTL";
+$wb["Record"]         = "Rekord";
+$wb["Record"]         = "Rekordów";
+$wb["Mailserver"]         = "Serwer poczty";
+
+$wb["Dokument"] = "Dokument";
+$wb["neues Dokument anlegen"] = "nowy Dokument";
+
+$wb["error_soa_exists_1"] = "Domena (Rekord SOA) o podanej nazwie ju¿ istnieje ";
+$wb["error_soa_exists_2"] = "";
+//////////////// DNS Manager Ende ///////////
+
+$wb["IP-Adresse ungültig."] = "Adres IP jest nieprawid³owy.";
+$wb["Records"] = 'Rekordów';
+$wb["ziel"] = 'cel';
+$wb["Neu"] = 'nowy';
+
+// NEW 1.3 //////////////////////////////////////
+
+$wb["Master neu"] = 'Nowy g³ówny';
+$wb["Slave neu"] = 'Nowy zapasowy';
+$wb["Slave Zone"] = 'Strefa zapasowa';
+$wb["domain"] = 'Domena';
+$wb["DNS-Master IP"] = 'Adres DNS serwera g³ównego';
+$wb["Name"] = 'Nazwa';
+$wb["Masters"] = 'G³ówne';
+$wb["Slaves"] = 'Zapasowe';
+$wb["SUCHE"] = 'SZUKAJ';
+
+
+//////////////// Server Status ////////////////
+$wb["Arbeitsspeicher"]          = "Pamiêæ g³ówna";
+$wb["CPU"]          = "CPU";
+$wb["Dienste"]      = "Serwisy";
+$wb["Server Online seit"]          = "Serwer dzia³a od";
+$wb["User Online"]      = "Zalogowanych u¿ytkowników";
+$wb["System Load 1 Minute"] = "Obci¹¿enie systemu w okresie 1-minutowym";
+$wb["System Load 5 Minuten"] = "Obci¹¿enie systemu w okresie 5-minutowym";
+$wb["System Load 15 Minuten"] = "Obci¹¿enie systemu w okresie 15-minutowym";
+//////////////// Server Status Ende //////////
+
+?>

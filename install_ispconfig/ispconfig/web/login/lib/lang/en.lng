@@ -1,0 +1,25 @@
+<?
+/********************************
+* ISPConfig Dictionary File
+* Version 1.0
+*********************************/
+
+// License Manager
+$wb["Es wurde keine g&uuml;ltige Lizenzdatei gefunden."] = "No valid licence file found.";
+$wb["Hier k&ouml;nnen Sie ihre Lizenzdatei einspielen."] = "You can upload your licence file here.";
+
+$wb["Passwort"] = "Password";
+$wb["Lizenzdatei"] = "licence file";
+$wb["Weiter"] = "next";
+$wb["Die Lizenzdatei wurde eingespielt.<br>Sie k&ouml;nnen sich jetzt einloggen."] = "The licence file has been uploaded.<br> You can now log in.";
+$wb["Ihre Nutzersitzung wurde beendet."] = "Your session has expired.";
+$wb["Hier können Sie sich neu einloggen"] = "Here you can log in again";
+
+$wb["FEHLER 101: Username oder Passwort Falsch."] = "ERROR 101: wrong username or password.";
+$wb["FEHLER 102: Account inaktiv."] = "ERROR 102: Account inactive.";
+$wb["FEHLER 103: Es wurde kein Username oder Passwort angegeben."] = "ERROR 103: No username or password provided.";
+$wb["FEHLER 104: Die Nutzersession wurde beendet."] = "ERROR 104: Session expired.";
+$wb["<br>&nbsp;<br>Hier können Sie sich erneut einloggen:"] = "<br>&nbsp;<br>Here you can log in again:";
+$wb["Hier können Sie sich einloggen:"] = "Here you can log in:";
+
+?>

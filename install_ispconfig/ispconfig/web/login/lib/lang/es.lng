@@ -1,0 +1,25 @@
+<?
+/********************************
+* ISPConfig Dictionary File
+* Version 1.0
+* Login
+*********************************/
+
+// License Manager
+$wb["Es wurde keine g&uuml;ltige Lizenzdatei gefunden."] = "No encontrado un fichero de licencia valido.";
+$wb["Hier k&ouml;nnen Sie ihre Lizenzdatei einspielen."] = "Puede subir el fichero de licencia desde aqum.";
+
+$wb["Passwort"] = "Contraseqa";
+$wb["Lizenzdatei"] = "Fichero de Licencia";
+$wb["Weiter"] = "siguiente";
+$wb["Die Lizenzdatei wurde eingespielt.<br>Sie k&ouml;nnen sich jetzt einloggen."] = "El fichero de licencia ha sido subido.<br> Ahora puede autentificarse.";
+$wb["Ihre Nutzersitzung wurde beendet."] = "Su sesisn ha caducado.";
+$wb["Hier kvnnen Sie sich neu einloggen"] = "Aqum puede autentificarse de nuevo";
+
+$wb["FEHLER 101: Username oder Passwort Falsch."] = "ERROR 101: Nombre de usuario o contraseqa incorrecto.";
+$wb["FEHLER 102: Account inaktiv."] = "ERROR 102: Cuenta inactiva.";
+$wb["FEHLER 103: Es wurde kein Username oder Passwort angegeben."] = "ERROR 103: No ha suministrado nombre de usuario o contraseqa.";
+$wb["FEHLER 104: Die Nutzersession wurde beendet."] = "ERROR 104: Su sesisn ha caducado.";
+$wb["<br>&nbsp;<br>Hier kvnnen Sie sich erneut einloggen:"] = "<br>&nbsp;<br>Aqum puede volver a autentificarse:";
+$wb["Hier kvnnen Sie sich einloggen:"] = "Aqum puede autentificarse:";
+?>

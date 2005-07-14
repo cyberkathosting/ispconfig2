@@ -1,0 +1,57 @@
+<?
+
+/**********************************************
+* ISPConfig Help File
+* Version 1.2
+* Syntax: $hlp["FieldName"] = "HelpText";
+************************************************/
+
+$hlp["web_host"] = "Host des Web: z.B. www";
+$hlp["web_domain"] = "Domain des Web: z.B. projektfarm.de";
+$hlp["web_speicher"] = "Grösse des Speicherplatzes des Web. 2 steht z.B. für 2 MB Speicherplatz.";
+$hlp["web_traffic"] = "Die Zahl gibt an, wie viel Taffic bei diesem Web inklusive ist (z.B. 2 GB inkl.).";
+$hlp["web_cgi"] = "Durch das Häkchen ist das Ausführen von CGI-Scripts im Web möglich.";
+$hlp["web_php"] = "Durch das Häkchen ist das Ausführen von PHP im Web möglich.";
+$hlp["web_ssi"] = "Durch das Häkchen ist das Ausführen von SSI im Web möglich.";
+$hlp["web_ftp"] = "Durch das Häkchen wird der FTP-Zugang aktiviert.";
+$hlp["web_frontpage"] = "Durch das Häkchen werden die Frontpage-Extensions aktiviert.";
+$hlp["web_mysql"] = "Durch das Häkchen ist das Anlegen und Betreiben von MySQL-Datenbanken in diesem Web möglich.";
+$hlp["web_shell"] = "Durch das Häkchen ist das Zugreifen und Arbeiten auf der Shell in diesem Web möglich.";
+$hlp["web_ssl"] = "Aktiviert die SSL-Verschlüsselung für das Web. Weitere Einstellungen befinden sich auf der Reiterkarte SSL.";
+$hlp["ssl_request"] = "Der hier erzeugte Text kann an eine Zertifizierungsstelle gesendet werden, um ein SSL-Zertifiat zu erhalten.";
+$hlp["ssl_cert"] = "In dieses Feld kopieren Sie den von der Zertifizierungsstelle erhaltenen Text(Zertifikat).";
+$hlp["web_ip"] = "Hier wählen Sie die für das Web vorgesehene IP-Adresse aus.";
+$hlp["optionen_mysql_user"] = "In dieses Feld geben Sie den Usernamen für die MySQL-Datenbank an.";
+$hlp["optionen_mysql_passwort"] = "In dieses Feld geben Sie das Passwort für die MySQL-Datenbank an.";
+$hlp["web_dns"] = "Durch das Häkchen wird für die Domain beim Speichern des Webs ein Nameservereintrag (A-Record) erstellt.";
+$hlp["web_userlimit"] = "Die Zahl gibt an, wie viele User für das Web angelegt werden können.";
+$hlp["web_domainlimit"] = "Die Zahl gibt an, wie viele Domains für das Web angelegt werden können.";
+$hlp["ssl_state"] = "Geben Sie hier Ihr Bundesland/Ihre Provinz an.";
+$hlp["ssl_locality"] = "Geben Sie hier Ihren Ort an.";
+$hlp["ssl_organization"] = "Geben Sie hier Ihre Firma oder Organisation an.";
+$hlp["ssl_organization_unit"] = "Geben Sie hier die Abteilung Ihrer Firma/Organisation ein (z.B. IT Department).";
+$hlp["ssl_country"] = "Wählen Sie hier Ihr Land aus.";
+$hlp["web_dns_mx"] = "Durch das Häkchen wird für die URL ein MX-Eintrag erstellt.";
+$hlp["ssl_days"] = "Geben Sie hier die gewünschte Laufzeit (in Tagen) des SSL-Zertifikates ein (z.B. 365).";
+$hlp["web_httpd_include"] = "Hier können Sie zusätzliche Apache-Direktiven für dieses Web eingeben.";
+$hlp["web_anonftp"] = "Durch das Häkchen ist der Zugriff auf das Web über anonymes FTP möglich. Bitte beachten Sie: pro IP-Adresse ist nur ein Anonymous-FTP-Account möglich.";
+$hlp["web_anonftplimit"] = "Die Zahl gibt an, wieviel Speicherplatz für anonymes FTP freigegeben ist.";
+$hlp["optionen_frontpage_passwort"] = "In dieses Feld geben Sie das Passwort für die Frontpage Extensions an.";
+$hlp["optionen_mysql_remote_access"] = "Durch das Häkchen wird der externe Zugriff auf die MySQL Datenbank aktiviert.";
+$hlp["optionen_local_mailserver"] = "Die Auswahl \"externer Mailserver\" bewirkt, dass keine Einträge für den lokalen MTA erzeugt werden.";
+$hlp["web_faktura"] = "Durch das Auswählen aktivieren/deaktivieren Sie die Webfaktura für dieses Web.";
+$hlp["optionen_logsize"] = "Maximale Grösse der Logfiles für dieses Web. Es sind absolute Angaben in MB oder relative Angaben in % (des Speicherplatzes für das Web) möglich.";
+$hlp["web_php_safe_mode"] = "Wenn PHP für dieses Web aktiviert ist, wird es im Safe Mode ausgeführt.";
+$hlp["web_wap"] = "Hier können Sie die Unterstützung des Servers für .wml-Dateien aktivieren. .wml-Dateien können von WAP-Handies interpretiert werden.";
+$hlp["web_standard_cgi"] = "Geben Sie hier an, ob die auf dem Server hinterlegten Standard-CGI-Skripte für dieses Web zur Verfügung stehen sollen.";
+$hlp["web_mysql_anzahl_dbs"] = "Geben Sie hier die Anzahl an Datenbanken an, die diesem Web max. zur Verfügung stehen.";
+$hlp["web_individual_error_pages"] = "Wenn dieses Feld aktiviert ist, können Sie im \"Optionen\"-Tab individuelle Fehler-Seiten definieren.";
+$hlp["error_400"] = "Geben Sie hier den HTML-Code für die Fehler-Seite 400 (\"Ungültige Syntax\") an. Wenn Sie das Feld leer lassen, wird die Standard-Fehler-Seite verwendet.";
+$hlp["error_401"] = "Geben Sie hier den HTML-Code für die Fehler-Seite 401 (\"Autorisierung erforderlich\") an. Wenn Sie das Feld leer lassen, wird die Standard-Fehler-Seite verwendet.";
+$hlp["error_403"] = "Geben Sie hier den HTML-Code für die Fehler-Seite 403 (\"Verboten\") an. Wenn Sie das Feld leer lassen, wird die Standard-Fehler-Seite verwendet.";
+$hlp["error_404"] = "Geben Sie hier den HTML-Code für die Fehler-Seite 404 (\"Datei nicht gefunden\") an. Wenn Sie das Feld leer lassen, wird die Standard-Fehler-Seite verwendet.";
+$hlp["error_405"] = "Geben Sie hier den HTML-Code für die Fehler-Seite 405 (\"Methode nicht erlaubt\") an. Wenn Sie das Feld leer lassen, wird die Standard-Fehler-Seite verwendet.";
+$hlp["error_500"] = "Geben Sie hier den HTML-Code für die Fehler-Seite 500 (\"Interner Server-Fehler\") an. Wenn Sie das Feld leer lassen, wird die Standard-Fehler-Seite verwendet.";
+$hlp["error_503"] = "Geben Sie hier den HTML-Code für die Fehler-Seite 503 (\"Service ist z.Zt. überlastet\") an. Wenn Sie das Feld leer lassen, wird die Standard-Fehler-Seite verwendet.";
+
+?>

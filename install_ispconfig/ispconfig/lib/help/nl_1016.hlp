@@ -1,0 +1,18 @@
+<?
+/**********************************************
+* ISPConfig Help File
+* Version 1.2
+* Syntax: $hlp["FieldName"] = "HelpText";
+************************************************/
+
+$hlp["dns_soa"] = "Domein SOA (Start Of Authority). Domeinnaam zonder host naam (bijv. zonder www/ftp/mail).";
+$hlp["dns_refresh"] = "DNS Refresh in seconden.";
+$hlp["dns_retry"] = "DNS Retry in seconden.";
+$hlp["dns_expire"] = "DNS Expire in seconden.";
+$hlp["dns_ttl"] = "DNS TTL in seconden.";
+$hlp["dns_ns1"] = "Vul hier de master nameserver in (primair).";
+$hlp["dns_ns2"] = "Vul hier de slave nameserver in (secundair).";
+$hlp["dns_adminmail"] = "Het email adres van de zone administrator.";
+$hlp["server_id"] = "Selecteer de server.";
+$hlp["dns_soa_ip"] = "IP adres van het domein.";
+?>

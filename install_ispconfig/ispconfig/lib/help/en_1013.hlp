@@ -1,0 +1,57 @@
+<?
+
+/**********************************************
+* ISPConfig Help File
+* Version 1.2
+* Syntax: $hlp["FieldName"] = "HelpText";
+************************************************/
+
+$hlp["web_host"] = "Host of the web: e.g. www";
+$hlp["web_domain"] = "Domain of the web: e.g. projektfarm.de";
+$hlp["web_speicher"] = "Size of the storage space of the web. For example, 2 stands for 2 MB storage space.";
+$hlp["web_traffic"] = "Specifies how much free traffic is included in this web (e.g. 2 GB).";
+$hlp["web_cgi"] = "Activates CGI for this web.";
+$hlp["web_php"] = "Activates PHP for this web.";
+$hlp["web_ssi"] = "Activates SSI for this web.";
+$hlp["web_ftp"] = "Activates FTP access for this web.";
+$hlp["web_frontpage"] = "Activates Frontpage Extensions for this web.";
+$hlp["web_mysql"] = "Enables a MySQL database for this web.";
+$hlp["web_shell"] = "Activates shell access for this web.";
+$hlp["web_ssl"] = "Activates SSL encryption for this web. Further settings can be found on the tab SSL.";
+$hlp["ssl_request"] = "You can send the contents of the textarea to a Certificate Authority (CA) to get an official SSL certificate.";
+$hlp["ssl_cert"] = "You can copy the official certificate from your Certificate Authority (CA) into this textarea.";
+$hlp["web_ip"] = "Please select the IP address of the web.";
+$hlp["optionen_mysql_user"] = "Please enter the user name for the MySQL database.";
+$hlp["optionen_mysql_passwort"] = "Please enter the password for the MySQL database.";
+$hlp["web_dns"] = "By checking the box you can create a DNS A record for the web.";
+$hlp["web_userlimit"] = "Specifies how many users can be created in this web.";
+$hlp["web_domainlimit"] = "Specifies how many domains can be created for this web.";
+$hlp["ssl_state"] = "Please enter your county/province.";
+$hlp["ssl_locality"] = "Please enter your town.";
+$hlp["ssl_organization"] = "Please enter your company/organization.";
+$hlp["ssl_organization_unit"] = "Please enter the department of your company/organization (e.g. IT Department).";
+$hlp["ssl_country"] = "Please select your country.";
+$hlp["web_dns_mx"] = "By checking the box you can create a DNS MX record for the web.";
+$hlp["ssl_days"] = "Please enter the desired period of validity (in days) of the SSL certificate (e.g. 365).";
+$hlp["web_httpd_include"] = "Here you can enter additional Apache directives for this web.";
+$hlp["web_anonftp"] = "Enables Anonymous-FTP for this web. Please note: per IP address you can have only one Anonymous-FTP account.";
+$hlp["web_anonftplimit"] = "Please enter the desired storage space (in MB) for the Anonymous-FTP account.";
+$hlp["optionen_frontpage_passwort"] = "Please specify a password for the Frontpage Extensions.";
+$hlp["optionen_mysql_remote_access"] = "Enables remote access to the web's MySQL database.";
+$hlp["optionen_local_mailserver"] = "If you select \"external Mailserver\" no entries for the local MTA will be created.";
+$hlp["web_faktura"] = "Activates/deactivates the ISP-Billing module for this web.";
+$hlp["optionen_logsize"] = "Maximum Apache logfile size for this web. Valid entries are absolute numbers in MB or relative numbers in % (of the total storage space of the web).";
+$hlp["web_php_safe_mode"] = "If PHP is activated for this website, it will be run in Safe Mode.";
+$hlp["web_wap"] = "Here you can activate the server's support for .wml files. .wml files can be interpreted by mobile phones with WAP.";
+$hlp["web_standard_cgi"] = "Please specify if the standard CGI scripts provided on this server should be available for this website.";
+$hlp["web_mysql_anzahl_dbs"] = "Please specify the max. number of databases that should be available for this website.";
+$hlp["web_individual_error_pages"] = "If this field is checked, you can define individual error pages on the \"Options\" tab.";
+$hlp["error_400"] = "Please enter the HTML code for the error page 400 (\"Invalid Syntax\"). If you leave this field empty, the standard error page will be used.";
+$hlp["error_401"] = "Please enter the HTML code for the error page 401 (\"Authorisation required\"). If you leave this field empty, the standard error page will be used.";
+$hlp["error_403"] = "Please enter the HTML code for the error page 403 (\"Forbidden\"). If you leave this field empty, the standard error page will be used.";
+$hlp["error_404"] = "Please enter the HTML code for the error page 404 (\"File not found\"). If you leave this field empty, the standard error page will be used.";
+$hlp["error_405"] = "Please enter the HTML code for the error page 405 (\"Method not allowed\"). If you leave this field empty, the standard error page will be used.";
+$hlp["error_500"] = "Please enter the HTML code for the error page 500 (\"Internal Server Error\"). If you leave this field empty, the standard error page will be used.";
+$hlp["error_503"] = "Please enter the HTML code for the error page 503 (\"Service unavailable\"). If you leave this field empty, the standard error page will be used.";
+
+?>

@@ -1,0 +1,141 @@
+    <table border="0" width="100%" height="188" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="100%" height="45" class="normal" bgcolor="{TABLE_H_COLOR}">&nbsp; Hier
+          können Sie die Anmeldedaten von {SITENAME}&nbsp; ändern.</td>
+      </tr>
+      <tr>
+        <td width="100%" height="19" bgcolor="{TABLE_H_COLOR}">
+          <script Language="JavaScript"><!--
+function FrontPage_Form2_Validator(theForm)
+{
+
+  if (theForm.vorname.value == "")
+  {
+    alert("Geben Sie einen Wert in das Feld \"Vorname\" ein.");
+    theForm.vorname.focus();
+    return (false);
+  }
+
+  if (theForm.vorname.value.length > 30)
+  {
+    alert("Geben Sie höchstens 30 Zeichen in das Feld \"Vorname\" ein.");
+    theForm.vorname.focus();
+    return (false);
+  }
+
+  if (theForm.name.value == "")
+  {
+    alert("Geben Sie einen Wert in das Feld \"Name\" ein.");
+    theForm.name.focus();
+    return (false);
+  }
+
+  if (theForm.name.value.length > 30)
+  {
+    alert("Geben Sie höchstens 30 Zeichen in das Feld \"Name\" ein.");
+    theForm.name.focus();
+    return (false);
+  }
+
+  if (theForm.email.value == "")
+  {
+    alert("Geben Sie einen Wert in das Feld \"EMail\" ein.");
+    theForm.email.focus();
+    return (false);
+  }
+
+  if (theForm.email.value.length > 50)
+  {
+    alert("Geben Sie höchstens 50 Zeichen in das Feld \"EMail\" ein.");
+    theForm.email.focus();
+    return (false);
+  }
+
+  if (theForm.passwortRecover.value == "")
+  {
+    alert("Geben Sie einen Wert in das Feld \"Passwort Vergessen\" ein.");
+    theForm.passwortRecover.focus();
+    return (false);
+  }
+  
+  if (theForm.strasse.value == "")
+  {
+    alert("Geben Sie einen Wert in das Feld \"Strasse\" ein.");
+    theForm.strasse.focus();
+    return (false);
+  }
+  
+  if (theForm.plz.value == "")
+  {
+    alert("Geben Sie einen Wert in das Feld \"PLZ\" ein.");
+    theForm.plz.focus();
+    return (false);
+  }
+  
+  if (theForm.ort.value == "")
+  {
+    alert("Geben Sie einen Wert in das Feld \"Ort\" ein.");
+    theForm.ort.focus();
+    return (false);
+  }  
+  return (true);
+}
+//--></script><form method="POST" action="nutzerdaten_speichern.php">
+            <table border="0" width="100%" cellspacing="0" cellpadding="4" bgcolor="{TABLE_H_COLOR}">
+              <tr>
+                <td width="32%" class="normal">&nbsp;Vorname</td>
+                <td width="68%"><input type="text" name="vorname" size="30" value="{VORNAME}" class="text"></td>
+              </tr>
+              <tr>
+                <td width="32%" class="normal">&nbsp;Name</td>
+                <td width="68%"><input type="text" name="name" size="30" value="{NAME}" class="text"></td>
+              </tr>
+              <tr>
+                <td width="32%" class="normal">&nbsp;Strasse</td>
+                <td width="68%"><input type="text" name="strasse" size="30" value="{STRASSE}" class="text"></td>
+              </tr>
+              <tr>
+                <td width="32%" class="normal">&nbsp;PLZ</td>
+                <td width="68%"><input type="text" name="plz" size="30" value="{PLZ}" class="text"></td>
+              </tr>
+              <tr>
+                <td width="32%" class="normal">&nbsp;Ort</td>
+                <td width="68%"><input type="text" name="ort" size="30" value="{ORT}" class="text"></td>
+              </tr>
+              <tr>
+                <td width="32%" class="normal">&nbsp;Land</td>
+                <td width="68%"><input type="text" name="land" size="30" value="{LAND}" class="text"></td>
+              </tr>
+              <tr>
+                <td width="32%" class="normal">&nbsp;EMail</td>
+                <td width="68%"><input type="text" name="email" size="30" value="{EMAIL}" class="text"></td>
+              </tr>
+              <tr>
+                <td width="32%" class="normal">&nbsp;Telefon</td>
+                <td width="68%"><input type="text" name="telefon" size="30" value="{TELEFON}" class="text"></td>
+              </tr>
+              <tr>
+                <td width="32%" class="normal">&nbsp;Fax</td>
+                <td width="68%"><input type="text" name="fax" size="30" value="{FAX}" class="text"></td>
+              </tr>
+              <tr>
+                <td width="32%" class="normal">&nbsp;Alter</td>
+                <td width="68%"><input type="text" name="alter1" size="30" value="{ALTER}" class="text"></td>
+              </tr>
+              <tr>
+                <td width="100%" colspan="2" class="normal">Diese
+                  Frage wird Ihnen gestellt, wenn Sie Ihr Passwort vergessen
+                  haben.</td>
+              </tr>
+              <tr>
+                <td width="32%" bgcolor="{TABLE_H_COLOR}"></td>
+                <td width="68%" bgcolor="{TABLE_H_COLOR}"><input type="text" name="passwortRecover" size="30" value="{PASSWORTRECOVER}" class="text"></td>
+              </tr>
+            </table>
+            <p align="center" bgcolor="{TABLE_H_COLOR}"><input border="0" src="../../{DESIGNPATH}/btn_ok_kl.gif" name="I1" type="image"><a href="../../{MODUL}/frame_start.php?{SESSION}" target="seiteFrame"><img border="0" src="../../{DESIGNPATH}/btn_kl_abbrechen.gif"><br>
+            </a>&nbsp;</p>
+            <input type="hidden" name="s" value="{S}">
+          </form>
+        </td>
+      </tr>
+    </table>

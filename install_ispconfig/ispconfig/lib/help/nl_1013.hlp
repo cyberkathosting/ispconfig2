@@ -1,0 +1,44 @@
+<?
+/**********************************************
+* ISPConfig Help File
+* Version 1.2
+* Syntax: $hlp["FieldName"] = "HelpText";
+************************************************/
+
+$hlp["web_host"] = "Hostnaam van website: bijv. www";
+$hlp["web_domain"] = "Domein van website: bijv. projektfarm.de";
+$hlp["web_speicher"] = "Grootte (in MBs) van de webruimte. Voorbeeld, 2 staat for 2 MB webruimte.";
+$hlp["web_traffic"] = "Geeft aan hoeveel gratis verkeer er bij deze website zit (bijv. 2 GB).";
+$hlp["web_cgi"] = "Activeert CGI voor deze website.";
+$hlp["web_php"] = "Activeert PHP voor deze website.";
+$hlp["web_ssi"] = "Activeert SSI voor deze website.";
+$hlp["web_ftp"] = "Activeert FTP toegang voor deze website.";
+$hlp["web_frontpage"] = "Activeert Frontpage Extensies voor deze website.";
+$hlp["web_mysql"] = "Activeert een MySQL database voor deze website.";
+$hlp["web_shell"] = "Activeert shell access voor deze website.";
+$hlp["web_ssl"] = "Activateert SSL encryptie voor deze website. Meer instellingen kunnen onder tabblad SSL worden gevonden.";
+$hlp["ssl_request"] = "U kunt de inhoud van dit tekstvak naar uw Certificate Authority (CA) sturen om deze om te zetten naar een officieel SSL certificaat.";
+$hlp["ssl_cert"] = "U kunt hier een officieel certificaat van uw Certificate Authority (CA) toevoegen.";
+$hlp["web_ip"] = "Selecteer IP adres om te gebruiken voor website.";
+$hlp["optionen_mysql_user"] = "Vul gebruikersname in voor MySQL database.";
+$hlp["optionen_mysql_passwort"] = "Vul wachtwoord in voor MySQL database.";
+$hlp["web_dns"] = "Door middel van deze box aan te vinken wordt er een A record aan de dns toegevoegd.";
+$hlp["web_userlimit"] = "Specificeer hoeveel gebruikers aangemaakt kunnen worden voor deze website.";
+$hlp["web_domainlimit"] = "Specificeer hoeveel domeinen aangemaakt kunnen worden voor deze website.";
+$hlp["ssl_state"] = "Vul land/provincie in.";
+$hlp["ssl_locality"] = "Vul uw stad in.";
+$hlp["ssl_organization"] = "Vul uw bedrijfs/organisatie naam in.";
+$hlp["ssl_organization_unit"] = "Vul uw onderdeel in van bedrijf/organisatie (Bijv. IT Afdeling).";
+$hlp["ssl_country"] = "Selecteer uw land.";
+$hlp["web_dns_mx"] = "Door middel van deze box aan te vinken wordt er een MX record aan de dns toegevoegd.";
+$hlp["ssl_days"] = "Vul hier de geldigheids duur in van het SSL certificaat (bijv. 365, is een jaar).";
+$hlp["web_httpd_include"] = "Hier kunt u additionele Apache Directives toevoegen.";
+$hlp["web_anonftp"] = "Activeert anonieme FTP toegang voor deze website. Belangrijke note: U kunt maar 1 anonieme FTP account aanmaken per ip adres!";
+$hlp["web_anonftplimit"] = "Vul hier de ftp ruimte (in MBs) in voor anonieme FTP toegang";
+$hlp["optionen_frontpage_passwort"] = "Vul een wachtwoord in om voor Frontpage Extensies te gebruiken.";
+$hlp["optionen_mysql_remote_access"] = "Laat remote toegang toe tot DB op Mysql server.";
+$hlp["optionen_local_mailserver"] = "Als u \"externe Mailserver\" selecteert, zullen er geen veranderingen voor de lokake MTA worden gedaan.";
+$hlp["web_faktura"] = "Activeert/Deactiveert de ISP-Faktuur module voor deze website";
+$hlp["optionen_logsize"] = "Maximale grootte van de Apache logfiles van deze website. Waarde moet een absolute waarde hebben in MegaBytes of relatieve waarde uitgedrukt in % (van de totale grootte van de website).";
+
+?>

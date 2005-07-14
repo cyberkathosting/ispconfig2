@@ -1,0 +1,33 @@
+<?
+/********************************
+* ISPConfig Dictionary File
+* Version 1.0
+*********************************/
+
+$wb["Anbieter"]     = "Återförsäljare";
+$wb["Web"]          = "Web";
+$wb["Admin Handbuch"] = "Admin Manual";
+$wb["Reseller Handbuch"] = "Återförsäljar Manual";
+$wb["Kunden Handbuch"] = "Kund Manual";
+$wb["Deutsch"]          = "Tyska";
+$wb["Englisch"]          = "Engelska";
+$wb["Schwedisch"]         = "Svenska";
+$wb["Projektfarm Support"]          = "Projektfarm Support";
+$wb["Online Hilfe"] = "Online Hjälp";
+
+
+//////////////// Server Status ////////////////
+$wb["Arbeitsspeicher"]          = "Arbetsminne";
+$wb["CPU"]          = "CPU";
+$wb["Dienste"]      = "Tjänster";
+$wb["Server Online seit"]          = "Server Online sedan";
+$wb["User Online"]      = "Användare Online";
+$wb["System Load 1 Minute"] = "System belastning senaste 1 Min";
+$wb["System Load 5 Minuten"] = "System belastning senaste 5 Min";
+$wb["System Load 15 Minuten"] = "System belastning senaste 15 Min";
+//////////////// Server Status Ende //////////
+
+
+
+
+?>

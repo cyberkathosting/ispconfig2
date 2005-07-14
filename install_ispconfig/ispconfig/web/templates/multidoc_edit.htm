@@ -1,0 +1,93 @@
+<script language="JavaScript">
+<!--
+function MM_goToURL() { //v3.0
+  var i, args=MM_goToURL.arguments; document.MM_returnValue = false;
+  var listValue = document.myform.gid.options[document.myform.gid.selectedIndex].value; 
+  for (i=0; i<(args.length-1); i+=2) eval(args[i]+".location='"+args[i+1]+listValue+"'");
+}
+function changeDeck(deck) {
+if(checkform(document.myform)) {
+document.myform.next_deck_id.value = deck;
+document.myform.fertig.value = 0;
+document.myform.submit();
+}
+}
+function attachDoc(nextDoctypeID,nextType) {
+if(checkform(document.myform)) {
+document.myform.next_doctype_id.value = nextDoctypeID;
+document.myform.next_type.value = nextType;
+document.myform.next_tree_id.value = "";
+document.myform.caller_tree_id.value = document.myform.tree_id.value;
+document.myform.submit();
+}
+}
+function editDoc(nextTreeID,nextType) {
+if(checkform(document.myform)) {
+document.myform.next_type.value = nextType;
+document.myform.next_tree_id.value = nextTreeID;
+document.myform.caller_tree_id.value = document.myform.tree_id.value;
+document.myform.submit();
+}
+}
+function checkform(theForm) {
+{CHECKFORM}
+return true;
+}
+//-->
+</script>
+<form action="edit.php" onsubmit="return checkform(this)" method="post" name="myform" target="{TARGET}">
+  <table width="100%" border="0" cellspacing="0" cellpadding="10">
+              <tr>
+                <td>
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td>&nbsp;</td>
+                    </tr>
+                    <tr> 
+                      
+            <td>{GROUPS}</td>
+                    </tr>
+                    
+                    <tr> 
+                      
+            <td>{DECKS}</td>
+                    </tr>
+                    <tr> 
+                      <td bgcolor="{FGCOLOR}"> 
+                        <table width="100%" border="0" cellspacing="1" cellpadding="0" bgcolor="{FGCOLOR}">
+                          <tr> 
+                            <td bgcolor="#EEEEEE"> 
+                              <table width="100%" border="0" cellspacing="0" cellpadding="2">
+                                <tr> 
+                                  <td width="23%">&nbsp;</td>
+                                  <td width="77%">&nbsp;</td>
+                                </tr>
+                                {ELEMENTS}
+                                <tr> 
+                                  <td width="23%">&nbsp;</td>
+                                  <td width="77%">&nbsp;</td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                    {BUTTONS}
+                  </table>
+                </td>
+              </tr>
+            </table>
+  <input type="hidden" name="s" value="{S}">
+  <input type="hidden" name="gid_old" value="{GID_OLD}">
+  <input type="hidden" name="doctype_id" value="{DOCTYPE_ID}">
+  <input type="hidden" name="next_type" value="">
+  <input type="hidden" name="tree_id" value="{TREE_ID}">
+  <input type="hidden" name="doc_id" value="{DOC_ID}">
+  <input type="hidden" name="deck_id" value="{DECK_ID}">
+  <input type="hidden" name="next_deck_id" value="{DECK_ID}">
+  <input type="hidden" name="next_doctype_id" value="{NEXT_DOCTYPE_ID}">
+  <input type="hidden" name="next_tree_id" value="{NEXT_TREE_ID}">
+  <input type="hidden" name="caller_tree_id" value="{CALLER_TREE_ID}">
+  <input type="hidden" name="fertig" value="1">
+</form>

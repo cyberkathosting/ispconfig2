@@ -1,0 +1,63 @@
+<link href="../style.css" rel="stylesheet" type="text/css">
+ <form name="form1" method="post" action="spamfilter.php">
+<table border="0" cellspacing="0" cellpadding="2">
+  <tr>
+    <td height="42">&nbsp;</td>
+    <td colspan="2">&nbsp;</td>
+  </tr>
+  <tmpl_if name="error">
+  <tr>
+    <td height="42">&nbsp;</td>
+    <td colspan="2" class="TxtForm"><tmpl_var name="error"></td>
+  </tr>
+  </tmpl_if>
+  <tr>
+    <td width="50">&nbsp;</td>
+    <td width="120" class="TxtForm"><strong><tmpl_var name='txt_mailscan'>:</strong></td>
+    <td class="TxtForm"><select name="user_mailscan">{tmpl_var name='user_mailscan'}</select></td>
+  </tr>
+  <tr>
+    <td width="50">&nbsp;</td>
+    <td width="120" class="TxtForm"><strong><tmpl_var name='txt_antivirus'>:</strong></td>
+    <td class="TxtForm"><select name="antivirus">{tmpl_var name='antivirus'}</select></td>
+  </tr>
+  <tr>
+    <td width="50">&nbsp;</td>
+    <td width="120" class="TxtForm"><strong><tmpl_var name='txt_spamfilter'>:</strong></td>
+    <td class="TxtForm"><select name="user_spamfilter">{tmpl_var name='user_spamfilter'}</select></td>
+  </tr>
+  <tr>
+    <td width="50">&nbsp;</td>
+    <td width="120" class="TxtForm"><strong><tmpl_var name='txt_spam_strategie'>:</strong></td>
+    <td class="TxtForm"><select name="spam_strategy">{tmpl_var name='spam_strategy'}</select></td>
+  </tr>
+  <tr>
+    <td width="50">&nbsp;</td>
+    <td width="120" class="TxtForm"><strong><tmpl_var name='txt_spam_hits'>:</strong></td>
+    <td class="TxtForm"><input name="spam_hits" type="text" value="{tmpl_var name='spam_hits'}" size="4" maxlength="4"></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td colspan="2"><hr></td>
+    </tr
+  ><tr>
+    <td width="50">&nbsp;</td>
+    <td width="120" class="TxtForm"><strong><tmpl_var name='txt_rewrite_subject'>:</strong></td>
+    <td class="TxtForm"><select name="spam_rewrite_subject">{tmpl_var name='spam_rewrite_subject'}</select></td>
+  </tr>
+  <tr>
+    <td width="50">&nbsp;</td>
+    <td width="120" class="TxtForm"><strong><tmpl_var name='txt_betreff'>:</strong></td>
+    <td class="TxtForm"><input name="spam_subject_tag" type="text" value="{tmpl_var name='spam_subject_tag'}" size="30" maxlength="50"></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td colspan="2">&nbsp;</td>
+    </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><input type="submit" name="Submit" value="{tmpl_var name='txt_speichern'}"> <input type="button" name="Abbrechen" value="{tmpl_var name='txt_abbrechen'}" onClick="location.href='index.php'"></td>
+  </tr>
+</table>
+</form>

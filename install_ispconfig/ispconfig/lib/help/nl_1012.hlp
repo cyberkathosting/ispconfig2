@@ -1,0 +1,31 @@
+<?
+/**********************************************
+* ISPConfig Help File
+* Version 1.2
+* Syntax: $hlp["FieldName"] = "HelpText";
+************************************************/
+
+$hlp["kunde_anrede"] = "Vul hier de klant gegevens in.";
+$hlp["kunde_firma"] = "Vul hier de bedrijfsnaam van de klant in.";
+$hlp["kunde_vorname"] = "Vul hier de voornaam naam van de klant in.";
+$hlp["kunde_name"] = "Vul hier de achternaam van de klant in.";
+$hlp["kunde_strasse"] = "Vul hier de straat van de klant in.";
+$hlp["kunde_plz"] = "Vul hier de postcode van de klant in.";
+$hlp["kunde_ort"] = "Vul hier de plaats van de klant in.";
+$hlp["kunde_land"] = "Vul hier het land van de klant in.";
+$hlp["kunde_telefon"] = "Vul hier het telefoon nummer van de klant in.";
+$hlp["kunde_fax"] = "Vul hier het fax nummer van de klant in";
+$hlp["kunde_email"] = "Vul hier het email adres van de klant in.";
+$hlp["kunde_internet"] = "Vul hier het internet adres van de klant in.";
+$hlp["webadmin_user"] = "Vul hier de gewenste login naam in voor de klant.";
+$hlp["webadmin_passwort"] = "Vul het gewenste wachtwoord in voor deze klant.";
+$hlp["rechnung_firma"] = "Vul hier de faktuur data (bedrijfsnaam) in van de klant.";
+$hlp["rechnung_vorname"] = "Vul hier de faktuur data (voornaam) in van de klant.";
+$hlp["rechnung_name"] = "Vul hier de faktuur data (achternaam) in van de klant.";
+$hlp["rechnung_strasse"] = "Vul hier de faktuur data (straat) in van de klant.";
+$hlp["rechnung_plz"] = "Vul hier de faktuur data (postcode) in van de klant.";
+$hlp["rechnung_ort"] = "Vul hier de faktuur data (plaats) in van de klant.";
+$hlp["rechnung_land"] = "Vul hier de faktuur data (land) in van de klant.";
+$hlp["rechnung_intervall"] = "Vul hier de faktuur data (termijnen) in van de klant.";
+$hlp["rechnung_zahlungsbedingungen"] = "Vul hier de faktuur data (betaal conditie) in van de klant.";
+?>

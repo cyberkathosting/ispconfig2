@@ -1,0 +1,29 @@
+
+                  
+<form method="POST" action="htaccess_user_save.php" target="_self" name="myform" enctype="multipart/form-data">
+  <table border="0" width="99%" cellspacing="0" cellpadding="4" height="113" bgcolor="{TABLE_H_COLOR}">
+    <tr>
+      <td height="21" class="normal_bold">&nbsp;</td>
+      <td height="21">&nbsp;</td>
+    </tr>
+    <tr> 
+      <td width="37%" height="21" class="normal_bold">&nbsp;{TXT_USERNAME}:</td>
+      <td width="63%" height="21"> 
+        {USERNAME}
+      </td>
+    </tr>
+    <tr>
+      <td height="21" class="normal_bold">&nbsp;{TXT_PASSWORT}:</td>
+      <td height="21"><input name="passwort" type="password" class="text" id="passwort" size="23" maxlength="30"></td>
+    </tr>
+    <tr> 
+      <td colspan="2" height="50" align="center">
+	  <input name="speichern" type="submit" id="speichern" value="{SPEICHERN}" class="button">
+        &nbsp;&nbsp;
+        
+        <input name="abbrechen" type="button" id="abbrechen" value="{ABBRECHEN}" onClick="window.location.href='../frame_start.php?{SESSION}'" class="button">
+      </td>
+    </tr>
+  </table>
+  <input type="hidden" name="ed" value="{ED}"><input type="hidden" name="web_id" value="{WEB_ID}"><input type="hidden" name="s" value="{S}">
+</form>

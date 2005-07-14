@@ -1,0 +1,40 @@
+<?php
+
+$wb["txt_login_desc"] = "Zum &Auml;ndern Ihrer Email Konfiguration hier einloggen.";
+$wb["txt_error"] = "Fehler";
+$wb["txt_email_username"] = "Email-Username";
+$wb["txt_password"] = "Passwort";
+$wb["txt_login"] = "Login";
+$wb["txt_autoresponder"] = "Autoresponder";
+$wb["txt_nachricht"] = "Nachricht";
+$wb["txt_speichern"] = "Speichern";
+$wb["txt_abbrechen"] = "Abbrechen";
+$wb["txt_email_account"] = "Email Account";
+$wb["txt_user_und_email"] = "User &amp; Email";
+$wb["txt_spamfilter"] = "Spamfilter";
+$wb["txt_logout"] = "Logout";
+$wb["txt_mailscan"] = "MailScan";
+$wb["txt_antivirus"] = "Antivirus";
+$wb["txt_spam_strategie"] = "Spam Strategie";
+$wb["txt_spam_hits"] = "Spam Hits";
+$wb["txt_rewrite_subject"] = "Rewrite Subject";
+$wb["txt_betreff"] = "Betreff";
+$wb["txt_name"] = "Name";
+$wb["txt_email_adresse"] = "Email Adresse";
+$wb["txt_username"] = "Username";
+$wb["txt_web_speicher"] = "WebSpeicher";
+$wb["txt_mail_speicher"] = "MailSpeicher";
+$wb["txt_email_passwort_leer"] = "Email-Username und/oder Passwort sind leer.";
+$wb["txt_user_unbekannt"] = "Username unbekannt.";
+$wb["txt_access_forbidden"] = "Zugriff nicht erlaubt!";
+$wb["txt_yes"] = "Ja";
+$wb["txt_no"] = "Nein";
+$wb["txt_unlimited"] = "unlimitiert";
+$wb["txt_welcome"] = "Willkommen...";
+$wb["txt_error_spam_hits_format"] = "Der Wert <i>".$wb["txt_spam_hits"]."</i> muss das folgende Format besitzen:";
+$wb["txt_accept"] = "akzeptieren";
+$wb["txt_discard"] = "löschen";
+$wb["txt_language"] = "Sprache";
+$wb["txt_no_mailuser_login"] = "Der Login ist für Ihr Web deaktiviert.";
+
+?>

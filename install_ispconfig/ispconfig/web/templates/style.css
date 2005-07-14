@@ -1,0 +1,68 @@
+th { font-family: Verdana,Arial,Helvetica; font-size: 10pt; }
+
+        BODY  {     BACKGROUND-COLOR: #ffffff;
+    				   FONT-SIZE: 10px;
+					   scrollbar-arrow-color:white;
+        		      scrollbar-base-color: {FGCOLOR}
+        	   }
+        		  
+	a  { font-family: Verdana, Arial, Helvetica; text-decoration: underline; color: #0000FF }
+	a:hover { text-decoration: none;}
+	a.link { color: #000000; font-weight:normal; font-size: 10pt; text-decoration: none;}
+	a.link:visited {color: #000000}
+	a.link:link {color:#000000}
+	a.linkstd { color: #FFFFFF; font-weight: normal; font-size: 8pt; text-decoration: none;}
+	a.linkstd:hover { text-decoration: none;}
+	a.linkstd:visited {color: #FFFFFF}
+	a.linkstd:link {color:#FFFFFF}
+    
+    a.link8 { color: #000000; font-weight: normal; font-size: 8pt; text-decoration: none;}
+	a.link8:hover { text-decoration: none;}
+	a.link8:visited {color: #000000}
+	a.link8:link {color:#000000}
+
+	a.linkstd2 { color: #FFFFFF; font-weight: normal; font-size: 7pt; text-decoration: none;}
+	a.linkstd2:hover { text-decoration: none;}
+	a.linkstd2:visited {color: #FFFFFF}
+	a.linkstd2:link {color:#FFFFFF}
+
+	.bg { background: #EEEEAA; }
+	.heading { font-family: Arial,Helvetica; font-size: 11pt; font-weight: bold; color: #000080;}
+	.normal { font-family: Arial,Helvetica; font-size: 10pt; color: #000000;}
+	.normal_kl { font-family: Arial,Helvetica; font-size: 8pt; color: #000000;}
+	.normal_bold { font-family: Arial,Helvetica; font-size: 10pt; color: #000000; font-weight: bold;}
+	.link { font-family: Arial,Helvetica; font-size: 10pt; color: #000000;}
+	.t3bw { font-family: Arial,Helvetica; font-size: 10pt; font-weight: bold; color: #FFFFFF;}
+	
+	
+	.t1 { font-family: Arial,Helvetica; font-size: 8pt; }
+	.t1b { font-family: Arial,Helvetica; font-size: 8pt; font-weight: bold;}
+	.t2 { font-family: Arial,Helvetica; font-size: 9pt; }
+	.t2l { font-family: Arial,Helvetica; font-size: 9pt;  text-decoration: none;}
+	.t2b { font-family: Arial,Helvetica; font-size: 9pt; font-weight: bold;}
+	.t3 { font-family: Arial,Helvetica; font-size: 10pt; }
+	.t3b { font-family: Arial,Helvetica; font-size: 10pt; font-weight: bold;}
+	.t4 { font-family: Arial,Helvetica; font-size: 11pt; }
+	.t4b { font-family: Arial,Helvetica; font-size: 11pt; font-weight: bold;}
+	.t5 { font-family: Arial,Helvetica; font-size: 12pt; }
+	.t5b { font-family: Arial,Helvetica; font-size: 12pt; font-weight: bold;}
+	.t6 { font-family: Arial,Helvetica; font-size: 13pt; }
+	.t6b { font-family: Arial,Helvetica; font-size: 13pt; font-weight: bold;}
+	.r2 { font-family: Arial,Helvetica; font-size: 9pt; color: #FF0000; }
+	.g2 { font-family: Arial,Helvetica; font-size: 9pt; color: #006600;}
+	
+
+	textarea,input.text,select,option{color:#000000;
+	font-family:"CourierNew",Courier,monospace;background-color:#FCFCFC;font-size:14px;font-style:normal;
+	font-variant:normal;font-weight:normal;scrollbar-arrow-color:#FFFFFF;scrollbar-track-color:{FGCOLOR};
+	scrollbar-face-color:{FGCOLOR};scrollbar-base-color:{FGCOLOR};scrollbar-3dlight-color:{FGCOLOR};
+	border: 1 solid #666666; position: relative;}
+	
+	td.text { FONT-FAMILY: Verdana, Arial, Helvetica; FONT-SIZE: 10.5px; LETTER-SPACING: 0px;}
+
+	.button {
+                border-color : #666699 #666699 #666699 #666699;
+                border-width : 1 1 1 1;
+                color : Black; background-color : #FFFFFF;
+                height : 19px; font-size : 12px;
+        }

@@ -1,0 +1,85 @@
+<?
+/********************************
+* ISPConfig Dictionary File
+* Version 1.0
+*********************************/
+
+/////////////// Allgemein - general (kommt in mehreren Modulen vor) /////////
+$wb["login_begruessung"]     = "Login:";
+$wb["Username"]     = "Username";
+$wb["Passwort"]     = "Password";
+$wb["Login"]       = "Login";
+$wb["Administration"]  = "Management";
+$wb["ISP Manager"]  = "ISP Manager";
+$wb["DNS Manager"]  = "DNS Manager";
+$wb["Tools"]        = "Verktyg";
+$wb["Logout"]       = "Logout";
+$wb["Status"]       = "Status";
+$wb["neu"]          = "ny";
+$wb["Hinweis"]      = "Referens";
+$wb["Web"]          = "Web";
+$wb["Email"]        = "email";
+$wb["FTP"]          = "FTP";
+$wb["DNS"]          = "DNS";
+$wb["Sonstiges"]    = "Annan";
+$wb["Datei"]        = "Fil";
+$wb["von"]          = "från"; // besser 'ab'?
+$wb["error_headline"] = "Följande fel uppstod:";
+$wb["Gruppe"]       = "Group";
+$wb["Titel"]        = "Title";
+$wb["Server"]       = "Server";
+$wb["Host"]         = "Hostname";
+$wb["Domain"]       = "Domän";
+$wb["IP Adresse"]   = "IP Adress";
+$wb["Ordner"]       = "Katalog";
+$wb["Dokument"]     = "Dokument";
+$wb["Dokument suchen"] = "Dokument sökning";
+$wb["Suchmaske"]    = "Sök kriterier";
+$wb["Ausgabeformat"] = "Output format";
+$wb["Standard"]     = "Standard";
+$wb["Einträge"]    = "Poster";
+$wb["Papierkorb leeren"] = "Töm recycle bin";
+$wb["Stammordner"]  = "Master Zone";
+$wb["keine Gruppe"] = "Ingen grupp";
+$wb["neues Dokument anlegen"] = "Nytt dokument skapat";
+$wb["auf"]   = "Expandera";
+$wb["zu"]    = "Komprimera";
+$wb["in_ordner"]    = "i katalog";
+$wb["Papierkorb"]   = "Recycle Bin";
+$wb["Wiederherstellen"]    = "Återställ";
+$wb["Papierkorb: Einträge"]   = "Recycle bin: contents";
+$wb["Speichern"]    = "Spara";
+$wb["Löschen"]    = "Radera";
+$wb["Abbrechen"]    = "Avbryt";
+$wb["Suchen"]    = "Sök";
+
+$wb["Herr"] = "Herr";
+$wb["Frau"] = "Fru";
+
+$wb["Es ist folgender Fehler aufgetreten:"] = "Följande fel uppstod:";
+
+$wb["Web-FTP"] = 'Web-FTP';
+$wb["ISP Faktura"] = 'ISP Faktura';
+
+$wb["Verzeichnis öffnen"] = "Öppna";
+$wb["Verzeichnis schliessen"] = "Stäng";
+$wb["Hilfe"] = 'Hjälp';
+$wb["Online Hilfe"] = 'Online Hjälp';
+$wb["schliessen"] = 'Stäng';
+
+$wb["PAPIERKORB_HINWEIS"] = "<b>Note:</b> Artiklar som finns kvar i recycle bin efter tömmning är i update stadie. Försök att radera dem senare.";
+
+
+// Multidoc  Allgemein ////////////////////////////////
+
+$wb["title_required"] = "Ange ett värde i fältet 'Title'";
+$wb["error_keine_rechte"] = "Du har inte behörighet att läsa eller editera denna post.";
+$wb["error_doctype_nicht_vorhanden"] = "Det efterfrågade dokumentet existerar inte.";
+$wb["error_doctype_rechte"] = "Du har inte behörighet att editera denna dokument typ.";
+$wb["Formular Designer"] = "Form Designer";
+$wb["Geben Sie einen Wert in das Feld"] = "Ange ett värde i fältet";
+$wb["jscript_ein"] = " ";
+
+////////////// Allgemein Ende ///////////////////
+
+?>

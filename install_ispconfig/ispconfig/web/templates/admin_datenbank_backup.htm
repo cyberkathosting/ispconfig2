@@ -1,0 +1,47 @@
+<table width="100%" cellspacing="15">
+  <tr><td>
+  <form name="form1" method="post" action="backup_send.php">
+        <table width="100%" border="0" cellpadding="2" cellspacing="0">
+          <tr> 
+            <td height="34" class="t2b">&nbsp;{SYSDB}</td>
+          </tr>
+          <tr> 
+            <td width="25" class="t2"><nobr> 
+              <input name="transfer" type="radio" value="download" checked>
+              Download 
+              <input type="radio" name="transfer" value="ftp">
+              FTP </nobr></td>
+          </tr>
+          <tr> 
+            <td align="center"><hr size="1" noshade></td>
+          </tr>
+          <tr> 
+            <td><table width="300" border="0" cellspacing="0" cellpadding="2">
+                <tr> 
+                  <td width="89" class="t2">&nbsp;{FTP_SERVER}:</td>
+                  <td width="203"><input name="ftp_server" type="text" class="text" id="ftp_server"></td>
+                </tr>
+                <tr> 
+                  <td class="t2">&nbsp;{VERZEICHNIS}:</td>
+                  <td><input name="ftp_dir" type="text" class="text" id="ftp_dir" value="/"></td>
+                </tr>
+                <tr> 
+                  <td class="t2">&nbsp;{USERNAME}:</td>
+                  <td><input name="ftp_user" type="text" class="text" id="ftp_user"></td>
+                </tr>
+                <tr> 
+                  <td class="t2">&nbsp;{PASSWORT}:</td>
+                  <td><input name="ftp_passwort" type="password" class="text" id="ftp_passwort"></td>
+                </tr>
+              </table></td>
+          </tr>
+          <tr>
+            <td align="center"><hr size="1" noshade></td>
+          </tr>
+          <tr> 
+            <td align="center"><input name="s" type="hidden" value="{S}"> <input type="submit" name="Submit" value="{BACKUP_STARTEN}" class="button"></td>
+          </tr>
+        </table>
+	</form>
+</td></tr>
+</table>

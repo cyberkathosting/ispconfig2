@@ -1,0 +1,53 @@
+<?
+/********************************
+* ISPConfig Dictionary File
+* Version 1.0
+*********************************/
+
+$wb["Datei Upload"] = 'Datei Upload';
+$wb["Ordner neu"] = 'Ordner neu';
+$wb["Web Auswahl"] = 'Web Auswahl';
+$wb["Web auswählen"] = 'Web auswählen';
+$wb["Auswahl"] = 'Auswahl';
+$wb["WEB FTP"] = 'WEB FTP';
+$wb["Hilfe"] = 'Hilfe';
+$wb["Name"] = 'Name';
+$wb["Grösse"] = 'Grösse';
+$wb["Datum"] = 'Datum';
+$wb["Eigentümer"] = 'Eigentümer';
+$wb["Alle"] = 'Alle';
+$wb["Lesen"] = 'Lesen';
+$wb["Schreiben"] = 'Schreiben';
+$wb["Ausführen"] = 'Ausführen';
+$wb["Verzeichnisschutz"] = 'Verzeichnisschutz';
+$wb["Verzeichnis schützen"] = 'Verzeichnis schützen';
+$wb[".htaccess User"] = '.htaccess User';
+$wb[".htaccess Userübersicht"] = '.htaccess Userübersicht';
+$wb["Bearbeiten"] = 'Bearbeiten';
+$wb["Hinzufügen"] = 'Hinzufügen';
+$wb["Parameterübergabe unvollständig"] = "Parameterübergabe unvollständig";
+$wb["Ungültiges Format der web_id."] = "Ungültiges Format der web_id.";
+$wb["Ungültige web_id."] = "Ungültige web_id.";
+$wb["Konnte server_path_httpd_root nicht ermitteln."] = "Konnte server_path_httpd_root nicht ermitteln.";
+$wb["Das Verzeichnis existiert nicht oder Sie haben nicht die notwendigen Berechtigungen."] = "Das Verzeichnis existiert nicht oder Sie haben nicht die notwendigen Berechtigungen.";
+$wb["Der Pfad enthält ungültige Zeichen."] = "Der Pfad enthält ungültige Zeichen.";
+$wb["Diese Funktion ist im Demo-Modus deaktiviert"] = "Diese Funktion ist im Demo-Modus deaktiviert.";
+$wb["ist ein Link."] = "ist ein Link.";
+$wb["existiert nicht."] = "existiert nicht."; // Es geht um: /home/file.htm existiert nicht.
+$wb["konnte nicht gelöscht werden."] = "konnte nicht gelöscht werden.";
+$wb["Das Verschieben der Datei ist fehlgeschlagen."] = "Das Verschieben der Datei ist fehlgeschlagen.";
+$wb["konnte nicht gelöscht werden. Das Verzeichnis muss leer sein und Sie müssen Schreibrechte besitzen."] = "konnte nicht gelöscht werden. Das Verzeichnis muss leer sein und Sie müssen Schreibrechte besitzen.";
+$wb["Das Verschieben des Verzeichnisses ist fehlgeschlagen."] = "Das Verschieben des Verzeichnisses ist fehlgeschlagen.";
+$wb["Es wurde keine Datei zum Upload ausgewählt."] = "Es wurde keine Datei zum Upload ausgewählt.";
+$wb["Die Datei existiert bereits in diesem Verzeichnis."] = "Die Datei existiert bereits in diesem Verzeichnis.";
+$wb["Möglicher Dateiupload Angriff."] = "Möglicher Dateiupload Angriff.";
+$wb["Ordner"] = "Ordner";
+
+$wb["chmod failed."] = "chmod fehlgeschlagen";
+$wb["FTP: Failed to open"] = "FTP: Öffnen der Datei fehlgeschlagen";
+$wb["Failed to open"] = "Öffnen der Datei fehlgeschlagen";
+$wb["Could not connect to"] = "Verbindung fehlgeshlagen mit Server ";
+$wb["Could not connect as user"] = "Login fehlgeschlagen als User: ";
+$wb["Next >>"] = "<br><br>Weiter >>";
+
+?>

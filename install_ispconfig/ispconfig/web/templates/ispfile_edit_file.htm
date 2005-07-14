@@ -1,0 +1,67 @@
+<form method="POST" action="file_save.php" target="_self" name="myform" enctype="multipart/form-data">
+  <table border="0" width="99%" cellspacing="0" cellpadding="4" height="62" bgcolor="{TABLE_H_COLOR}">
+    <tr>
+      <td width="21%" height="21" class="normal_bold">&nbsp;{TXT_NAME}:</td>
+      <td width="79%" height="21">
+        <input type="text" name="filename" size="23" value="{BTEXT}" maxlength="30" class="text">
+      </td>
+    </tr>
+    <tr>
+      <td width="21%" height="21" class="normal_bold">&nbsp;{TXT_FOLDER}:</td>
+      <td width="79%" height="21">
+        <select size="1" name="ordner">
+                <option value="root">/</option>
+                            {NODES}
+
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2" height="21" class="normal_bold">
+        <hr size="1">
+      </td>
+    </tr>
+        {CHMOD_BEGIN}
+    <tr>
+      <td width="21%" height="21" class="normal_bold">&nbsp;{TXT_OWNER}</td>
+      <td width="79%" height="21" class="normal">
+        <input type="checkbox" name="perm_user_read" value="1" {PERM_USER_READ}>
+        {TXT_R}
+        <input type="checkbox" name="perm_user_write" value="1" {PERM_USER_WRITE}>
+        {TXT_W}
+        <input type="checkbox" name="perm_user_exec" value="1" {PERM_USER_EXEC}>
+        {TXT_X}</td>
+    </tr>
+    <tr>
+      <td width="21%" height="21" class="normal_bold">&nbsp;{TXT_GROUP}</td>
+      <td width="79%" height="21" class="normal">
+        <input type="checkbox" name="perm_group_read" value="1" {PERM_GROUP_READ}>
+        {TXT_R}
+        <input type="checkbox" name="perm_group_write" value="1" {PERM_GROUP_WRITE}>
+        {TXT_W}
+        <input type="checkbox" name="perm_group_exec" value="1" {PERM_GROUP_EXEC}>
+        {TXT_X}</td>
+    </tr>
+    <tr>
+      <td width="21%" height="21" class="normal_bold">&nbsp;{TXT_ALL}</td>
+      <td width="79%" height="21" class="normal">
+        <input type="checkbox" name="perm_other_read" value="1" {PERM_OTHER_READ}>
+        {TXT_R}
+        <input type="checkbox" name="perm_other_write" value="1" {PERM_OTHER_WRITE}>
+        {TXT_W}
+        <input type="checkbox" name="perm_other_exec" value="1" {PERM_OTHER_EXEC}>
+        {TXT_X}</td>
+    </tr>
+        {CHMOD_END}
+    <tr>
+      <td colspan="2" height="50" align="center">
+        <input name="speichern" type="submit" id="speichern" value="{SPEICHERN}" class="button">
+        &nbsp;&nbsp;
+        <input name="loeschen" type="button" id="loeschen" value="{LOESCHEN}" onClick="if(confirm('{CONFIRM_DELETE}')) { location.href = 'file_delete.php?s={S}&web_id={WEB_ID}&ed={ED}'};" class="button">
+                &nbsp;&nbsp;
+        <input name="abbrechen" type="button" id="abbrechen" value="{ABBRECHEN}" onClick="window.location.href='../frame_start.php?{SESSION}'" class="button">
+        </td>
+    </tr>
+  </table>
+  <input type="hidden" name="ed" value="{ED}"><input type="hidden" name="web_id" value="{WEB_ID}"><input type="hidden" name="s" value="{S}">
+</form>

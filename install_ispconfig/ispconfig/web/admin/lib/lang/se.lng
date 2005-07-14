@@ -1,0 +1,187 @@
+<?
+/********************************
+* ISPConfig Dictionary File
+* Version 1.0
+*********************************/
+
+//////////////// Server Status ////////////////
+$wb["Arbeitsspeicher"]          = "Arbetsminne";
+$wb["CPU"]          = "CPU";
+$wb["Dienste"]      = "Tjänster";
+$wb["Server Online seit"]          = "Server Online sedan";
+$wb["User Online"]      = "Användare Online";
+$wb["System Load 1 Minute"] = "System belastning senaste 1 Min";
+$wb["System Load 5 Minuten"] = "System belastning senaste 5 Min";
+$wb["System Load 15 Minuten"] = "System belastning senaste 15 Min";
+//////////////// Server Status Ende //////////
+
+///////////////// Administration ////////////////
+$wb["ISPConfig Datenbank"]    = "ISPConfig Databas";
+$wb["Backup erstellen"]       = "Backup Data";
+$wb["Datenbank Check"]        = "Kontrollerar Databas";
+$wb["Datenbank Optimieren"]   = "Optimerar Databas";
+$wb["Datenbank Reparieren"]   = "Reparerar Databas";
+$wb["Eigenschaften"] = "Inställningar";
+$wb["Server Name"]  = "Server Namn";
+$wb["Netzmaske"]    = "Nätmask";
+$wb["Sprache"]      = "Språk";
+$wb["IP Liste"]     = "IP Lista";
+$wb["hinweis_ip_liste"] = "<b>OBS:</b> Skriv bara en IP Adress per rad i fältet IP Lista.";
+$wb["Pfad"]         = "Sökväg";
+$wb["Programm"]     = "Program";
+$wb["Reparatur"]    = "Reparerar";
+$wb["Optimiere"]    = "Optimerar";
+$wb["Pfad httpd.conf"]    = "Sökväg httpd.conf";
+$wb["MTA Typ"]    = "MTA Typ";
+$wb["Virtuser Datei"]    = "Virtuser File";
+$wb["FTP Programm"]    = "FTP Program";
+$wb["FTP conf. Datei"]    = "FTP conf. File";
+$wb["Userid von"]    = "UserId från";
+$wb["Groupid von"]    = "GroupId från";
+
+$wb["Backup von Tabelle"] = "Backup Tabell";
+$wb["Optimiere"] = "Optimerar";
+$wb["Reparatur"] = "Reparerar";
+$wb["oder"] = "eller";
+$wb["Installation starten"] = "Installerar";
+
+$wb["Deutsch"] = "Tyska";
+$wb["Englisch"] = "Engelska";
+$wb["Schwedisch"] = "Svenska";
+$wb["Datei"] = "Fil";
+
+//////////////// Administration Ende ///////////
+
+//////////////// Firewall, Monitor + Dienste  ////////////////
+
+$wb["Überwachung"] = "Övervakning";
+$wb["Firewall"] = "Firewall";
+$wb["Web-Server"] = "Web Server";
+$wb["FTP-Server"] = "FTP Server";
+$wb["SMTP-Server"] = "SMTP Server";
+$wb["DNS-Server"] = "DNS Server";
+$wb["mySQL-Server"] = "mySQL Server";
+$wb["An"] = "På";
+$wb["Aus"] = "Av";
+$wb["neu Starten"] = "Omstart";
+$wb["Neu"] = "Lägg till";
+$wb["Aktionen"] = "Actions";
+$wb["Dienst"] = "Tjänster";
+$wb["Hostname"] = "Hostnamn";
+$wb["Port"] = "Port";
+$wb["Typ"] = "Typ";
+$wb["TCP"] = "TCP";
+$wb["UDP"] = "UDP";
+$wb["Der Dienst-Typ wird nur bei sonstigen-Diensten ausgewertet."] = "Den här typen av tjänst kommer bara att bli analyserad tillsammans med andra tjänster.";
+$wb["Sonstige"] = "Annan";
+$wb["Ja"] = "Ja";
+$wb["Nein"] = "Nej";
+$wb["Offline"] = "Offline";
+$wb["ISP Dienste"] = "ISP Tjänster";
+$wb["ISP Überwachung"] = "ISP Övervakning";
+$wb["ISP Firewall"] = "ISP Firewall";
+$wb["Name"] = "Namn";
+$wb["Aktiv"] = "Aktiv";
+$wb["Firewall Regel"] = "Firewall Regler";
+$wb["Dieser Port kann nicht geändert werden."] = "Denna port kan inte ändras.";
+
+//////////////// Firewall ENDE ////////////////
+
+//////////////// LNG 1.1.12 BEGIN /////////////
+
+$wb["ISP Server"] = 'ISP Server';
+$wb["Admin Email"] = 'Admin email';
+$wb["EMail"] = 'email';
+$wb["Funktionen"] = 'Funktioner';
+$wb["httpd User"] = 'httpd Användare';
+$wb["httpd Group"] = 'httpd Grupp';
+$wb["Document Root"] = 'Dokument Root';
+$wb["Frontpage Pfad"] = 'Frontpage Sökväg';
+$wb["access Log"] = 'Access Log';
+$wb["Sendmail"] = 'Sendmail';
+$wb["Sendmail CW"] = 'Sendmail CW';
+$wb["Log speichern"] = 'Spara Log';
+$wb["BIND User"] = 'BIND User';
+$wb["BIND Group"] = 'BIND Group';
+$wb["Zonefiles Dir."] = 'Zonefiles Dir';
+$wb["Default Ns1"] = 'Default Ns1';
+$wb["Default Ns2"] = 'Default Ns2';
+$wb["Standard MX"] = 'Default MX';
+$wb["Frontpage Extensions"] = 'Frontpage Extensions';
+$wb["User Prefix"] = 'Användar Prefix';
+$wb["Anbieter Nr. von"] = 'Återförsäljar nr. från';
+$wb["Kunden Nr. von"] = 'Kund nr. från';
+$wb["SOAP Server IP"] = 'SOAP Server IP';
+$wb["SOAP Server Port"] = 'SOAP Server Port';
+$wb["Web-FTP"] = 'Web-FTP';
+$wb["ISP Faktura"] = 'ISP Faktura';
+$wb["Modul Manager"] = 'Modul Manager';
+$wb["Hinzufügen"] = 'Lägg till';
+$wb["Alle anzeigen"] = 'Visa Alla';
+$wb["Update Manager"] = 'Update Manager';
+$wb["Update"] = 'Update';
+$wb["System Config"] = 'System Config';
+$wb["Bearbeiten"] = 'Edit';
+$wb["Importieren"] = 'Importera';
+$wb["Exportieren"] = 'Exportera';
+$wb["Allgemein"] = 'Allmän';
+$wb["ISP-Manager"] = 'ISP Manager';
+$wb["Faktura"] = 'Faktura';
+$wb["Übernehmen"] = 'Spara';
+$wb["Webserver"] = 'Webserver';
+$wb["Bind DNS"] = 'Bind DNS';
+$wb["Mailserver"] = 'Mail server';
+$wb["POP3-Server"] = 'POP3 Server';
+$wb["nein"] = 'nej';
+$wb["ja"] = 'ja';
+$wb["ISP Server Status"] = 'ISP Server Status';
+$wb["System-Datenbank"] = 'System-Databas';
+$wb["Verzeichnis"] = 'Förteckning';
+$wb["Backup starten"] = 'Backup';
+
+// NEW 1.1.12a //////////////////////////////
+
+$wb["Es wurde kein Web ausgewählt."] = "Ingen Web adress vald.";
+$wb["Backup-Funktionen im Demo-Modus nicht verfügbar."] = "Backup funktioner finns inte tillgängliga i demo version.";
+$wb["Backup Status"] = "Backup-Status";
+$wb["Der Name des FTP-Servers <br>enthält ungültige Zeichen."] = "Namnet på FTP server <br>innehåller otillåtna tecken.";
+$wb["Sie haben keinen FTP Benutzernamen angegeben."] = "Inget FTP-Usernamn är angett.";
+$wb["Ftp-Verbindung nicht hergestellt!"] = "Ftp upload misslyckades!";
+$wb["Verbindung mit:"] = "Uppkopplad till:";
+$wb["als Benutzer:"] = "som Användare:";
+$wb["nicht möglich."] = "inte möjligt.";
+$wb["Konnte nicht in Verzeichnis:"] = "byter till katalog:";
+$wb["wechseln."] = "misslyckad.";
+$wb["Wechsel in Verzeichnis:"] = "byter till katalog:";
+$wb["Ftp upload war fehlerhaft!"] = "Ftp upload misslyckades!";
+$wb["Upload erfolgreich."] = "upload lyckades.";
+$wb["FTP-Upload Status"] = "Ftp upload Status";
+$wb["Backup-Methode nicht unterstützt."] = "Backup metod finns inte tillgänglig.";
+$wb["Rechnung Nr. von"] = "Faktura nr. från";
+
+//////////////// LNG 1.1.12 ENDE ///////////////
+
+// NEW 1.3 /////////////////////////////////////
+
+$wb["Remoting"] = 'Remoting';
+$wb["User"] = 'User';
+$wb["Conf. Dir."] = 'Conf. Dir.';
+$wb["Suexec"] = 'Suexec';
+$wb["Postfix"] = 'Postfix';
+$wb["Mail Log"] = 'Mail Log';
+$wb["Maildir"] = 'Maildir';
+$wb["Antivir Mailadmin"] = 'Antivirus Admin';
+
+//////////////// Remoting //////////////////////
+$wb["Hinzufügen"] = "Lägg till";
+$wb["Berechtigungen"] = "Rättigheter";
+$wb["Speichern"] = "Spara";
+$wb["Löschen"] = "Radera";
+$wb["Abbrechen"] = "Avbryt";
+$wb["IP-Adresse"] = "IP-Adress";
+$wb["DNS-Query"] = "DNS-Query";
+$wb["DNS-Insert"] = "DNS-Insert";
+$wb["DNS-Update"] = "DNS-Update";
+$wb["DNS-Delete"] = "DNS-Delete";
+
+?>

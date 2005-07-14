@@ -1,0 +1,23 @@
+<?
+/********************************
+* ISPConfig Dictionary File
+* Version 1.0
+*********************************/
+
+$wb["Anbieter"]     = "Anbieter";
+$wb["Web"]          = "Web";
+$wb["Admin Handbuch"] = "Admin Handbuch";
+$wb["Reseller Handbuch"] = "Reseller Handbuch";
+$wb["Kunden Handbuch"] = "Kunden Handbuch";
+$wb["Deutsch"]          = "Deutsch";
+$wb["Englisch"]          = "Englisch";
+$wb["Projektfarm Support"]          = "Projektfarm Support";
+$wb["Online Hilfe"] = "Online Hilfe";
+
+$wb["Willkommen"] = "Willkommen";
+$wb["willkommen_kunde"] = "Herzlich Willkommen in ISPConfig!
+Hier können Sie Ihre Website(s) verwalten. Bei Fragen oder Problemen
+wenden Sie sich bitte an den Serveradministrator, oder lesen Sie das
+ISPConfig-Kundenhandbuch.";
+
+?>

@@ -1,0 +1,48 @@
+<script language="JavaScript">
+<!--
+function MM_goToURL() { //v3.0
+  var i, args=MM_goToURL.arguments; document.MM_returnValue = false;
+  for (i=0; i<(args.length-1); i+=2) eval(args[i]+".location='"+args[i+1]+document.myform.gid.value+"'");
+}
+function changeDeck(deck) {
+document.myform.deck_id.value = deck;
+document.myform.submit();
+}
+function attachDoc(nextDoctype) {
+document.myform.next_doctype_id.value = nextDoctype;
+document.myform.next_tree_id.value = "";
+document.myform.caller_tree_id.value = document.myform.tree_id.value;
+document.myform.submit();
+}
+function editDoc(nextTree) {
+document.myform.next_tree_id.value = nextTree;
+document.myform.caller_tree_id.value = document.myform.tree_id.value;
+document.myform.submit();
+}
+
+//-->
+</script>
+<form action="insert.php" method="post" name="myform">
+  <table border="0" width="100%" cellspacing="0" cellpadding="4"bgcolor="{TABLE_H_COLOR}">
+  <tr>    
+    <td colspan="2" height="18"> 
+      <p align="center" class="normal_bold">&nbsp; 
+          </td>
+        </tr>
+		{FORM}
+		<tr> 
+      <td colspan="2" height="18"> 
+        <p align="center" class="normal_bold"> 
+          <input type="hidden" name="s" value="{S}">
+          <input type="hidden" name="doctype_id" value="{DOCTYPE_ID}">
+          <input type="hidden" name="tree_id" value="{TREE_ID}">
+          <input type="hidden" name="doc_id" value="{DOC_ID}">
+          <input type="hidden" name="deck_id" value="">
+          <input type="hidden" name="next_doctype_id" value="{NEXT_DOCTYPE_ID}">
+		  <input type="hidden" name="next_tree_id" value="{NEXT_TREE_ID}">
+		  <input type="hidden" name="caller_tree_id" value="{CALLER_TREE_ID}">
+        
+      </td>
+        </tr>
+      </table>
+	  </form>

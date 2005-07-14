@@ -1,0 +1,30 @@
+<?
+/********************************
+* ISPConfig Dictionary File
+* Version 1.0
+*
+* T³umaczenie wersji polskiej
+* Digital Gospel http://www.digital-gospel.com
+* Wersja 1.0
+* Ostatnie zmiany 2004.06.21
+*********************************/
+
+// License Manager
+$wb["Es wurde keine g&uuml;ltige Lizenzdatei gefunden."] = "Nie znaleziono wa¿nej licencji.";
+$wb["Hier k&ouml;nnen Sie ihre Lizenzdatei einspielen."] = "Tutaj mo¿esz wczytaæ swoj¹ licencjê.";
+
+$wb["Passwort"] = "Has³o";
+$wb["Lizenzdatei"] = "plik licencji";
+$wb["Weiter"] = "dalej";
+$wb["Die Lizenzdatei wurde eingespielt.<br>Sie k&ouml;nnen sich jetzt einloggen."] = "Plik z licencj¹ ozsta³ wczytany.<br> Mo¿esz siê ju¿ zalogowaæ.";
+$wb["Ihre Nutzersitzung wurde beendet."] = "Czas wa¿noœci twojej sesji wygas³.";
+$wb["Hier können Sie sich neu einloggen"] = "Tutaj mo¿esz siê zalogowaæ ponownie";
+
+$wb["FEHLER 101: Username oder Passwort Falsch."] = "B£¥D 101: nieprawid³owa nazwa u¿ytkownika lub has³o.";
+$wb["FEHLER 102: Account inaktiv."] = "B£¥D 102: Konto nieaktywne.";
+$wb["FEHLER 103: Es wurde kein Username oder Passwort angegeben."] = "B£¥D 103: Niepodano nazwy u¿ytkownika lub has³a.";
+$wb["FEHLER 104: Die Nutzersession wurde beendet."] = "B£¥D 104: Sesja wygas³a.";
+$wb["<br>&nbsp;<br>Hier können Sie sich erneut einloggen:"] = "<br>&nbsp;<br>Tutaj mo¿esz siê zalogowaæ ponownie:";
+$wb["Hier können Sie sich einloggen:"] = "Tutaj mo¿esz siê zalogowaæ:";
+
+?>

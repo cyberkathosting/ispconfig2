@@ -1,0 +1,26 @@
+<?
+/********************************
+* ISPConfig Dictionary File
+* Version 1.0
+* Login
+*********************************/
+
+// License Manager
+$wb["Es wurde keine g&uuml;ltige Lizenzdatei gefunden."] = "Non è stato individuato un file di licenza valido.";
+$wb["Hier k&ouml;nnen Sie ihre Lizenzdatei einspielen."] = "Potete caricare il vostro file di licenza qui.";
+
+$wb["Passwort"] = "Password";
+$wb["Lizenzdatei"] = "File di licenza";
+$wb["Weiter"] = "Successivo";
+$wb["Die Lizenzdatei wurde eingespielt.<br>Sie k&ouml;nnen sich jetzt einloggen."] = "Il file di licenza è stato caricato. <br> Potete procedere alla connessione.";
+$wb["Ihre Nutzersitzung wurde beendet."] = "La sessione è scaduta.";
+$wb["Hier können Sie sich neu einloggen"] = "Potete procedere con la  connessione";
+
+$wb["FEHLER 101: Username oder Passwort Falsch."] = "ERRORE 101: nome utente o password errati.";
+$wb["FEHLER 102: Account inaktiv."] = "ERRORE 102: Account non attivo.";
+$wb["FEHLER 103: Es wurde kein Username oder Passwort angegeben."] = "ERRORE 103: Nessun nome utente o password.";
+$wb["FEHLER 104: Die Nutzersession wurde beendet."] = "ERRORE 104: la sessione è scaduta.";
+$wb["<br>&nbsp;<br>Hier können Sie sich erneut einloggen:"] = "<br>&nbsp;<br> Potete procedere con la connessione:";
+$wb["Hier können Sie sich einloggen:"] = "Potete procedere con la connessione:";
+
+?>

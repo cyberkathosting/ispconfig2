@@ -1,0 +1,46 @@
+<script language="JavaScript" type="text/javascript">
+<!-- 
+function InfoPopUp(popurl,info,hoehe,breite)
+{
+if (navigator.userAgent.indexOf("MSIE") != -1) {
+InfoPop = window.open(popurl,info,'toolbar=no,location=no,directories=no,status=no,scrollbars=yes,titlebar=yes,width=' + breite + ',height=' + hoehe + ', left=' + (screen.availwidth / 2 - breite / 2) + ' ,top=' + (screen.availheight / 2 - hoehe / 2));
+} else {
+InfoPop = window.open(popurl,info,'toolbar=no,location=no,directories=no,status=no,scrollbars=yes,titlebar=yes,width=' + breite + ',height=' + hoehe + ' ,screenX=300 ,screenY=300');
+} 
+}
+// -->
+</script>
+
+    <table border="0" width="466" cellspacing="0" cellpadding="0" height="103" bgcolor="{TABLE_H_COLOR}">
+      <tr>
+        <td width="100%" height="20" class="normal">&nbsp;<br>
+          &nbsp;&nbsp;&nbsp;
+          Hier finden Sie einige Werkzeuge, die Ihnen den täglichen<br>
+          &nbsp;&nbsp;&nbsp; Umgang mit myBookmark erleichtern.<br>
+          &nbsp;</td>
+      </tr>
+      <tr>
+        <td width="100%" height="20" class="normal">&nbsp;&nbsp;&nbsp;
+          <a href="javascript:InfoPopUp('easylogin.php?{SESSION}','info1',400,520)">easyLogin
+          - myBookmark schnell starten</a></td>
+      </tr>
+      <tr>
+        <td width="100%" height="20" class="normal">&nbsp;&nbsp;&nbsp;
+          <a href="javascript:InfoPopUp('qtools.php?{SESSION}','info1',400,520)">easyAdd - zum schnellen Hinzufügen von Links</a></td>
+      </tr>
+      <tr>
+        <td width="100%" height="21" class="normal">&nbsp;&nbsp;&nbsp;
+          <a href="../tools/im_export/frame_adresse_exportieren.php?{SESSION}">Exportieren von Adressdaten</a> (Keine
+          Bookmarks)</td>
+      </tr>
+      <tr>
+        <td width="100%" height="21" class="normal">&nbsp;&nbsp;&nbsp; <a href="im_export/import.php?{SESSION}"><font size="2">Bookmark
+          Import</font></a></td>
+      </tr>
+      <tr>
+        <td width="100%" height="21" class="normal">&nbsp;&nbsp;&nbsp; <a href="../tools/im_export/bookmark_export.php?{SESSION}&uid={USERID}">Bookmark
+          Export</a> 
+          <p>&nbsp;</p>
+        </td>
+      </tr>
+    </table>

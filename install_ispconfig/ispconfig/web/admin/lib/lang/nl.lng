@@ -1,0 +1,320 @@
+<?
+/********************************
+* ISPConfig Dictionary File
+* Version 1.0
+*********************************/
+
+//////////////// Server Status ////////////////
+$wb["Arbeitsspeicher"]          = "Geheugen";
+$wb["CPU"]          = "CPU";
+$wb["Dienste"]      = "Services";
+$wb["Server Online seit"]          = "Server Online sinds";
+$wb["User Online"]      = "Gebruikers Online";
+$wb["System Load 1 Minute"] = "System gebruik 1 Minuut";
+$wb["System Load 5 Minuten"] = "System gebruik 5 Minuten";
+$wb["System Load 15 Minuten"] = "System gebruik 15 Minuten";
+//////////////// Server Status Ende //////////
+
+///////////////// Administration ////////////////
+$wb["ISPConfig Datenbank"]    = "ISPConfig Database";
+$wb["Backup erstellen"]       = "Backup Data";
+$wb["Datenbank Check"]        = "Controleer Database";
+$wb["Datenbank Optimieren"]   = "Optimaliseer Database";
+$wb["Datenbank Reparieren"]   = "Repareer Database";
+$wb["Eigenschaften"] = "Instellingen";
+$wb["Server Name"]  = "Server Naam";
+$wb["Netzmaske"]    = "Netmask";
+$wb["Sprache"]      = "Taal";
+$wb["IP Liste"]     = "IP Lijst";
+$wb["hinweis_ip_liste"] = "<b>Hint:</b> Gebruik maar een ip per regel in deze lijst.";
+$wb["Pfad"]         = "Pad";
+$wb["Programm"]     = "Programma";
+$wb["Reparatur"]    = "Repareer";
+$wb["Optimiere"]    = "Optimaliseer";
+$wb["Pfad httpd.conf"]    = "Pad naar httpd.conf";
+$wb["MTA Typ"]    = "MTA Type";
+$wb["Virtuser Datei"]    = "Virtuele gebruikers File";
+$wb["FTP Programm"]    = "FTP Programma";
+$wb["FTP conf. Datei"]    = "FTP conf. bestand";
+$wb["Userid von"]    = "gebruikersid van";
+$wb["Groupid von"]    = "Groepid van";
+
+$wb["Backup von Tabelle"] = "Backup Tabel";
+$wb["Optimiere"] = "Optimaliseer";
+$wb["Reparatur"] = "Repareer";
+$wb["oder"] = "of";
+$wb["Installation starten"] = "Installeer";
+
+$wb["Deutsch"] = "Duits";
+$wb["Englisch"] = "Engels";
+$wb["Nederlands"] = "Nederlands";
+$wb["Data"] = "Bestand";
+//////////////// Administration Ende ///////////
+
+//////////////// Firewall, Monitor + Dienste  ////////////////
+
+$wb["Überwachung"] = "Monitoring";
+$wb["Firewall"] = "Firewall";
+$wb["Web-Server"] = "Web Server";
+$wb["FTP-Server"] = "FTP Server";
+$wb["SMTP-Server"] = "SMTP Server";
+$wb["DNS-Server"] = "DNS Server";
+$wb["mySQL-Server"] = "mySQL Server";
+$wb["An"] = "Aan";
+$wb["Aus"] = "Uit";
+$wb["neu Starten"] = "Herstarten";
+$wb["Neu"] = "Toevoegen";
+$wb["Aktionen"] = "Actie";
+$wb["Dienst"] = "Service";
+$wb["Hostname"] = "Hostnaam";
+$wb["Port"] = "Poort";
+$wb["Typ"] = "Type";
+$wb["TCP"] = "TCP";
+$wb["UDP"] = "UDP";
+$wb["Der Dienst-Typ wird nur bei sonstigen-Diensten ausgewertet."] = "Dit type service wordt alleen geanalyseerd in geval van andere services.";
+$wb["Sonstige"] = "Andere";
+$wb["Ja"] = "Ja";
+$wb["Nein"] = "Nee";
+$wb["Offline"] = "Offline";
+$wb["ISP Dienste"] = "ISP Diensten";
+$wb["ISP Überwachung"] = "ISP Monitor";
+$wb["ISP Firewall"] = "ISP Firewall";
+$wb["Name"] = "Naam";
+$wb["Aktiv"] = "Actief";
+$wb["Firewall Regel"] = "Firewall Regel";
+$wb["Dieser Port kann nicht geändert werden."] = "Deze poort kan niet veranderd worden.<br>";
+$wb["Dieser Port kann nicht deaktiviert werden."] = "This port cannot be deactivated.<br>";
+
+//////////////// Firewall ENDE ////////////////
+
+//////////////// LNG 1.1.12 BEGIN /////////////
+
+$wb["ISP Server"] = 'ISP Server';
+$wb["Admin Email"] = 'Admin Email';
+$wb["EMail"] = 'Email';
+$wb["Funktionen"] = 'Functie';
+$wb["httpd User"] = 'httpd User';
+$wb["httpd Group"] = 'httpd Group';
+$wb["Document Root"] = 'Document Root';
+$wb["Frontpage Pfad"] = 'Frontpage Pad';
+$wb["access Log"] = 'access Log';
+$wb["Sendmail"] = 'Sendmail';
+$wb["Sendmail CW"] = 'Sendmail CW';
+$wb["Log speichern"] = 'Bewaar Log';
+$wb["BIND User"] = 'BIND User';
+$wb["BIND Group"] = 'BIND Group';
+$wb["Zonefiles Dir."] = 'Zonefiles Dir.';
+$wb["Default Ns1"] = 'Standaard Ns1';
+$wb["Default Ns2"] = 'Standaard Ns2';
+$wb["Standard MX"] = 'Standaard MX';
+$wb["Frontpage Extensions"] = 'Frontpage Extensies';
+$wb["User Prefix"] = 'Gebruikers voorvoegsel';
+$wb["Anbieter Nr. von"] = 'Wederverkoper no. van';
+$wb["Kunden Nr. von"] = 'Klant no. van';
+$wb["SOAP Server IP"] = 'SOAP Server IP';
+$wb["SOAP Server Port"] = 'SOAP Server Port';
+$wb["Web-FTP"] = 'Web-FTP';
+$wb["ISP Faktura"] = 'ISP Factuur';
+$wb["Modul Manager"] = 'Module Manager';
+$wb["Hinzufügen"] = 'Toevoegen';
+$wb["Alle anzeigen"] = 'Laat alles zien';
+$wb["Update Manager"] = 'Update Manager';
+$wb["Update"] = 'Update';
+$wb["System Config"] = 'System Configuratie';
+$wb["Bearbeiten"] = 'Bewerk';
+$wb["Importieren"] = 'Importeer';
+$wb["Exportieren"] = 'Exporteer';
+$wb["Allgemein"] = 'Algemeen';
+$wb["ISP-Manager"] = 'ISP Manager';
+$wb["Faktura"] = 'Factuur';
+$wb["Übernehmen"] = 'Opslaan';
+$wb["Webserver"] = 'Webserver';
+$wb["Bind DNS"] = 'Bind DNS';
+$wb["Mailserver"] = 'Mailserver';
+$wb["POP3-Server"] = 'POP3 Server';
+$wb["nein"] = 'Nee';
+$wb["ja"] = 'Ja';
+$wb["ISP Server Status"] = 'ISP Server Status';
+$wb["System-Datenbank"] = 'Systeem-Database';
+$wb["Verzeichnis"] = 'Map';
+$wb["Backup starten"] = 'Backup';
+//////////////// LNG 1.1.12 ENDE ///////////////
+
+// NEW 1.3 /////////////////////////////////////
+
+$wb["Remoting"] = 'Remoting';
+$wb["User"] = 'User';
+$wb["Conf. Dir."] = 'Conf. Dir.';
+$wb["Suexec"] = 'Suexec';
+$wb["Postfix"] = 'Postfix';
+$wb["Mail Log"] = 'Mail Log';
+$wb["Maildir"] = 'Maildir';
+$wb["Antivir Mailadmin"] = 'Antivirus-Admin';
+$wb["aktiv"] = "active";
+$wb["inaktiv"] = "inactive";
+$wb["weiter_link"] = "<br><br> <a href='../../isp_manager/frame_start.php?s=$s'>Meer &gt;&gt;</a>";
+$wb["txt_client_salutatory_email_desc"] = "<b>Salutatory Email for Clients</b>";
+$wb["txt_client_salutatory_email_sender_email"] = "Sender's Email";
+$wb["txt_client_salutatory_email_sender_name"] = "Name of Sender";
+$wb["txt_client_salutatory_email_bcc"] = "BCC Recipient";
+$wb["txt_client_salutatory_email_subject"] = "Subject";
+$wb["txt_client_salutatory_email_message"] = "Message";
+$wb["txt_client_salutatory_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Include the following variables in your text:</b></td></tr>
+        <tr>
+          <td class="normal">%%%USER%%%</td>
+          <td class="normal">
+            Client\'s Username</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%PASSWORD%%%</td>
+          <td class="normal">
+            Client\'s Password</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%FIRST_NAME%%%</td>
+          <td class="normal">
+            Client\'s First Name</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%LAST_NAME%%%</td>
+          <td class="normal">
+            Client\'s Last Name</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%COMPANY%%%</td>
+          <td class="normal">
+            Client\'s Company</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%EMAIL%%%</td>
+          <td class="normal">
+            Client\'s Email Address</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%CP%%%</td>
+          <td class="normal">
+            ISPConfig Login URL</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%MANUAL%%%</td>
+          <td class="normal">
+            ISPConfig Client Manual</td>
+        </tr>
+        </table>';
+
+$wb["txt_res_salutatory_email_desc"] = "<b>Salutatory Email for Resellers</b>";
+$wb["txt_res_salutatory_email_sender_email"] = "Sender's Email";
+$wb["txt_res_salutatory_email_sender_name"] = "Name of Sender";
+$wb["txt_res_salutatory_email_bcc"] = "BCC Recipient";
+$wb["txt_res_salutatory_email_subject"] = "Subject";
+$wb["txt_res_salutatory_email_message"] = "Message";
+$wb["txt_res_salutatory_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Include the following variables in your text:</b></td></tr>
+        <tr>
+          <td class="normal">%%%USER%%%</td>
+          <td class="normal">
+            Reseller\'s Username</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%PASSWORD%%%</td>
+          <td class="normal">
+            Reseller\'s Password</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%FIRST_NAME%%%</td>
+          <td class="normal">
+            Reseller\'s First Name</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%LAST_NAME%%%</td>
+          <td class="normal">
+            Reseller\'s Last Name</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%COMPANY%%%</td>
+          <td class="normal">
+            Reseller\'s Company</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%EMAIL%%%</td>
+          <td class="normal">
+            Reseller\'s Email Address</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%CP%%%</td>
+          <td class="normal">
+            ISPConfig Login URL</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%MANUAL%%%</td>
+          <td class="normal">
+            ISPConfig Reseller Manual</td>
+        </tr>
+        </table>';
+$wb["txt_standard_index"] = "Standard Index<br>&nbsp;&nbsp;Page";
+$wb["txt_standard_index_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Include the following variables in your text:</b></td></tr>
+        <tr>
+          <td class="normal">%%%FQDN%%%</td>
+          <td class="normal">
+            Website\'s Fully Qualified Domain Name</td>
+        </tr>
+    </table>';
+$wb["txt_user_standard_index"] = "Users' Standard<br>&nbsp;&nbsp;Index Page";
+$wb["txt_user_standard_index_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Include the following variables in your text:</b></td></tr>
+        <tr>
+          <td class="normal">%%%USER%%%</td>
+          <td class="normal">
+            User\'s Username</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%FQDN%%%</td>
+          <td class="normal">
+            Website\'s Fully Qualified Domain Name</td>
+        </tr>
+        </table>';
+
+//////////////// Remoting //////////////////////
+$wb["Hinzufügen"] = "Add";
+$wb["Berechtigungen"] = "Permissions";
+$wb["Speichern"] = "Save";
+$wb["Löschen"] = "Delete";
+$wb["Abbrechen"] = "Cancel";
+$wb["IP-Adresse"] = "IP-Address";
+$wb["DNS-Query"] = "Query Primary DNS Records";
+$wb["DNS-Insert"] = "Create Primary DNS Records";
+$wb["DNS-Update"] = "Edit Primary DNS Records";
+$wb["DNS-Delete"] = "Delete Primary DNS Records";
+$wb["slave_query"] = "Query Secondary DNS Records";
+$wb["slave_insert"] = "Create Secondary DNS Records";
+$wb["slave_update"] = "Edit Secondary DNS Records";
+$wb["slave_delete"] = "Delete Secondary DNS Records";
+$wb["reseller_query"] = "Query Resellers";
+$wb["reseller_insert"] = "Create Resellers";
+$wb["reseller_update"] = "Edit Resellers";
+$wb["reseller_delete"] = "Delete Resellers";
+$wb["kunde_query"] = "Query Clients";
+$wb["kunde_insert"] = "Create Clients";
+$wb["kunde_update"] = "Edit Clients";
+$wb["kunde_delete"] = "Delete Clients";
+$wb["web_query"] = "Query Websites";
+$wb["web_insert"] = "Create Websites";
+$wb["web_update"] = "Edit Websites";
+$wb["web_delete"] = "Delete Websites";
+$wb["txt_primary_dns_records"] = "Primary DNS Records";
+$wb["txt_secondary_dns_records"] = "Secondary DNS Records";
+$wb["txt_anbieter"] = "Resellers";
+$wb["txt_kunden"] = "Clients";
+$wb["txt_webs"] = "Websites";
+
+?>

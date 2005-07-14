@@ -1,0 +1,65 @@
+<?
+/********************************
+* ISPConfig Dictionary File
+* Version 1.0
+*********************************/
+
+//////////////// DNS Manager ////////////////
+$wb["Optionen"]     = "Inställningar";
+$wb["Ziel"]         = "Target";
+$wb["Priorität"]   = "Prioritet";
+$wb["DNS Eintrag"]  = "DNS Entry";
+$wb["Ordner neu"]   = "Sortera efter";
+$wb["Suchen"]       = "Sök";
+$wb["DNS-Manager"]       = "DNS-Manager";
+$wb["Domain (SOA)"]         = "Domän";
+$wb["Email Admin"]         = "Admin email";
+$wb["Nameserver 1"]         = "Nameserver 1";
+$wb["Nameserver 2"]         = "Nameserver 2";
+$wb["Refresh"]         = "Uppdatera";
+$wb["Retry"]         = "Försök igen";
+$wb["Expire"]         = "Utgångsdatum";
+$wb["TTL"]         = "TTL";
+$wb["Record"]         = "Record";
+$wb["Record"]         = "Records";
+$wb["Mailserver"]         = "Mailserver";
+
+$wb["Dokument"] = "Document";
+$wb["neues Dokument anlegen"] = "nytt dokument";
+
+$wb["error_soa_exists_1"] = "Du har redan skapat en domän med detta namn ";
+$wb["error_soa_exists_2"] = "";
+//////////////// DNS Manager Ende ///////////
+
+$wb["IP-Adresse ungültig."] = "IP adress felaktig.";
+$wb["Records"] = 'Records';
+$wb["ziel"] = 'Target';
+$wb["Neu"] = 'Ny';
+
+// NEW 1.3 //////////////////////////////////////
+
+$wb["Master neu"] = 'Ny Master';
+$wb["Slave neu"] = 'Ny Slave';
+$wb["Slave Zone"] = 'Slave Zone';
+$wb["domain"] = 'Domän';
+$wb["DNS-Master IP"] = 'DNS-Master IP';
+$wb["Name"] = 'Namn';
+$wb["Masters"] = 'Masters';
+$wb["Slaves"] = 'Slaves';
+$wb["SUCHE"] = 'Sök';
+
+
+
+//////////////// Server Status ////////////////
+$wb["Arbeitsspeicher"]          = "Arbetsminne";
+$wb["CPU"]          = "CPU";
+$wb["Dienste"]      = "Tjänster";
+$wb["Server Online seit"]          = "Server Online sedan";
+$wb["User Online"]      = "Users Online";
+$wb["System Load 1 Minute"] = "System belastning senaste 1 Min";
+$wb["System Load 5 Minuten"] = "System belastning senaste 5 Min";
+$wb["System Load 15 Minuten"] = "System belastning senaste 15 Min";
+//////////////// Server Status Ende //////////
+
+
+?>

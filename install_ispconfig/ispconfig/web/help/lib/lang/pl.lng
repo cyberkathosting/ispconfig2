@@ -1,0 +1,37 @@
+<?
+/********************************
+* ISPConfig Dictionary File
+* Version 1.0
+*
+* T³umaczenie wersji polskiej
+* Digital Gospel http://www.digital-gospel.com
+* Wersja 1.0
+* Ostatnie zmiany 2004.06.21
+*********************************/
+
+$wb["Anbieter"]     = "Reseller";
+$wb["Web"]          = "WWW";
+$wb["Admin Handbuch"] = "Podrêcznik Administratora";
+$wb["Reseller Handbuch"] = "Podrêcznik Resellera";
+$wb["Kunden Handbuch"] = "Podrêcznik Klienta";
+$wb["Deutsch"]          = "German";
+$wb["Englisch"]          = "English";
+$wb["Projektfarm Support"]          = "Wsparcie techniczne firmy Projektfarm";
+$wb["Online Hilfe"] = "Pomoc Online";
+
+
+//////////////// Server Status ////////////////
+$wb["Arbeitsspeicher"]          = "Pamiêæ g³ówna";
+$wb["CPU"]          = "CPU";
+$wb["Dienste"]      = "Serwisy";
+$wb["Server Online seit"]          = "Serwer dzia³a od";
+$wb["User Online"]      = "Zalogowanych u¿ytkowników";
+$wb["System Load 1 Minute"] = "Obci¹¿enie systemu w okresie 1-minutowym";
+$wb["System Load 5 Minuten"] = "Obci¹¿enie systemu w okresie 5-minutowym";
+$wb["System Load 15 Minuten"] = "Obci¹¿enie systemu w okresie 15-minutowym";
+//////////////// Server Status Ende //////////
+
+
+
+
+?>

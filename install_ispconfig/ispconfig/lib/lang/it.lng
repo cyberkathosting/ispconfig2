@@ -1,0 +1,95 @@
+<?
+/********************************
+* ISPConfig Dictionary File
+* Version 1.0
+* Allgemein
+*********************************/
+
+/////////////// Allgemein - general (kommt in mehreren Modulen vor) /////////
+$wb["login_begruessung"]     = "Connessione:";
+$wb["Username"]     = "Nome Utente";
+$wb["Passwort"]     = "Password";
+$wb["Login"]       = "Connessione";
+$wb["Administration"]  = "Gestione";
+$wb["ISP Manager"]  = "Gestore ISP";
+$wb["DNS Manager"]  = "Gestore DNS";
+$wb["Tools"]        = "Strumenti";
+$wb["Logout"]       = "Disconnessione";
+$wb["Status"]       = "Stato";
+$wb["neu"]          = "Nuovo";
+$wb["Hinweis"]      = "Riferimento";
+$wb["Web"]          = "Web";
+$wb["Email"]        = "Email";
+$wb["FTP"]          = "FTP";
+$wb["DNS"]          = "DNS";
+$wb["Sonstiges"]    = "Altro";
+$wb["Datei"]        = "File";
+$wb["von"]          = "Da";
+$wb["error_headline"] = "Si è verificato il seguente errore:";
+$wb["Gruppe"]       = "Gruppo";
+$wb["Titel"]        = "Titolo";
+$wb["Server"]       = "Server";
+$wb["Host"]         = "Nome Host";
+$wb["Domain"]       = "Dominio";
+$wb["IP Adresse"]   = "Indirizzo IP";
+$wb["Ordner"]       = "Tipo";
+$wb["Dokument"]     = "Documento";
+$wb["Dokument suchen"] = "Ricerca documento";
+$wb["Suchmaske"]    = "Termini di ricerca";
+$wb["Ausgabeformat"] = "Formato del file di output";
+$wb["Standard"]     = "Standard";
+$wb["Einträge"]    = "Inserimento dati";
+$wb["Papierkorb leeren"] = "Svuota cestino";
+$wb["Stammordner"]  = "Zona Master";
+$wb["keine Gruppe"] = "Nessun gruppo";
+$wb["neues Dokument anlegen"] = "E stato creato un nuovo documento";
+$wb["auf"]   = "Ingrandire";
+$wb["zu"]    = "Ridurre";
+$wb["in_ordner"]    = "Ordina per";
+$wb["Papierkorb"]   = "Cestino";
+$wb["Wiederherstellen"]    = "Ripristina";
+$wb["Papierkorb: Einträge"]   = "Cestino: contenuti";
+$wb["Speichern"]    = "Salva";
+$wb["Löschen"]    = "Elimina";
+$wb["Abbrechen"]    = "Cancella";
+$wb["Suchen"]    = "Cerca";
+
+$wb["Herr"] = "Sig.";
+$wb["Frau"] = "Sig.ra";
+
+$wb["Es ist folgender Fehler aufgetreten:"] = "Si è verificato il seguente errore:";
+
+$wb["Web-FTP"] = 'Web-FTP';
+$wb["ISP Faktura"] = 'ISP Invoice';
+
+$wb["Verzeichnis öffnen"] = "open";
+$wb["Verzeichnis schliessen"] = "close";
+$wb["Hilfe"] = 'Help';
+$wb["Online Hilfe"] = 'Online Help';
+$wb["schliessen"] = 'close';
+
+$wb["PAPIERKORB_HINWEIS"] = "<b>Note:</b> Items remaining in recycle bin after emptying are currently in update state. Please try to delete them later.";
+
+
+// Multidoc  Allgemein ////////////////////////////////
+
+$wb["title_required"] = "Inserire una voce nel campo "Titolo"";
+$wb["error_keine_rechte"] = "Non avete i privilegi necessari per leggere o inserire questa voce.";
+$wb["error_doctype_nicht_vorhanden"] = "Il tipo di documento richiesto non esiste.";
+$wb["error_doctype_rechte"] = "Non avete i privilegi necessari per creare un documento di questo tipo.";
+$wb["Formular Designer"] = "Progettista Modulo";
+$wb["Geben Sie einen Wert in das Feld"] = "Inserire un valore nell'apposito campo";
+$wb["jscript_ein"] = " ";
+
+////////////// Allgemein Ende ///////////////////
+
+$wb["Es konnte ein Dokument nicht wiederhergestellt werden, da sich das Eltern-Dokument noch im Papierkorb befindet.\n"] = "The object cannot be restored as long as its parent object is in the recycle bin.";
+
+$wb["DNS-Domains angelegt"] = 'Master Zones created';
+$wb["Benutzter Diskspace"] = "Diskspace used";
+$wb["Slave Zones angelegt"] = "Slave Zones created";
+$wb["Datenbanken angelegt"] = "Databases created";
+
+$wb["txt_confirm_delete"] = "Do you really want to delete this object?";
+
+?>

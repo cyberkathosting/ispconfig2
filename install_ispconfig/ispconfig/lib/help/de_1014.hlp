@@ -1,0 +1,26 @@
+<?
+
+/**********************************************
+* ISPConfig Help File
+* Version 1.2
+* Syntax: $hlp["FieldName"] = "HelpText";
+************************************************/
+
+$hlp["user_username"] = "Bitte geben Sie hier den Usernamen an. Sie können den Usernamen frei wählen. Der Username darf jedoch noch nicht vergeben sein und keine Umlaute z.B. ä, ü..., Sonderzeichen z.B. @, % ... sowie Leerzeichen enthalten. Die maximale Länge des Namens ist auf 26 Zeichen beschränkt.";
+$hlp["user_passwort"] = "Bitte geben Sie hier das Passwort an. Sie können das Passwort frei wählen, es darf jedoch keine Umlaute z.B. ä, ü... sowie Sonderzeichen z.B. @, % ... enthalten.";
+$hlp["user_speicher"] = "Bitte geben Sie hier den Speicherplatz für den User an. Der Speicherplatz wird in MB angegeben.";
+$hlp["user_admin"] = "Durch Auswahl dieses Feldes erteilen Sie dem User den Adminstatus. Max. ein User kann den Status Admin haben.";
+$hlp["user_shell"] = "Durch Auswahl dieses Feldes ermöglichen Sie dem User den Zugriff auf die Shell-Ebene.";
+$hlp["user_emailalias"] = "Hier können Sie weitere Email-Aliasse (veränderte Schreibweisen) angeben, um auch diese Mails abrufen zu können. Bitte geben Sie nur den Teil vor dem \"@\" ein!";
+$hlp["user_name"] = "Bitte geben Sie hier den richtigen Namen des Users ein.";
+$hlp["user_autoresponder"] = "Durch Auswahl dieses Feldes aktivieren Sie die automatische Beantwortung aller eingehenden Emails des Users.";
+$hlp["user_autoresponder_text"] = "Bitte geben Sie hier den Text an der bei der automatische Beantwortung aller eingehenden Emails des Users versand werden soll.";
+$hlp["user_mailquota"] = "Bitte geben Sie hier den Email-Speicherplatz für den User an. Der Speicherplatz wird in MB angegeben.";
+$hlp["user_catchallemail"] = "Durch Auswahl dieses Feldes werden alle nicht zustellbaren Emails an dieses Emailkonto weitergeleitet. Max. ein User pro Web kann diesen Status haben. Soll der Status verändert werden, muss zuerst beim alten Inhaber der Catchall-Funktion der Status zurückgesetzt werden.";
+$hlp["user_mailscan"] = "Durch Auswahl dieses Feldes werden alle eingehenden Emails des Users einem  Virenscan unterzogen und Anlagen mit ausführbaren Dateiendungen so umbenannt, dass sie nicht mehr per Doppelklick versehentlich geöffnet werden können.";
+$hlp["user_spamfilter"] = "Durch Auswahl dieses Feldes wird der Spamfilter aktiviert.";
+$hlp["user_emailweiterleitung_local_copy"] = "Durch Auswahl dieses Feldes wird eine Kopie der weitergeleiteten Email lokal abgespeichert.";
+$hlp["user_email"] = "Bitte geben Sie hier den Namen an, der in der Emailadresse vor dem @ stehen soll, z.B. \"ihrname\". Sie können den Namen frei wählen. Der Name darf jedoch noch nicht vergeben sein und darf keine Umlaute z.B. ä, ü... sowie Sonderzeichen z.B. @, % ... enthalten.";
+$hlp["user_emailweiterleitung"] = "Bitte geben Sie hier die Email-Adressen an, an die die eingehenden Emails weitergeleitet werden sollen.";
+
+?>

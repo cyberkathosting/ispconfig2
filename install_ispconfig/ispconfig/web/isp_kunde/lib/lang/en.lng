@@ -1,0 +1,459 @@
+<?
+/********************************
+* ISPConfig Dictionary File
+* Version 1.0
+*********************************/
+
+
+///////////////// ISP Manager //////////////////
+$wb["Anbieter"]     = "Reseller";
+$wb["Kunde"]        = "Customer";
+$wb["Suchen"]       = "Search";
+$wb["Stammdaten"]   = "Master Data";
+$wb["Limits"]       = "Limits";
+$wb["Zugangsdaten"] = "Login Data";
+$wb["Statistik"]    = "Statistics";
+$wb["Firma"]        = "Company";
+$wb["Anrede"]       = "Title";
+$wb["Vorname"]      = "First Name";
+$wb["Name"]         = "Surname";
+$wb["Strasse"]      = "Street";
+$wb["PLZ"]          = "Postal code";
+$wb["Ort"]          = "Town";
+$wb["Land"]         = "Country";
+$wb["Telefon"]      = "Telephone";
+$wb["Fax"]          = "Fax";
+$wb["Internet"]     = "Web address";
+$wb["Öffnen"]      = "Open";
+$wb["Benutzername"] = "Username"; // besser: vielleicht nur Variable $wb["username"] benutzen?
+$wb["zugangsdaten_anbieter_einleitung"] = "Here you can set a username and password for the reseller.";
+$wb["zugangsdaten_kunde_einleitung"] = "Here you can set a username and password to for the client to manage <br> his sites.<br> ";
+$wb["Web Verwaltung"] = "Site Management";
+$wb["Rechnung"]      = "Bill";
+$wb["Rechnungsanschrift:"] = "Billing address:<br>";
+$wb["Intervall"]    = "Interval";
+$wb["Preis"]        = "Price";
+$wb["Zahlungsart"]  = "Payment method";
+$wb["Basis"]        = "Basis";
+$wb["Create DNS"]   = "Create DNS";
+$wb["Speicher MB"]     = "Space MB";
+$wb["Max. User"]        = "Max. User";
+$wb["Max. Domain"]        = "Max. Domain";
+$wb["PHP Scripte"]        = "PHP Scripts";
+$wb["SSI"]        = "SSI";
+$wb["FTP Zugang"]        = "FTP Access";
+$wb["MySQL"]        = "MySQL";
+$wb["SSL"]        = "SSL";
+$wb["Shell Zugriff"]      = "Shell Access";
+$wb["Zugang"]       = "Access";  // Zugriff u. Zugang zusammenfassen!/nur einen Begriff nehmen!
+$wb["CGI Scripte"]      = "CGI Scripts";
+$wb["Bundesland"]   = "County";
+$wb["Abteilung"]    = "Department";
+$wb["Gültigkeit (Tage)"]  = "Validity (days)";
+$wb["SSL Key"]          = "SSL Key";
+$wb["SSL Zertifikat"]   = "SSL Certificate";
+$wb["Aktion"]       = "Action";
+$wb["Zertifikat erzeugen"] = "Create certificate";
+$wb["Zertifikat speichern"] = "Save certificate";
+$wb["Zertifikat löschen"] = "Delete Certificate";
+$wb["Speicherplatz gesamt"] = "Storage space";
+$wb["unlimitiert"]  = "unlimited";
+$wb["verbraucht"]   = "used";
+$wb["Trafficübersicht"] = "Traffic overview";
+$wb["Monat"]        = "Month";
+$wb["Traffic"]      = "Traffic";
+$wb["traffic_letzte_4"] = "Traffic in the last 4 years";
+$wb["Jahr"]         = "Year";
+$wb["MySQL User"]        = "MySQL Username";
+$wb["MySQL Passwort"]    = "MySQL Password";
+
+// Ergänzungen /////////////////////////////////
+$wb["Anbieter neu"] = "New reseller";
+$wb["Kunde neu"]    = "New client";
+$wb["Web neu"]      = "New site";
+$wb["Ordner neu"]   = "New folder";
+$wb["Suchen"]       = "Search";
+$wb["ISP Anbieter"] = "ISP Reseller";
+$wb["Webs"] = "Sites";
+$wb["User"] = "User";
+$wb["Domains"] = "Domains";
+$wb["Zahlung"] = "Payment";
+$wb["ISP Kunde"] = "ISP Client";
+$wb["ISP Web"] = "ISP Site";
+$wb["Kunden"] = "Clients";
+$wb["Dokument suchen"] = "Document search";
+
+$wb["User & Email"] = "User & Email";
+$wb["Co-Domains"] = "Co-Domains";
+$wb["SSL"] = "SSL";
+$wb["Optionen"] = "Options";
+
+$wb["Webs angelegt"] = "Sites used";
+$wb["User angelegt"] = "Users used";
+$wb["Domains angelegt"] = "Domains used";
+$wb["rechnungsanschrift"] = "Invoice address:<br> ";
+
+$wb["neues Web anlegen"] = "New site";
+$wb["weiter"] = "next";
+$wb["SUCHE"] = "search";
+
+$wb["msg_beta"] = "";
+$wb["title_isp_beta"] = "";
+$wb["msg_kein_win"] = "This software is not available for the Windows operating systems.";
+
+// Error Codes ispconfig_isp_datenbank.lib.php
+$wb["error_db_nicht_erlaubt"] = "The creation of MySQL databases is not allowed for this web.<br>";
+$wb["error_db_leeres_passwort"] = "Please specify a password!<br>";
+$wb["error_db_exist_1"] = "A database with the name";
+$wb["error_db_exist_2"] = "does already exist.<br>";
+$wb["error_db_user_exist_1"] = "The database user";
+$wb["error_db_user_exist_2"] = "does already exist.<br>";
+$wb["error_max_db_web"] = "The maximum number of databases for this site has been reached.<br>";
+$wb["error_max_db_anbieter"] = "The hoster's maximum number of databases has been reached.<br>";
+
+// Error Codes ispconfig_isp_domain.lib.php
+$wb["error_web_doppelt"] = "The name ";
+$wb["error_max_domain_web"] = "The maximum number of domains for this site has been reached.<br>";
+$wb["error_max_domain_anbieter"] = "The hoster's maximum number of domains has been reached.<br>";
+$wb["angelegt"] = " is already in use by another site or domain.<br>";
+$wb["error_domain_forward"] = "The domain forward contained invalid signs and has therefore been deleted.<br>";
+
+// Error Codes ispconfig_isp_kunde.lib.php
+$wb["error_user_exist_1"] = "The ISPConfig user";
+$wb["error_user_exist_2"] = "does already exist. The user was not added or changed.<br>";
+$wb["error_max_user_licence"] = "The maximum number of ISPConfig user accounts for the license has been reached.<br>";
+
+
+// Error Codes ispconfig_isp_reseller.lib.php
+$wb["error_reseller_title"] = "A reseller with this title does already exist.<br>";
+$wb["error_reseller_group_not_found"] = "The reseller group could not be found.<br>";
+$wb["error_anbieter_no_delete"] = "<b>The reseller was not deleted.</b><br>&nbsp;<br>The reseller can only be deleted if all sites and customers of the reseller have been deleted.  Also make sure that the waste-paper basket of the reseller is empty.<br>";
+$wb["error_anbieter_no_restore"] = "The reseller cannot be restored.<br>";
+
+// Error Codes ispconfig_isp_user.lib.php
+$wb["error_sysuser_exist_1"] = "The user with the name";
+$wb["error_sysuser_exist_2"] = "does already exist.<br>";
+$wb["error_max_user_web"] = "The maximum number of site users has been reached.<br>";
+$wb["error_max_space_web"] = "The selected diskspace exceeds site's limits.<br>";
+$wb["error_max_user_anbieter"] = "The reseller's maximum number of users has been reached.<br>";
+$wb["error_sysuser_exist"] = "The username is already in use.<br>";
+$wb["error_admin_exist"] = "A user with administrator rights does already exist for this site.<br>";
+$wb["error_admin_exist_long"] = "A user with administrator privileges does already exist. You must remove the other administrator if you wish to assign administrator privileges to this user.<br>";
+
+// Error Codes ispconfig_isp_user.lib.php
+$wb["error_max_web_anbieter"] = "The maximum number of sites for the reseller has been reached.<br>";
+$wb["error_web_ssl_exist"] = "An SSL certificate does already exist for this IP.<br>";
+
+// Plugins
+$wb["CPU Auslastung 1 Minute"] = "CPU Usage 1 Minute";
+$wb["CPU Auslastung 5 Minuten"] = "CPU Usage 5 Minutes";
+$wb["CPU Auslastung 15 Minuten"] = "CPU Usage 15 Minutes";
+$wb["Server Online seit"] = "Server Online since";
+$wb["User Online"] = "Users Online";
+$wb["error_web_id"] = "This Plugin needs a valid web ID.";
+$wb["von"] = "of";
+$wb["Gesamt"] = "Overall";
+$wb["Traffic in den letzten 4 Jahren"] = "Traffic in the last 4 years";
+
+$wb["Backup von Tabelle"] = "Backup Table";
+$wb["Optimiere"] = "Optimize";
+$wb["Reparatur"] = "Repair";
+$wb["oder"] = "or";
+$wb["Installation starten"] = "Install";
+
+$wb["Monatlich"] = "Monthly";
+$wb["Quartal"] = "Quarter-Yearly";
+$wb["Halbjährlich"] = "Half-Yearly";
+$wb["Jährlich"] = "Yearly";
+$wb["Sonstige"] = "Other";
+
+$wb["bei Erhalt"] = "on receipt";
+$wb["Netto 7 Tage"] = "net 7 days";
+$wb["Netto 15 Tage"] = "net 15 days";
+$wb["Netto 30 Tage"] = "net 30 days";
+$wb["Sonstige"] = "other";
+$wb["Neu"] = "New";
+$wb["Postfach MB"] = "Mailbox MB";
+
+$wb["email_alias_txt"] = "<b>Hint:</b> one alias per line.";
+$wb["Weiterleitung"] = "Forward";
+$wb["Nachricht"] = "Message";
+$wb["Kein Kunde vorhanden"] = "No client available.<br>";
+$wb["Dieses Web können Sie nicht löschen."] = "You cannot delete this web.<br>";
+$wb["Ausgabeformat"] = "List format";
+$wb["Bearbeiten"] = "Edit";
+$wb["Löschen"] = "Delete";
+
+$wb["willkommen_kunde"] = "Welcome to ISPConfig!
+You can administrate your website(s) here. If you have questions or problems,
+please contact your server administrator or refer to the ISPConfig client manual.";
+$wb["Willkommen"] = "Welcome";
+
+
+// Regex Fehlermeldungen
+$wb["Es sind nur folgende Zeichen erlaubt: a-z A-Z 0-9 -"] = "Only the following sign are allowed: a-z A-Z 0-9 -<br>";
+$wb["Es sind nur folgende Zeichen erlaubt: a-z A-Z 0-9 - ."] = "Only the following sign are allowed: a-z A-Z 0-9 - .<br>";
+$wb["Der Username muss aus min. 4, max 25 Buchstaben oder Zahlen bestehen, wobei er mit einem Buchstaben beginnen muss."] = "The user name has to contain a minimum of 4 and a maximum of 26 letters or figures and has to begin with a letter.<br>";
+
+$wb["error_reseller_licence"] = "Adding resellers is not possible with your licence of ISPConfig.<br>";
+$wb["error_reseller_licence_nodelete"] = "This reseller cannot be deleted.<br>";
+
+$wb["error_kunde_licence"] = "Adding clients is not possible with your licence of ISPConfig.<br>";
+$wb["error_kunde_licence_nodelete"] = "This client cannot be deleted.<br>";
+
+$wb["mysqldb_nicht_vorhanden"] = "MySQL database does not exist. <br>Please enter a password to create the database.<br>";
+$wb["mysql_nicht_aktiv"] = "The creation of MySQL databases is not allowed for this web.<br>";
+$wb["Datenbank Name"] = "Database Name";
+$wb["Speicher belegt"] = "Database Size";
+
+$wb["Kein Web angelegt"] = "No web created.";
+$wb["Real Name"] = "Real Name";
+$wb["Feld"] = "Field";
+$wb["httpd_inc_txt"] = "Apache Directives<br>&nbsp; (Optional)";
+$wb["Kopie speichern"] = "Keep Copy";
+
+$wb["err_0001"] = "The Domain belongs to another client.";
+
+$wb["MySQL Remote Access"] = "MySQL Remote Access";
+$wb["lokaler mailserver"] = "Local Mailserver";
+$wb["externer mailserver"] = "External Mailserver";
+
+$wb["Log-Grösse"] = "Logsize";
+$wb["Frontpage Passwort"] = "Frontpage Password";
+
+// NEW 1.1.12 ///////////////////////////////////
+
+$wb["Anbieternummer"] = 'Reseller No.';
+$wb["Domain DNS"] = 'Master Zones (DNS)';
+$wb["HTTPD Includes"] = 'HTTPD Includes';
+$wb["DNS-Manager"] = 'DNS Manager';
+$wb["DNS-Domains angelegt"] = 'Master Zones created';
+$wb["Kundennummer"] = 'Client No.';
+$wb["Anonymous FTP"] = 'Anonymous FTP';
+$wb["Anon. FTP MB"] = 'Anon. FTP MB';
+$wb["Faktura"] = 'Invoice';
+$wb["Mailserver"] = 'Mailserver';
+$wb["aktiviert"] = 'active';
+$wb["deaktiviert"] = 'inactive';
+$wb["ISP User"] = 'ISP User';
+$wb["WebSpeicher MB"] = 'WebSpace MB';
+$wb["MailSpeicher MB"] = 'MailSpace MB';
+$wb["Administrator"] = 'Administrator';
+$wb["Erweiterte Einstellungen"] = 'Advanced Settings';
+$wb["email_weiterleitung_txt"] = '<b>Hint:</b> one email per line.';
+$wb["Email Alias"] = 'Email Alias';
+$wb["catchAll-Email"] = 'catchAll-Email';
+$wb["MailScan"] = 'MailScan';
+$wb["Spam-Filter"] = 'Spam Filter';
+$wb["Autoresponder"] = 'Autoresponder';
+$wb["ISP Domain"] = 'ISP Domain';
+$wb["Create DNS MX"] = 'Create DNS MX';
+$wb["Admin"] = 'Admin';
+$wb["CatchAll"] = 'CatchAll';
+$wb["Bitte Artikel auswählen"] = "Select Item";
+$wb["Letzte Abrechnung"] = "Last Invoice";
+$wb["Artikel hinzufügen"] = "Add Item";
+$wb["Wird automatisch vergeben."] = 'Is assigned automatically.';
+$wb["Email Adresse"] = "Email Address";
+
+// new 1.2 ////////////////////////////////////////
+$wb["error_email_exist"] = "Duplicate Email Address.<br>";
+$wb["error_realname"] = "Only the following signs are allowed: a-z A-Z 0-9 - _ .<br>";
+$wb["Die Emailadresse muss aus min. 1, max 60 Buchstaben oder Zahlen bestehen."] = "The email address must contain between 1 and 60 letters or numbers.<br>";
+
+// new 1.3 ////////////////////////////////////////
+$wb["Bundesland"] = "Province";
+$wb["Spamfilter & Antivirus"] = 'Spamfilter & Antivirus';
+$wb["Spamfilter"] = 'Spamfilter';
+$wb["Antivirus"] = 'Antivirus';
+$wb["accept"] = 'accept';
+$wb["discard"] = 'discard';
+$wb["Spam Strategie"] = 'Spam Strategy';
+$wb["Spam Hits"] = 'Spam Hits';
+$wb["Rewrite Subject"] = 'Rewrite Subject';
+$wb["Betreff"] = 'Subject';
+$wb["SUCHE"] = 'SEARCH';
+$wb["IP"] = 'IP';
+$wb["Standard CGIs"] = 'Standard CGIs';
+$wb["PHP Safe Mode"] = 'PHP Safe Mode';
+$wb["WAP"] = 'WAP';
+$wb["Individuelle Fehler-Seiten"] = 'Individual Error Pages';
+$wb["Anzahl Datenbanken"] = 'Number of Databases';
+$wb["Fehler 400<br>(Ungültige Syntax)"] = "400 Error<br>(Invalid Syntax)";
+$wb["Fehler 401<br>(Autorisierung<br>erforderlich)"] = "401 Error<br>(Authorisation<br>required)";
+$wb["Fehler 403<br>(Verboten)"] = "403 Error<br>(Forbidden)";
+$wb["Fehler 404<br>(Datei nicht<br>gefunden)"] = "404 Error<br>(File not found)";
+$wb["Fehler 405<br>(Methode nicht<br>erlaubt)"] = "405 Error<br>(Method not<br>allowed)";
+$wb["Fehler 500<br>(Interner<br>Server-Fehler)"] = "500 Error<br>(Internal Server<br>Error)";
+$wb["Fehler 503<br>(Service ist z.Zt.<br>überlastet)"] = "503 Error<br>(Service<br>unavailable)";
+$wb["Datenbanken"] = "Databases";
+$wb["Datenbank"] = "Database";
+$wb["Datenbankname"] = "Database Name";
+$wb["Datenbankuser"] = "Database User";
+$wb["weiter_link"] = "<br><br> <a href='../../isp_manager/frame_start.php?s=$s'>Next &gt;&gt;</a>";
+$wb["Slave Zones"] = 'Slave Zones (DNS)';
+$wb["txt_client_salutatory_email_desc"] = "<b>Salutatory Email for Clients</b>";
+$wb["txt_client_salutatory_email_sender_email"] = "Sender's Email";
+$wb["txt_client_salutatory_email_sender_name"] = "Name of Sender";
+$wb["txt_client_salutatory_email_bcc"] = "BCC Recipient";
+$wb["txt_client_salutatory_email_subject"] = "Subject";
+$wb["txt_client_salutatory_email_message"] = "Message";
+$wb["txt_client_salutatory_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Include the following variables in your text:</b></td></tr>
+        <tr>
+          <td class="normal">%%%USER%%%</td>
+          <td class="normal">
+            Client\'s Username</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%PASSWORD%%%</td>
+          <td class="normal">
+            Client\'s Password</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%FIRST_NAME%%%</td>
+          <td class="normal">
+            Client\'s First Name</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%LAST_NAME%%%</td>
+          <td class="normal">
+            Client\'s Last Name</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%COMPANY%%%</td>
+          <td class="normal">
+            Client\'s Company</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%EMAIL%%%</td>
+          <td class="normal">
+            Client\'s Email Address</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%CP%%%</td>
+          <td class="normal">
+            ISPConfig Login URL</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%MANUAL%%%</td>
+          <td class="normal">
+            ISPConfig Client Manual</td>
+        </tr>
+        </table>';
+$wb["txt_standard_index"] = "Standard Index<br>&nbsp;&nbsp;Page";
+$wb["txt_standard_index_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Include the following variables in your text:</b></td></tr>
+        <tr>
+          <td class="normal">%%%FQDN%%%</td>
+          <td class="normal">
+            Website\'s Fully Qualified Domain Name</td>
+        </tr>
+    </table>';
+$wb["txt_user_standard_index"] = "Users' Standard<br>&nbsp;&nbsp;Index Page";
+$wb["txt_user_standard_index_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Include the following variables in your text:</b></td></tr>
+        <tr>
+          <td class="normal">%%%USER%%%</td>
+          <td class="normal">
+            User\'s Username</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%FQDN%%%</td>
+          <td class="normal">
+            Website\'s Fully Qualified Domain Name</td>
+        </tr>
+        </table>';
+
+//////////////// ISP Manager Ende /////////////
+
+//////////////// Server Status ////////////////
+$wb["Arbeitsspeicher"]          = "Main Memory";
+$wb["CPU"]          = "CPU";
+$wb["Dienste"]      = "Services";
+$wb["Server Online seit"]          = "Server Online since";
+$wb["User Online"]      = "Users Online";
+$wb["System Load 1 Minute"] = "System Load 1 Minute";
+$wb["System Load 5 Minuten"] = "System Load 5 Minutes";
+$wb["System Load 15 Minuten"] = "System Load 15 Minutes";
+//////////////// Server Status Ende //////////
+
+$wb["Es konnte ein Dokument nicht wiederhergestellt werden, da sich das Eltern-Dokument noch im Papierkorb befindet.\n"] = "The object cannot be restored as long as its parent object is in the recycle bin.";
+$wb["error_anbieter_max_webs_ueberschritten"] = "The reseller already has more websites than you want to assign to him.<br>";
+$wb["error_anbieter_max_diskspace_ueberschritten"] = "The reseller already uses more diskspace than you want to assign to him.<br>";
+$wb["error_anbieter_max_user_ueberschritten"] = "The reseller already has more users than you want to assign to him.<br>";
+$wb["error_anbieter_max_domain_ueberschritten"] = "The reseller already has more domains than you want to assign to him.<br>";
+$wb["error_anbieter_dnsmanager_aktiv"] = "The reseller already has some DNS Records. The DNS Manager cannot be deactivated.<br>";
+$wb["error_anbieter_max_dns_ueberschritten"] = "The reseller already has more Primary DNS Records than you want to assign to him.<br>";
+$wb["error_anbieter_max_slavedns_ueberschritten"] = "The reseller already has more Secondary DNS Records than you want to assign to him.<br>";
+$wb["error_anbieter_httpd_include_aktiv"] = "HTTPD Includes are already in use on some of the reseller's websites. This feature cannot be deactivated.<br>";
+$wb["error_anbieter_shell_access_aktiv"] = "Shell Access already in use on some of the reseller's websites. This feature cannot be deactivated.<br>";
+$wb["error_anbieter_cgi_aktiv"] = "CGI is already in use on some of the reseller's websites. This feature cannot be deactivated.<br>";
+$wb["error_anbieter_standard_cgi_aktiv"] = "Standard CGIs are already in use on some of the reseller's websites. This feature cannot be deactivated.<br>";
+$wb["error_anbieter_php_aktiv"] = "PHP is already in use on some of the reseller's websites. This feature cannot be deactivated.<br>";
+$wb["error_anbieter_ssi_aktiv"] = "SSI is already in use on some of the reseller's websites. This feature cannot be deactivated.<br>";
+$wb["error_anbieter_ftp_aktiv"] = "FTP is already in use on some of the reseller's websites. This feature cannot be deactivated.<br>";
+$wb["error_anbieter_anonftp_aktiv"] = "Anonymous FTP is already in use on some of the reseller's websites. This feature cannot be deactivated.<br>";
+$wb["error_anbieter_frontpage_aktiv"] = "Frontpage is already in use on some of the reseller's websites. This feature cannot be deactivated.<br>";
+$wb["error_anbieter_datenbank_aktiv"] = "MySQL databases are already in use on some of the reseller's websites. This feature cannot be deactivated.<br>";
+$wb["error_anbieter_max_datenbank_ueberschritten"] = "The reseller already has more MySQL databases than you want to assign to him.<br>";
+$wb["error_anbieter_ssl_aktiv"] = "SSL is already in use on some of the reseller's websites. This feature cannot be deactivated.<br>";
+$wb["error_anbieter_wap_aktiv"] = "WAP is already in use on some of the reseller's websites. This feature cannot be deactivated.<br>";
+$wb["error_anbieter_error_pages_aktiv"] = "Individual error pages are already in use on some of the reseller's websites. This feature cannot be deactivated.<br>";
+$wb["error_web_no_unlimited_diskspace_1"] = "You cannot assign unlimited diskspace to this website. The max. diskspace for this website is ";
+$wb["error_web_no_unlimited_diskspace_2"] = " MB.<br>";
+$wb["error_web_no_diskspace_free_1"] = "You have left only ";
+$wb["error_web_no_diskspace_free_2"] = " MB which you can assign to this website.<br>";
+$wb["error_web_no_unlimited_users_1"] = "You cannot assign an unlimited number of users to this website. The max. number of users for this website is ";
+$wb["error_web_no_unlimited_users_2"] = ".<br>";
+$wb["error_web_no_users_free_1"] = "You have left only ";
+$wb["error_web_no_users_free_2"] = " user(s) which you can assign to this website.<br>";
+$wb["error_web_no_unlimited_domains_1"] = "You cannot assign an unlimited number of domains to this website. The max. number of domains for this website is ";
+$wb["error_web_no_unlimited_domains_2"] = ".<br>";
+$wb["error_web_no_domains_free_1"] = "You have left only ";
+$wb["error_web_no_domains_free_2"] = " domain(s) which you can assign to this website.<br>";
+$wb["error_web_no_user_decrease_1"] = "This website already has ";
+$wb["error_web_no_user_decrease_2"] = " user(s). You cannot decrease the number of users.<br>";
+$wb["error_web_no_domain_decrease_1"] = "This website already has ";
+$wb["error_web_no_domain_decrease_2"] = " domain(s). You cannot decrease the number of domains.<br>";
+
+$wb["Benutzter Diskspace"] = "Diskspace used";
+$wb["Slave Zones angelegt"] = "Slave Zones created";
+$wb["Datenbanken angelegt"] = "Databases created";
+$wb["error_web_no_database_decrease_1"] = "This website already has ";
+$wb["error_web_no_database_decrease_2"] = " database(s). You cannot decrease the number of databases.<br>";
+$wb["error_web_no_shell_access"] = "You cannot assign shell access to this website.<br>";
+$wb["error_web_no_cgi"] = "You cannot assign CGI functionality to this website.<br>";
+$wb["error_web_no_standard_cgi"] = "You cannot assign Standard CGIs to this website.<br>";
+$wb["error_web_no_php"] = "You cannot assign PHP functionality to this website.<br>";
+$wb["error_web_no_ssi"] = "You cannot assign SSI functionality to this website.<br>";
+$wb["error_web_no_ftp"] = "You cannot assign FTP functionality to this website.<br>";
+$wb["error_web_no_mysql"] = "You cannot assign MySQL databases to this website.<br>";
+$wb["error_web_no_databases_free_1"] = "You have left only ";
+$wb["error_web_no_databases_free_2"] = " database(s) which you can assign to this website.<br>";
+$wb["error_web_no_ssl"] = "You cannot assign SSL functionality to this website.<br>";
+$wb["error_web_no_anonftp"] = "You cannot assign Anonymous FTP functionality to this website.<br>";
+$wb["error_web_no_wap"] = "You cannot assign WAP functionality to this website.<br>";
+$wb["error_web_no_individual_error_pages"] = "You cannot assign individual error pages to this website.<br>";
+$wb["error_web_no_httpd_include"] = "You cannot assign HTTPD Includes to this website.<br>";
+$wb["error_web_no_frontpage"] = "You cannot assign Frontpage functionality to this website.<br>";
+$wb["Web Vorlage"] = "Hostingplan";
+$wb["ISP Web-Vorlage"] = "ISP Hostingplan";
+$wb["Keine Vorlage verwenden"] = "Individual Settings";
+$wb["Keine Vorlage vorhanden"] = "No Hostingplan Available";
+$wb["txt_accept"] = "accept";
+$wb["txt_discard"] = "discard";
+$wb["Eigenschaften"] = "Properties";
+$wb["ISP Datenbank"] = "ISP Database";
+$wb["Nein"] = "No";
+$wb["Ja"] = "Yes";
+$wb["Web"] = "Site";
+$wb["Domain"] = "Domain";
+
+?>

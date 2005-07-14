@@ -1,0 +1,90 @@
+<?
+/********************************
+* ISPConfig Dictionary File
+* Version 1.0
+*
+* T³umaczenie wersji polskiej
+* Digital Gospel http://www.digital-gospel.com
+* Wersja 1.0
+* Ostatnie zmiany 2004.06.21
+*********************************/
+
+/////////////// Allgemein - general (kommt in mehreren Modulen vor) /////////
+$wb["login_begruessung"]     = "Login:";
+$wb["Username"]     = "Nazwa u¿ytkownika";
+$wb["Passwort"]     = "Has³o";
+$wb["Login"]       = "Login";
+$wb["Administration"]  = "Administracja";
+$wb["ISP Manager"]  = "Manager ISP";
+$wb["DNS Manager"]  = "Manager DNS";
+$wb["Tools"]        = "Narzêdzia";
+$wb["Logout"]       = "Wyloguj siê";
+$wb["Status"]       = "Status";
+$wb["neu"]          = "nowy";
+$wb["Hinweis"]      = "PodpowiedŸ";
+$wb["Web"]          = "WWW";
+$wb["Email"]        = "E-mail";
+$wb["FTP"]          = "FTP";
+$wb["DNS"]          = "DNS";
+$wb["Sonstiges"]    = "Inny";
+$wb["Datei"]        = "Plik";
+$wb["von"]          = "od"; // besser 'ab'?
+$wb["error_headline"] = "Wyst¹pi³ nastêpuj¹cy b³¹d:";
+$wb["Gruppe"]       = "Grupa";
+$wb["Titel"]        = "Tytu³";
+$wb["Server"]       = "Serwer";
+$wb["Host"]         = "Nazwa hosta";
+$wb["Domain"]       = "Domena";
+$wb["IP Adresse"]   = "Adres IP";
+$wb["Ordner"]       = "Folder";
+$wb["Dokument"]     = "Dokument";
+$wb["Dokument suchen"] = "Szukaj dokumentu";
+$wb["Suchmaske"]    = "Poszukiwane wyra¿enie";
+$wb["Ausgabeformat"] = "FOrmat wyœwietlania";
+$wb["Standard"]     = "Standard";
+$wb["Einträge"]    = "Wpisy";
+$wb["Papierkorb leeren"] = "Kosz jest pusty";
+$wb["Stammordner"]  = "Strefa g³ówna";
+$wb["keine Gruppe"] = "Nie ma grupy";
+$wb["neues Dokument anlegen"] = "utworzono nowy dokument";
+$wb["auf"]   = "rozwiñ";
+$wb["zu"]    = "zwiñ";
+$wb["in_ordner"]    = "w Folderze";
+$wb["Papierkorb"]   = "Kosz";
+$wb["Wiederherstellen"]    = "Odtwórz";
+$wb["Papierkorb: Einträge"]   = "Kosz: zawartoœæ";
+$wb["Speichern"]    = "Zapisz";
+$wb["Löschen"]    = "Usuñ";
+$wb["Abbrechen"]    = "Anuluj";
+$wb["Suchen"]    = "Szukaj";
+
+$wb["Herr"] = "Pan";
+$wb["Frau"] = "Pani";
+
+$wb["Es ist folgender Fehler aufgetreten:"] = "Wyst¹pi³ nastêpuj¹cy b³¹d:";
+
+$wb["Web-FTP"] = 'Web-FTP';
+$wb["ISP Faktura"] = 'Faktura ISP';
+
+$wb["Verzeichnis öffnen"] = "otwórz";
+$wb["Verzeichnis schliessen"] = "zamknij";
+$wb["Hilfe"] = 'Pomoc';
+$wb["Online Hilfe"] = 'Pomoc oline';
+$wb["schliessen"] = 'zamknij
+
+$wb["PAPIERKORB_HINWEIS"] = "<b>Uwaga:</b> Elementy znajduj¹ce siê w koszu znajduj¹ siê aktualnie w stanie aktualizacji. Proszê spróbowaæ skasowaæ je póŸniej.";
+
+
+// Multidoc  Allgemein ////////////////////////////////
+
+$wb["title_required"] = "Proszê uzupe³nic pole 'Tytu³'";
+$wb["error_keine_rechte"] = "Nie masz wystarczaj¹cych praw dostêpu by edytowaæ ten wpis.";
+$wb["error_doctype_nicht_vorhanden"] = "¯¹dany dokument nie istnieje.";
+$wb["error_doctype_rechte"] = "Nie masz wystarczaj¹cych praw by edytowaæ ten typ dokumentu.";
+$wb["Formular Designer"] = "Kreator formularzy";
+$wb["Geben Sie einen Wert in das Feld"] = "Proszê podaæ wartoœc w polu";
+$wb["jscript_ein"] = " ";
+
+////////////// Allgemein Ende ///////////////////
+
+?>

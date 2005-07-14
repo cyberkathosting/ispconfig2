@@ -1,0 +1,26 @@
+<?
+
+/**********************************************
+* ISPConfig Help File
+* Version 1.2
+* Syntax: $hlp["FieldName"] = "HelpText";
+************************************************/
+
+$hlp["user_username"] = "Please specify a user name. You can enter any user name as long as it does not contain umlauts (ä, ö,ü), special characters (@, %, ...) and blanks. The maximum length is 26 characters.";
+$hlp["user_passwort"] = "Please specify a password. You can enter any password as long as it does not contain umlauts (ä, ö,ü), special characters (@, %, ...) and blanks.";
+$hlp["user_speicher"] = "Please enter the storage space for the user.";
+$hlp["user_admin"] = "Makes the user the administrator for this web. Only one user per web can be an administrator.";
+$hlp["user_shell"] = "Enables shell access for the user.";
+$hlp["user_emailalias"] = "Here you can enter further email aliases (e.g. different spellings) in order to be able to receive emails for those aliases. Enter only the part in front of \"@\"!";
+$hlp["user_name"] = "Please enter the real name of the user.";
+$hlp["user_autoresponder"] = "Activates the email autoresponder for the email boxes of the user.";
+$hlp["user_autoresponder_text"] = "Please enter a text for the email autoresponder.";
+$hlp["user_mailquota"] = "Please specify the quota of the user's mailbox (in MB).";
+$hlp["user_catchallemail"] = "If this box is checked all undeliverable emails for this web end up in this mailbox. Only one user per web can have a catchAll email address.";
+$hlp["user_mailscan"] = "Enables the virus scanner for this mailbox. Extensions of suspicious attachments (e.g. .exe-files) will be renamed so that they cannot be opened by double-click.";
+$hlp["user_spamfilter"] = "Activates the spam filter for this mailbox.";
+$hlp["user_emailweiterleitung_local_copy"] = "If this box is checked a local copy of all incoming emails will be kept even if the emails are forwarded to other email addresses.";
+$hlp["user_email"] = "Please specify the name that should be in front of the \"@\" in the email address. You can enter any name as long as it does not contain umlauts (ä, ö,ü), special characters (@, %, ...) and blanks.";
+$hlp["user_emailweiterleitung"] = "Here you can enter email addresses to which incoming emails should be forwarded.";
+
+?>

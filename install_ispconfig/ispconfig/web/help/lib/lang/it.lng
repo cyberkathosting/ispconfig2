@@ -1,0 +1,41 @@
+<?
+/********************************
+* ISPConfig Dictionary File
+* Version 1.0
+*********************************/
+
+$wb["Anbieter"]     = "Reseller";
+$wb["Web"]          = "Web";
+$wb["Admin Handbuch"] = "Administrator Manual";
+$wb["Reseller Handbuch"] = "Reseller Manual";
+$wb["Kunden Handbuch"] = "Customer Manual";
+$wb["Deutsch"]          = "German";
+$wb["Englisch"]          = "English";
+$wb["Projektfarm Support"]          = "Projektfarm Support";
+$wb["Online Hilfe"] = "Online Help";
+$wb["willkommen_kunde"] = "Welcome to ISPConfig!
+You can administrate your website(s) here. If you have questions or problems,
+please contact your server administrator or refer to the ISPConfig client manual.";
+$wb["Willkommen"] = "Welcome";
+
+//////////////// Server Status ////////////////
+$wb["Arbeitsspeicher"]          = "Main Memory";
+$wb["CPU"]          = "CPU";
+$wb["Dienste"]      = "Services";
+$wb["Server Online seit"]          = "Server Online since";
+$wb["User Online"]      = "Users Online";
+$wb["System Load 1 Minute"] = "System Load 1 Minute";
+$wb["System Load 5 Minuten"] = "System Load 5 Minutes";
+$wb["System Load 15 Minuten"] = "System Load 15 Minutes";
+//////////////// Server Status Ende //////////
+
+$wb["Webs angelegt"] = "Sites used";
+$wb["User angelegt"] = "Users used";
+$wb["Domains angelegt"] = "Domains used";
+$wb["unlimitiert"]  = "unlimited";
+$wb["Anbieter"]     = "Reseller";
+$wb["DNS-Domains angelegt"] = 'DNS Domains created';
+$wb["von"] = "of";
+
+
+?>

@@ -1,0 +1,63 @@
+<?
+/********************************
+* ISPConfig Dictionary File
+* Version 1.0
+*********************************/
+
+//////////////// DNS Manager ////////////////
+$wb["Optionen"]     = "Optionen";
+$wb["Ziel"]         = "Ziel";
+$wb["Priorität"]   = "Priorität";
+$wb["DNS Eintrag"]  = "DNS Eintrag";
+$wb["Ordner neu"]   = "Ordner neu";
+$wb["Suchen"]       = "Suchen";
+$wb["DNS-Manager"]       = "DNS-Manager";
+
+$wb["Domain (SOA)"]         = "Domain (SOA)";
+$wb["Email Admin"]         = "Email Admin";
+$wb["Nameserver 1"]         = "Nameserver 1";
+$wb["Nameserver 2"]         = "Nameserver 2";
+$wb["Refresh"]         = "Refresh";
+$wb["Retry"]         = "Retry";
+$wb["Expire"]         = "Expire";
+$wb["TTL"]         = "TTL";
+$wb["Record"]         = "Record";
+$wb["Record"]         = "Records";
+$wb["Mailserver"]         = "Mailserver";
+
+$wb["Dokument"] = "Dokument";
+$wb["neues Dokument anlegen"] = "neues Dokument anlegen";
+
+$wb["error_soa_exists_1"] = "Sie haben bereits einen SOA Record mit dem Namen ";
+$wb["error_soa_exists_2"] = " angelegt.<br>";
+
+// NEW 1.3 //////////////////////////////////////
+
+$wb["Master neu"] = 'Master neu';
+$wb["Slave neu"] = 'Slave neu';
+$wb["Slave Zone"] = 'Slave Zone';
+$wb["domain"] = 'Domain';
+$wb["DNS-Master IP"] = 'DNS-Master IP';
+$wb["Name"] = 'Name';
+$wb["Masters"] = 'Masters';
+$wb["Slaves"] = 'Slaves';
+$wb["SUCHE"] = 'SUCHE';
+
+
+
+//////////////// DNS Manager Ende ///////////
+
+$wb["IP-Adresse ungültig."] = "IP-Adresse ungültig.";
+$wb["Records"] = 'Records';
+$wb["ziel"] = 'ziel';
+$wb["Neu"] = 'Neu';
+$wb["Maximale Anzahl an DNS-Einträgen erreicht."] = "Die max. Anzahl an Zonen ist bei diesem Konto erreicht.<br>";
+$wb["error_no_zones_allowed"] = "Bei diesem Konto ist das Anlegen von Zones nicht erlaubt.<br>";
+$wb["error_no_dns_anbieter"] = "Unter diesem Konto können keine DNS-Records angelegt werden.<br>";
+$wb["error_max_slave_dns_anbieter"] = "Die max. Anzahl an Slave Zones ist bei diesem Konto erreicht worden.<br>";
+$wb["weiter_link"] = "<br><br> <a href='../../isp_dns/frame_start.php?s=$s'>Weiter &gt;&gt;</a>";
+$wb["error_a_record_exists"] = "Für diesen Host existiert schon ein A-Record in dieser Zone.<br>";
+$wb["error_cname_record_exists"] = "Für diesen Host existiert schon ein CNAME-Record in dieser Zone.<br>";
+$wb["error_mx_record_exists"] = "Dieser oder ein ähnlicher MX-Record existiert schon in dieser Zone.<br>";
+
+?>

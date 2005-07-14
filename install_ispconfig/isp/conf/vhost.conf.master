@@ -1,0 +1,46 @@
+{FP_RESOURCE_CONFIG}
+{FP_ACCESS_CONFIG}
+###################################
+#
+# ISPConfig vHost Configuration File
+#         Version 1.0
+#
+###################################
+#
+<!-- BEGIN DYNAMIC BLOCK: namevhost -->
+{SERVERIP}
+<!-- END DYNAMIC BLOCK: namevhost -->
+#
+#
+<!-- BEGIN DYNAMIC BLOCK: vhost -->
+
+######################################
+# Vhost: {SERVERNAME}
+######################################
+#
+#
+<VirtualHost {IP}>
+{HTTPD_INCLUDE}
+{SUEXEC}
+ServerName {SERVERNAME}
+ServerAdmin {SERVERADMIN}
+DocumentRoot {DOCUMENTROOT}
+{SERVERALIAS}
+{DIRECTORYINDEX}
+{CGI}
+ErrorLog {WEB_ERROR_LOG}
+{PHP}
+{SSI}
+{WAP}
+{ERRORALIAS}
+{ERROR}
+AliasMatch ^/~([^/]+)(/(.*))? {HTTPD_ROOT}/{WEB}/user/$1/web/$3
+AliasMatch ^/users/([^/]+)(/(.*))? {HTTPD_ROOT}/{WEB}/user/$1/web/$3
+{REWRITE_RULE}
+{FRONTPAGE}
+</VirtualHost>
+#
+{SSL}
+#
+#
+<!-- END DYNAMIC BLOCK: vhost -->

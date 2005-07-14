@@ -1,0 +1,94 @@
+<?
+/********************************
+* ISPConfig Dictionary File
+* Version 1.0
+*********************************/
+
+/////////////// Allgemein - general (kommt in mehreren Modulen vor) /////////
+$wb["login_begruessung"]     = "Login:";
+$wb["Username"]     = "Username";
+$wb["Passwort"]     = "Password";
+$wb["Login"]       = "Login";
+$wb["Administration"]  = "Management";
+$wb["ISP Manager"]  = "ISP Manager";
+$wb["DNS Manager"]  = "DNS Manager";
+$wb["Tools"]        = "Tools";
+$wb["Logout"]       = "Logout";
+$wb["Status"]       = "Status";
+$wb["neu"]          = "new";
+$wb["Hinweis"]      = "Reference";
+$wb["Web"]          = "Web";
+$wb["Email"]        = "Email";
+$wb["FTP"]          = "FTP";
+$wb["DNS"]          = "DNS";
+$wb["Sonstiges"]    = "Other";
+$wb["Datei"]        = "File";
+$wb["von"]          = "from"; // besser 'ab'?
+$wb["error_headline"] = "The following error occurred:";
+$wb["Gruppe"]       = "Group";
+$wb["Titel"]        = "Title";
+$wb["Server"]       = "Server";
+$wb["Host"]         = "Hostname";
+$wb["Domain"]       = "Domain";
+$wb["IP Adresse"]   = "IP Address";
+$wb["Ordner"]       = "Folder";
+$wb["Dokument"]     = "Document";
+$wb["Dokument suchen"] = "Document search";
+$wb["Suchmaske"]    = "Search terms";
+$wb["Ausgabeformat"] = "Output format";
+$wb["Standard"]     = "Standard";
+$wb["Einträge"]    = "Entries";
+$wb["Papierkorb leeren"] = "Empty recycle bin";
+$wb["Stammordner"]  = "Master Zone";
+$wb["keine Gruppe"] = "No group";
+$wb["neues Dokument anlegen"] = "new document created";
+$wb["auf"]   = "expand";
+$wb["zu"]    = "collapse";
+$wb["in_ordner"]    = "in Folder";
+$wb["Papierkorb"]   = "Recycle Bin";
+$wb["Wiederherstellen"]    = "Restore";
+$wb["Papierkorb: Einträge"]   = "Recycle bin: contents";
+$wb["Speichern"]    = "Save";
+$wb["Löschen"]    = "Delete";
+$wb["Abbrechen"]    = "Cancel";
+$wb["Suchen"]    = "Search";
+
+$wb["Herr"] = "Mr";
+$wb["Frau"] = "Mrs";
+
+$wb["Es ist folgender Fehler aufgetreten:"] = "The following error occurred:";
+
+$wb["Web-FTP"] = 'Web-FTP';
+$wb["ISP Faktura"] = 'ISP Invoice';
+
+$wb["Verzeichnis öffnen"] = "open";
+$wb["Verzeichnis schliessen"] = "close";
+$wb["Hilfe"] = 'Help';
+$wb["Online Hilfe"] = 'Online Help';
+$wb["schliessen"] = 'close';
+
+$wb["PAPIERKORB_HINWEIS"] = "<b>Note:</b> Items remaining in recycle bin after emptying are currently in update state. Please try to delete them later.";
+
+
+// Multidoc  Allgemein ////////////////////////////////
+
+$wb["title_required"] = "Please enter a value into the field 'Title'";
+$wb["error_keine_rechte"] = "You do not have the necessary privileges to read or edit this entry.";
+$wb["error_doctype_nicht_vorhanden"] = "The requested document type does not exist.";
+$wb["error_doctype_rechte"] = "You do not have the necessary privileges to edit this document type.";
+$wb["Formular Designer"] = "Form Designer";
+$wb["Geben Sie einen Wert in das Feld"] = "Please enter a value in the field";
+$wb["jscript_ein"] = " ";
+
+////////////// Allgemein Ende ///////////////////
+
+$wb["Es konnte ein Dokument nicht wiederhergestellt werden, da sich das Eltern-Dokument noch im Papierkorb befindet.\n"] = "The object cannot be restored as long as its parent object is in the recycle bin.";
+
+$wb["DNS-Domains angelegt"] = 'Master Zones created';
+$wb["Benutzter Diskspace"] = "Diskspace used";
+$wb["Slave Zones angelegt"] = "Slave Zones created";
+$wb["Datenbanken angelegt"] = "Databases created";
+
+$wb["txt_confirm_delete"] = "Do you really want to delete this object?";
+
+?>

@@ -1,0 +1,33 @@
+<form method="POST" action="frame_start.php?s={S}" target="_self" name="myform" enctype="multipart/form-data">
+  <table border="0" width="99%" cellspacing="0" cellpadding="4" height="104" bgcolor="{TABLE_H_COLOR}">
+    <tr> 
+      <td width="31%" class="normal_bold">&nbsp;</td>
+      <td width="69%" class="normal">&nbsp;</td>
+    </tr>
+    <tr valign="bottom"> 
+      <td width="31%" class="normal_bold">&nbsp;{WEB_AUSWAHL}:</td>
+      <td width="69%"> 
+        <select size="1" name="web_id" onChange="document.myform.submit();">
+            {WEBS}
+        </select>
+      </td>
+    </tr>
+	<tr> 
+      <td width="31%" class="normal_bold">&nbsp;{WEB_USERNAME}:</td>
+      <td width="69%" class="normal">&nbsp;<input type="text" name="ftp_user" size="30" maxlength="255" class="text" value="{USER}" /></td>
+    </tr>
+	<tr> 
+      <td width="31%" class="normal_bold">&nbsp;{WEB_PASSWORT}:</td>
+      <td width="69%" class="normal">&nbsp;<input type="password" name="ftp_passwort" size="30" maxlength="255" class="text" />
+      </td>
+    </tr>
+    <tr> 
+      <td width="100%" colspan="2" height="50" align="center"> 
+        <input type="submit" name="Submit" value="{AUSWAHL}" class="button">
+      &nbsp;&nbsp;
+      <input type="button" name="Submit2" value="{ABBRECHEN}" onClick="window.location.href='frame_start.php?{SESSION}'" class="button">
+	</td>
+    </tr>
+  </table>
+  <input type="hidden" name="s" value="{S}">
+</form>

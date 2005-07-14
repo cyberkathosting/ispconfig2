@@ -1,0 +1,30 @@
+
+<form method="get" action="edit.php" name="form1">
+  <table border="0" width="100%" cellspacing="0" cellpadding="4"bgcolor="{TABLE_H_COLOR}">
+  <tr> 
+          
+    <td colspan="2" height="18"> 
+      <p align="center" class="normal_bold">&nbsp; 
+          </td>
+        </tr>
+  <tr bgcolor="#EEEEEE"> 
+      <td width="28%" class="normal">{DOKUMENT}:</td>
+    	  
+      <td width="72%" class="normal"> 
+        <div align="left">
+		<select name="doctype_id">
+		{DOCTYPES}  
+          </select>
+          <input type="submit" name="Abschicken" value="&gt;&gt;">
+        </div>
+    </td>
+        </tr>
+		<tr> 
+      <td colspan="2" height="18"> 
+        <p align="center" class="normal_bold">
+          <input type="hidden" name="s" value="{S}">
+        
+      </td>
+        </tr>
+      </table>
+	  </form>

@@ -1,0 +1,47 @@
+<script language="JavaScript">
+<!--
+function MM_goToURL() { //v3.0
+  var i, args=MM_goToURL.arguments; document.MM_returnValue = false;
+  var listValue = document.myform.gid.options[document.myform.gid.selectedIndex].value; 
+  for (i=0; i<(args.length-1); i+=2) eval(args[i]+".location='"+args[i+1]+listValue+"'");
+}
+//-->
+</script>
+                  
+<form method="POST" action="node_insert.php" target="_top" name="myform" enctype="multipart/form-data">
+  <table border="0" width="99%" cellspacing="0" cellpadding="4" height="62" bgcolor="#FFFFFF">
+    <tr> 
+      <td width="26%" height="25" class="normal_bold">{TXTGRUPPE}:</td>
+      <td width="74%" height="25"> 
+        <select size="1" name="gid" onChange="MM_goToURL('self','node.php?s={S}&id={ID}&gid=');return document.MM_returnValue">
+ 			               {GRUPPE}
+ 			               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          
+        </select>
+      </td>
+    </tr>
+    <tr> 
+      <td width="31%" height="21" class="normal_bold">&nbsp;{TXTNAME}:</td>
+      <td width="69%" height="21"> 
+        <input type="text" name="title" size="23" value="{BTEXT}" maxlength="30" class="text">
+      </td>
+    </tr>
+    <tr> 
+      <td width="31%" height="21" class="normal_bold">&nbsp;{TXTINORDNER}:</td>
+      <td width="69%" height="21"> 
+        <select size="1" name="ordner">
+                            {NODES}
+                          
+        </select>
+      </td>
+    </tr>
+    <tr> 
+      <td width="100%" colspan="2" height="50" align="center"> 
+            <input type="submit" name="speichern" value=" {SPEICHERN} " class="button">
+&nbsp;&nbsp;<input type="submit" name="abbrechen" value=" {ABBRECHEN} " class="button" onClick="window.location.href = '../frame_start.php?s={S}';return false;"> 
+&nbsp;&nbsp;<input type="submit" name="abbrechen" value=" {LOESCHEN} " class="button" onClick="window.location.href = 'delete.php?tree_id={ID}&s={S}';return false;"> 
+      </td>
+    </tr>
+  </table>
+                    <input type="hidden" name="art" value="v"><input type="hidden" name="id" value="{ID}"><input type="hidden" name="s" value="{S}">
+                  </form>
