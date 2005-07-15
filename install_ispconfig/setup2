@@ -64,19 +64,17 @@ fi
 . dist.info.tmp
 
 ############# INSTALLATIONSART #################
-  if [ -d /root/ispconfig ] && [ -d /home/admispconfig ]; then
+  if [ "$install_art" == "upgrade" ]; then
     echo 'Upgrade einer existierenden ISPConfig-Installation. / Upgrading an existing ISPConfig installation.'
     log 'Upgrade einer existierenden ISPConfig-Installation. / Upgrading an existing ISPConfig installation.'
     echo
     echo 'Das Upgrade wird von Ihnen geänderte Templates/Dateien von ISPConfig überspielen. Wenn Sie diese Dateien sichern möchten, sollten Sie jetzt eine zweite Shell öffnen, um ein Backup der betroffenen Dateien durchzuführen.'
     echo 'The upgrade will overwrite your manual changes to files/templates of ISPConfig. In order to save those files you should open a second shell to make a backup of the affected files.'
-    install_art=upgrade
     $dist_init_scripts/ispconfig_server stop
     log "ISPConfig server stopped"
   else
     echo 'Neuinstallation eines ISPConfig-Systems. / Installation of a new ISPConfig system.'
     log 'Neuinstallation eines ISPConfig-Systems. / Installation of a new ISPConfig system.'
-    install_art=install
   fi
 ############### INSTALLATIONSART ENDE ##########
 

@@ -205,8 +205,13 @@ if [ "$dist_supported" == "" ] || [ "$distvers" == "" ]; then
   error 'Ihr Betriebssystem wird nicht unterstützt! / Your operating system is not supported!'
 fi
 
-sleep 3
+if [ -d /root/ispconfig ] && [ -d /home/admispconfig ]; then
+  export install_art=upgrade
+else
+  export install_art=install
+fi
 
+sleep 3
 cd compile_aps/
 chmod 700 compile
 ./compile || exit 1
