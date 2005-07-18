@@ -26,8 +26,24 @@ OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
 NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, 
 EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
-// Inhaltsverzeichnis des Admin Bereiches
+
 ?>
+
+<!-- Form Designer //-->
+menuDaten.neu(new VerzEintrag('multidoc','root','Form Designer','','',''));
+menuDaten.neu(new LinkEintrag('multidoc','Add list','<?echo $go_info["server"]["server_url"]?>/multidoc/admin/doctype_edit.php?<?echo $session?>','seiteFrame','form.gif','DocType Hinzufügen','n','<?echo "1&amp;$session"?>'));
+menuDaten.neu(new LinkEintrag('multidoc','Edit list ','<?echo $go_info["server"]["server_url"]?>/multidoc/admin/doctype_list.php?<?echo $session?>','seiteFrame','form.gif','DocType bearbeiten','n','<?echo "1&amp;$session"?>'));
+menuDaten.neu(new LinkEintrag('multidoc','Import Formdefinition','<?echo $go_info["server"]["server_url"]?>/multidoc/import/doctype.php?<?echo $session?>','seiteFrame','form.gif','DocType importieren','n','<?echo "1&amp;$session"?>'));
+menuDaten.neu(new LinkEintrag('multidoc','Export Formdefinition','<?echo $go_info["server"]["server_url"]?>/multidoc/export/index.php?<?echo $session?>','seiteFrame','form.gif','DocType exportieren','n','<?echo "1&amp;$session"?>'));
+
+
+menuDaten.neu(new LinkEintrag('multidoc','Import Data','<?echo $go_info["server"]["server_url"]?>/multidoc/import/import.php?<?echo $session?>','seiteFrame','form.gif','DocType importieren','n','<?echo "1&amp;$session"?>'));
+
+
+<!-- Multidoc List Management //-->
+menuDaten.neu(new VerzEintrag('list','root','List & Report Manager','','',''));
+menuDaten.neu(new LinkEintrag('list','Add list','<?echo $go_info["server"]["server_url"]?>/multidoc/listadmin/listtype_edit.php?<?echo $session?>','seiteFrame','doc.gif','ListType hinzufügen','n','<?echo "1&amp;$session"?>'));
+menuDaten.neu(new LinkEintrag('list','Edit list','<?echo $go_info["server"]["server_url"]?>/multidoc/listadmin/listtype_list.php?<?echo $session?>','seiteFrame','doc.gif','ListType bearbeiten','n','<?echo "1&amp;$session"?>'));
 
 <?
 ?>

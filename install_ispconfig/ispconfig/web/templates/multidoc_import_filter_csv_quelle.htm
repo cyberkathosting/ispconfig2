@@ -1,0 +1,45 @@
+
+                  
+<form method="POST" action="import3.php" name="myform" enctype="multipart/form-data">
+  <table border="0" width="99%" cellspacing="0" cellpadding="4" height="62" bgcolor="{TABLE_H_COLOR}">
+    <!-- BEGIN DYNAMIC BLOCK: add -->
+    <tr> 
+      <td width="31%" height="21" class="normal_bold">Datei:</td>
+      <td width="69%" height="21"> 
+        <input type="file" name="userfile"  size="20">
+      </td>
+    </tr>
+    <tr> 
+      <td width="31%" height="21" class="normal_bold">Felder getrennt mit:</td>
+      <td width="69%" height="21"> 
+        <input type="text" name="feld_trenner" size="5" value=";">
+      </td>
+    </tr>
+    <tr> 
+      <td width="31%" height="21" class="normal_bold">Zeilen Getrennt mit</td>
+      <td width="69%" height="21"> 
+        <input type="text" name="zeilen_trenner" size="10" value="\r\n">
+      </td>
+    </tr>
+    <!-- END DYNAMIC BLOCK: add -->
+    <!-- BEGIN DYNAMIC BLOCK: update -->
+    <tr> 
+      <td width="31%" height="21" class="normal_bold">&nbsp;1. Zeile &Uuml;berschrift:</td>
+      <td width="69%" height="21"> 
+        <input type="checkbox" name="zeile_ueberschrift" value="1">
+      </td>
+    </tr>
+    <!-- END DYNAMIC BLOCK: update -->
+    <tr> 
+      <td width="100%" colspan="2" height="1" align="center"> 
+        <p align="center"> 
+          <input border="0" src="../../{DESIGNPATH}/btn_speichern.gif" name="I1" type="image">
+          <a href="../frame_start.php?{SESSION}" target="_self"><img border="0" src="../../{DESIGNPATH}/btn_abbrechen.gif"></a> 
+      </td>
+    </tr>
+  </table>
+  <input type="hidden" name="s" value="{S}">
+  <input type="hidden" name="doctype_id" value="{DOCTYPE_ID}">
+  <input type="hidden" name="importfilter" value="csv">
+</form>
+ 

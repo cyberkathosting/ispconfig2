@@ -1,0 +1,129 @@
+ 
+      
+<form method="POST" name="myform" action="insert.php" target="seiteFrame">
+  <table border="0" width="100%" cellspacing="0" cellpadding="4" bgcolor="{TABLE_H_COLOR}">
+    <tr> 
+      <td width="100%" colspan="2" height="18"> <p align="center" class="normal_bold">&nbsp; 
+      </td>
+    </tr>
+    <tr> 
+      <td width="17%" class="normal_bold">&nbsp;Name:</td>
+      <td width="83%" class="normal"> <input type="text" name="form[doctype_name]" size="34" class="text" value="{DOCTYPE_NAME}"> 
+        <font size="1">&nbsp; </font></td>
+    </tr>
+    <tr> 
+      <td width="17%" class="normal_bold">&nbsp;Titel:</td>
+      <td width="83%"> <input type="text" name="form[doctype_title]" size="34" maxlength="50" class="text" value="{DOCTYPE_TITLE}"> 
+      </td>
+    </tr>
+    <tr> 
+      <td width="17%" class="normal_bold">&nbsp;Modul:</td>
+      <td width="83%"> <select name="form[doctype_modul]">
+          {MODULES}
+        </select> </td>
+    </tr>
+    <tr> 
+      <td width="17%" class="normal_bold">&nbsp;Breite:</td>
+      <td width="83%"> <input type="text" name="form[form_width]" size="5" maxlength="50" class="text" value="{FORM_WIDTH}">
+        (450) </td>
+    </tr>
+    <tr> 
+      <td width="17%" class="normal_bold">&nbsp;Gruppe:</td>
+      <td width="83%"> <select name="form[doctype_groupid]">
+          {GRUPPE}
+        </select> </td>
+    </tr>
+    <tr> 
+      <td width="17%" class="normal_bold">&nbsp;Nur Gruppen:</td>
+      <td width="83%"> <select name="form[group_required]">
+          {FORM_GROUP_REQUIRED}
+        </select> </td>
+    </tr>
+    <tr> 
+      <td width="17%" class="normal_bold">&nbsp;Speichertyp:</td>
+      <td width="83%"> <select name="form[doctype_storage_type]">
+          <option value="db">Datenbank</option>
+        </select> </td>
+    </tr>
+    <tr> 
+      <td width="17%" class="normal_bold">&nbsp;Baumstruktur:</td>
+      <td width="83%"> <select name="form[tree]">
+          {FORM_TREE}
+        </select> </td>
+    </tr>
+    <tr> 
+      <td width="17%" class="normal_bold">&nbsp;Speichern Button:</td>
+      <td width="83%"> <select name="form[buttons]">
+          {FORM_BUTTONS}
+        </select> </td>
+    </tr>
+    <tr> 
+      <td width="17%" class="normal_bold">&nbsp;Icon:</td>
+      <td width="83%"> <input type="text" name="form[doctype_icon]" size="34" maxlength="50" class="text" value="{DOCTYPE_ICON}"> 
+      </td>
+    </tr>
+    <tr> 
+      <td width="17%" class="normal_bold">&nbsp;Speicherpfad:</td>
+      <td width="83%" class="normal"> <input type="text" name="form[doctype_storage_path]" size="34" maxlength="50" class="text" value="{DOCTYPE_STORAGE_PATH}"> 
+      </td>
+    </tr>
+    <tr> 
+      <td width="17%" class="normal_bold">&nbsp;Beschreibung:</td>
+      <td width="83%"> <textarea rows="5" name="form[doctype_description]" cols="30" wrap=physical>{DOCTYPE_DESCRIPTION}</textarea> 
+      </td>
+    </tr>
+    <tr> 
+      <td width="17%" class="normal_bold">&nbsp;Cache:</td>
+      <td width="83%"> <select name="form[doctype_cache]">
+          <option value="0">Nein</option>
+        </select> </td>
+    </tr>
+    <tr>
+      <td class="normal_bold">&nbsp;WYSIWYG Editor:</td>
+      <td><input type="checkbox" name="form[wysiwyg_lib]" value="1" {DOCTYPE_WYSIWYG}></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="normal_bold"> <hr size="1" noshade> </td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="normal_bold">&nbsp;DocType Event Handler:</td>
+    </tr>
+    <tr> 
+      <td width="17%" class="normal_bold">&nbsp;ClassName:</td>
+      <td width="83%"> <input type="text" name="form[doctype_event_class]" size="34" maxlength="50" class="text" value="{DOCTYPE_EVENT_CLASS}"> 
+      </td>
+    </tr>
+    <tr> 
+      <td width="17%" class="normal_bold">&nbsp;onINSERT:</td>
+      <td width="83%"> <input type="text" name="form[doctype_event_insert]" size="34" maxlength="50" class="text" value="{DOCTYPE_EVENT_INSERT}"> 
+      </td>
+    </tr>
+    <tr> 
+      <td width="17%" class="normal_bold">&nbsp;onUPDATE:</td>
+      <td width="83%"> <input type="text" name="form[doctype_event_update]" size="34" maxlength="50" class="text" value="{DOCTYPE_EVENT_UPDATE}"> 
+      </td>
+    </tr>
+    <tr> 
+      <td width="17%" class="normal_bold">&nbsp;onDELETE:</td>
+      <td width="83%"> <input type="text" name="form[doctype_event_delete]" size="34" maxlength="50" class="text" value="{DOCTYPE_EVENT_DELETE}"> 
+      </td>
+    </tr>
+    <tr> 
+      <td width="17%" class="normal_bold">&nbsp;onSHOW:</td>
+      <td width="83%"> <input type="text" name="form[doctype_event_show]" size="34" maxlength="50" class="text" value="{DOCTYPE_EVENT_SHOW}"> 
+      </td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="normal_bold"> <hr noshade size="1"> </td>
+    </tr>
+    <tr> 
+      <td width="100%" colspan="2" align="center" height="62"> <input type="submit" name="Abschicken" value="Speichern"> 
+      </td>
+    </tr>
+  </table>
+        
+  <input type="hidden" name="doctype_id" value="{DOCTYPE_ID}">
+  <input type="hidden" name="s" value="{S}">
+  <input type="hidden" name="art" value="doctype">
+</form>
+

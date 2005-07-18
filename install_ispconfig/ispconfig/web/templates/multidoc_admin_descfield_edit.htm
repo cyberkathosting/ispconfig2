@@ -1,0 +1,62 @@
+      <form method="POST" name="myform" action="insert.php" target="seiteFrame">
+        
+  <table border="0" width="100%" cellspacing="0" cellpadding="4" bgcolor="{TABLE_H_COLOR}">
+    <tr> 
+      <td width="100%" colspan="2" height="18"> 
+        <p align="center" class="normal_bold">&nbsp; 
+      </td>
+    </tr>
+    <tr> 
+      <td width="17%" class="normal_bold">Ebene:</td>
+      <td width="83%"> {DECKS}</td>
+    </tr>
+    <tr> 
+      <td width="17%" class="normal_bold">Name:</td>
+      <td width="83%"> 
+        <input type="text" name="form[name]" size="34" maxlength="50" class="text" value="{NAME}">
+      </td>
+    </tr>
+    <tr> 
+      <td width="17%" class="normal_bold">Text:</td>
+      <td width="83%"> 
+        <textarea name="form[value]" cols="34" class="text" rows="5">{VALUE}</textarea>
+      </td>
+    </tr>
+    <tr> 
+      <td width="17%" class="normal_bold">Ausrichtung:</td>
+      <td width="83%"> 
+        <select name="form[alignment]">
+          <option value="left">Links</option>
+          <option value="center">Mitte</option>
+          <option value="right">Rechts</option>
+        </select>
+      </td>
+    </tr>
+    <tr> 
+      <td width="17%" class="normal_bold">Sichtbar:</td>
+      <td width="83%"> 
+        <select name="form[visible]">
+          <option value="1">Ja</option>
+          <option value="0" {INVISIBLE}>Nein</option>
+        </select>
+      </td>
+    </tr>
+    <tr> 
+      <td width="17%" class="normal_bold">CSS KLasse:</td>
+      <td width="83%"> 
+        <input type="text" name="form[css_class]" size="34" maxlength="50" class="text" value="{CSS_CLASS}">
+      </td>
+    </tr>
+    <tr> 
+      <td width="100%" colspan="2" align="center" height="62"> 
+        <input type="submit" name="Abschicken" value="Speichern">
+      </td>
+    </tr>
+  </table>
+        
+  <input type="hidden" name="element_id" value="{ID}">
+  <input type="hidden" name="s" value="{S}">
+  <input type="hidden" name="art" value="descField">
+  <input type="hidden" name="doctype_id" value="{DOCTYPE_ID}">
+</form>
+

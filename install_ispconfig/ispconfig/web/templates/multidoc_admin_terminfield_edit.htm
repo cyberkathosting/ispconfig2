@@ -1,0 +1,129 @@
+      <form method="POST" name="myform" action="insert.php" target="seiteFrame">
+        
+  <table border="0" width="100%" cellspacing="0" cellpadding="4" bgcolor="{TABLE_H_COLOR}">
+    <tr> 
+      <td width="100%" colspan="2" height="18"> 
+        <p align="center" class="normal_bold">&nbsp; 
+      </td>
+    </tr>
+    <tr> 
+      <td width="17%" class="normal_bold">Ebene:</td>
+      <td width="83%"> {DECKS} </td>
+    </tr>
+    <tr> 
+      <td width="17%" class="normal_bold">Name:</td>
+      <td width="83%"> 
+        <input type="text" name="form[name]" size="34" maxlength="50" class="text" value="{NAME}">
+      </td>
+    </tr>
+    <tr> 
+      <td width="17%" class="normal_bold">&nbsp;Titel:</td>
+      <td width="83%"> 
+        <input type="text" name="form[title]" size="34" maxlength="255" class="text" value="{TITLE}">
+      </td>
+    </tr>
+    <tr> 
+      <td width="17%" class="normal_bold">Beschreibung:</td>
+      <td width="83%"> 
+        <textarea name="form[description]" cols="34" class="text" rows="5">{DESCRIPTION}</textarea>
+      </td>
+    </tr>
+    <tr> 
+      <td width="17%" class="normal_bold">Feldl&auml;nge:</td>
+      <td width="83%"> 
+        <input type="text" name="form[length]" size="10" maxlength="50" class="text" value="{LENGTH}">
+      </td>
+    </tr>
+    <tr> 
+      <td width="17%" class="normal_bold">Voreintrag:</td>
+      <td width="83%"> 
+        <input type="text" name="form[value]" size="34" maxlength="50" class="text" value="{VALUE}">
+      </td>
+    </tr>
+    <tr> 
+      <td width="17%" class="normal_bold">Format:</td>
+      <td width="83%"> 
+        <select name="form[format]">
+          <option value="d.m.Y">d.m.Y</option>
+        </select>
+      </td>
+    </tr>
+    <tr> 
+      <td width="17%" class="normal_bold">max. L&auml;nge:</td>
+      <td width="83%"> 
+        <input type="text" name="form[maxlength]" size="10" maxlength="50" class="text" value="{MAXLENGTH}">
+      </td>
+    </tr>
+    <tr>
+      <td width="17%" class="normal_bold">Zeitraum:</td>
+      <td width="83%" class="normal">
+        <input type="checkbox" name="form[bis]" value="1" {BIS}>
+        (von - bis Felder)</td>
+    </tr>
+    <tr> 
+      <td width="17%" class="normal_bold">Zeitfeld:</td>
+      <td width="83%"> 
+        <input type="checkbox" name="form[zeit]" value="1" {ZEIT}>
+      </td>
+    </tr>
+    <tr> 
+      <td width="17%" class="normal_bold">Intervall:</td>
+      <td width="83%"> 
+        <input type="checkbox" name="form[intervall]" value="1" {INTERVALL}>
+      </td>
+    </tr>
+    <tr> 
+      <td width="17%" class="normal_bold">Erinnerung:</td>
+      <td width="83%"> 
+        <input type="checkbox" name="form[erinnerung]" value="1" {ERINNERUNG}>
+      </td>
+    </tr>
+    <tr> 
+      <td width="17%" class="normal_bold">Benachrichtigung:</td>
+      <td width="83%"> 
+        <input type="checkbox" name="form[benachrichtigung]" value="1" {BENACHRICHTIGUNG}>
+      </td>
+    </tr>
+    <tr> 
+      <td width="17%" class="normal_bold">Required:</td>
+      <td width="83%"> 
+        <select name="form[required]">
+          <option value="0">Nein</option>
+          <option value="1" {REQUIRED}>Ja</option>
+        </select>
+      </td>
+    </tr>
+    <tr> 
+      <td width="17%" class="normal_bold">Sichtbar:</td>
+      <td width="83%"> 
+        <select name="form[visible]">
+          <option value="1">Ja</option>
+          <option value="0" {INVISIBLE}>Nein</option>
+        </select>
+      </td>
+    </tr>
+    <tr> 
+      <td width="17%" class="normal_bold">Suchfeld:</td>
+      <td width="83%"> 
+        <input type="checkbox" name="form[search]" value="1" {SEARCH}>
+      </td>
+    </tr>
+    <tr> 
+      <td width="17%" class="normal_bold">CSS KLasse:</td>
+      <td width="83%"> 
+        <input type="text" name="form[css_class]" size="34" maxlength="50" class="text" value="{CSS_CLASS}">
+      </td>
+    </tr>
+    <tr> 
+      <td width="100%" colspan="2" align="center" height="62"> 
+        <input type="submit" name="Abschicken" value="Speichern">
+      </td>
+    </tr>
+  </table>
+        
+  <input type="hidden" name="element_id" value="{ID}">
+  <input type="hidden" name="s" value="{S}">
+  <input type="hidden" name="art" value="terminField">
+  <input type="hidden" name="doctype_id" value="{DOCTYPE_ID}">
+</form>
+

@@ -1,0 +1,30 @@
+      
+<table border="0" width="100%" cellspacing="0" cellpadding="4" bgcolor="{TABLE_H_COLOR}">
+  <tr bgcolor="{FGCOLOR}"> 
+    <td width="48%" class="normal"><b><font color="#FFFFFF">{DECK_TITLE}:</font></b></td>  
+    <td width="52%" class="normal">
+      <div align="right"><font color="#FFFFFF">[</font><a href="element_edit.php?id={DECK_ID}&art=deck&doctype_id={DOCTYPE_ID}&s={S}"><font color="#FFFFFF">Bearbeiten</font></a><font color="#FFFFFF">] 
+        [</font><a href="delete.php?deck_id={DECK_ID}&art=deck&doctype_id={DOCTYPE_ID}&s={S}"><font color="#FFFFFF">L&ouml;schen</font></a><font color="#FFFFFF">]</font></div>
+    </td>
+   </tr>
+        <tr> 
+          
+    <td colspan="2" align="center" height="1" valign="middle"> 
+      <table width="100%" border="0" cellspacing="0" cellpadding="2">
+        <!-- BEGIN DYNAMIC BLOCK: elements -->
+        <tr> 
+                
+          <td class="normal" width="45%"><b>{ELEMENT_TITLE}</b></td>
+                
+          <td class="normal" width="22%">{ELEMENT_TYPE}</td>
+                
+          <td class="normal" align="right" width="33%"><nobr>[<a href="element_edit.php?id={ELEMENT_ID}&art={ELEMENT_TYPE}&doctype_id={DOCTYPE_ID}&deck_id={DECK_ID}&s={S}">Bearbeiten</a>] 
+            [<a href="delete.php?element_id={ELEMENT_ID}&art={ELEMENT_TYPE}&doctype_id={DOCTYPE_ID}&deck_id={DECK_ID}&s={S}">L&ouml;schen</a>] 
+            [<a href="element_flip.php?id={ELEMENT_ID}&doctype_id={DOCTYPE_ID}&deck_id={DECK_ID}&s={S}">^</a>]</nobr></td>
+              </tr>
+			  <!-- END DYNAMIC BLOCK: elements -->
+            </table>
+          </td>
+        </tr>
+      </table>
+ 
