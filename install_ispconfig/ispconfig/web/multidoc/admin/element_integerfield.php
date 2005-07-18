@@ -26,6 +26,9 @@ OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
 NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, 
 EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
+
+if(!$go_api->auth->check_admin(0,1)) die("Access not permitted.");
+
 $go_api->content->define( array(
 		            main    => "main.htm",
 		            table   => "multidoc_admin_integerfield_edit.htm",

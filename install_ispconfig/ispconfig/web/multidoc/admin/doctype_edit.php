@@ -30,6 +30,8 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 include("../../../lib/config.inc.php");
 include("../../../lib/session.inc.php");
 
+if(!$go_api->auth->check_admin(0,1)) die("Access not permitted.");
+
 $go_api->uses("doc");
                  
 ############################################################################
@@ -37,8 +39,6 @@ $go_api->uses("doc");
 #   Template definieren
 #
 ############################################################################
-
-// $tpl = new FastTemplate("../../templates");
 
 $go_api->content->define( array(
 		            main    => "main.htm",
@@ -52,11 +52,10 @@ $go_api->content->assign( array( TITLE => "$session_site Startseite",
 						FGCOLOR => "$session_nav_hcolour",
 						TABLE_H_COLOR => "$session_page_hcolour",
 						BOXSIZE => "450",
-						WINDOWTITLE => "<font size=\"2\" face=\"Verdana\" color=\"#FFFFFF\">&nbsp; Dokumententyp bearbeiten/erstellen</font>",
+						WINDOWTITLE => "<font size=\"2\" face=\"Verdana\" color=\"#000000\">&nbsp; Form editor</font>",
 						SITENAME => "$session_site",
 						DESIGNPATH => $session_design_path,
-SERVERURL => $go_info["server"]["server_url"],
-
+						SERVERURL => $go_info["server"]["server_url"],
 						S => $s
             
             ) );
@@ -73,37 +72,37 @@ $go_api->content->no_strict();
 
 if($doc->tree == 0){
 $tree_option = "
-<option value=\"1\">Ja</option>
-<option value=\"0\" SELECTED>Nein</option>
+<option value=\"1\">yes</option>
+<option value=\"0\" SELECTED>no</option>
 ";
 }else{
 $tree_option = "
-<option value=\"1\" SELECTED>Ja</option>
-<option value=\"0\">Nein</option>
+<option value=\"1\" SELECTED>yes</option>
+<option value=\"0\">no</option>
 ";
 }
 
 if($doc->buttons == 0){
 $buttons_option = "
-<option value=\"1\">Ja</option>
-<option value=\"0\" SELECTED>Nein</option>
+<option value=\"1\">yes</option>
+<option value=\"0\" SELECTED>no</option>
 ";
 }else{
 $buttons_option = "
-<option value=\"1\" SELECTED>Ja</option>
-<option value=\"0\">Nein</option>
+<option value=\"1\" SELECTED>yes</option>
+<option value=\"0\">no</option>
 ";
 }
 
 if($doc->group_required == 0){
 $group_required = "
-<option value=\"1\">Ja</option>
-<option value=\"0\" SELECTED>Nein</option>
+<option value=\"1\">yes</option>
+<option value=\"0\" SELECTED>no</option>
 ";
 }else{
 $group_required = "
-<option value=\"1\" SELECTED>Ja</option>
-<option value=\"0\">Nein</option>
+<option value=\"1\" SELECTED>yes</option>
+<option value=\"0\">no</option>
 ";
 }
 
@@ -119,11 +118,11 @@ $wysiwyg_lib = "CHECKED";
 ****************************************/
 
 if($doc->groupid == 0) {
-$gruppe = "<option value=\"0\" selected>Alle User</option>";
-$groupname = "Stammordner";
+$gruppe = "<option value=\"0\" selected>All users</option>";
+$groupname = "Root folder";
 $ordnerid = "root";
 } else {
-$gruppe = "<option value=\"0\">Alle User</option>";
+$gruppe = "<option value=\"0\">All users</option>";
 }
 
 if($mygroups = $go_api->groups->myGroups()){

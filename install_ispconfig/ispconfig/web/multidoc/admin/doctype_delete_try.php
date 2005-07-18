@@ -29,6 +29,8 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 include("../../../lib/config.inc.php");
 include("../../../lib/session.inc.php");
 
+if(!$go_api->auth->check_admin(0,1)) die("Access not permitted.");
+
 $go_api->uses("doc");
 
 // $start = $go_api->multidoc->utime();
@@ -54,7 +56,7 @@ $tpl->assign( array( TITLE => "$session_site Startseite",
 						FGCOLOR => "$session_nav_hcolour",
 						TABLE_H_COLOR => "$session_page_hcolour",
 						BOXSIZE => "450",
-						WINDOWTITLE => "<font size=\"2\" face=\"Verdana\" color=\"#FFFFFF\">&nbsp; Dokumententyp löschen</font>",
+						WINDOWTITLE => "<font size=\"2\" face=\"Verdana\" color=\"#000000\">&nbsp; Delete Form</font>",
 						SITENAME => "$session_site",
 						DESIGNPATH => $session_design_path,
 SERVERURL => $go_info["server"]["server_url"],

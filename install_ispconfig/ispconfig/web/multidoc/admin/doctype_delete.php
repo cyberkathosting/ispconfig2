@@ -29,8 +29,12 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 include("../../../lib/config.inc.php");
 include("../../../lib/session.inc.php");
 
+if(!$go_api->auth->check_admin(0,1)) die("Access not permitted.");
+
 if ($groupid = "") $groupid = 0;
 $go_api->uses("doc");
+
+$doctype_id = intval($_REQUEST["doctype_id"]);
 
 if($go_api->auth->check_admin(0)) {
 
@@ -55,7 +59,7 @@ if($go_api->auth->check_admin(0)) {
         $go_api->db->query("DELETE FROM termin_event where parent_doctype_id = '$doctype_id'");
 
     } else {
-    $go_api->errorMessage("Dokumententyp nicht gefunden");
+    $go_api->errorMessage("Doctype not found.");
     }
 
 }

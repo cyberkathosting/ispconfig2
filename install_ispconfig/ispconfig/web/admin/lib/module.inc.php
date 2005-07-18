@@ -31,24 +31,20 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #######################################################
 $go_info["modul"]["menu"] = "";
                                                                              
-$go_info["modul"]["element_types"] = array( deck => "Ebene",
-                                            shortText => "kleines Textfeld",
-                                            longText => "grosses Textfeld",
-                                            optionField => "Optionsfeld",
-                                            dateField => "Datumsfeld",
-                                            attachField => "Dokumentenabhängigkeit",
+$go_info["modul"]["element_types"] = array( deck => "Layer",
+                                            shortText => "Short Textfield",
+                                            longText => "Large Textarea",
+                                            optionField => "Optiofield",
+                                            dateField => "Date field",
+                                            attachField => "Attached form",
                                             checkboxField => "Checkbox",
-                                            seperatorField => "Trennstrich",
-                                            descField => "Beschreibung",
-                                            fileField => "Dateifeld",
+                                            seperatorField => "Horizontal ruler",
+                                            descField => "Description",
+                                            fileField => "File field",
                                             linkField => "Hyperlink",
-                                            doubleField => "Währungsfeld",
-                                            integerField => "Ganzzahlen Feld",
-                                            terminField => "Termin",
-                                            pluginField => "Plugin",
-                                            imageField => "*Bildfeld",
-                                            messageField => "*Messenger",
-                                            workflowField => "*Workflow"
+                                            doubleField => "Currency field",
+                                            integerField => "Integer Feld",
+                                            pluginField => "Plugin"
                                             );
 
 $go_info["modul"]["table_name"]        = "sys";

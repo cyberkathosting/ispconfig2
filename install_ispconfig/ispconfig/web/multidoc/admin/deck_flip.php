@@ -27,11 +27,16 @@ NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
 EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
+if(!$go_api->auth->check_admin(0,1)) die("Access not permitted.");
+
 include("../../../lib/config.inc.php");
 include("../../../lib/session.inc.php");
 
 if ($groupid = "") $groupid = 0;
 $go_api->uses("doc,docadmin");
+
+$doctype_id = intval($_REQUEST["doctype_id"]);
+$deck_id = intval($_REQUEST["deck_id"]);
 
 $go_api->docadmin->deck_flip($doctype_id,$deck_id);
 

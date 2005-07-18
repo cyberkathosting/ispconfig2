@@ -29,24 +29,15 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 include("../../../lib/config.inc.php");
 include("../../../lib/session.inc.php");
 
+if(!$go_api->auth->check_admin(0,1)) die("Access not permitted.");
+
 $go_api->uses("doc");
-
-//$start = $go_api->doc->utime();
-                 
-############################################################################
-#
-#   Template definieren
-#
-############################################################################
-
-//$tpl = new FastTemplate("../../templates");
 
 $go_api->content->define( array(
 		main    => "main.htm",
 		table   => "multidoc_admin_doctype_show.htm",
 		stylesheet => "style.css"));
 		
-//$go_api->content->define_dynamic ( "elements", "decks" );
 $go_api->content->define_dynamic ( "dropdown", "table" );
 
 $go_api->content->assign( array( TITLE => "$session_site Startseite",
@@ -56,14 +47,12 @@ $go_api->content->assign( array( TITLE => "$session_site Startseite",
 						FGCOLOR => "$session_nav_hcolour",
 						TABLE_H_COLOR => "$session_page_hcolour",
 						BOXSIZE => "450",
-						WINDOWTITLE => "<font size=\"2\" face=\"Verdana\" color=\"#FFFFFF\">&nbsp; Formular Designer</font>",
+						WINDOWTITLE => "<font size=\"2\" face=\"Verdana\" color=\"#000000\">&nbsp; Form Designer</font>",
 						SITENAME => "$session_site",
 						DESIGNPATH => $session_design_path,
-SERVERURL => $go_info["server"]["server_url"],
-
+						SERVERURL => $go_info["server"]["server_url"],
 						S => $s
-            
-            ) );
+            			) );
 
 if(isset($id)){
 $doc = $go_api->doc->doctype_get($id);
@@ -74,7 +63,7 @@ if($doc->groupid != 0) {
 $gruppe = $go_api->db->queryOneRecord("select name from groups where groupid = '".$doc->groupid."'");
 $gruppe = $gruppe["name"];
 } else {
-$gruppe = "Alle User";
+$gruppe = "All users";
 }
 
 $go_api->content->assign( array( DOCTYPE_TITLE => $doc->title,
@@ -91,12 +80,12 @@ while(list($key, $val) = each($doc->deck))
     {
     $rows .= "
     <tr bgcolor=\"$session_nav_hcolour\"> 
-    <td width=\"48%\" class=\"normal\"><b><font color=\"#FFFFFF\">".$val->title.":</font></b></td>  
+    <td width=\"48%\" class=\"normal\"><b><font color=\"#000000\">".$val->title.":</font></b></td>  
     <td width=\"52%\" class=\"normal\">
-      <div align=\"right\"><nobr><font color=\"#FFFFFF\">[<a href=\"element_edit.php?id=$key&art=deck&doctype_id=".$id."&s=$s\"><font color=\"#FFFFFF\">Bearbeiten</font></a>] 
-        [<a href=\"../edit/edit.php?deck_id=$key&doctype_id=".$id."&s=$s\"><font color=\"#FFFFFF\">Vorschau</font></a>] 
-        [<a href=\"delete.php?deck_id=".$key."&art=deck&doctype_id=".$id."&s=$s\"><font color=\"#FFFFFF\">L&ouml;schen</font></a>]
-		[<a href=\"deck_flip.php?doctype_id=".$id."&deck_id=".$key."&s=$s\"><font color=\"#FFFFFF\">^</font></a>]</font></nobr></div>
+      <div align=\"right\"><nobr><font color=\"#000000\">[<a href=\"element_edit.php?id=$key&art=deck&doctype_id=".$id."&s=$s\"><font color=\"#000000\">Edit</font></a>] 
+        [<a href=\"../edit/edit.php?deck_id=$key&doctype_id=".$id."&s=$s\"><font color=\"#000000\">Preview</font></a>] 
+        [<a href=\"delete.php?deck_id=".$key."&art=deck&doctype_id=".$id."&s=$s\"><font color=\"#000000\">Delete</font></a>]
+		[<a href=\"deck_flip.php?doctype_id=".$id."&deck_id=".$key."&s=$s\"><font color=\"#000000\">^</font></a>]</font></nobr></div>
     </td>
    </tr>
         <tr> 
@@ -109,8 +98,8 @@ while(list($key, $val) = each($doc->deck))
         $rows .= "<tr> 
           <td class=\"normal\" width=\"45%\"><b>".$element_val->name."</b></td>
           <td class=\"normal\" width=\"22%\">".$element_val->type."</td>
-          <td class=\"normal\" align=\"right\" width=\"33%\"><nobr>[<a href=\"element_edit.php?id=".$element_key."&art=".$element_val->type."&doctype_id=".$id."&deck_id=".$key."&s=$s\">Bearbeiten</a>] 
-            [<a href=\"delete.php?element_id=".$element_key."&art=field&doctype_id=".$id."&deck_id=".$key."&s=$s\">L&ouml;schen</a>] 
+          <td class=\"normal\" align=\"right\" width=\"33%\"><nobr>[<a href=\"element_edit.php?id=".$element_key."&art=".$element_val->type."&doctype_id=".$id."&deck_id=".$key."&s=$s\">Edit</a>] 
+            [<a href=\"delete.php?element_id=".$element_key."&art=field&doctype_id=".$id."&deck_id=".$key."&s=$s\">Delete</a>] 
             [<a href=\"element_flip.php?id=".$element_key."&doctype_id=".$id."&deck_id=".$key."&s=$s\">^</a>]</nobr></td>
               </tr>";
         }
@@ -125,36 +114,8 @@ while(list($key, $val) = each($doc->deck))
 } else {
 $go_api->content->no_strict();
 }
-/*
-if(is_array($doc->deck)){
-while (list($key, $val) = each($doc->deck)) 
-    {
-    $go_api->content->assign( array( DECK_TITLE => $val->title,
-                                     DECK_ID => $key));
-    
-    if(is_array($val->elements)){
-        while (list($element_key, $element_val) = each($val->elements)){
-        $go_api->content->assign( array( ELEMENT_TITLE => $element_val->name,
-                             ELEMENT_TYPE => $element_val->type,
-                             ELEMENT_ID => $element_key));
-        $go_api->content->parse(ELEMENTS, ".elements");
-        }
-        } else {
-        $go_api->content->no_strict();
-        $go_api->content->clear_dynamic("elements");
-        }
-
-    $go_api->content->parse(DECKS, ".decks");
-    $go_api->content->clear("ELEMENTS");
-    }
-      
-} else {
-$go_api->content->no_strict();
-}
-*/
 }
 
-//echo $go_api->doc->utime() - $start;
 
 while (list($key, $val) = each($go_info["modul"]["element_types"]))
     {

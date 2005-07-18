@@ -29,6 +29,8 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 include("../../../lib/config.inc.php");
 include("../../../lib/session.inc.php");
 
+if(!$go_api->auth->check_admin(0,1)) die("Access not permitted.");
+
 if ($groupid = "") $groupid = 0;
 $go_api->uses("doc,docadmin");
 

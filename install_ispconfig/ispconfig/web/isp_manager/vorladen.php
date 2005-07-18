@@ -10,7 +10,7 @@
 Ordner werden geladen....<br>&nbsp;<br>
 Loading folders....</small><small>  </small></font>
 <p>&nbsp;<p>&nbsp;<p>&nbsp;<p>&nbsp;<p><font face="Arial,MS Sans Serif,Helvetica"><small>
-<a href="inhalt.php?s=<? echo $s?>" class="t2">reload</a></small><small></noscript></small></font>
+<a href="inhalt_tree.php?s=<? echo $s?>" class="t2">reload</a></small><small></noscript></small></font>
 <p>&nbsp;</p>
 </BODY>
 </HTML>

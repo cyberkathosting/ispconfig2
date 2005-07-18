@@ -1,4 +1,6 @@
-<?
+<?include("../../../lib/config.inc.php");
+include("../../../lib/session.inc.php");
+
 /*
 Copyright (c) 2005, projektfarm Gmbh, Till Brehm, Falko Timme
 All rights reserved.
@@ -27,7 +29,50 @@ NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
 EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-?>
+if(!$go_api->auth->check_admin(0,1)) die("Access not permitted.");
+                 
+############################################################################
+#
+#   Template definieren
+#
+############################################################################
 
-<?
+$tpl = new FastTemplate("../../templates");
+
+$tpl->define( array(
+		main    => "main.htm",
+		table   => "multidoc_export_switch.htm",
+		stylesheet => "style.css"));
+		
+
+$tpl->assign( array( TITLE => "$session_site Startseite",
+						SESSION => $session,
+						BACKGROUND_GIF => "",
+						COPYRIGHT => "von Till",
+						FGCOLOR => "$session_nav_hcolour",
+						TABLE_H_COLOR => "$session_page_hcolour",
+						BOXSIZE => "450",
+						WINDOWTITLE => "<font size=\"2\" face=\"Verdana\" color=\"#000000\">&nbsp; Form export</font>",
+						SITENAME => "$session_site",
+						DESIGNPATH => $session_design_path,
+SERVERURL => $go_info["server"]["server_url"],
+
+						S => $s
+            
+            ) );
+
+$rows = $go_api->db->queryAllRecords("select * from doctype");
+$bgcolor = "#FFFFFF";
+$x = 0;
+while (list($key, $row) = each($rows))
+    {
+    $doctypes .= "<option value=\"".$row["doctype_id"]."\">".$row["doctype_title"]."</option>\n";
+    }
+$tpl->assign( array( DOCTYPES => "$doctypes"));
+
+
+$tpl->parse(STYLESHEET, stylesheet);
+$tpl->parse(MAIN, array("table","main"));
+$tpl->FastPrint();
+exit;
 ?>
