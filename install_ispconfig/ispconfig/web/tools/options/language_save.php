@@ -30,13 +30,17 @@ include("../../../lib/config.inc.php");
 include("../../../lib/session.inc.php");
 
 if($go_api->auth->check_write($groupid)) {
-
-	$language = addslashes($HTTP_POST_VARS["language"]);
-	$go_api->db->query("UPDATE sys_user SET language = '$language' where doc_id = ".$go_info["user"]["userid"]);
 	
-	$go_info["server"]["lang"] = $language;
-	$go_info["user"]["language"] = $language;
-	$go_api->session->save();
+	if($go_info["server"]["mode"] != "demo") {
+		$language = addslashes($HTTP_POST_VARS["language"]);
+		$go_api->db->query("UPDATE sys_user SET language = '$language' where doc_id = ".$go_info["user"]["userid"]);
+	
+		$go_info["server"]["lang"] = $language;
+		$go_info["user"]["language"] = $language;
+		$go_api->session->save();
+	} else {
+		die("Function in DEMO-Mode not available.");
+	}
 	
 }
 
