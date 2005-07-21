@@ -48,6 +48,11 @@ function make_local_host_names() {
     if($hostname != ""){
       $hostnames[] = $hostname;
       $hostnames[] = "localhost.".$hostname;
+      if(strpos($hostname, '.') !== false){
+        $hostname_parts = explode('.', $hostname);
+        $hostname_parts = array_slice($hostname_parts, 1);
+        $hostnames[] = 'localhost.'.implode('.', $hostname_parts);
+      }
       $hostname = NULL;
       foreach($hostnames as $hostname){
         $mod->tpl->assign( array( DOMAIN => $hostname));
@@ -104,6 +109,11 @@ function make_local_host_names() {
     if($hostname != ""){
       $hostnames[] = $hostname;
       $hostnames[] = "localhost.".$hostname;
+      if(strpos($hostname, '.') !== false){
+        $hostname_parts = explode('.', $hostname);
+        $hostname_parts = array_slice($hostname_parts, 1);
+        $hostnames[] = 'localhost.'.implode('.', $hostname_parts);
+      }
       $hostname = NULL;
       foreach($hostnames as $hostname){
         $mod->tpl->assign( array( DOMAIN => $hostname));

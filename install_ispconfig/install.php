@@ -199,6 +199,17 @@ function find_includes($file){
                   }
                 }
               }
+              unset($more_files);
+              $more_files = explode("\n", shell_exec("ls -l $include_file | awk '{print \$10}'"));
+              if(!empty($more_files)){
+                foreach($more_files as $more_file){
+                  if(is_file($more_file)){
+                    if($further_includes = find_includes($more_file)){
+                      $includes = array_merge($includes, $further_includes);
+                    }
+                  }
+                }
+              }
             }
           }
         }
@@ -1132,6 +1143,7 @@ Include ".$httpd_conf_dir."/vhosts/Vhosts_ispconfig.conf
   ///////// Auskommentieren: PHP, SSI, CGI ///////////////
   if($includes = find_includes($httpd_conf)){
     $mime_types = trim(shell_exec('httpd -V | awk -F"\"" \'$1==" -D TYPES_CONFIG_FILE="{print $2}\''));
+    if(empty($mime_types)) $mime_types = trim(shell_exec('httpd -V | awk -F"\"" \'$1==" -D AP_TYPES_CONFIG_FILE="{print $2}\''));
     if(!empty($mime_types)){
       if(substr($mime_types,0,1) != "/"){
         $mime_types = $httpd_root."/".$mime_types;
@@ -1139,10 +1151,13 @@ Include ".$httpd_conf_dir."/vhosts/Vhosts_ispconfig.conf
       $mime_types = realpath($mime_types);
       if(is_file($mime_types)) $includes[] = $mime_types;
     }
+    if($mime_types != '/etc/mime.types'){
+      if(is_file('/etc/mime.types')) $includes[] = '/etc/mime.types';
+    }
     foreach($includes as $include){
       if(!strstr($include, "Vhosts_ispconfig.conf")){
         exec("cp -f ".$include." ".$include.".".$datum);
-        comment_out($include, "AddType application/x-httpd-php,SetOutputFilter,SetInputFilter,AddType text/html .shtml,AddHandler server-parsed .shtml,AddOutputFilter INCLUDES .shtml,AddHandler cgi-script,application/x-httpd-php");
+        comment_out($include, "AddType application/x-httpd-php,SetOutputFilter,SetInputFilter,AddType text/html .shtml,AddHandler server-parsed .shtml,AddOutputFilter INCLUDES .shtml,AddHandler cgi-script,application/x-httpd-php,application/x-perl,application/x-php,AddHandler php5-script .php,AddType text/html .php,text/x-perl");
       }
     }
   }
