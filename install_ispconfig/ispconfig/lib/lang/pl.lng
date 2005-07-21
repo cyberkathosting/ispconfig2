@@ -70,7 +70,7 @@ $wb["Verzeichnis öffnen"] = "otwórz";
 $wb["Verzeichnis schliessen"] = "zamknij";
 $wb["Hilfe"] = 'Pomoc';
 $wb["Online Hilfe"] = 'Pomoc oline';
-$wb["schliessen"] = 'zamknij
+$wb["schliessen"] = 'zamknij';
 
 $wb["PAPIERKORB_HINWEIS"] = "<b>Uwaga:</b> Elementy znajduj¹ce siê w koszu znajduj¹ siê aktualnie w stanie aktualizacji. Proszê spróbowaæ skasowaæ je póŸniej.";
 
