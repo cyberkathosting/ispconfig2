@@ -892,6 +892,8 @@ exec("chmod 700 /root/ispconfig/sv/ispconfig_wconf");
 caselog("cp -fr isp /root/ispconfig", $FILE, __LINE__,"copied directory isp to /root/ispconfig/","could not copy directory isp to /root/ispconfig/");
 caselog("cp -f cronolog /root/ispconfig", $FILE, __LINE__,"copied cronolog to /root/ispconfig/","could not copy cronolog to /root/ispconfig/");
 caselog("cp -f cronosplit /root/ispconfig", $FILE, __LINE__,"copied cronosplit to /root/ispconfig/","could not copy cronosplit to /root/ispconfig/");
+exec("chmod 755 /root/ispconfig/cronolog");
+exec("chmod 755 /root/ispconfig/cronosplit");
 
 mkdirs("/root/ispconfig/standard_cgis");
 mkdirs("/root/ispconfig/standard_cgis/cgi-bin");
