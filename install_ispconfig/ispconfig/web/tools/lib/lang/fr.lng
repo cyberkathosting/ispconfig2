@@ -1,0 +1,346 @@
+<?
+/********************************
+* 42go Dictionary File
+* Version 1.0
+* (c) Tribal-Dolphin
+* http://www.tribal-dolphin.net
+*********************************/
+
+//////////////// Tools //////////////////////
+$wb["Tools & Optionen"] = "Outils & Options";
+$wb["Passwort ändern"] = "Changer de Mot de Passe";
+$wb["Allgemein"]    = "Général";
+$wb["Passwort alt"] = "ancien mot de passe";
+$wb["Passwort neu"] = "nouveau mot de passe";
+$wb["Passwort wiederholen"] = "confirmez le nouveau mot de passe";
+$wb["Adresse ändern"] = "Changement d'Adresse";
+
+$wb["willkommen_kunde"] = "Bienvenue sur 42go-ISP-Manager!
+Vous pouvez administer votre (vos) site(s) web ici. Si vous avez des questions ou des problèmes,
+contactez svp votre administrateur de serveur ou référez-vous au manuel client 42go-ISP.";
+$wb["Willkommen"] = "Bienvenue";
+
+$wb["passwort_gespeichert"] = "Mot de passe mis à jour.";
+$wb["passwort_uebereinstimmung"] = "Les deux mots de passe que vous avez fournis ne correspondent pas entre eux . Assurez vous que le mot de passe dans le champ -- nouveau mot de passe -- et -- nouveau mot de passe (répétition) -- est identique .";
+$wb["passwort_alt"] = "Le mot de passe n'a pas été mis à jour <br>car votre ancien mot de passe est incorrect.";
+
+// NEW 1.1.12 ///////////////////////////////
+
+$wb["Backup Manager"] = 'Gestionnaire de Sauvegarde';
+$wb["Backup"] = 'Sauvegarde';
+$wb["Restore"] = 'Restauration';
+$wb["Daten Export"] = 'Export de données';
+$wb["Update Manager"] = 'Gestionnaire de mise à jour';
+$wb["Portscanner"] = 'Scanner de Port';
+$wb["Whois"] = 'Whois';
+$wb["Download"] = 'Télécharger';
+$wb["FTP-Server"] = 'Serveur FTP';
+$wb["Verzeichnis"] = 'Dossier';
+$wb["Web Daten"] = 'Données Web';
+$wb["User Daten"] = 'Données Utilisateur';
+$wb["Log Daten"] = 'Fichiers Log';
+$wb["mySQL Datenbank (wenn vorhanden)"] = 'BDD mySQL';
+$wb["Backup starten"] = 'Démarrer la Sauvegarde';
+$wb["Kein Web vorhanden."] = 'Aucuns site trouvé.';
+$wb["Web-Backup"] = 'Sauvegarde Web';
+$wb["Kunden-Stammaten"] = 'Données Client';
+$wb["Format Einstellungen"] = 'Specification du Format';
+$wb["Trennzeichen"] = 'Separateur';
+$wb["Eingeschlossen mit"] = 'entouré de';
+$wb["Daten für folgende Anbieter exportieren"] = 'Export de données';
+$wb["Export starten"] = "Démarrer l'Export";
+$wb["Anbieter-Stammdaten"] = 'Données Revendeur';
+$wb["Export"] = 'Exporter';
+$wb["Von"] = 'De';
+$wb["Bis"] = 'A';
+$wb["Local Portscanner"] = 'Scanner de Port Local';
+
+// NEW 1.1.12a //////////////////////////////
+
+$wb["Es wurde kein Web ausgewählt."] = "Aucun site sélectionné.";
+$wb["Backup-Funktionen im Demo-Modus nicht verfügbar."] = "Sauvegardes non disponible en mode demo.";
+$wb["Backup Status"] = "Statut de la Sauvegarde";
+$wb["Der Name des FTP-Servers <br>enthält ungültige Zeichen."] = "Le nom du serveur FTP <br>contient des caractères invalides.";
+$wb["Sie haben keinen FTP Benutzernamen angegeben."] = "Aucun nom d'utilisateur FTP entré.";
+$wb["Ftp-Verbindung nicht hergestellt!"] = "Connexion Ftp échouée!";
+$wb["Verbindung mit:"] = "Connexion à :";
+$wb["als Benutzer:"] = "comme Utilisateur :";
+$wb["nicht möglich."] = "impossible.";
+$wb["Konnte nicht in Verzeichnis:"] = "accès au dossier :";
+$wb["wechseln."] = "échoué.";
+$wb["Wechsel in Verzeichnis:"] = "accès au dossier :";
+$wb["Ftp upload war fehlerhaft!"] = "Envoi FTP échoué!";
+$wb["Upload erfolgreich."] = "Envoi effectué.";
+$wb["FTP-Upload Status"] = "Statut de l'envoie FTP";
+$wb["Backup-Methode nicht unterstützt."] = "Méthode de sauvegarde indisponible.";
+$wb["Sprache ändern"] = "Changer la Langue";
+$wb["Sprache (ISO)"] = "Langue (ISO)";
+$wb["Software Version"] = "Version du logiciel";
+//////////////// Tools Ende /////////////////
+
+///////////////// ISP Manager //////////////////
+$wb["Anbieter"]     = "Revendeur";
+$wb["Kunde"]        = "Client";
+$wb["Suchen"]       = "Rechercher";
+$wb["Stammdaten"]   = "Données Principales";
+$wb["Limits"]       = "Limites";
+$wb["Zugangsdaten"] = "Données d'Identification";
+$wb["Statistik"]    = "Statistiques";
+$wb["Firma"]        = "Société";
+$wb["Anrede"]       = "Titre";
+$wb["Vorname"]      = "Prénom";
+$wb["Name"]         = "Nom";
+$wb["Strasse"]      = "Rue";
+$wb["PLZ"]          = "Code Postal";
+$wb["Ort"]          = "Ville";
+$wb["Land"]         = "Pays";
+$wb["Telefon"]      = "Téléphone";
+$wb["Fax"]          = "Fax";
+$wb["Internet"]     = "Adresse Web";
+$wb["Öffnen"]      = "Ouvrir";
+$wb["Benutzername"] = "Nom d'Utilisateur"; // besser: vielleicht nur Variable $wb["username"] benutzen?
+$wb["zugangsdaten_anbieter_einleitung"] = "Entrez ici un nom d'utilisateur et un mot de passe pour ce revendeur.";
+$wb["zugangsdaten_kunde_einleitung"] = "Entrez ici un nom d'utilisateur et un mot de passe pour ce client <br> afin qu'il administre ces sites.<br> ";
+$wb["Web Verwaltung"] = "Gestion de Site";
+$wb["Rechnung"]      = "Facturation";
+$wb["Rechnungsanschrift:"] = "Adresse de facturation :<br>";
+$wb["Intervall"]    = "Intervale";
+$wb["Preis"]        = "Prix";
+$wb["Zahlungsart"]  = "Méthode de payement";
+$wb["Basis"]        = "Base";
+$wb["Create DNS"]   = "Créer les DNS";
+$wb["Speicher MB"]     = "Espace Disque en MB";
+$wb["Max. User"]        = "Utilisateurs Max.";
+$wb["Max. Domain"]        = "Domaines Max.";
+$wb["PHP Scripte"]        = "Scripts PHP";
+$wb["SSI"]        = "SSI";
+$wb["FTP Zugang"]        = "Comptes FTP";
+$wb["MySQL"]        = "MySQL";
+$wb["SSL"]        = "SSL";
+$wb["Shell Zugriff"]      = "Accès Shell";
+$wb["Zugang"]       = "Accès";  // Zugriff u. Zugang zusammenfassen!/nur einen Begriff nehmen!
+$wb["CGI Scripte"]      = "Scripts CGI";
+$wb["Bundesland"]   = "Région";
+$wb["Abteilung"]    = "Départment";
+$wb["Gültigkeit (Tage)"]  = "Validité (jours)";
+$wb["SSL Key"]          = "Clef SSL";
+$wb["SSL Zertifikat"]   = "Certificat SSL";
+$wb["Aktion"]       = "Action";
+$wb["Zertifikat erzeugen"] = "Créer le certificat";
+$wb["Zertifikat speichern"] = "Sauver le certificat";
+$wb["Zertifikat löschen"] = "Effacer le certificat";
+$wb["Speicherplatz gesamt"] = "Espace de Stockage";
+$wb["unlimitiert"]  = "illimité";
+$wb["verbraucht"]   = "utilisé";
+$wb["Trafficübersicht"] = " Vue d'ensemble du trafic";
+$wb["Monat"]        = "Mois";
+$wb["Traffic"]      = "Trafic";
+$wb["traffic_letzte_4"] = "Trafic des 4 dernières années";
+$wb["Jahr"]         = "Année";
+$wb["MySQL User"]        = "Utilisateur MySQL";
+$wb["MySQL Passwort"]    = "Mot de passe MySQL";
+
+// Ergänzungen /////////////////////////////////
+$wb["Anbieter neu"] = "Nouveau revendeur";
+$wb["Kunde neu"]    = "Nouveau client";
+$wb["Web neu"]      = "Nouveau site";
+$wb["Ordner neu"]   = "Nouveau dossier";
+$wb["Suchen"]       = "Rechercher";
+$wb["ISP Anbieter"] = "Revendeur ISP";
+$wb["Webs"] = "Sites";
+$wb["User"] = "Utilisateur";
+$wb["Domains"] = "Domaines";
+$wb["Zahlung"] = "Paiement";
+$wb["ISP Kunde"] = "Client ISP";
+$wb["ISP Web"] = "Site ISP";
+$wb["Kunden"] = "Clients";
+$wb["Dokument suchen"] = "Rechercher Document";
+
+$wb["User & Email"] = "Utilisateur & E-Mail";
+$wb["Co-Domains"] = "Alias de Domaine";
+$wb["SSL"] = "SSL";
+$wb["Optionen"] = "Options";
+
+$wb["Webs angelegt"] = "Sites utilisés";
+$wb["User angelegt"] = "Utilisateurs utilisés";
+$wb["Domains angelegt"] = "Domaines utilisés";
+$wb["rechnungsanschrift"] = "Adresse de facturation :<br> ";
+
+$wb["neues Web anlegen"] = "Nouveau site";
+$wb["weiter"] = "suivant";
+$wb["SUCHE"] = "rechercher";
+
+$wb["msg_beta"] = "Cette version beta est utilisable jusqu'au 30.09.2002. <br>&nbsp;<br>Pour vos erreurs et questions concernant le manager ISP merci d'utiliser l'adresse e-mail : <a href='mailto:isp-beta@projektfarm.de'>isp-beta@projektfarm.de</a>.<br><br> Davantage d'information ainsi que des manuels PDF peuvent être trouvée à  <a href='http://www.projektfarm.de'>http://www.projektfarm.de</a>.";
+$wb["title_isp_beta"] = "42go ISP-Manager Beta";
+$wb["msg_kein_win"] = "Ce logiciel n'est pas compatible avec Windows.";
+
+// Error Codes 42go_isp_domain.lib.php
+$wb["error_web_doppelt"] = "Le nom ";
+$wb["error_max_domain_web"] = "Le nombre maximum de domaine pour ce site à été atteinte.<br>";
+$wb["error_max_domain_anbieter"] = "Le nombre maximum de domaine de l'hébergeur à été atteinte.<br>";
+$wb["angelegt"] = " est déjà utilisé par un autre site ou domaine.<br>";
+
+// Error Codes 42go_isp_kunde.lib.php
+$wb["error_user_exist_1"] = "L'utilisateur";
+$wb["error_user_exist_2"] = "existe déjà. L'utilisateur n'as pas été ajouté ou changer.<br>";
+$wb["error_max_user_licence"] = "Le nombre maximal de compte utilisateur pour cette licence à été atteinte.<br>";
+
+// Error Codes 42go_isp_reseller.lib.php
+$wb["error_reseller_title"] = "Un revendeur avec ce titre existe déjà.<br>";
+$wb["error_reseller_group_not_found"] = "Le groupe du revendeur n'as pas été trouvé.<br>";
+$wb["error_anbieter_no_delete"] = "<b>Le revenceur n'as pas été éffacé.</b><br>&nbsp;<br>Il peut être effacé que si tous les sites et clients du revendeur sont supprimé.   Assurez-vous en outre que la corbeille du revendeur est vide.<br>";
+
+// Error Codes 42go_isp_user.lib.php
+$wb["error_sysuser_exist_1"] = "Un utilisateur avec le nom";
+$wb["error_sysuser_exist_2"] = "existe déjà.<br>";
+$wb["error_max_user_web"] = "Le nombre maximum d'utilisateurs à été atteinte.<br>";
+$wb["error_max_space_web"] = "L'espace disque choisi dépasse la limite du site.<br>";
+$wb["error_max_user_anbieter"] = "Le nombre maximal d'utilisateurs de l'hébergeur à été atteinte.<br>";
+$wb["error_sysuser_exist"] = "Ce nom d'utilisateur est déjà utilisé<br>";
+$wb["error_admin_exist"] = "Un utilisateur avec les droits d'administrateur existe déjà pour ce site.<br>";
+$wb["error_admin_exist_long"] = "Un utilisateur avec les droits d'administrateur existe déjà. Vous devez enlever l'autre administrateur si vous voulez assigner des privilèges d'administrateur à cet utilisateur.<br>";
+
+// Error Codes 42go_isp_user.lib.php
+$wb["error_max_web_anbieter"] = "Le nombre maximal de sites pour le revendeur a été atteint.<br>";
+$wb["error_web_ssl_exist"] = "Un certificat SSL existe déjà pour cette IP.<br>";
+
+// Plugins
+$wb["CPU Auslastung 1 Minute"] = "Charge système sur 1 Minute";
+$wb["CPU Auslastung 5 Minuten"] = "Charge système sur 5 Minutes";
+$wb["CPU Auslastung 15 Minuten"] = "Charge système sur 15 Minutes";
+$wb["Server Online seit"] = "Serveur en ligne depuis";
+$wb["User Online"] = "Utilisateurs en ligne";
+$wb["error_web_id"] = "Ce plugin necessite un web ID valide.";
+$wb["von"] = "de";
+$wb["Gesamt"] = "Général";
+$wb["Traffic in den letzten 4 Jahren"] = "Trafic des 4 dernières années";
+
+$wb["Backup von Tabelle"] = "Backup Table";
+$wb["Optimiere"] = "Optimize";
+$wb["Reparatur"] = "Repair";
+$wb["oder"] = "or";
+$wb["Installation starten"] = "Install";
+
+$wb["Monatlich"] = "Mensuel";
+$wb["Quartal"] = "Trimestriel";
+$wb["Halbjährlich"] = "Semestriel";
+$wb["Jährlich"] = "Annuel";
+$wb["Sonstige"] = "Autre";
+
+$wb["bei Erhalt"] = "à reception";
+$wb["Netto 7 Tage"] = "net 7 jours";
+$wb["Netto 15 Tage"] = "net 15 jours";
+$wb["Netto 30 Tage"] = "net 30 jours";
+$wb["Sonstige"] = "autre";
+$wb["Neu"] = "Nouveau";
+$wb["Postfach MB"] = "Boite Mail MB";
+
+$wb["email_alias_txt"] = "<b>Attention :</b> un alias par ligne.";
+$wb["Weiterleitung"] = "Redirection";
+$wb["Nachricht"] = "Message";
+$wb["Kein Kunde vorhanden"] = "Aucun client disponible.<br>";
+$wb["Dieses Web können Sie nicht löschen."] = "Vous ne pouvez pas effacer ce site web.<br>";
+$wb["Ausgabeformat"] = "List format";
+$wb["Bearbeiten"] = "Editer";
+$wb["Löschen"] = "Effacer";
+
+$wb["willkommen_kunde"] = "Bienvenue sur 42go-ISP-Manager!
+Vous pouvez administer votre (vos) site(s) web ici. Si vous avez des questions ou des problèmes,
+contactez svp votre administrateur de serveur ou référez-vous au manuel client 42go-ISP.";
+$wb["Willkommen"] = "Bienvenue";
+
+$wb["txt_client_salutatory_email_desc"] = "<b>E-Mail de bienvenue pour les Clients</b>";
+$wb["txt_client_salutatory_email_sender_email"] = "E-Mail de l'expéditeur";
+$wb["txt_client_salutatory_email_sender_name"] = "Nom de l'expéditeur";
+$wb["txt_client_salutatory_email_bcc"] = "Destinataire en Copie Caché (BCC)";
+$wb["txt_client_salutatory_email_subject"] = "Subjet";
+$wb["txt_client_salutatory_email_message"] = "Message";
+$wb["txt_client_salutatory_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Liste des variables possibles :</b></td></tr>
+        <tr>
+          <td class="normal">%%%USER%%%</td>
+          <td class="normal">
+            Nom d\'utilisateur du Client</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%PASSWORD%%%</td>
+          <td class="normal">
+            Mot de passe du Client</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%FIRST_NAME%%%</td>
+          <td class="normal">
+            Prénom du Client</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%LAST_NAME%%%</td>
+          <td class="normal">
+            Nom du Client</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%COMPANY%%%</td>
+          <td class="normal">
+            Société du Client</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%EMAIL%%%</td>
+          <td class="normal">
+            Adresse E-Mail du Client</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%CP%%%</td>
+          <td class="normal">
+            URL de l\'administration de 42go ISP-Manager</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%MANUAL%%%</td>
+          <td class="normal">
+            Manuel client de 42go ISP-Manager</td>
+        </tr>
+        </table>';
+$wb["txt_standard_index"] = "Page d'Index<br>&nbsp;&nbsp;standard";
+$wb["txt_standard_index_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Liste des variables possibles :</b></td></tr>
+        <tr>
+          <td class="normal">%%%FQDN%%%</td>
+          <td class="normal">
+            Nom de Domaine du Site Web (FQDN)</td>
+        </tr>
+    </table>';
+$wb["txt_user_standard_index"] = "Page d'Index standard<br>&nbsp;&nbsp;des Utilisateurs";
+$wb["txt_user_standard_index_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Liste des variables possibles :</b></td></tr>
+        <tr>
+          <td class="normal">%%%USER%%%</td>
+          <td class="normal">
+            Nom d\'utilisateur</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%FQDN%%%</td>
+          <td class="normal">
+            Nom de Domaine du Site Web (FQDN)</td>
+        </tr>
+        </table>';
+
+//////////////// ISP Manager Ende /////////////
+
+//////////////// Server Status ////////////////
+$wb["Arbeitsspeicher"]          = "Mémoire principale";
+$wb["CPU"]          = "CPU";
+$wb["Dienste"]      = "Services";
+$wb["Server Online seit"]          = "Serveur en ligne depuis";
+$wb["User Online"]      = "Utilisateurs en ligne";
+$wb["System Load 1 Minute"] = "Charge système sur 1 Minute";
+$wb["System Load 5 Minuten"] = "Charge système sur 5 Minutes";
+$wb["System Load 15 Minuten"] = "Charge système sur 15 Minutes";
+//////////////// Server Status Ende //////////
+
+$wb["DNS-Domains angelegt"] = 'Domaine DNS créé';
+
+?>

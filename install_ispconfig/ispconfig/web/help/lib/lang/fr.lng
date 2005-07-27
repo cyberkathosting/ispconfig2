@@ -1,0 +1,43 @@
+<?
+/********************************
+* 42go Dictionary File
+* Version 1.0
+* (c) Tribal-Dolphin
+* http://www.tribal-dolphin.net
+*********************************/
+
+$wb["Anbieter"]     = "Revendeur";
+$wb["Web"]          = "Web";
+$wb["Admin Handbuch"] = "Manuel Administrateur";
+$wb["Reseller Handbuch"] = "Manuel Revendeur";
+$wb["Kunden Handbuch"] = "Manuel Utilisateur";
+$wb["Deutsch"]          = "Allemand";
+$wb["Englisch"]          = "Anglais";
+$wb["Projektfarm Support"]          = "Support Projektfarm";
+$wb["Online Hilfe"] = "Aide en Ligne";
+
+$wb["willkommen_kunde"] = "Bienenue sur 42go-ISP-Manager!
+Vous pouvez administrer votre (vos) site(s) web. Si vous avez des questions ou problèmes,
+merci de contacter l'administrateur du serveur ou consulter le manuel 42go-ISP.";
+$wb["Willkommen"] = "Bienvenue";
+
+//////////////// Server Status ////////////////
+$wb["Arbeitsspeicher"]          = "Memoire principale";
+$wb["CPU"]          = "CPU";
+$wb["Dienste"]      = "Services";
+$wb["Server Online seit"]          = "Serveur en ligne depuis";
+$wb["User Online"]      = "Utilisateurs en ligne";
+$wb["System Load 1 Minute"] = "Charge système sur 1 Minute";
+$wb["System Load 5 Minuten"] = "Charge système sur 5 Minutes";
+$wb["System Load 15 Minuten"] = "Charge système sur 15 Minutes";
+//////////////// Server Status Ende //////////
+
+$wb["Webs angelegt"] = "Sites utilisés";
+$wb["User angelegt"] = "Utilisateurs utilisés";
+$wb["Domains angelegt"] = "Domaines utilisés";
+$wb["unlimitiert"]  = "ilimité";
+$wb["Anbieter"]     = "Revendeur";
+$wb["DNS-Domains angelegt"] = "Domaines DNS créé";
+$wb["von"] = "de";
+
+?>

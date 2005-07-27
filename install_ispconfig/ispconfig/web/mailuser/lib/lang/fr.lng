@@ -1,0 +1,46 @@
+<?php
+/********************************
+* 42go Dictionary File
+* Version 1.0
+* (c) Tribal-Dolphin
+* http://www.tribal-dolphin.net
+*********************************/
+
+$wb["txt_login_desc"] = "Pour changer votre configuration E-Mail, identifiez vous ici.";
+$wb["txt_error"] = "Erreur";
+$wb["txt_email_username"] = "Nom d'Utilisateur E-Mail";
+$wb["txt_password"] = "Mot de Passe";
+$wb["txt_login"] = "Identification";
+$wb["txt_autoresponder"] = "Répondeur Automatique";
+$wb["txt_nachricht"] = "Message";
+$wb["txt_speichern"] = "Sauver";
+$wb["txt_abbrechen"] = "Annuler";
+$wb["txt_email_account"] = "Compte E-Mail";
+$wb["txt_user_und_email"] = "Utilisateur &amp; E-Mail";
+$wb["txt_spamfilter"] = "Filtre Anti-Spam";
+$wb["txt_logout"] = "Déconnexion";
+$wb["txt_mailscan"] = "ScanMail";
+$wb["txt_antivirus"] = "Anti-Virus";
+$wb["txt_spam_strategie"] = "Strategie Spam";
+$wb["txt_spam_hits"] = "Spam Hits";
+$wb["txt_rewrite_subject"] = "Ré-écrire le Sujet";
+$wb["txt_betreff"] = "Sujet";
+$wb["txt_name"] = "Nom";
+$wb["txt_email_adresse"] = "Adresse E-Mail";
+$wb["txt_username"] = "Nom d'Utilisateur";
+$wb["txt_web_speicher"] = "Quota Web";
+$wb["txt_mail_speicher"] = "Quota Mail";
+$wb["txt_email_passwort_leer"] = "Le nom d'utilisateur et/ou le mot de passe sont vides!";
+$wb["txt_user_unbekannt"] = "Utilisateur inconnu.";
+$wb["txt_access_forbidden"] = "Accès Interdit !";
+$wb["txt_yes"] = "Oui";
+$wb["txt_no"] = "Non";
+$wb["txt_unlimited"] = "illimité";
+$wb["txt_welcome"] = "Bienvenue...";
+$wb["txt_error_spam_hits_format"] = "La valeur <i>".$wb["txt_spam_hits"]."</i> Doit avoir le format suivant :";
+$wb["txt_accept"] = "accepter";
+$wb["txt_discard"] = "refuser";
+$wb["txt_language"] = "Langue";
+$wb["txt_no_mailuser_login"] = "L'identification est désactivée pour votre Site.";
+
+?>
