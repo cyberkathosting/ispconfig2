@@ -113,9 +113,9 @@ rm -fr ${INSTALL_ROOT_TMP}
 cd ${COMPILE_DIR}
 
 cd ${CLAMAV}
-./configure --prefix=/home/adm${APPLICATION_NAME}/${APPLICATION_NAME}/tools/clamav --sysconfdir=/home/adm${APPLICATION_NAME}/${APPLICATION_NAME}/tools/clamav/etc --with-user=adm${APPLICATION_NAME} --with-group=adm${APPLICATION_NAME} --disable-clamav --disable-bzip2
-make
-make install
+./configure --prefix=/home/adm${APPLICATION_NAME}/${APPLICATION_NAME}/tools/clamav --sysconfdir=/home/adm${APPLICATION_NAME}/${APPLICATION_NAME}/tools/clamav/etc --with-user=adm${APPLICATION_NAME} --with-group=adm${APPLICATION_NAME} --disable-clamav --disable-bzip2 || error "Could not configure ClamAV"
+make || error "Could not make ClamAV"
+make install || error "Could not install ClamAV"
 cp -f COPYING /home/adm${APPLICATION_NAME}/${APPLICATION_NAME}/tools/clamav/
 cd ${COMPILE_DIR}
 cp -f clamav.conf /home/adm${APPLICATION_NAME}/${APPLICATION_NAME}/tools/clamav/etc/clamav.conf
@@ -128,12 +128,12 @@ tar -pczf ${COMPILE_DIR}/../binaries/clamav.tar.gz clamav/ || error "Could not c
 cd ${COMPILE_DIR}
 
 cd ${UUDEVIEW}
-./configure --prefix=/home/adm${APPLICATION_NAME}/${APPLICATION_NAME}/tools/uudeview
-make
-make install
+./configure --prefix=/home/adm${APPLICATION_NAME}/${APPLICATION_NAME}/tools/uudeview || error "Could not configure UUDeview"
+make || error "Could not make UUDeview"
+make install || error "Could not install UUDeview"
 cp -f COPYING /home/adm${APPLICATION_NAME}/${APPLICATION_NAME}/tools/uudeview/
 cd /home/adm${APPLICATION_NAME}/${APPLICATION_NAME}/tools
-tar -pczf ${COMPILE_DIR}/../binaries/uudeview.tar.gz uudeview/
+tar -pczf ${COMPILE_DIR}/../binaries/uudeview.tar.gz uudeview/ || error "Could not create uudeview.tar.gz"
 cd ${COMPILE_DIR}
 
 exit 0
