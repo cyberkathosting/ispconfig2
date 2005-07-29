@@ -46,7 +46,7 @@ if [ ! -z "$MYUID" ];
 then
   if [ $MYUID != 0 ];
   then
-    error "Sie benötigen root-Rechte zum Ausführen dieses Skriptes! / You need root privileges to run this script!";
+    error "Sie benötigen root-Rechte zum Ausführen dieses Skriptes! / You need root privileges to run this script! / Vous devez avoir les privileges root pour executer ce script!";
   fi
 fi
 
@@ -202,7 +202,7 @@ log "operating system: $distversion"
 dist_supported=`grep -i "$distvers" dist.txt`
 
 if [ "$dist_supported" == "" ] || [ "$distvers" == "" ]; then
-  error 'Ihr Betriebssystem wird nicht unterstützt! / Your operating system is not supported!'
+  error "Ihr Betriebssystem wird nicht unterstützt! / Your operating system is not supported! / Votre systeme d'exploitation n'est pas supporté!"
 fi
 
 if [ -d /root/ispconfig ] && [ -d /home/admispconfig ]; then
