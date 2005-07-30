@@ -7,7 +7,7 @@
 // License Manager
 $wb["Es wurde keine g&uuml;ltige Lizenzdatei gefunden."] = "No valid licence file found.";
 $wb["Hier k&ouml;nnen Sie ihre Lizenzdatei einspielen."] = "You can upload your licence file here.";
-
+$wb["Username"] = "Username";
 $wb["Passwort"] = "Password";
 $wb["Lizenzdatei"] = "licence file";
 $wb["Weiter"] = "next";

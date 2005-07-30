@@ -8,7 +8,7 @@
 // License Manager
 $wb["Es wurde keine g&uuml;ltige Lizenzdatei gefunden."] = "No encontrado un fichero de licencia valido.";
 $wb["Hier k&ouml;nnen Sie ihre Lizenzdatei einspielen."] = "Puede subir el fichero de licencia desde aqum.";
-
+$wb["Username"] = "Username";
 $wb["Passwort"] = "Contraseqa";
 $wb["Lizenzdatei"] = "Fichero de Licencia";
 $wb["Weiter"] = "siguiente";

@@ -7,7 +7,7 @@
 // License Manager
 $wb["Es wurde keine g&uuml;ltige Lizenzdatei gefunden."] = "Geen geldige licentie bestand gevonden.";
 $wb["Hier k&ouml;nnen Sie ihre Lizenzdatei einspielen."] = "U kunt uw licentie bestand hier laden.";
-
+$wb["Username"] = "Username";
 $wb["Passwort"] = "Wachtwoord";
 $wb["Lizenzdatei"] = "Licentie bestand";
 $wb["Weiter"] = "Volgende";
