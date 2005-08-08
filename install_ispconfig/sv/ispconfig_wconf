@@ -48,7 +48,7 @@ if [ ! -z "$MYUID" ];
 then
   if [ $MYUID != 0 ];
   then
-    error "Sie benötigen root-Rechte zum Ausführen dieses Skriptes! / You need root privileges to run this script!";
+    error "Sie benötigen root-Rechte zum Ausführen dieses Skriptes! / You need root privileges to run this script! / Vous devez avoir les privileges root pour executer ce script!";
   fi
 fi
 
