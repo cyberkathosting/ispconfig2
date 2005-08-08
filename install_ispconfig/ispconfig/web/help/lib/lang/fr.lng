@@ -1,6 +1,6 @@
 <?
 /********************************
-* 42go Dictionary File
+* ISPConfig Dictionary File
 * Version 1.0
 * (c) Tribal-Dolphin
 * http://www.tribal-dolphin.net
@@ -16,9 +16,9 @@ $wb["Englisch"]          = "Anglais";
 $wb["Projektfarm Support"]          = "Support Projektfarm";
 $wb["Online Hilfe"] = "Aide en Ligne";
 
-$wb["willkommen_kunde"] = "Bienenue sur 42go-ISP-Manager!
+$wb["willkommen_kunde"] = "Bienenue sur ISPConfig!
 Vous pouvez administrer votre (vos) site(s) web. Si vous avez des questions ou problèmes,
-merci de contacter l'administrateur du serveur ou consulter le manuel 42go-ISP.";
+merci de contacter l'administrateur du serveur ou consulter le manuel ISPConfig.";
 $wb["Willkommen"] = "Bienvenue";
 
 //////////////// Server Status ////////////////

@@ -1,6 +1,6 @@
 <?php
 /********************************
-* 42go Dictionary File
+* ISPConfig Dictionary File
 * Version 1.0
 * (c) Tribal-Dolphin
 * http://www.tribal-dolphin.net
@@ -8,7 +8,7 @@
 
 $wb["txt_login_desc"] = "Pour changer votre configuration E-Mail, identifiez vous ici.";
 $wb["txt_error"] = "Erreur";
-$wb["txt_email_username"] = "Nom d'Utilisateur E-Mail";
+$wb["txt_email_username"] = "Utilisateur E-Mail";
 $wb["txt_password"] = "Mot de Passe";
 $wb["txt_login"] = "Identification";
 $wb["txt_autoresponder"] = "Répondeur Automatique";

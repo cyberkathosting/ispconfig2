@@ -1,6 +1,6 @@
 <?
 /********************************
-* 42go Dictionary File
+* ISPConfig Dictionary File
 * Version 1.0
 * (c) Tribal-Dolphin
 * http://www.tribal-dolphin.net
@@ -15,7 +15,7 @@ $wb["Passwort neu"] = "nouveau mot de passe";
 $wb["Passwort wiederholen"] = "confirmez le nouveau mot de passe";
 $wb["Adresse ändern"] = "Changement d'Adresse";
 
-$wb["willkommen_kunde"] = "Bienvenue sur 42go-ISP-Manager!
+$wb["willkommen_kunde"] = "Bienvenue sur ISPConfig!
 Vous pouvez administer votre (vos) site(s) web ici. Si vous avez des questions ou des problèmes,
 contactez svp votre administrateur de serveur ou référez-vous au manuel client 42go-ISP.";
 $wb["Willkommen"] = "Bienvenue";
@@ -171,7 +171,7 @@ $wb["weiter"] = "suivant";
 $wb["SUCHE"] = "rechercher";
 
 $wb["msg_beta"] = "Cette version beta est utilisable jusqu'au 30.09.2002. <br>&nbsp;<br>Pour vos erreurs et questions concernant le manager ISP merci d'utiliser l'adresse e-mail : <a href='mailto:isp-beta@projektfarm.de'>isp-beta@projektfarm.de</a>.<br><br> Davantage d'information ainsi que des manuels PDF peuvent être trouvée à  <a href='http://www.projektfarm.de'>http://www.projektfarm.de</a>.";
-$wb["title_isp_beta"] = "42go ISP-Manager Beta";
+$wb["title_isp_beta"] = "ISPConfig Beta";
 $wb["msg_kein_win"] = "Ce logiciel n'est pas compatible avec Windows.";
 
 // Error Codes 42go_isp_domain.lib.php
@@ -244,9 +244,9 @@ $wb["Ausgabeformat"] = "List format";
 $wb["Bearbeiten"] = "Editer";
 $wb["Löschen"] = "Effacer";
 
-$wb["willkommen_kunde"] = "Bienvenue sur 42go-ISP-Manager!
+$wb["willkommen_kunde"] = "Bienvenue sur ISPConfig!
 Vous pouvez administer votre (vos) site(s) web ici. Si vous avez des questions ou des problèmes,
-contactez svp votre administrateur de serveur ou référez-vous au manuel client 42go-ISP.";
+contactez svp votre administrateur de serveur ou référez-vous au manuel client ISPconfig.";
 $wb["Willkommen"] = "Bienvenue";
 
 $wb["txt_client_salutatory_email_desc"] = "<b>E-Mail de bienvenue pour les Clients</b>";
@@ -292,12 +292,12 @@ $wb["txt_client_salutatory_email_variables"] = '<table border="0" cellpadding="3
         <tr>
           <td class="normal">%%%CP%%%</td>
           <td class="normal">
-            URL de l\'administration de 42go ISP-Manager</td>
+            URL de l\'administration d\'ISPConfig</td>
         </tr>
         <tr>
           <td class="normal">%%%MANUAL%%%</td>
           <td class="normal">
-            Manuel client de 42go ISP-Manager</td>
+            Manuel client d\'ISPConfig</td>
         </tr>
         </table>';
 $wb["txt_standard_index"] = "Page d'Index<br>&nbsp;&nbsp;standard";

@@ -1,6 +1,6 @@
 <?
 /********************************
-* 42go Dictionary File
+* ISPConfig Dictionary File
 * Version 1.0
 * (c) Tribal-Dolphin
 * http://www.tribal-dolphin.net
@@ -18,7 +18,7 @@ $wb["System Load 15 Minuten"] = "Charge système sur 15 Minutes";
 //////////////// Server Status Ende //////////
 
 ///////////////// Administration ////////////////
-$wb["42go Datenbank"]    = "Base de données 42go";
+$wb["ISPConfig Datenbank"]    = "Base de données ISPConfig";
 $wb["Backup erstellen"]       = "Sauvegarder la base";
 $wb["Datenbank Check"]        = "Vérifier la base";
 $wb["Datenbank Optimieren"]   = "Optimiser la base";
@@ -45,7 +45,7 @@ $wb["Backup von Tabelle"] = "Sauvegarder la Table";
 $wb["Optimiere"] = "Optimiser";
 $wb["Reparatur"] = "Réparer";
 $wb["oder"] = "ou";
-$wb["Installation starten"] = "Installation";
+$wb["Installation starten"] = "Lancer l'Installation";
 
 $wb["Deutsch"] = "Allemand";
 $wb["Englisch"] = "Anglais";

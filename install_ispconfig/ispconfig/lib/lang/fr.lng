@@ -1,6 +1,6 @@
 <?
 /********************************
-* 42go Dictionary File
+* ISPConfig Dictionary File
 * Version 1.0
 * (c) Tribal-Dolphin
 * http://www.tribal-dolphin.net
@@ -32,7 +32,7 @@ $wb["Titel"]        = "Titre";
 $wb["Server"]       = "Serveur";
 $wb["Host"]         = "Nom d'hôte";
 $wb["Domain"]       = "Domaine";
-$wb["IP Adresse"]   = "Addresse IP";
+$wb["IP Adresse"]   = "Adresse IP";
 $wb["Ordner"]       = "Dossier";
 $wb["Dokument"]     = "Document";
 $wb["Dokument suchen"] = "Rechercher un document";

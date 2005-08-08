@@ -1,6 +1,6 @@
 <?
 /********************************
-* 42go Dictionary File
+* ISPConfig Dictionary File
 * Version 1.0
 * (c) Tribal-Dolphin
 * http://www.tribal-dolphin.net
@@ -99,7 +99,7 @@ $wb["weiter"] = "suivant";
 $wb["SUCHE"] = "rechercher";
 
 $wb["msg_beta"] = "Cette version beta est utilisable jusqu'au 30.09.2002. <br>&nbsp;<br>Pour vos erreurs et questions concernant le manager ISP merci d'utiliser l'adresse e-mail : <a href='mailto:isp-beta@projektfarm.de'>isp-beta@projektfarm.de</a>.<br><br> Davantage d'information ainsi que des manuels PDF peuvent être trouvée à  <a href='http://www.projektfarm.de'>http://www.projektfarm.de</a>.";
-$wb["title_isp_beta"] = "42go ISP-Manager Beta";
+$wb["title_isp_beta"] = "ISP-Manager Beta";
 $wb["msg_kein_win"] = "Ce logiciel n'est pas compatible avec Windows.";
 
 // Error Codes 42go_isp_datenbank.lib.php
@@ -184,9 +184,9 @@ $wb["Ausgabeformat"] = "List format";
 $wb["Bearbeiten"] = "Editer";
 $wb["Löschen"] = "Effacer";
 
-$wb["willkommen_kunde"] = "Bienvenue sur 42go-ISP-Manager!
+$wb["willkommen_kunde"] = "Bienvenue sur ISPConfig!
 Vous pouvez administer votre (vos) site(s) web ici. Si vous avez des questions ou des problèmes,
-contactez svp votre administrateur de serveur ou référez-vous au manuel client 42go-ISP.";
+contactez svp votre administrateur de serveur ou référez-vous au manuel client d'ISPConfig.";
 $wb["Willkommen"] = "Bienvenue";
 
 
@@ -195,10 +195,10 @@ $wb["Es sind nur folgende Zeichen erlaubt: a-z A-Z 0-9 -"] = "Seulement les cara
 $wb["Es sind nur folgende Zeichen erlaubt: a-z A-Z 0-9 - ."] = "Seulement les caractères suivants sont autorisés : a-z A-Z 0-9 - .<br>";
 $wb["Der Username muss aus min. 4, max 25 Buchstaben oder Zahlen bestehen, wobei er mit einem Buchstaben beginnen muss."] = "Le nom d'utilisatoir doit avoir entre 4 et 26 lettres ou chiffres et doit commencer par une lettre.<br>";
 
-$wb["error_reseller_licence"] = "Ajouter un revendeur n'est pas possible avec votre licence 42go ISP-Manager.<br>";
+$wb["error_reseller_licence"] = "Ajouter un revendeur n'est pas possible avec votre licence ISPConfig.<br>";
 $wb["error_reseller_licence_nodelete"] = "Ce revendeur ne peut pas être supprimé.<br>";
 
-$wb["error_kunde_licence"] = "Ajouter un client n'est pas possible avec votre licence 42go ISP-Manager.<br>";
+$wb["error_kunde_licence"] = "Ajouter un client n'est pas possible avec votre licence ISPConfig.<br>";
 $wb["error_kunde_licence_nodelete"] = "Ce client ne peut pas être supprimé.<br>";
 
 $wb["mysqldb_nicht_vorhanden"] = "La base de données MySQL n'existe pas. <br>Entrez un mot de passe pour la créer.<br>";
@@ -258,7 +258,7 @@ $wb["Email Adresse"] = "Adresse E-Mail";
 
 // new 1.2 ////////////////////////////////////////
 $wb["error_email_exist"] = "Cette adresse E-Mail est utilisé par un autre client.<br>";
-$wb["error_realname"] = "LEs caractères autorisés sont : a-z A-Z 0-9 - _ .<br>";
+$wb["error_realname"] = "Les caractères autorisés sont : a-z A-Z 0-9 - _ .<br>";
 $wb["Die Emailadresse muss aus min. 1, max 60 Buchstaben oder Zahlen bestehen."] = "L'adresse E-Mail doit contenir entre 1 et 60 lettres ou chiffres.<br>";
 
 // new 1.3 ////////////////////////////////////////
@@ -284,7 +284,7 @@ $wb["Fehler 401<br>(Autorisierung<br>erforderlich)"] = "Erreur 401<br>(Autorisat
 $wb["Fehler 403<br>(Verboten)"] = "Erreur 403<br>(Interdit)";
 $wb["Fehler 404<br>(Datei nicht<br>gefunden)"] = "Erreur 404<br>(Ficier non trouvé)";
 $wb["Fehler 405<br>(Methode nicht<br>erlaubt)"] = "Erreur 405<br>(Méthode non<br>permise)";
-$wb["Fehler 500<br>(Interner<br>Server-Fehler)"] = "Erreur 500<br>(Erreur Interne<br>su Serveur)";
+$wb["Fehler 500<br>(Interner<br>Server-Fehler)"] = "Erreur 500<br>(Erreur Serveur)";
 $wb["Fehler 503<br>(Service ist z.Zt.<br>überlastet)"] = "Erreur 503<br>(Service<br>indisponible)";
 $wb["Datenbanken"] = "Bases de données";
 $wb["Datenbank"] = "Base de donnée";
@@ -335,12 +335,12 @@ $wb["txt_client_salutatory_email_variables"] = '<table border="0" cellpadding="3
         <tr>
           <td class="normal">%%%CP%%%</td>
           <td class="normal">
-            URL de l\'administration de 42go ISP-Manager</td>
+            URL de l\'administration d\'ISPConfig</td>
         </tr>
         <tr>
           <td class="normal">%%%MANUAL%%%</td>
           <td class="normal">
-            Manuel client de 42go ISP-Manager</td>
+            Manuel client de d\'ISPConfig</td>
         </tr>
         </table>';
 $wb["txt_standard_index"] = "Page d'Index<br>&nbsp;&nbsp;standard";
@@ -392,20 +392,20 @@ $wb["error_anbieter_max_domain_ueberschritten"] = "Le revendeur possède plus de 
 $wb["error_anbieter_dnsmanager_aktiv"] = "Le revendeur possède des enregistrements DNS. Ils est donc impossible de désactiver le DNS Manager.<br>";
 $wb["error_anbieter_max_dns_ueberschritten"] = "Le revendeur utilise plus de zone DNS maitre que vous voulez lui assigner.<br>";
 $wb["error_anbieter_max_slavedns_ueberschritten"] = "Le revendeur utilise plus de zone DNS esclaves que vous voulez lui assigner.<br>";
-$wb["error_anbieter_httpd_include_aktiv"] = "Les HTTPD Includes sont en service sur certains des sites Web du revendeur. Cette option ne peut être désactiver.<br>";
-$wb["error_anbieter_shell_access_aktiv"] = "L'Accès Shell est en service sur certains des sites Web du revendeur. Cette option ne peut être désactiver.<br>";
-$wb["error_anbieter_cgi_aktiv"] = "L'option CGI est en service sur certains des sites Web du revendeur. Cette option ne peut être désactiver.<br>";
-$wb["error_anbieter_standard_cgi_aktiv"] = "L'option CGIs Standard est en service sur certains des sites Web du revendeur. Cette option ne peut être désactiver.<br>";
-$wb["error_anbieter_php_aktiv"] = "PHP est en service sur certains des sites Web du revendeur. Cette option ne peut être désactiver.<br>";
-$wb["error_anbieter_ssi_aktiv"] = "SSI est en service sur certains des sites Web du revendeur. Cette option ne peut être désactiver.<br>";
-$wb["error_anbieter_ftp_aktiv"] = "FTP est en service sur certains des sites Web du revendeur. Cette option ne peut être désactiver.<br>";
-$wb["error_anbieter_anonftp_aktiv"] = "FTP anonyme est en service sur certains des sites Web du revendeur. Cette option ne peut être désactiver.<br>";
-$wb["error_anbieter_frontpage_aktiv"] = "Frontpage est en service sur certains des sites Web du revendeur. Cette option ne peut être désactiver.<br>";
-$wb["error_anbieter_datenbank_aktiv"] = "MySQL est en service sur certains des sites Web du revendeur. Cette option ne peut être désactiver.<br>";
+$wb["error_anbieter_httpd_include_aktiv"] = "Les HTTPD Includes sont en service sur certains des sites Web du revendeur. Cette option ne peut être désactivée.<br>";
+$wb["error_anbieter_shell_access_aktiv"] = "L'Accès Shell est en service sur certains des sites Web du revendeur. Cette option ne peut être désactivée.<br>";
+$wb["error_anbieter_cgi_aktiv"] = "L'option CGI est en service sur certains des sites Web du revendeur. Cette option ne peut être désactivée.<br>";
+$wb["error_anbieter_standard_cgi_aktiv"] = "L'option CGIs Standard est en service sur certains des sites Web du revendeur. Cette option ne peut être désactivée.<br>";
+$wb["error_anbieter_php_aktiv"] = "PHP est en service sur certains des sites Web du revendeur. Cette option ne peut être désactivée.<br>";
+$wb["error_anbieter_ssi_aktiv"] = "SSI est en service sur certains des sites Web du revendeur. Cette option ne peut être désactivée.<br>";
+$wb["error_anbieter_ftp_aktiv"] = "FTP est en service sur certains des sites Web du revendeur. Cette option ne peut être désactivée.<br>";
+$wb["error_anbieter_anonftp_aktiv"] = "FTP anonyme est en service sur certains des sites Web du revendeur. Cette option ne peut être désactivée.<br>";
+$wb["error_anbieter_frontpage_aktiv"] = "Frontpage est en service sur certains des sites Web du revendeur. Cette option ne peut être désactivée.<br>";
+$wb["error_anbieter_datenbank_aktiv"] = "MySQL est en service sur certains des sites Web du revendeur. Cette option ne peut être désactivée.<br>";
 $wb["error_anbieter_max_datenbank_ueberschritten"] = "Le revendeur utilise plus de BDD MySQL que vous voulez lui assigner.<br>";
-$wb["error_anbieter_ssl_aktiv"] = "SSL est en service sur certains des sites Web du revendeur. Cette option ne peut être désactiver.<br>";
-$wb["error_anbieter_wap_aktiv"] = "WAP est en service sur certains des sites Web du revendeur. Cette option ne peut être désactiver.<br>";
-$wb["error_anbieter_error_pages_aktiv"] = "Les pages d'erreur persos sont en service sur certains des sites Web du revendeur. Cette option ne peut être désactiver.<br>";
+$wb["error_anbieter_ssl_aktiv"] = "SSL est en service sur certains des sites Web du revendeur. Cette option ne peut être désactivée.<br>";
+$wb["error_anbieter_wap_aktiv"] = "WAP est en service sur certains des sites Web du revendeur. Cette option ne peut être désactivée.<br>";
+$wb["error_anbieter_error_pages_aktiv"] = "Les pages d'erreur persos sont en service sur certains des sites Web du revendeur. Cette option ne peut être désactivée.<br>";
 $wb["error_web_no_unlimited_diskspace_1"] = "Vous ne pouvez assigner un espace disque illimité pour ce site. L'espace disque max. pour ce site est de ";
 $wb["error_web_no_unlimited_diskspace_2"] = " MB.<br>";
 $wb["error_web_no_diskspace_free_1"] = "Il ne vous reste que ";
