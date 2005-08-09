@@ -113,8 +113,8 @@ class isp_username_plugin {
     {
     global $go_info, $go_api,$HTTP_POST_VARS,$next_tree_id;
         $plugin_vars = $HTTP_POST_VARS["plugin"];
-        $username = $plugin_vars["user"];
-    $email = $plugin_vars["email"];
+        $username = strtolower($plugin_vars["user"]);
+    	$email = $plugin_vars["email"];
 
         $sys_config = $go_api->db->queryOneRecord("SELECT * from sys_config");
         $user_prefix = $sys_config["user_prefix"];
@@ -135,7 +135,7 @@ class isp_username_plugin {
                 }
         }
         // Überprüfung Username mittels regex, bei Fehler löschen
-        if(!preg_match("/^[a-zA-Z][\w\.\-\_]{3,64}$/",$user_prefix . $username)) {
+        if(!preg_match("/^[a-z][\w\.\-\_]{3,64}$/",$user_prefix . $username)) {
                 $go_api->db->query("DELETE from isp_isp_user where doc_id = '$doc_id'");
         $go_api->db->query("DELETE from isp_nodes where doc_id = '$doc_id' and doctype_id = '$doctype_id'");
                 $go_api->errorMessage('<b>'.$go_api->lng("Feld").': Username</b><br>'.$go_api->lng("Der Username muss aus min. 4, max 32 Buchstaben oder Zahlen bestehen, wobei er mit einem Buchstaben beginnen muss.") . "<br>&nbsp;<br>");
