@@ -59,8 +59,8 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
                 // error handler
                 function updateError($location)
                 {
-                        $this->errorNumber = mysql_errno();
-                        $this->errorMessage = mysql_error();
+                        $this->errorNumber = mysqli_errno();
+                        $this->errorMessage = mysqli_error();
                         $this->errorLocation = $location;
                         if($this->errorNumber && $this->show_error_messages)
                         {
@@ -73,7 +73,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
                 {
                         if($this->linkId == 0)
                         {
-                                $this->linkId = mysql_connect($this->dbHost, $this->dbUser, $this->dbPass);
+                                $this->linkId = mysqli_connect($this->dbHost, $this->dbUser, $this->dbPass);
                                 if(!$this->linkId)
                                 {
                                         $this->updateError('DB::connect()<br />mysql_connect');
@@ -89,12 +89,12 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
                         {
                                 return false;
                         }
-                        if(!mysql_select_db($this->dbName, $this->linkId))
+                        if(!mysqli_select_db($this->linkId, $this->dbName))
                         {
                                 $this->updateError('DB::connect()<br />mysql_select_db');
                                 return false;
                         }
-                        $this->queryId = @mysql_query($queryString, $this->linkId);
+                        $this->queryId = @mysqli_query($this->linkId, $queryString);
                         $this->updateError('DB::query('.$queryString.')<br />mysql_query');
                         if(!$this->queryId)
                         {
@@ -132,7 +132,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
                 // returns the next record in an array
                 function nextRecord()
                 {
-            $this->record = mysql_fetch_assoc($this->queryId);
+            			$this->record = mysqli_fetch_assoc($this->queryId);
                         $this->updateError('DB::nextRecord()<br />mysql_fetch_array');
                         if(!$this->record || !is_array($this->record))
                         {
@@ -145,13 +145,13 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
                 // returns number of rows returned by the last select query
                 function numRows()
                 {
-                        return mysql_num_rows($this->queryId);
+                        return mysqli_num_rows($this->queryId);
                 }
 
                 // returns mySQL insert id
                 function insertID()
                 {
-                        return mysql_insert_id();
+                        return mysqli_insert_id($this->linkId);
                 }
 
         // Check der variablen
@@ -167,10 +167,10 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
                foreach($form as $key => $value)
                        {
                        $sql_key .= "$key, ";
-            $sql_value .= "'".$this->check($value)."', ";
+            		   $sql_value .= "'".$this->check($value)."', ";
                        }
                $sql_key = substr($sql_key,0,strlen($sql_key) - 2);
-        $sql_value = substr($sql_value,0,strlen($sql_value) - 2);
+        	   $sql_value = substr($sql_value,0,strlen($sql_value) - 2);
 
                $sql = "INSERT INTO $tablename (" . $sql_key . ") VALUES (" . $sql_value .")";
 
@@ -303,18 +303,20 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
        }
 
        function dropTable($table_name) {
-       $this->check($table_name);
-       $sql = "DROP TABLE '". $table_name."'";
-       return $this->query($sql);
+       	$this->check($table_name);
+       	$sql = "DROP TABLE '". $table_name."'";
+       	return $this->query($sql);
        }
 
        // gibt Array mit Tabellennamen zurück
        function getTables($database_name) {
-
-            $result = mysql_list_tables($database_name);
-            for ($i = 0; $i < mysql_num_rows($result); $i++) {
-                $tb_names[$i] = mysql_tablename($result, $i);
-            }
+            $sql = "SHOW TABLES FROM ".$database_name;
+			$result = $this->query($sql);
+			$i = 0;
+			while($row = mysqli_fetch_row($result)) {
+				$tb_names[$i] = $row[0];
+				$i++
+			}
             return $tb_names;
        }
 
