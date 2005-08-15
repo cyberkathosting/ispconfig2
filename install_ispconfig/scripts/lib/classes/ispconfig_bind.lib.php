@@ -68,12 +68,16 @@ function make_named($server_id) {
 
   $ip_addresses = array_unique($ip_addresses);
 
-  foreach($ip_addresses as $ip_address){
-    $zone = $ip_address;
+  if(is_array($ip_addresses) && !empty($ip_addresses)){
+    foreach($ip_addresses as $ip_address){
+      $zone = $ip_address;
 
-    // Variablen zuweisen
-    $mod->tpl->assign( array('ZONE' => $zone));
-    $mod->tpl->parse('NAMED_REVERSE',".named_reverse");
+      // Variablen zuweisen
+      $mod->tpl->assign( array('ZONE' => $zone));
+      $mod->tpl->parse('NAMED_REVERSE',".named_reverse");
+    }
+  } else {
+    $mod->tpl->clear_dynamic('named_reverse');
   }
 
   //$dnss = $mod->db->queryAllRecords("select * from dns_nodes,dns_isp_dns WHERE dns_isp_dns.server_id = '$server_id' and dns_nodes.doc_id = dns_isp_dns.doc_id AND dns_nodes.doctype_id = '".$isp_web->dns_doctype_id."' AND dns_nodes.status = '1'");
@@ -147,6 +151,7 @@ function make_zonefile($doc_id) {
   $mod->tpl->define_dynamic( "arecords", "table" );
   $mod->tpl->define_dynamic( "cnamerecords", "table" );
   $mod->tpl->define_dynamic( "mxrecords", "table" );
+  $mod->tpl->define_dynamic( "spfrecords", "table" );
 
   $dns = $mod->db->queryOneRecord("select * from dns_isp_dns WHERE doc_id = '$doc_id'");
   $server_id = $dns["server_id"];
@@ -215,6 +220,55 @@ function make_zonefile($doc_id) {
   }
 
   if($has_mxrecords != 1) $mod->tpl->clear_dynamic('mxrecords');
+
+  ////// SPF //////
+  $spfrecords = $mod->db->queryAllRecords("SELECT dns_spf.host, dns_spf.a, dns_spf.mx, dns_spf.ptr, dns_spf.a_break, dns_spf.mx_break, dns_spf.ip4_break, dns_spf.include_break, dns_spf.all_ FROM dns_dep, dns_spf, dns_nodes WHERE dns_dep.parent_doc_id = '$doc_id' AND dns_dep.parent_doctype_id = '".$isp_web->dns_doctype_id."' AND dns_dep.child_doctype_id = '".$isp_web->spf_record_doctype_id."' AND dns_spf.doc_id = dns_dep.child_doc_id AND dns_nodes.type = 'a' AND dns_nodes.doctype_id = '".$isp_web->spf_record_doctype_id."' AND dns_nodes.status = '1' AND dns_nodes.doc_id = dns_spf.doc_id");
+
+  foreach($spfrecords as $spfrecord){
+    $spf = '';
+    if($mod->file->unix_nl(trim($spfrecord['ip4_break'])) != ''){
+      $ip4_breaks = explode("\n", $mod->file->unix_nl(trim($spfrecord['ip4_break'])));
+      if(!empty($ip4_breaks)){
+        foreach($ip4_breaks as $ip4_break){
+          $spf .= 'ip4:'.$ip4_break.' ';
+        }
+      }
+    }
+    if($spfrecord['a'] == 1) $spf .= 'a ';
+    if($spfrecord['mx'] == 1) $spf .= 'mx ';
+    if($spfrecord['ptr'] == 1) $spf .= 'ptr ';
+    if($mod->file->unix_nl(trim($spfrecord['a_break'])) != ''){
+      $a_breaks = explode("\n", $mod->file->unix_nl(trim($spfrecord['a_break'])));
+      if(!empty($a_breaks)){
+        foreach($a_breaks as $a_break){
+          $spf .= 'a:'.$a_break.' ';
+        }
+      }
+    }
+    if($mod->file->unix_nl(trim($spfrecord['mx_break'])) != ''){
+      $mx_breaks = explode("\n", $mod->file->unix_nl(trim($spfrecord['mx_break'])));
+      if(!empty($mx_breaks)){
+        foreach($mx_breaks as $mx_break){
+          $spf .= 'mx:'.$mx_break.' ';
+        }
+      }
+    }
+    if(trim($spfrecord['include_break']) != '') $spf .= 'include:'.trim($spfrecord['include_break']).' ';
+    if($spfrecord['all_'] == 1){
+      $spf .= '~all';
+    } else {
+      $spf .= '?all';
+    }
+
+    // Variablen zuweisen
+    $mod->tpl->assign( array( 'SPF_HOST' => $spfrecord["host"].($spfrecord["host"] == '' ? '' : '.').$dns["dns_soa"],
+                         'SPF' => trim($spf)));
+    $mod->tpl->parse('SPFRECORDS',".spfrecords");
+    $has_spfrecords = 1;
+  }
+
+  if($has_spfrecords != 1) $mod->tpl->clear_dynamic('spfrecords');
+  ////// SPF ENDE //////
 
   $mod->tpl->parse('TABLE', table);
 

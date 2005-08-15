@@ -20,4 +20,7 @@ $TTL        {DNS_TTL}
 <!-- BEGIN DYNAMIC BLOCK: cnamerecords -->
 {CNAME_HOST}       CNAME  {CNAME_ZIEL}.
 <!-- END DYNAMIC BLOCK: cnamerecords -->
+<!-- BEGIN DYNAMIC BLOCK: spfrecords -->
+{SPF_HOST}.       TXT  "v=spf1 {SPF}"
+<!-- END DYNAMIC BLOCK: spfrecords -->
 ;;;; MAKE MANUAL ENTRIES BELOW THIS LINE! ;;;;

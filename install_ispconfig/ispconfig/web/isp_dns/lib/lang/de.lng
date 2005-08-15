@@ -59,5 +59,17 @@ $wb["weiter_link"] = "<br><br> <a href='../../isp_dns/frame_start.php?s=$s'>Weit
 $wb["error_a_record_exists"] = "Für diesen Host existiert schon ein A-Record in dieser Zone.<br>";
 $wb["error_cname_record_exists"] = "Für diesen Host existiert schon ein CNAME-Record in dieser Zone.<br>";
 $wb["error_mx_record_exists"] = "Dieser oder ein ähnlicher MX-Record existiert schon in dieser Zone.<br>";
+$wb["error_spf_record_exists"] = "Dieser SPF-Record existiert schon in dieser Zone.<br>";
+
+$wb["ja"] = "Ja";
+$wb["nein"] = "Nein";
+$wb["a"] = "Werden Emails vom<br>&nbsp;&nbsp;A-Record verschickt?";
+$wb["mx"] = "Werden Emails vom<br>&nbsp;&nbsp;MX-Record verschickt?";
+$wb["ptr"] = "Werden Emails von<br>&nbsp;&nbsp;allen Servern dieser<br>&nbsp;&nbsp;Domain verschickt?";
+$wb["a_break"] = "Werden Emails von<br>&nbsp;&nbsp;anderen A-Records<br>&nbsp;&nbsp;verschickt?";
+$wb["mx_break"] = "Werden Emails von<br>&nbsp;&nbsp;anderen MX-Records<br>&nbsp;&nbsp;verschickt?";
+$wb["ip4_break"] = "Werden Emails von<br>&nbsp;&nbsp;anderen IP-Adressen<br>&nbsp;&nbsp;verschickt?";
+$wb["include_break"] = "SPF-Record von der<br>&nbsp;&nbsp;folgenden Zone erben?";
+$wb["all_"] = "Sind dies alle Hosts,<br>&nbsp;&nbsp;die Emails für diese<br>&nbsp;&nbsp;Domain verschicken<br>&nbsp;&nbsp;dürfen?";
 
 ?>

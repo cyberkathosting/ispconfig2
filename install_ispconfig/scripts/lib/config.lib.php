@@ -44,6 +44,7 @@ var $monitor_doctype_id = 1024;
 var $firewall_doctype_id = 1025;
 var $slave_doctype_id = 1028;
 var $datenbank_doctype_id = 1029;
+var $spf_record_doctype_id = 1031;
 var $vhost_conf;
 var $ftp_conf;
 var $apache_user;

@@ -75,5 +75,17 @@ $wb["weiter_link"] = "<br><br> <a href='../../isp_dns/frame_start.php?s=$s'>Next
 $wb["error_a_record_exists"] = "There is already an A Record entry for this host in this zone.<br>";
 $wb["error_cname_record_exists"] = "There is already a CNAME Record entry for this host in this zone.<br>";
 $wb["error_mx_record_exists"] = "This or a similar MX Record does already exist in this zone.<br>";
+$wb["error_spf_record_exists"] = "This SPF Record does already exist in this zone.<br>";
+
+$wb["ja"] = "Yes";
+$wb["nein"] = "No";
+$wb["a"] = "Are emails sent<br>&nbsp;&nbsp;from A Record?";
+$wb["mx"] = "Are emails sent<br>&nbsp;&nbsp;from MX Record?";
+$wb["ptr"] = "Are emails sent<br>&nbsp;&nbsp;from all servers of<br>&nbsp;&nbsp;this domain?";
+$wb["a_break"] = "Are emails sent<br>&nbsp;&nbsp;from other A Records?";
+$wb["mx_break"] = "Are emails sent<br>&nbsp;&nbsp;from other MX Records?";
+$wb["ip4_break"] = "Are emails sent<br>&nbsp;&nbsp;from other IP addresses?";
+$wb["include_break"] = "Inherit SPF Record<br>&nbsp;&nbsp;from this zone?";
+$wb["all_"] = "Do the above entries<br>&nbsp;&nbsp;contain all hosts<br>&nbsp;&nbsp;allowed to send emails<br>&nbsp;&nbsp;for this domain?";
 
 ?>
