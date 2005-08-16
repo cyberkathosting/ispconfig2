@@ -80,13 +80,13 @@ $wb["error_spf_record_exists"] = "Cet enregistrement SPF existe déjà dans cette 
 
 $wb["ja"] = "Oui";
 $wb["nein"] = "Non";
-$wb["a"] = "Are emails sent<br>&nbsp;&nbsp;from A Record?";
-$wb["mx"] = "Are emails sent<br>&nbsp;&nbsp;from MX Record?";
-$wb["ptr"] = "Are emails sent<br>&nbsp;&nbsp;from all servers of<br>&nbsp;&nbsp;this domain?";
-$wb["a_break"] = "Are emails sent<br>&nbsp;&nbsp;from other A Records?";
-$wb["mx_break"] = "Are emails sent<br>&nbsp;&nbsp;from other MX Records?";
-$wb["ip4_break"] = "Are emails sent<br>&nbsp;&nbsp;from other IP addresses?";
-$wb["include_break"] = "Inherit SPF Record<br>&nbsp;&nbsp;from this zone?";
-$wb["all_"] = "Do the above entries<br>&nbsp;&nbsp;contain all hosts<br>&nbsp;&nbsp;allowed to send emails<br>&nbsp;&nbsp;for this domain?";
+$wb["a"] = "Est-ce que les e-mails sont envoyés<br>&nbsp;&nbsp;depuis un enregistrement A?";
+$wb["mx"] = "Est-ce que les e-mails sont envoyés<br>&nbsp;&nbsp;depuis un enregistrement MX?";
+$wb["ptr"] = "Est-ce que les e-mails sont envoyés<br>&nbsp;&nbsp;de tous les serveurs<br>&nbsp;&nbsp;de ce domaine?";
+$wb["a_break"] = "Est-ce que les e-mails sont envoyés<br>&nbsp;&nbsp;d'un autre enregistrement A?";
+$wb["mx_break"] = "Est-ce que les e-mails sont envoyés<br>&nbsp;&nbsp;d'un autre enregistrement MX?";
+$wb["ip4_break"] = "Est-ce que les e-mails sont envoyés<br>&nbsp;&nbsp;d'un autre adresse IP?";
+$wb["include_break"] = "Héritez de l'enregistrement SPF<br>&nbsp;&nbsp;de cette zone?";
+$wb["all_"] = "Les entrées ci dessus<br>&nbsp;&nbsp;contiennent elle tous les hôtes<br>&nbsp;&nbsp;autorisés à envoyer des e-mails<br>&nbsp;&nbsp;pour ce domaine?";
 
 ?>
