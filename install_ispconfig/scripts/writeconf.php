@@ -299,7 +299,7 @@ $mod->log->logrotate();
 
 exec("pwconv &> /dev/null");
 exec("grpconv &> /dev/null");
-exec("/root/ispconfig/httpd/bin/apachectl graceful &> /dev/null");
+//exec("/root/ispconfig/httpd/bin/apachectl graceful &> /dev/null");
 
 echo "ende\n";
 
