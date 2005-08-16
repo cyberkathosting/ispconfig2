@@ -10,7 +10,8 @@ $wb["Admin Handbuch"] = "Admin Handbuch";
 $wb["Reseller Handbuch"] = "Reseller Handbuch";
 $wb["Kunden Handbuch"] = "Kunden Handbuch";
 $wb["Deutsch"]          = "Deutsch";
-$wb["Englisch"]          = "Englisch";
+$wb["Englisch"]         = "Englisch";
+$wb["Französische"]     = "Französische";
 $wb["Projektfarm Support"]          = "Projektfarm Support";
 $wb["Online Hilfe"] = "Online Hilfe";
 
