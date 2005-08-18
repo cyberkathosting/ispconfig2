@@ -61,7 +61,19 @@ if($user_row["language"] != '') {
 	$go_info["user"]["language"] = $go_info["server"]["lang"];
 }
 
-
+if($go_info["user"]["userid"] != 1) {
+  if(is_array($go_api->groups->myGroups())) {
+    $info_row = $go_api->db->queryOneRecord("SELECT vorname,name,email FROM isp_isp_reseller WHERE reseller_userid = " . $go_info["user"]["userid"]);
+    $go_info["user"]["firstname"]      = $info_row["vorname"];
+    $go_info["user"]["lastname"]       = $info_row["name"];
+    $go_info["user"]["email"]          = $info_row["email"];
+  } else {
+    $info_row = $go_api->db->queryOneRecord("SELECT kunde_vorname,kunde_name,kunde_email FROM isp_isp_kunde WHERE webadmin_userid = " . $go_info["user"]["userid"]);
+    $go_info["user"]["firstname"]      = $info_row["kunde_vorname"];
+    $go_info["user"]["lastname"]       = $info_row["kunde_name"];
+    $go_info["user"]["email"]          = $info_row["kunde_email"];
+  }
+}
 
 #####################################################
 #
