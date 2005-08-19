@@ -109,6 +109,18 @@ class auth
         }
 
         }
+		
+		function user_type($user_id) {
+		global $go_api, $s;
+		
+		if($user_id == 1) return "admin";
+		
+		$sys_resl_count = $go_api->db->queryOneRecord("SELECT count(doc_id) as num from isp_isp_reseller where reseller_userid = $user_id");
+		if($sys_resl_count["num"] >= 1) return "reseller";
+		
+		$sys_user_count = $go_api->db->queryOneRecord("SELECT count(doc_id) as num from isp_isp_kunde where webadmin_userid = $user_id");
+		if($sys_user_count["num"] >= 1) return "client";
+		}
 
         function check_perms($groupid,$rights,$action = 0)
         {

@@ -11,7 +11,6 @@ $wb["Reseller Handbuch"] = "Reseller Handbuch";
 $wb["Kunden Handbuch"] = "Kunden Handbuch";
 $wb["Deutsch"]          = "Deutsch";
 $wb["Englisch"]         = "Englisch";
-$wb["Französische"]     = "Französische";
 $wb["Projektfarm Support"]          = "Projektfarm Support";
 $wb["Online Hilfe"] = "Online Hilfe";
 
@@ -21,4 +20,27 @@ Hier können Sie Ihre Website(s) verwalten. Bei Fragen oder Problemen
 wenden Sie sich bitte an den Serveradministrator, oder lesen Sie das
 ISPConfig-Kundenhandbuch.";
 
+// NEW 2.0.8 ///////////////////////////////////
+$wb["Französische"]     = "Französische";
+// Support Tickets System
+$wb["Unterstützungskarten"] = "Unterstützungskarten";
+$wb["Geöffnete Karten"] = "Geöffnete Karten";
+$wb["Geschlossene Karten"] = "Geschlossene Karten";
+$wb["Neue Karte"] = "Neue Karte";
+$wb["Betreff"] = "Betreff";
+$wb["Priorität"] = "Priorität";
+$wb["Niedrig"] = "Niedrig";
+$wb["Mittel"] = "Mittel";
+$wb["Hoch"] = "Hoch";
+$wb["Ihre frage"] = "Ihre frage";
+$wb["Senden"] = "Senden";
+$wb["Fehler während der schaffung der karte"] = "Fehler während der schaffung der karte";
+$wb["Neue unterstützungskarte, die auf antwort wartet"] = "Neue unterstützungskarte, die auf antwort wartet";
+$wb["Sie erhielten eine antwort"] = "Sie erhielten eine antwort";
+$wb["geantwortet zu ihnen"] = "geantwortet zu ihnen";
+$wb["Datum"] = "Datum";
+$wb["Davon"] = "Davon";
+$wb["Ihre antwort"] = "Ihre antwort";
+$wb["Antworten"] = "Reply";
+$wb["Schließen"] = "Schließen";
 ?>

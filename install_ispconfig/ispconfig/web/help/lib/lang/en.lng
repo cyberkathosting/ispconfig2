@@ -11,7 +11,6 @@ $wb["Reseller Handbuch"] = "Reseller Manual";
 $wb["Kunden Handbuch"] = "Customer Manual";
 $wb["Deutsch"]          = "German";
 $wb["Englisch"]         = "English";
-$wb["Französische"]     = "French";
 $wb["Projektfarm Support"]          = "Projektfarm Support";
 $wb["Online Hilfe"] = "Online Help";
 
@@ -39,5 +38,27 @@ $wb["Anbieter"]     = "Reseller";
 $wb["DNS-Domains angelegt"] = 'DNS Domains created';
 $wb["von"] = "of";
 
-
+// NEW 2.0.8 ///////////////////////////////////
+$wb["Französische"]     = "French";
+// Support Tickets System
+$wb["Unterstützungskarten"] = "Support Tickets";
+$wb["Geöffnete Karten"] = "Opened Tickets";
+$wb["Geschlossene Karten"] = "Closed Tickets";
+$wb["Neue Karte"] = "New Ticket";
+$wb["Betreff"] = "Subject";
+$wb["Priorität"] = "Priority";
+$wb["Niedrig"] = "Low";
+$wb["Mittel"] = "Medium";
+$wb["Hoch"] = "High";
+$wb["Ihre frage"] = "Your question";
+$wb["Senden"] = "Send";
+$wb["Fehler während der schaffung der karte"] = "Error during the creation of the ticket";
+$wb["Neue unterstützungskarte, die auf antwort wartet"] = "New support ticket waiting for answer";
+$wb["Sie erhielten eine antwort"] = "You received an answer";
+$wb["geantwortet zu ihnen"] = "answered to you";
+$wb["Datum"] = "Date";
+$wb["Davon"] = "From";
+$wb["Ihre antwort"] = "Your answer";
+$wb["Antworten"] = "Reply";
+$wb["Schließen"] = "Close";
 ?>

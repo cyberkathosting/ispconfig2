@@ -13,7 +13,6 @@ $wb["Reseller Handbuch"] = "Manuel Revendeur";
 $wb["Kunden Handbuch"] = "Manuel Utilisateur";
 $wb["Deutsch"]          = "Allemand";
 $wb["Englisch"]         = "Anglais";
-$wb["Französische"]     = "Français";
 $wb["Projektfarm Support"]          = "Support Projektfarm";
 $wb["Online Hilfe"] = "Aide en Ligne";
 
@@ -41,4 +40,27 @@ $wb["Anbieter"]     = "Revendeur";
 $wb["DNS-Domains angelegt"] = "Domaines DNS créé";
 $wb["von"] = "de";
 
+// NEW 2.0.8 ///////////////////////////////////
+$wb["Französische"]     = "Français";
+// Support Tickets System
+$wb["Unterstützungskarten"] = "Tickets Support";
+$wb["Geöffnete Karten"] = "Billets Ouverts";
+$wb["Geschlossene Karten"] = "Billets Fermés";
+$wb["Neue Karte"] = "Nouveau Billet";
+$wb["Betreff"] = "Sujet";
+$wb["Priorität"] = "Priorité";
+$wb["Niedrig"] = "Faible";
+$wb["Mittel"] = "Moyenne";
+$wb["Hoch"] = "Forte";
+$wb["Ihre frage"] = "Votre question";
+$wb["Senden"] = "Envoyer";
+$wb["Fehler während der schaffung der karte"] = "Erreur lors de la création du billet";
+$wb["Neue unterstützungskarte, die auf antwort wartet"] = "Un nouveau billet est en attente d'une réponse.";
+$wb["Sie erhielten eine antwort"] = "Vous avez reçu une réponse";
+$wb["geantwortet zu ihnen"] = "Vous à répondu";
+$wb["Datum"] = "Date";
+$wb["Davon"] = "De";
+$wb["Ihre antwort"] = "Votre réponse";
+$wb["Antworten"] = "Répondre";
+$wb["Schließen"] = "Fermer";
 ?>

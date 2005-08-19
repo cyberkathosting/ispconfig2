@@ -365,6 +365,33 @@ CREATE TABLE `help_nodes` (
 
 -- --------------------------------------------------------
 
+-- 
+-- Table structure for table `help_tickets`
+-- 
+
+CREATE TABLE `help_tickets` (
+  `doc_id` bigint(20) unsigned NOT NULL auto_increment,
+  `ticket_from` bigint(20) unsigned default NULL,
+  `ticket_to` bigint(20) unsigned default NULL,
+  `ticket_status` char(1) default NULL,
+  `ticket_reply` bigint(20) unsigned default NULL,
+  `ticket_urgency` char(1) default NULL,
+  `ticket_date` timestamp NOT NULL,
+  `ticket_subject` varchar(255) default NULL,
+  `ticket_message` text,
+  PRIMARY KEY  (`doc_id`),
+  KEY `ticket_from` (`ticket_from`),
+  KEY `ticket_to` (`ticket_to`),
+  KEY `ticket_status` (`ticket_status`)
+) TYPE=MyISAM;
+
+--
+-- Dumping data for table `help_tickets`
+--
+
+
+-- --------------------------------------------------------
+
 --
 -- Table structure for table `isp_com`
 --

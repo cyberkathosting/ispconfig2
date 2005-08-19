@@ -268,8 +268,24 @@ function ladeDaten() {
 
 // Für weitere Informationen sieh in der JS-Menü-Dokumentation nach.
 //-->
+<?
+$usertype = "client";
+$gruppen = $go_api->groups->myGroups();
+if(is_array($gruppen)) $usertype = "reseller";
+if($go_info["user"]["userid"] == 1) $usertype = "admin";
+?>
 
 menuDaten.neu(new HauptverzeichnisEintrag('root','<? echo $go_api->lng("Online Hilfe")?>','frame_start.php?<? echo $session?>&tpl=start','','','Online Hilfe'));
+menuDaten.neu(new VerzEintrag('Tickets','root','<? echo $go_api->lng("Unterstützungskarten")?>','help.gif','help.gif',''));
+// Support Ticket System
+<?
+if($usertype != 'admin') {
+	echo "menuDaten.neu(new LinkEintrag('Tickets','".$go_api->lng("Neue Karte")."','isp_support/new.php?<?echo $session?>','seiteFrame','form_green.gif','".$go_api->lng("Neue Karte")."','n','$id&amp;$session'));";
+}
+?>
+menuDaten.neu(new LinkEintrag('Tickets','<? echo $go_api->lng("Geöffnete Karten")?>','isp_support/open.php?<?echo $session?>','seiteFrame','vzauf-0.gif','<? echo $go_api->lng("Geöffnete Karten")?>','n','<?echo "$id&amp;$session"?>'));
+menuDaten.neu(new LinkEintrag('Tickets','<? echo $go_api->lng("Geschlossene Karten")?>','isp_support/close.php?<?echo $session?>','seiteFrame','lock.gif','<? echo $go_api->lng("Geschlossene Karten")?>','n','<?echo "$id&amp;$session"?>'));
+
 <?
 /*******************************************
 * News Einträge erzeugen
@@ -393,31 +409,25 @@ foreach($groups as $gid) {
 }
 */
 
-$usertype = "client";
-$gruppen = $go_api->groups->myGroups();
-if(is_array($gruppen)) $usertype = "reseller";
-if($go_info["user"]["userid"] == 1) $usertype = "admin";
-
-
 // Einträge für Handbücher
 
 echo "menuDaten.neu(new VerzEintrag('de','root','".$go_api->lng("Deutsch")."','','',''));\n";
 
 if($usertype == 'admin') echo "menuDaten.neu(new LinkEintrag('de','".$go_api->lng("Admin Handbuch")."','documents/de/admin.pdf','_blank','doc.gif','','','$id&amp;$session'));\n";
 if($usertype == 'reseller') echo "menuDaten.neu(new LinkEintrag('de','".$go_api->lng("Reseller Handbuch")."','documents/de/reseller.pdf','_blank','doc.gif','','','$id&amp;$session'));\n";
-if($usertype != 'admin' && $usertype != 'reseller') echo "menuDaten.neu(new LinkEintrag('de','".$go_api->lng("Kunden Handbuch")."','documents/de/client.pdf','_blank','doc.gif','','','$id&amp;$session'));\n";
+if($usertype == 'client') echo "menuDaten.neu(new LinkEintrag('de','".$go_api->lng("Kunden Handbuch")."','documents/de/client.pdf','_blank','doc.gif','','','$id&amp;$session'));\n";
 
 echo "menuDaten.neu(new VerzEintrag('en','root','".$go_api->lng("Englisch")."','','',''));\n";
 
 if($usertype == 'admin') echo "menuDaten.neu(new LinkEintrag('en','".$go_api->lng("Admin Handbuch")."','documents/en/admin.pdf','_blank','doc.gif','','','$id&amp;$session'));\n";
 if($usertype == 'reseller') echo "menuDaten.neu(new LinkEintrag('en','".$go_api->lng("Reseller Handbuch")."','documents/en/reseller.pdf','_blank','doc.gif','','','$id&amp;$session'));\n";
-if($usertype != 'admin' && $usertype != 'reseller') echo "menuDaten.neu(new LinkEintrag('en','".$go_api->lng("Kunden Handbuch")."','documents/en/client.pdf','_blank','doc.gif','','','$id&amp;$session'));\n";
+if($usertype == 'client') echo "menuDaten.neu(new LinkEintrag('en','".$go_api->lng("Kunden Handbuch")."','documents/en/client.pdf','_blank','doc.gif','','','$id&amp;$session'));\n";
 
 echo "menuDaten.neu(new VerzEintrag('fr','root','".$go_api->lng("Französische")."','','',''));\n";
 
 if($usertype == 'admin') echo "menuDaten.neu(new LinkEintrag('fr','".$go_api->lng("Admin Handbuch")."','documents/fr/admin.pdf','_blank','doc.gif','','','$id&amp;$session'));\n";
 if($usertype == 'reseller') echo "menuDaten.neu(new LinkEintrag('fr','".$go_api->lng("Reseller Handbuch")."','documents/fr/reseller.pdf','_blank','doc.gif','','','$id&amp;$session'));\n";
-if($usertype != 'admin' && $usertype != 'reseller') echo "menuDaten.neu(new LinkEintrag('fr','".$go_api->lng("Kunden Handbuch")."','documents/fr/client.pdf','_blank','doc.gif','','','$id&amp;$session'));\n";
+if($usertype == 'client') echo "menuDaten.neu(new LinkEintrag('fr','".$go_api->lng("Kunden Handbuch")."','documents/fr/client.pdf','_blank','doc.gif','','','$id&amp;$session'));\n";
 
 if(@is_file("isp_support/nav.php")) include("isp_support/nav.php");
 
