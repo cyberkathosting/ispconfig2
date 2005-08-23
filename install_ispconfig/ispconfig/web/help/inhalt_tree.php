@@ -280,7 +280,7 @@ menuDaten.neu(new VerzEintrag('Tickets','root','<? echo $go_api->lng("Unterstütz
 // Support Ticket System
 <?
 if($usertype != 'admin') {
-	echo "menuDaten.neu(new LinkEintrag('Tickets','".$go_api->lng("Neue Karte")."','isp_support/new.php?<?echo $session?>','seiteFrame','form_green.gif','".$go_api->lng("Neue Karte")."','n','$id&amp;$session'));";
+	echo "menuDaten.neu(new LinkEintrag('Tickets','".$go_api->lng("Neue Karte")."','isp_support/new.php?$session','seiteFrame','form_green.gif','".$go_api->lng("Neue Karte")."','n','$id&amp;$session'));";
 }
 ?>
 menuDaten.neu(new LinkEintrag('Tickets','<? echo $go_api->lng("Geöffnete Karten")?>','isp_support/open.php?<?echo $session?>','seiteFrame','vzauf-0.gif','<? echo $go_api->lng("Geöffnete Karten")?>','n','<?echo "$id&amp;$session"?>'));
