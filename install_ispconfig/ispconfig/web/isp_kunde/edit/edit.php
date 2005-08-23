@@ -3,34 +3,34 @@
 Copyright (c) 2005, projektfarm Gmbh, Till Brehm, Falko Timme
 All rights reserved.
 
-Redistribution and use in source and binary forms, with or without modification, 
+Redistribution and use in source and binary forms, with or without modification,
 are permitted provided that the following conditions are met:
 
-    * Redistributions of source code must retain the above copyright notice, 
+    * Redistributions of source code must retain the above copyright notice,
       this list of conditions and the following disclaimer.
-    * Redistributions in binary form must reproduce the above copyright notice, 
-      this list of conditions and the following disclaimer in the documentation 
+    * Redistributions in binary form must reproduce the above copyright notice,
+      this list of conditions and the following disclaimer in the documentation
       and/or other materials provided with the distribution.
-    * Neither the name of ISPConfig nor the names of its contributors 
-      may be used to endorse or promote products derived from this software without 
+    * Neither the name of ISPConfig nor the names of its contributors
+      may be used to endorse or promote products derived from this software without
       specific prior written permission.
 
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
-ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED 
-WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. 
-IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, 
-INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, 
-BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, 
-DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY 
-OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING 
-NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, 
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT,
+INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY
+OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
 EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 include("../../../lib/config.inc.php");
 include("../../../lib/session.inc.php");
 
 foreach($_REQUEST as $key => $val) {
-	$$key = addslashes($val);
+        $$key = addslashes($val);
 }
 $tree_id = intval($_REQUEST["tree_id"]);
 $doc_id = intval($_REQUEST["doc_id"]);
@@ -103,6 +103,7 @@ while (list($key, $val) = each($doc->deck))
         case "shortText":
             if($element_val->write_once == 1 and $action == "update") unset($form[$element_val->name]);
             if($element_val->password == 1 and $form[$element_val->name] == "") unset($form[$element_val->name]);
+            //if($element_val->value == -1) $form[$element_val->name] = 'unlimited';
         break;
 
         case "dateField":
@@ -640,6 +641,12 @@ while (list($key, $val) = each($doc->deck))
         }
         $value = stripslashes($value);
 
+       if($value == '-1') $value = $go_api->lng("Unbegrenzt");
+       if($element_val->name != 'web_mysql_anzahl_dbs' && $element_val->name != 'web_anonftplimit' && $element_val->name != 'server_id' && $element_val->name != 'web_speicher' && $element_val->name != 'web_traffic' && $element_val->name != 'web_userlimit' && $element_val->name != 'web_domainlimit'){
+          if($value == '0') $value = '<font color="#FF0000"><b>'.$go_api->lng("Nein").'</b></font>';
+          if($value == '1') $value = '<font color="#009F00"><b>'.$go_api->lng("Ja").'</b></font>';
+        }
+
         // Switch durch Datentypen
         $mode = 'r';
         //die();
@@ -668,8 +675,8 @@ while (list($key, $val) = each($doc->deck))
         if($go_api->renderer->input != "") {
         $go_api->renderer->elements .=
         "<tr bgcolor=\"#EEEEEE\">
-         <td width=\"31%\" class=\"normal\" valign=\"top\"><nobr><b>&nbsp; ".$go_api->lng($element_val->title).":</b></nobr></td>
-         <td width=\"69%\" class=\"normal\">".$go_api->renderer->input.$help_element."</td>
+         <td width=\"31%\" class=\"normal\" valign=\"middle\"><nobr><b>&nbsp; ".$go_api->lng($element_val->title).":</b></nobr></td>
+         <td width=\"69%\" class=\"normal\" valign=\"top\"><table><tr><td class=\"normal\" valign=\"top\">".$go_api->renderer->input."</td><td class=\"normal\" valign=\"top\">".$help_element."</td></tr></table></td>
         </tr>
         ";
         }

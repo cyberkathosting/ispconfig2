@@ -455,5 +455,6 @@ $wb["Nein"] = "Non";
 $wb["Ja"] = "Oui";
 $wb["Web"] = "Site";
 $wb["Domain"] = "Domaine";
+$wb["Unbegrenzt"] = "Sans Limitation";
 
 ?>
