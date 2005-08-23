@@ -9,7 +9,7 @@
 $hlp["web_host"] = "Host des Web: z.B. www";
 $hlp["web_domain"] = "Domain des Web: z.B. projektfarm.de";
 $hlp["web_speicher"] = "Grösse des Speicherplatzes des Web. 2 steht z.B. für 2 MB Speicherplatz.";
-$hlp["web_traffic"] = "Die Zahl gibt an, wie viel Taffic bei diesem Web inklusive ist (z.B. 2 GB inkl.).";
+$hlp["web_traffic"] = "Die Zahl gibt an, wie viel Taffic bei diesem Web inklusive ist (z.B. 2000 MB inkl.).";
 $hlp["web_cgi"] = "Durch das Häkchen ist das Ausführen von CGI-Scripts im Web möglich.";
 $hlp["web_php"] = "Durch das Häkchen ist das Ausführen von PHP im Web möglich.";
 $hlp["web_ssi"] = "Durch das Häkchen ist das Ausführen von SSI im Web möglich.";

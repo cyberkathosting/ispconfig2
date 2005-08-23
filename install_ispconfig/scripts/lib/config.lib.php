@@ -438,8 +438,8 @@ function web_update($doc_id,$doctype_id,$server_id) {
   //gibt es Admin-User für das Web? Wenn er gelöscht wurde, evtl. vorh. Autoresponder-Dateien löschen
   $sql = "SELECT * FROM isp_nodes, isp_dep, isp_isp_user WHERE isp_dep.parent_doc_id = '".$doc_id."' AND isp_dep.parent_doctype_id = '".$this->web_doctype_id."' AND isp_dep.child_doc_id = isp_isp_user.doc_id AND isp_dep.child_doctype_id = '".$this->user_doctype_id."' AND isp_isp_user.user_admin = '1' AND isp_nodes.doc_id = isp_isp_user.doc_id AND isp_nodes.doctype_id = '".$this->user_doctype_id."' AND isp_nodes.status = '1'";
 
-    $users = $mod->db->queryAllRecords($sql);
-    if(empty($users)){
+    $user = $mod->db->queryOneRecord($sql);
+    if(empty($user)){
      exec("rm -fr $web_path/.forward");
      exec("rm -fr $web_path/.procmailrc");
      exec("rm -fr $web_path/.vacation.cache");
@@ -455,8 +455,17 @@ function web_update($doc_id,$doctype_id,$server_id) {
      //exec("chown $apache_user $web_path/web &> /dev/null");
      exec("chown -R --from=$old_admin_uid $apache_user $web_path/web &> /dev/null");
      //exec("chown $apache_user $web_path/web/error &> /dev/null");
+     $admin_user = $this->apache_user;
+    } else {
+     $admin_user = $user['user_username'];
     }
-    unset($users);
+
+    // gesperrte Webs wieder aktivieren, wenn gewünscht
+    if($web['web_traffic_status'] == 1){
+      exec("chown ".$admin_user." ".$web_path." &> /dev/null");
+      exec("chmod 755 ".$web_path." &> /dev/null");
+    }
+    unset($user);
 }
 
 function web_delete($doc_id,$doctype_id,$server_id) {

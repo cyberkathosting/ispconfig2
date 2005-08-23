@@ -432,5 +432,12 @@ $wb["Nein"] = "Nein";
 $wb["Ja"] = "Ja";
 $wb["Web"] = "Web";
 $wb["Domain"] = "Domain";
+$wb["Traffic-Überschreitung"] = "Traffic-Überschreitung";
+$wb["sperren"] = "Sperren";
+$wb["benachrichtigen"] = "Benachrichtigen";
+$wb["keine Aktion"] = "Keine Aktion";
+$wb["Website-Status"] = "Website-Status";
+$wb["aktiv"] = "Aktiv";
+$wb["gesperrt"] = "Gesperrt";
 
 ?>

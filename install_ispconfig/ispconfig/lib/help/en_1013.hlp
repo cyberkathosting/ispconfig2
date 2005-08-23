@@ -9,7 +9,7 @@
 $hlp["web_host"] = "Host of the web: e.g. www";
 $hlp["web_domain"] = "Domain of the web: e.g. projektfarm.de";
 $hlp["web_speicher"] = "Size of the storage space of the web. For example, 2 stands for 2 MB storage space.";
-$hlp["web_traffic"] = "Specifies how much free traffic is included in this web (e.g. 2 GB).";
+$hlp["web_traffic"] = "Specifies how much free traffic is included in this web (e.g. 2000 MB).";
 $hlp["web_cgi"] = "Activates CGI for this web.";
 $hlp["web_php"] = "Activates PHP for this web.";
 $hlp["web_ssi"] = "Activates SSI for this web.";
