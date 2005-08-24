@@ -376,7 +376,7 @@ CREATE TABLE `help_tickets` (
   `ticket_status` char(1) default NULL,
   `ticket_reply` bigint(20) unsigned default NULL,
   `ticket_urgency` char(1) default NULL,
-  `ticket_date` timestamp(14) NOT NULL,
+  `ticket_date` datetime default NULL,
   `ticket_subject` varchar(255) default NULL,
   `ticket_message` text,
   PRIMARY KEY  (`doc_id`),

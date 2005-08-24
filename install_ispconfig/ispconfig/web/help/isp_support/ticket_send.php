@@ -58,7 +58,7 @@ $subject = stripslashes($subject);
 $request = stripslashes($request);
 
 // Insert into database
-$sql = "INSERT INTO help_tickets (ticket_from,ticket_to,ticket_status,ticket_urgency,ticket_subject,ticket_message) VALUES ($from_id,$to_id,\"O\",\"$priority\",\"$subject\",\"$request\")";
+$sql = "INSERT INTO help_tickets (ticket_from,ticket_to,ticket_status,ticket_urgency,ticket_subject,ticket_message,ticket_date) VALUES ($from_id,$to_id,\"O\",\"$priority\",\"$subject\",\"$request\",NOW())";
 if(!$go_api->db->query($sql)) $go_api->errorMessage($go_api->lng("Fehler während der schaffung der karte"));
 
 // Prepare and Send Mail

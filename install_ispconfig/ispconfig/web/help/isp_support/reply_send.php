@@ -44,7 +44,7 @@ switch($Submit){
 			$new_ticket_to = $go_info["user"]["userid"];
 		}
 		$answer = stripslashes($answer);
-		$sql = "INSERT INTO help_tickets (ticket_from,ticket_to,ticket_reply,ticket_message) VALUES ($new_ticket_from,$new_ticket_to,$tid,\"$answer\")";
+		$sql = "INSERT INTO help_tickets (ticket_from,ticket_to,ticket_reply,ticket_message,ticket_date) VALUES ($new_ticket_from,$new_ticket_to,$tid,\"$answer\",NOW())";
 		$go_api->db->query($sql);
 		// Send Mail
 		$to_usertype = $go_api->auth->user_type($new_ticket_to);
@@ -86,7 +86,7 @@ switch($Submit){
 			$new_ticket_to = $go_info["user"]["userid"];
 		}
 		$answer = stripslashes($answer);
-		$sql = "INSERT INTO help_tickets (ticket_from,ticket_to,ticket_reply,ticket_message) VALUES ($new_ticket_from,$new_ticket_to,$tid,\"$answer\")";
+		$sql = "INSERT INTO help_tickets (ticket_from,ticket_to,ticket_reply,ticket_message,ticket_date) VALUES ($new_ticket_from,$new_ticket_to,$tid,\"$answer\",NOW())";
 		$go_api->db->query($sql);
 		$sql = "UPDATE help_tickets SET ticket_status='C' WHERE doc_id=$tid";
 		$go_api->db->query($sql);		

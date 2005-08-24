@@ -81,7 +81,13 @@ $go_api->content->assign( array(    TSUBJECT => $first_ticket["ticket_subject"],
                         			) );
 // Assing Dynamic content
 $vtemp = array();
-$vtemp["TDATE"] = $first_ticket["ticket_date"];
+if($go_info["user"]["language"] == "en") {
+	  $vtemp["TDATE"] = $first_ticket["ticket_date"];
+} else {
+	  $tannee = substr($first_ticket["ticket_date"],0,4); $tmois = substr($first_ticket["ticket_date"],5, 2); $tjour = substr($first_ticket["ticket_date"],8,2);
+	  $theure = substr($first_ticket["ticket_date"],11,8);
+	  $vtemp["TDATE"] = $tjour."/".$tmois."/".$tannee." ".$theure;
+}		
 $vtemp["TFROM"] = $TFROM;
 $vtemp["TMESS"] = $first_ticket["ticket_message"];
 		
@@ -108,8 +114,14 @@ if(is_array($other_ticket)) {
 			$sql = "SELECT vorname,name FROM isp_isp_reseller WHERE reseller_userid = ".$row["ticket_from"];
 			$from_ident = $go_api->db->queryOneRecord($sql);
 			$vtemp["TFROM"] = $from_ident["vorname"]." ".$from_ident["name"];
+		}
+		if($go_info["user"]["language"] == "en") {
+		  $vtemp["TDATE"] = $row["ticket_date"];
+		} else {
+		  $tannee = substr($row["ticket_date"],0,4); $tmois = substr($row["ticket_date"],5, 2); $tjour = substr($row["ticket_date"],8,2);
+		  $theure = substr($row["ticket_date"],11,8);
+		  $vtemp["TDATE"] = $tjour."/".$tmois."/".$tannee." ".$theure;
 		}		
-		$vtemp["TDATE"] = $row["ticket_date"];
 		$vtemp["TMESS"] = $row["ticket_message"];
 		
 		$go_api->content->assign($vtemp);

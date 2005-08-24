@@ -68,7 +68,13 @@ if(is_array($opened_tickets)) {
 			case "3" : $vtemp["TPRIORITY"] = $go_api->lng("Mittel"); break;
 			case "5" : $vtemp["TPRIORITY"] = $go_api->lng("Niedrig"); break;
 		}
-		$vtemp["TDATE"] = $row["ticket_date"];
+		if($go_info["user"]["language"] == "en") {
+		  $vtemp["TDATE"] = $row["ticket_date"];
+		} else {
+		  $tannee = substr($row["ticket_date"],0,4); $tmois = substr($row["ticket_date"],5, 2); $tjour = substr($row["ticket_date"],8,2);
+		  $theure = substr($row["ticket_date"],11,8);
+		  $vtemp["TDATE"] = $tjour."/".$tmois."/".$tannee." ".$theure;
+		}		
 
    		if($bgcolor == "#CCCCCC") {
    			$bgcolor = "#EEEEEE";
