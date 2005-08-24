@@ -459,4 +459,88 @@ $wb["Website-Status"] = "Website Status";
 $wb["aktiv"] = "Active";
 $wb["gesperrt"] = "Suspended";
 
+$wb["txt_traffic_suspension_email_desc"] = "<b>Web Site Suspension Notification (Traffic Exceedance)</b>";
+$wb["txt_traffic_suspension_sender_email"] = "Sender's Email";
+$wb["txt_traffic_suspension_sender_name"] = "Name of Sender";
+$wb["txt_traffic_suspension_email_bcc"] = "BCC Recipient";
+$wb["txt_traffic_suspension_email_subject"] = "Subject";
+$wb["txt_traffic_suspension_email_message"] = "Message";
+$wb["txt_traffic_suspension_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Include the following variables in your text:</b></td></tr>
+        <tr>
+          <td class="normal">%%%FIRST_NAME%%%</td>
+          <td class="normal">
+            Client\'s First Name</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%LAST_NAME%%%</td>
+          <td class="normal">
+            Client\'s Last Name</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%WEBSITE%%%</td>
+          <td class="normal">
+            Client\'s Web Site</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%MONTH%%%</td>
+          <td class="normal">
+            Month of Traffic Exceedance</td>
+        </tr>
+        <tr>
+          <td class="normal" valign="top">%%%INCLUDED_TRAFFIC%%%</td>
+          <td class="normal">
+            Traffic included in Web Site Package</td>
+        </tr>
+        <tr>
+          <td class="normal" valign="top">%%%TOTAL_TRAFFIC%%%</td>
+          <td class="normal">
+            Total Traffic in Month of Exceedance</td>
+        </tr>
+        </table>';
+
+$wb["txt_traffic_notification_email_desc"] = "<b>Traffic Exceedance Notification</b>";
+$wb["txt_traffic_notification_sender_email"] = "Sender's Email";
+$wb["txt_traffic_notification_sender_name"] = "Name of Sender";
+$wb["txt_traffic_notification_email_bcc"] = "BCC Recipient";
+$wb["txt_traffic_notification_email_subject"] = "Subject";
+$wb["txt_traffic_notification_email_message"] = "Message";
+$wb["txt_traffic_notification_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Include the following variables in your text:</b></td></tr>
+        <tr>
+          <td class="normal">%%%FIRST_NAME%%%</td>
+          <td class="normal">
+            Client\'s First Name</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%LAST_NAME%%%</td>
+          <td class="normal">
+            Client\'s Last Name</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%WEBSITE%%%</td>
+          <td class="normal">
+            Client\'s Web Site</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%MONTH%%%</td>
+          <td class="normal">
+            Month of Traffic Exceedance</td>
+        </tr>
+        <tr>
+          <td class="normal" valign="top">%%%INCLUDED_TRAFFIC%%%</td>
+          <td class="normal">
+            Traffic included in Web Site Package</td>
+        </tr>
+        <tr>
+          <td class="normal" valign="top">%%%TOTAL_TRAFFIC%%%</td>
+          <td class="normal">
+            Total Traffic in Month of Exceedance</td>
+        </tr>
+        </table>';
+
 ?>

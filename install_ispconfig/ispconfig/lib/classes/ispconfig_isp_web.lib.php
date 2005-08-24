@@ -84,10 +84,10 @@ function web_show($doc_id, $doctype_id) {
 
         // Website-Status nur anzeigen, wenn Website gesperrt ist
         $web = $go_api->db->queryOneRecord("SELECT isp_isp_web.web_traffic_status FROM isp_nodes,isp_isp_web WHERE isp_nodes.doc_id = '$doc_id' AND isp_nodes.doctype_id = '$doctype_id' AND isp_isp_web.doc_id = '$doc_id'");
-        if($web['web_traffic_status'] == 1){
-          $doc->deck[0]->elements[35]->visible = 0;
-        } else {
+        if($web['web_traffic_status'] == 2){
           $doc->deck[0]->elements[35]->visible = 1;
+        } else {
+          $doc->deck[0]->elements[35]->visible = 0;
         }
 
         // Individuelle Fehler-Seiten unsichtbar schalten, wenn nicht aktiviert

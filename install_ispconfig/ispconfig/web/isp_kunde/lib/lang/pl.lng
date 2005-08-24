@@ -387,5 +387,12 @@ $wb["Ja"] = "Yes";
 $wb["Web"] = "Site";
 $wb["Domain"] = "Domain";
 $wb["Unbegrenzt"] = "Unlimited";
+$wb["Traffic-Überschreitung"] = "Traffic Exceedance";
+$wb["sperren"] = "Suspend";
+$wb["benachrichtigen"] = "Notify";
+$wb["keine Aktion"] = "No Action";
+$wb["Website-Status"] = "Website Status";
+$wb["aktiv"] = "Active";
+$wb["gesperrt"] = "Suspended";
 
 ?>

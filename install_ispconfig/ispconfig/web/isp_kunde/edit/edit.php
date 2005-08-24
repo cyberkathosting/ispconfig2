@@ -641,6 +641,13 @@ while (list($key, $val) = each($doc->deck))
         }
         $value = stripslashes($value);
 
+        if($element_val->name == 'web_traffic_ueberschreitung'){
+          $element_val->values[$value] = $go_api->lng($element_val->values[$value]);
+        }
+        if($element_val->name == 'web_traffic_status'){
+          $element_val->values[$value] = $go_api->lng($element_val->values[$value]);
+        }
+
        if($value == '-1') $value = $go_api->lng("Unbegrenzt");
        if($element_val->name != 'web_mysql_anzahl_dbs' && $element_val->name != 'web_anonftplimit' && $element_val->name != 'server_id' && $element_val->name != 'web_speicher' && $element_val->name != 'web_traffic' && $element_val->name != 'web_userlimit' && $element_val->name != 'web_domainlimit'){
           if($value == '0') $value = '<font color="#FF0000"><b>'.$go_api->lng("Nein").'</b></font>';
