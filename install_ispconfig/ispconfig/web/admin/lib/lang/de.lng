@@ -336,7 +336,7 @@ $wb["txt_anbieter"] = "Anbieter";
 $wb["txt_kunden"] = "Kunden";
 $wb["txt_webs"] = "Websites";
 
-$wb["txt_traffic_suspension_email_desc"] = "<bBenachrichtigung über Website-Sperrung (Traffic-Überschreitung)</b>";
+$wb["txt_traffic_suspension_email_desc"] = "<b>Benachrichtigung über Website-Sperrung (Traffic-Überschreitung)</b>";
 $wb["txt_traffic_suspension_sender_email"] = "Absender-Email";
 $wb["txt_traffic_suspension_sender_name"] = "Absender-Name";
 $wb["txt_traffic_suspension_email_bcc"] = "BCC-Empfänger";
@@ -420,7 +420,7 @@ $wb["txt_traffic_notification_email_variables"] = '<table border="0" cellpadding
         </tr>
         </table>';
 
-$wb["txt_res_traffic_suspension_email_desc"] = "<bBenachrichtigung über Anbieter-Sperrung (Traffic-Überschreitung)</b>";
+$wb["txt_res_traffic_suspension_email_desc"] = "<b>Benachrichtigung über Anbieter-Sperrung (Traffic-Überschreitung)</b>";
 $wb["txt_res_traffic_suspension_sender_email"] = "Absender-Email";
 $wb["txt_res_traffic_suspension_sender_name"] = "Absender-Name";
 $wb["txt_res_traffic_suspension_email_bcc"] = "BCC-Empfänger";

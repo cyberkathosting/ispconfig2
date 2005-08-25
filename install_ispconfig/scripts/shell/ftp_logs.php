@@ -78,7 +78,7 @@ exec("rm -f $ftp_log.$datum");
 exec("mv $ftp_log.$datum2 $ftp_log.$datum");
 
 $fp = fopen ($ftp_log.".".$datum, "r");
-$ftp_log_contents = fread($fp, filesize ($ftp_log.".".$datum));
+if(!$ftp_log_contents = @fread($fp, filesize ($ftp_log.".".$datum))) $ftp_log_contents = '';
 fclose($fp);
 while(strstr($ftp_log_contents, "  ")){
   $ftp_log_contents = str_replace("  ", " ", $ftp_log_contents);

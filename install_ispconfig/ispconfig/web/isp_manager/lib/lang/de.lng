@@ -440,7 +440,7 @@ $wb["Website-Status"] = "Website-Status";
 $wb["aktiv"] = "Aktiv";
 $wb["gesperrt"] = "Gesperrt";
 
-$wb["txt_traffic_suspension_email_desc"] = "<bBenachrichtigung über Website-Sperrung (Traffic-Überschreitung)</b>";
+$wb["txt_traffic_suspension_email_desc"] = "<b>Benachrichtigung über Website-Sperrung (Traffic-Überschreitung)</b>";
 $wb["txt_traffic_suspension_sender_email"] = "Absender-Email";
 $wb["txt_traffic_suspension_sender_name"] = "Absender-Name";
 $wb["txt_traffic_suspension_email_bcc"] = "BCC-Empfänger";

@@ -64,7 +64,7 @@ $this->sendmail_cw = $server_conf["server_sendmail_cw"];
 
 function reseller_show($doc_id, $doctype_id) {
     global $go_api, $go_info, $doc, $tablevalues;
-//print_r($doc);
+//print_r($doc->deck[1]);
         ///////////////////////////////////////////////////////////////////////////
         // $tablevalues enthält daten, $doc enthält dokumententyp Repräsentation.
         ///////////////////////////////////////////////////////////////////////////
@@ -74,7 +74,7 @@ function reseller_show($doc_id, $doctype_id) {
         $server = $go_api->db->queryOneRecord("SELECT * from isp_server where doc_id = '$server_id'");
         // Deaktiviere Frontpage
         if($server["server_enable_frontpage"] != 1) {
-                $doc->deck[1]->elements[16]->visible = 0;
+                $doc->deck[1]->elements[18]->visible = 0;
         }
 
         // DNS-Reseller: "Sonstiges"-Tab verstecken (Begrüßungsemail für Kunden nicht nötig)

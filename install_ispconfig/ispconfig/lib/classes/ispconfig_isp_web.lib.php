@@ -61,7 +61,7 @@ $this->sendmail_cw = $server_conf["server_sendmail_cw"];
 
 function web_show($doc_id, $doctype_id) {
     global $go_api, $go_info, $doc, $tablevalues;
-//print_r($doc);
+//print_r($doc->deck[0]);
         ///////////////////////////////////////////////////////////////////////////
         // $tablevalues enthält daten, $doc enthält dokumententyp Repräsentation.
         ///////////////////////////////////////////////////////////////////////////
@@ -124,7 +124,7 @@ function web_show($doc_id, $doctype_id) {
                   $doc->deck[0]->elements[17]->visible = 0;
                   $doc->deck[0]->elements[18]->visible = 0;
                 }
-                if($reseller["limit_ssi"] != 1) $doc->deck[0]->elements[19]->visible = 0;
+                if($reseller["limit_ssi"] != 1) $doc->deck[0]->elements[20]->visible = 0;
                 if($reseller["limit_ftp"] != 1) $doc->deck[0]->elements[21]->visible = 0;
                 if($reseller["limit_mysql"] != 1){
                   $doc->deck[0]->elements[23]->visible = 0;
