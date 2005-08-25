@@ -1252,8 +1252,23 @@ if(!strstr($dist, "freebsd")){
   caselog("chmod 644 /etc/Bastille/bastille-firewall.cfg", $FILE, __LINE__);
   $conf = rf("/etc/Bastille/bastille-firewall.cfg");
   $conf = str_replace("{DNS_SERVERS}", "", $conf);
-  $conf = str_replace("{TCP_PUBLIC_SERVICES}", "21 22 25 53 80 81 110 443 10000", $conf);
-  $conf = str_replace("{UDP_PUBLIC_SERVICES}", "53", $conf);
+
+  $tcp_public_services = '';
+  $udp_public_services = '';
+  if($conn = mysql_query("SELECT dienst_port, dienst_typ FROM isp_firewall WHERE dienst_aktiv = 'ja'")){
+    while($row = mysql_fetch_array($conn)){
+      if($row['dienst_typ'] == 'tcp') $tcp_public_services .= $row['dienst_port'].' ';
+      if($row['dienst_typ'] == 'udp') $udp_public_services .= $row['dienst_port'].' ';
+    }
+    $tcp_public_services = trim($tcp_public_services);
+    $udp_public_services = trim($udp_public_services);
+  } else {
+    $tcp_public_services = '21 22 25 53 80 81 110 443 10000';
+    $udp_public_services = '53';
+  }
+  $conf = str_replace("{TCP_PUBLIC_SERVICES}", $tcp_public_services, $conf);
+  $conf = str_replace("{UDP_PUBLIC_SERVICES}", $udp_public_services, $conf);
+
   wf("/etc/Bastille/bastille-firewall.cfg", $conf);
 
   if(is_file($dist_init_scripts."/bastille-firewall")) caselog("mv -f $dist_init_scripts/bastille-firewall $dist_init_scripts/bastille-firewall.backup_".date("m_d_Y__H_i_s", $current_date), $FILE, __LINE__);
