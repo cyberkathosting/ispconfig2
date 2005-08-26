@@ -1,0 +1,22 @@
+<?
+/**********************************************
+* ISPConfig Help File
+* Version 1.2
+* Syntax: $hlp["FieldName"] = "HelpText";
+************************************************/
+
+$hlp["kunde_anrede"] = "Choisissez l'adresse du client.";
+$hlp["kunde_firma"] = "Entrer la société du client.";
+$hlp["kunde_vorname"] = "Entrer le prénom du client.";
+$hlp["kunde_name"] = "Entrer le nom du client.";
+$hlp["kunde_strasse"] = "Entrer la rue du client.";
+$hlp["kunde_plz"] = "Entrer le code postal du client.";
+$hlp["kunde_ort"] = "Entrer la ville du client.";
+$hlp["kunde_land"] = "Entrer le pays du client.";
+$hlp["kunde_telefon"] = "Entrer le numéro de téléphone du client.";
+$hlp["kunde_fax"] = "Entrer le numéro de fax du client.";
+$hlp["kunde_email"] = "Entrer l'adresse e-mail du client.";
+$hlp["kunde_internet"] = "Entrer l'URL du site web du client.";
+$hlp["webadmin_user"] = "Entrer le nom d'utilisateur du client pour se connecter à ISPConfig.";
+$hlp["webadmin_passwort"] = "Entrer le mot de passe ISPConfig du client.";
+?>
