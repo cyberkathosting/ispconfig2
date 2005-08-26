@@ -455,95 +455,95 @@ $wb["Nein"] = "Non";
 $wb["Ja"] = "Oui";
 $wb["Web"] = "Site";
 $wb["Domain"] = "Domaine";
-$wb["Traffic-Überschreitung"] = "Traffic Exceedance";
-$wb["sperren"] = "Suspend";
-$wb["benachrichtigen"] = "Notify";
-$wb["keine Aktion"] = "No Action";
-$wb["Website-Status"] = "Website Status";
-$wb["aktiv"] = "Active";
-$wb["gesperrt"] = "Suspended";
+$wb["Traffic-Überschreitung"] = "Dépassement de Trafic";
+$wb["sperren"] = "Suspendre";
+$wb["benachrichtigen"] = "Notifier";
+$wb["keine Aktion"] = "Ne Rien Faire";
+$wb["Website-Status"] = "Statut du site";
+$wb["aktiv"] = "Actif";
+$wb["gesperrt"] = "Suspendu";
 
-$wb["txt_traffic_suspension_email_desc"] = "<b>Web Site Suspension Notification (Traffic Exceedance)</b>";
-$wb["txt_traffic_suspension_sender_email"] = "Sender's Email";
-$wb["txt_traffic_suspension_sender_name"] = "Name of Sender";
-$wb["txt_traffic_suspension_email_bcc"] = "BCC Recipient";
-$wb["txt_traffic_suspension_email_subject"] = "Subject";
+$wb["txt_traffic_suspension_email_desc"] = "<b>Notification de Suspension de site (Dépassement du Trafic)</b>";
+$wb["txt_traffic_suspension_sender_email"] = "E-Mail de l'expéditeur";
+$wb["txt_traffic_suspension_sender_name"] = "Nom de l'expéditeur";
+$wb["txt_traffic_suspension_email_bcc"] = "Destinataire en Copie Caché (BCC)";
+$wb["txt_traffic_suspension_email_subject"] = "Sujet";
 $wb["txt_traffic_suspension_email_message"] = "Message";
 $wb["txt_traffic_suspension_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
 <tr>
     <td valign="top" colspan="2" class="normal">
-      <b>Include the following variables in your text:</b></td></tr>
+      <b>Liste des variables possibles :</b></td></tr>
         <tr>
           <td class="normal">%%%FIRST_NAME%%%</td>
           <td class="normal">
-            Client\'s First Name</td>
+            Prénom du Client</td>
         </tr>
         <tr>
           <td class="normal">%%%LAST_NAME%%%</td>
           <td class="normal">
-            Client\'s Last Name</td>
+            Nom du Client</td>
         </tr>
         <tr>
           <td class="normal">%%%WEBSITE%%%</td>
           <td class="normal">
-            Client\'s Web Site</td>
+            Site du client</td>
         </tr>
         <tr>
           <td class="normal">%%%MONTH%%%</td>
           <td class="normal">
-            Month of Traffic Exceedance</td>
+            Mois du dépassement de trafic</td>
         </tr>
         <tr>
           <td class="normal" valign="top">%%%INCLUDED_TRAFFIC%%%</td>
           <td class="normal">
-            Traffic included in Web Site Package</td>
+            Trafic autorisé pour le site</td>
         </tr>
         <tr>
           <td class="normal" valign="top">%%%TOTAL_TRAFFIC%%%</td>
           <td class="normal">
-            Total Traffic in Month of Exceedance</td>
+            Trafic Total du mois de Dépassement</td>
         </tr>
         </table>';
 
-$wb["txt_traffic_notification_email_desc"] = "<b>Traffic Exceedance Notification</b>";
-$wb["txt_traffic_notification_sender_email"] = "Sender's Email";
-$wb["txt_traffic_notification_sender_name"] = "Name of Sender";
-$wb["txt_traffic_notification_email_bcc"] = "BCC Recipient";
-$wb["txt_traffic_notification_email_subject"] = "Subject";
+$wb["txt_traffic_notification_email_desc"] = "<b>Notification de Dépassement de Trafic</b>";
+$wb["txt_traffic_notification_sender_email"] = "E-Mail de l'expéditeur";
+$wb["txt_traffic_notification_sender_name"] = "Nom de l'expéditeur";
+$wb["txt_traffic_notification_email_bcc"] = "Destinataire en Copie Caché (BCC)";
+$wb["txt_traffic_notification_email_subject"] = "Sujet";
 $wb["txt_traffic_notification_email_message"] = "Message";
 $wb["txt_traffic_notification_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
 <tr>
     <td valign="top" colspan="2" class="normal">
-      <b>Include the following variables in your text:</b></td></tr>
+      <b>Liste des variables possibles :</b></td></tr>
         <tr>
           <td class="normal">%%%FIRST_NAME%%%</td>
           <td class="normal">
-            Client\'s First Name</td>
+            Prénom du Client</td>
         </tr>
         <tr>
           <td class="normal">%%%LAST_NAME%%%</td>
           <td class="normal">
-            Client\'s Last Name</td>
+            Nom du Client</td>
         </tr>
         <tr>
           <td class="normal">%%%WEBSITE%%%</td>
           <td class="normal">
-            Client\'s Web Site</td>
+            Site du client</td>
         </tr>
         <tr>
           <td class="normal">%%%MONTH%%%</td>
           <td class="normal">
-            Month of Traffic Exceedance</td>
+            Mois du dépassement de trafic</td>
         </tr>
         <tr>
           <td class="normal" valign="top">%%%INCLUDED_TRAFFIC%%%</td>
           <td class="normal">
-            Traffic included in Web Site Package</td>
+            Trafic autorisé pour le site</td>
         </tr>
         <tr>
           <td class="normal" valign="top">%%%TOTAL_TRAFFIC%%%</td>
           <td class="normal">
-            Total Traffic in Month of Exceedance</td>
+            Trafic Total du mois de Dépassement</td>
         </tr>
         </table>';
 

@@ -456,12 +456,12 @@ $wb["Ja"] = "Oui";
 $wb["Web"] = "Site";
 $wb["Domain"] = "Domaine";
 $wb["Unbegrenzt"] = "Sans Limitation";
-$wb["Traffic-Überschreitung"] = "Traffic Exceedance";
-$wb["sperren"] = "Suspend";
-$wb["benachrichtigen"] = "Notify";
-$wb["keine Aktion"] = "No Action";
-$wb["Website-Status"] = "Website Status";
-$wb["aktiv"] = "Active";
-$wb["gesperrt"] = "Suspended";
+$wb["Traffic-Überschreitung"] = "Dépassement de Trafic";
+$wb["sperren"] = "Suspendre";
+$wb["benachrichtigen"] = "Notifier";
+$wb["keine Aktion"] = "Ne Rien Faire";
+$wb["Website-Status"] = "Statut du site";
+$wb["aktiv"] = "Actif";
+$wb["gesperrt"] = "Suspendu";
 
 ?>

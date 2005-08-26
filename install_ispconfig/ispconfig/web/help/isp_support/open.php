@@ -69,10 +69,12 @@ if(is_array($opened_tickets)) {
 			case "5" : $vtemp["TPRIORITY"] = $go_api->lng("Niedrig"); break;
 		}
 		if($go_info["user"]["language"] == "en") {
-		  $vtemp["TDATE"] = $row["ticket_date"];
+		  $tannee = substr($row["ticket_date"],0,4); $tmois = substr($row["ticket_date"],5, 2); $tjour = substr($row["ticket_date"],8,2);
+		  $theure = substr($row["ticket_date"],11,8);
+		  $vtemp["TDATE"] = $tmois."/".$tjour."/".$tannee." ".$theure;
 		} else {
-		  $tannee = substr($row["ticket_date"], 0, 4); $tmois = substr($row["ticket_date"], 4, 2); $tjour = substr($row["ticket_date"], 6, 2);
-		  $theure = substr($row["ticket_date"],8,8);
+		  $tannee = substr($row["ticket_date"],0,4); $tmois = substr($row["ticket_date"],5, 2); $tjour = substr($row["ticket_date"],8,2);
+		  $theure = substr($row["ticket_date"],11,8);
 		  $vtemp["TDATE"] = $tjour."/".$tmois."/".$tannee." ".$theure;
 		}		
 

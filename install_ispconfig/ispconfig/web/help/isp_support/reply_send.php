@@ -55,7 +55,7 @@ switch($Submit){
 			$to_mail = $dest["kunde_email"];
 		} else {
 			$dest = $go_api->db->queryOneRecord("SELECT email FROM isp_isp_reseller WHERE reseller_userid = $new_ticket_to");
-			$to_mail = $dest["kunde_email"];
+			$to_mail = $dest["email"];
 		}
 		if($go_info["user"]["userid"] == 1) {
 			$from_mail = $go_info["server"]["log_mail"];
@@ -88,6 +88,35 @@ switch($Submit){
 		$answer = stripslashes($answer);
 		$sql = "INSERT INTO help_tickets (ticket_from,ticket_to,ticket_reply,ticket_message,ticket_date) VALUES ($new_ticket_from,$new_ticket_to,$tid,\"$answer\",NOW())";
 		$go_api->db->query($sql);
+		// Send Mail
+		$to_usertype = $go_api->auth->user_type($new_ticket_to);
+		if($from_usertype == "admin") {
+			$to_mail = $go_info["server"]["log_mail"];
+		} elseif($from_usertype == "client") {
+			$dest = $go_api->db->queryOneRecord("SELECT kunde_email FROM isp_isp_kunde WHERE webadmin_userid = $new_ticket_to");
+			$to_mail = $dest["kunde_email"];
+		} else {
+			$dest = $go_api->db->queryOneRecord("SELECT email FROM isp_isp_reseller WHERE reseller_userid = $new_ticket_to");
+			$to_mail = $dest["email"];
+		}
+		if($go_info["user"]["userid"] == 1) {
+			$from_mail = $go_info["server"]["log_mail"];
+			$from_name = "Admin";
+		} else {
+			$from_mail = $go_info["user"]["email"];
+			$from_name = $go_info["user"]["lastname"]." ".$go_info["user"]["firstname"];
+		}
+		$message = $from_name." ".$go_api->lng("geantwortet zu ihnen");
+		$headers  = "From: ".$from_name." <".$from_mail.">\r\n";
+		$headers .= "Reply-To: <".$from_mail.">\r\n";
+		$headers .= "Return-Path: <".$from_mail.">\r\n";
+		$headers .= "X-Sender: <".$from_mail.">\r\n";
+		$headers .= "X-Mailer: PHP5\r\n"; //mailer
+		$headers .= "X-Priority: ".$ticket_data["ticket_urgency"]."\r\n";
+		$headers .= "MIME-Version: 1.0\r\n";
+		$headers .= "Content-Type: text/plain\r\n";
+		mail($to_mail, $go_api->lng("Sie erhielten eine antwort"), $message, $headers);		
+		// Close Ticket
 		$sql = "UPDATE help_tickets SET ticket_status='C' WHERE doc_id=$tid";
 		$go_api->db->query($sql);		
 	break;

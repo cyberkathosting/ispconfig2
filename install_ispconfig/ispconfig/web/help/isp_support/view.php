@@ -82,7 +82,9 @@ $go_api->content->assign( array(    TSUBJECT => $first_ticket["ticket_subject"],
 // Assing Dynamic content
 $vtemp = array();
 if($go_info["user"]["language"] == "en") {
-	  $vtemp["TDATE"] = $first_ticket["ticket_date"];
+	  $tannee = substr($first_ticket["ticket_date"],0,4); $tmois = substr($first_ticket["ticket_date"],5, 2); $tjour = substr($first_ticket["ticket_date"],8,2);
+	  $theure = substr($first_ticket["ticket_date"],11,8);
+	  $vtemp["TDATE"] = $tmois."/".$tjour."/".$tannee." ".$theure;
 } else {
 	  $tannee = substr($first_ticket["ticket_date"],0,4); $tmois = substr($first_ticket["ticket_date"],5, 2); $tjour = substr($first_ticket["ticket_date"],8,2);
 	  $theure = substr($first_ticket["ticket_date"],11,8);
@@ -116,7 +118,9 @@ if(is_array($other_ticket)) {
 			$vtemp["TFROM"] = $from_ident["vorname"]." ".$from_ident["name"];
 		}
 		if($go_info["user"]["language"] == "en") {
-		  $vtemp["TDATE"] = $row["ticket_date"];
+		  $tannee = substr($row["ticket_date"],0,4); $tmois = substr($row["ticket_date"],5, 2); $tjour = substr($row["ticket_date"],8,2);
+		  $theure = substr($row["ticket_date"],11,8);
+		  $vtemp["TDATE"] = $tmois."/".$tjour."/".$tannee." ".$theure;
 		} else {
 		  $tannee = substr($row["ticket_date"],0,4); $tmois = substr($row["ticket_date"],5, 2); $tjour = substr($row["ticket_date"],8,2);
 		  $theure = substr($row["ticket_date"],11,8);
