@@ -116,6 +116,9 @@ if [ -f /etc/mandrakelinux-release ] && [ ! -h  /etc/mandrakelinux-release ]; th
 fi
 if [ -f /etc/redhat-release ] && [ ! -h  /etc/redhat-release ]; then
    version=`cat /etc/redhat-release | cut -f5 -d' '`
+   if [ -n '$version' ]; then
+     version=`cat /etc/redhat-release | cut -f3 -d' '`
+   fi
    echo $version | grep \\. &> /dev/null
    if [ $? != 0 ]; then
      version=`echo $version.0`
