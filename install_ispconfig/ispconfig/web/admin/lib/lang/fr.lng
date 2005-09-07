@@ -219,12 +219,12 @@ $wb["txt_client_salutatory_email_variables"] = '<table border="0" cellpadding="3
         <tr>
           <td class="normal">%%%CP%%%</td>
           <td class="normal">
-            URL de l\'administration de 42go ISP-Manager</td>
+            URL de l\'administration d\'ISPConfig</td>
         </tr>
         <tr>
           <td class="normal">%%%MANUAL%%%</td>
           <td class="normal">
-            Manuel client de 42go ISP-Manager</td>
+            Manuel client d\'ISPConfig</td>
         </tr>
         </table>';
 
@@ -271,12 +271,12 @@ $wb["txt_res_salutatory_email_variables"] = '<table border="0" cellpadding="3" c
         <tr>
           <td class="normal">%%%CP%%%</td>
           <td class="normal">
-            URL de l\'administration de 42go ISP-Manager</td>
+            URL de l\'administration d\'ISPConfig</td>
         </tr>
         <tr>
           <td class="normal">%%%MANUAL%%%</td>
           <td class="normal">
-            Manuel revendeur de 42go ISP-Manager</td>
+            Manuel revendeur d\'ISPConfig</td>
         </tr>
         </table>';
 $wb["txt_standard_index"] = "Page d'Index<br>&nbsp;&nbsp;standard";
