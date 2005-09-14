@@ -1033,7 +1033,7 @@ function make_docroot($doc_id,$hostname,$domainname,$web_quota,$update) {
     touch($web_path."/web/error/.no_delete");
   }
 
-  if(!is_file($web_path."/web/index.html") && !is_file($web_path."/web/index.htm") && !is_file($web_path."/web/index.shtml") && !is_file($web_path."/web/index.shtm") && !is_file($web_path."/web/index.php") && !is_file($web_path."/web/index.php3") && !is_file($web_path."/web/index.php4") && !is_file($web_path."/web/index.phtml") && !is_file($web_path."/web/index.cgi") && !is_file($web_path."/web/index.pl") && !is_file($web_path."/web/index.jsp") && !is_file($web_path."/web/index.asp")){
+  if(!is_file($web_path."/web/index.html") && !is_file($web_path."/web/index.htm") && !is_file($web_path."/web/index.shtml") && !is_file($web_path."/web/index.shtm") && !is_file($web_path."/web/index.php") && !is_file($web_path."/web/index.php3") && !is_file($web_path."/web/index.php4") && !is_file($web_path."/web/index.php5") && !is_file($web_path."/web/index.phtml") && !is_file($web_path."/web/index.cgi") && !is_file($web_path."/web/index.pl") && !is_file($web_path."/web/index.jsp") && !is_file($web_path."/web/index.asp") && !is_file($web_path."/web/index.aspx")){
     if($standard_index_page == ""){
       $mod->log->caselog("cp -fr /root/ispconfig/isp/standard_index.html_".$go_info["server"]["lang"]." ".$web_path."/web/index.html", $this->FILE, __LINE__);
     } else {
