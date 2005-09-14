@@ -159,6 +159,7 @@ function web_show($doc_id, $doctype_id) {
                 // Hostingplan anwenden
                 $vorlage_id = intval($_REQUEST["vorlage_id"]);
                 if(!empty($vorlage_id)) {
+                
                         // Hole Vorlage
                         $vorlage = $go_api->db->queryOneRecord("SELECT * FROM isp_isp_web_template WHERE doc_id = $vorlage_id");
 
@@ -172,7 +173,7 @@ function web_show($doc_id, $doctype_id) {
                         $doc->deck[0]->elements[16]->value = $vorlage["web_standard_cgi"];
                         $doc->deck[0]->elements[17]->value = $vorlage["web_php"];
                         $doc->deck[0]->elements[18]->value = $vorlage["web_php_safe_mode"];
-                        $doc->deck[0]->elements[19]->value = $vorlage["web_ssi"];
+                        $doc->deck[0]->elements[20]->value = $vorlage["web_ssi"];
                         $doc->deck[0]->elements[21]->value = $vorlage["web_ftp"];
                         $doc->deck[0]->elements[22]->value = $vorlage["web_frontpage"];
                         $doc->deck[0]->elements[23]->value = $vorlage["web_mysql"];
