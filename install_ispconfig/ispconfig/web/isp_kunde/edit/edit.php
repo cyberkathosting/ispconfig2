@@ -627,9 +627,10 @@ while (list($key, $val) = each($doc->deck))
                 if(is_file($hlp_file)) include_once($hlp_file);
 
     if(is_array($val->elements) and $deck_id == $key){
+
         // gehe durch alle Elemente des Decks
         while (list($element_key, $element_val) = each($val->elements)){
-//print_r($element_val);
+
         // wenn Element sichtbar ist
         if($element_val->visible == 1) {
 
@@ -648,11 +649,13 @@ while (list($key, $val) = each($doc->deck))
           $element_val->values[$value] = $go_api->lng($element_val->values[$value]);
         }
 
+       /*
        if($value == '-1') $value = $go_api->lng("Unbegrenzt");
        if($element_val->name != 'web_mysql_anzahl_dbs' && $element_val->name != 'web_anonftplimit' && $element_val->name != 'server_id' && $element_val->name != 'web_speicher' && $element_val->name != 'web_traffic' && $element_val->name != 'web_userlimit' && $element_val->name != 'web_domainlimit' && $element_val->name != 'web_traffic_ueberschreitung' && $element_val->name != 'web_traffic_status'){
           if($value == '0') $value = '<font color="#FF0000"><b>'.$go_api->lng("Nein").'</b></font>';
           if($value == '1') $value = '<font color="#009F00"><b>'.$go_api->lng("Ja").'</b></font>';
         }
+        */
 
         // Switch durch Datentypen
         $mode = 'r';
