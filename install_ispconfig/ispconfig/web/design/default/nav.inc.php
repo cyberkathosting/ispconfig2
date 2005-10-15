@@ -62,7 +62,31 @@
         </table>
 		<?php } else { echo "&nbsp;";}?>
 		</td>
-        <td width="200"><img src="../<? echo $session_design_path?>/images/nav_oben_logo.png" width="200" height="78"></td>
+        <td width="200"><img src="../<? 
+		
+		// bestimme Username des Resellers
+		/*
+		$groups = $go_api->groups->myGroups();
+		if(is_array($groups)) {
+			$reseller_sys_doc_id = $go_info["user"]["userid"];
+		} else {
+			$reseller = $go_api->db->queryOneRecord("SELECT doc_id FROM sys_user WHERE userid = ".$go_info["user"]["userid"]);
+			$reseller_sys_doc_id = $reseller["doc_id"];
+		}
+		
+		$reseller = $go_api->db->queryOneRecord("SELECT reseller_user FROM isp_isp_reseller WHERE reseller_userid = ".$reseller_sys_doc_id);
+		
+		
+		$reseller_name = escapeshellcmd($reseller["reseller_user"]);
+		$reseller_name = str_replace("/","",$reseller_name);
+		*/
+		
+		session_start();
+		$reseller_name = $_SESSION["reseller_image_id"];
+		
+		echo ($reseller_name != '' && @is_file('../design/reseller_images/nav_'.$reseller_name.'.png'))?'design/reseller_images/nav_'.$reseller_name.'.png':$session_design_path.'/images/nav_oben_logo.png';
+		
+		?>" width="200" height="78"></td>
       </tr>
     </table></td>
   </tr>

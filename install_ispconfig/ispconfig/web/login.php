@@ -26,6 +26,7 @@ OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
 NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
 EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
+session_start();
 include("../lib/config.inc.php");
 require_once("login/lib/lang/".$go_info["server"]["lang"].".lng");
 $err = intval($_GET["err"]);
@@ -50,7 +51,11 @@ $err = intval($_GET["err"]);
   <tr>
     <td align="center" valign="middle"><table width="400" border="0" cellpadding="0" cellspacing="1" bgcolor="#CCCCCC">
       <tr>
-        <td><img src="design/default/images/login_logo.png" width="398" height="78"></td>
+        <td><img src="<? $reseller = $_REQUEST["reseller"];
+		$reseller = escapeshellcmd($reseller);
+		$reseller = str_replace("/","",$reseller);
+		$_SESSION["reseller_image_id"] = $reseller;
+		echo ($reseller != '' && @is_file('design/reseller_images/login_'.$reseller.'.png'))?'design/reseller_images/login_'.$reseller.'.png':'design/default/images/login_logo.png';?>" width="398" height="78"></td>
       </tr>
       <tr>
         <td bgcolor="#FFFFFF"><table width="100%" border="0" cellspacing="0" cellpadding="5">
