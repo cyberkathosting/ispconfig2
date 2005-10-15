@@ -134,6 +134,10 @@ dist_ftp_conf:/etc/proftpd.conf:Config-File:read::debian31
 dist_ftp_version:standalone:Server-Version:exit::debian31
 dist_ftp_log:/var/log/xferlog:Log-File:read::debian31
 
+dist_ftp_conf:/etc/proftpd.conf:Config-File:read::debiantesting/unstable0
+dist_ftp_version:standalone:Server-Version:exit::debiantesting/unstable0
+dist_ftp_log:/var/log/xferlog:Log-File:read::debiantesting/unstable0
+
 dist_ftp_conf:/usr/local/etc/proftpd.conf:Config-File:read::freebsd50
 dist_ftp_version:standalone:Server-Version:exit::freebsd50
 dist_ftp_log:/var/log/xferlog:Log-File:read::freebsd50

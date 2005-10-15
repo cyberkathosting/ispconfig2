@@ -80,6 +80,8 @@ dist_path_httpd_root:/home/www:Web-Root:read::debian30
 
 dist_path_httpd_root:/home/www:Web-Root:read::debian31
 
+dist_path_httpd_root:/home/www:Web-Root:read::debiantesting/unstable0
+
 dist_path_httpd_root:/home/www:Web-Root:read::freebsd50
 
 dist_path_httpd_root:/home/www:Web-Root:read::freebsd51
