@@ -58,6 +58,14 @@ dist_ftp_conf:/etc/vsftpd.conf:Config-File:read::mdk102
 dist_ftp_version:xinetd:Server-Version:select:standalone|inetd|xinetd:mdk102
 dist_ftp_log:/var/log/vsftpd.log:Log-File:read::mdk102
 
+dist_ftp_conf:/etc/vsftpd/vsftpd.conf:Config-File:read::rhat41
+dist_ftp_version:standalone:Server-Version:select:standalone|inetd|xinetd:rhat41
+dist_ftp_log:/var/log/vsftpd.log:Log-File:read::rhat41
+
+dist_ftp_conf:/etc/vsftpd/vsftpd.conf:Config-File:read::rhat42
+dist_ftp_version:standalone:Server-Version:select:standalone|inetd|xinetd:rhat42
+dist_ftp_log:/var/log/vsftpd.log:Log-File:read::rhat42
+
 dist_ftp_conf:/etc/vsftpd.conf:Config-File:read::rhat73
 dist_ftp_version:xinetd:Server-Version:select:standalone|inetd|xinetd:rhat73
 dist_ftp_log:/var/log/vsftpd.log:Log-File:read::rhat73

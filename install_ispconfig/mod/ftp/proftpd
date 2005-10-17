@@ -58,6 +58,14 @@ dist_ftp_conf:/etc/proftpd.conf:Config-File:read::mdk102
 dist_ftp_version:standalone:Server-Version:exit::mdk102
 dist_ftp_log:/var/log/xferlog:Log-File:read::mdk102
 
+dist_ftp_conf:/etc/proftpd.conf:Config-File:read::rhat41
+dist_ftp_version:standalone:Server-Version:exit::rhat41
+dist_ftp_log:/var/log/xferlog:Log-File:read::rhat41
+
+dist_ftp_conf:/etc/proftpd.conf:Config-File:read::rhat42
+dist_ftp_version:standalone:Server-Version:exit::rhat42
+dist_ftp_log:/var/log/xferlog:Log-File:read::rhat42
+
 dist_ftp_conf:/etc/proftpd.conf:Config-File:read::rhat73
 dist_ftp_version:standalone:Server-Version:exit::rhat73
 dist_ftp_log:/var/log/xferlog:Log-File:read::rhat73
