@@ -55,7 +55,7 @@ if(isset($HTTP_POST_VARS["s"])) $s = $HTTP_POST_VARS["s"];
 $s = addslashes($s);
 $session = "s=$s";
 $set_header = 1;
-session_start();
+@session_start();
 
 /**********************************************
 * System Settings

@@ -114,6 +114,27 @@ if [ -f /etc/mandrakelinux-release ] && [ ! -h  /etc/mandrakelinux-release ]; th
    cat dist.info.ende >> dist.info.tmp
    rm -f dist.info.ende
 fi
+if [ -f /etc/mandriva-release ] && [ ! -h  /etc/mandriva-release ]; then
+   version=`cat /etc/mandriva-release | cut -f4 -d' '`
+   echo $version | grep \\. &> /dev/null
+   if [ $? != 0 ]; then
+     version=`echo $version.0`
+   fi
+   distversion=`echo Mandriva $version`
+   echo $distversion
+   version=`echo $version | cut -f1 -dr`
+   distvers=mdr${version//./}
+   echo dist=$distvers '##' > dist.info.tmp
+   grep -i $distvers dist.txt >>  dist.info.tmp
+   cp -f dist.info.tmp dist.info
+   VAR1=`cat dist.info.tmp | cut -f1 -d=`
+   for var1 in $VAR1
+   do
+     echo export $var1 >> dist.info.ende
+   done
+   cat dist.info.ende >> dist.info.tmp
+   rm -f dist.info.ende
+fi
 if [ -f /etc/redhat-release ] && [ ! -h  /etc/redhat-release ]; then
    version=`cat /etc/redhat-release | cut -f5 -d' '`
    if [ -n '$version' ]; then
@@ -123,9 +144,15 @@ if [ -f /etc/redhat-release ] && [ ! -h  /etc/redhat-release ]; then
    if [ $? != 0 ]; then
      version=`echo $version.0`
    fi
-   distversion=`echo RedHat $version`
-   echo $distversion
-   distvers=rhat${version//./}
+   if [ "`cat /etc/redhat-release | cut -f1 -d' '`" == "CentOS" ]; then
+     distversion=`echo CentOS $version`
+     echo $distversion
+     distvers=centos${version//./}
+   else
+     distversion=`echo RedHat $version`
+     echo $distversion
+     distvers=rhat${version//./}
+   fi
    echo dist=$distvers '##' > dist.info.tmp
    grep -i $distvers dist.txt >> dist.info.tmp
    cp -f dist.info.tmp dist.info

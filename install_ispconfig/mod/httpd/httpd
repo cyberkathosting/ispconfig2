@@ -42,9 +42,11 @@ dist_path_httpd_root:/home/www:Web-Root:read::mdk101
 
 dist_path_httpd_root:/home/www:Web-Root:read::mdk102
 
-dist_path_httpd_root:/home/www:Web-Root:read::rhat41
+dist_path_httpd_root:/home/www:Web-Root:read::mdr20060
 
-dist_path_httpd_root:/home/www:Web-Root:read::rhat42
+dist_path_httpd_root:/home/www:Web-Root:read::centos41
+
+dist_path_httpd_root:/home/www:Web-Root:read::centos42
 
 dist_path_httpd_root:/home/www:Web-Root:read::rhat73
 

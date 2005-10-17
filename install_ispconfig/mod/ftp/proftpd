@@ -58,13 +58,17 @@ dist_ftp_conf:/etc/proftpd.conf:Config-File:read::mdk102
 dist_ftp_version:standalone:Server-Version:exit::mdk102
 dist_ftp_log:/var/log/xferlog:Log-File:read::mdk102
 
-dist_ftp_conf:/etc/proftpd.conf:Config-File:read::rhat41
-dist_ftp_version:standalone:Server-Version:exit::rhat41
-dist_ftp_log:/var/log/xferlog:Log-File:read::rhat41
+dist_ftp_conf:/etc/proftpd.conf:Config-File:read::mdr20060
+dist_ftp_version:standalone:Server-Version:exit::mdr20060
+dist_ftp_log:/var/log/xferlog:Log-File:read::mdr20060
 
-dist_ftp_conf:/etc/proftpd.conf:Config-File:read::rhat42
-dist_ftp_version:standalone:Server-Version:exit::rhat42
-dist_ftp_log:/var/log/xferlog:Log-File:read::rhat42
+dist_ftp_conf:/etc/proftpd.conf:Config-File:read::centos41
+dist_ftp_version:standalone:Server-Version:exit::centos41
+dist_ftp_log:/var/log/xferlog:Log-File:read::centos41
+
+dist_ftp_conf:/etc/proftpd.conf:Config-File:read::centos42
+dist_ftp_version:standalone:Server-Version:exit::centos42
+dist_ftp_log:/var/log/xferlog:Log-File:read::centos42
 
 dist_ftp_conf:/etc/proftpd.conf:Config-File:read::rhat73
 dist_ftp_version:standalone:Server-Version:exit::rhat73
