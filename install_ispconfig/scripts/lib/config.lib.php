@@ -1227,15 +1227,19 @@ function make_vhost($server_id) {
       //NameVirtualHost schreiben
       if(!empty($ip_test)){
         // Variablen zuweisen
-        $mod->tpl->assign( array(SERVERIP => "NameVirtualHost ".$ip["server_ip"].$web_port));
+        $mod->tpl->assign( array(SERVERIP => "NameVirtualHost ".$ip["server_ip"].$web_port."
+<VirtualHost ".$ip["server_ip"].$web_port.">
+  ServerName localhost 
+  ServerAdmin root@localhost
+  DocumentRoot /var/www/sharedip 
+</VirtualHost>"));
       } else {
         $mod->tpl->assign( array(SERVERIP => ""));
       }
-    $mod->tpl->parse(NAMEVHOST,".namevhost");
+	$mod->tpl->parse(NAMEVHOST,".namevhost");
   }
 
   $webs = $mod->db->queryAllRecords("select * from isp_nodes,isp_isp_web WHERE isp_isp_web.server_id = '$server_id' AND isp_nodes.doc_id = isp_isp_web.doc_id AND isp_nodes.doctype_id = '".$this->web_doctype_id."' AND isp_nodes.status = '1'");
-
 
   if(!empty($webs)){
   foreach($webs as $web){
