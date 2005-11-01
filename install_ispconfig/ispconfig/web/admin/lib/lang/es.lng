@@ -30,7 +30,7 @@ $wb["Server Name"]  = "Nombre del Servidor";
 $wb["Netzmaske"]    = "Netmask";
 $wb["Sprache"]      = "Lenguaje";
 $wb["IP Liste"]     = "Lista de IPs";
-$wb["hinweis_ip_liste"] = "<b>Hint:</b> Solo ponga una Ip por lmnea en el campo Lista de IPs.";
+$wb["hinweis_ip_liste"] = "<b>Hint:</b> Solo ponga una Ip por línea en el campo Lista de IPs.";
 $wb["Pfad"]         = "Path";
 $wb["Programm"]     = "Programa";
 $wb["Reparatur"]    = "Reparar";
@@ -49,7 +49,7 @@ $wb["oder"] = "o";
 $wb["Installation starten"] = "Instalar";
 $wb["Deutsch"] = "Deutsch";
 $wb["Englisch"] = "English";
-$wb["Spanish"] = "Espaqol";
+$wb["Spanish"] = "Español";
 $wb["Datei"] = "Fichero";
 
 //////////////// Administration Ende ///////////
@@ -57,7 +57,7 @@ $wb["Datei"] = "Fichero";
 //////////////// Firewall, Monitor + Dienste  ////////////////
 
 $wb["Überwachung"] = "Monitorizando";
-$wb["Firewall"] = "Firewall";
+$wb["Firewall"] = "Cortafuegos";
 $wb["Web-Server"] = "Servidor Web";
 $wb["FTP-Server"] = "Servidor FTP";
 $wb["SMTP-Server"] = "Servidor SMTP";
@@ -66,7 +66,7 @@ $wb["mySQL-Server"] = "Servidor MySQL";
 $wb["An"] = "On";
 $wb["Aus"] = "Off";
 $wb["neu Starten"] = "Restart";
-$wb["Neu"] = "Aqadir";
+$wb["Neu"] = "Añadir";
 $wb["Aktionen"] = "Acciones";
 $wb["Dienst"] = "Servicio";
 $wb["Hostname"] = "Hostname";
@@ -86,7 +86,7 @@ $wb["Name"] = "Nombre";
 $wb["Aktiv"] = "Activo";
 $wb["Firewall Regel"] = "Regla de Firewall";
 $wb["Dieser Port kann nicht geändert werden."] = "Este puerto no puede ser alterado.<br>";
-$wb["Dieser Port kann nicht deaktiviert werden."] = "This port cannot be deactivated.<br>";
+$wb["Dieser Port kann nicht deaktiviert werden."] = "Este puerto no puede ser desactivado.<br>";
 
 //////////////// Firewall ENDE ////////////////
 
@@ -95,7 +95,7 @@ $wb["Dieser Port kann nicht deaktiviert werden."] = "This port cannot be deactiv
 $wb["ISP Server"] = 'ISP Server';
 $wb["Admin Email"] = 'Admin Email';
 $wb["EMail"] = 'EMail';
-$wb["Funktionen"] = 'Functions';
+$wb["Funktionen"] = 'Funcciones';
 $wb["httpd User"] = 'httpd User';
 $wb["httpd Group"] = 'httpd Group';
 $wb["Document Root"] = 'Document Root';
