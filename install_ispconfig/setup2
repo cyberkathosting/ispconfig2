@@ -665,7 +665,9 @@ fi  ## install_art == install
   
   if [ ! -S /var/www/sharedip ]; then
     mkdir -p /var/www/sharedip
-	cp /root/ispconfig/isp/sharedip_index.html_$lang /var/www/sharedip/index.html
+	log "Directory /var/www/sharedip created."
+	cp isp/sharedip_index.html_$lang /var/www/sharedip/index.html
+	log "Use sharedip_index.html_$lang as SharedIP default page."
   fi 
   
   VAR1=`cat dist.info | cut -f1 -d=`
