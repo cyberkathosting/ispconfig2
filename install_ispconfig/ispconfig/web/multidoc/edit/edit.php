@@ -158,7 +158,7 @@ unset($form);
 
 
 $vars = "";
-$vars["title"] = $title;
+$vars["title"] = trim($title);
 $vars["doctype_id"] = $doctype_id;
 
 if($go_api->auth->check_write($gid,1)) {

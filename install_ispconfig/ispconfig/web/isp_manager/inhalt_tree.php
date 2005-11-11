@@ -363,8 +363,8 @@ foreach($groups as $gid) {
     while($DB = mysql_fetch_array($conn)):
         $id = $DB["tree_id"];
         $ordner = $DB["parent"];
-        $btext = addslashes($DB["title"]);
-        $link = addslashes($DB["content"]);
+        $btext = trim(addslashes($DB["title"]));
+        $link = trim(addslashes($DB["content"]));
         $art = $DB["type"];
         $groupid = $DB["groupid"];
 
