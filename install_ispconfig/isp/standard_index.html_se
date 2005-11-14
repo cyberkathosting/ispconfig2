@@ -1,6 +1,6 @@
 <HTML>
 <HEAD>
-<TITLE>Welcome!</TITLE>
+<TITLE>Välkommen!</TITLE>
 </HEAD>
 <BODY BGCOLOR="#FFFFFF" leftMargin=0 topMargin=0 rightMargin=0 marginheight="0" marginwidth="0">
 <CENTER>
@@ -10,10 +10,10 @@
     <HR SIZE="1" COLOR="#FFFFFF">
     <TABLE>
       <TR>
-            <TD><FONT SIZE="3" COLOR="#FFFFFF" FACE="Helvetica, Arial"><B>Welcome
-              to
+            <TD><FONT SIZE="3" COLOR="#FFFFFF" FACE="Helvetica, Arial"><B>Välkommen
+              till
               <!--ADRESSE//-->
-              your website!
+              din webbplats!
               <!--ADRESSE//-->
               </B></FONT></TD>
       </TR>
@@ -24,9 +24,9 @@
   <TR>
     <TD BGCOLOR="#FFFFFF">
     <BR><BR><CENTER>
-        <FONT COLOR="#000000" SIZE="2" FACE="Helvetica, Arial">This is the standard index of your website. You can easily delete it or replace it with another file. This is the index.html file
-        in the <B>web</B> directory.
-        <P>For questions or problems please contact the server administrator.</FONT> </CENTER>
+        <FONT COLOR="#000000" SIZE="2" FACE="Helvetica, Arial">Detta är en standard index sida på din webbplats. Du kan antingen ta bort den eller ersätta den med en annan fil. Detta är en index.html fil
+        i <B>webb</B> mappen.
+        <P>För frågor eller problem runt detta kontakta server administratören.</FONT> </CENTER>
           <BR>
 
         <HR SIZE="1" WIDTH="90%">

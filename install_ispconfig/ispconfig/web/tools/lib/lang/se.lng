@@ -5,7 +5,7 @@
 *********************************/
 
 //////////////// Tools //////////////////////
-$wb["Tools & Optionen"] = "Tools & Options";
+$wb["Tools & Optionen"] = "Verktyg & Tillval";
 $wb["Passwort ändern"] = "Ändra lösenord";
 $wb["Allgemein"]    = "Allmänt";
 $wb["Passwort alt"] = "Gammalt lösenord";
@@ -15,7 +15,7 @@ $wb["Adresse ändern"] = "Ändra Adress";
 
 $wb["willkommen_kunde"] = "Välkommen till ISPConfig!
 Du kan administrera din hemsida(or) här. Om du har frågor eller problem,
-kontakta din administratör eller använd ISPConfig klient manual.";
+kontakta din administratör eller använd ISPConfig kund manual.";
 $wb["Willkommen"] = "Välkommen";
 
 $wb["passwort_gespeichert"] = "Lösenordet uppdaterat.";
@@ -26,22 +26,22 @@ $wb["passwort_alt"] = "Lösenordet kunde inte uppdateras <br>pågrund av att det g
 
 $wb["Backup Manager"] = 'Backup Manager';
 $wb["Backup"] = 'Backup';
-$wb["Restore"] = 'Restore';
+$wb["Restore"] = 'Återställa';
 $wb["Daten Export"] = 'Data Export';
-$wb["Update Manager"] = 'Update Manager';
-$wb["Portscanner"] = 'Portscanner';
+$wb["Update Manager"] = 'Uppdaterings Manager';
+$wb["Portscanner"] = 'Portskanner';
 $wb["Whois"] = 'Whois';
-$wb["Download"] = 'Download';
+$wb["Download"] = 'Ladda ner';
 $wb["FTP-Server"] = 'FTP-Server';
 $wb["Verzeichnis"] = 'Katalog';
-$wb["Web Daten"] = 'Web Data';
-$wb["User Daten"] = 'User Data';
-$wb["Log Daten"] = 'Log Data';
-$wb["mySQL Datenbank (wenn vorhanden)"] = 'mySQL Database';
+$wb["Web Daten"] = 'Webb Data';
+$wb["User Daten"] = 'Användar Data';
+$wb["Log Daten"] = 'Logg Data';
+$wb["mySQL Datenbank (wenn vorhanden)"] = 'mySQL Databas';
 $wb["Backup starten"] = 'Start Backup';
 $wb["Kein Web vorhanden."] = 'Ingen domän funnen.';
-$wb["Web-Backup"] = 'Web Backup';
-$wb["Kunden-Stammaten"] = 'Client-Data';
+$wb["Web-Backup"] = 'Webb Backup';
+$wb["Kunden-Stammaten"] = 'Kund Data';
 $wb["Format Einstellungen"] = 'Format Specifikation';
 $wb["Trennzeichen"] = 'Separator';
 $wb["Eingeschlossen mit"] = 'Bifoga med';
@@ -51,7 +51,7 @@ $wb["Anbieter-Stammdaten"] = 'Återförsäljar Data';
 $wb["Export"] = 'Export';
 $wb["Von"] = 'Från';
 $wb["Bis"] = 'Till';
-$wb["Local Portscanner"] = 'Local Portscanner';
+$wb["Local Portscanner"] = 'Lokal Portskanner';
 
 // NEW 1.1.12a //////////////////////////////
 
@@ -59,21 +59,21 @@ $wb["Es wurde kein Web ausgewählt."] = "Ingen hemsida vald.";
 $wb["Backup-Funktionen im Demo-Modus nicht verfügbar."] = "Backup-Funktioner är inte tillgängliga i demo mode.";
 $wb["Backup Status"] = "Backup-Status";
 $wb["Der Name des FTP-Servers <br>enthält ungültige Zeichen."] = "Namnet på FTP server <br>innehåller otillåtna tecken.";
-$wb["Sie haben keinen FTP Benutzernamen angegeben."] = "Inget FTP Username har angetts.";
-$wb["Ftp-Verbindung nicht hergestellt!"] = "Ftp Connection misslyckades!";
+$wb["Sie haben keinen FTP Benutzernamen angegeben."] = "Inget FTP Användarnamn har angetts.";
+$wb["Ftp-Verbindung nicht hergestellt!"] = "Ftp Anslutning misslyckades!";
 $wb["Verbindung mit:"] = "Uppkopplad till:";
 $wb["als Benutzer:"] = "som Användare:";
 $wb["nicht möglich."] = "inte möjligt.";
 $wb["Konnte nicht in Verzeichnis:"] = "ändrar till katalog:";
 $wb["wechseln."] = "misslyckats.";
 $wb["Wechsel in Verzeichnis:"] = "ändrar till katalog:";
-$wb["Ftp upload war fehlerhaft!"] = "FTP-Upload misslyckats!";
-$wb["Upload erfolgreich."] = "Upload lyckats.";
-$wb["FTP-Upload Status"] = "FTP Upload Status";
+$wb["Ftp upload war fehlerhaft!"] = "FTP-Uppladdning misslyckats!";
+$wb["Upload erfolgreich."] = "Uppladdning lyckats.";
+$wb["FTP-Upload Status"] = "FTP Uppladdning Status";
 $wb["Backup-Methode nicht unterstützt."] = "Backup metod inte tillgänglig.";
 $wb["Sprache ändern"] = "Byt språk";
 $wb["Sprache (ISO)"] = "Språk (ISO)";
-$wb["Software Version"] = "Software Version";
+$wb["Software Version"] = "Mjukvaru Version";
 
 
 //////////////// Tools Ende /////////////////
@@ -83,7 +83,7 @@ $wb["Anbieter"]     = "Återförsäljare";
 $wb["Kunde"]        = "Kund";
 $wb["Suchen"]       = "Sök";
 $wb["Stammdaten"]   = "Master data";
-$wb["Limits"]       = "Limits";
+$wb["Limits"]       = "Begränsningar";
 $wb["Zugangsdaten"] = "Ange information";
 $wb["Statistik"]    = "Statistik";
 $wb["Firma"]        = "Företag";
@@ -96,12 +96,12 @@ $wb["Ort"]          = "Ort";
 $wb["Land"]         = "Land";
 $wb["Telefon"]      = "Telefon";
 $wb["Fax"]          = "Fax";
-$wb["Internet"]     = "Web adress";
+$wb["Internet"]     = "Webb adress";
 $wb["Öffnen"]      = "Öppna";
-$wb["Benutzername"] = "Username"; // besser: vielleicht nur Variable $wb["username"] benutzen?
+$wb["Benutzername"] = "Användarnamn"; // besser: vielleicht nur Variable $wb["username"] benutzen?
 $wb["zugangsdaten_anbieter_einleitung"] = "Här kan du ange användarnamn och lösenord för återförsäljare.";
 $wb["zugangsdaten_kunde_einleitung"] = "Här kan du ange användarnamn och lösenord för hantering av <br> vald domän.<br> ";
-$wb["Web Verwaltung"] = "Web administration";
+$wb["Web Verwaltung"] = "Webb administration";
 $wb["Rechnung"]      = "Faktura";
 $wb["Rechnungsanschrift:"] = "Faktura adress:<br>";
 $wb["Intervall"]    = "Intervall";
@@ -109,26 +109,26 @@ $wb["Preis"]        = "Pris";
 $wb["Zahlungsart"]  = "Betalningsmetod";
 $wb["Basis"]        = "Basis";
 $wb["Create DNS"]   = "Skapa DNS";
-$wb["Speicher MB"]     = "Space MB";
-$wb["Max. User"]        = "Max. User";
-$wb["Max. Domain"]        = "Max. Domän";
+$wb["Speicher MB"]     = "Utrymme MB";
+$wb["Max. User"]        = "Max. Användare";
+$wb["Max. Domain"]        = "Max. Domäner";
 $wb["PHP Scripte"]        = "PHP Scripts";
 $wb["SSI"]        = "SSI";
 $wb["FTP Zugang"]        = "FTP access";
 $wb["mySQL"]        = "mySQL";
 $wb["SSL"]        = "SSL";
-$wb["Shell Zugriff"]      = "Shell Access";
+$wb["Shell Zugriff"]      = "Skal Access";
 $wb["Zugang"]       = "Access";  // Zugriff u. Zugang zusammenfassen!/nur einen Begriff nehmen!
 $wb["CGI Scripte"]      = "CGI Scripts";
 $wb["Bundesland"]   = "Län";
 $wb["Abteilung"]    = "Avdelning";
 $wb["Gültigkeit (Tage)"]  = "Giltighet (dagar)";
 $wb["SSL Key"]          = "SSL Key";
-$wb["SSL Zertifikat"]   = "SSL Certificate";
-$wb["Aktion"]       = "Action";
-$wb["Zertifikat erzeugen"] = "Skapar certificate";
-$wb["Zertifikat speichern"] = "Sparar certificate";
-$wb["Zertifikat löschen"] = "Raderar Certificate";
+$wb["SSL Zertifikat"]   = "SSL Certifikat";
+$wb["Aktion"]       = "Aktion";
+$wb["Zertifikat erzeugen"] = "Skapar Certifikat";
+$wb["Zertifikat speichern"] = "Sparar Certifikat";
+$wb["Zertifikat löschen"] = "Raderar Certifikat";
 $wb["Speicherplatz gesamt"] = "Utrymme";
 $wb["unlimitiert"]  = "obegränsad";
 $wb["verbraucht"]   = "använd";
@@ -137,8 +137,8 @@ $wb["Monat"]        = "Månad";
 $wb["Traffic"]      = "Trafik";
 $wb["traffic_letzte_4"] = "Trafik de senaste 4 åren";
 $wb["Jahr"]         = "År";
-$wb["mySQL User"]        = "mySQL Username";
-$wb["mySQL Passwort"]    = "mySQL Password";
+$wb["mySQL User"]        = "mySQL Användarnamn";
+$wb["mySQL Passwort"]    = "mySQL Lösenord";
 
 // Ergänzungen /////////////////////////////////
 $wb["Anbieter neu"] = "Ny Återförsäljare";
@@ -147,23 +147,23 @@ $wb["Web neu"]      = "Ny hemsida";
 $wb["Ordner neu"]   = "Sorteras efter";
 $wb["Suchen"]       = "Sök";
 $wb["ISP Anbieter"] = "ISP Återförsäljare";
-$wb["Webs"] = "WEB";
+$wb["Webs"] = "Webbplatser";
 $wb["User"] = "Användare";
 $wb["Domains"] = "Domäner";
 $wb["Zahlung"] = "Betalning";
-$wb["ISP Kunde"] = "ISP Client";
-$wb["ISP Web"] = "ISP Web";
-$wb["Kunden"] = "Clients";
+$wb["ISP Kunde"] = "ISP Kund";
+$wb["ISP Web"] = "ISP Webb";
+$wb["Kunden"] = "Kunder";
 $wb["Dokument suchen"] = "Dokument sökning";
 
-$wb["User & Email"] = "User & Email";
-$wb["Co-Domains"] = "Co-Domains";
+$wb["User & Email"] = "Användare & Epost";
+$wb["Co-Domains"] = "Co-Domäner";
 $wb["SSL"] = "SSL";
 $wb["Optionen"] = "Inställningar";
 
-$wb["Webs angelegt"] = "Sites used";
-$wb["User angelegt"] = "Users used";
-$wb["Domains angelegt"] = "Domäner used";
+$wb["Webs angelegt"] = "Använda Webbplatser";
+$wb["User angelegt"] = "Antal Användare";
+$wb["Domains angelegt"] = "Antal Domäner";
 $wb["rechnungsanschrift"] = "Faktura adress:<br> ";
 
 
@@ -182,7 +182,7 @@ $wb["error_max_domain_anbieter"] = "Maximalt antal domäner har uppnåtts för aktu
 $wb["angelegt"] = " används redan av en annan webplats eller domän.";
 
 // Error Codes ispconfig_isp_kunde.lib.php
-$wb["error_user_exist_1"] = "The ISPConfig user";
+$wb["error_user_exist_1"] = "Denna ISPConfig användare";
 $wb["error_user_exist_2"] = "existerar redan.  Användaren lades inte till eller ändrades.";
 $wb["error_max_user_licence"] = "Maximalt antal av ISPConfig användar konton för licensen har uppnåtts.";
 
@@ -193,7 +193,7 @@ $wb["error_anbieter_no_delete"] = "<b>Återförsäljaren raderades inte.</b><br>&nb
 
 // Error Codes ispconfig_isp_user.lib.php
 $wb["error_sysuser_exist_1"] = "Det finns redan en användare med detta namn";
-$wb["error_sysuser_exist_2"] = "entered.<br><br> <a href='../../isp_manager/frame_start.php?s=$s'>Mer</a>";
+$wb["error_sysuser_exist_2"] = "skapad.<br><br> <a href='../../isp_manager/frame_start.php?s=$s'>Mer</a>";
 $wb["error_max_user_web"] = "Maximalt antal användare har uppnåtts.<br><br> <a href='../../isp_manager/frame_start.php?s=$s'>More</a>";
 $wb["error_max_space_web"] = "Valt hårddisk utrymme överstiger hemsidans tillåtna utrymme.<br><br> <a href='../../isp_manager/frame_start.php?s=$s'>Mer</a>";
 $wb["error_max_user_anbieter"] = "Återförsäljarens maximala antal användare har uppnåtts.<br><br> <a href='../../isp_manager/frame_start.php?s=$s'>Mer</a>";
@@ -216,7 +216,7 @@ $wb["von"] = "av";
 $wb["Gesamt"] = "Genomsnittlig";
 $wb["Traffic in den letzten 4 Jahren"] = "Trafik under de senaste 4 åren";
 
-$wb["Backup von Tabelle"] = "Backup Table";
+$wb["Backup von Tabelle"] = "Backup Tabell";
 $wb["Optimiere"] = "Optimera";
 $wb["Reparatur"] = "Reparera";
 $wb["oder"] = "eller";
@@ -239,109 +239,92 @@ $wb["Postfach MB"] = "Mailbox MB";
 $wb["email_alias_txt"] = "<b>Tips:</b> en alias per rad.";
 $wb["Weiterleitung"] = "Vidarebefodra";
 $wb["Nachricht"] = "Meddelande";
-$wb["Kein Kunde vorhanden"] = "Ingen Client tillgänglig";
+$wb["Kein Kunde vorhanden"] = "Ingen Kund tillgänglig";
 $wb["Dieses Web können Sie nicht löschen."] = "Du kan inte radera denna Domän.";
 $wb["Ausgabeformat"] = "List format";
-$wb["Bearbeiten"] = "Edit";
+$wb["Bearbeiten"] = "Editera";
 $wb["Löschen"] = "Radera";
 
 $wb["willkommen_kunde"] = "Välkommen till ISPConfig!
-Du kan administrera din hemsida(or) här. Om du har frågor eller problem, kontakta din administratör eller använd ISPConfig client manual.";
+Du kan administrera din hemsida(or) här. Om du har frågor eller problem, kontakta din administratör eller använd ISPConfig kund manual.";
 $wb["Willkommen"] = "Välkommen";
-$wb["Standard CGIs"] = 'Standard CGIs';
-$wb["PHP Safe Mode"] = 'PHP Safe Mode';
-$wb["WAP"] = 'WAP';
-$wb["Individuelle Fehler-Seiten"] = 'Individual Error Pages';
-$wb["Anzahl Datenbanken"] = 'Number of Databases';
-$wb["Fehler 400<br>(Ungültige Syntax)"] = "400 Error<br>(Invalid Syntax)";
-$wb["Fehler 401<br>(Autorisierung<br>erforderlich)"] = "401 Error<br>(Authorisation<br>required)";
-$wb["Fehler 403<br>(Verboten)"] = "403 Error<br>(Forbidden)";
-$wb["Fehler 404<br>(Datei nicht<br>gefunden)"] = "404 Error<br>(File not found)";
-$wb["Fehler 405<br>(Methode nicht<br>erlaubt)"] = "405 Error<br>(Method not<br>allowed)";
-$wb["Fehler 500<br>(Interner<br>Server-Fehler)"] = "500 Error<br>(Internal Server<br>Error)";
-$wb["Fehler 503<br>(Service ist z.Zt.<br>überlastet)"] = "503 Error<br>(Service<br>unavailable)";
-$wb["Datenbanken"] = "Databases";
-$wb["Datenbank"] = "Database";
-$wb["Datenbankname"] = "Database Name";
-$wb["Datenbankuser"] = "Database User";
-$wb["weiter_link"] = "<br><br> <a href='../../isp_manager/frame_start.php?s=$s'>Next &gt;&gt;</a>";
-$wb["Slave Zones"] = 'Slave Zones (DNS)';
-$wb["txt_client_salutatory_email_desc"] = "<b>Salutatory Email for Clients</b>";
-$wb["txt_client_salutatory_email_sender_email"] = "Sender's Email";
-$wb["txt_client_salutatory_email_sender_name"] = "Name of Sender";
-$wb["txt_client_salutatory_email_bcc"] = "BCC Recipient";
-$wb["txt_client_salutatory_email_subject"] = "Subject";
-$wb["txt_client_salutatory_email_message"] = "Message";
+
+$wb["txt_client_salutatory_email_desc"] = "<b>Välkomst epost till kunder</b>";
+$wb["txt_client_salutatory_email_sender_email"] = "Avsänadrens epost";
+$wb["txt_client_salutatory_email_sender_name"] = "Ansändarens namn";
+$wb["txt_client_salutatory_email_bcc"] = "BCC Mottagare";
+$wb["txt_client_salutatory_email_subject"] = "Ämne";
+$wb["txt_client_salutatory_email_message"] = "Meddelande";
 $wb["txt_client_salutatory_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
 <tr>
     <td valign="top" colspan="2" class="normal">
-      <b>Include the following variables in your text:</b></td></tr>
+      <b>Inkludera följande variabler i din text:</b></td></tr>
         <tr>
           <td class="normal">%%%USER%%%</td>
           <td class="normal">
-            Client\'s Username</td>
+            Kundens Användarnamn</td>
         </tr>
         <tr>
           <td class="normal">%%%PASSWORD%%%</td>
           <td class="normal">
-            Client\'s Password</td>
+            Kundens Lösenord</td>
         </tr>
         <tr>
           <td class="normal">%%%FIRST_NAME%%%</td>
           <td class="normal">
-            Client\'s First Name</td>
+            Kundens Förnamn</td>
         </tr>
         <tr>
           <td class="normal">%%%LAST_NAME%%%</td>
           <td class="normal">
-            Client\'s Last Name</td>
+            Kundens Efternamn</td>
         </tr>
         <tr>
           <td class="normal">%%%COMPANY%%%</td>
           <td class="normal">
-            Client\'s Company</td>
+            Kundens Företagsnamn</td>
         </tr>
         <tr>
           <td class="normal">%%%EMAIL%%%</td>
           <td class="normal">
-            Client\'s Email Address</td>
+            Kundens Epost adress</td>
         </tr>
         <tr>
           <td class="normal">%%%CP%%%</td>
           <td class="normal">
-            ISPConfig Login URL</td>
+            ISPConfig Inloggnings URL</td>
         </tr>
         <tr>
           <td class="normal">%%%MANUAL%%%</td>
           <td class="normal">
-            ISPConfig Client Manual</td>
+            ISPConfig Kund Manual</td>
         </tr>
         </table>';
-$wb["txt_standard_index"] = "Standard Index<br>&nbsp;&nbsp;Page";
+$wb["txt_standard_index"] = "Standard Index<br>&nbsp;&nbsp;Sida";
 $wb["txt_standard_index_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
 <tr>
     <td valign="top" colspan="2" class="normal">
-      <b>Include the following variables in your text:</b></td></tr>
+      <b>Inkludera följande variabler i din text:</b></td></tr>
         <tr>
           <td class="normal">%%%FQDN%%%</td>
           <td class="normal">
-            Website\'s Fully Qualified Domain Name</td>
+            Webbplatsens Fullständiga Domän Namn</td>
         </tr>
     </table>';
-$wb["txt_user_standard_index"] = "Users' Standard<br>&nbsp;&nbsp;Index Page";
+$wb["txt_user_standard_index"] = "Användarens Standard<br>&nbsp;&nbsp;Index Sida";
 $wb["txt_user_standard_index_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
 <tr>
     <td valign="top" colspan="2" class="normal">
-      <b>Include the following variables in your text:</b></td></tr>
+      <b>Inkludera följande variabler i din text:</b></td></tr>
         <tr>
           <td class="normal">%%%USER%%%</td>
           <td class="normal">
-            User\'s Username</td>
+            Användarens Användarnamn</td>
         </tr>
         <tr>
           <td class="normal">%%%FQDN%%%</td>
           <td class="normal">
-            Website\'s Fully Qualified Domain Name</td>
+            Webbplatsens Fullständiga Domän Namn</td>
         </tr>
         </table>';
 
@@ -357,5 +340,7 @@ $wb["System Load 1 Minute"] = "System belastning senaste 1 Min";
 $wb["System Load 5 Minuten"] = "System belastning senaste 5 Min";
 $wb["System Load 15 Minuten"] = "System belastning senaste 15 Min";
 //////////////// Server Status Ende //////////
+
+$wb["DNS-Domains angelegt"] = 'DNS Domänen skapad';
 
 ?>

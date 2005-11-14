@@ -70,6 +70,7 @@ fi
     echo
     echo 'Das Upgrade wird von Ihnen geänderte Templates/Dateien von ISPConfig überspielen. Wenn Sie diese Dateien sichern möchten, sollten Sie jetzt eine zweite Shell öffnen, um ein Backup der betroffenen Dateien durchzuführen.'
     echo 'The upgrade will overwrite your manual changes to files/templates of ISPConfig. In order to save those files you should open a second shell to make a backup of the affected files.'
+    echo 'En uppgradering kommer att skriva över manuella ändringar gjorda på filer/mallar i ISPConfig.För att spara dessa ändringar bör du öppna ett andra skal fönster för att göra en backup på berörda filer.'
     echo "Cette mise à jour va supprimer vos changements dans les fichiers des manuels/modeles d'ISPConfig. Pour sauvegarder ces fichiers vous devez ouvrir une seconde fenêtre shell et enregistrer les fichiers concernés."
     $dist_init_scripts/ispconfig_server stop
     log "ISPConfig server stopped"
@@ -204,7 +205,57 @@ else
     q_url_check="L'URL est injoignable! La routine d'installation s'arrete ici!"
     q_restart="Redemarrage des services..."
     q_ende="Felicitations! Votre systeme ISPConfig est maintenant installe. Si vous devez installer le paquet quota, merci de suivre les etapes inscrites dans le manuel d'installation. Sinon votre systeme est maintenant accessible sans redemarrer."
-  else
+ else
+ if [ "$lang" == "se" ]; then
+    q_hinweis="I och med system installation, kommer en del system filer att bytas ut där justeringar görs. Detta kan leda till förlorade information i httpd.conf, named.conf och i Sendmail filerna."
+    q_hinweis_akzeptieren="Vill du fortsätta med installationen? [y/n]"
+    q_lizenz="Läs noggrant igenom licens avtalet:"
+    q_lizenz_akzeptieren="Accepterar du licens avtalet? [y/n]"
+    q_install_mode="Var vänlig välj installations läge. I expert läget måste du svara på ett antal frågor. I standard läget kommer förinställda värden att användas på frågorna."
+    q_select="Vänligen välj: "
+    q_wahl="Ditt val: "
+    q_anderer="andra"
+    q_korrekt="Är detta helt rätt? [y/n]"
+    q_mta_check="Letar efter MTA..."
+    q_mta_pruefung1="ISPConfig hittade följande MTA:"
+    q_wahl_mta="Vänligen välj din MTA: "
+    q_error1="Ditt system är inte kompatibelt med ISPConfig! Installationen avslutas här!"
+    q_procmail_check="Letar efter paket procmail..."
+    q_quota_check="Letar efter paket quota..."
+    q_ftp_check="Kontrollerar om FTP server finns installerat..."
+    q_ftp_pruefung1="ISPConfig hittade följande FTP server:"
+    q_wahl_ftp="Vänligen välj din FTP server: "
+    q_mysql_check="Letar efter paket MySQL..."
+    q_pop3_check="Kontrollerar om POP3 server finns installerat..."
+    q_pop3_pruefung1="ISPConfig hittade följande POP3 server:"
+    q_wahl_pop3="Vänligen välj din POP3 server: "
+    q_openssl_check="Letar efter paket openssl..."
+    q_bind_check="Letar efter paket bind..."
+    q_iptables_check="Letar efter program iptables/ipchains/ipfw..."
+    q_httpd_check="Letar efter program httpd..."
+    q_httpd_syntax_check="Kontrollerar syntaxen på httpd.conf..."
+    q_httpd_syntax_check_not_ok="Syntaxen på din httpd.conf är inte ok! Vänligen korrigera dessa fel. Installationen avslutas här!"
+    q_httpd_syntax_check_ok="Syntaxen är ok!"
+    q_check_ende="Det saknas minst ett paket utav de som är obligatoriska!"
+    q_mysql_running_check="MySQL är inte uppstartad! Vänligen starta din MySQL databas och kör ISPConfig installationen igen."
+    q_mysql_sock_check="Kunde inte hitta mysql.sock! Installationen avslutas här!"
+    q_php_check="Den binära PHP som kommer med ISPConfig fungerar inte korrekt på ditt system! Installationen avslutas här!"
+    q_prepare_files="Förbereder filer. Vänta ett ögonblick..."
+    q_voraussetzungen="Alla förberedelser är klara."
+    q_mysql_server="Skriv in din MySQL server:"
+    q_mysql_user="Skriv in användare för MySQL:"
+    q_mysql_passwort="Skriv in lösenord för MySQL:"
+    q_mysql_connection_check="Det inskrivna lösenordet för MySQL är felaktigt! Installationen avslutas här!"
+    q_mysql_database="Skriv in ett namn för ISPConfig databasen (ex. db_ispconfig):"
+    q_ip_address="Skriv in IP adressen för din ISPConfig web (ex. 192.168.0.1):"
+    q_ip_check="Den IP address du angav är inte åtkomstbar! Installationen avslutas här!"
+    q_host="Skriv in ditt värdamn (ex. www):"
+    q_domain="Skriv in ditt domännamn (ex. xyz.de):"
+    q_ispconfigprotocol="Välj vilket protokoll (http eller https (SSL kryptering)) att använda för access till ISPConfig systemet:"
+    q_url_check="Denna URL är inte åtkomstbar! Installationen avslutar här!"
+    q_restart="Gör omstart på en del program..."
+    q_ende="Gratulerar! Ditt ISPConfig system är nu installerat. Om du behöver installera quota, så följ då de steg som finns beskrivet i installations manualen. Annars är ditt system klart att användas utan omstart."
+else
     q_hinweis="With the system installation, some system files are replaced where adjustments were made. This can lead to loss of entries in httpd.conf, named.conf as well as in the Sendmail configuration."
     q_hinweis_akzeptieren="Do you want to continue with the installation? [y/n]"
     q_lizenz="Please read through the licence carefully:"
@@ -254,6 +305,7 @@ else
     q_restart="Restarting some services..."
     q_ende="Congratulations! Your ISPConfig system is now installed. If you had to install quota, please take the steps described in the installation manual. Otherwise your system is now available without reboot."
   fi
+fi
 fi
 
 waehl(){
@@ -658,7 +710,15 @@ fi  ## install_art == install
        ln -s /var/run/mysqld/mysqld.sock /var/lib/mysql/mysql.sock
        caselog "symbolic link from /var/lib/mysql/mysql.sock to /var/run/mysqld/mysqld.sock created" "symbolic link from /var/lib/mysql/mysql.sock to /var/run/mysqld/mysqld.sock could not be created!"
     fi
-    if [ ! -S /var/lib/mysql/mysql.sock ] && [ ! -h  /var/lib/mysql/mysql.sock ] && [ ! -S  /tmp/mysql.sock ] && [ ! -h  /tmp/mysql.sock ] && [ ! -S  /var/run/mysqld/mysqld.sock ] && [ ! -h  /var/run/mysqld/mysqld.sock ]; then
+    if [ ! -S /var/lib/mysql/mysql.sock ] && [ ! -h  /var/lib/mysql/mysql.sock ] && [ -S  /var/run/mysql/mysql.sock ]; then
+       if [ ! -d /var/lib/mysql ]; then
+          mkdir -p /var/lib/mysql
+          caselog "directory /var/lib/mysql created" "directory /var/lib/mysql  could not be created!"
+       fi
+       ln -s /var/run/mysql/mysql.sock /var/lib/mysql/mysql.sock
+       caselog "symbolic link from /var/lib/mysql/mysql.sock to /var/run/mysql/mysql.sock created" "symbolic link from /var/lib/mysql/mysql.sock to /var/run/mysql/mysql.sock could not be created!"
+    fi
+    if [ ! -S /var/lib/mysql/mysql.sock ] && [ ! -h  /var/lib/mysql/mysql.sock ] && [ ! -S  /tmp/mysql.sock ] && [ ! -h  /tmp/mysql.sock ] && [ ! -S  /var/run/mysqld/mysqld.sock ] && [ ! -h  /var/run/mysqld/mysqld.sock ] && [ ! -S  /var/run/mysql/mysql.sock ] && [ ! -h  /var/run/mysql/mysql.sock ]; then
        error "$q_mysql_sock_check";
     fi
   fi

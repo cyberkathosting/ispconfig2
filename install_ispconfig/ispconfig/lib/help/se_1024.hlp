@@ -1,0 +1,13 @@
+<?
+
+/**********************************************
+* ISPCofig Help File
+* Version 1.2
+* Syntax: $hlp["FieldName"] = "HelpText";
+************************************************/
+
+$hlp["dienst_name"] = "Nman på vilken tjänst som ska övervakas.";
+$hlp["dienst_port"] = "Vilket port använder tjänsten, ex. 80 för webb server.";
+$hlp["dienst_host"] = "Värdnamn eller IP adress på servern som ska övervakas.";
+$hlp["dienst_typ"] = "Typ av tjänst. Systemet kan övervaka TCP- eller UDP-baserade tjänster.";
+?>

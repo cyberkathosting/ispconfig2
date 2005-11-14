@@ -11,38 +11,38 @@ $wb["Priorität"]   = "Prioritet";
 $wb["DNS Eintrag"]  = "DNS Entry";
 $wb["Ordner neu"]   = "Sortera efter";
 $wb["Suchen"]       = "Sök";
-$wb["DNS-Manager"]       = "DNS-Manager";
+$wb["DNS-Manager"]       = "DNS Manager";
 $wb["Domain (SOA)"]         = "Domän";
-$wb["Email Admin"]         = "Admin email";
-$wb["Nameserver 1"]         = "Nameserver 1";
-$wb["Nameserver 2"]         = "Nameserver 2";
+$wb["Email Admin"]         = "Epost admin";
+$wb["Nameserver 1"]         = "Namnserver 1";
+$wb["Nameserver 2"]         = "Namnserver 2";
 $wb["Refresh"]         = "Uppdatera";
 $wb["Retry"]         = "Försök igen";
-$wb["Expire"]         = "Utgångsdatum";
+$wb["Expire"]         = "Giltigt till";
 $wb["TTL"]         = "TTL";
-$wb["Record"]         = "Record";
-$wb["Record"]         = "Records";
-$wb["Mailserver"]         = "Mailserver";
+$wb["Record"]         = "Inlägg";
+$wb["Record"]         = "Inlägg";
+$wb["Mailserver"]         = "Epost server";
 
-$wb["Dokument"] = "Document";
+$wb["Dokument"] = "Dokument";
 $wb["neues Dokument anlegen"] = "nytt dokument";
 
 $wb["error_soa_exists_1"] = "Du har redan skapat en domän med detta namn ";
-$wb["error_soa_exists_2"] = "";
+$wb["error_soa_exists_2"] = ".<br>";
 //////////////// DNS Manager Ende ///////////
 
 $wb["IP-Adresse ungültig."] = "IP adress felaktig.";
-$wb["Records"] = 'Records';
-$wb["ziel"] = 'Target';
+$wb["Records"] = 'Inlägg';
+$wb["ziel"] = 'Mål';
 $wb["Neu"] = 'Ny';
 
 // NEW 1.3 //////////////////////////////////////
 
 $wb["Master neu"] = 'Ny Master';
-$wb["Slave neu"] = 'Ny Slave';
-$wb["Slave Zone"] = 'Slave Zone';
+$wb["Slave neu"] = 'Ny Slav';
+$wb["Slave Zone"] = 'Slav Zone';
 $wb["domain"] = 'Domän';
-$wb["DNS-Master IP"] = 'DNS-Master IP';
+$wb["DNS-Master IP"] = 'DNS Master IP';
 $wb["Name"] = 'Namn';
 $wb["Masters"] = 'Masters';
 $wb["Slaves"] = 'Slaves';
@@ -55,38 +55,38 @@ $wb["Arbeitsspeicher"]          = "Arbetsminne";
 $wb["CPU"]          = "CPU";
 $wb["Dienste"]      = "Tjänster";
 $wb["Server Online seit"]          = "Server Online sedan";
-$wb["User Online"]      = "Users Online";
+$wb["User Online"]      = "Användare Online";
 $wb["System Load 1 Minute"] = "System belastning senaste 1 Min";
 $wb["System Load 5 Minuten"] = "System belastning senaste 5 Min";
 $wb["System Load 15 Minuten"] = "System belastning senaste 15 Min";
 //////////////// Server Status Ende //////////
 
-$wb["Webs angelegt"] = "Sites used";
-$wb["User angelegt"] = "Users used";
-$wb["Domains angelegt"] = "Domains used";
-$wb["unlimitiert"]  = "unlimited";
-$wb["Anbieter"]     = "Reseller";
-$wb["DNS-Domains angelegt"] = 'DNS Domains created';
-$wb["von"] = "of";
-$wb["Maximale Anzahl an DNS-Einträgen erreicht."] = "The max. number of zones for this account has been reached.<br>";
-$wb["error_no_zones_allowed"] = "The creation of zones is not allowed for this account.<br>";
-$wb["error_no_dns_anbieter"] = "This account is not allowed to create any DNS records.<br>";
-$wb["error_max_slave_dns_anbieter"] = "The max. number of slave zones has been reached for this account.<br>";
+$wb["Webs angelegt"] = "Använda webbplatser";
+$wb["User angelegt"] = "Upplagda användare";
+$wb["Domains angelegt"] = "Använda domäner";
+$wb["unlimitiert"]  = "obegränsat";
+$wb["Anbieter"]     = "Återförsäljare";
+$wb["DNS-Domains angelegt"] = 'DNS Domän skapad';
+$wb["von"] = "av";
+$wb["Maximale Anzahl an DNS-Einträgen erreicht."] = "Det maximala antalet zoner för detta kontot har uppnåtts.<br>";
+$wb["error_no_zones_allowed"] = "Du har ej tillåtelse att ska zoner på detta konto.<br>";
+$wb["error_no_dns_anbieter"] = "Du har ej tillåtelse att skapa några DNS inlägg på detta konto.<br>";
+$wb["error_max_slave_dns_anbieter"] = "Det maximala antalet slav zoner för detta konto har uppnåtts.<br>";
 $wb["weiter_link"] = "<br><br> <a href='../../isp_dns/frame_start.php?s=$s'>Mas &gt;&gt;</a>";
-$wb["error_a_record_exists"] = "There is already an A Record entry for this host in this zone.<br>";
-$wb["error_cname_record_exists"] = "There is already a CNAME Record entry for this host in this zone.<br>";
-$wb["error_mx_record_exists"] = "This or a similar MX Record does already exist in this zone.<br>";
-$wb["error_spf_record_exists"] = "This SPF Record does already exist in this zone.<br>";
+$wb["error_a_record_exists"] = "Det finns alla redan ett A inlägg för denna värd i denna zonen.<br>";
+$wb["error_cname_record_exists"] = "Det finns alla redan ett CNAME inlägg för denna värd i denna zonen.<br>";
+$wb["error_mx_record_exists"] = "Denna eller liknande MX inlägg finns alla redan i denna zonen.<br>";
+$wb["error_spf_record_exists"] = "Detta SPF inlägg finns alla redan i denna zonen.<br>";
 
-$wb["ja"] = "Yes";
-$wb["nein"] = "No";
-$wb["a"] = "Are emails sent<br>&nbsp;&nbsp;from A Record?";
-$wb["mx"] = "Are emails sent<br>&nbsp;&nbsp;from MX Record?";
-$wb["ptr"] = "Are emails sent<br>&nbsp;&nbsp;from all servers of<br>&nbsp;&nbsp;this domain?";
-$wb["a_break"] = "Are emails sent<br>&nbsp;&nbsp;from other A Records?";
-$wb["mx_break"] = "Are emails sent<br>&nbsp;&nbsp;from other MX Records?";
-$wb["ip4_break"] = "Are emails sent<br>&nbsp;&nbsp;from other IP addresses?";
-$wb["include_break"] = "Inherit SPF Record<br>&nbsp;&nbsp;from this zone?";
-$wb["all_"] = "Do the above entries<br>&nbsp;&nbsp;contain all hosts<br>&nbsp;&nbsp;allowed to send emails<br>&nbsp;&nbsp;for this domain?";
+$wb["ja"] = "Ja";
+$wb["nein"] = "Nej";
+$wb["a"] = "Är epost skickat<br>&nbsp;&nbsp;från A inlägg?";
+$wb["mx"] = "Är epost skickat<br>&nbsp;&nbsp;från MX inlägg?";
+$wb["ptr"] = "Är epost skickat<br>&nbsp;&nbsp;från alla servrar i<br>&nbsp;&nbsp;denna domän?";
+$wb["a_break"] = "Är epost skickat<br>&nbsp;&nbsp;från annat A inlägg?";
+$wb["mx_break"] = "Är epost skickat<br>&nbsp;&nbsp;från annat MX inlägg?";
+$wb["ip4_break"] = "Är epost skickat<br>&nbsp;&nbsp;från annan IP adress?";
+$wb["include_break"] = "Ärva SPF inlägg<br>&nbsp;&nbsp;från denna zon?";
+$wb["all_"] = "Innehåller ovanstående inlägg<br>&nbsp;&nbsp;alla värdar<br>&nbsp;&nbsp;som får skicka epost<br>&nbsp;&nbsp;för denna domänen?";
 
 ?>

@@ -157,3 +157,7 @@ dist_mail_local_host_names:/etc/postfix/local-host-names:Local-Host-Names-File:r
 dist_mail_log:/var/log/maillog:Log-File:read::freebsd51
 dist_mail_virtusertable:/etc/postfix/virtusertable:Virtusertable-File:read::freebsd51
 dist_mail_local_host_names:/etc/postfix/local-host-names:Local-Host-Names-File:read::freebsd51
+
+dist_mail_log:/var/log/mail/info:Log-File:read::Trustix30
+dist_mail_virtusertable:/etc/postfix/virtusertable:Virtusertable-File:read::Trustix30
+dist_mail_local_host_names:/etc/postfix/local-host-names:Local-Host-Names-File:read::Trustix30

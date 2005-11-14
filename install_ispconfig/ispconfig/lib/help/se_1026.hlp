@@ -1,0 +1,22 @@
+<?
+
+/**********************************************
+* ISPConfig Help File
+* Version 1.2
+* Syntax: $hlp["FieldName"] = "HelpText";
+************************************************/
+
+$hlp["artikelnummer"] = "Skriv in artikelnummer för produkten. Du kan använda vilket nummer som helst.";
+$hlp["artikeltyp"] = "Välj artikeltyp från listan.";
+$hlp["artikelbezeichnung"] = "Skriv in namnet på artikeln.";
+$hlp["verrechnung"] = "Skriv in vilken betalningsperiod (i månader) som används för artikeln. Exempelvis 1 betyder varje månad, 6 betyder halvårsvis, 12 betyder årsvis; 0 betyder engångsbetalning.";
+$hlp["artikeleinheit"] = "Välj vilken enhet för artikeln från listan.";
+$hlp["artikelpreis"] = "Skriv in pris per styck.";
+$hlp["abpackung"] = "Antal per paket.";
+$hlp["beschreibung"] = "Här kan du beskriva artikeln.";
+$hlp["artikelgroup"] = "Välj vilken, vilka återförsäljare denna artikel är aktuell för. Om inget val görs gäller artikeln för alla återförsäljare.";
+$hlp["weitere_artikeleinheit"] = "Enhet för trafik över gränsvärdet.";
+$hlp["weitere_abpackung"] = "Antal MB eller GB som läggs på räkningen vid gränsöverträdelse.";
+$hlp["weitere_artikelpreis"] = "Pris för trafik över gränsvärdet.";
+$hlp["steuersatz"] = "Skriv in momssatsen (ex. 25%).";
+?>

@@ -1,0 +1,12 @@
+<?
+/********************************
+* ISPConfig Dictionary File
+* Version 1.0
+* (c) Tribal-Dolphin
+* http://www.tribal-dolphin.net
+*********************************/
+
+$wb["Anbieter"]     = "Leverantör";
+$wb["Web"]          = "Webbplats";
+
+?>

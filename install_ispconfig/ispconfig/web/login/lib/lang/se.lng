@@ -7,7 +7,7 @@
 // License Manager
 $wb["Es wurde keine g&uuml;ltige Lizenzdatei gefunden."] = "Ingen godkänd licens fil funnen.";
 $wb["Hier k&ouml;nnen Sie ihre Lizenzdatei einspielen."] = "Du kan ladda din licens fil här.";
-$wb["Username"] = "Username";
+$wb["Username"] = "Användarnamn";
 $wb["Passwort"] = "Lösenord";
 $wb["Lizenzdatei"] = "Licens fil";
 $wb["Weiter"] = "Nästa";
@@ -15,10 +15,10 @@ $wb["Die Lizenzdatei wurde eingespielt.<br>Sie k&ouml;nnen sich jetzt einloggen.
 $wb["Ihre Nutzersitzung wurde beendet."] = "Din inloggning har gått ut.";
 $wb["Hier können Sie sich neu einloggen"] = "Här kan du logga in igen";
 
-$wb["FEHLER 101: Username oder Passwort Falsch."] = "ERROR 101: fel användarnamn och lösenord.";
-$wb["FEHLER 102: Account inaktiv."] = "ERROR 102: Inaktivt konto.";
-$wb["FEHLER 103: Es wurde kein Username oder Passwort angegeben."] = "ERROR 103: Inget användarnamn och lösenord finns tillgängligt.";
-$wb["FEHLER 104: Die Nutzersession wurde beendet."] = "ERROR 104: Din inloggning har gått ut.";
+$wb["FEHLER 101: Username oder Passwort Falsch."] = "FEL 101: Fel användarnamn och lösenord.";
+$wb["FEHLER 102: Account inaktiv."] = "FEL 102: Inaktivt konto.";
+$wb["FEHLER 103: Es wurde kein Username oder Passwort angegeben."] = "FEL 103: Inget användarnamn och lösenord finns tillgängligt.";
+$wb["FEHLER 104: Die Nutzersession wurde beendet."] = "FEL 104: Din inloggning har gått ut.";
 $wb["<br>&nbsp;<br>Hier können Sie sich erneut einloggen:"] = "<br>&nbsp;<br>Här kan du logga in igen:";
 $wb["Hier können Sie sich einloggen:"] = "Här kan du logga in:";
 

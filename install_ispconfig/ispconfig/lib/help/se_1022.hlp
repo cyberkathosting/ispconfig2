@@ -1,0 +1,47 @@
+<?
+
+/**********************************************
+* ISPConfig Help File
+* Version 1.2
+* Syntax: $hlp["FieldName"] = "HelpText";
+************************************************/
+
+$hlp["limit_user"] = "Skriv in antal användare en återförsäljare maximalt kan skapa.";
+$hlp["limit_disk"] = "Skriv in den maximala storleken på hårddisk utrymmet som en återförsäljare tillåts använda.";
+$hlp["limit_web"] = "Skriv in hur många webbplatser maximalt en återförsäljare kan skapa.";
+$hlp["limit_domain"] = "Skriv in antalet domäner maximalt en återförsäljare kan skapa.";
+$hlp["limit_http_include"] = "Tillåts återförsäljaren att skapa ytterligare Apache direktiv.";
+$hlp["limit_dns_manager"] = "Tillåts återförsäljaren att skapa DNS poster.";
+$hlp["limit_domain_dns"] = "Skriv in hur många domäner maximalt som återförsäljaren är tillåten att skapa Primära (Master) DNS inlägg.";
+$hlp["limit_slave_dns"] = "Skriv in hur många domäner maximalt som återförsäljaren är tillåten att skapa Sekundära (Slave) DNS inlägg.";
+
+$hlp["limit_cgi"] = "Markera om återförsäljaren kan tilldela CGI funktion till de webbplatser som finns på dennes konto.";
+$hlp["limit_php"] = "Markera om återförsäljaren kan tilldela PHP funktion till de webbplatser som finns på dennes konto.";
+$hlp["limit_ssi"] = "Markera om återförsäljaren kan tilldela SSI funktion till de webbplatser som finns på dennes konto.";
+$hlp["limit_ftp"] = "Markera om återförsäljaren kan tilldela FTP funktion till de webbplatser som finns på dennes konto.";
+$hlp["limit_frontpage"] = "Markera om återförsäljaren kan tilldela Frontpage funktion till de webbplatser som finns på dennes konto.";
+$hlp["limit_mysql"] = "Markera om återförsäljaren kan tilldela Mysql databaser till de webbplatser som finns på dennes konto.";
+$hlp["limit_shell_access"] = "Markera om återförsäljaren kan tilldela Skal konto (ex. bash) till de webbplatser som finns på dennes konto.";
+$hlp["limit_ssl"] = "Markera om återförsäljaren kan tilldela SSL funktion till de webbplatser som finns på dennes konto. Notera detta: du kan endast ha en SSL webbplats per ipnummer.";
+$hlp["limit_httpd_include"] = "Markera om återförsäljaren kan tilldela Apache direktivs till de webbplatser som finns på dennes konto.";
+$hlp["limit_anonftp"] = "Markera om återförsäljaren kan tilldela Anonym ftp funktion till de webbplatser som finns på dennes konto. Notera detta: endast ett Anonymt ftp konto per ipadress.";
+$hlp["limit_wap"] = "Markera om återförsäljaren kan tilldela WAP funktion till de webbplatser som finns på dennes konto.";
+$hlp["limit_standard_cgis"] = "Markera om standard CGI skript som finns på servern, ska finnas tillgängliga för webbplatser som finns under denna återförsäljaren.";
+$hlp["limit_mysql_anzahl_dbs"] = "Skriv in maximalt antal (totalt) databaser som återförsäljaren kan tilldela de webbplatser som finns på dennes konto.";
+$hlp["limit_error_pages"] = "Markera om återförsäljaren kan tillåta att individuella fel sidor skapas på webbplatser som finns på dennes konto.";
+
+$hlp["firma"] = "Skriv in företagsnamn på återförsäljaren.";
+$hlp["vorname"] = "Skriv in förnamnet på återförsäljaren.";
+$hlp["name"] = "Skriv in efternamnet på återförsäljaren.";
+$hlp["strasse"] = "Skriv in adress till återförsäljaren.";
+$hlp["plz"] = "Skriv in postnummer till återförsäljaren.";
+$hlp["ort"] = "Skriv in postadress till återförsäljaren.";
+$hlp["land"] = "Skriv in vilket land återförsäljaren finns i.";
+$hlp["telefon"] = "Skriv in återförsäljarens telefonnummer.";
+$hlp["fax"] = "Skriv in fax nummer till återförsäljaren.";
+$hlp["email"] = "Skriv in epost adress till återförsäljaren.";
+$hlp["internet"] = "Skriv in URL adressen till återförsäljarens hemsida.";
+$hlp["reseller_user"] = "Skriv in återförsäljarens användarnamn som används vid inloggning i ISPconfig systemet.";
+$hlp["reseller_passwort"] = "Skriv in återförsäljarens lösenord som används vid inloggning i ISPconfig systemet.";
+$hlp["anrede"] = "Skriv in välkomstmeddelande till återförsäljaren.";
+?>

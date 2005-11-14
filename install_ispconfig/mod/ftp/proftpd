@@ -157,3 +157,7 @@ dist_ftp_log:/var/log/xferlog:Log-File:read::freebsd50
 dist_ftp_conf:/usr/local/etc/proftpd.conf:Config-File:read::freebsd51
 dist_ftp_version:standalone:Server-Version:exit::freebsd51
 dist_ftp_log:/var/log/xferlog:Log-File:read::freebsd51
+
+dist_ftp_conf:/etc/proftpd.conf:Config-File:read::Trustix30
+dist_ftp_version:standalone:Server-Version:exit::Trustix30
+dist_ftp_log:/var/log/proftpd/xfer.log:Log-File:read::Trustix30

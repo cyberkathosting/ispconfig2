@@ -614,7 +614,14 @@ if(is_dir("/var/mail") && !file_exists("/var/spool/mail")){
 }
 /////////// Symlink von /var/spool/mail auf /var/mail ENDE ////////////
 
-if(!is_file("/var/spool/mail/admispconfig")){
+/////////// Trustix 30 ///////////
+if(is_dir("/var/spool/postfix") && !is_file("/var/spool/postfix/admispconfig")){
+  phpcaselog(touch("/var/spool/postfix/admispconfig"), "create /var/spool/postfix/admispconfig", $FILE, __LINE__);
+  caselog("chown admispconfig:mail /var/spool/postfix/admispconfig &> /dev/null", $FILE, __LINE__);
+  caselog("chmod 600 /var/spool/postfix/admispconfig", $FILE, __LINE__);
+}
+/////////// Trustix 30 end ///////////
+elseif(!is_file("/var/spool/mail/admispconfig")){
   phpcaselog(touch("/var/spool/mail/admispconfig"), "create /var/spool/mail/admispconfig", $FILE, __LINE__);
   caselog("chown admispconfig:mail /var/spool/mail/admispconfig &> /dev/null", $FILE, __LINE__);
   caselog("chmod 600 /var/spool/mail/admispconfig", $FILE, __LINE__);
