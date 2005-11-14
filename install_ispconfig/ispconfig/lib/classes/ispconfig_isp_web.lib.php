@@ -159,7 +159,7 @@ function web_show($doc_id, $doctype_id) {
                 // Hostingplan anwenden
                 $vorlage_id = intval($_REQUEST["vorlage_id"]);
                 if(!empty($vorlage_id)) {
-                
+
                         // Hole Vorlage
                         $vorlage = $go_api->db->queryOneRecord("SELECT * FROM isp_isp_web_template WHERE doc_id = $vorlage_id");
 
@@ -966,13 +966,16 @@ function _insert_dns($doc_id,$doctype_id,$web) {
 
         $sql = "INSERT INTO dns_nodes (userid,groupid,parent,type,doctype_id,status,doc_id,title) VALUES ('1','$groupid','$parent','$type','$dns_doctype_id','$status','$dns_doc_id','$title')";
         $go_api->db->query($sql);
-        //$dns_tree_id = $go_api->db->insertID();
+        $dns_tree_id = $go_api->db->insertID();
+
 
                 ////////////////////////////////////////
         // MX Record anlegen
         ////////////////////////////////////////
 
         $domain = trim($server["server_domain"]);
+        $host = $go_api->db->queryOneRecord("SELECT web_host FROM isp_isp_web WHERE doc_id = $doc_id");
+        $host = trim($host['web_host']);
                 if(!empty($domain)) {
                 //$ip_adresse = $domain["domain_ip"];
                 $sql = "INSERT INTO dns_mx (host,prioritaet,mailserver) VALUES ('$host','10','$domain')";
@@ -994,10 +997,10 @@ function _insert_dns($doc_id,$doctype_id,$web) {
                 $parent_doctype_id = $dns_doctype_id;
                 $child_doctype_id = $mx_record_doctype_id;
 
-                $parent_doc_id = $dns_record["doc_id"];
+                $parent_doc_id = $dns_doc_id;
                 $child_doc_id = $mx_doc_id;
 
-                $parent_tree_id = $dns_record["tree_id"];
+                $parent_tree_id = $dns_tree_id;
                 $child_tree_id = $mx_tree_id;
 
                 $sql = "INSERT INTO dns_dep (userid,parent_doc_id,parent_doctype_id,parent_tree_id,child_doc_id,child_doctype_id,child_tree_id,status) VALUES ('$userid','$parent_doc_id','$parent_doctype_id','$parent_tree_id','$child_doc_id','$child_doctype_id','$child_tree_id','$status')";
