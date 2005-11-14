@@ -3,23 +3,24 @@
 * ISPConfig Dictionary File
 * Version 1.0
 *
-* T³umaczenie wersji polskiej
-* Digital Gospel http://www.digital-gospel.com
-* Wersja 1.0
-* Ostatnie zmiany 2004.06.21
+* Tlumaczenie wersji polskiej
+* Patryk Marek --- http://kbn.pl --- info@kbn.pl
+* Wersja 1.0.2
+* Ostatnie zmiany 2005.09.12
 *********************************/
 
+$wb["Administration"]  = 'Administracja';
 $wb["Datei Upload"] = 'Za³aduj plik';
 $wb["Ordner neu"] = 'Nowy folder';
 $wb["Web Auswahl"] = 'Wybór WWW';
 $wb["Web auswählen"] = 'Wybierz WWW';
 $wb["Auswahl"] = 'Wybór';
-$wb["WEB FTP"] = 'Web-FTP';
+$wb["WEB FTP"] = 'Transfer plików (FTP)';
 $wb["Hilfe"] = 'Pomoc';
 $wb["Name"] = 'Nazwa';
-$wb["Grösse"] = 'Wielkoœæ';
+$wb["Grösse"] = 'Wielko¶æ';
 $wb["Datum"] = 'Data';
-$wb["Eigentümer"] = 'W³aœciciel';
+$wb["Eigentümer"] = 'W³a¶ciciel';
 $wb["Alle"] = 'Wszystko';
 $wb["Lesen"] = 'Czytaj';
 $wb["Schreiben"] = 'Zapisz';
@@ -27,7 +28,7 @@ $wb["Ausführen"] = 'Wykonaj';
 $wb["Verzeichnisschutz"] = 'Zabezpieczenie folderu';
 $wb["Verzeichnis schützen"] = 'Zabezpiecz folder';
 $wb[".htaccess User"] = 'U¿ytkownik .htaccess';
-$wb[".htaccess Userübersicht"] = 'Przegl¹d u¿ytkowników .htaccess';
+$wb[".htaccess Userübersicht"] = 'Przegl±d u¿ytkowników .htaccess';
 $wb["Bearbeiten"] = 'Edycja';
 $wb["Hinzufügen"] = 'Dodaj';
 $wb["Parameterübergabe unvollständig"] = "Niekompletne przetworzenie parametrów";
@@ -51,8 +52,8 @@ $wb["Ordner"] = "Folder";
 $wb["chmod failed."] = "chmod nie powid³o siê";
 $wb["FTP: Failed to open"] = "FTP: Nie mo¿na otworzyæ";
 $wb["Failed to open"] = "Nie mo¿na otworzyæ";
-$wb["Could not connect to"] = "Nie mo¿na po³¹czyæ siê z";
-$wb["Could not connect as user"] = "Nie mo¿na po³¹czyæ siê jako u¿ytkownik";
+$wb["Could not connect to"] = "Nie mo¿na po³±czyæ siê z";
+$wb["Could not connect as user"] = "Nie mo¿na po³±czyæ siê jako u¿ytkownik";
 $wb["Next >>"] = "Dalej >>";
 
 ?>

@@ -3,10 +3,10 @@
 * ISPConfig Dictionary File
 * Version 1.0
 *
-* T³umaczenie wersji polskiej
-* Digital Gospel http://www.digital-gospel.com
-* Wersja 1.0
-* Ostatnie zmiany 2004.06.21
+* Tlumaczenie wersji polskiej
+* Patryk Marek --- http://kbn.pl --- info@kbn.pl
+* Wersja 1.0.2
+* Ostatnie zmiany 2005.09.12
 *********************************/
 
 /////////////// Allgemein - general (kommt in mehreren Modulen vor) /////////
@@ -29,7 +29,7 @@ $wb["DNS"]          = "DNS";
 $wb["Sonstiges"]    = "Inny";
 $wb["Datei"]        = "Plik";
 $wb["von"]          = "od"; // besser 'ab'?
-$wb["error_headline"] = "Wyst¹pi³ nastêpuj¹cy b³¹d:";
+$wb["error_headline"] = "Wyst±pi³ nastêpuj±cy b³±d:";
 $wb["Gruppe"]       = "Grupa";
 $wb["Titel"]        = "Tytu³";
 $wb["Server"]       = "Serwer";
@@ -40,7 +40,7 @@ $wb["Ordner"]       = "Folder";
 $wb["Dokument"]     = "Dokument";
 $wb["Dokument suchen"] = "Szukaj dokumentu";
 $wb["Suchmaske"]    = "Poszukiwane wyra¿enie";
-$wb["Ausgabeformat"] = "FOrmat wyœwietlania";
+$wb["Ausgabeformat"] = "Format wy¶wietlania";
 $wb["Standard"]     = "Standard";
 $wb["Einträge"]    = "Wpisy";
 $wb["Papierkorb leeren"] = "Kosz jest pusty";
@@ -52,7 +52,7 @@ $wb["zu"]    = "zwiñ";
 $wb["in_ordner"]    = "w Folderze";
 $wb["Papierkorb"]   = "Kosz";
 $wb["Wiederherstellen"]    = "Odtwórz";
-$wb["Papierkorb: Einträge"]   = "Kosz: zawartoœæ";
+$wb["Papierkorb: Einträge"]   = "Kosz: zawarto¶æ";
 $wb["Speichern"]    = "Zapisz";
 $wb["Löschen"]    = "Usuñ";
 $wb["Abbrechen"]    = "Anuluj";
@@ -61,9 +61,10 @@ $wb["Suchen"]    = "Szukaj";
 $wb["Herr"] = "Pan";
 $wb["Frau"] = "Pani";
 
-$wb["Es ist folgender Fehler aufgetreten:"] = "Wyst¹pi³ nastêpuj¹cy b³¹d:";
+$wb["Es ist folgender Fehler aufgetreten:"] = "Wyst±pi³ nastêpuj±cy b³±d:";
 
-$wb["Web-FTP"] = 'Web-FTP';
+$wb["Web-FTP"] = 'Transfer plików (FTP)';
+$wb["Administration"]  = "Administracja";
 $wb["ISP Faktura"] = 'Faktura ISP';
 
 $wb["Verzeichnis öffnen"] = "otwórz";
@@ -72,17 +73,17 @@ $wb["Hilfe"] = 'Pomoc';
 $wb["Online Hilfe"] = 'Pomoc oline';
 $wb["schliessen"] = 'zamknij';
 
-$wb["PAPIERKORB_HINWEIS"] = "<b>Uwaga:</b> Elementy znajduj¹ce siê w koszu znajduj¹ siê aktualnie w stanie aktualizacji. Proszê spróbowaæ skasowaæ je póŸniej.";
+$wb["PAPIERKORB_HINWEIS"] = "<b>Uwaga:</b> Elementy znajduj±ce siê w koszu znajduj± siê aktualnie w stanie aktualizacji. Proszê spróbowaæ skasowaæ je pó¼niej.";
 
 
 // Multidoc  Allgemein ////////////////////////////////
 
 $wb["title_required"] = "Proszê uzupe³nic pole 'Tytu³'";
-$wb["error_keine_rechte"] = "Nie masz wystarczaj¹cych praw dostêpu by edytowaæ ten wpis.";
-$wb["error_doctype_nicht_vorhanden"] = "¯¹dany dokument nie istnieje.";
-$wb["error_doctype_rechte"] = "Nie masz wystarczaj¹cych praw by edytowaæ ten typ dokumentu.";
+$wb["error_keine_rechte"] = "Nie masz wystarczaj±cych praw dostêpu by edytowaæ ten wpis.";
+$wb["error_doctype_nicht_vorhanden"] = "¯±dany dokument nie istnieje.";
+$wb["error_doctype_rechte"] = "Nie masz wystarczaj±cych praw by edytowaæ ten typ dokumentu.";
 $wb["Formular Designer"] = "Kreator formularzy";
-$wb["Geben Sie einen Wert in das Feld"] = "Proszê podaæ wartoœc w polu";
+$wb["Geben Sie einen Wert in das Feld"] = "Proszê podaæ warto¶æ w polu";
 $wb["jscript_ein"] = " ";
 
 ////////////// Allgemein Ende ///////////////////

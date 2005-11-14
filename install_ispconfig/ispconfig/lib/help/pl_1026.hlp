@@ -1,0 +1,23 @@
+<?
+
+/**********************************************
+* ISPConfig Help File
+* Version 1.2
+* Syntax: $hlp["FieldName"] = "HelpText";
+************************************************/
+
+$hlp["artikelnummer"] = "Proszê pod±æ numer. Mo¿esz u¿yæ jakiejkolwiek liczby.";
+$hlp["artikeltyp"] = "Proszê wybraæ typ z listy.";
+$hlp["artikelbezeichnung"] = "Prosze podac nazwê.";
+$hlp["verrechnung"] = "Proszê sprecyzowaæ czas us³ug w (miesi±cach). Np. 1 oznacza 1 miesi±c.";
+$hlp["artikeleinheit"] = "Proszê wybierz czê¶æ rzeczy z listy.";
+$hlp["artikelpreis"] = "Proszê pod±æ cenê jednostkow±.";
+$hlp["abpackung"] = "Ilo¶æ czê¶ci przypadaj±cych na paczkê.";
+$hlp["beschreibung"] = "Jak mo¿esz opisaæ przedmiot.";
+$hlp["artikelgroup"] = "Proszê wybraæ prawid³owego sprzedawcê dla tego przedmiotu. Je¶li nie wybierasz przedmiotu wtedy ustawienia s± u¿ywane dla wszystkich sprzedawców.";
+$hlp["weitere_artikeleinheit"] = "Jednostka miary przy przekroczeniu.";
+$hlp["weitere_abpackung"] = "Ilo¶æ MB albo GB, który jest zewidencjonowany przy przekroczeniu.";
+$hlp["weitere_artikelpreis"] = "Cena za przekroczenie limitu transferu.";
+$hlp["steuersatz"] = "Proszê sprecyzowaæ stawkê podatkow± (np. 22%).";
+
+?>

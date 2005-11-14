@@ -1,40 +1,49 @@
-<?php
+<?
+/********************************
+* ISPConfig Dictionary File
+* Version 1.0
+*
+* Tlumaczenie wersji polskiej
+* Patryk Marek --- http://kbn.pl --- info@kbn.pl
+* Wersja 1.0.2
+* Ostatnie zmiany 2005.09.12
+*********************************/
 
-$wb["txt_login_desc"] = "To change your email configuration please login here.";
-$wb["txt_error"] = "Error";
-$wb["txt_email_username"] = "Email-Username";
-$wb["txt_password"] = "Password";
+$wb["txt_login_desc"] = "By zmienic konfiguracjê E-mail - proszê siê zalogowaæ.";
+$wb["txt_error"] = "B³±d";
+$wb["txt_email_username"] = "Nazwa u¿ytkownika Email";
+$wb["txt_password"] = "Has³o";
 $wb["txt_login"] = "Login";
 $wb["txt_autoresponder"] = "Autoresponder";
-$wb["txt_nachricht"] = "Message";
-$wb["txt_speichern"] = "Save";
-$wb["txt_abbrechen"] = "Abort";
-$wb["txt_email_account"] = "Email Account";
-$wb["txt_user_und_email"] = "User &amp; Email";
-$wb["txt_spamfilter"] = "Spamfilter";
-$wb["txt_logout"] = "Logout";
-$wb["txt_mailscan"] = "MailScan";
+$wb["txt_nachricht"] = "Wiadomo¶æ";
+$wb["txt_speichern"] = "Zapisz";
+$wb["txt_abbrechen"] = "Anuluj";
+$wb["txt_email_account"] = "Konto Email";
+$wb["txt_user_und_email"] = "U¿ytkownik &amp; Email";
+$wb["txt_spamfilter"] = "Filtr Spamu";
+$wb["txt_logout"] = "Wyloguj";
+$wb["txt_mailscan"] = "Skanowanie Poczty";
 $wb["txt_antivirus"] = "Antivirus";
-$wb["txt_spam_strategie"] = "Spam Strategy";
-$wb["txt_spam_hits"] = "Spam Hits";
-$wb["txt_rewrite_subject"] = "Rewrite Subject";
-$wb["txt_betreff"] = "Subject";
-$wb["txt_name"] = "Name";
-$wb["txt_email_adresse"] = "Email Address";
-$wb["txt_username"] = "Username";
-$wb["txt_web_speicher"] = "WebQuota";
-$wb["txt_mail_speicher"] = "MailQuota";
-$wb["txt_email_passwort_leer"] = "The username and/or the password are empty!";
-$wb["txt_user_unbekannt"] = "Unknown User.";
-$wb["txt_access_forbidden"] = "Access Forbidden!";
-$wb["txt_yes"] = "Yes";
-$wb["txt_no"] = "No";
-$wb["txt_unlimited"] = "unlimited";
-$wb["txt_welcome"] = "Welcome...";
-$wb["txt_error_spam_hits_format"] = "The value <i>".$wb["txt_spam_hits"]."</i> must have the following format:";
-$wb["txt_accept"] = "accept";
-$wb["txt_discard"] = "discard";
-$wb["txt_language"] = "Language";
-$wb["txt_no_mailuser_login"] = "The login is deactivated for your web.";
+$wb["txt_spam_strategie"] = "Strategia Spamu";
+$wb["txt_spam_hits"] = "Trafienie Spamu";
+$wb["txt_rewrite_subject"] = "Przepisaæ temat";
+$wb["txt_betreff"] = "Temat";
+$wb["txt_name"] = "Nazwa";
+$wb["txt_email_adresse"] = "Adres Email";
+$wb["txt_username"] = "U¿ytkownik";
+$wb["txt_web_speicher"] = "Limit Dyskowy dla Witryny";
+$wb["txt_mail_speicher"] = "Limit Dyskowy dla poczty";
+$wb["txt_email_passwort_leer"] = "Nazwa u¿ytkownika lub has³o jest puste!";
+$wb["txt_user_unbekannt"] = "Nieznany u¿ytkownik";
+$wb["txt_access_forbidden"] = "Dostêp pominiêty!";
+$wb["txt_yes"] = "Tak";
+$wb["txt_no"] = "Nie";
+$wb["txt_unlimited"] = "nielimitowana";
+$wb["txt_welcome"] = "Witamy...";
+$wb["txt_error_spam_hits_format"] = "Wart¶æ <i>".$wb["txt_spam_hits"]."</i> musi mieæ okre¶lony format.";
+$wb["txt_accept"] = "akceptuje";
+$wb["txt_discard"] = "odrzucam";
+$wb["txt_language"] = "Jêzyk";
+$wb["txt_no_mailuser_login"] = "Logowanie zosta³o wy³±czone dla tej strony.";
 
 ?>
