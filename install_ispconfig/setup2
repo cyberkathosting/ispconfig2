@@ -722,14 +722,14 @@ fi  ## install_art == install
        error "$q_mysql_sock_check";
     fi
   fi
-  
+
   if [ ! -S /var/www/sharedip ]; then
     mkdir -p /var/www/sharedip
-	log "Directory /var/www/sharedip created."
-	cp isp/sharedip_index.html_$lang /var/www/sharedip/index.html
-	log "Use sharedip_index.html_$lang as SharedIP default page."
-  fi 
-  
+        log "Directory /var/www/sharedip created."
+        cp isp/sharedip_index.html_$lang /var/www/sharedip/index.html
+        log "Use sharedip_index.html_$lang as SharedIP default page."
+  fi
+
   VAR1=`cat dist.info | cut -f1 -d=`
   for var1 in $VAR1
    do
