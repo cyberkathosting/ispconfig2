@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>Bienvenue!</title>
+<title>Willkommen!</title>
 </head>
 <body BGCOLOR="#FFFFFF" leftMargin=0 topMargin=0 rightMargin=0 marginheight="0" marginwidth="0">
 <center>
@@ -10,7 +10,7 @@
     <hr SIZE="1" COLOR="#FFFFFF">
     <table>
       <tr>
-        <td><font SIZE="3" COLOR="#FFFFFF" FACE="Helvetica, Arial"><b>Shared IP</b></font></td>
+        <td><font SIZE="3" COLOR="#FFFFFF" FACE="Helvetica, Arial"><b>Geteilte IP-Adresse</b></font></td>
       </tr>
     </table>
     <hr SIZE="1" COLOR="#FFFFFF">
@@ -19,10 +19,10 @@
   <tr>
     <td BGCOLOR="#FFFFFF">
     <br><br>
-	  <center>
-	      <p><font COLOR="#000000" SIZE="2" FACE="Helvetica, Arial"><br>
-          This IP address is shared. For access to the Web site which you look for, Enter its address instead of its IP.</font></p>
-	      <p><font COLOR="#000000" SIZE="2" FACE="Helvetica, Arial">For questions or problems please contact the server administrator.</font></p>
+          <center>
+              <p><font COLOR="#000000" SIZE="2" FACE="Helvetica, Arial"><br>
+          Diese IP-Adresse wird mehrfach genutzt. Um die gewünschte Website zu erreichen, geben Sie ihre Domain anstelle der IP-Adresse in der Adresszeile des Browsers ein.</font></p>
+              <p><font COLOR="#000000" SIZE="2" FACE="Helvetica, Arial">Bei Fragen oder Problemen wenden Sie sich bitte an den Server-Administrator.</font></p>
       </center>
       <hr SIZE="1" WIDTH="90%">
       <center>
