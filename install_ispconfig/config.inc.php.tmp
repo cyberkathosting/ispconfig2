@@ -69,7 +69,7 @@ $go_info["server"]["classes_root"] = $go_info["server"]["include_root"] . $go_in
 $go_info["server"]["temp_dir"] = $go_info["server"]["server_root"] . $go_info["server"]["dir_trenner"] ."temp";
 $go_info["server"]["files_dir"] = $go_info["server"]["server_root"] . $go_info["server"]["dir_trenner"] ."files";
 $go_info["server"]["backup_dir"] = $go_info["server"]["server_root"] . $go_info["server"]["dir_trenner"] ."backup";
-$go_info["server"]["version"] = "2.1.0";
+$go_info["server"]["version"] = "2.1.1";
 $go_info["server"]["os"] = "linux";
 $go_info["server"]["ort"] = "local";
 $go_info["server"]["banner"] = "0";
@@ -87,7 +87,7 @@ $go_info["server"]["lang"] = "{LANG}";
 
 $go_info["server"]["postfix_config"] = 1; // 1 = SENDMAIL-STYLE, 2 = POSTFIX-STYLE
 $go_info["server"]["smtp_restart"] = 1; // 1 = stop/start, 2 = restart
-$go_info["server"]["network_config"] = 1; // 0 = none, 1 = automatic
+$go_info["server"]["network_config"] = 0; // 0 = none, 1 = automatic
 
 /**********************************************
 * Tools Settings
