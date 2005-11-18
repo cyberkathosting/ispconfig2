@@ -52,4 +52,6 @@ $wb["Could not connect to"] = "Impossible de se connecter à ";
 $wb["Could not connect as user"] = "Impossible de se connecter comme utilisateur ";
 $wb["Next >>"] = "<br><br>Suivant >>";
 
+$wb["Catalog_Name"] = "Nom";
+
 ?>

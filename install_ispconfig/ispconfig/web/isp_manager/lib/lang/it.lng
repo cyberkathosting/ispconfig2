@@ -534,4 +534,6 @@ $wb["txt_traffic_notification_email_variables"] = '<table border="0" cellpadding
         </tr>
         </table>';
 
+$wb["Catalog_Name"] = "Name";
+
 ?>

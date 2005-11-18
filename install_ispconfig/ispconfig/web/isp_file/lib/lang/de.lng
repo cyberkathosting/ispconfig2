@@ -50,4 +50,6 @@ $wb["Could not connect to"] = "Verbindung fehlgeshlagen mit Server ";
 $wb["Could not connect as user"] = "Login fehlgeschlagen als User: ";
 $wb["Next >>"] = "<br><br>Weiter >>";
 
+$wb["Catalog_Name"] = "Name";
+
 ?>

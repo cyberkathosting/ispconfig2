@@ -6,10 +6,10 @@
 
 //////////////// DNS Manager ////////////////
 $wb["Optionen"]     = "Inställningar";
-$wb["Ziel"]         = "Target";
+$wb["Ziel"]         = "Mål";
 $wb["Priorität"]   = "Prioritet";
-$wb["DNS Eintrag"]  = "DNS Entry";
-$wb["Ordner neu"]   = "Sortera efter";
+$wb["DNS Eintrag"]  = "DNS Inlägg";
+$wb["Ordner neu"]   = "Ny Katalog";
 $wb["Suchen"]       = "Sök";
 $wb["DNS-Manager"]       = "DNS Manager";
 $wb["Domain (SOA)"]         = "Domän";
@@ -40,14 +40,13 @@ $wb["Neu"] = 'Ny';
 
 $wb["Master neu"] = 'Ny Master';
 $wb["Slave neu"] = 'Ny Slav';
-$wb["Slave Zone"] = 'Slav Zone';
+$wb["Slave Zone"] = 'Slav Zon';
 $wb["domain"] = 'Domän';
 $wb["DNS-Master IP"] = 'DNS Master IP';
 $wb["Name"] = 'Namn';
-$wb["Masters"] = 'Masters';
-$wb["Slaves"] = 'Slaves';
+$wb["Masters"] = 'Master';
+$wb["Slaves"] = 'Slav';
 $wb["SUCHE"] = 'Sök';
-
 
 
 //////////////// Server Status ////////////////
@@ -69,7 +68,7 @@ $wb["Anbieter"]     = "Återförsäljare";
 $wb["DNS-Domains angelegt"] = 'DNS Domän skapad';
 $wb["von"] = "av";
 $wb["Maximale Anzahl an DNS-Einträgen erreicht."] = "Det maximala antalet zoner för detta kontot har uppnåtts.<br>";
-$wb["error_no_zones_allowed"] = "Du har ej tillåtelse att ska zoner på detta konto.<br>";
+$wb["error_no_zones_allowed"] = "Du har ej tillåtelse att skapa zoner på detta konto.<br>";
 $wb["error_no_dns_anbieter"] = "Du har ej tillåtelse att skapa några DNS inlägg på detta konto.<br>";
 $wb["error_max_slave_dns_anbieter"] = "Det maximala antalet slav zoner för detta konto har uppnåtts.<br>";
 $wb["weiter_link"] = "<br><br> <a href='../../isp_dns/frame_start.php?s=$s'>Mas &gt;&gt;</a>";
@@ -88,5 +87,7 @@ $wb["mx_break"] = "Är epost skickat<br>&nbsp;&nbsp;från annat MX inlägg?";
 $wb["ip4_break"] = "Är epost skickat<br>&nbsp;&nbsp;från annan IP adress?";
 $wb["include_break"] = "Ärva SPF inlägg<br>&nbsp;&nbsp;från denna zon?";
 $wb["all_"] = "Innehåller ovanstående inlägg<br>&nbsp;&nbsp;alla värdar<br>&nbsp;&nbsp;som får skicka epost<br>&nbsp;&nbsp;för denna domänen?";
+
+$wb["Catalog_Name"] = "Namn";
 
 ?>

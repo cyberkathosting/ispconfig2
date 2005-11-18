@@ -37,7 +37,7 @@ $wb["Verzeichnis"] = 'Katalog';
 $wb["Web Daten"] = 'Webb Data';
 $wb["User Daten"] = 'Användar Data';
 $wb["Log Daten"] = 'Logg Data';
-$wb["mySQL Datenbank (wenn vorhanden)"] = 'mySQL Databas';
+$wb["mySQL Datenbank (wenn vorhanden)"] = 'MySQL Databas';
 $wb["Backup starten"] = 'Start Backup';
 $wb["Kein Web vorhanden."] = 'Ingen domän funnen.';
 $wb["Web-Backup"] = 'Webb Backup';
@@ -137,13 +137,13 @@ $wb["Monat"]        = "Månad";
 $wb["Traffic"]      = "Trafik";
 $wb["traffic_letzte_4"] = "Trafik de senaste 4 åren";
 $wb["Jahr"]         = "År";
-$wb["mySQL User"]        = "mySQL Användarnamn";
-$wb["mySQL Passwort"]    = "mySQL Lösenord";
+$wb["mySQL User"]        = "MySQL Användarnamn";
+$wb["mySQL Passwort"]    = "MySQL Lösenord";
 
 // Ergänzungen /////////////////////////////////
 $wb["Anbieter neu"] = "Ny Återförsäljare";
 $wb["Kunde neu"]    = "Ny Kund";
-$wb["Web neu"]      = "Ny hemsida";
+$wb["Web neu"]      = "Ny Hemsida";
 $wb["Ordner neu"]   = "Sorteras efter";
 $wb["Suchen"]       = "Sök";
 $wb["ISP Anbieter"] = "ISP Återförsäljare";

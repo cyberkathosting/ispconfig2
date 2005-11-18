@@ -56,4 +56,6 @@ $wb["Could not connect to"] = "Nie mo¿na po³±czyæ siê z";
 $wb["Could not connect as user"] = "Nie mo¿na po³±czyæ siê jako u¿ytkownik";
 $wb["Next >>"] = "Dalej >>";
 
+$wb["Catalog_Name"] = "Nazwa";
+
 ?>

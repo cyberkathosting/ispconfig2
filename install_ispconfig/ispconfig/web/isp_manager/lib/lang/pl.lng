@@ -561,4 +561,7 @@ $wb["System Load 1 Minute"] = "Obci±¿enie systemu w okresie 1-minutowym";
 $wb["System Load 5 Minuten"] = "Obci±¿enie systemu w okresie 5-minutowym";
 $wb["System Load 15 Minuten"] = "Obci±¿enie systemu w okresie 15-minutowym";
 //////////////// Server Status Ende //////////
+
+$wb["Catalog_Name"] = "Nazwa";
+
 ?>

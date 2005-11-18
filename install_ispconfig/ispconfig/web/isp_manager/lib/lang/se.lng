@@ -18,7 +18,7 @@ $wb["Anrede"]       = "Titel";
 $wb["Vorname"]      = "Förnamn";
 $wb["Name"]         = "Efternamn";
 $wb["Strasse"]      = "Gata";
-$wb["PLZ"]          = "Post nr.";
+$wb["PLZ"]          = "Post nr";
 $wb["Ort"]          = "Ort";
 $wb["Land"]         = "Land";
 $wb["Telefon"]      = "Telefon";
@@ -30,7 +30,7 @@ $wb["zugangsdaten_anbieter_einleitung"] = "Här kan du ange Användarnamn och Löse
 $wb["zugangsdaten_kunde_einleitung"] = "Här kan du ange Användarnamn och Lösenord för <br> specificerade Webb sidor.<br> ";
 $wb["Web Verwaltung"] = "Webbplats Management";
 $wb["Rechnung"]      = "Räkning";
-$wb["Rechnungsanschrift:"] = "faktura adress:<br>";
+$wb["Rechnungsanschrift:"] = "Faktura adress:<br>";
 $wb["Intervall"]    = "Intervall";
 $wb["Preis"]        = "Pris";
 $wb["Zahlungsart"]  = "Betalningsmetod";
@@ -42,7 +42,7 @@ $wb["Max. Domain"]        = "Max. Domäner";
 $wb["PHP Scripte"]        = "PHP Scripts";
 $wb["SSI"]        = "SSI";
 $wb["FTP Zugang"]        = "FTP access";
-$wb["mySQL"]        = "mySQL";
+$wb["mySQL"]        = "MySQL";
 $wb["SSL"]        = "SSL";
 $wb["Shell Zugriff"]      = "Skal Access";
 $wb["Zugang"]       = "Access";  // Zugriff u. Zugang zusammenfassen!/nur einen Begriff nehmen!
@@ -52,7 +52,7 @@ $wb["Abteilung"]    = "Avdelning";
 $wb["Gültigkeit (Tage)"]  = "Giltighetstid (dagar)";
 $wb["SSL Key"]          = "SSL Key";
 $wb["SSL Zertifikat"]   = "SSL Certifikat";
-$wb["Aktion"]       = "Aktion";
+$wb["Aktion"]       = "Verkställ";
 $wb["Zertifikat erzeugen"] = "Skapa Certifikat";
 $wb["Zertifikat speichern"] = "Spara Certifikat";
 $wb["Zertifikat löschen"] = "Radera Certifikat";
@@ -64,8 +64,8 @@ $wb["Monat"]        = "Månad";
 $wb["Traffic"]      = "Trafik";
 $wb["traffic_letzte_4"] = "Trafik under de senaste 4 åren";
 $wb["Jahr"]         = "År";
-$wb["mySQL User"]        = "mySQL Användarnamn";
-$wb["mySQL Passwort"]    = "mySQL Lösenord";
+$wb["mySQL User"]        = "MySQL Användarnamn";
+$wb["mySQL Passwort"]    = "MySQL Lösenord";
 
 // Ergänzungen /////////////////////////////////
 $wb["Anbieter neu"] = "Ny Återförsäljare";
@@ -74,7 +74,7 @@ $wb["Web neu"]      = "Ny hemsida";
 $wb["Ordner neu"]   = "Ny Katalog";
 $wb["Suchen"]       = "Sök";
 $wb["ISP Anbieter"] = "ISP Återförsäljare";
-$wb["Webs"] = "Webbplatser antal";
+$wb["Webs"] = "Webbplatser";
 $wb["User"] = "Användare";
 $wb["Domains"] = "Domäner";
 $wb["Zahlung"] = "Betalning";
@@ -99,7 +99,7 @@ $wb["SUCHE"] = "sök";
 
 $wb["msg_beta"] = "";
 $wb["title_isp_beta"] = "";
-$wb["msg_kein_win"] = "Denna programvara är inte tillgänglig för Windows operating systems.";
+$wb["msg_kein_win"] = "Denna programvara är inte tillgänglig för Windows operativ system.";
 
 // Error Codes ispconfig_isp_datenbank.lib.php
 $wb["error_db_nicht_erlaubt"] = "Du har inte rättighet att skapa MySQL databaser för denna webbplats.<br>";
@@ -115,7 +115,7 @@ $wb["error_max_db_anbieter"] = "Det maximala antalet av databaser för denna värd
 $wb["error_web_doppelt"] = "Det finns redan en hemsida eller domän med detta namn";
 $wb["error_max_domain_web"] = "Maximalt antal domäner för denna webplats har uppnåtts";
 $wb["error_max_domain_anbieter"] = "Maximalt antal domäner har uppnåtts för aktuell återförsäljare";
-$wb["angelegt"] = " används redan av en annan webplats eller domän.";
+$wb["angelegt"] = " används redan av en annan webbplats eller domän.";
 $wb["error_domain_forward"] = "Domän ompekningen innehöll ej godkända tecken och har därför tagits bort.<br>";
 
 // Error Codes ispconfig_isp_kunde.lib.php
@@ -138,7 +138,7 @@ $wb["error_max_space_web"] = "Valt hårddisk utrymme överstiger hemsidans tillåtn
 $wb["error_max_user_anbieter"] = "Återförsäljarens maximala antal användare har uppnåtts.<br><br> <a href='../../isp_manager/frame_start.php?s=$s'>Mer</a>";
 $wb["error_sysuser_exist"] = "Användarnamnet används redan.<br><br> <a href='../../isp_manager/frame_start.php?s=$s'>Mer</a>";
 $wb["error_admin_exist"] = "En användare med administrations rättigheter existerar redan för denna domän.<br><br> <a href='../../isp_manager/frame_start.php?s=$s'>Mer</a>";
-$wb["error_admin_exist_long"] = "En användare med administrations rättigheter existerar redan. Du måste radera den andra administratören om du vill ge den nya användaren rättigheter.<br><br> <a href='../../isp_manager/frame_start.php?s=$s'>Mer</a>";
+$wb["error_admin_exist_long"] = "En användare med administrations rättigheter existerar redan. Du måste radera den andra administratören om du vill ge den nya användaren rättigheterna.<br><br> <a href='../../isp_manager/frame_start.php?s=$s'>Mer</a>";
 
 // Error Codes ispconfig_isp_user.lib.php
 $wb["error_max_web_anbieter"] = "Maximalt antal domäner har uppnåtts för aktuell återförsäljare";
@@ -202,7 +202,7 @@ $wb["error_reseller_licence_nodelete"] = "Denna återförsäljare kan inte raderas.
 $wb["error_kunde_licence"] = "Denna licens av ISPConfig tillåter inte uppläggning av ny kund.";
 $wb["error_kunde_licence_nodelete"] = "Denna kund kan inte raderas.";
 
-$wb["mysqldb_nicht_vorhanden"] = "MySQL database existerar inte. <br>Ange ett lösenord för att skapa en databas.";
+$wb["mysqldb_nicht_vorhanden"] = "MySQL databasen existerar inte. <br>Ange ett lösenord för att skapa en databas.";
 $wb["mysql_nicht_aktiv"] = "MySQL databas kan inte skapas på denna domän.";
 $wb["Datenbank Name"] = "Databas Namn";
 $wb["Speicher belegt"] = "Databas Storlek";
@@ -215,7 +215,7 @@ $wb["Kopie speichern"] = "Spara Kopia";
 
 $wb["err_0001"] = "Domänen tillhör en annan kund.";
 
-$wb["mySQL remote access"] = "mySQL Fjärr Access";
+$wb["mySQL remote access"] = "MySQL Fjärr Access";
 $wb["lokaler mailserver"] = "Lokal Epostserver";
 $wb["externer mailserver"] = "Extern Epostserver";
 
@@ -224,12 +224,12 @@ $wb["Frontpage Passwort"] = "Frontpage Lösenord";
 
 // NEW 1.1.12 ///////////////////////////////////
 
-$wb["Anbieternummer"] = 'Återförsäljar nr.';
+$wb["Anbieternummer"] = 'Återförsäljar nr';
 $wb["Domain DNS"] = 'Domän DNS';
 $wb["HTTPD Includes"] = 'HTTPD Includes';
 $wb["DNS-Manager"] = 'DNS Manager';
 $wb["DNS-Domains angelegt"] = 'DNS Domän skapad';
-$wb["Kundennummer"] = 'Kund nr.';
+$wb["Kundennummer"] = 'Kund nr';
 $wb["Anonymous FTP"] = 'Anonym FTP';
 $wb["Anon. FTP MB"] = 'Anonym FTP MB';
 $wb["Faktura"] = 'Faktura';
@@ -237,13 +237,13 @@ $wb["Mailserver"] = 'Epostserver';
 $wb["aktiviert"] = 'aktiv';
 $wb["deaktiviert"] = 'inaktiv';
 $wb["ISP User"] = 'ISP Användare';
-$wb["WebSpeicher MB"] = 'Webbplats MB';
-$wb["MailSpeicher MB"] = 'Epostplats MB';
+$wb["WebSpeicher MB"] = 'Webb utrymme MB';
+$wb["MailSpeicher MB"] = 'Epost utrymme MB';
 $wb["Administrator"] = 'Administratör';
 $wb["Erweiterte Einstellungen"] = 'Avancerade inställningar';
 $wb["email_weiterleitung_txt"] = '<b>Tips:</b> en epost adress per rad.';
-$wb["Email Alias"] = 'epost Alias';
-$wb["catchAll-Email"] = 'catchAll epost';
+$wb["Email Alias"] = 'Epost Alias';
+$wb["catchAll-Email"] = 'CatchAll epost';
 $wb["MailScan"] = 'EpostScan';
 $wb["Spam-Filter"] = 'Spam Filter';
 $wb["Autoresponder"] = 'Autosvar';
@@ -255,7 +255,7 @@ $wb["Bitte Artikel auswählen"] = "Välj artikel";
 $wb["Letzte Abrechnung"] = "Senaste faktura";
 $wb["Artikel hinzufügen"] = "Lägg till artikel";
 $wb["Wird automatisch vergeben."] = 'Tilldelas automatiskt.';
-$wb["Email Adresse"] = "epost Adress";
+$wb["Email Adresse"] = "Epost Adress";
 
 // new 1.2 ////////////////////////////////////////
 $wb["error_email_exist"] = "Dubbel epost Adress.";
@@ -271,7 +271,7 @@ $wb["accept"] = 'Acceptera';
 $wb["discard"] = 'Avbryta';
 $wb["Spam Strategie"] = 'Spam Strategi';
 $wb["Spam Hits"] = 'Spam Träffar';
-$wb["Rewrite Subject"] = 'Omskriv ämnet';
+$wb["Rewrite Subject"] = 'Skriv om ämnet';
 $wb["Betreff"] = 'Ämne';
 $wb["SUCHE"] = 'SÖK';
 $wb["IP"] = 'IP';
@@ -461,7 +461,7 @@ $wb["sperren"] = "Stänga av";
 $wb["benachrichtigen"] = "Informera";
 $wb["keine Aktion"] = "Ingen Åtgärd";
 $wb["Website-Status"] = "Webbplats Status";
-$wb["aktiv"] = "Aktive";
+$wb["aktiv"] = "Aktiv";
 $wb["gesperrt"] = "Avstängd";
 
 $wb["txt_traffic_suspension_email_desc"] = "<b>Information om avstängning av Webbplats (Trafik Överträdelse)</b>";
@@ -547,5 +547,7 @@ $wb["txt_traffic_notification_email_variables"] = '<table border="0" cellpadding
             Total Trafik i månaden som överskridits</td>
         </tr>
         </table>';
+
+$wb["Catalog_Name"] = "Namn";
 
 ?>

@@ -49,4 +49,7 @@ $wb["Failed to open"] = "Failed to open ";
 $wb["Could not connect to"] = "Could not connect to ";
 $wb["Could not connect as user"] = "Could not connect as user ";
 $wb["Next >>"] = "<br><br>Next >>";
+
+$wb["Catalog_Name"] = "Name";
+
 ?>

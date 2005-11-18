@@ -464,4 +464,6 @@ $wb["Website-Status"] = "Statut du site";
 $wb["aktiv"] = "Actif";
 $wb["gesperrt"] = "Suspendu";
 
+$wb["Catalog_Name"] = "Nom";
+
 ?>

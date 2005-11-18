@@ -11,14 +11,14 @@ $wb["Kunde"]        = "Kund";
 $wb["Suchen"]       = "Sök";
 $wb["Stammdaten"]   = "Master data";
 $wb["Limits"]       = "Gränser";
-$wb["Zugangsdaten"] = "Ange Information";
+$wb["Zugangsdaten"] = "Inloggnings Information";
 $wb["Statistik"]    = "Statistik";
 $wb["Firma"]        = "Företag";
 $wb["Anrede"]       = "Titel";
 $wb["Vorname"]      = "Förnamn";
 $wb["Name"]         = "Efternamn";
 $wb["Strasse"]      = "Gata";
-$wb["PLZ"]          = "Post nr.";
+$wb["PLZ"]          = "Post nr";
 $wb["Ort"]          = "Ort";
 $wb["Land"]         = "Land";
 $wb["Telefon"]      = "Telefon";
@@ -42,7 +42,7 @@ $wb["Max. Domain"]        = "Max. Domäner";
 $wb["PHP Scripte"]        = "PHP Scripts";
 $wb["SSI"]        = "SSI";
 $wb["FTP Zugang"]        = "FTP access";
-$wb["mySQL"]        = "mySQL";
+$wb["mySQL"]        = "MySQL";
 $wb["SSL"]        = "SSL";
 $wb["Shell Zugriff"]      = "Skal Access";
 $wb["Zugang"]       = "Access";  // Zugriff u. Zugang zusammenfassen!/nur einen Begriff nehmen!
@@ -52,7 +52,7 @@ $wb["Abteilung"]    = "Avdelning";
 $wb["Gültigkeit (Tage)"]  = "Giltighetstid (dagar)";
 $wb["SSL Key"]          = "SSL Key";
 $wb["SSL Zertifikat"]   = "SSL Certifikat";
-$wb["Aktion"]       = "Aktion";
+$wb["Aktion"]       = "Verkställ";
 $wb["Zertifikat erzeugen"] = "Skapa Certifikat";
 $wb["Zertifikat speichern"] = "Spara Certifikat";
 $wb["Zertifikat löschen"] = "Radera Certifikat";
@@ -64,13 +64,13 @@ $wb["Monat"]        = "Månad";
 $wb["Traffic"]      = "Trafik";
 $wb["traffic_letzte_4"] = "Trafik under de senaste 4 åren";
 $wb["Jahr"]         = "År";
-$wb["mySQL User"]        = "mySQL Användarnamn";
-$wb["mySQL Passwort"]    = "mySQL Lösenord";
+$wb["mySQL User"]        = "MySQL Användarnamn";
+$wb["mySQL Passwort"]    = "MySQL Lösenord";
 
 // Ergänzungen /////////////////////////////////
 $wb["Anbieter neu"] = "Ny Återförsäljare";
 $wb["Kunde neu"]    = "Ny Kund";
-$wb["Web neu"]      = "Ny hemsida";
+$wb["Web neu"]      = "Ny Hemsida";
 $wb["Ordner neu"]   = "Ny Katalog";
 $wb["Suchen"]       = "Sök";
 $wb["ISP Anbieter"] = "ISP Återförsäljare";
@@ -79,7 +79,7 @@ $wb["User"] = "Användare";
 $wb["Domains"] = "Domäner";
 $wb["Zahlung"] = "Betalning";
 $wb["ISP Kunde"] = "ISP Kund";
-$wb["ISP Web"] = "ISP Web";
+$wb["ISP Web"] = "ISP Webb";
 $wb["Kunden"] = "Kunder";
 $wb["Dokument suchen"] = "Dokument sökning";
 
@@ -88,18 +88,18 @@ $wb["Co-Domains"] = "Co-Domäner";
 $wb["SSL"] = "SSL";
 $wb["Optionen"] = "Inställningar";
 
-$wb["Webs angelegt"] = "Nyttjade Webbplatser";
+$wb["Webs angelegt"] = "Antal Webbplatser";
 $wb["User angelegt"] = "Antal Användare";
-$wb["Domains angelegt"] = "Nyttjade Domäner";
+$wb["Domains angelegt"] = "Antal Domäner";
 $wb["rechnungsanschrift"] = "Faktura adress:<br> ";
 
-$wb["neues Web anlegen"] = "Ny webbplats";
+$wb["neues Web anlegen"] = "Ny Webbplats";
 $wb["weiter"] = "nästa";
 $wb["SUCHE"] = "sök";
 
 $wb["msg_beta"] = "";
 $wb["title_isp_beta"] = "";
-$wb["msg_kein_win"] = "Denna programvara är inte tillgänglig för Windows operating systems.";
+$wb["msg_kein_win"] = "Denna programvara är inte tillgänglig för Windows operativ system.";
 
 // Error Codes ispconfig_isp_datenbank.lib.php
 $wb["error_db_nicht_erlaubt"] = "Skapande av MySQL databaser är inte tillåtet för denna webbplats.<br>";
@@ -138,7 +138,7 @@ $wb["error_max_space_web"] = "Valt hårddisk utrymme överstiger hemsidans tillåtn
 $wb["error_max_user_anbieter"] = "Återförsäljarens maximala antal användare har uppnåtts.<br><br> <a href='../../isp_manager/frame_start.php?s=$s'>Mer</a>";
 $wb["error_sysuser_exist"] = "Användarnamnet används redan.<br><br> <a href='../../isp_manager/frame_start.php?s=$s'>Mer</a>";
 $wb["error_admin_exist"] = "En användare med administrations rättigheter existerar redan för denna domän.<br><br> <a href='../../isp_manager/frame_start.php?s=$s'>Mer</a>";
-$wb["error_admin_exist_long"] = "En användare med administrations rättigheter existerar redan. Du måste radera den andra administratören om du vill ge den nya användaren rättigheter.<br><br> <a href='../../isp_manager/frame_start.php?s=$s'>Mer</a>";
+$wb["error_admin_exist_long"] = "En användare med administrations rättigheter existerar redan. Du måste radera den andra administratören om du vill ge den nya användaren rättigheterna.<br><br> <a href='../../isp_manager/frame_start.php?s=$s'>Mer</a>";
 
 // Error Codes ispconfig_isp_user.lib.php
 $wb["error_max_web_anbieter"] = "Maximalt antal domäner har uppnåtts för aktuell återförsäljare";
@@ -150,7 +150,7 @@ $wb["CPU Auslastung 5 Minuten"] = "CPU belastning senaste 5 Min";
 $wb["CPU Auslastung 15 Minuten"] = "CPU belastning senaste 15 Min";
 $wb["Server Online seit"] = "Server Online sedan";
 $wb["User Online"] = "Användare Online";
-$wb["error_web_id"] = "Denna Plugin kräver ett existerande Web ID.";
+$wb["error_web_id"] = "Denna Plugin kräver ett existerande Webb ID.";
 $wb["von"] = "av";
 $wb["Gesamt"] = "Genomsnittlig";
 $wb["Traffic in den letzten 4 Jahren"] = "Trafik under de senaste 4 åren";
@@ -185,14 +185,14 @@ $wb["Bearbeiten"] = "Editera";
 $wb["Löschen"] = "Radera";
 
 $wb["willkommen_kunde"] = "Välkommen till ISPConfig!
-Du kan administrera din hemsida(or) här. Om du har frågor eller problem, kontakta din administratör eller använd ISPConfig client manual.";
+Du kan administrera din hemsida(or) här. Om du har frågor eller problem, kontakta din administratör eller använd ISPConfig kund manual.";
 $wb["Willkommen"] = "Välkommen";
 
 
 // Regex Fehlermeldungen
 $wb["Es sind nur folgende Zeichen erlaubt: a-z A-Z 0-9 -"] = "Endast följande tecken är tillåtna: a-z A-Z 0-9 -";
 $wb["Es sind nur folgende Zeichen erlaubt: a-z A-Z 0-9 - ."] = "Endast följande tecken är tillåtna: a-z A-Z 0-9 - .";
-$wb["Der Username muss aus min. 4, max 25 Buchstaben oder Zahlen bestehen, wobei er mit einem Buchstaben beginnen muss."] = "Användarnamnet måste innehålla min 4 och max 26 tecken och måste starta med en bokstav.";
+$wb["Der Username muss aus min. 4, max 25 Buchstaben oder Zahlen bestehen, wobei er mit einem Buchstaben beginnen muss."] = "Användarnamnet måste innehålla min 4 och max 26 tecken samt måste starta med en bokstav.";
 
 $wb["error_reseller_licence"] = "Denna licens av ISPConfig tillåter inte uppläggning av ny återförsäljare.";
 $wb["error_reseller_licence_nodelete"] = "Denna återförsäljare kan inte raderas.";
@@ -213,7 +213,7 @@ $wb["Kopie speichern"] = "Spara kopia";
 
 $wb["err_0001"] = "Domänen tillhör en annan klient.";
 
-$wb["mySQL remote access"] = "mySQL fjärr Access";
+$wb["mySQL remote access"] = "MySQL fjärr Access";
 $wb["lokaler mailserver"] = "Lokal Epostserver";
 $wb["externer mailserver"] = "Extern Epostserver";
 
@@ -222,12 +222,12 @@ $wb["Frontpage Passwort"] = "Frontpage Lösenord";
 
 // NEW 1.1.12 ///////////////////////////////////
 
-$wb["Anbieternummer"] = 'Återförsäljar nr.';
+$wb["Anbieternummer"] = 'Återförsäljar nr';
 $wb["Domain DNS"] = 'Domän DNS';
 $wb["HTTPD Includes"] = 'HTTPD Includes';
 $wb["DNS-Manager"] = 'DNS Manager';
 $wb["DNS-Domains angelegt"] = 'DNS Domän skapad';
-$wb["Kundennummer"] = 'Client nr.';
+$wb["Kundennummer"] = 'Kund nr';
 $wb["Anonymous FTP"] = 'Anonym FTP';
 $wb["Anon. FTP MB"] = 'Anonym FTP MB';
 $wb["Faktura"] = 'Faktura';
@@ -235,14 +235,14 @@ $wb["Mailserver"] = 'Epostserver';
 $wb["aktiviert"] = 'aktiv';
 $wb["deaktiviert"] = 'inaktiv';
 $wb["ISP User"] = 'ISP Användare';
-$wb["WebSpeicher MB"] = 'Webbplats MB';
-$wb["MailSpeicher MB"] = 'Epostutryme MB';
+$wb["WebSpeicher MB"] = 'Webb utrymme MB';
+$wb["MailSpeicher MB"] = 'Epost utryme MB';
 $wb["Administrator"] = 'Administratör';
 $wb["Erweiterte Einstellungen"] = 'Avancerade inställningar';
 $wb["email_weiterleitung_txt"] = '<b>Tips:</b> en epost adress per rad.';
-$wb["Email Alias"] = 'epost Alias';
-$wb["catchAll-Email"] = 'catchAll epost';
-$wb["MailScan"] = 'EpostSkanning';
+$wb["Email Alias"] = 'Epost Alias';
+$wb["catchAll-Email"] = 'CatchAll epost';
+$wb["MailScan"] = 'Epost Skanning';
 $wb["Spam-Filter"] = 'Spam Filter';
 $wb["Autoresponder"] = 'Autosvar';
 $wb["ISP Domain"] = 'ISP Domän';
@@ -253,12 +253,12 @@ $wb["Bitte Artikel auswählen"] = "Välj artikel";
 $wb["Letzte Abrechnung"] = "Senaste faktura";
 $wb["Artikel hinzufügen"] = "Lägg till artikel";
 $wb["Wird automatisch vergeben."] = 'Tilldelas automatiskt.';
-$wb["Email Adresse"] = "epost Adress";
+$wb["Email Adresse"] = "Epost Adress";
 
 // new 1.2 ////////////////////////////////////////
 $wb["error_email_exist"] = "Existerande epost Adress.";
 $wb["error_realname"] = "Endast följande tecken är tillåtna: a-z A-Z 0-9 - _ .";
-$wb["Die Emailadresse muss aus min. 1, max 60 Buchstaben oder Zahlen bestehen."] = "email adressen måste innehålla min 1 och max 60 bokstäver eller siffror.";
+$wb["Die Emailadresse muss aus min. 1, max 60 Buchstaben oder Zahlen bestehen."] = "Epost adressen måste innehålla min 1 och max 60 bokstäver eller siffror.";
 
 // new 1.3 ////////////////////////////////////////
 $wb["Bundesland"] = "Län";
@@ -457,11 +457,13 @@ $wb["Web"] = "Webbplats";
 $wb["Domain"] = "Domän";
 $wb["Unbegrenzt"] = "Obegränsat";
 $wb["Traffic-Überschreitung"] = "Trafik Överträdelse";
-$wb["sperren"] = "Avstänga";
+$wb["sperren"] = "Stänga av";
 $wb["benachrichtigen"] = "Meddela";
 $wb["keine Aktion"] = "Ingen Åtgärd";
 $wb["Website-Status"] = "Webbplats Status";
 $wb["aktiv"] = "Aktiv";
 $wb["gesperrt"] = "Avstängd";
+
+$wb["Catalog_Name"] = "Namn";
 
 ?>

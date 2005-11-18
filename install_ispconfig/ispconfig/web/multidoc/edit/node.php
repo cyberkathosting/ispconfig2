@@ -77,7 +77,7 @@ $go_api->content->assign( array(    TITLE => "$session_site Startseite",
                                     SERVERURL => $go_info["server"]["server_url"],
 						            S => $s,
                                     TXTGRUPPE => $go_api->lng('Gruppe'),
-                                    TXTNAME => $go_api->lng('Name'),
+                                    TXTNAME => $go_api->lng('Catalog_Name'),
                                     TXTINORDNER => $go_api->lng('in_ordner')
                                     ) );
 

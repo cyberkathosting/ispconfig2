@@ -96,4 +96,6 @@ $wb["ip4_break"] = "Czy emaile s± wys³ane<br>&nbsp;&nbsp;od innego adreesu IP?";
 $wb["include_break"] = "Odziedziczyæ zapis SPF<br>&nbsp;&nbsp;z tej strefy?";
 $wb["all_"] = "Zapisz powy¿sze wpisy<br>&nbsp;&nbsp;do³±cz wszystkie hosty<br>&nbsp;&nbsp;mo¿esz wys³aæ email<br>&nbsp;&nbsp;dla tej domeny?";
 
+$wb["Catalog_Name"] = "Nazwa";
+
 ?>

@@ -49,7 +49,7 @@ $go_api->content->assign( array(    TITLE => "$session_site Startseite",
                                                 ) );
 
 // Assign Text Elements
-$go_api->content->assign( array(        TXT_NAME => $go_api->lng("Name"),
+$go_api->content->assign( array(        TXT_NAME => $go_api->lng("Catalog_Name"),
                                                                         TXT_FOLDER => $go_api->lng("Ordner"),
                                                                         TXT_OWNER => $go_api->lng("Eigentümer"),
                                                                         TXT_GROUP => $go_api->lng("Gruppe"),

@@ -72,4 +72,6 @@ $wb["ip4_break"] = "Werden Emails von<br>&nbsp;&nbsp;anderen IP-Adressen<br>&nbs
 $wb["include_break"] = "SPF-Record von der<br>&nbsp;&nbsp;folgenden Zone erben?";
 $wb["all_"] = "Sind dies alle Hosts,<br>&nbsp;&nbsp;die Emails für diese<br>&nbsp;&nbsp;Domain verschicken<br>&nbsp;&nbsp;dürfen?";
 
+$wb["Catalog_Name"] = "Name";
+
 ?>

@@ -444,4 +444,6 @@ $wb["Website-Status"] = "Website-Status";
 $wb["aktiv"] = "Aktiv";
 $wb["gesperrt"] = "Gesperrt";
 
+$wb["Catalog_Name"] = "Name";
+
 ?>

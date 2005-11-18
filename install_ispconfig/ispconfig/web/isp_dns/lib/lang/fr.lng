@@ -89,4 +89,6 @@ $wb["ip4_break"] = "Est-ce que les e-mails sont envoyés<br>&nbsp;&nbsp;d'un autr
 $wb["include_break"] = "Héritez de l'enregistrement SPF<br>&nbsp;&nbsp;de cette zone?";
 $wb["all_"] = "Les entrées ci dessus<br>&nbsp;&nbsp;contiennent elle tous les hôtes<br>&nbsp;&nbsp;autorisés à envoyer des e-mails<br>&nbsp;&nbsp;pour ce domaine?";
 
+$wb["Catalog_Name"] = "Nom";
+
 ?>

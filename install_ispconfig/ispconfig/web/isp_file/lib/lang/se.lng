@@ -50,4 +50,6 @@ $wb["Could not connect to"] = "Kunde inte ansluta till ";
 $wb["Could not connect as user"] = "Kunde inte ansluta som användare ";
 $wb["Next >>"] = "Nästa >>";
 
+$wb["Catalog_Name"] = "Namn";
+
 ?>

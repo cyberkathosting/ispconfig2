@@ -18,7 +18,7 @@ $wb["Status"]       = "Status";
 $wb["neu"]          = "ny";
 $wb["Hinweis"]      = "Referens";
 $wb["Web"]          = "Webb";
-$wb["Email"]        = "epost";
+$wb["Email"]        = "Epost";
 $wb["FTP"]          = "FTP";
 $wb["DNS"]          = "DNS";
 $wb["Sonstiges"]    = "Annan";
@@ -39,7 +39,7 @@ $wb["Ausgabeformat"] = "Visnings format";
 $wb["Standard"]     = "Standard";
 $wb["Einträge"]    = "Poster";
 $wb["Papierkorb leeren"] = "Töm papperskorgen";
-$wb["Stammordner"]  = "Master Zone";
+$wb["Stammordner"]  = "Master Zon";
 $wb["keine Gruppe"] = "Ingen grupp";
 $wb["neues Dokument anlegen"] = "Nytt dokument skapat";
 $wb["auf"]   = "Expandera";
@@ -47,7 +47,7 @@ $wb["zu"]    = "Komprimera";
 $wb["in_ordner"]    = "i katalog";
 $wb["Papierkorb"]   = "Papperskorg";
 $wb["Wiederherstellen"]    = "Återställ";
-$wb["Papierkorb: Einträge"]   = "Innehåll papperskorgen";
+$wb["Papierkorb: Einträge"]   = "Innehåll i papperskorgen";
 $wb["Speichern"]    = "Spara";
 $wb["Löschen"]    = "Radera";
 $wb["Abbrechen"]    = "Avbryt";
@@ -82,7 +82,7 @@ $wb["jscript_ein"] = " ";
 
 ////////////// Allgemein Ende ///////////////////
 
-$wb["Es konnte ein Dokument nicht wiederhergestellt werden, da sich das Eltern-Dokument noch im Papierkorb befindet.\n"] = "Detta objekt kan inte återskapas så länge ett överliggande objekt finn si papperskorgen.";
+$wb["Es konnte ein Dokument nicht wiederhergestellt werden, da sich das Eltern-Dokument noch im Papierkorb befindet.\n"] = "Detta objekt kan inte återskapas så länge ett överliggande objekt finns i papperskorgen.";
 
 $wb["DNS-Domains angelegt"] = 'Master Zon skapad';
 $wb["Benutzter Diskspace"] = "Utrymme använt";

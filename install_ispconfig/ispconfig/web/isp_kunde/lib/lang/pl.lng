@@ -469,4 +469,6 @@ $wb["aktiv"] = "Aktywne";
 $wb["gesperrt"] = "Zawieszony";
 $wb["Mailuser Login"] = "Logowanie u¿ytkownika email";
 
+$wb["Catalog_Name"] = "Nazwa";
+
 ?>
