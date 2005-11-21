@@ -57,7 +57,7 @@ if (isset($submit)) {
 
 // Switch von Domain-Endung
 switch ($endfix) {
-        case '.de':$id=1;break;
+        case '.de':$id=24;break;
         case '.com':$id=2;break;
         case '.net':$id=3;break;
         case '.org':$id=4;break;
@@ -80,6 +80,7 @@ switch ($endfix) {
         case '.hu':$id=21;break;
 		case '.se':$id=22;break;
 		case '.nl':$id=23;break;
+		case '.pl':$id=1;break;
 
         default:echo("Error!\n");break;
         }
@@ -89,7 +90,7 @@ $domain=($domainname."".$endfix."");
 //Richtigen Server abfragen
 $antwort = '';
 
-if ($id==1) {
+if ($id==24) {
 	$WhoIsServer = '';
 	$regex = '/^[a-zA-Z0-9\-\.]{0,63}$/';
 	
@@ -548,6 +549,26 @@ else if ($id==23) {
 	}
 } 
 
+
+else if ($id==1) {
+
+        $WhoIsServer="dns.pl"; //$WhoIsServer zuweisen
+        $fp = fsockopen ("$WhoIsServer", 43, $errnr, $errstr); // Verbindung aufmachen
+    set_socket_blocking($fp,0);
+           fputs($fp, "$domain\n"); //Domain uebermittlen
+                 while (!feof($fp)) { // Antwort einlesen
+                        $result = fgets($fp, 2048);
+        if (substr("$result" ,2, 16) == "No entries found") { //Antwort kontrollieren:frei
+                $antwort = 0;
+                }
+
+        else if (substr("$result" ,0, 7) == "domain:") { //Antwort kontrollieren:nicht frei
+                $antwort = 1;
+                           } // Wenn nciht merh frei Daten ansehen?
+      }
+    fclose($fp); // Verbindung schliessen
+}
+
 //s .o.
 
 else if ($id==2||3||4) {
@@ -615,6 +636,7 @@ $html_pre = '&nbsp;<br><form name="form1" method="post" action="">
                 <tr>
                   <td align="center" class="t2">www.
                                   <input type="text" name="domainname" size="17">&nbsp;&nbsp;&nbsp;<select name="endfix" size="1" style="font-family: Verdana; font-size: 10pt; color: #4E566B; font-weight: bold">
+		<option name="pl" value=".pl">.pl
         <option name="de" value=".de">.de
         <option name="com" value=".com">.com
         <option name="net" value=".net">.net
@@ -637,6 +659,7 @@ $html_pre = '&nbsp;<br><form name="form1" method="post" action="">
         <option name="sk" value=".sk">.sk
 		<option name="se" value=".se">.se
 		<option name="nl" value=".nl">.nl
+
 </select>
                     &nbsp;
                     <input type="submit" name="submit" value="Search &gt;&gt;" class="button"> </td>
