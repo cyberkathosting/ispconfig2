@@ -262,10 +262,6 @@ else
 fi
 
 sleep 3
-cd compile_aps/
-chmod 700 compile
-./compile || exit 1
-cd ..
 
 chmod 700 setup2
 ./setup2

@@ -743,6 +743,12 @@ fi  ## install_art == install
   . dist.info
 
   echo $q_prepare_files
+
+  cd compile_aps/
+  chmod 700 compile
+  ./compile || (cd `pwd`/../.. && rm -fr install_ispconfig && exit 1)
+  cd ..
+
   mv -f binaries/aps.tar.gz ./aps.tar.gz
   mv -f binaries/spamassassin.tar.gz ./spamassassin.tar.gz
   mv -f binaries/uudeview.tar.gz ./uudeview.tar.gz
