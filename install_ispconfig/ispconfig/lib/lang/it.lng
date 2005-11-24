@@ -62,13 +62,13 @@ $wb["Es ist folgender Fehler aufgetreten:"] = "Si è verificato il seguente error
 $wb["Web-FTP"] = 'Web-FTP';
 $wb["ISP Faktura"] = 'ISP Invoice';
 
-$wb["Verzeichnis öffnen"] = "open";
-$wb["Verzeichnis schliessen"] = "close";
-$wb["Hilfe"] = 'Help';
-$wb["Online Hilfe"] = 'Online Help';
-$wb["schliessen"] = 'close';
+$wb["Verzeichnis öffnen"] = "apri";
+$wb["Verzeichnis schliessen"] = "chiudi";
+$wb["Hilfe"] = 'Aiuto';
+$wb["Online Hilfe"] = 'Aiuto Online';
+$wb["schliessen"] = 'chiudi';
 
-$wb["PAPIERKORB_HINWEIS"] = "<b>Note:</b> Items remaining in recycle bin after emptying are currently in update state. Please try to delete them later.";
+$wb["PAPIERKORB_HINWEIS"] = "<b>Nota:</b> Gli oggetti rimasti nel cestino dopo la cancellazione sono attualmente in  aggiornamento. Prova a cancellarli in un altro momento.";
 
 
 // Multidoc  Allgemein ////////////////////////////////
@@ -83,13 +83,13 @@ $wb["jscript_ein"] = " ";
 
 ////////////// Allgemein Ende ///////////////////
 
-$wb["Es konnte ein Dokument nicht wiederhergestellt werden, da sich das Eltern-Dokument noch im Papierkorb befindet.\n"] = "The object cannot be restored as long as its parent object is in the recycle bin.";
+$wb["Es konnte ein Dokument nicht wiederhergestellt werden, da sich das Eltern-Dokument noch im Papierkorb befindet.\n"] = "L'oggetto non puo' essere ripristinato a causa di altri oggetti collegati ad esso trovati nel cestino.";
 
-$wb["DNS-Domains angelegt"] = 'Master Zones created';
-$wb["Benutzter Diskspace"] = "Diskspace used";
-$wb["Slave Zones angelegt"] = "Slave Zones created";
-$wb["Datenbanken angelegt"] = "Databases created";
+$wb["DNS-Domains angelegt"] = 'Zona Master creata';
+$wb["Benutzter Diskspace"] = "Spazio disco usato";
+$wb["Slave Zones angelegt"] = "Zona Slave creata";
+$wb["Datenbanken angelegt"] = "Database creato";
 
-$wb["txt_confirm_delete"] = "Do you really want to delete this object?";
+$wb["txt_confirm_delete"] = "Vuoi veramente cancellare questo oggetto?";
 
 ?>
