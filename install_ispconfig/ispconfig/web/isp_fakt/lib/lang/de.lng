@@ -1,0 +1,78 @@
+<?
+/********************************
+* 42go Dictionary File
+* Version 1.0
+* (c) projektfarm GmbH
+*********************************/
+
+$wb["ISP Faktura"] = 'ISP Faktura';
+$wb["Web-FTP"] = 'Web-FTP';
+$wb["Domains"] = 'Domains';
+$wb["Service"] = 'Service';
+$wb["Webs"] = 'Webs';
+$wb["Traffic"] = 'Traffic';
+$wb["Email-Adressen"] = 'Email-Adressen';
+$wb["Artikel"] = 'Artikel';
+$wb["admin"] = 'admin';
+$wb["Artikel für"] = 'Artikel für';
+$wb["Dienstleistung"] = 'Dienstleistung';
+$wb["Hardware"] = 'Hardware';
+$wb["Software"] = 'Software';
+$wb["Typ"] = 'Typ';
+$wb["Artikel Nr."] = 'Artikel Nr.';
+$wb["Bezeichnung"] = 'Bezeichnung';
+$wb["Beschreibung"] = 'Beschreibung';
+$wb["Stück"] = 'Stück';
+$wb["MB"] = 'MB';
+$wb["GB"] = 'GB';
+$wb["Stunde"] = 'Stunde';
+$wb["Einheit"] = 'Einheit';
+$wb["Menge"] = 'Menge';
+$wb["Preis"] = 'Preis';
+$wb["Verrechnung"] = 'Verrechnung';$wb["Artikel neu"] = 'Artikel neu';
+$wb["Ordner neu"] = 'Ordner neu';
+$wb["Abrechnen"] = 'Abrechnen';
+$wb["Hilfe"] = 'Hilfe';
+$wb["#Artikel neu#"] = '#Artikel neu#';
+$wb["#Ordner neu#"] = '#Ordner neu#';
+$wb["Produkte"] = 'Produkte';
+$wb["#Abrechnen#"] = '#Abrechnen#';
+$wb["Rechnungen"] = 'Rechnungen';
+$wb["Kunden"] = 'Kunden';
+$wb["Anbieter"] = 'Anbieter';
+$wb["Keine Artikel zum Abrechnen gefunden."] = 'Keine Artikel zum Abrechnen gefunden.';
+$wb["Abrechnung"] = 'Abrechnung';
+$wb["Name"] = 'Name';
+$wb["IP-Traffic"] = 'IP-Traffic';
+$wb["Steuersatz"] = 'Steuersatz';
+$wb["Bei Überschreitung:"] = 'Bei Überschreitung:';
+$wb["Diese Angaben sind nur für Artikel vom Typ: Traffic gültig!"] = 'Diese Angaben sind nur für Artikel vom Typ: Traffic gültig!';
+$wb["Rechnungen Kunden"] = 'Rechnungen Kunden';
+$wb["Firma"] = 'Firma';
+$wb["Vorname"] = 'Vorname';
+$wb["Strasse"] = 'Strasse';
+$wb["PLZ"] = 'PLZ';
+$wb["Ort"] = 'Ort';
+$wb["Land"] = 'Land';
+$wb["Steuernr."] = 'Steuernr.';
+$wb["Rechnung"] = 'Rechnung';
+$wb["Datum"] = 'Datum';
+$wb["Rechnung Nr."] = 'Rechnung Nr.';
+$wb["Anzahl"] = 'Anzahl';
+$wb["Art. Nr."] = 'Art. Nr.';
+$wb["Gesamt"] = 'Gesamt';
+$wb["EURO"] = 'EURO';
+$wb["Web gesamt"] = 'Web gesamt';
+$wb["enthaltene Mehrwertsteuer"] = 'enthaltene Mehrwertsteuer';
+$wb["Gesamtbetrag"] = 'Gesamtbetrag';
+$wb["Rechnungen Anbieter"] = 'Rechnungen Anbieter';
+$wb["Kunde"] = 'Kunde';
+$wb["Rg. Nr."] = 'Rg. Nr.';
+$wb["OK"] = 'OK';
+$wb["Weiter"] = "Next";
+$wb["Summe Anbieter"] = "Summe Anbieter";
+$wb["Summe Web"] = "Summe Web";
+$wb["Summe Kunde"] = "Summe Kunde";
+$wb["Abrechnung abgeschlossen."] = "Abrechnung abgeschlossen.";
+
+?>
