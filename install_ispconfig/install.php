@@ -1105,6 +1105,17 @@ caselog("chown admispconfig:admispconfig $conf_datei", $FILE, __LINE__);
 
 if($install_art == "install"){
   $vhost = "
+<Directory /var/www/sharedip>
+    Options +Includes -Indexes
+    AllowOverride None
+    AllowOverride Indexes AuthConfig Limit FileInfo
+    Order allow,deny
+    Allow from all
+    <Files ~ \"^\\.ht\">
+    Deny from all
+    </Files>
+</Directory>
+
 ###############ispconfig_log###############
 LogFormat \"%v||||%b||||%h %l %u %t \\\"%r\\\" %>s %b \\\"%{Referer}i\\\" \\\"%{User-Agent}i\\\"\" combined_ispconfig
 CustomLog \"|/root/ispconfig/cronolog --symlink=/var/log/httpd/ispconfig_access_log /var/log/httpd/ispconfig_access_log_%Y_%m_%d\" combined_ispconfig
