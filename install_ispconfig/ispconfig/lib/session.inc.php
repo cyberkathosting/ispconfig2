@@ -35,6 +35,8 @@ if($set_header == 1) {
     ob_start("ob_gzhandler");
 }
 
+$go_info["server"]["dir_trenner"] = '/';
+
 
 /********************************************************/
 /* Laden der Basis Klassen                              */
@@ -207,6 +209,7 @@ if ($go_api->auth->status != "ok")
 
 $s = $go_api->session->start();
 
+$go_info["server"]["dir_trenner"] = '/';
 
 /**********************************************************/
 /* Füllen des info arrays, wenn neue Session              */
