@@ -1105,53 +1105,53 @@ caselog("chown admispconfig:admispconfig $conf_datei", $FILE, __LINE__);
 
 if($install_art == "install"){
   $vhost = "
-<Directory /var/www/sharedip>
+<directory /var/www/sharedip>
     Options +Includes -Indexes
     AllowOverride None
     AllowOverride Indexes AuthConfig Limit FileInfo
     Order allow,deny
     Allow from all
-    <Files ~ \"^\\.ht\">
+    <files ~ \"^\\.ht\">
     Deny from all
-    </Files>
-</Directory>
+    </files>
+</directory>
 
 ###############ispconfig_log###############
 LogFormat \"%v||||%b||||%h %l %u %t \\\"%r\\\" %>s %b \\\"%{Referer}i\\\" \\\"%{User-Agent}i\\\"\" combined_ispconfig
 CustomLog \"|/root/ispconfig/cronolog --symlink=/var/log/httpd/ispconfig_access_log /var/log/httpd/ispconfig_access_log_%Y_%m_%d\" combined_ispconfig
 
-<Directory ".$dist_path_httpd_root."/*/web>
+<directory ".$dist_path_httpd_root."/*/web>
     Options +Includes -Indexes
     AllowOverride None
     AllowOverride Indexes AuthConfig Limit FileInfo
     Order allow,deny
     Allow from all
-    <Files ~ \"^\\.ht\">
+    <files ~ \"^\\.ht\">
     Deny from all
-    </Files>
-</Directory>
+    </files>
+</directory>
 
-<Directory ".$dist_path_httpd_root."/*/user/*/web>
+<directory ".$dist_path_httpd_root."/*/user/*/web>
     Options +Includes -Indexes
     AllowOverride None
     AllowOverride Indexes AuthConfig Limit FileInfo
     Order allow,deny
     Allow from all
-    <Files ~ \"^\\.ht\">
+    <files ~ \"^\\.ht\">
     Deny from all
-    </Files>
-</Directory>
+    </files>
+</directory>
 
-<Directory ".$dist_path_httpd_root."/*/cgi-bin>
+<directory ".$dist_path_httpd_root."/*/cgi-bin>
     Options ExecCGI -Indexes
     AllowOverride None
     AllowOverride Indexes AuthConfig Limit FileInfo
     Order allow,deny
     Allow from all
-    <Files ~ \"^\\.ht\">
+    <files ~ \"^\\.ht\">
     Deny from all
-    </Files>
-</Directory>
+    </files>
+</directory>
 
 Include ".$httpd_conf_dir."/vhosts/Vhosts_ispconfig.conf
 
@@ -1204,7 +1204,7 @@ if(is_file($dist_cron_tab)){
 } else {
   $existing_cron_jobs = "";
 }
-$cron_jobs = array('30 00 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/logs.php &> /dev/null','59 23 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/ftp_logs.php &> /dev/null','59 23 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/mail_logs.php &> /dev/null','59 23 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/cleanup.php &> /dev/null','0 4 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/webalizer.php &> /dev/null','0,30 * * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/check_services.php &> /dev/null','15 3,15 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/quota_msg.php &> /dev/null','40 00 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/traffic.php &> /dev/null');
+$cron_jobs = array('30 00 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/logs.php &> /dev/null','59 23 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/ftp_logs.php &> /dev/null','59 23 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/mail_logs.php &> /dev/null','59 23 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/cleanup.php &> /dev/null','0 4 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/webalizer.php &> /dev/null','0,30 * * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/check_services.php &> /dev/null','15 3,15 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/quota_msg.php &> /dev/null','40 00 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/traffic.php &> /dev/null','05 02 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/backup.php &> /dev/null');
 foreach($cron_jobs as $cron_job){
   if(!strstr($existing_cron_jobs, $cron_job)){
     af($dist_cron_tab, "\n".$cron_job."\n");
