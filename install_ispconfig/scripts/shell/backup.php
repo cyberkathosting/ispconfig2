@@ -45,15 +45,15 @@ $server = $mod->system->server_conf;
 $httpd_root = stripslashes($server["server_path_httpd_root"]);
 unset($server);
 
-// erstelle temp verzeichnis
-$tmp_dir = $go_info["server"]["temp_dir"].$go_info["server"]["dir_trenner"].md5(uniqid (""));
-mkdir( $tmp_dir, 0700) or $go_api->errorMessage($go_api->lng("tmp_dir_error"));
-
 $zip = $go_info["tools"]["zip"];
 
 // Function for making backup
 function do_backup($web_id) {
-        global $mod,$go_info,$httpd_root,$tmp_dir,$zip,$backup_file_name;
+        global $mod,$go_info,$httpd_root,$zip,$backup_file_name;
+		
+		// erstelle temp verzeichnis
+		$tmp_dir = $go_info["server"]["temp_dir"].$go_info["server"]["dir_trenner"].md5(uniqid (""));
+		mkdir( $tmp_dir, 0700) or $go_api->errorMessage($go_api->lng("tmp_dir_error"));
 
         $web_id = intval($web_id);
 		
@@ -126,7 +126,7 @@ function do_backup($web_id) {
 		chgrp("$backup_dir/$backup_file_name",$web_group);
 		
 		// Delete temp file
-		exec("rm -rf $tgz_name");
+		exec("rm -rf $tmp_dir");
 
 }
 
