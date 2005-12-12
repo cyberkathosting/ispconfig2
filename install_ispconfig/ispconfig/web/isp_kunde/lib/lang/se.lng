@@ -41,11 +41,11 @@ $wb["Max. User"]        = "Max. Användare";
 $wb["Max. Domain"]        = "Max. Domäner";
 $wb["PHP Scripte"]        = "PHP Scripts";
 $wb["SSI"]        = "SSI";
-$wb["FTP Zugang"]        = "FTP access";
+$wb["FTP Zugang"]        = "FTP Åtkomst";
 $wb["mySQL"]        = "MySQL";
 $wb["SSL"]        = "SSL";
-$wb["Shell Zugriff"]      = "Skal Access";
-$wb["Zugang"]       = "Access";  // Zugriff u. Zugang zusammenfassen!/nur einen Begriff nehmen!
+$wb["Shell Zugriff"]      = "Skal Åtkomst";
+$wb["Zugang"]       = "Åtkomst";  // Zugriff u. Zugang zusammenfassen!/nur einen Begriff nehmen!
 $wb["CGI Scripte"]      = "CGI Scripts";
 $wb["Bundesland"]   = "Land";
 $wb["Abteilung"]    = "Avdelning";
@@ -84,7 +84,7 @@ $wb["Kunden"] = "Kunder";
 $wb["Dokument suchen"] = "Dokument sökning";
 
 $wb["User & Email"] = "Användare & Epost";
-$wb["Co-Domains"] = "Co-Domäner";
+$wb["Co-Domains"] = "Sub-Domäner";
 $wb["SSL"] = "SSL";
 $wb["Optionen"] = "Inställningar";
 
@@ -175,7 +175,7 @@ $wb["Sonstige"] = "annan";
 $wb["Neu"] = "Ny";
 $wb["Postfach MB"] = "Epostlåda MB";
 
-$wb["email_alias_txt"] = "<b>Tips:</b> en alias per rad.";
+$wb["email_alias_txt"] = "<b>Tips:</b> ett alias per rad.";
 $wb["Weiterleitung"] = "Vidarebefodra";
 $wb["Nachricht"] = "Meddelande";
 $wb["Kein Kunde vorhanden"] = "Ingen Kund tillgänglig";
@@ -206,14 +206,14 @@ $wb["Datenbank Name"] = "Databas Namn";
 $wb["Speicher belegt"] = "Databas Storlek";
 
 $wb["Kein Web angelegt"] = "Ingen hemsida skapad";
-$wb["Real Name"] = "Riktigt namn";
+$wb["Real Name"] = "Riktiga namn";
 $wb["Feld"] = "Fält";
 $wb["httpd_inc_txt"] = "Apache Direktiv<br>&nbsp; (Tillval)";
 $wb["Kopie speichern"] = "Spara kopia";
 
 $wb["err_0001"] = "Domänen tillhör en annan klient.";
 
-$wb["mySQL remote access"] = "MySQL fjärr Access";
+$wb["mySQL remote access"] = "MySQL fjärr Åtkomst";
 $wb["lokaler mailserver"] = "Lokal Epostserver";
 $wb["externer mailserver"] = "Extern Epostserver";
 
@@ -393,7 +393,7 @@ $wb["error_anbieter_dnsmanager_aktiv"] = "Denna återförsäljaren har alla redan n
 $wb["error_anbieter_max_dns_ueberschritten"] = "Denna återförsäljare har alla redan fler Primära DNS Inlägg än det du tänker tilldela honom.<br>";
 $wb["error_anbieter_max_slavedns_ueberschritten"] = "Denna återförsäljare har alla redan fler Sekundära DNS Inlägg än det du tänker tilldela honom.<br>";
 $wb["error_anbieter_httpd_include_aktiv"] = "HTTPD Includes är alla redan i användning på någon av återförsäljarens webbplats. Denna funktion kan ej deaktiveras.<br>";
-$wb["error_anbieter_shell_access_aktiv"] = "Skal Access är alla redan i användning på någon av återförsäljarens webbplats. Denna funktion kan ej deaktiveras.<br>";
+$wb["error_anbieter_shell_access_aktiv"] = "Skal Åtkomst är alla redan i användning på någon av återförsäljarens webbplats. Denna funktion kan ej deaktiveras.<br>";
 $wb["error_anbieter_cgi_aktiv"] = "CGI är alla redan i användning på någon av återförsäljarens webbplats.. Denna funktion kan ej deaktiveras.<br>";
 $wb["error_anbieter_standard_cgi_aktiv"] = "Standard CGI är alla redan i användning på någon av återförsäljarens webbplats. Denna funktion kan ej deaktiveras.<br>";
 $wb["error_anbieter_php_aktiv"] = "PHP är alla redan i användning på någon av återförsäljarens webbplats. Denna funktion kan ej deaktiveras.<br>";
@@ -428,7 +428,7 @@ $wb["Slave Zones angelegt"] = "Slav Zoner skapade";
 $wb["Datenbanken angelegt"] = "Databaser skapade";
 $wb["error_web_no_database_decrease_1"] = "Denna webbplats har alla redan ";
 $wb["error_web_no_database_decrease_2"] = " databas(er). Du kan inte minska antalet databaser.<br>";
-$wb["error_web_no_shell_access"] = "Du kan inte tilldela Skal access funktionen till denna webbplats.<br>";
+$wb["error_web_no_shell_access"] = "Du kan inte tilldela Skal Åtkomst funktionen till denna webbplats.<br>";
 $wb["error_web_no_cgi"] = "Du kan inte tilldela CGI funktionen till denna webbplats.<br>";
 $wb["error_web_no_standard_cgi"] = "Du kan inte tilldela Standard CGI till denna webbplats.<br>";
 $wb["error_web_no_php"] = "Du kan inte tilldela PHP funktionen till denna webbplats.<br>";

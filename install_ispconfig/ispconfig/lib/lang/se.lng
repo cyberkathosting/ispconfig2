@@ -67,7 +67,7 @@ $wb["Hilfe"] = 'Hjälp';
 $wb["Online Hilfe"] = 'Online Hjälp';
 $wb["schliessen"] = 'Stäng';
 
-$wb["PAPIERKORB_HINWEIS"] = "<b>Note:</b> Artiklar som finns kvar i papperskorgen efter tömmning är i updaterings stadie. Försök att radera dem senare.";
+$wb["PAPIERKORB_HINWEIS"] = "<b>Note:</b> Artiklar som finns kvar i papperskorgen efter tömmning är i uppdaterings stadie. Försök att radera dem senare.";
 
 
 // Multidoc  Allgemein ////////////////////////////////
@@ -87,7 +87,7 @@ $wb["Es konnte ein Dokument nicht wiederhergestellt werden, da sich das Eltern-D
 $wb["DNS-Domains angelegt"] = 'Master Zon skapad';
 $wb["Benutzter Diskspace"] = "Utrymme använt";
 $wb["Slave Zones angelegt"] = "Slav Zon skapad";
-$wb["Datenbanken angelegt"] = "Database skapad";
+$wb["Datenbanken angelegt"] = "Databas skapad";
 
 $wb["txt_confirm_delete"] = "Vill du verkligen ta bort detta objekt?";
 

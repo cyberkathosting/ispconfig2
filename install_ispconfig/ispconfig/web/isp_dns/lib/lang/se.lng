@@ -71,7 +71,7 @@ $wb["Maximale Anzahl an DNS-Einträgen erreicht."] = "Det maximala antalet zoner 
 $wb["error_no_zones_allowed"] = "Du har ej tillåtelse att skapa zoner på detta konto.<br>";
 $wb["error_no_dns_anbieter"] = "Du har ej tillåtelse att skapa några DNS inlägg på detta konto.<br>";
 $wb["error_max_slave_dns_anbieter"] = "Det maximala antalet slav zoner för detta konto har uppnåtts.<br>";
-$wb["weiter_link"] = "<br><br> <a href='../../isp_dns/frame_start.php?s=$s'>Mas &gt;&gt;</a>";
+$wb["weiter_link"] = "<br><br> <a href='../../isp_dns/frame_start.php?s=$s'>Nästa &gt;&gt;</a>";
 $wb["error_a_record_exists"] = "Det finns alla redan ett A inlägg för denna värd i denna zonen.<br>";
 $wb["error_cname_record_exists"] = "Det finns alla redan ett CNAME inlägg för denna värd i denna zonen.<br>";
 $wb["error_mx_record_exists"] = "Denna eller liknande MX inlägg finns alla redan i denna zonen.<br>";
