@@ -342,5 +342,36 @@ $wb["System Load 15 Minuten"] = "Charge système sur 15 Minutes";
 //////////////// Server Status Ende //////////
 
 $wb["DNS-Domains angelegt"] = 'Domaine DNS créé';
+$wb["Hinzufügen"] = "Add";
+$wb["Berechtigungen"] = "Permissions";
+$wb["Speichern"] = "Save";
+$wb["Löschen"] = "Delete";
+$wb["Abbrechen"] = "Cancel";
+$wb["IP-Adresse"] = "IP-Address";
+$wb["DNS-Query"] = "Query Primary DNS Records";
+$wb["DNS-Insert"] = "Create Primary DNS Records";
+$wb["DNS-Update"] = "Edit Primary DNS Records";
+$wb["DNS-Delete"] = "Delete Primary DNS Records";
+$wb["slave_query"] = "Query Secondary DNS Records";
+$wb["slave_insert"] = "Create Secondary DNS Records";
+$wb["slave_update"] = "Edit Secondary DNS Records";
+$wb["slave_delete"] = "Delete Secondary DNS Records";
+$wb["reseller_query"] = "Query Resellers";
+$wb["reseller_insert"] = "Create Resellers";
+$wb["reseller_update"] = "Edit Resellers";
+$wb["reseller_delete"] = "Delete Resellers";
+$wb["kunde_query"] = "Query Clients";
+$wb["kunde_insert"] = "Create Clients";
+$wb["kunde_update"] = "Edit Clients";
+$wb["kunde_delete"] = "Delete Clients";
+$wb["web_query"] = "Query Websites";
+$wb["web_insert"] = "Create Websites";
+$wb["web_update"] = "Edit Websites";
+$wb["web_delete"] = "Delete Websites";
+$wb["txt_primary_dns_records"] = "Primary DNS Records";
+$wb["txt_secondary_dns_records"] = "Secondary DNS Records";
+$wb["txt_anbieter"] = "Resellers";
+$wb["txt_kunden"] = "Clients";
+$wb["txt_webs"] = "Websites";
 
 ?>

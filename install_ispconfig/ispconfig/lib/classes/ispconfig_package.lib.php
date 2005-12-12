@@ -46,7 +46,7 @@ global $go_api, $go_info;
 
     $installer = $inst_path.$go_info["server"]["dir_trenner"].$inst_file;
 
-    if(!@is_file($installer)) $go_api->errorMessage("Installations Anweisungen nicht gefunden: $installer");
+    if(!@is_file($installer)) $go_api->errorMessage("Installation instructions not found: $installer");
 
     // Datei auslesen
     $fp = fopen ($installer, "r");
@@ -314,12 +314,12 @@ global $go_api, $go_info;
     // Verzeichnisse anlegen
     if(is_array($this->inst['dirs'])) {
         foreach($this->inst['dirs'] as $mdir) {
-            if($mdir["action"] == "MKDIR") {
-                @mkdir($mdir["dir"],0755) or $go_api->errorMessage("Konnte Verzeichnis '".$mdir["dir"]."' nicht erstellen.");
+            if($mdir["action"] == "MKDIR" && !is_dir($mdir["dir"])) {
+                @mkdir($mdir["dir"],0755) or $go_api->errorMessage("Cannot create direktory: '".$mdir["dir"]."'");
             }
             // Achtung: verzeichnis muss leer sein!
-            if($mdir["action"] == "RMDIR") {
-                @mkdir($mdir["dir"]) or $go_api->errorMessage("Konnte Verzeichnis '".$mdir["dir"]."' nicht löschen.");;
+            if($mdir["action"] == "RMDIR" && is_dir($mdir["dir"])) {
+                @mkdir($mdir["dir"]) or $go_api->errorMessage("Cannot delete direktory: '".$mdir["dir"]."'");;
             }
         }
     }
@@ -328,7 +328,7 @@ global $go_api, $go_info;
     if(is_array($this->inst['files'])) {
         foreach($this->inst['files'] as $mfile) {
             if($mfile["action"] == "CPFILE") {
-                @copy($mfile["source"],$mfile["destdir"].'/'.$mfile["destname"] ) or $go_api->errorMessage("Konnte Datei '".$mfile["destdir"].'/'.$mfile["destname"]."' nicht kopieren.");
+                @copy($mfile["source"],$mfile["destdir"].'/'.$mfile["destname"] ) or $go_api->errorMessage("Cannot copy file: '".$mfile["destdir"].'/'.$mfile["destname"]."' ");
             }
         }
     }
@@ -342,14 +342,17 @@ global $go_api, $go_info;
 
             if($msql["action"] == "SQLFILEEXEC") {
                 //exec($msql["command"] . " -e \"source ".$msql["sql_file"]."\" ".$msql["db"]);
-                $fp = fopen ($msql["sql_file"], "r") or $go_api->errorMessage("Can not open SQL File: ".$msql["sql_file"]);
-                while($sql_line = fgets($fp,100000)) {
-                    $sql_line = str_replace("\r\n", "", $sql_line);
-                    $sql_line = str_replace("\n", "", $sql_line);
+				$content = file_get_contents($msql["sql_file"]) or $go_api->errorMessage("Can not open SQL File: ".$msql["sql_file"]);
+				$content = str_replace("\r\n", "\n", $content);
+				$statements = explode(";\n",$content);
+				
+               foreach($statements as $sql_line) {
+                    //$sql_line = str_replace("\r\n", "", $sql_line);
+                    //$sql_line = str_replace("\n", "", $sql_line);
                     $go_api->db->query($sql_line);
-                    if($go_api->db->errorMessage != "") $go_api->errorMessage($go_api->db->errorMessage);
+                    if($go_api->db->errorMessage != "") $go_api->errorMessage("The SQL staement: '$sql_line' has this error: ".$go_api->db->errorMessage);
                 }
-                fclose($fp);
+                //fclose($fp);
             }
         }
     }

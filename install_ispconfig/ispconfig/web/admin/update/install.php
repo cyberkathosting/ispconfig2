@@ -43,7 +43,7 @@ mkdir( $tmp_dir, 0700) or $go_api->errorMessage($go_api->lng("tmp_dir_error"));
 if($method == "upload") {
     // File Upload
     if (is_uploaded_file($HTTP_POST_FILES['file']['tmp_name'])) {
-        copy($HTTP_POST_FILES['file']['tmp_name'], $tmp_dir.$go_info["server"]["dir_trenner"].$HTTP_POST_FILES['file']['name']) or $go_api->errorMessage("Konnte Datei nicht kopieren.");
+        copy($HTTP_POST_FILES['file']['tmp_name'], $tmp_dir.$go_info["server"]["dir_trenner"].$HTTP_POST_FILES['file']['name']) or $go_api->errorMessage($go_api->lng("file_copy_error"));
         $pkg_name = $HTTP_POST_FILES['file']['name'];
     } else {
         $go_api->errorMessage($go_api->lng("file_copy_error"));
@@ -83,6 +83,8 @@ $go_api->package->parse($tmp_dir,"package.ins");
 //print_r($go_api->package->inst);
 
 $go_api->package->install($tmp_dir);
+
+if($go_info["server"]["mode"] != "demo") exec("rm -rf ".escapeshellcmd($tmp_dir));
 
 $go_api->msg("<center>".$go_api->lng("Installation OK")."</center>","Installation");
 
