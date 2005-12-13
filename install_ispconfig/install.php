@@ -614,22 +614,25 @@ if(is_dir("/var/mail") && !file_exists("/var/spool/mail")){
 }
 /////////// Symlink von /var/spool/mail auf /var/mail ENDE ////////////
 
-/////////// Trustix 30 ///////////
-if(is_dir("/home/mail") && !is_file("/home/mail/admispconfig")){
-  phpcaselog(touch("/home/mail/admispconfig"), "create /home/mail/admispconfig", $FILE, __LINE__);
-  caselog("chown admispconfig:mail /home/mail/admispconfig &> /dev/null", $FILE, __LINE__);
-  caselog("chmod 600 /home/mail/admispconfig", $FILE, __LINE__);
-}
-elseif(is_dir("/var/spool/postfix") && !is_file("/var/spool/postfix/admispconfig")){
-  phpcaselog(touch("/var/spool/postfix/admispconfig"), "create /var/spool/postfix/admispconfig", $FILE, __LINE__);
-  caselog("chown admispconfig:mail /var/spool/postfix/admispconfig &> /dev/null", $FILE, __LINE__);
-  caselog("chmod 600 /var/spool/postfix/admispconfig", $FILE, __LINE__);
-}
-/////////// Trustix 30 end ///////////
-elseif(!is_file("/var/spool/mail/admispconfig")){
-  phpcaselog(touch("/var/spool/mail/admispconfig"), "create /var/spool/mail/admispconfig", $FILE, __LINE__);
-  caselog("chown admispconfig:mail /var/spool/mail/admispconfig &> /dev/null", $FILE, __LINE__);
-  caselog("chmod 600 /var/spool/mail/admispconfig", $FILE, __LINE__);
+if($dist == "Trustix30") {
+  /////////// Trustix 30 ///////////
+  if(is_dir("/home/mail") && !is_file("/home/mail/admispconfig")){
+    phpcaselog(touch("/home/mail/admispconfig"), "create /home/mail/admispconfig", $FILE, __LINE__);
+    caselog("chown admispconfig:mail /home/mail/admispconfig &> /dev/null", $FILE, __LINE__);
+    caselog("chmod 600 /home/mail/admispconfig", $FILE, __LINE__);
+  }
+  elseif(is_dir("/var/spool/postfix") && !is_file("/var/spool/postfix/admispconfig")){
+    phpcaselog(touch("/var/spool/postfix/admispconfig"), "create /var/spool/postfix/admispconfig", $FILE, __LINE__);
+    caselog("chown admispconfig:mail /var/spool/postfix/admispconfig &> /dev/null", $FILE, __LINE__);
+    caselog("chmod 600 /var/spool/postfix/admispconfig", $FILE, __LINE__);
+  }
+  /////////// Trustix 30 end ///////////
+} else {
+  if(!is_file("/var/spool/mail/admispconfig")){
+    phpcaselog(touch("/var/spool/mail/admispconfig"), "create /var/spool/mail/admispconfig", $FILE, __LINE__);
+    caselog("chown admispconfig:mail /var/spool/mail/admispconfig &> /dev/null", $FILE, __LINE__);
+    caselog("chmod 600 /var/spool/mail/admispconfig", $FILE, __LINE__);
+  }
 }
 
 if($install_art == "upgrade"){
@@ -1110,7 +1113,7 @@ caselog("chown admispconfig:admispconfig $conf_datei", $FILE, __LINE__);
 
 if($install_art == "install"){
   $vhost = "
-<directory "/var/www/sharedip>
+<directory /var/www/sharedip>
     Options +Includes -Indexes
     AllowOverride None
     AllowOverride Indexes AuthConfig Limit FileInfo
