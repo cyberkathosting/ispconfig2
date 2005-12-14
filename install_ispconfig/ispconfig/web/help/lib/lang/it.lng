@@ -4,38 +4,38 @@
 * Version 1.0
 *********************************/
 
-$wb["Anbieter"]     = "Reseller";
+$wb["Anbieter"]     = "Rivenditore";
 $wb["Web"]          = "Web";
 $wb["Admin Handbuch"] = "Administrator Manual";
 $wb["Reseller Handbuch"] = "Reseller Manual";
 $wb["Kunden Handbuch"] = "Customer Manual";
-$wb["Deutsch"]          = "German";
-$wb["Englisch"]          = "English";
+$wb["Deutsch"]          = "Tedesco";
+$wb["Englisch"]          = "Inglese";
 $wb["Projektfarm Support"]          = "Projektfarm Support";
 $wb["Online Hilfe"] = "Online Help";
-$wb["willkommen_kunde"] = "Welcome to ISPConfig!
+$wb["willkommen_kunde"] = "Benvenuto in ISPConfig!
 You can administrate your website(s) here. If you have questions or problems,
 please contact your server administrator or refer to the ISPConfig client manual.";
-$wb["Willkommen"] = "Welcome";
+$wb["Willkommen"] = "Benvenuto";
 
 //////////////// Server Status ////////////////
-$wb["Arbeitsspeicher"]          = "Main Memory";
+$wb["Arbeitsspeicher"] = "Memoria Principale";
 $wb["CPU"]          = "CPU";
-$wb["Dienste"]      = "Services";
-$wb["Server Online seit"]          = "Server Online since";
-$wb["User Online"]      = "Users Online";
-$wb["System Load 1 Minute"] = "System Load 1 Minute";
-$wb["System Load 5 Minuten"] = "System Load 5 Minutes";
-$wb["System Load 15 Minuten"] = "System Load 15 Minutes";
+$wb["Dienste"]      = "Servizi";
+$wb["Server Online seit"] = "Il Server è online dal";
+$wb["User Online"]      = "Utenti online";
+$wb["CPU Auslastung 1 Minute"] = "Utilizzo CPU 1 Minuto";
+$wb["CPU Auslastung 5 Minuten"] = "Utilizzo CPU 5 Minuti";
+$wb["CPU Auslastung 15 Minuten"] = "Utilizzo CPU 15 Minuti";
 //////////////// Server Status Ende //////////
 
 $wb["Webs angelegt"] = "Sites used";
 $wb["User angelegt"] = "Users used";
 $wb["Domains angelegt"] = "Domains used";
 $wb["unlimitiert"]  = "unlimited";
-$wb["Anbieter"]     = "Reseller";
+$wb["Anbieter"]     = "Rivenditore";
 $wb["DNS-Domains angelegt"] = 'DNS Domains created';
-$wb["von"] = "of";
+$wb["von"] = "di";
 
 
 ?>
