@@ -102,6 +102,7 @@ if($transfer == "download") {
         // setze Header
         header("Content-Type: application/octet-stream");
         header("Content-Disposition: attachment; filename=\"$backup_file_name\"");
+		header("Pragma: public");
 
         // gebe Daten aus
         echo file_get_contents($tgz_name);
