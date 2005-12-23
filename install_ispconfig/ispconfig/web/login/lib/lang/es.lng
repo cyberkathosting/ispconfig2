@@ -3,23 +3,25 @@
 * ISPConfig Dictionary File
 * Version 1.0
 * Login
+* Version 1.0
+* Enhanced by danf.1979@gmail.com
 *********************************/
 
 // License Manager
 $wb["Es wurde keine g&uuml;ltige Lizenzdatei gefunden."] = "No encontrado un fichero de licencia valido.";
-$wb["Hier k&ouml;nnen Sie ihre Lizenzdatei einspielen."] = "Puede subir el fichero de licencia desde aqum.";
-$wb["Username"] = "Username";
-$wb["Passwort"] = "Contraseqa";
+$wb["Hier k&ouml;nnen Sie ihre Lizenzdatei einspielen."] = "Puede subir el fichero de licencia desde aqui.";
+$wb["Username"] = "Usuario";
+$wb["Passwort"] = "Clave";
 $wb["Lizenzdatei"] = "Fichero de Licencia";
 $wb["Weiter"] = "siguiente";
 $wb["Die Lizenzdatei wurde eingespielt.<br>Sie k&ouml;nnen sich jetzt einloggen."] = "El fichero de licencia ha sido subido.<br> Ahora puede autentificarse.";
-$wb["Ihre Nutzersitzung wurde beendet."] = "Su sesisn ha caducado.";
-$wb["Hier kvnnen Sie sich neu einloggen"] = "Aqum puede autentificarse de nuevo";
+$wb["Ihre Nutzersitzung wurde beendet."] = "Su sesion ha caducado.";
+$wb["Hier können Sie sich neu einloggen"] = "Aqui puede autentificarse de nuevo";
 
-$wb["FEHLER 101: Username oder Passwort Falsch."] = "ERROR 101: Nombre de usuario o contraseqa incorrecto.";
+$wb["FEHLER 101: Username oder Passwort Falsch."] = "ERROR 101: Nombre de usuario o clave incorrecto.";
 $wb["FEHLER 102: Account inaktiv."] = "ERROR 102: Cuenta inactiva.";
-$wb["FEHLER 103: Es wurde kein Username oder Passwort angegeben."] = "ERROR 103: No ha suministrado nombre de usuario o contraseqa.";
-$wb["FEHLER 104: Die Nutzersession wurde beendet."] = "ERROR 104: Su sesisn ha caducado.";
-$wb["<br>&nbsp;<br>Hier kvnnen Sie sich erneut einloggen:"] = "<br>&nbsp;<br>Aqum puede volver a autentificarse:";
-$wb["Hier kvnnen Sie sich einloggen:"] = "Aqum puede autentificarse:";
+$wb["FEHLER 103: Es wurde kein Username oder Passwort angegeben."] = "ERROR 103: No ha suministrado un nombre de usuario o clave.";
+$wb["FEHLER 104: Die Nutzersession wurde beendet."] = "ERROR 104: Su sesion ha caducado.";
+$wb["<br>&nbsp;<br>Hier können Sie sich erneut einloggen:"] = "<br>&nbsp;<br>Aqui puede volver a autentificarse:";
+$wb["Hier können Sie sich einloggen:"]  = "Aqui puede autentificarse:";
 ?>

@@ -2,51 +2,52 @@
 
 //////////////// Tools //////////////////////
 $wb["Tools & Optionen"] = "Herramientas y Opciones";
-$wb["Passwort dndern"] = "Cambiar Password";
+$wb["Passwort ändern"] = "Cambiar clave";
 $wb["Allgemein"]    = "General";
-$wb["Passwort alt"] = "Password anterior";
-$wb["Passwort neu"] = "Password nuevo";
-$wb["Passwort wiederholen"] = "confirme nuevo password";
-$wb["Adresse dndern"] = "Cambiar Direccisn";
-$wb["willkommen_kunde"] = "Bienvenido a ISPConfig!
-Puede administrar desde aqum sus sitios web. Si tiene alguna pregunta o problemas
-por favor contacte con su administrador de sistema o consulte el ISPConfig manual del cliente.";
+$wb["Passwort alt"] = "Clave anterior";
+$wb["Passwort neu"] = "Clave nueva";
+$wb["Passwort wiederholen"] = "Confirmar clave";
+$wb["Adresse dndern"] = "Cambiar Direccion";
+$wb["willkommen_kunde"] = "Bienvenido al Panel de Control ISPConfig!
+Ud. puede administrar sus sitios web desde aqui. Si tiene alguna pregunta o problemas
+por favor contacte al administrador del servidor o dirijase al manual del cliente
+ISPConfig en la seccion ayuda.";
 
 $wb["Willkommen"] = "Bienvenido";
-$wb["passwort_gespeichert"] = "Password actualizado con ixito.";
-$wb["passwort_uebereinstimmung"] = "Los dos passwords que ha suministrado no coinciden. Por favor, asegurese de que escribe el password en el campo --Nuevo password-- exactamente igual que en --Repita nuevo password--";
-$wb["passwort_alt"] = "El password no ha podido ser actualizado <br>porque su password anterior no es correcto.";
+$wb["passwort_gespeichert"] = "Clave actualizada con exito.";
+$wb["passwort_uebereinstimmung"] = "Los dos claves que ha suministrado no coinciden. Por favor, asegurese de que escribe la clave en el campo --Clave nueva-- de la misma forma que en --confirme nueva clave--";
+$wb["passwort_alt"] = "La clave no ha podido ser actualizada <br>porque su clave anterior no es correcta.";
 
 // NEW 1.1.12 ///////////////////////////////
 
-$wb["Backup Manager"] = 'Backup Manager';
-$wb["Backup"] = 'Backup';
-$wb["Restore"] = 'Restore';
-$wb["Daten Export"] = 'Data Export';
-$wb["Update Manager"] = 'Update Manager';
-$wb["Portscanner"] = 'Portscanner';
+$wb["Backup Manager"] = 'Manejador de respaldos';
+$wb["Backup"] = 'Respaldo';
+$wb["Restore"] = 'Restaurar';
+$wb["Daten Export"] = 'Exportar datos';
+$wb["Update Manager"] = 'Manejador de actualizaciones';
+$wb["Portscanner"] = 'Escaneador de puertos';
 $wb["Whois"] = 'Whois';
-$wb["Download"] = 'Download';
-$wb["FTP-Server"] = 'FTP-Server';
-$wb["Verzeichnis"] = 'Folder';
-$wb["Web Daten"] = 'Web Data';
-$wb["User Daten"] = 'User Data';
-$wb["Log Daten"] = 'Log Data';
-$wb["mySQL Datenbank (wenn vorhanden)"] = 'mySQL Database';
-$wb["Backup starten"] = 'Start Backup';
-$wb["Kein Web vorhanden."] = 'No Web found.';
-$wb["Web-Backup"] = 'Web Backup';
-$wb["Kunden-Stammaten"] = 'Client-Data';
-$wb["Format Einstellungen"] = 'Format Specification';
-$wb["Trennzeichen"] = 'Separator';
-$wb["Eingeschlossen mit"] = 'enclosed with';
-$wb["Daten für folgende Anbieter exportieren"] = 'Export Data';
-$wb["Export starten"] = 'Export start';
-$wb["Anbieter-Stammdaten"] = 'Reseller Data';
-$wb["Export"] = 'Export';
-$wb["Von"] = 'From';
-$wb["Bis"] = 'To';
-$wb["Local Portscanner"] = 'Local Portscanner';
+$wb["Download"] = 'Bajar';
+$wb["FTP-Server"] = 'Servidor FTP';
+$wb["Verzeichnis"] = 'Carpeta';
+$wb["Web Daten"] = 'Datos de la Web';
+$wb["User Daten"] = 'Datos de usuario';
+$wb["Log Daten"] = 'Datos de los log';
+$wb["mySQL Datenbank (wenn vorhanden)"] = 'Base de datos MySQL';
+$wb["Backup starten"] = 'Comenzar respaldo';
+$wb["Kein Web vorhanden."] = 'No se encontro un sitio web.';
+$wb["Web-Backup"] = 'Respaldo de la web';
+$wb["Kunden-Stammaten"] = 'Datos del cliente';
+$wb["Format Einstellungen"] = 'Espicificacion del formato';
+$wb["Trennzeichen"] = 'Separador';
+$wb["Eingeschlossen mit"] = 'encerrado con';
+$wb["Daten für folgende Anbieter exportieren"] = 'Exportar datos';
+$wb["Export starten"] = 'Comenzar exportacion';
+$wb["Anbieter-Stammdaten"] = 'Datos del revendedor';
+$wb["Export"] = 'Exportar';
+$wb["Von"] = 'Desde';
+$wb["Bis"] = 'Hacia';
+$wb["Local Portscanner"] = 'Escaneador de puertos local';
 
 // NEW 1.1.12a //////////////////////////////
 
@@ -56,19 +57,19 @@ $wb["Backup Status"] = "Backup-Status";
 $wb["Der Name des FTP-Servers <br>enthält ungültige Zeichen."] = "The name of the FTP server <br>contains invalid characters.";
 $wb["Sie haben keinen FTP Benutzernamen angegeben."] = "No FTP-Username set.";
 $wb["Ftp-Verbindung nicht hergestellt!"] = "Ftp-Connection failed!";
-$wb["Verbindung mit:"] = "Connected to:";
-$wb["als Benutzer:"] = "as User:";
+$wb["Verbindung mit:"] = "Conectado a:";
+$wb["als Benutzer:"] = "como el usuario:";
 $wb["nicht möglich."] = "not possible.";
-$wb["Konnte nicht in Verzeichnis:"] = "changing to folder:";
+$wb["Konnte nicht in Verzeichnis:"] = "cambiando a la carpeta:";
 $wb["wechseln."] = "failed.";
-$wb["Wechsel in Verzeichnis:"] = "changing to folder:";
+$wb["Wechsel in Verzeichnis:"] = "cambiando a la carpeta:";
 $wb["Ftp upload war fehlerhaft!"] = "FTP-Upload failed!";
 $wb["Upload erfolgreich."] = "Upload successful.";
 $wb["FTP-Upload Status"] = "FTP-Upload Status";
 $wb["Backup-Methode nicht unterstützt."] = "Backup-method not available.";
-$wb["Sprache ändern"] = "Change Language";
-$wb["Sprache (ISO)"] = "Language (ISO)";
-$wb["Software Version"] = "Software Version";
+$wb["Sprache ändern"] = "Cambiar lenguaje";
+$wb["Sprache (ISO)"] = "Lenguaje";
+$wb["Software Version"] = "Version del software";
 
 //////////////// Tools Ende /////////////////
 
@@ -76,69 +77,69 @@ $wb["Software Version"] = "Software Version";
 $wb["Anbieter"]     = "Revendedor";
 $wb["Kunde"]        = "Cliente";
 $wb["Suchen"]       = "Buscar";
-$wb["Stammdaten"]   = "Master data";
+$wb["Stammdaten"]   = "Datos maestros";
 $wb["Limits"]       = "Limites";
-$wb["Zugangsdaten"] = "Introduzca informacisn";
-$wb["Statistik"]    = "Estadmsticas";
+$wb["Zugangsdaten"] = "Introduzca informacion";
+$wb["Statistik"]    = "Estadisticas";
 $wb["Firma"]        = "Empresa";
-$wb["Anrede"]       = "Tmtulo";
-$wb["Vorname"]      = "Nombre";
-$wb["Name"]         = "Apellido";
+$wb["Anrede"]       = "Titulo";
+$wb["Vorname"]      = "Primer nombre";
+$wb["Name"]         = "Nombre";
 $wb["Strasse"]      = "Calle";
-$wb["PLZ"]          = "C.Postal";
+$wb["PLZ"]          = "Codigo postal";
 $wb["Ort"]          = "Ciudad";
-$wb["Land"]         = "Pams";
-$wb["Telefon"]      = "Telifono";
+$wb["Land"]         = "Pais";
+$wb["Telefon"]      = "Telefono";
 $wb["Fax"]          = "Fax";
-$wb["Internet"]     = "Direccisn Web";
-$wb["Vffnen"]      = "Abierto";
-$wb["Benutzername"] = "Username"; // besser: vielleicht nur Variable $wb["username"] benutzen?
-$wb["zugangsdaten_anbieter_einleitung"] = "Aqum puede aqadir un nombre de usuario y contraseqa para el revendedor.";
-$wb["zugangsdaten_kunde_einleitung"] = "Aqum puede aqadir un nombre de usuario y contraseqa para gestionar <br> sitios especificados.<br> ";
-$wb["Web Verwaltung"] = "Gestisn de Sitio";
+$wb["Internet"]     = "Direccion Web";
+$wb["Öffnen"]      = "Abrir";
+$wb["Benutzername"] = "Usuario"; // besser: vielleicht nur Variable $wb["username"] benutzen?
+$wb["zugangsdaten_anbieter_einleitung"] = "Aqui puede adicionar un nombre de usuario y clave para el revendedor.";
+$wb["zugangsdaten_kunde_einleitung"] = "Aqui puede adicionar un nombre de usuario y clave para gestionar sitios especificados.<br><br>";
+$wb["Web Verwaltung"] = "Gestion de Sitio";
 $wb["Rechnung"]      = "Factura";
-$wb["Rechnungsanschrift:"] = "Direccisn de Facturacisn:<br>";
+$wb["Rechnungsanschrift:"] = "Direccion de Facturacion:<br><br>";
 $wb["Intervall"]    = "Intervalo";
 $wb["Preis"]        = "Precio";
 $wb["Zahlungsart"]  = "Forma de Pago";
 $wb["Basis"]        = "Base";
 $wb["Create DNS"]   = "Crear DNS";
 $wb["Speicher MB"]     = "Espacio MB";
-$wb["Max. User"]        = "Max. Usuarios";
-$wb["Max. Domain"]        = "Max. Dominios";
-$wb["PHP Scripte"]        = "PHP Scripts";
+$wb["Max. User"]        = "Usuarios (Max)";
+$wb["Max. Domain"]        = "Dominios (Max)";
+$wb["PHP Scripte"]        = "Scripts de PHP";
 $wb["SSI"]        = "SSI";
 $wb["FTP Zugang"]        = "Acceso FTP";
 $wb["mySQL"]        = "MySQL";
 $wb["SSL"]        = "SSL";
 $wb["Shell Zugriff"]      = "Acceso Shell";
 $wb["Zugang"]       = "Access";  // Zugriff u. Zugang zusammenfassen!/nur einen Begriff nehmen!
-$wb["CGI Scripte"]      = "CGI Scripts";
-$wb["Bundesland"]   = "Pams";
+$wb["CGI Scripte"]      = "Scripts CGI";
+$wb["Bundesland"]   = "Pais";
 $wb["Abteilung"]    = "Departamento";
-$wb["G|ltigkeit (Tage)"]  = "Validez (dmas)";
+$wb["Gültigkeit (Tage)"]  = "Validez (dias)";
 $wb["SSL Key"]          = "SSL Key";
 $wb["SSL Zertifikat"]   = "SSL Certificado";
-$wb["Aktion"]       = "Accisn";
+$wb["Aktion"]       = "Accion";
 $wb["Zertifikat erzeugen"] = "Crear certificado";
 $wb["Zertifikat speichern"] = "Guardar certificado";
-$wb["Zertifikat lvschen"] = "Borrar Certificado";
+$wb["Zertifikat löschen"] = "Borrar Certificado";
 $wb["Speicherplatz gesamt"] = "Espacio Almacenaje";
 $wb["unlimitiert"]  = "sin limite";
 $wb["verbraucht"]   = "usado";
-$wb["Traffic|bersicht"] = "Supervision del Trafico";
+$wb["TrafficÃ¼bersicht"] = "Supervision del Trafico";
 $wb["Monat"]        = "Mes";
 $wb["Traffic"]      = "Trafico";
-$wb["traffic_letzte_4"] = "Trafico en los zltimos 4 aqos";
-$wb["Jahr"]         = "Year";
-$wb["mySQL User"]        = "mySQL Username";
-$wb["mySQL Passwort"]    = "mySQL Password";
+$wb["traffic_letzte_4"] = "Trafico en los ultimos 4 anios";
+$wb["Jahr"]         = "Anio";
+$wb["mySQL User"]        = "Usuario MySQL";
+$wb["mySQL Passwort"]    = "Clave MySQL";
 
 // Ergdnzungen /////////////////////////////////
 $wb["Anbieter neu"] = "Nuevo revendedor";
 $wb["Kunde neu"]    = "Nuevo cliente";
 $wb["Web neu"]      = "Nuevo sitio";
-$wb["Ordner neu"]   = "Ordenado por";
+$wb["Ordner neu"]   = "Nueva carpeta";
 $wb["Suchen"]       = "Buscar";
 $wb["ISP Anbieter"] = "Revendedor ISP";
 $wb["Webs"] = "Sitios";
@@ -156,7 +157,7 @@ $wb["Optionen"] = "Opciones";
 $wb["Webs angelegt"] = "Sitios utilizados";
 $wb["User angelegt"] = "Usuarios utilizados";
 $wb["Domains angelegt"] = "Dominios utilizados";
-$wb["rechnungsanschrift"] = "Direccisn de Facturacisn:<br> ";
+$wb["rechnungsanschrift"] = "Direccion de Facturacion:<br> ";
 $wb["neues Web anlegen"] = "Nuevo Sitio";
 $wb["weiter"] = "siguiente";
 $wb["SUCHE"] = "buscar";
@@ -166,14 +167,14 @@ $wb["msg_kein_win"] = "Este software no esta disponible para sistemas operativos
 
 // Error Codes ispconfig_isp_domain.lib.php
 $wb["error_web_doppelt"] = "El nombre ";
-$wb["error_max_domain_web"] = "Ha sobrepasado el nzmero maximo de dominios permitido para este sitio";
-$wb["error_max_domain_anbieter"] = "Ha sobrepasado el nzmero maximo de revendedores de dominios";
+$wb["error_max_domain_web"] = "Ha sobrepasado el numero maximo de dominios permitido para este sitio";
+$wb["error_max_domain_anbieter"] = "Ha sobrepasado el numero maximo de revendedores de dominios";
 $wb["angelegt"] = " ya esta siendo utilizado por otro sitio o dominio.";
 
 // Error Codes ispconfig_isp_kunde.lib.php
 $wb["error_user_exist_1"] = "El Usuario ISPConfig ";
 $wb["error_user_exist_2"] = "ya existe.  El usuario no ha sido aqadido o modificado.";
-$wb["error_max_user_licence"] = "El nzmero maximo de cuentas de usuario de ISPConfig segzn su licencia ha sido excedido.";
+$wb["error_max_user_licence"] = "El numero maximo de cuentas de usuario de ISPConfig segun su licencia ha sido excedido.";
 
 
 // Error Codes ispconfig_isp_reseller.lib.php
@@ -184,28 +185,28 @@ $wb["error_anbieter_no_delete"] = "<b>El revendedor no ha sido borrado.</b><br>&
 // Error Codes ispconfig_isp_user.lib.php
 $wb["error_sysuser_exist_1"] = "Ya hay un usuario con el nombre";
 $wb["error_sysuser_exist_2"] = "introducido.<br><br> <a href='../../isp_manager/frame_start.php?s=$s'>Mas</a>";
-$wb["error_max_user_web"] = "Se ha sobrepasado el nzmero maximo de usuarios del sitio.<br><br> <a href='../../isp_manager/frame_start.php?s=$s'>Mas</a>";
-$wb["error_max_space_web"] = "El espacio en disco seleccionado excede de los lmmites de sitio.<br><br> <a href='../../isp_manager/frame_start.php?s=$s'>Mas</a>";
-$wb["error_max_user_anbieter"] = "Se ha sobrepasado el nzmero maximo de usuarios del revendedor.<br><br> <a href='../../isp_manager/frame_start.php?s=$s'>Mas</a>";
+$wb["error_max_user_web"] = "Se ha sobrepasado el numero maximo de usuarios del sitio.<br><br> <a href='../../isp_manager/frame_start.php?s=$s'>Mas</a>";
+$wb["error_max_space_web"] = "El espacio en disco seleccionado excede de los limites de sitio.<br><br> <a href='../../isp_manager/frame_start.php?s=$s'>Mas</a>";
+$wb["error_max_user_anbieter"] = "Se ha sobrepasado el numero maximo de usuarios del revendedor.<br><br> <a href='../../isp_manager/frame_start.php?s=$s'>Mas</a>";
 $wb["error_sysuser_exist"] = "El nombre de usuario ya esta en uso.<br><br> <a href='../../isp_manager/frame_start.php?s=$s'>Mas</a>";
 $wb["error_admin_exist"] = "Ya existe un usuario con derechos de administrador para este sitio.<br><br> <a href='../../isp_manager/frame_start.php?s=$s'>Mas</a>";
 $wb["error_admin_exist_long"] = "Ya existe un usuario con derechos de administrador. Debe borrar el otro administrador si desea asignar derechos a este usuario.<br><br> <a href='../../isp_manager/frame_start.php?s=$s'>Mas</a>";
 
 // Error Codes ispconfig_isp_user.lib.php
-$wb["error_max_web_anbieter"] = "Se ha sobrepasado el nzmero maximo de sitios para revendedores";
+$wb["error_max_web_anbieter"] = "Se ha sobrepasado el numero maximo de sitios para revendedores";
 $wb["error_web_ssl_exist"] = "Ya existe un certificado SSL para esta IP.";
 
 // Plugins
-$wb["CPU Auslastung 1 Minute"] = "Uso CPU 1 Minuto";
-$wb["CPU Auslastung 5 Minuten"] = "Uso CPU 5 Minutos";
-$wb["CPU Auslastung 15 Minuten"] = "Uso CPU 15 Minutos";
-$wb["Server Online seit"] = "Servidor Activo desde";
-$wb["User Online"] = "Usuarios Activos";
+$wb["System Load 1 Minute"] = "Carga de la CPU 1 Minuto";
+$wb["System Load 5 Minuten"] = "Carga de la CPU 5 Minutos";
+$wb["System Load 15 Minuten"] = "Carga de la CPU 15 Minutos";
+$wb["Server Online seit"] = "Servidor en linea desde";
+$wb["User Online"] = "Usuarios en linea";
 $wb["error_web_id"] = "Este Plugin necesita una ID valida.";
 $wb["von"] = "de";
 $wb["Gesamt"] = "Completo";
-$wb["Traffic in den letzten 4 Jahren"] = "Trafico en los zltimos 4 aqos";
-$wb["Backup von Tabelle"] = "Tabla Backup";
+$wb["Traffic in den letzten 4 Jahren"] = "Trafico en los ultimos 4 anios";
+$wb["Backup von Tabelle"] = "Tabla de respaldo";
 $wb["Optimiere"] = "Optimizar";
 $wb["Reparatur"] = "Reparar";
 $wb["oder"] = "o";
@@ -216,24 +217,24 @@ $wb["Halbjdhrlich"] = "Semestral";
 $wb["Jdhrlich"] = "Anual";
 $wb["Sonstige"] = "Otro";
 $wb["bei Erhalt"] = "A la vista";
-$wb["Netto 7 Tage"] = "neto 7 dmas";
-$wb["Netto 15 Tage"] = "neto 15 dmas";
-$wb["Netto 30 Tage"] = "neto 30 dmas";
+$wb["Netto 7 Tage"] = "neto 7 dias";
+$wb["Netto 15 Tage"] = "neto 15 dias";
+$wb["Netto 30 Tage"] = "neto 30 dias";
 $wb["Sonstige"] = "otro";
 $wb["Neu"] = "Nuevo";
-$wb["Postfach MB"] = "Buzsn Correos MB";
-$wb["email_alias_txt"] = "<b>Hint:</b> un alias por lmnea.";
+$wb["Postfach MB"] = "Buzon Correos MB";
+$wb["email_alias_txt"] = "<b>Hint:</b> un alias por linea.";
 $wb["Weiterleitung"] = "Reenviar";
 $wb["Nachricht"] = "Mensaje";
 $wb["Kein Kunde vorhanden"] = "No hay cliente disponible";
-$wb["Dieses Web kvnnen Sie nicht lvschen."] = "Ud. no puede borrar esta web.";
+$wb["Dieses Web kvnnen Sie nicht löschen."] = "Ud. no puede borrar esta web.";
 $wb["Ausgabeformat"] = "Formato de Listado";
 $wb["Bearbeiten"] = "Editar";
-$wb["Lvschen"] = "Borrar";
+$wb["Löschen"] = "Borrar";
 $wb["willkommen_kunde"] = "Bienvenido al Panel de Control ISPConfig!
-Ud. puede administrar sus sitios web desde aqum. Si tiene alguna pregunta o problemas
-por favor contacto con su administrador del servidor o dirijase al manual del cliente
-ISPConfig client manual.";
+Ud. puede administrar sus sitios web desde aqui. Si tiene alguna pregunta o problemas
+por favor contacte al administrador del servidor o dirijase al manual del cliente
+ISPConfig en la seccion ayuda.";
 $wb["Willkommen"] = "Bienvenido";
 
 
@@ -246,7 +247,7 @@ $wb["error_reseller_licence_nodelete"] = "Este revendedor no puede ser borrado."
 $wb["error_kunde_licence"] = "No es posible aqadir clientes con su licencia de ISPConfig.";
 $wb["error_kunde_licence_nodelete"] = "Este cliente no puede ser borrado.";
 $wb["mysqldb_nicht_vorhanden"] = "No existe base de datos en el MySQL. <br>Por favor introduzca un password para crear la base de datos.";
-$wb["mysql_nicht_aktiv"] = "La creacisn de bases de datos de MySQL no esta permitida para este sitio web.";
+$wb["mysql_nicht_aktiv"] = "La creacion de bases de datos de MySQL no esta permitida para este sitio web.";
 $wb["Datenbank Name"] = "Nombre de la Base de datos";
 $wb["Speicher belegt"] = "Tamaqo de la Base de Datos";
 $wb["Kein Web angelegt"] = "No se ha creado la web";
@@ -258,12 +259,12 @@ $wb["err_0001"] = "El dominio pertenece a otro cliente.";
 $wb["mySQL remote access"] = "Acceso Remoto MySQL";
 $wb["lokaler mailserver"] = "Servidor Local de Correo";
 $wb["externer mailserver"] = "Servidor Externo de Correo";
-$wb["txt_client_salutatory_email_desc"] = "<b>Salutatory Email for Clients</b>";
-$wb["txt_client_salutatory_email_sender_email"] = "Sender's Email";
-$wb["txt_client_salutatory_email_sender_name"] = "Name of Sender";
-$wb["txt_client_salutatory_email_bcc"] = "BCC Recipient";
-$wb["txt_client_salutatory_email_subject"] = "Subject";
-$wb["txt_client_salutatory_email_message"] = "Message";
+$wb["txt_client_salutatory_email_desc"] = "<b>Email de saludo para los clientes</b>";
+$wb["txt_client_salutatory_email_sender_email"] = "Email del remitente";
+$wb["txt_client_salutatory_email_sender_name"] = "Nombre del remitente";
+$wb["txt_client_salutatory_email_bcc"] = "Remitente BCC";
+$wb["txt_client_salutatory_email_subject"] = "Asunto";
+$wb["txt_client_salutatory_email_message"] = "Mensaje";
 $wb["txt_client_salutatory_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
 <tr>
     <td valign="top" colspan="2" class="normal">
@@ -344,45 +345,14 @@ $wb["txt_user_standard_index_variables"] = '<table border="0" cellpadding="3" ce
 $wb["Arbeitsspeicher"]          = "Memoria Principal";
 $wb["CPU"]          = "CPU";
 $wb["Dienste"]      = "Servicios";
-$wb["Server Online seit"]          = "Servidor Activo desde";
-$wb["User Online"]      = "Usuarios Activos";
-$wb["System Load 1 Minute"] = "Uso CPU 1 Minuto";
-$wb["System Load 5 Minuten"] = "Uso CPU 5 Minutos";
-$wb["System Load 15 Minuten"] = "Uso CPU 15 Minutos";
+$wb["Server Online seit"]          = "Servidor en linea desde";
+$wb["User Online"]      = "Usuarios en linea";
+$wb["System Load 1 Minute"] = "Carga de la CPU 1 Minuto";
+$wb["System Load 5 Minuten"] = "Carga de la CPU 5 Minutos";
+$wb["System Load 15 Minuten"] = "Carga de la CPU 15 Minutos";
 
 //////////////// Server Status Ende //////////
 
-$wb["DNS-Domains angelegt"] = 'DNS Domains created';
-$wb["Hinzufügen"] = "Add";
-$wb["Berechtigungen"] = "Permissions";
-$wb["Speichern"] = "Save";
-$wb["Löschen"] = "Delete";
-$wb["Abbrechen"] = "Cancel";
-$wb["IP-Adresse"] = "IP-Address";
-$wb["DNS-Query"] = "Query Primary DNS Records";
-$wb["DNS-Insert"] = "Create Primary DNS Records";
-$wb["DNS-Update"] = "Edit Primary DNS Records";
-$wb["DNS-Delete"] = "Delete Primary DNS Records";
-$wb["slave_query"] = "Query Secondary DNS Records";
-$wb["slave_insert"] = "Create Secondary DNS Records";
-$wb["slave_update"] = "Edit Secondary DNS Records";
-$wb["slave_delete"] = "Delete Secondary DNS Records";
-$wb["reseller_query"] = "Query Resellers";
-$wb["reseller_insert"] = "Create Resellers";
-$wb["reseller_update"] = "Edit Resellers";
-$wb["reseller_delete"] = "Delete Resellers";
-$wb["kunde_query"] = "Query Clients";
-$wb["kunde_insert"] = "Create Clients";
-$wb["kunde_update"] = "Edit Clients";
-$wb["kunde_delete"] = "Delete Clients";
-$wb["web_query"] = "Query Websites";
-$wb["web_insert"] = "Create Websites";
-$wb["web_update"] = "Edit Websites";
-$wb["web_delete"] = "Delete Websites";
-$wb["txt_primary_dns_records"] = "Primary DNS Records";
-$wb["txt_secondary_dns_records"] = "Secondary DNS Records";
-$wb["txt_anbieter"] = "Resellers";
-$wb["txt_kunden"] = "Clients";
-$wb["txt_webs"] = "Websites";
+$wb["DNS-Domains angelegt"] = 'Dominios DNS creados';
 
 ?>

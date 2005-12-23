@@ -3,6 +3,7 @@
 * ISPConfig Dictionary File
 * Version 1.1.12
 * Administration
+* Enhanced by danf.1979@gmail.com
 *********************************/
 
 //////////////// Server Status ////////////////
@@ -10,45 +11,45 @@
 $wb["Arbeitsspeicher"]          = "Memoria Principal";
 $wb["CPU"]          = "CPU";
 $wb["Dienste"]      = "Servicios";
-$wb["Server Online seit"]          = "Servidor Activo desde";
-$wb["User Online"]      = "Usuarios Activos";
-$wb["CPU Auslastung 1 Minute"] = "Uso de CPU 1 Minuto";
-$wb["CPU Auslastung 5 Minuten"] = "Uso de CPU 5 Minutos";
-$wb["CPU Auslastung 15 Minuten"] = "Uso de CPU 15 Minutes";
+$wb["Server Online seit"]          = "Servidor en linea desde";
+$wb["User Online"]      = "Usuarios en linea";
+$wb["System Load 1 Minute"] = "Carga de la CPU 1 Minuto";
+$wb["System Load 5 Minuten"] = "Carga de la CPU 5 Minutos";
+$wb["System Load 15 Minuten"] = "Carga de la CPU 15 Minutos";
 
 //////////////// Server Status Ende //////////
 
 ///////////////// Administration ////////////////
 
 $wb["ISPConfig Datenbank"]    = "ISPConfig Base de Datos";
-$wb["Backup erstellen"]       = "Datos Backup";
-$wb["Datenbank Check"]        = "Verificar Base de Datos";
-$wb["Datenbank Optimieren"]   = "Optimizar Base de Datos";
-$wb["Datenbank Reparieren"]   = "Reparar Base de Datos";
+$wb["Backup erstellen"]       = "Respaldo de datos";
+$wb["Datenbank Check"]        = "Verificar la base de datos";
+$wb["Datenbank Optimieren"]   = "Optimizar la base de datos";
+$wb["Datenbank Reparieren"]   = "Reparar la base de datos";
 $wb["Eigenschaften"] = "Configuraciones";
-$wb["Server Name"]  = "Nombre del Servidor";
-$wb["Netzmaske"]    = "Netmask";
+$wb["Server Name"]  = "Nombre servidor";
+$wb["Netzmaske"]    = "Mascara de red";
 $wb["Sprache"]      = "Lenguaje";
 $wb["IP Liste"]     = "Lista de IPs";
-$wb["hinweis_ip_liste"] = "<b>Hint:</b> Solo ponga una Ip por línea en el campo Lista de IPs.";
-$wb["Pfad"]         = "Path";
+$wb["hinweis_ip_liste"] = "<b>Hint:</b> Solo ponga una IP por linea en el campo Lista de IPs.";
+$wb["Pfad"]         = "Ruta";
 $wb["Programm"]     = "Programa";
 $wb["Reparatur"]    = "Reparar";
 $wb["Optimiere"]    = "Optimizar";
-$wb["Pfad httpd.conf"]    = "Path httpd.conf";
-$wb["MTA Typ"]    = "MTA Type";
+$wb["Pfad httpd.conf"]    = "Ruta a httpd.conf";
+$wb["MTA Typ"]    = "Tipo MTA";
 $wb["Virtuser Datei"]    = "Fichero Virtuser";
-$wb["FTP Programm"]    = "FTP Program";
-$wb["FTP conf. Datei"]    = "Fichero FTP conf.";
+$wb["FTP Programm"]    = "Programa FTP";
+$wb["FTP conf. Datei"]    = "Fichero de config";
 $wb["Userid von"]    = "Userid desde";
 $wb["Groupid von"]    = "Groupid desde";
-$wb["Backup von Tabelle"] = "Backup Tabla";
+$wb["Backup von Tabelle"] = "Tabla de respaldo";
 $wb["Optimiere"] = "Optimizar";
 $wb["Reparatur"] = "Reparar";
 $wb["oder"] = "o";
 $wb["Installation starten"] = "Instalar";
-$wb["Deutsch"] = "Deutsch";
-$wb["Englisch"] = "English";
+$wb["Deutsch"] = "Aleman";
+$wb["Englisch"] = "Ingles";
 $wb["Spanish"] = "Español";
 $wb["Datei"] = "Fichero";
 
@@ -65,13 +66,13 @@ $wb["DNS-Server"] = "Servidor DNS";
 $wb["mySQL-Server"] = "Servidor MySQL";
 $wb["An"] = "On";
 $wb["Aus"] = "Off";
-$wb["neu Starten"] = "Restart";
-$wb["Neu"] = "Añadir";
+$wb["neu Starten"] = "Reiniciar";
+$wb["Neu"] = "Adicionar";
 $wb["Aktionen"] = "Acciones";
 $wb["Dienst"] = "Servicio";
-$wb["Hostname"] = "Hostname";
-$wb["Port"] = "Port";
-$wb["Typ"] = "Type";
+$wb["Hostname"] = "Nombre del host";
+$wb["Port"] = "Puerto";
+$wb["Typ"] = "Tipo";
 $wb["TCP"] = "TCP";
 $wb["UDP"] = "UDP";
 $wb["Der Dienst-Typ wird nur bei sonstigen-Diensten ausgewertet."] = "El tipo de servicio sera solamente analizado en el caso de otros servicios.";
@@ -92,105 +93,105 @@ $wb["Dieser Port kann nicht deaktiviert werden."] = "Este puerto no puede ser de
 
 //////////////// LNG 1.1.12 BEGIN /////////////
 
-$wb["ISP Server"] = 'ISP Server';
-$wb["Admin Email"] = 'Admin Email';
+$wb["ISP Server"] = 'Servidor ISP';
+$wb["Admin Email"] = 'Email del admin';
 $wb["EMail"] = 'EMail';
-$wb["Funktionen"] = 'Funcciones';
-$wb["httpd User"] = 'httpd User';
-$wb["httpd Group"] = 'httpd Group';
+$wb["Funktionen"] = 'Funciones';
+$wb["httpd User"] = 'Usuario httpd';
+$wb["httpd Group"] = 'Grupo httpd';
 $wb["Document Root"] = 'Document Root';
-$wb["Frontpage Pfad"] = 'Frontpage Path';
-$wb["access Log"] = 'access Log';
+$wb["Frontpage Pfad"] = 'Ruta a Frontpage';
+$wb["access Log"] = 'Log de acceso';
 $wb["Sendmail"] = 'Sendmail';
 $wb["Sendmail CW"] = 'Sendmail CW';
-$wb["Log speichern"] = 'Save Log';
-$wb["BIND User"] = 'BIND User';
-$wb["BIND Group"] = 'BIND Group';
-$wb["Zonefiles Dir."] = 'Zonefiles Dir.';
-$wb["Default Ns1"] = 'Default Ns1';
-$wb["Default Ns2"] = 'Default Ns2';
-$wb["Standard MX"] = 'Default MX';
-$wb["Frontpage Extensions"] = 'Frontpage Extensions';
-$wb["User Prefix"] = 'User Prefix';
-$wb["Anbieter Nr. von"] = 'Reseller no. from';
-$wb["Kunden Nr. von"] = 'Client no. from';
+$wb["Log speichern"] = 'Guardar log';
+$wb["BIND User"] = 'Usuario BIND';
+$wb["BIND Group"] = 'Grupo BIND';
+$wb["Zonefiles Dir."] = 'Directorio zonas';
+$wb["Default Ns1"] = 'Ns1 por defecto';
+$wb["Default Ns2"] = 'Ns2 por defecto';
+$wb["Standard MX"] = 'MX por defecto';
+$wb["Frontpage Extensions"] = 'Extensiones Frontpage';
+$wb["User Prefix"] = 'Prefijo de usuario';
+$wb["Anbieter Nr. von"] = 'Numero de revendedor desde';
+$wb["Kunden Nr. von"] = 'Numero de cliente desde';
 $wb["SOAP Server IP"] = 'SOAP Server IP';
 $wb["SOAP Server Port"] = 'SOAP Server Port';
 $wb["Web-FTP"] = 'Web-FTP';
 $wb["ISP Faktura"] = 'ISP Invoice';
 $wb["Modul Manager"] = 'Modul Manager';
-$wb["Hinzufügen"] = 'Add';
-$wb["Alle anzeigen"] = 'Show All';
-$wb["Update Manager"] = 'Update Manager';
-$wb["Update"] = 'Update';
-$wb["System Config"] = 'System Config';
-$wb["Bearbeiten"] = 'Edit';
-$wb["Importieren"] = 'Import';
-$wb["Exportieren"] = 'Export';
-$wb["Allgemein"] = 'Common';
+$wb["Hinzufügen"] = 'Adicionar';
+$wb["Alle anzeigen"] = 'Mostrar todo';
+$wb["Update Manager"] = 'Manejador de actualizaciones';
+$wb["Update"] = 'Actualizar';
+$wb["System Config"] = 'Configuracion de sistema';
+$wb["Bearbeiten"] = 'Editar';
+$wb["Importieren"] = 'Importar';
+$wb["Exportieren"] = 'Exportar';
+$wb["Allgemein"] = 'Comun';
 $wb["ISP-Manager"] = 'ISP Manager';
-$wb["Faktura"] = 'Invoice';
-$wb["Übernehmen"] = 'Save';
-$wb["Webserver"] = 'Webserver';
+$wb["Faktura"] = 'Factura';
+$wb["Übernehmen"] = 'Guardar';
+$wb["Webserver"] = 'Servidor web';
 $wb["Bind DNS"] = 'Bind DNS';
-$wb["Mailserver"] = 'Mailserver';
-$wb["POP3-Server"] = 'POP3 Server';
+$wb["Mailserver"] = 'Servidor mail';
+$wb["POP3-Server"] = 'Servidor POP3';
 $wb["nein"] = 'no';
-$wb["ja"] = 'yes';
-$wb["ISP Server Status"] = 'ISP Server Status';
-$wb["System-Datenbank"] = 'System-Database';
-$wb["Verzeichnis"] = 'Folder';
-$wb["Backup starten"] = 'start Backup';
+$wb["ja"] = 'si';
+$wb["ISP Server Status"] = 'Estado del servidor ISP';
+$wb["System-Datenbank"] = 'Base de datos del sistema';
+$wb["Verzeichnis"] = 'Carpeta';
+$wb["Backup starten"] = 'Comenzar el respaldo';
 
 // NEW 1.1.12a //////////////////////////////
 
-$wb["Es wurde kein Web ausgewählt."] = "No web selected.";
+$wb["Es wurde kein Web ausgewählt."] = "Ninguna web seleccionada.";
 $wb["Backup-Funktionen im Demo-Modus nicht verfügbar."] = "Backup-Functions not available in demo mode.";
-$wb["Backup Status"] = "Backup-Status";
-$wb["Der Name des FTP-Servers <br>enthält ungültige Zeichen."] = "The name of the FTP server <br>contains invalid characters.";
+$wb["Backup Status"] = "Estado del respaldo";
+$wb["Der Name des FTP-Servers <br>enthält ungültige Zeichen."] = "El nombre del servidor FTP <br>contiene caracteres invalidos.";
 $wb["Sie haben keinen FTP Benutzernamen angegeben."] = "No FTP-Username set.";
-$wb["Ftp-Verbindung nicht hergestellt!"] = "Ftp-Connection failed!";
-$wb["Verbindung mit:"] = "Connected to:";
-$wb["als Benutzer:"] = "as User:";
+$wb["Ftp-Verbindung nicht hergestellt!"] = "La coneccion al FTP ha fallado!";
+$wb["Verbindung mit:"] = "Conectado a:";
+$wb["als Benutzer:"] = "como el usuario:";
 $wb["nicht möglich."] = "not possible.";
-$wb["Konnte nicht in Verzeichnis:"] = "changing to folder:";
+$wb["Konnte nicht in Verzeichnis:"] = "cambiando al directorio:";
 $wb["wechseln."] = "failed.";
-$wb["Wechsel in Verzeichnis:"] = "changing to folder:";
+$wb["Wechsel in Verzeichnis:"] = "cambiando al directorio:";
 $wb["Ftp upload war fehlerhaft!"] = "FTP-Upload failed!";
-$wb["Upload erfolgreich."] = "Upload successful.";
+$wb["Upload erfolgreich."] = "Envio exitoso.";
 $wb["FTP-Upload Status"] = "FTP-Upload Status";
-$wb["Backup-Methode nicht unterstützt."] = "Backup-method not available.";
-$wb["Rechnung Nr. von"] = "Invoice No. from";
+$wb["Backup-Methode nicht unterstützt."] = "Metodo de respaldo no disponible.";
+$wb["Rechnung Nr. von"] = "Numero de factura desde";
 
 //////////////// LNG 1.1.12 ENDE ///////////////
 
 // NEW 1.3 /////////////////////////////////////
 
 $wb["Remoting"] = 'Remoting';
-$wb["User"] = 'User';
-$wb["Conf. Dir."] = 'Conf. Dir.';
+$wb["User"] = 'Usuario';
+$wb["Conf. Dir."] = 'Directorio';
 $wb["Suexec"] = 'Suexec';
 $wb["Postfix"] = 'Postfix';
 $wb["Mail Log"] = 'Mail Log';
 $wb["Maildir"] = 'Maildir';
 $wb["Antivir Mailadmin"] = 'Antivirus-Admin';
-$wb["aktiv"] = "active";
-$wb["inaktiv"] = "inactive";
+$wb["aktiv"] = "activado";
+$wb["inaktiv"] = "desactivado";
 $wb["weiter_link"] = "<br><br> <a href='../../isp_manager/frame_start.php?s=$s'>Mas &gt;&gt;</a>";
-$wb["txt_client_salutatory_email_desc"] = "<b>Salutatory Email for Clients</b>";
-$wb["txt_client_salutatory_email_sender_email"] = "Sender's Email";
-$wb["txt_client_salutatory_email_sender_name"] = "Name of Sender";
-$wb["txt_client_salutatory_email_bcc"] = "BCC Recipient";
-$wb["txt_client_salutatory_email_subject"] = "Subject";
-$wb["txt_client_salutatory_email_message"] = "Message";
+$wb["txt_client_salutatory_email_desc"] = "<b>Email de saludo para los clientes</b>";
+$wb["txt_client_salutatory_email_sender_email"] = "Email del remitente";
+$wb["txt_client_salutatory_email_sender_name"] = "Nombre del remitente";
+$wb["txt_client_salutatory_email_bcc"] = "Remitente BCC";
+$wb["txt_client_salutatory_email_subject"] = "Asunto";
+$wb["txt_client_salutatory_email_message"] = "Mensaje";
 $wb["txt_client_salutatory_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
 <tr>
     <td valign="top" colspan="2" class="normal">
-      <b>Include the following variables in your text:</b></td></tr>
+      <b>Incluya las siguientes variables en su texto:</b></td></tr>
         <tr>
           <td class="normal">%%%USER%%%</td>
           <td class="normal">
-            Client\'s Username</td>
+            Nombre de usuario del cliente</td>
         </tr>
         <tr>
           <td class="normal">%%%PASSWORD%%%</td>
@@ -229,45 +230,45 @@ $wb["txt_client_salutatory_email_variables"] = '<table border="0" cellpadding="3
         </tr>
         </table>';
 
-$wb["txt_res_salutatory_email_desc"] = "<b>Salutatory Email for Resellers</b>";
-$wb["txt_res_salutatory_email_sender_email"] = "Sender's Email";
-$wb["txt_res_salutatory_email_sender_name"] = "Name of Sender";
-$wb["txt_res_salutatory_email_bcc"] = "BCC Recipient";
-$wb["txt_res_salutatory_email_subject"] = "Subject";
-$wb["txt_res_salutatory_email_message"] = "Message";
+$wb["txt_res_salutatory_email_desc"] = "<b>Email de saludo para los revendedores</b>";
+$wb["txt_res_salutatory_email_sender_email"] = "Email del remitente";
+$wb["txt_res_salutatory_email_sender_name"] = "Nombre del remitente";
+$wb["txt_res_salutatory_email_bcc"] = "Remitente BCC";
+$wb["txt_res_salutatory_email_subject"] = "Asunto";
+$wb["txt_res_salutatory_email_message"] = "Mensaje";
 $wb["txt_res_salutatory_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
 <tr>
     <td valign="top" colspan="2" class="normal">
-      <b>Include the following variables in your text:</b></td></tr>
+      <b>Incluya las siguientes variables en su texto:</b></td></tr>
         <tr>
           <td class="normal">%%%USER%%%</td>
           <td class="normal">
-            Reseller\'s Username</td>
+            Nombre de usuario del revendedor</td>
         </tr>
         <tr>
           <td class="normal">%%%PASSWORD%%%</td>
           <td class="normal">
-            Reseller\'s Password</td>
+            Clave del revendedor</td>
         </tr>
         <tr>
           <td class="normal">%%%FIRST_NAME%%%</td>
           <td class="normal">
-            Reseller\'s First Name</td>
+            Primer nombre del revendedor</td>
         </tr>
         <tr>
           <td class="normal">%%%LAST_NAME%%%</td>
           <td class="normal">
-            Reseller\'s Last Name</td>
+            Apellidos del revendedor</td>
         </tr>
         <tr>
           <td class="normal">%%%COMPANY%%%</td>
           <td class="normal">
-            Reseller\'s Company</td>
+            Empresa del revendedor</td>
         </tr>
         <tr>
           <td class="normal">%%%EMAIL%%%</td>
           <td class="normal">
-            Reseller\'s Email Address</td>
+            Direccion email del revendedor</td>
         </tr>
         <tr>
           <td class="normal">%%%CP%%%</td>
@@ -277,7 +278,7 @@ $wb["txt_res_salutatory_email_variables"] = '<table border="0" cellpadding="3" c
         <tr>
           <td class="normal">%%%MANUAL%%%</td>
           <td class="normal">
-            ISPConfig Reseller Manual</td>
+            Manual ISPConfig para el revendedor</td>
         </tr>
         </table>';
 $wb["txt_standard_index"] = "Standard Index<br>&nbsp;&nbsp;Page";
@@ -309,12 +310,12 @@ $wb["txt_user_standard_index_variables"] = '<table border="0" cellpadding="3" ce
         </table>';
 
 //////////////// Remoting //////////////////////
-$wb["Hinzufügen"] = "Add";
-$wb["Berechtigungen"] = "Permissions";
-$wb["Speichern"] = "Save";
-$wb["Löschen"] = "Delete";
-$wb["Abbrechen"] = "Cancel";
-$wb["IP-Adresse"] = "IP-Address";
+$wb["Hinzufügen"] = "Adicionar";
+$wb["Berechtigungen"] = "Permisos";
+$wb["Speichern"] = "Guardar";
+$wb["Löschen"] = "Borrar";
+$wb["Abbrechen"] = "Cancelar";
+$wb["IP-Adresse"] = "Direccion IP";
 $wb["DNS-Query"] = "Query Primary DNS Records";
 $wb["DNS-Insert"] = "Create Primary DNS Records";
 $wb["DNS-Update"] = "Edit Primary DNS Records";
@@ -328,25 +329,25 @@ $wb["reseller_insert"] = "Create Resellers";
 $wb["reseller_update"] = "Edit Resellers";
 $wb["reseller_delete"] = "Delete Resellers";
 $wb["kunde_query"] = "Query Clients";
-$wb["kunde_insert"] = "Create Clients";
-$wb["kunde_update"] = "Edit Clients";
-$wb["kunde_delete"] = "Delete Clients";
+$wb["kunde_insert"] = "Crear clientes";
+$wb["kunde_update"] = "Editar clientes";
+$wb["kunde_delete"] = "Borrar clientes";
 $wb["web_query"] = "Query Websites";
-$wb["web_insert"] = "Create Websites";
-$wb["web_update"] = "Edit Websites";
-$wb["web_delete"] = "Delete Websites";
+$wb["web_insert"] = "Crear sitios web";
+$wb["web_update"] = "Editar sitios web";
+$wb["web_delete"] = "Borrar sitios web";
 $wb["txt_primary_dns_records"] = "Primary DNS Records";
 $wb["txt_secondary_dns_records"] = "Secondary DNS Records";
-$wb["txt_anbieter"] = "Resellers";
-$wb["txt_kunden"] = "Clients";
-$wb["txt_webs"] = "Websites";
+$wb["txt_anbieter"] = "Revendedores";
+$wb["txt_kunden"] = "Clientes";
+$wb["txt_webs"] = "Sitios web";
 
 $wb["txt_traffic_suspension_email_desc"] = "<b>Web Site Suspension Notification (Traffic Exceedance)</b>";
-$wb["txt_traffic_suspension_sender_email"] = "Sender's Email";
-$wb["txt_traffic_suspension_sender_name"] = "Name of Sender";
+$wb["txt_traffic_suspension_sender_email"] = "Email del remitente";
+$wb["txt_traffic_suspension_sender_name"] = "Nombre del remitente";
 $wb["txt_traffic_suspension_email_bcc"] = "BCC Recipient";
-$wb["txt_traffic_suspension_email_subject"] = "Subject";
-$wb["txt_traffic_suspension_email_message"] = "Message";
+$wb["txt_traffic_suspension_email_subject"] = "Asunto";
+$wb["txt_traffic_suspension_email_message"] = "Mensaje";
 $wb["txt_traffic_suspension_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
 <tr>
     <td valign="top" colspan="2" class="normal">
@@ -354,17 +355,17 @@ $wb["txt_traffic_suspension_email_variables"] = '<table border="0" cellpadding="
         <tr>
           <td class="normal">%%%FIRST_NAME%%%</td>
           <td class="normal">
-            Client\'s First Name</td>
+            Primer nombre del cliente</td>
         </tr>
         <tr>
           <td class="normal">%%%LAST_NAME%%%</td>
           <td class="normal">
-            Client\'s Last Name</td>
+            Apellidos del cliente</td>
         </tr>
         <tr>
           <td class="normal">%%%WEBSITE%%%</td>
           <td class="normal">
-            Client\'s Web Site</td>
+            Sitio web del cliente</td>
         </tr>
         <tr>
           <td class="normal">%%%MONTH%%%</td>
@@ -384,7 +385,7 @@ $wb["txt_traffic_suspension_email_variables"] = '<table border="0" cellpadding="
         </table>';
 
 $wb["txt_traffic_notification_email_desc"] = "<b>Traffic Exceedance Notification</b>";
-$wb["txt_traffic_notification_sender_email"] = "Sender's Email";
+$wb["txt_traffic_notification_sender_email"] = "Email del remitente";
 $wb["txt_traffic_notification_sender_name"] = "Name of Sender";
 $wb["txt_traffic_notification_email_bcc"] = "BCC Recipient";
 $wb["txt_traffic_notification_email_subject"] = "Subject";

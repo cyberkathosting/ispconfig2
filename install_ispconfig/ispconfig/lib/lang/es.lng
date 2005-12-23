@@ -3,14 +3,15 @@
 * ISPConfig Dictionary File
 * Version 1.0
 * Allgemein
+* Enhanced by danf.1979@gmail.com
 *********************************/
 
 /////////////// Allgemein - general (kommt in mehreren Modulen vor) /////////
-$wb["login_begruessung"]     = "Autentificacisn:";
-$wb["Username"]     = "Nombre Usuario";
-$wb["Passwort"]     = "Contraseqa";
-$wb["Login"]       = "Autentificacisn";
-$wb["Administration"]  = "Administracisn";
+$wb["login_begruessung"]     = "Autentificacion:";
+$wb["Username"]     = "Usuario";
+$wb["Passwort"]     = "Clave";
+$wb["Login"]       = "Autentificacion";
+$wb["Administration"]  = "Administracion";
 $wb["ISP Manager"]  = "Gestor ISP";
 $wb["DNS Manager"]  = "Gestor DNS";
 $wb["Tools"]        = "Herramientas";
@@ -25,13 +26,13 @@ $wb["DNS"]          = "DNS";
 $wb["Sonstiges"]    = "Otro";
 $wb["Datei"]        = "Fichero";
 $wb["von"]          = "de";
-$wb["error_headline"] = "Ha ocurrido el siguiente error:";
+$wb["error_headline"] = "Ha ocurrido lo siguiente:";
 $wb["Gruppe"]       = "Grupo";
-$wb["Titel"]        = "Tmtulo";
+$wb["Titel"]        = "Titulo";
 $wb["Server"]       = "Servidor";
-$wb["Host"]         = "Hostname";
+$wb["Host"]         = "Nombre del host";
 $wb["Domain"]       = "Dominio";
-$wb["IP Adresse"]   = "Direccisn IP";
+$wb["IP Adresse"]   = "Direccion IP";
 $wb["Ordner"]       = "Ordenar";
 $wb["Dokument"]     = "Documento";
 $wb["Dokument suchen"] = "Buscar Documento";
@@ -48,47 +49,47 @@ $wb["zu"]    = "colapsar";
 $wb["in_ordner"]    = "Ordenar por";
 $wb["Papierkorb"]   = "Papelera";
 $wb["Wiederherstellen"]    = "Restaurar";
-$wb["Papierkorb: Eintrdge"]   = "Papelera: contenido";
+$wb["Papierkorb: Einträge"]   = "Papelera: contenido";
 $wb["Speichern"]    = "Guardar";
-$wb["Lvschen"]    = "Borrar";
+$wb["Löschen"]    = "Borrar";
 $wb["Abbrechen"]    = "Cancelar";
 $wb["Suchen"]    = "Buscar";
 
 $wb["Herr"] = "Sr.";
 $wb["Frau"] = "Sra.";
 
-$wb["Es ist folgender Fehler aufgetreten:"] = "Ha ocurrido el siguiente error:";
+$wb["Es ist folgender Fehler aufgetreten:"] = "Ha ocurrido lo siguiente:";
 
 $wb["Web-FTP"] = 'Web-FTP';
-$wb["ISP Faktura"] = 'ISP Invoice';
+$wb["ISP Faktura"] = 'ISP Factura';
 
-$wb["Verzeichnis öffnen"] = "open";
-$wb["Verzeichnis schliessen"] = "close";
-$wb["Hilfe"] = 'Help';
-$wb["Online Hilfe"] = 'Online Help';
-$wb["schliessen"] = 'close';
+$wb["Verzeichnis öffnen"] = "abrir";
+$wb["Verzeichnis schliessen"] = "cerrar";
+$wb["Hilfe"] = 'Ayuda';
+$wb["Online Hilfe"] = 'Ayuda en linea';
+$wb["schliessen"] = 'cerrar';
 
-$wb["PAPIERKORB_HINWEIS"] = "<b>Note:</b> Items remaining in recycle bin after emptying are currently in update state. Please try to delete them later.";
+$wb["PAPIERKORB_HINWEIS"] = "<b>Note:</b> Los itemes que quedan en la papelera luego de vaciarla estan en estado de actualizacion. Intente borrarlas mas tarde.";
 
 // Multidoc  Allgemein ////////////////////////////////
 
-$wb["title_required"] = "Por favor, introduzca un valor en el campo 'Tmtulo'";
+$wb["title_required"] = "Por favor, introduzca un valor en el campo 'Titulo'";
 $wb["error_keine_rechte"] = "No tiene los privilegios necesarios para leer o editar esta entrada.";
 $wb["error_doctype_nicht_vorhanden"] = "El tipo de documento solicitado no existe.";
 $wb["error_doctype_rechte"] = "No tiene los privilegios necesarios para editar este tipo de documento.";
-$wb["Formular Designer"] = "Formulario Diseqador";
+$wb["Formular Designer"] = "Creador de formularios";
 $wb["Geben Sie einen Wert in das Feld"] = "Por favor, introduzca un valor en el campo";
 $wb["jscript_ein"] = " ";
 
 ////////////// Allgemein Ende ///////////////////
 
-$wb["Es konnte ein Dokument nicht wiederhergestellt werden, da sich das Eltern-Dokument noch im Papierkorb befindet.\n"] = "The object cannot be restored as long as its parent object is in the recycle bin.";
+$wb["Es konnte ein Dokument nicht wiederhergestellt werden, da sich das Eltern-Dokument noch im Papierkorb befindet.\n"] = "El objeto no puede ser restaurado mientras su objeto 'padre' esta en la papelera de reciclaje. Porfavor restaure el objeto 'padre'.";
 
-$wb["DNS-Domains angelegt"] = 'Master Zones created';
-$wb["Benutzter Diskspace"] = "Diskspace used";
-$wb["Slave Zones angelegt"] = "Slave Zones created";
-$wb["Datenbanken angelegt"] = "Databases created";
+$wb["DNS-Domains angelegt"] = 'Zonas maestras creadas';
+$wb["Benutzter Diskspace"] = "Uso de disco";
+$wb["Slave Zones angelegt"] = "Zonas esclavas creadas";
+$wb["Datenbanken angelegt"] = "Base de datos creada";
 
-$wb["txt_confirm_delete"] = "Do you really want to delete this object?";
+$wb["txt_confirm_delete"] = "Realmente quiere borrar este objeto?";
 
 ?>

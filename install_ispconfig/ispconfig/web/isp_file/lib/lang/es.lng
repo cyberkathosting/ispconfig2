@@ -2,29 +2,30 @@
 /********************************
 * ISPConfig Dictionary File
 * Version 1.0
+* Enhanced by danf.1979@gmail.com
 *********************************/
 
-$wb["Datei Upload"] = 'File Upload';
-$wb["Ordner neu"] = 'New Folder';
-$wb["Web Auswahl"] = 'Web Selection';
-$wb["Web auswählen"] = 'Select Web';
-$wb["Auswahl"] = 'Selection';
+$wb["Datei Upload"] = 'Enviar archivo';
+$wb["Ordner neu"] = 'Nueva carpeta';
+$wb["Web Auswahl"] = 'Seleccion de la web';
+$wb["Web auswählen"] = 'Seleccion Web';
+$wb["Auswahl"] = 'Aceptar';
 $wb["WEB FTP"] = 'WEB FTP';
-$wb["Hilfe"] = 'Help';
-$wb["Name"] = 'Name';
-$wb["Grösse"] = 'Size';
-$wb["Datum"] = 'Date';
-$wb["Eigentümer"] = 'Owner';
-$wb["Alle"] = 'All';
-$wb["Lesen"] = 'Read';
-$wb["Schreiben"] = 'Write';
-$wb["Ausführen"] = 'Execute';
-$wb["Verzeichnisschutz"] = 'Directory Protection';
-$wb["Verzeichnis schützen"] = 'Protect Directory';
-$wb[".htaccess User"] = '.htaccess User';
-$wb[".htaccess Userübersicht"] = 'Overview of .htaccess Users';
-$wb["Bearbeiten"] = 'Edit';
-$wb["Hinzufügen"] = 'Add';
+$wb["Hilfe"] = 'Ayuda';
+$wb["Name"] = 'Nombre';
+$wb["Grösse"] = 'Tamaño';
+$wb["Datum"] = 'Fecha';
+$wb["Eigentümer"] = 'Dueño';
+$wb["Alle"] = 'Todos';
+$wb["Lesen"] = 'Lectura';
+$wb["Schreiben"] = 'Escritura';
+$wb["Ausführen"] = 'Ejecucion';
+$wb["Verzeichnisschutz"] = 'Proteccion de directorio';
+$wb["Verzeichnis schützen"] = 'Proteger directorio';
+$wb[".htaccess User"] = 'Usuario .htaccess';
+$wb[".htaccess Userübersicht"] = 'Vista de usuarios .htaccess';
+$wb["Bearbeiten"] = 'Editar';
+$wb["Hinzufügen"] = 'Adicionar';
 $wb["Parameterübergabe unvollständig"] = "Parameter passing incomplete";
 $wb["Ungültiges Format der web_id."] = "Invalid format of web_id.";
 $wb["Ungültige web_id."] = "Invalid web_id.";
@@ -41,15 +42,12 @@ $wb["Das Verschieben des Verzeichnisses ist fehlgeschlagen."] = "Moving the dire
 $wb["Es wurde keine Datei zum Upload ausgewählt."] = "No file selected for upload.";
 $wb["Die Datei existiert bereits in diesem Verzeichnis."] = "The file already exists in this directory.";
 $wb["Möglicher Dateiupload Angriff."] = "Potential file upload attack.";
-$wb["Ordner"] = "Folder";
+$wb["Ordner"] = "Carpeta";
 
-$wb["chmod failed."] = "chmod failed";
+$wb["chmod failed."] = "Fallo el chmod";
 $wb["FTP: Failed to open"] = "FTP: Failed to open ";
 $wb["Failed to open"] = "Failed to open ";
 $wb["Could not connect to"] = "Could not connect to ";
-$wb["Could not connect as user"] = "Could not connect as user ";
+$wb["Could not connect as user"] = "No se pudo conectar como el usuario ";
 $wb["Next >>"] = "<br><br>Next >>";
-
-$wb["Catalog_Name"] = "Name";
-
 ?>
