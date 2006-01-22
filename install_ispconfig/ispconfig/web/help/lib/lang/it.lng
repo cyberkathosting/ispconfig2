@@ -12,10 +12,10 @@ $wb["Kunden Handbuch"] = "Customer Manual";
 $wb["Deutsch"]          = "Tedesco";
 $wb["Englisch"]          = "Inglese";
 $wb["Projektfarm Support"]          = "Projektfarm Support";
-$wb["Online Hilfe"] = "Online Help";
+$wb["Online Hilfe"] = "Aiuto Online";
 $wb["willkommen_kunde"] = "Benvenuto in ISPConfig!
-You can administrate your website(s) here. If you have questions or problems,
-please contact your server administrator or refer to the ISPConfig client manual.";
+Puoi amministrare i tuoi siti Web qui. Se hai domande o problemi,
+contatta l'amministratore del server o guarda il manuale client di ISPConfig.";
 $wb["Willkommen"] = "Benvenuto";
 
 //////////////// Server Status ////////////////
@@ -29,12 +29,12 @@ $wb["CPU Auslastung 5 Minuten"] = "Utilizzo CPU 5 Minuti";
 $wb["CPU Auslastung 15 Minuten"] = "Utilizzo CPU 15 Minuti";
 //////////////// Server Status Ende //////////
 
-$wb["Webs angelegt"] = "Sites used";
-$wb["User angelegt"] = "Users used";
-$wb["Domains angelegt"] = "Domains used";
-$wb["unlimitiert"]  = "unlimited";
+$wb["Webs angelegt"] = "Siti usati";
+$wb["User angelegt"] = "Utenti usati";
+$wb["Domains angelegt"] = "Domini usati";
+$wb["unlimitiert"]  = "illimitato";
 $wb["Anbieter"]     = "Rivenditore";
-$wb["DNS-Domains angelegt"] = 'DNS Domains created';
+$wb["DNS-Domains angelegt"] = 'DNS Domain creato';
 $wb["von"] = "di";
 
 
