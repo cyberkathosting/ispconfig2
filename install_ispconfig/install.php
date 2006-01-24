@@ -1113,53 +1113,53 @@ caselog("chown admispconfig:admispconfig $conf_datei", $FILE, __LINE__);
 
 if($install_art == "install"){
   $vhost = "
-<directory /var/www/sharedip>
+<Directory /var/www/sharedip>
     Options +Includes -Indexes
     AllowOverride None
     AllowOverride Indexes AuthConfig Limit FileInfo
     Order allow,deny
     Allow from all
-    <files ~ \"^\\.ht\">
+    <Files ~ \"^\\.ht\">
     Deny from all
-    </files>
-</directory>
+    </Files>
+</Directory>
 
 ###############ispconfig_log###############
 LogFormat \"%v||||%b||||%h %l %u %t \\\"%r\\\" %>s %b \\\"%{Referer}i\\\" \\\"%{User-Agent}i\\\"\" combined_ispconfig
 CustomLog \"|/root/ispconfig/cronolog --symlink=/var/log/httpd/ispconfig_access_log /var/log/httpd/ispconfig_access_log_%Y_%m_%d\" combined_ispconfig
 
-<directory ".$dist_path_httpd_root."/*/web>
+<Directory ".$dist_path_httpd_root."/*/web>
     Options +Includes -Indexes
     AllowOverride None
     AllowOverride Indexes AuthConfig Limit FileInfo
     Order allow,deny
     Allow from all
-    <files ~ \"^\\.ht\">
+    <Files ~ \"^\\.ht\">
     Deny from all
-    </files>
-</directory>
+    </Files>
+</Directory>
 
-<directory ".$dist_path_httpd_root."/*/user/*/web>
+<Directory ".$dist_path_httpd_root."/*/user/*/web>
     Options +Includes -Indexes
     AllowOverride None
     AllowOverride Indexes AuthConfig Limit FileInfo
     Order allow,deny
     Allow from all
-    <files ~ \"^\\.ht\">
+    <Files ~ \"^\\.ht\">
     Deny from all
-    </files>
-</directory>
+    </Files>
+</Directory>
 
-<directory ".$dist_path_httpd_root."/*/cgi-bin>
+<Directory ".$dist_path_httpd_root."/*/cgi-bin>
     Options ExecCGI -Indexes
     AllowOverride None
     AllowOverride Indexes AuthConfig Limit FileInfo
     Order allow,deny
     Allow from all
-    <files ~ \"^\\.ht\">
+    <Files ~ \"^\\.ht\">
     Deny from all
-    </files>
-</directory>
+    </Files>
+</Directory>
 
 Include ".$httpd_conf_dir."/vhosts/Vhosts_ispconfig.conf
 
