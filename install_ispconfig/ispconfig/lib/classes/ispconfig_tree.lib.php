@@ -465,22 +465,25 @@ var $_table;
         $sql = "UPDATE ".$go_info["modul"]["table_name"]."_dep SET groupid = '$gid' where parent_tree_id = '$tree_id'";
         $go_api->db->query($sql);
 
-        /*$sql = "SELECT * from ".$go_info["modul"]["table_name"]."_dep where parent_tree_id = '$tree_id'";
+        $sql = "SELECT * from ".$go_info["modul"]["table_name"]."_dep where parent_tree_id = '$tree_id'";
         $rows = $go_api->db->queryAllRecords($sql);
         foreach($rows as $items) {
-        $this->item_update($items["child_tree_id"],$leer,$gid);
-        // Rekursiv aufrufen
+        	//$this->item_update($items["child_tree_id"],$leer,$gid);
+			//$vars["userid"] = $go_info["user"]["userid"];
+        	$vars["groupid"] = $gid;
+			$vars["parent"] = "group".$gid;
+        	// $vars["type"] = "i";
+        	//$vars["status"] = "1";
+        	$go_api->db->update($this->_table,$vars,"tree_id = '".$items["child_tree_id"]."'");
+        	// Call it recursive
+			$this->update_dep_group($items["child_tree_id"],$gid);
 
         }
-
-        // files updaten
-        */
-
     }
 
         /********************************************************
-                   * Rekursives updaten der Groupid, wenn sich Gruppe ändert
-                   *********************************************************/
+        * Rekursives updaten der Groupid, wenn sich Gruppe ändert
+        *********************************************************/
 
        function update_groupid($tree_id,$userid,$groupid)
        {
