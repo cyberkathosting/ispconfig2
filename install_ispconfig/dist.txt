@@ -770,6 +770,6 @@ dist_passwd=/etc/passwd ##                                       # Trustix30
 dist_shadow=/etc/shadow ##                                       # Trustix30
 dist_group=/etc/group ##                                         # Trustix30
 dist_cron_daemon=fcron ##                                        # Trustix30
-dist_cron_tab=/var/spool/fcron/root ##                           # Trustix30
+dist_cron_tab=/usr/bin/fcrontab ##                               # Trustix30
 dist_mysql_group=mysql ##                                        # Trustix30
 dist_httpd_daemon=httpd ##                                       # Trustix30

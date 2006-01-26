@@ -331,7 +331,7 @@ $userid = $go_info["user"]["userid"];
     }
 */
 
-echo "menuDaten.neu(new VerzEintrag('webs','root','Webs','','',''));\n";
+echo "menuDaten.neu(new VerzEintrag('webs','root','".$go_api->lng("Webs")."','','',''));\n";
 echo "menuDaten.neu(new LinkEintrag('root','".$go_api->lng("Papierkorb")."','edit/papierkorb.php?gid=$gid&amp;$session','seiteFrame','papierkorb.gif','Papierkorb','i','$session'));\n";
 
     // Item Einträge

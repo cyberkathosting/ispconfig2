@@ -17,7 +17,7 @@ $wb["System Load 15 Minuten"] = "System belastning senaste 15 Min";
 
 ///////////////// Administration ////////////////
 $wb["ISPConfig Datenbank"]    = "ISPConfig Databas";
-$wb["Backup erstellen"]       = "Backup Data";
+$wb["Backup erstellen"]       = "Data Backup";
 $wb["Datenbank Check"]        = "Kontrollerar Databas";
 $wb["Datenbank Optimieren"]   = "Optimerar Databas";
 $wb["Datenbank Reparieren"]   = "Reparerar Databas";
@@ -35,11 +35,11 @@ $wb["Pfad httpd.conf"]    = "Sökväg httpd.conf";
 $wb["MTA Typ"]    = "MTA Typ";
 $wb["Virtuser Datei"]    = "Virt. användar Fil";
 $wb["FTP Programm"]    = "FTP Program";
-$wb["FTP conf. Datei"]    = "FTP konf. Fil";
+$wb["FTP conf. Datei"]    = "FTP .conf Fil";
 $wb["Userid von"]    = "AnvändarId från";
 $wb["Groupid von"]    = "GruppId från";
 
-$wb["Backup von Tabelle"] = "Backup Tabell";
+$wb["Backup von Tabelle"] = "Tabell Backup";
 $wb["Optimiere"] = "Optimerar";
 $wb["Reparatur"] = "Reparerar";
 $wb["oder"] = "eller";
@@ -72,8 +72,8 @@ $wb["Port"] = "Port";
 $wb["Typ"] = "Typ";
 $wb["TCP"] = "TCP";
 $wb["UDP"] = "UDP";
-$wb["Der Dienst-Typ wird nur bei sonstigen-Diensten ausgewertet."] = "Den här typen av tjänst kommer bara att bli analyserad tillsammans med andra tjänster.";
-$wb["Sonstige"] = "Annan";
+$wb["Der Dienst-Typ wird nur bei sonstigen-Diensten ausgewertet."] = "Den här typen av tjänst kommer att bli analyserad tillsammans med andra tjänster.";
+$wb["Sonstige"] = "Övrigt";
 $wb["Ja"] = "Ja";
 $wb["Nein"] = "Nej";
 $wb["Offline"] = "Offline";
@@ -91,12 +91,12 @@ $wb["Dieser Port kann nicht deaktiviert werden."] = "Denna port kan inte bli dea
 //////////////// LNG 1.1.12 BEGIN /////////////
 
 $wb["ISP Server"] = 'ISP Server';
-$wb["Admin Email"] = 'Admin epost';
+$wb["Admin Email"] = 'Admin Epost';
 $wb["EMail"] = 'Epost';
 $wb["Funktionen"] = 'Funktioner';
 $wb["httpd User"] = 'httpd Användare';
 $wb["httpd Group"] = 'httpd Grupp';
-$wb["Document Root"] = 'Dokument Rot';
+$wb["Document Root"] = 'Dokument Root';
 $wb["Frontpage Pfad"] = 'Frontpage Sökväg';
 $wb["access Log"] = 'Åtkomst Logg';
 $wb["Sendmail"] = 'Sendmail';
@@ -121,7 +121,7 @@ $wb["Hinzufügen"] = 'Lägg till';
 $wb["Alle anzeigen"] = 'Visa Alla';
 $wb["Update Manager"] = 'Uppdaterings Manager';
 $wb["Update"] = 'Uppdatera';
-$wb["System Config"] = 'System Konfig';
+$wb["System Config"] = 'System Konfiguration';
 $wb["Bearbeiten"] = 'Editera';
 $wb["Importieren"] = 'Importera';
 $wb["Exportieren"] = 'Exportera';
@@ -137,7 +137,7 @@ $wb["nein"] = 'nej';
 $wb["ja"] = 'ja';
 $wb["ISP Server Status"] = 'ISP Server Status';
 $wb["System-Datenbank"] = 'System Databas';
-$wb["Verzeichnis"] = 'Förteckning';
+$wb["Verzeichnis"] = 'Katalog';
 $wb["Backup starten"] = 'Backup';
 
 // NEW 1.1.12a //////////////////////////////
@@ -145,7 +145,7 @@ $wb["Backup starten"] = 'Backup';
 $wb["Es wurde kein Web ausgewählt."] = "Ingen Webb adress vald.";
 $wb["Backup-Funktionen im Demo-Modus nicht verfügbar."] = "Backup funktioner finns inte tillgängliga i demo version.";
 $wb["Backup Status"] = "Backup Status";
-$wb["Der Name des FTP-Servers <br>enthält ungültige Zeichen."] = "Namnet på FTP server <br>innehåller otillåtna tecken.";
+$wb["Der Name des FTP-Servers <br>enthält ungültige Zeichen."] = "Namnet på FTP servern <br>innehåller otillåtna tecken.";
 $wb["Sie haben keinen FTP Benutzernamen angegeben."] = "Inget FTP användarnamn är angett.";
 $wb["Ftp-Verbindung nicht hergestellt!"] = "Ftp uppladdning misslyckades!";
 $wb["Verbindung mit:"] = "Uppkopplad till:";
@@ -155,7 +155,7 @@ $wb["Konnte nicht in Verzeichnis:"] = "byter till katalog:";
 $wb["wechseln."] = "misslyckad.";
 $wb["Wechsel in Verzeichnis:"] = "byter till katalog:";
 $wb["Ftp upload war fehlerhaft!"] = "Ftp uppladdning misslyckades!";
-$wb["Upload erfolgreich."] = "uppladdning lyckades.";
+$wb["Upload erfolgreich."] = "Uppladdning lyckades.";
 $wb["FTP-Upload Status"] = "Ftp uppladdnings Status";
 $wb["Backup-Methode nicht unterstützt."] = "Backup metod finns inte tillgänglig.";
 $wb["Rechnung Nr. von"] = "Faktura nr. från";
@@ -166,12 +166,12 @@ $wb["Rechnung Nr. von"] = "Faktura nr. från";
 
 $wb["Remoting"] = 'Remoting';
 $wb["User"] = 'Användare';
-$wb["Conf. Dir."] = 'Konfig. Mapp';
+$wb["Conf. Dir."] = 'Conf Katalog';
 $wb["Suexec"] = 'Suexec';
 $wb["Postfix"] = 'Postfix';
 $wb["Mail Log"] = 'Epost Logg';
-$wb["Maildir"] = 'Epost mappformat';
-$wb["Antivir Mailadmin"] = 'Antivirus Admin';
+$wb["Maildir"] = 'Epost Mappformat';
+$wb["Antivir Mailadmin"] = 'Antivirus AdminEpost';
 $wb["aktiv"] = "aktiv";
 $wb["inaktiv"] = "inaktiv";
 $wb["weiter_link"] = "<br><br> <a href='../../isp_manager/frame_start.php?s=$s'>Nästa &gt;&gt;</a>";
@@ -313,11 +313,11 @@ $wb["Speichern"] = "Spara";
 $wb["Löschen"] = "Radera";
 $wb["Abbrechen"] = "Avbryt";
 $wb["IP-Adresse"] = "IP-Adress";
-$wb["DNS-Query"] = "DNS-fråga";
+$wb["DNS-Query"] = "DNS-Fråga";
 $wb["DNS-Insert"] = "DNS-Inlägg";
 $wb["DNS-Update"] = "DNS-Uppdatera";
 $wb["DNS-Delete"] = "DNS-Ta bort";
-$wb["slave_query"] = "Sekundär DNS Inläggs Fråga";
+$wb["slave_query"] = "Sekundärt DNS Inläggs Fråga";
 $wb["slave_insert"] = "Skapa Sekundärt DNS Inlägg";
 $wb["slave_update"] = "Editera Sekundärt DNS Inlägg";
 $wb["slave_delete"] = "Ta bort Sekundärt DNS Inlägg";
@@ -497,4 +497,6 @@ $wb["txt_res_traffic_notification_email_variables"] = '<table border="0" cellpad
         </tr>
         </table>';
 
+$wb["Updates"] = "Uppdatera";
+$wb["Sonstiges"] = "Övrigt";
 ?>

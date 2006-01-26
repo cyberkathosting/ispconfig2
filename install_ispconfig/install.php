@@ -112,6 +112,12 @@ function af($file, $content){
   fclose($fp);
 }
 
+function aftsl($file, $content){
+  if(!$fp = fopen ($file, "ab")) ilog("WARNING: could not open file ".$file);
+  fwrite($fp,$content);
+  fclose($fp);
+}
+
 function unix_nl($input){
   $output = str_replace("\r\n", "\n", $input);
   $output = str_replace("\r", "\n", $output);
@@ -1207,6 +1213,19 @@ phpcaselog(touch("/var/log/httpd/ispconfig_access_log"), "create /var/log/httpd/
 exec("chmod 644 /var/log/httpd/ispconfig_access_log");
 
 //////////// Cron Jobs //////////////////
+if($dist == "Trustix30"){
+$cron_tsl_file = "/home/fcronisp";
+if(is_file($cron_tsl_file)) unlink($cron_tsl_file);
+    exec("$dist_cron_tab -l > $cron_tsl_file");
+    exec("chmod 777 $cron_tsl_file");
+$cron_job_tsl = array('30 00 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/logs.php &> /dev/null','59 23 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/ftp_logs.php &> /dev/null','59 23 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/mail_logs.php &> /dev/null','59 23 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/cleanup.php &> /dev/null','0 4 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/webalizer.php &> /dev/null','0,30 * * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/check_services.php &> /dev/null','15 3,15 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/quota_msg.php &> /dev/null','40 00 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/traffic.php &> /dev/null','05 02 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/backup.php &> /dev/null');
+foreach($cron_job_tsl as $cron_tsl){
+    aftsl($cron_tsl_file, "\n".$cron_tsl."\n");
+  }
+  exec("$dist_cron_tab $cron_tsl_file");
+  if(is_file($cron_tsl_file)) unlink($cron_tsl_file);
+}
+else{
 if(is_file($dist_cron_tab)){
   $existing_cron_jobs = rf($dist_cron_tab);
 } else {
@@ -1224,6 +1243,7 @@ if($install_art == "upgrade"){
   }
 }
 if(is_file($dist_cron_tab)) remove_blank_lines($dist_cron_tab);
+}
 daemon_init($dist_cron_daemon, "restart");
 ////////// Cron Jobs ENDE ///////////////
 

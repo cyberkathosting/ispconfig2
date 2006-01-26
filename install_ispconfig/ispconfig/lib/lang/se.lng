@@ -67,7 +67,7 @@ $wb["Hilfe"] = 'Hjälp';
 $wb["Online Hilfe"] = 'Online Hjälp';
 $wb["schliessen"] = 'Stäng';
 
-$wb["PAPIERKORB_HINWEIS"] = "<b>Note:</b> Artiklar som finns kvar i papperskorgen efter tömmning är i uppdaterings stadie. Försök att radera dem senare.";
+$wb["PAPIERKORB_HINWEIS"] = "<b>Notera detta:</b> Artiklar som finns kvar i papperskorgen efter tömmning är i uppdaterings stadie. Försök att radera dem senare.";
 
 
 // Multidoc  Allgemein ////////////////////////////////
@@ -90,5 +90,7 @@ $wb["Slave Zones angelegt"] = "Slav Zon skapad";
 $wb["Datenbanken angelegt"] = "Databas skapad";
 
 $wb["txt_confirm_delete"] = "Vill du verkligen ta bort detta objekt?";
+
+$wb["Web-Manager"] = 'Webb Manager';
 
 ?>

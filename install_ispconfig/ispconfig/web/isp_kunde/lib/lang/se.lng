@@ -9,8 +9,8 @@
 $wb["Anbieter"]     = "Återförsäljare";
 $wb["Kunde"]        = "Kund";
 $wb["Suchen"]       = "Sök";
-$wb["Stammdaten"]   = "Master data";
-$wb["Limits"]       = "Gränser";
+$wb["Stammdaten"]   = "Grund data";
+$wb["Limits"]       = "Begränsning";
 $wb["Zugangsdaten"] = "Inloggnings Information";
 $wb["Statistik"]    = "Statistik";
 $wb["Firma"]        = "Företag";
@@ -28,29 +28,29 @@ $wb["Öffnen"]      = "Öppna";
 $wb["Benutzername"] = "Användarnamn"; // besser: vielleicht nur Variable $wb["username"] benutzen?
 $wb["zugangsdaten_anbieter_einleitung"] = "Här kan du ange Användarnamn och Lösenord för Återförsäljare.";
 $wb["zugangsdaten_kunde_einleitung"] = "Här kan du ange Användarnamn och Lösenord för <br> specificerade Web sidor.<br> ";
-$wb["Web Verwaltung"] = "Webbplats Management";
-$wb["Rechnung"]      = "Räkning";
+$wb["Web Verwaltung"] = "Webbplats Underhåll";
+$wb["Rechnung"]      = "Faktura";
 $wb["Rechnungsanschrift:"] = "Faktura adress:<br>";
 $wb["Intervall"]    = "Intervall";
 $wb["Preis"]        = "Pris";
 $wb["Zahlungsart"]  = "Betalningsmetod";
-$wb["Basis"]        = "Basis";
+$wb["Basis"]        = "Basinfo";
 $wb["Create DNS"]   = "Skapa DNS";
 $wb["Speicher MB"]     = "Utrymme MB";
 $wb["Max. User"]        = "Max. Användare";
 $wb["Max. Domain"]        = "Max. Domäner";
-$wb["PHP Scripte"]        = "PHP Scripts";
+$wb["PHP Scripte"]        = "PHP Skript";
 $wb["SSI"]        = "SSI";
 $wb["FTP Zugang"]        = "FTP Åtkomst";
 $wb["mySQL"]        = "MySQL";
 $wb["SSL"]        = "SSL";
 $wb["Shell Zugriff"]      = "Skal Åtkomst";
 $wb["Zugang"]       = "Åtkomst";  // Zugriff u. Zugang zusammenfassen!/nur einen Begriff nehmen!
-$wb["CGI Scripte"]      = "CGI Scripts";
-$wb["Bundesland"]   = "Land";
+$wb["CGI Scripte"]      = "CGI Skript";
+$wb["Bundesland"]   = "Län";
 $wb["Abteilung"]    = "Avdelning";
 $wb["Gültigkeit (Tage)"]  = "Giltighetstid (dagar)";
-$wb["SSL Key"]          = "SSL Key";
+$wb["SSL Key"]          = "SSL Nyckel";
 $wb["SSL Zertifikat"]   = "SSL Certifikat";
 $wb["Aktion"]       = "Verkställ";
 $wb["Zertifikat erzeugen"] = "Skapa Certifikat";
@@ -70,14 +70,14 @@ $wb["mySQL Passwort"]    = "MySQL Lösenord";
 // Ergänzungen /////////////////////////////////
 $wb["Anbieter neu"] = "Ny Återförsäljare";
 $wb["Kunde neu"]    = "Ny Kund";
-$wb["Web neu"]      = "Ny Hemsida";
+$wb["Web neu"]      = "Ny Webbplats";
 $wb["Ordner neu"]   = "Ny Katalog";
 $wb["Suchen"]       = "Sök";
 $wb["ISP Anbieter"] = "ISP Återförsäljare";
 $wb["Webs"] = "Webbplatser";
 $wb["User"] = "Användare";
 $wb["Domains"] = "Domäner";
-$wb["Zahlung"] = "Betalning";
+$wb["Zahlung"] = "Betalningsperiod";
 $wb["ISP Kunde"] = "ISP Kund";
 $wb["ISP Web"] = "ISP Webb";
 $wb["Kunden"] = "Kunder";
@@ -109,7 +109,7 @@ $wb["error_db_exist_2"] = "finns alla redan.<br>";
 $wb["error_db_user_exist_1"] = "Denna databas användare";
 $wb["error_db_user_exist_2"] = "finns alla redan.<br>";
 $wb["error_max_db_web"] = "Det maximala antalet databaser för denna webbplats har uppnåtts.<br>";
-$wb["error_max_db_anbieter"] = "Denna Värds maximala antal databaser har uppnåtts.<br>";
+$wb["error_max_db_anbieter"] = "Det maximala antalet av databaser för denna värd har uppnåtts.<br>";
 
 // Error Codes ispconfig_isp_domain.lib.php
 $wb["error_web_doppelt"] = "Det finns redan en hemsida eller domän med detta namn";
@@ -120,7 +120,7 @@ $wb["error_domain_forward"] = "Domän ompekningen innehöll ej godkända tecken och
 
 // Error Codes ispconfig_isp_kunde.lib.php
 $wb["error_user_exist_1"] = "Denna ISPConfig användaren";
-$wb["error_user_exist_2"] = "finns alla redan. Användaren lades inte till eller ändrades.";
+$wb["error_user_exist_2"] = "existerar alla redan. Användaren lades inte till eller ändrades.";
 $wb["error_max_user_licence"] = "Maximalt antal av ISPConfig användar konton för licensen har uppnåtts.";
 
 
@@ -155,7 +155,7 @@ $wb["von"] = "av";
 $wb["Gesamt"] = "Genomsnittlig";
 $wb["Traffic in den letzten 4 Jahren"] = "Trafik under de senaste 4 åren";
 
-$wb["Backup von Tabelle"] = "Backup Tabell";
+$wb["Backup von Tabelle"] = "Tabell Backup";
 $wb["Optimiere"] = "Optimera";
 $wb["Reparatur"] = "Reparera";
 $wb["oder"] = "eller";
@@ -176,7 +176,7 @@ $wb["Neu"] = "Ny";
 $wb["Postfach MB"] = "Epostlåda MB";
 
 $wb["email_alias_txt"] = "<b>Tips:</b> ett alias per rad.";
-$wb["Weiterleitung"] = "Vidarebefodra";
+$wb["Weiterleitung"] = "Vidarebefodra till";
 $wb["Nachricht"] = "Meddelande";
 $wb["Kein Kunde vorhanden"] = "Ingen Kund tillgänglig";
 $wb["Dieses Web können Sie nicht löschen."] = "Du kan inte radera denna Domän.";
@@ -200,18 +200,18 @@ $wb["error_reseller_licence_nodelete"] = "Denna återförsäljare kan inte raderas.
 $wb["error_kunde_licence"] = "Denna licens av ISPConfig tillåter inte uppläggning av ny kund.";
 $wb["error_kunde_licence_nodelete"] = "Denna kund kan inte raderas.";
 
-$wb["mysqldb_nicht_vorhanden"] = "MySQL database existerar inte. <br>Ange ett lösenord för att skapa en databas.";
+$wb["mysqldb_nicht_vorhanden"] = "MySQL databasen existerar inte. <br>Ange ett lösenord för att skapa en databas.";
 $wb["mysql_nicht_aktiv"] = "MySQL databas kan inte skapas på denna domän.";
 $wb["Datenbank Name"] = "Databas Namn";
 $wb["Speicher belegt"] = "Databas Storlek";
 
 $wb["Kein Web angelegt"] = "Ingen hemsida skapad";
-$wb["Real Name"] = "Riktiga namn";
+$wb["Real Name"] = "Riktiga Namn";
 $wb["Feld"] = "Fält";
 $wb["httpd_inc_txt"] = "Apache Direktiv<br>&nbsp; (Tillval)";
-$wb["Kopie speichern"] = "Spara kopia";
+$wb["Kopie speichern"] = "Spara Kopia";
 
-$wb["err_0001"] = "Domänen tillhör en annan klient.";
+$wb["err_0001"] = "Domänen tillhör en annan kund.";
 
 $wb["mySQL remote access"] = "MySQL fjärr Åtkomst";
 $wb["lokaler mailserver"] = "Lokal Epostserver";
@@ -236,12 +236,12 @@ $wb["aktiviert"] = 'aktiv';
 $wb["deaktiviert"] = 'inaktiv';
 $wb["ISP User"] = 'ISP Användare';
 $wb["WebSpeicher MB"] = 'Webb utrymme MB';
-$wb["MailSpeicher MB"] = 'Epost utryme MB';
+$wb["MailSpeicher MB"] = 'Epost utrymme MB';
 $wb["Administrator"] = 'Administratör';
 $wb["Erweiterte Einstellungen"] = 'Avancerade inställningar';
 $wb["email_weiterleitung_txt"] = '<b>Tips:</b> en epost adress per rad.';
 $wb["Email Alias"] = 'Epost Alias';
-$wb["catchAll-Email"] = 'CatchAll epost';
+$wb["catchAll-Email"] = 'CatchAll Epost';
 $wb["MailScan"] = 'Epost Skanning';
 $wb["Spam-Filter"] = 'Spam Filter';
 $wb["Autoresponder"] = 'Autosvar';
@@ -266,10 +266,10 @@ $wb["Spamfilter & Antivirus"] = 'Spamfilter & Antivirus';
 $wb["Spamfilter"] = 'Spamfilter';
 $wb["Antivirus"] = 'Antivirus';
 $wb["accept"] = 'Acceptera';
-$wb["discard"] = 'Avbryta';
+$wb["discard"] = 'Avbryt';
 $wb["Spam Strategie"] = 'Spam Strategi';
-$wb["Spam Hits"] = 'Spam Hits';
-$wb["Rewrite Subject"] = 'Omskriv Ämne';
+$wb["Spam Hits"] = 'Spam Träffar';
+$wb["Rewrite Subject"] = 'Omskriv Ämnet';
 $wb["Betreff"] = 'Ämne';
 $wb["SUCHE"] = 'SÖK';
 $wb["IP"] = 'IP';
@@ -284,12 +284,12 @@ $wb["Fehler 403<br>(Verboten)"] = "403 Fel<br>(Förbjudet)";
 $wb["Fehler 404<br>(Datei nicht<br>gefunden)"] = "404 Fel<br>(Filen hittades ej)";
 $wb["Fehler 405<br>(Methode nicht<br>erlaubt)"] = "405 Fel<br>(Metoden<br>tillåts ej)";
 $wb["Fehler 500<br>(Interner<br>Server-Fehler)"] = "500 Fel<br>(Internt Server<br>Fel)";
-$wb["Fehler 503<br>(Service ist z.Zt.<br>überlastet)"] = "503 Fel<br>(Service<br>ej tillgänglig)";
+$wb["Fehler 503<br>(Service ist z.Zt.<br>überlastet)"] = "503 Fel<br>(Tjänsten är<br>ej tillgänglig)";
 $wb["Datenbanken"] = "Databaser";
 $wb["Datenbank"] = "Databas";
 $wb["Datenbankname"] = "Databas Namn";
 $wb["Datenbankuser"] = "Databas Användare";
-$wb["weiter_link"] = "<br><br> <a href='../../isp_manager/frame_start.php?s=$s'>Next &gt;&gt;</a>";
+$wb["weiter_link"] = "<br><br> <a href='../../isp_manager/frame_start.php?s=$s'>Nästa &gt;&gt;</a>";
 $wb["Slave Zones"] = 'Slav Zoner (DNS)';
 $wb["txt_client_salutatory_email_desc"] = "<b>Välkomst epost för Kunder</b>";
 $wb["txt_client_salutatory_email_sender_email"] = "Avsändarens epost";
@@ -309,7 +309,7 @@ $wb["txt_client_salutatory_email_variables"] = '<table border="0" cellpadding="3
         <tr>
           <td class="normal">%%%PASSWORD%%%</td>
           <td class="normal">
-            Kundens LÖsenord</td>
+            Kundens Lösenord</td>
         </tr>
         <tr>
           <td class="normal">%%%FIRST_NAME%%%</td>
@@ -346,14 +346,14 @@ $wb["txt_standard_index"] = "Standard Index<br>&nbsp;&nbsp;Page";
 $wb["txt_standard_index_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
 <tr>
     <td valign="top" colspan="2" class="normal">
-      <b>Inkludera följand variablar i din text:</b></td></tr>
+      <b>Inkludera följande variablar i din text:</b></td></tr>
         <tr>
           <td class="normal">%%%FQDN%%%</td>
           <td class="normal">
-            Webbplatsens fullständiga domännamn</td>
+            Webbplatsens Fullständiga Domän Namn</td>
         </tr>
     </table>';
-$wb["txt_user_standard_index"] = "Användarens' Standard<br>&nbsp;&nbsp;Index Page";
+$wb["txt_user_standard_index"] = "Användarens Standard<br>&nbsp;&nbsp;Index Sida";
 $wb["txt_user_standard_index_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
 <tr>
     <td valign="top" colspan="2" class="normal">
@@ -366,15 +366,13 @@ $wb["txt_user_standard_index_variables"] = '<table border="0" cellpadding="3" ce
         <tr>
           <td class="normal">%%%FQDN%%%</td>
           <td class="normal">
-            Webbplatsens fullständiga Domännamn</td>
+            Webbplatsens Fullständiga Domän Namn</td>
         </tr>
         </table>';
-
 
 //////////////// ISP Manager Ende /////////////
 
 //////////////// Server Status ////////////////
-
 $wb["Arbeitsspeicher"]          = "Arbetsminne";
 $wb["CPU"]          = "CPU";
 $wb["Dienste"]      = "Tjänster";
@@ -384,69 +382,69 @@ $wb["System Load 1 Minute"] = "System belastning senaste 1 Min";
 $wb["System Load 5 Minuten"] = "System belastning senaste 5 Min";
 $wb["System Load 15 Minuten"] = "System belastning senaste 15 Min";
 //////////////// Server Status Ende //////////
-$wb["Es konnte ein Dokument nicht wiederhergestellt werden, da sich das Eltern-Dokument noch im Papierkorb befindet.\n"] = "Detta objekt kan inte återställa då ett överliggande objekt fortfarande finns i papperskorgen.";
-$wb["error_anbieter_max_webs_ueberschritten"] = "Denna återförsäljare har alla redan fler webbplatser än det du tänker tilldela honom.<br>";
-$wb["error_anbieter_max_diskspace_ueberschritten"] = "Denna återförsäljare har alla redan mer utrymme än det du tänker tilldela honom.<br>";
-$wb["error_anbieter_max_user_ueberschritten"] = "Denna återförsäljaren har alla redan fler användare än det du tänker tilldela honom.<br>";
-$wb["error_anbieter_max_domain_ueberschritten"] = "Denna återförsäljaren har alla redan fler domäner än det du tänker tilldela honom.<br>";
-$wb["error_anbieter_dnsmanager_aktiv"] = "Denna återförsäljaren har alla redan några DNS Inlägg. DNS Manager kan därför ej deaktiveras.<br>";
-$wb["error_anbieter_max_dns_ueberschritten"] = "Denna återförsäljare har alla redan fler Primära DNS Inlägg än det du tänker tilldela honom.<br>";
-$wb["error_anbieter_max_slavedns_ueberschritten"] = "Denna återförsäljare har alla redan fler Sekundära DNS Inlägg än det du tänker tilldela honom.<br>";
-$wb["error_anbieter_httpd_include_aktiv"] = "HTTPD Includes är alla redan i användning på någon av återförsäljarens webbplats. Denna funktion kan ej deaktiveras.<br>";
-$wb["error_anbieter_shell_access_aktiv"] = "Skal Åtkomst är alla redan i användning på någon av återförsäljarens webbplats. Denna funktion kan ej deaktiveras.<br>";
-$wb["error_anbieter_cgi_aktiv"] = "CGI är alla redan i användning på någon av återförsäljarens webbplats.. Denna funktion kan ej deaktiveras.<br>";
-$wb["error_anbieter_standard_cgi_aktiv"] = "Standard CGI är alla redan i användning på någon av återförsäljarens webbplats. Denna funktion kan ej deaktiveras.<br>";
-$wb["error_anbieter_php_aktiv"] = "PHP är alla redan i användning på någon av återförsäljarens webbplats. Denna funktion kan ej deaktiveras.<br>";
-$wb["error_anbieter_ssi_aktiv"] = "SSI är alla redan i användning på någon av återförsäljarens webbplats. Denna funktion kan ej deaktiveras.<br>";
-$wb["error_anbieter_ftp_aktiv"] = "FTP är alla redan i användning på någon av återförsäljarens webbplats. Denna funktion kan ej deaktiveras.<br>";
-$wb["error_anbieter_anonftp_aktiv"] = "Anonym FTP är alla redan i användning på någon av återförsäljarens webbplats. Denna funktion kan ej deaktiveras.<br>";
-$wb["error_anbieter_frontpage_aktiv"] = "Frontpage är alla redan i användning på någon av återförsäljarens webbplats. Denna funktion kan ej deaktiveras.<br>";
-$wb["error_anbieter_datenbank_aktiv"] = "MySQL databaser är alla redan i användning på någon av återförsäljarens webbplats. Denna funktion kan ej deaktiveras.<br>";
-$wb["error_anbieter_max_datenbank_ueberschritten"] = "Denna återförsäljare har alla redan fler MySQL databaser än det du tänker tilldela honom.<br>";
-$wb["error_anbieter_ssl_aktiv"] = "SSL är alla redan i användning på någon av återförsäljarens webbplats. Denna funktion kan ej deaktiveras.<br>";
-$wb["error_anbieter_wap_aktiv"] = "WAP är alla redan i användning på någon av återförsäljarens webbplats. Denna funktion kan ej deaktiveras.<br>";
-$wb["error_anbieter_error_pages_aktiv"] = "Individuella fel sidor är alla redan i användning på någon av återförsäljarens webbplats. Denna funktion kan ej deaktiveras.<br>";
-$wb["error_web_no_unlimited_diskspace_1"] = "Du kan inte tilldela obegränsat med utrymme för denna webbplats. Det maximala utrymmet för denna webbplats är ";
+$wb["Es konnte ein Dokument nicht wiederhergestellt werden, da sich das Eltern-Dokument noch im Papierkorb befindet.\n"] = "Detta objekt kan ej återställas så länge överliggande objekt finns i papperskorgen.";
+$wb["error_anbieter_max_webs_ueberschritten"] = "Denna återförsäljare har redan fler webbplatser än det du vill tilldela honom.<br>";
+$wb["error_anbieter_max_diskspace_ueberschritten"] = "Denna återförsäljare har redan mer utrymme på hårddisken än det du tänker tilldela honom.<br>";
+$wb["error_anbieter_max_user_ueberschritten"] = "Denna återförsäljare har redan fler användare än det du tänker tilldela honom.<br>";
+$wb["error_anbieter_max_domain_ueberschritten"] = "Denna återförsäljare har fler domäner än det du tänker tilldela honom.<br>";
+$wb["error_anbieter_dnsmanager_aktiv"] = "Denna återförsäljaren har alla redan några DNS Inlägg. DNS Manager kan inte bli deaktiverad.<br>";
+$wb["error_anbieter_max_dns_ueberschritten"] = "Denna återförsäljare har redan fler Primära DNS inlägg än det du tänker tilldela honom.<br>";
+$wb["error_anbieter_max_slavedns_ueberschritten"] = "Denna återförsäljare har redan fler Sekundära DNS Inlägg än vad du tänker tilldela honom.<br>";
+$wb["error_anbieter_httpd_include_aktiv"] = "HTTPD Includes används alla redan på någon av återförsäljarens webbplatser. Denna funktion kan ej bli deaktiverad.<br>";
+$wb["error_anbieter_shell_access_aktiv"] = "Skal Åtkomst används på någon av återförsäljarens webbplatser. Denna funktion kan ej bli deaktiverad.<br>";
+$wb["error_anbieter_cgi_aktiv"] = "CGI används på någon av återförsäljarens webbplatser. Denna funktion kan ej bli deaktiverad.<br>";
+$wb["error_anbieter_standard_cgi_aktiv"] = "Standard CGIs används på någon av återförsäljarens webbplatser. Denna funktion kan ej bli deaktiverad.<br>";
+$wb["error_anbieter_php_aktiv"] = "PHP används på någon av återförsäljarens webbplatser. Denna funktion kan ej bli deaktiverad.<br>";
+$wb["error_anbieter_ssi_aktiv"] = "SSI används på någon av återförsäljarens webbplatser. Denna funktion kan ej bli deaktiverad.<br>";
+$wb["error_anbieter_ftp_aktiv"] = "FTP används på någon av återförsäljarens webbplatser. Denna funktion kan ej bli deaktiverad.<br>";
+$wb["error_anbieter_anonftp_aktiv"] = "Anonym FTP används på någon av återförsäljarens webbplatser. Denna funktion kan ej bli deaktiverad.<br>";
+$wb["error_anbieter_frontpage_aktiv"] = "Frontpage används på någon av återförsäljarens webbplatser. Denna funktion kan ej bli deaktiverad.<br>";
+$wb["error_anbieter_datenbank_aktiv"] = "MySQL databaser används på någon av återförsäljarens webbplatser. Denna funktion kan ej bli deaktiverad.<br>";
+$wb["error_anbieter_max_datenbank_ueberschritten"] = "Denna återförsäljaren har alla redan fler MySQL databaser än du tänker tilldela honom.<br>";
+$wb["error_anbieter_ssl_aktiv"] = "SSL används på någon av återförsäljarens webbplatser. Denna funktion kan ej bli deaktiverad.<br>";
+$wb["error_anbieter_wap_aktiv"] = "WAP används på någon av återförsäljarens webbplatser. Denna funktion kan ej bli deaktiverad.<br>";
+$wb["error_anbieter_error_pages_aktiv"] = "Individuella Felsidor används på någon av återförsäljarens webbplatser. Denna funktion kan ej bli deaktiverad.<br>";
+$wb["error_web_no_unlimited_diskspace_1"] = "Du kan inte tilldela obegränsat med utrymme till denna webbplats. Den maximala utrymmet för denna webbplats är ";
 $wb["error_web_no_unlimited_diskspace_2"] = " MB.<br>";
 $wb["error_web_no_diskspace_free_1"] = "Du har endast kvar ";
-$wb["error_web_no_diskspace_free_2"] = " MB som du kan tilldela denna webbplats.<br>";
-$wb["error_web_no_unlimited_users_1"] = "Du kan inte tilldela obegränsat med användare till denna webbplats. Det maximala antalet användare för denna webbplats är ";
+$wb["error_web_no_diskspace_free_2"] = " MB som du kan tilldela till denna webbplats.<br>";
+$wb["error_web_no_unlimited_users_1"] = "Du kan inte tilldela obegränsat antal användare för denna webbplats. Maximalt antal användare för denna webbplats är ";
 $wb["error_web_no_unlimited_users_2"] = ".<br>";
 $wb["error_web_no_users_free_1"] = "Du har endast kvar ";
 $wb["error_web_no_users_free_2"] = " användare som du kan tilldela denna webbplats.<br>";
-$wb["error_web_no_unlimited_domains_1"] = "Du kan inte tilldela obegränsat antal domäner till denna webbplats. Det maximala antalet domäner för denna webbplats är ";
+$wb["error_web_no_unlimited_domains_1"] = "Du kan inte tilldela obegränsat antal domäner till denna webbplats. Maximalt antal domäner för denna webbplats är ";
 $wb["error_web_no_unlimited_domains_2"] = ".<br>";
 $wb["error_web_no_domains_free_1"] = "Du har endast kvar ";
 $wb["error_web_no_domains_free_2"] = " domän(er) som du kan tilldela denna webbplats.<br>";
 $wb["error_web_no_user_decrease_1"] = "Denna webbplats har alla redan ";
-$wb["error_web_no_user_decrease_2"] = " användare. Du kan inte minska antalet användare.<br>";
+$wb["error_web_no_user_decrease_2"] = " användare. Du kan därför inte öka antalet användare.<br>";
 $wb["error_web_no_domain_decrease_1"] = "Denna webbplats har alla redan ";
-$wb["error_web_no_domain_decrease_2"] = " domän(er). Du kan inte minska på antalet domäner.<br>";
+$wb["error_web_no_domain_decrease_2"] = " domän(er). Du kan därför inte öka antalet domäner.<br>";
 
 $wb["Benutzter Diskspace"] = "Utrymme använt";
 $wb["Slave Zones angelegt"] = "Slav Zoner skapade";
 $wb["Datenbanken angelegt"] = "Databaser skapade";
 $wb["error_web_no_database_decrease_1"] = "Denna webbplats har alla redan ";
-$wb["error_web_no_database_decrease_2"] = " databas(er). Du kan inte minska antalet databaser.<br>";
-$wb["error_web_no_shell_access"] = "Du kan inte tilldela Skal Åtkomst funktionen till denna webbplats.<br>";
-$wb["error_web_no_cgi"] = "Du kan inte tilldela CGI funktionen till denna webbplats.<br>";
-$wb["error_web_no_standard_cgi"] = "Du kan inte tilldela Standard CGI till denna webbplats.<br>";
-$wb["error_web_no_php"] = "Du kan inte tilldela PHP funktionen till denna webbplats.<br>";
-$wb["error_web_no_ssi"] = "Du kan inte tilldela SSI funktionen till denna webbplats.<br>";
-$wb["error_web_no_ftp"] = "Du kan inte tilldela FTP funktionen till denna webbplats.<br>";
-$wb["error_web_no_mysql"] = "Du kan inte tilldela MySQL databaser till denna webbplats.<br>";
+$wb["error_web_no_database_decrease_2"] = " databas(er). Du kan därför inte öka antalet databaser.<br>";
+$wb["error_web_no_shell_access"] = "Du kan inte tilldela Skal Åtkomst till denna webbplats.<br>";
+$wb["error_web_no_cgi"] = "Du kan inte tilldela CGI funktion till denna webbplats.<br>";
+$wb["error_web_no_standard_cgi"] = "Du kan inte tilldela standard CGI till denna webbplats.<br>";
+$wb["error_web_no_php"] = "Du kan inte tilldela PHP funktion till denna webbplats<br>";
+$wb["error_web_no_ssi"] = "Du kan inte tilldela SSI funktion till denna webbplats<br>";
+$wb["error_web_no_ftp"] = "Du kan inte tilldela FTP funktion till denna webbplats<br>";
+$wb["error_web_no_mysql"] = "Du kan inte tilldela MySQL databaser till denna webbplats<br>";
 $wb["error_web_no_databases_free_1"] = "Du har endast kvar ";
 $wb["error_web_no_databases_free_2"] = " databas(er) som du kan tilldela denna webbplats.<br>";
-$wb["error_web_no_ssl"] = "Du kan inte tilldela SSL funktionen till denna webplats.<br>";
-$wb["error_web_no_anonftp"] = "Du kan inte tilldela Anonym FTP funktionen till denna webbplats.<br>";
-$wb["error_web_no_wap"] = "Du kan inte tilldela WAP funktionen till denna webbplats.<br>";
-$wb["error_web_no_individual_error_pages"] = "Du kan inte tilldela Individuella fel sidor till denna webbplats.<br>";
-$wb["error_web_no_httpd_include"] = "Du kan inte tilldela HTTPD Includes till denna webbplats.<br>";
-$wb["error_web_no_frontpage"] = "Du kan inte tilldela Frontpage funktionen till denna webbplats.<br>";
-$wb["Web Vorlage"] = "Hostingplan";
-$wb["ISP Web-Vorlage"] = "ISP Hostingplan";
+$wb["error_web_no_ssl"] = "Du kan inte tilldela SSL funktion till denna webbplats<br>";
+$wb["error_web_no_anonftp"] = "Du kan inte tilldela Anonym FTP funktion till denna webbplats.<br>";
+$wb["error_web_no_wap"] = "Du kan inte tilldela WAP funktion till denna webbplats<br>";
+$wb["error_web_no_individual_error_pages"] = "Du kan inte tilldela individuella fel sidor till denna webbplats<br>";
+$wb["error_web_no_httpd_include"] = "Du kan inte lägga till HTTPD Includes till denna webbplats.<br>";
+$wb["error_web_no_frontpage"] = "Du kan inte lägga till Frontpage funktion till denna webbplats.<br>";
+$wb["Web Vorlage"] = "Webb Paket";
+$wb["ISP Web-Vorlage"] = "ISP Webb Paket";
 $wb["Keine Vorlage verwenden"] = "Individuella Inställningar";
-$wb["Keine Vorlage vorhanden"] = "Ingen Hostingplan Tillgänglig";
+$wb["Keine Vorlage vorhanden"] = "Ingen Webb Paket Tillgängliga";
 $wb["txt_accept"] = "acceptera";
 $wb["txt_discard"] = "avbryt";
 $wb["Eigenschaften"] = "Inställningar";
@@ -458,12 +456,23 @@ $wb["Domain"] = "Domän";
 $wb["Unbegrenzt"] = "Obegränsat";
 $wb["Traffic-Überschreitung"] = "Trafik Överträdelse";
 $wb["sperren"] = "Stänga av";
-$wb["benachrichtigen"] = "Meddela";
+$wb["benachrichtigen"] = "Informera";
 $wb["keine Aktion"] = "Ingen Åtgärd";
 $wb["Website-Status"] = "Webbplats Status";
 $wb["aktiv"] = "Aktiv";
 $wb["gesperrt"] = "Avstängd";
 
 $wb["Catalog_Name"] = "Namn";
+$wb["Diskspace MB"] = "Utrymme MB";
+$wb["Traffic MB"] = "Trafik MB";
+$wb["Create DNS-MX"] = "Skapa DNS-MX";
+$wb["Mailuser Login"] = "Epostanvändar Inlogg";
+$wb["Invoice"] = "Faktura Underlag";
+$wb["Uname"] = "Namn";
+$wb["Sonstiges"] = "Övrigt";
+$wb["SSL Request"] = "SSL Begäran";
+$wb["Web-Manager"] = "Webb Manager";
+$wb["Web-FTP"] = "Webb FTP";
+$wb["Webs"] = "Webbplatser";
 
 ?>
