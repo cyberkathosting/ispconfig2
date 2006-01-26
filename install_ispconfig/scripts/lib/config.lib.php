@@ -1343,8 +1343,12 @@ AddHandler cgi-script .pl";
         $php = "AddType application/x-httpd-php .php .php3 .php4 .php5";
       }
       if($apache_version == 2){
-        $php = "AddType application/x-httpd-php .php .php3 .php4 .php5
-<Files *.php>
+	  	$php = '';
+		if($go_info["server"]["apache2_php"] == 'addtype' or $go_info["server"]["apache2_php"] == 'both') {
+			$php .= "AddType application/x-httpd-php .php .php3 .php4 .php5\n";
+		}
+		if($go_info["server"]["apache2_php"] == 'filter' or $go_info["server"]["apache2_php"] == 'both') {
+            $php .= "<Files *.php>
     SetOutputFilter PHP
     SetInputFilter PHP
 </Files>
@@ -1360,6 +1364,7 @@ AddHandler cgi-script .pl";
     SetOutputFilter PHP
     SetInputFilter PHP
 </Files>";
+		}
       }
       if($web["web_php_safe_mode"]){
         $php .= "\nphp_admin_flag safe_mode On

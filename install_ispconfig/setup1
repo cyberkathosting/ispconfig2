@@ -224,6 +224,26 @@ if [ -f /etc/debian_version ] && [ ! -h  /etc/debian_version ]; then
    cat dist.info.ende >> dist.info.tmp
    rm -f dist.info.ende
 fi
+if [ -f /etc/slackware-version ] && [ ! -h  /etc/slackware-version ]; then
+   version=`cat /etc/slackware-version | cut -f2 -d' '`
+   echo $version | grep \\. &> /dev/null
+   if [ $? != 0 ]; then
+     version=`echo $version.0`
+   fi
+   distversion=`echo Slackware $version`
+   echo $distversion
+   distvers=slackware${version//./}
+   echo dist=$distvers '##' > dist.info.tmp
+   grep -i $distvers dist.txt >> dist.info.tmp
+   cp -f dist.info.tmp dist.info
+   VAR1=`cat dist.info.tmp | cut -f1 -d=`
+   for var1 in $VAR1
+   do
+     echo export $var1 >> dist.info.ende
+   done
+   cat dist.info.ende >> dist.info.tmp
+   rm -f dist.info.ende
+fi
 if [ ! -n "$distvers" ]; then
   os=`uname -rs |cut -f1 -d' '`
   if [ "$os" == "FreeBSD" ]; then

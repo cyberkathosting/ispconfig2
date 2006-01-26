@@ -45,7 +45,7 @@ class isp
 
                 // Datei anlegen
                 if($go_info["server"]["mode"] != "demo") {
-                        if(touch($file)) {
+                        if(@touch($file)) {
                                 $go_api->log("Signalfile Set: $action",1);
                         } else {
                                 $go_api->log("Setting Signalfile Failed: $action",4);

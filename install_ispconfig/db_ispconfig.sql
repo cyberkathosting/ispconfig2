@@ -893,7 +893,7 @@ CREATE TABLE `isp_isp_user` (
   `doc_id` bigint(20) NOT NULL auto_increment,
   `doctype_id` bigint(20) NOT NULL default '1014',
   `user_username` varchar(32) default NULL,
-  `user_passwort` varchar(20) default NULL,
+  `user_passwort` varchar(64) default NULL,
   `user_speicher` varchar(10) default NULL,
   `user_admin` char(1) default NULL,
   `user_shell` char(1) default NULL,

@@ -161,3 +161,7 @@ dist_ftp_log:/var/log/xferlog:Log-File:read::freebsd51
 dist_ftp_conf:/etc/proftpd.conf:Config-File:read::Trustix30
 dist_ftp_version:standalone:Server-Version:exit::Trustix30
 dist_ftp_log:/var/log/proftpd/xfer.log:Log-File:read::Trustix30
+
+dist_ftp_conf:/etc/proftpd.conf:Config-File:read::Slackware1020
+dist_ftp_version:inetd:Server-Version:exit::Slackware1020
+dist_ftp_log:/var/log/proftpd/xferlog:Log-File:read::Slackware1020

@@ -106,9 +106,11 @@ global $go_api, $go_info,$s;
         $status = "DELETE";
         $errorMessage = $go_api->lng("error_sysuser_exist_1")." ".$user["user_username"]." ".$go_api->lng("error_sysuser_exist_2");
     }
-
-    // Passwort des User verschlüsseln
-    $passwort = "||||:".crypt($user["user_passwort"],substr($user["user_passwort"],0,2));
+	if($go_info["server"]["password_hash"] == 'crypt') {
+    	$passwort = "||||:".crypt($user["user_passwort"],substr($user["user_passwort"],0,2));
+	} else {
+		$passwort = "||||:". crypt(stripslashes($user["user_passwort"]), "$1$".md5(time()) );
+	}
     $go_api->db->query("UPDATE isp_isp_user SET user_passwort = '$passwort' where doc_id = '$doc_id'");
 
      // Check Ob maximale Anzah User des Web erreicht ist
@@ -276,7 +278,11 @@ global $go_api, $go_info,$s,$HTTP_POST_VARS;
 
     $user = $go_api->db->queryOneRecord("select * from isp_isp_user where doc_id = '$doc_id'");
     if(substr($user["user_passwort"],0,5) != "||||:" and $user["user_passwort"] != "") {
-        $passwort = "||||:".crypt($user["user_passwort"],substr($user["user_passwort"],0,2));
+        if($go_info["server"]["password_hash"] == 'crypt') {
+    		$passwort = "||||:".crypt($user["user_passwort"],substr($user["user_passwort"],0,2));
+		} else {
+			$passwort = "||||:". crypt(stripslashes($user["user_passwort"]), "$1$".md5(time()) );
+		}
         $go_api->db->query("UPDATE isp_isp_user SET user_passwort = '$passwort' where doc_id = '$doc_id'");
     }
 
