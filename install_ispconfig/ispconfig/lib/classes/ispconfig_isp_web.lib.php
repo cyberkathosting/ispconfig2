@@ -974,6 +974,7 @@ function _insert_dns($doc_id,$doctype_id,$web) {
         ////////////////////////////////////////
 
         $domain = trim($server["server_domain"]);
+        if(trim($server['server_host']) != '') $domain = trim($server['server_host']).'.'.$domain;
         $host = $go_api->db->queryOneRecord("SELECT web_host FROM isp_isp_web WHERE doc_id = $doc_id");
         $host = trim($host['web_host']);
                 if(!empty($domain)) {
