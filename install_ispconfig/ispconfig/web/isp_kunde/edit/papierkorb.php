@@ -32,8 +32,10 @@ include("../../../lib/session.inc.php");
 $tree_id = intval($_REQUEST["tree_id"]);
 $doc_id = intval($_REQUEST["doc_id"]);
 $doctype_id = intval($_REQUEST["doctype_id"]);
-$gid = intval($_REQUEST["gid"]);
-$userid = intval($_REQUEST["userid"]);
+//$gid = intval($_REQUEST["gid"]);
+//$userid = intval($_REQUEST["userid"]);
+$gid = 0;
+$userid = intval($go_info["user"]["userid"]);
 
 if($go_api->auth->check_write($gid)) {
 
@@ -71,8 +73,7 @@ $go_api->content->assign( array( TITLE => "$session_site Papierkorb",
                         WIEDERHERSTELLEN => $go_api->lng("Wiederherstellen")
 
             ) );
-
-
+			
 if($gid == 0) {
     $sql = "SELECT tree_id,title,icon,type,doctype_id,doc_id from ".$go_info["modul"]["table_name"]."_nodes where status = '0' and userid = '$userid'";
 } else {
