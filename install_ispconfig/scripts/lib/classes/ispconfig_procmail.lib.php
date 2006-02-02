@@ -120,11 +120,14 @@ function make_procmailrc($doc_id) {
 
   if($mod->system->server_conf["use_maildir"]){
     $user_mailquota = "";
+    $quota_comment = '## ';
   } else {
     if($user["user_mailquota"] == "-1"){
       $user_mailquota = "";
+      $quota_comment = '## ';
     } else {
       $user_mailquota = "QUOTA=".(1048576 * intval($user["user_mailquota"]));
+      $quota_comment = '';
     }
   }
 
@@ -162,6 +165,7 @@ function make_procmailrc($doc_id) {
   $mod->tpl->assign( array(MAILDIR_COMMENT => $maildir_comment,
                       PMDIR => $web_path."/user/".$user_username,
                       QUOTA => $user_mailquota,
+                      QUOTA_COMMENT => $quota_comment,
                       MAILSCAN_COMMENT => $mailscan_comment,
                       SPAMASSASSIN_COMMENT => $spamfilter_comment,
                       AUTORESPONDER_COMMENT => $autoresponder_comment,

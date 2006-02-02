@@ -3,27 +3,27 @@
 Copyright (c) 2005, projektfarm Gmbh, Till Brehm, Falko Timme
 All rights reserved.
 
-Redistribution and use in source and binary forms, with or without modification, 
+Redistribution and use in source and binary forms, with or without modification,
 are permitted provided that the following conditions are met:
 
-    * Redistributions of source code must retain the above copyright notice, 
+    * Redistributions of source code must retain the above copyright notice,
       this list of conditions and the following disclaimer.
-    * Redistributions in binary form must reproduce the above copyright notice, 
-      this list of conditions and the following disclaimer in the documentation 
+    * Redistributions in binary form must reproduce the above copyright notice,
+      this list of conditions and the following disclaimer in the documentation
       and/or other materials provided with the distribution.
-    * Neither the name of ISPConfig nor the names of its contributors 
-      may be used to endorse or promote products derived from this software without 
+    * Neither the name of ISPConfig nor the names of its contributors
+      may be used to endorse or promote products derived from this software without
       specific prior written permission.
 
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
-ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED 
-WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. 
-IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, 
-INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, 
-BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, 
-DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY 
-OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING 
-NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, 
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT,
+INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY
+OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
 EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
@@ -91,7 +91,11 @@ class isp_username_plugin {
         * Emailadresse vorbereiten
         *****************************************************/
 
-        $out_email = '<input type="text" name="plugin[email]" size="10" maxlength="32" class="text" value="'.$user["user_email"].'">@'.$web["web_domain"];
+        if($go_api->db->queryOneRecord("SELECT * FROM isp_isp_domain, isp_dep, isp_nodes WHERE isp_isp_domain.doc_id = isp_dep.child_doc_id AND isp_isp_domain.doctype_id = isp_dep.child_doctype_id AND isp_dep.parent_doctype_id = ".$web['doctype_id']." AND isp_dep.parent_doc_id = ".$web['doc_id']." AND isp_dep.child_doctype_id = '1015' AND (isp_isp_domain.domain_host = '' OR isp_isp_domain.domain_host IS NULL) AND isp_nodes.doc_id = isp_dep.parent_doc_id AND isp_nodes.doctype_id = '1015' AND isp_nodes.status != '0' AND isp_dep.child_tree_id = isp_nodes.tree_id")){
+          $out_email = '<input type="text" name="plugin[email]" size="10" maxlength="32" class="text" value="'.$user["user_email"].'">@'.$web["web_domain"];
+        } else {
+          $out_email = '<input type="text" name="plugin[email]" size="10" maxlength="32" class="text" value="'.$user["user_email"].'">@'.$web["web_host"].".".$web["web_domain"];
+        }
         $go_api->renderer->element_jscript_nummer++;
 
         $html_out = '<table width="100%" bgcolor="#EEEEEE">
@@ -114,7 +118,7 @@ class isp_username_plugin {
     global $go_info, $go_api,$HTTP_POST_VARS,$next_tree_id;
         $plugin_vars = $HTTP_POST_VARS["plugin"];
         $username = strtolower($plugin_vars["user"]);
-    	$email = $plugin_vars["email"];
+            $email = $plugin_vars["email"];
 
         $sys_config = $go_api->db->queryOneRecord("SELECT * from sys_config");
         $user_prefix = $sys_config["user_prefix"];

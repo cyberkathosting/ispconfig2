@@ -417,8 +417,8 @@ function web_insert($doc_id, $doctype_id, $die_on_error = '1') {
         // nur anlegen, wenn resellerlimit noch nicht erreicht
     if($web["web_host"] != "" and $reseller_domain_div > 0) {
     // Überprüfe, ob Domain noch nicht existiert
-    $host_codomain_count = $go_api->db->queryOneRecord("SELECT count(doc_id) as anzahl from isp_isp_domain where domain_host = '' and domain_domain = '".$web["web_domain"]."'");
-    $host_webdomain_count = $go_api->db->queryOneRecord("SELECT count(doc_id) as anzahl from isp_isp_web where web_host = '' and web_domain = '".$web["web_domain"]."'");
+    $host_codomain_count = $go_api->db->queryOneRecord("SELECT count(doc_id) as anzahl from isp_isp_domain where (domain_host = '' OR domain_host IS NULL) and domain_domain = '".$web["web_domain"]."'");
+    $host_webdomain_count = $go_api->db->queryOneRecord("SELECT count(doc_id) as anzahl from isp_isp_web where (web_host = '' OR web_host IS NULL) and web_domain = '".$web["web_domain"]."'");
 
         if($host_codomain_count["anzahl"] == 0 and $host_webdomain_count["anzahl"] == 0) {
             // anlegen einer "hostlosen" Co-Domain
