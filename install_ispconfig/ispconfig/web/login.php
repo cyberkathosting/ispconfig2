@@ -52,6 +52,7 @@ $err = intval($_GET["err"]);
     <td align="center" valign="middle"><table width="400" border="0" cellpadding="0" cellspacing="1" bgcolor="#CCCCCC">
       <tr>
         <td><img src="<? $reseller = $_REQUEST["reseller"];
+		if(!preg_match("/^[a-zA-Z0-9_\-]{0,50}$/",$reseller)) die("The 'reseller' variable contains invalid chars. Allowed: 'a-z A-Z 0-9 _ -'. Max. Length: 50 chars.");
 		$reseller = escapeshellcmd($reseller);
 		$reseller = str_replace("/","",$reseller);
 		$_SESSION["reseller_image_id"] = $reseller;
