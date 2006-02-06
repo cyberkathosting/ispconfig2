@@ -35,6 +35,10 @@ MOD_SSL=mod_ssl-2.8.25-1.3.34
 PHP=php-5.1.2
 CLAMAV=clamav-0.88
 UUDEVIEW=uudeview-0.5.20
+SPAMASSASSIN=Mail-SpamAssassin-3.1.0
+CRONOLOG=cronolog-1.6.2
+ZIP=zip-2.3
+UNZIP=unzip-5.50
 
 APPLICATION_NAME=ispconfig
 INSTALL_ROOT=/root/${APPLICATION_NAME}
@@ -58,7 +62,11 @@ error ()
   rm -fr ${MOD_SSL}
   rm -fr ${PHP}
   rm -fr ${CLAMAV}
+  rm -fr ${SPAMASSASSIN}
   rm -fr ${UUDEVIEW}
+  rm -fr ${CRONOLOG}
+  rm -fr ${ZIP}
+  rm -fr ${UNZIP}
   exit 1
 }
 
@@ -67,7 +75,11 @@ tar xvfz ${APACHE}.tar.gz || error "Could not unpack Apache"
 tar xvfz ${MOD_SSL}.tar.gz || error "Could not unpack mod_ssl"
 tar xvfz ${PHP}.tar.gz || error "Could not unpack PHP"
 tar xvfz ${CLAMAV}.tar.gz || error "Could not unpack ClamAV"
+tar xvfz ${SPAMASSASSIN}.tar.gz || error "Could not unpack SpamAssassin"
 tar xvfz ${UUDEVIEW}.tar.gz || error "Could not unpack uudeview"
+tar xvfz ${CRONOLOG}.tar.gz || error "Could not unpack cronolog"
+tar xvfz ${ZIP}.tar.gz || error "Could not unpack zip"
+tar xvfz ${UNZIP}.tar.gz || error "Could not unpack unzip"
 
 cd ${OPENSSL}
 ./config --prefix=${INSTALL_ROOT}/openssl || error "Could not configure OpenSSL"
@@ -127,6 +139,15 @@ cd /home/adm${APPLICATION_NAME}/${APPLICATION_NAME}/tools/
 tar -pczf ${COMPILE_DIR}/../binaries/clamav.tar.gz clamav/ || error "Could not create clamav.tar.gz"
 cd ${COMPILE_DIR}
 
+cd ${SPAMASSASSIN}
+perl Makefile.PL PREFIX=/home/adm${APPLICATION_NAME}/${APPLICATION_NAME}/tools/spamassassin/usr SYSCONFDIR=/home/adm${APPLICATION_NAME}/${APPLICATION_NAME}/tools/spamassassin/etc || error "Could not configure SpamAssassin"
+make || error "Could not make SpamAssassin"
+make install || error "Could not install SpamAssassin"
+cp -f LICENSE /home/adm${APPLICATION_NAME}/${APPLICATION_NAME}/tools/spamassassin/
+cd /home/adm${APPLICATION_NAME}/${APPLICATION_NAME}/tools
+tar -pczf ${COMPILE_DIR}/../binaries/spamassassin.tar.gz spamassassin/ || error "Could not create spamassassin.tar.gz"
+cd ${COMPILE_DIR}
+
 cd ${UUDEVIEW}
 ./configure --prefix=/home/adm${APPLICATION_NAME}/${APPLICATION_NAME}/tools/uudeview || error "Could not configure UUDeview"
 make || error "Could not make UUDeview"
@@ -134,6 +155,23 @@ make install || error "Could not install UUDeview"
 cp -f COPYING /home/adm${APPLICATION_NAME}/${APPLICATION_NAME}/tools/uudeview/
 cd /home/adm${APPLICATION_NAME}/${APPLICATION_NAME}/tools
 tar -pczf ${COMPILE_DIR}/../binaries/uudeview.tar.gz uudeview/ || error "Could not create uudeview.tar.gz"
+cd ${COMPILE_DIR}
+
+cd ${CRONOLOG}
+./configure || error "Could not configure cronolog"
+make || error "Could not make cronolog"
+mv src/cronolog ${COMPILE_DIR}/../binaries/cronolog || error "Could not copy cronolog"
+mv src/cronosplit ${COMPILE_DIR}/../binaries/cronosplit || error "Could not copy cronosplit"
+cd ${COMPILE_DIR}
+
+cd ${ZIP}
+make -f unix/Makefile generic || error "Could not make zip"
+mv zip ${COMPILE_DIR}/../binaries/zip || error "Could not copy zip"
+cd ${COMPILE_DIR}
+
+cd ${UNZIP}
+make -f unix/Makefile generic || error "Could not make unzip"
+mv unzip ${COMPILE_DIR}/../binaries/unzip || error "Could not copy unzip"
 cd ${COMPILE_DIR}
 
 exit 0
