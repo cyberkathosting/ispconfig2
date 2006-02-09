@@ -34,29 +34,27 @@ class groups
          global $go_api, $go_info;
          
           $userid = $go_info["user"]["userid"];
-			$rows = $go_api->db->queryAllRecords("select * from user_groups, groups where user_groups.userid = '$userid' and user_groups.groupid = groups.groupid and user_groups.userstatus = '1' and groups.groupstatus = '1' order by groups.groupid");
-			if(is_array($rows)) {
-				foreach($rows as $row) {
-			
-				$groupid = $row["groupid"];
-			
-				$mygroups[$groupid] = array( 	usergroupid => $row["usergroupid"],
-												userid => $row["userid"],
-												name => $row["name"],
-												perms => $row["perms"],
-												userstatus => $row["userstatus"],
-												groupstatus => $row["groupstatus"]
-												);
+	  $rows = $go_api->db->queryAllRecords("select * from user_groups, groups where user_groups.userid = '$userid' and user_groups.groupid = groups.groupid and user_groups.userstatus = '1' and groups.groupstatus = '1' order by groups.name");
+	  if(is_array($rows)) {
+	    foreach($rows as $row) {
+              $groupid = $row["groupid"];
+	      $mygroups[$groupid] = array( 	usergroupid => $row["usergroupid"],
+						userid => $row["userid"],
+		  				name => $row["name"],
+						perms => $row["perms"],
+			 			userstatus => $row["userstatus"],
+						groupstatus => $row["groupstatus"]
+					);
 			
 			
-				}
-			}
-            unset($rows);
-			if(is_array($mygroups)){
-			return $mygroups;
-			} else {
-			return false;
-			}
+	    }
+	  }
+          unset($rows);
+	  if(is_array($mygroups)){
+		return $mygroups;
+	  } else {
+		return false;
+	  }
         }
         
         function in_group($uid,$gid)
