@@ -38,6 +38,7 @@ zone "{ZONE}.in-addr.arpa" {
 zone "{DOMAIN}" {
         type master;
         file "pri.{DOMAIN}";
+	allow-transfer {{SLAVES} };
 };
 <!-- END DYNAMIC BLOCK: named -->
 
