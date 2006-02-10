@@ -44,6 +44,13 @@ APPLICATION_NAME=ispconfig
 INSTALL_ROOT=/root/${APPLICATION_NAME}
 INSTALL_ROOT_TMP=${INSTALL_ROOT}_tmp
 COMPILE_DIR=`pwd`
+ARCH=`uname -m`
+
+if [ $ARCH == "x86_64" ]; then
+  WITH_OPENSSL="--with-openssl"
+else
+  WITH_OPENSSL="--with-openssl=${INSTALL_ROOT}/openssl"
+fi
 
 error ()
 {
@@ -94,7 +101,7 @@ make certificate TYPE=custom  || error "Could not make certificate for Apache"
 make install || error "Could not install Apache"
 
 cd ../${PHP}
-./configure --with-apxs=${INSTALL_ROOT}/httpd/bin/apxs --enable-track-vars --enable-sockets --enable-mbstring=all --with-config-file-path=${INSTALL_ROOT}/php --enable-ftp --prefix=${INSTALL_ROOT}/php --with-openssl=${INSTALL_ROOT}/openssl --with-mysql=/usr --disable-libxml --disable-dom --disable-xml --disable-xmlreader --disable-xmlwriter --disable-simplexml --without-pear || error "Could not configure PHP"
+./configure --with-apxs=${INSTALL_ROOT}/httpd/bin/apxs --enable-track-vars --enable-sockets --enable-mbstring=all --with-config-file-path=${INSTALL_ROOT}/php --enable-ftp --prefix=${INSTALL_ROOT}/php ${WITH_OPENSSL} --with-mysql=/usr --disable-libxml --disable-dom --disable-xml --disable-xmlreader --disable-xmlwriter --disable-simplexml --without-pear || error "Could not configure PHP"
 make || error "Could not make PHP"
 make install || error "Could not install PHP"
 ln -s ${INSTALL_ROOT}/php/bin/php ${INSTALL_ROOT}/php/php
