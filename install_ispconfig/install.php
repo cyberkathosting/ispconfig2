@@ -859,7 +859,7 @@ if(!isset($url)) $url = $server_ispconfigprotocol."://".$server_name;
 
 
 $conf = rf("/root/ispconfig/httpd/conf/httpd.conf_".$server_ispconfigprotocol);
-$conf = str_replace("{SERVER_NAME}", $server_domain, $conf);
+$conf = str_replace("{SERVER_NAME}", $server_name, $conf);
 wf("/root/ispconfig/httpd/conf/httpd.conf", $conf);
 
 $conf = rf("isp/conf/forward.master");
