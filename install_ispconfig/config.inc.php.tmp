@@ -63,7 +63,11 @@ $set_header = 1;
 
 $go_info["server"]["dir_trenner"] = "/";
 $go_info["server"]["server_root"] = "/home/admispconfig/ispconfig";
-$go_info["server"]["server_url"] = "{URL}:81";
+if(isset($_SERVER['SERVER_NAME']) && isset($_SERVER['SERVER_PORT'])){
+  $go_info["server"]["server_url"] = '{PROTOCOL}'.$_SERVER['SERVER_NAME'].':'.$_SERVER['SERVER_PORT'];
+} else {
+  $go_info["server"]["server_url"] = "{URL}:81";
+}
 $go_info["server"]["include_root"] = $go_info["server"]["server_root"] . $go_info["server"]["dir_trenner"] ."lib";
 $go_info["server"]["classes_root"] = $go_info["server"]["include_root"] . $go_info["server"]["dir_trenner"] ."classes";
 $go_info["server"]["temp_dir"] = $go_info["server"]["server_root"] . $go_info["server"]["dir_trenner"] ."temp";
@@ -89,7 +93,7 @@ $go_info["server"]["postfix_config"] = 1; // 1 = SENDMAIL-STYLE, 2 = POSTFIX-STY
 $go_info["server"]["smtp_restart"] = 1; // 1 = stop/start, 2 = restart
 $go_info["server"]["network_config"] = 0; // 0 = none, 1 = automatic
 $go_info["server"]["sudo_du_enabled"] = false; // enable sudo for gathering website file usage
-$go_info["server"]["apache2_php"] = 'both'; // 'filter' = set PHP filters, 'addtype' = Set PHP addtype or 'both' = Set Filter + Addtype 
+$go_info["server"]["apache2_php"] = 'both'; // 'filter' = set PHP filters, 'addtype' = Set PHP addtype or 'both' = Set Filter + Addtype
 $go_info["server"]["password_hash"] = 'crypt'; // 'crypt' = crypt; 'md5' = crypt-md5
 
 /**********************************************

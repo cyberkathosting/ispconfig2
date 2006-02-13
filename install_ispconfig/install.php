@@ -1107,6 +1107,7 @@ $conf = str_replace("{DB_USER}", $db_user, $conf);
 $conf = str_replace("{DB_PASSWORD}", $db_password, $conf);
 $conf = str_replace("{DB_NAME}", $new_db, $conf);
 $conf = str_replace("{URL}", $url, $conf);
+$conf = str_replace("{PROTOCOL}", $server_ispconfigprotocol."://", $conf);
 $conf = str_replace("{LANG}", $lang, $conf);
 if($install_art == "upgrade"){
   if($old_version < 2000){
