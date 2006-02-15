@@ -57,6 +57,7 @@ $tpl->assign( array( TITLE => "$session_site Optionen",
                                                 WINDOWTITLE => "<font size=\"2\" face=\"Verdana\" color=\"#333333\">&nbsp; ".$go_api->lng("Passwort ändern")."</font>",
                                                 SITENAME => $session_site,
                                                 DESIGNPATH => $session_design_path,
+                                                CHARSET => $go_info["theme"]["charset"],
                         SERVERURL => $go_info["server"]["server_url"],
                                                 MODUL => $session_modul,
                                                 S => $s

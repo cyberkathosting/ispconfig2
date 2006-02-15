@@ -1,33 +1,32 @@
 <?
 /********************************
-* 42go Dictionary File
+* ISPConfig Dictionary File
 * Version 1.0
-* (c) projektfarm GmbH 
 *********************************/
 
-$wb["Domains"] = 'Domeinen'; 
-$wb["Service"] = 'Dienst'; 
-$wb["Webs"] = 'Webs'; 
-$wb["Traffic"] = 'Verkeer'; 
+$wb["Domains"] = 'Domeinen';
+$wb["Service"] = 'Dienst';
+$wb["Webs"] = 'Webs';
+$wb["Traffic"] = 'Verkeer';
 $wb["Email-Adressen"] = 'Email Addres';
-$wb["Artikel"] = 'Artikel'; 
-$wb["admin"] = 'admin'; 
-$wb["Artikel für"] = 'Artikel voor'; 
-$wb["Dienstleistung"] = 'Dienst'; 
-$wb["Hardware"] = 'Hardware'; 
-$wb["Software"] = 'Software'; 
+$wb["Artikel"] = 'Artikel';
+$wb["admin"] = 'admin';
+$wb["Artikel für"] = 'Artikel voor';
+$wb["Dienstleistung"] = 'Dienst';
+$wb["Hardware"] = 'Hardware';
+$wb["Software"] = 'Software';
 $wb["Typ"] = 'Type';
-$wb["Artikel Nr."] = 'Artikel Nr.'; 
-$wb["Bezeichnung"] = 'Naam'; 
-$wb["Beschreibung"] = 'Omschrijving'; 
-$wb["Stück"] = 'Stuk'; 
+$wb["Artikel Nr."] = 'Artikel Nr.';
+$wb["Bezeichnung"] = 'Naam';
+$wb["Beschreibung"] = 'Omschrijving';
+$wb["Stück"] = 'Stuk';
 $wb["MB"] = 'MB';
 $wb["GB"] = 'GB';
-$wb["Stunde"] = 'Uur'; 
-$wb["Einheit"] = 'Eenheid'; 
-$wb["Menge"] = 'Bedrag'; 
-$wb["Preis"] = 'Prijs'; 
-$wb["Verrechnung"] = 'Verrekening'; 
+$wb["Stunde"] = 'Uur';
+$wb["Einheit"] = 'Eenheid';
+$wb["Menge"] = 'Bedrag';
+$wb["Preis"] = 'Prijs';
+$wb["Verrechnung"] = 'Verrekening';
 $wb["Artikel neu"] = 'Nieuw Item';
 $wb["Ordner neu"] = 'Nieuwe Map';
 $wb["Abrechnen"] = 'Nieuwe Faktuur';

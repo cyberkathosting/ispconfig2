@@ -114,6 +114,7 @@ $go_info["theme"]["page"]["box_color"] = "E4E4E4"; // z.B. E4E4E4 , angaben ohne
 $go_info["theme"]["page"]["nav_color"] = "E0E0E0"; // z.B. 025CCA , angaben ohne #
 // Die Logo-Datei muss im Verzeichnis /home/admispconfig/ispconfig/web/design/default liegen!
 $go_info["theme"]["page"]["logo"] = ""; // z.B. meinlogo.gif
+$go_info["theme"]["charset"] = "iso-8859-1";
 
 /**********************************************
 * Logging

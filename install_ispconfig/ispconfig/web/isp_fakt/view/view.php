@@ -30,7 +30,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 include("../../../lib/config.inc.php");
 include("../../../lib/session.inc.php");
 
-if($go_info["user"]["userid"] != 1) $go_api->errorMessage($go_api->lng("Nur für Admin verfügbar.")); 
+if($go_info["user"]["userid"] != 1) $go_api->errorMessage($go_api->lng("Nur für Admin verfügbar."));
 
 $rechnung_id = intval($HTTP_GET_VARS["rechnung_id"]);
 $rg_record = $go_api->db->queryOneRecord("SELECT * from isp_fakt_rechnung where rechnung_id = $rechnung_id");
@@ -48,7 +48,7 @@ $mwst_gesamt = 0;
 <html>
 <head>
 <title></title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=<?php echo $go_info["theme"]["charset"]; ?>">
 <link href="../../design/default/style.css" rel="stylesheet" type="text/css">
 </head>
 
@@ -58,8 +58,8 @@ $mwst_gesamt = 0;
                         <td colspan="2"><table width="100%" border="0" cellspacing="0" cellpadding="0">
                           <tr>
                             <td width="54%">
-					<table width="100%" border="0" cellspacing="0" cellpadding="2">
-					  <tr>
+                                        <table width="100%" border="0" cellspacing="0" cellpadding="2">
+                                          <tr>
                         <td width="1%">&nbsp;</td>
                         <td width="23%" class="normal_bold"><? echo $go_api->lng("Firma")?>: </td>
                         <td width="76%" class="normal"><? echo $kunde["rechnung_firma"];?></td>
@@ -100,7 +100,7 @@ $mwst_gesamt = 0;
                         <td class="normal"><? echo $kunde["rechnung_steuernr"];?></td>
                       </tr>
                       </table>
-							</td>
+                                                        </td>
                             <td width="46%" valign="bottom"><table width="100%" border="0" cellspacing="0" cellpadding="2">
                               <tr align="right" valign="top">
                                 <td height="135" colspan="2" class="normal_bold"><font size="6"><? echo $go_api->lng("Rechnung")?></font></td>
@@ -122,13 +122,13 @@ $mwst_gesamt = 0;
                         <td>&nbsp;</td>
                         <td width="528">&nbsp;</td>
                       </tr>
-					  <?
-					  
-					  foreach($rechnung as $web_id => $web) {
-					  $web_gpreis = 0;
-					  $web_record = $go_api->db->queryOneRecord("SELECT * from isp_isp_web where doc_id = $web_id");
-					  ?>
-					  <tr>
+                                          <?
+
+                                          foreach($rechnung as $web_id => $web) {
+                                          $web_gpreis = 0;
+                                          $web_record = $go_api->db->queryOneRecord("SELECT * from isp_isp_web where doc_id = $web_id");
+                                          ?>
+                                          <tr>
                         <td width="2" height="23" bgcolor="#CCCCCC" class="normal_bold">&nbsp;</td>
                         <td width="58" bgcolor="#CCCCCC" class="normal_bold">Web:</td>
                         <td bgcolor="#CCCCCC" class="normal"><? echo $web_record["web_host"].".".$web_record["web_domain"]?></td>
@@ -143,28 +143,28 @@ $mwst_gesamt = 0;
                             <td width="12%" align="right" class="normal_bold"><? echo $go_api->lng("Preis")?></td>
                             <td width="14%" align="right" class="normal_bold"><? echo $go_api->lng("Gesamt")?></td>
                           </tr>
-						  <?
-						  foreach($web as $record) {
-						  ?>
-						  <tr>
+                                                  <?
+                                                  foreach($web as $record) {
+                                                  ?>
+                                                  <tr>
                             <td class="normal"><? echo $record["anzahl"]?></td>
                             <td class="normal"><? echo $record["nummer"]?></td>
                             <td class="normal"><? echo $record["name"]?></td>
                             <td align="right" valign="baseline" class="normal"><? echo sprintf("%01.2f", $record["preis"])?> <? echo $go_api->lng("EURO")?></td>
                             <td align="right" valign="baseline" class="normal"><? echo sprintf("%01.2f", $record["preis"] * $record["anzahl"])?> <? echo $go_api->lng("EURO")?></td>
                           </tr>
-						  <tr>
+                                                  <tr>
                             <td class="normal">&nbsp;</td>
-							<td class="normal">&nbsp;</td>
+                                                        <td class="normal">&nbsp;</td>
                             <td class="normal"><? echo $record["text"]?></td>
                             <td class="normal">&nbsp;</td>
                             <td class="normal">&nbsp;</td>
                           </tr>
-						  <?
-						  $mwst_gesamt += $record["preis"] * $record["anzahl"] * (intval($record["vat"]) / 100);
-						  $web_gpreis += $record["preis"] * $record["anzahl"];
-						  }
-						  ?>
+                                                  <?
+                                                  $mwst_gesamt += $record["preis"] * $record["anzahl"] * (intval($record["vat"]) / 100);
+                                                  $web_gpreis += $record["preis"] * $record["anzahl"];
+                                                  }
+                                                  ?>
                           <tr>
                             <td colspan="5"><hr size="1" noshade></td>
                           </tr>
@@ -177,10 +177,10 @@ $mwst_gesamt = 0;
                         <td>&nbsp;</td>
                         <td colspan="2" align="right">&nbsp;</td>
                       </tr>
-					  <?
-					  $gpreis += $web_gpreis;
-					  }
-					  ?>
+                                          <?
+                                          $gpreis += $web_gpreis;
+                                          }
+                                          ?>
                       <tr>
                         <td>&nbsp;</td>
                         <td colspan="2"><hr size="1" noshade></td>
@@ -194,6 +194,6 @@ $mwst_gesamt = 0;
                         <td>&nbsp;</td>
                         <td colspan="2" align="right" class="t6b"><? echo $go_api->lng("Gesamtbetrag")?>: <? echo sprintf("%01.2f", $gpreis)?> <? echo $go_api->lng("EURO")?></td>
                       </tr>
-  					</table>
+                                          </table>
 </body>
 </html>

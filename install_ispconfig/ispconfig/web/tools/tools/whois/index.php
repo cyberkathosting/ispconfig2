@@ -3,27 +3,27 @@
 Copyright (c) 2005, projektfarm Gmbh, Till Brehm, Falko Timme
 All rights reserved.
 
-Redistribution and use in source and binary forms, with or without modification, 
+Redistribution and use in source and binary forms, with or without modification,
 are permitted provided that the following conditions are met:
 
-    * Redistributions of source code must retain the above copyright notice, 
+    * Redistributions of source code must retain the above copyright notice,
       this list of conditions and the following disclaimer.
-    * Redistributions in binary form must reproduce the above copyright notice, 
-      this list of conditions and the following disclaimer in the documentation 
+    * Redistributions in binary form must reproduce the above copyright notice,
+      this list of conditions and the following disclaimer in the documentation
       and/or other materials provided with the distribution.
-    * Neither the name of ISPConfig nor the names of its contributors 
-      may be used to endorse or promote products derived from this software without 
+    * Neither the name of ISPConfig nor the names of its contributors
+      may be used to endorse or promote products derived from this software without
       specific prior written permission.
 
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
-ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED 
-WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. 
-IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, 
-INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, 
-BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, 
-DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY 
-OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING 
-NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, 
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT,
+INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY
+OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
 EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 include("../../../../lib/config.inc.php");
@@ -44,6 +44,7 @@ $go_api->content->assign( array(    TITLE => "$session_site Startseite",
                                                             WINDOWTITLE => "<font size=\"2\" face=\"Verdana\" color=\"#FFFFFF\">&nbsp; Whois</font>",
                                                             SITENAME => "$session_site",
                                                             DESIGNPATH => $session_design_path,
+                                                            CHARSET => $go_info["theme"]["charset"],
                                     SERVERURL => $go_info["server"]["server_url"],
                                                             S => $s
                                     ) );
@@ -78,9 +79,9 @@ switch ($endfix) {
         case '.sk':$id=19;break;
         case '.lt':$id=20;break;
         case '.hu':$id=21;break;
-		case '.se':$id=22;break;
-		case '.nl':$id=23;break;
-		case '.pl':$id=1;break;
+                case '.se':$id=22;break;
+                case '.nl':$id=23;break;
+                case '.pl':$id=1;break;
 
         default:echo("Error!\n");break;
         }
@@ -91,18 +92,18 @@ $domain=($domainname."".$endfix."");
 $antwort = '';
 
 if ($id==24) {
-	$WhoIsServer = '';
-	$regex = '/^[a-zA-Z0-9\-\.]{0,63}$/';
-	
-	if(preg_match($regex,$domain)) {
-		
-		$domain = escapeshellcmd($domain);
-		//$result = system("whois $domain");
-		$fp = popen("whois $domain", 'r');
-		$result = fread($fp, 4096);
-		pclose($fp);
-		$record = $result;
-		
+        $WhoIsServer = '';
+        $regex = '/^[a-zA-Z0-9\-\.]{0,63}$/';
+
+        if(preg_match($regex,$domain)) {
+
+                $domain = escapeshellcmd($domain);
+                //$result = system("whois $domain");
+                $fp = popen("whois $domain", 'r');
+                $result = fread($fp, 4096);
+                pclose($fp);
+                $record = $result;
+
               if (substr("$result" ,2, 16) == "No entries found") { //Antwort kontrollieren:frei
                 $antwort = 0;
                 }
@@ -505,49 +506,49 @@ else if ($id==21) {
 }
 
 else if ($id==22) {
-	
-	// Linux whois für SE
-	$WhoIsServer = '-';
-	$regex = '/^[a-zA-Z0-9\-\.]{0,63}$/';
-	
-	if(preg_match($regex,$domain)) {
-		
-		$domain = escapeshellcmd($domain);
-		//$result = system("whois $domain");
-		$fp = popen("whois $domain", 'r');
-		$result = fread($fp, 4096);
-		pclose($fp);
-		$record = $result;
-		
+
+        // Linux whois für SE
+        $WhoIsServer = '-';
+        $regex = '/^[a-zA-Z0-9\-\.]{0,63}$/';
+
+        if(preg_match($regex,$domain)) {
+
+                $domain = escapeshellcmd($domain);
+                //$result = system("whois $domain");
+                $fp = popen("whois $domain", 'r');
+                $result = fread($fp, 4096);
+                pclose($fp);
+                $record = $result;
+
         if (stristr("$result", "domainname.name:")) { //Antwort kontrollieren:nicht frei
-		$antwort = 2;
-		} else {
-			$antwort = 0;
-		}
-	}
-} 
+                $antwort = 2;
+                } else {
+                        $antwort = 0;
+                }
+        }
+}
 
 else if ($id==23) {
-	// Linux whois für NL
-	$WhoIsServer = '-';
-	$regex = '/^[a-zA-Z0-9\-\.]{0,63}$/';
-	
-	if(preg_match($regex,$domain)) {
-		
-		$domain = escapeshellcmd($domain);
-		//$result = system("whois $domain");
-		$fp = popen("whois $domain", 'r');
-		$result = fread($fp, 4096);
-		pclose($fp);
-		$record = $result;
-		
+        // Linux whois für NL
+        $WhoIsServer = '-';
+        $regex = '/^[a-zA-Z0-9\-\.]{0,63}$/';
+
+        if(preg_match($regex,$domain)) {
+
+                $domain = escapeshellcmd($domain);
+                //$result = system("whois $domain");
+                $fp = popen("whois $domain", 'r');
+                $result = fread($fp, 4096);
+                pclose($fp);
+                $record = $result;
+
         if (stristr("$result", "Domain name:")) { //Antwort kontrollieren:nicht frei
-		$antwort = 2;
-		} else {
-			$antwort = 0;
-		}
-	}
-} 
+                $antwort = 2;
+                } else {
+                        $antwort = 0;
+                }
+        }
+}
 
 
 else if ($id==1) {
@@ -617,10 +618,10 @@ if ((empty($domain) == false) && (empty($WhoIsServer) == false)) {
 //die($antwort);
 if($antwort == 1) {
     showtime($domain, $WhoIsServer);
-	
+
 } elseif($antwort == 2) {
-	
-	$result .= "<table border='0' width='100%' align='center'><tr><td><PRE>$record</pre>
+
+        $result .= "<table border='0' width='100%' align='center'><tr><td><PRE>$record</pre>
     </td></tr></table>";
 } else {
         if ((empty($domain) == false) && (empty($WhoIsServer) == false)) {
@@ -636,7 +637,7 @@ $html_pre = '&nbsp;<br><form name="form1" method="post" action="">
                 <tr>
                   <td align="center" class="t2">www.
                                   <input type="text" name="domainname" size="17">&nbsp;&nbsp;&nbsp;<select name="endfix" size="1" style="font-family: Verdana; font-size: 10pt; color: #4E566B; font-weight: bold">
-		<option name="pl" value=".pl">.pl
+                <option name="pl" value=".pl">.pl
         <option name="de" value=".de">.de
         <option name="com" value=".com">.com
         <option name="net" value=".net">.net
@@ -657,8 +658,8 @@ $html_pre = '&nbsp;<br><form name="form1" method="post" action="">
         <option name="lu" value=".lu">.lu
         <option name="no" value=".no">.no
         <option name="sk" value=".sk">.sk
-		<option name="se" value=".se">.se
-		<option name="nl" value=".nl">.nl
+                <option name="se" value=".se">.se
+                <option name="nl" value=".nl">.nl
 
 </select>
                     &nbsp;

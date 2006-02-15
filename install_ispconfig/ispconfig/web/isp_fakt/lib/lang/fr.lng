@@ -1,8 +1,7 @@
 <?
 /********************************
-* 42go Dictionary File
+* ISPConfig Dictionary File
 * Version 1.0
-* (c) projektfarm GmbH
 *********************************/
 
 $wb["ISP Faktura"] = 'Facturation ISP';

@@ -1,5 +1,4 @@
-<?
-
+<?php
 /*
 Copyright (c) 2005, projektfarm Gmbh, Till Brehm, Falko Timme
 All rights reserved.
@@ -56,13 +55,13 @@ $go_info["modul"]["menu"][2] = array(   icon => "icon_abrechnen.gif",
                                         title => "Abrechnen",
                                         link => "abrechnung/show.php",
                                         perms => "rw");
-/*                                      
+/*
 $go_info["modul"]["menu"][3] = array(   icon => "nav_suchen.gif",
                                         title => "Suchen",
                                         link => "../multidoc/search/index.php",
                                         perms => "rw");
 
-*/                                                                               
+*/
 $go_info["modul"]["element_types"] = array( deck => "Ebene",
                                             shortText => "kleines Textfeld",
                                             longText => "grosses Textfeld",
