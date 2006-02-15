@@ -486,7 +486,7 @@ $go_api->content->assign( array( DOCTYPE_TITLE => $doc->title,
                      DOC_ID => $doc_id,
                      DOCTYPE_ID => $doctype_id,
                      NEXT_DOCTYPE_ID => $next_doctype_id,
-                     WYSIWYG_LIB => $wysiwyg_lib
+                                         WYSIWYG_LIB => $wysiwyg_lib
                                          ));
 
 if($doc->tree == 1) {

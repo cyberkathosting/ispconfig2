@@ -59,7 +59,7 @@ function make_named($server_id) {
   $mod->tpl->assign( array('BINDDIR' => $mod->system->server_conf["server_bind_zonefile_dir"]));
 
   //$ips = $mod->system->data["isp_server_ip"];
-  $ips = $mod->db->queryAllRecords("SELECT dns_isp_dns.doc_id, dns_isp_dns.server_id, dns_isp_dns.dns_soa, dns_isp_dns.dns_soa_ip AS server_ip, dns_isp_dns.dns_allow_transfer as slaves FROM dns_nodes, dns_isp_dns WHERE dns_isp_dns.server_id = '$server_id' AND dns_nodes.doc_id = dns_isp_dns.doc_id AND dns_nodes.doctype_id = '".$isp_web->dns_doctype_id."' AND dns_nodes.status = '1'");
+  $ips = $mod->db->queryAllRecords("SELECT dns_isp_dns.doc_id, dns_isp_dns.server_id, dns_isp_dns.dns_soa, dns_isp_dns.dns_soa_ip AS server_ip FROM dns_nodes, dns_isp_dns WHERE dns_isp_dns.server_id = '$server_id' AND dns_nodes.doc_id = dns_isp_dns.doc_id AND dns_nodes.doctype_id = '".$isp_web->dns_doctype_id."' AND dns_nodes.status = '1'");
 
   foreach($ips as $ip){
     list($ip1,$ip2,$ip3,$ip4) = explode(".", $ip["server_ip"]);
@@ -84,13 +84,10 @@ function make_named($server_id) {
   $dnss = $ips;
   foreach($dnss as $dns){
     $domain = trim($dns["dns_soa"]);
-    $slaves = trim($dns["slaves"]);
-    if ((substr($slaves,-1) != ";") && (strlen($slaves) >= 7)) {$slaves .= ";"; }
 
     if($domain != ""){
       // Variablen zuweisen
       $mod->tpl->assign( array( 'DOMAIN' => $domain));
-      $mod->tpl->assign( array( 'SLAVES' => $slaves));
       $mod->tpl->parse('NAMED',".named");
     }
   }
