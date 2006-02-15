@@ -48,8 +48,28 @@ ARCH=`uname -m`
 
 if [ $ARCH == "x86_64" ]; then
   WITH_OPENSSL="--with-openssl"
+  if echo "$dist" | grep -q "fedora" || echo "$dist" | grep -q "suse" || echo "$dist" | grep -q "centos" ; then
+    mkdir -p /usr/local/lib/mysql &> /dev/null
+    ln -s /usr/include/mysql /usr/local/lib/mysql/include &> /dev/null
+    ln -s /usr/lib64/mysql /usr/local/lib/mysql/lib &> /dev/null
+
+    WITH_MYSQL="--with-mysql=/usr/local/lib/mysql"
+    WITH_ZLIB_DIR="--with-zlib-dir=/usr/lib64"
+  elif echo "$dist" | grep -q "mdk" || echo "$dist" | grep -q "mdr" ; then
+    mkdir -p /usr/local/lib/mysql &> /dev/null
+    ln -s /usr/include/mysql /usr/local/lib/mysql/include &> /dev/null
+    ln -s /usr/lib64 /usr/local/lib/mysql/lib &> /dev/null
+
+    WITH_MYSQL="--with-mysql=/usr/local/lib/mysql"
+    WITH_ZLIB_DIR="--with-zlib-dir=/usr/lib64"
+  else
+    WITH_MYSQL="--with-mysql=/usr"
+    WITH_ZLIB_DIR=""
+  fi
 else
   WITH_OPENSSL="--with-openssl=${INSTALL_ROOT}/openssl"
+  WITH_MYSQL="--with-mysql=/usr"
+  WITH_ZLIB_DIR=""
 fi
 
 error ()
@@ -101,7 +121,7 @@ make certificate TYPE=custom  || error "Could not make certificate for Apache"
 make install || error "Could not install Apache"
 
 cd ../${PHP}
-./configure --with-apxs=${INSTALL_ROOT}/httpd/bin/apxs --enable-track-vars --enable-sockets --enable-mbstring=all --with-config-file-path=${INSTALL_ROOT}/php --enable-ftp --prefix=${INSTALL_ROOT}/php ${WITH_OPENSSL} --with-mysql=/usr --disable-libxml --disable-dom --disable-xml --disable-xmlreader --disable-xmlwriter --disable-simplexml --without-pear || error "Could not configure PHP"
+./configure --with-apxs=${INSTALL_ROOT}/httpd/bin/apxs --enable-track-vars --enable-sockets --enable-mbstring=all --with-config-file-path=${INSTALL_ROOT}/php --enable-ftp --prefix=${INSTALL_ROOT}/php ${WITH_OPENSSL} ${WITH_MYSQL} --disable-libxml --disable-dom --disable-xml ${WITH_ZLIB_DIR} --disable-xmlreader --disable-xmlwriter --disable-simplexml --without-pear || error "Could not configure PHP"
 make || error "Could not make PHP"
 make install || error "Could not install PHP"
 ln -s ${INSTALL_ROOT}/php/bin/php ${INSTALL_ROOT}/php/php
