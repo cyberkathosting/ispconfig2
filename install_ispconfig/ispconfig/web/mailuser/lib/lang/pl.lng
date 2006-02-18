@@ -45,5 +45,6 @@ $wb["txt_accept"] = "akceptuje";
 $wb["txt_discard"] = "odrzucam";
 $wb["txt_language"] = "Jêzyk";
 $wb["txt_no_mailuser_login"] = "Logowanie zosta³o wy³±czone dla tej strony.";
-
+$wb["txt_forwarder"] = "Forwarder";
+$wb["txt_forwarder_desc"] = "<b>Hint:</b> One email per line.";
 ?>

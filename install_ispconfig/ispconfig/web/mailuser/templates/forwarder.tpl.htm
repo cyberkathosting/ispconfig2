@@ -1,0 +1,28 @@
+<link href="../style.css" rel="stylesheet" type="text/css">
+ <form name="form1" method="post" action="forwarder.php">
+<table border="0" cellspacing="0" cellpadding="2">
+  <tr>
+    <td height="42">&nbsp;</td>
+    <td colspan="2">&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td class="TxtForm" valign="top"><strong><tmpl_var name='txt_forwarder'>:</strong></td>
+    <td class="TxtForm"><textarea name="user_emailweiterleitung" cols="30" rows="10">{tmpl_var name='user_emailweiterleitung'}</textarea></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td class="TxtForm" colspan="2"><tmpl_var name='txt_forwarder_desc'></td>
+    </tr>
+  <tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td colspan="2">&nbsp;</td>
+    </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><input type="submit" name="Submit" value="{tmpl_var name='txt_speichern'}"> <input type="button" name="Abbrechen" value="{tmpl_var name='txt_abbrechen'}" onClick="location.href='index.php'"></td>
+  </tr>
+</table>
+</form>

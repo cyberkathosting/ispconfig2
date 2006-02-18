@@ -36,5 +36,7 @@ $wb["txt_accept"] = "akzeptieren";
 $wb["txt_discard"] = "löschen";
 $wb["txt_language"] = "Sprache";
 $wb["txt_no_mailuser_login"] = "Der Login ist für Ihr Web deaktiviert.";
+$wb["txt_forwarder"] = "Weiterleitung";
+$wb["txt_forwarder_desc"] = "<b>Hinweis:</b> Eine Emailadresse pro Zeile.";
 
 ?>

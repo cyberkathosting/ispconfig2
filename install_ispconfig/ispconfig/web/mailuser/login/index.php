@@ -49,7 +49,11 @@ if(count($_POST) > 1) {
 
                   if($login_allowed == 1){
                         // for DEBUG Only
-                        $app->pop3->hostname = "localhost";
+                        if($go_info["server"]["mode"] == 'demo') {
+							$app->pop3->hostname = "ispconfig.org";
+						} else {
+							$app->pop3->hostname = "localhost";
+						}
 
                         // Öffne Pop3 Verbindung
                         $res = $app->pop3->Open();
