@@ -141,6 +141,8 @@ function web_insert($doc_id, $doctype_id, $server_id) {
     if(!empty($datenbanken)){
       foreach($datenbanken as $datenbank){
 ############################
+    mysql_select_db("mysql")
+    or die($mod->log->ext_log("Could not select database", 2, $this->FILE, __LINE__));
     $new_db = $datenbank["datenbankname"];
     $mysql_user = $datenbank["datenbankuser"];
     $mysql_passwort = substr($datenbank["db_passwort"],5);
@@ -148,6 +150,7 @@ function web_insert($doc_id, $doctype_id, $server_id) {
     //Existiert DB?
     $db_list = mysql_list_dbs();
     $i = 0;
+    $new_db_exists = 0;
     $cnt = mysql_num_rows($db_list);
     while ($i < $cnt) {
       if(mysql_db_name($db_list, $i) == $new_db){
@@ -297,6 +300,8 @@ function web_update($doc_id,$doctype_id,$server_id) {
   if(!empty($datenbanken)){
     foreach($datenbanken as $datenbank){
 ###############################
+  mysql_select_db("mysql")
+  or die($mod->log->ext_log("Could not select database", 2, $this->FILE, __LINE__));
   $new_db = $datenbank["datenbankname"];
   $mysql_user = $datenbank["datenbankuser"];
   $mysql_passwort = substr($datenbank["db_passwort"],5);
@@ -304,6 +309,7 @@ function web_update($doc_id,$doctype_id,$server_id) {
   //Existiert DB?
   $db_list = mysql_list_dbs();
   $i = 0;
+  $new_db_exists = 0;
   $cnt = mysql_num_rows($db_list);
   while ($i < $cnt) {
       if(mysql_db_name($db_list, $i) == $new_db){
@@ -508,10 +514,13 @@ function web_delete($doc_id,$doctype_id,$server_id) {
     if(!empty($datenbanken)){
       foreach($datenbanken as $datenbank){
 ###################################
+    mysql_select_db("mysql")
+    or die($mod->log->ext_log("Could not select database", 2, $this->FILE, __LINE__));
     $new_db = $datenbank["datenbankname"];
     $mysql_user = $datenbank["datenbankuser"];
     $db_list = mysql_list_dbs();
     $i = 0;
+    $new_db_exists = 0;
     $cnt = mysql_num_rows($db_list);
     while ($i < $cnt) {
       if(mysql_db_name($db_list, $i) == $new_db){
@@ -1343,11 +1352,11 @@ AddHandler cgi-script .pl";
         $php = "AddType application/x-httpd-php .php .php3 .php4 .php5";
       }
       if($apache_version == 2){
-	  	$php = '';
-		if($go_info["server"]["apache2_php"] == 'addtype' or $go_info["server"]["apache2_php"] == 'both') {
-			$php .= "AddType application/x-httpd-php .php .php3 .php4 .php5\n";
-		}
-		if($go_info["server"]["apache2_php"] == 'filter' or $go_info["server"]["apache2_php"] == 'both') {
+                  $php = '';
+                if($go_info["server"]["apache2_php"] == 'addtype' or $go_info["server"]["apache2_php"] == 'both') {
+                        $php .= "AddType application/x-httpd-php .php .php3 .php4 .php5\n";
+                }
+                if($go_info["server"]["apache2_php"] == 'filter' or $go_info["server"]["apache2_php"] == 'both') {
             $php .= "<Files *.php>
     SetOutputFilter PHP
     SetInputFilter PHP
@@ -1364,7 +1373,7 @@ AddHandler cgi-script .pl";
     SetOutputFilter PHP
     SetInputFilter PHP
 </Files>";
-		}
+                }
       }
       if($web["web_php_safe_mode"]){
         $php .= "\nphp_admin_flag safe_mode On

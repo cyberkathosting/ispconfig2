@@ -791,6 +791,10 @@ $go_api->db->query("UPDATE isp_isp_web SET status = 'u' where status != 'n' and 
       }
     }
 
+    if($web["web_mysql"] && !$old_form_data["web_mysql"]){
+      $go_api->db->query("UPDATE isp_isp_datenbank, isp_nodes SET isp_isp_datenbank.status = 'u' WHERE isp_isp_datenbank.web_id = '$doc_id' AND isp_isp_datenbank.doc_id = isp_nodes.doc_id AND isp_nodes.doctype_id = isp_isp_datenbank.doctype_id AND isp_nodes.status = '1'");
+    }
+
     ////////////////////////////////////////////////////
      // Userid des Webs auf ISPConfig-Userid des Kunden setzen
      ////////////////////////////////////////////////////
