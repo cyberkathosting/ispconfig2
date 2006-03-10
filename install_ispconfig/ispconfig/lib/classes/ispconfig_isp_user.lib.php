@@ -106,11 +106,23 @@ global $go_api, $go_info,$s;
         $status = "DELETE";
         $errorMessage = $go_api->lng("error_sysuser_exist_1")." ".$user["user_username"]." ".$go_api->lng("error_sysuser_exist_2");
     }
+
+	//calculate 2/8 random chars as salt for the crypt // by bjmg	
 	if($go_info["server"]["password_hash"] == 'crypt') {
-    	$passwort = "||||:".crypt($user["user_passwort"],substr($user["user_passwort"],0,2));
-	} else {
-		$passwort = "||||:". crypt(stripslashes($user["user_passwort"]), "$1$".md5(time()) );
+	    $salt="";
+	    for ($n=0;$n<2;$n++) {
+	    $salt.=chr(mt_rand(64,126));
 	}
+	} else {
+	    $salt="$1$";
+	    for ($n=0;$n<8;$n++) {
+		$salt.=chr(mt_rand(64,126));
+	    }
+	    $salt.="$";
+	}
+	$passwort = "||||:".crypt($user["user_passwort"], $salt);
+
+
     $go_api->db->query("UPDATE isp_isp_user SET user_passwort = '$passwort' where doc_id = '$doc_id'");
 
      // Check Ob maximale Anzah User des Web erreicht ist
@@ -278,11 +290,22 @@ global $go_api, $go_info,$s,$HTTP_POST_VARS;
 
     $user = $go_api->db->queryOneRecord("select * from isp_isp_user where doc_id = '$doc_id'");
     if(substr($user["user_passwort"],0,5) != "||||:" and $user["user_passwort"] != "") {
-        if($go_info["server"]["password_hash"] == 'crypt') {
-    		$passwort = "||||:".crypt($user["user_passwort"],substr($user["user_passwort"],0,2));
-		} else {
-			$passwort = "||||:". crypt(stripslashes($user["user_passwort"]), "$1$".md5(time()) );
-		}
+	//calculate 2/8 random chars as salt for the crypt // by bjmg
+	if($go_info["server"]["password_hash"] == 'crypt') {
+	    $salt="";
+	    for ($n=0;$n<2;$n++) {
+		$salt.=chr(mt_rand(64,126));
+	    }
+	} else {
+	    $salt="$1$";
+	    for ($n=0;$n<8;$n++) {
+		$salt.=chr(mt_rand(64,126));
+	    }
+	    $salt.="$";
+	}
+	
+	$passwort = "||||:".crypt($user["user_passwort"], $salt);
+
         $go_api->db->query("UPDATE isp_isp_user SET user_passwort = '$passwort' where doc_id = '$doc_id'");
     }
 

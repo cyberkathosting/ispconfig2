@@ -60,7 +60,21 @@ include("../../../lib/session.inc.php");
 	
 	// Erstelle oder Update User + Passwort
 	$usr = $HTTP_POST_VARS["username"];
-	$users[$usr] = crypt($HTTP_POST_VARS["passwort"],substr($HTTP_POST_VARS["passwort"],0,2));
+
+	//calculate 2/8 random chars as salt for the crypt // by bjmg
+	if($go_info["server"]["password_hash"] == 'crypt') {
+	    $salt="";
+	    for ($n=0;$n<2;$n++) {
+		$salt.=chr(mt_rand(64,126));
+	    }
+	} else {
+	    $salt="$1$";
+	    for ($n=0;$n<8;$n++) {
+		$salt.=chr(mt_rand(64,126));
+	    }
+	    $salt.="$";
+	}
+	$users[$usr] = crypt($HTTP_POST_VARS["passwort"], $salt);
 	
 	// Schreibe Datei zurück
 	$tmpfname = tempnam($go_info["server"]["temp_dir"], "hta_");

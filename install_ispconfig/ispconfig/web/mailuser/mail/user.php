@@ -50,8 +50,22 @@ if(count($_POST) > 1) {
 
         $rec = array();
         if(trim($_POST["user_passwort"]) != '') {
-                $rec["user_passwort"] = "||||:".crypt(trim($_POST["user_passwort"]),substr(trim($_POST["user_passwort"]),0,2));
-        }
+	    //calculate 2/8 random chars as salt for the crypt // by bjmg	
+	    if($go_info["server"]["password_hash"] == 'crypt') {
+	        $salt="";
+	        for ($n=0;$n<2;$n++) {
+	    	    $salt.=chr(mt_rand(64,126));
+		}
+	    } else {
+		$salt="$1$";
+		for ($n=0;$n<8;$n++) {
+		    $salt.=chr(mt_rand(64,126));
+		}
+		$salt.="$";
+	    }
+	    $rec["user_passwort"] = "||||:".crypt(trim($_POST["user_passwort"]), $salt);
+	}
+
         $rec["user_name"] = escapeshellcmd(substr($_POST["user_name"],0,50));
         $rec["status"] = 'u';
 

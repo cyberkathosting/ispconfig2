@@ -37,6 +37,8 @@ set_time_limit(0);
 include("/root/ispconfig/scripts/lib/config.inc.php");
 include("/root/ispconfig/scripts/lib/server.inc.php");
 
+if($go_info["server"]["do_automated_backups"] != 1) die();
+
 // Erstelle Namen für Backup Datei
 $backup_file_name = "backup_".date("Y_m_d",time()).".zip";
 
@@ -50,14 +52,14 @@ $zip = $go_info["tools"]["zip"];
 // Function for making backup
 function do_backup($web_id) {
         global $mod,$go_info,$httpd_root,$zip,$backup_file_name;
-		
-		// erstelle temp verzeichnis
-		$tmp_dir = $go_info["server"]["temp_dir"].$go_info["server"]["dir_trenner"].md5(uniqid (""));
-		mkdir( $tmp_dir, 0700) or $go_api->errorMessage($go_api->lng("tmp_dir_error"));
+
+                // erstelle temp verzeichnis
+                $tmp_dir = $go_info["server"]["temp_dir"].$go_info["server"]["dir_trenner"].md5(uniqid (""));
+                mkdir( $tmp_dir, 0700) or $go_api->errorMessage($go_api->lng("tmp_dir_error"));
 
         $web_id = intval($web_id);
-		
-		$backup_txt = '';
+
+                $backup_txt = '';
         $backup_txt .= $web_id .',';
 
         // Hole Web
@@ -67,19 +69,19 @@ function do_backup($web_id) {
         $web_pfad = $httpd_root ."/web".$web_id."/web";
         exec("cd $web_pfad; $zip -r $tmp_dir/web".$web_id."_web.zip *");
         $backup_txt .= "web,";
-        
-		// erstelle user tar.gz
+
+                // erstelle user tar.gz
         $user_pfad = $httpd_root."/web".$web_id."/user";
         exec("cd $user_pfad; $zip -r  $tmp_dir/web".$web_id."_user.zip *");
         $backup_txt .= "user,";
-        
-		// erstelle log tar.gz
+
+                // erstelle log tar.gz
         $log_pfad = $httpd_root."/web".$web_id."/log";
         exec("cd $log_pfad; $zip -r  $tmp_dir/web".$web_id."_log.zip *");
         $backup_txt .= "log,";
-        
-		// erstelle mySQL tar.gz
-		//Wenn Web Datenbank hat
+
+                // erstelle mySQL tar.gz
+                //Wenn Web Datenbank hat
         if($web["web_mysql"] == 1) {
           if($datenbanken = $mod->db->queryAllRecords("SELECT datenbankname FROM isp_isp_datenbank WHERE web_id = $web_id")){
             foreach($datenbanken as $datenbank){
@@ -94,39 +96,39 @@ function do_backup($web_id) {
         }
         $backup_txt = substr($backup_txt,0,-1);
         $backup_txt .= "\r\n";
-		
-		// Schreibe backup.dat Inhaltsbeschreibung
-		$backup_desc_file = fopen ("$tmp_dir/backup.dat", "w");
-		fwrite($backup_desc_file,$backup_txt,strlen($backup_txt));
-		fclose($backup_desc_file);
-		
-		// erstelle ein einziges zip aus Einzelwebs
-		$tgz_part1 = md5(uniqid ("")).".zip";
-		$tgz_name = $go_info["server"]["temp_dir"]."/".$tgz_part1;
-		exec("$zip -j $tgz_name $tmp_dir/*");
-		
-		// Move file in /backup directory
-		$backup_dir = $httpd_root ."/web".$web_id."/backup";
-		$web_user = fileowner($web_pfad);
-		$web_group = filegroup($web_pfad);
-		if(!@is_dir($backup_dir)) {
-		  mkdir($backup_dir,0755);
-		} else {
-		  exec("rm -rf $backup_dir/*");
-		}
-		if(@fileowner($backup_dir) != $web_user) {
-		  chown($backup_dir,$web_user);
-		}
-		if(@filegroup($backup_dir) != $web_group) {
-		  chgrp($backup_dir,$web_group);
-		}
-		
-		exec("mv $tgz_name $backup_dir/$backup_file_name");
-		chown("$backup_dir/$backup_file_name",$web_user);
-		chgrp("$backup_dir/$backup_file_name",$web_group);
-		
-		// Delete temp file
-		exec("rm -rf $tmp_dir");
+
+                // Schreibe backup.dat Inhaltsbeschreibung
+                $backup_desc_file = fopen ("$tmp_dir/backup.dat", "w");
+                fwrite($backup_desc_file,$backup_txt,strlen($backup_txt));
+                fclose($backup_desc_file);
+
+                // erstelle ein einziges zip aus Einzelwebs
+                $tgz_part1 = md5(uniqid ("")).".zip";
+                $tgz_name = $go_info["server"]["temp_dir"]."/".$tgz_part1;
+                exec("$zip -j $tgz_name $tmp_dir/*");
+
+                // Move file in /backup directory
+                $backup_dir = $httpd_root ."/web".$web_id."/backup";
+                $web_user = fileowner($web_pfad);
+                $web_group = filegroup($web_pfad);
+                if(!@is_dir($backup_dir)) {
+                  mkdir($backup_dir,0755);
+                } else {
+                  exec("rm -rf $backup_dir/*");
+                }
+                if(@fileowner($backup_dir) != $web_user) {
+                  chown($backup_dir,$web_user);
+                }
+                if(@filegroup($backup_dir) != $web_group) {
+                  chgrp($backup_dir,$web_group);
+                }
+
+                exec("mv $tgz_name $backup_dir/$backup_file_name");
+                chown("$backup_dir/$backup_file_name",$web_user);
+                chgrp("$backup_dir/$backup_file_name",$web_group);
+
+                // Delete temp file
+                exec("rm -rf $tmp_dir");
 
 }
 
@@ -134,7 +136,7 @@ function do_backup($web_id) {
 $webs = $mod->db->queryAllRecords("SELECT * FROM isp_isp_web");
 if(!empty($webs)){
   foreach($webs as $web){
-    do_backup($web[0]);
+    do_backup($web['doc_id']);
   }
 }
 
