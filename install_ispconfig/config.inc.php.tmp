@@ -63,8 +63,8 @@ $set_header = 1;
 
 $go_info["server"]["dir_trenner"] = "/";
 $go_info["server"]["server_root"] = "/home/admispconfig/ispconfig";
-if(isset($_SERVER['HTTP_HOST']) && isset($_SERVER['SERVER_PORT'])){
-  $go_info["server"]["server_url"] = '{PROTOCOL}'.$_SERVER['HTTP_HOST'].':'.$_SERVER['SERVER_PORT'];
+if(isset($_SERVER['HTTP_HOST'])){
+  $go_info["server"]["server_url"] = '{PROTOCOL}'.$_SERVER['HTTP_HOST'];
 } else {
   $go_info["server"]["server_url"] = "{URL}:81";
 }
