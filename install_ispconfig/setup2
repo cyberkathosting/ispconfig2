@@ -750,6 +750,23 @@ fi  ## install_art == install
 
   echo $q_prepare_files
 
+  if [ "$install_art" == "upgrade" ]; then
+    cp -f /home/admispconfig/ispconfig/lib/config.inc.php ./
+    caselog "saved /home/admispconfig/ispconfig/lib/config.inc.php" "could not save /home/admispconfig/ispconfig/lib/config.inc.php"
+    cp -f /home/admispconfig/ispconfig/users ./
+    caselog "saved /home/admispconfig/ispconfig/users" "could not save /home/admispconfig/ispconfig/users"
+    cp -f /home/admispconfig/ispconfig/adminmail.txt ./
+    caselog "saved /home/admispconfig/ispconfig/adminmail.txt" "could not save /home/admispconfig/ispconfig/adminmail.txt"
+
+    tar -pczf root_ispconfig.tar.gz /root/ispconfig/ &> /dev/null
+    caselog "created backup of directory /root/ispconfig/" "could not create backup of directory /root/ispconfig/"
+    tar -pczf home_admispconfig.tar.gz /home/admispconfig/ &> /dev/null
+    caselog "created backup of directory /home/admispconfig/" "could not create backup of directory /home/admispconfig/"
+
+    rm -fr /root/ispconfig
+    caselog "deleted directory /root/ispconfig/" "could not delete directory /root/ispconfig/"
+  fi
+
   cd compile_aps/
   chmod 700 compile
   ./compile || (cd `pwd`/../.. && rm -fr install_ispconfig && exit 1)
@@ -783,22 +800,6 @@ fi  ## install_art == install
   fi
   ###### Prüfen, ob PHP korrekt funktioniert ENDE ######
 
-  if [ "$install_art" == "upgrade" ]; then
-    cp -f /home/admispconfig/ispconfig/lib/config.inc.php ./
-    caselog "saved /home/admispconfig/ispconfig/lib/config.inc.php" "could not save /home/admispconfig/ispconfig/lib/config.inc.php"
-    cp -f /home/admispconfig/ispconfig/users ./
-    caselog "saved /home/admispconfig/ispconfig/users" "could not save /home/admispconfig/ispconfig/users"
-    cp -f /home/admispconfig/ispconfig/adminmail.txt ./
-    caselog "saved /home/admispconfig/ispconfig/adminmail.txt" "could not save /home/admispconfig/ispconfig/adminmail.txt"
-
-    tar -pczf root_ispconfig.tar.gz /root/ispconfig/ &> /dev/null
-    caselog "created backup of directory /root/ispconfig/" "could not create backup of directory /root/ispconfig/"
-    tar -pczf home_admispconfig.tar.gz /home/admispconfig/ &> /dev/null
-    caselog "created backup of directory /home/admispconfig/" "could not create backup of directory /home/admispconfig/"
-
-    rm -fr /root/ispconfig
-    caselog "deleted directory /root/ispconfig/" "could not delete directory /root/ispconfig/"
-  fi
   mv -f ispconfig_tmp /root/ispconfig
   caselog "moved directory ispconfig_tmp to /root/ispconfig" "could not move directory ispconfig_tmp to /root/ispconfig"
   cp -f dist.info /root/ispconfig
