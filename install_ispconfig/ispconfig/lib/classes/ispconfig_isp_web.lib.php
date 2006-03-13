@@ -977,13 +977,16 @@ function _insert_dns($doc_id,$doctype_id,$web) {
         // MX Record anlegen
         ////////////////////////////////////////
 
-        $domain = trim($server["server_domain"]);
-        if(trim($server['server_host']) != '') $domain = trim($server['server_host']).'.'.$domain;
+        if(trim($server["server_host"]) == ''){
+          $mailserver = trim($server["server_domain"]);
+        } else {
+          $mailserver = trim($server["server_host"]).'.'.trim($server["server_domain"]);
+        }
         $host = $go_api->db->queryOneRecord("SELECT web_host FROM isp_isp_web WHERE doc_id = $doc_id");
         $host = trim($host['web_host']);
-                if(!empty($domain)) {
+                if(!empty($mailserver)) {
                 //$ip_adresse = $domain["domain_ip"];
-                $sql = "INSERT INTO dns_mx (host,prioritaet,mailserver) VALUES ('$host','10','$domain')";
+                $sql = "INSERT INTO dns_mx (host,prioritaet,mailserver) VALUES ('$host','10','$mailserver')";
                 $go_api->db->query($sql);
                 $mx_doc_id = $go_api->db->insertID();
 
