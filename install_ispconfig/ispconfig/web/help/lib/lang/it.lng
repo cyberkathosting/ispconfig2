@@ -6,12 +6,12 @@
 
 $wb["Anbieter"]     = "Rivenditore";
 $wb["Web"]          = "Web";
-$wb["Admin Handbuch"] = "Administrator Manual";
-$wb["Reseller Handbuch"] = "Reseller Manual";
-$wb["Kunden Handbuch"] = "Customer Manual";
+$wb["Admin Handbuch"] = "Manuale Administrator";
+$wb["Reseller Handbuch"] = "Manuale Rivenditore";
+$wb["Kunden Handbuch"] = "Manuale Cliente";
 $wb["Deutsch"]          = "Tedesco";
 $wb["Englisch"]          = "Inglese";
-$wb["Projektfarm Support"]          = "Projektfarm Support";
+$wb["Projektfarm Support"]          = "Supporto Projektfarm";
 $wb["Online Hilfe"] = "Aiuto Online";
 $wb["willkommen_kunde"] = "Benvenuto in ISPConfig!
 Puoi amministrare i tuoi siti Web qui. Se hai domande o problemi,

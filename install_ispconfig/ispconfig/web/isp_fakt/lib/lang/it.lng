@@ -75,11 +75,11 @@ $wb["Summe Kunde"] = "Customer Total";
 $wb["Abrechnung abgeschlossen."] = "Invoice created.";
 
 //////////////// Server Status ////////////////
-$wb["Arbeitsspeicher"]          = "Main Memory";
+$wb["Arbeitsspeicher"]          = "Memoria Principale";
 $wb["CPU"]          = "CPU";
-$wb["Dienste"]      = "Services";
-$wb["Server Online seit"]          = "Server Online since";
-$wb["User Online"]      = "Users Online";
+$wb["Dienste"]      = "Servizi";
+$wb["Server Online seit"]          = "Server Online da";
+$wb["User Online"]      = "Utenti Online";
 $wb["System Load 1 Minute"] = "System Load 1 Minute";
 $wb["System Load 5 Minuten"] = "System Load 5 Minutes";
 $wb["System Load 15 Minuten"] = "System Load 15 Minutes";

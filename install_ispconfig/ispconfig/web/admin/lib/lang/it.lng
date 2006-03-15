@@ -118,7 +118,7 @@ $wb["Web-FTP"] = 'Web-FTP';
 $wb["ISP Faktura"] = 'ISP Invoice';
 $wb["Modul Manager"] = 'Modul Manager';
 $wb["Hinzufügen"] = 'Aggiungi';
-$wb["Alle anzeigen"] = 'Show All';
+$wb["Alle anzeigen"] = 'Visualizza Tutto';
 $wb["Update Manager"] = 'Update Manager';
 $wb["Update"] = 'Aggiorna';
 $wb["System Config"] = 'System Config';
@@ -165,22 +165,22 @@ $wb["Rechnung Nr. von"] = "Invoice No. from";
 // NEW 1.3 /////////////////////////////////////
 
 $wb["Remoting"] = 'Remoting';
-$wb["User"] = 'User';
+$wb["User"] = 'Utente';
 $wb["Conf. Dir."] = 'Conf. Dir.';
 $wb["Suexec"] = 'Suexec';
 $wb["Postfix"] = 'Postfix';
 $wb["Mail Log"] = 'Mail Log';
 $wb["Maildir"] = 'Maildir';
 $wb["Antivir Mailadmin"] = 'Antivirus-Admin';
-$wb["aktiv"] = "active";
-$wb["inaktiv"] = "inactive";
+$wb["aktiv"] = "attivo";
+$wb["inaktiv"] = "inattivo";
 $wb["weiter_link"] = "<br><br> <a href='../../isp_manager/frame_start.php?s=$s'>Next &gt;&gt;</a>";
 $wb["txt_client_salutatory_email_desc"] = "<b>Salutatory Email for Clients</b>";
 $wb["txt_client_salutatory_email_sender_email"] = "Sender's Email";
 $wb["txt_client_salutatory_email_sender_name"] = "Name of Sender";
 $wb["txt_client_salutatory_email_bcc"] = "BCC Recipient";
-$wb["txt_client_salutatory_email_subject"] = "Subject";
-$wb["txt_client_salutatory_email_message"] = "Message";
+$wb["txt_client_salutatory_email_subject"] = "Soggetto";
+$wb["txt_client_salutatory_email_message"] = "Messaggio";
 $wb["txt_client_salutatory_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
 <tr>
     <td valign="top" colspan="2" class="normal">
@@ -231,8 +231,8 @@ $wb["txt_res_salutatory_email_desc"] = "<b>Salutatory Email for Resellers</b>";
 $wb["txt_res_salutatory_email_sender_email"] = "Sender's Email";
 $wb["txt_res_salutatory_email_sender_name"] = "Name of Sender";
 $wb["txt_res_salutatory_email_bcc"] = "BCC Recipient";
-$wb["txt_res_salutatory_email_subject"] = "Subject";
-$wb["txt_res_salutatory_email_message"] = "Message";
+$wb["txt_res_salutatory_email_subject"] = "Soggetto";
+$wb["txt_res_salutatory_email_message"] = "Messaggio";
 $wb["txt_res_salutatory_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
 <tr>
     <td valign="top" colspan="2" class="normal">
@@ -321,22 +321,22 @@ $wb["slave_query"] = "Query Secondary DNS Records";
 $wb["slave_insert"] = "Create Secondary DNS Records";
 $wb["slave_update"] = "Edit Secondary DNS Records";
 $wb["slave_delete"] = "Delete Secondary DNS Records";
-$wb["reseller_query"] = "Query Resellers";
-$wb["reseller_insert"] = "Crea Resellers";
-$wb["reseller_update"] = "Modifica Resellers";
-$wb["reseller_delete"] = "Elimina Resellers";
-$wb["kunde_query"] = "Query Clients";
-$wb["kunde_insert"] = "Crea Clients";
-$wb["kunde_update"] = "Modifica Clients";
-$wb["kunde_delete"] = "Elimina Clients";
+$wb["reseller_query"] = "Query Rivenditori";
+$wb["reseller_insert"] = "Crea Rivenditori";
+$wb["reseller_update"] = "Modifica Rivenditori";
+$wb["reseller_delete"] = "Elimina Rivenditori";
+$wb["kunde_query"] = "Query Clienti";
+$wb["kunde_insert"] = "Crea Clienti";
+$wb["kunde_update"] = "Modifica Clienti";
+$wb["kunde_delete"] = "Elimina Clienti";
 $wb["web_query"] = "Query Websites";
 $wb["web_insert"] = "Crea Websites";
 $wb["web_update"] = "Modifica Websites";
 $wb["web_delete"] = "Elimina Websites";
 $wb["txt_primary_dns_records"] = "Primary DNS Records";
 $wb["txt_secondary_dns_records"] = "Secondary DNS Records";
-$wb["txt_anbieter"] = "Resellers";
-$wb["txt_kunden"] = "Clients";
+$wb["txt_anbieter"] = "Rivenditori";
+$wb["txt_kunden"] = "Clienti";
 $wb["txt_webs"] = "Websites";
 
 $wb["txt_traffic_suspension_email_desc"] = "<b>Web Site Suspension Notification (Traffic Exceedance)</b>";
@@ -385,8 +385,8 @@ $wb["txt_traffic_notification_email_desc"] = "<b>Traffic Exceedance Notification
 $wb["txt_traffic_notification_sender_email"] = "Sender's Email";
 $wb["txt_traffic_notification_sender_name"] = "Name of Sender";
 $wb["txt_traffic_notification_email_bcc"] = "BCC Recipient";
-$wb["txt_traffic_notification_email_subject"] = "Subject";
-$wb["txt_traffic_notification_email_message"] = "Message";
+$wb["txt_traffic_notification_email_subject"] = "Oggetto";
+$wb["txt_traffic_notification_email_message"] = "Messaggio";
 $wb["txt_traffic_notification_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
 <tr>
     <td valign="top" colspan="2" class="normal">
@@ -427,8 +427,8 @@ $wb["txt_res_traffic_suspension_email_desc"] = "<b>Reseller Suspension Notificat
 $wb["txt_res_traffic_suspension_sender_email"] = "Sender's Email";
 $wb["txt_res_traffic_suspension_sender_name"] = "Name of Sender";
 $wb["txt_res_traffic_suspension_email_bcc"] = "BCC Recipient";
-$wb["txt_res_traffic_suspension_email_subject"] = "Subject";
-$wb["txt_res_traffic_suspension_email_message"] = "Message";
+$wb["txt_res_traffic_suspension_email_subject"] = "Oggetto";
+$wb["txt_res_traffic_suspension_email_message"] = "Messaggio";
 $wb["txt_res_traffic_suspension_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
 <tr>
     <td valign="top" colspan="2" class="normal">
@@ -464,8 +464,8 @@ $wb["txt_res_traffic_notification_email_desc"] = "<b>Reseller Traffic Exceedance
 $wb["txt_res_traffic_notification_sender_email"] = "Sender's Email";
 $wb["txt_res_traffic_notification_sender_name"] = "Name of Sender";
 $wb["txt_res_traffic_notification_email_bcc"] = "BCC Recipient";
-$wb["txt_res_traffic_notification_email_subject"] = "Subject";
-$wb["txt_res_traffic_notification_email_message"] = "Message";
+$wb["txt_res_traffic_notification_email_subject"] = "Oggetto";
+$wb["txt_res_traffic_notification_email_message"] = "Messaggio";
 $wb["txt_res_traffic_notification_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
 <tr>
     <td valign="top" colspan="2" class="normal">

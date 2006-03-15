@@ -51,7 +51,7 @@ $wb["Wiederherstellen"]    = "Ripristina";
 $wb["Papierkorb: Einträge"]   = "Cestino: contenuti";
 $wb["Speichern"]    = "Salva";
 $wb["Löschen"]    = "Elimina";
-$wb["Abbrechen"]    = "Cancella";
+$wb["Abbrechen"]    = "Annulla";
 $wb["Suchen"]    = "Cerca";
 
 $wb["Herr"] = "Sig.";
@@ -91,5 +91,14 @@ $wb["Slave Zones angelegt"] = "Zona Slave creata";
 $wb["Datenbanken angelegt"] = "Database creato";
 
 $wb["txt_confirm_delete"] = "Vuoi veramente cancellare questo oggetto?";
+
+////////////// Hello add ////////////////////////
+
+$wb['Geöffnete Karten'] = "Ticket aperti";
+$wb['Geschlossene Karten'] = "Ticket chiusi";
+$wb['Unterstützungskarten'] = "Supporto tecnico";
+$wb['Betreff'] = "Riferimento";
+$wb['Priorität'] = "Priorit&agrave;";
+$wb['Datum'] = "Data";
 
 ?>

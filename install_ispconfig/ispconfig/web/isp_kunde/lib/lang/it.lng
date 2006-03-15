@@ -434,21 +434,21 @@ $wb["Keine Vorlage verwenden"] = "Individual Settings";
 $wb["Keine Vorlage vorhanden"] = "No Hostingplan Available";
 $wb["txt_accept"] = "accept";
 $wb["txt_discard"] = "discard";
-$wb["Eigenschaften"] = "Properties";
+$wb["Eigenschaften"] = "Propieta'";
 $wb["ISP Datenbank"] = "ISP Database";
 $wb["Nein"] = "No";
-$wb["Ja"] = "Yes";
-$wb["Web"] = "Site";
-$wb["Domain"] = "Domain";
-$wb["Unbegrenzt"] = "Unlimited";
+$wb["Ja"] = "Si";
+$wb["Web"] = "Sito";
+$wb["Domain"] = "Dominio";
+$wb["Unbegrenzt"] = "Illimitato";
 $wb["Traffic-Überschreitung"] = "Traffic Exceedance";
-$wb["sperren"] = "Suspend";
+$wb["sperren"] = "Sospeso";
 $wb["benachrichtigen"] = "Notify";
 $wb["keine Aktion"] = "No Action";
 $wb["Website-Status"] = "Website Status";
-$wb["aktiv"] = "Active";
-$wb["gesperrt"] = "Suspended";
+$wb["aktiv"] = "Attivo";
+$wb["gesperrt"] = "Sospeso";
 
-$wb["Catalog_Name"] = "Name";
+$wb["Catalog_Name"] = "Nome";
 
 ?>

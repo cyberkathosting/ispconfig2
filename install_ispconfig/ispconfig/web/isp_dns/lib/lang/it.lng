@@ -60,13 +60,13 @@ $wb["System Load 15 Minuten"] = "Utilizzo CPU 15 Minuti";
 
 //////////////// Server Status Ende //////////
 
-$wb["Webs angelegt"] = "Sites used";
-$wb["User angelegt"] = "Users used";
-$wb["Domains angelegt"] = "Domains used";
-$wb["unlimitiert"]  = "unlimited";
-$wb["Anbieter"]     = "Reseller";
+$wb["Webs angelegt"] = "Siti usati";
+$wb["User angelegt"] = "Utenti usati";
+$wb["Domains angelegt"] = "Domini usati";
+$wb["unlimitiert"]  = "illimitato";
+$wb["Anbieter"]     = "Rivenditore";
 $wb["DNS-Domains angelegt"] = 'DNS Domains created';
-$wb["von"] = "of";
+$wb["von"] = "di";
 $wb["Maximale Anzahl an DNS-Einträgen erreicht."] = "The max. number of zones for this account has been reached.<br>";
 $wb["error_no_zones_allowed"] = "The creation of zones is not allowed for this account.<br>";
 $wb["error_no_dns_anbieter"] = "This account is not allowed to create any DNS records.<br>";
@@ -77,7 +77,7 @@ $wb["error_cname_record_exists"] = "There is already a CNAME Record entry for th
 $wb["error_mx_record_exists"] = "This or a similar MX Record does already exist in this zone.<br>";
 $wb["error_spf_record_exists"] = "This SPF Record does already exist in this zone.<br>";
 
-$wb["ja"] = "Yes";
+$wb["ja"] = "Si";
 $wb["nein"] = "No";
 $wb["a"] = "Are emails sent<br>&nbsp;&nbsp;from A Record?";
 $wb["mx"] = "Are emails sent<br>&nbsp;&nbsp;from MX Record?";
@@ -88,6 +88,6 @@ $wb["ip4_break"] = "Are emails sent<br>&nbsp;&nbsp;from other IP addresses?";
 $wb["include_break"] = "Inherit SPF Record<br>&nbsp;&nbsp;from this zone?";
 $wb["all_"] = "Do the above entries<br>&nbsp;&nbsp;contain all hosts<br>&nbsp;&nbsp;allowed to send emails<br>&nbsp;&nbsp;for this domain?";
 
-$wb["Catalog_Name"] = "Name";
+$wb["Catalog_Name"] = "Nome";
 
 ?>
