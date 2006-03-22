@@ -532,7 +532,8 @@ function web_delete($doc_id,$doctype_id,$server_id) {
     //DB löschen
     if($new_db_exists){
     //DB-Backup
-    $mod->log->caselog("mysqldump -h $db_server -u $db_user -p$db_password -c --add-drop-table --add-locks --all --quick --lock-tables $new_db >/root/ispconfig/scripts/$new_db.sql", $this->FILE, __LINE__);
+    // $mod->log->caselog("mysqldump -h $db_server -u $db_user -p$db_password -c --add-drop-table --add-locks --all --quick --lock-tables $new_db >/root/ispconfig/scripts/$new_db.sql", $this->FILE, __LINE__);
+	exec("mysqldump -h $db_server -u $db_user -p$db_password -c --add-drop-table --add-locks --all --quick --lock-tables $new_db >/root/ispconfig/scripts/$new_db.sql");
     @mysql_query("DROP DATABASE ".$new_db);
     }
 
