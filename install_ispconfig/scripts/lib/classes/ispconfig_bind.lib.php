@@ -123,7 +123,7 @@ function make_named($server_id) {
   if(md5_file($mod->system->server_conf["server_bind_named_conf"]) != md5($named_text)){
     $mod->log->caselog("cp -fr ".$mod->system->server_conf["server_bind_named_conf"]." ".$mod->system->server_conf["server_bind_named_conf"]."~", $this->FILE, __LINE__);
     $mod->system->chown($mod->system->server_conf["server_bind_named_conf"]."~", $mod->system->server_conf["server_bind_user"], $mod->system->server_conf["server_bind_group"]);
-    $mod->file->wf($mod->system->server_conf["server_bind_named_conf"], $named_text);
+    $mod->file->wf($mod->system->server_conf["server_bind_named_conf"], $named_text."\n");
     $bind_restart = 1;
   }
 
