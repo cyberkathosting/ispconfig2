@@ -115,15 +115,15 @@ function make_named($server_id) {
 
   $mod->tpl->parse('TABLE', table);
 
-  $named_text = $mod->tpl->fetch();
-  $named_text .= $mod->file->manual_entries($mod->system->server_conf["server_bind_named_conf"], "//// MAKE MANUAL ENTRIES BELOW THIS LINE! ////");
+  $named_text = trim($mod->tpl->fetch());
+  $named_text .= $mod->file->manual_entries($mod->system->server_conf["server_bind_named_conf"], "//// MAKE MANUAL ENTRIES BELOW THIS LINE! ////")."\n";
 
   if(!is_file($mod->system->server_conf["server_bind_named_conf"])) $mod->log->phpcaselog(touch($mod->system->server_conf["server_bind_named_conf"]), "create ".$mod->system->server_conf["server_bind_named_conf"], $this->FILE, __LINE__);
 
   if(md5_file($mod->system->server_conf["server_bind_named_conf"]) != md5($named_text)){
     $mod->log->caselog("cp -fr ".$mod->system->server_conf["server_bind_named_conf"]." ".$mod->system->server_conf["server_bind_named_conf"]."~", $this->FILE, __LINE__);
     $mod->system->chown($mod->system->server_conf["server_bind_named_conf"]."~", $mod->system->server_conf["server_bind_user"], $mod->system->server_conf["server_bind_group"]);
-    $mod->file->wf($mod->system->server_conf["server_bind_named_conf"], $named_text."\n");
+    $mod->file->wf($mod->system->server_conf["server_bind_named_conf"], $named_text);
     $bind_restart = 1;
   }
 
