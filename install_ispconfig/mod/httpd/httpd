@@ -62,6 +62,8 @@ dist_path_httpd_root:/home/www:Web-Root:read::fedora30
 
 dist_path_httpd_root:/home/www:Web-Root:read::fedora40
 
+dist_path_httpd_root:/home/www:Web-Root:read::fedora50
+
 dist_path_httpd_root:/home/www:Web-Root:read::suse72
 
 dist_path_httpd_root:/home/www:Web-Root:read::suse73

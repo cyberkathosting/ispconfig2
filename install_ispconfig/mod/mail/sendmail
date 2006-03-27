@@ -98,6 +98,10 @@ dist_mail_log:/var/log/maillog:Log-File:read::fedora40
 dist_mail_virtusertable:/etc/mail/virtusertable:Virtusertable-File:read::fedora40
 dist_mail_local_host_names:/etc/mail/local-host-names:Local-Host-Names-File:read::fedora40
 
+dist_mail_log:/var/log/maillog:Log-File:read::fedora50
+dist_mail_virtusertable:/etc/mail/virtusertable:Virtusertable-File:read::fedora50
+dist_mail_local_host_names:/etc/mail/local-host-names:Local-Host-Names-File:read::fedora50
+
 dist_mail_log:/var/log/mail:Log-File:read::suse72
 dist_mail_virtusertable:/etc/mail/virtusertable:Virtusertable-File:read::suse72
 dist_mail_local_host_names:/etc/mail/sendmail.cw:Local-Host-Names-File:read::suse72
