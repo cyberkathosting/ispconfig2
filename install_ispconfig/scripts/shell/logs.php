@@ -119,7 +119,7 @@ $current_time = time();
 // Traffic auswerten und Symlinks für Webalizer aktualisieren
 foreach($traffic as $virtual_host => $bytes) {
 
-        if(trim($virtual_host) != '') {
+        if(trim($virtual_host) != '' && trim($virtual_host)!='localhost') {
                 // Traffic in DB Schreiben
                 // Bestimme Web-ID
                 $link =  readlink("$webroot/$virtual_host");
