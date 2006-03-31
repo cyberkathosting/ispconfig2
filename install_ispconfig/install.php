@@ -776,6 +776,20 @@ if($install_art == "upgrade"){
   while($row = mysql_fetch_array($conn)){
     mysql_query("INSERT INTO sys_nodes (userid,groupid,type,doctype_id,status,modul,doc_id) VALUES ('1','0','a','1','1','sys','".$row["doc_id"]."')");
   }
+
+  $conn = mysql_query("SELECT * FROM isp_firewall WHERE doc_id > 10");
+  while($row = mysql_fetch_array($conn)){
+    mysql_query("INSERT INTO sys_nodes (userid,groupid,type,doctype_id,status,modul,doc_id) VALUES ('1','0','a','1025','1','','".$row["doc_id"]."')");
+    mysql_query("INSERT INTO sys_dep (userid,groupid,parent_doc_id,parent_doctype_id,parent_tree_id,child_doc_id,child_doctype_id,child_tree_id,status) VALUES ('1','0','1','1023','15','".$row["doc_id"]."','1025','".mysql_insert_id()."','1')");
+  }
+
+  $conn = mysql_query("SELECT * FROM isp_monitor");
+  while($row = mysql_fetch_array($conn)){
+    mysql_query("UPDATE isp_monitor SET status = 'u' WHERE doc_id = '".$row["doc_id"]."'");
+    mysql_query("INSERT INTO sys_nodes (userid,groupid,type,doctype_id,status,modul,doc_id) VALUES ('1','0','a','1024','1','','".$row["doc_id"]."')");
+    mysql_query("INSERT INTO sys_dep (userid,groupid,parent_doc_id,parent_doctype_id,parent_tree_id,child_doc_id,child_doctype_id,child_tree_id,status) VALUES ('1','0','1','1023','15','".$row["doc_id"]."','1024','".mysql_insert_id()."','1')");
+  }
+
   mysql_query("UPDATE sys_user SET modules = CONCAT(modules, ',isp_file') WHERE modules NOT LIKE '%isp_file%'");
   mysql_query("UPDATE sys_user SET modules = CONCAT(modules, ',isp_fakt') WHERE doc_id = '1' AND modules NOT LIKE '%isp_fakt%'");
   mysql_query("UPDATE sys_user SET modules = CONCAT(modules, ',help') WHERE modules NOT LIKE '%help%'");
@@ -1369,4 +1383,7 @@ exec("pwconv &> /dev/null");
 exec("grpconv &> /dev/null");
 
 phpcaselog(unlink("/root/ispconfig/dist.inc.php"), "delete /root/ispconfig/dist.inc.php", $FILE, __LINE__);
+if($install_art == "upgrade"){
+  touch($pfad."/ispconfig/.run");
+}
 ?>
