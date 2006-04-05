@@ -48,6 +48,8 @@ dist_path_httpd_root:/home/www:Web-Root:read::centos41
 
 dist_path_httpd_root:/home/www:Web-Root:read::centos42
 
+dist_path_httpd_root:/home/www:Web-Root:read::centos43
+
 dist_path_httpd_root:/home/www:Web-Root:read::rhat73
 
 dist_path_httpd_root:/home/www:Web-Root:read::rhat80
