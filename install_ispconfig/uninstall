@@ -64,7 +64,18 @@ or die("Could not connect to MySQL server!");
   exec("/root/ispconfig/php/php -q /root/ispconfig/scripts/writeconf.php &> /dev/null");
 }
 
-$replace = "###############ispconfig_log###############
+$replace = "<Directory /var/www/sharedip>
+    Options +Includes -Indexes
+    AllowOverride None
+    AllowOverride Indexes AuthConfig Limit FileInfo
+    Order allow,deny
+    Allow from all
+    <Files ~ \"^\\.ht\">
+    Deny from all
+    </Files>
+</Directory>
+
+###############ispconfig_log###############
 LogFormat \"%v||||%b||||%h %l %u %t \\\"%r\\\" %>s %b \\\"%{Referer}i\\\" \\\"%{User-Agent}i\\\"\" combined_ispconfig
 CustomLog \"|/root/ispconfig/cronolog --symlink=/var/log/httpd/ispconfig_access_log /var/log/httpd/ispconfig_access_log_%Y_%m_%d\" combined_ispconfig
 
@@ -146,36 +157,34 @@ if($mod->system->server_conf["server_ftp_typ"] == "vsftpd"){
 }
 
 $cron_jobs = array('30 00 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/logs.php &> /dev/null','59 23 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/ftp_logs.php &> /dev/null','59 23 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/mail_logs.php &> /dev/null','59 23 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/cleanup.php &> /dev/null','0 4 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/webalizer.php &> /dev/null','0,30 * * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/check_services.php &> /dev/null','15 3,15 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/quota_msg.php &> /dev/null','40 00 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/traffic.php &> /dev/null','05 02 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/backup.php &> /dev/null');
-foreach($cron_job_tsl as $cron_tsl);
 
 if($mod->system->server_conf["dist_cron_daemon"] == "fcron"){
-//	$cron_tsl_unfile = "/home/unfcronisp";
-	exec("/usr/bin/fcrontab -l > /home/unfcronisp");
-	exec("chmod 777 /home/unfcronisp");
-$fptsl = fopen ("/home/unfcronisp", "r");
-$conftsl = fread($fptsl, filesize ("/home/unfcronisp"));
-fclose($fptsl);
-		foreach($cron_jobs as $cron_job){
-		$conftsl = str_replace($cron_job, "", $conftsl);
-		}
-$fptsl= fopen ("/home/unfcronisp", "w");
-fwrite($fptsl,$conftsl);
-fclose($fptsl);
-$mod->file->remove_blank_lines("/home/unfcronisp");
-	exec("/usr/bin/fcrontab /home/unfcronisp");
-	exec("rm -f /home/unfcronisp");
-}
-else{
-$fp = fopen ($mod->system->server_conf["dist_cron_tab"], "r");
-$conf = fread($fp, filesize ($mod->system->server_conf["dist_cron_tab"]));
-fclose($fp);
-foreach($cron_jobs as $cron_job){
-  $conf = str_replace($cron_job, "", $conf);
-}
-$fp = fopen ($mod->system->server_conf["dist_cron_tab"], "w");
-fwrite($fp,$conf);
-fclose($fp);
-$mod->file->remove_blank_lines($mod->system->server_conf["dist_cron_tab"]);
+  //$cron_tsl_unfile = "/home/unfcronisp";
+  exec("/usr/bin/fcrontab -l > /home/unfcronisp");
+  exec("chmod 777 /home/unfcronisp");
+  $fptsl = fopen ("/home/unfcronisp", "r");
+  $conftsl = fread($fptsl, filesize ("/home/unfcronisp"));
+  fclose($fptsl);
+  foreach($cron_jobs as $cron_job){
+    $conftsl = str_replace($cron_job, "", $conftsl);
+  }
+  $fptsl= fopen ("/home/unfcronisp", "w");
+  fwrite($fptsl,$conftsl);
+  fclose($fptsl);
+  $mod->file->remove_blank_lines("/home/unfcronisp");
+  exec("/usr/bin/fcrontab /home/unfcronisp");
+  exec("rm -f /home/unfcronisp");
+} else {
+  $fp = fopen ($mod->system->server_conf["dist_cron_tab"], "r");
+  $conf = fread($fp, filesize ($mod->system->server_conf["dist_cron_tab"]));
+  fclose($fp);
+  foreach($cron_jobs as $cron_job){
+    $conf = str_replace($cron_job, "", $conf);
+  }
+  $fp = fopen ($mod->system->server_conf["dist_cron_tab"], "w");
+  fwrite($fp,$conf);
+  fclose($fp);
+  $mod->file->remove_blank_lines($mod->system->server_conf["dist_cron_tab"]);
 }
 $mod->system->daemon_init($mod->system->server_conf["dist_cron_daemon"], "restart");
 
