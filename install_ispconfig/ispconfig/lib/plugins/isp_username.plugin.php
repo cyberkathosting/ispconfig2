@@ -91,11 +91,11 @@ class isp_username_plugin {
         * Emailadresse vorbereiten
         *****************************************************/
 
-        if($go_api->db->queryOneRecord("SELECT * FROM isp_isp_domain, isp_dep, isp_nodes WHERE isp_isp_domain.doc_id = isp_dep.child_doc_id AND isp_isp_domain.doctype_id = isp_dep.child_doctype_id AND isp_dep.parent_doctype_id = ".$web['doctype_id']." AND isp_dep.parent_doc_id = ".$web['doc_id']." AND isp_dep.child_doctype_id = '1015' AND (isp_isp_domain.domain_host = '' OR isp_isp_domain.domain_host IS NULL) AND isp_nodes.doc_id = isp_dep.parent_doc_id AND isp_nodes.doctype_id = '1015' AND isp_nodes.status != '0' AND isp_dep.child_tree_id = isp_nodes.tree_id")){
+        //if($go_api->db->queryOneRecord("SELECT * FROM isp_isp_domain, isp_dep, isp_nodes WHERE isp_isp_domain.doc_id = isp_dep.child_doc_id AND isp_isp_domain.doctype_id = isp_dep.child_doctype_id AND isp_dep.parent_doctype_id = ".$web['doctype_id']." AND isp_dep.parent_doc_id = ".$web['doc_id']." AND isp_dep.child_doctype_id = '1015' AND (isp_isp_domain.domain_host = '' OR isp_isp_domain.domain_host IS NULL) AND isp_nodes.doc_id = isp_dep.parent_doc_id AND isp_nodes.doctype_id = '1015' AND isp_nodes.status != '0' AND isp_dep.child_tree_id = isp_nodes.tree_id")){
           $out_email = '<input type="text" name="plugin[email]" size="10" maxlength="32" class="text" value="'.$user["user_email"].'">@'.$web["web_domain"];
-        } else {
-          $out_email = '<input type="text" name="plugin[email]" size="10" maxlength="32" class="text" value="'.$user["user_email"].'">@'.$web["web_host"].".".$web["web_domain"];
-        }
+        //} else {
+        //  $out_email = '<input type="text" name="plugin[email]" size="10" maxlength="32" class="text" value="'.$user["user_email"].'">@'.$web["web_host"].".".$web["web_domain"];
+        //}
         $go_api->renderer->element_jscript_nummer++;
 
         $html_out = '<table width="100%" bgcolor="#EEEEEE">
