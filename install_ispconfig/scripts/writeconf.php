@@ -233,7 +233,6 @@ if(!empty($dns_write)){
   }
 }
 
-//$slave_dnss = $mod->db->queryAllRecords("SELECT * FROM dns_secondary WHERE status != ''");
 $slave_dnss = $mod->db->queryAllRecords("SELECT dns_secondary.* FROM dns_nodes,dns_secondary WHERE dns_nodes.doc_id = dns_secondary.doc_id AND dns_nodes.doctype_id = '".$isp_web->slave_doctype_id."' AND dns_secondary.status != ''");
 if(!empty($dns_write) || !empty($slave_dnss)){
   $bind_restart += $mod->dns->make_named($mod->system->server_id);

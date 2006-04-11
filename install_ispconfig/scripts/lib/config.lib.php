@@ -533,7 +533,7 @@ function web_delete($doc_id,$doctype_id,$server_id) {
     if($new_db_exists){
     //DB-Backup
     // $mod->log->caselog("mysqldump -h $db_server -u $db_user -p$db_password -c --add-drop-table --add-locks --all --quick --lock-tables $new_db >/root/ispconfig/scripts/$new_db.sql", $this->FILE, __LINE__);
-	exec("mysqldump -h $db_server -u $db_user -p$db_password -c --add-drop-table --add-locks --all --quick --lock-tables $new_db >/root/ispconfig/scripts/$new_db.sql");
+        exec("mysqldump -h $db_server -u $db_user -p$db_password -c --add-drop-table --add-locks --all --quick --lock-tables $new_db >/root/ispconfig/scripts/$new_db.sql");
     @mysql_query("DROP DATABASE ".$new_db);
     }
 
@@ -942,24 +942,6 @@ function user_delete($doc_id, $doctype_id) {
   //$mod->log->caselog("userdel -r $user_username &> /dev/null", $this->FILE, __LINE__);
   //$mod->system->deluser($user_username);
   $mod->system->deactivateuser($user_username);
-
-  // Gruppe des Webs löschen
-  if(!is_dir($web_path)){
-    if(!strstr($mod->system->server_conf["dist"], "freebsd")){
-      $mod->log->caselog("setquota -g web$web_doc_id 0 0 0 0 -a &> /dev/null", $this->FILE, __LINE__);
-    } else {
-      if($q_dirs = $mod->system->quota_dirs()){
-        if(!empty($q_dirs)){
-          foreach($q_dirs as $q_dir){
-            $mod->log->caselog("setquota -g -f ".$q_dir." -bh0 -bs0 web".$web_doc_id." &> /dev/null", $this->FILE, __LINE__);
-          }
-        }
-      }
-    }
-
-    $mod->system->delgroup("web".$web_doc_id);
-    //$mod->log->caselog("groupdel web$web_doc_id &> /dev/null", $this->FILE, __LINE__);
-  }
 
   // User-Mail-Datei löschen
   if(is_file("/var/spool/mail/".$user_username)){
@@ -2400,7 +2382,6 @@ function web_user_clean(){
     foreach($items as $item){
       switch ($item["doctype_id"]) {
       case 1013:
-        //if(!$web = $mod->db->queryOneRecord("SELECT doc_id FROM isp_isp_web WHERE doc_id = '".$item["doc_id"]."'")){
           //Verzeichnisse löschen
           $web_path = $item["pfad"];
           if($item["web_host"] == ""){
@@ -2410,18 +2391,33 @@ function web_user_clean(){
           }
           $mod->log->caselog("rm -fr $web_path_realname", $this->FILE, __LINE__);
           $mod->log->caselog("rm -fr $web_path", $this->FILE, __LINE__);
+
+          // Gruppe des Webs löschen
+          if(!is_dir($web_path)){
+            if(!strstr($mod->system->server_conf["dist"], "freebsd")){
+              $mod->log->caselog("setquota -g web".$item['doc_id']." 0 0 0 0 -a &> /dev/null", $this->FILE, __LINE__);
+            } else {
+              if($q_dirs = $mod->system->quota_dirs()){
+                if(!empty($q_dirs)){
+                  foreach($q_dirs as $q_dir){
+                    $mod->log->caselog("setquota -g -f ".$q_dir." -bh0 -bs0 web".$item['doc_id']." &> /dev/null", $this->FILE, __LINE__);
+                  }
+                }
+              }
+            }
+
+            $mod->system->delgroup("web".$item['doc_id']);
+          }
+
           $mod->db->query("DELETE FROM del_status WHERE id = '".$item["id"]."'");
-        //}
       break;
       case 1014:
-        //if(!$user = $mod->db->queryOneRecord("SELECT doc_id FROM isp_isp_user WHERE doc_id = '".$item["doc_id"]."'")){
           //User-Verzeichnis löschen
           if(is_dir($item["pfad"])){
             $mod->log->caselog("rm -fr ".$item["pfad"], $this->FILE, __LINE__);
           }
           $mod->system->deluser($item["name"]);
           $mod->db->query("DELETE FROM del_status WHERE id = '".$item["id"]."'");
-        //}
       break;
       }
     }

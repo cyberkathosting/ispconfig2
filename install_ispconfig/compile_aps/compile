@@ -27,13 +27,14 @@
 # EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 ###############################################################################
 
-PATH="/sbin:/usr/sbin:/usr/local/sbin:/root/bin:/usr/local/bin:/bin:/usr/bin:/usr/X11R6/bin:/usr/local/libexec"
+PATH="/home/admispconfig/ispconfig/tools/clamav/bin:/sbin:/usr/sbin:/usr/local/sbin:/root/bin:/usr/local/bin:/bin:/usr/bin:/usr/X11R6/bin:/usr/local/libexec"
 
 OPENSSL=openssl-0.9.8a
 APACHE=apache_1.3.34
 MOD_SSL=mod_ssl-2.8.25-1.3.34
 PHP=php-5.1.2
 CLAMAV=clamav-0.88.1
+CLAMASSASSIN=clamassassin-1.2.3
 UUDEVIEW=uudeview-0.5.20
 SPAMASSASSIN=Mail-SpamAssassin-3.1.0
 CRONOLOG=cronolog-1.6.2
@@ -89,6 +90,7 @@ error ()
   rm -fr ${MOD_SSL}
   rm -fr ${PHP}
   rm -fr ${CLAMAV}
+  rm -fr ${CLAMASSASSIN}
   rm -fr ${SPAMASSASSIN}
   rm -fr ${UUDEVIEW}
   rm -fr ${CRONOLOG}
@@ -102,6 +104,7 @@ tar xvfz ${APACHE}.tar.gz || error "Could not unpack Apache"
 tar xvfz ${MOD_SSL}.tar.gz || error "Could not unpack mod_ssl"
 tar xvfz ${PHP}.tar.gz || error "Could not unpack PHP"
 tar xvfz ${CLAMAV}.tar.gz || error "Could not unpack ClamAV"
+tar xvfz ${CLAMASSASSIN}.tar.gz || error "Could not unpack ClamAssassin"
 tar xvfz ${SPAMASSASSIN}.tar.gz || error "Could not unpack SpamAssassin"
 tar xvfz ${UUDEVIEW}.tar.gz || error "Could not unpack uudeview"
 tar xvfz ${CRONOLOG}.tar.gz || error "Could not unpack cronolog"
@@ -162,6 +165,10 @@ cp -f freshclam.conf /home/adm${APPLICATION_NAME}/${APPLICATION_NAME}/tools/clam
 rm -f /home/adm${APPLICATION_NAME}/${APPLICATION_NAME}/tools/clamav/etc/clamd.conf
 cd /home/adm${APPLICATION_NAME}/${APPLICATION_NAME}/tools/clamav/etc/
 ln -s clamav.conf clamd.conf
+cd ${COMPILE_DIR}
+cd ${CLAMASSASSIN}
+./configure --prefix=/home/adm${APPLICATION_NAME}/${APPLICATION_NAME}/tools/clamav --disable-clamdscan
+make install
 cd /home/adm${APPLICATION_NAME}/${APPLICATION_NAME}/tools/
 tar -pczf ${COMPILE_DIR}/../binaries/clamav.tar.gz clamav/ || error "Could not create clamav.tar.gz"
 cd ${COMPILE_DIR}
