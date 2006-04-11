@@ -167,6 +167,7 @@ cd /home/adm${APPLICATION_NAME}/${APPLICATION_NAME}/tools/clamav/etc/
 ln -s clamav.conf clamd.conf
 cd ${COMPILE_DIR}
 cd ${CLAMASSASSIN}
+mkdir -p /home/adm${APPLICATION_NAME}/${APPLICATION_NAME}/tools/clamav/share/clamav
 ./configure --prefix=/home/adm${APPLICATION_NAME}/${APPLICATION_NAME}/tools/clamav --disable-clamdscan
 make install
 cd /home/adm${APPLICATION_NAME}/${APPLICATION_NAME}/tools/
