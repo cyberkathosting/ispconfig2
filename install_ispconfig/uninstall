@@ -48,7 +48,7 @@ $db_user = $go_info["server"]["db_user"];
 $db_password = $go_info["server"]["db_password"];
 $db = $go_info["server"]["db_name"];
 $httpd_conf = $mod->system->server_conf["dist_httpd_conf"];
-
+/*
 if($answer == "y"){
   $link = @mysql_connect($db_server, $db_user, $db_password)
 or die("Could not connect to MySQL server!");
@@ -63,7 +63,7 @@ or die("Could not connect to MySQL server!");
   mysql_close($link);
   exec("/root/ispconfig/php/php -q /root/ispconfig/scripts/writeconf.php &> /dev/null");
 }
-
+*/
 $replace = "<Directory /var/www/sharedip>
     Options +Includes -Indexes
     AllowOverride None
@@ -79,7 +79,7 @@ $replace = "<Directory /var/www/sharedip>
 LogFormat \"%v||||%b||||%h %l %u %t \\\"%r\\\" %>s %b \\\"%{Referer}i\\\" \\\"%{User-Agent}i\\\"\" combined_ispconfig
 CustomLog \"|/root/ispconfig/cronolog --symlink=/var/log/httpd/ispconfig_access_log /var/log/httpd/ispconfig_access_log_%Y_%m_%d\" combined_ispconfig
 
-<Directory ".$mod->system->server_conf["dist_path_httpd_root"]."/*/web>
+<Directory ".$mod->system->server_conf["server_path_httpd_root"]."/*/web>
     Options +Includes -Indexes
     AllowOverride None
     AllowOverride Indexes AuthConfig Limit FileInfo
@@ -90,7 +90,7 @@ CustomLog \"|/root/ispconfig/cronolog --symlink=/var/log/httpd/ispconfig_access_
     </Files>
 </Directory>
 
-<Directory ".$mod->system->server_conf["dist_path_httpd_root"]."/*/user/*/web>
+<Directory ".$mod->system->server_conf["server_path_httpd_root"]."/*/user/*/web>
     Options +Includes -Indexes
     AllowOverride None
     AllowOverride Indexes AuthConfig Limit FileInfo
@@ -101,7 +101,7 @@ CustomLog \"|/root/ispconfig/cronolog --symlink=/var/log/httpd/ispconfig_access_
     </Files>
 </Directory>
 
-<Directory ".$mod->system->server_conf["dist_path_httpd_root"]."/*/cgi-bin>
+<Directory ".$mod->system->server_conf["server_path_httpd_root"]."/*/cgi-bin>
     Options ExecCGI -Indexes
     AllowOverride None
     AllowOverride Indexes AuthConfig Limit FileInfo
