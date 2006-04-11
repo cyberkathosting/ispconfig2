@@ -172,20 +172,24 @@ grep -w ^adm${APPLICATION_NAME} /etc/group &> /dev/null
 if [ $? != 0 ]; then
   groupadd adm${APPLICATION_NAME} &> /dev/null
   DELGROUP=1
+else
+  DELGROUP=0
 fi
 grep -w ^adm${APPLICATION_NAME} /etc/passwd &> /dev/null
 if [ $? != 0 ]; then
   useradd adm${APPLICATION_NAME} -g adm${APPLICATION_NAME} &> /dev/null
   DELUSER=1
+else
+  DELUSER=0
 fi
 mkdir -p /home/adm${APPLICATION_NAME}/${APPLICATION_NAME}/tools/clamav/share/clamav
 chown -R adm${APPLICATION_NAME}:adm${APPLICATION_NAME} /home/adm${APPLICATION_NAME}/${APPLICATION_NAME}/tools/clamav/share
 ./configure --prefix=/home/adm${APPLICATION_NAME}/${APPLICATION_NAME}/tools/clamav --disable-clamdscan
 make install
-if [ $DELUSER -eq 1 ]; then
+if [ "$DELUSER" -eq "1" ]; then
   userdel adm${APPLICATION_NAME} &> /dev/null
 fi
-if [ $DELUSER -eq 1 ]; then
+if [ "$DELGROUP" -eq "1" ]; then
   groupdel adm${APPLICATION_NAME} &> /dev/null
 fi
 
