@@ -779,15 +779,23 @@ if($install_art == "upgrade"){
 
   $conn = mysql_query("SELECT * FROM isp_firewall WHERE doc_id > 10");
   while($row = mysql_fetch_array($conn)){
-    mysql_query("INSERT INTO sys_nodes (userid,groupid,type,doctype_id,status,modul,doc_id) VALUES ('1','0','a','1025','1','','".$row["doc_id"]."')");
-    mysql_query("INSERT INTO sys_dep (userid,groupid,parent_doc_id,parent_doctype_id,parent_tree_id,child_doc_id,child_doctype_id,child_tree_id,status) VALUES ('1','0','1','1023','15','".$row["doc_id"]."','1025','".mysql_insert_id()."','1')");
+    $result = mysql_query("SELECT * FROM sys_nodes WHERE userid = '1' AND groupid = '0' AND type = 'a' AND doctype_id = '1025' AND status = '1' AND doc_id = '".$row["doc_id"]."'");
+    $num_rows = @mysql_num_rows($result);
+    if(!$num_rows){
+      mysql_query("INSERT INTO sys_nodes (userid,groupid,type,doctype_id,status,modul,doc_id) VALUES ('1','0','a','1025','1','','".$row["doc_id"]."')");
+      mysql_query("INSERT INTO sys_dep (userid,groupid,parent_doc_id,parent_doctype_id,parent_tree_id,child_doc_id,child_doctype_id,child_tree_id,status) VALUES ('1','0','1','1023','15','".$row["doc_id"]."','1025','".mysql_insert_id()."','1')");
+    }
   }
 
   $conn = mysql_query("SELECT * FROM isp_monitor");
   while($row = mysql_fetch_array($conn)){
     mysql_query("UPDATE isp_monitor SET status = 'u' WHERE doc_id = '".$row["doc_id"]."'");
-    mysql_query("INSERT INTO sys_nodes (userid,groupid,type,doctype_id,status,modul,doc_id) VALUES ('1','0','a','1024','1','','".$row["doc_id"]."')");
-    mysql_query("INSERT INTO sys_dep (userid,groupid,parent_doc_id,parent_doctype_id,parent_tree_id,child_doc_id,child_doctype_id,child_tree_id,status) VALUES ('1','0','1','1023','15','".$row["doc_id"]."','1024','".mysql_insert_id()."','1')");
+    $result = mysql_query("SELECT * FROM sys_nodes WHERE userid = '1' AND groupid = '0' AND type = 'a' AND doctype_id = '1024' AND status = '1' AND doc_id = '".$row["doc_id"]."'");
+    $num_rows = @mysql_num_rows($result);
+    if(!$num_rows){
+      mysql_query("INSERT INTO sys_nodes (userid,groupid,type,doctype_id,status,modul,doc_id) VALUES ('1','0','a','1024','1','','".$row["doc_id"]."')");
+      mysql_query("INSERT INTO sys_dep (userid,groupid,parent_doc_id,parent_doctype_id,parent_tree_id,child_doc_id,child_doctype_id,child_tree_id,status) VALUES ('1','0','1','1023','15','".$row["doc_id"]."','1024','".mysql_insert_id()."','1')");
+    }
   }
 
   mysql_query("UPDATE sys_user SET modules = CONCAT(modules, ',isp_file') WHERE modules NOT LIKE '%isp_file%'");
