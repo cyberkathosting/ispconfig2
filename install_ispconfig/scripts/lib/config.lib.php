@@ -1335,11 +1335,20 @@ AddHandler cgi-script .pl";
         $php = "AddType application/x-httpd-php .php .php3 .php4 .php5";
       }
       if($apache_version == 2){
-                  $php = '';
-                if($go_info["server"]["apache2_php"] == 'addtype' or $go_info["server"]["apache2_php"] == 'both') {
+		$a2php = $go_info["server"]["apache2_php"];
+		if (!is_array($a2php)) {
+			$a2php = array($a2php);
+		}
+                $php = '';
+                if (array_search('engine',$a2php) !== false) {
+                        $php .= "php_admin_flag engine on\n";
+                }
+                if ((array_search('addtype',$a2php) !== false) ||
+                    (array_search('both',$a2php) !== false)) {
                         $php .= "AddType application/x-httpd-php .php .php3 .php4 .php5\n";
                 }
-                if($go_info["server"]["apache2_php"] == 'filter' or $go_info["server"]["apache2_php"] == 'both') {
+                if ((array_search('filter',$a2php) !== false) ||
+                    (array_search('both',$a2php) !== false)) {
             $php .= "<Files *.php>
     SetOutputFilter PHP
     SetInputFilter PHP
@@ -1369,6 +1378,15 @@ php_admin_value session.save_path ".$mod->system->server_conf["server_path_httpd
       }
     } else {
       $php = "";
+      if($apache_version == 2){
+        $a2php = $go_info["server"]["apache2_php"];
+        if (!is_array($a2php)) {
+          $a2php = array($a2php);
+        }
+        if (array_search('engine',$a2php) !== false) {
+          $php .= "php_admin_flag engine off\n";
+        }
+      }
     }
 
     if($web["web_ssi"]){
