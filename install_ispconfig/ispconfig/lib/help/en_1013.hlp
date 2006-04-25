@@ -45,6 +45,7 @@ $hlp["web_php_safe_mode"] = "If PHP is activated for this website, it will be ru
 $hlp["web_wap"] = "Here you can activate the server's support for .wml files. .wml files can be interpreted by mobile phones with WAP.";
 $hlp["web_standard_cgi"] = "Please specify if the standard CGI scripts provided on this server should be available for this website.";
 $hlp["web_mysql_anzahl_dbs"] = "Please specify the max. number of databases that should be available for this website.";
+$hlp["web_mysql_space"] = "Size of the total storage space available to the databases of this web.";
 $hlp["web_individual_error_pages"] = "If this field is checked, you can define individual error pages on the \"Options\" tab.";
 $hlp["error_400"] = "Please enter the HTML code for the error page 400 (\"Invalid Syntax\"). If you leave this field empty, the standard error page will be used.";
 $hlp["error_401"] = "Please enter the HTML code for the error page 401 (\"Authorisation required\"). If you leave this field empty, the standard error page will be used.";

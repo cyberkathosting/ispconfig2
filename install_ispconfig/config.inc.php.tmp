@@ -96,6 +96,7 @@ $go_info["server"]["sudo_du_enabled"] = false; // enable sudo for gathering webs
 $go_info["server"]["apache2_php"] = 'both'; // 'filter' = set PHP filters, 'addtype' = Set PHP addtype or 'both' = Set Filter + Addtype
 $go_info["server"]["password_hash"] = 'md5'; // 'crypt' = crypt; 'md5' = crypt-md5
 $go_info["server"]["do_automated_backups"] = 0; // 0 = no, 1 = yes; PLEASE NOTE: automated backups might fill up your HDD fast!
+$go_info["server"]["mysql_quota_privs"] = array("Insert","Create");
 
 /**********************************************
 * Tools Settings

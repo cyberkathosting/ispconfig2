@@ -125,7 +125,18 @@ class reseller_stats_plugin {
        <td width="50%" bgcolor="#FFFFFF"><font face="Verdana, Arial, Helvetica, sans-serif" size="2">'.$go_api->lng("Datenbanken angelegt").':</font></td>
        <td width="50%" bgcolor="#FFFFFF" align="right"><font face="Verdana, Arial, Helvetica, sans-serif" size="2">'.$datenbankanzahl["anzahl"].' '.$go_api->lng("von").' '.$datenbanklimit.'</font></td>
      </tr>';
-       }
+      }
+     }
+     
+     if($reseller["limit_mysql"]){
+     $mysqlspace = $go_api->db->queryOneRecord("SELECT sum(isp_isp_web.web_mysql_space) as mysqlspace from isp_isp_web,isp_nodes where isp_isp_web.doc_id = isp_nodes.doc_id and  isp_nodes.groupid = '".$reseller_group."' and isp_nodes.doctype_id = 1013");
+    if(empty($mysqlspace["mysqlspace"])) $mysqlspace["mysqlspace"] = 0;
+    $mysqlspacelimit = $reseller["limit_mysql_space"];
+    if($reseller["limit_mysql_space"] == -1) $mysqlspacelimit = $go_api->lng("unlimitiert");
+    $html_out .= '<tr>
+       <td width="50%" bgcolor="#FFFFFF"><font face="Verdana, Arial, Helvetica, sans-serif" size="2">'.$go_api->lng("Benutzter MySQL-Speicherplatz").':</font></td>
+       <td width="50%" bgcolor="#FFFFFF" align="right"><font face="Verdana, Arial, Helvetica, sans-serif" size="2">'.$mysqlspace["mysqlspace"].' MB '.$go_api->lng("von").' '.$mysqlspacelimit.' MB</font></td>
+     </tr>';
      }
 
 

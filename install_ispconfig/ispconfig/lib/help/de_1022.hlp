@@ -28,6 +28,7 @@ $hlp["limit_anonftp"] = "Bitte geben Sie an, ob der Reseller den ihm zugeordnete
 $hlp["limit_wap"] = "Bitte geben Sie an, ob der Reseller den ihm zugeordneten Websites WAP-Funktionalität zuweisen darf.";
 $hlp["limit_standard_cgis"] = "Bitte geben Sie an, ob der Reseller den ihm zugeordneten Websites die auf dem Server vorhandenen Standard-CGI-Skripte zuweisen darf.";
 $hlp["limit_mysql_anzahl_dbs"] = "Bitte geben Sie die max. Anzahl (Gesamtsumme) an Datenbanken an, die der Reseller den ihm zugeordneten Websites zuweisen kann.";
+$hlp["limit_mysql_space"] = "Bitte geben Sie den max. Speicherplatz (Gesamtsumme) an, den der Reseller den ihm zugeordneten Websites für Datenbanken zuweisen kann.";
 $hlp["limit_error_pages"] = "Bitte geben Sie an, ob der Reseller den ihm zugeordneten Websites die Möglichkeit zuweisen darf, individuelle Fehler-Seiten zu verwenden.";
 
 $hlp["firma"] = "Bitte geben Sie hier den Firmennamen des Resellers ein.";

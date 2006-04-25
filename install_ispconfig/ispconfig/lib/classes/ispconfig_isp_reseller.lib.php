@@ -346,6 +346,17 @@ function reseller_update($doc_id, $doctype_id, $die_on_error = '1') {
       unset($datenbankanzahl);
     }
 
+    if(is_null($reseller["limit_mysql_space"])) $reseller["limit_mysql_space"] = 0;
+    if($reseller["limit_mysql_space"] >= 0){
+      $mysqlspace = $go_api->db->queryOneRecord("SELECT sum(isp_isp_web.web_mysql_space) as mysqlspace from isp_isp_web,isp_nodes where isp_isp_web.doc_id = isp_nodes.doc_id and  isp_nodes.groupid = '".$reseller["reseller_group"]."' and isp_nodes.doctype_id = ".$this->web_doctype_id);
+        $mysqlspace = $mysqlspace["mysqlspace"];
+      if($mysqlspace > $reseller["limit_mysql_space"]){
+        $go_api->db->query("UPDATE isp_isp_reseller SET limit_mysql_space = '$mysqlspace' WHERE doc_id = '$doc_id'");
+        $res_limit_errorMessage .= $go_api->lng("error_anbieter_max_mysql_space_ueberschritten");
+      }
+      unset($mysqlspace);
+    }
+
     if(!$reseller["limit_ssl"]){
       $webanzahl = $go_api->db->queryOneRecord("SELECT COUNT(isp_isp_web.doc_id) AS anzahl FROM isp_nodes, isp_isp_web WHERE isp_nodes.groupid = '".$reseller["reseller_group"]."' AND isp_nodes.doctype_id = '".$this->web_doctype_id."' AND isp_nodes.doc_id = isp_isp_web.doc_id AND isp_isp_web.web_ssl = '1'");
       $webanzahl = $webanzahl["anzahl"];

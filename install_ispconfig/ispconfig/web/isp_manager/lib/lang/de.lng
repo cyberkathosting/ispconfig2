@@ -526,4 +526,13 @@ $wb["txt_traffic_notification_email_variables"] = '<table border="0" cellpadding
 
 $wb["Catalog_Name"] = "Name";
 
+// MySQL Quota ////////////////////////////////////////
+$wb["error_web_no_unlimited_mysql_space_1"] = "Sie können diesem Web keinen unlimitierten MySQL-Speicherplatz zuweisen. Der max. MySQL-Speicherplatz für dieses Web beträgt ";
+$wb["error_web_no_unlimited_mysql_space_2"] = " MB.<br>";
+$wb["error_web_no_mysql_space_free_1"] = "Sie können den Datenbanken dieses Webs maximal noch ";
+$wb["error_web_no_mysql_space_free_2"] = " MB Speicherplatz zuweisen.<br>";
+$wb["error_anbieter_max_mysql_space_ueberschritten"] = "Der Anbieter benutzt mehr MySQL-Speicherplatz, als Sie ihm zuordnen möchten.<br>";
+$wb["Benutzter MySQL-Speicherplatz"] = "Benutzter MySQL-Speicherplatz";
+$wb["Speicherplatz Datenbanken"] = "Speicherplatz Datenbanken";
+
 ?>
