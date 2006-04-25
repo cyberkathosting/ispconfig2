@@ -1337,7 +1337,7 @@ AddHandler cgi-script .pl";
       if($apache_version == 2){
 		$a2php = $go_info["server"]["apache2_php"];
 		if (!is_array($a2php)) {
-			$a2php = array($a2php);
+			$a2php = explode(',', $a2php);
 		}
                 $php = '';
                 if (array_search('engine',$a2php) !== false) {
@@ -1381,7 +1381,7 @@ php_admin_value session.save_path ".$mod->system->server_conf["server_path_httpd
       if($apache_version == 2){
         $a2php = $go_info["server"]["apache2_php"];
         if (!is_array($a2php)) {
-          $a2php = array($a2php);
+          $a2php = explode(',', $a2php);
         }
         if (array_search('engine',$a2php) !== false) {
           $php .= "php_admin_flag engine off\n";

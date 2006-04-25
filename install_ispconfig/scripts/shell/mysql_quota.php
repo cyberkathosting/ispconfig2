@@ -92,6 +92,10 @@ function grant_privileges($db, $grant = true) {
     $privs = array("Insert", "Create");
   }
 
+  if (!is_array($privs)) {
+    $privs = explode(',', $privs);
+  }
+
   $assign = "_priv='" . ($grant ? "Y" : "N") . "'";
   $set = implode("$assign,", $privs) . $assign;
 
