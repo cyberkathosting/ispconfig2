@@ -163,14 +163,25 @@ function reseller_update($doc_id, $doctype_id, $die_on_error = '1') {
 
     if(is_null($reseller["limit_disk"])) $reseller["limit_disk"] = 0;
     if($reseller["limit_disk"] >= 0){
-      $diskspace = $go_api->db->queryOneRecord("SELECT sum(isp_isp_web.web_speicher) as diskspace from isp_isp_web,isp_nodes where isp_isp_web.doc_id = isp_nodes.doc_id and  isp_nodes.groupid = '".$reseller["reseller_group"]."' and isp_nodes.doctype_id = ".$this->web_doctype_id);
-        $diskspace = $diskspace["diskspace"];
+      $diskspace = $go_api->db->queryOneRecord("SELECT sum(isp_isp_web.web_speicher) as diskspace, sum(isp_isp_web.web_mailquota) as mailquota, sum(isp_isp_web.web_mysql_quota) as mysqlquota from isp_isp_web,isp_nodes where isp_isp_web.doc_id = isp_nodes.doc_id and  isp_nodes.groupid = '".$reseller["reseller_group"]."' and isp_nodes.doctype_id = ".$this->web_doctype_id);
+      $minspace  = $go_api->db->queryOneRecord("SELECT min(isp_isp_web.web_speicher) as diskspace, min(isp_isp_web.web_mailquota) as mailquota, min(isp_isp_web.web_mysql_quota) as mysqlquota from isp_isp_web,isp_nodes where isp_isp_web.doc_id = isp_nodes.doc_id and  isp_nodes.groupid = '".$reseller["reseller_group"]."' and isp_nodes.doctype_id = ".$this->web_doctype_id);
+      $diskspace = $diskspace["diskspace"] + $diskspace["mailquota"] + $diskspace["mysqlquota"];
+      $minspace  = min($diskspace["diskspace"], $diskspace["mailquota"], $diskspace["mysqlquota"]);
       if($diskspace > $reseller["limit_disk"]){
         $go_api->db->query("UPDATE isp_isp_reseller SET limit_disk = '$diskspace' WHERE doc_id = '$doc_id'");
         $res_limit_errorMessage .= $go_api->lng("error_anbieter_max_diskspace_ueberschritten");
+      } else if ($minspace < 0) {
+        $go_api->db->query("UPDATE isp_isp_reseller SET limit_disk = '-1' WHERE doc_id = '$doc_id'");
+        $res_limit_errorMessage .= $go_api->lng("error_anbieter_max_diskspace_ueberschritten");
       }
       unset($diskspace);
+      unset($minspace);
     }
+
+    // TODO: Die folgenden Checks prüfen teilweise nur das tatsächlich Eingerichtete,
+    //       nicht aber die an Webs vergebenen Limits.
+    //       Dadurch können Reseller-Limits kleiner gesetzt werden als dessen Web-Limits.
+    //       => Limits der Webs überprüfen anstatt der tatsächlich angelegten Elemente
 
     if(is_null($reseller["limit_user"])) $reseller["limit_user"] = 0;
     if($reseller["limit_user"] >= 0){
@@ -344,17 +355,6 @@ function reseller_update($doc_id, $doctype_id, $die_on_error = '1') {
         $res_limit_errorMessage .= $go_api->lng("error_anbieter_max_datenbank_ueberschritten");
       }
       unset($datenbankanzahl);
-    }
-
-    if(is_null($reseller["limit_mysql_space"])) $reseller["limit_mysql_space"] = 0;
-    if($reseller["limit_mysql_space"] >= 0){
-      $mysqlspace = $go_api->db->queryOneRecord("SELECT sum(isp_isp_web.web_mysql_space) as mysqlspace from isp_isp_web,isp_nodes where isp_isp_web.doc_id = isp_nodes.doc_id and  isp_nodes.groupid = '".$reseller["reseller_group"]."' and isp_nodes.doctype_id = ".$this->web_doctype_id);
-        $mysqlspace = $mysqlspace["mysqlspace"];
-      if($mysqlspace > $reseller["limit_mysql_space"]){
-        $go_api->db->query("UPDATE isp_isp_reseller SET limit_mysql_space = '$mysqlspace' WHERE doc_id = '$doc_id'");
-        $res_limit_errorMessage .= $go_api->lng("error_anbieter_max_mysql_space_ueberschritten");
-      }
-      unset($mysqlspace);
     }
 
     if(!$reseller["limit_ssl"]){

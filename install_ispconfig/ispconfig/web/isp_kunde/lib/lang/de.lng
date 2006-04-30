@@ -232,6 +232,7 @@ $wb["deaktiviert"] = 'deaktiviert';
 $wb["ISP User"] = 'ISP User';
 $wb["WebSpeicher MB"] = 'WebSpeicher MB';
 $wb["MailSpeicher MB"] = 'MailSpeicher MB';
+$wb["Max. MailSpeicher MB"] = 'Max. MailSpeicher MB';
 $wb["Administrator"] = 'Administrator';
 $wb["Erweiterte Einstellungen"] = 'Erweiterte Einstellungen';
 $wb["Email Alias"] = 'Email-Alias';

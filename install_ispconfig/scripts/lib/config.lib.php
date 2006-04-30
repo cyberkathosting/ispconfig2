@@ -698,6 +698,9 @@ function user_insert($doc_id, $doctype_id) {
       $mod->log->caselog("chown $user_username:mail /var/spool/mail/$user_username &> /dev/null", $this->FILE, __LINE__);
       $mod->log->caselog("chmod 600 /var/spool/mail/$user_username", $this->FILE, __LINE__);
     }
+  } else if ($mod->system->server_conf["use_maildir"] == 2) {
+    // Cyrus IMAP, Mailbox anlegen
+    $mod->cyrus_imap->add($user["user_username"], $user["user_mailquota"]);
   }
 
   // Diskquota setzen
@@ -797,7 +800,11 @@ function user_update($doc_id, $doctype_id) {
       $mod->log->caselog("chown $user_username:mail /var/spool/mail/$user_username &> /dev/null", $this->FILE, __LINE__);
       $mod->log->caselog("chmod 600 /var/spool/mail/$user_username", $this->FILE, __LINE__);
     }
+  } else if ($mod->system->server_conf["use_maildir"] == 2) {
+    // Cyrus IMAP, Mailbox-Quota anpassen
+    $mod->cyrus_imap->update($user["user_username"], $user["user_mailquota"]);
   }
+  exec("whoami >> /root/tempout");
 
   // Gehört User einem Reseller oder dem admin?
   if($reseller = $mod->db->queryOneRecord("SELECT isp_isp_reseller.user_standard_index FROM isp_nodes, isp_isp_reseller WHERE isp_nodes.doc_id = $doc_id AND isp_nodes.doctype_id = '".$doctype_id."' AND isp_nodes.groupid = isp_isp_reseller.reseller_group")){
@@ -2436,6 +2443,11 @@ function web_user_clean(){
           }
           $mod->system->deluser($item["name"]);
           $mod->db->query("DELETE FROM del_status WHERE id = '".$item["id"]."'");
+
+          if ($mod->system->server_conf["use_maildir"] == 2) {
+            // Cyrus IMAP, Mailbox löschen
+            $mod->cyrus_imap->del($item["name"]);
+          }
       break;
       }
     }

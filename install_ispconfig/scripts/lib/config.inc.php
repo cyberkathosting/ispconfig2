@@ -71,4 +71,5 @@ $go_info["modules"]["system"] = "system";
 $go_info["modules"]["mail"] = $go_info["isp"]["server_conf"]["server_mta"];
 $go_info["modules"]["procmail"] = "procmail";
 $go_info["modules"]["dns"] = "bind";
+$go_info["modules"]["cyrus_imap"] = "cyrus_imap";
 ?>

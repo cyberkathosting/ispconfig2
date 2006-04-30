@@ -238,6 +238,7 @@ $wb["deaktiviert"] = 'inaktiv';
 $wb["ISP User"] = 'ISP Användare';
 $wb["WebSpeicher MB"] = 'Webb utrymme MB';
 $wb["MailSpeicher MB"] = 'Epost utrymme MB';
+$wb["Max. MailSpeicher MB"] = 'Epost utrymme MB';
 $wb["Administrator"] = 'Administratör';
 $wb["Erweiterte Einstellungen"] = 'Avancerade inställningar';
 $wb["email_weiterleitung_txt"] = '<b>Tips:</b> en epost adress per rad.';
@@ -557,12 +558,10 @@ $wb["Sonstiges"] = "Övrigt";
 $wb["SSL Request"] = "SSL Begäran";
 
 // MySQL Quota ////////////////////////////////////////
-$wb["error_web_no_unlimited_mysql_space_1"] = "You cannot assign unlimited database space to this website. The max. database space for this website is ";
-$wb["error_web_no_unlimited_mysql_space_2"] = " MB.<br>";
-$wb["error_web_no_mysql_space_free_1"] = "You have left only ";
-$wb["error_web_no_mysql_space_free_2"] = " MB which you can assign to this website's databases.<br>";
-$wb["error_anbieter_max_mysql_space_ueberschritten"] = "The reseller already uses more database space than you want to assign to him.<br>";
 $wb["Benutzter MySQL-Speicherplatz"] = "Database space used";
 $wb["Speicherplatz Datenbanken"] = "Diskspace Databases";
+
+// Mail Quota /////////////////////////////////////////
+$wb["error_max_mailquota_web"] = "The selected mailspace exceeds site's limits.<br>";
 
 ?>

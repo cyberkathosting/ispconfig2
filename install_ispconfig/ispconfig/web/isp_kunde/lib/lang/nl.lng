@@ -233,6 +233,7 @@ $wb["deaktiviert"] = 'Inaktief';
 $wb["ISP User"] = 'ISP Gebruiker';
 $wb["WebSpeicher MB"] = 'Webruimte MB';
 $wb["MailSpeicher MB"] = 'Mailruimte MB';
+$wb["Max. MailSpeicher MB"] = 'Mailruimte MB';
 $wb["Administrator"] = 'Administrator';
 $wb["Erweiterte Einstellungen"] = 'Meer Instellingen';
 $wb["email_weiterleitung_txt"] = 'email_weiterleitung_txt';

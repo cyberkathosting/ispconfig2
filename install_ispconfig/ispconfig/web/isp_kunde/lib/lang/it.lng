@@ -219,6 +219,7 @@ $wb["deaktiviert"] = 'inactive';
 $wb["ISP User"] = 'ISP User';
 $wb["WebSpeicher MB"] = 'WebSpace MB';
 $wb["MailSpeicher MB"] = 'MailSpace MB';
+$wb["Max. MailSpeicher MB"] = 'Max. MailSpace MB';
 $wb["Administrator"] = 'Administrator';
 $wb["Erweiterte Einstellungen"] = 'Advanced Settings';
 $wb["email_weiterleitung_txt"] = '<b>Hint:</b> one email per line.';

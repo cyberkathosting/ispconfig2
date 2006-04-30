@@ -134,6 +134,7 @@ global $go_api, $go_info,$s;
 
      $userlimit = $web["web_userlimit"];
      $quotalimit = $web["web_speicher"];
+     $mailquotalimit = $web["web_mailquota"];
      $web_doc_id = $web["doc_id"];
      $web_doctype_id = $web["doctype_id"];
      //unset($web);
@@ -158,6 +159,20 @@ global $go_api, $go_info,$s;
         if($user["user_speicher"] > $quotalimit) {
         $status = "DELETE";
         $errorMessage .= $go_api->lng("error_max_space_web");
+        }
+     }
+
+     // wenn Mail-Quota-Limit gesetzt ist
+     if($mailquotalimit >= 0) {
+        $mailquotaused = $go_api->db->queryOneRecord("SELECT sum(user_mailquota) as mailquota from isp_isp_user, isp_dep where
+        isp_isp_user.doc_id = isp_dep.child_doc_id and isp_isp_user.doctype_id = isp_dep.child_doctype_id and
+        isp_dep.parent_doctype_id = $web_doctype_id and isp_dep.parent_doc_id = $web_doc_id and isp_dep.child_doctype_id = $doctype_id");
+	
+	$mailquotalimit -= $mailquotaused["mailquota"] - $user["user_mailquota"];
+
+        if (($user["user_mailquota"] > $mailquotalimit) || $user["user_mailquota"] < 0) {
+          $status = "DELETE";
+          $errorMessage .= $go_api->lng("error_max_mailquota_web");
         }
      }
 
@@ -371,13 +386,32 @@ global $go_api, $go_info,$s,$HTTP_POST_VARS;
 
      // wenn Quotalimits gesetzt sind
      $quotalimit = $web["web_speicher"];
-     if($quotalimit > 0) {
+     if($quotalimit >= 0) {
         if($user["user_speicher"] > $quotalimit) {
           $go_api->db->query("UPDATE isp_isp_user SET user_speicher = '".$web["web_speicher"]."' where doc_id = $doc_id");
           if($die_on_error){
             $go_api->errorMessage($go_api->lng("error_max_space_web").$go_api->lng("weiter_link"));
           } else {
             return $go_api->lng("error_max_space_web");
+          }
+        }
+     }
+
+     // wenn Mail-Quota-Limit gesetzt ist
+     $mailquotalimit = $web["web_mailquota"];
+     if($mailquotalimit >= 0) {
+        $mailquotaused = $go_api->db->queryOneRecord("SELECT sum(user_mailquota) as mailquota from isp_isp_user, isp_dep where
+        isp_isp_user.doc_id = isp_dep.child_doc_id and isp_isp_user.doctype_id = isp_dep.child_doctype_id and
+        isp_dep.parent_doctype_id = $web_doctype_id and isp_dep.parent_doc_id = $web_doc_id and isp_dep.child_doctype_id = $doctype_id");
+	
+	$mailquotalimit -= $mailquotaused["mailquota"] - $user["user_mailquota"];
+
+        if (($user["user_mailquota"] > $mailquotalimit) || $user["user_mailquota"] < 0) {
+          $go_api->db->query("UPDATE isp_isp_user SET user_mailquota = '".$mailquotalimit."' where doc_id = $doc_id");
+          if($die_on_error){
+            $go_api->errorMessage($go_api->lng("error_max_mailquota_web").$go_api->lng("weiter_link"));
+          } else {
+            return $go_api->lng("error_max_mailquota_web");
           }
         }
      }

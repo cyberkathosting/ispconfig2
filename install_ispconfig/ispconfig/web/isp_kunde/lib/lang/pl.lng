@@ -236,6 +236,7 @@ $wb["deaktiviert"] = 'nieaktywny';
 $wb["ISP User"] = 'U¿ytkownik ISP';
 $wb["WebSpeicher MB"] = 'Pojemno¶æ serwisu WWW MB';
 $wb["MailSpeicher MB"] = 'Pojemno¶æ serwera pocztowego MB';
+$wb["Max. MailSpeicher MB"] = 'Pojemno¶æ serwera pocztowego MB';
 $wb["Administrator"] = 'Administrator';
 $wb["Erweiterte Einstellungen"] = 'Ustawienia zaawansowane';
 $wb["email_weiterleitung_txt"] = '<b>Porada:</b> jeden adres e-mail w ka¿dej linii.';

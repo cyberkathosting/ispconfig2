@@ -237,6 +237,7 @@ $wb["deaktiviert"] = 'inaktiv';
 $wb["ISP User"] = 'ISP Användare';
 $wb["WebSpeicher MB"] = 'Webb utrymme MB';
 $wb["MailSpeicher MB"] = 'Epost utrymme MB';
+$wb["Max. MailSpeicher MB"] = 'Epost utrymme MB';
 $wb["Administrator"] = 'Administratör';
 $wb["Erweiterte Einstellungen"] = 'Avancerade inställningar';
 $wb["email_weiterleitung_txt"] = '<b>Tips:</b> en epost adress per rad.';

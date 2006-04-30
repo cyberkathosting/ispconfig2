@@ -134,18 +134,18 @@ class check_webspace_plugin {
 
 	*/
 
-	$used_fract = floatval($web["web_mysql_space_used_fract"]);
-	$mysqlspace = floatval($web["web_mysql_space"]);
+	$used_fract = floatval($web["web_mysql_quota_used_fract"]);
+	$mysqlquota = floatval($web["web_mysql_quota"]);
 
-    $db_size = $used_fract * $mysqlspace;
+    $db_size = $used_fract * $mysqlquota;
 
-    if ($mysqlspace > 0) {
+    if ($mysqlquota > 0) {
         $html_out .= '</table></div>';
         $html_out .= '<br />';
         $html_out .= '<div align="center"><table width="80%" border="0" cellspacing="1" cellpadding="4" bgcolor="#CCCCCC">';
         $html_out .= '<tr>
        <td width="70%" bgcolor="#FFFFFF"><font face="Verdana, Arial, Helvetica, sans-serif" size="2">DB::MySQL</font></td>
-       <td width="30%" bgcolor="#FFFFFF" align="right"><font face="Verdana, Arial, Helvetica, sans-serif" size="2">'.sprintf("%01.1f ".$go_api->lng("von")." %01.1fMB<br />(%01.1f%%)", $db_size, $mysqlspace, $used_fract * 100).'</font></td>
+       <td width="30%" bgcolor="#FFFFFF" align="right"><font face="Verdana, Arial, Helvetica, sans-serif" size="2">'.sprintf("%01.1f ".$go_api->lng("von")." %01.1fMB<br />(%01.1f%%)", $db_size, $mysqlquota, $used_fract * 100).'</font></td>
      </tr>';
     }
 

@@ -85,9 +85,9 @@ function web_show($doc_id, $doctype_id) {
         // Website-Status nur anzeigen, wenn Website gesperrt ist
         $web = $go_api->db->queryOneRecord("SELECT isp_isp_web.web_traffic_status FROM isp_nodes,isp_isp_web WHERE isp_nodes.doc_id = '$doc_id' AND isp_nodes.doctype_id = '$doctype_id' AND isp_isp_web.doc_id = '$doc_id'");
         if($web['web_traffic_status'] == 2){
-          $doc->deck[0]->elements[36]->visible = 1;
+          $doc->deck[0]->elements[37]->visible = 1;
         } else {
-          $doc->deck[0]->elements[36]->visible = 0;
+          $doc->deck[0]->elements[37]->visible = 0;
         }
 
         // Individuelle Fehler-Seiten unsichtbar schalten, wenn nicht aktiviert
@@ -113,36 +113,36 @@ function web_show($doc_id, $doctype_id) {
         if($reseller = $go_api->db->queryOneRecord("SELECT * from isp_isp_reseller where reseller_group = $resellerid")) {
 
                 // deaktiviere Shell Access, wenn bei Resellern inaktiv
-                if($reseller["limit_shell_access"] != 1) $doc->deck[0]->elements[14]->visible = 0;
+                if($reseller["limit_shell_access"] != 1) $doc->deck[0]->elements[15]->visible = 0;
                 if($reseller["limit_cgi"] != 1){
-                  $doc->deck[0]->elements[15]->visible = 0;
                   $doc->deck[0]->elements[16]->visible = 0;
+                  $doc->deck[0]->elements[17]->visible = 0;
                 } else {
-                  if($reseller["limit_standard_cgis"] != 1) $doc->deck[0]->elements[16]->visible = 0;
+                  if($reseller["limit_standard_cgis"] != 1) $doc->deck[0]->elements[17]->visible = 0;
                 }
                 if($reseller["limit_php"] != 1){
-                  $doc->deck[0]->elements[17]->visible = 0;
                   $doc->deck[0]->elements[18]->visible = 0;
+                  $doc->deck[0]->elements[19]->visible = 0;
                 }
-                if($reseller["limit_ssi"] != 1) $doc->deck[0]->elements[20]->visible = 0;
-                if($reseller["limit_ftp"] != 1) $doc->deck[0]->elements[21]->visible = 0;
+                if($reseller["limit_ssi"] != 1) $doc->deck[0]->elements[21]->visible = 0;
+                if($reseller["limit_ftp"] != 1) $doc->deck[0]->elements[22]->visible = 0;
                 if($reseller["limit_mysql"] != 1){
-                  $doc->deck[0]->elements[23]->visible = 0;
                   $doc->deck[0]->elements[24]->visible = 0;
-		  $doc->deck[0]->elements[25]->visible = 0;
+                  $doc->deck[0]->elements[25]->visible = 0;
+		  $doc->deck[0]->elements[26]->visible = 0;
                 }
-                if($reseller["limit_ssl"] != 1) $doc->deck[0]->elements[26]->visible = 0;
-                if($reseller["limit_anonftp"] != 1) $doc->deck[0]->elements[27]->visible = 0;
+                if($reseller["limit_ssl"] != 1) $doc->deck[0]->elements[27]->visible = 0;
                 if($reseller["limit_anonftp"] != 1) $doc->deck[0]->elements[28]->visible = 0;
-                if($reseller["limit_wap"] != 1) $doc->deck[0]->elements[30]->visible = 0;
-                if($reseller["limit_error_pages"] != 1) $doc->deck[0]->elements[31]->visible = 0;
+                if($reseller["limit_anonftp"] != 1) $doc->deck[0]->elements[29]->visible = 0;
+                if($reseller["limit_wap"] != 1) $doc->deck[0]->elements[31]->visible = 0;
+                if($reseller["limit_error_pages"] != 1) $doc->deck[0]->elements[32]->visible = 0;
                 if($reseller["limit_httpd_include"] != 1){
-                  $doc->deck[0]->elements[34]->visible = 0;
                   $doc->deck[0]->elements[35]->visible = 0;
+                  $doc->deck[0]->elements[36]->visible = 0;
                 }
 
                 if($reseller["limit_frontpage"] != 1) {
-                  $doc->deck[0]->elements[22]->visible = 0;
+                  $doc->deck[0]->elements[23]->visible = 0;
                   $doc->deck[6]->elements[5]->visible = 0;
                 }
         }
@@ -153,7 +153,7 @@ function web_show($doc_id, $doctype_id) {
         $server = $go_api->db->queryOneRecord("SELECT * from isp_server where doc_id = '$server_id'");
         // Deaktiviere Frontpage
         if($server["server_enable_frontpage"] != 1) {
-                $doc->deck[0]->elements[22]->visible = 0;
+                $doc->deck[0]->elements[23]->visible = 0;
                 $doc->deck[6]->elements[5]->visible = 0;
         }
 
@@ -167,26 +167,27 @@ function web_show($doc_id, $doctype_id) {
                         $doc->deck[0]->elements[8]->value = $vorlage["web_speicher"];
                         $doc->deck[0]->elements[9]->value = $vorlage["web_traffic"];
                         $doc->deck[0]->elements[10]->value = $vorlage["web_traffic_ueberschreitung"];
-                        $doc->deck[0]->elements[11]->value = $vorlage["web_userlimit"];
-                        $doc->deck[0]->elements[12]->value = $vorlage["web_domainlimit"];
-                        $doc->deck[0]->elements[14]->value = $vorlage["web_shell"];
-                        $doc->deck[0]->elements[15]->value = $vorlage["web_cgi"];
-                        $doc->deck[0]->elements[16]->value = $vorlage["web_standard_cgi"];
-                        $doc->deck[0]->elements[17]->value = $vorlage["web_php"];
-                        $doc->deck[0]->elements[18]->value = $vorlage["web_php_safe_mode"];
-                        $doc->deck[0]->elements[20]->value = $vorlage["web_ssi"];
-                        $doc->deck[0]->elements[21]->value = $vorlage["web_ftp"];
-                        $doc->deck[0]->elements[22]->value = $vorlage["web_frontpage"];
-                        $doc->deck[0]->elements[23]->value = $vorlage["web_mysql"];
-                        $doc->deck[0]->elements[24]->value = $vorlage["web_mysql_anzahl_dbs"];
-                        $doc->deck[0]->elements[25]->value = $vorlage["web_mysql_space"];
-                        $doc->deck[0]->elements[26]->value = $vorlage["web_ssl"];
-                        $doc->deck[0]->elements[27]->value = $vorlage["web_anonftp"];
-                        $doc->deck[0]->elements[28]->value = $vorlage["web_anonftplimit"];
-                        $doc->deck[0]->elements[30]->value = $vorlage["web_wap"];
-                        $doc->deck[0]->elements[31]->value = $vorlage["web_individual_error_pages"];
-                        $doc->deck[0]->elements[33]->value = $vorlage["web_mailuser_login"];
-                        $doc->deck[0]->elements[35]->value = $vorlage["web_httpd_include"];
+                        $doc->deck[0]->elements[11]->value = $vorlage["web_mailquota"];
+                        $doc->deck[0]->elements[12]->value = $vorlage["web_userlimit"];
+                        $doc->deck[0]->elements[13]->value = $vorlage["web_domainlimit"];
+                        $doc->deck[0]->elements[15]->value = $vorlage["web_shell"];
+                        $doc->deck[0]->elements[16]->value = $vorlage["web_cgi"];
+                        $doc->deck[0]->elements[17]->value = $vorlage["web_standard_cgi"];
+                        $doc->deck[0]->elements[18]->value = $vorlage["web_php"];
+                        $doc->deck[0]->elements[19]->value = $vorlage["web_php_safe_mode"];
+                        $doc->deck[0]->elements[21]->value = $vorlage["web_ssi"];
+                        $doc->deck[0]->elements[22]->value = $vorlage["web_ftp"];
+                        $doc->deck[0]->elements[23]->value = $vorlage["web_frontpage"];
+                        $doc->deck[0]->elements[24]->value = $vorlage["web_mysql"];
+                        $doc->deck[0]->elements[25]->value = $vorlage["web_mysql_anzahl_dbs"];
+                        $doc->deck[0]->elements[26]->value = $vorlage["web_mysql_quota"];
+                        $doc->deck[0]->elements[27]->value = $vorlage["web_ssl"];
+                        $doc->deck[0]->elements[28]->value = $vorlage["web_anonftp"];
+                        $doc->deck[0]->elements[29]->value = $vorlage["web_anonftplimit"];
+                        $doc->deck[0]->elements[31]->value = $vorlage["web_wap"];
+                        $doc->deck[0]->elements[32]->value = $vorlage["web_individual_error_pages"];
+                        $doc->deck[0]->elements[34]->value = $vorlage["web_mailuser_login"];
+                        $doc->deck[0]->elements[36]->value = $vorlage["web_httpd_include"];
                 }
 
 
@@ -218,16 +219,17 @@ function web_insert($doc_id, $doctype_id, $die_on_error = '1') {
     if($reseller = $go_api->db->queryOneRecord("SELECT * from isp_isp_reseller where reseller_group = $resellerid")) {
       // Diskspace
       if($reseller["limit_disk"] >= 0){
-        $diskspace = $go_api->db->queryOneRecord("SELECT sum(isp_isp_web.web_speicher) as diskspace from isp_isp_web,isp_nodes where isp_isp_web.doc_id = isp_nodes.doc_id and  isp_nodes.groupid = '$resellerid' and isp_nodes.doctype_id = ".$this->web_doctype_id);
-        $diskspace = $diskspace["diskspace"];
-        if($web["web_speicher"] < 0){
-          $diskspace -= $web["web_speicher"];
+        $diskspace = $go_api->db->queryOneRecord("SELECT sum(isp_isp_web.web_speicher) as diskspace, sum(isp_isp_web.web_mailquota) as mailquota, sum(isp_isp_web.web_mysql_quota) as mysqlquota from isp_isp_web,isp_nodes where isp_isp_web.doc_id = isp_nodes.doc_id and  isp_nodes.groupid = '$resellerid' and isp_nodes.doctype_id = ".$this->web_doctype_id);
+	if ($web["web_mysql"] != 1) { $web["web_mysql_quota"] = 0; $diskspace["mysqlquota"] = 0; }
+        $diskspace = $diskspace["diskspace"] + $diskspace["mailquota"] + $diskspace["mysqlquota"];
+        if(($web["web_speicher"] < 0) || ($web["web_mailquota"] < 0) || ($web["web_mysql_quota"] < 0)){
+          $diskspace -= $web["web_speicher"] + $web["web_mailquota"] + $web["web_mysql_quota"];
           $free = $reseller["limit_disk"] - $diskspace;
           $limit_errors .= $go_api->lng("error_web_no_unlimited_diskspace_1").$free.$go_api->lng("error_web_no_unlimited_diskspace_2");
         } else {
           $free = $reseller["limit_disk"] - $diskspace;
           if($free < 0){
-            $max_free = $free + $web["web_speicher"];
+            $max_free = $free + $web["web_speicher"] + $web["web_mailquota"] + $web["web_mysql_quota"];
             $limit_errors .= $go_api->lng("error_web_no_diskspace_free_1").$max_free.$go_api->lng("error_web_no_diskspace_free_2");
           }
         }
@@ -273,29 +275,13 @@ function web_insert($doc_id, $doctype_id, $die_on_error = '1') {
       if($reseller["limit_ftp"] != 1 && $web["ftp"] == 1) $limit_errors .= $go_api->lng("error_web_no_ftp");
       if($reseller["limit_mysql"] != 1 && $web["web_mysql"] == 1) $limit_errors .= $go_api->lng("error_web_no_mysql");
       // Datenbanken
-      if($reseller["limit_mysql"] == 1 && $reseller["limit_mysql_anzahl_dbs"] >= 0){
+      if($web["web_mysql"] == 1 && $reseller["limit_mysql_anzahl_dbs"] >= 0){
         $datenbankanzahl = $go_api->db->queryOneRecord("SELECT sum(isp_isp_web.web_mysql_anzahl_dbs) as datenbankanzahl from isp_isp_web,isp_nodes where isp_isp_web.doc_id = isp_nodes.doc_id and  isp_nodes.groupid = '$resellerid' and isp_nodes.doctype_id = ".$this->web_doctype_id);
         $datenbankanzahl = $datenbankanzahl["datenbankanzahl"];
         $free = $reseller["limit_mysql_anzahl_dbs"] - $datenbankanzahl;
         if($free < 0){
           $max_free = $free + $web["web_mysql_anzahl_dbs"];
           $limit_errors .= $go_api->lng("error_web_no_databases_free_1").$max_free.$go_api->lng("error_web_no_databases_free_2");
-        }
-      }
-      // MySQL-Diskspace
-      if($reseller["limit_mysql"] == 1 && $reseller["limit_mysql_space"] >= 0){
-        $mysqlspace = $go_api->db->queryOneRecord("SELECT sum(isp_isp_web.web_mysql_space) as mysqlspace from isp_isp_web,isp_nodes where isp_isp_web.doc_id = isp_nodes.doc_id and  isp_nodes.groupid = '$resellerid' and isp_nodes.doctype_id = ".$this->web_doctype_id);
-        $mysqlspace = $mysqlspace["mysqlspace"];
-        if($web["web_mysql_space"] < 0){
-          $mysqlspace -= $web["web_mysql_space"];
-          $free = $reseller["limit_mysql_space"] - $mysqlspace;
-          $limit_errors .= $go_api->lng("error_web_no_unlimited_mysql_space_1").$free.$go_api->lng("error_web_no_unlimited_mysql_space_2");
-        } else {
-          $free = $reseller["limit_mysql_space"] - $mysqlspace;
-          if($free < 0){
-            $max_free = $free + $web["web_mysql_space"];
-            $limit_errors .= $go_api->lng("error_web_no_mysql_space_free_1").$max_free.$go_api->lng("error_web_no_mysql_space_free_2");
-          }
         }
       }
       if($reseller["limit_ssl"] != 1 && $web["web_ssl"] == 1) $limit_errors .= $go_api->lng("error_web_no_ssl");
@@ -308,6 +294,7 @@ function web_insert($doc_id, $doctype_id, $die_on_error = '1') {
       if(isset($limit_errors)){
         $go_api->db->query("DELETE from isp_isp_web where doc_id = '$doc_id'");
         $go_api->db->query("DELETE from isp_nodes where doc_id = '$doc_id' and doctype_id = '$doctype_id'");
+	$go_api->db->query("ALTER TABLE isp_isp_web AUTO_INCREMENT = 1"); // Im Fehlerfall nächstes Mal wieder die gleiche ID benutzen
         if($die_on_error){
           $go_api->errorMessage($limit_errors.$go_api->lng("weiter_link"));
         } else {
@@ -511,33 +498,36 @@ $go_api->db->query("UPDATE isp_isp_web SET status = 'u' where status != 'n' and 
         }
 
     /////// Prüfen, ob Diskspace, User- und Domainanzahl innerhalb der Grenzen des Resellers liegen ////////
+    
+    // TODO: Hier fehlen durchweg noch Prüfungen ob das Web ggf. schon mehr benutzt (bzw. an User vergeben hat)
+    //       als zugewiesen werden soll
+    
     $user_node = $go_api->db->queryOneRecord("SELECT * from isp_nodes where doc_id = $doc_id and doctype_id = $doctype_id");
     $resellerid = $user_node["groupid"];
     unset($user_node);
     if($reseller = $go_api->db->queryOneRecord("SELECT * from isp_isp_reseller where reseller_group = $resellerid")) {
       // Diskspace
       if($reseller["limit_disk"] >= 0){
-        $diskspace = $go_api->db->queryOneRecord("SELECT sum(isp_isp_web.web_speicher) as diskspace from isp_isp_web,isp_nodes where isp_isp_web.doc_id = isp_nodes.doc_id and  isp_nodes.groupid = '$resellerid' and isp_nodes.doctype_id = ".$this->web_doctype_id);
-        $diskspace = $diskspace["diskspace"];
-        if($web["web_speicher"] < 0){
-          $diskspace -= $web["web_speicher"];
+        $diskspace = $go_api->db->queryOneRecord("SELECT sum(isp_isp_web.web_speicher) as diskspace, sum(isp_isp_web.web_mailquota) as mailquota, sum(isp_isp_web.web_mysql_quota) as mysqlquota from isp_isp_web,isp_nodes where isp_isp_web.doc_id = isp_nodes.doc_id and  isp_nodes.groupid = '$resellerid' and isp_nodes.doctype_id = ".$this->web_doctype_id);
+	if ($web["web_mysql"] != 1) { $web["web_mysql_quota"] = 0; $diskspace["mysqlquota"] = 0; }
+        $diskspace = $diskspace["diskspace"] + $diskspace["mailquota"] + $diskspace["mysqlquota"];
+        if(($web["web_speicher"] < 0) || ($web["web_mailquota"] < 0) || ($web["web_mysql_quota"] < 0)){
+          $diskspace -= $web["web_speicher"] + $web["web_mailquota"] + $web["web_mysql_quota"];
           $free = $reseller["limit_disk"] - $diskspace;
-          if($free >= 0){
-            $go_api->db->query("UPDATE isp_isp_web SET web_speicher = '".$free."' WHERE doc_id = '".$doc_id."'");
-          } else {
-            $go_api->db->query("UPDATE isp_isp_web SET web_speicher = '".$old_form_data["web_speicher"]."' WHERE doc_id = '".$doc_id."'");
-          }
+	  // Da sich hier 3 Werte eine Obergrenze teilen ist es schwer den Wert zu korrigieren, daher: Alte Werte behalten
+          $go_api->db->query("UPDATE isp_isp_web SET web_speicher = '".$old_form_data["web_speicher"]."' WHERE doc_id = '".$doc_id."'");
+          $go_api->db->query("UPDATE isp_isp_web SET web_mailquota = '".$old_form_data["web_mailquota"]."' WHERE doc_id = '".$doc_id."'");
+          $go_api->db->query("UPDATE isp_isp_web SET web_mysql_quota = '".$old_form_data["web_mysql_quota"]."' WHERE doc_id = '".$doc_id."'");
           $status = "NOTIFY";
           $errorMessage .= $go_api->lng("error_web_no_unlimited_diskspace_1").$free.$go_api->lng("error_web_no_unlimited_diskspace_2");
         } else {
           $free = $reseller["limit_disk"] - $diskspace;
           if($free < 0){
-            $max_free = $free + $web["web_speicher"];
-            if($max_free >= 0){
-              $go_api->db->query("UPDATE isp_isp_web SET web_speicher = '".$max_free."' WHERE doc_id = '".$doc_id."'");
-            } else {
-              $go_api->db->query("UPDATE isp_isp_web SET web_speicher = '".$old_form_data["web_speicher"]."' WHERE doc_id = '".$doc_id."'");
-            }
+            $max_free = $free + $web["web_speicher"] + $web["web_mailquota"] + $web["web_mysql_quota"];
+            // Da sich hier 3 Werte eine Obergrenze teilen ist es schwer den Wert zu korrigieren, daher: Alte Werte behalten
+            $go_api->db->query("UPDATE isp_isp_web SET web_speicher = '".$old_form_data["web_speicher"]."' WHERE doc_id = '".$doc_id."'");
+            $go_api->db->query("UPDATE isp_isp_web SET web_mailquota = '".$old_form_data["web_mailquota"]."' WHERE doc_id = '".$doc_id."'");
+            $go_api->db->query("UPDATE isp_isp_web SET web_mysql_quota = '".$old_form_data["web_mysql_quota"]."' WHERE doc_id = '".$doc_id."'");
             $status = "NOTIFY";
             $errorMessage .= $go_api->lng("error_web_no_diskspace_free_1").$max_free.$go_api->lng("error_web_no_diskspace_free_2");
           }
@@ -637,7 +627,7 @@ $go_api->db->query("UPDATE isp_isp_web SET status = 'u' where status != 'n' and 
         $errorMessage .= $go_api->lng("error_web_no_mysql");
       }
       // Datenbanken
-      if($reseller["limit_mysql"] == 1 && $reseller["limit_mysql_anzahl_dbs"] >= 0){
+      if($web["web_mysql"] == 1 && $reseller["limit_mysql_anzahl_dbs"] >= 0){
         $datenbankanzahl = $go_api->db->queryOneRecord("SELECT sum(isp_isp_web.web_mysql_anzahl_dbs) as datenbankanzahl from isp_isp_web,isp_nodes where isp_isp_web.doc_id = isp_nodes.doc_id and  isp_nodes.groupid = '$resellerid' and isp_nodes.doctype_id = ".$this->web_doctype_id);
         $datenbankanzahl = $datenbankanzahl["datenbankanzahl"];
         $free = $reseller["limit_mysql_anzahl_dbs"] - $datenbankanzahl;
@@ -650,34 +640,6 @@ $go_api->db->query("UPDATE isp_isp_web SET status = 'u' where status != 'n' and 
           }
           $status = "NOTIFY";
           $errorMessage .= $go_api->lng("error_web_no_databases_free_1").$max_free.$go_api->lng("error_web_no_databases_free_2");
-        }
-      }
-      // MySQL-Diskspace
-      if($reseller["limit_mysql"] == 1 && $reseller["limit_mysql_space"] >= 0){
-        $mysqlspace = $go_api->db->queryOneRecord("SELECT sum(isp_isp_web.web_mysql_space) as mysqlspace from isp_isp_web,isp_nodes where isp_isp_web.doc_id = isp_nodes.doc_id and  isp_nodes.groupid = '$resellerid' and isp_nodes.doctype_id = ".$this->web_doctype_id);
-        $mysqlspace = $mysqlspace["mysqlspace"];
-        if($web["web_mysql_space"] < 0){
-          $mysqlspace -= $web["web_mysql_space"];
-          $free = $reseller["limit_mysql_space"] - $mysqlspace;
-          if($free >= 0){
-            $go_api->db->query("UPDATE isp_isp_web SET web_mysql_space = '".$free."' WHERE doc_id = '".$doc_id."'");
-          } else {
-            $go_api->db->query("UPDATE isp_isp_web SET web_mysql_space = '".$old_form_data["web_mysql_space"]."' WHERE doc_id = '".$doc_id."'");
-          }
-          $status = "NOTIFY";
-          $errorMessage .= $go_api->lng("error_web_no_unlimited_mysql_space_1").$free.$go_api->lng("error_web_no_unlimited_mysql_space_2");
-        } else {
-          $free = $reseller["limit_mysql_space"] - $mysqlspace;
-          if($free < 0){
-            $max_free = $free + $web["web_mysql_space"];
-            if($max_free >= 0){
-              $go_api->db->query("UPDATE isp_isp_web SET web_mysql_space = '".$max_free."' WHERE doc_id = '".$doc_id."'");
-            } else {
-              $go_api->db->query("UPDATE isp_isp_web SET web_mysql_space = '".$old_form_data["web_mysql_space"]."' WHERE doc_id = '".$doc_id."'");
-            }
-            $status = "NOTIFY";
-            $errorMessage .= $go_api->lng("error_web_no_mysql_space_free_1").$max_free.$go_api->lng("error_web_no_mysql_space_free_2");
-          }
         }
       }
       if($reseller["limit_ssl"] != 1 && $web["web_ssl"] == 1){
