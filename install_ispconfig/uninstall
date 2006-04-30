@@ -80,7 +80,7 @@ LogFormat \"%v||||%b||||%h %l %u %t \\\"%r\\\" %>s %b \\\"%{Referer}i\\\" \\\"%{
 CustomLog \"|/root/ispconfig/cronolog --symlink=/var/log/httpd/ispconfig_access_log /var/log/httpd/ispconfig_access_log_%Y_%m_%d\" combined_ispconfig
 
 <Directory ".$mod->system->server_conf["server_path_httpd_root"]."/*/web>
-    Options +Includes -Indexes
+    Options +Includes -Indexes -ExecCGI
     AllowOverride None
     AllowOverride Indexes AuthConfig Limit FileInfo
     Order allow,deny
@@ -91,7 +91,7 @@ CustomLog \"|/root/ispconfig/cronolog --symlink=/var/log/httpd/ispconfig_access_
 </Directory>
 
 <Directory ".$mod->system->server_conf["server_path_httpd_root"]."/*/user/*/web>
-    Options +Includes -Indexes
+    Options +Includes -Indexes -ExecCGI
     AllowOverride None
     AllowOverride Indexes AuthConfig Limit FileInfo
     Order allow,deny
