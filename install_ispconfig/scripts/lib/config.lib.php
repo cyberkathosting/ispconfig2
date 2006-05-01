@@ -1333,9 +1333,20 @@ Group web".$web["doc_id"];
     }
 
     $cgi = "";
-    if($web["web_cgi"] == 1) $cgi = "ScriptAlias  /cgi-bin/ ".$mod->system->server_conf["server_path_httpd_root"]."/"."web".$web["doc_id"]."/"."cgi-bin/
-AddHandler cgi-script .cgi
-AddHandler cgi-script .pl";
+    if ($web["web_cgi"] == 1 || ($web["web_cgi_mod_perl"] == 1 && $server["server_httpd_mod_perl"] == 1)) {
+	$cgi = "ScriptAlias  /cgi-bin/ ".$mod->system->server_conf["server_path_httpd_root"]."/"."web".$web["doc_id"]."/"."cgi-bin/";
+
+	if ($web["web_cgi_mod_perl"] == 1) {
+	    $cgi .= "\nPerlOptions +Enable";
+	    $cgi_handler = "\tSetHandler perl-script
+\tPerlResponseHandler ModPerl::Registry
+\tPerlOptions +ParseHeaders";
+	} else {
+	    $cgi_handler = "\tSetHandler cgi-script";
+	}
+
+	$cgi .= "\n<Location /cgi-bin>\n$cgi_handler\n</Location>";
+    }
 
     if($web["web_php"]){
       if($apache_version == 1){

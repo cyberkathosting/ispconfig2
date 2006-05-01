@@ -85,9 +85,9 @@ function web_show($doc_id, $doctype_id) {
         // Website-Status nur anzeigen, wenn Website gesperrt ist
         $web = $go_api->db->queryOneRecord("SELECT isp_isp_web.web_traffic_status FROM isp_nodes,isp_isp_web WHERE isp_nodes.doc_id = '$doc_id' AND isp_nodes.doctype_id = '$doctype_id' AND isp_isp_web.doc_id = '$doc_id'");
         if($web['web_traffic_status'] == 2){
-          $doc->deck[0]->elements[37]->visible = 1;
+          $doc->deck[0]->elements[39]->visible = 1;
         } else {
-          $doc->deck[0]->elements[37]->visible = 0;
+          $doc->deck[0]->elements[39]->visible = 0;
         }
 
         // Individuelle Fehler-Seiten unsichtbar schalten, wenn nicht aktiviert
@@ -109,36 +109,49 @@ function web_show($doc_id, $doctype_id) {
             $resellerid = $user_node["groupid"];
             unset($user_node);
 
-        // Wenn es ein Reseller ist
-        if($reseller = $go_api->db->queryOneRecord("SELECT * from isp_isp_reseller where reseller_group = $resellerid")) {
+        $reseller = $go_api->db->queryOneRecord("SELECT * from isp_isp_reseller WHERE reseller_group = $resellerid");
 
-                // deaktiviere Shell Access, wenn bei Resellern inaktiv
+        if (!$reseller && $go_info["user"]["userid"] != 1 && is_array($go_api->groups->myGroups())) {
+            $reseller = $go_api->db->queryOneRecord("SELECT * from isp_isp_reseller WHERE reseller_userid = " . $go_info["user"]["userid"]);
+        }
+
+        if ($reseller) {
+
+		if($reseller["limit_dns_manager"] != 1){
+		  $doc->deck[0]->elements[5]->visible = 0;
+		  $doc->deck[0]->elements[6]->visible = 0;
+		}
                 if($reseller["limit_shell_access"] != 1) $doc->deck[0]->elements[15]->visible = 0;
-                if($reseller["limit_cgi"] != 1){
+                if($reseller["limit_cgi"] != 1 && $reseller["limit_cgi_mod_perl"] != 1){
                   $doc->deck[0]->elements[16]->visible = 0;
                   $doc->deck[0]->elements[17]->visible = 0;
+                  $doc->deck[0]->elements[20]->visible = 0;
                 } else {
-                  if($reseller["limit_standard_cgis"] != 1) $doc->deck[0]->elements[17]->visible = 0;
+                  if($reseller["limit_standard_cgis"] != 1) $doc->deck[0]->elements[20]->visible = 0;
+                  if($reseller["limit_cgi"] != 1 || $reseller["limit_cgi_mod_perl"] != 1) {
+		    $mode = ($reseller["limit_cgi_mod_perl"] == 1) ? 1 : 0;
+		    $doc->deck[0]->elements[17]->values = array("$mode" => $doc->deck[0]->elements[17]->values[$mode]);
+		  }
                 }
                 if($reseller["limit_php"] != 1){
-                  $doc->deck[0]->elements[18]->visible = 0;
-                  $doc->deck[0]->elements[19]->visible = 0;
+                  $doc->deck[0]->elements[21]->visible = 0;
+                  $doc->deck[0]->elements[22]->visible = 0;
                 }
-                if($reseller["limit_ssi"] != 1) $doc->deck[0]->elements[21]->visible = 0;
-                if($reseller["limit_ftp"] != 1) $doc->deck[0]->elements[22]->visible = 0;
+                if($reseller["limit_ssi"] != 1) $doc->deck[0]->elements[23]->visible = 0;
+                if($reseller["limit_ftp"] != 1) $doc->deck[0]->elements[24]->visible = 0;
                 if($reseller["limit_mysql"] != 1){
-                  $doc->deck[0]->elements[24]->visible = 0;
-                  $doc->deck[0]->elements[25]->visible = 0;
-		  $doc->deck[0]->elements[26]->visible = 0;
+                  $doc->deck[0]->elements[26]->visible = 0;
+                  $doc->deck[0]->elements[27]->visible = 0;
+                  $doc->deck[0]->elements[28]->visible = 0;
                 }
-                if($reseller["limit_ssl"] != 1) $doc->deck[0]->elements[27]->visible = 0;
-                if($reseller["limit_anonftp"] != 1) $doc->deck[0]->elements[28]->visible = 0;
-                if($reseller["limit_anonftp"] != 1) $doc->deck[0]->elements[29]->visible = 0;
-                if($reseller["limit_wap"] != 1) $doc->deck[0]->elements[31]->visible = 0;
-                if($reseller["limit_error_pages"] != 1) $doc->deck[0]->elements[32]->visible = 0;
+                if($reseller["limit_ssl"] != 1) $doc->deck[0]->elements[29]->visible = 0;
+                if($reseller["limit_anonftp"] != 1) $doc->deck[0]->elements[30]->visible = 0;
+                if($reseller["limit_anonftp"] != 1) $doc->deck[0]->elements[31]->visible = 0;
+                if($reseller["limit_wap"] != 1) $doc->deck[0]->elements[33]->visible = 0;
+                if($reseller["limit_error_pages"] != 1) $doc->deck[0]->elements[34]->visible = 0;
                 if($reseller["limit_httpd_include"] != 1){
-                  $doc->deck[0]->elements[35]->visible = 0;
-                  $doc->deck[0]->elements[36]->visible = 0;
+                  $doc->deck[0]->elements[37]->visible = 0;
+                  $doc->deck[0]->elements[38]->visible = 0;
                 }
 
                 if($reseller["limit_frontpage"] != 1) {
@@ -153,9 +166,13 @@ function web_show($doc_id, $doctype_id) {
         $server = $go_api->db->queryOneRecord("SELECT * from isp_server where doc_id = '$server_id'");
         // Deaktiviere Frontpage
         if($server["server_enable_frontpage"] != 1) {
-                $doc->deck[0]->elements[23]->visible = 0;
-                $doc->deck[6]->elements[5]->visible = 0;
+            $doc->deck[0]->elements[25]->visible = 0;
+            $doc->deck[6]->elements[5]->visible = 0;
         }
+	// Deaktiviere mod_perl
+	if($server["server_httpd_mod_perl"] != 1) {
+	    $doc->deck[0]->elements[17]->visible = 0;
+	}
 
                 // Hostingplan anwenden
                 $vorlage_id = intval($_REQUEST["vorlage_id"]);
@@ -268,7 +285,8 @@ function web_insert($doc_id, $doctype_id, $die_on_error = '1') {
       }
       // andere Limits
       if($reseller["limit_shell_access"] != 1 && $web["web_shell"] == 1) $limit_errors .= $go_api->lng("error_web_no_shell_access");
-      if($reseller["limit_cgi"] != 1 && $web["web_cgi"] == 1) $limit_errors .= $go_api->lng("error_web_no_cgi");
+      if($reseller["limit_cgi"] != 1 && $web["web_cgi"] == 1 && $web["web_cgi_mod_perl"] != 1) $limit_errors .= $go_api->lng("error_web_no_cgi");
+      if($reseller["limit_cgi_mod_perl"] != 1 && $web["web_cgi"] && $web["web_cgi_mod_perl"] == 1) $limit_errors .= $go_api->lng("error_web_no_cgi_mod_perl");
       if(($reseller["limit_standard_cgis"] != 1 || $reseller["limit_cgi"] != 1) && $web["web_standard_cgi"] == 1) $limit_errors .= $go_api->lng("error_web_no_standard_cgi");
       if($reseller["limit_php"] != 1 && ($web["web_php"] == 1 || $web[" web_php_safe_mode"] == 1)) $limit_errors .= $go_api->lng("error_web_no_php");
       if($reseller["limit_ssi"] != 1 && $web["web_ssi"] == 1) $limit_errors .= $go_api->lng("error_web_no_ssi");
@@ -596,10 +614,15 @@ $go_api->db->query("UPDATE isp_isp_web SET status = 'u' where status != 'n' and 
         $go_api->db->query("UPDATE isp_isp_web SET web_shell = '0' WHERE doc_id = '".$doc_id."'");
         $errorMessage .= $go_api->lng("error_web_no_shell_access");
       }
-      if($reseller["limit_cgi"] != 1 && $web["web_cgi"] == 1){
+      if($reseller["limit_cgi"] != 1 && $web["web_cgi"] == 1 && $web["web_cgi_mod_perl"] != 1){
         $status = "NOTIFY";
         $go_api->db->query("UPDATE isp_isp_web SET web_cgi = '0', web_standard_cgi = '0' WHERE doc_id = '".$doc_id."'");
         $errorMessage .= $go_api->lng("error_web_no_cgi");
+      }
+      if($reseller["limit_cgi_mod_perl"] != 1 && $web["web_cgi"] == 1 && $web["web_cgi_mod_perl"] == 1){
+        $status = "NOTIFY";
+        $go_api->db->query("UPDATE isp_isp_web SET web_cgi = '0', web_standard_cgi = '0' WHERE doc_id = '".$doc_id."'");
+        $errorMessage .= $go_api->lng("error_web_no_cgi_mod_perl");
       }
       if(($reseller["limit_standard_cgis"] != 1 || $reseller["limit_cgi"] != 1) && $web["web_standard_cgi"] == 1){
         $status = "NOTIFY";

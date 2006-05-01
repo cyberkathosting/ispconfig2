@@ -74,8 +74,11 @@ function reseller_show($doc_id, $doctype_id) {
         $server = $go_api->db->queryOneRecord("SELECT * from isp_server where doc_id = '$server_id'");
         // Deaktiviere Frontpage
         if($server["server_enable_frontpage"] != 1) {
-                $doc->deck[1]->elements[18]->visible = 0;
+            $doc->deck[1]->elements[18]->visible = 0;
         }
+	if($server["server_httpd_mod_perl"] != 1) {
+	    $doc->deck[1]->elements[13]->visible = 0;
+	}
 
         // DNS-Reseller: "Sonstiges"-Tab verstecken (Begrüßungsemail für Kunden nicht nötig)
         // Resellerdaten auslesen
@@ -263,11 +266,21 @@ function reseller_update($doc_id, $doctype_id, $die_on_error = '1') {
     }
 
     if(!$reseller["limit_cgi"]){
-      $webanzahl = $go_api->db->queryOneRecord("SELECT COUNT(isp_isp_web.doc_id) AS anzahl FROM isp_nodes, isp_isp_web WHERE isp_nodes.groupid = '".$reseller["reseller_group"]."' AND isp_nodes.doctype_id = '".$this->web_doctype_id."' AND isp_nodes.doc_id = isp_isp_web.doc_id AND isp_isp_web.web_cgi = '1'");
+      $webanzahl = $go_api->db->queryOneRecord("SELECT COUNT(isp_isp_web.doc_id) AS anzahl FROM isp_nodes, isp_isp_web WHERE isp_nodes.groupid = '".$reseller["reseller_group"]."' AND isp_nodes.doctype_id = '".$this->web_doctype_id."' AND isp_nodes.doc_id = isp_isp_web.doc_id AND isp_isp_web.web_cgi = '1' AND isp_isp_web.web_cgi_mod_perl = '0'");
       $webanzahl = $webanzahl["anzahl"];
       if($webanzahl > 0){
         $go_api->db->query("UPDATE isp_isp_reseller SET limit_cgi = '1' WHERE doc_id = '$doc_id'");
         $res_limit_errorMessage .= $go_api->lng("error_anbieter_cgi_aktiv");
+      }
+      unset($webanzahl);
+    }
+
+    if (!$reseller["limit_cgi_mod_perl"] && $server["server_httpd_mod_perl"] == 1) {
+      $webanzahl = $go_api->db->queryOneRecord("SELECT COUNT(isp_isp_web.doc_id) AS anzahl FROM isp_nodes, isp_isp_web WHERE isp_nodes.groupid = '".$reseller["reseller_group"]."' AND isp_nodes.doctype_id = '".$this->web_doctype_id."' AND isp_nodes.doc_id = isp_isp_web.doc_id AND isp_isp_web.web_cgi = '1' AND isp_isp_web.web_cgi_mod_perl = '1'");
+      $webanzahl = $webanzahl["anzahl"];
+      if($webanzahl > 0){
+        $go_api->db->query("UPDATE isp_isp_reseller SET limit_cgi_mod_perl = '1' WHERE doc_id = '$doc_id'");
+        $res_limit_errorMessage .= $go_api->lng("error_anbieter_cgi_mod_perl_aktiv");
       }
       unset($webanzahl);
     }
@@ -291,7 +304,7 @@ function reseller_update($doc_id, $doctype_id, $die_on_error = '1') {
       }
       unset($webanzahl);
     }
-
+    
     if(!$reseller["limit_ssi"]){
       $webanzahl = $go_api->db->queryOneRecord("SELECT COUNT(isp_isp_web.doc_id) AS anzahl FROM isp_nodes, isp_isp_web WHERE isp_nodes.groupid = '".$reseller["reseller_group"]."' AND isp_nodes.doctype_id = '".$this->web_doctype_id."' AND isp_nodes.doc_id = isp_isp_web.doc_id AND isp_isp_web.web_ssi = '1'");
       $webanzahl = $webanzahl["anzahl"];
