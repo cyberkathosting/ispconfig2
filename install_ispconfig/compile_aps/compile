@@ -30,8 +30,8 @@
 PATH="/home/admispconfig/ispconfig/tools/clamav/bin:/sbin:/usr/sbin:/usr/local/sbin:/root/bin:/usr/local/bin:/bin:/usr/bin:/usr/X11R6/bin:/usr/local/libexec"
 
 OPENSSL=openssl-0.9.8a
-APACHE=apache_1.3.35
-MOD_SSL=mod_ssl-2.8.25-1.3.35
+APACHE=apache_1.3.34
+MOD_SSL=mod_ssl-2.8.25-1.3.34
 PHP=php-5.1.3
 CLAMAV=clamav-0.88.2
 CLAMASSASSIN=clamassassin-1.2.3
