@@ -480,4 +480,6 @@ $wb["Web-Manager"] = "Webb Manager";
 $wb["Web-FTP"] = "Webb FTP";
 $wb["Webs"] = "Webbplatser";
 
+$wb["Nicht scannen"] = "Don't scan";
+
 ?>

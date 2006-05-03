@@ -538,4 +538,6 @@ $wb["Speicherplatz Datenbanken"] = "Speicherplatz Datenbanken";
 // Mail Quota /////////////////////////////////////////
 $wb["error_max_mailquota_web"] = "Der angegebene Mail-Speicher überschreitet das Limit des verfügbaren Mail-Speicherplatzes.<br>";
 
+$wb["Nicht scannen"] = "Nicht scannen";
+
 ?>

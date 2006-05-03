@@ -22,5 +22,6 @@ $hlp["user_spamfilter"] = "Durch Auswahl dieses Feldes wird der Spamfilter aktiv
 $hlp["user_emailweiterleitung_local_copy"] = "Durch Auswahl dieses Feldes wird eine Kopie der weitergeleiteten Email lokal abgespeichert.";
 $hlp["user_email"] = "Bitte geben Sie hier den Namen an, der in der Emailadresse vor dem @ stehen soll, z.B. \"ihrname\". Sie können den Namen frei wählen. Der Name darf jedoch noch nicht vergeben sein und darf keine Umlaute z.B. ä, ü... sowie Sonderzeichen z.B. @, % ... enthalten.";
 $hlp["user_emailweiterleitung"] = "Bitte geben Sie hier die Email-Adressen an, an die die eingehenden Emails weitergeleitet werden sollen.";
+$hlp["user_emailweiterleitung_no_scan"] = "Wenn dieses Feld ausgewählt ist werden Mails vor der Weiterleitung grundsätzlich nicht auf Viren oder Spam geprüft.";
 
 ?>

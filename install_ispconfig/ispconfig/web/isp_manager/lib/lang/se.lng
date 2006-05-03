@@ -568,4 +568,6 @@ $wb["Speicherplatz Datenbanken"] = "Diskspace Databases";
 // Mail Quota /////////////////////////////////////////
 $wb["error_max_mailquota_web"] = "The selected mailspace exceeds site's limits.<br>";
 
+$wb["Nicht scannen"] = "Don't scan";
+
 ?>

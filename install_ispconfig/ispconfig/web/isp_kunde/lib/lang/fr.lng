@@ -471,4 +471,6 @@ $wb["gesperrt"] = "Suspendu";
 
 $wb["Catalog_Name"] = "Nom";
 
+$wb["Nicht scannen"] = "Don't scan";
+
 ?>
