@@ -163,9 +163,9 @@ function make_procmailrc($doc_id) {
     $forward_emails = str_replace("\n", ",", trim($mod->file->unix_nl($user["user_emailweiterleitung"])));
 
     if (!$user["user_emailweiterleitung_local_copy"]) {
-      $forward_code = ":0 w\n! $forward_emails";
+      $forward_code = "\n:0 w\n! $forward_emails\n";
     } else {
-      $forward_code = ":0 c\n! $forward_emails";
+      $forward_code = "\n:0 c\n! $forward_emails\n";
     }
 
     if ($user["user_emailweiterleitung_no_scan"]) {
