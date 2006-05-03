@@ -27,7 +27,7 @@ NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
 EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-class procmail{
+class procmail {
 
 var $FILE = "/root/ispconfig/scripts/lib/classes/ispconfig_procmail.lib.php";
 
@@ -58,6 +58,8 @@ function make_forward($doc_id) {
   exec("chown $user_username:web$web_doc_id $datei &> /dev/null");
   exec("chmod 600 $datei");
 
+  // Forwarding ab sofort via Procmail-Recipe
+  /*
   if(!empty($user["user_emailweiterleitung"])){
     $forward_emails = str_replace("\n", ", ", trim($mod->file->unix_nl($user["user_emailweiterleitung"])));
 
@@ -69,6 +71,7 @@ function make_forward($doc_id) {
 
     $mod->file->wf($datei, $datei_inhalt);
   }
+  */
 
   // symbolische Links für Admin-User erstellen
   if($user["user_admin"]){
@@ -99,11 +102,11 @@ function make_procmailrc($doc_id) {
   $user_username = $user["user_username"];
 
   // Maildir-Format
-  if($mod->system->server_conf["use_maildir"]){
+  if($mod->system->server_conf["use_maildir"] == 1){ // Nur bei Maildir
     $maildir_comment = "";
 
-        // TB: Maildirmake aufrufen, sonst Fehler beim Mailabholen möglich
-        if(!is_dir($web_path."/user/".$user_username."/Maildir")) $mod->log->caselog("maildirmake ".$web_path."/user/".$user_username."/Maildir &> /dev/null", "maildirmake ".$web_path."/user/".$user_username."/Maildir &> /dev/null", __LINE__);
+    // TB: Maildirmake aufrufen, sonst Fehler beim Mailabholen möglich
+    if(!is_dir($web_path."/user/".$user_username."/Maildir")) $mod->log->caselog("maildirmake ".$web_path."/user/".$user_username."/Maildir &> /dev/null", "maildirmake ".$web_path."/user/".$user_username."/Maildir &> /dev/null", __LINE__);
 
     if(!is_dir($web_path."/user/".$user_username."/Maildir")) $mod->log->phpcaselog(mkdir($web_path."/user/".$user_username."/Maildir", 0700), "create ".$web_path."/user/".$user_username."/Maildir", $this->FILE, __LINE__);
     exec("chown -R ".$user_username.":web".$web_doc_id." ".$web_path."/user/".$user_username."/Maildir");
@@ -118,7 +121,7 @@ function make_procmailrc($doc_id) {
     $maildir_comment = "## ";
   }
 
-  if($mod->system->server_conf["use_maildir"]){
+  if($mod->system->server_conf["use_maildir"]){ // Bei allem, außer bei mbox
     $user_mailquota = "";
     $quota_comment = '## ';
   } else {
@@ -155,6 +158,27 @@ function make_procmailrc($doc_id) {
   } else {
     $antivirus_comment = "## ";
   }
+  
+  if (!empty($user["user_emailweiterleitung"])){
+    $forward_emails = str_replace("\n", ",", trim($mod->file->unix_nl($user["user_emailweiterleitung"])));
+
+    if (!$user["user_emailweiterleitung_local_copy"]) {
+      $forward_code = ":0 w\n! $forward_emails";
+    } else {
+      $forward_code = ":0 c\n! $forward_emails";
+    }
+
+    if ($user["user_emailweiterleitung_no_scan"]) {
+	$forward = "";
+	$forward_no_scan = $forward_code;
+    } else {
+	$forward_no_scan = "";
+	$forward = $forward_code;
+    }
+  }
+
+  $proc_dir   = $this->create_procmail_dir($web_path, $user_username, $user["user_admin"]);
+  $recipe_dir = $this->create_procmail_dir($web_path, $user_username);
 
   //.procmailrc erstellen
   // Template Öffnen
@@ -163,23 +187,23 @@ function make_procmailrc($doc_id) {
 
   // Variablen zuweisen
   $mod->tpl->assign( array(MAILDIR_COMMENT => $maildir_comment,
-                      PMDIR => $web_path."/user/".$user_username,
+                      PMDIR => $recipe_dir,
                       QUOTA => $user_mailquota,
                       QUOTA_COMMENT => $quota_comment,
                       MAILSCAN_COMMENT => $mailscan_comment,
                       SPAMASSASSIN_COMMENT => $spamfilter_comment,
                       AUTORESPONDER_COMMENT => $autoresponder_comment,
-                      ANTIVIRUS_COMMENT => $antivirus_comment));
+                      ANTIVIRUS_COMMENT => $antivirus_comment,
+		      FORWARD => $forward,
+		      FORWARD_NO_SCAN => $forward_no_scan));
 
   $mod->tpl->parse(TABLE, table);
 
   $procmail_text = $mod->tpl->fetch();
 
-  if($user["user_admin"]){
-    $datei = $web_path."/.procmailrc";
-    if(is_link($datei)) exec("rm -f $datei");
-  } else {
-    $datei = $web_path."/user/".$user_username."/.procmailrc";
+  $datei = "$proc_dir/.procmailrc";
+  if ($user["user_admin"] && is_link($datei)) {
+    exec("rm -f $datei");
   }
   $mod->file->wf($datei, $procmail_text);
 
@@ -216,6 +240,8 @@ function make_recipes($doc_id) {
   $user_name = $user["user_name"];
   $user_autoresponder_text = $user["user_autoresponder_text"];
 
+  $recipe_dir = $this->create_procmail_dir($web_path, $user_username);
+
   // Variablen zuweisen
   $mod->tpl->assign( array(USER_AUTORESPONDER_TEXT => $user_autoresponder_text));
 
@@ -223,7 +249,7 @@ function make_recipes($doc_id) {
 
   $vacation_text = $mod->tpl->fetch();
 
-  $datei = $web_path."/user/".$user_username."/.vacation.msg";
+  $datei = $recipe_dir."/.vacation.msg";
 
   $mod->file->wf($datei, $vacation_text);
 
@@ -243,14 +269,14 @@ function make_recipes($doc_id) {
   }
 
   // Variablen zuweisen
-  $mod->tpl->assign( array( PFAD                         => $web_path."/user/".$user_username,
-                                                          EMAIL_ADDRESS         => $email_adresse));
+  $mod->tpl->assign( array( PFAD => $recipe_dir,
+                            EMAIL_ADDRESS => $email_adresse));
 
   $mod->tpl->parse(TABLE, table);
 
   $autoresponderrc_text = $mod->tpl->fetch();
 
-  $datei2 = $web_path."/user/".$user_username."/.autoresponder.rc";
+  $datei2 = $recipe_dir."/.autoresponder.rc";
   $mod->file->wf($datei2, $autoresponderrc_text);
 
   exec("chown root:$root_gruppe $datei2 &> /dev/null");
@@ -262,13 +288,13 @@ function make_recipes($doc_id) {
   $mod->tpl->define( array(table    => "quota.rc.master"));
 
   // Variablen zuweisen
-  $mod->tpl->assign( array(PFAD => $web_path."/user/".$user_username));
+  $mod->tpl->assign( array(PFAD => $recipe_dir));
 
   $mod->tpl->parse(TABLE, table);
 
   $quotarc_text = $mod->tpl->fetch();
 
-  $datei3 = $web_path."/user/".$user_username."/.quota.rc";
+  $datei3 = $recipe_dir."/.quota.rc";
   $mod->file->wf($datei3, $quotarc_text);
 
   exec("chown root:$root_gruppe $datei3 &> /dev/null");
@@ -287,15 +313,15 @@ function make_recipes($doc_id) {
   }
 
   // Variablen zuweisen
-  $mod->tpl->assign( array(PREFS_FILE => $web_path."/user/".$user_username."/.user_prefs",
+  $mod->tpl->assign( array(PREFS_FILE => $recipe_dir."/.user_prefs",
                            SPAM_COMMENT => $spam_comment,
-                                                   USERNAME => $user_username));
+                           USERNAME => $user_username));
 
   $mod->tpl->parse(TABLE, table);
 
   $sarc_text = $mod->tpl->fetch();
 
-  $datei5 = $web_path."/user/".$user_username."/.spamassassin.rc";
+  $datei5 = $recipe_dir."/.spamassassin.rc";
   $mod->file->wf($datei5, $sarc_text);
 
   exec("chown root:$root_gruppe $datei5 &> /dev/null");
@@ -320,31 +346,41 @@ function make_recipes($doc_id) {
 
   $user_prefs_text = $mod->tpl->fetch();
 
-  $datei6 = $web_path."/user/".$user_username."/.user_prefs";
+  $datei6 = $recipe_dir."/.user_prefs";
   $mod->file->wf($datei6, $user_prefs_text);
 
   exec("chown root:$root_gruppe $datei6 &> /dev/null");
   exec("chmod 644 $datei6");
 
-  exec("cp -f /root/ispconfig/isp/conf/bounce-exceed-quota.txt ".$web_path."/user/".$user_username."/.bounce-exceed-quota.txt");
-  exec("chown root:".$root_gruppe." ".$web_path."/user/".$user_username."/.bounce-exceed-quota.txt &> /dev/null");
-  exec("chmod 644 ".$web_path."/user/".$user_username."/.bounce-exceed-quota.txt");
+  exec("cp -f /root/ispconfig/isp/conf/bounce-exceed-quota.txt ".$recipe_dir."/.bounce-exceed-quota.txt");
+  exec("chown root:".$root_gruppe." ".$recipe_dir."/.bounce-exceed-quota.txt &> /dev/null");
+  exec("chmod 644 ".$recipe_dir."/.bounce-exceed-quota.txt");
 
-  exec("cp -f /root/ispconfig/isp/conf/html-trap.rc.master ".$web_path."/user/".$user_username."/.html-trap.rc");
-  exec("chown root:".$root_gruppe." ".$web_path."/user/".$user_username."/.html-trap.rc &> /dev/null");
-  exec("chmod 644 ".$web_path."/user/".$user_username."/.html-trap.rc");
+  exec("cp -f /root/ispconfig/isp/conf/html-trap.rc.master ".$recipe_dir."/.html-trap.rc");
+  exec("chown root:".$root_gruppe." ".$recipe_dir."/.html-trap.rc &> /dev/null");
+  exec("chmod 644 ".$recipe_dir."/.html-trap.rc");
 
-  exec("cp -f /root/ispconfig/isp/conf/local-rules.rc.master ".$web_path."/user/".$user_username."/.local-rules.rc");
-  exec("chown root:".$root_gruppe." ".$web_path."/user/".$user_username."/.local-rules.rc &> /dev/null");
-  exec("chmod 644 ".$web_path."/user/".$user_username."/.local-rules.rc");
+  exec("cp -f /root/ispconfig/isp/conf/local-rules.rc.master ".$recipe_dir."/.local-rules.rc");
+  exec("chown root:".$root_gruppe." ".$recipe_dir."/.local-rules.rc &> /dev/null");
+  exec("chmod 644 ".$recipe_dir."/.local-rules.rc");
 
-  exec("cp -f /root/ispconfig/isp/conf/mailsize.rc.master ".$web_path."/user/".$user_username."/.mailsize.rc");
-  exec("chown root:".$root_gruppe." ".$web_path."/user/".$user_username."/.mailsize.rc &> /dev/null");
-  exec("chmod 644 ".$web_path."/user/".$user_username."/.mailsize.rc");
+  exec("cp -f /root/ispconfig/isp/conf/mailsize.rc.master ".$recipe_dir."/.mailsize.rc");
+  exec("chown root:".$root_gruppe." ".$recipe_dir."/.mailsize.rc &> /dev/null");
+  exec("chmod 644 ".$recipe_dir."/.mailsize.rc");
 
-  exec("cp -f /root/ispconfig/isp/conf/antivirus.rc.master ".$web_path."/user/".$user_username."/.antivirus.rc");
-  exec("chown root:".$root_gruppe." ".$web_path."/user/".$user_username."/.antivirus.rc &> /dev/null");
-  exec("chmod 644 ".$web_path."/user/".$user_username."/.antivirus.rc");
+  exec("cp -f /root/ispconfig/isp/conf/antivirus.rc.master ".$recipe_dir."/.antivirus.rc");
+  exec("chown root:".$root_gruppe." ".$recipe_dir."/.antivirus.rc &> /dev/null");
+  exec("chmod 644 ".$recipe_dir."/.antivirus.rc");
+}
+
+function create_procmail_dir($web_path, $user_username, $is_admin = false) {
+  $external = ($mod->system->server_conf["use_maildir"] == 2);
+
+  if ($external) {
+    return $mod->ext->create_user_config_dir($user_username);
+  }
+
+  return $is_admin ? $web_path : "$web_path/user/$user_username";
 }
 
 }

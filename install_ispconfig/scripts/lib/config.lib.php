@@ -1127,17 +1127,17 @@ function make_docroot($doc_id,$hostname,$domainname,$web_quota,$update) {
   if(is_file($crt_file)) exec("chmod 644 $crt_file");
 
   $root_gruppe = $mod->system->root_group();
-  exec("chmod 400 $web_path/user/.no_delete");
+  exec("chmod 1400 $web_path/user/.no_delete");
   exec("chown root:$root_gruppe $web_path/user/.no_delete");
-  exec("chmod 400 $web_path/log/.no_delete");
+  exec("chmod 1400 $web_path/log/.no_delete");
   exec("chown root:$root_gruppe $web_path/log/.no_delete");
-  exec("chmod 400 $web_path/cgi-bin/.no_delete");
+  exec("chmod 1400 $web_path/cgi-bin/.no_delete");
   exec("chown root:$root_gruppe $web_path/cgi-bin/.no_delete");
-  exec("chmod 400 $web_path/ssl/.no_delete");
+  exec("chmod 1400 $web_path/ssl/.no_delete");
   exec("chown root:$root_gruppe $web_path/ssl/.no_delete");
-  exec("chmod 400 $web_path/phptmp/.no_delete");
+  exec("chmod 1400 $web_path/phptmp/.no_delete");
   exec("chown root:$root_gruppe $web_path/phptmp/.no_delete");
-  exec("chmod 400 $web_path/web/error/.no_delete");
+  exec("chmod 1400 $web_path/web/error/.no_delete");
   exec("chown root:$root_gruppe $web_path/web/error/.no_delete");
 
   ////////////// Standard CGIs ////////////////////
@@ -2459,6 +2459,8 @@ function web_user_clean(){
             // Cyrus IMAP, Mailbox löschen
             $mod->cyrus_imap->del($item["name"]);
           }
+
+          $mod->ext->delete_user_config_dir($item["name"]);
       break;
       }
     }
