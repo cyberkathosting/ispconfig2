@@ -158,6 +158,24 @@ global $go_api, $go_info;
     unset($haupt_domain);
 
 
+    // Check ob lokaler Host als MX eingetragen ist
+    if (!empty($domain["domain_host"])) {
+        $host = $domain["domain_host"] . ".";
+    }
+    getmxrr($host . $domain["domain_domain"], $mx_list);
+
+    $mx_found = false;
+    foreach ($mx_list as $mx) {
+        if (ip2long(gethostbyname($mx)) == ip2long($domain["domain_ip"])) {
+            $mx_found = true;
+        }
+    }
+
+    if (!$mx_found) {
+        $go_api->db->query("UPDATE isp_isp_domain SET domain_local_mailserver = '' WHERE doc_id = '$doc_id'");
+    }
+
+
     if($status == "DELETE") {
         // Eintrag löschen
         $go_api->db->query("DELETE from isp_isp_domain where doc_id = '$doc_id'");
@@ -241,6 +259,24 @@ global $go_api, $go_info,$s;
                 }
 
         }
+
+
+    // Check ob lokaler Host als MX eingetragen ist
+    if (!empty($domain["domain_host"])) {
+        $host = $domain["domain_host"] . ".";
+    }
+    getmxrr($host . $domain["domain_domain"], $mx_list);
+
+    $mx_found = false;
+    foreach ($mx_list as $mx) {
+        if (ip2long(gethostbyname($mx)) == ip2long($domain["domain_ip"])) {
+            $mx_found = true;
+        }
+    }
+
+    if (!$mx_found) {
+        $go_api->db->query("UPDATE isp_isp_domain SET domain_local_mailserver = '' WHERE doc_id = '$doc_id'");
+    }
 
 
     // Web Status auf update setzen

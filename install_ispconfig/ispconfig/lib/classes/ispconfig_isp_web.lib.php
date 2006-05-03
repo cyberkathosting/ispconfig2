@@ -380,6 +380,24 @@ function web_insert($doc_id, $doctype_id, $die_on_error = '1') {
 
      }
 
+    
+    // Check ob lokaler Host als MX eingetragen ist
+    if (!empty($web["web_host"])) {
+        $host = $web["web_host"] . ".";
+    }
+    getmxrr($host . $web["web_domain"], $mx_list);
+
+    $mx_found = false;
+    foreach ($mx_list as $mx) {
+        if (ip2long(gethostbyname($mx)) == ip2long($web["web_ip"])) {
+            $mx_found = true;
+        }
+    }
+
+    if (!$mx_found) {
+        $go_api->db->query("UPDATE isp_isp_web SET optionen_local_mailserver = '' WHERE doc_id = '$doc_id'");
+    }
+
 
     //////////////////////////////////////////////////////
     // Check ob bereits ein SSL Cert auf der IP Existiert
@@ -464,6 +482,20 @@ function web_insert($doc_id, $doctype_id, $die_on_error = '1') {
             //    $domain = $go_api->db->queryOneRecord("SELECT * from isp_isp_domain where doc_id = '$codomain_doc_id'");
             //    $go_api->isp_domain->_insert_dns($codomain_doc_id,$domain_doctype_id,$domain);
             //}
+
+            // Check ob lokaler Host als MX eingetragen ist
+            getmxrr($web["web_domain"], $mx_list);
+
+            $mx_found = false;
+            foreach ($mx_list as $mx) {
+                if (ip2long(gethostbyname($mx)) == ip2long($web["web_ip"])) {
+                    $mx_found = true;
+                }
+            }
+
+            if (!$mx_found) {
+                $go_api->db->query("UPDATE isp_isp_domain SET domain_local_mailserver = '' WHERE doc_id = '$codomain_doc_id'");
+            }
         }
 
     unset($host_codomain_count);
@@ -858,6 +890,25 @@ $go_api->db->query("UPDATE isp_isp_web SET status = 'u' where status != 'n' and 
 
         // ISPConfig Rechte in nodes Table checken
         $go_api->isp->check_perms($doc_id, $doctype_id);
+
+
+    // Check ob lokaler Host als MX eingetragen ist
+    if (!empty($web["web_host"])) {
+        $host = $web["web_host"] . ".";
+    }
+    getmxrr($host . $web["web_domain"], $mx_list);
+
+    $mx_found = false;
+    foreach ($mx_list as $mx) {
+        if (ip2long(gethostbyname($mx)) == ip2long($web["web_ip"])) {
+            $mx_found = true;
+        }
+    }
+
+    if (!$mx_found) {
+        $go_api->db->query("UPDATE isp_isp_web SET optionen_local_mailserver = '' WHERE doc_id = '$doc_id'");
+    }
+
 
     ///////////////////////////////////
     // NOTIFY Error Handler
