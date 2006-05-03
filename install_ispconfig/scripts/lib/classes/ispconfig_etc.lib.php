@@ -43,6 +43,9 @@ function create_user_config_dir($username) {
   $cfg_dir = $this->get_user_config_dir($username);
 
   if (!is_dir($cfg_dir)) {
+    global $mod;
+    $root_gruppe = $mod->system->root_group();
+
     exec("mkdir -p $cfg_dir &> /dev/null");
     exec("chown -R root:$root_gruppe $cfg_dir &> /dev/null");
     exec("chmod 644 $cfg_dir");
@@ -52,7 +55,7 @@ function create_user_config_dir($username) {
 }
 
 function delete_user_config_dir($username) {
-  $cfg_dir = get_user_config_dir($username);
+  $cfg_dir = $this->get_user_config_dir($username);
   if (is_dir($cfg_dir)) {
     exec("rm -rf $cfg_dir");
   }

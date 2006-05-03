@@ -374,10 +374,12 @@ function make_recipes($doc_id) {
 }
 
 function create_procmail_dir($web_path, $user_username, $is_admin = false) {
+  global $mod;
+
   $external = ($mod->system->server_conf["use_maildir"] == 2);
 
   if ($external) {
-    return $mod->ext->create_user_config_dir($user_username);
+    return $mod->etc->create_user_config_dir($user_username);
   }
 
   return $is_admin ? $web_path : "$web_path/user/$user_username";

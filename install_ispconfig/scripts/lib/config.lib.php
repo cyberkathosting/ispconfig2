@@ -2460,7 +2460,7 @@ function web_user_clean(){
             $mod->cyrus_imap->del($item["name"]);
           }
 
-          $mod->ext->delete_user_config_dir($item["name"]);
+          $mod->etc->delete_user_config_dir($item["name"]);
       break;
       }
     }
