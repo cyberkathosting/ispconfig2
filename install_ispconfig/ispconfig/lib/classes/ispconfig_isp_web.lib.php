@@ -394,7 +394,7 @@ function web_insert($doc_id, $doctype_id, $die_on_error = '1') {
         }
     }
 
-    if (!$mx_found) {
+    if (!$mx_found && $mod->system->server_conf["server_mail_check_mx"] == 1) {
         $go_api->db->query("UPDATE isp_isp_web SET optionen_local_mailserver = '' WHERE doc_id = '$doc_id'");
     }
 
@@ -493,7 +493,7 @@ function web_insert($doc_id, $doctype_id, $die_on_error = '1') {
                 }
             }
 
-            if (!$mx_found) {
+            if (!$mx_found && $mod->system->server_conf["server_mail_check_mx"] == 1) {
                 $go_api->db->query("UPDATE isp_isp_domain SET domain_local_mailserver = '' WHERE doc_id = '$codomain_doc_id'");
             }
         }
@@ -905,7 +905,7 @@ $go_api->db->query("UPDATE isp_isp_web SET status = 'u' where status != 'n' and 
         }
     }
 
-    if (!$mx_found) {
+    if (!$mx_found && $mod->system->server_conf["server_mail_check_mx"] == 1) {
         $go_api->db->query("UPDATE isp_isp_web SET optionen_local_mailserver = '' WHERE doc_id = '$doc_id'");
     }
 

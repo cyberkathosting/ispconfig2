@@ -551,5 +551,8 @@ $wb["Speicherplatz Datenbanken"] = "Diskspace Databases";
 $wb["error_max_mailquota_web"] = "The selected mailspace exceeds site's limits.<br>";
 
 $wb["Nicht scannen"] = "Don't scan";
+$wb["MX prüfen"] = "Check MX";
+$wb["Cyrus-Administrator"] = "Cyrus Admin";
+$wb["Passwort Cyrus-Admin"] = "Cyrus Admin Password";
 
 ?>

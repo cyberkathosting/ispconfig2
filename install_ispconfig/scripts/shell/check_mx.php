@@ -35,6 +35,10 @@ set_time_limit(0);
 include("/root/ispconfig/scripts/lib/config.inc.php");
 include("/root/ispconfig/scripts/lib/server.inc.php");
 
+if ($mod->system->server_conf["server_mail_check_mx"] != 1) {
+    exit;
+}
+
 $web_list = $mod->db->queryAllRecords("SELECT * from isp_isp_web");
 foreach ($web_list as $web) {
     if (empty($web["optionen_local_mailserver"])) {

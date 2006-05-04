@@ -459,5 +459,8 @@ $wb["aktiv"] = "Activa";
 $wb["gesperrt"] = "Suspendida";
 
 $wb["Nicht scannen"] = "Don't scan";
+$wb["MX prüfen"] = "Check MX";
+$wb["Cyrus-Administrator"] = "Cyrus Admin";
+$wb["Passwort Cyrus-Admin"] = "Cyrus Admin Password";
 
 ?>

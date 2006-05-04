@@ -472,5 +472,8 @@ $wb["gesperrt"] = "Suspendu";
 $wb["Catalog_Name"] = "Nom";
 
 $wb["Nicht scannen"] = "Don't scan";
+$wb["MX prüfen"] = "Check MX";
+$wb["Cyrus-Administrator"] = "Cyrus Admin";
+$wb["Passwort Cyrus-Admin"] = "Cyrus Admin Password";
 
 ?>

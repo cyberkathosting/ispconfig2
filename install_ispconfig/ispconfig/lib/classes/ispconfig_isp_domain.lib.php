@@ -171,7 +171,7 @@ global $go_api, $go_info;
         }
     }
 
-    if (!$mx_found) {
+    if (!$mx_found && $mod->system->server_conf["server_mail_check_mx"] == 1) {
         $go_api->db->query("UPDATE isp_isp_domain SET domain_local_mailserver = '' WHERE doc_id = '$doc_id'");
     }
 
@@ -274,7 +274,7 @@ global $go_api, $go_info,$s;
         }
     }
 
-    if (!$mx_found) {
+    if (!$mx_found && $mod->system->server_conf["server_mail_check_mx"] == 1) {
         $go_api->db->query("UPDATE isp_isp_domain SET domain_local_mailserver = '' WHERE doc_id = '$doc_id'");
     }
 

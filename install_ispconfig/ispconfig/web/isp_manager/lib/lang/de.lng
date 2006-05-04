@@ -539,5 +539,8 @@ $wb["Speicherplatz Datenbanken"] = "Speicherplatz Datenbanken";
 $wb["error_max_mailquota_web"] = "Der angegebene Mail-Speicher überschreitet das Limit des verfügbaren Mail-Speicherplatzes.<br>";
 
 $wb["Nicht scannen"] = "Nicht scannen";
+$wb["MX prüfen"] = "MX prüfen";
+$wb["Cyrus-Administrator"] = "Cyrus-Administrator";
+$wb["Passwort Cyrus-Admin"] = "Passwort Cyrus-Admin";
 
 ?>
