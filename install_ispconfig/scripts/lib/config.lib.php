@@ -1333,10 +1333,10 @@ Group web".$web["doc_id"];
     }
 
     $cgi = "";
-    if ($web["web_cgi"] == 1 || ($web["web_cgi_mod_perl"] == 1 && $server["server_httpd_mod_perl"] == 1)) {
+    if ($web["web_cgi"] == 1) {
 	$cgi = "ScriptAlias  /cgi-bin/ ".$mod->system->server_conf["server_path_httpd_root"]."/"."web".$web["doc_id"]."/"."cgi-bin/";
 
-	if ($web["web_cgi_mod_perl"] == 1) {
+	if ($web["web_cgi_mod_perl"] == 1 && $server["server_httpd_mod_perl"] == 1) {
 	    $cgi .= "\nPerlOptions +Enable";
 	    $cgi_handler = "\tSetHandler perl-script
 \tPerlResponseHandler ModPerl::Registry
