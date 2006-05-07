@@ -66,7 +66,8 @@ $httpd_root = $server["server_path_httpd_root"];
 unset($server);
 
 // erstelle temp verzeichnis
-$tmp_dir = $go_info["server"]["temp_dir"].$go_info["server"]["dir_trenner"].md5(uniqid (""));
+//$tmp_dir = $go_info["server"]["temp_dir"].$go_info["server"]["dir_trenner"].md5(uniqid (""));
+$tmp_dir = "/home/admispconfig/ispconfig/temp/".md5(uniqid (""));
 mkdir( $tmp_dir, 0700) or $go_api->errorMessage($go_api->lng("tmp_dir_error"));
 
 $zip = $go_info["tools"]["zip"];
