@@ -57,6 +57,7 @@ $this->user_von = $server_conf["userid_von"];
 $this->group_von = $server_conf["groupid_von"];
 $this->virtusertable = $server_conf["server_sendmail_virtuser_datei"];
 $this->sendmail_cw = $server_conf["server_sendmail_cw"];
+$this->server_conf = $server_conf;
 }
 
 function web_show($doc_id, $doctype_id) {
@@ -388,21 +389,23 @@ function web_insert($doc_id, $doctype_id, $die_on_error = '1') {
 
     
     // Check ob lokaler Host als MX eingetragen ist
-    if (!empty($web["web_host"])) {
-        $host = $web["web_host"] . ".";
-    }
-    getmxrr($host . $web["web_domain"], $mx_list);
+	if($this->server_conf["server_mail_check_mx"] == 1) {
+    	if (!empty($web["web_host"])) {
+        	$host = $web["web_host"] . ".";
+    	}
+    	getmxrr($host . $web["web_domain"], $mx_list);
 
-    $mx_found = false;
-    foreach ($mx_list as $mx) {
-        if (ip2long(gethostbyname($mx)) == ip2long($web["web_ip"])) {
-            $mx_found = true;
-        }
-    }
+    	$mx_found = false;
+    	foreach ($mx_list as $mx) {
+        	if (ip2long(gethostbyname($mx)) == ip2long($web["web_ip"])) {
+            	$mx_found = true;
+        	}
+    	}
 
-    if (!$mx_found && $mod->system->server_conf["server_mail_check_mx"] == 1) {
-        $go_api->db->query("UPDATE isp_isp_web SET optionen_local_mailserver = '' WHERE doc_id = '$doc_id'");
-    }
+    	if (!$mx_found) {
+        	$go_api->db->query("UPDATE isp_isp_web SET optionen_local_mailserver = '' WHERE doc_id = '$doc_id'");
+    	}
+	}
 
 
     //////////////////////////////////////////////////////
@@ -899,21 +902,23 @@ $go_api->db->query("UPDATE isp_isp_web SET status = 'u' where status != 'n' and 
 
 
     // Check ob lokaler Host als MX eingetragen ist
-    if (!empty($web["web_host"])) {
-        $host = $web["web_host"] . ".";
-    }
-    getmxrr($host . $web["web_domain"], $mx_list);
+	if($this->server_conf["server_mail_check_mx"] == 1) {
+    	if (!empty($web["web_host"])) {
+        	$host = $web["web_host"] . ".";
+    	}
+    	getmxrr($host . $web["web_domain"], $mx_list);
 
-    $mx_found = false;
-    foreach ($mx_list as $mx) {
-        if (ip2long(gethostbyname($mx)) == ip2long($web["web_ip"])) {
-            $mx_found = true;
-        }
-    }
+    	$mx_found = false;
+    	foreach ($mx_list as $mx) {
+        	if (ip2long(gethostbyname($mx)) == ip2long($web["web_ip"])) {
+            	$mx_found = true;
+        	}
+    	}
 
-    if (!$mx_found && $mod->system->server_conf["server_mail_check_mx"] == 1) {
-        $go_api->db->query("UPDATE isp_isp_web SET optionen_local_mailserver = '' WHERE doc_id = '$doc_id'");
-    }
+    	if (!$mx_found) {
+        	$go_api->db->query("UPDATE isp_isp_web SET optionen_local_mailserver = '' WHERE doc_id = '$doc_id'");
+    	}
+	}
 
 
     ///////////////////////////////////

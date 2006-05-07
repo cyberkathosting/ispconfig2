@@ -918,6 +918,7 @@ CREATE TABLE `isp_isp_user` (
   `user_lang` char(2) NOT NULL default '',
   `user_emailweiterleitung_no_scan` char(1) default NULL,
   `user_ftp` char(1) default NULL,
+  `user_emaildomain` text NOT NULL,
   PRIMARY KEY  (`doc_id`),
   KEY `doctype_id` (`doctype_id`)
 ) TYPE=MyISAM;
