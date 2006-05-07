@@ -175,11 +175,9 @@ function web_show($doc_id, $doctype_id) {
 	    	$doc->deck[0]->elements[17]->visible = 0;
 		}
 		
+		// Deactivate mailquota field when maildir is selected.
 		if($server["use_maildir"] == 1) {
-			//$tmp_id = $doc->deck[0]->getElementID('web_mailquota');
 			$doc->deck[0]->getElementByName('web_mailquota')->visible = 0;
-			//$doc->deck[0]->elements[11]->visible = 0;
-			//unset($tmp_id);
 		}
 
                 // Hostingplan anwenden

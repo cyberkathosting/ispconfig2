@@ -23,5 +23,5 @@ $hlp["user_emailweiterleitung_local_copy"] = "If this box is checked a local cop
 $hlp["user_email"] = "Please specify the name that should be in front of the \"@\" in the email address. You can enter any name as long as it does not contain umlauts (ä, ö,ü), special characters (@, %, ...) and blanks.";
 $hlp["user_emailweiterleitung"] = "Here you can enter email addresses to which incoming emails should be forwarded.";
 $hlp["user_emailweiterleitung_no_scan"] = "If this box is checked mails will not be scanned before they are forwarded.";
-
+$hlp["user_ftp"] = "Enable FTP access for this user.";
 ?>

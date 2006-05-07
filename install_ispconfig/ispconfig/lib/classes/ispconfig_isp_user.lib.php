@@ -89,6 +89,10 @@ function user_show($doc_id, $doctype_id) {
                  $doc->deck[2]->elements[2]->values["accept"] = $go_api->lng("txt_accept");
                  $doc->deck[2]->elements[2]->values["discard"] = $go_api->lng("txt_discard");
         }
+		
+		// Deactivate user_ftp field, when FTP is not enabled for the website
+		 if($web["web_ftp"] != '1') $doc->deck[0]->getElementByName('user_ftp')->visible = 0;
+		
 
 }
 

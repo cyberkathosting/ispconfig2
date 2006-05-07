@@ -21,4 +21,6 @@ $hlp["user_spamfilter"] = "Activer le filtre anti-spam pour cette boite mail.";
 $hlp["user_emailweiterleitung_local_copy"] = "Si cette case est cochée, une copie locale de tous les mails reçus seras conservée si cet adresse e-mail est redirigée vers une autre adresse e-mail.";
 $hlp["user_email"] = "Specifier le nom précédant le \"@\" dans l'adresse e-mail. Vous pouvez entrer à n'importe quel nom tant qu'il ne contient pas de trémas (ä, ö, ü), des caractères spéciaux (@, %, ...) et des espaces.";
 $hlp["user_emailweiterleitung"] = "Ici vous pouvez entrer les adresses e-mail vers lequelles les mails entrant seront redirigés.";
+$hlp["user_ftp"] = "Enable FTP access for this user.";
+
 ?>

@@ -22,5 +22,5 @@ $hlp["user_spamfilter"] = "Detta val aktiverar Spam filter för denna epost låda.
 $hlp["user_emailweiterleitung_local_copy"] = "Om detta val väljs så kommer en kopia av all inkommande epost att sparas i den lokala epost lådan, även om eposten ska vidarebefodras till annan epost låda.";
 $hlp["user_email"] = "Skriv in namnet som ska vara framför \"@\" i epost adressen. Du kan slå in vilket namn som helst, bara det inte innehåller några specialtecken. Exempelvis (å,ä,ö,ü), eller special tecken som (@, %, ...) eller blanksteg.";
 $hlp["user_emailweiterleitung"] = "Skriv in den epost adress som ankommande epost ska bli vidarebefodrat till.";
-
+$hlp["user_ftp"] = "Enable FTP access for this user.";
 ?>
