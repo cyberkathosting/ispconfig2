@@ -169,10 +169,18 @@ function web_show($doc_id, $doctype_id) {
             $doc->deck[0]->elements[25]->visible = 0;
             $doc->deck[6]->elements[5]->visible = 0;
         }
-	// Deaktiviere mod_perl
-	if($server["server_httpd_mod_perl"] != 1) {
-	    $doc->deck[0]->elements[17]->visible = 0;
-	}
+		
+		// Deaktiviere mod_perl
+		if($server["server_httpd_mod_perl"] != 1) {
+	    	$doc->deck[0]->elements[17]->visible = 0;
+		}
+		
+		if($server["use_maildir"] == 1) {
+			//$tmp_id = $doc->deck[0]->getElementID('web_mailquota');
+			$doc->deck[0]->getElementByName('web_mailquota')->visible = 0;
+			//$doc->deck[0]->elements[11]->visible = 0;
+			//unset($tmp_id);
+		}
 
                 // Hostingplan anwenden
                 $vorlage_id = intval($_REQUEST["vorlage_id"]);
