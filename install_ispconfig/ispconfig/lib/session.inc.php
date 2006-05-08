@@ -27,6 +27,8 @@ NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
 EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
+if(isset($_REQUEST["go_info"])) die('Variable not accepted.');
+
 if($set_header == 1) {
     header("Expires: Mon, 26 Jul 1997 05:00:00 GMT");             // Date in the past
     header("Last-Modified: " . gmdate("D, d M Y H:i:s") . " GMT"); // always modified
