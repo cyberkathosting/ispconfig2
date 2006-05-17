@@ -40,6 +40,7 @@ case "$1" in
     start)
         echo "Starting ISPConfig system..."
         {INITDIR}/mysqld start &> /dev/null
+        {INITDIR}/mysql start &> /dev/null
         sleep 3
         /root/ispconfig/httpd/bin/apachectl startssl
         /root/ispconfig/sv/ispconfig_wconf &> /dev/null &
