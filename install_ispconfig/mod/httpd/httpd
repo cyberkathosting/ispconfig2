@@ -86,6 +86,8 @@ dist_path_httpd_root:/home/www:Web-Root:read::suse93
 
 dist_path_httpd_root:/home/www:Web-Root:read::suse100
 
+dist_path_httpd_root:/home/www:Web-Root:read::suse101
+
 dist_path_httpd_root:/home/www:Web-Root:read::debian30
 
 dist_path_httpd_root:/home/www:Web-Root:read::debian31
