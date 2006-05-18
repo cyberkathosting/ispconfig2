@@ -93,7 +93,7 @@ $go_info["server"]["postfix_config"] = 1; // 1 = SENDMAIL-STYLE, 2 = POSTFIX-STY
 $go_info["server"]["smtp_restart"] = 1; // 1 = stop/start, 2 = restart
 $go_info["server"]["network_config"] = 0; // 0 = none, 1 = automatic
 $go_info["server"]["sudo_du_enabled"] = false; // enable sudo for gathering website file usage
-$go_info["server"]["apache2_php"] = 'filter,addtype'; // one string of one or more comma seperated options: 'filter' = set PHP filters, 'addtype' = Set PHP addtype, 'both' = Set Filter + Addtype, 'engine' = Use "php_admin_flag engine on/off"
+$go_info["server"]["apache2_php"] = 'filter,addtype,engine'; // one string of one or more comma seperated options: 'filter' = set PHP filters, 'addtype' = Set PHP addtype, 'both' = Set Filter + Addtype, 'engine' = Use "php_admin_flag engine on/off"
 $go_info["server"]["password_hash"] = 'md5'; // 'crypt' = crypt; 'md5' = crypt-md5
 $go_info["server"]["do_automated_backups"] = 0; // 0 = no, 1 = yes; PLEASE NOTE: automated backups might fill up your HDD fast!
 $go_info["server"]["mysql_quota_privs"] = 'Insert,Create';
