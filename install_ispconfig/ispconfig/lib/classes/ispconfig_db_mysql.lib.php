@@ -28,6 +28,8 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 //include_once($go_info["server"]["classes_root"] . $go_info["server"]["dir_trenner"] ."db_common.lib.php");
 
+if(CONFIG_LOADED != 1) die('Direct access not permitted.');
+
         class db_mysql
         {
                 var $dbHost = "";                // hostname of the MySQL server

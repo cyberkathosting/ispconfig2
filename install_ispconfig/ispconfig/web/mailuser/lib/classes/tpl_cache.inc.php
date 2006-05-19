@@ -19,6 +19,8 @@
  * @package vLIB
  * @access public
  */
+ 
+ if(CONFIG_LOADED != 1) die('Direct access not permitted.');
 
 class tplc extends tpl {
 

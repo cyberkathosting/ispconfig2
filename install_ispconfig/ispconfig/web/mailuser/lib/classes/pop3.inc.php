@@ -5,6 +5,8 @@
  * @(#) $Header: /home/mlemos/cvsroot/PHPlibrary/pop3.php,v 1.6 2002/01/12 02:39:57 mlemos Exp $
  *
  */
+ 
+ if(CONFIG_LOADED != 1) die('Direct access not permitted.');
 
 class pop3
 {

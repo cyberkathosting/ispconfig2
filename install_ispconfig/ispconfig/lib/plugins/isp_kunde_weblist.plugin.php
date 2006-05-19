@@ -38,6 +38,8 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  # Datum:
  #
  #############################################################
+ 
+ if(CONFIG_LOADED != 1) die('Direct access not permitted.');
 
 class isp_kunde_weblist_plugin {
 

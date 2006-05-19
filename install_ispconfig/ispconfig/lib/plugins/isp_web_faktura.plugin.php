@@ -40,6 +40,8 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  # Letztes Update: 06.05.2003
  #
  #############################################################
+ 
+ if(CONFIG_LOADED != 1) die('Direct access not permitted.');
 
 class isp_web_faktura_plugin {
 

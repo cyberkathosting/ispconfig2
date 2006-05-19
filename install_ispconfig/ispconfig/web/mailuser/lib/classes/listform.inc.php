@@ -34,6 +34,8 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 * @version 1.1
 */
 
+if(CONFIG_LOADED != 1) die('Direct access not permitted.');
+
 class listform {
 
 	//var $tableDef;

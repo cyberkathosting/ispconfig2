@@ -26,11 +26,14 @@ OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
 NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
 EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
+
 if($go_info["server"]["mode"] == 'demo') {
 	require_once("../../../lib/config.inc.php");
 } else {
 	require_once("/home/admispconfig/ispconfig/lib/config.inc.php");
 }
+
+if(CONFIG_LOADED != 1) die('Direct access not permitted.');
 
 $conf["rootpath"]                 = $go_info["server"]["server_root"]."/web/mailuser";
 $conf["classpath"]                 = $conf["rootpath"]."/lib/classes";

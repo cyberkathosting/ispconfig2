@@ -10,6 +10,8 @@
 //
 // $Id: class.tpl.inc.php,v 1.1 2003/07/08 12:31:10 platinum Exp $
 
+if(CONFIG_LOADED != 1) die('Direct access not permitted.');
+
 // check to avoid multiple including of class
 if (!defined('vlibTemplateClassLoaded')) {
     define('vlibTemplateClassLoaded', 1);

@@ -29,6 +29,8 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 // Implements Message Catalog like utility to PHP
 
+if(CONFIG_LOADED != 1) die('Direct access not permitted.');
+
 class msgcat {
   
   // PUBLIC VARIABLES

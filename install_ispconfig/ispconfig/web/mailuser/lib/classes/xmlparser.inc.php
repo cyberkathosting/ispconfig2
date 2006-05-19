@@ -26,6 +26,8 @@ it's subelements as keys and subarrays.
 
 */
 
+if(CONFIG_LOADED != 1) die('Direct access not permitted.');
+
 class xmlparser{
       function GetChildren($vals, &$i) {
          $children = array(); // Contains node data
