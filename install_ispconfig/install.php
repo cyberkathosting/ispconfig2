@@ -1387,6 +1387,12 @@ exec("chown admispconfig:admispconfig ".$go_info["server"]["log_file"]);
 exec("chmod 644 ".$go_info["server"]["log_file"]);
 //////////// LOG-FILE ANLEGEN ENDE ////////////////
 
+
+///////////////// CREATE CHROOT SSH ENV //////////////////
+exec("chmod +x /root/ispconfig/scripts/shell/create_chroot_env.sh");
+
+///////////////// CREATE CHROOT SSH ENV //////////////////
+
 exec("pwconv &> /dev/null");
 exec("grpconv &> /dev/null");
 

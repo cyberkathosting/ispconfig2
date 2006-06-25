@@ -617,10 +617,17 @@ function user_insert($doc_id, $doctype_id) {
   $web_path = $mod->system->server_conf["server_path_httpd_root"]."/web".$web_doc_id;
   $gid_web = $mod->system->server_conf["groupid_von"] + $web_doc_id;
 
-  if($user["user_admin"]){
-    $mod->system->adduser($user_username, $userid, $gid_web, $user_name, $web_path, $shell, $passwort);
+  if($go_info["server"]["ssh_chroot"] == 1) {
+          $chroot_addpath = "/./";
   } else {
-    $mod->system->adduser($user_username, $userid, $gid_web, $user_name, $web_path."/user/".$user_username, $shell, $passwort);
+          $chroot_addpath = "";
+  }
+
+
+  if($user["user_admin"]){
+    $mod->system->adduser($user_username, $userid, $gid_web, $user_name, $web_path.$chroot_addpath, $shell, $passwort);
+  } else {
+    $mod->system->adduser($user_username, $userid, $gid_web, $user_name, $web_path."/user/".$user_username.$chroot_addpath, $shell, $passwort);
   }
 
 /*
@@ -735,10 +742,18 @@ function user_insert($doc_id, $doctype_id) {
 
   // Eintrag aus del_status entfernen, wenn vorhanden
   $mod->db->query("DELETE FROM del_status WHERE doc_id = '".$doc_id."' AND doctype_id = '".$doctype_id."'");
+
+  // Chroot enviroment erstellen
+  if($go_info["server"]["ssh_chroot"] == 1) {
+          exec("/root/ispconfig/scripts/shell/create_chroot_env.sh $user_username");
+  }
+
+
+
 }
 
 function user_update($doc_id, $doctype_id) {
-  global $mod;
+  global $mod,$go_info;
   $dist = $mod->system->server_conf["dist"];
   $user = $mod->system->data["isp_isp_user"][$doc_id];
   if(empty($user)) $mod->log->ext_log("query result empty", 2, $this->FILE, __LINE__);
@@ -773,17 +788,23 @@ function user_update($doc_id, $doctype_id) {
   $web_path = $mod->system->server_conf["server_path_httpd_root"]."/web".$web_doc_id;
   $gid_web = $mod->system->server_conf["groupid_von"] + $web_doc_id;
 
+  if($go_info["server"]["ssh_chroot"] == 1) {
+          $chroot_addpath = "/./";
+  } else {
+          $chroot_addpath = "";
+  }
+
   if(!empty($user["user_passwort"])){
     if($user["user_admin"]){
-      $mod->system->updateuser($user_username, $userid, $gid_web, $user_name, $web_path, $shell, $passwort);
+      $mod->system->updateuser($user_username, $userid, $gid_web, $user_name, $web_path.$chroot_addpath, $shell, $passwort);
     } else {
-      $mod->system->updateuser($user_username, $userid, $gid_web, $user_name, $web_path."/user/".$user_username, $shell, $passwort);
+      $mod->system->updateuser($user_username, $userid, $gid_web, $user_name, $web_path."/user/".$user_username.$chroot_addpath, $shell, $passwort);
     }
   } else {
     if($user["user_admin"]){
-      $mod->system->updateuser($user_username, $userid, $gid_web, $user_name, $web_path, $shell, $mod->system->getpasswd($user_username));
+      $mod->system->updateuser($user_username, $userid, $gid_web, $user_name, $web_path.$chroot_addpath, $shell, $mod->system->getpasswd($user_username));
     } else {
-      $mod->system->updateuser($user_username, $userid, $gid_web, $user_name, $web_path."/user/".$user_username, $shell, $mod->system->getpasswd($user_username));
+      $mod->system->updateuser($user_username, $userid, $gid_web, $user_name, $web_path."/user/".$user_username.$chroot_addpath, $shell, $mod->system->getpasswd($user_username));
     }
   }
 
@@ -834,6 +855,7 @@ function user_update($doc_id, $doctype_id) {
   }
   ////////// Verzeichnisse erzeugen ENDE ///////////
 
+
   //wenn User Admin-User des Webs, Owner des Webs ändern, aber nicht Owner der User-Verzeichnisse!
   if($user["user_admin"]){
     //exec("usermod -G web".$web_doc_id." ".$user_username."");
@@ -877,6 +899,12 @@ function user_update($doc_id, $doctype_id) {
   //Status zurücksetzen
   $mod->db->query("update isp_isp_user SET status = '' where doc_id = '$doc_id'");
   $mod->system->data["isp_isp_user"][$doc_id]["status"] = '';
+
+  // Chroot enviroment erstellen
+  if($go_info["server"]["ssh_chroot"] == 1) {
+          exec("/root/ispconfig/scripts/shell/create_chroot_env.sh $user_username");
+  }
+
 }
 
 
@@ -1251,16 +1279,21 @@ function make_vhost($server_id) {
       $web_httpd_include = $this->httpd_syntax_check($web["doc_id"], $web_httpd_include, 1);
     }
 
+    if($server["server_httpd_suexec"] || $go_info["server"]["apache2_php"] == 'suphp'){
+      $sql = "SELECT * FROM isp_nodes, isp_dep, isp_isp_user WHERE isp_dep.parent_doc_id = '".$web["doc_id"]."' AND isp_dep.parent_doctype_id = '".$this->web_doctype_id."' AND isp_dep.child_doc_id = isp_isp_user.doc_id AND isp_dep.child_doctype_id = '".$this->user_doctype_id."' AND isp_isp_user.user_admin = '1' AND isp_nodes.doc_id = isp_isp_user.doc_id AND isp_nodes.doctype_id = '".$this->user_doctype_id."' AND isp_nodes.status = '1'";
+
+      $admin_user = $mod->db->queryOneRecord($sql);
+
+      if(!empty($admin_user)){
+        $webadmin = $admin_user["user_username"];
+      } else {
+        $webadmin = "nobody";
+      }
+
+    }
+
     if($server["server_httpd_suexec"]){
       if($suexec_check == "0"){
-        $sql = "SELECT * FROM isp_nodes, isp_dep, isp_isp_user WHERE isp_dep.parent_doc_id = '".$web["doc_id"]."' AND isp_dep.parent_doctype_id = '".$this->web_doctype_id."' AND isp_dep.child_doc_id = isp_isp_user.doc_id AND isp_dep.child_doctype_id = '".$this->user_doctype_id."' AND isp_isp_user.user_admin = '1' AND isp_nodes.doc_id = isp_isp_user.doc_id AND isp_nodes.doctype_id = '".$this->user_doctype_id."' AND isp_nodes.status = '1'";
-
-        $admin_user = $mod->db->queryOneRecord($sql);
-        if(!empty($admin_user)){
-          $webadmin = $admin_user["user_username"];
-        } else {
-          $webadmin = "nobody";
-        }
 
         if($apache_version == 1){
           $suexec = "User ".$webadmin."
@@ -1336,7 +1369,7 @@ AddHandler cgi-script .pl";
       }
       if($apache_version == 2){
                   $php = '';
-                if($go_info["server"]["apache2_php"] == 'addtype' or $go_info["server"]["apache2_php"] == 'both') {
+                if($go_info["server"]["apache2_php"] == 'addtype' or $go_info["server"]["apache2_php"] == 'both' or $go_info["server"]["apache2_php"] == 'suphp') {
                         $php .= "AddType application/x-httpd-php .php .php3 .php4 .php5\n";
                 }
                 if($go_info["server"]["apache2_php"] == 'filter' or $go_info["server"]["apache2_php"] == 'both') {
@@ -1358,15 +1391,24 @@ AddHandler cgi-script .pl";
 </Files>";
                 }
       }
-      if($web["web_php_safe_mode"]){
-        $php .= "\nphp_admin_flag safe_mode On
+          if($go_info["server"]["apache2_php"] == 'suphp'){
+                  $php .= "suPHP_Engine on\n";
+                  $php .= "suPHP_UserGroup ".$webadmin." web".$web["doc_id"]."\n";
+                  $php .= "AddHandler x-httpd-php .php .php3 .php4 .php5\n";
+                  $php .= "suPHP_AddHandler x-httpd-php\n";
+          }
+
+          if($go_info["server"]["apache2_php"] != 'suphp') {
+              if($web["web_php_safe_mode"]){
+                $php .= "\nphp_admin_flag safe_mode On
 php_admin_value open_basedir ".$mod->system->server_conf["server_path_httpd_root"]."/"."web".$web["doc_id"]."/
 php_admin_value file_uploads 1
 php_admin_value upload_tmp_dir ".$mod->system->server_conf["server_path_httpd_root"]."/"."web".$web["doc_id"]."/phptmp/
 php_admin_value session.save_path ".$mod->system->server_conf["server_path_httpd_root"]."/"."web".$web["doc_id"]."/phptmp/";
-      } else {
-        $php .= "\nphp_admin_flag safe_mode Off";
-      }
+              } else {
+                $php .= "\nphp_admin_flag safe_mode Off";
+              }
+        }
     } else {
       $php = "";
     }

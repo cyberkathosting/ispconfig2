@@ -127,6 +127,10 @@ function web_show($doc_id, $doctype_id) {
                   $doc->deck[0]->elements[17]->visible = 0;
                   $doc->deck[0]->elements[18]->visible = 0;
                 }
+				
+				// SuPHP
+				if($go_info["server"]["apache2_php"] == 'suphp') $doc->deck[0]->elements[18]->visible = 0;
+				
                 if($reseller["limit_ssi"] != 1) $doc->deck[0]->elements[20]->visible = 0;
                 if($reseller["limit_ftp"] != 1) $doc->deck[0]->elements[21]->visible = 0;
                 if($reseller["limit_mysql"] != 1){
