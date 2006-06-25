@@ -138,6 +138,10 @@ function web_show($doc_id, $doctype_id) {
                   $doc->deck[0]->elements[21]->visible = 0;
                   $doc->deck[0]->elements[22]->visible = 0;
                 }
+				
+				// hide safemode checkbox when suphp is enabled
+				if($go_info["server"]["apache2_php"] == 'suphp') $doc->deck[0]->elements[22]->visible = 0;
+				
                 if($reseller["limit_ssi"] != 1) $doc->deck[0]->elements[23]->visible = 0;
                 if($reseller["limit_ftp"] != 1) $doc->deck[0]->elements[24]->visible = 0;
                 if($reseller["limit_mysql"] != 1){
