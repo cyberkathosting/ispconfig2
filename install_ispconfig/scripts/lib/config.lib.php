@@ -1416,14 +1416,14 @@ Group web".$web["doc_id"];
                 }
       }
 	  
-	  if(array_search('suphp',$a2php) !== false)){
+	  if(array_search('suphp',$a2php) !== false){
                   $php .= "suPHP_Engine on\n";
                   $php .= "suPHP_UserGroup ".$webadmin." web".$web["doc_id"]."\n";
                   $php .= "AddHandler x-httpd-php .php .php3 .php4 .php5\n";
                   $php .= "suPHP_AddHandler x-httpd-php\n";
           }
 		  
-	  if(array_search('suphp',$a2php) !== false)) {
+	  if(array_search('suphp',$a2php) !== false) {
       if($web["web_php_safe_mode"]){
         $php .= "\nphp_admin_flag safe_mode On
 php_admin_value open_basedir ".$mod->system->server_conf["server_path_httpd_root"]."/"."web".$web["doc_id"]."/
