@@ -35,7 +35,7 @@ if($go_info["server"]["mode"] == 'demo') {
 
 if(CONFIG_LOADED != 1) die('Direct access not permitted.');
 
-$conf["rootpath"]                 = $go_info["server"]["server_root"]."/web/mailuser";
+$conf["rootpath"]                 = SERVER_ROOT."/web/mailuser";
 $conf["classpath"]                 = $conf["rootpath"]."/lib/classes";
 
 /*

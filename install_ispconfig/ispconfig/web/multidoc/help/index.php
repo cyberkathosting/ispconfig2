@@ -44,7 +44,7 @@ if(!empty($doctype_id)) {
 
         if(trim($message) == '') {
                 // Hole Help File, wenn vorhanden
-                $hlp_file = $go_info["server"]["include_root"] . $go_info["server"]["dir_trenner"] ."help".$go_info["server"]["dir_trenner"].$go_api->language."_".$doctype_id.".hlp";
+                $hlp_file = INCLUDE_ROOT . DIR_TRENNER ."help".DIR_TRENNER.$go_api->language."_".$doctype_id.".hlp";
                 if(is_file($hlp_file)) include_once($hlp_file);
                 $element_name = $doc->deck[$deck_id]->elements[$element_id]->name;
                 $message = nl2br($hlp[$element_name]);

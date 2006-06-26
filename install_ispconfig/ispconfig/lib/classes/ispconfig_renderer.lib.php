@@ -1261,7 +1261,7 @@ class renderer
     global $go_info,$go_api,$doc_id,$doctype_id,$groupid;
     $this->input = "";
     if($element_val->name != "") {
-        $plugin_file = $go_info["server"]["include_root"].$go_info["server"]["dir_trenner"].'plugins'.$go_info["server"]["dir_trenner"].$element_val->name.".plugin.php";
+        $plugin_file = INCLUDE_ROOT . DIR_TRENNER.'plugins'.DIR_TRENNER.$element_val->name.".plugin.php";
         if(@is_file($plugin_file)) {
             include_once($plugin_file);
             $pluginclass = $element_val->name . '_plugin';

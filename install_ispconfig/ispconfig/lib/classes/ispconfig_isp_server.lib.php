@@ -98,7 +98,7 @@ function server_insert($doc_id, $doctype_id) {
 
         // adminmail.txt anlegen
         if($go_info["server"]["mode"] != 'demo') {
-            $pfad = $go_info["server"]["server_root"]."/adminmail.txt";
+            $pfad = SERVER_ROOT."/adminmail.txt";
             $fp = fopen ($pfad, "w");
             fwrite($fp,$server["server_admin_email"]);
             fclose($fp);
@@ -154,7 +154,7 @@ global $go_api, $go_info;
 
         // adminmail.txt anlegen
         if($go_info["server"]["mode"] != 'demo') {
-            $pfad = $go_info["server"]["server_root"]."/adminmail.txt";
+            $pfad = SERVER_ROOT."/adminmail.txt";
             $fp = fopen ($pfad, "w");
             fwrite($fp,$server["server_admin_email"]);
             fclose($fp);

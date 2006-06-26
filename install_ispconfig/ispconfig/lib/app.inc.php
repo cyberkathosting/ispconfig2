@@ -45,9 +45,9 @@ class go_api
       /* Aufsetzen Rest API                                     */
       /**********************************************************/
 
-      $dbclass = $go_info["server"]["classes_root"] . $go_info["server"]["dir_trenner"] ."ispconfig_db_".$go_info["server"]["db_type"].".lib.php";
+      $dbclass = CLASSES_ROOT . DIR_TRENNER ."ispconfig_db_".DB_TYPE.".lib.php";
       include_once($dbclass);
-          $dbname = 'db_'.$go_info["server"]["db_type"];
+          $dbname = 'db_'.DB_TYPE;
       $this->db = new $dbname;
 
       $this->language = $go_info["server"]["lang"];
@@ -62,8 +62,8 @@ class go_api
         global $go_info,$s;
         if($this->_language_inc != 1) {
             // lade globales und modul Wordbook
-            @include_once($go_info["server"]["include_root"].$go_info["server"]["dir_trenner"]."lang".$go_info["server"]["dir_trenner"].$this->language.".lng");
-            @include_once($go_info["server"]["server_root"] . $go_info["server"]["dir_trenner"]  ."web".$go_info["server"]["dir_trenner"]. $go_info["modul"]["path"] .  $go_info["server"]["dir_trenner"] ."lib" . $go_info["server"]["dir_trenner"] . "lang" . $go_info["server"]["dir_trenner"] . $this->language.".lng");
+            @include_once(INCLUDE_ROOT . DIR_TRENNER."lang".DIR_TRENNER.$this->language.".lng");
+            @include_once(SERVER_ROOT . DIR_TRENNER  ."web".DIR_TRENNER. $go_info["modul"]["path"] . DIR_TRENNER ."lib" . DIR_TRENNER . "lang" . DIR_TRENNER . $this->language.".lng");
             $this->_wb = $wb;
             $this->_language_inc = 1;
         }
@@ -98,7 +98,7 @@ class go_api
       foreach($modules as $value)
                       {
             $value = trim($value);
-                      include_once($go_info["server"]["classes_root"] . $go_info["server"]["dir_trenner"] ."ispconfig_".$value.".lib.php");
+                      include_once(CLASSES_ROOT . DIR_TRENNER ."ispconfig_".$value.".lib.php");
                            $this->$value = new $value;
                            }
       }
@@ -114,7 +114,7 @@ class go_api
       $objects = explode(",",$objects);
       foreach($objects as $value)
                       {
-                      include_once($go_info["server"]["classes_root"] . $go_info["server"]["dir_trenner"] ."ispconfig_".$value.".obj.php");
+                      include_once(CLASSES_ROOT . DIR_TRENNER ."ispconfig_".$value.".obj.php");
                            }
       }
 

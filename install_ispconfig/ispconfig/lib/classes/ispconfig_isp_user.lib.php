@@ -197,7 +197,7 @@ global $go_api, $go_info,$s;
      }
 
      // check ob username erlaubt ist anhand der baduser datei
-     $baduser_datei = $go_info["server"]["server_root"].$go_info["server"]["dir_trenner"]."users";
+     $baduser_datei = SERVER_ROOT . DIR_TRENNER."users";
      if($fd = @fopen ($baduser_datei, "rb")) {
         $baduser = @fread ($fd, filesize ($baduser_datei));
         fclose ($fd);
@@ -329,7 +329,7 @@ global $go_api, $go_info,$s,$HTTP_POST_VARS;
     $go_api->db->query("UPDATE isp_isp_web SET status = 'u' where status != 'n' and status != 'd' and doc_id = '$web_doc_id'");
 
     // check ob username erlaubt ist anhand der baduser datei
-     $baduser_datei = $go_info["server"]["server_root"].$go_info["server"]["dir_trenner"]."users";
+     $baduser_datei = SERVER_ROOT . DIR_TRENNER."users";
      if($fd = @fopen ($baduser_datei, "rb")) {
         $baduser = @fread ($fd, filesize ($baduser_datei));
         fclose ($fd);

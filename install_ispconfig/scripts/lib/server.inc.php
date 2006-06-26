@@ -27,6 +27,9 @@ NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
 EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
+if(isset($_REQUEST["go_info"]) or count($_REQUEST) > 0) die('http request to shell script not allowed!');
+if(!defined('SERVER_ROOT')) die('Direct calls to this file are not allowed.');
+
 class mod{
 
   function mod(){
@@ -36,8 +39,8 @@ class mod{
     $this->tpl = new FastTemplate($go_info["isp"]["server_root"].'/isp/conf');
 
     // Einbindung Datenbank
-    include_once($go_info["isp"]["classes_root"] . $go_info["server"]["dir_trenner"] ."ispconfig_db_".$go_info["server"]["db_type"].".lib.php");
-    $dbname = 'db_'.$go_info["server"]["db_type"];
+    include_once($go_info["isp"]["classes_root"] . $go_info["server"]["dir_trenner"] ."ispconfig_db_".DB_TYPE.".lib.php");
+    $dbname = 'db_'.DB_TYPE;
     $this->db = new $dbname;
 
     // Einbindung Logging

@@ -46,7 +46,7 @@ class FastTemplate {
         {
                 global $php_errormsg, $go_info;
 
-                $this->set_root($go_info["server"]["server_root"] . $go_info["server"]["dir_trenner"] ."web".$go_info["server"]["dir_trenner"]."templates");
+                $this->set_root(SERVER_ROOT . DIR_TRENNER ."web".DIR_TRENNER."templates");
 
                 if(!empty($pathToTemplates))
                 {
