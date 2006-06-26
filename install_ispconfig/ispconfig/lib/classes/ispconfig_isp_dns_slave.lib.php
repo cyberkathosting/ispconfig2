@@ -72,6 +72,14 @@ function slave_insert($doc_id, $doctype_id, $die_on_error = '1') {
             }
           }
         }
+		
+		// Check for duplicates
+		$tmp_rec = $go_api->db->queryOneRecord("SELECT count(doc_id) as domain_number FROM dns_secondary where domain = '".$slave["domain"]."' AND doc_id != ".$slave["doc_id"]);
+		if($tmp_rec["domain_number"] > 0) {
+			$status = "DELETE";
+			$errorMessage .= $go_api->lng("Duplicate record.");
+		}
+		unset($tmp_rec);
 
         if($status == "DELETE") {
         // Eintrag löschen
