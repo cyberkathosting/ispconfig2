@@ -68,7 +68,7 @@ define("DIR_TRENNER","/");
 define("SERVER_ROOT","/home/admispconfig/ispconfig");
 define("INCLUDE_ROOT",SERVER_ROOT.DIR_TRENNER."lib");
 define("CLASSES_ROOT",INCLUDE_ROOT.DIR_TRENNER."classes");
-define("DB_TYPE","mysql")
+define("DB_TYPE","mysql");
 
 
 if(isset($_SERVER['HTTP_HOST'])){
