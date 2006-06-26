@@ -27,7 +27,9 @@ NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
 EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-if(isset($_REQUEST["go_info"])) die('Variable not accepted.');
+if(isset($_REQUEST["go_info"])) die('Variable not allowed as REQUEST parameter!');
+if(!defined('SERVER_ROOT')) die('Include file is missing. Please run the setup script as described in the installation manual.');
+
 
 if($set_header == 1) {
     header("Expires: Mon, 26 Jul 1997 05:00:00 GMT");             // Date in the past
@@ -44,7 +46,7 @@ $go_info["server"]["dir_trenner"] = '/';
 /* Laden der Basis Klassen                              */
 /********************************************************/
 
-include($go_info["server"]["classes_root"] . $go_info["server"]["dir_trenner"] ."ispconfig_template.lib.php");
+include(CLASSES_ROOT . DIR_TRENNER ."ispconfig_template.lib.php");
 
 /*********************************************************/
 /* Setting up API                                                                                                  */
@@ -64,16 +66,10 @@ class go_api
       /**********************************************************/
       /* Aufsetzen Rest API                                     */
       /**********************************************************/
-      /*
-      include($go_info["server"]["classes_root"] .'\\adodb\\adodb.inc.php');
-      $this->db = NewADOConnection($go_info["server"]["db_type"]);
-      $this->db->Connect("localhost", "root", "", "db_ispconfig");
-      //print_r($this->db);
-      //die();
-      */
-      $dbclass = $go_info["server"]["classes_root"] . $go_info["server"]["dir_trenner"] ."ispconfig_db_".$go_info["server"]["db_type"].".lib.php";
+
+      $dbclass = CLASSES_ROOT . DIR_TRENNER ."ispconfig_db_".DB_TYPE.".lib.php";
       include_once($dbclass);
-          $dbname = 'db_'.$go_info["server"]["db_type"];
+          $dbname = 'db_'.DB_TYPE;
       $this->db = new $dbname;
 
       $this->uses("auth,session,groups,content,log");
@@ -91,8 +87,8 @@ class go_api
         global $go_info,$s;
         if($this->_language_inc != 1) {
             // lade globales und modul Wordbook
-            @include_once($go_info["server"]["include_root"].$go_info["server"]["dir_trenner"]."lang".$go_info["server"]["dir_trenner"].$this->language.".lng");
-            @include_once($go_info["server"]["server_root"] . $go_info["server"]["dir_trenner"]  ."web".$go_info["server"]["dir_trenner"]. $go_info["modul"]["path"] .  $go_info["server"]["dir_trenner"] ."lib" . $go_info["server"]["dir_trenner"] . "lang" . $go_info["server"]["dir_trenner"] . $this->language.".lng");
+            @include_once(INCLUDE_ROOT . DIR_TRENNER."lang".DIR_TRENNER.$this->language.".lng");
+            @include_once(SERVER_ROOT . DIR_TRENNER  ."web".DIR_TRENNER. $go_info["modul"]["path"] .  DIR_TRENNER ."lib" . DIR_TRENNER . "lang" . DIR_TRENNER . $this->language.".lng");
             $this->_wb = $wb;
             $this->_language_inc = 1;
         }
@@ -127,7 +123,7 @@ class go_api
       foreach($modules as $value)
                       {
             $value = trim($value);
-                      include_once($go_info["server"]["classes_root"] . $go_info["server"]["dir_trenner"] ."ispconfig_".$value.".lib.php");
+                      include_once(CLASSES_ROOT . DIR_TRENNER ."ispconfig_".$value.".lib.php");
                            $this->$value = new $value;
                            }
       }
@@ -143,7 +139,7 @@ class go_api
       $objects = explode(",",$objects);
       foreach($objects as $value)
                       {
-                      include_once($go_info["server"]["classes_root"] . $go_info["server"]["dir_trenner"] ."ispconfig_".$value.".obj.php");
+                      include_once(CLASSES_ROOT . DIR_TRENNER ."ispconfig_".$value.".obj.php");
                            }
       }
 
@@ -211,15 +207,13 @@ if ($go_api->auth->status != "ok")
 
 $s = $go_api->session->start();
 
-$go_info["server"]["dir_trenner"] = '/';
-
 /**********************************************************/
 /* Füllen des info arrays, wenn neue Session              */
 /**********************************************************/
 
 if($go_info["session"]["id"] == "")
 {
-include($go_info["server"]["include_root"] . $go_info["server"]["dir_trenner"] ."go_info.inc.php");
+include(INCLUDE_ROOT . DIR_TRENNER ."go_info.inc.php");
 $go_api->session->save();
 }
 
@@ -232,7 +226,7 @@ $go_api->language = $go_info["user"]["language"];
 
 if($go_info["modul"]["name"] == "bookmark")
 {
-include($go_info["server"]["classes_root"] . $go_info["server"]["dir_trenner"] ."ispconfig_bookmark.lib.php");
+include(CLASSES_ROOT . DIR_TRENNER ."ispconfig_bookmark.lib.php");
 $go_api->bookmark = new bookmark;
 }
 /**********************************************************/
@@ -240,7 +234,7 @@ $go_api->bookmark = new bookmark;
 /**********************************************************/
 
 //if(@is_file($go_info["server"]["server_root"] . $go_info["server"]["dir_trenner"]  ."web".$go_info["server"]["dir_trenner"]. $go_info["modul"]["path"] .  $go_info["server"]["dir_trenner"] ."lib" . $go_info["server"]["dir_trenner"] . "module.inc.php")) {
-    include($go_info["server"]["server_root"] . $go_info["server"]["dir_trenner"]  ."web".$go_info["server"]["dir_trenner"]. $go_info["modul"]["path"] .  $go_info["server"]["dir_trenner"] ."lib" . $go_info["server"]["dir_trenner"] . "module.inc.php");
+    include(SERVER_ROOT . DIR_TRENNER  ."web".DIR_TRENNER. $go_info["modul"]["path"] .  DIR_TRENNER ."lib" . DIR_TRENNER . "module.inc.php");
 //}
 
 /**********************************************************/

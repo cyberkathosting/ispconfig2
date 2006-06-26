@@ -26,6 +26,10 @@ OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
 NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, 
 EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
+
+if(isset($_REQUEST["go_info"])) die('Variable not allowed as REQUEST parameter!');
+if(!defined('SERVER_ROOT')) die('Include file is missing. Please run the setup script as described in the installation manual.');
+
 if($go_info["theme"]["page"]["logo"] != "") {
 	echo '<div align="right"><img src="'.$go_info["server"]["server_url"]."/".$go_info["theme"]["path"]."/".$go_info["theme"]["page"]["logo"].'"></img></div>';
 }

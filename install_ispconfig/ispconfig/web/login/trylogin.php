@@ -29,9 +29,12 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 include("../../lib/config.inc.php");
 // Versionen ab 3.3
 
-$dbclass = $go_info["server"]["classes_root"] . $go_info["server"]["dir_trenner"] ."ispconfig_db_".$go_info["server"]["db_type"].".lib.php";
+if(isset($_REQUEST["go_info"])) die('Variable not allowed as REQUEST parameter!');
+if(!defined('SERVER_ROOT')) die('Include file is missing. Please run the setup script as described in the installation manual.');
+
+$dbclass = CLASSES_ROOT . DIR_TRENNER ."ispconfig_db_".DB_TYPE.".lib.php";
 include_once($dbclass);
-$dbname = 'db_'.$go_info["server"]["db_type"];
+$dbname = 'db_'.DB_TYPE;
 $db = new $dbname;
 
 $s = addslashes($s);

@@ -26,6 +26,11 @@ OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
 NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, 
 EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
+
+if(isset($_REQUEST["go_info"])) die('Variable not allowed as REQUEST parameter!');
+if(!defined('SERVER_ROOT')) die('Include file is missing. Please run the setup script as described in the installation manual.');
+
+
 ######################################################
 #
 # hole Infos aus Datenbank
@@ -150,7 +155,7 @@ $go_info["modul"]["name"]              = $module_row["module_name"];
 $go_info["modul"]["title"]             = $module_row["module_title"];
 $go_info["modul"]["path"]              = $module_row["module_path"];
 $go_info["modul"]["table_name"]        = $module_row["module_name"];
-$go_info["modul"]["include_dir"]       = $go_info["server"]["include_root"];
+$go_info["modul"]["include_dir"]       = INCLUDE_ROOT;
 $go_info["modul"]["template_dir"]      = $go_info["server"]["template_root"];
 $go_info["modul"]["item_order"]        = $user_row["bookmark_order"];
 $go_info["modul"]["news"]              = $user_row["news"];

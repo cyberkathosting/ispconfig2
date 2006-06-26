@@ -48,7 +48,7 @@ $tpl->parse(STYLESHEET, stylesheet);
 
 // installierte Sprachen bestimmen
 $lng_select = '';
-$ordner = $go_info["server"]["include_root"].$go_info["server"]["dir_trenner"]."lang";
+$ordner = INCLUDE_ROOT . DIR_TRENNER."lang";
 $handle = @opendir($ordner);
 while ($file = @readdir ($handle)) {
     if ($file != "." && $file != "..") {

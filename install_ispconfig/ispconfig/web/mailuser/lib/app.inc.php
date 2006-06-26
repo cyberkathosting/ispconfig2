@@ -32,7 +32,7 @@ if($go_info["server"]["mode"] == 'demo') {
 	require_once("/home/admispconfig/ispconfig/lib/config.inc.php");
 }
 
-$conf["rootpath"]                 = $go_info["server"]["server_root"]."/web/mailuser";
+$conf["rootpath"]                 = SERVER_ROOT ."/web/mailuser";
 $conf["classpath"]                 = $conf["rootpath"]."/lib/classes";
 
 /*

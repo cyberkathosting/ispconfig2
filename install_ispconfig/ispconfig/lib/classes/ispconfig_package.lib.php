@@ -64,7 +64,7 @@ global $go_api, $go_info;
     //$p_src = str_replace("\\","/",$inst_path);
     //$p_app = str_replace("\\","/",$inst_path);
     $install = str_replace("{src}", $inst_path, $install);
-    $install = str_replace("{app}", $go_info["server"]["server_root"], $install);
+    $install = str_replace("{app}", SERVER_ROOT, $install);
     $install = str_replace("{ispconfig_db}", $go_info["server"]["db_name"], $install);
 
 

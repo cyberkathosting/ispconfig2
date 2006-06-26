@@ -63,6 +63,14 @@ $set_header = 1;
 
 $go_info["server"]["dir_trenner"] = "/";
 $go_info["server"]["server_root"] = "/home/admispconfig/ispconfig";
+
+define("DIR_TRENNER","/");
+define("SERVER_ROOT","/home/admispconfig/ispconfig");
+define("INCLUDE_ROOT",SERVER_ROOT.DIR_TRENNER."lib");
+define("CLASSES_ROOT",INCLUDE_ROOT.DIR_TRENNER."classes");
+define("DB_TYPE","mysql")
+
+
 if(isset($_SERVER['HTTP_HOST'])){
   $go_info["server"]["server_url"] = '{PROTOCOL}'.$_SERVER['HTTP_HOST'];
 } else {

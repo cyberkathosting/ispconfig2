@@ -1048,7 +1048,7 @@ function make_docroot($doc_id,$hostname,$domainname,$web_quota,$update) {
     touch($web_path."/phptmp/.no_delete");
   }
 
-  $go_pfad = $go_info["server"]["server_root"];
+  $go_pfad = SERVER_ROOT;
   if(!is_dir($web_path."/web/error")){
     $mod->log->caselog("cp -fr /root/ispconfig/isp/error_".$go_info["server"]["lang"]." $web_path/web/error", $this->FILE, __LINE__);
   }

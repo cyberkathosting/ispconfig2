@@ -87,7 +87,7 @@ $go_info["modul"]["table_name"]        = "isp_file";
 
 $go_info["modul"]["name"]              = "isp_file";
 $go_info["modul"]["title"]             = "WEB FTP";
-$go_info["modul"]["include_dir"]       = $go_info["server"]["include_root"];
+$go_info["modul"]["include_dir"]       = INCLUDE_ROOT;
 $go_info["modul"]["template_dir"]      = $go_info["server"]["template_root"];
 $go_info["modul"]["lang_dir"]          = "";
 $go_info["modul"]["version"]           = "";

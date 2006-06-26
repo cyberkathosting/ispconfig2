@@ -259,7 +259,7 @@ if(is_array($termin_event)) {
 // Plugin Events aufrufen
 if(is_array($plugin_event)) {
     foreach($plugin_event as $tval => $options) {
-                $plugin_file = $go_info["server"]["include_root"].$go_info["server"]["dir_trenner"].'plugins'.$go_info["server"]["dir_trenner"].$tval.".plugin.php";
+                $plugin_file = INCLUDE_ROOT . DIR_TRENNER.'plugins'.DIR_TRENNER.$tval.".plugin.php";
         if(@is_file($plugin_file)) {
             include_once($plugin_file);
             $pluginclass = $tval . '_plugin';
@@ -624,7 +624,7 @@ while (list($key, $val) = each($doc->deck))
         $go_api->renderer->element_jscript_nummer = $element_jscript_nummer;
 
                 // Hole Help File, wenn vorhanden
-                $hlp_file = $go_info["server"]["include_root"] . $go_info["server"]["dir_trenner"] ."help".$go_info["server"]["dir_trenner"].$go_api->language."_".$doctype_id.".hlp";
+                $hlp_file = INCLUDE_ROOT . DIR_TRENNER ."help".DIR_TRENNER.$go_api->language."_".$doctype_id.".hlp";
                 if(is_file($hlp_file)) include_once($hlp_file);
 
     if(is_array($val->elements) and $deck_id == $key){

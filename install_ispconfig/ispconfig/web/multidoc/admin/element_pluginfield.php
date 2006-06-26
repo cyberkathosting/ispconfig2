@@ -86,7 +86,7 @@ if(isset($id)){
 
     if(!empty($plugin_name)) {
 
-        $plugin_file = $go_info["server"]["include_root"].$go_info["server"]["dir_trenner"].'plugins'.$go_info["server"]["dir_trenner"].$plugin_name.".plugin.php";
+        $plugin_file = INCLUDE_ROOT . DIR_TRENNER.'plugins'.DIR_TRENNER.$plugin_name.".plugin.php";
         if(@is_file($plugin_file)) {
             include($plugin_file);
             $pluginclass = $plugin_name . '_plugin';

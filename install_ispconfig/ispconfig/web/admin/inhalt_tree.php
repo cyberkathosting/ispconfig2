@@ -247,7 +247,7 @@ menuDaten.neu(new HauptverzeichnisEintrag('root','<? echo $go_api->lng("Administ
 
 while (list($key, $val) = each($go_info["session"]["modules"])){
 if($val["type"] == "p") {
-$inhalt = $go_info["server"]["server_root"]. $go_info["server"]["dir_trenner"] . "web" . $go_info["server"]["dir_trenner"] .$val["path"] . $go_info["server"]["dir_trenner"].'lib'.$go_info["server"]["dir_trenner"].'admin.inc.php';
+$inhalt = SERVER_ROOT . DIR_TRENNER . "web" . DIR_TRENNER .$val["path"] . DIR_TRENNER.'lib'.DIR_TRENNER.'admin.inc.php';
 }
 if(@is_file($inhalt)) {
 include($inhalt);
