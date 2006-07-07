@@ -67,17 +67,17 @@ function do_backup($web_id) {
 
         // erstelle ewb tar.gz
         $web_pfad = $httpd_root ."/web".$web_id."/web";
-        exec("cd $web_pfad; $zip -r $tmp_dir/web".$web_id."_web.zip *");
+        exec("cd $web_pfad; $zip -ry $tmp_dir/web".$web_id."_web.zip *");
         $backup_txt .= "web,";
 
                 // erstelle user tar.gz
         $user_pfad = $httpd_root."/web".$web_id."/user";
-        exec("cd $user_pfad; $zip -r  $tmp_dir/web".$web_id."_user.zip *");
+        exec("cd $user_pfad; $zip -ry  $tmp_dir/web".$web_id."_user.zip *");
         $backup_txt .= "user,";
 
                 // erstelle log tar.gz
         $log_pfad = $httpd_root."/web".$web_id."/log";
-        exec("cd $log_pfad; $zip -r  $tmp_dir/web".$web_id."_log.zip *");
+        exec("cd $log_pfad; $zip -ry  $tmp_dir/web".$web_id."_log.zip *");
         $backup_txt .= "log,";
 
                 // erstelle mySQL tar.gz
