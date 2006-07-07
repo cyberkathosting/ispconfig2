@@ -4,6 +4,9 @@
 #         Version 1.0
 #
 ###################################
+
+DefaultAddress 127.0.0.1
+
 <!-- BEGIN DYNAMIC BLOCK: vhost -->
 <VirtualHost {IP}>
         DefaultRoot             ~
