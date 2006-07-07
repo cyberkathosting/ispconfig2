@@ -90,46 +90,46 @@ class isp_username_plugin {
         /****************************************************
         * Emailadresse vorbereiten
         *****************************************************/
-		
-		// Selecting all co-domains
-		$co_domains = $go_api->db->queryAllRecords("SELECT domain_host, domain_domain FROM isp_dep, isp_isp_domain WHERE isp_dep.parent_doc_id = ".$web["doc_id"]." and isp_dep.parent_doctype_id = ".$web["doctype_id"]." and isp_dep.child_doc_id = isp_isp_domain.doc_id and isp_dep.child_doctype_id = isp_isp_domain.doctype_id");
-		
-		// get the domains, if we are in edit mode
-		if($doc_id > 0) {
-			$email_domains = explode("\n",$user["user_emaildomain"]);
-		} else {
-			$email_domains[0] = ($web["web_host"] != '')?$web["web_host"].'.'.$web["web_domain"]:$web["web_domain"];
-			foreach($co_domains as $co_domain) {
-				$email_domains[] = ($co_domain["domain_host"] != '')?$co_domain["domain_host"].'.'.$co_domain["domain_domain"]:$co_domain["domain_domain"];
-			}
-		}
-		
-		// now we build the HTML output
-		$tmp_domain = ($web["web_host"] != '')?$web["web_host"].'.'.$web["web_domain"]:$web["web_domain"];
-		$tmp_checked = (in_array($tmp_domain,$email_domains,false))?' CHECKED':'';
-		$out_email = '<table><tr><td><input type="text" name="plugin[email]" size="10" maxlength="32" class="text" value="'.$user["user_email"].'"></td><td><input type="checkbox" name="plugin[email_domain][0]" value="'.$tmp_domain.'"'.$tmp_checked.'>@'.$tmp_domain.'</td></tr>';
-		$go_api->renderer->element_jscript_nummer += 2;
-		unset($tmp_domain);
-		unset($tmp_checked);
-		
-		$n = 1;
-		foreach($co_domains as $co_domain) {
-			$tmp_domain = ($co_domain["domain_host"] != '')?$co_domain["domain_host"].'.'.$co_domain["domain_domain"]:$co_domain["domain_domain"];
-			$tmp_checked = (in_array($tmp_domain,$email_domains,false))?' CHECKED':'';
-			$out_email .= '<tr><td>&nbsp;</td><td><input type="checkbox" name="plugin[email_domain]['.$n.']" value="'.$tmp_domain.'"'.$tmp_checked.'>@'.$tmp_domain.'</td></tr>';
-			$n++;
-			$go_api->renderer->element_jscript_nummer++;
-		}
-		unset($tmp_domain);
-		unset($tmp_checked);
-		$out_email .= '</table>';
+
+                // Selecting all co-domains
+                $co_domains = $go_api->db->queryAllRecords("SELECT domain_host, domain_domain FROM isp_dep, isp_isp_domain WHERE isp_dep.parent_doc_id = ".$web["doc_id"]." and isp_dep.parent_doctype_id = ".$web["doctype_id"]." and isp_dep.child_doc_id = isp_isp_domain.doc_id and isp_dep.child_doctype_id = isp_isp_domain.doctype_id");
+
+                // get the domains, if we are in edit mode
+                if($doc_id > 0) {
+                        $email_domains = explode("\n",$user["user_emaildomain"]);
+                } else {
+                        $email_domains[0] = ($web["web_host"] != '')?$web["web_host"].'.'.$web["web_domain"]:$web["web_domain"];
+                        foreach($co_domains as $co_domain) {
+                                $email_domains[] = ($co_domain["domain_host"] != '')?$co_domain["domain_host"].'.'.$co_domain["domain_domain"]:$co_domain["domain_domain"];
+                        }
+                }
+
+                // now we build the HTML output
+                $tmp_domain = ($web["web_host"] != '')?$web["web_host"].'.'.$web["web_domain"]:$web["web_domain"];
+                $tmp_checked = (in_array($tmp_domain,$email_domains,false))?' CHECKED':'';
+                $out_email = '<table><tr><td><input type="text" name="plugin[email]" size="10" maxlength="32" class="text" value="'.$user["user_email"].'"></td><td><input type="checkbox" name="plugin[email_domain][0]" value="'.$tmp_domain.'"'.$tmp_checked.'>@'.$tmp_domain.'</td></tr>';
+                $go_api->renderer->element_jscript_nummer += 2;
+                unset($tmp_domain);
+                unset($tmp_checked);
+
+                $n = 1;
+                foreach($co_domains as $co_domain) {
+                        $tmp_domain = ($co_domain["domain_host"] != '')?$co_domain["domain_host"].'.'.$co_domain["domain_domain"]:$co_domain["domain_domain"];
+                        $tmp_checked = (in_array($tmp_domain,$email_domains,false))?' CHECKED':'';
+                        $out_email .= '<tr><td>&nbsp;</td><td><input type="checkbox" name="plugin[email_domain]['.$n.']" value="'.$tmp_domain.'"'.$tmp_checked.'>@'.$tmp_domain.'</td></tr>';
+                        $n++;
+                        $go_api->renderer->element_jscript_nummer++;
+                }
+                unset($tmp_domain);
+                unset($tmp_checked);
+                $out_email .= '</table>';
 
         $html_out = '<table width="100%" bgcolor="#EEEEEE">
            <tr>
          <td width="30%" class="normal" valign="top"><nobr><b>&nbsp;'.$go_api->lng("Email Adresse").':</b></nobr></td>
          <td width="70%" class="tbox">'.$out_email.'</td>
         </tr>
-		<tr bgcolor="#EEEEEE">
+                <tr bgcolor="#EEEEEE">
             <td colspan="2" class=""><hr noshade size="1"></td>
         </tr>
        <tr>
@@ -167,88 +167,88 @@ class isp_username_plugin {
                         $user_prefix = str_replace("[HOSTDOMAIN]",$web["web_domain"],$user_prefix);
                 }
         }
-		
+
         // Überprüfung Username mittels regex, bei Fehler löschen
         if(!preg_match("/^[a-z][\w\.\-\_]{3,64}$/",$user_prefix . $username)) {
                 $go_api->db->query("DELETE from isp_isp_user where doc_id = '$doc_id'");
         $go_api->db->query("DELETE from isp_nodes where doc_id = '$doc_id' and doctype_id = '$doctype_id'");
                 $go_api->errorMessage('<b>'.$go_api->lng("Feld").': Username</b><br>'.$go_api->lng("Der Username muss aus min. 4, max 32 Buchstaben oder Zahlen bestehen, wobei er mit einem Buchstaben beginnen muss.") . "<br>&nbsp;<br>");
         }
-		
-   		// Überprüfung email mittels regex, bei Fehler löschen
-        if(!preg_match("/^[a-zA-Z][\w\.\-\_]{0,60}$/",$email)) {
+
+                   // Überprüfung email mittels regex, bei Fehler löschen
+        if(!preg_match("/^[a-zA-Z0-9][\w\.\-\_]{0,60}$/",$email)) {
                 $go_api->db->query("DELETE from isp_isp_user where doc_id = '$doc_id'");
-        		$go_api->db->query("DELETE from isp_nodes where doc_id = '$doc_id' and doctype_id = '$doctype_id'");
+                        $go_api->db->query("DELETE from isp_nodes where doc_id = '$doc_id' and doctype_id = '$doctype_id'");
                 $go_api->errorMessage('<b>'.$go_api->lng("Feld").': Email</b><br>'.$go_api->lng("Die Emailadresse muss aus min. 1, max 60 Buchstaben oder Zahlen bestehen.") . "<br>&nbsp;<br>");
         }
-		
-		// Write the email domains
-		$email_domain_array = $plugin_vars["email_domain"];
-		
-		if(is_array($email_domain_array)) {
-			// check if the domains are really co-domains of this site to prevent attacks		
-			$co_domains = $go_api->db->queryAllRecords("SELECT domain_host, domain_domain FROM isp_dep, isp_isp_domain WHERE isp_dep.parent_doc_id = ".$web["doc_id"]." and isp_dep.parent_doctype_id = ".$web["doctype_id"]." and isp_dep.child_doc_id = isp_isp_domain.doc_id and isp_dep.child_doctype_id = isp_isp_domain.doctype_id");
-			$web_domains[0] = ($web["web_host"] != '')?$web["web_host"].'.'.$web["web_domain"]:$web["web_domain"];
-			foreach($co_domains as $co_domain) {
-				$web_domains[] = ($co_domain["domain_host"] != '')?$co_domain["domain_host"].'.'.$co_domain["domain_domain"]:$co_domain["domain_domain"];
-			}
-			foreach($email_domain_array as $tmp_domain) {
-				$tmp_domain = trim($tmp_domain);
-				if(in_array($tmp_domain,$web_domains)) $email_domain_checked[] = $tmp_domain;
-			}
-		
-			$email_domain = addslashes(implode("\n",$email_domain_checked));
-		} else {
-		 	$email_domain = '';
-		}
-		
-    
-		// Nur Username + Email reinschreiben, überprüfung erfolgt durch doctype_event
+
+                // Write the email domains
+                $email_domain_array = $plugin_vars["email_domain"];
+
+                if(is_array($email_domain_array)) {
+                        // check if the domains are really co-domains of this site to prevent attacks
+                        $co_domains = $go_api->db->queryAllRecords("SELECT domain_host, domain_domain FROM isp_dep, isp_isp_domain WHERE isp_dep.parent_doc_id = ".$web["doc_id"]." and isp_dep.parent_doctype_id = ".$web["doctype_id"]." and isp_dep.child_doc_id = isp_isp_domain.doc_id and isp_dep.child_doctype_id = isp_isp_domain.doctype_id");
+                        $web_domains[0] = ($web["web_host"] != '')?$web["web_host"].'.'.$web["web_domain"]:$web["web_domain"];
+                        foreach($co_domains as $co_domain) {
+                                $web_domains[] = ($co_domain["domain_host"] != '')?$co_domain["domain_host"].'.'.$co_domain["domain_domain"]:$co_domain["domain_domain"];
+                        }
+                        foreach($email_domain_array as $tmp_domain) {
+                                $tmp_domain = trim($tmp_domain);
+                                if(in_array($tmp_domain,$web_domains)) $email_domain_checked[] = $tmp_domain;
+                        }
+
+                        $email_domain = addslashes(implode("\n",$email_domain_checked));
+                } else {
+                         $email_domain = '';
+                }
+
+
+                // Nur Username + Email reinschreiben, überprüfung erfolgt durch doctype_event
         $go_api->db->query("UPDATE isp_isp_user SET user_username = '$user_prefix$username', user_email = '$email', user_emaildomain = '$email_domain' where doc_id = $doc_id");
 
-    	return true;
+            return true;
     }
 
     function update($doc_id, $doctype_id, $groupid = 0)
     {
-   		global $go_info, $go_api, $HTTP_POST_VARS, $next_tree_id, $form_changed;
+                   global $go_info, $go_api, $HTTP_POST_VARS, $next_tree_id, $form_changed;
         $plugin_vars = $HTTP_POST_VARS["plugin"];
-    	$email = $plugin_vars["email"];
+            $email = $plugin_vars["email"];
         $form_changed = 1;
-		
-		$next_tree_id = strval($next_tree_id);
+
+                $next_tree_id = strval($next_tree_id);
         $web = $go_api->db->queryOneRecord("SELECT * from isp_nodes, isp_isp_web where isp_nodes.doc_id = isp_isp_web.doc_id and isp_nodes.tree_id = '$next_tree_id'");
 
 
-    	// Überprüfung email mittels regex, bei Fehler löschen
-        if(!preg_match("/^[a-zA-Z][\w\.\-\_]{0,60}$/",$email)) {
-        	$go_api->db->query("UPDATE isp_isp_user SET user_email = user_username where doc_id = $doc_id");
+            // Überprüfung email mittels regex, bei Fehler löschen
+        if(!preg_match("/^[a-zA-Z0-9][\w\.\-\_]{0,60}$/",$email)) {
+                $go_api->db->query("UPDATE isp_isp_user SET user_email = user_username where doc_id = $doc_id");
                 //$go_api->db->query("DELETE from isp_isp_user where doc_id = '$doc_id'");
-        	//$go_api->db->query("DELETE from isp_nodes where doc_id = '$doc_id' and doctype_id = '$doctype_id'");
+                //$go_api->db->query("DELETE from isp_nodes where doc_id = '$doc_id' and doctype_id = '$doctype_id'");
                 $go_api->errorMessage('<b>'.$go_api->lng("Feld").': Email</b><br>'.$go_api->lng("Die Emailadresse muss aus min. 1, max 60 Buchstaben oder Zahlen bestehen.") . "<br>&nbsp;<br>");
         }
-		
-		// Write the email domains
-		$email_domain_array = $plugin_vars["email_domain"];
-		
-		if(is_array($email_domain_array)) {
-			// check if the domains are really co-domains of this site to preventattacaks
-			$co_domains = $go_api->db->queryAllRecords("SELECT domain_host, domain_domain FROM isp_dep, isp_isp_domain WHERE isp_dep.parent_doc_id = ".$web["doc_id"]." and isp_dep.parent_doctype_id = ".$web["doctype_id"]." and isp_dep.child_doc_id = isp_isp_domain.doc_id and isp_dep.child_doctype_id = isp_isp_domain.doctype_id");
-			$web_domains[0] = ($web["web_host"] != '')?$web["web_host"].'.'.$web["web_domain"]:$web["web_domain"];
-			foreach($co_domains as $co_domain) {
-				$web_domains[] = ($co_domain["domain_host"] != '')?$co_domain["domain_host"].'.'.$co_domain["domain_domain"]:$co_domain["domain_domain"];
-			}
-			foreach($email_domain_array as $tmp_domain) {
-				$tmp_domain = trim($tmp_domain);
-				if(in_array($tmp_domain,$web_domains)) $email_domain_checked[] = $tmp_domain;
-			}
-		
-			$email_domain = addslashes(implode("\n",$email_domain_checked));
-		} else {
-			$email_domain = '';
-		}
-		
-    	// Nur Username + Email reinschreiben, überprüfung erfolgt durch doctype_event
+
+                // Write the email domains
+                $email_domain_array = $plugin_vars["email_domain"];
+
+                if(is_array($email_domain_array)) {
+                        // check if the domains are really co-domains of this site to preventattacaks
+                        $co_domains = $go_api->db->queryAllRecords("SELECT domain_host, domain_domain FROM isp_dep, isp_isp_domain WHERE isp_dep.parent_doc_id = ".$web["doc_id"]." and isp_dep.parent_doctype_id = ".$web["doctype_id"]." and isp_dep.child_doc_id = isp_isp_domain.doc_id and isp_dep.child_doctype_id = isp_isp_domain.doctype_id");
+                        $web_domains[0] = ($web["web_host"] != '')?$web["web_host"].'.'.$web["web_domain"]:$web["web_domain"];
+                        foreach($co_domains as $co_domain) {
+                                $web_domains[] = ($co_domain["domain_host"] != '')?$co_domain["domain_host"].'.'.$co_domain["domain_domain"]:$co_domain["domain_domain"];
+                        }
+                        foreach($email_domain_array as $tmp_domain) {
+                                $tmp_domain = trim($tmp_domain);
+                                if(in_array($tmp_domain,$web_domains)) $email_domain_checked[] = $tmp_domain;
+                        }
+
+                        $email_domain = addslashes(implode("\n",$email_domain_checked));
+                } else {
+                        $email_domain = '';
+                }
+
+            // Nur Username + Email reinschreiben, überprüfung erfolgt durch doctype_event
         $go_api->db->query("UPDATE isp_isp_user SET user_email = '$email', user_emaildomain = '$email_domain' where doc_id = $doc_id");
 
 
