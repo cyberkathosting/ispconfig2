@@ -158,7 +158,7 @@ function make_procmailrc($doc_id) {
   } else {
     $antivirus_comment = "## ";
   }
-  
+
   if (!empty($user["user_emailweiterleitung"])){
     $forward_emails = str_replace("\n", ",", trim($mod->file->unix_nl($user["user_emailweiterleitung"])));
 
@@ -169,11 +169,11 @@ function make_procmailrc($doc_id) {
     }
 
     if ($user["user_emailweiterleitung_no_scan"]) {
-	$forward = "";
-	$forward_no_scan = $forward_code;
+        $forward = "";
+        $forward_no_scan = $forward_code;
     } else {
-	$forward_no_scan = "";
-	$forward = $forward_code;
+        $forward_no_scan = "";
+        $forward = $forward_code;
     }
   }
 
@@ -194,8 +194,8 @@ function make_procmailrc($doc_id) {
                       SPAMASSASSIN_COMMENT => $spamfilter_comment,
                       AUTORESPONDER_COMMENT => $autoresponder_comment,
                       ANTIVIRUS_COMMENT => $antivirus_comment,
-		      FORWARD => $forward,
-		      FORWARD_NO_SCAN => $forward_no_scan));
+                      FORWARD => $forward,
+                      FORWARD_NO_SCAN => $forward_no_scan));
 
   $mod->tpl->parse(TABLE, table);
 
@@ -220,7 +220,7 @@ function make_procmailrc($doc_id) {
 }
 
 function make_recipes($doc_id) {
-  global $mod, $isp_web;
+  global $mod, $isp_web, $go_info;
 
   // Template Öffnen
   $mod->tpl->clear_all();
@@ -283,19 +283,8 @@ function make_recipes($doc_id) {
   exec("chmod 644 $datei2");
 
   //quota.rc erstellen
-  // Template Öffnen
-  $mod->tpl->clear_all();
-  $mod->tpl->define( array(table    => "quota.rc.master"));
-
-  // Variablen zuweisen
-  $mod->tpl->assign( array(PFAD => $recipe_dir));
-
-  $mod->tpl->parse(TABLE, table);
-
-  $quotarc_text = $mod->tpl->fetch();
-
-  $datei3 = $recipe_dir."/.quota.rc";
-  $mod->file->wf($datei3, $quotarc_text);
+  $datei3 = $web_path."/user/".$user_username."/.quota.rc";
+  $mod->file->wf($datei3, $mod->file->rf($go_info["isp"]["server_root"].'/isp/conf/quota.rc.master'));
 
   exec("chown root:$root_gruppe $datei3 &> /dev/null");
   exec("chmod 644 $datei3");
