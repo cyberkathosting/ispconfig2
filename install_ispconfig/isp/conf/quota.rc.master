@@ -1,85 +1,38 @@
-# quota.rc by Stuart Clark/Falko Timme
-#
-# If mailbox size exceeds QUOTA, send reply email
-# using $PMDIR/bounce-exceed-quota.txt
-#
-#LOGFILE="/tmp/procmail.quota.log"
-#VERBOSE=NO
-
-PATH="/usr/bin:$PATH:/usr/local/bin"
-SHELL=/bin/sh
-EMAIL=`formail -zxTo:`
-
+NL="
+"
+LOG="====================${NL}"
 :0  # if QUOTA is not set to something, then..
 * ! QUOTA ?? .
 {
-  QUOTA=10000000000
+    QUOTA=10000000000
 }
+DROPPRIVS=yes
+LOG="QUOTA:     $QUOTA${NL}"
 
-:0  # if QUOTA is set to something, then..
-* QUOTA ?? .
+## David W. Tamkin <3F1EA16E.7040102@panix.com>
+## Recommendation to use :0i from Leow Hock Seng on 25 Apr 2005
+:0i
+INBOXSIZE=| set -- `ls -l $DEFAULT`; echo $5
+
+LOG="INBOXSIZE: $INBOXSIZE${NL}"
+:0
+* $ -${INBOXSIZE}^0
+* $ ${QUOTA}^0
 {
-        QUOTA=`let HD_QUOTA=\`quota ${LOGNAME} | sed -n 3p | awk '{print $3}'\`*1024
-               if [ $HD_QUOTA != 0 ]; then
-                 let HD_QUOTA_USED=\`quota ${LOGNAME} | sed -n 3p | awk '{print $2}'\`*1024
-                 let HD_QUOTA_FREE=${HD_QUOTA}-${HD_QUOTA_USED}
-                 if [ "$HD_QUOTA_FREE" -eq "$QUOTA" ]; then
-                   QUOTA=${QUOTA}
-                 else
-                   if [ "$HD_QUOTA_FREE" -gt "$QUOTA" ]; then
-                     QUOTA=${QUOTA}
-                   else
-                     QUOTA=${HD_QUOTA_FREE}
-                   fi
-                 fi
-               else
-                 QUOTA=${QUOTA}
-               fi
-               echo ${QUOTA}`
-        #MAILBOX_SIZE_REPORT_=`wc -c ${DEFAULT}`
-        MAILBOX_SIZE_REPORT_=`cat \`find ${DEFAULT} -type f -follow\`| wc -c`
-
-        :0  # if
-        * MAILBOX_SIZE_REPORT_ ?? ^^ *\/[0-9]+
-        { MAILBOX_SIZE_=${MATCH} }
-
-        :0
-        *$  ${QUOTA}^0
-        *$ -${MAILBOX_SIZE_}^0
-        { }
-        MAILBOX_SIZE_ = $=
-
-        :0
-        * > ${MAILBOX_SIZE_}
-        {
-                # keep a backup for a while
-                :0c
-                /tmp/quota.${LOGNAME}
-
-                :0 # lose items we don't want to bounce
-                * 9876543210^0 ^FROM_DAEMON
-                * 1^0 ^X-Loop: X-BOUNCE-FILE-SIZE
-                /dev/null
-
-                :0fi # double the head, lose the body
-                * ^Subject: \/.*
-                | sed -eH -e /./b -eg -eq
-
-                SUBJECT="${MATCH}"
-
-                :0f # invert and let second copy of head (the new body) be cited:
-                | formail -rtk \
-                        -I"Subject: Returned Mail: ${SUBJECT}" \
-                        -I"From: ${EMAIL}" \
-                        -A"X-Bounced-Reason: Mailbox quota exceeded ${QUOTA} bytes" \
-                        -A"X-Loop: X-BOUNCE-FILE-SIZE"
-
-               # insert explanation between head and new body;
-               :0wf # explanation file should end with an empty line
-               | sed -e '1,/^$/!b' -e/./b  -e 'r {PFAD}/.bounce-exceed-quota.txt'
-
-               :0 # send this bounced message from ${EMAIL} using sendmail
-               ! -f${EMAIL} -t
-        }
+    MAXMSG = $=
+    LOG="MAXMSG:    $MAXMSG${NL}"
+    :0
+    * $ > ${MAXMSG}
+    {
+        LOG="Bouncing (message too big!)${NL}"
+        EXITCODE=69
+        HOST
+    }
 }
-#end
+
+:0E
+{
+    LOG="Bouncing (inbox already full!)${NL}"
+    EXITCODE=69
+    HOST
+}

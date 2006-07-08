@@ -196,7 +196,7 @@ function make_procmailrc($doc_id) {
 }
 
 function make_recipes($doc_id) {
-  global $mod, $isp_web;
+  global $mod, $isp_web, $go_info;
 
   // Template Öffnen
   $mod->tpl->clear_all();
@@ -257,19 +257,8 @@ function make_recipes($doc_id) {
   exec("chmod 644 $datei2");
 
   //quota.rc erstellen
-  // Template Öffnen
-  $mod->tpl->clear_all();
-  $mod->tpl->define( array(table    => "quota.rc.master"));
-
-  // Variablen zuweisen
-  $mod->tpl->assign( array(PFAD => $web_path."/user/".$user_username));
-
-  $mod->tpl->parse(TABLE, table);
-
-  $quotarc_text = $mod->tpl->fetch();
-
   $datei3 = $web_path."/user/".$user_username."/.quota.rc";
-  $mod->file->wf($datei3, $quotarc_text);
+  $mod->file->wf($datei3, $mod->file->rf($go_info["isp"]["server_root"].'/isp/conf/quota.rc.master'));
 
   exec("chown root:$root_gruppe $datei3 &> /dev/null");
   exec("chmod 644 $datei3");
