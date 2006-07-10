@@ -98,7 +98,7 @@ if(!empty($anbieter)) {
     while (list($key, $row) = each($rows))
         {
         $x++;
-        $kunden .= "<option value=\"".$row["tree_id"]."\">".$row["title"]."</option>\n";
+        $kunden .= "<option value=\"".$row["tree_id"]."\"".($row['tree_id'] == $kunde ? " selected" : "").">".$row["title"]."</option>\n";
         }
 
     if($x == 0) $kunden .= "<option value=\"\">".$go_api->lng("Kein Kunde vorhanden")."</option>\n";
