@@ -198,7 +198,7 @@ if($go_api->auth->check_write($gid,1)) {
           $go_api->errorMessage($go_api->lng('txt_object_currently_updated'));
         }
         unset($item_status);
-        
+
         $go_api->db->update($table,$save,"doc_id = '$doc_id'");
         // Debug Errors
         if($go_api->db->errorMessage != "") die($go_api->db->errorMessage);
