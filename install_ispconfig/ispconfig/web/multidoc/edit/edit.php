@@ -192,6 +192,13 @@ if($go_api->auth->check_write($gid,1)) {
     // Check ob User Schreibberechtigung für Datensatz besitzt
     if($go_api->tree->is_owner($tree_id,'w') and count($save) > 0 and $form_changed == 1) {
         $doc_id = $item["doc_id"];
+
+        // if the item is currently being updated, deny the new changes
+        if($item_status = $go_api->db->queryOneRecord("SELECT status FROM ".$table." WHERE doc_id = '".$doc_id."' AND status != ''")){
+          $go_api->errorMessage($go_api->lng('txt_object_currently_updated'));
+        }
+        unset($item_status);
+        
         $go_api->db->update($table,$save,"doc_id = '$doc_id'");
         // Debug Errors
         if($go_api->db->errorMessage != "") die($go_api->db->errorMessage);

@@ -93,4 +93,6 @@ $wb["Datenbanken angelegt"] = "Base de données créée";
 
 $wb["txt_confirm_delete"] = "Voulez vous vraiment effacer cet élément?";
 
+$wb["txt_object_currently_updated"] = "Your changes cannot be saved because this item is currently being updated. Please try again later.<br><br> <a href='../frame_start.php?s=$s'>Next &gt;&gt;</a>";
+
 ?>
