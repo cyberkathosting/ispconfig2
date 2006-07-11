@@ -375,4 +375,13 @@ $wb["txt_anbieter"] = "Resellers";
 $wb["txt_kunden"] = "Clients";
 $wb["txt_webs"] = "Websites";
 
+$wb["txt_move_websites"] = "Move Websites";
+$wb["txt_website_deleted_no_move"] = "This website has been deleted and cannot be moved.<br><br> <a href='../../frame_start.php?s=$s'>Next &gt;&gt;</a>";
+$wb["txt_customer_deleted_no_move"] = "This customer has been deleted; the website cannot be moved.<br><br> <a href='../../frame_start.php?s=$s'>Next &gt;&gt;</a>";
+$wb["txt_website_moved"] = "The website has been moved to the customer you specified.<br><br> <a href='../../frame_start.php?s=$s'>Next &gt;&gt;</a>";
+$wb["txt_move_website_from"] = "from";
+$wb["txt_move_website_to"] = "to";
+$wb["txt_move_website_website"] = "Website";
+$wb["txt_move_website_submit"] = "Submit";
+
 ?>

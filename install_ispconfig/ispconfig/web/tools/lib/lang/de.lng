@@ -358,6 +358,13 @@ $wb["txt_anbieter"] = "Anbieter";
 $wb["txt_kunden"] = "Kunden";
 $wb["txt_webs"] = "Websites";
 
-
+$wb["txt_move_websites"] = "Websites verschieben";
+$wb["txt_website_deleted_no_move"] = "Diese Website ist gelöscht worden und kann nicht verschoben werden.<br><br> <a href='../../frame_start.php?s=$s'>Weiter &gt;&gt;</a>";
+$wb["txt_customer_deleted_no_move"] = "Dieser Kunde ist gelöscht worden; die Website kann nicht verschoben werden.<br><br> <a href='../../frame_start.php?s=$s'>Weiter &gt;&gt;</a>";
+$wb["txt_website_moved"] = "Die Website ist zum gewünschten Kunden verschoben worden.<br><br> <a href='../../frame_start.php?s=$s'>Weiter &gt;&gt;</a>";
+$wb["txt_move_website_from"] = "von";
+$wb["txt_move_website_to"] = "zu";
+$wb["txt_move_website_website"] = "Website";
+$wb["txt_move_website_submit"] = "Abschicken";
 
 ?>
