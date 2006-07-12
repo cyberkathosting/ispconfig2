@@ -543,6 +543,8 @@ $wb["txt_traffic_notification_email_variables"] = '<table border="0" cellpadding
         </tr>
         </table>';
 
+$wb["Catalog_Name"] = "Name";
+
 // MySQL Quota ////////////////////////////////////////
 $wb["Benutzter MySQL-Speicherplatz"] = "Database space used";
 $wb["Speicherplatz Datenbanken"] = "Diskspace Databases";
@@ -554,5 +556,10 @@ $wb["Nicht scannen"] = "Don't scan";
 $wb["MX prüfen"] = "Check MX";
 $wb["Cyrus-Administrator"] = "Cyrus Admin";
 $wb["Passwort Cyrus-Admin"] = "Cyrus Admin Password";
+
+$wb["Spam Whitelist"] = 'Spam Whitelist';
+$wb["Spam Blacklist"] = 'Spam Blacklist';
+$wb["spam_whitelist_txt"] = '<b>Hint:</b> One entry per line. Valid entries are, for example, friend@somewhere.com, *@isp.com, or *.domain.net.';
+$wb["spam_blacklist_txt"] = '<b>Hint:</b> One entry per line. Valid entries are, for example, friend@somewhere.com, *@isp.com, or *.domain.net.';
 
 ?>

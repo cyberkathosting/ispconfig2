@@ -324,12 +324,20 @@ function make_recipes($doc_id) {
   if(!isset($user["spam_hits"])) $user["spam_hits"] = "5";
   if(!isset($user["spam_rewrite_subject"])) $user["spam_rewrite_subject"] = "1";
   if(!isset($user["spam_subject_tag"])) $user["spam_subject_tag"] = "***SPAM*** ";
+  $user['spam_whitelist'] = $mod->file->unix_nl(trim($user['spam_whitelist']));
+  $user['spam_blacklist'] = $mod->file->unix_nl(trim($user['spam_blacklist']));
+  if($user['spam_whitelist'] != '') $user['spam_whitelist'] = implode(' ', explode("\n", $user['spam_whitelist']));
+  if($user['spam_blacklist'] != '') $user['spam_blacklist'] = implode(' ', explode("\n", $user['spam_blacklist']));
 
   // Variablen zuweisen
   $mod->tpl->assign( array(HITS => $user["spam_hits"],
                            REWRITE_SUBJECT => $user["spam_rewrite_subject"],
                            REWRITE_SUBJECT_2 => (($user["spam_rewrite_subject"] == 1)? '':'# '),
-                           SUBJECT_TAG => $user["spam_subject_tag"]));
+                           SUBJECT_TAG => $user["spam_subject_tag"],
+                           WHITELIST => $user['spam_whitelist'],
+                           WHITELIST_2 => ($user['spam_whitelist'] != "" ? "" : "# "),
+                           BLACKLIST => $user['spam_blacklist'],
+                           BLACKLIST_2 => ($user['spam_blacklist'] != "" ? "" : "# "),));
 
   $mod->tpl->parse(TABLE, table);
 

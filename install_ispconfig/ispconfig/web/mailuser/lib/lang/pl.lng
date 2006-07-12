@@ -47,4 +47,8 @@ $wb["txt_language"] = "Jêzyk";
 $wb["txt_no_mailuser_login"] = "Logowanie zosta³o wy³±czone dla tej strony.";
 $wb["txt_forwarder"] = "Forwarder";
 $wb["txt_forwarder_desc"] = "<b>Hint:</b> One email per line.";
+$wb["txt_spam_whitelist"] = 'Spam Whitelist';
+$wb["txt_spam_blacklist"] = 'Spam Blacklist';
+$wb["txt_hint_spam_whitelist"] = '<b>Hint:</b> One entry per line. Valid entries are, for example, friend@somewhere.com, *@isp.com, or *.domain.net.';
+$wb["txt_hint_spam_blacklist"] = '<b>Hint:</b> One entry per line. Valid entries are, for example, friend@somewhere.com, *@isp.com, or *.domain.net.';
 ?>

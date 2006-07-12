@@ -16,6 +16,9 @@ required_score                {HITS}
 # Whitelist and blacklist addresses are now file-glob-style patterns, so
 # "friend@somewhere.com", "*@isp.com", or "*.domain.net" will all work.
 # whitelist_from        someone@somewhere.com
+{WHITELIST_2}whitelist_from        {WHITELIST}
+
+{BLACKLIST_2}blacklist_from        {BLACKLIST}
 
 # Add your own customised scores for some tests below.  The default scores are
 # read from the installed spamassassin rules files, but you can override them
