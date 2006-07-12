@@ -555,5 +555,9 @@ $wb["Invoice"] = "Faktura Underlag";
 $wb["Uname"] = "Namn";
 $wb["Sonstiges"] = "Övrigt";
 $wb["SSL Request"] = "SSL Begäran";
+$wb["Spam Whitelist"] = 'Spam Whitelist';
+$wb["Spam Blacklist"] = 'Spam Blacklist';
+$wb["spam_whitelist_txt"] = '<b>Hint:</b> One entry per line. Valid entries are, for example, friend@somewhere.com, *@isp.com, or *.domain.net.';
+$wb["spam_blacklist_txt"] = '<b>Hint:</b> One entry per line. Valid entries are, for example, friend@somewhere.com, *@isp.com, or *.domain.net.';
 
 ?>

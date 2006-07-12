@@ -39,8 +39,8 @@
   <tr>
     <td>&nbsp;</td>
     <td colspan="2"><hr></td>
-    </tr
-  ><tr>
+  </tr>
+  <tr>
     <td width="50">&nbsp;</td>
     <td width="120" class="TxtForm"><strong><tmpl_var name='txt_rewrite_subject'>:</strong></td>
     <td class="TxtForm"><select name="spam_rewrite_subject">{tmpl_var name='spam_rewrite_subject'}</select></td>
@@ -49,6 +49,28 @@
     <td width="50">&nbsp;</td>
     <td width="120" class="TxtForm"><strong><tmpl_var name='txt_betreff'>:</strong></td>
     <td class="TxtForm"><input name="spam_subject_tag" type="text" value="{tmpl_var name='spam_subject_tag'}" size="30" maxlength="50"></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td colspan="2"><hr></td>
+  </tr>
+  <tr>
+    <td width="50">&nbsp;</td>
+    <td width="120" class="TxtForm" valign="top"><strong><tmpl_var name='txt_spam_whitelist'>:</strong></td>
+    <td class="TxtForm"><textarea name="spam_whitelist" cols="40" rows="6">{tmpl_var name='spam_whitelist'}</textarea><td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td colspan="2" class="TxtForm"><tmpl_var name='txt_hint_spam_whitelist'></td>
+  </tr>
+  <tr>
+    <td width="50">&nbsp;</td>
+    <td width="120" class="TxtForm" valign="top"><strong><tmpl_var name='txt_spam_blacklist'>:</strong></td>
+    <td class="TxtForm"><textarea name="spam_blacklist" cols="40" rows="6">{tmpl_var name='spam_blacklist'}</textarea><td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td colspan="2" class="TxtForm"><tmpl_var name='txt_hint_spam_blacklist'></td>
   </tr>
   <tr>
     <td>&nbsp;</td>
