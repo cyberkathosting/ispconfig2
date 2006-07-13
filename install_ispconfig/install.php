@@ -1248,24 +1248,19 @@ foreach($cron_job_tsl as $cron_tsl){
   exec("$dist_cron_tab $cron_tsl_file");
   if(is_file($cron_tsl_file)) unlink($cron_tsl_file);
 }
-else{
-if(is_file($dist_cron_tab)){
-  $existing_cron_jobs = rf($dist_cron_tab);
-} else {
-  $existing_cron_jobs = "";
-}
-$cron_jobs = array('30 00 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/logs.php &> /dev/null','59 23 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/ftp_logs.php &> /dev/null','59 23 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/mail_logs.php &> /dev/null','59 23 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/cleanup.php &> /dev/null','0 4 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/webalizer.php &> /dev/null','0,30 * * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/check_services.php &> /dev/null','15 3,15 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/quota_msg.php &> /dev/null','40 00 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/traffic.php &> /dev/null','05 02 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/backup.php &> /dev/null');
-foreach($cron_jobs as $cron_job){
-  if(!strstr($existing_cron_jobs, $cron_job)){
-    af($dist_cron_tab, "\n".$cron_job."\n");
+else {
+  exec("crontab -u root -l > crontab.txt");
+  $existing_cron_jobs = rf('crontab.txt');
+  $cron_jobs = array('30 00 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/logs.php &> /dev/null','59 23 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/ftp_logs.php &> /dev/null','59 23 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/mail_logs.php &> /dev/null','59 23 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/cleanup.php &> /dev/null','0 4 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/webalizer.php &> /dev/null','0,30 * * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/check_services.php &> /dev/null','15 3,15 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/quota_msg.php &> /dev/null','40 00 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/traffic.php &> /dev/null','05 02 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/backup.php &> /dev/null');
+  foreach($cron_jobs as $cron_job){
+    if(!strstr($existing_cron_jobs, $cron_job)){
+      af('crontab.txt', "\n".$cron_job."\n");
+    }
   }
-}
-if($install_art == "upgrade"){
-  if($old_version < 2000){
-    wf($dist_cron_tab, str_replace('59 23 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/logs.php &> /dev/null', '', rf($dist_cron_tab)));
-  }
-}
-if(is_file($dist_cron_tab)) remove_blank_lines($dist_cron_tab);
+  wf('crontab.txt', trim(rf('crontab.txt')));
+  remove_blank_lines('crontab.txt');
+  exec("crontab -u root crontab.txt &> /dev/null");
+  unlink('crontab.txt');
 }
 daemon_init($dist_cron_daemon, "restart");
 ////////// Cron Jobs ENDE ///////////////
