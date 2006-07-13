@@ -547,5 +547,6 @@ $wb["Spam Whitelist"] = 'Spam-Whitelist';
 $wb["Spam Blacklist"] = 'Spam-Blacklist';
 $wb["spam_whitelist_txt"] = '<b>Hinweis:</b> Ein Eintrag pro Zeile. Gültige Einträge sind z.B. friend@somewhere.com, *@isp.com oder *.domain.net.';
 $wb["spam_blacklist_txt"] = '<b>Hinweis:</b> Ein Eintrag pro Zeile. Gültige Einträge sind z.B. friend@somewhere.com, *@isp.com oder *.domain.net.';
+$wb["Webalizer Stats"] = 'Webalizer-<br>&nbsp;Statistiken';
 
 ?>

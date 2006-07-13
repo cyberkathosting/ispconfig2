@@ -58,72 +58,73 @@ while ($dir = @readdir ($handle)) {
         // ist kein symbolischer Link
 
             $webname = $dir;
-            $web_path = $web_home . "/$webname/web";
-            $stats_path = $web_path . "/stats";
-            $logfile = $web_home . "/$webname/log/web.log";
-            $web_user = fileowner($web_path);
-            $web_group = filegroup($web_path);
+            $web_doc_id = str_replace("web", "", $webname);
+            if($web_data = $mod->db->queryOneRecord("SELECT * FROM isp_isp_web WHERE doc_id = '$web_doc_id' AND webalizer_stats = '1'")){
+              $web_path = $web_home . "/$webname/web";
+              $stats_path = $web_path . "/stats";
+              $logfile = $web_home . "/$webname/log/web.log";
+              $web_user = fileowner($web_path);
+              $web_group = filegroup($web_path);
 
-            // erstelle Stats Verzeichnis, wenn nicht vorhanden
-            if(!@is_dir($stats_path)) {
-                mkdir($stats_path,0775);
-                chown($stats_path,$web_user);
-                chgrp($stats_path,$web_group);
-                $message .= "Erstelle Statistik Verzeichnis: $stats_path\n";
-            }
+              // erstelle Stats Verzeichnis, wenn nicht vorhanden
+              if(!@is_dir($stats_path)) {
+                  mkdir($stats_path,0775);
+                  chown($stats_path,$web_user);
+                  chgrp($stats_path,$web_group);
+                  $message .= "Erstelle Statistik Verzeichnis: $stats_path\n";
+              }
 
 
-            // Experimentell: erstelle .htaccess Dateien mit Zugangsberechtigung für Gruppe des Webs
-            if(!@is_dir($stats_path."/.htaccess")) {
+              // Experimentell: erstelle .htaccess Dateien mit Zugangsberechtigung für Gruppe des Webs
+              if(!@is_dir($stats_path."/.htaccess")) {
 
-                $ht_file = "AuthType Basic
+                  $ht_file = "AuthType Basic
 AuthName \"Members Only\"
 AuthUserFile $web_home/$webname/.htpasswd
 <limit GET PUT POST>
 require valid-user
 </limit>";
-                $fp = fopen ($stats_path."/.htaccess", "w");
-                fwrite($fp,$ht_file);
-                fclose($fp);
-                chmod($stats_path."/.htaccess",0664);
+                  $fp = fopen ($stats_path."/.htaccess", "w");
+                  fwrite($fp,$ht_file);
+                  fclose($fp);
+                  chmod($stats_path."/.htaccess",0664);
+              }
+
+              if(!@is_dir($web_home."/".$webname."/.htpasswd")) {
+
+                  exec("cat ".$mod->system->server_conf["passwd_datei"]." | grep ".$web_home."/".$webname."/ |cut -f1 -d:", $users);
+                  exec("cat ".$mod->system->server_conf["passwd_datei"]." | grep ".$web_home."/".$webname.": |cut -f1 -d:", $users);
+                  $ht_file = "";
+                  if(!empty($users)){
+                     foreach($users as $user){
+                       $user_password = exec("cat ".$mod->system->server_conf["shadow_datei"]." | grep '$user:' | grep -w $user |cut -f2 -d:");
+                       $ht_file .= "$user:$user_password\n";
+                     }
+                  } else {
+                    $ht_file .= "admin:\$1\$TAVCXZlv\$NAjnpdNgAfPMNT4/A61Z.0\n";
+                  }
+
+                  unset($users);
+                  $fp = fopen ($web_home."/".$webname."/.htpasswd", "w");
+                  fwrite($fp,$ht_file);
+                  fclose($fp);
+                  chmod($web_home."/".$webname."/.htpasswd",0664);
+                  exec("chown :".$webname." ".$web_home."/".$webname."/.htpasswd");
+              }
+
+
+              // Starte Webalizer
+              if(@is_file($logfile)) {
+                  if(!empty($web_data["web_host"])){
+                    $web_real_name = $web_data["web_host"].".".$web_data["web_domain"];
+                  } else {
+                    $web_real_name = $web_data["web_domain"];
+                  }
+                  $message .= exec("webalizer -n $web_real_name -s $web_real_name -r $web_real_name -q -T -o $stats_path -c /root/ispconfig/scripts/shell/webalizer.conf $logfile")."\n";
+              }
+
+              exec("chown -R $web_user:$web_group $stats_path &> /dev/null");
             }
-
-            if(!@is_dir($web_home."/".$webname."/.htpasswd")) {
-
-                exec("cat ".$mod->system->server_conf["passwd_datei"]." | grep ".$web_home."/".$webname."/ |cut -f1 -d:", $users);
-                exec("cat ".$mod->system->server_conf["passwd_datei"]." | grep ".$web_home."/".$webname.": |cut -f1 -d:", $users);
-                $ht_file = "";
-                if(!empty($users)){
-                   foreach($users as $user){
-                     $user_password = exec("cat ".$mod->system->server_conf["shadow_datei"]." | grep '$user:' | grep -w $user |cut -f2 -d:");
-                     $ht_file .= "$user:$user_password\n";
-                   }
-                } else {
-                  $ht_file .= "admin:\$1\$TAVCXZlv\$NAjnpdNgAfPMNT4/A61Z.0\n";
-                }
-
-                unset($users);
-                $fp = fopen ($web_home."/".$webname."/.htpasswd", "w");
-                fwrite($fp,$ht_file);
-                fclose($fp);
-                chmod($web_home."/".$webname."/.htpasswd",0664);
-                exec("chown :".$webname." ".$web_home."/".$webname."/.htpasswd");
-            }
-
-
-            // Starte Webalizer
-            if(@is_file($logfile)) {
-                $web_doc_id = str_replace("web", "", $webname);
-                $web_data = $mod->db->queryOneRecord("SELECT * FROM isp_isp_web WHERE doc_id = '$web_doc_id'");
-                if(!empty($web_data["web_host"])){
-                  $web_real_name = $web_data["web_host"].".".$web_data["web_domain"];
-                } else {
-                  $web_real_name = $web_data["web_domain"];
-                }
-                $message .= exec("webalizer -n $web_real_name -s $web_real_name -r $web_real_name -q -T -o $stats_path -c /root/ispconfig/scripts/shell/webalizer.conf $logfile")."\n";
-            }
-
-                        exec("chown -R $web_user:$web_group $stats_path &> /dev/null");
 
         }
     }
