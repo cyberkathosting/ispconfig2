@@ -214,7 +214,11 @@ function make_recipes($doc_id) {
 
   $user_username = $user["user_username"];
   $user_name = $user["user_name"];
-  $user_autoresponder_text = $user["user_autoresponder_text"];
+  if($user['user_autoresponder'] == 1){
+    $user_autoresponder_text = $user["user_autoresponder_text"];
+  } else {
+    $user_autoresponder_text = md5(uniqid(rand(), true)); // some random string
+  }
 
   // Variablen zuweisen
   $mod->tpl->assign( array(USER_AUTORESPONDER_TEXT => $user_autoresponder_text));
@@ -224,8 +228,14 @@ function make_recipes($doc_id) {
   $vacation_text = $mod->tpl->fetch();
 
   $datei = $web_path."/user/".$user_username."/.vacation.msg";
-
+  if(is_file($datei)){
+    $vacation_msg_md5 = md5_file($datei);
+  } else {
+    $vacation_msg_md5 = '0';
+  }
   $mod->file->wf($datei, $vacation_text);
+  // delete .vacation.cache if autoresponder message has changed or if autoresponder has been turned on/off
+  if($vacation_msg_md5 != md5_file($datei) && is_file($web_path."/user/".$user_username."/.vacation.cache")) unlink ($web_path."/user/".$user_username."/.vacation.cache");
 
   $root_gruppe = $mod->system->root_group();
   exec("chown root:$root_gruppe $datei &> /dev/null");
