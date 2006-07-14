@@ -29,7 +29,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 include("../../../lib/config.inc.php");
 include("../../../lib/session.inc.php");
 
-if(is_file('/home/admispconfig/ispconfig/.run') || is_file('/root/ispconfig/.ispconfig_lock')) $go_api->errorMessage($go_api->lng('txt_system_currently_updated_no_recycle_bin'));
+if(is_file('/home/admispconfig/ispconfig/.run') || is_file('/home/admispconfig/ispconfig/.run2')) $go_api->errorMessage($go_api->lng('txt_system_currently_updated_no_recycle_bin'));
 
 $go_api->auth->check_write($gid);
 
@@ -66,7 +66,6 @@ if($err_msg != "") $go_api->errorMessage($err_msg);
 header("Location: ../../index.php?$session");
 exit;
 ?>
-
 
 
 
