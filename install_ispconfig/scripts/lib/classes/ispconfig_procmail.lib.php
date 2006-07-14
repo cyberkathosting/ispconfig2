@@ -238,7 +238,11 @@ function make_recipes($doc_id) {
 
   $user_username = $user["user_username"];
   $user_name = $user["user_name"];
-  $user_autoresponder_text = $user["user_autoresponder_text"];
+  if($user['user_autoresponder'] == 1){
+    $user_autoresponder_text = $user["user_autoresponder_text"];
+  } else {
+    $user_autoresponder_text = md5(uniqid(rand(), true)); // some random string
+  }
 
   $recipe_dir = $this->create_procmail_dir($web_path, $user_username);
 
@@ -251,7 +255,14 @@ function make_recipes($doc_id) {
 
   $datei = $recipe_dir."/.vacation.msg";
 
+  if(is_file($datei)){
+    $vacation_msg_md5 = md5_file($datei);
+  } else {
+    $vacation_msg_md5 = '0';
+  }
   $mod->file->wf($datei, $vacation_text);
+  // delete .vacation.cache if autoresponder message has changed or if autoresponder has been turned on/off
+  if($vacation_msg_md5 != md5_file($datei) && is_file($recipe_dir."/.vacation.cache")) unlink ($recipe_dir."/.vacation.cache");
 
   $root_gruppe = $mod->system->root_group();
   exec("chown root:$root_gruppe $datei &> /dev/null");
