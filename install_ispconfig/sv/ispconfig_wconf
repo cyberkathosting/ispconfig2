@@ -54,8 +54,10 @@ fi
 
 while (true) do
   if [ -f /home/admispconfig/ispconfig/.run ]; then
+    touch /home/admispconfig/ispconfig/.run2
     rm -f /home/admispconfig/ispconfig/.run
     /root/ispconfig/php/php -q /root/ispconfig/scripts/writeconf.php &> /dev/null
+    rm -f /home/admispconfig/ispconfig/.run2
   fi
   sleep 10
 done
