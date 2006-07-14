@@ -104,6 +104,7 @@ $wb["msg_beta"] = "";
 $wb["title_isp_beta"] = "";
 $wb["msg_kein_win"] = "Diese Informationen stehen unter Windows-Betriebssystemen nicht zur Verfügung.";
 
-$wb["txt_object_currently_updated"] = "Ihre Änderungen können nicht gespeichert werden, weil das Objekt gerade aktualisiert wird. Bitte versuchen Sie es später noch einmal.<br><br> <a href='../frame_start.php?s=$s'>Weiter &gt;&gt;</a>"; 
+$wb["txt_object_currently_updated"] = "Ihre Änderungen können nicht gespeichert werden, weil das Objekt gerade aktualisiert wird. Bitte versuchen Sie es später noch einmal.<br><br> <a href='../frame_start.php?s=$s'>Weiter &gt;&gt;</a>";
+$wb["txt_system_currently_updated_no_recycle_bin"] = "Auf den Papierkorb kann nicht zugegriffen werden, da das System gerade aktualisiert wird. Bitte versuchen Sie es in ein paar Minuten noch einmal.<br><br> <a href='../frame_start.php?s=$s'>Weiter &gt;&gt;</a>";
 
 ?>
