@@ -174,6 +174,13 @@ $table['antivirus'] = array(         'datatype'                 => "VARCHAR",
                                                                   'value'                 => array(        0 => $app->lng("txt_no"),
                                                                                                                         1 => $app->lng("txt_yes")));
 
+$table['use_uribl'] = array(         'datatype'                 => "VARCHAR",
+                                                                  'formtype'                 => "SELECT",
+                                                                  'regex'                        => "",
+                                                                  'errmsg'                => "",
+                                                                  'value'                 => array(        0 => $app->lng("txt_no"),
+                                                                                                                        1 => $app->lng("txt_yes")));
+
 $ordner = realpath(getcwd()."/../lib/lang");
 $handle = @opendir($ordner);
 while ($file = @readdir ($handle)) {

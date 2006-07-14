@@ -311,7 +311,8 @@ function make_recipes($doc_id) {
                            WHITELIST => $user['spam_whitelist'],
                            WHITELIST_2 => ($user['spam_whitelist'] != "" ? "" : "# "),
                            BLACKLIST => $user['spam_blacklist'],
-                           BLACKLIST_2 => ($user['spam_blacklist'] != "" ? "" : "# "),));
+                           BLACKLIST_2 => ($user['spam_blacklist'] != "" ? "" : "# "),
+                           URIBL_2 => ($user['use_uribl'] == "1" ? "" : "# ")));
 
   $mod->tpl->parse(TABLE, table);
 

@@ -553,5 +553,6 @@ $wb["Spam Blacklist"] = 'Spam Blacklist';
 $wb["spam_whitelist_txt"] = '<b>Hint:</b> One entry per line. Valid entries are, for example, friend@somewhere.com, *@isp.com, or *.domain.net.';
 $wb["spam_blacklist_txt"] = '<b>Hint:</b> One entry per line. Valid entries are, for example, friend@somewhere.com, *@isp.com, or *.domain.net.';
 $wb["Webalizer Stats"] = 'Webalizer<br>&nbsp;Statistics';
+$wb["Use Uribl"] = 'Use <a href="http://www.uribl.com/about.shtml" target="_blank" style="font-family:Arial,Verdana">URIBL</a>';
 
 ?>

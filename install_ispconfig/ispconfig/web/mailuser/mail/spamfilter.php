@@ -59,6 +59,7 @@ if(count($_POST) > 1) {
         $rec["spam_rewrite_subject"] = $_POST["spam_rewrite_subject"];
         $rec["spam_hits"] = escapeshellcmd(substr($_POST["spam_hits"],0,7));
         $rec["spam_subject_tag"] = substr($_POST["spam_subject_tag"],0,50);
+        $rec["use_uribl"] = $_POST["use_uribl"];
         $rec["spam_whitelist"] = substr($_POST["spam_whitelist"],0,10000);
         $rec["spam_blacklist"] = substr($_POST["spam_blacklist"],0,10000);
         $rec["status"] = 'u';
