@@ -166,8 +166,15 @@ $table['spam_blacklist'] = array(         'datatype'                 => "VARCHAR
                                                                           'regex'                        => "",
                                                                           'errmsg'                => "",
                                                                           'value'                 => "");
-                                                                          
+
 $table['antivirus'] = array(         'datatype'                 => "VARCHAR",
+                                                                  'formtype'                 => "SELECT",
+                                                                  'regex'                        => "",
+                                                                  'errmsg'                => "",
+                                                                  'value'                 => array(        0 => $app->lng("txt_no"),
+                                                                                                                        1 => $app->lng("txt_yes")));
+
+$table['use_uribl'] = array(         'datatype'                 => "VARCHAR",
                                                                   'formtype'                 => "SELECT",
                                                                   'regex'                        => "",
                                                                   'errmsg'                => "",

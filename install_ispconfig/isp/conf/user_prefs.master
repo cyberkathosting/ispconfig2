@@ -20,6 +20,13 @@ required_score                {HITS}
 
 {BLACKLIST_2}blacklist_from        {BLACKLIST}
 
+# URIBL support (see http://www.uribl.com)
+{URIBL_2}urirhssub       URIBL_BLACK  multi.uribl.com.        A   2
+{URIBL_2}body            URIBL_BLACK  eval:check_uridnsbl('URIBL_BLACK')
+{URIBL_2}describe        URIBL_BLACK  Contains an URL listed in the URIBL blacklist
+{URIBL_2}tflags          URIBL_BLACK  net
+{URIBL_2}score           URIBL_BLACK  3.0
+
 # Add your own customised scores for some tests below.  The default scores are
 # read from the installed spamassassin rules files, but you can override them
 # here.  To see the list of tests and their default scores, go to
