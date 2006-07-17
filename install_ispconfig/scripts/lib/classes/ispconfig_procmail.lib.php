@@ -361,10 +361,6 @@ function make_recipes($doc_id) {
   exec("chown root:$root_gruppe $datei6 &> /dev/null");
   exec("chmod 644 $datei6");
 
-  exec("cp -f /root/ispconfig/isp/conf/bounce-exceed-quota.txt ".$recipe_dir."/.bounce-exceed-quota.txt");
-  exec("chown root:".$root_gruppe." ".$recipe_dir."/.bounce-exceed-quota.txt &> /dev/null");
-  exec("chmod 644 ".$recipe_dir."/.bounce-exceed-quota.txt");
-
   exec("cp -f /root/ispconfig/isp/conf/html-trap.rc.master ".$recipe_dir."/.html-trap.rc");
   exec("chown root:".$root_gruppe." ".$recipe_dir."/.html-trap.rc &> /dev/null");
   exec("chmod 644 ".$recipe_dir."/.html-trap.rc");
