@@ -89,5 +89,8 @@ $wb["include_break"] = "Ärva SPF inlägg<br>&nbsp;&nbsp;från denna zon?";
 $wb["all_"] = "Innehåller ovanstående inlägg<br>&nbsp;&nbsp;alla värdar<br>&nbsp;&nbsp;som får skicka epost<br>&nbsp;&nbsp;för denna domänen?";
 
 $wb["Catalog_Name"] = "Namn";
+$wb["Feld"] = "Field";
+$wb["Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 -"] = "Only the following signs are allowed: a-z A-Z 0-9 -<br>";
+$wb["Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 - ."] = "Only the following signs are allowed: a-z A-Z 0-9 - .<br>";
 
 ?>

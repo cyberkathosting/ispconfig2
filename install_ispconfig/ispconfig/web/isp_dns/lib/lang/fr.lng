@@ -90,5 +90,8 @@ $wb["include_break"] = "Héritez de l'enregistrement SPF<br>&nbsp;&nbsp;de cette 
 $wb["all_"] = "Les entrées ci dessus<br>&nbsp;&nbsp;contiennent elle tous les hôtes<br>&nbsp;&nbsp;autorisés à envoyer des e-mails<br>&nbsp;&nbsp;pour ce domaine?";
 
 $wb["Catalog_Name"] = "Nom";
+$wb["Feld"] = "Field";
+$wb["Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 -"] = "Only the following signs are allowed: a-z A-Z 0-9 -<br>";
+$wb["Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 - ."] = "Only the following signs are allowed: a-z A-Z 0-9 - .<br>";
 
 ?>

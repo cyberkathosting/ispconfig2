@@ -191,8 +191,8 @@ $wb["Willkommen"] = "Welcome";
 
 
 // Regex Fehlermeldungen
-$wb["Es sind nur folgende Zeichen erlaubt: a-z A-Z 0-9 -"] = "Only the following sign are allowed: a-z A-Z 0-9 -<br>";
-$wb["Es sind nur folgende Zeichen erlaubt: a-z A-Z 0-9 - ."] = "Only the following sign are allowed: a-z A-Z 0-9 - .<br>";
+$wb["Es sind nur folgende Zeichen erlaubt: a-z A-Z 0-9 -"] = "Only the following signs are allowed: a-z A-Z 0-9 -<br>";
+$wb["Es sind nur folgende Zeichen erlaubt: a-z A-Z 0-9 - ."] = "Only the following signs are allowed: a-z A-Z 0-9 - .<br>";
 $wb["Der Username muss aus min. 4, max 25 Buchstaben oder Zahlen bestehen, wobei er mit einem Buchstaben beginnen muss."] = "The user name has to contain a minimum of 4 and a maximum of 26 letters or figures and has to begin with a letter.<br>";
 $wb['Der Username muss aus min. 4, max 32 Buchstaben oder Zahlen bestehen, wobei er mit einem Buchstaben beginnen muss.'] = 'The user name has to contain a minimum of 4 and a maximum of 32 letters or figures and has to begin with a letter.<br>';
 

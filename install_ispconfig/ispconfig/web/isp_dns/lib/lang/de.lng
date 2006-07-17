@@ -73,5 +73,8 @@ $wb["include_break"] = "SPF-Record von der<br>&nbsp;&nbsp;folgenden Zone erben?"
 $wb["all_"] = "Sind dies alle Hosts,<br>&nbsp;&nbsp;die Emails für diese<br>&nbsp;&nbsp;Domain verschicken<br>&nbsp;&nbsp;dürfen?";
 
 $wb["Catalog_Name"] = "Name";
+$wb["Feld"] = "Feld";
+$wb["Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 -"] = "Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 -<br>";
+$wb["Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 - ."] = "Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 - .<br>";
 
 ?>
