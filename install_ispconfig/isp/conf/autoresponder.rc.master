@@ -8,7 +8,7 @@ EMAIL=`formail -zxTo:`
               * !^FROM_DAEMON
                # Mail loops are evil
               * !^X-Loop: ${EMAIL}
-              | formail -rD 8192 .vacation.cache
+              | formail -rD 8192 {PFAD}/.vacation.cache
 
                 :0 ehc         # if the name was not in the cache
                 | (formail -rI"From: {EMAIL_ADDRESS}" -I"Precedence: junk" \
