@@ -87,20 +87,20 @@ function make_backup($web_id) {
                 // erstelle ewb tar.gz
                 if($daten_web == 1) {
                         $web_pfad = $httpd_root ."/web".$web_id."/web";
-                        exec("cd $web_pfad; $zip -r $tmp_dir/web".$web_id."_web.zip *");
-            //echo "cd $web_pfad; $zip -r $tmp_dir/web".$web_id."_web.zip *";
+                        exec("cd $web_pfad; $zip -ry $tmp_dir/web".$web_id."_web.zip *");
+            //echo "cd $web_pfad; $zip -ry $tmp_dir/web".$web_id."_web.zip *";
                         $backup_txt .= "web,";
                 }
                 // erstelle user tar.gz
                 if($daten_user == 1) {
                         $user_pfad = $httpd_root."/web".$web_id."/user";
-                        exec("cd $user_pfad; $zip -r  $tmp_dir/web".$web_id."_user.zip *");
+                        exec("cd $user_pfad; $zip -ry  $tmp_dir/web".$web_id."_user.zip *");
                         $backup_txt .= "user,";
                 }
                 // erstelle log tar.gz
                 if($daten_log == 1) {
                         $log_pfad = $httpd_root."/web".$web_id."/log";
-                        exec("cd $log_pfad; $zip -r  $tmp_dir/web".$web_id."_log.zip *");
+                        exec("cd $log_pfad; $zip -ry  $tmp_dir/web".$web_id."_log.zip *");
                         $backup_txt .= "log,";
                 }
                 // erstelle mySQL tar.gz
@@ -145,13 +145,13 @@ if($transfer == "download") {
 
         // setze Header
         header("Pragma: public");
-		header("Expires: 0");
-		header("Cache-Control: must-revalidate, post-check=0, pre-check=0");
-		header("Cache-Control: private",false);
-		header("Content-Type: application/octet-stream");
-		header("Content-Disposition: attachment; filename=\"".$backup_file_name."\";");
-		header("Content-Transfer-Encoding: binary");
-		header("Content-Length: ".filesize($tgz_name));
+                header("Expires: 0");
+                header("Cache-Control: must-revalidate, post-check=0, pre-check=0");
+                header("Cache-Control: private",false);
+                header("Content-Type: application/octet-stream");
+                header("Content-Disposition: attachment; filename=\"".$backup_file_name."\";");
+                header("Content-Transfer-Encoding: binary");
+                header("Content-Length: ".filesize($tgz_name));
 
         // gebe Daten aus
         echo file_get_contents($tgz_name);
