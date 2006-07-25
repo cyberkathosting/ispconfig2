@@ -25,5 +25,5 @@ $hlp["email"] = "Vul het email adres in van de reseller.";
 $hlp["internet"] = "Vul het internet adres in de reseller.";
 $hlp["reseller_user"] = "Vul gebruikersnaam in van de reseller voor toegang tot het ISPConfig systeem.";
 $hlp["reseller_passwort"] = "Vul wachtwoord in van de reseller voor toegang tot het ISPConfig systeem.";
-$hlp["anrede"] = "Please select the salutatory address of the reseller.";
+$hlp["anrede"] = "Selecteer het welkomsadres van de reseller.";
 ?>

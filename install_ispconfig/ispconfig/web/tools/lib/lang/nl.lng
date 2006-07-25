@@ -6,48 +6,48 @@
 
 //////////////// Tools //////////////////////
 $wb["Tools & Optionen"] = "Tools & Opties";
-$wb["Passwort ändern"] = "Verander password";
+$wb["Passwort ändern"] = "Verander wachwoord";
 $wb["Allgemein"]    = "Algemeen";
-$wb["Passwort alt"] = "Oud password";
-$wb["Passwort neu"] = "Nieuw password";
-$wb["Passwort wiederholen"] = "Bevestig nieuw password";
+$wb["Passwort alt"] = "Oud wachwoord";
+$wb["Passwort neu"] = "Nieuw wachwoord";
+$wb["Passwort wiederholen"] = "Bevestig nieuw wachwoord";
 $wb["Adresse ändern"] = "Verander adres";
-$wb["willkommen_kunde"] = "Welkom in de ISPConfig.
+$wb["willkommen_kunde"] = "Welkom bij ISPConfig.
 U kunt uw webpagina hier registreren. Als u vragen heeft of problemen,
 kunt u contact opnemen met uw server administrator of de ISPConfig klanten handleiding raadplegen.";
 
 $wb["Willkommen"] = "Welkom";
 
 $wb["passwort_gespeichert"] = "Wachtwoord succesvol veranderd.";
-$wb["passwort_uebereinstimmung"] = "De twee wachtwoorden die u heeft ingevuld stemmen niet overeen. Stel aub vast dat het password in het veld --Nieuw password-- en --herhaal nieuw password-- identiek zijn.";
+$wb["passwort_uebereinstimmung"] = "De twee wachtwoorden die u heeft ingevuld stemmen niet overeen. Stel aub vast dat het wachwoord in het veld --Nieuw wachwoord-- en --herhaal nieuw wachwoord-- identiek zijn.";
 $wb["passwort_alt"] = "Het wachtwoord kon niet gewijzigd worden <br> omdat het oude wachtwoord niet juist is.";
 
 // NEW 1.1.12 ///////////////////////////////
 
-$wb["Backup Manager"] = 'Backup Manager';
+$wb["Backup Manager"] = 'Backup manager';
 $wb["Backup"] = 'Backup';
 $wb["Restore"] = 'Terugzetten';
-$wb["Daten Export"] = 'Data Export';
-$wb["Update Manager"] = 'Update Manager';
+$wb["Daten Export"] = 'Data export';
+$wb["Update Manager"] = 'Update manager';
 $wb["Portscanner"] = 'Portscanner';
 $wb["Whois"] = 'Whois';
 $wb["Download"] = 'Download';
-$wb["FTP-Server"] = 'FTP-Server';
+$wb["FTP-Server"] = 'FTP-server';
 $wb["Verzeichnis"] = 'Map';
-$wb["Web Daten"] = 'Web Data';
-$wb["User Daten"] = 'Gebruikers Data';
-$wb["Log Daten"] = 'Log Data';
+$wb["Web Daten"] = 'Web data';
+$wb["User Daten"] = 'Gebruikers data';
+$wb["Log Daten"] = 'Log data';
 $wb["mySQL Datenbank (wenn vorhanden)"] = 'mySQL Database';
 $wb["Backup starten"] = 'Backup starten';
-$wb["Kein Web vorhanden."] = 'Geen Web gevonden.';
-$wb["Web-Backup"] = 'Web Backup';
-$wb["Kunden-Stammaten"] = 'Client gegevens';
+$wb["Kein Web vorhanden."] = 'Geen web gevonden.';
+$wb["Web-Backup"] = 'Web backup';
+$wb["Kunden-Stammaten"] = 'Klantgegevens';
 $wb["Format Einstellungen"] = 'Format specificatie';
 $wb["Trennzeichen"] = 'Scheidingsteken';
 $wb["Eingeschlossen mit"] = 'bijgevoegd';
-$wb["Daten für folgende Anbieter exportieren"] = 'Export Data';
+$wb["Daten für folgende Anbieter exportieren"] = 'Export data';
 $wb["Export starten"] = 'Export starten';
-$wb["Anbieter-Stammdaten"] = 'Reseller Stamgegevens';
+$wb["Anbieter-Stammdaten"] = 'Reseller stamgegevens';
 $wb["Export"] = 'Export';
 $wb["Von"] = 'Van';
 $wb["Bis"] = 'Aan';
@@ -78,18 +78,18 @@ $wb["Öffnen"]      = "Open";
 $wb["Benutzername"] = " Gebruikersnaam"; // besser: vielleicht nur Variable $wb["username"] benutzen?
 $wb["zugangsdaten_anbieter_einleitung"] = "Hier kunt u de gebruikersnaam en wachtwoord voor de aanbieder invullen.";
 $wb["zugangsdaten_kunde_einleitung"] = "Hier kunt u de gebruikersnaam en het wachtwoord invullen voor het beheren van de <br>betreffende sites.<br> ";
-$wb["Web Verwaltung"] = "Site Management";
+$wb["Web Verwaltung"] = "Site management";
 $wb["Rechnung"]      = "Rekening";
-$wb["Rechnungsanschrift:"] = "Rekening adres:<br>";
+$wb["Rechnungsanschrift:"] = "Factuuradres:<br>";
 $wb["Intervall"]    = "Interval";
 $wb["Preis"]        = "Prijs";
 $wb["Zahlungsart"]  = "Betalingsmethode";
 $wb["Basis"]        = "Basis";
 $wb["Create DNS"]   = "Aanmaken DNS";
 $wb["Speicher MB"]     = "Ruimte MB";
-$wb["Max. User"]        = "Max. Gebruikers";
-$wb["Max. Domain"]        = "Max. Domeinen";
-$wb["PHP Scripte"]        = "PHP Scripts";
+$wb["Max. User"]        = "Max. gebruikers";
+$wb["Max. Domain"]        = "Max. domeinen";
+$wb["PHP Scripte"]        = "PHP scripts";
 $wb["SSI"]        = "SSI";
 $wb["FTP Zugang"]        = "FTP Toegang";
 $wb["mySQL"]        = "mySQL";
@@ -97,53 +97,51 @@ $wb["SSL"]        = "SSL";
 $wb["Shell Zugriff"]      = "Shell Toegang";
 $wb["Zugang"]       = " Toegang";  // Zugriff u. Zugang zusammenfassen!/nur einen Begriff nehmen!
 $wb["CGI Scripte"]      = "CGI Scripts";
-$wb["CGI Modus"]      = "CGI Mode";
-$wb["CGI mod_perl"]      = "CGI mod_perl";
 $wb["Bundesland"]   = "Land";
 $wb["Abteilung"]    = "Afdeling";
 $wb["Gültigkeit (Tage)"]  = " Geldigheid (dagen)";
 $wb["SSL Key"]          = "SSL Sleutel";
 $wb["SSL Zertifikat"]   = "SSL Certificaat";
-$wb["Aktion"]       = "Aktie";
+$wb["Aktion"]       = "Actie";
 $wb["Zertifikat erzeugen"] = "Aanmaken Certificaat";
 $wb["Zertifikat speichern"] = "Opslaan Certificaat";
 $wb["Zertifikat löschen"] = "Verwijderen Certificaat";
 $wb["Speicherplatz gesamt"] = "Opslagruimte";
 $wb["unlimitiert"]  = "Ongelimiteerd";
 $wb["verbraucht"]   = "Verbruikt";
-$wb["Trafficübersicht"] = "Traffic overzicht";
+$wb["Trafficübersicht"] = "Verkeer overzicht";
 $wb["Monat"]        = "Maand";
-$wb["Traffic"]      = "Traffic";
-$wb["traffic_letzte_4"] = "Traffic over de laatste 4 jaren";
+$wb["Traffic"]      = "Verkeer";
+$wb["traffic_letzte_4"] = "Verkeer over de laatste 4 jaren";
 $wb["Jahr"]         = "Jaar";
-$wb["mySQL User"]        = "mySQL Gebruikersnaam";
-$wb["mySQL Passwort"]    = "mySQL Password";
+$wb["mySQL User"]        = "mySQL gebruikersnaam";
+$wb["mySQL Passwort"]    = "mySQL wachtwoord";
 
 // Ergänzungen /////////////////////////////////
 $wb["Anbieter neu"] = "Nieuwe aanbieder";
-$wb["Kunde neu"]    = "Nieuwe client";
+$wb["Kunde neu"]    = "Nieuwe klant";
 $wb["Web neu"]      = "Nieuwe site";
 $wb["Ordner neu"]   = "Gesorteerd op";
 $wb["Suchen"]       = "Zoeken";
-$wb["ISP Anbieter"] = "ISP Aanbieder";
+$wb["ISP Anbieter"] = "ISP aanbieder";
 $wb["Webs"] = "Sites";
 $wb["User"] = "Gebruiker";
 $wb["Domains"] = "Domeinen";
 $wb["Zahlung"] = "Betaling";
-$wb["ISP Kunde"] = "ISP CLient";
+$wb["ISP Kunde"] = "ISP klant";
 $wb["ISP Web"] = "ISP Site";
 $wb["Kunden"] = "Clienten";
 $wb["Dokument suchen"] = "Document zoeken";
 
-$wb["User & Email"] = "Gebruiker & Email";
-$wb["Co-Domains"] = "Co-Domeinen";
+$wb["User & Email"] = "Gebruiker & email";
+$wb["Co-Domains"] = "Co-domeinen";
 $wb["SSL"] = "SSL";
 $wb["Optionen"] = "Opties";
 
-$wb["Webs angelegt"] = "Sites aangelegd";
-$wb["User angelegt"] = "Gebruikers aangelegd";
-$wb["Domains angelegt"] = "Domeinen aangelegd";
-$wb["rechnungsanschrift"] = "Factuur adres:<br> ";
+$wb["Webs angelegt"] = "Sites aangemaakt";
+$wb["User angelegt"] = "Gebruikers aangemaakt";
+$wb["Domains angelegt"] = "Domeinen aangemaakt";
+$wb["rechnungsanschrift"] = "Factuuradres:<br> ";
 
 
 $wb["neues Web anlegen"] = "Nieuwe site";
@@ -186,20 +184,20 @@ $wb["error_admin_exist_long"] = "Een gebruiker met administrator rechten bestaat
 
 // Error Codes ispconfig_isp_user.lib.php
 $wb["error_max_web_anbieter"] = "Het maximaal aantal site voor de aanbieder is bereikt";
-$wb["error_web_ssl_exist"] = " Een SSL Certificaat bestaat al voor dit IP.";
+$wb["error_web_ssl_exist"] = " Een SSL Certificaat bestaat al voor dit IP-adres.";
 
 // Plugins
 $wb["CPU Auslastung 1 Minute"] = "System belasting 1 minuut";
 $wb["CPU Auslastung 5 Minuten"] = "System belasting 5 minuten";
 $wb["CPU Auslastung 15 Minuten"] = "System belasting 15 minuten";
 $wb["Server Online seit"] = "Server online sinds";
-$wb["User Online"] = "Gebruikers Online";
+$wb["User Online"] = "Gebruikers online";
 $wb["error_web_id"] = "Deze Plugin heeft een geldig web ID nodig.";
 $wb["von"] = "van";
 $wb["Gesamt"] = "Totaal";
 $wb["Traffic in den letzten 4 Jahren"] = "Verkeer in de laatste 4 jaar";
 
-$wb["Backup von Tabelle"] = "Backup Tabel";
+$wb["Backup von Tabelle"] = "Backup tabel";
 $wb["Optimiere"] = "Optimaliseren";
 $wb["Reparatur"] = "Repareren";
 $wb["oder"] = "of";
@@ -217,64 +215,64 @@ $wb["Netto 15 Tage"] = "Netto 15 dagen";
 $wb["Netto 30 Tage"] = "Netto 30 dagen";
 $wb["Sonstige"] = "Overig";
 $wb["Neu"] = "Nieuw";
-$wb["Postfach MB"] = "Mailbox groote in MB";
+$wb["Postfach MB"] = "Mailbox grootte in MB";
 
-$wb["email_alias_txt"] = "<b>Tip:</b> 1 alias per regel.";
+$wb["email_alias_txt"] = "<b>Tip:</b> één alias per regel.";
 $wb["Weiterleitung"] = "Doorsturen";
 $wb["Nachricht"] = "Bericht";
-$wb["Kein Kunde vorhanden"] = "Geen client beschikbaar";
-$wb["Dieses Web können Sie nicht löschen."] = " U kunt deze web niet verwijderen.";
+$wb["Kein Kunde vorhanden"] = "Geen klant beschikbaar";
+$wb["Dieses Web können Sie nicht löschen."] = " U kunt deze site niet verwijderen.";
 $wb["Ausgabeformat"] = "Lijst format";
 $wb["Bearbeiten"] = "Bewerken";
 $wb["Löschen"] = "Verwijderen";
 
-$wb["willkommen_kunde"] = "Welkom in de ISPConfig.
+$wb["willkommen_kunde"] = "Welkom bij ISPConfig.
 U kunt uw webpagina hier registreren. Als u vragen heeft of problemen,
 kunt u contact opnemen met uw server administrator of de ISPConfig klanten handleiding raadplegen.";
 
 $wb["Willkommen"] = "Welkom";
-$wb["Sprache ändern"] = "Change Language";
-$wb["Sprache (ISO)"] = "Language (ISO)";
-$wb["Software Version"] = "Software Version";
-$wb["txt_client_salutatory_email_desc"] = "<b>Salutatory Email for Clients</b>";
-$wb["txt_client_salutatory_email_sender_email"] = "Sender's Email";
-$wb["txt_client_salutatory_email_sender_name"] = "Name of Sender";
-$wb["txt_client_salutatory_email_bcc"] = "BCC Recipient";
-$wb["txt_client_salutatory_email_subject"] = "Subject";
-$wb["txt_client_salutatory_email_message"] = "Message";
+$wb["Sprache ändern"] = "Taal wijzigen";
+$wb["Sprache (ISO)"] = "Taal (ISO)";
+$wb["Software Version"] = "Software Versie";
+$wb["txt_client_salutatory_email_desc"] = "<b>Wekomsemail voor klanten</b>";
+$wb["txt_client_salutatory_email_sender_email"] = "Emailadres afzender";
+$wb["txt_client_salutatory_email_sender_name"] = "Naam afzender";
+$wb["txt_client_salutatory_email_bcc"] = "BCC ontvanger";
+$wb["txt_client_salutatory_email_subject"] = "onderwerp";
+$wb["txt_client_salutatory_email_message"] = "bericht";
 $wb["txt_client_salutatory_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
 <tr>
     <td valign="top" colspan="2" class="normal">
-      <b>Include the following variables in your text:</b></td></tr>
+      <b>Gebruik de volgende variabelen in uw tekst:</b></td></tr>
         <tr>
           <td class="normal">%%%USER%%%</td>
           <td class="normal">
-            Client\'s Username</td>
+            Gebruikersnaam klant</td>
         </tr>
         <tr>
-          <td class="normal">%%%PASSWORD%%%</td>
+          <td class="normal">%%%wachwoord%%%</td>
           <td class="normal">
-            Client\'s Password</td>
+            Wachtwoord klant</td>
         </tr>
         <tr>
           <td class="normal">%%%FIRST_NAME%%%</td>
           <td class="normal">
-            Client\'s First Name</td>
+            Voornaam klant</td>
         </tr>
         <tr>
           <td class="normal">%%%LAST_NAME%%%</td>
           <td class="normal">
-            Client\'s Last Name</td>
+            Achternaam klant</td>
         </tr>
         <tr>
           <td class="normal">%%%COMPANY%%%</td>
           <td class="normal">
-            Client\'s Company</td>
+            Bedrijfsnaam klant</td>
         </tr>
         <tr>
           <td class="normal">%%%EMAIL%%%</td>
           <td class="normal">
-            Client\'s Email Address</td>
+            Emailadres klant</td>
         </tr>
         <tr>
           <td class="normal">%%%CP%%%</td>
@@ -284,34 +282,34 @@ $wb["txt_client_salutatory_email_variables"] = '<table border="0" cellpadding="3
         <tr>
           <td class="normal">%%%MANUAL%%%</td>
           <td class="normal">
-            ISPConfig Client Manual</td>
+            ISPConfig klanten handleiding</td>
         </tr>
         </table>';
-$wb["txt_standard_index"] = "Standard Index<br>&nbsp;&nbsp;Page";
+$wb["txt_standard_index"] = "Standaard index<br>&nbsp;&nbsp;pagina";
 $wb["txt_standard_index_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
 <tr>
     <td valign="top" colspan="2" class="normal">
-      <b>Include the following variables in your text:</b></td></tr>
+      <b>Gebruik de volgende variabelen in uw tekst:</b></td></tr>
         <tr>
           <td class="normal">%%%FQDN%%%</td>
           <td class="normal">
-            Website\'s Fully Qualified Domain Name</td>
+            Website\'s Volledig gekwalificeerde domeinnaam</td>
         </tr>
     </table>';
-$wb["txt_user_standard_index"] = "Users' Standard<br>&nbsp;&nbsp;Index Page";
+$wb["txt_user_standard_index"] = "Gebruikers standaard<br>&nbsp;&nbsp;index pagina";
 $wb["txt_user_standard_index_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
 <tr>
     <td valign="top" colspan="2" class="normal">
-      <b>Include the following variables in your text:</b></td></tr>
+      <b>Gebruik de volgende variabelen in uw tekst:</b></td></tr>
         <tr>
           <td class="normal">%%%USER%%%</td>
           <td class="normal">
-            User\'s Username</td>
+            Gebruikersnaam</td>
         </tr>
         <tr>
           <td class="normal">%%%FQDN%%%</td>
           <td class="normal">
-            Website\'s Fully Qualified Domain Name</td>
+            Website\'s Volledig gekwalificeerde domeinnaam</td>
         </tr>
         </table>';
 
@@ -322,52 +320,53 @@ $wb["Arbeitsspeicher"]          = "Intern geheugen";
 $wb["CPU"]          = "CPU";
 $wb["Dienste"]      = "Diensten";
 $wb["Server Online seit"]          = "Server online sinds";
-$wb["User Online"]      = "Gebruikers Online";
+$wb["User Online"]      = "Gebruikers online";
 $wb["System Load 1 Minute"] = "Systeem gebruik 1 Minuut";
 $wb["System Load 5 Minuten"] = "Systeem gebruik 5 Minuten";
 $wb["System Load 15 Minuten"] = "Systeem gebruik 15 Minuten";
 //////////////// Server Status Ende //////////
 
-$wb["DNS-Domains angelegt"] = 'DNS Domains created';
-$wb["Hinzufügen"] = "Add";
-$wb["Berechtigungen"] = "Permissions";
-$wb["Speichern"] = "Save";
-$wb["Löschen"] = "Delete";
-$wb["Abbrechen"] = "Cancel";
-$wb["IP-Adresse"] = "IP-Address";
-$wb["DNS-Query"] = "Query Primary DNS Records";
-$wb["DNS-Insert"] = "Create Primary DNS Records";
-$wb["DNS-Update"] = "Edit Primary DNS Records";
-$wb["DNS-Delete"] = "Delete Primary DNS Records";
-$wb["slave_query"] = "Query Secondary DNS Records";
-$wb["slave_insert"] = "Create Secondary DNS Records";
-$wb["slave_update"] = "Edit Secondary DNS Records";
-$wb["slave_delete"] = "Delete Secondary DNS Records";
-$wb["reseller_query"] = "Query Resellers";
-$wb["reseller_insert"] = "Create Resellers";
-$wb["reseller_update"] = "Edit Resellers";
-$wb["reseller_delete"] = "Delete Resellers";
-$wb["kunde_query"] = "Query Clients";
-$wb["kunde_insert"] = "Create Clients";
-$wb["kunde_update"] = "Edit Clients";
-$wb["kunde_delete"] = "Delete Clients";
-$wb["web_query"] = "Query Websites";
-$wb["web_insert"] = "Create Websites";
-$wb["web_update"] = "Edit Websites";
-$wb["web_delete"] = "Delete Websites";
+$wb["DNS-Domains angelegt"] = 'DNS Domeinen aangelegd';
+$wb["Hinzufügen"] = "Toevoegen";
+$wb["Berechtigungen"] = "Rechten";
+$wb["Speichern"] = "Opslaan";
+$wb["Löschen"] = "Verwijderen";
+$wb["Abbrechen"] = "Annuleren";
+$wb["IP-Adresse"] = "IP-adres";
+$wb["DNS-Query"] = "Opvragen Primary DNS Records";
+$wb["DNS-Insert"] = "Aanmaken Primary DNS Records";
+$wb["DNS-Update"] = "Bewerken Primary DNS Records";
+$wb["DNS-Delete"] = "Verwijderen Primary DNS Records";
+$wb["slave_query"] = "Opvragen Secondary DNS Records";
+$wb["slave_insert"] = "Aanmaken Secondary DNS Records";
+$wb["slave_update"] = "Bewerken Secondary DNS Records";
+$wb["slave_delete"] = "Verwijderen Secondary DNS Records";
+$wb["reseller_query"] = "Opvragen resellers";
+$wb["reseller_insert"] = "Aanmaken resellers";
+$wb["reseller_update"] = "Bewerken resellers";
+$wb["reseller_delete"] = "Verwijderen resellers";
+$wb["kunde_query"] = "Opvragen klanten";
+$wb["kunde_insert"] = "Aanmaken klanten";
+$wb["kunde_update"] = "Bewerken klanten";
+$wb["kunde_delete"] = "Verwijderen klanten";
+$wb["web_query"] = "Opvragen websites";
+$wb["web_insert"] = "Aanmaken websites";
+$wb["web_update"] = "Bewerk websites";
+$wb["web_delete"] = "Verwijder websites";
 $wb["txt_primary_dns_records"] = "Primary DNS Records";
 $wb["txt_secondary_dns_records"] = "Secondary DNS Records";
 $wb["txt_anbieter"] = "Resellers";
-$wb["txt_kunden"] = "Clients";
+$wb["txt_kunden"] = "Klanten";
 $wb["txt_webs"] = "Websites";
 
-$wb["txt_move_websites"] = "Move Websites";
-$wb["txt_website_deleted_no_move"] = "This website has been deleted and cannot be moved.<br><br> <a href='../../frame_start.php?s=$s'>Next &gt;&gt;</a>";
-$wb["txt_customer_deleted_no_move"] = "This customer has been deleted; the website cannot be moved.<br><br> <a href='../../frame_start.php?s=$s'>Next &gt;&gt;</a>";
-$wb["txt_website_moved"] = "The website has been moved to the customer you specified.<br><br> <a href='../../frame_start.php?s=$s'>Next &gt;&gt;</a>";
-$wb["txt_move_website_from"] = "from";
-$wb["txt_move_website_to"] = "to";
+$wb["txt_move_websites"] = "Verplaats websites";
+$wb["txt_website_deleted_no_move"] = "Deze website is verwijderd en kan niet worden verplaatst.<br><br> <a href='../../frame_start.php?s=$s'>Next &gt;&gt;</a>";
+$wb["txt_customer_deleted_no_move"] = "Deze klant is verwijderd, de website kan niet worden verplaatst.<br><br> <a href='../../frame_start.php?s=$s'>Next &gt;&gt;</a>";
+$wb["txt_website_moved"] = "The website is verplaatst naar de door u gespecificeerde klant.<br><br> <a href='../../frame_start.php?s=$s'>Next &gt;&gt;</a>";
+$wb["txt_move_website_from"] = "van";
+$wb["txt_move_website_to"] = "naar";
 $wb["txt_move_website_website"] = "Website";
-$wb["txt_move_website_submit"] = "Submit";
+$wb["txt_move_website_submit"] = "Voorleggen";
+
 
 ?>
