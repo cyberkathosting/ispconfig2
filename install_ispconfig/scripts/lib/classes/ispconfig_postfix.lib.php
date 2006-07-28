@@ -53,6 +53,7 @@ function make_local_host_names() {
         $hostname_parts = array_slice($hostname_parts, 1);
         $hostnames[] = 'localhost.'.implode('.', $hostname_parts);
       }
+      if(!in_array('localhost.localdomain', $hostnames)) $hostnames[] = 'localhost.localdomain';
       $hostname = NULL;
       foreach($hostnames as $hostname){
         $mod->tpl->assign( array( DOMAIN => $hostname));
