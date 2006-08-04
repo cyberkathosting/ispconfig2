@@ -38,8 +38,8 @@ $wb["Neu"] = 'Nieuw';
 
 // NEW 1.3 //////////////////////////////////////
 
-$wb["Master neu"] = 'New master';
-$wb["Slave neu"] = 'New slave';
+$wb["Master neu"] = 'Nieuwe master';
+$wb["Slave neu"] = 'Nieuwe slave';
 $wb["Slave Zone"] = 'Slave zone';
 $wb["domain"] = 'Domein';
 $wb["DNS-Master IP"] = 'DNS-master IP';
