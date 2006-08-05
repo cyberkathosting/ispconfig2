@@ -66,6 +66,9 @@ switch ($endfix) {
         case '.com':
         case '.net':
         case '.org':
+        case '.com.au':
+        case '.net.au':
+        case '.org.au':
 				 $WhoIsServer="whois.crsnic.net";
 				 $result=whois_php ($WhoIsServer,$domain);
 		 		 break;
@@ -110,24 +113,9 @@ switch ($endfix) {
   			  }
 			  break;
          case '.org.za':
-		          $post = "domain=".$domain."&format=full";
-			  $result=whois_http_post ("www.org.za/cgi-bin/rwhois",$post);
-				//Clean up of html response to remove submit form  			  
-  			  if (stristr($result,"Domain not registered")) {
-					$result="Domain not registered";  			  
-  			  }
-  			  else{
-					/*
-					$doc = new DomDocument();
-					$doc->loadHTML($result);
-					$nodes=$doc->getElementsByTagName("pre");
-					$result=$nodes->item(0)->textContent;
-					*/
-					eregi('<pre>(.*)</pre>',$result,$matches);
-					$result = $matches[1];
-  			  }
+
 			  break;
-         default:echo("Error!\n");break;
+		 default:echo("Error!\n");break;
         }
 }
 
@@ -253,6 +241,9 @@ $html_pre = '&nbsp;<br><form name="form1" method="post" action="">
 								        <option name="se" value=".se">.se
 								        <option name="co.za" value=".co.za">.co.za
 								        <option name="org.za" value=".org.za">.org.za
+								        <option name="com.au" value=".com.au">.com.au
+								        <option name="net.au" value=".net.au">.net.au
+								        <option name="org.au" value=".org.au">.org.au
 							</select>&nbsp;
                     <input type="submit" name="submit" value="Search &gt;&gt;" class="button"> </td>
                 </tr>
