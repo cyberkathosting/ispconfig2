@@ -305,7 +305,7 @@ function web_insert($doc_id, $doctype_id, $die_on_error = '1') {
       if($reseller["limit_mysql"] != 1 && $web["web_mysql"] == 1) $limit_errors .= $go_api->lng("error_web_no_mysql");
       // Datenbanken
       if($web["web_mysql"] == 1 && $reseller["limit_mysql_anzahl_dbs"] >= 0){
-        $datenbankanzahl = $go_api->db->queryOneRecord("SELECT sum(isp_isp_web.web_mysql_anzahl_dbs) as datenbankanzahl from isp_isp_web,isp_nodes where isp_isp_web.doc_id = isp_nodes.doc_id and  isp_nodes.groupid = '$resellerid' and isp_nodes.doctype_id = ".$this->web_doctype_id);
+        $datenbankanzahl = $go_api->db->queryOneRecord("SELECT sum(isp_isp_web.web_mysql_anzahl_dbs) as datenbankanzahl from isp_isp_web,isp_nodes where isp_isp_web.doc_id = isp_nodes.doc_id and  isp_nodes.groupid = '$resellerid' and isp_nodes.doctype_id = ".$this->web_doctype_id." and isp_isp_web.web_mysql = 1");
         $datenbankanzahl = $datenbankanzahl["datenbankanzahl"];
         $free = $reseller["limit_mysql_anzahl_dbs"] - $datenbankanzahl;
         if($free < 0){
@@ -696,7 +696,7 @@ $go_api->db->query("UPDATE isp_isp_web SET status = 'u' where status != 'n' and 
       }
       // Datenbanken
       if($web["web_mysql"] == 1 && $reseller["limit_mysql_anzahl_dbs"] >= 0){
-        $datenbankanzahl = $go_api->db->queryOneRecord("SELECT sum(isp_isp_web.web_mysql_anzahl_dbs) as datenbankanzahl from isp_isp_web,isp_nodes where isp_isp_web.doc_id = isp_nodes.doc_id and  isp_nodes.groupid = '$resellerid' and isp_nodes.doctype_id = ".$this->web_doctype_id);
+        $datenbankanzahl = $go_api->db->queryOneRecord("SELECT sum(isp_isp_web.web_mysql_anzahl_dbs) as datenbankanzahl from isp_isp_web,isp_nodes where isp_isp_web.doc_id = isp_nodes.doc_id and  isp_nodes.groupid = '$resellerid' and isp_nodes.doctype_id = ".$this->web_doctype_id." and isp_isp_web.web_mysql = 1");
         $datenbankanzahl = $datenbankanzahl["datenbankanzahl"];
         $free = $reseller["limit_mysql_anzahl_dbs"] - $datenbankanzahl;
         if($free < 0){
