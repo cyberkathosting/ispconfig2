@@ -189,22 +189,35 @@ class isp_username_plugin {
                         // check if the domains are really co-domains of this site to prevent attacks
                         $co_domains = $go_api->db->queryAllRecords("SELECT domain_host, domain_domain FROM isp_dep, isp_isp_domain WHERE isp_dep.parent_doc_id = ".$web["doc_id"]." and isp_dep.parent_doctype_id = ".$web["doctype_id"]." and isp_dep.child_doc_id = isp_isp_domain.doc_id and isp_dep.child_doctype_id = isp_isp_domain.doctype_id");
                         $web_domains[0] = ($web["web_host"] != '')?$web["web_host"].'.'.$web["web_domain"]:$web["web_domain"];
-                        foreach($co_domains as $co_domain) {
-                                $web_domains[] = ($co_domain["domain_host"] != '')?$co_domain["domain_host"].'.'.$co_domain["domain_domain"]:$co_domain["domain_domain"];
+                        if( is_array($co_domains) ) {
+                              foreach($co_domains as $co_domain) {
+                                     $web_domains[] = ($co_domain["domain_host"] != '')?$co_domain["domain_host"].'.'.$co_domain["domain_domain"]:$co_domain["domain_domain"];
+                              }
                         }
-                        foreach($email_domain_array as $tmp_domain) {
-                                $tmp_domain = trim($tmp_domain);
-                                if(in_array($tmp_domain,$web_domains)) $email_domain_checked[] = $tmp_domain;
+                        
+                        if( is_array($email_domain_array) ) {
+                             foreach($email_domain_array as $tmp_domain) {
+                                     $tmp_domain = trim($tmp_domain);
+                                     if(in_array($tmp_domain,$web_domains)) 
+                                             $email_domain_checked[] = $tmp_domain;
+                             }
                         }
 
-                        $email_domain = addslashes(implode("\n",$email_domain_checked));
-                } else {
+                        //Don't do addslashes if it is not an array
+                        if( !is_array($email_domain_checked) ) {
+                        	 $email_domain = '';
+                        }
+                        else {
+                        	$email_domain = addslashes(implode("\n",$email_domain_checked));
+                        }
+                } 
+                else {
                          $email_domain = '';
                 }
 
 
-                // Nur Username + Email reinschreiben, überprüfung erfolgt durch doctype_event
-        $go_api->db->query("UPDATE isp_isp_user SET user_username = '$user_prefix$username', user_email = '$email', user_emaildomain = '$email_domain' where doc_id = $doc_id");
+           // Nur Username + Email reinschreiben, überprüfung erfolgt durch doctype_event
+             $go_api->db->query("UPDATE isp_isp_user SET user_username = '$user_prefix$username', user_email = '$email', user_emaildomain = '$email_domain' where doc_id = $doc_id");
 
             return true;
     }
