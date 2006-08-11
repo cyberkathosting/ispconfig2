@@ -42,6 +42,14 @@ if [ ! -f /bin/false ] && [ -f  /sbin/nologin ]; then
 fi
 
 chmod 700 setup1
-./setup1
+
+#Changed to save a log with all output in a log
+#makes sense in case of missing perlomodules etc, where the output overloads
+#the normal screenbuffer and you won't see anything.
+if[ -f /usr/bin/tee ]; then
+  ./setup1 | /usr/bin/tee /var/log/ispconfig_tee.log
+else
+  ./setup1
+fi
 
 exit 0;
