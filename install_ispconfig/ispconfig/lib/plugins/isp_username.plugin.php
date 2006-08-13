@@ -151,11 +151,13 @@ class isp_username_plugin {
 
         $sys_config = $go_api->db->queryOneRecord("SELECT * from sys_config");
         $user_prefix = $sys_config["user_prefix"];
+				
+				// Bestimme web Doc ID
+        $next_tree_id = strval($next_tree_id);
+        $web = $go_api->db->queryOneRecord("SELECT * from isp_nodes, isp_isp_web where isp_nodes.doc_id = isp_isp_web.doc_id and isp_nodes.tree_id = '$next_tree_id'");
+
 
         if($user_prefix != '') {
-                // Bestimme web Doc ID
-                $next_tree_id = strval($next_tree_id);
-                $web = $go_api->db->queryOneRecord("SELECT * from isp_nodes, isp_isp_web where isp_nodes.doc_id = isp_isp_web.doc_id and isp_nodes.tree_id = '$next_tree_id'");
 
                 // Ersetzungen vornehmen
                 $user_prefix = str_replace("[WEBID]",$web["doc_id"],$user_prefix);
