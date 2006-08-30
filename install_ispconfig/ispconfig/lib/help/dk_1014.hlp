@@ -1,0 +1,38 @@
+<?
+
+/**********************************************
+* ISPConfig Help File
+* Version 1.2
+* Syntax: $hlp["FieldName"] = "HelpText";
+************************************************/
+/*
+    Danish Language Strings for ISPConfig.
+    Copyright (C) 2002-2006 by Michael R. Christensen (aka MicCo)
+
+      Web site = http://www.micco-webdesign.dk/
+      e-mail   = admin@micco-webdesign.dk
+
+    Version History :
+      v1.0 : initial release
+      v2.2.6 (28 August 2006)   : various strings updates and add-ons
+
+*/
+
+$hlp["user_username"] = "Angiv et brugernavn. Du kan indtaste hvilket som helst brugernavn så længe det ikke indeholder (ä, ö,ü), specielle tegn (@, %, ...) og blanke. Maximum længden er 26 tegn.";
+$hlp["user_passwort"] = "Angiv en adgangskode. Du kan indtaste hvilken som helst adgangskode så længe den ikke indeholder (ä, ö,ü), specielle tegn (@, %, ...) og blanke.";
+$hlp["user_speicher"] = "Indtast disk plads for brugeren.";
+$hlp["user_admin"] = "Gør denne bruger til administrator for denne web. Kun en bruger pr. web kan være administrator.";
+$hlp["user_shell"] = "Aktivere shell access for denne bruger.";
+$hlp["user_emailalias"] = "Her kan du indtaste flere email aliaser (f.eks. forskellige stavemåder) for at modtage emails for disse aliaser. Indtast kun den del foran \"@\"!";
+$hlp["user_name"] = "Indtast brugerens rigtige navn.";
+$hlp["user_autoresponder"] = "Aktivere email autorespond for brugerens email boks.";
+$hlp["user_autoresponder_text"] = "Indtast en tekst for email autoresponds.";
+$hlp["user_mailquota"] = "Angiv kvota for brugerens mailboks (i MB).";
+$hlp["user_catchallemail"] = "Hvis denne boks er checked alle ikke leveringsbar emails for denne web ender i denne mailboks. Kun en bruger pr. web kan have en catchAll email adresse.";
+$hlp["user_mailscan"] = "Aktiver virus scanneren for denne mailboks. Endelser på mistænkelige vedhæftet filer (f.eks. .exe-filer) vil blive omdøbt så de ikke kan åbnes ved dobbel-klik.";
+$hlp["user_spamfilter"] = "Aktiver spam filter for denne mailboks.";
+$hlp["user_emailweiterleitung_local_copy"] = "Hvis denne boks er afmærked vil en lokal kopi af alle indkommende emails blive opbevaret selv om emails er vidersendt til andre email adresser.";
+$hlp["user_email"] = "Angiv navnet som skal stå foran \"@\" i email adressen. Du kan indtaste hvilken som helst navn så længe det ikke indeholder (ä, ö,ü), specielle tegn (@, %, ...) og blanke.";
+$hlp["user_emailweiterleitung"] = "Her kan du indtaste email adresser for hvem indkommende emails skal vidersendes til.";
+
+?>

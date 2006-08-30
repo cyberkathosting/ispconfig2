@@ -1,0 +1,31 @@
+<?
+
+/**********************************************
+* ISPConfig Help File
+* Version 1.2
+* Syntax: $hlp["FieldName"] = "HelpText";
+************************************************/
+/*
+    Danish Language Strings for ISPConfig.
+    Copyright (C) 2002-2006 by Michael R. Christensen (aka MicCo)
+
+      Web site = http://www.micco-webdesign.dk/
+      e-mail   = admin@micco-webdesign.dk
+
+    Version History :
+      v1.0 : initial release
+      v2.2.6 (28 August 2006)   : various strings updates and add-ons
+
+*/
+
+$hlp["dns_soa"] = "Domæne (Start of Authority). Indtast domænet (uden www).";
+$hlp["dns_refresh"] = "DNS Refresh i sekunder.";
+$hlp["dns_retry"] = "DNS Retry i sekunder.";
+$hlp["dns_expire"] = "DNS Expire i sekunder.";
+$hlp["dns_ttl"] = "DNS TTL i sekunder.";
+$hlp["dns_ns1"] = "Indtast primære navneserver.";
+$hlp["dns_ns2"] = "Indtast sekundære navneserver.";
+$hlp["dns_adminmail"] = "Indtast email adressen til zone administrator.";
+$hlp["server_id"] = "Vælg server.";
+$hlp["dns_soa_ip"] = "IP adresse for domæne.";
+?>

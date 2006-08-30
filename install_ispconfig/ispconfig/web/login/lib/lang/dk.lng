@@ -1,0 +1,37 @@
+<?
+/********************************
+* ISPConfig Dictionary File
+* Version 1.0
+*********************************/
+/*
+    Danish Language Strings for ISPConfig.
+    Copyright (C) 2002-2006 by Michael R. Christensen (aka MicCo)
+
+      Web site = http://www.micco-webdesign.dk/
+      e-mail   = admin@micco-webdesign.dk
+
+    Version History :
+      v1.0 : initial release
+      v2.2.6 (28 August 2006)   : various strings updates and add-ons
+
+*/
+
+// License Manager
+$wb["Es wurde keine g&uuml;ltige Lizenzdatei gefunden."] = "Ingen gyldig licens fil fundet.";
+$wb["Hier k&ouml;nnen Sie ihre Lizenzdatei einspielen."] = "Du kan upload din licens fil her.";
+$wb["Username"] = "Brugernavn";
+$wb["Passwort"] = "Adgangskode";
+$wb["Lizenzdatei"] = "Licens fil";
+$wb["Weiter"] = "Næste";
+$wb["Die Lizenzdatei wurde eingespielt.<br>Sie k&ouml;nnen sich jetzt einloggen."] = "Licens filen er blevet uploaded.<br> Du kan nu log ind.";
+$wb["Ihre Nutzersitzung wurde beendet."] = "Din session er udløbet.";
+$wb["Hier können Sie sich neu einloggen"] = "Her kan du log ind igen";
+
+$wb["FEHLER 101: Username oder Passwort Falsch."] = "ERROR 101: Forkert brugernavn eller adgangskode.";
+$wb["FEHLER 102: Account inaktiv."] = "ERROR 102: Konto inaktiv.";
+$wb["FEHLER 103: Es wurde kein Username oder Passwort angegeben."] = "ERROR 103: Ingen brugernavn eller adgangskode.";
+$wb["FEHLER 104: Die Nutzersession wurde beendet."] = "ERROR 104: Session udløb.";
+$wb["<br>&nbsp;<br>Hier können Sie sich erneut einloggen:"] = "<br>&nbsp;<br>Her kan du log ind igen:";
+$wb["Hier können Sie sich einloggen:"] = "Her kan du log ind:";
+
+?>

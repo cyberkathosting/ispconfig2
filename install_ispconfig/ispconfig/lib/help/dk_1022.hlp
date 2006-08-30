@@ -1,0 +1,59 @@
+<?
+
+/**********************************************
+* ISPConfig Help File
+* Version 1.2
+* Syntax: $hlp["FieldName"] = "HelpText";
+************************************************/
+/*
+    Danish Language Strings for ISPConfig.
+    Copyright (C) 2002-2006 by Michael R. Christensen (aka MicCo)
+
+      Web site = http://www.micco-webdesign.dk/
+      e-mail   = admin@micco-webdesign.dk
+
+    Version History :
+      v1.0 : initial release
+      v2.2.6 (28 August 2006)   : various strings updates and add-ons
+
+*/
+
+$hlp["limit_user"] = "Indtast maximum antal af brugere forhandleren må oprette.";
+$hlp["limit_disk"] = "Angiv maximum mængden af lagerplads forhandleren har tilladelse til at bruge.";
+$hlp["limit_web"] = "Indtast maximum antal af webs forhandleren må oprette.";
+$hlp["limit_domain"] = "Indtast maximum antal af domæner forhandleren må oprette";
+$hlp["limit_http_include"] = "Angive om forhandleren må oprette yderligere Apache directives.";
+$hlp["limit_dns_manager"] = "Angive om forhandleren må oprette DNS adgange.";
+$hlp["limit_domain_dns"] = "Angiv maximum antal af domæner som forhandleren må oprette Primary (Master) DNS records for.";
+$hlp["limit_slave_dns"] = "Angiv maximum antal af domæner som forhandleren må oprette Secondary (Slave) DNS records for.";
+
+$hlp["limit_cgi"] = "Angive om forhandleren kan give adgang til CGI funktioner for websider under sin konto.";
+$hlp["limit_php"] = "Angive om forhandleren kan give adgang til PHP funktioner for websider under sin konto.";
+$hlp["limit_ssi"] = "Angive om forhandleren kan give adgang til SSI funktioner for websider under sin konto.";
+$hlp["limit_ftp"] = "Angive om forhandleren kan give adgang til FTP funktioner for websider under sin konto.";
+$hlp["limit_frontpage"] = "Angive om forhandleren kan give adgang til Frontpage funktioner for websider under sin konto.";
+$hlp["limit_mysql"] = "Angive om forhandleren kan give adgang til MySQL databaser for websider under sin konto.";
+$hlp["limit_shell_access"] = "Angive om forhandleren kan give adgang til Shell konti under sin konto.";
+$hlp["limit_ssl"] = "Angive om forhandleren kan give adgang til SSL funktioner for websider under sin konto. Bemærk: Du kan kun have en SSL webside pr. IP-adresse.";
+$hlp["limit_httpd_include"] = "Angive om forhandleren kan give adgang til yderligere Apache directives for websider under sin konto.";
+$hlp["limit_anonftp"] = "Angive om forhandleren kan give adgang til Anonymous FTP funktioner for websider under sin konto. Bemærk: Du kan kun have en Anonymous-FTP konto pr. IP-adresse.";
+$hlp["limit_wap"] = "Angive om forhandleren kan give adgang til WAP funktioner for websider under sin konto.";
+$hlp["limit_standard_cgis"] = "Angive om standard CGI scripts leveret på denne server skal være tilgængelige for websider under forhandlerens konto.";
+$hlp["limit_mysql_anzahl_dbs"] = "Angive max. antal (total) af databaser som forhandleren kan tildele websider under sin konto.";
+$hlp["limit_error_pages"] = "Angive om forhandleren kan give tilladelse til oprettelses af egne fejl-sider for websider under sin konto.";
+
+$hlp["firma"] = "Indtast forhandlerens firmanavn.";
+$hlp["vorname"] = "Indtast forhandlerens fornavn.";
+$hlp["name"] = "Indtast forhandlerens efternavn.";
+$hlp["strasse"] = "Indtast forhandlerens adresse.";
+$hlp["plz"] = "Indtast forhandlerens post nr.";
+$hlp["ort"] = "Indtast forhandlerens by.";
+$hlp["land"] = "Indtast forhandlerens oprindelsesland.";
+$hlp["telefon"] = "Indtast forhandlerens telefonnummer.";
+$hlp["fax"] = "Indtast forhandlerens faxnummer.";
+$hlp["email"] = "Indtast forhandlerens email adresse.";
+$hlp["internet"] = "Indtast forhandlerens webside URL.";
+$hlp["reseller_user"] = "Indtast forhandlerens brugernavn for at logge ind på ISPConfig systemet.";
+$hlp["reseller_passwort"] = "Indtast forhandlerens adgangskode for at logge ind på ISPConfig systemet.";
+$hlp["anrede"] = "Vælg hilsen for forhandleren.";
+?>

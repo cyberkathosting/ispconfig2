@@ -1,0 +1,511 @@
+<?
+/********************************
+* ISPConfig Dictionary File
+* Version 1.0
+*********************************/
+/*
+    Danish Language Strings for ISPConfig.
+    Copyright (C) 2002-2006 by Michael R. Christensen (aka MicCo)
+
+      Web site = http://www.micco-webdesign.dk/
+      e-mail   = admin@micco-webdesign.dk
+
+    Version History :
+      v1.0 : initial release
+      v2.2.6 (28 August 2006)   : various strings updates and add-ons
+
+*/
+
+//////////////// Server Status ////////////////
+$wb["Arbeitsspeicher"]          = "Hukommelse";
+$wb["CPU"]          = "CPU";
+$wb["Dienste"]      = "Services";
+$wb["Server Online seit"]          = "Server Online i";
+$wb["User Online"]      = "Bruger Online";
+$wb["System Load 1 Minute"] = "System Load 1 Minut";
+$wb["System Load 5 Minuten"] = "System Load 5 Minutter";
+$wb["System Load 15 Minuten"] = "System Load 15 Minutter";
+//////////////// Server Status Ende //////////
+
+///////////////// Administration ////////////////
+$wb["ISPConfig Datenbank"]    = "ISPConfig Database";
+$wb["Backup erstellen"]       = "Backup data";
+$wb["Datenbank Check"]        = "Check Database";
+$wb["Datenbank Optimieren"]   = "Optimere Database";
+$wb["Datenbank Reparieren"]   = "Reparere Database";
+$wb["Eigenschaften"] = "Indstillinger";
+$wb["Server Name"]  = "Server Navn";
+$wb["Netzmaske"]    = "Netmaske";
+$wb["Sprache"]      = "Sprog";
+$wb["IP Liste"]     = "IP Liste";
+$wb["hinweis_ip_liste"] = "<b>TIP:</b> Kun en IP-adresse pr. linie i feltet IP Liste.";
+$wb["Pfad"]         = "Sti";
+$wb["Programm"]     = "Program";
+$wb["Reparatur"]    = "Reparere";
+$wb["Optimiere"]    = "Optimere";
+$wb["Pfad httpd.conf"]    = "Sti til httpd.conf";
+$wb["MTA Typ"]    = "MTA Type";
+$wb["Virtuser Datei"]    = "Virtuser Fil";
+$wb["FTP Programm"]    = "FTP Program";
+$wb["FTP conf. Datei"]    = "FTP conf. Fil";
+$wb["Userid von"]    = "Brugerid for";
+$wb["Groupid von"]    = "Gruppeid for";
+
+$wb["Backup von Tabelle"] = "Backup Tabel";
+$wb["Optimiere"] = "Optimerer";
+$wb["Reparatur"] = "Reparere";
+$wb["oder"] = "eller";
+$wb["Installation starten"] = "Indstallere";
+
+$wb["Deutsch"] = "Tysk";
+$wb["Englisch"] = "Engelsk";
+$wb["Datei"] = "Fil";
+
+//////////////// Administration Ende ///////////
+
+//////////////// Firewall, Monitor + Dienste  ////////////////
+
+$wb["Überwachung"] = "Overvågning";
+$wb["Firewall"] = "Firewall";
+$wb["Web-Server"] = "Web Server";
+$wb["FTP-Server"] = "FTP Server";
+$wb["SMTP-Server"] = "SMTP Server";
+$wb["DNS-Server"] = "DNS Server";
+$wb["mySQL-Server"] = "MySQL Server";
+$wb["An"] = "Til";
+$wb["Aus"] = "Fra";
+$wb["neu Starten"] = "Genstart";
+$wb["Neu"] = "Tilføj";
+$wb["Aktionen"] = "Actions";
+$wb["Dienst"] = "Service";
+$wb["Hostname"] = "Hostnavn";
+$wb["Port"] = "Port";
+$wb["Typ"] = "Type";
+$wb["TCP"] = "TCP";
+$wb["UDP"] = "UDP";
+$wb["Der Dienst-Typ wird nur bei sonstigen-Diensten ausgewertet."] = "Denne type af service vil kun blive analyseret i forbindelse med andre services.";
+$wb["Sonstige"] = "Andre";
+$wb["Ja"] = "Ja";
+$wb["Nein"] = "Nej";
+$wb["Offline"] = "Offline";
+$wb["ISP Dienste"] = "ISP Services";
+$wb["ISP Überwachung"] = "ISP Monitor";
+$wb["ISP Firewall"] = "ISP Firewall";
+$wb["Name"] = "Navn";
+$wb["Aktiv"] = "Aktiv";
+$wb["Firewall Regel"] = "Firewall Regler";
+$wb["Dieser Port kann nicht geändert werden."] = "Denne port kan ikke ændres.<br>";
+$wb["Dieser Port kann nicht deaktiviert werden."] = "Denne port kan ikke deaktiveres.<br>";
+
+//////////////// Firewall ENDE ////////////////
+
+//////////////// LNG 1.1.12 BEGIN /////////////
+
+$wb["ISP Server"] = 'ISP Server';
+$wb["Admin Email"] = 'Admin Email';
+$wb["EMail"] = 'EMail';
+$wb["Funktionen"] = 'Funktioner';
+$wb["httpd User"] = 'httpd Bruger';
+$wb["httpd Group"] = 'httpd Gruppe';
+$wb["Document Root"] = 'Dokument Rod';
+$wb["Frontpage Pfad"] = 'Frontpage Sti';
+$wb["access Log"] = 'åben Log';
+$wb["Sendmail"] = 'Sendmail';
+$wb["Sendmail CW"] = 'Sendmail CW';
+$wb["Log speichern"] = 'Gem Log';
+$wb["BIND User"] = 'BIND Bruger';
+$wb["BIND Group"] = 'BIND Gruppe';
+$wb["Zonefiles Dir."] = 'Zonefiler Dir.';
+$wb["Default Ns1"] = 'Default Ns1';
+$wb["Default Ns2"] = 'Default Ns2';
+$wb["Standard MX"] = 'Default MX';
+$wb["Frontpage Extensions"] = 'Frontpage Extensions';
+$wb["User Prefix"] = 'Bruger Prefix';
+$wb["Anbieter Nr. von"] = 'Forhandler nr. fra';
+$wb["Kunden Nr. von"] = 'Kunde nr. fra';
+$wb["SOAP Server IP"] = 'SOAP Server IP';
+$wb["SOAP Server Port"] = 'SOAP Server Port';
+$wb["Web-FTP"] = 'Web-FTP';
+$wb["ISP Faktura"] = 'ISP Faktura';
+$wb["Modul Manager"] = 'Modul Administrator';
+$wb["Hinzufügen"] = 'Tilføj';
+$wb["Alle anzeigen"] = 'Vis Alle';
+$wb["Update Manager"] = 'Opdaterings Administrator';
+$wb["Update"] = 'Opdater';
+$wb["System Config"] = 'System Konfig';
+$wb["Bearbeiten"] = 'Rediger';
+$wb["Importieren"] = 'Import';
+$wb["Exportieren"] = 'Export';
+$wb["Allgemein"] = 'Almindelig';
+$wb["ISP-Manager"] = 'ISP Administrator';
+$wb["Faktura"] = 'Faktura';
+$wb["Übernehmen"] = 'Gem';
+$wb["Webserver"] = 'Webserver';
+$wb["Bind DNS"] = 'Bind DNS';
+$wb["Mailserver"] = 'Mailserver';
+$wb["POP3-Server"] = 'POP3 Server';
+$wb["nein"] = 'nej';
+$wb["ja"] = 'ja';
+$wb["ISP Server Status"] = 'ISP Server Status';
+$wb["System-Datenbank"] = 'System-Database';
+$wb["Verzeichnis"] = 'Mappe';
+$wb["Backup starten"] = 'Backup';
+
+// NEW 1.1.12a //////////////////////////////
+
+$wb["Es wurde kein Web ausgewählt."] = "Ingen web valgt.";
+$wb["Backup-Funktionen im Demo-Modus nicht verfügbar."] = "Backup-Funktion ikke muligt i demo mode.";
+$wb["Backup Status"] = "Backup-Status";
+$wb["Der Name des FTP-Servers <br>enthält ungültige Zeichen."] = "Navnet på FTP server <br>indeholder ugyldige tegn.";
+$wb["Sie haben keinen FTP Benutzernamen angegeben."] = "Intet FTP-Brugernavn oplyst.";
+$wb["Ftp-Verbindung nicht hergestellt!"] = "Ftp-Kontakt fejled!";
+$wb["Verbindung mit:"] = "Kontakt til:";
+$wb["als Benutzer:"] = "som Bruger:";
+$wb["nicht möglich."] = "ikke muligt.";
+$wb["Konnte nicht in Verzeichnis:"] = "skifter til mappe:";
+$wb["wechseln."] = "fejlede.";
+$wb["Wechsel in Verzeichnis:"] = "skifter til mappe:";
+$wb["Ftp upload war fehlerhaft!"] = "FTP-Upload fejlede!";
+$wb["Upload erfolgreich."] = "Uploaded successfuld.";
+$wb["FTP-Upload Status"] = "FTP-Upload Status";
+$wb["Backup-Methode nicht unterstützt."] = "Backup-metode ikke tilgængelig.";
+$wb["Rechnung Nr. von"] = "Faktura nr. fra";
+
+//////////////// LNG 1.1.12 ENDE ///////////////
+
+// NEW 1.3 /////////////////////////////////////
+
+$wb["Remoting"] = 'Fjernstyring';   // Remoting
+$wb["User"] = 'Bruger';
+$wb["Conf. Dir."] = 'Conf. Dir.';
+$wb["Suexec"] = 'Suexec';
+$wb["Postfix"] = 'Postfix';
+$wb["Mail Log"] = 'Mail Log';
+$wb["Maildir"] = 'Maildir';
+$wb["Antivir Mailadmin"] = 'Antivirus-Admin';
+$wb["aktiv"] = "aktiv";
+$wb["inaktiv"] = "inaktiv";
+$wb["weiter_link"] = "<br><br> <a href='../../isp_manager/frame_start.php?s=$s'>Næste &gt;&gt;</a>";
+$wb["txt_client_salutatory_email_desc"] = "<b>Velkomst Email til Kunder</b>";
+$wb["txt_client_salutatory_email_sender_email"] = "Afsender's Email";
+$wb["txt_client_salutatory_email_sender_name"] = "Afsender's Navn";
+$wb["txt_client_salutatory_email_bcc"] = "BCC Modtager";
+$wb["txt_client_salutatory_email_subject"] = "Vedrørende";
+$wb["txt_client_salutatory_email_message"] = "Meddelse";
+$wb["txt_client_salutatory_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Brug følgende variabler i din tekst:</b></td></tr>
+        <tr>
+          <td class="normal">%%%USER%%%</td>
+          <td class="normal">
+            Klient\'s Brugernavn</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%PASSWORD%%%</td>
+          <td class="normal">
+            Klient\'s Adgangskode</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%FIRST_NAME%%%</td>
+          <td class="normal">
+            Klient\'s Fornavn</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%LAST_NAME%%%</td>
+          <td class="normal">
+            Klient\'s Efternavn</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%COMPANY%%%</td>
+          <td class="normal">
+            Klient\'s Firma</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%EMAIL%%%</td>
+          <td class="normal">
+            Klient\'s Email Adresse</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%CP%%%</td>
+          <td class="normal">
+            ISPConfig Logind URL</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%MANUAL%%%</td>
+          <td class="normal">
+            ISPConfig Klient Manual</td>
+        </tr>
+        </table>';
+
+$wb["txt_res_salutatory_email_desc"] = "<b>Velkomst Email til Forhandlere</b>";
+$wb["txt_res_salutatory_email_sender_email"] = "Afsender's Email";
+$wb["txt_res_salutatory_email_sender_name"] = "Afsender's Navn";
+$wb["txt_res_salutatory_email_bcc"] = "BCC Modtager";
+$wb["txt_res_salutatory_email_subject"] = "Vedrørende";
+$wb["txt_res_salutatory_email_message"] = "Meddelse";
+$wb["txt_res_salutatory_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Brug følgende variabler i din tekst:</b></td></tr>
+        <tr>
+          <td class="normal">%%%USER%%%</td>
+          <td class="normal">
+            Forhandler\'s Brugernavn</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%PASSWORD%%%</td>
+          <td class="normal">
+            Forhandler\'s Adgangskode</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%FIRST_NAME%%%</td>
+          <td class="normal">
+            Forhandler\'s Fornavn</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%LAST_NAME%%%</td>
+          <td class="normal">
+            Forhandler\'s Efternavn</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%COMPANY%%%</td>
+          <td class="normal">
+            Forhandler\'s Firma</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%EMAIL%%%</td>
+          <td class="normal">
+            Forhandler\'s Email Adresse</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%CP%%%</td>
+          <td class="normal">
+            ISPConfig Logind URL</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%MANUAL%%%</td>
+          <td class="normal">
+            ISPConfig Forhandler Manual</td>
+        </tr>
+        </table>';
+$wb["txt_standard_index"] = "Standard Index<br>&nbsp;&nbsp;Page";
+$wb["txt_standard_index_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Brug følgende variabler i din tekst:</b></td></tr>
+        <tr>
+          <td class="normal">%%%FQDN%%%</td>
+          <td class="normal">
+            Webside\'s Fuldt Egnet Domæne Navn</td>
+        </tr>
+    </table>';
+$wb["txt_user_standard_index"] = "Brugers' Standard<br>&nbsp;&nbsp;Index Side";
+$wb["txt_user_standard_index_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Brug følgende variabler i din tekst:</b></td></tr>
+        <tr>
+          <td class="normal">%%%USER%%%</td>
+          <td class="normal">
+            Bruger\'s Brugernavn</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%FQDN%%%</td>
+          <td class="normal">
+            Webside\'s Fuldt Egnet Domæne Navn</td>
+        </tr>
+        </table>';
+
+//////////////// Remoting //////////////////////
+$wb["Hinzufügen"] = "Tilføj";
+$wb["Berechtigungen"] = "Tilladelser";
+$wb["Speichern"] = "Gem";
+$wb["Löschen"] = "Slet";
+$wb["Abbrechen"] = "Annuller";
+$wb["IP-Adresse"] = "IP-Adresse";
+$wb["DNS-Query"] = "Forespørge Primær DNS Records";
+$wb["DNS-Insert"] = "Opret Primær DNS Records";
+$wb["DNS-Update"] = "Rediger Primær DNS Records";
+$wb["DNS-Delete"] = "Slet Primær DNS Records";
+$wb["slave_query"] = "Forespørge Sekundær DNS Records";
+$wb["slave_insert"] = "Opret Sekundær DNS Records";
+$wb["slave_update"] = "Rediger Sekundær DNS Records";
+$wb["slave_delete"] = "Slet Sekundær DNS Records";
+$wb["reseller_query"] = "Forespørge Forhandlere";
+$wb["reseller_insert"] = "Opret Forhandlere";
+$wb["reseller_update"] = "Rediger Forhandlere";
+$wb["reseller_delete"] = "Slet Forhandlere";
+$wb["kunde_query"] = "Forespørge Kunder";
+$wb["kunde_insert"] = "Opret Kunder";
+$wb["kunde_update"] = "Rediger Kunder";
+$wb["kunde_delete"] = "Slet Kunder";
+$wb["web_query"] = "Forespørge Websider";
+$wb["web_insert"] = "Opret Websider";
+$wb["web_update"] = "Rediger Websider";
+$wb["web_delete"] = "Slet Websider";
+$wb["txt_primary_dns_records"] = "Primær DNS Records";
+$wb["txt_secondary_dns_records"] = "Sekundær DNS Records";
+$wb["txt_anbieter"] = "Forhandlere";
+$wb["txt_kunden"] = "Kunder";
+$wb["txt_webs"] = "Websider";
+
+$wb["txt_traffic_suspension_email_desc"] = "<b>Webside Suspenderings Meddelse (Trafik Overskridelse)</b>";
+$wb["txt_traffic_suspension_sender_email"] = "Afsender's Email";
+$wb["txt_traffic_suspension_sender_name"] = "Afsender's Navn";
+$wb["txt_traffic_suspension_email_bcc"] = "BCC Modtager";
+$wb["txt_traffic_suspension_email_subject"] = "Vedrørende";
+$wb["txt_traffic_suspension_email_message"] = "Meddelse";
+$wb["txt_traffic_suspension_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Brug følgende variabler i din tekst:</b></td></tr>
+        <tr>
+          <td class="normal">%%%FIRST_NAME%%%</td>
+          <td class="normal">
+            Klient\'s Fornavn</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%LAST_NAME%%%</td>
+          <td class="normal">
+            Klient\'s Efternavn</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%WEBSITE%%%</td>
+          <td class="normal">
+            Klient\'s Webside</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%MONTH%%%</td>
+          <td class="normal">
+            Måned for Trafik Overskridelse</td>
+        </tr>
+        <tr>
+          <td class="normal" valign="top">%%%INCLUDED_TRAFFIC%%%</td>
+          <td class="normal">
+            Trafik indkluderet i Webside Pakke</td>
+        </tr>
+        <tr>
+          <td class="normal" valign="top">%%%TOTAL_TRAFFIC%%%</td>
+          <td class="normal">
+            Total Trafik i Måned for Overskridelse</td>
+        </tr>
+        </table>';
+
+$wb["txt_traffic_notification_email_desc"] = "<b>Trafik Overskridelses Meddelse</b>";
+$wb["txt_traffic_notification_sender_email"] = "Afsender's Email";
+$wb["txt_traffic_notification_sender_name"] = "Afsender's Navn";
+$wb["txt_traffic_notification_email_bcc"] = "BCC Modtager";
+$wb["txt_traffic_notification_email_subject"] = "Vedrørende";
+$wb["txt_traffic_notification_email_message"] = "Meddelse";
+$wb["txt_traffic_notification_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Brug følgende variabler i din tekst:</b></td></tr>
+        <tr>
+          <td class="normal">%%%FIRST_NAME%%%</td>
+          <td class="normal">
+            Klient\'s Fornavn</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%LAST_NAME%%%</td>
+          <td class="normal">
+            Klient\'s Efternavn</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%WEBSITE%%%</td>
+          <td class="normal">
+            Klient\'s Webside</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%MONTH%%%</td>
+          <td class="normal">
+            Måned for Trafik Overskridelse</td>
+        </tr>
+        <tr>
+          <td class="normal" valign="top">%%%INCLUDED_TRAFFIC%%%</td>
+          <td class="normal">
+            Trafik indkluderet i Webside Pakke</td>
+        </tr>
+        <tr>
+          <td class="normal" valign="top">%%%TOTAL_TRAFFIC%%%</td>
+          <td class="normal">
+            Total Trafik i Måned for Overskridelse</td>
+        </tr>
+        </table>';
+
+$wb["txt_res_traffic_suspension_email_desc"] = "<b>Forhandler Suspenderings Meddelse (Trafik Overskridelse)</b>";
+$wb["txt_res_traffic_suspension_sender_email"] = "Afsender's Email";
+$wb["txt_res_traffic_suspension_sender_name"] = "Afsender's Navn";
+$wb["txt_res_traffic_suspension_email_bcc"] = "BCC Modtager";
+$wb["txt_res_traffic_suspension_email_subject"] = "Vedrørende";
+$wb["txt_res_traffic_suspension_email_message"] = "Meddelse";
+$wb["txt_res_traffic_suspension_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Brug følgende variabler i din tekst:</b></td></tr>
+        <tr>
+          <td class="normal">%%%FIRST_NAME%%%</td>
+          <td class="normal">
+            Forhandler\'s Fornavn</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%LAST_NAME%%%</td>
+          <td class="normal">
+            Forhandler\'s Efternavn</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%MONTH%%%</td>
+          <td class="normal">
+            Måned for Trafik Overskridelse</td>
+        </tr>
+        <tr>
+          <td class="normal" valign="top">%%%INCLUDED_TRAFFIC%%%</td>
+          <td class="normal">
+            Trafik indkluderet for Forhandler</td>
+        </tr>
+        <tr>
+          <td class="normal" valign="top">%%%TOTAL_TRAFFIC%%%</td>
+          <td class="normal">
+            Total Trafik i Måned for Overskridelse</td>
+        </tr>
+        </table>';
+
+$wb["txt_res_traffic_notification_email_desc"] = "<b>Forhandler Trafik Overskridelses Meddelse</b>";
+$wb["txt_res_traffic_notification_sender_email"] = "Afsender's Email";
+$wb["txt_res_traffic_notification_sender_name"] = "Afsender's Navn";
+$wb["txt_res_traffic_notification_email_bcc"] = "BCC Modtager";
+$wb["txt_res_traffic_notification_email_subject"] = "Vedrørende";
+$wb["txt_res_traffic_notification_email_message"] = "Meddelse";
+$wb["txt_res_traffic_notification_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Brug følgende variabler i din tekst:</b></td></tr>
+        <tr>
+          <td class="normal">%%%FIRST_NAME%%%</td>
+          <td class="normal">
+            Forhandler\'s Fornavn</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%LAST_NAME%%%</td>
+          <td class="normal">
+            Forhandler\'s Efternavn</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%MONTH%%%</td>
+          <td class="normal">
+            Måned for Trafik Overskridelse</td>
+        </tr>
+        <tr>
+          <td class="normal" valign="top">%%%INCLUDED_TRAFFIC%%%</td>
+          <td class="normal">
+            Trafik indkluderet for Forhandler</td>
+        </tr>
+        <tr>
+          <td class="normal" valign="top">%%%TOTAL_TRAFFIC%%%</td>
+          <td class="normal">
+            Total Trafik i Måned for Overskridelse</td>
+        </tr>
+        </table>';
+
+?>

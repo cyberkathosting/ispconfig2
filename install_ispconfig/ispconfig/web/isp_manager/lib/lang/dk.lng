@@ -1,0 +1,574 @@
+<?
+/********************************
+* ISPConfig Dictionary File
+* Version 1.0
+*********************************/
+/*
+    Danish Language Strings for ISPConfig.
+    Copyright (C) 2002-2006 by Michael R. Christensen (aka MicCo)
+
+      Web site = http://www.micco-webdesign.dk/
+      e-mail   = admin@micco-webdesign.dk
+
+    Version History :
+      v1.0 : initial release
+      v2.2.6 (28 August 2006)   : various strings updates and add-ons
+
+*/
+
+///////////////// ISP Manager //////////////////
+$wb["Anbieter"]     = "Forhandler";
+$wb["Kunde"]        = "Kunder";
+$wb["Suchen"]       = "Søg";
+$wb["Stammdaten"]   = "Master Data";
+$wb["Limits"]       = "Begrænsninger";
+$wb["Zugangsdaten"] = "Login Data";
+$wb["Statistik"]    = "Statistik";
+$wb["Firma"]        = "Firma";
+$wb["Anrede"]       = "Titel";
+$wb["Vorname"]      = "Fornavn";
+$wb["Name"]         = "Efternavn";
+$wb["Strasse"]      = "Adresse";
+$wb["PLZ"]          = "Post nr.";
+$wb["Ort"]          = "By";
+$wb["Land"]         = "Land";
+$wb["Telefon"]      = "Telefon";
+$wb["Fax"]          = "Fax";
+$wb["Internet"]     = "Web adresse";
+$wb["Öffnen"]      = "Åben";
+$wb["Benutzername"] = "Brugernavn"; // besser: vielleicht nur Variable $wb["username"] benutzen?
+$wb["zugangsdaten_anbieter_einleitung"] = "Her kan du oprette et brugernavn og en adgangskode for forhandleren.";
+$wb["zugangsdaten_kunde_einleitung"] = "Here you can set a username and password to for the kunde to manage <br> his sites.<br> ";
+$wb["Web Verwaltung"] = "Side Håndtering";
+$wb["Rechnung"]      = "Faktura";
+$wb["Rechnungsanschrift:"] = "Faktura adresse:<br>";
+$wb["Intervall"]    = "Interval";
+$wb["Preis"]        = "Pris";
+$wb["Zahlungsart"]  = "Betalings metode";
+$wb["Basis"]        = "Basis";
+$wb["Create DNS"]   = "Opret DNS";
+$wb["Speicher MB"]     = "Plads MB";
+$wb["Max. User"]        = "Max. Bruger";
+$wb["Max. Domain"]        = "Max. Domæne";
+$wb["PHP Scripte"]        = "PHP Scripts";
+$wb["SSI"]        = "SSI";
+$wb["FTP Zugang"]        = "FTP Adgang";
+$wb["MySQL"]        = "MySQL";
+$wb["SSL"]        = "SSL";
+$wb["Shell Zugriff"]      = "Shell Adgang";
+$wb["Zugang"]       = "Adgang";  // Zugriff u. Zugang zusammenfassen!/nur einen Begriff nehmen!
+$wb["CGI Scripte"]      = "CGI Scripts";
+$wb["Bundesland"]   = "Kommune";
+$wb["Abteilung"]    = "Afdeling";
+$wb["Gültigkeit (Tage)"]  = "Gyldighed (dage)";
+$wb["SSL Key"]          = "SSL Nøgle";
+$wb["SSL Zertifikat"]   = "SSL Certifikat";
+$wb["Aktion"]       = "Action";
+$wb["Zertifikat erzeugen"] = "Opret Certifikat";
+$wb["Zertifikat speichern"] = "Gem Certifikat";
+$wb["Zertifikat löschen"] = "Slet Certifikat";
+$wb["Speicherplatz gesamt"] = "Lager plads";
+$wb["unlimitiert"]  = "Ubg.";
+$wb["verbraucht"]   = "brugt";
+$wb["Trafficübersicht"] = "Trafikoversigt";
+$wb["Monat"]        = "Måned";
+$wb["Traffic"]      = "Trafik";
+$wb["traffic_letzte_4"] = "Trafik de sidste 4 år";
+$wb["Jahr"]         = "År";
+$wb["MySQL User"]        = "MySQL Brugernavn";
+$wb["MySQL Passwort"]    = "MySQL Adgangskode";
+
+// Ergänzungen /////////////////////////////////
+$wb["Anbieter neu"] = "Ny forhandler";
+$wb["Kunde neu"]    = "Ny kunde";
+$wb["Web neu"]      = "Ny side";
+$wb["Ordner neu"]   = "Ny mappe";
+$wb["Suchen"]       = "Søg";
+$wb["ISP Anbieter"] = "ISP Forhandler";
+$wb["Webs"] = "Sider";
+$wb["User"] = "Bruger";
+$wb["Domains"] = "Domæner";
+$wb["Zahlung"] = "Betaling";
+$wb["ISP Kunde"] = "ISP Kunde";
+$wb["ISP Web"] = "ISP Side";
+$wb["Kunden"] = "Kunder";
+$wb["Dokument suchen"] = "Dokument søgning";
+
+$wb["User & Email"] = "Bruger & Email";
+$wb["Co-Domains"] = "Co-Domæner";
+$wb["SSL"] = "SSL";
+$wb["Optionen"] = "Muligheder";
+
+$wb["Webs angelegt"] = "Sider oprettet";
+$wb["User angelegt"] = "Brugere oprettet";
+$wb["Domains angelegt"] = "Domæner oprettet";
+$wb["rechnungsanschrift"] = "Faktura adresse:<br> ";
+
+$wb["neues Web anlegen"] = "Ny side";
+$wb["weiter"] = "næste";
+$wb["SUCHE"] = "søg";
+
+$wb["msg_beta"] = "";
+$wb["title_isp_beta"] = "";
+$wb["msg_kein_win"] = "Denne software er ikke til brug for Windows operative systemer.";
+
+// Error Codes ispconfig_isp_datenbank.lib.php
+$wb["error_db_nicht_erlaubt"] = "Oprettelse af MySQL databaser er ikke tilladt for denne web.<br>";
+$wb["error_db_leeres_passwort"] = "Angiv en adgangskode!<br>";
+$wb["error_db_exist_1"] = "En database med navnet";
+$wb["error_db_exist_2"] = "findes allerede.<br>";
+$wb["error_db_user_exist_1"] = "Database bruger";
+$wb["error_db_user_exist_2"] = "findes allerede.<br>";
+$wb["error_max_db_web"] = "Maximum antal af databaser for denne side er nået.<br>";
+$wb["error_max_db_anbieter"] = "Forhandlerens maximum antal af databaser er nået.<br>";
+
+// Error Codes ispconfig_isp_domain.lib.php
+$wb["error_web_doppelt"] = "Navnet ";
+$wb["error_max_domain_web"] = "Maximum antal af domæner for denne side er nået.<br>";
+$wb["error_max_domain_anbieter"] = "Forhandlerens maximum antal af domæner er nået.<br>";
+$wb["angelegt"] = " er allerede i brug af anden side eller domæne.<br>";
+$wb["error_domain_forward"] = "Domæne Vidersend indeholdte ugyldige tegn og er derfor slettet.<br>";
+
+// Error Codes ispconfig_isp_kunde.lib.php
+$wb["error_user_exist_1"] = "Denne ISPConfig bruger";
+$wb["error_user_exist_2"] = "findes allerede. Brugeren er derfor ikke tilføjet eller ændret.<br>";
+$wb["error_max_user_licence"] = "Maximum antal af ISPConfig bruger konti for licensen er nået.<br>";
+
+// Error Codes ispconfig_isp_reseller.lib.php
+$wb["error_reseller_title"] = "En forhandler med denne titel findes allerede.<br>";
+$wb["error_reseller_group_not_found"] = "Forhandler gruppen kunne ikke findes.<br>";
+$wb["error_anbieter_no_delete"] = "<b>Forhandleren blev ikke slettet.</b><br>&nbsp;<br>Forhandleren kan kun slettes hvis alle sider og kunder under forhandleren er blevet slettet.  Og sikkrer dig også at papirkurven hos forhandler er tom.<br>";
+$wb["error_anbieter_no_restore"] = "Forhandleren kan ikke gendannes.<br>";
+
+// Error Codes ispconfig_isp_user.lib.php
+$wb["error_sysuser_exist_1"] = "Bruger med navnet ";
+$wb["error_sysuser_exist_2"] = "findes allerede.<br>";
+$wb["error_max_user_web"] = "Maximum antal af side brugere er nået.<br>";
+$wb["error_max_space_web"] = "Den valgte diskplads overskrider side begrænsningen.<br>";
+$wb["error_max_user_anbieter"] = "Forhandleren's maximum antal af brugere er nået.<br>";
+$wb["error_sysuser_exist"] = "Brugernavn er allerede i brug.<br>";
+$wb["error_admin_exist"] = "En bruger med administrator rettigheder findes allerede for denne side.<br>";
+$wb["error_admin_exist_long"] = "En bruger med administrator rettigheder findes allerede. Du må først fjerne den anden administrator hvis du ønsker at tilføje administrator rettigheder til denne bruger.<br>";
+
+// Error Codes ispconfig_isp_user.lib.php
+$wb["error_max_web_anbieter"] = "Maximum antal af sider for forhandleren er nået.<br>";
+$wb["error_web_ssl_exist"] = "Et SSL certifikat findes allerede for denne IP.<br>";
+
+// Plugins
+$wb["CPU Auslastung 1 Minute"] = "CPU Brug 1 Minut";
+$wb["CPU Auslastung 5 Minuten"] = "CPU Brug 5 Minutter";
+$wb["CPU Auslastung 15 Minuten"] = "CPU Brug 15 Minutter";
+$wb["Server Online seit"] = "Server Online i";
+$wb["User Online"] = "Brugere Online";
+$wb["error_web_id"] = "Dette Plugin behøver et gyldigt web ID.";
+$wb["von"] = "af";
+$wb["Gesamt"] = "I alt";
+$wb["Traffic in den letzten 4 Jahren"] = "Trafik de sidste 4 år";
+
+$wb["Backup von Tabelle"] = "Backup Tabel";
+$wb["Optimiere"] = "Optimere";
+$wb["Reparatur"] = "Reparere";
+$wb["oder"] = "eller";
+$wb["Installation starten"] = "Indstallere";
+
+$wb["Monatlich"] = "Månedlig";
+$wb["Quartal"] = "Kvart-Årligt";
+$wb["Halbjährlich"] = "Halv-Årligt";
+$wb["Jährlich"] = "Årligt";
+$wb["Sonstige"] = "Andet";
+
+$wb["bei Erhalt"] = "ved modtagelse";
+$wb["Netto 7 Tage"] = "Netto 7 dage";
+$wb["Netto 15 Tage"] = "Netto 15 dage";
+$wb["Netto 30 Tage"] = "Netto 30 dage";
+$wb["Sonstige"] = "Andet";
+$wb["Neu"] = "Ny";
+$wb["Postfach MB"] = "Mailboks MB";
+
+$wb["email_alias_txt"] = "<b>Tip:</b> et alias pr. linie.";
+$wb["Weiterleitung"] = "Vidersend";
+$wb["Nachricht"] = "Meddelse";
+$wb["Kein Kunde vorhanden"] = "Ingen kunde til rådighed.<br>";
+$wb["Dieses Web können Sie nicht löschen."] = "Du kan ikke slette denne web.<br>";
+$wb["Ausgabeformat"] = "List format";
+$wb["Bearbeiten"] = "Rediger";
+$wb["Löschen"] = "Slet";
+
+$wb["willkommen_kunde"] = "Velkommen til ISPConfig!
+Du kan administrere din(e) webside(r) her. Hvis du har spørgsmål eller problemer,
+kontakt din server administrator eller søg svar i ISPConfig kunde manualen.";
+$wb["Willkommen"] = "Velkommen";
+
+
+// Regex Fehlermeldungen
+$wb["Es sind nur folgende Zeichen erlaubt: a-z A-Z 0-9 -"] = "Kun følgende tegn er tilladte: a-z A-Z 0-9 -<br>";
+$wb["Es sind nur folgende Zeichen erlaubt: a-z A-Z 0-9 - ."] = "Kun følgende tegn er tilladte: a-z A-Z 0-9 - .<br>";
+$wb["Der Username muss aus min. 4, max 25 Buchstaben oder Zahlen bestehen, wobei er mit einem Buchstaben beginnen muss."] = "Brugernavn skal indeholde minimum 4 og maximum 26 bogstaver eller tal og skal begynde med et bogstav.<br>";
+$wb['Der Username muss aus min. 4, max 32 Buchstaben oder Zahlen bestehen, wobei er mit einem Buchstaben beginnen muss.'] = 'Brugernavn skal indeholde minimum 4 og maximum 32 bogstaver eller tal og skal begynde med et bogstav.<br>';
+
+$wb["error_reseller_licence"] = "Tilføjelse af forhandlere er ikke muligt med din licens for ISPConfig.<br>";
+$wb["error_reseller_licence_nodelete"] = "Denne forhandler kan ikke slettes.<br>";
+
+$wb["error_kunde_licence"] = "Tilføjelse af kunder er ikke muligt med din licens for ISPConfig.<br>";
+$wb["error_kunde_licence_nodelete"] = "Denne kunde kan ikke slettes.<br>";
+
+$wb["mysqldb_nicht_vorhanden"] = "MySQL database findes ikke. <br>Indtast en adgangskode for at oprette databasen.<br>";
+$wb["mysql_nicht_aktiv"] = "Oprettelse af MySQL databaser er ikke tilladt for denne web.<br>";
+$wb["Datenbank Name"] = "Database Navn";
+$wb["Speicher belegt"] = "Database Size";
+
+$wb["Kein Web angelegt"] = "Ingen web oprettet.";
+$wb["Real Name"] = "Rigtige Navn";
+$wb["Feld"] = "Felt";
+$wb["httpd_inc_txt"] = "Apache Directives<br>&nbsp; (Optional)";
+$wb["Kopie speichern"] = "Behold Kopi";
+
+$wb["err_0001"] = "Domænet tilhøre en anden kunde.";
+
+$wb["MySQL Remote Access"] = "MySQL Remote Adgang";
+$wb["lokaler mailserver"] = "Lokal Mailserver";
+$wb["externer mailserver"] = "Extern Mailserver";
+
+$wb["Log-Grösse"] = "Logstørrelse";
+$wb["Frontpage Passwort"] = "Frontpage Adgangskode";
+
+// NEW 1.1.12 ///////////////////////////////////
+
+$wb["Anbieternummer"] = 'Forhandler Nr.';
+$wb["Domain DNS"] = 'Master Zoner (DNS)';
+$wb["HTTPD Includes"] = 'HTTPD Includes';
+$wb["DNS-Manager"] = 'DNS Manager';
+$wb["DNS-Domains angelegt"] = 'Master Zoner oprettet';
+$wb["Kundennummer"] = 'Kunde Nr.';
+$wb["Anonymous FTP"] = 'Anonymous FTP';
+$wb["Anon. FTP MB"] = 'Anon. FTP MB';
+$wb["Faktura"] = 'Faktura';
+$wb["Mailserver"] = 'Mailserver';
+$wb["aktiviert"] = 'aktiveret';
+$wb["deaktiviert"] = 'deaktiveret';
+$wb["ISP User"] = 'ISP Bruger';
+$wb["WebSpeicher MB"] = 'WebPlads MB';
+$wb["MailSpeicher MB"] = 'MailPlads MB';
+$wb["Administrator"] = 'Administrator';
+$wb["Erweiterte Einstellungen"] = 'Avancered Indstillinger';
+$wb["email_weiterleitung_txt"] = '<b>Tip:</b> en email pr. linie.';
+$wb["Email Alias"] = 'Email Alias';
+$wb["catchAll-Email"] = 'fangAlle-Email';
+$wb["MailScan"] = 'MailScan';
+$wb["Spam-Filter"] = 'Spam Filter';
+$wb["Autoresponder"] = 'Autoresponder';
+$wb["ISP Domain"] = 'ISP Domæne';
+$wb["Create DNS MX"] = 'Opret DNS MX';
+$wb["Admin"] = 'Admin';
+$wb["CatchAll"] = 'FangAlle';
+$wb["Bitte Artikel auswählen"] = "Vælg Artikel";
+$wb["Letzte Abrechnung"] = "Seneste Faktura";
+$wb["Artikel hinzufügen"] = "Tilføj Artikel";
+$wb["Wird automatisch vergeben."] = 'Tilføjes automatisk.';
+$wb["Email Adresse"] = "Email Adresse";
+
+// new 1.2 ////////////////////////////////////////
+$wb["error_email_exist"] = "Email Adresse Findes Allerede.<br>";
+$wb["error_realname"] = "Kun følgende tegn er tilladte: a-z A-Z 0-9 - _ .<br>";
+$wb["Die Emailadresse muss aus min. 1, max 60 Buchstaben oder Zahlen bestehen."] = "Email adressen må indeholde mellem 1 og 60 bogstaver eller tal.<br>";
+
+// new 1.3 ////////////////////////////////////////
+$wb["Bundesland"] = "Kommune";
+$wb["Spamfilter & Antivirus"] = 'Spamfilter & Antivirus';
+$wb["Spamfilter"] = 'Spamfilter';
+$wb["Antivirus"] = 'Antivirus';
+$wb["accept"] = 'acceptere';
+$wb["discard"] = 'kassere';
+$wb["Spam Strategie"] = 'Spam Strategi';
+$wb["Spam Hits"] = 'Spam Hits';
+$wb["Rewrite Subject"] = 'Omskriv Vedrørende';
+$wb["Betreff"] = 'Vedrørende';
+$wb["SUCHE"] = 'SØG';
+$wb["IP"] = 'IP';
+$wb["Standard CGIs"] = 'Standard CGIs';
+$wb["PHP Safe Mode"] = 'PHP Safe Mode';
+$wb["WAP"] = 'WAP';
+$wb["Individuelle Fehler-Seiten"] = 'Egne Fejl Sider';
+$wb["Anzahl Datenbanken"] = 'Antal Databaser';
+$wb["Fehler 400<br>(Ungültige Syntax)"] = "400 Error<br>(Invalid Syntax)";
+$wb["Fehler 401<br>(Autorisierung<br>erforderlich)"] = "401 Error<br>(Authorisation<br>required)";
+$wb["Fehler 403<br>(Verboten)"] = "403 Error<br>(Forbidden)";
+$wb["Fehler 404<br>(Datei nicht<br>gefunden)"] = "404 Error<br>(File not found)";
+$wb["Fehler 405<br>(Methode nicht<br>erlaubt)"] = "405 Error<br>(Method not<br>allowed)";
+$wb["Fehler 500<br>(Interner<br>Server-Fehler)"] = "500 Error<br>(Internal Server<br>Error)";
+$wb["Fehler 503<br>(Service ist z.Zt.<br>überlastet)"] = "503 Error<br>(Service<br>unavailable)";
+$wb["Datenbanken"] = "Databaser";
+$wb["Datenbank"] = "Database";
+$wb["Datenbankname"] = "Database Navn";
+$wb["Datenbankuser"] = "Database Bruger";
+$wb["weiter_link"] = "<br><br> <a href='../../isp_manager/frame_start.php?s=$s'>Næste &gt;&gt;</a>";
+$wb["Slave Zones"] = 'Slave Zoner (DNS)';
+$wb["txt_client_salutatory_email_desc"] = "<b>Velkomst Email for Kunder</b>";
+$wb["txt_client_salutatory_email_sender_email"] = "Afsenders Email";
+$wb["txt_client_salutatory_email_sender_name"] = "Afsenders Navn";
+$wb["txt_client_salutatory_email_bcc"] = "BCC Modtager";
+$wb["txt_client_salutatory_email_subject"] = "Vedrørende";
+$wb["txt_client_salutatory_email_message"] = "Meddelse";
+$wb["txt_client_salutatory_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Inkludere følgende variabler i din tekst:</b></td></tr>
+        <tr>
+          <td class="normal">%%%USER%%%</td>
+          <td class="normal">
+            Kunde\'s Brugernavn</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%PASSWORD%%%</td>
+          <td class="normal">
+            Kunde\'s Adgangskode</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%FIRST_NAME%%%</td>
+          <td class="normal">
+            Kunde\'s Fornavn</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%LAST_NAME%%%</td>
+          <td class="normal">
+            Kunde\'s Efternavn</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%COMPANY%%%</td>
+          <td class="normal">
+            Kunde\'s Firma</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%EMAIL%%%</td>
+          <td class="normal">
+            Kunde\'s Email Adresse</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%CP%%%</td>
+          <td class="normal">
+            ISPConfig Login URL</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%MANUAL%%%</td>
+          <td class="normal">
+            ISPConfig Kunde Manual</td>
+        </tr>
+        </table>';
+$wb["txt_standard_index"] = "Standard Index<br>&nbsp;&nbsp;Side";
+$wb["txt_standard_index_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Inkludere følgende variabler i din tekst:</b></td></tr>
+        <tr>
+          <td class="normal">%%%FQDN%%%</td>
+          <td class="normal">
+            Webside\'s Fuldt Gyldigt Domæne Navn</td>
+        </tr>
+    </table>';
+$wb["txt_user_standard_index"] = "Brugere' Standard<br>&nbsp;&nbsp;Index Side";
+$wb["txt_user_standard_index_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Inkludere følgende variabler i din tekst:</b></td></tr>
+        <tr>
+          <td class="normal">%%%USER%%%</td>
+          <td class="normal">
+            Bruger\'s Brugernavn</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%FQDN%%%</td>
+          <td class="normal">
+            Webside\'s Fuldt Gyldigt Domæne Navn</td>
+        </tr>
+        </table>';
+
+//////////////// ISP Manager Ende /////////////
+
+//////////////// Server Status ////////////////
+$wb["Arbeitsspeicher"]          = "Hukommelse";
+$wb["CPU"]          = "CPU";
+$wb["Dienste"]      = "Services";
+$wb["Server Online seit"]          = "Server Online i";
+$wb["User Online"]      = "Brugere Online";
+$wb["System Load 1 Minute"] = "System Load 1 Minut";
+$wb["System Load 5 Minuten"] = "System Load 5 Minutter";
+$wb["System Load 15 Minuten"] = "System Load 15 Minutter";
+//////////////// Server Status Ende //////////
+
+$wb["Es konnte ein Dokument nicht wiederhergestellt werden, da sich das Eltern-Dokument noch im Papierkorb befindet.\n"] = "Objektet kan ikke gendannes så længe det forgående objekt findes i papirkurven.";
+$wb["error_anbieter_max_webs_ueberschritten"] = "Forhandleren har allerede flere websider end du ønsker at tilskrive forhandleren.<br>";
+$wb["error_anbieter_max_diskspace_ueberschritten"] = "Forhandleren bruger allerede mere diskplads end du ønsker at tilskrive forhandleren.<br>";
+$wb["error_anbieter_max_user_ueberschritten"] = "Forhandleren har allerede flere brugere end du ønsker at tilskrive forhandleren.<br>";
+$wb["error_anbieter_max_domain_ueberschritten"] = "Forhandleren har allerede flere domæner end du ønsker at tilskrive forhandleren.<br>";
+$wb["error_anbieter_dnsmanager_aktiv"] = "Forhandleren har allerede nogle DNS Records. DNS Manager kan ikke deaktiveres.<br>";
+$wb["error_anbieter_max_dns_ueberschritten"] = "Forhandleren har allerede flere Primary DNS Records end du ønsker at tilskrive forhandleren.<br>";
+$wb["error_anbieter_max_slavedns_ueberschritten"] = "Forhandleren har allerede flere Secondary DNS Records end du ønsker at tilskrive forhandleren.<br>";
+$wb["error_anbieter_httpd_include_aktiv"] = "HTTPD Includes er allerede i brug på nogle af forhandlerens websider. Denne mulighed kan ikke deaktiveres.<br>";
+$wb["error_anbieter_shell_access_aktiv"] = "Shell Adgang er allerede i brug på nogle af forhandlerens websider. Denne mulighed kan ikke deaktiveres.<br>";
+$wb["error_anbieter_cgi_aktiv"] = "CGI er allerede i brug på nogle af forhandlerens websider. Denne mulighed kan ikke deaktiveres.<br>";
+$wb["error_anbieter_standard_cgi_aktiv"] = "Standard CGIs er allerede i brug på nogle af forhandlerens websider. Denne mulighed kan ikke deaktiveres.<br>";
+$wb["error_anbieter_php_aktiv"] = "PHP er allerede i brug på nogle af forhandlerens websider. Denne mulighed kan ikke deaktiveres.<br>";
+$wb["error_anbieter_ssi_aktiv"] = "SSI er allerede i brug på nogle af forhandlerens websider. Denne mulighed kan ikke deaktiveres.<br>";
+$wb["error_anbieter_ftp_aktiv"] = "FTP er allerede i brug på nogle af forhandlerens websider. Denne mulighed kan ikke deaktiveres.<br>";
+$wb["error_anbieter_anonftp_aktiv"] = "Anonymous FTP er allerede i brug på nogle af forhandlerens websider. Denne mulighed kan ikke deaktiveres.<br>";
+$wb["error_anbieter_frontpage_aktiv"] = "Frontpage er allerede i brug på nogle af forhandlerens websider. Denne mulighed kan ikke deaktiveres.<br>";
+$wb["error_anbieter_datenbank_aktiv"] = "MySQL databases er allerede i brug på nogle af forhandlerens websider. Denne mulighed kan ikke deaktiveres.<br>";
+$wb["error_anbieter_max_datenbank_ueberschritten"] = "Forhandleren har allerede flere MySQL databases end du ønsker at tilskrive forhandleren.<br>";
+$wb["error_anbieter_ssl_aktiv"] = "SSL er allerede i brug på nogle af forhandlerens websider. Denne mulighed kan ikke deaktiveres.<br>";
+$wb["error_anbieter_wap_aktiv"] = "WAP er allerede i brug på nogle af forhandlerens websider. Denne mulighed kan ikke deaktiveres.<br>";
+$wb["error_anbieter_error_pages_aktiv"] = "Individual error pages er allerede i brug på nogle af forhandlerens websider. Denne mulighed kan ikke deaktiveres.<br>";
+$wb["error_web_no_unlimited_diskspace_1"] = "Du kan ikke tilføje ubegrænset diskplads til denne webside. Max. diskplads for denne webside er ";
+$wb["error_web_no_unlimited_diskspace_2"] = " MB.<br>";
+$wb["error_web_no_diskspace_free_1"] = "Der restere kun ";
+$wb["error_web_no_diskspace_free_2"] = " MB som du kan tilføje denne webside.<br>";
+$wb["error_web_no_unlimited_users_1"] = "Du kan ikke tilføje et ubegrænset antal brugere til denne webside. Max. antal bruger for denne webside er ";
+$wb["error_web_no_unlimited_users_2"] = ".<br>";
+$wb["error_web_no_users_free_1"] = "Der restere kun ";
+$wb["error_web_no_users_free_2"] = " bruger(e) som du kan tilføje denne webside.<br>";
+$wb["error_web_no_unlimited_domains_1"] = "Du kan ikke tilføje et ubegrænset antal af domæner til denne webside. Max. antal domæner for denne webside er ";
+$wb["error_web_no_unlimited_domains_2"] = ".<br>";
+$wb["error_web_no_domains_free_1"] = "Der restere kun ";
+$wb["error_web_no_domains_free_2"] = " domæne(r) som du kan tilføje denne webside.<br>";
+$wb["error_web_no_user_decrease_1"] = "Denne webside har allerede ";
+$wb["error_web_no_user_decrease_2"] = " bruger(e). Du kan ikke nedskrive antalet af brugere.<br>";
+$wb["error_web_no_domain_decrease_1"] = "Denne webside har allerede ";
+$wb["error_web_no_domain_decrease_2"] = " domæne(r). Du kan ikke nedskrive antalet af domæner.<br>";
+
+$wb["Benutzter Diskspace"] = "Diskplads brugt";
+$wb["Slave Zones angelegt"] = "Slave Zoner oprettet";
+$wb["Datenbanken angelegt"] = "Databaser oprettet";
+$wb["error_web_no_database_decrease_1"] = "Denne webside har allerede ";
+$wb["error_web_no_database_decrease_2"] = " database(r). Du kan ikke nedskrive antalet af databaser.<br>";
+$wb["error_web_no_shell_access"] = "Du kan ikke tilføje shell access til denne webside.<br>";
+$wb["error_web_no_cgi"] = "Du kan ikke tilføje CGI funktioner til denne webside.<br>";
+$wb["error_web_no_standard_cgi"] = "Du kan ikke tilføje Standard CGIs til denne webside.<br>";
+$wb["error_web_no_php"] = "Du kan ikke tilføje PHP funktioner til denne webside.<br>";
+$wb["error_web_no_ssi"] = "Du kan ikke tilføje SSI funktioner til denne webside.<br>";
+$wb["error_web_no_ftp"] = "Du kan ikke tilføje FTP funktioner til denne webside.<br>";
+$wb["error_web_no_mysql"] = "Du kan ikke tilføje MySQL databases til denne webside.<br>";
+$wb["error_web_no_databases_free_1"] = "Der restere kun ";
+$wb["error_web_no_databases_free_2"] = " database(r) som du kan tilføje denne webside.<br>";
+$wb["error_web_no_ssl"] = "Du kan ikke tilføje SSL funktioner til denne webside.<br>";
+$wb["error_web_no_anonftp"] = "Du kan ikke tilføje Anonymous FTP funktioner til denne webside.<br>";
+$wb["error_web_no_wap"] = "Du kan ikke tilføje WAP funktioner til denne webside.<br>";
+$wb["error_web_no_individual_error_pages"] = "Du kan ikke tilføje individual error pages til denne webside.<br>";
+$wb["error_web_no_httpd_include"] = "Du kan ikke tilføje HTTPD Includes til denne webside.<br>";
+$wb["error_web_no_frontpage"] = "Du kan ikke tilføje Frontpage funktioner til denne webside.<br>";
+$wb["Web Vorlage"] = "Hostingplan";
+$wb["ISP Web-Vorlage"] = "ISP Hostingplan";
+$wb["Keine Vorlage verwenden"] = "Individuelle Indstillinger";
+$wb["Keine Vorlage vorhanden"] = "Ingen Hostingplan til rådighed";
+$wb["txt_accept"] = "acceptere";
+$wb["txt_discard"] = "kassere";
+$wb["Eigenschaften"] = "Egenskaber";
+$wb["ISP Datenbank"] = "ISP Database";
+$wb["Nein"] = "Nej";
+$wb["Ja"] = "Ja";
+$wb["Web"] = "Side";
+$wb["Domain"] = "Domæne";
+$wb["Traffic-Überschreitung"] = "Trafik Overskridelse";
+$wb["sperren"] = "Suspender";
+$wb["benachrichtigen"] = "Bekendtgøre";
+$wb["keine Aktion"] = "Ingen Aktion";
+$wb["Website-Status"] = "Webside Status";
+$wb["aktiv"] = "Aktive";
+$wb["gesperrt"] = "Suspenderet";
+
+$wb["txt_traffic_suspension_email_desc"] = "<b>Web Side Suspension Information (Trafik Overskridelse)</b>";
+$wb["txt_traffic_suspension_sender_email"] = "Afsenders Email";
+$wb["txt_traffic_suspension_sender_name"] = "Afsenders Navn";
+$wb["txt_traffic_suspension_email_bcc"] = "BCC Modtager";
+$wb["txt_traffic_suspension_email_subject"] = "Vedrørende";
+$wb["txt_traffic_suspension_email_message"] = "Meddelse";
+$wb["txt_traffic_suspension_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Inkludere følgende variabler i din tekst:</b></td></tr>
+        <tr>
+          <td class="normal">%%%FIRST_NAME%%%</td>
+          <td class="normal">
+            Kunde\'s Fornavn</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%LAST_NAME%%%</td>
+          <td class="normal">
+            Kunde\'s Efternavn</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%WEBSITE%%%</td>
+          <td class="normal">
+            Kunde\'s Web Side</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%MONTH%%%</td>
+          <td class="normal">
+            Måned for Trafik Overskridelse</td>
+        </tr>
+        <tr>
+          <td class="normal" valign="top">%%%INCLUDED_TRAFFIC%%%</td>
+          <td class="normal">
+            Trafik inkluderet i Web Side Pakken</td>
+        </tr>
+        <tr>
+          <td class="normal" valign="top">%%%TOTAL_TRAFFIC%%%</td>
+          <td class="normal">
+            Total Trafik i Måned for Overskridelse</td>
+        </tr>
+        </table>';
+
+$wb["txt_traffic_notification_email_desc"] = "<b>Trafik Overskridelse Information</b>";
+$wb["txt_traffic_notification_sender_email"] = "Afsenders Email";
+$wb["txt_traffic_notification_sender_name"] = "Afsenders Navn";
+$wb["txt_traffic_notification_email_bcc"] = "BCC Modtager";
+$wb["txt_traffic_notification_email_subject"] = "Vedrørende";
+$wb["txt_traffic_notification_email_message"] = "Meddelse";
+$wb["txt_traffic_notification_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Inkludere følgende variabler i din tekst:</b></td></tr>
+        <tr>
+          <td class="normal">%%%FIRST_NAME%%%</td>
+          <td class="normal">
+            Kunde\'s Fornavn</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%LAST_NAME%%%</td>
+          <td class="normal">
+            Kunde\'s Efternavn</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%WEBSITE%%%</td>
+          <td class="normal">
+            Kunde\'s Web Side</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%MONTH%%%</td>
+          <td class="normal">
+            Måned for Trafik Overskridelse</td>
+        </tr>
+        <tr>
+          <td class="normal" valign="top">%%%INCLUDED_TRAFFIC%%%</td>
+          <td class="normal">
+            Trafik inkluderet i Web Side Pakken</td>
+        </tr>
+        <tr>
+          <td class="normal" valign="top">%%%TOTAL_TRAFFIC%%%</td>
+          <td class="normal">
+            Total Trafik i Måned for Overskridelse</td>
+        </tr>
+        </table>';
+
+
+$wb["Catalog_Name"] = "Navn";
+
+$wb["Spam Whitelist"] = 'Spam-Whitelist';
+$wb["Spam Blacklist"] = 'Spam-Blacklist';
+$wb["spam_whitelist_txt"] = '<b>Tip:</b> Ein Eintrag pro Zeile. Gültige Einträge sind z.B. friend@somewhere.com, *@isp.com oder *.domain.net.';
+$wb["spam_blacklist_txt"] = '<b>Tip:</b> Ein Eintrag pro Zeile. Gültige Einträge sind z.B. friend@somewhere.com, *@isp.com oder *.domain.net.';
+$wb["Webalizer Stats"] = 'Webalizer-<br>&nbsp;Statistiken';
+$wb["Use Uribl"] = 'Brug <a href="http://www.uribl.com/about.shtml" target="_blank" style="font-family:Arial,Verdana">URIBL</a>';
+$wb["Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 -"] = "Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 -<br>";
+$wb["Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 - ."] = "Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 - .<br>";
+
+
+?>
