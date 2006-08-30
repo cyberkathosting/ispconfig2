@@ -1,0 +1,76 @@
+<?
+/********************************
+* ISPConfig Dictionary File
+* Version 1.0
+*********************************/
+/*
+    Danish Language Strings for ISPConfig.
+    Copyright (C) 2002-2006 by Michael R. Christensen (aka MicCo)
+
+      Web site = http://www.micco-webdesign.dk/
+      e-mail   = admin@micco-webdesign.dk
+
+    Version History :
+      v1.0 : initial release
+      v2.2.6 (28 August 2006)   : various strings updates and add-ons
+
+*/
+
+$wb["Anbieter"]     = "Forhandler";
+$wb["Web"]          = "Web";
+$wb["Admin Handbuch"] = "Administrator Manual";
+$wb["Reseller Handbuch"] = "Forhandler Manual";
+$wb["Kunden Handbuch"] = "Kunde Manual";
+$wb["Deutsch"]          = "Tysk";
+$wb["Englisch"]         = "Engelsk";
+$wb["Projektfarm Support"]          = "Projektfarm Support";
+$wb["Online Hilfe"] = "Online Hjælp";
+
+$wb["willkommen_kunde"] = "Velkommen til ISPConfig!
+Du kan administrere din(e) webside(er) her. Hvis du har spørgsmål eller problemer,
+kontakt din server administrator eller læs ISPConfig klient manualen.";
+$wb["Willkommen"] = "Velkommen";
+
+//////////////// Server Status ////////////////
+$wb["Arbeitsspeicher"]          = "Hukommelse";
+$wb["CPU"]          = "CPU";
+$wb["Dienste"]      = "Services";
+$wb["Server Online seit"]          = "Server Online i";
+$wb["User Online"]      = "Brugere Online";
+$wb["System Load 1 Minute"] = "System Load 1 Minut";
+$wb["System Load 5 Minuten"] = "System Load 5 Minutter";
+$wb["System Load 15 Minuten"] = "System Load 15 Minutter";
+//////////////// Server Status Ende //////////
+
+$wb["Webs angelegt"] = "Sider";
+$wb["User angelegt"] = "Bruger";
+$wb["Domains angelegt"] = "Domæner";
+$wb["unlimitiert"]  = "Ubg.";
+$wb["Anbieter"]     = "Forhandler";
+$wb["DNS-Domains angelegt"] = 'DNS Domæner oprettet';
+$wb["von"] = "af";
+
+// NEW 2.0.8 ///////////////////////////////////
+$wb["Französische"]     = "Fransk";
+// Support Tickets System
+$wb["Unterstützungskarten"] = "Support Sager";
+$wb["Geöffnete Karten"] = "Åbne Sager";
+$wb["Geschlossene Karten"] = "Lukket Sager";
+$wb["Neue Karte"] = "Ny Sag";
+$wb["Betreff"] = "Vedrørende";
+$wb["Priorität"] = "Prioritet";
+$wb["Niedrig"] = "Lav";
+$wb["Mittel"] = "Medium";
+$wb["Hoch"] = "Høj";
+$wb["Ihre frage"] = "Dit spørgsmål";
+$wb["Senden"] = "Send";
+$wb["Fehler während der schaffung der karte"] = "Fejl under oprettelse af Support Sag";
+$wb["Neue unterstützungskarte, die auf antwort wartet"] = "Ny support sag afventer svar";
+$wb["Sie erhielten eine antwort"] = "Du har modtaget et svar";
+$wb["geantwortet zu ihnen"] = "svared dig";
+$wb["Datum"] = "Dato";
+$wb["Davon"] = "Fra";
+$wb["Ihre antwort"] = "Dit svar";
+$wb["Antworten"] = "Besvare";
+$wb["Schließen"] = "Luk";
+?>

@@ -1,0 +1,25 @@
+<?
+
+/**********************************************
+* ISPCofig Help File
+* Version 1.2
+* Syntax: $hlp["FieldName"] = "HelpText";
+************************************************/
+/*
+    Danish Language Strings for ISPConfig.
+    Copyright (C) 2002-2006 by Michael R. Christensen (aka MicCo)
+
+      Web site = http://www.micco-webdesign.dk/
+      e-mail   = admin@micco-webdesign.dk
+
+    Version History :
+      v1.0 : initial release
+      v2.2.6 (28 August 2006)   : various strings updates and add-ons
+
+*/
+
+$hlp["dienst_name"] = "Navn på den service der skal overvåges.";
+$hlp["dienst_port"] = "Port nummer for service, f.eks. 80 for web servere.";
+$hlp["dienst_host"] = "Hostnavn eller IP adresse for den server der skal overvåges.";
+$hlp["dienst_typ"] = "Type af service. Systemet kan overvåge TCP- og UDP-baseret services.";
+?>

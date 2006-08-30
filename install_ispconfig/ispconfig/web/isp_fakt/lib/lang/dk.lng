@@ -1,0 +1,100 @@
+<?
+/********************************
+* ISPConfig Dictionary File
+* Version 1.0
+*********************************/
+/*
+    Danish Language Strings for ISPConfig.
+    Copyright (C) 2002-2006 by Michael R. Christensen (aka MicCo)
+
+      Web site = http://www.micco-webdesign.dk/
+      e-mail   = admin@micco-webdesign.dk
+
+    Version History :
+      v1.0 : initial release
+      v2.2.6 (28 August 2006)   : various strings updates and add-ons
+
+*/
+
+$wb["ISP Faktura"] = 'ISP Faktura';
+$wb["Web-FTP"] = 'Web-FTP';
+$wb["Domains"] = 'Domæner';
+$wb["Service"] = 'Service';
+$wb["Webs"] = 'Webs';
+$wb["Traffic"] = 'Trafik';
+$wb["Email-Adressen"] = 'Email Adresser';
+$wb["Artikel"] = 'Artikel';
+$wb["admin"] = 'admin';
+$wb["Artikel für"] = 'Artikel for';
+$wb["Dienstleistung"] = 'Services';
+$wb["Hardware"] = 'Hardware';
+$wb["Software"] = 'Software';
+$wb["Typ"] = 'Type';
+$wb["Artikel Nr."] = 'Artikel Nr.';
+$wb["Bezeichnung"] = 'Navn';
+$wb["Beschreibung"] = 'Beskrivelse';
+$wb["Stück"] = 'Stk';
+$wb["MB"] = 'MB';
+$wb["GB"] = 'GB';
+$wb["Stunde"] = 'Timer';
+$wb["Einheit"] = 'Enhed';
+$wb["Menge"] = 'Antal';
+$wb["Preis"] = 'Pris';
+$wb["Verrechnung"] = 'Faktura Periode';
+$wb["Artikel neu"] = 'Ny Artikel';
+$wb["Ordner neu"] = 'Ny Mappe';
+$wb["Abrechnen"] = 'Opret Faktura';
+$wb["Artikel neu"] = 'Ny Artikel';
+$wb["Ordner neu"] = 'Ny Mappe';
+$wb["Produkte"] = 'Produkter';
+$wb["Abrechnen"] = 'Opret Faktura';
+$wb["Rechnungen"] = 'Faktura';
+$wb["Kunden"] = 'Kunder';
+$wb["Anbieter"] = 'Forhandlere';
+$wb["Keine Artikel zum Abrechnen gefunden."] = 'Ingen artikler fundet for opretelse af faktura.';
+$wb["Abrechnung"] = 'Faktura';
+$wb["Name"] = 'Navn';
+$wb["IP-Traffic"] = 'IP Trafik';
+$wb["Steuersatz"] = 'Moms %';
+$wb["Bei Überschreitung:"] = 'Ved Overskridelse:';
+$wb["Diese Angaben sind nur für Artikel vom Typ: Traffic gültig!"] = 'Dette er kun gældende for artikler af typen: Trafik!';
+$wb["Rechnungen Kunden"] = 'Kunde Faktura';
+$wb["Firma"] = 'Firma';
+$wb["Vorname"] = 'Fornavn';
+$wb["Strasse"] = 'Adresse';
+$wb["PLZ"] = 'Post nr.';
+$wb["Ort"] = 'By';
+$wb["Land"] = 'Land';
+$wb["Steuernr."] = 'SE/CVR-Nr.';
+$wb["Rechnung"] = 'Faktura';
+$wb["Datum"] = 'Dato';
+$wb["Rechnung Nr."] = 'Faktura Nr.';
+$wb["Anzahl"] = 'Antal';
+$wb["Art. Nr."] = 'Vare Nr.';
+$wb["Gesamt"] = 'Total';
+$wb["EURO"] = 'DKK';
+$wb["Web gesamt"] = 'Web Total';
+$wb["enthaltene Mehrwertsteuer"] = 'Inkluderet Moms';
+$wb["Gesamtbetrag"] = 'Total';
+$wb["Rechnungen Anbieter"] = 'Forhandler Faktura';
+$wb["Kunde"] = 'Kunde';
+$wb["Rg. Nr."] = 'Faktura Nr.';
+$wb["OK"] = 'OK';
+$wb["Weiter"] = "Næste";
+$wb["Summe Anbieter"] = "Forhandler Total";
+$wb["Summe Web"] = "Web Total";
+$wb["Summe Kunde"] = "Kunder Total";
+$wb["Abrechnung abgeschlossen."] = "Faktura oprettet.";
+
+//////////////// Server Status ////////////////
+$wb["Arbeitsspeicher"]          = "Hukommelse";
+$wb["CPU"]          = "CPU";
+$wb["Dienste"]      = "Services";
+$wb["Server Online seit"]          = "Server Online i";
+$wb["User Online"]      = "Brugere Online";
+$wb["System Load 1 Minute"] = "System Load 1 Minut";
+$wb["System Load 5 Minuten"] = "System Load 5 Minutter";
+$wb["System Load 15 Minuten"] = "System Load 15 Minutter";
+//////////////// Server Status Ende //////////
+
+?>

@@ -1,0 +1,58 @@
+<?php
+/*
+    Danish Language Strings for ISPConfig.
+    Copyright (C) 2002-2006 by Michael R. Christensen (aka MicCo)
+
+      Web site = http://www.micco-webdesign.dk/
+      e-mail   = admin@micco-webdesign.dk
+
+    Version History :
+      v1.0 : initial release
+      v2.2.6 (28 August 2006)   : various strings updates and add-ons
+
+*/
+$wb["txt_login_desc"] = "For at ændre din email konfiguration logind her.";
+$wb["txt_error"] = "Fejl";
+$wb["txt_email_username"] = "Email Brugernavn";
+$wb["txt_password"] = "Adgangskode";
+$wb["txt_login"] = "Logind";
+$wb["txt_autoresponder"] = "Autoresponder";
+$wb["txt_nachricht"] = "Meddelse";
+$wb["txt_speichern"] = "Gem";
+$wb["txt_abbrechen"] = "Annuller";
+$wb["txt_email_account"] = "Email Konto";
+$wb["txt_user_und_email"] = "Bruger &amp; Email";
+$wb["txt_spamfilter"] = "Spamfilter";
+$wb["txt_logout"] = "Logud";
+$wb["txt_mailscan"] = "MailScan";
+$wb["txt_antivirus"] = "Antivirus";
+$wb["txt_spam_strategie"] = "Spam Strategi";
+$wb["txt_spam_hits"] = "Spam Hits";
+$wb["txt_rewrite_subject"] = "Omskriv Vedrørende";
+$wb["txt_betreff"] = "Vedrørende";
+$wb["txt_name"] = "Navn";
+$wb["txt_email_adresse"] = "Email Adresse";
+$wb["txt_username"] = "Brugernavn";
+$wb["txt_web_speicher"] = "WebQuota";
+$wb["txt_mail_speicher"] = "MailQuota";
+$wb["txt_email_passwort_leer"] = "Brugernavn og/eller Adgangskode mangler!";
+$wb["txt_user_unbekannt"] = "Ukendt Bruger.";
+$wb["txt_access_forbidden"] = "Adgang Forbudt!";
+$wb["txt_yes"] = "Ja";
+$wb["txt_no"] = "Nej";
+$wb["txt_unlimited"] = "Ubg.";
+$wb["txt_welcome"] = "Velkommen...";
+$wb["txt_error_spam_hits_format"] = "Værdien <i>".$wb["txt_spam_hits"]."</i> skal have følgende format:";
+$wb["txt_accept"] = "accepter";
+$wb["txt_discard"] = "afvise";
+$wb["txt_language"] = "Sprog";
+$wb["txt_no_mailuser_login"] = "Logind er deaktiveret for din web.";
+$wb["txt_forwarder"] = "Vidersende";
+$wb["txt_forwarder_desc"] = "<b>Tip:</b> En email pr. linie.";
+$wb["txt_spam_whitelist"] = 'Spam-Whitelist';
+$wb["txt_spam_blacklist"] = 'Spam-Blacklist';
+$wb["txt_hint_spam_whitelist"] = '<b>Hint:</b> En adresse pr. linie. Gyldige adresser er f.eks., friend@somewhere.com, *@isp.com, eller *.domain.net.';
+$wb["txt_hint_spam_blacklist"] = '<b>Hint:</b> En adresse pr. linie. Gyldige adresser er f.eks., friend@somewhere.com, *@isp.com, eller *.domain.net.';
+$wb["txt_uribl"] = 'Brug <a href="http://www.uribl.com/about.shtml" target="_blank">URIBL</a>';
+
+?>
