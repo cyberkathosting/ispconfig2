@@ -2,7 +2,7 @@
 
 $wb["txt_login_desc"] = "Hier kunt u inloggen om uw emailconfiguratie te wijzigen.";
 $wb["txt_error"] = "Fout";
-$wb["txt_email_username"] = "Gebruikersnaam";
+$wb["txt_email_username"] = "Loginnaam";
 $wb["txt_password"] = "Wachtwoord";
 $wb["txt_login"] = "Inloggen";
 $wb["txt_autoresponder"] = "Automatisch beantwoorden";
