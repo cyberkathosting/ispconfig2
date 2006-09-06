@@ -1,0 +1,90 @@
+<?
+/********************************
+* 42go Dictionary File
+* Version 1.0
+* (c) projektfarm GmbH
+*********************************/
+
+$wb["ISP Faktura"] = 'ISP Fakturiranje';
+$wb["Web-FTP"] = 'Web-FTP';
+$wb["Domains"] = 'Domaine';
+$wb["Service"] = 'Servisi';
+$wb["Webs"] = 'Strani';
+$wb["Traffic"] = 'Promet';
+$wb["Email-Adressen"] = 'Email naslovi';
+$wb["Artikel"] = 'Artikel';
+$wb["admin"] = 'admin';
+$wb["Artikel für"] = 'Artikel za';
+$wb["Dienstleistung"] = 'servis';
+$wb["Hardware"] = 'hardware';
+$wb["Software"] = 'software';
+$wb["Typ"] = 'vesta';
+$wb["Artikel Nr."] = 'Artikel št.';
+$wb["Bezeichnung"] = 'Ime';
+$wb["Beschreibung"] = 'Opis';
+$wb["Stück"] = 'Kolièina';
+$wb["MB"] = 'MB';
+$wb["GB"] = 'GB';
+$wb["Stunde"] = 'Ur';
+$wb["Einheit"] = 'Enota';
+$wb["Menge"] = 'Kolièina';
+$wb["Preis"] = 'Cena';
+$wb["Verrechnung"] = 'Rok plaèila';
+$wb["Artikel neu"] = 'Nov artikel';
+$wb["Ordner neu"] = 'Nova mapa';
+$wb["Abrechnen"] = 'Novo fakturiranje';
+$wb["Artikel neu"] = 'Nov artikel';
+$wb["Ordner neu"] = 'Nova mapa';
+$wb["Produkte"] = 'Izdelki';
+$wb["Abrechnen"] = 'Novo fakturiranje';
+$wb["Rechnungen"] = 'Fakture';
+$wb["Kunden"] = 'Stranke';
+$wb["Anbieter"] = 'Preprodajalci';
+$wb["Keine Artikel zum Abrechnen gefunden."] = 'Ni bilo najdenih artiklov za narediti fakturo.';
+$wb["Abrechnung"] = 'Faktura';
+$wb["Name"] = 'Ime';
+$wb["IP-Traffic"] = 'IP promet';
+$wb["Steuersatz"] = 'Davek';
+$wb["Bei Überschreitung:"] = 'Prekoraèeno:';
+$wb["Diese Angaben sind nur für Artikel vom Typ: Traffic gültig!"] = 'These entries are only valid for items of the type: Traffic!';
+$wb["Rechnungen Kunden"] = 'Faktura stranke';
+$wb["Firma"] = 'Podjetje';
+$wb["Vorname"] = 'Ime';
+$wb["Strasse"] = 'Ulica';
+$wb["PLZ"] = 'ZIP Koda';
+$wb["Ort"] = 'Mesto';
+$wb["Land"] = 'Država';
+$wb["Steuernr."] = 'Davèna šetviljka';
+$wb["Rechnung"] = 'Faktura';
+$wb["Datum"] = 'Datum';
+$wb["Rechnung Nr."] = 'Številjka fakture';
+$wb["Anzahl"] = 'Kolièina';
+$wb["Art. Nr."] = 'Številjka predmeta (item no.)';
+$wb["Gesamt"] = 'Znesek';
+$wb["EURO"] = 'EURO';
+$wb["Web gesamt"] = 'Mrežni znesek (Web Total)';
+$wb["enthaltene Mehrwertsteuer"] = 'vkljuèen davek na nodano vrednost';
+$wb["Gesamtbetrag"] = 'Znesek';
+$wb["Rechnungen Anbieter"] = 'Faktura prodajalca (Reseller Invoices)';
+$wb["Kunde"] = 'Kupci';
+$wb["Rg. Nr."] = 'Številjka fakture';
+$wb["OK"] = 'OK';
+$wb["Weiter"] = "naslednji";
+$wb["Summe Anbieter"] = "Znesek prodajalca (Reseller Total)";
+$wb["Summe Web"] = "Mrežni znesek";
+$wb["Summe Kunde"] = "Znesek stranke";
+$wb["Abrechnung abgeschlossen."] = "Ustvarjena faktura.";
+
+//////////////// Server Status ////////////////
+$wb["Arbeitsspeicher"]          = "Glavna memorija";
+$wb["CPU"]          = "Procesor";
+$wb["Dienste"]      = "Aplikacije";
+$wb["Server Online seit"]          = "Strežnik v teku";
+$wb["User Online"]      = "Aktivni uporabniki";
+$wb["System Load 1 Minute"] = "Obremenitev sistema v zadnji minuti";
+$wb["System Load 5 Minuten"] = "Obremenitev sistema v zadnjih 5 minutah";
+$wb["System Load 15 Minuten"] = "Obremenitev sistema v zadnjih 15 minutah";
+//////////////// Server Status Ende //////////
+
+
+?>

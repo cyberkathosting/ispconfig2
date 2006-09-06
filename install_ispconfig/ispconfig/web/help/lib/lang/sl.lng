@@ -1,0 +1,43 @@
+<?
+/********************************
+* 42go Dictionary File
+* Version 1.0
+* (c) projektfarm GmbH
+*********************************/
+
+$wb["Anbieter"]     = "Preprodajalec";
+$wb["Web"]          = "Splet";
+$wb["Admin Handbuch"] = "Skrbniška navodila";
+$wb["Reseller Handbuch"] = "Preprodajalèeva navodila";
+$wb["Kunden Handbuch"] = "Uporabniška navodila";
+$wb["Deutsch"]          = "Nemško";
+$wb["Englisch"]          = "Angleško";
+$wb["Projektfarm Support"]          = "Projektfarm podpora";
+$wb["Online Hilfe"] = "Pomoè na spletu";
+
+$wb["willkommen_kunde"] = "Dobrodošel v 42go-ISP-Managerju!
+Tukaj lahko upravljati z vašo/vašimi spletno/spletnimi stranjo/stranmi. Èe
+imate težave kontaktiranje skrbnika ali si oglejte navodila.";
+$wb["Willkommen"] = "Dobrodošli";
+
+//////////////// Server Status ////////////////
+$wb["Arbeitsspeicher"]          = "Glavni spomin";
+$wb["CPU"]          = "CPU";
+$wb["Dienste"]      = "Servisi";
+$wb["Server Online seit"]          = "Strežnik v teku";
+$wb["User Online"]      = "Aktivni uporabniki";
+$wb["System Load 1 Minute"] = "Obremenitev sistema v zadnji minuti";
+$wb["System Load 5 Minuten"] = "Obremenitev sistema v zadnjih 5 minutah";
+$wb["System Load 15 Minuten"] = "Obremenitev sistema v zadnjih 15 minutah";
+//////////////// Server Status Ende //////////
+
+$wb["Webs angelegt"] = "Uporabljene strani";
+$wb["User angelegt"] = "Uporabljeni uporabniki";
+$wb["Domains angelegt"] = "Uporabljene domene";
+$wb["unlimitiert"]  = "neomejeno";
+$wb["Anbieter"]     = "Preprodajalec";
+$wb["DNS-Domains angelegt"] = 'DNS domene ustvarjene';
+$wb["von"] = "od";
+
+
+?>

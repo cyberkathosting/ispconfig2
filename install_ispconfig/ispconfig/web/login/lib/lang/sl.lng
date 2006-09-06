@@ -1,0 +1,26 @@
+<?
+/********************************
+* 42go Dictionary File
+* Version 1.0
+* (c) projektfarm GmbH
+*********************************/
+
+// License Manager
+$wb["Es wurde keine g&uuml;ltige Lizenzdatei gefunden."] = "Ni veljavne licence.";
+$wb["Hier k&ouml;nnen Sie ihre Lizenzdatei einspielen."] = "Tukaj lahko namestite licenco.";
+$wb["Username"] = "Uporabniško ime";
+$wb["Passwort"] = "Geslo";
+$wb["Lizenzdatei"] = "Licenca";
+$wb["Weiter"] = "naprej";
+$wb["Die Lizenzdatei wurde eingespielt.<br>Sie k&ouml;nnen sich jetzt einloggen."] = "Licenca je bila naložena.<br> Sedaj se lahko prijavite.";
+$wb["Ihre Nutzersitzung wurde beendet."] = "Seja je bila zakljuèena.";
+$wb["Hier können Sie sich neu einloggen"] = "Tukaj se lahko ponovno prijavite";
+
+$wb["FEHLER 101: Username oder Passwort Falsch."] = "ERROR 101: napaèen uporabnik ali geslo.";
+$wb["FEHLER 102: Account inaktiv."] = "ERROR 102: dostop deaktiviran.";
+$wb["FEHLER 103: Es wurde kein Username oder Passwort angegeben."] = "ERROR 103: niste vnesli uporabnika ali gesla.";
+$wb["FEHLER 104: Die Nutzersession wurde beendet."] = "ERROR 104: Seja zakljuèena.";
+$wb["<br>&nbsp;<br>Hier können Sie sich erneut einloggen:"] = "<br>&nbsp;<br>Tukaj se lahko ponovno prijavite:";
+$wb["Hier können Sie sich einloggen:"] = "Tukaj se lahko prijavite:";
+
+?>
