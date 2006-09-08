@@ -74,6 +74,10 @@ dist_ftp_conf:/etc/proftpd.conf:Config-File:read::centos43
 dist_ftp_version:standalone:Server-Version:exit::centos43
 dist_ftp_log:/var/log/xferlog:Log-File:read::centos43
 
+dist_ftp_conf:/etc/proftpd.conf:Config-File:read::centos44
+dist_ftp_version:standalone:Server-Version:exit::centos44
+dist_ftp_log:/var/log/xferlog:Log-File:read::centos44
+
 dist_ftp_conf:/etc/proftpd.conf:Config-File:read::rhat73
 dist_ftp_version:standalone:Server-Version:exit::rhat73
 dist_ftp_log:/var/log/xferlog:Log-File:read::rhat73
