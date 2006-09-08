@@ -62,6 +62,7 @@ class tool_portscan {
       if($this->_check_tcp('localhost',$i)){
         $port_service = getservbyport($i, "tcp");
         if(empty($port_service)) $port_service = "unknown";
+				if($i == '81') $port_service = 'ISPConfig';
         $msg .= "&nbsp; &nbsp; Port $i (tcp) is open ($port_service)!<br>\n";
       } else {
         $msg .= "";
