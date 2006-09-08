@@ -50,7 +50,7 @@ if(count($_POST) > 1) {
 
         $rec = array();
         $rec["user_autoresponder"] = $_POST["user_autoresponder"];
-        $rec["user_autoresponder_text"] = escapeshellcmd(substr($_POST["user_autoresponder_text"],0,10000));
+        $rec["user_autoresponder_text"] = substr($_POST["user_autoresponder_text"],0,10000);
         $rec["status"] = 'u';
 
         $sql = $app->form->getSQL($rec,"UPDATE",$id);
