@@ -132,14 +132,15 @@ switch ($endfix) {
 }
 
 function whois_php($WhoIsServer,$queryDomain){
-        $fp = fsockopen ("$WhoIsServer", 43, $errnr, $errstr);
-        $record="";
-	set_socket_blocking($fp, 0);
- 	fputs($fp, "$queryDomain\n");
-        while (!feof($fp)) {
+        if($fp = @fsockopen ("$WhoIsServer", 43, $errnr, $errstr)) {
+        	$record="";
+					set_socket_blocking($fp, 0);
+ 					fputs($fp, "$queryDomain\n");
+        		while (!feof($fp)) {
                        $record .= fgets($fp, 2048);
-	}	 
-	fclose($fp);
+						}	 
+					fclose($fp);
+				}
 	return $record;
 }
 
