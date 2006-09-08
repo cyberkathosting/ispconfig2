@@ -120,7 +120,7 @@ switch ($endfix) {
 }
 
 function whois_php($WhoIsServer,$queryDomain){
-        $fp = fsockopen ("$WhoIsServer", 43, $errnr, $errstr);
+        if($fp = @fsockopen ("$WhoIsServer", 43, $errnr, $errstr)) {
         $record="";
 	set_socket_blocking($fp, 0);
  	fputs($fp, "$queryDomain\n");
@@ -128,6 +128,7 @@ function whois_php($WhoIsServer,$queryDomain){
                        $record .= fgets($fp, 2048);
 	}	 
 	fclose($fp);
+	}
 	return $record;
 }
 
