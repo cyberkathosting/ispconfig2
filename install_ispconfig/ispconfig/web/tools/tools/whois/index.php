@@ -1,4 +1,4 @@
-<?
+<?php
 /*
 Copyright (c) 2005, projektfarm Gmbh, Till Brehm, Falko Timme
 All rights reserved.
@@ -30,8 +30,8 @@ include("../../../../lib/config.inc.php");
 include("../../../../lib/session.inc.php");
 
 $go_api->content->define(   array(
-                                    main    => "main.htm",
-                                    table   => "tools_standard.htm",
+                                    main       => "main.htm",
+                                    table      => "tools_standard.htm",
                                     stylesheet => "style.css"));
 
 $go_api->content->assign( array(    TITLE => "$session_site Startseite",
@@ -49,92 +49,79 @@ $go_api->content->assign( array(    TITLE => "$session_site Startseite",
                                                             S => $s
                                     ) );
 
+$tlds = array('.com'    => array('$result=whois_php(\'whois.crsnic.net\',$domain);'),
+              '.net'    => array('$result=whois_php(\'whois.crsnic.net\',$domain);'),
+              '.org'    => array('$result=whois_php(\'whois.crsnic.net\',$domain);'),
+              '.ac'     => array('$result=whois_php(\'whois.nic.ac\',$domain);'),
+              '.at'     => array('$result=whois_php(\'whois.ripe.net\',$domain);'),
+              '.be'     => array('$result=whois_php(\'whois.ripe.net\',$domain);'),
+              '.ch'     => array('$result=whois_php(\'whois.ripe.net\',$domain);'),
+              '.cz'     => array('$result=whois_php(\'whois.ripe.net\',$domain);'),
+              '.de'     => array('$result=whois_cli($domain);'),
+              '.dk'     => array('$result=whois_php(\'whois.ripe.net\',$domain);'),
+              '.eu.org' => array('$result=whois_php(\'whois.eu.org\',$domain);'),
+              '.fr'     => array('$result=whois_php(\'whois.ripe.net\',$domain);'),
+              '.hu'     => array('$result=whois_php(\'whois.ripe.net\',$domain);'),
+              '.it'     => array('$result=whois_php(\'whois.ripe.net\',$domain);'),
+              '.is'     => array('$result=whois_php(\'whois.ripe.net\',$domain);'),
+              '.li'     => array('$result=whois_php(\'whois.ripe.net\',$domain);'),
+              '.lt'     => array('$result=whois_php(\'whois.ripe.net\',$domain);'),
+              '.lu'     => array('$result=whois_php(\'whois.restena.lu\',$domain);'),
+              '.nl'     => array('$result=whois_cli($domain);'),
+              '.no'     => array('$result=whois_php(\'whois.ripe.net\',$domain);'),
+              '.pl'     => array('$result=whois_php (\'dns.pl\',$domain);'),
+              '.sk'     => array('$result=whois_php(\'whois.ripe.net\',$domain);'),
+              '.se'     => array('$result=whois_cli($domain);'),
+              '.co.za'  => array('$result=whois_http_get(\'http://co.za/cgi-bin/whois.sh?Domain=\'.$domain.\'&Enter=Enter\');',
+                                 '$result=(stristr($result,\'No Matches\'))?\'Domain not found\':$result;'
+                                ),
+              //'.org.za' => array(''), -> no Whois server in old code...
+              '.com.au' => array('$result=whois_php(\'whois.crsnic.net\',$domain);'),
+              '.net.au' => array('$result=whois_php(\'whois.crsnic.net\',$domain);'),
+              '.org.au' => array('$result=whois_php(\'whois.crsnic.net\',$domain);')
+			 );
+ksort($tlds);
+
 // BEGIN TOOL ###########################################################################
 
 //$go_api->auth->check_admin(0);
 
 $result = '';
 $domain=($domainname."".$endfix."");
-if (isset($submit)) {
-// Switch von Domain-Endung
-switch ($endfix) {
-        case '.de':
-        case '.se':
-        case '.nl':
-	     $result=whois_cli($domain);
-             break;
-        case '.com':
-        case '.net':
-        case '.org':
-        case '.com.au':
-        case '.net.au':
-        case '.org.au':
-				 $WhoIsServer="whois.crsnic.net";
-				 $result=whois_php ($WhoIsServer,$domain);
-		 		 break;
-        case '.lu':
-	        $WhoIsServer="whois.restena.lu";
-			  $result=whois_php ($WhoIsServer,$domain);
-		     break;
-        case '.fr':
-        case '.be':
-        case '.at':
-        case '.it':
-        case '.no':
-        case '.dk':
-        case '.cz':
-        case '.is':
-        case '.sk':
-        case '.li':
-        case '.ch':
-        case '.sk':
-        case '.lt':
-        case '.hu':
-	        $WhoIsServer="whois.ripe.net"; //$WhoIsServer zuweisen
-		     $result=whois_php ($WhoIsServer,$domain);
-		     break;
-        case '.ac':
-	        $WhoIsServer="whois.nic.ac"; //$WhoIsServer zuweisen
-		     $result=whois_php ($WhoIsServer,$domain);
-		     break;
-        case '.eu.org':
-	        $WhoIsServer="whois.eu.org"; //$WhoIsServer zuweisen
-			  $result=whois_php ($WhoIsServer,$domain);
-		     break;
-        case '.pl':
-	        $WhoIsServer="dns.pl"; //$WhoIsServer zuweisen
-			  $result=whois_php ($WhoIsServer,$domain);
-			  break;   
-         case '.co.za':
-			  $result=whois_http_get ("http://co.za/cgi-bin/whois.sh?Domain=".$domain."&Enter=Enter");
-			  //Clean up of html to remove submit form  			  
-  			  if (stristr($result,"No Matches")) {
-					$result="Domain not found.";  			  
-  			  }
-			  break;
-         case '.org.za':
 
-			  break;
-		 default:echo("Error!\n");break;
-        }
-}
+//Stat whois request
+  if (isset($submit)) {
+  	  if( !array_key_exists($endfix, $tlds) ) {
+  	  	   $result = 'This Toplevel Domain is not supported, yet';
+  	  }
+  	  else {
+  	  	   //Run Code assigned to tld
+  	  	   foreach( $tlds[ $endfix ] as $function ) {
+  	  	   	   if( $function != '' ) {
+  	  	   	   	    eval($function);
+  	  	   	   }
+  	  	   }
+  	  }
+  }
+
 
 function whois_php($WhoIsServer,$queryDomain){
+	    $record = '';
         if($fp = @fsockopen ("$WhoIsServer", 43, $errnr, $errstr)) {
-        $record="";
-	set_socket_blocking($fp, 0);
- 	fputs($fp, "$queryDomain\n");
-        while (!feof($fp)) {
+           
+	       set_socket_blocking($fp, 0);
+ 	       fputs($fp, "$queryDomain\n");
+           while (!feof($fp)) {
                        $record .= fgets($fp, 2048);
-	}	 
-	fclose($fp);
-	}
-	return $record;
+	       }	 
+	       fclose($fp);
+	    }
+	    return $record;
 }
 
 function whois_cli($queryDomain){
         $WhoIsServer = '-';
-	$record ="No Results";
+	    $record ="No Results";
         $regex = '/^[a-zA-Z0-9\-\.]{0,63}$/';
         if(preg_match($regex,$queryDomain)) {
                 $queryDomain = escapeshellcmd($queryDomain);
@@ -199,7 +186,10 @@ function PostPage($host,$query,$others=''){
 }
 
 function GetPage ($WhoIsServerURL) {
-	$handle = fopen($WhoIsServerURL, "rb");
+	$handle = @fopen($WhoIsServerURL, "rb");
+	if( !is_resource($handle) ) {
+		return 'Error fopening: '.$WhoIsServerURL;
+	}
 	$contents = '';
 	while (!feof($handle)) {
   		$contents .= fread($handle, 8192);
@@ -208,50 +198,32 @@ function GetPage ($WhoIsServerURL) {
 	return $contents;
 }
 
-$result .= "<table border='0' width='100%' align='center'><tr><td><PRE>$result</pre></td></tr></table>";
+$result   = "<table border='0' width='100%' align='center'><tr><td><PRE>$result</pre></td></tr></table>";
 $html_pre = '&nbsp;<br><form name="form1" method="post" action="">
               <table width="100%" border="0" cellspacing="0" cellpadding="0">
                 <tr>
                   <td align="center" class="t2">www.
-						   <input type="text" name="domainname" size="17">&nbsp;&nbsp;&nbsp;
+						   <input type="text" name="domainname" size="17" value="'.$domainname.'">&nbsp;&nbsp;&nbsp;
 						   <select name="endfix" size="1" style="font-family: Verdana; font-size: 10pt; color: #4E566B; font-weight: bold">
 								        
-								        
-								        <option name="com" value=".com">.com
-								        <option name="net" value=".net">.net
-								        <option name="org" value=".org">.org
-								        <option name="ac" value=".ac">.ac
-								        <option name="at" value=".at">.at
-								        <option name="be" value=".be">.be
-								        <option name="ch" value=".ch">.ch
-								        <option name="cz" value=".cz">.cz
-										<option name="de" value=".de">.de
-								        <option name="dk" value=".dk">.dk
-								        <option name="eu.org" value=".eu.org">.eu.org
-								        <option name="fr" value=".fr">.fr
-										<option name="hu" value=".hu">.hu
-								        <option name="it" value=".it">.it
-								        <option name="is" value=".is">.is
-								        <option name="li" value=".li">.li
-								        <option name="lt" value=".lt">.lt
-								        <option name="lu" value=".lu">.lu
-										<option name="nl" value=".nl">.nl
-								        <option name="no" value=".no">.no
-										<option name="pl" value=".pl">.pl
-								        <option name="sk" value=".sk">.sk
-								        <option name="se" value=".se">.se
-								        <option name="co.za" value=".co.za">.co.za
-								        <option name="org.za" value=".org.za">.org.za
-								        <option name="com.au" value=".com.au">.com.au
-								        <option name="net.au" value=".net.au">.net.au
-								        <option name="org.au" value=".org.au">.org.au
-							</select>&nbsp;
+						';
+						
+//Output optionfields ordered and selected in case of submitted whois
+foreach( $tlds as $tld => $dummy ) {
+	$html_pre .= "<option name=\"$tld\" value=\"$tld\"". ( ($tld == $endfix)?(' selected '):('') ) . '>'.$tld."\n";
+}
+
+
+$html_pre .= '							</select>&nbsp;
                     <input type="submit" name="submit" value="Search &gt;&gt;" class="button"> </td>
                 </tr>
               </table>
             </form><br>&nbsp;<br>';
+
 $html_show = $html_pre . $result;
 // END TOOL #############################################################################
+
+
 $go_api->content->assign( array( TOOL => $html_show));
 $go_api->content->parse(STYLESHEET, stylesheet);
 $go_api->content->parse(MAIN, array("table","main"));
