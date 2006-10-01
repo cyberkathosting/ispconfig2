@@ -107,4 +107,21 @@ $wb["msg_kein_win"] = "Diese Informationen stehen unter Windows-Betriebssystemen
 $wb["txt_object_currently_updated"] = "Ihre Änderungen können nicht gespeichert werden, weil das Objekt gerade aktualisiert wird. Bitte versuchen Sie es später noch einmal.<br><br> <a href='../frame_start.php?s=$s'>Weiter &gt;&gt;</a>";
 $wb["txt_system_currently_updated_no_recycle_bin"] = "Auf den Papierkorb kann nicht zugegriffen werden, da das System gerade aktualisiert wird. Bitte versuchen Sie es in ein paar Minuten noch einmal.<br><br> <a href='../frame_start.php?s=$s'>Weiter &gt;&gt;</a>";
 
+$wb["user_perms_nowrite_hd"]         = "Fehler: Sie haben nicht die notwendige Berechtigung diese Daten zu ändern";
+$wb["user_perms_nowrite_reasons"]    = "Das kann folgende Ursachen haben";
+$wb["user_perms_nowrite_reasons_1a"] = "1. Sie benutzen das System im Testmodus";
+$wb["user_perms_nowrite_reasons_1b"] = "- Melden Sie sich mit Ihrem Benutzernamen und Passwort an.";
+$wb["user_perms_nowrite_reasons_2a"] = "2. Sie versuchen ein Element zu &auml;ndern, das einer anderen Nutzergruppe zugeordnet ist.";
+$wb["user_perms_nowrite_reasons_2b"] = "In dieser Gruppe besitzen Sie keine Berechtigung zum Schreiben / &Auml;ndern.";
+$wb["user_perms_nowrite_reasons_2c"] = "- Bitten Sie den Eigent&uuml;mer der Gruppe Ihnen Schreibrechte auf diese Ressource zu geben.";
+
+$wb["group_perms_nowrite_hd"]         = "Fehler: Sie haben nicht die notwendige Gruppenrechte";
+$wb["group_perms_nowrite_reasons"]    = "Das kann folgende Ursachen haben";
+$wb["group_perms_nowrite_reasons_1a"] = "1. Sie benutzen das System im Testmodus";
+$wb["group_perms_nowrite_reasons_1b"] = "- Melden Sie sich mit Ihrem Benutzernamen und Passwort an.";
+$wb["group_perms_nowrite_reasons_2a"] = "2. Sie versuchen ein Element zu ändern, das einer anderen Nutzergruppe zugeordnet ist.";
+$wb["group_perms_nowrite_reasons_2b"] = "In dieser Gruppe besitzen Sie keine Berechtigung zum Schreiben";
+$wb["group_perms_nowrite_reasons_2c"] = "- Bitten Sie den Eigentümer der Gruppe Ihnen Schreibrechte auf diese Ressource zu geben.";
+
+
 ?>
