@@ -138,15 +138,21 @@ class auth
                 {
                 return true;
                 } else {
-                $message = "<b>Fehler: Sie haben nicht die notwendige Berechtigung diese Daten zu ändern</b><p>
-                <br>
-                Das kann folgende Ursachen haben:<br>
-                1. Sie benutzen das System im Testmodus<br>
-                   - Melden Sie sich mit Ihrem Benutzernamen und Passwort an.<br>&nbsp;<br>
-                2. Sie versuchen ein Element zu ändern, das einer anderen Nutzergruppe zugeordnet ist.<br>
-                   In dieser Gruppe besitzen Sie keine Berechtigung zum Schreiben / Ändern.<br>
-                   - Bitten Sie den Eigentümer der Gruppe Ihnen Schreibrechte auf diese Ressource zu geben.<br>&nbsp;<br>
-                <center><a href=\"" . $go_info["server"]["server_url"] . "/index.php?s=$s\">Weiter &gt;&gt;</a></center>";
+                	$message = '<b>'.$go_api->lng('user_perms_nowrite_hd').'</b><p><br>'
+                	           .
+                	           $go_api->lng('user_perms_nowrite_reasons').':<br>'
+                	           .
+                	           $go_api->lng('user_perms_nowrite_reasons_1a').'<br>'
+                	           .
+                	           $go_api->lng('user_perms_nowrite_reasons_1b').'<br><br>'
+                	           .
+                	           $go_api->lng('user_perms_nowrite_reasons_2a').'<br>'
+                	           .
+                	           $go_api->lng('user_perms_nowrite_reasons_2b').'<br><br>'
+                	           .
+                	           $go_api->lng('user_perms_nowrite_reasons_2c').'<br><br>'
+                	           .
+                	           '<center><a href="' . $go_info["server"]["server_url"] . "/index.php?s=$s\">Weiter &gt;&gt;</a></center>";
 
                 if($action == 0) {
             $go_api->errorMessage($message);
@@ -168,15 +174,21 @@ class auth
                 {
                 return true;
                 } else {
-                $message = "<b>Fehler: Sie haben nicht die notwendige Gruppenrechte</b><p>
-                <br>
-                Das kann folgende Ursachen haben:<br>
-                1. Sie benutzen das System im Testmodus<br>
-                   - Melden Sie sich mit Ihrem Benutzernamen und Passwort an.<br>&nbsp;<br>
-                2. Sie versuchen ein Element zu ändern, das einer anderen Nutzergruppe zugeordnet ist.<br>
-                   In dieser Gruppe besitzen Sie keine Berechtigung zum Schreiben<br>
-                   - Bitten Sie den Eigentümer der Gruppe Ihnen Schreibrechte auf diese Ressource zu geben.<br>&nbsp;<br>
-                <center><a href=\"" . $go_info["server"]["server_url"] . "/index.php?s=$s\">Weiter &gt;&gt;</a></center>";
+                	$message = '<b>'.$go_api->lng('group_perms_nowrite_hd').'</b><p><br>'
+                	           .
+                	           $go_api->lng('group_perms_nowrite_reasons').':<br>'
+                	           .
+                	           $go_api->lng('group_perms_nowrite_reasons_1a').'<br>'
+                	           .
+                	           $go_api->lng('group_perms_nowrite_reasons_1b').'<br><br>'
+                	           .
+                	           $go_api->lng('group_perms_nowrite_reasons_2a').'<br>'
+                	           .
+                	           $go_api->lng('group_perms_nowrite_reasons_2b').'<br><br>'
+                	           .
+                	           $go_api->lng('group_perms_nowrite_reasons_2c').'<br><br>'
+                	           .
+                	           '<center><a href="' . $go_info["server"]["server_url"] . "/index.php?s=$s\">Weiter &gt;&gt;</a></center>";
 
             if($action == 0) {
             $go_api->errorMessage($message);
