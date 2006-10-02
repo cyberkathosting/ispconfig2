@@ -105,6 +105,7 @@ $go_info["server"]["apache2_php"] = 'filter,addtype,engine'; // one string of on
 $go_info["server"]["password_hash"] = 'md5'; // 'crypt' = crypt; 'md5' = crypt-md5
 $go_info["server"]["do_automated_backups"] = 0; // 0 = no, 1 = yes; PLEASE NOTE: automated backups might fill up your HDD fast!
 $go_info["server"]["ssh_chroot"] = 0;
+$go_info["server"]["httpd_check"] = 1;
 $go_info["server"]["mysql_quota_privs"] = 'Insert,Create';
 
 

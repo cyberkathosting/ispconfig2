@@ -745,7 +745,7 @@ function user_insert($doc_id, $doctype_id) {
 
   // Eintrag aus del_status entfernen, wenn vorhanden
   $mod->db->query("DELETE FROM del_status WHERE doc_id = '".$doc_id."' AND doctype_id = '".$doctype_id."'");
-  
+
   // Chroot enviroment erstellen
   if($go_info["server"]["ssh_chroot"] == 1) {
           exec("/root/ispconfig/scripts/shell/create_chroot_env.sh $user_username");
@@ -902,12 +902,12 @@ function user_update($doc_id, $doctype_id) {
   //Status zurücksetzen
   $mod->db->query("update isp_isp_user SET status = '' where doc_id = '$doc_id'");
   $mod->system->data["isp_isp_user"][$doc_id]["status"] = '';
-  
+
   // Chroot enviroment erstellen
   if($go_info["server"]["ssh_chroot"] == 1) {
           exec("/root/ispconfig/scripts/shell/create_chroot_env.sh $user_username");
   }
-  
+
 }
 
 
@@ -1363,18 +1363,18 @@ Group web".$web["doc_id"];
 
     $cgi = "";
     if ($web["web_cgi"] == 1) {
-	$cgi = "ScriptAlias  /cgi-bin/ ".$mod->system->server_conf["server_path_httpd_root"]."/"."web".$web["doc_id"]."/"."cgi-bin/";
+        $cgi = "ScriptAlias  /cgi-bin/ ".$mod->system->server_conf["server_path_httpd_root"]."/"."web".$web["doc_id"]."/"."cgi-bin/";
 
-	if ($web["web_cgi_mod_perl"] == 1 && $server["server_httpd_mod_perl"] == 1) {
-	    $cgi .= "\nPerlOptions +Enable";
-	    $cgi_handler = "\tSetHandler perl-script
+        if ($web["web_cgi_mod_perl"] == 1 && $server["server_httpd_mod_perl"] == 1) {
+            $cgi .= "\nPerlOptions +Enable";
+            $cgi_handler = "\tSetHandler perl-script
 \tPerlResponseHandler ModPerl::Registry
 \tPerlOptions +ParseHeaders";
-	} else {
-	    $cgi_handler = "\tSetHandler cgi-script";
-	}
+        } else {
+            $cgi_handler = "\tSetHandler cgi-script";
+        }
 
-	$cgi .= "\n<Location /cgi-bin>\n$cgi_handler\n</Location>";
+        $cgi .= "\n<Location /cgi-bin>\n$cgi_handler\n</Location>";
     }
 
     if($web["web_php"]){
@@ -1382,10 +1382,10 @@ Group web".$web["doc_id"];
         $php = "AddType application/x-httpd-php .php .php3 .php4 .php5";
       }
       if($apache_version == 2){
-		$a2php = $go_info["server"]["apache2_php"];
-		if (!is_array($a2php)) {
-			$a2php = explode(',', $a2php);
-		}
+                $a2php = $go_info["server"]["apache2_php"];
+                if (!is_array($a2php)) {
+                        $a2php = explode(',', $a2php);
+                }
                 $php = '';
                 if (array_search('engine',$a2php) !== false) {
                         $php .= "php_admin_flag engine on\n";
@@ -1415,15 +1415,15 @@ Group web".$web["doc_id"];
 </Files>";
                 }
       }
-	  
-	  if(array_search('suphp',$a2php) !== false){
+
+          if(array_search('suphp',$a2php) !== false){
                   $php .= "suPHP_Engine on\n";
                   $php .= "suPHP_UserGroup ".$webadmin." web".$web["doc_id"]."\n";
                   $php .= "AddHandler x-httpd-php .php .php3 .php4 .php5\n";
                   $php .= "suPHP_AddHandler x-httpd-php\n";
           }
-		  
-	  if(array_search('suphp',$a2php) !== false) {
+
+          if(array_search('suphp',$a2php) !== false) {
       if($web["web_php_safe_mode"]){
         $php .= "\nphp_admin_flag safe_mode On
 php_admin_value open_basedir ".$mod->system->server_conf["server_path_httpd_root"]."/"."web".$web["doc_id"]."/
@@ -1433,7 +1433,7 @@ php_admin_value session.save_path ".$mod->system->server_conf["server_path_httpd
       } else {
         $php .= "\nphp_admin_flag safe_mode Off";
       }
-	  }
+          }
     } else {
       $php = "";
       if($apache_version == 2){
@@ -1870,7 +1870,12 @@ DocumentRoot /home
 
   $mod->file->af($this->vhost_conf, $test_vhost);
 
-  $httpd_syntax_check = $mod->log->caselog("httpd -t &> /dev/null", $this->FILE, __LINE__);
+  if($go_info["server"]["httpd_check"] == 1) {
+    $httpd_syntax_check = $mod->log->caselog("httpd -t &> /dev/null", $this->FILE, __LINE__);
+  } else {
+    // return always 0 = check OK
+    $httpd_syntax_check = 0;
+  }
 
   $conf = $mod->file->rf($this->vhost_conf);
 
@@ -2389,7 +2394,13 @@ function apache_restart(){
   $dist_httpd_daemon = $mod->system->server_conf["dist_httpd_daemon"];
   $dist_httpd_conf_dir = $mod->system->server_conf["server_path_httpd_conf"];
 
-  $ret_val = $mod->log->caselog("httpd -t  &> /dev/null", $this->FILE, __LINE__);
+  if($go_info["server"]["httpd_check"] == 1) {
+    $ret_val = $mod->log->caselog("httpd -t  &> /dev/null", $this->FILE, __LINE__);
+  } else {
+    // return always 0 = check OK
+    $ret_val = 0;
+  }
+
   if($ret_val == 0){
     $mod->log->ext_log("httpd syntax ok", 1, $this->FILE, __LINE__);
   } else {
@@ -2411,7 +2422,13 @@ function apache_reload(){
   $dist_httpd_daemon = $mod->system->server_conf["dist_httpd_daemon"];
   $dist_httpd_conf_dir = $mod->system->server_conf["server_path_httpd_conf"];
 
-  $ret_val = $mod->log->caselog("httpd -t  &> /dev/null", $this->FILE, __LINE__);
+  if($go_info["server"]["httpd_check"] == 1) {
+    $ret_val = $mod->log->caselog("httpd -t  &> /dev/null", $this->FILE, __LINE__);
+  } else {
+    // return always 0 = check OK
+    $ret_val = 0;
+  }
+
   if($ret_val == 0){
     $mod->log->ext_log("httpd syntax ok", 1, $this->FILE, __LINE__);
   } else {

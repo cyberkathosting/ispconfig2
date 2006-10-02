@@ -193,6 +193,7 @@ if($go_api->auth->check_write($gid,1)) {
     if($go_api->tree->is_owner($tree_id,'w') and count($save) > 0 and $form_changed == 1) {
         $doc_id = $item["doc_id"];
 
+        /* This block seems to make problems on lots of installations, although I couldn't verify it...
         // if the item or the parent is currently being updated, deny the new changes
         if($tmp_parent = $go_api->db->queryOneRecord("SELECT parent_doc_id, parent_doctype_id FROM ".$doc->modul."_dep where child_doc_id = $doc_id and child_doctype_id = $doctype_id")){
           $tmp_parent_doc = $go_api->doc->doctype_get($tmp_parent['parent_doctype_id']);
@@ -205,6 +206,7 @@ if($go_api->auth->check_write($gid,1)) {
         unset($tmp_parent);
         unset($tmp_parent_doc);
         unset($tmp_parent_item_status);
+        */
 
         $go_api->db->update($table,$save,"doc_id = '$doc_id'");
         // Debug Errors
