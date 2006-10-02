@@ -104,6 +104,7 @@ $go_info["server"]["apache2_php"] = 'both'; // 'filter' = set PHP filters, 'addt
 $go_info["server"]["password_hash"] = 'crypt'; // 'crypt' = crypt; 'md5' = crypt-md5
 $go_info["server"]["do_automated_backups"] = 0; // 0 = no, 1 = yes; PLEASE NOTE: automated backups might fill up your HDD fast!
 $go_info["server"]["ssh_chroot"] = 0;
+$go_info["server"]["httpd_check"] = 1;
 
 /**********************************************
 * Tools Settings

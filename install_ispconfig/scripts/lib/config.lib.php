@@ -1836,7 +1836,12 @@ DocumentRoot /home
 
   $mod->file->af($this->vhost_conf, $test_vhost);
 
-  $httpd_syntax_check = $mod->log->caselog("httpd -t &> /dev/null", $this->FILE, __LINE__);
+  if($go_info["server"]["httpd_check"] == 1) {
+    $httpd_syntax_check = $mod->log->caselog("httpd -t &> /dev/null", $this->FILE, __LINE__);
+  } else {
+    // return always 0 = check OK
+    $httpd_syntax_check = 0;
+  }
 
   $conf = $mod->file->rf($this->vhost_conf);
 
@@ -2355,7 +2360,13 @@ function apache_restart(){
   $dist_httpd_daemon = $mod->system->server_conf["dist_httpd_daemon"];
   $dist_httpd_conf_dir = $mod->system->server_conf["server_path_httpd_conf"];
 
-  $ret_val = $mod->log->caselog("httpd -t  &> /dev/null", $this->FILE, __LINE__);
+  if($go_info["server"]["httpd_check"] == 1) {
+    $ret_val = $mod->log->caselog("httpd -t  &> /dev/null", $this->FILE, __LINE__);
+  } else {
+    // return always 0 = check OK
+    $ret_val = 0;
+  }
+
   if($ret_val == 0){
     $mod->log->ext_log("httpd syntax ok", 1, $this->FILE, __LINE__);
   } else {
@@ -2377,7 +2388,13 @@ function apache_reload(){
   $dist_httpd_daemon = $mod->system->server_conf["dist_httpd_daemon"];
   $dist_httpd_conf_dir = $mod->system->server_conf["server_path_httpd_conf"];
 
-  $ret_val = $mod->log->caselog("httpd -t  &> /dev/null", $this->FILE, __LINE__);
+  if($go_info["server"]["httpd_check"] == 1) {
+    $ret_val = $mod->log->caselog("httpd -t  &> /dev/null", $this->FILE, __LINE__);
+  } else {
+    // return always 0 = check OK
+    $ret_val = 0;
+  }
+
   if($ret_val == 0){
     $mod->log->ext_log("httpd syntax ok", 1, $this->FILE, __LINE__);
   } else {
