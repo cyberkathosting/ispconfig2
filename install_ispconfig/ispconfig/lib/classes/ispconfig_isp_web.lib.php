@@ -279,8 +279,8 @@ function web_insert($doc_id, $doctype_id, $die_on_error = '1') {
       if($reseller["limit_ftp"] != 1 && $web["ftp"] == 1) $limit_errors .= $go_api->lng("error_web_no_ftp");
       if($reseller["limit_mysql"] != 1 && $web["web_mysql"] == 1) $limit_errors .= $go_api->lng("error_web_no_mysql");
       // Datenbanken
-      if($reseller["limit_mysql"] == 1 && $reseller["limit_mysql_anzahl_dbs"] >= 0){
-        $datenbankanzahl = $go_api->db->queryOneRecord("SELECT sum(isp_isp_web.web_mysql_anzahl_dbs) as datenbankanzahl from isp_isp_web,isp_nodes where isp_isp_web.doc_id = isp_nodes.doc_id and  isp_nodes.groupid = '$resellerid' and isp_nodes.doctype_id = ".$this->web_doctype_id);
+      if($web["web_mysql"] == 1 && $reseller["limit_mysql_anzahl_dbs"] >= 0){
+        $datenbankanzahl = $go_api->db->queryOneRecord("SELECT sum(isp_isp_web.web_mysql_anzahl_dbs) AS datenbankanzahl FROM isp_isp_web,isp_nodes WHERE isp_isp_web.doc_id = isp_nodes.doc_id AND isp_nodes.groupid = '$resellerid' AND isp_nodes.doctype_id = ".$this->web_doctype_id." AND isp_isp_web.web_mysql = 1");
         $datenbankanzahl = $datenbankanzahl["datenbankanzahl"];
         $free = $reseller["limit_mysql_anzahl_dbs"] - $datenbankanzahl;
         if($free < 0){
@@ -627,8 +627,8 @@ $go_api->db->query("UPDATE isp_isp_web SET status = 'u' where status != 'n' and 
         $errorMessage .= $go_api->lng("error_web_no_mysql");
       }
       // Datenbanken
-      if($reseller["limit_mysql"] == 1 && $reseller["limit_mysql_anzahl_dbs"] >= 0){
-        $datenbankanzahl = $go_api->db->queryOneRecord("SELECT sum(isp_isp_web.web_mysql_anzahl_dbs) as datenbankanzahl from isp_isp_web,isp_nodes where isp_isp_web.doc_id = isp_nodes.doc_id and  isp_nodes.groupid = '$resellerid' and isp_nodes.doctype_id = ".$this->web_doctype_id);
+      if($web["web_mysql"] == 1 && $reseller["limit_mysql_anzahl_dbs"] >= 0){
+        $datenbankanzahl = $go_api->db->queryOneRecord("SELECT sum(isp_isp_web.web_mysql_anzahl_dbs) AS datenbankanzahl FROM isp_isp_web,isp_nodes WHERE isp_isp_web.doc_id = isp_nodes.doc_id AND isp_nodes.groupid = '$resellerid' AND isp_nodes.doctype_id = ".$this->web_doctype_id." AND isp_isp_web.web_mysql = 1");
         $datenbankanzahl = $datenbankanzahl["datenbankanzahl"];
         $free = $reseller["limit_mysql_anzahl_dbs"] - $datenbankanzahl;
         if($free < 0){
