@@ -108,7 +108,7 @@ if($_POST['web_doc_id'] > 0 && $_POST['old_customer_doc_id'] > 0 && $_POST['new_
   if($_POST['web_doc_id'] > 0){
     $customer = $go_api->db->queryOneRecord("SELECT * FROM isp_isp_kunde, isp_dep WHERE isp_dep.parent_doc_id = isp_isp_kunde.doc_id AND isp_dep.child_doc_id = ".$_POST['web_doc_id']." AND isp_dep.child_doctype_id = 1013 AND isp_dep.parent_doctype_id = 1012");
     $from = '<tr><td align="center" class="t2">&nbsp;</td></tr>
-             <tr><td align="center" class="t2"><b>'.$go_api->lng('txt_move_website_from').':</b> '.$customer['kunde_vorname'].' '.$customer['kunde_vorname'].($customer['kunde_firma'] != '' ? " (".$customer['kunde_firma'].")": "").'<input type="hidden" name="old_customer_doc_id" value="'.$customer['doc_id'].'"></input></td></tr>';
+             <tr><td align="center" class="t2"><b>'.$go_api->lng('txt_move_website_from').':</b> '.$customer['kunde_vorname'].' '.$customer['kunde_name'].($customer['kunde_firma'] != '' ? " (".$customer['kunde_firma'].")": "").'<input type="hidden" name="old_customer_doc_id" value="'.$customer['doc_id'].'"></input></td></tr>';
 
     // select possible new customers (must not be in recycle bin)
     $all_customers = $go_api->db->queryAllRecords("SELECT * FROM isp_isp_kunde, isp_nodes WHERE isp_isp_kunde.doc_id != ".$customer['doc_id']." AND isp_nodes.doc_id = isp_isp_kunde.doc_id AND isp_nodes.doctype_id = isp_isp_kunde.doctype_id AND isp_nodes.status = '1'");
@@ -116,7 +116,7 @@ if($_POST['web_doc_id'] > 0 && $_POST['old_customer_doc_id'] > 0 && $_POST['new_
            <tr><td align="center" class="t2"><b>'.$go_api->lng('txt_move_website_to').':</b> <select name="new_customer_doc_id"><option value=""></option>';
     if(is_array($all_customers) && !empty($all_customers)){
       foreach($all_customers as $all_customer){
-        $to .= '<option value="'.$all_customer['doc_id'].'"'.($_POST['new_customer_doc_id'] == $all_customer['doc_id'] ? " selected" : "").'>'.$all_customer['kunde_vorname'].' '.$all_customer['kunde_vorname'].($all_customer['kunde_firma'] != '' ? " (".$all_customer['kunde_firma'].")": "").'</option>';
+        $to .= '<option value="'.$all_customer['doc_id'].'"'.($_POST['new_customer_doc_id'] == $all_customer['doc_id'] ? " selected" : "").'>'.$all_customer['kunde_vorname'].' '.$all_customer['kunde_name'].($all_customer['kunde_firma'] != '' ? " (".$all_customer['kunde_firma'].")": "").'</option>';
       }
     }
     $to .= '</select></td></tr>';
