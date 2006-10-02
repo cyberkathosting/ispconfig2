@@ -29,7 +29,10 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 include("../../../lib/config.inc.php");
 include("../../../lib/session.inc.php");
 
-if(is_file('/home/admispconfig/ispconfig/.run') || is_file('/home/admispconfig/ispconfig/.run2')) $go_api->errorMessage($go_api->lng('txt_system_currently_updated_no_recycle_bin')); 
+clearstatcache();
+if(is_file('/home/admispconfig/ispconfig/.run') || is_file('/home/admispconfig/ispconfig/.run2')){
+  $go_api->errorMessage($go_api->lng('txt_system_currently_updated_no_recycle_bin'));
+}
 
 $tree_id = intval($_REQUEST["tree_id"]);
 $doc_id = intval($_REQUEST["doc_id"]);
