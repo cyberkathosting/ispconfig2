@@ -118,10 +118,10 @@ function web_show($doc_id, $doctype_id) {
 
         if ($reseller) {
 
-		if($reseller["limit_dns_manager"] != 1){
-		  $doc->deck[0]->elements[5]->visible = 0;
-		  $doc->deck[0]->elements[6]->visible = 0;
-		}
+                if($reseller["limit_dns_manager"] != 1){
+                  $doc->deck[0]->elements[5]->visible = 0;
+                  $doc->deck[0]->elements[6]->visible = 0;
+                }
                 if($reseller["limit_shell_access"] != 1) $doc->deck[0]->elements[15]->visible = 0;
                 if($reseller["limit_cgi"] != 1 && $reseller["limit_cgi_mod_perl"] != 1){
                   $doc->deck[0]->elements[16]->visible = 0;
@@ -130,18 +130,18 @@ function web_show($doc_id, $doctype_id) {
                 } else {
                   if($reseller["limit_standard_cgis"] != 1) $doc->deck[0]->elements[20]->visible = 0;
                   if($reseller["limit_cgi"] != 1 || $reseller["limit_cgi_mod_perl"] != 1) {
-		    $mode = ($reseller["limit_cgi_mod_perl"] == 1) ? 1 : 0;
-		    $doc->deck[0]->elements[17]->values = array("$mode" => $doc->deck[0]->elements[17]->values[$mode]);
-		  }
+                    $mode = ($reseller["limit_cgi_mod_perl"] == 1) ? 1 : 0;
+                    $doc->deck[0]->elements[17]->values = array("$mode" => $doc->deck[0]->elements[17]->values[$mode]);
+                  }
                 }
                 if($reseller["limit_php"] != 1){
                   $doc->deck[0]->elements[21]->visible = 0;
                   $doc->deck[0]->elements[22]->visible = 0;
                 }
-				
-				// hide safemode checkbox when suphp is enabled
-				if($go_info["server"]["apache2_php"] == 'suphp') $doc->deck[0]->elements[22]->visible = 0;
-				
+
+                                // hide safemode checkbox when suphp is enabled
+                                if($go_info["server"]["apache2_php"] == 'suphp') $doc->deck[0]->elements[22]->visible = 0;
+
                 if($reseller["limit_ssi"] != 1) $doc->deck[0]->elements[23]->visible = 0;
                 if($reseller["limit_ftp"] != 1) $doc->deck[0]->elements[24]->visible = 0;
                 if($reseller["limit_mysql"] != 1){
@@ -174,16 +174,16 @@ function web_show($doc_id, $doctype_id) {
             $doc->deck[0]->elements[25]->visible = 0;
             $doc->deck[6]->elements[5]->visible = 0;
         }
-		
-		// Deaktiviere mod_perl
-		if($server["server_httpd_mod_perl"] != 1) {
-	    	$doc->deck[0]->elements[17]->visible = 0;
-		}
-		
-		// Deactivate mailquota field when maildir is selected.
-		if($server["use_maildir"] == 1) {
-			$doc->deck[0]->getElementByName('web_mailquota')->visible = 0;
-		}
+
+                // Deaktiviere mod_perl
+                if($server["server_httpd_mod_perl"] != 1) {
+                    $doc->deck[0]->elements[17]->visible = 0;
+                }
+
+                // Deactivate mailquota field when maildir is selected.
+                if($server["use_maildir"] == 1) {
+                        $doc->deck[0]->getElementByName('web_mailquota')->visible = 0;
+                }
 
                 // Hostingplan anwenden
                 $vorlage_id = intval($_REQUEST["vorlage_id"]);
@@ -248,7 +248,7 @@ function web_insert($doc_id, $doctype_id, $die_on_error = '1') {
       // Diskspace
       if($reseller["limit_disk"] >= 0){
         $diskspace = $go_api->db->queryOneRecord("SELECT sum(isp_isp_web.web_speicher) as diskspace, sum(isp_isp_web.web_mailquota) as mailquota, sum(isp_isp_web.web_mysql_quota) as mysqlquota from isp_isp_web,isp_nodes where isp_isp_web.doc_id = isp_nodes.doc_id and  isp_nodes.groupid = '$resellerid' and isp_nodes.doctype_id = ".$this->web_doctype_id);
-	if ($web["web_mysql"] != 1) { $web["web_mysql_quota"] = 0; $diskspace["mysqlquota"] = 0; }
+        if ($web["web_mysql"] != 1) { $web["web_mysql_quota"] = 0; $diskspace["mysqlquota"] = 0; }
         $diskspace = $diskspace["diskspace"] + $diskspace["mailquota"] + $diskspace["mysqlquota"];
         if(($web["web_speicher"] < 0) || ($web["web_mailquota"] < 0) || ($web["web_mysql_quota"] < 0)){
           $diskspace -= $web["web_speicher"] + $web["web_mailquota"] + $web["web_mysql_quota"];
@@ -305,7 +305,7 @@ function web_insert($doc_id, $doctype_id, $die_on_error = '1') {
       if($reseller["limit_mysql"] != 1 && $web["web_mysql"] == 1) $limit_errors .= $go_api->lng("error_web_no_mysql");
       // Datenbanken
       if($web["web_mysql"] == 1 && $reseller["limit_mysql_anzahl_dbs"] >= 0){
-        $datenbankanzahl = $go_api->db->queryOneRecord("SELECT sum(isp_isp_web.web_mysql_anzahl_dbs) as datenbankanzahl from isp_isp_web,isp_nodes where isp_isp_web.doc_id = isp_nodes.doc_id and  isp_nodes.groupid = '$resellerid' and isp_nodes.doctype_id = ".$this->web_doctype_id." and isp_isp_web.web_mysql = 1");
+        $datenbankanzahl = $go_api->db->queryOneRecord("SELECT sum(isp_isp_web.web_mysql_anzahl_dbs) AS datenbankanzahl FROM isp_isp_web,isp_nodes WHERE isp_isp_web.doc_id = isp_nodes.doc_id AND  isp_nodes.groupid = '$resellerid' AND isp_nodes.doctype_id = ".$this->web_doctype_id." AND isp_isp_web.web_mysql = 1");
         $datenbankanzahl = $datenbankanzahl["datenbankanzahl"];
         $free = $reseller["limit_mysql_anzahl_dbs"] - $datenbankanzahl;
         if($free < 0){
@@ -323,7 +323,7 @@ function web_insert($doc_id, $doctype_id, $die_on_error = '1') {
       if(isset($limit_errors)){
         $go_api->db->query("DELETE from isp_isp_web where doc_id = '$doc_id'");
         $go_api->db->query("DELETE from isp_nodes where doc_id = '$doc_id' and doctype_id = '$doctype_id'");
-	$go_api->db->query("ALTER TABLE isp_isp_web AUTO_INCREMENT = 1"); // Im Fehlerfall nächstes Mal wieder die gleiche ID benutzen
+        $go_api->db->query("ALTER TABLE isp_isp_web AUTO_INCREMENT = 1"); // Im Fehlerfall nächstes Mal wieder die gleiche ID benutzen
         if($die_on_error){
           $go_api->errorMessage($limit_errors.$go_api->lng("weiter_link"));
         } else {
@@ -391,25 +391,25 @@ function web_insert($doc_id, $doctype_id, $die_on_error = '1') {
 
      }
 
-    
+
     // Check ob lokaler Host als MX eingetragen ist
-	if($this->server_conf["server_mail_check_mx"] == 1) {
-    	if (!empty($web["web_host"])) {
-        	$host = $web["web_host"] . ".";
-    	}
-    	getmxrr($host . $web["web_domain"], $mx_list);
+        if($this->server_conf["server_mail_check_mx"] == 1) {
+            if (!empty($web["web_host"])) {
+                $host = $web["web_host"] . ".";
+            }
+            getmxrr($host . $web["web_domain"], $mx_list);
 
-    	$mx_found = false;
-    	foreach ($mx_list as $mx) {
-        	if (ip2long(gethostbyname($mx)) == ip2long($web["web_ip"])) {
-            	$mx_found = true;
-        	}
-    	}
+            $mx_found = false;
+            foreach ($mx_list as $mx) {
+                if (ip2long(gethostbyname($mx)) == ip2long($web["web_ip"])) {
+                    $mx_found = true;
+                }
+            }
 
-    	if (!$mx_found) {
-        	$go_api->db->query("UPDATE isp_isp_web SET optionen_local_mailserver = '' WHERE doc_id = '$doc_id'");
-    	}
-	}
+            if (!$mx_found) {
+                $go_api->db->query("UPDATE isp_isp_web SET optionen_local_mailserver = '' WHERE doc_id = '$doc_id'");
+            }
+        }
 
 
     //////////////////////////////////////////////////////
@@ -561,10 +561,10 @@ $go_api->db->query("UPDATE isp_isp_web SET status = 'u' where status != 'n' and 
         }
 
     /////// Prüfen, ob Diskspace, User- und Domainanzahl innerhalb der Grenzen des Resellers liegen ////////
-    
+
     // TODO: Hier fehlen durchweg noch Prüfungen ob das Web ggf. schon mehr benutzt (bzw. an User vergeben hat)
     //       als zugewiesen werden soll
-    
+
     $user_node = $go_api->db->queryOneRecord("SELECT * from isp_nodes where doc_id = $doc_id and doctype_id = $doctype_id");
     $resellerid = $user_node["groupid"];
     unset($user_node);
@@ -572,12 +572,12 @@ $go_api->db->query("UPDATE isp_isp_web SET status = 'u' where status != 'n' and 
       // Diskspace
       if($reseller["limit_disk"] >= 0){
         $diskspace = $go_api->db->queryOneRecord("SELECT sum(isp_isp_web.web_speicher) as diskspace, sum(isp_isp_web.web_mailquota) as mailquota, sum(isp_isp_web.web_mysql_quota) as mysqlquota from isp_isp_web,isp_nodes where isp_isp_web.doc_id = isp_nodes.doc_id and  isp_nodes.groupid = '$resellerid' and isp_nodes.doctype_id = ".$this->web_doctype_id);
-	if ($web["web_mysql"] != 1) { $web["web_mysql_quota"] = 0; $diskspace["mysqlquota"] = 0; }
+        if ($web["web_mysql"] != 1) { $web["web_mysql_quota"] = 0; $diskspace["mysqlquota"] = 0; }
         $diskspace = $diskspace["diskspace"] + $diskspace["mailquota"] + $diskspace["mysqlquota"];
         if(($web["web_speicher"] < 0) || ($web["web_mailquota"] < 0) || ($web["web_mysql_quota"] < 0)){
           $diskspace -= $web["web_speicher"] + $web["web_mailquota"] + $web["web_mysql_quota"];
           $free = $reseller["limit_disk"] - $diskspace;
-	  // Da sich hier 3 Werte eine Obergrenze teilen ist es schwer den Wert zu korrigieren, daher: Alte Werte behalten
+          // Da sich hier 3 Werte eine Obergrenze teilen ist es schwer den Wert zu korrigieren, daher: Alte Werte behalten
           $go_api->db->query("UPDATE isp_isp_web SET web_speicher = '".$old_form_data["web_speicher"]."' WHERE doc_id = '".$doc_id."'");
           $go_api->db->query("UPDATE isp_isp_web SET web_mailquota = '".$old_form_data["web_mailquota"]."' WHERE doc_id = '".$doc_id."'");
           $go_api->db->query("UPDATE isp_isp_web SET web_mysql_quota = '".$old_form_data["web_mysql_quota"]."' WHERE doc_id = '".$doc_id."'");
@@ -696,7 +696,7 @@ $go_api->db->query("UPDATE isp_isp_web SET status = 'u' where status != 'n' and 
       }
       // Datenbanken
       if($web["web_mysql"] == 1 && $reseller["limit_mysql_anzahl_dbs"] >= 0){
-        $datenbankanzahl = $go_api->db->queryOneRecord("SELECT sum(isp_isp_web.web_mysql_anzahl_dbs) as datenbankanzahl from isp_isp_web,isp_nodes where isp_isp_web.doc_id = isp_nodes.doc_id and  isp_nodes.groupid = '$resellerid' and isp_nodes.doctype_id = ".$this->web_doctype_id." and isp_isp_web.web_mysql = 1");
+        $datenbankanzahl = $go_api->db->queryOneRecord("SELECT sum(isp_isp_web.web_mysql_anzahl_dbs) AS datenbankanzahl FROM isp_isp_web,isp_nodes WHERE isp_isp_web.doc_id = isp_nodes.doc_id AND  isp_nodes.groupid = '$resellerid' AND isp_nodes.doctype_id = ".$this->web_doctype_id." AND isp_isp_web.web_mysql = 1");
         $datenbankanzahl = $datenbankanzahl["datenbankanzahl"];
         $free = $reseller["limit_mysql_anzahl_dbs"] - $datenbankanzahl;
         if($free < 0){
@@ -906,23 +906,23 @@ $go_api->db->query("UPDATE isp_isp_web SET status = 'u' where status != 'n' and 
 
 
     // Check ob lokaler Host als MX eingetragen ist
-	if($this->server_conf["server_mail_check_mx"] == 1) {
-    	if (!empty($web["web_host"])) {
-        	$host = $web["web_host"] . ".";
-    	}
-    	getmxrr($host . $web["web_domain"], $mx_list);
+        if($this->server_conf["server_mail_check_mx"] == 1) {
+            if (!empty($web["web_host"])) {
+                $host = $web["web_host"] . ".";
+            }
+            getmxrr($host . $web["web_domain"], $mx_list);
 
-    	$mx_found = false;
-    	foreach ($mx_list as $mx) {
-        	if (ip2long(gethostbyname($mx)) == ip2long($web["web_ip"])) {
-            	$mx_found = true;
-        	}
-    	}
+            $mx_found = false;
+            foreach ($mx_list as $mx) {
+                if (ip2long(gethostbyname($mx)) == ip2long($web["web_ip"])) {
+                    $mx_found = true;
+                }
+            }
 
-    	if (!$mx_found) {
-        	$go_api->db->query("UPDATE isp_isp_web SET optionen_local_mailserver = '' WHERE doc_id = '$doc_id'");
-    	}
-	}
+            if (!$mx_found) {
+                $go_api->db->query("UPDATE isp_isp_web SET optionen_local_mailserver = '' WHERE doc_id = '$doc_id'");
+            }
+        }
 
 
     ///////////////////////////////////
