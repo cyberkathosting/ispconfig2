@@ -84,23 +84,23 @@ function make_backup($web_id) {
         // überprüfe Rechte
         if($web["userid"] = $go_info["user"]["userid"] or $go_api->groups->in_group($go_info["user"]["userid"],$web["groupid"])) {
 
-                // erstelle ewb tar.gz
+                // erstelle web tar.gz
                 if($daten_web == 1) {
                         $web_pfad = $httpd_root ."/web".$web_id."/web";
-                        exec("cd $web_pfad; $zip -ry $tmp_dir/web".$web_id."_web.zip *");
+                        exec("cd $web_pfad; $zip -y $tmp_dir/web".$web_id."_web.zip .* -r *");
             //echo "cd $web_pfad; $zip -ry $tmp_dir/web".$web_id."_web.zip *";
                         $backup_txt .= "web,";
                 }
                 // erstelle user tar.gz
                 if($daten_user == 1) {
                         $user_pfad = $httpd_root."/web".$web_id."/user";
-                        exec("cd $user_pfad; $zip -ry  $tmp_dir/web".$web_id."_user.zip *");
+                        exec("cd $user_pfad; $zip -y  $tmp_dir/web".$web_id."_user.zip .* -r *");
                         $backup_txt .= "user,";
                 }
                 // erstelle log tar.gz
                 if($daten_log == 1) {
                         $log_pfad = $httpd_root."/web".$web_id."/log";
-                        exec("cd $log_pfad; $zip -ry  $tmp_dir/web".$web_id."_log.zip *");
+                        exec("cd $log_pfad; $zip -y  $tmp_dir/web".$web_id."_log.zip .* -r *");
                         $backup_txt .= "log,";
                 }
                 // erstelle mySQL tar.gz
