@@ -83,19 +83,21 @@ function web_insert($doc_id, $doctype_id, $server_id) {
   $web_speicher = intval($web["web_speicher"]);
 
   if($web_speicher > 0){
-    $blocks = $web_speicher * 1024;
+    $blocks_soft = $web_speicher * 1024;
+    $blocks_hard = $blocks_soft + 1024;
   } else {
-    $blocks = 0;
+    $blocks_soft = $blocks_hard = 0;
   }
 
   $group = "web".$doc_id;
   if(!strstr($mod->system->server_conf["dist"], "freebsd")){
-    $mod->log->caselog("setquota -g $group $blocks $blocks 0 0 -a &> /dev/null", $this->FILE, __LINE__);
+    $mod->log->caselog("setquota -g $group $blocks_soft $blocks_hard 0 0 -a &> /dev/null", $this->FILE, __LINE__);
+    $mod->log->caselog("setquota -T -g $group 604800 604800 -a &> /dev/null", $this->FILE, __LINE__);
   } else {
     if($q_dirs = $mod->system->quota_dirs()){
       if(!empty($q_dirs)){
         foreach($q_dirs as $q_dir){
-          $mod->log->caselog("setquota -g -f ".$q_dir." -bh".$blocks." -bs".$blocks." ".$group." &> /dev/null", $this->FILE, __LINE__);
+          $mod->log->caselog("setquota -g -f ".$q_dir." -bh".$blocks_hard." -bs".$blocks_soft." ".$group." &> /dev/null", $this->FILE, __LINE__);
         }
       }
     }
@@ -245,18 +247,20 @@ function web_update($doc_id,$doctype_id,$server_id) {
   //Diskquota setzen
   $web_speicher = intval($web["web_speicher"]);
   if($web_speicher > 0){
-    $blocks = $web_speicher * 1024;
+    $blocks_soft = $web_speicher * 1024;
+    $blocks_hard = $blocks_soft + 1024;
   } else {
-    $blocks = 0;
+    $blocks_soft = $blocks_hard = 0;
   }
   $group = "web".$doc_id;
   if(!strstr($mod->system->server_conf["dist"], "freebsd")){
-    $mod->log->caselog("setquota -g $group $blocks $blocks 0 0 -a &> /dev/null", $this->FILE, __LINE__);
+    $mod->log->caselog("setquota -g $group $blocks_soft $blocks_hard 0 0 -a &> /dev/null", $this->FILE, __LINE__);
+    $mod->log->caselog("setquota -T -g $group 604800 604800 -a &> /dev/null", $this->FILE, __LINE__);
   } else {
     if($q_dirs = $mod->system->quota_dirs()){
       if(!empty($q_dirs)){
         foreach($q_dirs as $q_dir){
-          $mod->log->caselog("setquota -g -f ".$q_dir." -bh".$blocks." -bs".$blocks." ".$group." &> /dev/null", $this->FILE, __LINE__);
+          $mod->log->caselog("setquota -g -f ".$q_dir." -bh".$blocks_hard." -bs".$blocks_soft." ".$group." &> /dev/null", $this->FILE, __LINE__);
         }
       }
     }
@@ -604,9 +608,10 @@ function user_insert($doc_id, $doctype_id) {
     }
   }
   if($user_speicher > 0){
-    $blocks = $user_speicher * 1024;
+    $blocks_soft = $user_speicher * 1024;
+    $blocks_hard = $blocks_soft + 1024;
   } else {
-    $blocks = 0;
+    $blocks_soft = $blocks_hard = 0;
   }
   if($mod->system->is_user($user_username)){
     $passwort = str_rot13($mod->system->getpasswd($user_username));
@@ -709,12 +714,13 @@ function user_insert($doc_id, $doctype_id) {
 
   // Diskquota setzen
   if(!strstr($mod->system->server_conf["dist"], "freebsd")){
-    $mod->log->caselog("setquota -u $user_username $blocks $blocks 0 0 -a &> /dev/null", $this->FILE, __LINE__);
+    $mod->log->caselog("setquota -u $user_username $blocks_soft $blocks_hard 0 0 -a &> /dev/null", $this->FILE, __LINE__);
+    $mod->log->caselog("setquota -T -u $user_username 604800 604800 -a &> /dev/null", $this->FILE, __LINE__);
   } else {
     if($q_dirs = $mod->system->quota_dirs()){
       if(!empty($q_dirs)){
         foreach($q_dirs as $q_dir){
-          $mod->log->caselog("setquota -u -f ".$q_dir." -bh".$blocks." -bs".$blocks." ".$user_username." &> /dev/null", $this->FILE, __LINE__);
+          $mod->log->caselog("setquota -u -f ".$q_dir." -bh".$blocks_hard." -bs".$blocks_soft." ".$user_username." &> /dev/null", $this->FILE, __LINE__);
         }
       }
     }
@@ -780,9 +786,10 @@ function user_update($doc_id, $doctype_id) {
     }
   }
   if($user_speicher > 0){
-    $blocks = $user_speicher * 1024;
+    $blocks_soft = $user_speicher * 1024;
+    $blocks_hard = $blocks_soft + 1024;
   } else {
-    $blocks = 0;
+    $blocks_soft = $blocks_hard = 0;
   }
   $passwort = substr($user["user_passwort"],5);
   $web_path = $mod->system->server_conf["server_path_httpd_root"]."/web".$web_doc_id;
@@ -880,12 +887,13 @@ function user_update($doc_id, $doctype_id) {
 
   // Diskquota setzen
   if(!strstr($mod->system->server_conf["dist"], "freebsd")){
-    $mod->log->caselog("setquota -u $user_username $blocks $blocks 0 0 -a &> /dev/null", $this->FILE, __LINE__);
+    $mod->log->caselog("setquota -u $user_username $blocks_soft $blocks_hard 0 0 -a &> /dev/null", $this->FILE, __LINE__);
+    $mod->log->caselog("setquota -T -u $user_username 604800 604800 -a &> /dev/null", $this->FILE, __LINE__);
   } else {
     if($q_dirs = $mod->system->quota_dirs()){
       if(!empty($q_dirs)){
         foreach($q_dirs as $q_dir){
-          $mod->log->caselog("setquota -u -f ".$q_dir." -bh".$blocks." -bs".$blocks." ".$user_username." &> /dev/null", $this->FILE, __LINE__);
+          $mod->log->caselog("setquota -u -f ".$q_dir." -bh".$blocks_hard." -bs".$blocks_soft." ".$user_username." &> /dev/null", $this->FILE, __LINE__);
         }
       }
     }
@@ -1906,19 +1914,22 @@ function make_ftp($server_id){
 
           // Diskquota setzen für Anonymous FTP-User (entspricht max. Datenmenge, die per Anonymous FTP hochgeladen werfen kann)
           if(intval($web["web_anonftplimit"]) > 0){
-            $blocks = $web["web_anonftplimit"] * 1024;
+            $blocks_soft = $web["web_anonftplimit"] * 1024;
+            $blocks_hard = $blocks_soft + 1024;
           } else {
-            $blocks = 0;
+            $blocks_soft = $blocks_hard = 0;
           }
           if(!strstr($mod->system->server_conf["dist"], "freebsd")){
-            $mod->log->caselog("setquota -u web".$web["doc_id"]."_anonftp ".$blocks." ".$blocks." 0 0 -a &> /dev/null", $this->FILE, __LINE__);
-            $mod->log->caselog("setquota -g web".$web["doc_id"]."_anonftp ".$blocks." ".$blocks." 0 0 -a &> /dev/null", $this->FILE, __LINE__);
+            $mod->log->caselog("setquota -u web".$web["doc_id"]."_anonftp ".$blocks_soft." ".$blocks_hard." 0 0 -a &> /dev/null", $this->FILE, __LINE__);
+            $mod->log->caselog("setquota -T -u web".$web["doc_id"]."_anonftp 604800 604800 -a &> /dev/null", $this->FILE, __LINE__);
+            $mod->log->caselog("setquota -g web".$web["doc_id"]."_anonftp ".$blocks_soft." ".$blocks_hard." 0 0 -a &> /dev/null", $this->FILE, __LINE__);
+            $mod->log->caselog("setquota -T -g web".$web["doc_id"]."_anonftp 604800 604800 -a &> /dev/null", $this->FILE, __LINE__);
           } else {
             if($q_dirs = $mod->system->quota_dirs()){
               if(!empty($q_dirs)){
                 foreach($q_dirs as $q_dir){
-                  $mod->log->caselog("setquota -u -f ".$q_dir." -bh".$blocks." -bs".$blocks." web".$web["doc_id"]."_anonftp &> /dev/null", $this->FILE, __LINE__);
-                  $mod->log->caselog("setquota -g -f ".$q_dir." -bh".$blocks." -bs".$blocks." web".$web["doc_id"]."_anonftp &> /dev/null", $this->FILE, __LINE__);
+                  $mod->log->caselog("setquota -u -f ".$q_dir." -bh".$blocks_hard." -bs".$blocks_soft." web".$web["doc_id"]."_anonftp &> /dev/null", $this->FILE, __LINE__);
+                  $mod->log->caselog("setquota -g -f ".$q_dir." -bh".$blocks_hard." -bs".$blocks_soft." web".$web["doc_id"]."_anonftp &> /dev/null", $this->FILE, __LINE__);
                 }
               }
             }
