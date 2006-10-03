@@ -1100,6 +1100,17 @@ function make_docroot($doc_id,$hostname,$domainname,$web_quota,$update) {
   // symbolischen Link erzeugen
   if(!is_link($web_path_realname)) $mod->log->phpcaselog(@symlink($web_path, $web_path_realname), "ln -s $web_path $web_path_realname", $this->FILE, __LINE__);
 
+  if($handle = opendir($mod->system->server_conf["server_path_httpd_root"])){
+    while (false !== ($file = readdir($handle))) {
+      if($file != "." && $file != ".." && is_link($mod->system->server_conf["server_path_httpd_root"]."/".$file)){
+        if($mod->system->server_conf["server_path_httpd_root"]."/".$file != $web_path_realname && readlink($mod->system->server_conf["server_path_httpd_root"]."/".$file) == $web_path){
+          unlink($mod->system->server_conf["server_path_httpd_root"]."/".$file);
+        }
+      }
+    }
+    closedir($handle);
+  }
+
   // Gruppe des Webs erstellen
   $groupid = $mod->system->server_conf["groupid_von"] + $doc_id;
   //if(!$mod->system->is_group("web".$doc_id)) $mod->log->caselog("groupadd -g $groupid web$doc_id &> /dev/null", $this->FILE, __LINE__);
