@@ -124,7 +124,7 @@ make certificate TYPE=custom  || error "Could not make certificate for Apache"
 make install || error "Could not install Apache"
 
 cd ../${PHP}
-CFLAGS="-D_FILE_OFFSET_BITS=64" ./configure --with-apxs=${INSTALL_ROOT}/httpd/bin/apxs --enable-track-vars --enable-sockets --enable-mbstring=all --with-config-file-path=${INSTALL_ROOT}/php --enable-ftp --prefix=${INSTALL_ROOT}/php ${WITH_OPENSSL} ${WITH_MYSQL} ${WITH_ZLIB_DIR} --without-pear || error "Could not configure PHP"
+./configure --with-apxs=${INSTALL_ROOT}/httpd/bin/apxs --enable-track-vars --enable-sockets --enable-mbstring=all --with-config-file-path=${INSTALL_ROOT}/php --enable-ftp --prefix=${INSTALL_ROOT}/php ${WITH_OPENSSL} ${WITH_MYSQL} ${WITH_ZLIB_DIR} --without-pear || error "Could not configure PHP"
 make || error "Could not make PHP"
 make install || error "Could not install PHP"
 ln -s ${INSTALL_ROOT}/php/bin/php ${INSTALL_ROOT}/php/php
