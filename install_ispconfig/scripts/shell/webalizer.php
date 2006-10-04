@@ -153,6 +153,7 @@ function dir_size($dir) {
 }
 
 function dir_array($dir){
+  $directory_array = array();
   if ($dirstream = @opendir($dir)) {
     while (false !== ($filename = readdir($dirstream))) {
       if ($filename!="." && $filename!=".."){
