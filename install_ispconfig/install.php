@@ -1259,6 +1259,7 @@ else {
   }
   wf('crontab.txt', trim(rf('crontab.txt')));
   remove_blank_lines('crontab.txt');
+  af('crontab.txt', "\n");
   exec("crontab -u root crontab.txt &> /dev/null");
   unlink('crontab.txt');
 }
