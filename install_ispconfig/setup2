@@ -704,6 +704,39 @@ fi  ## install_art == install
   fi
 
   echo
+  echo "########## gcc ##########"
+  echo
+  which gcc
+  if [ $? != 0 ]; then
+    error "gcc not found!";
+  else
+    log "gcc found: `which gcc`"
+    echo OK
+  fi
+
+  echo
+  echo "########## make ##########"
+  echo
+  which make
+  if [ $? != 0 ]; then
+    error "make not found!";
+  else
+    log "make found: `which make`"
+    echo OK
+  fi
+
+  echo
+  echo "########## lex ##########"
+  echo
+  which lex
+  if [ $? != 0 ]; then
+    error "flex not found!";
+  else
+    log "flex found: `which lex`"
+    echo OK
+  fi
+
+  echo
   echo "########## INSTALLATION ##########"
   echo
   if [ -f /etc/my.cnf ]; then
