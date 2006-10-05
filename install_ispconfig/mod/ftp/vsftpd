@@ -62,6 +62,10 @@ dist_ftp_conf:/etc/vsftpd.conf:Config-File:read::mdr20060
 dist_ftp_version:xinetd:Server-Version:select:standalone|inetd|xinetd:mdr20060
 dist_ftp_log:/var/log/vsftpd.log:Log-File:read::mdr20060
 
+dist_ftp_conf:/etc/vsftpd.conf:Config-File:read::mdr20070
+dist_ftp_version:xinetd:Server-Version:select:standalone|inetd|xinetd:mdr20070
+dist_ftp_log:/var/log/vsftpd.log:Log-File:read::mdr20070
+
 dist_ftp_conf:/etc/vsftpd/vsftpd.conf:Config-File:read::centos41
 dist_ftp_version:standalone:Server-Version:select:standalone|inetd|xinetd:centos41
 dist_ftp_log:/var/log/vsftpd.log:Log-File:read::centos41
