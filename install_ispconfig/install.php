@@ -643,15 +643,15 @@ if($dist == "Trustix30") {
 
 if($install_art == "upgrade"){
   include("config.inc.php");
-  
+
   //Check if mysql works
     $return = `mysql -V`;
     if( FALSE === strpos($return, 'mysql  Ver') ) {
-    	error('UPDATE - myslq does not work: '.$return);
+            error('UPDATE - myslq does not work: '.$return);
     }
     unset($return);
-    
-  
+
+
   $old_version = str_pad(str_replace(".", "", $go_info["server"]["version"]), 4, "0", STR_PAD_RIGHT);
   $server_url = $go_info["server"]["server_url"];
   $server_ispconfigprotocol = parse_url($server_url);
@@ -669,9 +669,9 @@ if($install_art == "upgrade"){
   ///////////// admispconfig zum Mitglied aller Webgruppen machen /////////
   //$conn = mysql_query("SELECT * FROM isp_isp_web");
   if( FALSE === ($conn = @mysql_query("SELECT * FROM isp_isp_web") ) ) {
-  	   error('UPDATE - MySQL-Error on Line: '.__LINE__.' : '.mysql_error($link));
+             error('UPDATE - MySQL-Error on Line: '.__LINE__.' : '.mysql_error($link));
   }
-  
+
   while($row = mysql_fetch_array($conn)){
     $web_groups[] = "web".$row["doc_id"];
   }
@@ -698,7 +698,7 @@ if($install_art == "upgrade"){
   //////////// admispconfig zum Mitglied aller Webgruppen machen ENDE ////////
   //$conn = mysql_query("SELECT * FROM isp_server WHERE doc_id = '1'");
   if( FALSE === ($conn = mysql_query("SELECT * FROM isp_server WHERE doc_id = '1'") ) ) {
-  	   error('UPDATE - MySQL-Error on Line: '.__LINE__.' : '.mysql_error($link));
+             error('UPDATE - MySQL-Error on Line: '.__LINE__.' : '.mysql_error($link));
   }
   if($row = mysql_fetch_array($conn)){
     $ip = $row["server_ip"];
@@ -757,7 +757,7 @@ if($install_art == "upgrade"){
 
   if(empty($db_password)){
     caselog("mysqldump -h $db_server -u $db_user -c -t --add-drop-table --add-locks --all --quick --lock-tables $new_db > existing_db.sql", $FILE, __LINE__, "dumped old db to file existing_db.sql","could not dump old db to file existing_db.sql");
-  } 
+  }
   else {
     caselog("mysqldump -h $db_server -u $db_user -p$db_password -c -t --add-drop-table --add-locks --all --quick --lock-tables $new_db > existing_db.sql", $FILE, __LINE__,"dumped old db to file existing_db.sql","could not dump old db to file existing_db.sql");
   }
@@ -791,7 +791,7 @@ if($install_art == "upgrade"){
   //////////// Nachträge in neuer DB machen /////////////
   //$conn = mysql_query("SELECT * FROM sys_user WHERE doc_id > 1");
   if( FALSE === ($conn = mysql_query("SELECT * FROM sys_user WHERE doc_id > 1") ) ) {
-  	   ilog('UPDATE - MySQL-Error on Line: '.__LINE__.' : '.mysql_error($link));
+             ilog('UPDATE - MySQL-Error on Line: '.__LINE__.' : '.mysql_error($link));
   }
   else {
        while($row = mysql_fetch_array($conn)){
@@ -801,7 +801,7 @@ if($install_art == "upgrade"){
 
   //$conn = mysql_query("SELECT * FROM isp_firewall WHERE doc_id > 10");
   if( FALSE === ($conn = mysql_query("SELECT * FROM isp_firewall WHERE doc_id > 10") ) ) {
-  	   ilog('UPDATE - MySQL-Error on Line: '.__LINE__.' : '.mysql_error($link));
+             ilog('UPDATE - MySQL-Error on Line: '.__LINE__.' : '.mysql_error($link));
   }
   else {
        while($row = mysql_fetch_array($conn)){
@@ -816,7 +816,7 @@ if($install_art == "upgrade"){
 
   //$conn = mysql_query("SELECT * FROM isp_monitor");
   if( FALSE === ($conn = mysql_query("SELECT * FROM isp_firewall WHERE doc_id > 10") ) ) {
-  	   ilog('UPDATE - MySQL-Error on Line: '.__LINE__.' : '.mysql_error($link));
+             ilog('UPDATE - MySQL-Error on Line: '.__LINE__.' : '.mysql_error($link));
   }
   else {
        while($row = mysql_fetch_array($conn)){
@@ -831,27 +831,27 @@ if($install_art == "upgrade"){
   }
 
   if( FALSE === mysql_query("UPDATE sys_user SET modules = CONCAT(modules, ',isp_file') WHERE modules NOT LIKE '%isp_file%'") ) {
-  	   ilog('UPDATE - MySQL-Error on Line: '.__LINE__.' : '.mysql_error($link));
+             ilog('UPDATE - MySQL-Error on Line: '.__LINE__.' : '.mysql_error($link));
   }
   if( FALSE === mysql_query("UPDATE sys_user SET modules = CONCAT(modules, ',isp_fakt') WHERE doc_id = '1' AND modules NOT LIKE '%isp_fakt%'") ) {
-  	   ilog('UPDATE - MySQL-Error on Line: '.__LINE__.' : '.mysql_error($link));
+             ilog('UPDATE - MySQL-Error on Line: '.__LINE__.' : '.mysql_error($link));
   }
   if( FALSE === mysql_query("UPDATE sys_user SET modules = CONCAT(modules, ',help') WHERE modules NOT LIKE '%help%'") ) {
-  	   ilog('UPDATE - MySQL-Error on Line: '.__LINE__.' : '.mysql_error($link));
+             ilog('UPDATE - MySQL-Error on Line: '.__LINE__.' : '.mysql_error($link));
   }
   if( FALSE === mysql_query("UPDATE isp_isp_web SET optionen_directory_index = 'index.html\nindex.htm\nindex.php\nindex.php5\nindex.php4\nindex.php3\nindex.shtml\nindex.cgi\nindex.pl\nindex.jsp\nDefault.htm\ndefault.htm' WHERE optionen_directory_index IS NULL") ) {
-  	   ilog('UPDATE - MySQL-Error on Line: '.__LINE__.' : '.mysql_error($link));
+             ilog('UPDATE - MySQL-Error on Line: '.__LINE__.' : '.mysql_error($link));
   }
   if( FALSE === mysql_query("UPDATE isp_server SET server_ftp_typ = 'proftpd' WHERE server_ftp_typ = 'proftp'") ) {
-  	   ilog('UPDATE - MySQL-Error on Line: '.__LINE__.' : '.mysql_error($link));
+             ilog('UPDATE - MySQL-Error on Line: '.__LINE__.' : '.mysql_error($link));
   }
   if( FALSE === mysql_query("UPDATE isp_server SET server_ftp_typ = 'vsftpd' WHERE server_ftp_typ = 'vsftp'") ) {
-  	   ilog('UPDATE - MySQL-Error on Line: '.__LINE__.' : '.mysql_error($link));
+             ilog('UPDATE - MySQL-Error on Line: '.__LINE__.' : '.mysql_error($link));
   }
-  
+
   //$conn = mysql_query("SELECT * FROM isp_traffic");
   if( FALSE === ($conn = mysql_query("SELECT * FROM isp_firewall WHERE doc_id > 10") ) ) {
-  	   ilog('UPDATE - MySQL-Error on Line: '.__LINE__.' : '.mysql_error($link));
+             ilog('UPDATE - MySQL-Error on Line: '.__LINE__.' : '.mysql_error($link));
   }
   else {
        while($row = mysql_fetch_array($conn)){
@@ -867,40 +867,40 @@ if($install_art == "upgrade"){
   if($old_version < 1200){
     // Anlegen der Faktura Records
     $sql = "SELECT * FROM isp_nodes, isp_isp_web WHERE isp_nodes.doc_id = isp_isp_web.doc_id AND isp_nodes.doctype_id = isp_isp_web.doctype_id";
-    
+
     if( FALSE === ($conn = mysql_query($sql) ) ) {
-    	ilog('UPDATE - MySQL-Error on Line: '.__LINE__.' : '.mysql_error($link));
+            ilog('UPDATE - MySQL-Error on Line: '.__LINE__.' : '.mysql_error($link));
     }
     else {
-    	  
-    	  while($web = mysql_fetch_array($conn)){
 
-        	  $web_id = $web["doc_id"];
-        	  $beschreibung = $web["web_host"].".".$web["web_domain"];
+              while($web = mysql_fetch_array($conn)){
 
-        	  // Web Record hinzufügen
-       	  	  $sql = "INSERT INTO isp_fakt_record (web_id,doc_id,doctype_id,typ,notiz) VALUES ('$web_id','$web_id','1013','Web','$beschreibung')";
-        	  mysql_query($sql);
-        	  // Traffic Record hinzufügen
-        	  $sql = "INSERT INTO isp_fakt_record (web_id,typ,notiz) VALUES ('$web_id','Traffic','$beschreibung')";
-        	  mysql_query($sql);
+                  $web_id = $web["doc_id"];
+                  $beschreibung = $web["web_host"].".".$web["web_domain"];
 
-        	  // User zu Web holen
-        	  $sql = "SELECT * FROM isp_dep, isp_isp_user WHERE isp_dep.parent_doc_id = $web_id AND isp_dep.parent_doctype_id = 1013 AND isp_dep.child_doc_id = isp_isp_user.doc_id AND isp_dep.child_doctype_id = isp_isp_user.doctype_id";
-        	  
-        	  if( FALSE === ($conn2 = mysql_query($sql)) ) {
-        	  	   ilog('UPDATE - MySQL-Error on Line: '.__LINE__.' : '.mysql_error($link));
-        	  }
-        	  else {
-        	  	   while($user = mysql_fetch_array($conn2)) {
-               	    	  $beschreibung = $user["user_username"];
-               	    	  $doc_id = $user["doc_id"];
-                	   	  $sql = "INSERT INTO isp_fakt_record (web_id,doc_id,doctype_id,typ,notiz) VALUES ('$web_id','$doc_id','1014','Email','$beschreibung')";
-                	   	  mysql_query($sql);
-        	  	   }
-        	  }
-    	  }
-  	  }
+                  // Web Record hinzufügen
+                           $sql = "INSERT INTO isp_fakt_record (web_id,doc_id,doctype_id,typ,notiz) VALUES ('$web_id','$web_id','1013','Web','$beschreibung')";
+                  mysql_query($sql);
+                  // Traffic Record hinzufügen
+                  $sql = "INSERT INTO isp_fakt_record (web_id,typ,notiz) VALUES ('$web_id','Traffic','$beschreibung')";
+                  mysql_query($sql);
+
+                  // User zu Web holen
+                  $sql = "SELECT * FROM isp_dep, isp_isp_user WHERE isp_dep.parent_doc_id = $web_id AND isp_dep.parent_doctype_id = 1013 AND isp_dep.child_doc_id = isp_isp_user.doc_id AND isp_dep.child_doctype_id = isp_isp_user.doctype_id";
+
+                  if( FALSE === ($conn2 = mysql_query($sql)) ) {
+                             ilog('UPDATE - MySQL-Error on Line: '.__LINE__.' : '.mysql_error($link));
+                  }
+                  else {
+                             while($user = mysql_fetch_array($conn2)) {
+                                     $beschreibung = $user["user_username"];
+                                     $doc_id = $user["doc_id"];
+                                     $sql = "INSERT INTO isp_fakt_record (web_id,doc_id,doctype_id,typ,notiz) VALUES ('$web_id','$doc_id','1014','Email','$beschreibung')";
+                                     mysql_query($sql);
+                             }
+                  }
+              }
+            }
   }
   /*
   if($old_version < 2000){
@@ -1319,6 +1319,7 @@ else{
   }
   wf('crontab.txt', trim(rf('crontab.txt')));
   remove_blank_lines('crontab.txt');
+  af('crontab.txt', "\n");
   exec("crontab -u root crontab.txt &> /dev/null");
   unlink('crontab.txt');
 }
