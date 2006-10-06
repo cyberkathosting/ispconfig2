@@ -154,6 +154,12 @@ function kunde_update($doc_id, $doctype_id, $die_on_error = '1') {
           $message = str_replace("%%%CP%%%", $go_info["server"]["server_url"], $message);
           $message = str_replace("%%%MANUAL%%%", $go_info["server"]["server_url"]."/help/documents/".$manual_lng."/client.pdf", $message);
 
+          if(trim($go_info["server"]["salutatory_email_charset"]) == '' || !isset($go_info["server"]["salutatory_email_charset"])){
+            $salutatory_email_charset = 'unknown-8bit';
+          } else {
+            $salutatory_email_charset = trim($go_info["server"]["salutatory_email_charset"]);
+          }
+
           $headers  = "From: ".$absender_name." <".$absender_email.">\r\n";
           if($bcc != "" && eregi("[0-9a-z]([-_.]?[0-9a-z])*@[0-9a-z]([-.]?[0-9a-z])*\\.[a-z]{2,6}$", $bcc) && !strstr($bcc, " ") && !strstr($bcc, "!") && !strstr($bcc, "?") && !strstr($bcc, "\"") && !strstr($bcc, "(") && !strstr($bcc, ")") && !strstr($bcc, "[") && !strstr($bcc, "]") && !strstr($bcc, "{") && !strstr($bcc, "}") && !strstr($bcc, "/") && !strstr($bcc, "#")) $headers .= "Bcc: ".$bcc."\r\n";
           $headers .= "Reply-To: <".$absender_email.">\r\n";
@@ -162,7 +168,7 @@ function kunde_update($doc_id, $doctype_id, $die_on_error = '1') {
           $headers .= "X-Priority: 3\r\n"; //1 UrgentMessage, 3 Normal
           $headers .= "Return-Path: <".$absender_email.">\r\n";
           $headers .= "MIME-Version: 1.0\r\n";
-          $headers .= "Content-Type: text/plain\r\n";
+          $headers .= "Content-Type: text/plain; charset=".$salutatory_email_charset."\r\n";
           mail($kunde["kunde_email"], $subject, $message, $headers);
         }
         ///////////////// Begrüßungsemail schicken ENDE ////////////////
