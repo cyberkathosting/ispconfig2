@@ -161,7 +161,7 @@ $mwst_gesamt = 0;
                             <td class="normal">&nbsp;</td>
                           </tr>
                                                   <?
-                                                  $mwst_gesamt += $record["preis"] * $record["anzahl"] * (intval($record["vat"]) / 100);
+                                                  $preis_netto += ($record["preis"] * $record["anzahl"]) / (1+intval($record["vat"]) / 100);
                                                   $web_gpreis += $record["preis"] * $record["anzahl"];
                                                   }
                                                   ?>
@@ -188,7 +188,7 @@ $mwst_gesamt = 0;
                       <tr>
                         <td>&nbsp;</td>
                         <td colspan="2" align="right" class="normal"><? echo $go_api->lng("enthaltene Mehrwertsteuer")?>:
-                         <? echo sprintf("%01.2f", $mwst_gesamt)?> <? echo $go_api->lng("EURO")?></td>
+                         <? echo sprintf("%01.2f", $gpreis - $preis_netto)?> <? echo $go_api->lng("EURO")?></td>
                       </tr>
                       <tr>
                         <td>&nbsp;</td>
