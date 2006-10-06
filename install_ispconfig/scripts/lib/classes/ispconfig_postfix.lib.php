@@ -33,17 +33,18 @@ var $FILE = "/root/ispconfig/scripts/lib/classes/ispconfig_postfix.lib.php";
 
 function make_local_host_names() {
   global $isp_web, $mod, $go_info;
-
-  // Template Öffnen
-  $mod->tpl->clear_all();
-  $mod->tpl->define( array(table    => "sendmail.cw.master"));
-  $mod->tpl->define_dynamic ( "sendmail", "table" );
-
-
+	
+	// This array $hostnames will contain the lines of the local-host-names file
+	$hostnames = array();
+	
+	// This array includes all domains that are not on the local mailserver
+	$sendmail_exclude_domains = array();
+	
   if($go_info["server"]["postfix_config"] == 1){  // SENDMAIL-STYLE
     $sendmail_exclude_domains[] = "";
 
-    /////////// HOSTNAMES IN local-host-names SCHREIBEN ////////////////
+    /////////// write the HOSTNAMES IN local-host-names ////////////////
+		$hostnames[] = "localhost";
     $hostname = $mod->system->hostname();
     if($hostname != ""){
       $hostnames[] = $hostname;
@@ -55,14 +56,10 @@ function make_local_host_names() {
       }
       if(!in_array('localhost.localdomain', $hostnames)) $hostnames[] = 'localhost.localdomain';
       $hostname = NULL;
-      foreach($hostnames as $hostname){
-        $mod->tpl->assign( array( DOMAIN => $hostname));
-        $mod->tpl->parse(SENDMAIL,".sendmail");
-      }
     }
-    $hostnames = NULL;
-    /////////// HOSTNAMES IN local-host-names SCHREIBEN ENDE ////////////////
-
+    /////////// write the HOSTNAMES IN local-host-names END ////////////////
+	
+		// Get all website domains
     $webs = $mod->db->queryAllRecords("SELECT * FROM isp_nodes,isp_isp_web WHERE isp_nodes.doc_id = isp_isp_web.doc_id AND isp_nodes.doctype_id = '".$isp_web->web_doctype_id."' AND isp_nodes.status = '1'");
     if(!empty($webs)){
       foreach($webs as $web){
@@ -73,19 +70,13 @@ function make_local_host_names() {
         }
         if(!$web["optionen_local_mailserver"]) $sendmail_exclude_domains[] = $domain;
         // Variablen zuweisen
-        if(!in_array($domain, $sendmail_exclude_domains)){
-          $mod->tpl->assign( array( DOMAIN => $domain));
-          $mod->tpl->parse(SENDMAIL,".sendmail");
-        } else {
-          $mod->tpl->assign( array( DOMAIN => ""));
-          $mod->tpl->parse(SENDMAIL,".sendmail");
+        if(!in_array($domain, $sendmail_exclude_domains) && $domain != ''){
+          $hostnames[] = $domain;
         }
       }
-    } else {
-      $mod->tpl->assign( array( DOMAIN => ""));
-      $mod->tpl->parse(SENDMAIL,".sendmail");
     }
-
+	
+		// Get all co-domains
     $webs = $mod->db->queryAllRecords("SELECT * FROM isp_dep,isp_isp_domain WHERE isp_dep.child_doc_id = isp_isp_domain.doc_id AND isp_dep.child_doctype_id ='".$isp_web->domain_doctype_id."' AND isp_dep.parent_doctype_id = '".$isp_web->web_doctype_id."' AND isp_isp_domain.status != 'd'");
 
     foreach($webs as $web){
@@ -96,16 +87,13 @@ function make_local_host_names() {
       }
       if(!$web["domain_local_mailserver"]) $sendmail_exclude_domains[] = $domain;
       // Variablen zuweisen
-      if(!in_array($domain, $sendmail_exclude_domains)){
-        $mod->tpl->assign( array( DOMAIN => $domain));
-        $mod->tpl->parse(SENDMAIL,".sendmail");
-      } else {
-        $mod->tpl->assign( array( DOMAIN => ""));
-        $mod->tpl->parse(SENDMAIL,".sendmail");
-      }
+      if(!in_array($domain, $sendmail_exclude_domains) && $domain != ''){
+          $hostnames[] = $domain;
+        }
     }
   } else { // POSTFIX-STYLE
     /////////// HOSTNAMES IN local-host-names SCHREIBEN ////////////////
+		$hostnames[] = "localhost";
     $hostname = $mod->system->hostname();
     if($hostname != ""){
       $hostnames[] = $hostname;
@@ -116,168 +104,104 @@ function make_local_host_names() {
         $hostnames[] = 'localhost.'.implode('.', $hostname_parts);
       }
       $hostname = NULL;
-      foreach($hostnames as $hostname){
-        $mod->tpl->assign( array( DOMAIN => $hostname));
-        $mod->tpl->parse(SENDMAIL,".sendmail");
-      }
     }
-    $hostnames = NULL;
     /////////// HOSTNAMES IN local-host-names SCHREIBEN ENDE ////////////////
   }
+	
+	$hostnames = array_unique($hostnames);
+	
+	$sendmail_header = '###################################
+#
+# ISPConfig local-host-names Configuration File
+#         Version 1.1
+#
+###################################';
 
-  $mod->tpl->parse(TABLE, table);
-  $sendmail_text = $mod->tpl->fetch();
-
-  list($sendmail_header, $sendmail_main) = explode("##----##", $sendmail_text);
-  $sendmail_array = explode("\n", $sendmail_main);
-  $sendmail_array = array_unique($sendmail_array);
-  $sendmail_text = $sendmail_header.(implode("\n", $sendmail_array));
+  $sendmail_text = $sendmail_header.(implode("\n", $hostnames));
+	$sendmail_text .= "\n#### MAKE MANUAL ENTRIES BELOW THIS LINE! ####";
   $sendmail_text .= $mod->file->manual_entries($mod->system->server_conf["server_sendmail_cw"]);
 
   $mod->log->caselog("cp -fr ".$mod->system->server_conf["server_sendmail_cw"]." ".$mod->system->server_conf["server_sendmail_cw"]."~", $this->FILE, __LINE__);
   $mod->file->wf($mod->system->server_conf["server_sendmail_cw"], $sendmail_text);
-  $mod->file->remove_blank_lines($mod->system->server_conf["server_sendmail_cw"]);
+  // $mod->file->remove_blank_lines($mod->system->server_conf["server_sendmail_cw"]);
 }
+
 
 function make_virtusertable() {
   global $isp_web, $mod, $go_info;
 
   if($go_info["server"]["postfix_config"] == 1){  // SENDMAIL-STYLE
-    // Template Öffnen
-    $mod->tpl->clear_all();
-    $mod->tpl->define( array(table    => "virtusertable.master"));
-    $mod->tpl->define_dynamic ( "virtusertable", "table" );
-
-    /*
-    $existing_webs = $mod->db->queryAllRecords("SELECT isp_isp_web.web_host, isp_isp_web.web_domain, isp_isp_web.optionen_local_mailserver FROM isp_nodes, isp_isp_web WHERE isp_nodes.doc_id = isp_isp_web.doc_id AND isp_nodes.doctype_id = isp_isp_web.doctype_id AND isp_nodes.status = 1");
-    $existing_domains = $mod->db->queryAllRecords("SELECT isp_isp_domain.domain_host, isp_isp_domain.domain_domain, isp_isp_domain.domain_local_mailserver FROM isp_nodes, isp_isp_domain WHERE isp_nodes.doc_id = isp_isp_domain.doc_id AND isp_nodes.doctype_id = isp_isp_domain.doctype_id AND isp_nodes.status = 1");
-    if(!empty($existing_webs)){
-      foreach($existing_webs as $existing_web){
-        if(!empty($existing_web["web_host"])){
-          $nouser_index = $existing_web["web_host"].".".$existing_web["web_domain"];
-        } else {
-          $nouser_index = $existing_web["web_domain"];
-        }
-        if($existing_web["optionen_local_mailserver"]) $nousers[$nouser_index] = "error:nouser No such user here";
-      }
-    }
-    if(!empty($existing_domains)){
-      foreach($existing_domains as $existing_domain){
-        if(!empty($existing_domain["domain_host"])){
-          $nouser_index = $existing_domain["domain_host"].".".$existing_domain["domain_domain"];
-        } else {
-          $nouser_index = $existing_domain["domain_domain"];
-        }
-        if($existing_domain["domain_local_mailserver"]) $nousers[$nouser_index] = "error:nouser No such user here";
-      }
-    }
-    */
-
+    
+		// This array contains all email addresses in the form 
+		// $virtusertable_email[DOMAIN][LOCAL_PART] = USERNAME
+		$virtusertable_email = array();
+		
+		// This array contains all email addresses in the form 
+		// $virtusertable_email[DOMAIN][LOCAL_PART] = USERNAME
+		$virtusertable_catchall = array();
+		
+		// get all users from the database
     $users = $mod->db->queryAllRecords("select * from isp_nodes,isp_isp_user WHERE isp_nodes.doc_id = isp_isp_user.doc_id AND isp_nodes.doctype_id = '".$isp_web->user_doctype_id."' AND isp_nodes.status = '1'");
-
-    //Emailalias und Benutzer herausfinden
+		
+		// get all email domains from local-host-names file
+		$tmp_local_host_names = file_get_contents($mod->system->server_conf["server_sendmail_cw"]);
+		$local_host_names = explode("\n",$tmp_local_host_names);
+		unset($tmp_local_host_names);
+		
+		// go trough each user record
     if(!empty($users)){
     foreach($users as $user){
-      $doc_id = $user["doc_id"];
-      $sql = "SELECT * FROM isp_dep WHERE child_doc_id = '$doc_id' AND child_doctype_id = '".$isp_web->user_doctype_id."'";
-      $web_dep = $mod->db->queryOneRecord($sql);
-      $web_doc_id = $web_dep["parent_doc_id"];
-      $web = $mod->system->data["isp_isp_web"][$web_doc_id];
-
-      if($user["user_catchallemail"]){
-        $catchall = "\n####----||||----####";
-      } else {
-        $catchall = "";
-      }
-
-      $user_emailalias = $mod->file->unix_nl($user["user_emailalias"])."\n".$user["user_email"]."\n".$user["user_username"].$catchall;
-
-      $user_username = $user["user_username"];
-
-      if(!empty($user_emailalias)) {
-        $emails = explode("\n", $user_emailalias);
-        $count = sizeof($emails);
-        for($i=0; $i<$count; $i++){
-          // Variablen zuweisen
-          if(!empty($emails[$i]) && $web["optionen_local_mailserver"]){
-
-            if(!empty($web["web_host"])){
-              $mod->tpl->assign( array(    EMAILALIAS => str_replace("####----||||----####", "", $emails[$i])."@".$web["web_host"].".".$web["web_domain"],
-                                           USER => $user_username));
-              $mod->tpl->parse(VIRTUSERTABLE,".virtusertable");
-              //if($user["user_catchallemail"] && isset($nousers[$web["web_host"].".".$web["web_domain"]])) unset($nousers[$web["web_host"].".".$web["web_domain"]]);
-            } else {
-              $mod->tpl->assign( array(  EMAILALIAS => str_replace("####----||||----####", "", $emails[$i])."@".$web["web_domain"],
-                                         USER => $user_username));
-              $mod->tpl->parse(VIRTUSERTABLE,".virtusertable");
-              //if($user["user_catchallemail"] && isset($nousers[$web["web_domain"]])) unset($nousers[$web["web_domain"]]);
-            }
-          } else {
-            $mod->tpl->assign( array(    EMAILALIAS => "",
-                                         USER => ""));
-            $mod->tpl->parse(VIRTUSERTABLE,".virtusertable");
-          }
-        }
-        $codomains = $mod->db->queryAllRecords("SELECT * from isp_dep,isp_isp_domain where isp_dep.child_doc_id = isp_isp_domain.doc_id and isp_dep.child_doctype_id ='".$isp_web->domain_doctype_id."' and isp_dep.parent_doctype_id = '".$isp_web->web_doctype_id."' and isp_dep.parent_doc_id = '".$web_doc_id."' and isp_isp_domain.status != 'd'");
-        if(!empty($codomains)){
-          foreach($codomains as $codomain){
-            foreach($emails as $email){
-              if(!empty($email) && $codomain["domain_local_mailserver"]){
-
-                if(!empty($codomain["domain_host"])){
-                  $mod->tpl->assign( array(  EMAILALIAS => str_replace("####----||||----####", "", $email)."@".$codomain["domain_host"].".".$codomain["domain_domain"],
-                                             USER => $user_username));
-                  $mod->tpl->parse(VIRTUSERTABLE,".virtusertable");
-                  //if($user["user_catchallemail"] && isset($nousers[$codomain["domain_host"].".".$codomain["domain_domain"]])) unset($nousers[$codomain["domain_host"].".".$codomain["domain_domain"]]);
-                } else {
-                  $mod->tpl->assign( array(  EMAILALIAS => str_replace("####----||||----####", "", $email)."@".$codomain["domain_domain"],
-                                             USER => $user_username));
-                  $mod->tpl->parse(VIRTUSERTABLE,".virtusertable");
-                  //if($user["user_catchallemail"] && isset($nousers[$codomain["domain_domain"]])) unset($nousers[$codomain["domain_domain"]]);
-                }
-              } else {
-                $mod->tpl->assign( array(    EMAILALIAS => "",
-                                             USER => ""));
-                $mod->tpl->parse(VIRTUSERTABLE,".virtusertable");
-              }
-            }
-          }
-        }
-      } else {
-        $mod->tpl->assign( array(    EMAILALIAS => "",
-                                     USER => ""));
-        $mod->tpl->parse(VIRTUSERTABLE,".virtusertable");
-      }
-    }
-    } else {
-       $mod->tpl->assign( array(    EMAILALIAS => "",
-                                    USER => ""));
-       $mod->tpl->parse(VIRTUSERTABLE,".virtusertable");
-    }
-
-    /*
-    if(!empty($nousers)){
-      while (list($key, $val) = each($nousers)) {
-        $mod->tpl->assign( array(EMAILALIAS => "@".$key,
-                                 USER => $val));
-        $mod->tpl->parse(VIRTUSERTABLE,".virtusertable");
-      }
-    }
-    */
-
-    $mod->tpl->parse(TABLE, table);
-    if(!empty($users) || !empty($nousers)){
-      $virtusertable_text = $mod->tpl->fetch();
-
-      list($virtusertable_header, $virtusertable_main) = explode("##----##", $virtusertable_text);
-      $virtusertable_array = explode("\n", $virtusertable_main);
-      $virtusertable_array = array_unique($virtusertable_array);
-      $virtusertable_text = $virtusertable_header.(implode("\n", $virtusertable_array));
-
-    } else {
-      $virtusertable_text = "";
-    }
-    $virtusertable_text = str_replace("    \n", "", $virtusertable_text); //Leerzeichen in leerer virtusertable-Datei entfernen
+			if($user["user_emaildomain"] != '') {
+				$tmp_domains = explode("\n",$user["user_emaildomain"]);
+				foreach($tmp_domains as $tmp_domain) {
+					$tmp_domain = trim($tmp_domain);
+					$tmp_email = $user["user_email"];
+					// Check if domain is not empty and if the domain is on the local mailserver
+					if($tmp_domain != '' && in_array($tmp_domain,$local_host_names)) {
+						if($user["user_catchallemail"]) {
+							// add catchall
+							$virtusertable_catchall[$tmp_domain] = $user["user_username"];
+						} else {
+							// add primary user address
+							$virtusertable_email[$tmp_domain][$tmp_email] = $user["user_username"];
+							// add aliases
+							$tmp_aliases = explode("\n", $user["user_emailalias"]);
+							foreach($tmp_aliases as $tmp_alias) {
+								$virtusertable_email[$tmp_domain][$tmp_alias] = $user["user_username"];
+							}
+							unset($tmp_aliases);
+							unset($tmp_alias);
+							unset($tmp_email);
+						} // end if
+					} // end foreach
+					unset($tmp_domains);
+					unset($tmp_domain);
+				} // end if
+			}// end foreach
+			unset($users);
+			unset($user);
+			unset($local_host_names);
+			
+			$virtusertable_text = '###################################
+#
+# ISPConfig virtusertable Configuration File
+#         Version 1.1
+#
+###################################';
+		
+		
+		if(is_array($virtusertable_email)) {
+			foreach($virtusertable_email as $domain => $emails) {
+				$emails = array_unique($emails);
+				foreach($emails as $email => $username) {
+					$virtusertable_text .= $email."@".$domain."    ".$username."\n";
+				} // end foreach
+				if($virtusertable_catchall[$domain]) {
+					$virtusertable_text .= "@".$domain."    ".$username."\n";
+				} // end if
+			} // end foreach
+		} // end if
+			
     $virtusertable_text .= $mod->file->manual_entries($mod->system->server_conf["server_sendmail_virtuser_datei"]);
 
     //Backup erstellen
@@ -287,8 +211,10 @@ function make_virtusertable() {
 
     //virtusertable.db anlegen
     $mod->log->caselog("postmap hash:".$mod->system->server_conf["server_sendmail_virtuser_datei"], $this->FILE, __LINE__);
-    //Leerzeilen löschen
-    $mod->file->remove_blank_lines($mod->system->server_conf["server_sendmail_virtuser_datei"]);
+    
+		//Leerzeilen löschen
+    //$mod->file->remove_blank_lines($mod->system->server_conf["server_sendmail_virtuser_datei"]);
+		
   } else { // POSTFIX-STYLE
     // Template Öffnen
     $mod->tpl->clear_all();
