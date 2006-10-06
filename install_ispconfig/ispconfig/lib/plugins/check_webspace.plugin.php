@@ -37,7 +37,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  # Datum:       18.04.2003
  #
  #############################################################
- 
+
  if(CONFIG_LOADED != 1) die('Direct access not permitted.');
 
 class check_webspace_plugin {
@@ -57,7 +57,7 @@ class check_webspace_plugin {
 
     $html_out .= '<div align="center"><table width="80%" border="0" cellspacing="1" cellpadding="4" bgcolor="#CCCCCC">';
 
-        if($go_info["server"]["sudo_du_enabled"] == true) {
+        if($go_info["server"]["sudo_du_enabled"]) {
             $fd = popen ("sudo du -h --max-depth=1 ".$path_httpd_root."/web".$web_id, "r");
         } else {
                 $fd = popen ("du -h --max-depth=1 ".$path_httpd_root."/web".$web_id, "r");
