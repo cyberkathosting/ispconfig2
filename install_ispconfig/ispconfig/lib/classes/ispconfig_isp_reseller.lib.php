@@ -76,9 +76,9 @@ function reseller_show($doc_id, $doctype_id) {
         if($server["server_enable_frontpage"] != 1) {
             $doc->deck[1]->elements[18]->visible = 0;
         }
-	if($server["server_httpd_mod_perl"] != 1) {
-	    $doc->deck[1]->elements[13]->visible = 0;
-	}
+        if($server["server_httpd_mod_perl"] != 1) {
+            $doc->deck[1]->elements[13]->visible = 0;
+        }
 
         // DNS-Reseller: "Sonstiges"-Tab verstecken (Begrüßungsemail für Kunden nicht nötig)
         // Resellerdaten auslesen
@@ -304,7 +304,7 @@ function reseller_update($doc_id, $doctype_id, $die_on_error = '1') {
       }
       unset($webanzahl);
     }
-    
+
     if(!$reseller["limit_ssi"]){
       $webanzahl = $go_api->db->queryOneRecord("SELECT COUNT(isp_isp_web.doc_id) AS anzahl FROM isp_nodes, isp_isp_web WHERE isp_nodes.groupid = '".$reseller["reseller_group"]."' AND isp_nodes.doctype_id = '".$this->web_doctype_id."' AND isp_nodes.doc_id = isp_isp_web.doc_id AND isp_isp_web.web_ssi = '1'");
       $webanzahl = $webanzahl["anzahl"];
@@ -438,6 +438,12 @@ function reseller_update($doc_id, $doctype_id, $die_on_error = '1') {
           $message = str_replace("%%%CP%%%", $go_info["server"]["server_url"], $message);
           $message = str_replace("%%%MANUAL%%%", $go_info["server"]["server_url"]."/help/documents/".$manual_lng."/reseller.pdf", $message);
 
+          if(trim($go_info["server"]["salutatory_email_charset"]) == '' || !isset($go_info["server"]["salutatory_email_charset"])){
+            $salutatory_email_charset = 'unknown-8bit';
+          } else {
+            $salutatory_email_charset = trim($go_info["server"]["salutatory_email_charset"]);
+          }
+
           $headers  = "From: ".$absender_name." <".$absender_email.">\n";
           if($bcc != "" && eregi("[0-9a-z]([-_.]?[0-9a-z])*@[0-9a-z]([-.]?[0-9a-z])*\\.[a-z]{2,6}$", $bcc) && !strstr($bcc, " ") && !strstr($bcc, "!") && !strstr($bcc, "?") && !strstr($bcc, "\"") && !strstr($bcc, "(") && !strstr($bcc, ")") && !strstr($bcc, "[") && !strstr($bcc, "]") && !strstr($bcc, "{") && !strstr($bcc, "}") && !strstr($bcc, "/") && !strstr($bcc, "#")) $headers .= "Bcc: ".$bcc."\n";
           $headers .= "Reply-To: <".$absender_email.">\n";
@@ -446,7 +452,7 @@ function reseller_update($doc_id, $doctype_id, $die_on_error = '1') {
           $headers .= "X-Priority: 3\n"; //1 UrgentMessage, 3 Normal
           $headers .= "Return-Path: <".$absender_email.">\n";
           $headers .= "MIME-Version: 1.0\n";
-          $headers .= "Content-Type: text/plain\n";
+          $headers .= "Content-Type: text/plain; charset=".$salutatory_email_charset."\n";
           mail($reseller["email"], $subject, $message, $headers);
         }
         ///////////////// Begrüßungsemail schicken ENDE ////////////////
