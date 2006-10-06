@@ -34,6 +34,7 @@ var $FILE = "/root/ispconfig/scripts/lib/classes/ispconfig_postfix.lib.php";
 function make_local_host_names() {
   global $isp_web, $mod, $go_info;
 	
+	
 	// This array $hostnames will contain the lines of the local-host-names file
 	$hostnames = array();
 	
@@ -115,10 +116,11 @@ function make_local_host_names() {
 # ISPConfig local-host-names Configuration File
 #         Version 1.1
 #
-###################################';
+###################################
+';
 
   $sendmail_text = $sendmail_header.(implode("\n", $hostnames));
-	$sendmail_text .= "\n#### MAKE MANUAL ENTRIES BELOW THIS LINE! ####";
+  $sendmail_text .= "\n#### MAKE MANUAL ENTRIES BELOW THIS LINE! ####";
   $sendmail_text .= $mod->file->manual_entries($mod->system->server_conf["server_sendmail_cw"]);
 
   $mod->log->caselog("cp -fr ".$mod->system->server_conf["server_sendmail_cw"]." ".$mod->system->server_conf["server_sendmail_cw"]."~", $this->FILE, __LINE__);
@@ -141,7 +143,7 @@ function make_virtusertable() {
 		$virtusertable_catchall = array();
 		
 		// get all users from the database
-    $users = $mod->db->queryAllRecords("select * from isp_nodes,isp_isp_user WHERE isp_nodes.doc_id = isp_isp_user.doc_id AND isp_nodes.doctype_id = '".$isp_web->user_doctype_id."' AND isp_nodes.status = '1'");
+    	$users = $mod->db->queryAllRecords("select * from isp_nodes,isp_isp_user WHERE isp_nodes.doc_id = isp_isp_user.doc_id AND isp_nodes.doctype_id = '".$isp_web->user_doctype_id."' AND isp_nodes.status = '1'");
 		
 		// get all email domains from local-host-names file
 		$tmp_local_host_names = file_get_contents($mod->system->server_conf["server_sendmail_cw"]);
@@ -149,50 +151,53 @@ function make_virtusertable() {
 		unset($tmp_local_host_names);
 		
 		// go trough each user record
-    if(!empty($users)){
-    foreach($users as $user){
-			if($user["user_emaildomain"] != '') {
-				$tmp_domains = explode("\n",$user["user_emaildomain"]);
-				foreach($tmp_domains as $tmp_domain) {
-					$tmp_domain = trim($tmp_domain);
-					$tmp_email = $user["user_email"];
-					// Check if domain is not empty and if the domain is on the local mailserver
-					if($tmp_domain != '' && in_array($tmp_domain,$local_host_names)) {
-						if($user["user_catchallemail"]) {
-							// add catchall
-							$virtusertable_catchall[$tmp_domain] = $user["user_username"];
-						} else {
-							// add primary user address
-							$virtusertable_email[$tmp_domain][$tmp_email] = $user["user_username"];
-							// add aliases
-							$tmp_aliases = explode("\n", $user["user_emailalias"]);
-							foreach($tmp_aliases as $tmp_alias) {
-								$virtusertable_email[$tmp_domain][$tmp_alias] = $user["user_username"];
-							}
-							unset($tmp_aliases);
-							unset($tmp_alias);
-							unset($tmp_email);
+    	if(!empty($users)){
+    		foreach($users as $user){
+				if($user["user_emaildomain"] != '') {
+					$tmp_domains = explode("\n",$user["user_emaildomain"]);
+					foreach($tmp_domains as $tmp_domain) {
+						$tmp_domain = trim($tmp_domain);
+						$tmp_email = $user["user_email"];
+						// Check if domain is not empty and if the domain is on the local mailserver
+						if($tmp_domain != '' && in_array($tmp_domain,$local_host_names)) {
+							if($user["user_catchallemail"]) {
+								// add catchall
+								$virtusertable_catchall[$tmp_domain] = $user["user_username"];
+							} else {
+								// add primary user address
+								$virtusertable_email[$tmp_domain][$tmp_email] = $user["user_username"];
+								// add aliases
+								$tmp_aliases = explode("\n", $user["user_emailalias"]);
+								foreach($tmp_aliases as $tmp_alias) {
+									$tmp_alias = trim($tmp_alias);
+									if($tmp_alias != '') $virtusertable_email[$tmp_domain][$tmp_alias] = $user["user_username"];
+								}
+								unset($tmp_aliases);
+								unset($tmp_alias);
+								unset($tmp_email);
+							} // end if
 						} // end if
 					} // end foreach
 					unset($tmp_domains);
 					unset($tmp_domain);
-				} // end if
-			}// end foreach
-			unset($users);
-			unset($user);
-			unset($local_host_names);
+				}// end if
+			} // end foreach
+		unset($users);
+		unset($user);
+		unset($local_host_names);
+		}
 			
-			$virtusertable_text = '###################################
+		$virtusertable_text = '###################################
 #
 # ISPConfig virtusertable Configuration File
 #         Version 1.1
 #
-###################################';
+###################################
+';
 		
 		
 		if(is_array($virtusertable_email)) {
 			foreach($virtusertable_email as $domain => $emails) {
-				$emails = array_unique($emails);
 				foreach($emails as $email => $username) {
 					$virtusertable_text .= $email."@".$domain."    ".$username."\n";
 				} // end foreach
@@ -201,21 +206,24 @@ function make_virtusertable() {
 				} // end if
 			} // end foreach
 		} // end if
+		
+		$virtusertable_text .= "#### MAKE MANUAL ENTRIES BELOW THIS LINE! ####";
 			
-    $virtusertable_text .= $mod->file->manual_entries($mod->system->server_conf["server_sendmail_virtuser_datei"]);
+    	$virtusertable_text .= $mod->file->manual_entries($mod->system->server_conf["server_sendmail_virtuser_datei"]);
 
-    //Backup erstellen
-    $mod->log->caselog("cp -fr ".$mod->system->server_conf["server_sendmail_virtuser_datei"]." ".$mod->system->server_conf["server_sendmail_virtuser_datei"]."~", $this->FILE, __LINE__);
-    $mod->file->wf($mod->system->server_conf["server_sendmail_virtuser_datei"], $virtusertable_text);
+    	//Backup erstellen
+    	$mod->log->caselog("cp -fr ".$mod->system->server_conf["server_sendmail_virtuser_datei"]." ".$mod->system->server_conf["server_sendmail_virtuser_datei"]."~", $this->FILE, __LINE__);
+    	$mod->file->wf($mod->system->server_conf["server_sendmail_virtuser_datei"], $virtusertable_text);
 
 
-    //virtusertable.db anlegen
-    $mod->log->caselog("postmap hash:".$mod->system->server_conf["server_sendmail_virtuser_datei"], $this->FILE, __LINE__);
+    	//virtusertable.db anlegen
+    	$mod->log->caselog("postmap hash:".$mod->system->server_conf["server_sendmail_virtuser_datei"], $this->FILE, __LINE__);
     
 		//Leerzeilen löschen
-    //$mod->file->remove_blank_lines($mod->system->server_conf["server_sendmail_virtuser_datei"]);
+    	//$mod->file->remove_blank_lines($mod->system->server_conf["server_sendmail_virtuser_datei"]);
 		
   } else { // POSTFIX-STYLE
+	/*
     // Template Öffnen
     $mod->tpl->clear_all();
     $mod->tpl->no_strict();
@@ -327,6 +335,7 @@ function make_virtusertable() {
     $mod->log->caselog("postmap hash:".$mod->system->server_conf["server_sendmail_virtuser_datei"], $this->FILE, __LINE__);
     //Leerzeilen löschen
     $mod->file->remove_blank_lines($mod->system->server_conf["server_sendmail_virtuser_datei"]);
+		*/
   }
 }
 
