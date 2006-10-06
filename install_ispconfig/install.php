@@ -641,7 +641,19 @@ if($dist == "Trustix30") {
   }
 }
 
-if($install_art == "upgrade"){
+if($install_art == "install"){
+  $postfix_config = '1';
+  $smtp_restart = '1';
+  $network_config = '0';
+  $sudo_du_enabled = 'false';
+  $apache2_php = 'filter,addtype,engine';
+  $password_hash = 'md5';
+  $do_automated_backups = '0';
+  $ssh_chroot = '0';
+  $httpd_check = '1';
+  $salutatory_email_charset = 'iso-8859-1';
+  $mysql_quota_privs = 'Insert,Create';
+} else {
   include("config.inc.php");
 
   //Check if mysql works
@@ -651,7 +663,17 @@ if($install_art == "upgrade"){
     }
     unset($return);
 
-
+  $postfix_config = (isset($go_info["server"]["postfix_config"]) ? $go_info["server"]["postfix_config"] : '1');
+  $smtp_restart = (isset($go_info["server"]["smtp_restart"]) ? $go_info["server"]["smtp_restart"] : '1');
+  $network_config = (isset($go_info["server"]["network_config"]) ? $go_info["server"]["network_config"] : '0');
+  $sudo_du_enabled = (isset($go_info["server"]["sudo_du_enabled"]) ? $go_info["server"]["sudo_du_enabled"] : 'false');
+  $apache2_php = (isset($go_info["server"]["apache2_php"]) ? $go_info["server"]["apache2_php"] : 'filter,addtype,engine');
+  $password_hash = (isset($go_info["server"]["password_hash"]) ? $go_info["server"]["password_hash"] : 'md5');
+  $do_automated_backups = (isset($go_info["server"]["do_automated_backups"]) ? $go_info["server"]["do_automated_backups"] : '0');
+  $ssh_chroot = (isset($go_info["server"]["ssh_chroot"]) ? $go_info["server"]["ssh_chroot"] : '0');
+  $httpd_check = (isset($go_info["server"]["httpd_check"]) ? $go_info["server"]["httpd_check"] : '1');
+  $salutatory_email_charset = (isset($go_info["server"]["salutatory_email_charset"]) ? $go_info["server"]["salutatory_email_charset"] : 'iso-8859-1');
+  $mysql_quota_privs = (isset($go_info["server"]["mysql_quota_privs"]) ? $go_info["server"]["mysql_quota_privs"] : 'Insert,Create');
   $old_version = str_pad(str_replace(".", "", $go_info["server"]["version"]), 4, "0", STR_PAD_RIGHT);
   $server_url = $go_info["server"]["server_url"];
   $server_ispconfigprotocol = parse_url($server_url);
@@ -1191,6 +1213,17 @@ $conf = str_replace("{DB_NAME}", $new_db, $conf);
 $conf = str_replace("{URL}", $url, $conf);
 $conf = str_replace("{PROTOCOL}", $server_ispconfigprotocol."://", $conf);
 $conf = str_replace("{LANG}", $lang, $conf);
+$conf = str_replace("{POSTFIX_CONFIG}", $postfix_config, $conf);
+$conf = str_replace("{SMTP_RESTART}", $smtp_restart, $conf);
+$conf = str_replace("{NETWORK_CONFIG}", $network_config, $conf);
+$conf = str_replace("{SUDO_DU_ENABLED}", $sudo_du_enabled, $conf);
+$conf = str_replace("{APACHE2_PHP}", $apache2_php, $conf);
+$conf = str_replace("{PASSWORD_HASH}", $password_hash, $conf);
+$conf = str_replace("{DO_AUTOMATED_BACKUPS}", $do_automated_backups, $conf);
+$conf = str_replace("{SSH_CHROOT}", $ssh_chroot, $conf);
+$conf = str_replace("{HTTPD_CHECK}", $httpd_check, $conf);
+$conf = str_replace("{SALUTATORY_EMAIL_CHARSET}", $salutatory_email_charset, $conf);
+$conf = str_replace("{MYSQL_QUOTA_PRIVS}", $mysql_quota_privs, $conf);
 if($install_art == "upgrade"){
   if($old_version < 2000){
     $conf = str_replace('$go_info["theme"]["page"]["nav_color"] = "025CCA";', '$go_info["theme"]["page"]["nav_color"] = "E0E0E0";', $conf);

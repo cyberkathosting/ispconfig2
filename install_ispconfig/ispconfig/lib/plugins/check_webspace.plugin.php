@@ -55,7 +55,7 @@ class check_webspace_plugin {
 
     $html_out .= '<div align="center"><table width="80%" border="0" cellspacing="1" cellpadding="4" bgcolor="#CCCCCC">';
 
-        if($go_info["server"]["sudo_du_enabled"] == true) {
+        if($go_info["server"]["sudo_du_enabled"]) {
             $fd = popen ("sudo du -h --max-depth=1 ".$path_httpd_root."/web".$web_id, "r");
         } else {
                 $fd = popen ("du -h --max-depth=1 ".$path_httpd_root."/web".$web_id, "r");
@@ -130,12 +130,12 @@ class check_webspace_plugin {
           }
         }
 
-	$db_size = $belegt / 1024;
+        $db_size = $belegt / 1024;
 
-	*/
+        */
 
-	$used_fract = floatval($web["web_mysql_quota_used_fract"]);
-	$mysqlquota = floatval($web["web_mysql_quota"]);
+        $used_fract = floatval($web["web_mysql_quota_used_fract"]);
+        $mysqlquota = floatval($web["web_mysql_quota"]);
 
     $db_size = $used_fract * $mysqlquota;
 
