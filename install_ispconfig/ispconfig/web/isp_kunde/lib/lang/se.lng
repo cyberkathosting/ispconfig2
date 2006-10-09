@@ -193,6 +193,7 @@ $wb["Willkommen"] = "Välkommen";
 $wb["Es sind nur folgende Zeichen erlaubt: a-z A-Z 0-9 -"] = "Endast följande tecken är tillåtna: a-z A-Z 0-9 -";
 $wb["Es sind nur folgende Zeichen erlaubt: a-z A-Z 0-9 - ."] = "Endast följande tecken är tillåtna: a-z A-Z 0-9 - .";
 $wb["Der Username muss aus min. 4, max 25 Buchstaben oder Zahlen bestehen, wobei er mit einem Buchstaben beginnen muss."] = "Användarnamnet måste innehålla min 4 och max 26 tecken samt måste starta med en bokstav.";
+$wb['Der Username muss aus min. 4, max 32 Buchstaben oder Zahlen bestehen, wobei er mit einem Buchstaben beginnen muss.'] = "Användarnamnet måste innehålla min 4 och max 32 tecken samt måste starta med en bokstav.";
 
 $wb["error_reseller_licence"] = "Denna licens av ISPConfig tillåter inte uppläggning av ny återförsäljare.";
 $wb["error_reseller_licence_nodelete"] = "Denna återförsäljare kan inte raderas.";

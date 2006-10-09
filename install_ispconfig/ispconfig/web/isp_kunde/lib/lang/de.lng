@@ -190,7 +190,8 @@ $wb["Willkommen"] = "Willkommen";
 // Regex Fehlermeldungen
 $wb["Es sind nur folgende Zeichen erlaubt: a-z A-Z 0-9 -"] = "Es sind nur folgende Zeichen erlaubt: a-z A-Z 0-9 -<br>";
 $wb["Es sind nur folgende Zeichen erlaubt: a-z A-Z 0-9 - ."] = "Es sind nur folgende Zeichen erlaubt: a-z A-Z 0-9 - .<br>";
-$wb["Der Username muss aus min. 4, max 25 Buchstaben oder Zahlen bestehen, wobei er mit einem Buchstaben beginnen muss."] = "Der Username muss aus min. 4, max 26 Buchstaben oder Zahlen bestehen, wobei er mit einem Buchstaben beginnen muss.<br>";
+$wb["Der Username muss aus min. 4, max 25 Buchstaben oder Zahlen bestehen, wobei er mit einem Buchstaben beginnen muss."] = "Der Username muss aus min. 4, max. 26 Buchstaben oder Zahlen bestehen, wobei er mit einem Buchstaben beginnen muss.<br>";
+$wb['Der Username muss aus min. 4, max 32 Buchstaben oder Zahlen bestehen, wobei er mit einem Buchstaben beginnen muss.'] = 'Der Username muss aus min. 4, max. 32 Buchstaben oder Zahlen bestehen, wobei er mit einem Buchstaben beginnen muss.<br>';
 
 $wb["error_reseller_licence"] = "Das anlegen neuer Reseller ist mit Ihrer ISPConfig-Lizenz nicht möglich.<br>";
 $wb["error_reseller_licence_nodelete"] = "Dieser Reseller kann nicht gelöscht werden.<br>";

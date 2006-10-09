@@ -194,6 +194,7 @@ $wb["Willkommen"] = "Bienvenue";
 $wb["Es sind nur folgende Zeichen erlaubt: a-z A-Z 0-9 -"] = "Seulement les caractères suivants sont autorisés : a-z A-Z 0-9 -<br>";
 $wb["Es sind nur folgende Zeichen erlaubt: a-z A-Z 0-9 - ."] = "Seulement les caractères suivants sont autorisés : a-z A-Z 0-9 - .<br>";
 $wb["Der Username muss aus min. 4, max 25 Buchstaben oder Zahlen bestehen, wobei er mit einem Buchstaben beginnen muss."] = "Le nom d'utilisatoir doit avoir entre 4 et 26 lettres ou chiffres et doit commencer par une lettre.<br>";
+$wb['Der Username muss aus min. 4, max 32 Buchstaben oder Zahlen bestehen, wobei er mit einem Buchstaben beginnen muss.'] = "Le nom d'utilisatoir doit avoir entre 4 et 32 lettres ou chiffres et doit commencer par une lettre.<br>";
 
 $wb["error_reseller_licence"] = "Ajouter un revendeur n'est pas possible avec votre licence ISPConfig.<br>";
 $wb["error_reseller_licence_nodelete"] = "Ce revendeur ne peut pas être supprimé.<br>";

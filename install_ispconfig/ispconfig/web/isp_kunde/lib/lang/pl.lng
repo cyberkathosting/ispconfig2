@@ -192,6 +192,7 @@ $wb["Willkommen"] = "Witamy";
 $wb["Es sind nur folgende Zeichen erlaubt: a-z A-Z 0-9 -"] = "Dozwolone s± znaki: a-z A-Z 0-9 -";
 $wb["Es sind nur folgende Zeichen erlaubt: a-z A-Z 0-9 - ."] = "Dozwolone s± znaki: a-z A-Z 0-9 - .";
 $wb["Der Username muss aus min. 4, max 25 Buchstaben oder Zahlen bestehen, wobei er mit einem Buchstaben beginnen muss."] = "Nazwa u¿ytkownika musi zawieraæ od 4 do 26 znaków i musi siê zaczynaæ od litery.";
+$wb['Der Username muss aus min. 4, max 32 Buchstaben oder Zahlen bestehen, wobei er mit einem Buchstaben beginnen muss.'] = "Nazwa u¿ytkownika musi zawieraæ od 4 do 32 znaków i musi siê zaczynaæ od litery.";
 
 $wb["error_reseller_licence"] = "Twoja licencja na system ISPConfig nie zezwala na dodawanie resellerów.";
 $wb["error_reseller_licence_nodelete"] = "Tego resellera nie mo¿na sun±æ.";
