@@ -195,6 +195,7 @@ $wb["Willkommen"] = "Dobrodošli";
 $wb["Es sind nur folgende Zeichen erlaubt: a-z A-Z 0-9 -"] = "Dovoljeni so samo sledeèi znaki: a-z A-Z 0-9 -<br>";
 $wb["Es sind nur folgende Zeichen erlaubt: a-z A-Z 0-9 - ."] = "Dovoljeni so samo sledeèi znaki: a-z A-Z 0-9 - .<br>";
 $wb["Der Username muss aus min. 4, max 25 Buchstaben oder Zahlen bestehen, wobei er mit einem Buchstaben beginnen muss."] = "Uporabniško ime mora biti dolgo vsaj 4 znake ter najveè 26 znakov.<br>";
+$wb['Der Username muss aus min. 4, max 32 Buchstaben oder Zahlen bestehen, wobei er mit einem Buchstaben beginnen muss.'] = "Uporabniško ime mora biti dolgo vsaj 4 znake ter najveè 32 znakov.<br>";
 
 $wb["error_reseller_licence"] = "Dodajanje preprodajalcev ne dovoljuje vaša licenca.<br>";
 $wb["error_reseller_licence_nodelete"] = "Ta preprodajalec ne mora biti izbrisan.<br>";
