@@ -117,6 +117,16 @@ $wb["title_isp_beta"] = "";
 $wb["msg_kein_win"] = "Disse Informationen kan ikke bruges under Windows-Styresystemet.";
 
 $wb["txt_object_currently_updated"] = "Dine ændringer kan ikke gemmes da dette emne opdateres. Prøv igen om et øjeblik.<br><br> <a href='../frame_start.php?s=$s'>Næste &gt;&gt;</a>";
-$wb["txt_system_currently_updated_no_recycle_bin"] = "Der kan ikke opnåes adgang til papirkurven da systemet opdateres. Prøv igen om et øjeblik.<br><br> <a href='../frame_start.php?s=$s'>Næste &gt;&gt;</a>"; 
+$wb["txt_system_currently_updated_no_recycle_bin"] = "Der kan ikke opnåes adgang til papirkurven da systemet opdateres. Prøv igen om et øjeblik.<br><br> <a href='../frame_start.php?s=$s'>Næste &gt;&gt;</a>";
+
+$wb['no_permission_to_change_data'] = "<b>Error: You don't have the necessary permissions to change these data.</b><p>
+                <br>
+                This is because of one of the following reasons:<br>
+                1. You are using the system in test mode.<br>
+                   - Log in with your username and password.<br>&nbsp;<br>
+                2. You are trying to change an element which is allocated to another group.<br>
+                   In this group you don't have permission to write / edit data.<br>
+                   - Please ask the owner of the group to grant write access to this resource to you.<br>&nbsp;<br>
+                <center><a href=\"" . $go_info["server"]["server_url"] . "/index.php?s=$s\">Next &gt;&gt;</a></center>";
 
 ?>

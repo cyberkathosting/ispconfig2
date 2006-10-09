@@ -94,4 +94,14 @@ $wb["txt_confirm_delete"] = "您确定要删除该对象?";
 $wb["txt_object_currently_updated"] = "Your changes cannot be saved because this item is currently being updated. Please try again later.<br><br> <a href='../frame_start.php?s=$s'>Next &gt;&gt;</a>";
 $wb["txt_system_currently_updated_no_recycle_bin"] = "The recycle bin cannot be accessed because the system is currently being updated. Please try again in a few minutes.<br><br> <a href='../frame_start.php?s=$s'>Next &gt;&gt;</a>";
 
+$wb['no_permission_to_change_data'] = "<b>Error: You don't have the necessary permissions to change these data.</b><p>
+                <br>
+                This is because of one of the following reasons:<br>
+                1. You are using the system in test mode.<br>
+                   - Log in with your username and password.<br>&nbsp;<br>
+                2. You are trying to change an element which is allocated to another group.<br>
+                   In this group you don't have permission to write / edit data.<br>
+                   - Please ask the owner of the group to grant write access to this resource to you.<br>&nbsp;<br>
+                <center><a href=\"" . $go_info["server"]["server_url"] . "/index.php?s=$s\">Next &gt;&gt;</a></center>";
+
 ?>

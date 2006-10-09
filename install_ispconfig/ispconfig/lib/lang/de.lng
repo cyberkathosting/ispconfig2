@@ -105,6 +105,16 @@ $wb["title_isp_beta"] = "";
 $wb["msg_kein_win"] = "Diese Informationen stehen unter Windows-Betriebssystemen nicht zur Verfügung.";
 
 $wb["txt_object_currently_updated"] = "Ihre Änderungen können nicht gespeichert werden, weil das Objekt gerade aktualisiert wird. Bitte versuchen Sie es später noch einmal.<br><br> <a href='../frame_start.php?s=$s'>Weiter &gt;&gt;</a>";
-$wb["txt_system_currently_updated_no_recycle_bin"] = "Auf den Papierkorb kann nicht zugegriffen werden, da das System gerade aktualisiert wird. Bitte versuchen Sie es in ein paar Minuten noch einmal.<br><br> <a href='../frame_start.php?s=$s'>Weiter &gt;&gt;</a>";  
+$wb["txt_system_currently_updated_no_recycle_bin"] = "Auf den Papierkorb kann nicht zugegriffen werden, da das System gerade aktualisiert wird. Bitte versuchen Sie es in ein paar Minuten noch einmal.<br><br> <a href='../frame_start.php?s=$s'>Weiter &gt;&gt;</a>";
+
+$wb['no_permission_to_change_data'] = "<b>Fehler: Sie haben nicht die notwendige Berechtigung, diese Daten zu ändern</b><p>
+                <br>
+                Das kann folgende Ursachen haben:<br>
+                1. Sie benutzen das System im Testmodus.<br>
+                   - Melden Sie sich mit Ihrem Benutzernamen und Passwort an.<br>&nbsp;<br>
+                2. Sie versuchen ein Element zu ändern, das einer anderen Nutzergruppe zugeordnet ist.<br>
+                   In dieser Gruppe besitzen Sie keine Berechtigung zum Schreiben / Ändern.<br>
+                   - Bitten Sie den Eigentümer der Gruppe, Ihnen Schreibrechte auf diese Ressource zu geben.<br>&nbsp;<br>
+                <center><a href=\"" . $go_info["server"]["server_url"] . "/index.php?s=$s\">Weiter &gt;&gt;</a></center>";
 
 ?>

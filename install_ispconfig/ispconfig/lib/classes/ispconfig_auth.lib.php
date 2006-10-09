@@ -50,7 +50,7 @@ class auth
                 /* Check nach login PUT Variablen*/
                 if (($username != "") && ($passwort != "")) {
                     $username = addslashes($username);
-					$passwort = addslashes($passwort);
+                                        $passwort = addslashes($passwort);
 
                     if ($row = $go_api->db->queryOneRecord("SELECT username,doc_id FROM sys_user WHERE username = '$username' AND (passwort = PASSWORD('$passwort') OR passwort = '".md5($passwort)."')")) {
                         if($row["username"] == $username)
@@ -112,18 +112,18 @@ class auth
         }
 
         }
-		
-		function user_type($user_id) {
-		global $go_api, $s;
-		
-		if($user_id == 1) return "admin";
-		
-		$sys_resl_count = $go_api->db->queryOneRecord("SELECT count(doc_id) as num from isp_isp_reseller where reseller_userid = $user_id");
-		if($sys_resl_count["num"] >= 1) return "reseller";
-		
-		$sys_user_count = $go_api->db->queryOneRecord("SELECT count(doc_id) as num from isp_isp_kunde where webadmin_userid = $user_id");
-		if($sys_user_count["num"] >= 1) return "client";
-		}
+
+                function user_type($user_id) {
+                global $go_api, $s;
+
+                if($user_id == 1) return "admin";
+
+                $sys_resl_count = $go_api->db->queryOneRecord("SELECT count(doc_id) as num from isp_isp_reseller where reseller_userid = $user_id");
+                if($sys_resl_count["num"] >= 1) return "reseller";
+
+                $sys_user_count = $go_api->db->queryOneRecord("SELECT count(doc_id) as num from isp_isp_kunde where webadmin_userid = $user_id");
+                if($sys_user_count["num"] >= 1) return "client";
+                }
 
         function check_perms($groupid,$rights,$action = 0)
         {
@@ -140,15 +140,7 @@ class auth
                 {
                 return true;
                 } else {
-                $message = "<b>Fehler: Sie haben nicht die notwendige Berechtigung diese Daten zu ändern</b><p>
-                <br>
-                Das kann folgende Ursachen haben:<br>
-                1. Sie benutzen das System im Testmodus<br>
-                   - Melden Sie sich mit Ihrem Benutzernamen und Passwort an.<br>&nbsp;<br>
-                2. Sie versuchen ein Element zu ändern, das einer anderen Nutzergruppe zugeordnet ist.<br>
-                   In dieser Gruppe besitzen Sie keine Berechtigung zum Schreiben / Ändern.<br>
-                   - Bitten Sie den Eigentümer der Gruppe Ihnen Schreibrechte auf diese Ressource zu geben.<br>&nbsp;<br>
-                <center><a href=\"" . $go_info["server"]["server_url"] . "/index.php?s=$s\">Weiter &gt;&gt;</a></center>";
+                $message = $go_api->lng('no_permission_to_change_data');
 
                 if($action == 0) {
             $go_api->errorMessage($message);
