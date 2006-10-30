@@ -37,7 +37,7 @@ $wb["Dokument suchen"] = "Pretraga Dokumenta ";
 $wb["Suchmaske"]    = "Kljuène reèi Pretrage";
 $wb["Ausgabeformat"] = "Izlazni format";
 $wb["Standard"]     = "Standard";
-$wb["Einträge"]    = "Entries";
+$wb["Einträge"]    = "Podaci";
 $wb["Papierkorb leeren"] = "Isprazni korpu za otpatke";
 $wb["Stammordner"]  = "Master Zone";
 $wb["keine Gruppe"] = "Nema grupe";
@@ -46,7 +46,7 @@ $wb["auf"]   = "proširi";
 $wb["zu"]    = "sažmi";
 $wb["in_ordner"]    = "u Folder-a";
 $wb["Papierkorb"]   = "Korpa za otpatke";
-$wb["Wiederherstellen"]    = "Restore";
+$wb["Wiederherstellen"]    = "Obnovi";
 $wb["Papierkorb: Einträge"]   = "Korpa za otpatke: sadržaj";
 $wb["Speichern"]    = "Snimi";
 $wb["Löschen"]    = "Obriši";
@@ -56,7 +56,7 @@ $wb["Suchen"]    = "Pretraži";
 $wb["Herr"] = "G-din";
 $wb["Frau"] = "G-ða";
 
-$wb["Es ist folgender Fehler aufgetreten:"] = "Došlo je do sledeže greške:";
+$wb["Es ist folgender Fehler aufgetreten:"] = "Došlo je do sledeæe greške:";
 
 $wb["Web-FTP"] = 'Web-FTP';
 $wb["ISP Faktura"] = 'ISP Raèun';
@@ -67,47 +67,47 @@ $wb["Hilfe"] = 'Pomoæ';
 $wb["Online Hilfe"] = 'Online Pomoæ';
 $wb["schliessen"] = 'zatvori';
 
-$wb["PAPIERKORB_HINWEIS"] = "<b>Note:</b> Datoteke preostale u korpi za otpatke nakon njenog pražnjenja su trenutno u fazi osvežavanja. Probajte da ih obrišete kasnije.";
+$wb["PAPIERKORB_HINWEIS"] = "<b>Note:</b> Datoteke preostale u korpi za otpatke nakon njenog pražnjenja su trenutno u fazi ažuriranja. Probajte da ih obrišete kasnije.";
 
 
 // Multidoc  Allgemein ////////////////////////////////
 
-$wb["title_required"] = "Please enter a value into the field 'Title'";
-$wb["error_keine_rechte"] = "You do not have the necessary privileges to read or edit this entry.";
-$wb["error_doctype_nicht_vorhanden"] = "The requested document type does not exist.";
-$wb["error_doctype_rechte"] = "You do not have the necessary privileges to edit this document type.";
-$wb["Formular Designer"] = "Form Designer";
-$wb["Geben Sie einen Wert in das Feld"] = "Please enter a value in the field";
+$wb["title_required"] = "Unesite podatak u polje 'Naslov'";
+$wb["error_keine_rechte"] = "Nemate potrebne privilegije da bi ste èitali ili menjali ovaj podatak.";
+$wb["error_doctype_nicht_vorhanden"] = "Zahtevani tip dokumenta ne postoji.";
+$wb["error_doctype_rechte"] = "Nemate neophodne privilegije da bi ste menjali ovaj tip dokumenta.";
+$wb["Formular Designer"] = "Dizajner Obrazaca";
+$wb["Geben Sie einen Wert in das Feld"] = "Unesite podatak u polje";
 $wb["jscript_ein"] = " ";
 
 ////////////// Allgemein Ende ///////////////////
 
 $wb["Es konnte ein Dokument nicht wiederhergestellt werden, da sich das Eltern-Dokument noch im Papierkorb befindet.\n"] = "The object cannot be restored as long as its parent object is in the recycle bin.";
 
-$wb["DNS-Domains angelegt"] = 'Master Zones created';
-$wb["Benutzter Diskspace"] = "Diskspace used";
-$wb["Slave Zones angelegt"] = "Slave Zones created";
-$wb["Datenbanken angelegt"] = "Databases created";
+$wb["DNS-Domains angelegt"] = 'Glavna Zona je kreirana';
+$wb["Benutzter Diskspace"] = "Iskorišæenost diska";
+$wb["Slave Zones angelegt"] = "Pomoæna Zona je kreirana";
+$wb["Datenbanken angelegt"] = "Baza podataka je kreirana";
 
-$wb["txt_confirm_delete"] = "Do you really want to delete this object?";
+$wb["txt_confirm_delete"] = "Da li zaista želite da obrišete ovaj objekat?";
 
-$wb["txt_object_currently_updated"] = "Your changes cannot be saved because this item is currently being updated. Please try again later.<br><br> <a href='../frame_start.php?s=$s'>Next &gt;&gt;</a>";
-$wb["txt_system_currently_updated_no_recycle_bin"] = "The recycle bin cannot be accessed because the system is currently being updated. Please try again in a few minutes.<br><br> <a href='../frame_start.php?s=$s'>Next &gt;&gt;</a>"; 
+$wb["txt_object_currently_updated"] = "Vaše promene ne mogu biti snimljene zato še ovaj podatak sada ažurira. Probajte kasnije.<br><br> <a href='../frame_start.php?s=$s'>Sledeæe &gt;&gt;</a>";
+$wb["txt_system_currently_updated_no_recycle_bin"] = "Ne može se pristupiti korpi za otpatke zato što se sistem trenutno ažurira. Probajte ponovo nakon nekoliko minuta.<br><br> <a href='../frame_start.php?s=$s'>Sledeæe &gt;&gt;</a>"; 
 
-$wb["user_perms_nowrite_hd"]         = "Error occured: You do not have the sufficient rights to change that file";
-$wb["user_perms_nowrite_reasons"]    = "Possbile reasons for that issue";
-$wb["user_perms_nowrite_reasons_1a"] = "1. You are using that system in demo mode";
-$wb["user_perms_nowrite_reasons_1b"] = "- Please log in with your username and password.";
-$wb["user_perms_nowrite_reasons_2a"] = "2. You try to change an element which belongs to another group.";
-$wb["user_perms_nowrite_reasons_2b"] = "You do not have the sufficient rights in this group for writing / changing data.";
-$wb["user_perms_nowrite_reasons_2c"] = "- Please contact the group's owner to grant you the sufficient rights.";
+$wb["user_perms_nowrite_hd"]         = "Došlo je do greške: Nemate dovoljne privilegije da promenite tu datoteku";
+$wb["user_perms_nowrite_reasons"]    = "Moguæi razlozi za taj problem";
+$wb["user_perms_nowrite_reasons_1a"] = "1. Koristite taj sistem u demo modu";
+$wb["user_perms_nowrite_reasons_1b"] = "- Prijavite se sa vašim korisnièkim imenom i lozinkom.";
+$wb["user_perms_nowrite_reasons_2a"] = "2. Pokušavate da promenite element koji pripada drugoj grupi.";
+$wb["user_perms_nowrite_reasons_2b"] = "Nemate dovoljne privilegije u ovoj grupi za upisivanje / promenu podataka.";
+$wb["user_perms_nowrite_reasons_2c"] = "- Kontaktirajte vlasnika grupe da bi Vam odobrio neophodna prava.";
 
-$wb["group_perms_nowrite_hd"]         = "Error occured: You do not have the necessary group rights";
-$wb["group_perms_nowrite_reasons"]    = "Possbile reasons for that issue";
-$wb["group_perms_nowrite_reasons_1a"] = "1. You are using that system in demo mode";
-$wb["group_perms_nowrite_reasons_1b"] = "- Please log in with your username and password.";
-$wb["group_perms_nowrite_reasons_2a"] = "2. You try to change an element which belongs to another group.";
-$wb["group_perms_nowrite_reasons_2b"] = "You do not have the sufficient rights in this group for writing / changing data.";
-$wb["group_perms_nowrite_reasons_2c"] = "- Please contact the group's owner to grant you the sufficient rights.";
+$wb["group_perms_nowrite_hd"]         = "Došlo je do greške: Nemate odgovarajuæe grupna prava";
+$wb["group_perms_nowrite_reasons"]    = "Moguæi razlozi za taj problem";
+$wb["group_perms_nowrite_reasons_1a"] = "1. Koristite taj sistem u demo modu";
+$wb["group_perms_nowrite_reasons_1b"] = "- Prijavite se sa vašim korisnièkim imenom i lozinkom.";
+$wb["group_perms_nowrite_reasons_2a"] = "2. Pokušavate da promenite element koji pripada drugoj grupi.";
+$wb["group_perms_nowrite_reasons_2b"] = "Nemate dovoljna prava u ovoj grupi da bi ste upisivali / menjali podatke.";
+$wb["group_perms_nowrite_reasons_2c"] = "- Kontaktirajte vlasnika grupe da bi Vam odobrio neophodna prava.";
 
 ?>
