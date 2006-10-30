@@ -1,0 +1,32 @@
+<?
+
+/**********************************************
+* ISPConfig Help File
+* Version 1.2
+* Syntax: $hlp["FieldName"] = "HelpText";
+************************************************/
+
+$hlp["kunde_anrede"] = "Please select the salutatory address for the customer.";
+$hlp["kunde_firma"] = "Please enter the company name of the customer.";
+$hlp["kunde_vorname"] = "Please enter the first name of the customer.";
+$hlp["kunde_name"] = "Please enter the surname of the customer.";
+$hlp["kunde_strasse"] = "Please enter the street of the customer.";
+$hlp["kunde_plz"] = "Please enter the ZIP code of the customer.";
+$hlp["kunde_ort"] = "Please enter the town of the customer.";
+$hlp["kunde_land"] = "Please enter the country of the customer.";
+$hlp["kunde_telefon"] = "Please enter the telephone number of the customer.";
+$hlp["kunde_fax"] = "Please enter the fax number of the customer.";
+$hlp["kunde_email"] = "Please enter the email address of the customer.";
+$hlp["kunde_internet"] = "Please enter the URL of the customer's website.";
+$hlp["webadmin_user"] = "Please enter the user name for the customer's login to the ISPConfig system.";
+$hlp["webadmin_passwort"] = "Please enter the ISPConfig password of the customer.";
+$hlp["rechnung_firma"] = "Please enter the billing data (company name) of the customer.";
+$hlp["rechnung_vorname"] = "Please enter the billing data (first name) of the customer.";
+$hlp["rechnung_name"] = "Please enter the billing data (surname) of the customer.";
+$hlp["rechnung_strasse"] = "Please enter the billing data (street) of the customer.";
+$hlp["rechnung_plz"] = "Please enter the billing data (ZIP code) of the customer.";
+$hlp["rechnung_ort"] = "Please enter the billing data (town) of the customer.";
+$hlp["rechnung_land"] = "Please enter the billing data (country) of the customer.";
+$hlp["rechnung_intervall"] = "Please enter the billing periods for the items of the customer.";
+$hlp["rechnung_zahlungsbedingungen"] = "Please enter the payment conditions for the customer.";
+?>
