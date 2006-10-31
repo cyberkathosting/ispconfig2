@@ -6,10 +6,10 @@
 * Syntax: $hlp["FieldName"] = "HelpText";
 ************************************************/
 
-$hlp["limit_user"] = "Please enter the maximum amount of users the reseller is allowed to create.";
-$hlp["limit_disk"] = "Please specify the maximum amount of storage space the reseller is allowed to use.";
-$hlp["limit_web"] = "Please enter the maximum amount of webs the reseller is allowed to create.";
-$hlp["limit_domain"] = "Please enter the maximum amount of domains the reseller is allowed to create";
+$hlp["limit_user"] = "Odredite maksimalni broj korisnika koje preprodavac može da kreira.";
+$hlp["limit_disk"] = "Odredite maksimalnu kolièninu prostora koju preprodavac može da koristi.";
+$hlp["limit_web"] = "Unesite maksimalni broj internet prezentacija koje preprodavac može da kreira.";
+$hlp["limit_domain"] = "Unesite maksimalni broj domena koje preprodavac može da kreira";
 $hlp["limit_http_include"] = "Please specify if the reseller is allowed to create additional Apache directives.";
 $hlp["limit_dns_manager"] = "Please specify if the reseller is allowed to create DNS entries.";
 $hlp["limit_domain_dns"] = "Please specify the maximum number of domains for which the reseller is allowed to create Primary (Master) DNS records.";
