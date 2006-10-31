@@ -9,14 +9,14 @@
 $hlp["artikelnummer"] = "Unesite broj dela za proizvod. Možete slobodno koristiti bilo koji broj.";
 $hlp["artikeltyp"] = "Odaberite tip dela sa spiska.";
 $hlp["artikelbezeichnung"] = "Navedite ime dela.";
-$hlp["verrechnung"] = "Please specify the billing period (in months) for the item. For example 1 means monthly, 6 means half-yearly, 12 means yearly; 0 means one-time.";
-$hlp["artikeleinheit"] = "Please select the unit of the item from the list.";
-$hlp["artikelpreis"] = "Please enter the price per unit of the item.";
-$hlp["abpackung"] = "Amount of units per package.";
-$hlp["beschreibung"] = "Here you can describe the item.";
-$hlp["artikelgroup"] = "Please select for which reseller the item is valid. If nothing is selected the item is valid for all resellers.";
-$hlp["weitere_artikeleinheit"] = "Unit for traffic exceedance.";
-$hlp["weitere_abpackung"] = "Amount of MB or GB that are billed on exceedance.";
-$hlp["weitere_artikelpreis"] = "Price for traffic exceedance.";
-$hlp["steuersatz"] = "Please specify the VAT rate (e.g. 16%).";
+$hlp["verrechnung"] = "Odaberite period naplate (u mesecima) za deo. Na primer 1 znaèi meseèno, 6 znaèi polugodišnje, 12 znaèi godišnje; 0 znaèi jednokratno.";
+$hlp["artikeleinheit"] = "Odaberite jedninicu dela sa liste.";
+$hlp["artikelpreis"] = "Odaberite cenu po po jedinici za deo.";
+$hlp["abpackung"] = "Kolièina jedinica po pakovanju.";
+$hlp["beschreibung"] = "Ovde možete opisati deo.";
+$hlp["artikelgroup"] = "Odaberite za kog preprodavca je deo važeæi. Ako ništa nije odabrano deo je važeæi za sve preprodavce.";
+$hlp["weitere_artikeleinheit"] = "Jedinica za prekoraèenje potrošnje.";
+$hlp["weitere_abpackung"] = "Kolièina MB ili GB koja se naplaæuje po prekoraèenju potrošnje.";
+$hlp["weitere_artikelpreis"] = "Cena za prekoraèenje potrošnje.";
+$hlp["steuersatz"] = "Navedite stopu PDV-a (npr. 18%).";
 ?>
