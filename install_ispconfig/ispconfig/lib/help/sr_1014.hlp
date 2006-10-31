@@ -6,12 +6,12 @@
 * Syntax: $hlp["FieldName"] = "HelpText";
 ************************************************/
 
-$hlp["user_username"] = "Please specify a user name. You can enter any user name as long as it does not contain umlauts (ä, ö,ü), special characters (@, %, ...) and blanks. The maximum length is 26 characters.";
-$hlp["user_passwort"] = "Please specify a password. You can enter any password as long as it does not contain umlauts (ä, ö,ü), special characters (@, %, ...) and blanks.";
-$hlp["user_speicher"] = "Please enter the storage space for the user.";
-$hlp["user_admin"] = "Makes the user the administrator for this web. Only one user per web can be an administrator.";
-$hlp["user_shell"] = "Enables shell access for the user.";
-$hlp["user_emailalias"] = "Here you can enter further email aliases (e.g. different spellings) in order to be able to receive emails for those aliases. Enter only the part in front of \"@\"!";
+$hlp["user_username"] = "Unesite korisnièko ime. Možete uneti bilo koje korisnièko ime koje ne sadrži posebna slova (ä, ö,ü), posebne znake (@, %, ...) i prazna mesta. Maksimalna dužina je 26 karaktera.";
+$hlp["user_passwort"] = "Unesite lozinku. Možete uneti bilo koju lozinku koja ne sadrži posebna slova (ä, ö,ü), posebne znake (@, %, ...) i prazna mesta.";
+$hlp["user_speicher"] = "Unesite dodeljeni prostor za korisnika.";
+$hlp["user_admin"] = "Pretvara korisnika u administratora za ovu internet prezentaciju. Samo jedan korisnik po internet prezentaciji može biti admnistrator.";
+$hlp["user_shell"] = "Omoguæava shell pristup za korisnika.";
+$hlp["user_emailalias"] = "Ovde možete uneti Here you can enter further email aliases (e.g. different spellings) in order to be able to receive emails for those aliases. Enter only the part in front of \"@\"!";
 $hlp["user_name"] = "Please enter the real name of the user.";
 $hlp["user_autoresponder"] = "Activates the email autoresponder for the email boxes of the user.";
 $hlp["user_autoresponder_text"] = "Please enter a text for the email autoresponder.";
