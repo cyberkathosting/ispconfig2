@@ -1,0 +1,391 @@
+<?
+/********************************
+* ISPConfig Dictionary File
+* Version 1.0
+*********************************/
+
+//////////////// Tools //////////////////////
+$wb["Tools & Optionen"] = "Alati i Opcije";
+$wb["Passwort ändern"] = "Promena Lozinke";
+$wb["Allgemein"]    = "Opšte";
+$wb["Passwort alt"] = "stara lozinka";
+$wb["Passwort neu"] = "nova lozinka";
+$wb["Passwort wiederholen"] = "potvrda nove lozinke";
+$wb["Adresse ändern"] = "Promena Adrese";
+
+$wb["willkommen_kunde"] = "Dobrodošli u ISPConfig!
+Možete da ureðujete vaše internet prezentacije na ovom mestu. Ako imate pitanja ili probleme,
+kontaktirajte vašeg server administratora ili pogledajte uputstvo za klijente ISPConfig-a.";
+$wb["Willkommen"] = "Dobrodošli";
+
+$wb["passwort_gespeichert"] = "Promena lozinke uspešno obavljena.";
+$wb["passwort_uebereinstimmung"] = "Dve lozinke nisu u saglasju jedna sa drugom. Proverite da li su lozinke u poljima --Nova lozinka-- i --Ponovite novu lozinku-- identiène.";
+$wb["passwort_alt"] = "Lozinka ne može biti promenjena <br>zato što stara lozinka nije ispravna.";
+
+// NEW 1.1.12 ///////////////////////////////
+
+$wb["Backup Manager"] = 'Upravitelj arhiviranja podataka';
+$wb["Backup"] = 'Arhiviranje podataka';
+$wb["Restore"] = 'Obnavljanje';
+$wb["Daten Export"] = 'Izvoz podataka';
+$wb["Update Manager"] = 'Upravitelj ažuriranja';
+$wb["Portscanner"] = 'Skener portova';
+$wb["Whois"] = 'Whois';
+$wb["Download"] = 'Preuzimanje datoteka';
+$wb["FTP-Server"] = 'FTP-Server';
+$wb["Verzeichnis"] = 'Omotnica';
+$wb["Web Daten"] = 'Podactci internet prezentacije';
+$wb["User Daten"] = 'Korisnikovi podatci';
+$wb["Log Daten"] = 'Podatci log datoteka';
+$wb["mySQL Datenbank (wenn vorhanden)"] = 'mySQL Baza podataka';
+$wb["Backup starten"] = 'Poèni Arhiviranje podataka';
+$wb["Kein Web vorhanden."] = 'Nije pronaðena internet prezentacija.';
+$wb["Web-Backup"] = 'Arhiviranje internet prezentacije';
+$wb["Kunden-Stammaten"] = 'Podatci klijentata';
+$wb["Format Einstellungen"] = 'Specifikacija Formata';
+$wb["Trennzeichen"] = 'Delilac';
+$wb["Eingeschlossen mit"] = 'obuhvaæen sa';
+$wb["Daten für folgende Anbieter exportieren"] = 'Izvoz Podataka';
+$wb["Export starten"] = 'Poèetak izvoza';
+$wb["Anbieter-Stammdaten"] = 'Podatci preprodavca';
+$wb["Export"] = 'Izoz';
+$wb["Von"] = 'Od';
+$wb["Bis"] = 'Ka';
+$wb["Local Portscanner"] = 'Lokalni skener portova';
+
+// NEW 1.1.12a //////////////////////////////
+
+$wb["Es wurde kein Web ausgewählt."] = "Nije odabrana internet prezentacija.";
+$wb["Backup-Funktionen im Demo-Modus nicht verfügbar."] = "Funkcije arhiviranja nisu dostupne u demo modu.";
+$wb["Backup Status"] = "Staus Arhiviranja";
+$wb["Der Name des FTP-Servers <br>enthält ungültige Zeichen."] = "naziv FTP servera<br>sadrži neispravne karaktere.";
+$wb["Sie haben keinen FTP Benutzernamen angegeben."] = "Nije podešeno FTP-Korisnièko ime.";
+$wb["Ftp-Verbindung nicht hergestellt!"] = "FTP-Konekcija nije uspela!";
+$wb["Verbindung mit:"] = "Connected to:";
+$wb["als Benutzer:"] = "as User:";
+$wb["nicht möglich."] = "not possible.";
+$wb["Konnte nicht in Verzeichnis:"] = "changing to folder:";
+$wb["wechseln."] = "failed.";
+$wb["Wechsel in Verzeichnis:"] = "changing to folder:";
+$wb["Ftp upload war fehlerhaft!"] = "FTP-Upload failed!";
+$wb["Upload erfolgreich."] = "Upload successful.";
+$wb["FTP-Upload Status"] = "FTP-Upload Status";
+$wb["Backup-Methode nicht unterstützt."] = "Backup-method not available.";
+$wb["Sprache ändern"] = "Change Language";
+$wb["Sprache (ISO)"] = "Language (ISO)";
+$wb["Software Version"] = "Software Version";
+
+
+//////////////// Tools Ende /////////////////
+
+///////////////// ISP Manager //////////////////
+$wb["Anbieter"]     = "Reseller";
+$wb["Kunde"]        = "Customer";
+$wb["Suchen"]       = "Search";
+$wb["Stammdaten"]   = "Master data";
+$wb["Limits"]       = "Limits";
+$wb["Zugangsdaten"] = "Enter information";
+$wb["Statistik"]    = "Statistics";
+$wb["Firma"]        = "Company";
+$wb["Anrede"]       = "Address";
+$wb["Vorname"]      = "First Name";
+$wb["Name"]         = "Surname";
+$wb["Strasse"]      = "Street";
+$wb["PLZ"]          = "Postal code";
+$wb["Ort"]          = "Town";
+$wb["Land"]         = "Country";
+$wb["Telefon"]      = "Telephone";
+$wb["Fax"]          = "Fax";
+$wb["Internet"]     = "Web address";
+$wb["Öffnen"]      = "Open";
+$wb["Benutzername"] = "Username"; // besser: vielleicht nur Variable $wb["username"] benutzen?
+$wb["zugangsdaten_anbieter_einleitung"] = "Here you can set a username and password for the reseller.";
+$wb["zugangsdaten_kunde_einleitung"] = "Here you can set a username and password to manage <br> specified sites.<br> ";
+$wb["Web Verwaltung"] = "Site Management";
+$wb["Rechnung"]      = "Bill";
+$wb["Rechnungsanschrift:"] = "Billing address:<br>";
+$wb["Intervall"]    = "Interval";
+$wb["Preis"]        = "Price";
+$wb["Zahlungsart"]  = "Payment method";
+$wb["Basis"]        = "Basis";
+$wb["Create DNS"]   = "Create DNS";
+$wb["Speicher MB"]     = "Space MB";
+$wb["Max. User"]        = "Max. User";
+$wb["Max. Domain"]        = "Max. Domain";
+$wb["PHP Scripte"]        = "PHP Scripts";
+$wb["SSI"]        = "SSI";
+$wb["FTP Zugang"]        = "FTP access";
+$wb["mySQL"]        = "mySQL";
+$wb["SSL"]        = "SSL";
+$wb["Shell Zugriff"]      = "Shell Access";
+$wb["Zugang"]       = "Access";  // Zugriff u. Zugang zusammenfassen!/nur einen Begriff nehmen!
+$wb["CGI Scripte"]      = "CGI Scripts";
+$wb["CGI Modus"]      = "CGI Mode";
+$wb["CGI mod_perl"]      = "CGI mod_perl";
+$wb["Bundesland"]   = "County";
+$wb["Abteilung"]    = "Department";
+$wb["Gültigkeit (Tage)"]  = "Validity (days)";
+$wb["SSL Key"]          = "SSL Key";
+$wb["SSL Zertifikat"]   = "SSL Certificate";
+$wb["Aktion"]       = "Action";
+$wb["Zertifikat erzeugen"] = "Create certificate";
+$wb["Zertifikat speichern"] = "Save certificate";
+$wb["Zertifikat löschen"] = "Delete Certificate";
+$wb["Speicherplatz gesamt"] = "Storage space";
+$wb["unlimitiert"]  = "unlimited";
+$wb["verbraucht"]   = "used";
+$wb["Trafficübersicht"] = "Traffic overview";
+$wb["Monat"]        = "Month";
+$wb["Traffic"]      = "Traffic";
+$wb["traffic_letzte_4"] = "Traffic in the last 4 years";
+$wb["Jahr"]         = "Year";
+$wb["mySQL User"]        = "mySQL Username";
+$wb["mySQL Passwort"]    = "mySQL Password";
+
+// Ergänzungen /////////////////////////////////
+$wb["Anbieter neu"] = "New reseller";
+$wb["Kunde neu"]    = "New client";
+$wb["Web neu"]      = "New site";
+$wb["Ordner neu"]   = "Sort by";
+$wb["Suchen"]       = "Search";
+$wb["ISP Anbieter"] = "ISP Reseller";
+$wb["Webs"] = "Sites";
+$wb["User"] = "User";
+$wb["Domains"] = "Domains";
+$wb["Zahlung"] = "Payment";
+$wb["ISP Kunde"] = "ISP Client";
+$wb["ISP Web"] = "ISP Site";
+$wb["Kunden"] = "Clients";
+$wb["Dokument suchen"] = "Document search";
+
+$wb["User & Email"] = "User & Email";
+$wb["Co-Domains"] = "Co-Domains";
+$wb["SSL"] = "SSL";
+$wb["Optionen"] = "Options";
+
+$wb["Webs angelegt"] = "Sites used";
+$wb["User angelegt"] = "Users used";
+$wb["Domains angelegt"] = "Domains used";
+$wb["rechnungsanschrift"] = "Invoice address:<br> ";
+
+
+$wb["neues Web anlegen"] = "New site";
+$wb["weiter"] = "next";
+$wb["SUCHE"] = "search";
+
+$wb["msg_beta"] = "";
+$wb["title_isp_beta"] = "";
+$wb["msg_kein_win"] = "This software is not available for the Windows operating systems.";
+
+// Error Codes ispconfig_isp_domain.lib.php
+$wb["error_web_doppelt"] = "There is already a site or domain with that name";
+$wb["error_max_domain_web"] = "The maximum number of domains for this site has been reached";
+$wb["error_max_domain_anbieter"] = "The reseller's maximum number of domains has been reached";
+$wb["angelegt"] = "used";
+
+// Error Codes ispconfig_isp_kunde.lib.php
+$wb["error_user_exist_1"] = "The ISPConfig user";
+$wb["error_user_exist_2"] = "exists already.  The user was not added or changed.";
+$wb["error_max_user_licence"] = "The maximum number of ISPConfig user accounts for the license has been reached.";
+
+
+// Error Codes ispconfig_isp_reseller.lib.php
+$wb["error_reseller_title"] = "A reseller with this title exists already.";
+$wb["error_reseller_group_not_found"] = "The reseller group could not be found.";
+$wb["error_anbieter_no_delete"] = "<b>The reseller was not deleted.</b><br>&nbsp;<br>The reseller can only be deleted if all sites and customers of the reseller have been deleted.  Also make sure that the waste-paper basket of the reseller is empty.";
+
+// Error Codes ispconfig_isp_user.lib.php
+$wb["error_sysuser_exist_1"] = "There is already a user with the name";
+$wb["error_sysuser_exist_2"] = "entered.<br><br> <a href='../../isp_manager/frame_start.php?s=$s'>More</a>";
+$wb["error_max_user_web"] = "The maximum number of site users has been reached.<br><br> <a href='../../isp_manager/frame_start.php?s=$s'>More</a>";
+$wb["error_max_space_web"] = "The selected diskspace exceeds site's limits.<br><br> <a href='../../isp_manager/frame_start.php?s=$s'>More</a>";
+$wb["error_max_user_anbieter"] = "The reseller's maximum number of users has been reached.<br><br> <a href='../../isp_manager/frame_start.php?s=$s'>More</a>";
+$wb["error_sysuser_exist"] = "The username is already in use.<br><br> <a href='../../isp_manager/frame_start.php?s=$s'>More</a>";
+$wb["error_admin_exist"] = "A user with administrator rights already exists for this site.<br><br> <a href='../../isp_manager/frame_start.php?s=$s'>More</a>";
+$wb["error_admin_exist_long"] = "A user with administrator rights already exists.You must remove the other administrator if you wish to assign right to this user.<br><br> <a href='../../isp_manager/frame_start.php?s=$s'>More</a>";
+
+// Error Codes ispconfig_isp_user.lib.php
+$wb["error_max_web_anbieter"] = "The maximum number of sites for the reseller has been reached";
+$wb["error_web_ssl_exist"] = "An SSL certificate already exists for this IP.";
+
+// Plugins
+$wb["CPU Auslastung 1 Minute"] = "CPU Usage 1 Minute";
+$wb["CPU Auslastung 5 Minuten"] = "CPU Usage 5 Minutes";
+$wb["CPU Auslastung 15 Minuten"] = "CPU Usage 15 Minutes";
+$wb["Server Online seit"] = "Server Online since";
+$wb["User Online"] = "Users Online";
+$wb["error_web_id"] = "This Plugin needs a valid web ID.";
+$wb["von"] = "of";
+$wb["Gesamt"] = "Overall";
+$wb["Traffic in den letzten 4 Jahren"] = "Traffic in the last 4 years";
+
+$wb["Backup von Tabelle"] = "Backup Table";
+$wb["Optimiere"] = "Optimize";
+$wb["Reparatur"] = "Repair";
+$wb["oder"] = "or";
+$wb["Installation starten"] = "Install";
+
+$wb["Monatlich"] = "Monthly";
+$wb["Quartal"] = "Quarter-Yearly";
+$wb["Halbjährlich"] = "Half-Yearly";
+$wb["Jährlich"] = "Yearly";
+$wb["Sonstige"] = "Other";
+
+$wb["bei Erhalt"] = "on receipt";
+$wb["Netto 7 Tage"] = "net 7 days";
+$wb["Netto 15 Tage"] = "net 15 days";
+$wb["Netto 30 Tage"] = "net 30 days";
+$wb["Sonstige"] = "other";
+$wb["Neu"] = "New";
+$wb["Postfach MB"] = "Mailbox MB";
+
+$wb["email_alias_txt"] = "<b>Hint:</b> one alias per line.";
+$wb["Weiterleitung"] = "Forward";
+$wb["Nachricht"] = "Message";
+$wb["Kein Kunde vorhanden"] = "No client available";
+$wb["Dieses Web können Sie nicht löschen."] = "You cannot delete this web.";
+$wb["Ausgabeformat"] = "List format";
+$wb["Bearbeiten"] = "Edit";
+$wb["Löschen"] = "Delete";
+
+$wb["willkommen_kunde"] = "Welcome to ISPConfig!
+You can administrate your website(s) here. If you have questions or problems,
+please contact your server administrator or refer to the ISPConfig client manual.";
+$wb["Willkommen"] = "Welcome";
+
+$wb["txt_client_salutatory_email_desc"] = "<b>Salutatory Email for Clients</b>";
+$wb["txt_client_salutatory_email_sender_email"] = "Sender's Email";
+$wb["txt_client_salutatory_email_sender_name"] = "Name of Sender";
+$wb["txt_client_salutatory_email_bcc"] = "BCC Recipient";
+$wb["txt_client_salutatory_email_subject"] = "Subject";
+$wb["txt_client_salutatory_email_message"] = "Message";
+$wb["txt_client_salutatory_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Include the following variables in your text:</b></td></tr>
+        <tr>
+          <td class="normal">%%%USER%%%</td>
+          <td class="normal">
+            Client\'s Username</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%PASSWORD%%%</td>
+          <td class="normal">
+            Client\'s Password</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%FIRST_NAME%%%</td>
+          <td class="normal">
+            Client\'s First Name</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%LAST_NAME%%%</td>
+          <td class="normal">
+            Client\'s Last Name</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%COMPANY%%%</td>
+          <td class="normal">
+            Client\'s Company</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%EMAIL%%%</td>
+          <td class="normal">
+            Client\'s Email Address</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%CP%%%</td>
+          <td class="normal">
+            ISPConfig Login URL</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%MANUAL%%%</td>
+          <td class="normal">
+            ISPConfig Client Manual</td>
+        </tr>
+        </table>';
+$wb["txt_standard_index"] = "Standard Index<br>&nbsp;&nbsp;Page";
+$wb["txt_standard_index_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Include the following variables in your text:</b></td></tr>
+        <tr>
+          <td class="normal">%%%FQDN%%%</td>
+          <td class="normal">
+            Website\'s Fully Qualified Domain Name</td>
+        </tr>
+    </table>';
+$wb["txt_user_standard_index"] = "Users' Standard<br>&nbsp;&nbsp;Index Page";
+$wb["txt_user_standard_index_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Include the following variables in your text:</b></td></tr>
+        <tr>
+          <td class="normal">%%%USER%%%</td>
+          <td class="normal">
+            User\'s Username</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%FQDN%%%</td>
+          <td class="normal">
+            Website\'s Fully Qualified Domain Name</td>
+        </tr>
+        </table>';
+
+//////////////// ISP Manager Ende /////////////
+
+//////////////// Server Status ////////////////
+$wb["Arbeitsspeicher"]          = "Main Memory";
+$wb["CPU"]          = "CPU";
+$wb["Dienste"]      = "Services";
+$wb["Server Online seit"]          = "Server Online since";
+$wb["User Online"]      = "Users Online";
+$wb["System Load 1 Minute"] = "System Load 1 Minute";
+$wb["System Load 5 Minuten"] = "System Load 5 Minutes";
+$wb["System Load 15 Minuten"] = "System Load 15 Minutes";
+//////////////// Server Status Ende //////////
+
+$wb["DNS-Domains angelegt"] = 'DNS Domains created';
+
+$wb["Hinzufügen"] = "Add";
+$wb["Berechtigungen"] = "Permissions";
+$wb["Speichern"] = "Save";
+$wb["Löschen"] = "Delete";
+$wb["Abbrechen"] = "Cancel";
+$wb["IP-Adresse"] = "IP-Address";
+$wb["DNS-Query"] = "Query Primary DNS Records";
+$wb["DNS-Insert"] = "Create Primary DNS Records";
+$wb["DNS-Update"] = "Edit Primary DNS Records";
+$wb["DNS-Delete"] = "Delete Primary DNS Records";
+$wb["slave_query"] = "Query Secondary DNS Records";
+$wb["slave_insert"] = "Create Secondary DNS Records";
+$wb["slave_update"] = "Edit Secondary DNS Records";
+$wb["slave_delete"] = "Delete Secondary DNS Records";
+$wb["reseller_query"] = "Query Resellers";
+$wb["reseller_insert"] = "Create Resellers";
+$wb["reseller_update"] = "Edit Resellers";
+$wb["reseller_delete"] = "Delete Resellers";
+$wb["kunde_query"] = "Query Clients";
+$wb["kunde_insert"] = "Create Clients";
+$wb["kunde_update"] = "Edit Clients";
+$wb["kunde_delete"] = "Delete Clients";
+$wb["web_query"] = "Query Websites";
+$wb["web_insert"] = "Create Websites";
+$wb["web_update"] = "Edit Websites";
+$wb["web_delete"] = "Delete Websites";
+$wb["txt_primary_dns_records"] = "Primary DNS Records";
+$wb["txt_secondary_dns_records"] = "Secondary DNS Records";
+$wb["txt_anbieter"] = "Resellers";
+$wb["txt_kunden"] = "Clients";
+$wb["txt_webs"] = "Websites";
+
+$wb["txt_move_websites"] = "Move Websites";
+$wb["txt_website_deleted_no_move"] = "This website has been deleted and cannot be moved.<br><br> <a href='../../frame_start.php?s=$s'>Next &gt;&gt;</a>";
+$wb["txt_customer_deleted_no_move"] = "This customer has been deleted; the website cannot be moved.<br><br> <a href='../../frame_start.php?s=$s'>Next &gt;&gt;</a>";
+$wb["txt_website_moved"] = "The website has been moved to the customer you specified.<br><br> <a href='../../frame_start.php?s=$s'>Next &gt;&gt;</a>";
+$wb["txt_move_website_from"] = "from";
+$wb["txt_move_website_to"] = "to";
+$wb["txt_move_website_website"] = "Website";
+$wb["txt_move_website_submit"] = "Submit";
+
+?>
