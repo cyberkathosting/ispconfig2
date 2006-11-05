@@ -76,9 +76,9 @@ $tlds = array('.com'    => array('$result=whois_php(\'whois.crsnic.net\',$domain
                                  '$result=(stristr($result,\'No Matches\'))?\'Domain not found\':$result;'
                                 ),
               //'.org.za' => array(''), -> no Whois server in old code...
-              '.com.au' => array('$result=whois_php(\'whois.crsnic.net\',$domain);'),
-              '.net.au' => array('$result=whois_php(\'whois.crsnic.net\',$domain);'),
-              '.org.au' => array('$result=whois_php(\'whois.crsnic.net\',$domain);')
+              '.com.au' => array('$result=whois_php(\'whois.aunic.net\',$domain);'),
+              '.net.au' => array('$result=whois_php(\'whois.aunic.net\',$domain);'),
+              '.org.au' => array('$result=whois_php(\'whois.aunic.net\',$domain);')
 			 );
 ksort($tlds);
 
@@ -110,7 +110,7 @@ function whois_php($WhoIsServer,$queryDomain){
         if($fp = @fsockopen ("$WhoIsServer", 43, $errnr, $errstr)) {
            
 	       set_socket_blocking($fp, 0);
- 	       fputs($fp, "$queryDomain\n");
+ 	       fputs($fp, "$queryDomain\r\n");
            while (!feof($fp)) {
                        $record .= fgets($fp, 2048);
 	       }	 
