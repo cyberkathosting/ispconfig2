@@ -10,12 +10,12 @@ $wb["Username"]     = "Gebruikersnaam";
 $wb["Passwort"]     = "Wachtwoord";
 $wb["Login"]       = "Login";
 $wb["Administration"]  = "Management";
-$wb["ISP Manager"]  = "ISP manager";
-$wb["DNS Manager"]  = "DNS manager";
+$wb["ISP Manager"]  = "ISP Manager";
+$wb["DNS Manager"]  = "DNS Manager";
 $wb["Tools"]        = "Tools";
 $wb["Logout"]       = "Uitloggen";
 $wb["Status"]       = "Status";
-$wb["neu"]          = "Nieuw";
+$wb["neu"]          = "nieuw";
 $wb["Hinweis"]      = "Referentie";
 $wb["Web"]          = "Web";
 $wb["Email"]        = "Email";
@@ -26,25 +26,25 @@ $wb["Datei"]        = "Bestand";
 $wb["von"]          = "van"; // besser 'ab'?
 $wb["error_headline"] = "De volgende fout is opgetreden:";
 $wb["Gruppe"]       = "Groep";
-$wb["Titel"]        = " Titel";
+$wb["Titel"]        = "Titel";
 $wb["Server"]       = "Server";
 $wb["Host"]         = "Hostnaam";
 $wb["Domain"]       = "Domein";
-$wb["IP Adresse"]   = " IP adressen";
-$wb["Ordner"]       = "Sorteren";
+$wb["IP Adresse"]   = "IP Adres";
+$wb["Ordner"]       = "Map";
 $wb["Dokument"]     = "Document";
-$wb["Dokument suchen"] = "Dokument zoeken";
+$wb["Dokument suchen"] = "Document zoeken";
 $wb["Suchmaske"]    = "Zoektermen";
 $wb["Ausgabeformat"] = "Output formaat";
 $wb["Standard"]     = "Standaard";
 $wb["Einträge"]    = "Ingave";
-$wb["Papierkorb leeren"] = " Leeg prullenbak";
-$wb["Stammordner"]  = "Stamdossier";
+$wb["Papierkorb leeren"] = "Leeg prullenbak";
+$wb["Stammordner"]  = "Master zone";
 $wb["keine Gruppe"] = "Geen groep";
 $wb["neues Dokument anlegen"] = "Nieuw document gemaakt";
-$wb["auf"]   = "Uitklappen";
-$wb["zu"]    = "Inklappen";
-$wb["in_ordner"]    = "gesorteerd op";
+$wb["auf"]   = "uitklappen";
+$wb["zu"]    = "inklappen";
+$wb["in_ordner"]    = "in map";
 $wb["Papierkorb"]   = "Prullenbak";
 $wb["Wiederherstellen"]    = "Herstellen";
 $wb["Papierkorb: Einträge"]   = "Prullenbak: inhoud";
@@ -56,22 +56,16 @@ $wb["Suchen"]    = "Zoeken";
 $wb["Herr"] = "Dhr";
 $wb["Frau"] = "Mevr";
 
-$wb["Verzeichnis öffnen"] = "open";
-$wb["Verzeichnis schliessen"] = "sluiten";
-$wb["Hilfe"] = 'Help';
-$wb["Online Hilfe"] = 'Online help';
-$wb["schliessen"] = 'sluiten';
-
 $wb["Es ist folgender Fehler aufgetreten:"] = "De volgende fout is opgetreden:";
 
-$wb["Web-FTP"] = 'Web-FTP';
+$wb["Web-FTP"] = "Web-FTP";
 $wb["ISP Faktura"] = 'ISP factuur';
 
 $wb["Verzeichnis öffnen"] = "openen";
 $wb["Verzeichnis schliessen"] = "sluiten";
-$wb["Hilfe"] = 'Help';
-$wb["Online Hilfe"] = 'Online help';
-$wb["schliessen"] = 'sluiten';
+$wb["Hilfe"] = "Help";
+$wb["Online Hilfe"] = "Online Help";
+$wb["schliessen"] = "sluiten";
 
 $wb["PAPIERKORB_HINWEIS"] = "<b>Note:</b> Items die zich in de prullenbak bevinden worden op dit moment geupdate. Probeer het later nog eens.";
 
@@ -95,23 +89,24 @@ $wb["Benutzter Diskspace"] = "Schijfruimte gebruikt";
 $wb["Slave Zones angelegt"] = "Slave zones aangemaakt";
 $wb["Datenbanken angelegt"] = "Databases aangemaakt";
 
-$wb["txt_confirm_delete"] = "Weet u zeker dat u dit object wilt verwijderen?";
+$wb["txt_confirm_delete"] = "Wilt u dit object echt verwijderen?";
 
-$wb["user_perms_nowrite_hd"]         = "Error occured: You do not have the sufficient rights to change that file";
-$wb["user_perms_nowrite_reasons"]    = "Possbile reasons for that issue";
-$wb["user_perms_nowrite_reasons_1a"] = "1. You are using that system in demo mode";
-$wb["user_perms_nowrite_reasons_1b"] = "- Please log in with your username and password.";
-$wb["user_perms_nowrite_reasons_2a"] = "2. You try to change an element which belongs to another group.";
-$wb["user_perms_nowrite_reasons_2b"] = "You do not have the sufficient rights in this group for writing / changing data.";
-$wb["user_perms_nowrite_reasons_2c"] = "- Please contact the group's owner to grant you the sufficient rights.";
+$wb["txt_object_currently_updated"] = "Uw wijzigingen kunnen niet worden opgeslagen, omdat dit item op dit moment wordt geupdate. Probeert u het later nog eens.<br><br> <a href='../frame_start.php?s=$s'>Volgende &gt;&gt;</a>";
+$wb["txt_system_currently_updated_no_recycle_bin"] = "U heeft op dit moment geen toegang tot de prullenbak, omdat het systeem op dt moment wordt geupdate. Probeer het over een paar minuten nog eens.<br><br> <a href='../frame_start.php?s=$s'>Volgende &gt;&gt;</a>"; 
 
-$wb["group_perms_nowrite_hd"]         = "Error occured: You do not have the necessary group rights";
-$wb["group_perms_nowrite_reasons"]    = "Possbile reasons for that issue";
-$wb["group_perms_nowrite_reasons_1a"] = "1. You are using that system in demo mode";
-$wb["group_perms_nowrite_reasons_1b"] = "- Please log in with your username and password.";
-$wb["group_perms_nowrite_reasons_2a"] = "2. You try to change an element which belongs to another group.";
-$wb["group_perms_nowrite_reasons_2b"] = "You do not have the sufficient rights in this group for writing / changing data.";
-$wb["group_perms_nowrite_reasons_2c"] = "- Please contact the group's owner to grant you the sufficient rights.";
+$wb["user_perms_nowrite_hd"]         = "Foutmelding: U heeft geen rechten om dit bestand te wijzigen";
+$wb["user_perms_nowrite_reasons"]    = "Mogelijke oorzaken zijn";
+$wb["user_perms_nowrite_reasons_1a"] = "1. U gebruikt het systeem in demo mode";
+$wb["user_perms_nowrite_reasons_1b"] = "- Log a.u.b. in met uw gebruikersnaam en wachtwoord.";
+$wb["user_perms_nowrite_reasons_2a"] = "2. U probeert een item te wijzigen dat toebehoort aan een andere groep.";
+$wb["user_perms_nowrite_reasons_2b"] = "U heeft in deze groep geen schrijfrechten / veranderen data.";
+$wb["user_perms_nowrite_reasons_2c"] = "- Neem a.u.b. contact op met de eigenaar van de groep en vraag de benodigde rechten aan.";
 
-
+$wb["group_perms_nowrite_hd"]         = "Foutmelding: U heeft niet de benodigde rechten voor deze groep";
+$wb["group_perms_nowrite_reasons"]    = "Mogelijke oorzaken zijn";
+$wb["group_perms_nowrite_reasons_1a"] = "1. U gebruikt het systeem in demo mode";
+$wb["group_perms_nowrite_reasons_1b"] = "- Log a.u.b. in met uw gebruikersnaam en wachtwoord.";
+$wb["group_perms_nowrite_reasons_2a"] = "2. U probeert een item te wijzigen dat toebehoort aan een andere groep.";
+$wb["group_perms_nowrite_reasons_2b"] = "U heeft in deze groep geen schrijfrechten / veranderen data.";
+$wb["group_perms_nowrite_reasons_2c"] = "- Neem a.u.b. contact op met de eigenaar van de groep en vraag de benodigde rechten aan.";
 ?>
