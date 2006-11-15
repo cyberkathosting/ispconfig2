@@ -10,10 +10,10 @@ $hlp["limit_user"] = "Odredite maksimalni broj korisnika koje preprodavac može d
 $hlp["limit_disk"] = "Odredite maksimalnu kolièninu prostora koju preprodavac može da koristi.";
 $hlp["limit_web"] = "Unesite maksimalni broj internet prezentacija koje preprodavac može da kreira.";
 $hlp["limit_domain"] = "Unesite maksimalni broj domena koje preprodavac može da kreira";
-$hlp["limit_http_include"] = "Please specify if the reseller is allowed to create additional Apache directives.";
-$hlp["limit_dns_manager"] = "Please specify if the reseller is allowed to create DNS entries.";
-$hlp["limit_domain_dns"] = "Please specify the maximum number of domains for which the reseller is allowed to create Primary (Master) DNS records.";
-$hlp["limit_slave_dns"] = "Please specify the maximum number of domains for which the reseller is allowed to create Secondary (Slave) DNS records.";
+$hlp["limit_http_include"] = "Odredite da li je preprodavcu dozvoljeno da kreira dodatne Apache direktive.";
+$hlp["limit_dns_manager"] = "Odredite da li je preprodavcu dozvoljeno da kreira DNS zapise.";
+$hlp["limit_domain_dns"] = "Odredite da maksimalni broj domena za koje je  preprodavcu dozvoljeno da kreira Primarne (Master) DNS zapise.";
+$hlp["limit_slave_dns"] = "Odredite maksimalni broj domena za koje je preprodavcu dozvoljeno da kreira Sekundarne (Slave) DNS zapise.";
 
 $hlp["limit_cgi"] = "Please specify if the reseller is allowed to assign CGI functionality to the websites under his account.";
 $hlp["limit_cgi_mod_perl"] = "Please specify if the reseller is allowed to assign CGI functionality using mod_perl to the websites under his account.";
