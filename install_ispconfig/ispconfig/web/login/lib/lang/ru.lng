@@ -1,0 +1,25 @@
+<?
+/********************************
+* ISPConfig Dictionary File
+* Version 1.0
+*********************************/
+
+// License Manager
+$wb["Es wurde keine g&uuml;ltige Lizenzdatei gefunden."] = "Не найден действительный лиценционный файл.";
+$wb["Hier k&ouml;nnen Sie ihre Lizenzdatei einspielen."] = "Вы можете закачать свой лицензионный файл здесь.";
+$wb["Username"] = "Имя";
+$wb["Passwort"] = "Пароль";
+$wb["Lizenzdatei"] = "лицензионный файл";
+$wb["Weiter"] = "далее";
+$wb["Die Lizenzdatei wurde eingespielt.<br>Sie k&ouml;nnen sich jetzt einloggen."] = "Лицензионный файл загружен.<br> Теперь Вы можете войти в систему.";
+$wb["Ihre Nutzersitzung wurde beendet."] = "Ваша сессия устарела.";
+$wb["Hier kЖnnen Sie sich neu einloggen"] = "Здесь Вы можете снова войти в систему.";
+
+$wb["FEHLER 101: Username oder Passwort Falsch."] = "ОШИБКА 101: неправильное имя или пароль.";
+$wb["FEHLER 102: Account inaktiv."] = "ОШИБКА 102: Учетная запись неактивна.";
+$wb["FEHLER 103: Es wurde kein Username oder Passwort angegeben."] = "ОШИБКА 103: Не введено имя или пароль.";
+$wb["FEHLER 104: Die Nutzersession wurde beendet."] = "ОШИБКА 104: Сессия устарела.";
+$wb["<br>&nbsp;<br>Hier kЖnnen Sie sich erneut einloggen:"] = "<br>&nbsp;<br>Здесь Вы можете снова войти в систему:";
+$wb["Hier kЖnnen Sie sich einloggen:"] = "Вход в систему:";
+
+?>

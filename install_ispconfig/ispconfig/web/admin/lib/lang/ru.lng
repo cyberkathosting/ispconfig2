@@ -1,0 +1,499 @@
+<?
+/********************************
+* ISPConfig Dictionary File
+* Version 1.0
+*********************************/
+
+//////////////// Server Status ////////////////
+$wb["Arbeitsspeicher"]          = "Основная Память";
+$wb["CPU"]          = "Процессор";
+$wb["Dienste"]      = "Службы";
+$wb["Server Online seit"]          = "Время Работы Сервера";
+$wb["User Online"]      =  "Количество Подключений";
+$wb["System Load 1 Minute"] = "Загрузка Системы за 1 Минуту";
+$wb["System Load 5 Minuten"] = "Загрузка Системы за 5 Минут";
+$wb["System Load 15 Minuten"] = "Загрузка Системы за 15 Минут";
+//////////////// Server Status Ende //////////
+
+///////////////// Administration ////////////////
+$wb["ISPConfig Datenbank"]    = "Базы Данных ISPConfig";
+$wb["Backup erstellen"]       = "Резервное Копирование";
+$wb["Datenbank Check"]        = "Проверить Базы Данных";
+$wb["Datenbank Optimieren"]   = "Оптимизировать Базы Данных";
+$wb["Datenbank Reparieren"]   = "Отремонтировать Базы Данных";
+$wb["Eigenschaften"] = "Установки";
+$wb["Server Name"]  = "Имя Сервера";
+$wb["Netzmaske"]    = "Сетевая Маска";
+$wb["Sprache"]      = "Язык";
+$wb["IP Liste"]     = "Список IP Адресов";
+$wb["hinweis_ip_liste"] = "<b>Обратите внимание:</b> в поле списка IP адресов необходимо ставить по одному IP адресу на строчку.";
+$wb["Pfad"]         = "Путь";
+$wb["Programm"]     = "Программа";
+$wb["Reparatur"]    = "Отремонтировать";
+$wb["Optimiere"]    = "Оптимизировать";
+$wb["Pfad httpd.conf"]    = "Путь httpd.conf";
+$wb["MTA Typ"]    = "MTA Тип";
+$wb["Virtuser Datei"]    = "Файл Virtuser";
+$wb["FTP Programm"]    = "FTP Программа";
+$wb["FTP conf. Datei"]    = "Файл Конфигурации";
+$wb["Userid von"]    = "Отсчет UserID от";
+$wb["Groupid von"]    = "Отсчет GroupID от";
+
+$wb["Backup von Tabelle"] = "Резервное Копирование";
+$wb["Optimiere"] = "Оптимизировать";
+$wb["Reparatur"] = "Отремонтировать";
+$wb["oder"] = "или";
+$wb["Installation starten"] = "Установить";
+
+$wb["Deutsch"] = "Немецкий";
+$wb["Englisch"] = "Английский";
+$wb["Datei"] = "Файл";
+
+//////////////// Administration Ende ///////////
+
+//////////////// Firewall, Monitor + Dienste  ////////////////
+
+$wb["эberwachung"] = "Мониторинг";
+$wb["Firewall"] = "Брандмауэр";
+$wb["Web-Server"] = "Веб Сервер";
+$wb["FTP-Server"] = "FTP Сервер";
+$wb["SMTP-Server"] = "SMTP Сервер";
+$wb["DNS-Server"] = "DNS Сервер";
+$wb["mySQL-Server"] = "mySQL Сервер";
+$wb["An"] = "Вкл.";
+$wb["Aus"] = "Выкл.";
+$wb["neu Starten"] = "Перезапустить";
+$wb["Neu"] = "Добавить";
+$wb["Aktionen"] = "Действия";
+$wb["Dienst"] = "Служба";
+$wb["Hostname"] = "Имя Хоста";
+$wb["Port"] = "Порт";
+$wb["Typ"] = "Тип";
+$wb["TCP"] = "TCP";
+$wb["UDP"] = "UDP";
+$wb["Der Dienst-Typ wird nur bei sonstigen-Diensten ausgewertet."] = "Тип службы будет проанализирован только при выборе \"Другое\".";
+$wb["Sonstige"] = "Другое";
+$wb["Ja"] = "Да";
+$wb["Nein"] = "Нет";
+$wb["Offline"] = "Оффлайн";
+$wb["ISP Dienste"] = "Службы";
+$wb["ISP эberwachung"] = "Мониторинг";
+$wb["ISP Firewall"] = "Брандмауэр";
+$wb["Name"] = "Название";
+$wb["Aktiv"] = "Активен";
+$wb["Firewall Regel"] = "Правило Брандмауэра";
+$wb["Dieser Port kann nicht geДndert werden."] = "Этот порт нельзя изменить.<br>";
+$wb["Dieser Port kann nicht deaktiviert werden."] = "Этот порт нельзя деактивировать.<br>";
+
+//////////////// Firewall ENDE ////////////////
+
+//////////////// LNG 1.1.12 BEGIN /////////////
+
+$wb["ISP Server"] = 'Сервер';
+$wb["Admin Email"] = 'Email Администратора';
+$wb["EMail"] = 'EMail';
+$wb["Funktionen"] = 'Функции';
+$wb["httpd User"] = 'httpd Пользователь';
+$wb["httpd Group"] = 'httpd Группа';
+$wb["Document Root"] = 'Корневой Каталог';
+$wb["Frontpage Pfad"] = 'Путь Frontpage';
+$wb["access Log"] = 'Лог доступа';
+$wb["Sendmail"] = 'Sendmail';
+$wb["Sendmail CW"] = 'Sendmail CW';
+$wb["Log speichern"] = 'Сохранять Лог';
+$wb["BIND User"] = 'Пользователь BIND';
+$wb["BIND Group"] = 'Группа BIND';
+$wb["Zonefiles Dir."] = 'Папка Файлов Зон';
+$wb["Default Ns1"] = 'Ns1 по умолчанию';
+$wb["Default Ns2"] = 'Ns2 по умолчанию';
+$wb["Standard MX"] = 'MX по умолчанию';
+$wb["Frontpage Extensions"] = 'Расширения Frontpage';
+$wb["User Prefix"] = 'Приставка';
+$wb["Anbieter Nr. von"] = '# реселлера от';
+$wb["Kunden Nr. von"] = '# клиента от';
+$wb["SOAP Server IP"] = 'IP Сервера SOAP';
+$wb["SOAP Server Port"] = 'Порт Сервера SOAP';
+$wb["Web-FTP"] = 'Веб-FTP';
+$wb["ISP Faktura"] = 'Счета';
+$wb["Modul Manager"] = 'Управление Модулями';
+$wb["HinzufЭgen"] = 'Добавить';
+$wb["Alle anzeigen"] = 'Показать Все';
+$wb["Update Manager"] = 'Управление Компонентами';
+$wb["Update"] = 'Установить';
+$wb["System Config"] = 'Конфигурация Системы';
+$wb["Bearbeiten"] = 'Правка';
+$wb["Importieren"] = 'Импорт';
+$wb["Exportieren"] = 'Экспорт';
+$wb["Allgemein"] = 'Общие';
+$wb["ISP-Manager"] = 'Управление Хостингом';
+$wb["Faktura"] = 'Счет';
+$wb["эbernehmen"] = 'Сохранить';
+$wb["Webserver"] = 'Веб Сервер';
+$wb["Bind DNS"] = 'Байнд DNS';
+$wb["Mailserver"] = 'Почтовый Сервер';
+$wb["POP3-Server"] = 'POP3 Сервер';
+$wb["nein"] = 'нет';
+$wb["ja"] = 'да';
+$wb["ISP Server Status"] = 'Статус Сервера';
+$wb["System-Datenbank"] = 'Системная База Данных';
+$wb["Verzeichnis"] = 'Папка';
+$wb["Backup starten"] = 'Бэкап';
+
+// NEW 1.1.12a //////////////////////////////
+
+$wb["Es wurde kein Web ausgewДhlt."] = "Не выбран сайт.";
+$wb["Backup-Funktionen im Demo-Modus nicht verfЭgbar."] = "Функции резервного копирования недоступны в демонстрационном режиме.";
+$wb["Backup Status"] = "Бэкап-Статус";
+$wb["Der Name des FTP-Servers <br>enthДlt ungЭltige Zeichen."] = "Имя FTP сервера <br>содержит недопустимые символы.";
+$wb["Sie haben keinen FTP Benutzernamen angegeben."] = "Не указано Имя Пользователя FTP.";
+$wb["Ftp-Verbindung nicht hergestellt!"] = "Не удалось установить FTP-Соединение!";
+$wb["Verbindung mit:"] = "Установлено соединение с:";
+$wb["als Benutzer:"] = "от Имени Пользователя:";
+$wb["nicht mЖglich."] = "невозможен.";
+$wb["Konnte nicht in Verzeichnis:"] = "переход в папку:";
+$wb["wechseln."] = "невозможен.";
+$wb["Wechsel in Verzeichnis:"] = "переход в папку:";
+$wb["Ftp upload war fehlerhaft!"] = "Ошибка FTP-Загрузки!";
+$wb["Upload erfolgreich."] = "Загрузка успешно завершена.";
+$wb["FTP-Upload Status"] = "Статус FTP-Загрузки";
+$wb["Backup-Methode nicht unterstЭtzt."] = "Данный метод резервного копирования недоступен.";
+$wb["Rechnung Nr. von"] = "# счета от";
+
+//////////////// LNG 1.1.12 ENDE ///////////////
+
+// NEW 1.3 /////////////////////////////////////
+
+$wb["Remoting"] = 'Удаленный Доступ';
+$wb["User"] = 'Пользователь';
+$wb["Conf. Dir."] = 'Папка Conf.';
+$wb["Suexec"] = 'Suexec';
+$wb["Postfix"] = 'Postfix';
+$wb["Mail Log"] = 'Почтовый Лог';
+$wb["Maildir"] = 'Maildir';
+$wb["Antivir Mailadmin"] = 'Антивирусный Админ';
+$wb["aktiv"] = "вкл.";
+$wb["inaktiv"] = "выкл.";
+$wb["weiter_link"] = "<br><br> <a href='../../isp_manager/frame_start.php?s=$s'>Далее &gt;&gt;</a>";
+$wb["txt_client_salutatory_email_desc"] = "<b>Приветственный Email для Клиентов</b>";
+$wb["txt_client_salutatory_email_sender_email"] = "Email Отправителя";
+$wb["txt_client_salutatory_email_sender_name"] = "Имя Отправителя";
+$wb["txt_client_salutatory_email_bcc"] = "Копия Получателю";
+$wb["txt_client_salutatory_email_subject"] = "Тема";
+$wb["txt_client_salutatory_email_message"] = "Сообщение";
+$wb["txt_client_salutatory_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Вы можете включать в текст следующие переменные:</b></td></tr>
+        <tr>
+          <td class="normal">%%%USER%%%</td>
+          <td class="normal">
+            Имя Пользователя Клиента</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%PASSWORD%%%</td>
+          <td class="normal">
+            Пароль Клиента</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%FIRST_NAME%%%</td>
+          <td class="normal">
+            Имя Клиента</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%LAST_NAME%%%</td>
+          <td class="normal">
+            Фамилия Клиента</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%COMPANY%%%</td>
+          <td class="normal">
+            Компания Клиента</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%EMAIL%%%</td>
+          <td class="normal">
+            Email Адрес Клиента</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%CP%%%</td>
+          <td class="normal">
+            URL Панели Управления Клиента</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%MANUAL%%%</td>
+          <td class="normal">
+            Руководство по Панели Управления</td>
+        </tr>
+        </table>';
+
+$wb["txt_res_salutatory_email_desc"] = "<b>Приветственный Email для Реселлеров</b>";
+$wb["txt_res_salutatory_email_sender_email"] = "Email Отправителя";
+$wb["txt_res_salutatory_email_sender_name"] = "Имя Отправителя";
+$wb["txt_res_salutatory_email_bcc"] = "Копия Получателю";
+$wb["txt_res_salutatory_email_subject"] = "Тема";
+$wb["txt_res_salutatory_email_message"] = "Сообщение";
+$wb["txt_res_salutatory_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Вы можете включать в текст следующие переменные:</b></td></tr>
+        <tr>
+          <td class="normal">%%%USER%%%</td>
+          <td class="normal">
+            Имя Пользователя Реселлера</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%PASSWORD%%%</td>
+          <td class="normal">
+            Пароль Реселлера</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%FIRST_NAME%%%</td>
+          <td class="normal">
+            Имя Реселлера</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%LAST_NAME%%%</td>
+          <td class="normal">
+            Фамилия Реселлера</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%COMPANY%%%</td>
+          <td class="normal">
+            Компания Реселлера</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%EMAIL%%%</td>
+          <td class="normal">
+            Email Адрес Реселлера</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%CP%%%</td>
+          <td class="normal">
+            URL Панели Управления Реселлера</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%MANUAL%%%</td>
+          <td class="normal">
+            Руководство по Панели Управления</td>
+        </tr>
+        </table>';
+$wb["txt_standard_index"] = "Стандартная Index<br>&nbsp;&nbsp;Страница";
+$wb["txt_standard_index_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Вы можете включать в текст следующие переменные:</b></td></tr>
+        <tr>
+          <td class="normal">%%%FQDN%%%</td>
+          <td class="normal">
+            Полное Имя Веб-сайта</td>
+        </tr>
+    </table>';
+$wb["txt_user_standard_index"] = "Стандартная Index<br>&nbsp;&nbsp;Страница Пользователя";
+$wb["txt_user_standard_index_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Вы можете включать в текст следующие переменные:</b></td></tr>
+        <tr>
+          <td class="normal">%%%USER%%%</td>
+          <td class="normal">
+            Имя Пользователя</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%FQDN%%%</td>
+          <td class="normal">
+            Полное Имя Веб-сайта</td>
+        </tr>
+        </table>';
+
+//////////////// Remoting //////////////////////
+$wb["HinzufЭgen"] = "Добавить";
+$wb["Berechtigungen"] = "Права";
+$wb["Speichern"] = "Сохранить";
+$wb["LЖschen"] = "Удалить";
+$wb["Abbrechen"] = "Отмена";
+$wb["IP-Adresse"] = "IP Адрес";
+$wb["DNS-Query"] = "Опрос Первичных Записей DNS";
+$wb["DNS-Insert"] = "Создать Первичные Записи DNS";
+$wb["DNS-Update"] = "Редактировать Первичные Записи DNS";
+$wb["DNS-Delete"] = "Удалить Первичные Записи DNS";
+$wb["slave_query"] = "Опрос Вторичных Записей DNS";
+$wb["slave_insert"] = "Создать Вторичные Записи DNS";
+$wb["slave_update"] = "Редактировать Вторичные Записи DNS";
+$wb["slave_delete"] = "Удалить Вторичные Записи DNS";
+$wb["reseller_query"] = "Опрос Реселлеров";
+$wb["reseller_insert"] = "Создать Реселлеров";
+$wb["reseller_update"] = "Редактировать Реселлеров";
+$wb["reseller_delete"] = "Удалить Реселлеров";
+$wb["kunde_query"] = "Опрос Клиентов";
+$wb["kunde_insert"] = "Создать Клиентов";
+$wb["kunde_update"] = "Редактировать Клиентов";
+$wb["kunde_delete"] = "Удалить Клиентов";
+$wb["web_query"] = "Оппрос Веб-сайтов";
+$wb["web_insert"] = "Создать Веб-сайты";
+$wb["web_update"] = "Редактировать Веб-сайты";
+$wb["web_delete"] = "Удалить Веб-сайты";
+$wb["txt_primary_dns_records"] = "Первичные Записи DNS";
+$wb["txt_secondary_dns_records"] = "Вторичные Записи DNS";
+$wb["txt_anbieter"] = "Реселлеры";
+$wb["txt_kunden"] = "Клиенты";
+$wb["txt_webs"] = "Веб-сайты";
+
+$wb["txt_traffic_suspension_email_desc"] = "<b>Уведомление о Приостановке Хостинга Сайта (Перерасход Трафика)</b>";
+$wb["txt_traffic_suspension_sender_email"] = "Email Отправителя";
+$wb["txt_traffic_suspension_sender_name"] = "Имя Отправителя";
+$wb["txt_traffic_suspension_email_bcc"] = "Копия Получателю";
+$wb["txt_traffic_suspension_email_subject"] = "Тема";
+$wb["txt_traffic_suspension_email_message"] = "Сообщение";
+$wb["txt_traffic_suspension_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Вы можете включать в текст следующие переменные:</b></td></tr>
+        <tr>
+          <td class="normal">%%%FIRST_NAME%%%</td>
+          <td class="normal">
+            Имя Клиента</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%LAST_NAME%%%</td>
+          <td class="normal">
+            Фамилия Клиента</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%WEBSITE%%%</td>
+          <td class="normal">
+            Веб-сайт Клиента</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%MONTH%%%</td>
+          <td class="normal">
+            Месяц, когда был перерасход</td>
+        </tr>
+        <tr>
+          <td class="normal" valign="top">%%%INCLUDED_TRAFFIC%%%</td>
+          <td class="normal">
+            Размер включенного трафика</td>
+        </tr>
+        <tr>
+          <td class="normal" valign="top">%%%TOTAL_TRAFFIC%%%</td>
+          <td class="normal">
+            Общий размер трафика в месяц</td>
+        </tr>
+        </table>';
+
+$wb["txt_traffic_notification_email_desc"] = "<b>Уведомление о Перерасходе Трафика для Клиента</b>";
+$wb["txt_traffic_notification_sender_email"] = "Email Отправителя";
+$wb["txt_traffic_notification_sender_name"] = "Имя Отправителя";
+$wb["txt_traffic_notification_email_bcc"] = "Копия Получателю";
+$wb["txt_traffic_notification_email_subject"] = "Тема";
+$wb["txt_traffic_notification_email_message"] = "Сообщение";
+$wb["txt_traffic_notification_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Вы можете включать в текст следующие переменные:</b></td></tr>
+        <tr>
+          <td class="normal">%%%FIRST_NAME%%%</td>
+          <td class="normal">
+            Имя Клиента</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%LAST_NAME%%%</td>
+          <td class="normal">
+            Фамилия Клиента</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%WEBSITE%%%</td>
+          <td class="normal">
+            Веб-сайт Клиента</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%MONTH%%%</td>
+          <td class="normal">
+            Месяц, когда бы перерасход</td>
+        </tr>
+        <tr>
+          <td class="normal" valign="top">%%%INCLUDED_TRAFFIC%%%</td>
+          <td class="normal">
+            Размер включенного трафика</td>
+        </tr>
+        <tr>
+          <td class="normal" valign="top">%%%TOTAL_TRAFFIC%%%</td>
+          <td class="normal">
+            Общий размер трафика в месяц</td>
+        </tr>
+        </table>';
+
+$wb["txt_res_traffic_suspension_email_desc"] = "<b>Уведомление о Приостановке Реселлера (Перерасход Трафика)</b>";
+$wb["txt_res_traffic_suspension_sender_email"] = "Email Отправителя";
+$wb["txt_res_traffic_suspension_sender_name"] = "Имя Отправителя";
+$wb["txt_res_traffic_suspension_email_bcc"] = "Копия Получателю";
+$wb["txt_res_traffic_suspension_email_subject"] = "Тема";
+$wb["txt_res_traffic_suspension_email_message"] = "Сообщение";
+$wb["txt_res_traffic_suspension_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Вы можете включать в текст следующие переменные:</b></td></tr>
+        <tr>
+          <td class="normal">%%%FIRST_NAME%%%</td>
+          <td class="normal">
+            Имя Реселлера</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%LAST_NAME%%%</td>
+          <td class="normal">
+            Фамилия Реселлера</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%MONTH%%%</td>
+          <td class="normal">
+            Месяц, когда был перерасход</td>
+        </tr>
+        <tr>
+          <td class="normal" valign="top">%%%INCLUDED_TRAFFIC%%%</td>
+          <td class="normal">
+            Размер включенного трафика</td>
+        </tr>
+        <tr>
+          <td class="normal" valign="top">%%%TOTAL_TRAFFIC%%%</td>
+          <td class="normal">
+            Общий размер трафика в месяц</td>
+        </tr>
+        </table>';
+
+$wb["txt_res_traffic_notification_email_desc"] = "<b>Уведомление о Перерасходе Трафика для Реселлера</b>";
+$wb["txt_res_traffic_notification_sender_email"] = "Email Отправителя";
+$wb["txt_res_traffic_notification_sender_name"] = "Имя Отправителя";
+$wb["txt_res_traffic_notification_email_bcc"] = "Копия Получателю";
+$wb["txt_res_traffic_notification_email_subject"] = "Тема";
+$wb["txt_res_traffic_notification_email_message"] = "Сообщение";
+$wb["txt_res_traffic_notification_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Вы можете включать в текст следующие переменные:</b></td></tr>
+        <tr>
+          <td class="normal">%%%FIRST_NAME%%%</td>
+          <td class="normal">
+            Имя Реселлера</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%LAST_NAME%%%</td>
+          <td class="normal">
+            Фамилия Реселлера</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%MONTH%%%</td>
+          <td class="normal">
+            Месяц, когда был перерасход</td>
+        </tr>
+        <tr>
+          <td class="normal" valign="top">%%%INCLUDED_TRAFFIC%%%</td>
+          <td class="normal">
+            Размер включенного трафика</td>
+        </tr>
+        <tr>
+          <td class="normal" valign="top">%%%TOTAL_TRAFFIC%%%</td>
+          <td class="normal">
+            Общий размер трафика в месяц</td>
+        </tr>
+        </table>';
+
+?>
