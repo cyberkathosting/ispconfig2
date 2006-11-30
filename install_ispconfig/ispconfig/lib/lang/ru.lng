@@ -1,0 +1,107 @@
+<?
+/********************************
+* ISPConfig Dictionary File
+* Version 1.0
+*********************************/
+
+/////////////// Allgemein - general (kommt in mehreren Modulen vor) /////////
+$wb["login_begruessung"]     = "Вход:";
+$wb["Username"]     = "Имя";
+$wb["Passwort"]     = "Пароль";
+$wb["Login"]       = "Логин";
+$wb["Administration"]  = "Настройки";
+$wb["ISP Manager"]  = "Управление Хостингом";
+$wb["DNS Manager"]  = "Управление DNS";
+$wb["Tools"]        = "Инструменты";
+$wb["Logout"]       = "Выход";
+$wb["Status"]       = "Статус";
+$wb["neu"]          = "новый";
+$wb["Hinweis"]      = "Справка";
+$wb["Web"]          = "Веб";
+$wb["Email"]        = "Email";
+$wb["FTP"]          = "FTP";
+$wb["DNS"]          = "DNS";
+$wb["Sonstiges"]    = "Другое";
+$wb["Datei"]        = "Файл";
+$wb["von"]          = "от"; // besser 'ab'?
+$wb["error_headline"] = "Произошла следующая ошибка:";
+$wb["Gruppe"]       = "Группа";
+$wb["Titel"]        = "Название";
+$wb["Server"]       = "Сервер";
+$wb["Host"]         = "Имя Хоста";
+$wb["Domain"]       = "Домен";
+$wb["IP Adresse"]   = "IP Адрес";
+$wb["Ordner"]       = "Папка";
+$wb["Dokument"]     = "Документ";
+$wb["Dokument suchen"] = "Поиск в документе";
+$wb["Suchmaske"]    = "Условия поиска";
+$wb["Ausgabeformat"] = "Формат вывода";
+$wb["Standard"]     = "Стандарт";
+$wb["EintrДge"]    = "Записи";
+$wb["Papierkorb leeren"] = "Очистить корзину";
+$wb["Stammordner"]  = "Мастер Зона";
+$wb["keine Gruppe"] = "Без группы";
+$wb["neues Dokument anlegen"] = "создан новый документ";
+$wb["auf"]   = "развернуть";
+$wb["zu"]    = "свернуть";
+$wb["in_ordner"]    = "в Папке";
+$wb["Papierkorb"]   = "Корзина";
+$wb["Wiederherstellen"]    = "Восстановить";
+$wb["Papierkorb: EintrДge"]   = "Корзина: содержимое";
+$wb["Speichern"]    = "Сохранить";
+$wb["LЖschen"]    = "Удалить";
+$wb["Abbrechen"]    = "Отмена";
+$wb["Suchen"]    = "Поиск";
+
+$wb["Herr"] = "Г-н";
+$wb["Frau"] = "Г-жа";
+
+$wb["Es ist folgender Fehler aufgetreten:"] = "Произошла следующая ошибка:";
+
+$wb["Web-FTP"] = 'Web-FTP';
+$wb["ISP Faktura"] = 'Счета';
+
+$wb["Verzeichnis Жffnen"] = "открыть";
+$wb["Verzeichnis schliessen"] = "закрыть";
+$wb["Hilfe"] = 'Помощь';
+$wb["Online Hilfe"] = 'Онлайн Помощь';
+$wb["schliessen"] = 'закрыть';
+
+$wb["PAPIERKORB_HINWEIS"] = "<b>Обратите внимание:</b> Над объектами в корзине сейчас производятся выбранные Вами действия. Пожалуйста, попробуйте очистить корзину позже.";
+
+
+// Multidoc  Allgemein ////////////////////////////////
+
+$wb["title_required"] = "Пожалуйста, заполните поле 'Название'";
+$wb["error_keine_rechte"] = "У Вас нет необходимых прав для просмотра и редактирования этой записи.";
+$wb["error_doctype_nicht_vorhanden"] = "Запрошенный тип документа не существует.";
+$wb["error_doctype_rechte"] = "У Вас нет необходимых прав для редактирования документов этого типа.";
+$wb["Formular Designer"] = "Мастер Форм";
+$wb["Geben Sie einen Wert in das Feld"] = "Пожалуйста, заполните поле";
+$wb["jscript_ein"] = " ";
+
+////////////// Allgemein Ende ///////////////////
+
+$wb["Es konnte ein Dokument nicht wiederhergestellt werden, da sich das Eltern-Dokument noch im Papierkorb befindet.\n"] = "The object cannot be restored as long as its parent object is in the recycle bin.";
+
+$wb["DNS-Domains angelegt"] = 'Созданы Мастер Зоны';
+$wb["Benutzter Diskspace"] = "Использовано дискового пространства";
+$wb["Slave Zones angelegt"] = "Созданы Слэйв Зоны";
+$wb["Datenbanken angelegt"] = "Созданы базы данных";
+
+$wb["txt_confirm_delete"] = "Вы действительно хотите удалить этот объект?";
+
+$wb["txt_object_currently_updated"] = "Изменения не могут быть сохранены, так как над выбранным объектом сейчас производятся действия. Пожалуйста, повторите попытку позже.<br><br> <a href='../frame_start.php?s=$s'>Next &gt;&gt;</a>";
+$wb["txt_system_currently_updated_no_recycle_bin"] = "Доступ к корзине невозможен, так как система занята. Пожалуйста, повторите попытку через несколько минут.<br><br> <a href='../frame_start.php?s=$s'>Next &gt;&gt;</a>";
+
+$wb['no_permission_to_change_data'] = "<b>Ошибка: У Вас нет необходимых прав для редактирования этих данных.</b><p>
+                <br>
+                Причиной этого может служить следующее:<br>
+                1. Вы используете систему в тестовом режиме.<br>
+                   - Войдите в систему, указав Ваше имя и пароль.<br>&nbsp;<br>
+                2. Вы пытаетесь редактировать элемент, принадлежащий другой группе.<br>
+                   В этой группе у Вас нет прав на запись / редактирование данных.<br>
+                   - Пожалуйста, попросите владельца группы дать Вам разрешение на запись данных.<br>&nbsp;<br>
+                <center><a href=\"" . $go_info["server"]["server_url"] . "/index.php?s=$s\">Далее &gt;&gt;</a></center>";
+
+?>

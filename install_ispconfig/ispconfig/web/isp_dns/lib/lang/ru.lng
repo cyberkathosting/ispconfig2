@@ -1,0 +1,97 @@
+<?
+/********************************
+* ISPConfig Dictionary File
+* Version 1.0
+*********************************/
+
+//////////////// DNS Manager ////////////////
+$wb["Optionen"]     = "Опции";
+$wb["Ziel"]         = "Назначение";
+$wb["PrioritДt"]   = "Приоритет";
+$wb["DNS Eintrag"]  = "DNS Запись";
+$wb["Ordner neu"]   = "Сортировка";
+$wb["Suchen"]       = "Поиск";
+$wb["DNS-Manager"]       = "Управление DNS";
+$wb["Domain (SOA)"]         = "Домен (SOA)";
+$wb["Email Admin"]         = "Email Администратора";
+$wb["Nameserver 1"]         = "Сервер Имен 1";
+$wb["Nameserver 2"]         = "Сервер Имен 2";
+$wb["Refresh"]         = "Обновление";
+$wb["Retry"]         = "Повторение";
+$wb["Expire"]         = "Окончание";
+$wb["TTL"]         = "TTL";
+$wb["Record"]         = "Запись";
+$wb["Record"]         = "Записи";
+$wb["Mailserver"]         = "Почтовый Сервер";
+
+$wb["Dokument"] = "Документ";
+$wb["neues Dokument anlegen"] = "новый Документ";
+
+$wb["error_soa_exists_1"] = "Вы уже создавали домен (SOA Запись) под именем ";
+$wb["error_soa_exists_2"] = ".<br>";
+//////////////// DNS Manager Ende ///////////
+
+$wb["IP-Adresse ungЭltig."] = "Некорректный IP Адрес.";
+$wb["Records"] = 'Записи';
+$wb["ziel"] = 'назначение';
+$wb["Neu"] = 'новый';
+
+// NEW 1.3 //////////////////////////////////////
+
+$wb["Master neu"] = 'Новая Мастер Зона';
+$wb["Slave neu"] = 'Новая Слейв Зона';
+$wb["Slave Zone"] = 'Слейв Зона';
+$wb["domain"] = 'Домен';
+$wb["DNS-Master IP"] = 'IP DNS Мастер Зоны';
+$wb["Name"] = 'Название';
+$wb["Masters"] = 'Мастер';
+$wb["Slaves"] = 'Слейв';
+$wb["SUCHE"] = 'ПОИСК';
+
+
+
+//////////////// Server Status ////////////////
+$wb["Arbeitsspeicher"]          = "Основная Память";
+$wb["CPU"]          = "Процессор";
+$wb["Dienste"]      = "Службы";
+$wb["Server Online seit"]          = "Время Работы Сервера";
+$wb["User Online"]      = "Количество Подключений";
+$wb["System Load 1 Minute"] = "Загрузка Системы за 1 Минуту";
+$wb["System Load 5 Minuten"] = "Загрузка Системы за 5 Минут";
+$wb["System Load 15 Minuten"] = "Загрузка Системы за 15 Минут";
+//////////////// Server Status Ende //////////
+
+$wb["Webs angelegt"] = "Сайтов";
+$wb["User angelegt"] = "Пользователей";
+$wb["Domains angelegt"] = "Доменов";
+$wb["unlimitiert"]  = "неограниченно";
+$wb["Anbieter"]     = "Реселлер";
+$wb["DNS-Domains angelegt"] = 'DNS Доменов создано';
+$wb["von"] = "of";
+$wb["Maximale Anzahl an DNS-EintrДgen erreicht."] = "В данной учетной записи достигнуто максимально возможное количество зон.<br>";
+$wb["error_no_zones_allowed"] = "В данной учетной записи не разрешается создавать зоны.<br>";
+$wb["error_no_dns_anbieter"] = "В данной учетной записи не разрешается создавать DNS записи.<br>";
+$wb["error_max_slave_dns_anbieter"] = "В данной учетной записи достигнуто максимально возможное количество слейв зон.<br>";
+$wb["weiter_link"] = "<br><br> <a href='../../isp_dns/frame_start.php?s=$s'>Далее &gt;&gt;</a>";
+$wb["error_a_record_exists"] = "В данной зоне уже существует Запись A для этого хоста.<br>";
+$wb["error_cname_record_exists"] = "В данной зоне уже существует Запись CNAME для этого хоста.<br>";
+$wb["error_mx_record_exists"] = "В данной зоне уже существует эта или аналогичная Запись MX.<br>";
+$wb["error_spf_record_exists"] = "В данной зоне уже существует эта Запись SPF.<br>";
+
+$wb["ja"] = "Да";
+$wb["nein"] = "Нет";
+$wb["a"] = "Почта отправляется<br>&nbsp;&nbsp;посредством Записи A?";
+$wb["mx"] = "Почта отправляется<br>&nbsp;&nbsp;посредством Записи MX?";
+$wb["ptr"] = "Почта отправляется<br>&nbsp;&nbsp;посредством всех серверов<br>&nbsp;&nbsp;этого домена?";
+$wb["a_break"] = "Почта отправляется<br>&nbsp;&nbsp;посредством других Записей A?";
+$wb["mx_break"] = "Почта отправляется<br>&nbsp;&nbsp;посредством других Записей MX?";
+$wb["ip4_break"] = "Почта отправляется<br>&nbsp;&nbsp;с других IP адресов?";
+$wb["include_break"] = "SPF Запись наследуется<br>&nbsp;&nbsp;из этой зоны?";
+$wb["all_"] = "Содержат ли вышеуказанные записи<br>&nbsp;&nbsp;имена всех хостов,<br>&nbsp;&nbsp;с которых разрешено отправлять почту<br>&nbsp;&nbsp;в этом домене?";
+
+$wb["Catalog_Name"] = "Название";
+$wb["Feld"] = "Поле";
+$wb["Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 -"] = "Разрешены только следующие символы: a-z A-Z 0-9 -<br>";
+$wb["Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 - ."] = "Разрешены только следующие символы: a-z A-Z 0-9 - .<br>"; 
+
+?>

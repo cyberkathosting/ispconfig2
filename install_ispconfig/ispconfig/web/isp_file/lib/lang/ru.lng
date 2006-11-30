@@ -1,0 +1,55 @@
+<?
+/********************************
+* ISPConfig Dictionary File
+* Version 1.0
+*********************************/
+
+$wb["Datei Upload"] = 'Загрузка Файла';
+$wb["Ordner neu"] = 'Новая Папка';
+$wb["Web Auswahl"] = 'Выбор Сайта';
+$wb["Web auswДhlen"] = 'Выбрать Сайт';
+$wb["Auswahl"] = 'Войти';
+$wb["WEB FTP"] = 'ВЕБ FTP';
+$wb["Hilfe"] = 'Помощь';
+$wb["Name"] = 'Название';
+$wb["GrЖsse"] = 'Размер';
+$wb["Datum"] = 'Дата';
+$wb["EigentЭmer"] = 'Владелец';
+$wb["Alle"] = 'Все';
+$wb["Lesen"] = 'Чтение';
+$wb["Schreiben"] = 'Запись';
+$wb["AusfЭhren"] = 'Исполнение';
+$wb["Verzeichnisschutz"] = 'Защита Папки';
+$wb["Verzeichnis schЭtzen"] = 'Защитить Папку';
+$wb[".htaccess User"] = 'Пользователь .htaccess';
+$wb[".htaccess UserЭbersicht"] = 'Обзор Пользователей .htaccess';
+$wb["Bearbeiten"] = 'Правка';
+$wb["HinzufЭgen"] = 'Добавить';
+$wb["ParameterЭbergabe unvollstДndig"] = "Недостаточно параметров";
+$wb["UngЭltiges Format der web_id."] = "Неправильный формат web_id.";
+$wb["UngЭltige web_id."] = "Неправильный web_id.";
+$wb["Konnte server_path_httpd_root nicht ermitteln."] = "Ошибка определения server_path_httpd_root.";
+$wb["Das Verzeichnis existiert nicht oder Sie haben nicht die notwendigen Berechtigungen."] = "Папка не существует, либо у Вас нет необходимых прав.";
+$wb["Der Pfad enthДlt ungЭltige Zeichen."] = "Путь содержит некорректные символы.";
+$wb["Diese Funktion ist im Demo-Modus deaktiviert"] = "Данная функция отключена в демонстрационном режиме.";
+$wb["ist ein Link."] = "является ссылкой.";
+$wb["existiert nicht."] = "не существует."; // Es geht um: /home/file.htm existiert nicht.
+$wb["konnte nicht gelЖscht werden."] = "ошибка удаления.";
+$wb["Das Verschieben der Datei ist fehlgeschlagen."] = "Ошибка перемещения файла.";
+$wb["konnte nicht gelЖscht werden. Das Verzeichnis muss leer sein und Sie mЭssen Schreibrechte besitzen."] = "ошибка удаления. Папка должна быть пустой, а также Вы должны иметь права на запись.";
+$wb["Das Verschieben des Verzeichnisses ist fehlgeschlagen."] = "Ошибка перемещения папки.";
+$wb["Es wurde keine Datei zum Upload ausgewДhlt."] = "Не выбран файл для загрузки.";
+$wb["Die Datei existiert bereits in diesem Verzeichnis."] = "Такой файл уже существует в этой папке.";
+$wb["MЖglicher Dateiupload Angriff."] = "Возможная файловая атака.";
+$wb["Ordner"] = "Папка";
+
+$wb["chmod failed."] = "ошибка chmod";
+$wb["FTP: Failed to open"] = "FTP: Ошибка открытия ";
+$wb["Failed to open"] = "Ошибка открытия ";
+$wb["Could not connect to"] = "Ошибка соединения с ";
+$wb["Could not connect as user"] = "Ошибка соединения от имени пользователя ";
+$wb["Next >>"] = "<br><br>Далее >>";
+
+$wb["Catalog_Name"] = "Название";
+
+?>

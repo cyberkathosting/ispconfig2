@@ -1,0 +1,389 @@
+<?
+/********************************
+* ISPConfig Dictionary File
+* Version 1.0
+*********************************/
+
+//////////////// Tools //////////////////////
+$wb["Tools & Optionen"] = "Инструменты и Опции";
+$wb["Passwort Дndern"] = "Изменить Пароль";
+$wb["Allgemein"]    = "Общие";
+$wb["Passwort alt"] = "старый пароль";
+$wb["Passwort neu"] = "новый пароль";
+$wb["Passwort wiederholen"] = "новый пароль (повтор)";
+$wb["Adresse Дndern"] = "Изменить Адрес";
+
+$wb["willkommen_kunde"] = "Добро пожаловать в панель управления ISPConfig!
+Здесь Вы можете администрировать свой сайт (сайты). Если у Вас есть вопросы по работе панели или Вы испытываете какие-либо трудности,
+просьба связаться с администратором сервера или обратиться к Руководству Клиента.";
+$wb["Willkommen"] = "Добро Пожаловать";
+
+$wb["passwort_gespeichert"] = "Пароль успешно изменен.";
+$wb["passwort_uebereinstimmung"] = "Пароль не был изменен, так как введенные Вами пароли не соответствуют друг другу. Просьба удостовериться, что пароли, введенные в поля Новый Пароль и Новый Пароль (Повтор) являются полностью идентичными.";
+$wb["passwort_alt"] = "Пароль не был изменен, <br>так как Ваш старый пароль был введен неверно.";
+
+// NEW 1.1.12 ///////////////////////////////
+
+$wb["Backup Manager"] = 'Резервное Копирование';
+$wb["Backup"] = 'Бэкап';
+$wb["Restore"] = 'Восстановить';
+$wb["Daten Export"] = 'Экспорт Данных';
+$wb["Update Manager"] = 'Управление Компонентами';
+$wb["Portscanner"] = 'Сканер Портов';
+$wb["Whois"] = 'Whois';
+$wb["Download"] = 'Закачать';
+$wb["FTP-Server"] = 'FTP Сервер';
+$wb["Verzeichnis"] = 'Папка';
+$wb["Web Daten"] = 'Сайты';
+$wb["User Daten"] = 'Пользовательские Данные';
+$wb["Log Daten"] = 'Логи';
+$wb["mySQL Datenbank (wenn vorhanden)"] = 'Базы mySQL';
+$wb["Backup starten"] = 'Начать Бэкап';
+$wb["Kein Web vorhanden."] = 'Сайт не найден.';
+$wb["Web-Backup"] = 'Веб-Бэкап';
+$wb["Kunden-Stammaten"] = 'Данные Клиента';
+$wb["Format Einstellungen"] = 'Формат';
+$wb["Trennzeichen"] = 'Разделитель';
+$wb["Eingeschlossen mit"] = 'enclosed with';
+$wb["Daten fЭr folgende Anbieter exportieren"] = 'Экспортировать Данные';
+$wb["Export starten"] = 'Начать Экспорт';
+$wb["Anbieter-Stammdaten"] = 'Данные Реселлера';
+$wb["Export"] = 'Экспорт';
+$wb["Von"] = 'От';
+$wb["Bis"] = 'Кому';
+$wb["Local Portscanner"] = 'Локальный Сканер Портов';
+
+// NEW 1.1.12a //////////////////////////////
+
+$wb["Es wurde kein Web ausgewДhlt."] = "Не выбран сайт.";
+$wb["Backup-Funktionen im Demo-Modus nicht verfЭgbar."] = "Функции резервного копирования недоступны в демонстрационном режиме.";
+$wb["Backup Status"] = "Бэкап-Статус";
+$wb["Der Name des FTP-Servers <br>enthДlt ungЭltige Zeichen."] = "Имя FTP сервера <br>содержит недопустимые символы.";
+$wb["Sie haben keinen FTP Benutzernamen angegeben."] = "Не указано Имя Пользователя FTP.";
+$wb["Ftp-Verbindung nicht hergestellt!"] = "Не удалось установить FTP-Соединение!";
+$wb["Verbindung mit:"] = "Установлено соединение с:";
+$wb["als Benutzer:"] = "от Имени Пользователя:";
+$wb["nicht mЖglich."] = "невозможен.";
+$wb["Konnte nicht in Verzeichnis:"] = "переход в папку:";
+$wb["wechseln."] = "невозможен.";
+$wb["Wechsel in Verzeichnis:"] = "переход в папку:";
+$wb["Ftp upload war fehlerhaft!"] = "Ошибка FTP-Загрузки!";
+$wb["Upload erfolgreich."] = "Загрузка успешно завершена.";
+$wb["FTP-Upload Status"] = "Статсу FTP-Загрузки";
+$wb["Backup-Methode nicht unterstЭtzt."] = "Данный метод резервного копирования недоступен.";
+$wb["Sprache Дndern"] = "Изменить Язык";
+$wb["Sprache (ISO)"] = "Язык (ISO)";
+$wb["Software Version"] = "Версия Панели Управления";
+
+
+//////////////// Tools Ende /////////////////
+
+///////////////// ISP Manager //////////////////
+$wb["Anbieter"]     = "Реселлер";
+$wb["Kunde"]        = "Клиент";
+$wb["Suchen"]       = "Поиск";
+$wb["Stammdaten"]   = "Данные";
+$wb["Limits"]       = "Ограничения";
+$wb["Zugangsdaten"] = "Данные Доступа";
+$wb["Statistik"]    = "Статистика";
+$wb["Firma"]        = "Компания";
+$wb["Anrede"]       = "Адрес";
+$wb["Vorname"]      = "Имя";
+$wb["Name"]         = "Фамилия";
+$wb["Strasse"]      = "Улица";
+$wb["PLZ"]          = "Индекс";
+$wb["Ort"]          = "Город";
+$wb["Land"]         = "Страна";
+$wb["Telefon"]      = "Телефон";
+$wb["Fax"]          = "Факс";
+$wb["Internet"]     = "Веб адрес";
+$wb["жffnen"]      = "Открыть";
+$wb["Benutzername"] = "Имя Пользователя"; // besser: vielleicht nur Variable $wb["username"] benutzen?
+$wb["zugangsdaten_anbieter_einleitung"] = "Здесь Вы можете задать Имя и Пароль для реселлера.";
+$wb["zugangsdaten_kunde_einleitung"] = "Здесь Вы можете задать Имя И Пароль для клиента, чтобы он мог <br> управлять своими сайтами.<br> ";
+$wb["Web Verwaltung"] = "Управление Сайтами";
+$wb["Rechnung"]      = "Счет";
+$wb["Rechnungsanschrift:"] = "Биллинговый адрес:<br>";
+$wb["Intervall"]    = "Период";
+$wb["Preis"]        = "Цена";
+$wb["Zahlungsart"]  = "Способ оплаты";
+$wb["Basis"]        = "Настройки";
+$wb["Create DNS"]   = "Создать DNS";
+$wb["Speicher MB"]     = "Дисковое Пространство MB";
+$wb["Max. User"]        = "Максимально Пользователей";
+$wb["Max. Domain"]        = "Максимально Доменов";
+$wb["PHP Scripte"]        = "PHP Скрипты";
+$wb["SSI"]        = "SSI";
+$wb["FTP Zugang"]        = "FTP Доступ";
+$wb["mySQL"]        = "mySQL";
+$wb["SSL"]        = "SSL";
+$wb["Shell Zugriff"]      = "Доступ к Оболочке";
+$wb["Zugang"]       = "Доступ";  // Zugriff u. Zugang zusammenfassen!/nur einen Begriff nehmen!
+$wb["CGI Scripte"]      = "CGI Скрипты";
+$wb["Bundesland"]   = "Регион";
+$wb["Abteilung"]    = "Отдел";
+$wb["GЭltigkeit (Tage)"]  = "Время Действия (в днях)";
+$wb["SSL Key"]          = "SSL Ключ";
+$wb["SSL Zertifikat"]   = "SSL Сертификат";
+$wb["Aktion"]       = "Действие";
+$wb["Zertifikat erzeugen"] = "Создать сертификат";
+$wb["Zertifikat speichern"] = "Сохранить сертификат";
+$wb["Zertifikat lЖschen"] = "Удалить Сертификат";
+$wb["Speicherplatz gesamt"] = "дисковое пространство";
+$wb["unlimitiert"]  = "неограниченно";
+$wb["verbraucht"]   = "использовано";
+$wb["TrafficЭbersicht"] = "Образо трафика";
+$wb["Monat"]        = "Месяц";
+$wb["Traffic"]      = "Трафик";
+$wb["traffic_letzte_4"] = "Трафик за последние 4 года";
+$wb["Jahr"]         = "Год";
+$wb["mySQL User"]        = "Имя Пользователя mySQL";
+$wb["mySQL Passwort"]    = "Пароль mySQL";
+
+// ErgДnzungen /////////////////////////////////
+$wb["Anbieter neu"] = "Новый реселлер";
+$wb["Kunde neu"]    = "Новый слиент";
+$wb["Web neu"]      = "Новый сайт";
+$wb["Ordner neu"]   = "Сортировка";
+$wb["Suchen"]       = "Поиск";
+$wb["ISP Anbieter"] = "Реселлер";
+$wb["Webs"] = "Сайты";
+$wb["User"] = "Пользователь";
+$wb["Domains"] = "Домены";
+$wb["Zahlung"] = "Оплата";
+$wb["ISP Kunde"] = "Клиент";
+$wb["ISP Web"] = "Сайт";
+$wb["Kunden"] = "Клиенты";
+$wb["Dokument suchen"] = "Поиск Документа";
+
+$wb["User & Email"] = "Email";
+$wb["Co-Domains"] = "Под-Домены";
+$wb["SSL"] = "SSL";
+$wb["Optionen"] = "Опции";
+
+$wb["Webs angelegt"] = "Сайтов";
+$wb["User angelegt"] = "Пользователей";
+$wb["Domains angelegt"] = "Доменов";
+$wb["rechnungsanschrift"] = "Биллинговый адрес:<br> ";
+
+
+$wb["neues Web anlegen"] = "Новый сайт";
+$wb["weiter"] = "далее";
+$wb["SUCHE"] = "поиск";
+
+$wb["msg_beta"] = "";
+$wb["title_isp_beta"] = "";
+$wb["msg_kein_win"] = "Этого программного обеспечения не сушествует для операционных систем семейства Windows.";
+
+// Error Codes ispconfig_isp_domain.lib.php
+$wb["error_web_doppelt"] = "Уже существует сайт или домен с таким именем";
+$wb["error_max_domain_web"] = "Достигнуто максимальное количество доменов для этого сайта";
+$wb["error_max_domain_anbieter"] = "Достигнуто максимальное количество доменов для данного реселлера";
+$wb["angelegt"] = "использовано";
+
+// Error Codes ispconfig_isp_kunde.lib.php
+$wb["error_user_exist_1"] = "Пользователь";
+$wb["error_user_exist_2"] = "уже существует.  Пользователь не был добавлен или отредактирован.";
+$wb["error_max_user_licence"] = "Достигнуто максимальное для Вашей лицензии количество учетных записей.";
+
+
+// Error Codes ispconfig_isp_reseller.lib.php
+$wb["error_reseller_title"] = "Реселлер с таким названием уже существует.";
+$wb["error_reseller_group_not_found"] = "Группа реселлера не может быть найдена.";
+$wb["error_anbieter_no_delete"] = "<b>Ошибка удаления реселлера.</b><br>&nbsp;<br>Реселлера можно удалить только после удаления всех его сайтов и клиентов. Удостоверьтесь также, что корзина реселлера очищена.";
+
+// Error Codes ispconfig_isp_user.lib.php
+$wb["error_sysuser_exist_1"] = "Уже существует пользователь с именем";
+$wb["error_sysuser_exist_2"] = "введено.<br><br> <a href='../../isp_manager/frame_start.php?s=$s'>Подробнее</a>";
+$wb["error_max_user_web"] = "Достигнуто максимальное количество пользователей сайта.<br><br> <a href='../../isp_manager/frame_start.php?s=$s'>Подробнее</a>";
+$wb["error_max_space_web"] = "Выбранное дисковое пространство превышает лимит сайта.<br><br> <a href='../../isp_manager/frame_start.php?s=$s'>Подробнее</a>";
+$wb["error_max_user_anbieter"] = "Достигнуто максимальное количество пользователей реселлера.<br><br> <a href='../../isp_manager/frame_start.php?s=$s'>Подробнее</a>";
+$wb["error_sysuser_exist"] = "Имя пользователя уже используется.<br><br> <a href='../../isp_manager/frame_start.php?s=$s'>Подробнее</a>";
+$wb["error_admin_exist"] = "У этого сайта уже существует пользователь с правами администратора.<br><br> <a href='../../isp_manager/frame_start.php?s=$s'>Подробнее</a>";
+$wb["error_admin_exist_long"] = "Пользователь с правами администратора уже существует. Вы должны удалить другого администратора, если Вы хотите передать административные привилегии этому пользователю.<br><br> <a href='../../isp_manager/frame_start.php?s=$s'>Подробнее</a>";
+
+// Error Codes ispconfig_isp_user.lib.php
+$wb["error_max_web_anbieter"] = "Достигнуто максимальное количество сайтов для данного реселлера.";
+$wb["error_web_ssl_exist"] = "Для этого IP уже существует SSL сертификат.";
+
+// Plugins
+$wb["CPU Auslastung 1 Minute"] = "Загрузка Процессора за 1 Минуту.";
+$wb["CPU Auslastung 5 Minuten"] = "Загрузка Процессора за 5 Минут";
+$wb["CPU Auslastung 15 Minuten"] = "Загрузка Процессора за 15 Минут";
+$wb["Server Online seit"] = "Время Работы Сервера";
+$wb["User Online"] = "Количество Подключений";
+$wb["error_web_id"] = "этот плагин требует наличия действительного веб ID.";
+$wb["von"] = "от";
+$wb["Gesamt"] = "Всего";
+$wb["Traffic in den letzten 4 Jahren"] = "Трафик за последние 4 года";
+
+$wb["Backup von Tabelle"] = "Резервное Копирование";
+$wb["Optimiere"] = "Оптимизировать";
+$wb["Reparatur"] = "Отремонтировать";
+$wb["oder"] = "или";
+$wb["Installation starten"] = "Установить";
+
+$wb["Monatlich"] = "Раз в месяц";
+$wb["Quartal"] = "Раз в квартал";
+$wb["HalbjДhrlich"] = "Раз в полугодие";
+$wb["JДhrlich"] = "Раз в год";
+$wb["Sonstige"] = "Другое";
+
+$wb["bei Erhalt"] = "при получении";
+$wb["Netto 7 Tage"] = "за 7 дней";
+$wb["Netto 15 Tage"] = "за 15 дней";
+$wb["Netto 30 Tage"] = "за 30 дней";
+$wb["Sonstige"] = "другое";
+$wb["Neu"] = "Новый";
+$wb["Postfach MB"] = "Почтовый Ящик MB";
+
+$wb["email_alias_txt"] = "<b>Подсказка:</b> один псевдоним на строчку.";
+$wb["Weiterleitung"] = "Пересылка";
+$wb["Nachricht"] = "Сообщение";
+$wb["Kein Kunde vorhanden"] = "Клиент недоступен";
+$wb["Dieses Web kЖnnen Sie nicht lЖschen."] = "Вы не можете удалить этот сайт.";
+$wb["Ausgabeformat"] = "List format";
+$wb["Bearbeiten"] = "Правка";
+$wb["LЖschen"] = "Удалить";
+
+$wb["willkommen_kunde"] = "Добро пожаловать в панель управления ISPConfig!
+Здесь Вы можете администрировать свой сайт (сайты). Если у Вас есть вопросы по работе панели
+или Вы испытываете какие-либо трудности, просьба связаться с администратором сервера или обратиться к Руководству Клиента.";
+$wb["Willkommen"] = "Добро Пожаловать";
+
+$wb["txt_client_salutatory_email_desc"] = "<b>Приветственный Email для Клиентов</b>";
+$wb["txt_client_salutatory_email_sender_email"] = "Email Отправителя";
+$wb["txt_client_salutatory_email_sender_name"] = "Имя Отправителя";
+$wb["txt_client_salutatory_email_bcc"] = "Копия Получателю";
+$wb["txt_client_salutatory_email_subject"] = "Тема";
+$wb["txt_client_salutatory_email_message"] = "Сообщение";
+$wb["txt_client_salutatory_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Вы можете включать в текст следующие переменные:</b></td></tr>
+        <tr>
+          <td class="normal">%%%USER%%%</td>
+          <td class="normal">
+            Имя Клиента</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%PASSWORD%%%</td>
+          <td class="normal">
+            Пароль Клиента</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%FIRST_NAME%%%</td>
+          <td class="normal">
+            Имя Клиента</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%LAST_NAME%%%</td>
+          <td class="normal">
+            Фамилия Клиента</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%COMPANY%%%</td>
+          <td class="normal">
+            Компания Клиента</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%EMAIL%%%</td>
+          <td class="normal">
+            Email Адрес Клиента</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%CP%%%</td>
+          <td class="normal">
+            URL Панели Управления Клиента</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%MANUAL%%%</td>
+          <td class="normal">
+            Руководство по Панели Управления</td>
+        </tr>
+        </table>';
+$wb["txt_standard_index"] = "Стандартная Index<br>&nbsp;&nbsp;Страница";
+$wb["txt_standard_index_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Вы можете включать в текст следующие переменные:</b></td></tr>
+        <tr>
+          <td class="normal">%%%FQDN%%%</td>
+          <td class="normal">
+            Полное Имя Веб-сайта</td>
+        </tr>
+    </table>';
+$wb["txt_user_standard_index"] = "Стандартная Index<br>&nbsp;&nbsp;Страница Пользователя";
+$wb["txt_user_standard_index_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Вы можете включать в текст следующие переменные:</b></td></tr>
+        <tr>
+          <td class="normal">%%%USER%%%</td>
+          <td class="normal">
+            Имя Пользователя</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%FQDN%%%</td>
+          <td class="normal">
+            Полное Имя Веб-сайта</td>
+        </tr>
+        </table>';
+
+//////////////// ISP Manager Ende /////////////
+
+//////////////// Server Status ////////////////
+$wb["Arbeitsspeicher"]          = "Основная Память";
+$wb["CPU"]          = "Процессор";
+$wb["Dienste"]      = "Службы";
+$wb["Server Online seit"]          = "Время Работы Сервера";
+$wb["User Online"]      = "Количество Подключений";
+$wb["System Load 1 Minute"] = "Загрузка Системы за 1 Минуту";
+$wb["System Load 5 Minuten"] = "Загрузка Системы за 5 Минут";
+$wb["System Load 15 Minuten"] = "Загрузка Системы за 15 Минут";
+//////////////// Server Status Ende //////////
+
+$wb["DNS-Domains angelegt"] = 'DNS Доменов создано';
+
+$wb["HinzufЭgen"] = "Добавить";
+$wb["Berechtigungen"] = "Права";
+$wb["Speichern"] = "Сохранить";
+$wb["LЖschen"] = "Удалить";
+$wb["Abbrechen"] = "Отмена";
+$wb["IP-Adresse"] = "IP-Адрес";
+$wb["DNS-Query"] = "Опрос Первичных Записей DNS";
+$wb["DNS-Insert"] = "Создать Первичные Записи DNS";
+$wb["DNS-Update"] = "Редактировать Первичные Записи DNS";
+$wb["DNS-Delete"] = "Удалить Первичные Записи DNS";
+$wb["slave_query"] = "Опрос Вторичных Записей DNS";
+$wb["slave_insert"] = "Создать Вторичные Записи DNS";
+$wb["slave_update"] = "Редактировать Вторичные Записи DNS";
+$wb["slave_delete"] = "Удалить Вторичные Записи DNS";
+$wb["reseller_query"] = "Опрос Реселлеров";
+$wb["reseller_insert"] = "Создать Реселлеров";
+$wb["reseller_update"] = "Редактировать Реселлеров";
+$wb["reseller_delete"] = "Удалить Реселлеров";
+$wb["kunde_query"] = "Опрос Клиентов";
+$wb["kunde_insert"] = "Создать Клиентов";
+$wb["kunde_update"] = "Редактировать Клиентов";
+$wb["kunde_delete"] = "Удалить Клиентов";
+$wb["web_query"] = "Опрос Веб-сайтов";
+$wb["web_insert"] = "Создать Веб-сайты";
+$wb["web_update"] = "Редактировать Веб-сайты";
+$wb["web_delete"] = "Удалить Веб-сайты";
+$wb["txt_primary_dns_records"] = "Первичные Записи DNS";
+$wb["txt_secondary_dns_records"] = "Вторичные Записи DNS";
+$wb["txt_anbieter"] = "Реселлеры";
+$wb["txt_kunden"] = "Клиенты";
+$wb["txt_webs"] = "Веб-сайты";
+
+$wb["txt_move_websites"] = "Перемещение Веб-сайтов";
+$wb["txt_website_deleted_no_move"] = "Этот сайт был удален и не может быть перемещен.<br><br> <a href='../../frame_start.php?s=$s'>Далее &gt;&gt;</a>";
+$wb["txt_customer_deleted_no_move"] = "Этот клиент был удален, и сайт не может быть перемещен.<br><br> <a href='../../frame_start.php?s=$s'>Далее &gt;&gt;</a>";
+$wb["txt_website_moved"] = "Сайт был перемещен к указанному Вами Клиенту.<br><br> <a href='../../frame_start.php?s=$s'>Далее &gt;&gt;</a>";
+$wb["txt_move_website_from"] = "от";
+$wb["txt_move_website_to"] = "кому";
+$wb["txt_move_website_website"] = "Веб-сайт";
+$wb["txt_move_website_submit"] = "Отправить";
+
+?>

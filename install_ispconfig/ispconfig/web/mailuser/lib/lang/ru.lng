@@ -1,0 +1,47 @@
+<?php
+
+$wb["txt_login_desc"] = "Зайдите сюда для изменения Вашей почтовой конфигурации.";
+$wb["txt_error"] = "Ошибка";
+$wb["txt_email_username"] = "Email-Имя Пользователя";
+$wb["txt_password"] = "Пароль";
+$wb["txt_login"] = "Вход";
+$wb["txt_autoresponder"] = "Автоответчик";
+$wb["txt_nachricht"] = "Сообщение";
+$wb["txt_speichern"] = "Сохранить";
+$wb["txt_abbrechen"] = "Прервать";
+$wb["txt_email_account"] = "Учетная Запись Email";
+$wb["txt_user_und_email"] = "Пользователь &amp; Email";
+$wb["txt_spamfilter"] = "Спам-фильтр";
+$wb["txt_logout"] = "Выход";
+$wb["txt_mailscan"] = "Сканирование Почты";
+$wb["txt_antivirus"] = "Антивирус";
+$wb["txt_spam_strategie"] = "Спам Стратегия";
+$wb["txt_spam_hits"] = "Спам Попадания";
+$wb["txt_rewrite_subject"] = "Переписывать Тему";
+$wb["txt_betreff"] = "Тема";
+$wb["txt_name"] = "Название";
+$wb["txt_email_adresse"] = "Email Адрес";
+$wb["txt_username"] = "Имя Пользователя";
+$wb["txt_web_speicher"] = "Веб-Квота";
+$wb["txt_mail_speicher"] = "Почтовая Квота";
+$wb["txt_email_passwort_leer"] = "Имя Пользователя и/или Пароль не указаны!";
+$wb["txt_user_unbekannt"] = "Неизвестный Пользователь.";
+$wb["txt_access_forbidden"] = "Доступ Запрещен!";
+$wb["txt_yes"] = "Да";
+$wb["txt_no"] = "Нет";
+$wb["txt_unlimited"] = "неограниченно";
+$wb["txt_welcome"] = "Добро Пожаловать...";
+$wb["txt_error_spam_hits_format"] = "Значение <i>".$wb["txt_spam_hits"]."</i> должно иметь следующий формат:";
+$wb["txt_accept"] = "принять";
+$wb["txt_discard"] = "отказаться";
+$wb["txt_language"] = "Язык";
+$wb["txt_no_mailuser_login"] = "Вход для Вашего сайта заблокирован.";
+$wb["txt_forwarder"] = "Пересылка";
+$wb["txt_forwarder_desc"] = "<b>Подсказка:</b> Один email на строчку.";
+$wb["txt_spam_whitelist"] = 'Белый Спам-Список';
+$wb["txt_spam_blacklist"] = 'Черный Спам-Список';
+$wb["txt_hint_spam_whitelist"] = '<b>Подсказка:</b> Одна запись на строчку. Правильными записями, например, являются friend@somewhere.com, *@isp.com, или *.domain.net.';
+$wb["txt_hint_spam_blacklist"] = '<b>Подсказка:</b> Одна запись на строчку. Правильными записями, например, являются friend@somewhere.com, *@isp.com, или *.domain.net.';
+$wb["txt_uribl"] = 'Используйте <a href="http://www.uribl.com/about.shtml" target="_blank">URIBL</a>'; 
+
+?>

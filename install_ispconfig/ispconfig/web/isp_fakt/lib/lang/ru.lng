@@ -1,0 +1,88 @@
+<?
+/********************************
+* ISPConfig Dictionary File
+* Version 1.0
+*********************************/
+
+$wb["ISP Faktura"] = 'Счета';
+$wb["Web-FTP"] = 'Веб-FTP';
+$wb["Domains"] = 'Домены';
+$wb["Service"] = 'Услуги';
+$wb["Webs"] = 'Сайты';
+$wb["Traffic"] = 'Трафик';
+$wb["Email-Adressen"] = 'Адреса Email';
+$wb["Artikel"] = 'Объект';
+$wb["admin"] = 'админ';
+$wb["Artikel fЭr"] = 'Объект для';
+$wb["Dienstleistung"] = 'Услуги';
+$wb["Hardware"] = 'Железо';
+$wb["Software"] = 'Программы';
+$wb["Typ"] = 'Тип';
+$wb["Artikel Nr."] = 'Объект #';
+$wb["Bezeichnung"] = 'Название';
+$wb["Beschreibung"] = 'Описание';
+$wb["StЭck"] = 'Шт.';
+$wb["MB"] = 'MB';
+$wb["GB"] = 'GB';
+$wb["Stunde"] = 'Час';
+$wb["Einheit"] = 'Единица';
+$wb["Menge"] = 'Количество';
+$wb["Preis"] = 'Цена';
+$wb["Verrechnung"] = 'Расчетный Период';
+$wb["Artikel neu"] = 'Новый Объект';
+$wb["Ordner neu"] = 'Новая Папка';
+$wb["Abrechnen"] = 'Новый Счет';
+$wb["Artikel neu"] = 'Новый Объект';
+$wb["Ordner neu"] = 'Новая Папка';
+$wb["Produkte"] = 'Продукты';
+$wb["Abrechnen"] = 'Новый Счет';
+$wb["Rechnungen"] = 'Счета';
+$wb["Kunden"] = 'Клиенты';
+$wb["Anbieter"] = 'Реселлеры';
+$wb["Keine Artikel zum Abrechnen gefunden."] = 'Нет объектов для создания счета.';
+$wb["Abrechnung"] = 'Счет';
+$wb["Name"] = 'Название';
+$wb["IP-Traffic"] = 'IP Трафик';
+$wb["Steuersatz"] = 'Налог';
+$wb["Bei эberschreitung:"] = 'При Перерасходе:';
+$wb["Diese Angaben sind nur fЭr Artikel vom Typ: Traffic gЭltig!"] = 'Эти записи действительны только для объектов типа: Трафик!';
+$wb["Rechnungen Kunden"] = 'Счета Клиентов';
+$wb["Firma"] = 'Компания';
+$wb["Vorname"] = 'Имя';
+$wb["Strasse"] = 'Улица';
+$wb["PLZ"] = 'Индекс';
+$wb["Ort"] = 'Город';
+$wb["Land"] = 'Страна';
+$wb["Steuernr."] = 'ИНН';
+$wb["Rechnung"] = 'Счет';
+$wb["Datum"] = 'Дата';
+$wb["Rechnung Nr."] = 'Счет #';
+$wb["Anzahl"] = 'Количество';
+$wb["Art. Nr."] = 'Объект #';
+$wb["Gesamt"] = 'Всего';
+$wb["EURO"] = 'EURO';
+$wb["Web gesamt"] = 'Всего за Сайты';
+$wb["enthaltene Mehrwertsteuer"] = 'Включая НДС';
+$wb["Gesamtbetrag"] = 'Всего';
+$wb["Rechnungen Anbieter"] = 'Счета Реселлеров';
+$wb["Kunde"] = 'Клиент';
+$wb["Rg. Nr."] = 'Счет #';
+$wb["OK"] = 'OK';
+$wb["Weiter"] = "Далее";
+$wb["Summe Anbieter"] = "Всего от Реселлера";
+$wb["Summe Web"] = "Всего за Сайты";
+$wb["Summe Kunde"] = "Всего от Клиента";
+$wb["Abrechnung abgeschlossen."] = "Счет создан.";
+
+//////////////// Server Status ////////////////
+$wb["Arbeitsspeicher"]          = "Основная Память";
+$wb["CPU"]          = "Процессор";
+$wb["Dienste"]      = "Службы";
+$wb["Server Online seit"]          = "Время Работы Сервера";
+$wb["User Online"]      = "Количество Подключений";
+$wb["System Load 1 Minute"] = "Загрузка Системы за 1 Минуту";
+$wb["System Load 5 Minuten"] = "Загрузка Системы за 5 Минут";
+$wb["System Load 15 Minuten"] = "Загрузка Системы за 15 Минут";
+//////////////// Server Status Ende //////////
+
+?>
