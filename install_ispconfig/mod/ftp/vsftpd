@@ -170,13 +170,17 @@ dist_ftp_conf:/etc/vsftpd.conf:Config-File:read::debian30
 dist_ftp_version:inetd:Server-Version:select:standalone|inetd|xinetd:debian30
 dist_ftp_log:/var/log/vsftpd.log:Log-File:read::debian30
 
-dist_ftp_conf:/etc/vsftpd.conf:Config-File:read::debiantesting/unstable0
-dist_ftp_version:inetd:Server-Version:select:standalone|inetd|xinetd:debiantesting/unstable0
-dist_ftp_log:/var/log/vsftpd.log:Log-File:read::debiantesting/unstable0
-
 dist_ftp_conf:/etc/vsftpd.conf:Config-File:read::debian31
 dist_ftp_version:inetd:Server-Version:select:standalone|inetd|xinetd:debian31
 dist_ftp_log:/var/log/vsftpd.log:Log-File:read::debian31
+
+dist_ftp_conf:/etc/vsftpd.conf:Config-File:read::debian40
+dist_ftp_version:inetd:Server-Version:select:standalone|inetd|xinetd:debian40
+dist_ftp_log:/var/log/vsftpd.log:Log-File:read::debian40
+
+dist_ftp_conf:/etc/vsftpd.conf:Config-File:read::debiantesting/unstable0
+dist_ftp_version:inetd:Server-Version:select:standalone|inetd|xinetd:debiantesting/unstable0
+dist_ftp_log:/var/log/vsftpd.log:Log-File:read::debiantesting/unstable0
 
 dist_ftp_conf:/usr/local/etc/vsftpd.conf:Config-File:read::freebsd50
 dist_ftp_version:inetd:Server-Version:select:standalone|inetd|xinetd:freebsd50
