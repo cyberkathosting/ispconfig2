@@ -526,7 +526,7 @@ function find_uid_gid($min, $max){
 
 function rc_edit($service, $rl, $action){
   // $action = "on|off";
-  global $dist_init_scripts, $dist_runlevel;
+  global $dist_init_scripts, $dist_runlevel, $dist;
   if(trim($dist_runlevel) == ""){ // falls es keine runlevel gibt (FreeBSD)
     if($action == "on"){
       @symlink($dist_init_scripts."/".$service, $dist_init_scripts."/".$service.".sh");
@@ -539,26 +539,35 @@ function rc_edit($service, $rl, $action){
       }
     }
   } else { // Linux
-    $runlevels = explode(",", $rl);
-    foreach($runlevels as $runlevel){
-      $runlevel = trim($runlevel);
-      if($runlevel != "" && is_dir($dist_runlevel."/rc".$runlevel.".d")){
-        $handle=opendir($dist_runlevel."/rc".$runlevel.".d");
-        while($file = readdir($handle)){
-          if($file != "." && $file != ".."){
-            $target = @readlink($dist_runlevel."/rc".$runlevel.".d/".$file);
-            if(strstr($file, $service) && strstr($target, $service) && substr($file,0,1) == "S") $ln_arr[$runlevel][] = $dist_runlevel."/rc".$runlevel.".d/".$file;
-          }
-        }
-        closedir($handle);
-      }
+    if(substr($dist, 0,4) == 'suse'){
       if($action == "on"){
-        if(!is_array($ln_arr[$runlevel])) @symlink($dist_init_scripts."/".$service, $dist_runlevel."/rc".$runlevel.".d/S99".$service);
+        exec("chkconfig --add $service &> /dev/null");
       }
       if($action == "off"){
-        if(is_array($ln_arr[$runlevel])){
-          foreach($ln_arr[$runlevel] as $link){
-            unlink($link);
+        exec("chkconfig --del $service &> /dev/null");
+      }
+    } else {
+      $runlevels = explode(",", $rl);
+      foreach($runlevels as $runlevel){
+        $runlevel = trim($runlevel);
+        if($runlevel != "" && is_dir($dist_runlevel."/rc".$runlevel.".d")){
+          $handle=opendir($dist_runlevel."/rc".$runlevel.".d");
+          while($file = readdir($handle)){
+            if($file != "." && $file != ".."){
+              $target = @readlink($dist_runlevel."/rc".$runlevel.".d/".$file);
+              if(strstr($file, $service) && strstr($target, $service) && substr($file,0,1) == "S") $ln_arr[$runlevel][] = $dist_runlevel."/rc".$runlevel.".d/".$file;
+            }
+          }
+          closedir($handle);
+        }
+        if($action == "on"){
+          if(!is_array($ln_arr[$runlevel])) @symlink($dist_init_scripts."/".$service, $dist_runlevel."/rc".$runlevel.".d/S99".$service);
+        }
+        if($action == "off"){
+          if(is_array($ln_arr[$runlevel])){
+            foreach($ln_arr[$runlevel] as $link){
+              unlink($link);
+            }
           }
         }
       }
