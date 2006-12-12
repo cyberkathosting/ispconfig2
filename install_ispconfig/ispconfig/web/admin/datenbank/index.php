@@ -70,8 +70,8 @@ $sql = "SELECT * from sys_news, sys_nodes where sys_news.doc_id = sys_nodes.doc_
 $go_api->db->query($sql);
 
 
-if($page > 0) $zurueck = "<a href=\"news_list.php?page=$lastpage&gid=$gid&s=$s\" class=\"t2l\">&lt;&lt; Zur&uuml;ck</a>";
-if($go_api->db->numRows() > $bis) $weiter = "<a href=\"news_list.php?page=$nextpage&gid=$gid&s=$s\" class=\"t2l\">Weiter &gt;&gt;</a>";
+if($page > 0) $zurueck = "<a href=\"index.php?page=$lastpage&gid=$gid&s=$s\" class=\"t2l\">&lt;&lt; Zur&uuml;ck</a>";
+if($go_api->db->numRows() > $bis) $weiter = "<a href=\"index.php?page=$nextpage&gid=$gid&s=$s\" class=\"t2l\">Weiter &gt;&gt;</a>";
 
 $go_api->content->assign( array( WEITER => $weiter,
                                  ZURUECK => $zurueck));
