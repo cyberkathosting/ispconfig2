@@ -54,7 +54,8 @@ class check_disk_plugin {
     }
 
         $df_out = split("\n",$buffer);
-        for($i=0;$i<sizeof($df_out);$i++){
+        $df_num = sizeof($df_out);
+        for($i=0;$i<$df_num;$i++){
           if(ltrim($df_out[$i]) != $df_out[$i]){
             if(isset($df_out[($i-1)])){
               $df_out[($i-1)] .= $df_out[$i];
