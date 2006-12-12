@@ -37,7 +37,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  # Datum:       18.04.2003
  #
  #############################################################
- 
+
  if(CONFIG_LOADED != 1) die('Direct access not permitted.');
 
 class check_disk_plugin {
@@ -56,7 +56,8 @@ class check_disk_plugin {
     }
 
         $df_out = split("\n",$buffer);
-        for($i=0;$i<sizeof($df_out);$i++){
+        $df_num = sizeof($df_out);
+        for($i=0;$i<$df_num;$i++){
           if(ltrim($df_out[$i]) != $df_out[$i]){
             if(isset($df_out[($i-1)])){
               $df_out[($i-1)] .= $df_out[$i];
