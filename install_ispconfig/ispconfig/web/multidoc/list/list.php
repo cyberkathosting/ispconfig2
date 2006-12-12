@@ -123,8 +123,8 @@ $go_api->db->query($sql);
 
 if($liste->limit != ""){
 
-if($page > 0) $zurueck = "<a href=\"news_list.php?page=$lastpage&gid=$gid&s=$s\" class=\"t2l\">&lt;&lt; ".$go_api->lng("Zurück")."</a>";
-if($go_api->db->numRows() > $bis) $weiter = "<a href=\"news_list.php?page=$nextpage&gid=$gid&s=$s\" class=\"t2l\">".$go_api->lng("Weiter")." &gt;&gt;</a>";
+if($page > 0) $zurueck = "<a href=\"list.php?page=$lastpage&gid=$gid&s=$s\" class=\"t2l\">&lt;&lt; ".$go_api->lng("Zurück")."</a>";
+if($go_api->db->numRows() > $bis) $weiter = "<a href=\"list.php?page=$nextpage&gid=$gid&s=$s\" class=\"t2l\">".$go_api->lng("Weiter")." &gt;&gt;</a>";
 
 $go_api->content->assign( array( WEITER => $weiter,
                                  ZURUECK => $zurueck));
