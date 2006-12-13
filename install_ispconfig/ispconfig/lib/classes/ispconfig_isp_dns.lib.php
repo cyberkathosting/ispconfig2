@@ -64,6 +64,88 @@ $this->sendmail_cw = $server_conf["server_sendmail_cw"];
 function soa_insert($doc_id, $doctype_id, $die_on_error = '1') {
 global $go_api, $go_info;
 
+    // Remove http:// and https:// and spaces from domains and hosts
+    if($tmp_as = $go_api->db->queryAllRecords("SELECT * FROM dns_a WHERE host LIKE 'http://%' OR host LIKE 'https://%' OR host LIKE ' %' OR host LIKE '% ' OR ip_adresse LIKE 'http://%' OR ip_adresse LIKE 'https://%' OR ip_adresse LIKE ' %' OR ip_adresse LIKE '% '")){
+      foreach($tmp_as as $tmp_a){
+        $tmp_a['host'] = str_replace('http://', '', $tmp_a['host']);
+        $tmp_a['host'] = str_replace('https://', '', $tmp_a['host']);
+        $tmp_a['host'] = trim($tmp_a['host']);
+        $tmp_a['ip_adresse'] = str_replace('http://', '', $tmp_a['ip_adresse']);
+        $tmp_a['ip_adresse'] = str_replace('https://', '', $tmp_a['ip_adresse']);
+        $tmp_a['ip_adresse'] = trim($tmp_a['ip_adresse']);
+        $go_api->db->query("UPDATE dns_a SET host = '".$tmp_a['host']."', ip_adresse = '".$tmp_a['ip_adresse']."' WHERE doc_id = ".$tmp_a['doc_id']);
+      }
+      unset($tmp_as);
+    }
+
+    if($tmp_cnames = $go_api->db->queryAllRecords("SELECT * FROM dns_cname WHERE host LIKE 'http://%' OR host LIKE 'https://%' OR host LIKE ' %' OR host LIKE '% ' OR ziel LIKE 'http://%' OR ziel LIKE 'https://%' OR ziel LIKE ' %' OR ziel LIKE '% '")){
+      foreach($tmp_cnames as $tmp_cname){
+        $tmp_cname['host'] = str_replace('http://', '', $tmp_cname['host']);
+        $tmp_cname['host'] = str_replace('https://', '', $tmp_cname['host']);
+        $tmp_cname['host'] = trim($tmp_cname['host']);
+        $tmp_cname['ziel'] = str_replace('http://', '', $tmp_cname['ziel']);
+        $tmp_cname['ziel'] = str_replace('https://', '', $tmp_cname['ziel']);
+        $tmp_cname['ziel'] = trim($tmp_cname['ziel']);
+        $go_api->db->query("UPDATE dns_cname SET host = '".$tmp_cname['host']."', ziel = '".$tmp_cname['ziel']."' WHERE doc_id = ".$tmp_cname['doc_id']);
+      }
+      unset($tmp_cnames);
+    }
+
+    if($tmp_dns_isp_dnss = $go_api->db->queryAllRecords("SELECT * FROM dns_isp_dns WHERE dns_soa LIKE 'http://%' OR dns_soa LIKE 'https://%' OR dns_soa LIKE ' %' OR dns_soa LIKE '% ' OR dns_ns1 LIKE 'http://%' OR dns_ns1 LIKE 'https://%' OR dns_ns1 LIKE ' %' OR dns_ns1 LIKE '% ' OR dns_ns2 LIKE 'http://%' OR dns_ns2 LIKE 'https://%' OR dns_ns2 LIKE ' %' OR dns_ns2 LIKE '% ' OR dns_soa_ip LIKE 'http://%' OR dns_soa_ip LIKE 'https://%' OR dns_soa_ip LIKE ' %' OR dns_soa_ip LIKE '% '")){
+      foreach($tmp_dns_isp_dnss as $tmp_dns_isp_dns){
+        $tmp_dns_isp_dns['dns_soa'] = str_replace('http://', '', $tmp_dns_isp_dns['dns_soa']);
+        $tmp_dns_isp_dns['dns_soa'] = str_replace('https://', '', $tmp_dns_isp_dns['dns_soa']);
+        $tmp_dns_isp_dns['dns_soa'] = trim($tmp_dns_isp_dns['dns_soa']);
+        $tmp_dns_isp_dns['dns_ns1'] = str_replace('http://', '', $tmp_dns_isp_dns['dns_ns1']);
+        $tmp_dns_isp_dns['dns_ns1'] = str_replace('https://', '', $tmp_dns_isp_dns['dns_ns1']);
+        $tmp_dns_isp_dns['dns_ns1'] = trim($tmp_dns_isp_dns['dns_ns1']);
+        $tmp_dns_isp_dns['dns_ns2'] = str_replace('http://', '', $tmp_dns_isp_dns['dns_ns2']);
+        $tmp_dns_isp_dns['dns_ns2'] = str_replace('https://', '', $tmp_dns_isp_dns['dns_ns2']);
+        $tmp_dns_isp_dns['dns_ns2'] = trim($tmp_dns_isp_dns['dns_ns2']);
+        $tmp_dns_isp_dns['dns_soa_ip'] = str_replace('http://', '', $tmp_dns_isp_dns['dns_soa_ip']);
+        $tmp_dns_isp_dns['dns_soa_ip'] = str_replace('https://', '', $tmp_dns_isp_dns['dns_soa_ip']);
+        $tmp_dns_isp_dns['dns_soa_ip'] = trim($tmp_dns_isp_dns['dns_soa_ip']);
+        $go_api->db->query("UPDATE dns_isp_dns SET dns_soa = '".$tmp_dns_isp_dns['dns_soa']."', dns_ns1 = '".$tmp_dns_isp_dns['dns_ns1']."', dns_ns2 = '".$tmp_dns_isp_dns['dns_ns2']."', dns_soa_ip = '".$tmp_dns_isp_dns['dns_soa_ip']."' WHERE doc_id = ".$tmp_dns_isp_dns['doc_id']);
+      }
+      unset($tmp_dns_isp_dnss);
+    }
+
+    if($tmp_mxs = $go_api->db->queryAllRecords("SELECT * FROM dns_mx WHERE host LIKE 'http://%' OR host LIKE 'https://%' OR host LIKE ' %' OR host LIKE '% ' OR mailserver LIKE 'http://%' OR mailserver LIKE 'https://%' OR mailserver LIKE ' %' OR mailserver LIKE '% '")){
+      foreach($tmp_mxs as $tmp_mx){
+        $tmp_mx['host'] = str_replace('http://', '', $tmp_mx['host']);
+        $tmp_mx['host'] = str_replace('https://', '', $tmp_mx['host']);
+        $tmp_mx['host'] = trim($tmp_mx['host']);
+        $tmp_mx['mailserver'] = str_replace('http://', '', $tmp_mx['mailserver']);
+        $tmp_mx['mailserver'] = str_replace('https://', '', $tmp_mx['mailserver']);
+        $tmp_mx['mailserver'] = trim($tmp_mx['mailserver']);
+        $go_api->db->query("UPDATE dns_mx SET host = '".$tmp_mx['host']."', mailserver = '".$tmp_mx['mailserver']."' WHERE doc_id = ".$tmp_mx['doc_id']);
+      }
+      unset($tmp_mxs);
+    }
+
+    if($tmp_secondaries = $go_api->db->queryAllRecords("SELECT * FROM dns_secondary WHERE domain LIKE 'http://%' OR domain LIKE 'https://%' OR domain LIKE ' %' OR domain LIKE '% ' OR master_ip LIKE 'http://%' OR master_ip LIKE 'https://%' OR master_ip LIKE ' %' OR master_ip LIKE '% '")){
+      foreach($tmp_secondaries as $tmp_secondary){
+        $tmp_secondary['domain'] = str_replace('http://', '', $tmp_secondary['domain']);
+        $tmp_secondary['domain'] = str_replace('https://', '', $tmp_secondary['domain']);
+        $tmp_secondary['domain'] = trim($tmp_secondary['domain']);
+        $tmp_secondary['master_ip'] = str_replace('http://', '', $tmp_secondary['master_ip']);
+        $tmp_secondary['master_ip'] = str_replace('https://', '', $tmp_secondary['master_ip']);
+        $tmp_secondary['master_ip'] = trim($tmp_secondary['master_ip']);
+        $go_api->db->query("UPDATE dns_secondary SET domain = '".$tmp_secondary['domain']."', master_ip = '".$tmp_secondary['master_ip']."' WHERE doc_id = ".$tmp_secondary['doc_id']);
+      }
+      unset($tmp_secondaries);
+    }
+
+    if($tmp_spfs = $go_api->db->queryAllRecords("SELECT * FROM dns_spf WHERE host LIKE 'http://%' OR host LIKE 'https://%' OR host LIKE ' %' OR host LIKE '% '")){
+      foreach($tmp_spfs as $tmp_spf){
+        $tmp_spf['host'] = str_replace('http://', '', $tmp_spf['host']);
+        $tmp_spf['host'] = str_replace('https://', '', $tmp_spf['host']);
+        $tmp_spf['host'] = trim($tmp_spf['host']);
+        $go_api->db->query("UPDATE dns_spf SET host = '".$tmp_spf['host']."' WHERE doc_id = ".$tmp_spf['doc_id']);
+      }
+      unset($tmp_spfs);
+    }
+
     $aufruf = '';
 
     if($doctype_id == 1016) {
@@ -304,6 +386,88 @@ global $go_api, $go_info;
 
 function soa_update($doc_id, $doctype_id, $die_on_error = '1') {
     global $go_api, $go_info, $old_form_data;
+
+    // Remove http:// and https:// and spaces from domains and hosts
+    if($tmp_as = $go_api->db->queryAllRecords("SELECT * FROM dns_a WHERE host LIKE 'http://%' OR host LIKE 'https://%' OR host LIKE ' %' OR host LIKE '% ' OR ip_adresse LIKE 'http://%' OR ip_adresse LIKE 'https://%' OR ip_adresse LIKE ' %' OR ip_adresse LIKE '% '")){
+      foreach($tmp_as as $tmp_a){
+        $tmp_a['host'] = str_replace('http://', '', $tmp_a['host']);
+        $tmp_a['host'] = str_replace('https://', '', $tmp_a['host']);
+        $tmp_a['host'] = trim($tmp_a['host']);
+        $tmp_a['ip_adresse'] = str_replace('http://', '', $tmp_a['ip_adresse']);
+        $tmp_a['ip_adresse'] = str_replace('https://', '', $tmp_a['ip_adresse']);
+        $tmp_a['ip_adresse'] = trim($tmp_a['ip_adresse']);
+        $go_api->db->query("UPDATE dns_a SET host = '".$tmp_a['host']."', ip_adresse = '".$tmp_a['ip_adresse']."' WHERE doc_id = ".$tmp_a['doc_id']);
+      }
+      unset($tmp_as);
+    }
+
+    if($tmp_cnames = $go_api->db->queryAllRecords("SELECT * FROM dns_cname WHERE host LIKE 'http://%' OR host LIKE 'https://%' OR host LIKE ' %' OR host LIKE '% ' OR ziel LIKE 'http://%' OR ziel LIKE 'https://%' OR ziel LIKE ' %' OR ziel LIKE '% '")){
+      foreach($tmp_cnames as $tmp_cname){
+        $tmp_cname['host'] = str_replace('http://', '', $tmp_cname['host']);
+        $tmp_cname['host'] = str_replace('https://', '', $tmp_cname['host']);
+        $tmp_cname['host'] = trim($tmp_cname['host']);
+        $tmp_cname['ziel'] = str_replace('http://', '', $tmp_cname['ziel']);
+        $tmp_cname['ziel'] = str_replace('https://', '', $tmp_cname['ziel']);
+        $tmp_cname['ziel'] = trim($tmp_cname['ziel']);
+        $go_api->db->query("UPDATE dns_cname SET host = '".$tmp_cname['host']."', ziel = '".$tmp_cname['ziel']."' WHERE doc_id = ".$tmp_cname['doc_id']);
+      }
+      unset($tmp_cnames);
+    }
+
+    if($tmp_dns_isp_dnss = $go_api->db->queryAllRecords("SELECT * FROM dns_isp_dns WHERE dns_soa LIKE 'http://%' OR dns_soa LIKE 'https://%' OR dns_soa LIKE ' %' OR dns_soa LIKE '% ' OR dns_ns1 LIKE 'http://%' OR dns_ns1 LIKE 'https://%' OR dns_ns1 LIKE ' %' OR dns_ns1 LIKE '% ' OR dns_ns2 LIKE 'http://%' OR dns_ns2 LIKE 'https://%' OR dns_ns2 LIKE ' %' OR dns_ns2 LIKE '% ' OR dns_soa_ip LIKE 'http://%' OR dns_soa_ip LIKE 'https://%' OR dns_soa_ip LIKE ' %' OR dns_soa_ip LIKE '% '")){
+      foreach($tmp_dns_isp_dnss as $tmp_dns_isp_dns){
+        $tmp_dns_isp_dns['dns_soa'] = str_replace('http://', '', $tmp_dns_isp_dns['dns_soa']);
+        $tmp_dns_isp_dns['dns_soa'] = str_replace('https://', '', $tmp_dns_isp_dns['dns_soa']);
+        $tmp_dns_isp_dns['dns_soa'] = trim($tmp_dns_isp_dns['dns_soa']);
+        $tmp_dns_isp_dns['dns_ns1'] = str_replace('http://', '', $tmp_dns_isp_dns['dns_ns1']);
+        $tmp_dns_isp_dns['dns_ns1'] = str_replace('https://', '', $tmp_dns_isp_dns['dns_ns1']);
+        $tmp_dns_isp_dns['dns_ns1'] = trim($tmp_dns_isp_dns['dns_ns1']);
+        $tmp_dns_isp_dns['dns_ns2'] = str_replace('http://', '', $tmp_dns_isp_dns['dns_ns2']);
+        $tmp_dns_isp_dns['dns_ns2'] = str_replace('https://', '', $tmp_dns_isp_dns['dns_ns2']);
+        $tmp_dns_isp_dns['dns_ns2'] = trim($tmp_dns_isp_dns['dns_ns2']);
+        $tmp_dns_isp_dns['dns_soa_ip'] = str_replace('http://', '', $tmp_dns_isp_dns['dns_soa_ip']);
+        $tmp_dns_isp_dns['dns_soa_ip'] = str_replace('https://', '', $tmp_dns_isp_dns['dns_soa_ip']);
+        $tmp_dns_isp_dns['dns_soa_ip'] = trim($tmp_dns_isp_dns['dns_soa_ip']);
+        $go_api->db->query("UPDATE dns_isp_dns SET dns_soa = '".$tmp_dns_isp_dns['dns_soa']."', dns_ns1 = '".$tmp_dns_isp_dns['dns_ns1']."', dns_ns2 = '".$tmp_dns_isp_dns['dns_ns2']."', dns_soa_ip = '".$tmp_dns_isp_dns['dns_soa_ip']."' WHERE doc_id = ".$tmp_dns_isp_dns['doc_id']);
+      }
+      unset($tmp_dns_isp_dnss);
+    }
+
+    if($tmp_mxs = $go_api->db->queryAllRecords("SELECT * FROM dns_mx WHERE host LIKE 'http://%' OR host LIKE 'https://%' OR host LIKE ' %' OR host LIKE '% ' OR mailserver LIKE 'http://%' OR mailserver LIKE 'https://%' OR mailserver LIKE ' %' OR mailserver LIKE '% '")){
+      foreach($tmp_mxs as $tmp_mx){
+        $tmp_mx['host'] = str_replace('http://', '', $tmp_mx['host']);
+        $tmp_mx['host'] = str_replace('https://', '', $tmp_mx['host']);
+        $tmp_mx['host'] = trim($tmp_mx['host']);
+        $tmp_mx['mailserver'] = str_replace('http://', '', $tmp_mx['mailserver']);
+        $tmp_mx['mailserver'] = str_replace('https://', '', $tmp_mx['mailserver']);
+        $tmp_mx['mailserver'] = trim($tmp_mx['mailserver']);
+        $go_api->db->query("UPDATE dns_mx SET host = '".$tmp_mx['host']."', mailserver = '".$tmp_mx['mailserver']."' WHERE doc_id = ".$tmp_mx['doc_id']);
+      }
+      unset($tmp_mxs);
+    }
+
+    if($tmp_secondaries = $go_api->db->queryAllRecords("SELECT * FROM dns_secondary WHERE domain LIKE 'http://%' OR domain LIKE 'https://%' OR domain LIKE ' %' OR domain LIKE '% ' OR master_ip LIKE 'http://%' OR master_ip LIKE 'https://%' OR master_ip LIKE ' %' OR master_ip LIKE '% '")){
+      foreach($tmp_secondaries as $tmp_secondary){
+        $tmp_secondary['domain'] = str_replace('http://', '', $tmp_secondary['domain']);
+        $tmp_secondary['domain'] = str_replace('https://', '', $tmp_secondary['domain']);
+        $tmp_secondary['domain'] = trim($tmp_secondary['domain']);
+        $tmp_secondary['master_ip'] = str_replace('http://', '', $tmp_secondary['master_ip']);
+        $tmp_secondary['master_ip'] = str_replace('https://', '', $tmp_secondary['master_ip']);
+        $tmp_secondary['master_ip'] = trim($tmp_secondary['master_ip']);
+        $go_api->db->query("UPDATE dns_secondary SET domain = '".$tmp_secondary['domain']."', master_ip = '".$tmp_secondary['master_ip']."' WHERE doc_id = ".$tmp_secondary['doc_id']);
+      }
+      unset($tmp_secondaries);
+    }
+
+    if($tmp_spfs = $go_api->db->queryAllRecords("SELECT * FROM dns_spf WHERE host LIKE 'http://%' OR host LIKE 'https://%' OR host LIKE ' %' OR host LIKE '% '")){
+      foreach($tmp_spfs as $tmp_spf){
+        $tmp_spf['host'] = str_replace('http://', '', $tmp_spf['host']);
+        $tmp_spf['host'] = str_replace('https://', '', $tmp_spf['host']);
+        $tmp_spf['host'] = trim($tmp_spf['host']);
+        $go_api->db->query("UPDATE dns_spf SET host = '".$tmp_spf['host']."' WHERE doc_id = ".$tmp_spf['doc_id']);
+      }
+      unset($tmp_spfs);
+    }
 
     if($doctype_id == 1016) {
         $doc_id = $doc_id;
