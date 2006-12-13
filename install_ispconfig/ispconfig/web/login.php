@@ -37,9 +37,14 @@ $err = intval($_GET["err"]);
 <title>ISPConfig - Login</title>
 <meta http-equiv="Content-Type" content="text/html; charset=<?php echo $go_info["theme"]["charset"]; ?>">
 <link href="design/default/style.css" rel="stylesheet" type="text/css">
+<script  type="text/javascript">
+<!--
+function lf(){document.loginForm.username.focus();}
+// -->
+</script>
 </head>
 
-<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onload="lf()">
 <script language= "JavaScript">
   <!--Break out of frames
     if (top.frames.length > 0)
