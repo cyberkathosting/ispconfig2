@@ -100,6 +100,7 @@ class go_api
             $text = '[['.$text.']]';
         }
         */
+		
 
         if(!empty($this->_wb[$text])) {
             $text = $this->_wb[$text];

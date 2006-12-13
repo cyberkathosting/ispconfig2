@@ -43,6 +43,7 @@ $doctype_id = intval($_REQUEST["doctype_id"]);
 $listtype_id = intval($_REQUEST["listtype_id"]);
 $gid = intval($_REQUEST["gid"]);
 $userid = intval($_REQUEST["userid"]);
+$form = $_REQUEST["form"];
 
 if(!empty($listtype_id)){
 $liste = $go_api->listadmin->listtype_get($listtype_id);
@@ -123,8 +124,15 @@ $go_api->db->query($sql);
 
 if($liste->limit != ""){
 
-if($page > 0) $zurueck = "<a href=\"list.php?page=$lastpage&gid=$gid&s=$s\" class=\"t2l\">&lt;&lt; ".$go_api->lng("Zurück")."</a>";
-if($go_api->db->numRows() > $bis) $weiter = "<a href=\"list.php?page=$nextpage&gid=$gid&s=$s\" class=\"t2l\">".$go_api->lng("Weiter")." &gt;&gt;</a>";
+$query_url = '';
+$query_url .= "&gid=$gid&s=$s&listtype_id=$listtype_id&doctype_id=$doctype_id";
+foreach($form as $key => $val) {
+	$query_url .= '&form['.$key.']='.urlencode($val);
+}
+
+
+if($page > 0) $zurueck = "<a href=\"list.php?page=$lastpage".$query_url."\" class=\"t2l\">&lt;&lt; ".$go_api->lng("Zurück")."</a>";
+if($go_api->db->numRows() > $bis) $weiter = "<a href=\"list.php?page=$nextpage".$query_url."\" class=\"t2l\">".$go_api->lng("Weiter")." &gt;&gt;</a>";
 
 $go_api->content->assign( array( WEITER => $weiter,
                                  ZURUECK => $zurueck));

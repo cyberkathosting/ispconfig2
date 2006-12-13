@@ -80,6 +80,7 @@ $wb["Formular Designer"] = "Form Designer";
 $wb["Geben Sie einen Wert in das Feld"] = "Please enter a value in the field";
 $wb["jscript_ein"] = " ";
 
+
 ////////////// Allgemein Ende ///////////////////
 
 $wb["Es konnte ein Dokument nicht wiederhergestellt werden, da sich das Eltern-Dokument noch im Papierkorb befindet.\n"] = "The object cannot be restored as long as its parent object is in the recycle bin.";
@@ -103,5 +104,9 @@ $wb['no_permission_to_change_data'] = "<b>Error: You don't have the necessary pe
                    In this group you don't have permission to write / edit data.<br>
                    - Please ask the owner of the group to grant write access to this resource to you.<br>&nbsp;<br>
                 <center><a href=\"" . $go_info["server"]["server_url"] . "/index.php?s=$s\">Next &gt;&gt;</a></center>";
+
+$wb["Weiter"] = "Next";
+$wb["Zurück"] = "Back";
+
 
 ?>
