@@ -62,6 +62,33 @@ $this->sendmail_cw = $server_conf["server_sendmail_cw"];
 function domain_insert($doc_id, $doctype_id, $die_on_error = '1') {
 global $go_api, $go_info;
 
+    // Remove http:// and https:// and spaces from domains and hosts
+    if($tmp_domains = $go_api->db->queryAllRecords("SELECT * FROM isp_isp_domain WHERE domain_host LIKE 'http://%' OR domain_host LIKE 'https://%' OR domain_host LIKE ' %' OR domain_host LIKE '% ' OR domain_domain LIKE 'http://%' OR domain_domain LIKE 'https://%' OR domain_domain LIKE ' %' OR domain_domain LIKE '% '")){
+      foreach($tmp_domains as $tmp_domain){
+        $tmp_domain['domain_host'] = str_replace('http://', '', $tmp_domain['domain_host']);
+        $tmp_domain['domain_host'] = str_replace('https://', '', $tmp_domain['domain_host']);
+        $tmp_domain['domain_host'] = trim($tmp_domain['domain_host']);
+        $tmp_domain['domain_domain'] = str_replace('http://', '', $tmp_domain['domain_domain']);
+        $tmp_domain['domain_domain'] = str_replace('https://', '', $tmp_domain['domain_domain']);
+        $tmp_domain['domain_domain'] = trim($tmp_domain['domain_domain']);
+        $go_api->db->query("UPDATE isp_isp_domain SET domain_host = '".$tmp_domain['domain_host']."', domain_domain = '".$tmp_domain['domain_domain']."' WHERE doc_id = ".$tmp_domain['doc_id']);
+      }
+      unset($tmp_domains);
+    }
+
+    if($tmp_webs = $go_api->db->queryAllRecords("SELECT * FROM isp_isp_web WHERE web_host LIKE 'http://%' OR web_host LIKE 'https://%' OR web_host LIKE ' %' OR web_host LIKE '% ' OR web_domain LIKE 'http://%' OR web_domain LIKE 'https://%' OR web_domain LIKE ' %' OR web_domain LIKE '% '")){
+      foreach($tmp_webs as $tmp_web){
+        $tmp_web['web_host'] = str_replace('http://', '', $tmp_web['web_host']);
+        $tmp_web['web_host'] = str_replace('https://', '', $tmp_web['web_host']);
+        $tmp_web['web_host'] = trim($tmp_web['web_host']);
+        $tmp_web['web_domain'] = str_replace('http://', '', $tmp_web['web_domain']);
+        $tmp_web['web_domain'] = str_replace('https://', '', $tmp_web['web_domain']);
+        $tmp_web['web_domain'] = trim($tmp_web['web_domain']);
+        $go_api->db->query("UPDATE isp_isp_web SET web_host = '".$tmp_web['web_host']."', web_domain = '".$tmp_web['web_domain']."' WHERE doc_id = ".$tmp_web['doc_id']);
+      }
+      unset($tmp_webs);
+    }
+
     $domain = $go_api->db->queryOneRecord("SELECT * from isp_nodes, isp_isp_domain where isp_nodes.doc_id = isp_isp_domain.doc_id and isp_nodes.doctype_id = '1015' and isp_isp_domain.doc_id = '$doc_id'");
     $domaincount = $go_api->db->queryOneRecord("SELECT count(doc_id) as domain_count from isp_isp_domain where domain_host = '".$domain["domain_host"]."' and domain_domain = '".$domain["domain_domain"]."'");
         if($domaincount["domain_count"] > 1 or $go_api->db->queryOneRecord("SELECT doc_id from isp_isp_web where web_host = '".$domain["domain_host"]."' and web_domain = '".$domain["domain_domain"]."'")) {
@@ -197,6 +224,34 @@ global $go_api, $go_info;
 
 function domain_update($doc_id, $doctype_id, $die_on_error = '1') {
 global $go_api, $go_info,$s;
+
+    // Remove http:// and https:// and spaces from domains and hosts
+    if($tmp_domains = $go_api->db->queryAllRecords("SELECT * FROM isp_isp_domain WHERE domain_host LIKE 'http://%' OR domain_host LIKE 'https://%' OR domain_host LIKE ' %' OR domain_host LIKE '% ' OR domain_domain LIKE 'http://%' OR domain_domain LIKE 'https://%' OR domain_domain LIKE ' %' OR domain_domain LIKE '% '")){
+      foreach($tmp_domains as $tmp_domain){
+        $tmp_domain['domain_host'] = str_replace('http://', '', $tmp_domain['domain_host']);
+        $tmp_domain['domain_host'] = str_replace('https://', '', $tmp_domain['domain_host']);
+        $tmp_domain['domain_host'] = trim($tmp_domain['domain_host']);
+        $tmp_domain['domain_domain'] = str_replace('http://', '', $tmp_domain['domain_domain']);
+        $tmp_domain['domain_domain'] = str_replace('https://', '', $tmp_domain['domain_domain']);
+        $tmp_domain['domain_domain'] = trim($tmp_domain['domain_domain']);
+        $go_api->db->query("UPDATE isp_isp_domain SET domain_host = '".$tmp_domain['domain_host']."', domain_domain = '".$tmp_domain['domain_domain']."' WHERE doc_id = ".$tmp_domain['doc_id']);
+      }
+      unset($tmp_domains);
+    }
+
+    if($tmp_webs = $go_api->db->queryAllRecords("SELECT * FROM isp_isp_web WHERE web_host LIKE 'http://%' OR web_host LIKE 'https://%' OR web_host LIKE ' %' OR web_host LIKE '% ' OR web_domain LIKE 'http://%' OR web_domain LIKE 'https://%' OR web_domain LIKE ' %' OR web_domain LIKE '% '")){
+      foreach($tmp_webs as $tmp_web){
+        $tmp_web['web_host'] = str_replace('http://', '', $tmp_web['web_host']);
+        $tmp_web['web_host'] = str_replace('https://', '', $tmp_web['web_host']);
+        $tmp_web['web_host'] = trim($tmp_web['web_host']);
+        $tmp_web['web_domain'] = str_replace('http://', '', $tmp_web['web_domain']);
+        $tmp_web['web_domain'] = str_replace('https://', '', $tmp_web['web_domain']);
+        $tmp_web['web_domain'] = trim($tmp_web['web_domain']);
+        $go_api->db->query("UPDATE isp_isp_web SET web_host = '".$tmp_web['web_host']."', web_domain = '".$tmp_web['web_domain']."' WHERE doc_id = ".$tmp_web['doc_id']);
+      }
+      unset($tmp_webs);
+    }
+    
     $go_api->db->query("UPDATE isp_isp_domain SET status = 'u' where status != 'n' and doc_id = '$doc_id'");
     //$domain = $go_api->db->queryOneRecord("select * from isp_isp_domain where doc_id = '$doc_id'");
     // IP Adresse der Domain vom Web holen
