@@ -116,4 +116,7 @@ $wb["group_perms_nowrite_reasons_2a"] = "2. You try to change an element which b
 $wb["group_perms_nowrite_reasons_2b"] = "You do not have the sufficient rights in this group for writing / changing data.";
 $wb["group_perms_nowrite_reasons_2c"] = "- Please contact the group's owner to grant you the sufficient rights.";
 
+$wb["Weiter"] = "Next";
+$wb["Zurück"] = "Back";
+
 ?>

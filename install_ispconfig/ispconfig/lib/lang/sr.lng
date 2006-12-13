@@ -110,4 +110,7 @@ $wb["group_perms_nowrite_reasons_2a"] = "2. Pokušavate da promenite element koji
 $wb["group_perms_nowrite_reasons_2b"] = "Nemate dovoljna prava u ovoj grupi da bi ste upisivali / menjali podatke.";
 $wb["group_perms_nowrite_reasons_2c"] = "- Kontaktirajte vlasnika grupe da bi Vam odobrio neophodna prava.";
 
+$wb["Weiter"] = "Next";
+$wb["Zurück"] = "Back";
+
 ?>

@@ -109,4 +109,8 @@ $wb["group_perms_nowrite_reasons_1b"] = "- Log a.u.b. in met uw gebruikersnaam e
 $wb["group_perms_nowrite_reasons_2a"] = "2. U probeert een item te wijzigen dat toebehoort aan een andere groep.";
 $wb["group_perms_nowrite_reasons_2b"] = "U heeft in deze groep geen schrijfrechten / veranderen data.";
 $wb["group_perms_nowrite_reasons_2c"] = "- Neem a.u.b. contact op met de eigenaar van de groep en vraag de benodigde rechten aan.";
+
+$wb["Weiter"] = "Next";
+$wb["Zurück"] = "Back";
+
 ?>

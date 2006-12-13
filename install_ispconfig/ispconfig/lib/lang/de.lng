@@ -123,5 +123,7 @@ $wb["group_perms_nowrite_reasons_2a"] = "2. Sie versuchen ein Element zu ändern,
 $wb["group_perms_nowrite_reasons_2b"] = "In dieser Gruppe besitzen Sie keine Berechtigung zum Schreiben";
 $wb["group_perms_nowrite_reasons_2c"] = "- Bitten Sie den Eigentümer der Gruppe Ihnen Schreibrechte auf diese Ressource zu geben.";
 
+$wb["Weiter"] = "Next";
+$wb["Zurück"] = "Back";
 
 ?>
