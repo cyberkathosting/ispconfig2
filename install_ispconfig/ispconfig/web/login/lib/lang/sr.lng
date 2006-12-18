@@ -1,0 +1,25 @@
+<?
+/********************************
+* ISPConfig Dictionary File
+* Version 1.0
+*********************************/
+
+// License Manager
+$wb["Es wurde keine g&uuml;ltige Lizenzdatei gefunden."] = "Nije naðena datoteka sa važeæom licencom.";
+$wb["Hier k&ouml;nnen Sie ihre Lizenzdatei einspielen."] = "Možete uèitatti vašu datoteku sa licencom ovde.";
+$wb["Username"] = "Korisnièko ime";
+$wb["Passwort"] = "Lozinka";
+$wb["Lizenzdatei"] = "datoteka sa licencom";
+$wb["Weiter"] = "sledeæe";
+$wb["Die Lizenzdatei wurde eingespielt.<br>Sie k&ouml;nnen sich jetzt einloggen."] = "Datoteka sa licencom je uèitana.<br> Sada se možete prijaviti.";
+$wb["Ihre Nutzersitzung wurde beendet."] = "Vaša sesija je istekla.";
+$wb["Hier können Sie sich neu einloggen"] = "Ovde se možete prijaviti ponovo";
+
+$wb["FEHLER 101: Username oder Passwort Falsch."] = "GREŠKA 101: pogrešno korisnièko ime ili lozinka.";
+$wb["FEHLER 102: Account inaktiv."] = "GREŠKA 102: Nalog je neaktivan.";
+$wb["FEHLER 103: Es wurde kein Username oder Passwort angegeben."] = "GREŠKA 103: Nije uneseno korisnièko ime ili lozinka.";
+$wb["FEHLER 104: Die Nutzersession wurde beendet."] = "GREŠKA 104: Sesija je istekla.";
+$wb["<br>&nbsp;<br>Hier können Sie sich erneut einloggen:"] = "<br>&nbsp;<br>Ovde se možete ponovo prijaviti:";
+$wb["Hier können Sie sich einloggen:"] = "Ovde se možete prijaviti:";
+
+?>

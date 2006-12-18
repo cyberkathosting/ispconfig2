@@ -1,0 +1,88 @@
+<?
+/********************************
+* ISPConfig Dictionary File
+* Version 1.0
+*********************************/
+
+$wb["ISP Faktura"] = 'ISP Raèun';
+$wb["Web-FTP"] = 'Web-FTP';
+$wb["Domains"] = 'Domeni';
+$wb["Service"] = 'Servis';
+$wb["Webs"] = 'Prezentacije';
+$wb["Traffic"] = 'Saobraæaj';
+$wb["Email-Adressen"] = 'Email Adresa';
+$wb["Artikel"] = 'Stavka';
+$wb["admin"] = 'admin';
+$wb["Artikel für"] = 'Stavka za';
+$wb["Dienstleistung"] = 'Servis';
+$wb["Hardware"] = 'Hardver';
+$wb["Software"] = 'Softver';
+$wb["Typ"] = 'Tip';
+$wb["Artikel Nr."] = 'Stavka br.';
+$wb["Bezeichnung"] = 'Ime';
+$wb["Beschreibung"] = 'opis';
+$wb["Stück"] = 'Deo';
+$wb["MB"] = 'MB';
+$wb["GB"] = 'GB';
+$wb["Stunde"] = 'Èas';
+$wb["Einheit"] = 'Jedinica';
+$wb["Menge"] = 'Kolièina';
+$wb["Preis"] = 'Cena';
+$wb["Verrechnung"] = 'Period naplate';
+$wb["Artikel neu"] = 'Nova Stavka';
+$wb["Ordner neu"] = 'Nova Fascikla';
+$wb["Abrechnen"] = 'Napravi Raèun';
+$wb["Artikel neu"] = 'Nova Stavka';
+$wb["Ordner neu"] = 'Nova Fascikla';
+$wb["Produkte"] = 'Proizvodi';
+$wb["Abrechnen"] = 'Napravi Raèun';
+$wb["Rechnungen"] = 'Raèuni';
+$wb["Kunden"] = 'Klijenti';
+$wb["Anbieter"] = 'Preprodavci';
+$wb["Keine Artikel zum Abrechnen gefunden."] = 'Nisu pronaðene stavke da bi se da bi se napravio raèun.';
+$wb["Abrechnung"] = 'Raèun';
+$wb["Name"] = 'Ime';
+$wb["IP-Traffic"] = 'IP Saobraæaj';
+$wb["Steuersatz"] = 'Poreska Klasa';
+$wb["Bei Überschreitung:"] = 'Na Prekoraèenje:';
+$wb["Diese Angaben sind nur für Artikel vom Typ: Traffic gültig!"] = 'Ovi unosi sa važeæi samo za stavke tipa: Saobraæaj!';
+$wb["Rechnungen Kunden"] = 'Raèuni KlijentaCustomer Invoices';
+$wb["Firma"] = 'Kompanija';
+$wb["Vorname"] = 'Ime';
+$wb["Strasse"] = 'Ulica';
+$wb["PLZ"] = 'Poštanski broj';
+$wb["Ort"] = 'Grad';
+$wb["Land"] = 'Zemlja';
+$wb["Steuernr."] = 'Poreski broj';
+$wb["Rechnung"] = 'raèun';
+$wb["Datum"] = 'Datum';
+$wb["Rechnung Nr."] = 'Raèun Br.';
+$wb["Anzahl"] = 'Kolièina';
+$wb["Art. Nr."] = 'Stavka Br.';
+$wb["Gesamt"] = 'Ukupno';
+$wb["EURO"] = 'Dinara';
+$wb["Web gesamt"] = 'Prezentacija Ukupno';
+$wb["enthaltene Mehrwertsteuer"] = 'PDV Ukljuèen';
+$wb["Gesamtbetrag"] = 'Ukupno';
+$wb["Rechnungen Anbieter"] = 'Raèuni Preprodavaca';
+$wb["Kunde"] = 'Klijent';
+$wb["Rg. Nr."] = 'Raèun Br.';
+$wb["OK"] = 'OK';
+$wb["Weiter"] = "Sledeæe";
+$wb["Summe Anbieter"] = "Preprodavac Ukupno";
+$wb["Summe Web"] = "Prezentacija Ukupno";
+$wb["Summe Kunde"] = "Klijent Ukupno";
+$wb["Abrechnung abgeschlossen."] = "Raèun napravljen.";
+
+//////////////// Server Status ////////////////
+$wb["Arbeitsspeicher"]          = "Glavna Memorija";
+$wb["CPU"]          = "CPU";
+$wb["Dienste"]      = "Servisi";
+$wb["Server Online seit"]          = "Server Online od";
+$wb["User Online"]      = "Korisnika Online";
+$wb["System Load 1 Minute"] = "Sistemsko Optereæenje 1 Minut";
+$wb["System Load 5 Minuten"] = "Sistemsko Optereæenje 5 Minuta";
+$wb["System Load 15 Minuten"] = "Sistemsko Optereæenje 15 Minuta";
+//////////////// Server Status Ende //////////
+
+?>

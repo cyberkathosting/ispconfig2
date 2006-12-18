@@ -1,0 +1,55 @@
+<?
+/********************************
+* ISPConfig Dictionary File
+* Version 1.0
+*********************************/
+
+$wb["Datei Upload"] = 'Uèitavanje Datoteke';
+$wb["Ordner neu"] = 'Nova Fascikla';
+$wb["Web Auswahl"] = 'Odabir Internet Prezentacije';
+$wb["Web auswählen"] = 'Odaberi Internet Prezentaciju';
+$wb["Auswahl"] = 'Odabir';
+$wb["WEB FTP"] = 'WEB FTP';
+$wb["Hilfe"] = 'Pomoæ';
+$wb["Name"] = 'Ime';
+$wb["Grösse"] = 'Velièina';
+$wb["Datum"] = 'Datum';
+$wb["Eigentümer"] = 'Vlasnik';
+$wb["Alle"] = 'Sve';
+$wb["Lesen"] = 'Èitaj';
+$wb["Schreiben"] = 'Piši';
+$wb["Ausführen"] = 'Izvrši';
+$wb["Verzeichnisschutz"] = 'Zaštita Direktorijuma';
+$wb["Verzeichnis schützen"] = 'Zaštiti Direktorijum';
+$wb[".htaccess User"] = '.htaccess Korisnik';
+$wb[".htaccess Userübersicht"] = 'Pregled .htaccess Korisnika';
+$wb["Bearbeiten"] = 'Izmeni';
+$wb["Hinzufügen"] = 'Dodaj';
+$wb["Parameterübergabe unvollständig"] = "Prosleðivanje parametra nekompletno";
+$wb["Ungültiges Format der web_id."] = "Neispravan format web_id.";
+$wb["Ungültige web_id."] = "Neispravan web_id.";
+$wb["Konnte server_path_httpd_root nicht ermitteln."] = "Ne može se odrediti determine server_path_httpd_root.";
+$wb["Das Verzeichnis existiert nicht oder Sie haben nicht die notwendigen Berechtigungen."] = "Direktorijum ne postoji, ili nemate neophodne dozvole.";
+$wb["Der Pfad enthält ungültige Zeichen."] = "Putanja sadrži nedozvoljene znake.";
+$wb["Diese Funktion ist im Demo-Modus deaktiviert"] = "Ova funkcija je deaktivirana u demo modu.";
+$wb["ist ein Link."] = "je link.";
+$wb["existiert nicht."] = "ne postoji."; // Es geht um: /home/file.htm existiert nicht.
+$wb["konnte nicht gelöscht werden."] = "nemože se obrisati.";
+$wb["Das Verschieben der Datei ist fehlgeschlagen."] = "Neuspešno premeštanje datoteke.";
+$wb["konnte nicht gelöscht werden. Das Verzeichnis muss leer sein und Sie müssen Schreibrechte besitzen."] = "ne može biti obrisano. Direktorijum mora biti prazan i morate imati dozvole za pisanje.";
+$wb["Das Verschieben des Verzeichnisses ist fehlgeschlagen."] = "Neuspešno premeštanje direktorijuma.";
+$wb["Es wurde keine Datei zum Upload ausgewählt."] = "Nije odabrana datoteka za uèitavanje.";
+$wb["Die Datei existiert bereits in diesem Verzeichnis."] = "Datoteka veæ postoji u ovom direktorijumu.";
+$wb["Möglicher Dateiupload Angriff."] = "Potencijalni napad uèitavanja datoteke.";
+$wb["Ordner"] = "Omotnica";
+
+$wb["chmod failed."] = "chmod neuspešan";
+$wb["FTP: Failed to open"] = "FTP: Neuspeh otvaranja ";
+$wb["Failed to open"] = "Neuspeh otvaranja";
+$wb["Could not connect to"] = "Ne može se povezati na";
+$wb["Could not connect as user"] = "Ne može se povezati kao korisnik ";
+$wb["Next >>"] = "<br><br>Sledeæe >>";
+
+$wb["Catalog_Name"] = "Ime";
+
+?>
