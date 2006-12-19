@@ -1,0 +1,581 @@
+<?
+/********************************
+* ISPConfig Dictionary File
+* Version 1.0
+*********************************/
+
+
+///////////////// ISP Manager //////////////////
+$wb["Anbieter"]     = "Prodejce";
+$wb["Kunde"]        = "Klient";
+$wb["Suchen"]       = "Hledat";
+$wb["Stammdaten"]   = "Základní údaje";
+$wb["Limits"]       = "Limity";
+$wb["Zugangsdaten"] = "Pøihla¹ovací údaje";
+$wb["Statistik"]    = "Statistiky";
+$wb["Firma"]        = "Spoleènost";
+$wb["Anrede"]       = "Titul";
+$wb["Vorname"]      = "Køestní jméno";
+$wb["Name"]         = "Pøíjmení";
+$wb["Strasse"]      = "Ulice";
+$wb["PLZ"]          = "PSÈ";
+$wb["Ort"]          = "Mìsto";
+$wb["Land"]         = "Stát";
+$wb["Telefon"]      = "Telefon";
+$wb["Fax"]          = "Fax";
+$wb["Internet"]     = "www adresa";
+$wb["Öffnen"]      = "Otevøít";
+$wb["Benutzername"] = "U¾ivatelské jméno"; // besser: vielleicht nur Variable $wb["username"] benutzen?
+$wb["zugangsdaten_anbieter_einleitung"] = "Zde mù¾ete nastavit u¾ivatelské jméno a heslo prodejce.";
+$wb["zugangsdaten_kunde_einleitung"] = "Zde mù¾ete nastavit u¾ivatelské jméno a heslo klienta <br>pro správu jeho webù.<br> ";
+$wb["Web Verwaltung"] = "Správa webu";
+$wb["Rechnung"]      = "Úèet";
+$wb["Rechnungsanschrift:"] = "Úètovací adresa:<br>";
+$wb["Intervall"]    = "Interval";
+$wb["Preis"]        = "Cena";
+$wb["Zahlungsart"]  = "Metoda platby";
+$wb["Basis"]        = "Zákl. údaje";
+$wb["Create DNS"]   = "Vytvoøit DNS záznam";
+$wb["Speicher MB"]     = "Prostor na disku MB";
+$wb["Max. User"]        = "Max. poèet u¾ivatelù";
+$wb["Max. Domain"]        = "Max. poèet domén";
+$wb["PHP Scripte"]        = "PHP Scripty";
+$wb["SSI"]        = "SSI";
+$wb["FTP Zugang"]        = "FTP pøístup";
+$wb["MySQL"]        = "MySQL databáze";
+$wb["SSL"]        = "SSL";
+$wb["Shell Zugriff"]      = "Pøístup k shellu";
+$wb["Zugang"]       = "Pøístup";  // Zugriff u. Zugang zusammenfassen!/nur einen Begriff nehmen!
+$wb["CGI Scripte"]      = "CGI skripty";
+$wb["Bundesland"]   = "Kraj";
+$wb["Abteilung"]    = "Oddìlení";
+$wb["Gültigkeit (Tage)"]  = "Platnost (ve dnech)";
+$wb["SSL Key"]          = "SSL Klíè";
+$wb["SSL Zertifikat"]   = "SSL Certifikát";
+$wb["Aktion"]       = "Akce";
+$wb["Zertifikat erzeugen"] = "Vytvoøit certifikát";
+$wb["Zertifikat speichern"] = "Ulo¾it certifikát";
+$wb["Zertifikat löschen"] = "Smazat certifikát";
+$wb["Speicherplatz gesamt"] = "Diskový prostor";
+$wb["unlimitiert"]  = "neomezeno";
+$wb["verbraucht"]   = "Pou¾ito";
+$wb["Trafficübersicht"] = "Pøehled pøenosu dat";
+$wb["Monat"]        = "Mìsíc";
+$wb["Traffic"]      = "Pøenos dat";
+$wb["traffic_letzte_4"] = "Pøenos dat za poslední 4 roky";
+$wb["Jahr"]         = "Rok";
+$wb["MySQL User"]        = "U¾ivatelské jméno k MySQL databázi";
+$wb["MySQL Passwort"]    = "U¾ivatelksé heslo k MySQL databázi";
+
+// Ergänzungen /////////////////////////////////
+$wb["Anbieter neu"] = "Nový prodejce";
+$wb["Kunde neu"]    = "Nový klient";
+$wb["Web neu"]      = "Nový web";
+$wb["Ordner neu"]   = "Nový adresáø";
+$wb["Suchen"]       = "Hledat";
+$wb["ISP Anbieter"] = "ISP Prodejce";
+$wb["Webs"] = "Weby";
+$wb["User"] = "U¾ivatelé";
+$wb["Domains"] = "Domény";
+$wb["Zahlung"] = "Platba";
+$wb["ISP Kunde"] = "ISP klient";
+$wb["ISP Web"] = "ISP web";
+$wb["Kunden"] = "Klienti";
+$wb["Dokument suchen"] = "Vyhledávání v dokumentech";
+
+$wb["User & Email"] = "U¾iv. & Emaily";
+$wb["Co-Domains"] = "Ko-domény";
+$wb["SSL"] = "SSL";
+$wb["Optionen"] = "Mo¾nosti";
+
+$wb["Webs angelegt"] = "Vyu¾ito webù";
+$wb["User angelegt"] = "Vyu¾ito u¾ivatelù";
+$wb["Domains angelegt"] = "Vyu¾ito domén";
+$wb["rechnungsanschrift"] = "Fakturaèní adresa:<br> ";
+
+$wb["neues Web anlegen"] = "Nový web";
+$wb["weiter"] = "dal¹í";
+$wb["SUCHE"] = "hledat";
+
+$wb["msg_beta"] = "";
+$wb["title_isp_beta"] = "";
+$wb["msg_kein_win"] = "Tento software není dostupný pro operaèní systémy Windows.";
+
+// Error Codes ispconfig_isp_datenbank.lib.php
+$wb["error_db_nicht_erlaubt"] = "Vytvoøení MySQL databáze není pro tento web povoleno.<br>";
+$wb["error_db_leeres_passwort"] = "Prosím specifikujte heslo!<br>";
+$wb["error_db_exist_1"] = "Databáze se jménem";
+$wb["error_db_exist_2"] = "ji¾ existuje.<br>";
+$wb["error_db_user_exist_1"] = "U¾ivatel databáze";
+$wb["error_db_user_exist_2"] = "ji¾ existuje.<br>";
+$wb["error_max_db_web"] = "Bylo dosa¾eno maximálního mno¾ství databází pro tento web.<br>";
+$wb["error_max_db_anbieter"] = "Bylo dosa¾eno maximálního mno¾ství databází hostitele.<br>";
+
+// Error Codes ispconfig_isp_domain.lib.php
+$wb["error_web_doppelt"] = "Jméno ";
+$wb["error_max_domain_web"] = "Bylo dosa¾eno maximálního mno¾ství domén pro tento web.<br>";
+$wb["error_max_domain_anbieter"] = "Bylo dosa¾eno maximálního mno¾ství domén hostitele.<br>";
+$wb["angelegt"] = " je ji¾ pou¾íváno jiným webem nebo doménou.<br>";
+$wb["error_domain_forward"] = "Pøesmìrování domény obsahuje neplatné znaky a proto bude smazáno.<br>";
+
+// Error Codes ispconfig_isp_kunde.lib.php
+$wb["error_user_exist_1"] = "U¾ivatel systému";
+$wb["error_user_exist_2"] = "ji¾ existuje. U¾ivatel nebyl pøidán nebo zmìnìn.<br>";
+$wb["error_max_user_licence"] = "Bylo dosa¾eno maximální mno¾ství u¾ivatelù systému pro tuto licenci.<br>";
+
+
+// Error Codes ispconfig_isp_reseller.lib.php
+$wb["error_reseller_title"] = "Prodejce s tímto názvem ji¾ existuje.<br>";
+$wb["error_reseller_group_not_found"] = "Skupina prodejcù nebyla nalezena.<br>";
+$wb["error_anbieter_no_delete"] = "<b>Prodejce nebyl odstranìn.</b><br>&nbsp;<br>Prodejce mù¾e být odstranìn pouze kdy¾ budou odstranìny v¹echny weby a u¾ivateléprodejce. Také se ujistìte, ¾e je prázdný odpadkový ko¹.<br>";
+$wb["error_anbieter_no_restore"] = "Prodejce nemù¾e být obnoven.<br>";
+
+// Error Codes ispconfig_isp_user.lib.php
+$wb["error_sysuser_exist_1"] = "U¾ivatel se jménem";
+$wb["error_sysuser_exist_2"] = "ji¾ existuje.<br>";
+$wb["error_max_user_web"] = "Bylo dosa¾eno maximálního mno¾ství webù u¾ivatele.<br>";
+$wb["error_max_space_web"] = "Zvolený prostor na disku pøesahuje limit webu.<br>";
+$wb["error_max_user_anbieter"] = "Bylo dosa¾eno maximálního mno¾ství u¾ivatelù pro prodejce.<br>";
+$wb["error_sysuser_exist"] = "U¾ivatelské jméno je ji¾ pou¾íváno.<br>";
+$wb["error_admin_exist"] = "U¾ivatel s administrátorskými právy pro tento web ji¾ existuje.<br>";
+$wb["error_admin_exist_long"] = "U¾ivatel s administrátorskými právy ji¾ existuje. Nejdøíve musíte odstranit souèasné nastavení administrátora pokud chcete administrátorská práva pøiøadit tomuto u¾ivateli.<br>";
+// Error Codes ispconfig_isp_user.lib.php
+$wb["error_max_web_anbieter"] = "Bylo dosa¾eno maximálního mno¾ství webù pro prodejce.<br>";
+$wb["error_web_ssl_exist"] = "SSL certifikát ji¾ pro tuto IP adresu existuje.<br>";
+
+// Plugins
+$wb["CPU Auslastung 1 Minute"] = "Vyu¾ití CPU v poslední 1 minutì";
+$wb["CPU Auslastung 5 Minuten"] = "Vyu¾ití CPU v posledních 5 minutách";
+$wb["CPU Auslastung 15 Minuten"] = "Vyu¾ití CPU v posledních 15 minutách";
+$wb["Server Online seit"] = "Server Online po dobu";
+$wb["User Online"] = "Poèet u¾ivatelù Online";
+$wb["error_web_id"] = "Tento plugin vy¾aduje platné web ID.";
+$wb["von"] = "z";
+$wb["Gesamt"] = "Celkem";
+$wb["Traffic in den letzten 4 Jahren"] = "Pøenos dat za poslední 4 roky";
+
+$wb["Backup von Tabelle"] = "Zálohovat tabulku";
+$wb["Optimiere"] = "Optimalizovat";
+$wb["Reparatur"] = "Opravit";
+$wb["oder"] = "nebo";
+$wb["Installation starten"] = "Instalovat";
+
+$wb["Monatlich"] = "Mìsíènì";
+$wb["Quartal"] = "Ètvrtletnì";
+$wb["Halbjährlich"] = "Za pùl roku";
+$wb["Jährlich"] = "Roènì";
+$wb["Sonstige"] = "Jiné";
+
+$wb["bei Erhalt"] = "on receipt";
+$wb["Netto 7 Tage"] = "net 7 days";
+$wb["Netto 15 Tage"] = "net 15 days";
+$wb["Netto 30 Tage"] = "net 30 days";
+$wb["Sonstige"] = "jiné";
+$wb["Neu"] = "Nový";
+$wb["Postfach MB"] = "Mailbox MB";
+
+$wb["email_alias_txt"] = "<b>Tip:</b> jeden alias na øádek.";
+$wb["Weiterleitung"] = "Pøeposílání";
+$wb["Nachricht"] = "Zpráva";
+$wb["Kein Kunde vorhanden"] = "Není dostupný ¾ádný klient.<br>";
+$wb["Dieses Web können Sie nicht löschen."] = "Nemù¾ete vymazat tento web.<br>";
+$wb["Ausgabeformat"] = "Seznam";
+$wb["Bearbeiten"] = "Upravit";
+$wb["Löschen"] = "Vymazat";
+
+$wb["willkommen_kunde"] = "Vítejte v administraèním rozhraní Zserver s.r.o.! Mù¾ete zde upravovat nastavení Va¹eho webu.<br>
+&nbsp;<br>
+<div style=\"font-size:80%;text-align:left\">
+<h5>U¾ivatelé:</h5>
+<strong>Vytvoøení u¾ivatele:</strong><p>Web-Manager => Weby => \"vybrat web\" => U¾ivatelé & Emaily => Vytvoøit</p>
+Ka¾dý u¾ivatel má vlastní emailovou schránku ve formátu <span style=\"color:red\">email_ktery_jste_zadali@vase_domena</span> a také vlastní www stránky na adrese<span style=\"color:red\"> http://vase_domena/~uzivatelske_jmeno</span>, které jsou fyzicky umístìny v adresaøi <span style=\"color:red\">users/uzivatelske_jmeno</span>.<br>&nbsp;<br>
+        <em>Tipy:</em><br>
+        1. Pouze u¾ivatel se za¹krtnutým polem administrátor má pøístup k hlavnímu webu. Ostatní mají pøístup pouze ke svým webùm v users/uzivatel.<br>
+        2. Velikost prostoru pro u¾ivatelský web mù¾ete definovat v políèku \"Prostor pro web MB\".
+<h5>Web-FTP:</h5>
+Jednoduchý klient pro upload souborù a úpravy pøístupových práv k souborùm a adresáøùm.<br>&nbsp;<br>
+        <strong>Zaheslování pøístupu k vybranému adresáøi</strong>
+        lze jednodu¹e dosáhnout vybráním zvoleného adresáøe ve web-ftp klientovi a kliknutím na [zaheslovat adresáø]
+<h5>Databáze:</h5>
+<strong>Vytvoøení databáze:</strong>
+        <p>Web-Manager => Weby => \"vybrat web\" => Mo¾nosti => Databáze [Vytvoøit]</p>
+<strong>Webové rozhraní:</strong>
+        <p>Nástroje => phpMyAdmin</p>
+<h5>Statistiky:</h5>
+        Ka¾dý web ma vlastní statistiku pøístupù na adrese <span style=\"color:red\">http://vase_domena/stats</span>
+<h5>Problémy:</h5>
+V pøípadì problému s administraèním rozhraním webhostingu kontaktujte technickou podporu webhostingu zasláním po¾adavku na podporu:
+<p>Nápovìda => Po¾adavky na podporu => Nový po¾adavek</p></div>";
+$wb["Willkommen"] = "Vítejte";
+
+
+// Regex Fehlermeldungen
+$wb["Es sind nur folgende Zeichen erlaubt: a-z A-Z 0-9 -"] = "Povoleny jsou pouze následující znaky: a-z A-Z 0-9 -<br>";
+$wb["Es sind nur folgende Zeichen erlaubt: a-z A-Z 0-9 - ."] = "Povoleny jsou pouze následující znaky: a-z A-Z 0-9 - .<br>";
+$wb["Der Username muss aus min. 4, max 25 Buchstaben oder Zahlen bestehen, wobei er mit einem Buchstaben beginnen muss."] = "U¾ivatelské jméno musí obsahovat minimálnì 4 a maximálnì 26 znakù nebo èísel a musí zaèínat písmenem.<br>";
+$wb['Der Username muss aus min. 4, max 32 Buchstaben oder Zahlen bestehen, wobei er mit einem Buchstaben beginnen muss.'] = 'U¾ivatelské jméno musí obsahovat minimálnì 4 a maximálnì 26 znakù nebo èísel a musí zaèínat písmenem.<br>';
+
+$wb["error_reseller_licence"] = "Pøidávání prodejcù není s Va¹í licencí dovoleno.<br>";
+$wb["error_reseller_licence_nodelete"] = "Tohoto prodejce nelze odstranit.<br>";
+
+$wb["error_kunde_licence"] = "Pøidávání klientù není s Va¹í licencí dovoleno.<br>";
+$wb["error_kunde_licence_nodelete"] = "Tohoto klienta nelze odstranit.<br>";
+
+$wb["mysqldb_nicht_vorhanden"] = "MySQL databáze neexistuje. <br>Vlo¾te prosím heslo k vytvoøení databáze.<br>";
+$wb["mysql_nicht_aktiv"] = "Vytváøení MySQL databází není pro tento web povoleno.<br>";
+$wb["Datenbank Name"] = "Jméno databáze";
+$wb["Speicher belegt"] = "Velikost databáze";
+
+$wb["Kein Web angelegt"] = "Nebyl vytvoøen ¾ádný web.";
+$wb["Real Name"] = "Skuteèné jméno";
+$wb["Feld"] = "Pole";
+$wb["httpd_inc_txt"] = "Directivy Apache<br>&nbsp; (volitelné)";
+$wb["Kopie speichern"] = "Ponechat kopii";
+
+$wb["err_0001"] = "Doména patøí jinému klientovi.";
+
+$wb["MySQL Remote Access"] = "Vzdálený pøístup k MySQL databázi";
+$wb["lokaler mailserver"] = "Lokální Mailserver";
+$wb["externer mailserver"] = "Externí Mailserver";
+
+$wb["Log-Grösse"] = "Velikost logu";
+$wb["Frontpage Passwort"] = "Heslo k Frontpage";
+
+// NEW 1.1.12 ///////////////////////////////////
+
+$wb["Anbieternummer"] = 'Prodejce è.';
+$wb["Domain DNS"] = 'Primární Zóny (DNS)';
+$wb["HTTPD Includes"] = 'HTTPD Includes';
+$wb["DNS-Manager"] = 'DNS Mana¾er';
+$wb["DNS-Domains angelegt"] = 'Primární zóny vytvoøeny';
+$wb["Kundennummer"] = 'Klient è.';
+$wb["Anonymous FTP"] = 'Anonymní FTP';
+$wb["Anon. FTP MB"] = 'Anon. FTP MB';
+$wb["Faktura"] = 'Faktura';
+$wb["Mailserver"] = 'Mailserver';
+$wb["aktiviert"] = 'aktivní';
+$wb["deaktiviert"] = 'neaktivní';
+$wb["ISP User"] = 'ISP U¾ivatel';
+$wb["WebSpeicher MB"] = 'Prostor pro web MB';
+$wb["MailSpeicher MB"] = 'Prostor pro mail MB';
+$wb["Administrator"] = 'Administrátor';
+$wb["Erweiterte Einstellungen"] = 'Pokroèilé nastavení';
+$wb["email_weiterleitung_txt"] = '<b>Tip:</b> jeden email na øádek.';
+$wb["Email Alias"] = 'Email alias';
+$wb["catchAll-Email"] = 'Emailový ko¹';
+$wb["MailScan"] = 'MailSken';
+$wb["Spam-Filter"] = 'Spam Filtr';
+$wb["Autoresponder"] = 'Automatická odpovìï';
+$wb["ISP Domain"] = 'ISP Doména';
+$wb["Create DNS MX"] = 'Vytvoøit DNS MX';
+$wb["Admin"] = 'Admin';
+$wb["CatchAll"] = 'Emailový ko¹';
+$wb["Bitte Artikel auswählen"] = "Vybrat polo¾ku";
+$wb["Letzte Abrechnung"] = "Poslední faktura";
+$wb["Artikel hinzufügen"] = "Pøidat polo¾ku";
+$wb["Wird automatisch vergeben."] = 'Je pøiøazena automaticky.';
+$wb["Email Adresse"] = "Emailová adresa";
+
+// new 1.2 ////////////////////////////////////////
+$wb["error_email_exist"] = "Duplicitní Emailová adresa.<br>";
+$wb["error_realname"] = "Povoleny jsou pouze následující znaky: a-z A-Z 0-9 - _ .<br>";
+$wb["Die Emailadresse muss aus min. 1, max 60 Buchstaben oder Zahlen bestehen."] = "Emailová adresa musí obsahovat 1 a¾ 60 písmen nebo èísel.<br>";
+
+// new 1.3 ////////////////////////////////////////
+$wb["Bundesland"] = "Kraj";
+$wb["Spamfilter & Antivirus"] = 'Spamfiltr & Antivir';
+$wb["Spamfilter"] = 'Spamfiltr';
+$wb["Antivirus"] = 'Antivir';
+$wb["accept"] = 'pøijat';
+$wb["discard"] = 'odmítnut';
+$wb["Spam Strategie"] = 'Spam bude';
+$wb["Spam Hits"] = 'Spam Hits';
+$wb["Rewrite Subject"] = 'Pøepsat pøedmìt zprávy';
+$wb["Betreff"] = 'Pøedmìt zprávy';
+$wb["SUCHE"] = 'HLEDAT';
+$wb["IP"] = 'IP';
+$wb["Standard CGIs"] = 'Standardní CGI';
+$wb["PHP Safe Mode"] = 'PHP Safe Mode';
+$wb["WAP"] = 'WAP';
+$wb["Individuelle Fehler-Seiten"] = 'Individuální Error Pages';
+$wb["Anzahl Datenbanken"] = 'Poèet databází';
+$wb["Fehler 400<br>(Ungültige Syntax)"] = "400 Error<br>(Invalid Syntax)";
+$wb["Fehler 401<br>(Autorisierung<br>erforderlich)"] = "401 Error<br>(Authorisation<br>required)";
+$wb["Fehler 403<br>(Verboten)"] = "403 Error<br>(Forbidden)";
+$wb["Fehler 404<br>(Datei nicht<br>gefunden)"] = "404 Error<br>(File not found)";
+$wb["Fehler 405<br>(Methode nicht<br>erlaubt)"] = "405 Error<br>(Method not<br>allowed)";
+$wb["Fehler 500<br>(Interner<br>Server-Fehler)"] = "500 Error<br>(Internal Server<br>Error)";
+$wb["Fehler 503<br>(Service ist z.Zt.<br>überlastet)"] = "503 Error<br>(Service<br>unavailable)";
+$wb["Datenbanken"] = "Databází";
+$wb["Datenbank"] = "Databáze";
+$wb["Datenbankname"] = "Jméno databáze";
+$wb["Datenbankuser"] = "U¾ivatel databáze";
+$wb["weiter_link"] = "<br><br> <a href='../../isp_manager/frame_start.php?s=$s'>Dal¹í &gt;&gt;</a>";
+$wb["Slave Zones"] = 'Sekundární zóny (DNS)';
+$wb["txt_client_salutatory_email_desc"] = "<b>Uvítací email pro klienty</b>";
+$wb["txt_client_salutatory_email_sender_email"] = "Email odesílatele";
+$wb["txt_client_salutatory_email_sender_name"] = "Jméno odesílatele";
+$wb["txt_client_salutatory_email_bcc"] = "BCC pøíjemce";
+$wb["txt_client_salutatory_email_subject"] = "Pøedmìt zprávy";
+$wb["txt_client_salutatory_email_message"] = "Zpráva";
+$wb["txt_client_salutatory_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Vlo¾te následující promìnné do textu:</b></td></tr>
+        <tr>
+          <td class="normal">%%%USER%%%</td>
+          <td class="normal">
+            Client\'s Username</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%PASSWORD%%%</td>
+          <td class="normal">
+            Client\'s Password</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%FIRST_NAME%%%</td>
+          <td class="normal">
+            Client\'s Køestní jméno</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%LAST_NAME%%%</td>
+          <td class="normal">
+            Client\'s Pøíjmení</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%COMPANY%%%</td>
+          <td class="normal">
+            Client\'s Company</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%EMAIL%%%</td>
+          <td class="normal">
+            Client\'s Email Address</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%CP%%%</td>
+          <td class="normal">
+            ISPConfig Login URL</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%MANUAL%%%</td>
+          <td class="normal">
+            ISPConfig Client Manual</td>
+        </tr>
+        </table>';
+$wb["txt_standard_index"] = "Standard Index<br>&nbsp;&nbsp;Page";
+$wb["txt_standard_index_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Vlo¾te následující promìnné do textu:</b></td></tr>
+        <tr>
+          <td class="normal">%%%FQDN%%%</td>
+          <td class="normal">
+            Website\'s Fully Qualified Domain Name</td>
+        </tr>
+    </table>';
+$wb["txt_user_standard_index"] = "Users' Standard<br>&nbsp;&nbsp;Index Page";
+$wb["txt_user_standard_index_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Vlo¾te následující promìnné do textu:</b></td></tr>
+        <tr>
+          <td class="normal">%%%USER%%%</td>
+          <td class="normal">
+            User\'s Username</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%FQDN%%%</td>
+          <td class="normal">
+            Website\'s Fully Qualified Domain Name</td>
+        </tr>
+        </table>';
+
+//////////////// ISP Manager Ende /////////////
+
+//////////////// Server Status ////////////////
+$wb["Arbeitsspeicher"]          = "Operaèní pamì»";
+$wb["CPU"]          = "CPU";
+$wb["Dienste"]      = "Slu¾by";
+$wb["Server Online seit"]          = "Server Online po dobu";
+$wb["User Online"]      = "Poèet u¾ivatelù Online";
+$wb["System Load 1 Minute"] = "Zatí¾ení v poslední 1 minutì";
+$wb["System Load 5 Minuten"] = "Zatí¾ení v posledních 5 minutách";
+$wb["System Load 15 Minuten"] = "Zatí¾ení v posledních 15 minutách";
+//////////////// Server Status Ende //////////
+
+$wb["Es konnte ein Dokument nicht wiederhergestellt werden, da sich das Eltern-Dokument noch im Papierkorb befindet.\n"] = "The object cannot be restored as long as its parent object is in the recycle bin.";
+$wb["error_anbieter_max_webs_ueberschritten"] = "The reseller already has more websites than you want to assign to him.<br>";
+$wb["error_anbieter_max_diskspace_ueberschritten"] = "The reseller already uses more diskspace than you want to assign to him.<br>";
+$wb["error_anbieter_max_user_ueberschritten"] = "The reseller already has more users than you want to assign to him.<br>";
+$wb["error_anbieter_max_domain_ueberschritten"] = "The reseller already has more domains than you want to assign to him.<br>";
+$wb["error_anbieter_dnsmanager_aktiv"] = "The reseller already has some DNS Records. The DNS Manager cannot be deactivated.<br>";
+$wb["error_anbieter_max_dns_ueberschritten"] = "The reseller already has more Primary DNS Records than you want to assign to him.<br>";
+$wb["error_anbieter_max_slavedns_ueberschritten"] = "The reseller already has more Secondary DNS Records than you want to assign to him.<br>";
+$wb["error_anbieter_httpd_include_aktiv"] = "HTTPD Includes are already in use on some of the reseller's websites. This feature cannot be deactivated.<br>";
+$wb["error_anbieter_shell_access_aktiv"] = "Shell Access already in use on some of the reseller's websites. This feature cannot be deactivated.<br>";
+$wb["error_anbieter_cgi_aktiv"] = "CGI is already in use on some of the reseller's websites. This feature cannot be deactivated.<br>";
+$wb["error_anbieter_standard_cgi_aktiv"] = "Standard CGIs are already in use on some of the reseller's websites. This feature cannot be deactivated.<br>";
+$wb["error_anbieter_php_aktiv"] = "PHP is already in use on some of the reseller's websites. This feature cannot be deactivated.<br>";
+$wb["error_anbieter_ssi_aktiv"] = "SSI is already in use on some of the reseller's websites. This feature cannot be deactivated.<br>";
+$wb["error_anbieter_ftp_aktiv"] = "FTP is already in use on some of the reseller's websites. This feature cannot be deactivated.<br>";
+$wb["error_anbieter_anonftp_aktiv"] = "Anonymous FTP is already in use on some of the reseller's websites. This feature cannot be deactivated.<br>";
+$wb["error_anbieter_frontpage_aktiv"] = "Frontpage is already in use on some of the reseller's websites. This feature cannot be deactivated.<br>";
+$wb["error_anbieter_datenbank_aktiv"] = "MySQL databases are already in use on some of the reseller's websites. This feature cannot be deactivated.<br>";
+$wb["error_anbieter_max_datenbank_ueberschritten"] = "The reseller already has more MySQL databases than you want to assign to him.<br>";
+$wb["error_anbieter_ssl_aktiv"] = "SSL is already in use on some of the reseller's websites. This feature cannot be deactivated.<br>";
+$wb["error_anbieter_wap_aktiv"] = "WAP is already in use on some of the reseller's websites. This feature cannot be deactivated.<br>";
+$wb["error_anbieter_error_pages_aktiv"] = "Individual error pages are already in use on some of the reseller's websites. This feature cannot be deactivated.<br>";
+$wb["error_web_no_unlimited_diskspace_1"] = "You cannot assign unlimited diskspace to this website. The max. diskspace for this website is ";
+$wb["error_web_no_unlimited_diskspace_2"] = " MB.<br>";
+$wb["error_web_no_diskspace_free_1"] = "You have left only ";
+$wb["error_web_no_diskspace_free_2"] = " MB which you can assign to this website.<br>";
+$wb["error_web_no_unlimited_users_1"] = "You cannot assign an unlimited number of users to this website. The max. number of users for this website is ";
+$wb["error_web_no_unlimited_users_2"] = ".<br>";
+$wb["error_web_no_users_free_1"] = "You have left only ";
+$wb["error_web_no_users_free_2"] = " user(s) which you can assign to this website.<br>";
+$wb["error_web_no_unlimited_domains_1"] = "You cannot assign an unlimited number of domains to this website. The max. number of domains for this website is ";
+$wb["error_web_no_unlimited_domains_2"] = ".<br>";
+$wb["error_web_no_domains_free_1"] = "You have left only ";
+$wb["error_web_no_domains_free_2"] = " domain(s) which you can assign to this website.<br>";
+$wb["error_web_no_user_decrease_1"] = "This website already has ";
+$wb["error_web_no_user_decrease_2"] = " user(s). You cannot decrease the number of users.<br>";
+$wb["error_web_no_domain_decrease_1"] = "This website already has ";
+$wb["error_web_no_domain_decrease_2"] = " domain(s). You cannot decrease the number of domains.<br>";
+
+$wb["Benutzter Diskspace"] = "Diskspace used";
+$wb["Slave Zones angelegt"] = "Slave Zones created";
+$wb["Datenbanken angelegt"] = "Databases created";
+$wb["error_web_no_database_decrease_1"] = "This website already has ";
+$wb["error_web_no_database_decrease_2"] = " database(s). You cannot decrease the number of databases.<br>";
+$wb["error_web_no_shell_access"] = "You cannot assign shell access to this website.<br>";
+$wb["error_web_no_cgi"] = "You cannot assign CGI functionality to this website.<br>";
+$wb["error_web_no_standard_cgi"] = "You cannot assign Standard CGIs to this website.<br>";
+$wb["error_web_no_php"] = "You cannot assign PHP functionality to this website.<br>";
+$wb["error_web_no_ssi"] = "You cannot assign SSI functionality to this website.<br>";
+$wb["error_web_no_ftp"] = "You cannot assign FTP functionality to this website.<br>";
+$wb["error_web_no_mysql"] = "You cannot assign MySQL databases to this website.<br>";
+$wb["error_web_no_databases_free_1"] = "You have left only ";
+$wb["error_web_no_databases_free_2"] = " database(s) which you can assign to this website.<br>";
+$wb["error_web_no_ssl"] = "You cannot assign SSL functionality to this website.<br>";
+$wb["error_web_no_anonftp"] = "You cannot assign Anonymous FTP functionality to this website.<br>";
+$wb["error_web_no_wap"] = "You cannot assign WAP functionality to this website.<br>";
+$wb["error_web_no_individual_error_pages"] = "You cannot assign individual error pages to this website.<br>";
+$wb["error_web_no_httpd_include"] = "You cannot assign HTTPD Includes to this website.<br>";
+$wb["error_web_no_frontpage"] = "You cannot assign Frontpage functionality to this website.<br>";
+$wb["Web Vorlage"] = "Hostingplan";
+$wb["ISP Web-Vorlage"] = "ISP Hostingplan";
+$wb["Keine Vorlage verwenden"] = "Individual Settings";
+$wb["Keine Vorlage vorhanden"] = "No Hostingplan Available";
+$wb["txt_accept"] = "accept";
+$wb["txt_discard"] = "discard";
+$wb["Eigenschaften"] = "Properties";
+$wb["ISP Datenbank"] = "ISP Database";
+$wb["Nein"] = "No";
+$wb["Ja"] = "Yes";
+$wb["Web"] = "Site";
+$wb["Domain"] = "Domain";
+$wb["Traffic-Überschreitung"] = "Traffic Exceedance";
+$wb["sperren"] = "Suspend";
+$wb["benachrichtigen"] = "Notify";
+$wb["keine Aktion"] = "No Action";
+$wb["Website-Status"] = "Website Status";
+$wb["aktiv"] = "Active";
+$wb["gesperrt"] = "Suspended";
+
+$wb["txt_traffic_suspension_email_desc"] = "<b>Web Suspension Notification (Traffic Exceedance)</b>";
+$wb["txt_traffic_suspension_sender_email"] = "Email odesílatele";
+$wb["txt_traffic_suspension_sender_name"] = "Name of Sender";
+$wb["txt_traffic_suspension_email_bcc"] = "BCC Recipient";
+$wb["txt_traffic_suspension_email_subject"] = "Subject";
+$wb["txt_traffic_suspension_email_message"] = "Message";
+$wb["txt_traffic_suspension_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Vlo¾te následující promìnné do textu:</b></td></tr>
+        <tr>
+          <td class="normal">%%%FIRST_NAME%%%</td>
+          <td class="normal">
+            Køestní jméno klienta</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%LAST_NAME%%%</td>
+          <td class="normal">
+            Pøíjmení klienta</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%WEBSITE%%%</td>
+          <td class="normal">
+            Web klienta</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%MONTH%%%</td>
+          <td class="normal">
+            Mìsíc kdy do¹lo k pøekroèení limitu pøenosu dat</td>
+        </tr>
+        <tr>
+          <td class="normal" valign="top">%%%INCLUDED_TRAFFIC%%%</td>
+          <td class="normal">
+            Mno¾ství pøenesených dat povolené pro tento web</td>
+        </tr>
+        <tr>
+          <td class="normal" valign="top">%%%TOTAL_TRAFFIC%%%</td>
+          <td class="normal">
+            Celkové mno¾ství pøenesených dat v mìsíci kdy do¹lo k pøekroèení limitu pøenosu dat</td>
+        </tr>
+        </table>';
+
+$wb["txt_traffic_notification_email_desc"] = "<b>Oznámení o pøekroèení limitu pøenosu dat</b>";
+$wb["txt_traffic_notification_sender_email"] = "Email odesílatele";
+$wb["txt_traffic_notification_sender_name"] = "Jméno odesílatele";
+$wb["txt_traffic_notification_email_bcc"] = "BCC Pøíjemce";
+$wb["txt_traffic_notification_email_subject"] = "Pøedmìt zprávy";
+$wb["txt_traffic_notification_email_message"] = "Zpráva";
+$wb["txt_traffic_notification_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Vlo¾te následující promìnné do textu:</b></td></tr>
+        <tr>
+          <td class="normal">%%%FIRST_NAME%%%</td>
+          <td class="normal">
+            Køestní jméno klienta</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%LAST_NAME%%%</td>
+          <td class="normal">
+            Pøíjmení klienta</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%WEBSITE%%%</td>
+          <td class="normal">
+            Web klienta</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%MONTH%%%</td>
+          <td class="normal">
+            Mìsíc kdy do¹lo k pøekroèení limitu pøenosu dat</td>
+        </tr>
+        <tr>
+          <td class="normal" valign="top">%%%INCLUDED_TRAFFIC%%%</td>
+          <td class="normal">
+            Mno¾ství pøenesených dat povolené pro tento web</td>
+        </tr>
+        <tr>
+          <td class="normal" valign="top">%%%TOTAL_TRAFFIC%%%</td>
+          <td class="normal">
+            Celkové mno¾ství pøenesených dat v mìsíci kdy do¹lo k pøekroèení limitu pøenosu dat</td>
+        </tr>
+        </table>';
+
+
+$wb["Catalog_Name"] = "Jméno";
+$wb["Spam Whitelist"] = 'Bílá listina';
+$wb["Spam Blacklist"] = 'Èerná listina';
+$wb["spam_whitelist_txt"] = '<b>Tip:</b> Jednu adresu na øádek. Platné adresy jsou napøíklad: kamarad@domena.cz, *@domena.com, nebo *.domena.net.';
+$wb["spam_blacklist_txt"] = '<b>Tip:</b> Jednu adresu na øádek. Platné adresy jsou napøíklad: zlyspamer@domena.cz, *@domena.com, nebo *.domena.net.';
+$wb["Webalizer Stats"] = 'Webalizer<br>&nbsp;Statistiky';
+$wb["Use Uribl"] = 'Pou¾ívat <a href="http://www.uribl.com/about.shtml" target="_blank" style="font-family:Arial,Verdana">URIBL</a>';
+$wb["Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 -"] = "Jsou povoleny pouze následující znaky: a-z A-Z 0-9 -<br>";
+$wb["Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 - ."] = "Jsou povoleny pouze následující znaky: a-z A-Z 0-9 - .<br>";
+
+?>

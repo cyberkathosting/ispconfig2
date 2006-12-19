@@ -1,0 +1,19 @@
+<?
+
+/**********************************************
+* ISPConfig Help File
+* Version 1.2
+* Syntax: $hlp["FieldName"] = "HelpText";
+************************************************/
+
+$hlp["dns_soa"] = "Doména (Start of Authority). Prosím vlo¾te název domény (bez www).";
+$hlp["dns_refresh"] = "DNS Refresh v sekundách.";
+$hlp["dns_retry"] = "DNS Retry v sekundách.";
+$hlp["dns_expire"] = "DNS Expire v sekundách.";
+$hlp["dns_ttl"] = "DNS TTL v sekundách.";
+$hlp["dns_ns1"] = "Prosím vlo¾te primární nameserver.";
+$hlp["dns_ns2"] = "Prosím vlo¾te sekundární nameserver.";
+$hlp["dns_adminmail"] = "Prosím vlo¾te emailovou adresu zone administrátora.";
+$hlp["server_id"] = "Prosím vyberte server.";
+$hlp["dns_soa_ip"] = "IP adresa domény.";
+?>

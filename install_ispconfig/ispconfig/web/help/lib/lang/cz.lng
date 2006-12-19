@@ -1,0 +1,84 @@
+<?
+/********************************
+* ISPConfig Dictionary File
+* Version 1.0
+*********************************/
+
+$wb["Anbieter"]     = "Prodejce";
+$wb["Web"]          = "Web";
+$wb["Admin Handbuch"] = "Manuál administrátora";
+$wb["Reseller Handbuch"] = "Manuál prodejce";
+$wb["Kunden Handbuch"] = "Manuál u¾ivatele";
+$wb["Deutsch"]          = "Nìmecky";
+$wb["Englisch"]         = "Anglicky";
+$wb["Projektfarm Support"]          = "Projektfarm Support";
+$wb["Online Hilfe"] = "Online Nápovìda";
+
+$wb["willkommen_kunde"] = "Vítejte v administraèním rozhraní Zserver s.r.o.! Mù¾ete zde upravovat nastavení Va¹eho webu.<br>
+&nbsp;<br>
+<div style=\"font-size:80%;text-align:left\">
+<h5>U¾ivatelé:</h5>
+<strong>Vytvoøení u¾ivatele:</strong><p>Web-Manager => Weby => \"vybrat web\" => U¾ivatelé & Emaily => Vytvoøit</p>
+Ka¾dı u¾ivatel má vlastní emailovou schránku ve formátu <span style=\"color:red\">email_ktery_jste_zadali@vase_domena</span> a také vlastní www stránky na adrese<span style=\"color:red\"> http://vase_domena/~uzivatelske_jmeno</span>, které jsou fyzicky umístìny v adresaøi <span style=\"color:red\">users/uzivatelske_jmeno</span>.<br>&nbsp;<br>
+	<em>Tipy:</em><br>
+	1. Pouze u¾ivatel se za¹krtnutım polem administrátor má pøístup k hlavnímu webu. Ostatní mají pøístup pouze ke svım webùm v users/uzivatel.<br>
+	2. Velikost prostoru pro u¾ivatelskı web mù¾ete definovat v políèku \"Prostor pro web MB\".
+<h5>Web-FTP:</h5>
+Jednoduchı klient pro upload souborù a úpravy pøístupovıch práv k souborùm a adresáøùm.<br>&nbsp;<br>
+	<strong>Zaheslování pøístupu k vybranému adresáøi</strong>
+	lze jednodu¹e dosáhnout vybráním zvoleného adresáøe ve web-ftp klientovi a kliknutím na [zaheslovat adresáø]
+<h5>Databáze:</h5>
+<strong>Vytvoøení databáze:</strong>
+	<p>Web-Manager => Weby => \"vybrat web\" => Mo¾nosti => Databáze [Vytvoøit]</p>
+<strong>Webové rozhraní:</strong>
+	<p>Nástroje => phpMyAdmin</p>
+<h5>Statistiky:</h5>
+	Ka¾dı web ma vlastní statistiku pøístupù na adrese <span style=\"color:red\">http://vase_domena/stats</span>
+<h5>Problémy:</h5>
+V pøípadì problému s administraèním rozhraním webhostingu kontaktujte technickou podporu webhostingu zasláním po¾adavku na podporu:
+<p>Nápovìda => Po¾adavky na podporu => Novı po¾adavek</p></div>";
+$wb["Willkommen"] = "Vítejte";
+
+//////////////// Server Status ////////////////
+$wb["Arbeitsspeicher"]          = "Operaèní pamì»";
+$wb["CPU"]          = "CPU";
+$wb["Dienste"]      = "Slu¾by";
+$wb["Server Online seit"]          = "Server Online po dobu";
+$wb["User Online"]      = "Poèet u¾ivatelù Online";
+$wb["System Load 1 Minute"] = "Zatí¾ení v poslední 1 minutì";
+$wb["System Load 5 Minuten"] = "Zatí¾ení v posledních 5 minutách";
+$wb["System Load 15 Minuten"] = "Zatí¾ení v posledních 15 minutách";
+//////////////// Server Status Ende //////////
+
+$wb["Webs angelegt"] = "Poèet webù";
+$wb["User angelegt"] = "Poèet u¾ivatelù";
+$wb["Domains angelegt"] = "Poèet domén";
+$wb["unlimitiert"]  = "neomezenì";
+$wb["Anbieter"]     = "Prodejce";
+$wb["DNS-Domains angelegt"] = 'DNS Domény vytvoøeny';
+$wb["von"] = "z";
+
+// NEW 2.0.8 ///////////////////////////////////
+$wb["Französische"]     = "Francouzsky";
+// Support Tickets System
+$wb["Unterstützungskarten"] = "Po¾adavky na podporu";
+$wb["Geöffnete Karten"] = "Otevøené po¾adavky";
+$wb["Geschlossene Karten"] = "Uzavøené po¾adavky";
+$wb["Neue Karte"] = "Novı po¾adavek";
+$wb["Betreff"] = "Pøedmìt";
+$wb["Priorität"] = "Priorita";
+$wb["Niedrig"] = "Nízká";
+$wb["Mittel"] = "Støední";
+$wb["Hoch"] = "Vysoká";
+$wb["Ihre frage"] = "Va¹e otázka";
+$wb["Senden"] = "Odeslat";
+$wb["Fehler während der schaffung der karte"] = "Chyba pøi vytváøení po¾adavku";
+$wb["Neue unterstützungskarte, die auf antwort wartet"] = "Novı po¾adavek èeká na odpovìï";
+$wb["Sie erhielten eine antwort"] = "Obdr¾el(a) jste odpovìï na svou otázku";
+$wb["geantwortet zu ihnen"] = "Odpovìï na Va¹i otázku";
+$wb["Datum"] = "Datum";
+$wb["Davon"] = "Z";
+$wb["Ihre antwort"] = "Va¹e odpovìï";
+$wb["Antworten"] = "Odpovìdìt";
+$wb["Schließen"] = "Uzavøít";
+?>
