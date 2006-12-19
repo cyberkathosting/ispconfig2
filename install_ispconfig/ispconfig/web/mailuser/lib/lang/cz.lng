@@ -1,0 +1,47 @@
+<?php
+
+$wb["txt_login_desc"] = "Pro zmìnu konfigurace emailu se prosím zalogujte zde.";
+$wb["txt_error"] = "Error";
+$wb["txt_email_username"] = "Email-U¾ivatelské jméno";
+$wb["txt_password"] = "Heslo";
+$wb["txt_login"] = "Login";
+$wb["txt_autoresponder"] = "Automatická odpovìï";
+$wb["txt_nachricht"] = "Zpráva";
+$wb["txt_speichern"] = "Ulo¾it";
+$wb["txt_abbrechen"] = "Zru¹it";
+$wb["txt_email_account"] = "Emailový úèet";
+$wb["txt_user_und_email"] = "U¾ivatel &amp; Email";
+$wb["txt_spamfilter"] = "Spamfiltr";
+$wb["txt_logout"] = "Odhlásit";
+$wb["txt_mailscan"] = "MailSken";
+$wb["txt_antivirus"] = "Antivir";
+$wb["txt_spam_strategie"] = "Spam bude";
+$wb["txt_spam_hits"] = "Spam Hits";
+$wb["txt_rewrite_subject"] = "Pøepsat pøedmìt zprávy";
+$wb["txt_betreff"] = "Pøedmìt zprávy";
+$wb["txt_name"] = "Jméno";
+$wb["txt_email_adresse"] = "Emailová Adresa";
+$wb["txt_username"] = "U¾ivatelské jméno";
+$wb["txt_web_speicher"] = "WebQuota";
+$wb["txt_mail_speicher"] = "MailQuota";
+$wb["txt_email_passwort_leer"] = "U¾ivatelské jméno a/nebo heslo jsou prázdné!";
+$wb["txt_user_unbekannt"] = "Neznámý u¾ivatel.";
+$wb["txt_access_forbidden"] = "Pøístup odepøen!";
+$wb["txt_yes"] = "Ano";
+$wb["txt_no"] = "Ne";
+$wb["txt_unlimited"] = "neomezen";
+$wb["txt_welcome"] = "Vítejte...";
+$wb["txt_error_spam_hits_format"] = "Hodnota <i>".$wb["txt_spam_hits"]."</i> musí mít následující formát:";
+$wb["txt_accept"] = "pøijat";
+$wb["txt_discard"] = "odmítnut";
+$wb["txt_language"] = "Jazyk";
+$wb["txt_no_mailuser_login"] = "Pøíhlá¹ení je deaktivováné pro Vá¹ web.";
+$wb["txt_forwarder"] = "Pøeposlání";
+$wb["txt_forwarder_desc"] = "<b>Tip:</b> Jeden email na øádek.";
+$wb["txt_spam_whitelist"] = 'Bílá listina';
+$wb["txt_spam_blacklist"] = 'Èerná listina';
+$wb["txt_hint_spam_whitelist"] = '<b>Tip:</b> Jednu adresu na øádek. Platné adresy jsou napøíklad: kamarad@domena.cz, *@domena.com, nebo *.domena.net.';
+$wb["txt_hint_spam_blacklist"] = '<b>Tip:</b> Jednu adresu na øádek. Platné adresy jsou napøíklad: zlyspamer@domena.cz, *@domena.com, nebo *.domena.net.';
+$wb["txt_uribl"] = 'Pou¾ívat <a href="http://www.uribl.com/about.shtml" target="_blank">URIBL</a>';
+
+?>

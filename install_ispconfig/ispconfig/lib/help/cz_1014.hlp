@@ -1,0 +1,26 @@
+<?
+
+/**********************************************
+* ISPConfig Help File
+* Version 1.2
+* Syntax: $hlp["FieldName"] = "HelpText";
+************************************************/
+
+$hlp["user_username"] = "Prosím specifikujte u¾ivatelské jméno. Mù¾ete pou¾ít jakékoliv jméno pokud nebude obsahovat diakritiku (ä, ö,ü), speciální znaky (@, %, ...) a mezery. Maximální délka je 26 znakù.";
+$hlp["user_passwort"] = "Prosím specifikujte u¾ivatelské heslo. Mù¾ete pou¾ít jakékoliv jméno pokud nebude obsahovat diakritiku (ä, ö,ü), speciální znaky (@, %, ...) a mezery.";
+$hlp["user_speicher"] = "Prosím vlo¾te velikost diskového prostoru pro u¾ivatele.";
+$hlp["user_admin"] = "Oznací u¾ivatele jako administrátora tohoto webu. Pro ka¾dý web mù¾e být specifikován pouze jeden administrátor.";
+$hlp["user_shell"] = "Povolí shell prístup pro u¾ivatele.";
+$hlp["user_emailalias"] = "Zde mù¾ete definovat dal¹í emailové aliasy (napø. odli¹nou výslovnost) pro pøíjem emailu pro tyto aliasy. Vlo¾te pouze èást pøed \"@\"!";
+$hlp["user_name"] = "Prosím vlo¾te skuteèné jméno u¾ivatele.";
+$hlp["user_autoresponder"] = "Aktivuje automatickou odpovìd pro emailové schránky u¾ivatele.";
+$hlp["user_autoresponder_text"] = "Prosím vlo¾te text automatické odpovìdi.";
+$hlp["user_mailquota"] = "Prosím specifikujte maximální velikost schránky u¾ivatele (v MB).";
+$hlp["user_catchallemail"] = "Jestli¾e je za¹krtnuto toto políèko pak v¹echny nedoruèitelné emaily pro tento web budou doruèeny do této schránky. Tuto vlastnost mù¾e mit aktivovanou pouze jeden u¾ivatel daného webu.";
+$hlp["user_mailscan"] = "Povolí virus skener pro tuto emailovou schránku. Pøípona podezøelých pøíloh (napø. .exe soubory) bude pøejmenována, tak¾e nebude mo¾né spustit soubor dvojitým kliknutím.";
+$hlp["user_spamfilter"] = "Aktivuje spamový filtr pro tuto emailovou schránku.";
+$hlp["user_emailweiterleitung_local_copy"] = "Jestli¾e je za¹krtnuté toto políèko pak lokální kopie vsech pøíchozích emailù budou uchovány i v pøípade ¾e je nastaveno pøesmìrování na jiný email.";
+$hlp["user_email"] = "Prosím specifikujte jméno, které bude pøed \"@\" emailové adresy. Mù¾ete pou¾ít jakékoliv jméno pokud nebude obsahovat diakritiku (ä, ö,ü), speciální znaky (@, %, ...) a mezery.";
+$hlp["user_emailweiterleitung"] = "Zde mù¾ete vlo¾it emailové adresy, na které bude pøíchozí email pøeposlán.";
+
+?>

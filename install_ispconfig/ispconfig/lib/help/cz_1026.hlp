@@ -1,0 +1,22 @@
+<?
+
+/**********************************************
+* ISPConfig Help File
+* Version 1.2
+* Syntax: $hlp["FieldName"] = "HelpText";
+************************************************/
+
+$hlp["artikelnummer"] = "Prosím vlo¾te èíslo polo¾ky pro tento produkt. Mù¾ete pou¾ít jakékoliv èíslo.";
+$hlp["artikeltyp"] = "Prosím vyberte typ polo¾ky ze seznamu.";
+$hlp["artikelbezeichnung"] = "Prosím specifikujte jméno polo¾ky.";
+$hlp["verrechnung"] = "Prosím specifikujte úètovací období (v mìsícich) pro tuto polo¾ku. Napøíklad 1 znamená mesíène, 6 znamená jednou za pùl roku, 12 znamená jednou roène; 0 znamená jednorázovì.";
+$hlp["artikeleinheit"] = "Prosím vyberte ze seznamu jednotky pro tuto polo¾ku.";
+$hlp["artikelpreis"] = "Prosm vlo¾te cenu za jednotku pro tuto polo¾ku.";
+$hlp["abpackung"] = "Mno¾ství jednotek v balíèku.";
+$hlp["beschreibung"] = "Zde mù¾ete vlo¾it popis polo¾ky.";
+$hlp["artikelgroup"] = "Prosím vyberte, pro které prodejce je tato polo¾ka platná. Jestli¾e nebude vybráno nic pak bude polo¾ka platná pro vsechny prodejce.";
+$hlp["weitere_artikeleinheit"] = "Jednotka pro prekroèení limitu pøenosu dat.";
+$hlp["weitere_abpackung"] = "Mno¾ství MB nebo GB které jsou úètovány pøi pøekroèení limitu.";
+$hlp["weitere_artikelpreis"] = "Cena za prekroèeni limitu.";
+$hlp["steuersatz"] = "Prosím specifikujte DPH (napø. 19%).";
+?>

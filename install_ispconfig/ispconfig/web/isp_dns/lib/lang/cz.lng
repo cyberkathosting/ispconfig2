@@ -1,0 +1,97 @@
+<?
+/********************************
+* ISPConfig Dictionary File
+* Version 1.0
+*********************************/
+
+//////////////// DNS Manager ////////////////
+$wb["Optionen"]     = "Mo¾nosti";
+$wb["Ziel"]         = "Cíl";
+$wb["Priorität"]   = "Priorita";
+$wb["DNS Eintrag"]  = "DNS záznam";
+$wb["Ordner neu"]   = "Tøídit podle";
+$wb["Suchen"]       = "Hledat";
+$wb["DNS-Manager"]       = "DNS-Manager";
+$wb["Domain (SOA)"]         = "Doména (SOA)";
+$wb["Email Admin"]         = "Email administrátora";
+$wb["Nameserver 1"]         = "Nameserver 1";
+$wb["Nameserver 2"]         = "Nameserver 2";
+$wb["Refresh"]         = "Refresh";
+$wb["Retry"]         = "Retry";
+$wb["Expire"]         = "Expire";
+$wb["TTL"]         = "TTL";
+$wb["Record"]         = "Záznam";
+$wb["Record"]         = "Záznamy";
+$wb["Mailserver"]         = "Mailserver";
+
+$wb["Dokument"] = "Dokument";
+$wb["neues Dokument anlegen"] = "nový Dokument";
+
+$wb["error_soa_exists_1"] = "Ji¾ byla vytvoøena doména (SOA Záznam) s tímto jménem ";
+$wb["error_soa_exists_2"] = ".<br>";
+//////////////// DNS Manager Ende ///////////
+
+$wb["IP-Adresse ungültig."] = "IP adresa je neplatná.";
+$wb["Records"] = 'Záznamy';
+$wb["ziel"] = 'cíl';
+$wb["Neu"] = 'nový';
+
+// NEW 1.3 //////////////////////////////////////
+
+$wb["Master neu"] = 'Nový Master';
+$wb["Slave neu"] = 'Nový Slave';
+$wb["Slave Zone"] = 'Slave Zóna';
+$wb["domain"] = 'Doména';
+$wb["DNS-Master IP"] = 'DNS-Master IP';
+$wb["Name"] = 'Jméno';
+$wb["Masters"] = 'Masters';
+$wb["Slaves"] = 'Slaves';
+$wb["SUCHE"] = 'VYHLEDAT';
+
+
+
+//////////////// Server Status ////////////////
+$wb["Arbeitsspeicher"]          = "Operaèní pamì»";
+$wb["CPU"]          = "CPU";
+$wb["Dienste"]      = "Slu¾by";
+$wb["Server Online seit"]          = "Server Online po dobu";
+$wb["User Online"]      = "Poèet u¾ivatelù Online";
+$wb["System Load 1 Minute"] = "Zatí¾ení v poslední 1 minutì";
+$wb["System Load 5 Minuten"] = "Zatí¾ení v posledních 5 minutách";
+$wb["System Load 15 Minuten"] = "Zatí¾ení v posledních 15 minutách";
+//////////////// Server Status Ende //////////
+
+$wb["Webs angelegt"] = "Pou¾ito webù";
+$wb["User angelegt"] = "Pou¾ito u¾ivatelù";
+$wb["Domains angelegt"] = "Pou¾ito domén";
+$wb["unlimitiert"]  = "neomezeno";
+$wb["Anbieter"]     = "Prodejce";
+$wb["DNS-Domains angelegt"] = 'DNS Doména vytvoøena';
+$wb["von"] = "z";
+$wb["Maximale Anzahl an DNS-Einträgen erreicht."] = "Maximální poèet zón pro tento úèet byl vyèerpán.<br>";
+$wb["error_no_zones_allowed"] = "Vytvoøení zóny nené povoleno pro tento úèet.<br>";
+$wb["error_no_dns_anbieter"] = "U¾ivatel tohoto úètu není oprávnìn vytvoøit ¾ádný DNS záznam.<br>";
+$wb["error_max_slave_dns_anbieter"] = "Maximální poèet slave zón pro tento úèet byl vyèerpán.<br>";
+$wb["weiter_link"] = "<br><br> <a href='../../isp_dns/frame_start.php?s=$s'>Dal¹í &gt;&gt;</a>";
+$wb["error_a_record_exists"] = "Ji¾ byl vytvoøen A záznam s tímto jménem pro tuto zónu.<br>";
+$wb["error_cname_record_exists"] = "Ji¾ byl vytvoøen CNAME záznam s tímto jménem pro tuto zónu.<br>";
+$wb["error_mx_record_exists"] = "MX záznam s tímto nebo podobným jménem ji¾ v této zónì existuje.<br>";
+$wb["error_spf_record_exists"] = "SPF záznam s tímto jménem ji¾ v této zónì existuje.<br>";
+
+$wb["ja"] = "Ano";
+$wb["nein"] = "Ne";
+$wb["a"] = "Jsou emaily odesílány<br>&nbsp;&nbsp;z A záznamu?";
+$wb["mx"] = "Jsou emaily odesílány<br>&nbsp;&nbsp;z MX záznamu?";
+$wb["ptr"] = "Jsou emaily odesílány<br>&nbsp;&nbsp;ze v¹ech serverù z<br>&nbsp;&nbsp;této domény?";
+$wb["a_break"] = "Jsou emaily odesílány<br>&nbsp;&nbsp;z dal¹ích A záznamù?";
+$wb["mx_break"] = "Jsou emaily odesílány<br>&nbsp;&nbsp;z dal¹ích MX záznamù?";
+$wb["ip4_break"] = "Jsou emaily odesílány<br>&nbsp;&nbsp;z dal¹ích IP adres?";
+$wb["include_break"] = "Pøevzít SPF záznam<br>&nbsp;&nbsp;z této zóny?";
+$wb["all_"] = "Mají mít v¹ichni hostitelé<br>&nbsp;&nbsp;uvedení v záznamech vý¹e<br>&nbsp;&nbsp;povoleno zasílání emailù<br>&nbsp;&nbsp;z této (?pro tuto?) doménu?";
+
+$wb["Catalog_Name"] = "Jméno";
+$wb["Feld"] = "Pole";
+$wb["Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 -"] = "Jsou povoleny pouze následující znaky: a-z A-Z 0-9 -<br>";
+$wb["Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 - ."] = "Jsou povoleny pouze následující znaky: a-z A-Z 0-9 - .<br>";
+
+?>

@@ -1,0 +1,429 @@
+<?
+/********************************
+* ISPConfig Dictionary File
+* Version 1.0
+*********************************/
+
+//////////////// Tools //////////////////////
+$wb["Tools & Optionen"] = "Nástroje & Mo¾nosti";
+$wb["Passwort ändern"] = "Zmìnit heslo";
+$wb["Allgemein"]    = "Základní nastavení";
+$wb["Passwort alt"] = "Staré heslo";
+$wb["Passwort neu"] = "Nové heslo";
+$wb["Passwort wiederholen"] = "Potvrdit nové heslo";
+$wb["Adresse ändern"] = "Zmìnit adresu";
+
+$wb["willkommen_kunde"] = "Vítejte v administraèním rozhraní Zserver s.r.o.! Mù¾ete zde upravovat nastavení Va¹eho webu.<br>
+&nbsp;<br>
+<div style=\"font-size:80%;text-align:left\">
+<h5>U¾ivatelé:</h5>
+<strong>Vytvoøení u¾ivatele:</strong><p>Web-Manager => Weby => \"vybrat web\" => U¾ivatelé & Emaily => Vytvoøit</p>
+Ka¾dý u¾ivatel má vlastní emailovou schránku ve formátu <span style=\"color:red\">email_ktery_jste_zadali@vase_domena</span> a také vlastní www stránky na adrese<span style=\"color:red\"> http://vase_domena/~uzivatelske_jmeno</span>, které jsou fyzicky umístìny v adresaøi <span style=\"color:red\">users/uzivatelske_jmeno</span>.<br>&nbsp;<br>
+        <em>Tipy:</em><br>
+        1. Pouze u¾ivatel se za¹krtnutým polem administrátor má pøístup k hlavnímu webu. Ostatní mají pøístup pouze ke svým webùm v users/uzivatel.<br>
+        2. Velikost prostoru pro u¾ivatelský web mù¾ete definovat v políèku \"Prostor pro web MB\".
+<h5>Web-FTP:</h5>
+Jednoduchý klient pro upload souborù a úpravy pøístupových práv k souborùm a adresáøùm.<br>&nbsp;<br>
+        <strong>Zaheslování pøístupu k vybranému adresáøi</strong>
+        lze jednodu¹e dosáhnout vybráním zvoleného adresáøe ve web-ftp klientovi a kliknutím na [zaheslovat adresáø]
+<h5>Databáze:</h5>
+<strong>Vytvoøení databáze:</strong>
+        <p>Web-Manager => Weby => \"vybrat web\" => Mo¾nosti => Databáze [Vytvoøit]</p>
+<strong>Webové rozhraní:</strong>
+        <p>Nástroje => phpMyAdmin</p>
+<h5>Statistiky:</h5>
+        Ka¾dý web ma vlastní statistiku pøístupù na adrese <span style=\"color:red\">http://vase_domena/stats</span>
+<h5>Problémy:</h5>
+V pøípadì problému s administraèním rozhraním webhostingu kontaktujte technickou podporu webhostingu zasláním po¾adavku na podporu:
+<p>Nápovìda => Po¾adavky na podporu => Nový po¾adavek</p></div>";
+$wb["Willkommen"] = "Vítejte";
+
+$wb["passwort_gespeichert"] = "Heslo bylo úspì¹nì zmìnìno.";
+$wb["passwort_uebereinstimmung"] = "Nové heslo a kontrolní heslo se li¹í. Prosím ujistìte se, ¾e hesla v políèku --Nové heslo-- a --Potvrdit nové heslo-- jsou stejná.";
+$wb["passwort_alt"] = "Heslo nemù¾e být zmìnìno, <br>proto¾e Va¹e staré heslo nebylo správnì zadané.";
+
+// NEW 1.1.12 ///////////////////////////////
+
+$wb["Backup Manager"] = 'Mana¾er zálohování';
+$wb["Backup"] = 'Zálohování';
+$wb["Restore"] = 'Obnovení';
+$wb["Daten Export"] = 'Export dat';
+$wb["Update Manager"] = 'Mana¾er aktualizací';
+$wb["Portscanner"] = 'Portskener';
+$wb["Whois"] = 'Whois';
+$wb["Download"] = 'Download';
+$wb["FTP-Server"] = 'FTP-Server';
+$wb["Verzeichnis"] = 'Adresáø';
+$wb["Web Daten"] = 'Data webu';
+$wb["User Daten"] = 'Data u¾ivatele';
+$wb["Log Daten"] = 'Data logù';
+$wb["mySQL Datenbank (wenn vorhanden)"] = 'Databáze MySQL';
+$wb["Backup starten"] = 'Spustit zálohování';
+$wb["Kein Web vorhanden."] = '®ádný web nebyl nalezen.';
+$wb["Web-Backup"] = 'Zálohování webù';
+$wb["Kunden-Stammaten"] = 'Data klienta';
+$wb["Format Einstellungen"] = 'Specifikace formátu';
+$wb["Trennzeichen"] = 'Oddìlovaè';
+$wb["Eingeschlossen mit"] = 'ukonèeno';
+$wb["Daten für folgende Anbieter exportieren"] = 'Exportovat data';
+$wb["Export starten"] = 'Zahájit export';
+$wb["Anbieter-Stammdaten"] = 'Data prodejce';
+$wb["Export"] = 'Export';
+$wb["Von"] = 'Z';
+$wb["Bis"] = 'Do';
+$wb["Local Portscanner"] = 'Lokální Portskener';
+
+// NEW 1.1.12a //////////////////////////////
+
+$wb["Es wurde kein Web ausgewählt."] = "Nebyl vybrán ¾ádný web.";
+$wb["Backup-Funktionen im Demo-Modus nicht verfügbar."] = "Funkce zálohování není v demo módu dostupná.";
+$wb["Backup Status"] = "Stav zálohování";
+$wb["Der Name des FTP-Servers <br>enthält ungültige Zeichen."] = "Jméno FTP serveru <br>obsahuje neplatné znaky.";
+$wb["Sie haben keinen FTP Benutzernamen angegeben."] = "Nebylo nastaveno u¾ivatelské jméno FTP serveru.";
+$wb["Ftp-Verbindung nicht hergestellt!"] = "Pøipojení k FTP serveru se nezdaøilo!";
+$wb["Verbindung mit:"] = "Pøipojen k:";
+$wb["als Benutzer:"] = "jako u¾ivatel:";
+$wb["nicht möglich."] = "není mo¾né.";
+$wb["Konnte nicht in Verzeichnis:"] = "zmìna adresaøe na:";
+$wb["wechseln."] = "selhalo.";
+$wb["Wechsel in Verzeichnis:"] = "zmìna adresáøe na:";
+$wb["Ftp upload war fehlerhaft!"] = "FTP-Upload se nezdaøil!";
+$wb["Upload erfolgreich."] = "Upload byl úspì¹ný.";
+$wb["FTP-Upload Status"] = "Stav FTP-Uploadu";
+$wb["Backup-Methode nicht unterstützt."] = "Tato metoda zálohování není dostupná.";
+$wb["Sprache ändern"] = "Zmìnit jazyk";
+$wb["Sprache (ISO)"] = "Jazyk (ISO)";
+$wb["Software Version"] = "Verze Programu";
+
+
+//////////////// Tools Ende /////////////////
+
+///////////////// ISP Manager //////////////////
+$wb["Anbieter"]     = "Prodejce";
+$wb["Kunde"]        = "Zákazník";
+$wb["Suchen"]       = "Hledat";
+$wb["Stammdaten"]   = "Hlavní údaje";
+$wb["Limits"]       = "Limity";
+$wb["Zugangsdaten"] = "Vlo¾it informace";
+$wb["Statistik"]    = "Statistiky";
+$wb["Firma"]        = "Spoleènost";
+$wb["Anrede"]       = "Adresa";
+$wb["Vorname"]      = "Køestní jméno";
+$wb["Name"]         = "Pøíjmení";
+$wb["Strasse"]      = "Ulice";
+$wb["PLZ"]          = "PSÈ";
+$wb["Ort"]          = "Mìsto";
+$wb["Land"]         = "Zemì";
+$wb["Telefon"]      = "Telefon";
+$wb["Fax"]          = "Fax";
+$wb["Internet"]     = "www adresa";
+$wb["Öffnen"]      = "Otevøít";
+$wb["Benutzername"] = "U¾ivatelské jméno"; // besser: vielleicht nur Variable $wb["username"] benutzen?
+$wb["zugangsdaten_anbieter_einleitung"] = "Zde mù¾ete nastavit u¾ivatelské jméno a heslo prodejce.";
+$wb["zugangsdaten_kunde_einleitung"] = "Zde mù¾ete nastavit u¾ivatelské jméno a heslo pro správu <br> vybraného webu.<br> ";
+$wb["Web Verwaltung"] = "Správa webu";
+$wb["Rechnung"]      = "Úèet";
+$wb["Rechnungsanschrift:"] = "Úètovací adresa:<br>";
+$wb["Intervall"]    = "Interval";
+$wb["Preis"]        = "Cena";
+$wb["Zahlungsart"]  = "Zpùsob platby";
+$wb["Basis"]        = "Zákl. údaje";
+$wb["Vytvoøit DNS"]   = "Vytvoøit DNS záznam";
+$wb["Speicher MB"]     = "prostor MB";
+$wb["Max. User"]        = "Max. poèet u¾ivatelù";
+$wb["Max. Domain"]        = "Max. poèet domén";
+$wb["PHP Scripte"]        = "PHP Skripty";
+$wb["SSI"]        = "SSI";
+$wb["FTP Zugang"]        = "FTP pøístup";
+$wb["mySQL"]        = "MySQL";
+$wb["SSL"]        = "SSL";
+$wb["Shell Zugriff"]      = "Pøístup k shellu";
+$wb["Zugang"]       = "Pøístup";  // Zugriff u. Zugang zusammenfassen!/nur einen Begriff nehmen!
+$wb["CGI Scripte"]      = "CGI Scripty";
+$wb["Bundesland"]   = "Kraj";
+$wb["Abteilung"]    = "Oddìlení";
+$wb["Gültigkeit (Tage)"]  = "Platnost (ve dnech)";
+$wb["SSL Key"]          = "SSL Klíè";
+$wb["SSL Zertifikat"]   = "SSL Certifikát";
+$wb["Aktion"]       = "Akce";
+$wb["Zertifikat erzeugen"] = "Vytvoøit certifikát";
+$wb["Zertifikat speichern"] = "Ulo¾it certifikát";
+$wb["Zertifikat löschen"] = "Vymazat certifikát";
+$wb["Speicherplatz gesamt"] = "Úlo¾ný prostor";
+$wb["unlimitiert"]  = "neomezeno";
+$wb["verbraucht"]   = "pou¾ito";
+$wb["Trafficübersicht"] = "Pøehled pøenosu dat";
+$wb["Monat"]        = "Mìsíc";
+$wb["Traffic"]      = "Pøenos dat";
+$wb["traffic_letzte_4"] = "Pøenos dat za poslední 4 roky";
+$wb["Jahr"]         = "Rok";
+$wb["mySQL User"]        = "U¾ivatelské jméno k MySQL databázi";
+$wb["mySQL Passwort"]    = "U¾ivatelské heslo k MySQL databázi";
+
+// Ergänzungen /////////////////////////////////
+$wb["Anbieter neu"] = "Nový prodejce";
+$wb["Kunde neu"]    = "Nový klient";
+$wb["Web neu"]      = "Nový web";
+$wb["Ordner neu"]   = "Seøadit podle";
+$wb["Suchen"]       = "Hledat";
+$wb["ISP Anbieter"] = "ISP prodejce";
+$wb["Webs"] = "Weby";
+$wb["User"] = "U¾ivatel";
+$wb["Domains"] = "Domény";
+$wb["Zahlung"] = "Platby";
+$wb["ISP Kunde"] = "ISP klient";
+$wb["ISP Web"] = "ISP web";
+$wb["Kunden"] = "Klienti";
+$wb["Dokument suchen"] = "Vyhledávání v dokumentech";
+
+$wb["User & Email"] = "U¾iv. & Emaily";
+$wb["Co-Domains"] = "Ko-Domény";
+$wb["SSL"] = "SSL";
+$wb["Optionen"] = "Mo¾nosti";
+
+$wb["Webs angelegt"] = "Pou¾ito webù";
+$wb["User angelegt"] = "Pou¾ito u¾ivatelù";
+$wb["Domains angelegt"] = "Pou¾ito domén";
+$wb["rechnungsanschrift"] = "Fakturaèní adresa:<br> ";
+
+
+$wb["neues Web anlegen"] = "Nový web";
+$wb["weiter"] = "dal¹í";
+$wb["SUCHE"] = "hledat";
+
+$wb["msg_beta"] = "";
+$wb["title_isp_beta"] = "";
+$wb["msg_kein_win"] = "Tento software není dostupný pro operaèní systémy Windows.";
+
+// Error Codes ispconfig_isp_domain.lib.php
+$wb["error_web_doppelt"] = "Ji¾ existuje web nebo doména s tímto jménem";
+$wb["error_max_domain_web"] = "Byl dosa¾en maximální poèet domén pro tento web";
+$wb["error_max_domain_anbieter"] = "Byl dosa¾en maximální poèet domén pro prodejce";
+$wb["angelegt"] = "pou¾ito";
+
+// Error Codes ispconfig_isp_kunde.lib.php
+$wb["error_user_exist_1"] = "U¾ivatel systému ";
+$wb["error_user_exist_2"] = "ji¾ existuje.  U¾ivatel nebyl pøidán nebo zmìnìn.";
+$wb["error_max_user_licence"] = "Byl dosa¾en maximální poèet u¾ivatelù pro tuto licenci.";
+
+
+// Error Codes ispconfig_isp_reseller.lib.php
+$wb["error_reseller_title"] = "Prodejce s tímto názvem ji¾ existuje.";
+$wb["error_reseller_group_not_found"] = "Skupina prodejce nebyla nalezena.";
+$wb["error_anbieter_no_delete"] = "<b>Prodejce nebyl vymazán.</b><br>&nbsp;<br>Prodejce mù¾e být vymazán a¾ po vymazání v¹ech webù a u¾ivatelù vytvoøených tímto prodejcem. Také se ujistìte ¾e je prázdný odpadkový ko¹ prodejce.";
+
+// Error Codes ispconfig_isp_user.lib.php
+$wb["error_sysuser_exist_1"] = "U¾ivatel s tímto jménem ji¾ existuje";
+$wb["error_sysuser_exist_2"] = "vlo¾en.<br><br> <a href='../../isp_manager/frame_start.php?s=$s'>Více</a>";
+$wb["error_max_user_web"] = "Byl dosa¾en maximální poèet webù pro u¾ivatele.<br><br> <a href='../../isp_manager/frame_start.php?s=$s'>Více</a>";
+$wb["error_max_space_web"] = "Zvolený diskový prostor pøesahuje limit pro tento web.<br><br> <a href='../../isp_manager/frame_start.php?s=$s'>Více</a>";
+$wb["error_max_user_anbieter"] = "Byl dosa¾en maximální poèet u¾ivatelù prodejce.<br><br> <a href='../../isp_manager/frame_start.php?s=$s'>Více</a>";
+$wb["error_sysuser_exist"] = "Toto u¾ivatelské jméno je ji¾ pou¾íváno.<br><br> <a href='../../isp_manager/frame_start.php?s=$s'>Více</a>";
+$wb["error_admin_exist"] = "U¾ivatel s administrátorskými právy pro tento web ji¾ existuje.<br><br> <a href='../../isp_manager/frame_start.php?s=$s'>Více</a>";
+$wb["error_admin_exist_long"] = "U¾ivatel s administrátorskými právy ji¾ existuje. Musíte nejdøíve zru¹it adminstrátorská práva stávajícímu u¾ivateli s tìmito právi pokud si pøejete pøiøadit práva tomuto u¾ivateli.<br><br> <a href='../../isp_manager/frame_start.php?s=$s'>Více</a>";
+
+// Error Codes ispconfig_isp_user.lib.php
+$wb["error_max_web_anbieter"] = "Byl dosa¾en maximální poèet webù pro prodejce";
+$wb["error_web_ssl_exist"] = "SSL certifikát prot tuto IP adresu ji¾ existuje.";
+
+// Plugins
+$wb["CPU Auslastung 1 Minute"] = "Zatí¾ení CPU v poslední 1 minutì";
+$wb["CPU Auslastung 5 Minuten"] = "Zatí¾ení CPU v posledních 5 minutách";
+$wb["CPU Auslastung 15 Minuten"] = "Zatí¾ení CPU v posledních 15 minutách";
+$wb["Server Online seit"] = "Server Online po dobu";
+$wb["User Online"] = "Poèet u¾ivatelù Online";
+$wb["error_web_id"] = "Tento plugin vy¾aduje platné web ID.";
+$wb["von"] = "z";
+$wb["Gesamt"] = "Souhrn";
+$wb["Traffic in den letzten 4 Jahren"] = "Pøenos dat za poslední 4 roky";
+
+$wb["Backup von Tabelle"] = "Zálohovat tabulku";
+$wb["Optimiere"] = "Optimalizovat";
+$wb["Reparatur"] = "Opravit";
+$wb["oder"] = "nebo";
+$wb["Installation starten"] = "Instalovat";
+
+$wb["Monatlich"] = "Mìsíènì";
+$wb["Quartal"] = "Ètvrtletnì";
+$wb["Halbjährlich"] = "Za pùl roku";
+$wb["Jährlich"] = "Roènì";
+$wb["Sonstige"] = "Jiné";
+
+$wb["bei Erhalt"] = "on receipt";
+$wb["Netto 7 Tage"] = "net 7 days";
+$wb["Netto 15 Tage"] = "net 15 days";
+$wb["Netto 30 Tage"] = "net 30 days";
+$wb["Sonstige"] = "jiné";
+$wb["Neu"] = "Nový";
+$wb["Postfach MB"] = "Mailbox MB";
+
+$wb["email_alias_txt"] = "<b>Tip:</b> jeden alias na øádek.";
+$wb["Weiterleitung"] = "Pøeposlat";
+$wb["Nachricht"] = "Zpráva";
+$wb["Kein Kunde vorhanden"] = "®ádný klient není dostupný";
+$wb["Dieses Web können Sie nicht löschen."] = "Nemù¾ete vymazat tento web.";
+$wb["Ausgabeformat"] = "Seznam";
+$wb["Bearbeiten"] = "Upravit";
+$wb["Löschen"] = "Smazat";
+
+$wb["willkommen_kunde"] = "Vítejte v administraèním rozhraní Zserver s.r.o.! Mù¾ete zde upravovat nastavení Va¹eho webu.<br>
+&nbsp;<br>
+<div style=\"font-size:80%;text-align:left\">
+<h5>U¾ivatelé:</h5>
+<strong>Vytvoøení u¾ivatele:</strong><p>Web-Manager => Weby => \"vybrat web\" => U¾ivatelé & Emaily => Vytvoøit</p>
+Ka¾dý u¾ivatel má vlastní emailovou schránku ve formátu <span style=\"color:red\">email_ktery_jste_zadali@vase_domena</span> a také vlastní www stránky na adrese<span style=\"color:red\"> http://vase_domena/~uzivatelske_jmeno</span>, které jsou fyzicky umístìny v adresaøi <span style=\"color:red\">users/uzivatelske_jmeno</span>.<br>&nbsp;<br>
+        <em>Tipy:</em><br>
+        1. Pouze u¾ivatel se za¹krtnutým polem administrátor má pøístup k hlavnímu webu. Ostatní mají pøístup pouze ke svým webùm v users/uzivatel.<br>
+        2. Velikost prostoru pro u¾ivatelský web mù¾ete definovat v políèku \"Prostor pro web MB\".
+<h5>Web-FTP:</h5>
+Jednoduchý klient pro upload souborù a úpravy pøístupových práv k souborùm a adresáøùm.<br>&nbsp;<br>
+        <strong>Zaheslování pøístupu k vybranému adresáøi</strong>
+        lze jednodu¹e dosáhnout vybráním zvoleného adresáøe ve web-ftp klientovi a kliknutím na [zaheslovat adresáø]
+<h5>Databáze:</h5>
+<strong>Vytvoøení databáze:</strong>
+        <p>Web-Manager => Weby => \"vybrat web\" => Mo¾nosti => Databáze [Vytvoøit]</p>
+<strong>Webové rozhraní:</strong>
+        <p>Nástroje => phpMyAdmin</p>
+<h5>Statistiky:</h5>
+        Ka¾dý web ma vlastní statistiku pøístupù na adrese <span style=\"color:red\">http://vase_domena/stats</span>
+<h5>Problémy:</h5>
+V pøípadì problému s administraèním rozhraním webhostingu kontaktujte technickou podporu webhostingu zasláním po¾adavku na podporu:
+<p>Nápovìda => Po¾adavky na podporu => Nový po¾adavek</p></div>";
+$wb["Willkommen"] = "Vítejte";
+
+$wb["txt_client_salutatory_email_desc"] = "<b>Uvítací email pro klienty</b>";
+$wb["txt_client_salutatory_email_sender_email"] = "Email odesílatele";
+$wb["txt_client_salutatory_email_sender_name"] = "Jméno odesílatele";
+$wb["txt_client_salutatory_email_bcc"] = "BCC Pøijemce";
+$wb["txt_client_salutatory_email_subject"] = "Pøedmìt zprávy";
+$wb["txt_client_salutatory_email_message"] = "Zpráva";
+$wb["txt_client_salutatory_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Vlo¾te následující promìnné do textu:</b></td></tr>
+        <tr>
+          <td class="normal">%%%USER%%%</td>
+          <td class="normal">
+            U¾ivatelské jméno klienta</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%PASSWORD%%%</td>
+          <td class="normal">
+            U¾ivatelské heslo klienta</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%FIRST_NAME%%%</td>
+          <td class="normal">
+            Køestní jméno klienta</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%LAST_NAME%%%</td>
+          <td class="normal">
+            Pøíjmení klienta</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%COMPANY%%%</td>
+          <td class="normal">
+            Spoleènost klienta</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%EMAIL%%%</td>
+          <td class="normal">
+            Emailová adresa klienta</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%CP%%%</td>
+          <td class="normal">
+            Pøihla¹ovací jméno do systému</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%MANUAL%%%</td>
+          <td class="normal">
+            Klientský manuál</td>
+        </tr>
+        </table>';
+$wb["txt_standard_index"] = "Standardní Index<br>&nbsp;&nbsp;Page";
+$wb["txt_standard_index_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Vlo¾te následující promìnné do textu:</b></td></tr>
+        <tr>
+          <td class="normal">%%%FQDN%%%</td>
+          <td class="normal">
+            Plné jméno webu (FQDN)</td>
+        </tr>
+    </table>';
+$wb["txt_user_standard_index"] = "Standardní u¾ivatelská<br>&nbsp;&nbsp;Index Page";
+$wb["txt_user_standard_index_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Vlo¾te následující promìnné do textu:</b></td></tr>
+        <tr>
+          <td class="normal">%%%USER%%%</td>
+          <td class="normal">
+            U¾ivatelské jméno</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%FQDN%%%</td>
+          <td class="normal">
+            Plné jméno webu (FQDN)</td>
+        </tr>
+        </table>';
+
+//////////////// ISP Manager Ende /////////////
+
+//////////////// Server Status ////////////////
+$wb["Arbeitsspeicher"]          = "Operaèní pamì»";
+$wb["CPU"]          = "CPU";
+$wb["Dienste"]      = "Slu¾by";
+$wb["Server Online seit"]          = "Server Online po dobu";
+$wb["User Online"]      = "Poèet u¾ivatelù Online";
+$wb["System Load 1 Minute"] = "Zatí¾ení v poslední 1 minutì";
+$wb["System Load 5 Minuten"] = "Zatí¾ení v posledních 5 minutách";
+$wb["System Load 15 Minuten"] = "Zatí¾ení v posledních 15 minutách";
+//////////////// Server Status Ende //////////
+
+$wb["DNS-Domains angelegt"] = 'DNS záznam domény vytvoøen';
+
+$wb["Hinzufügen"] = "Vlo¾it";
+$wb["Berechtigungen"] = "Práva";
+$wb["Speichern"] = "Ulo¾it";
+$wb["Löschen"] = "Vymazat";
+$wb["Abbrechen"] = "Zru¹it";
+$wb["IP-Adresse"] = "IP adresa";
+$wb["DNS-Ovìøit"] = "Ovìøit primární záznam v DNS";
+$wb["DNS-Insert"] = "Vytvoøit primární záznam v DNS";
+$wb["DNS-Update"] = "Upravit primární záznam v DNS";
+$wb["DNS-Vymazat"] = "Vymazat primární záznam v DNS";
+$wb["slave_query"] = "Ovìøit sekundární záznam v DNS";
+$wb["slave_insert"] = "Vytvoøit sekundární záznam v DNS";
+$wb["slave_update"] = "Upravit sekundární záznam v DNS";
+$wb["slave_delete"] = "Vymazat sekundární záznam v DNS";
+$wb["reseller_query"] = "Ovìøit prodejce";
+$wb["reseller_insert"] = "Vytvoøit prodejce";
+$wb["reseller_update"] = "Upravit prodejce";
+$wb["reseller_delete"] = "Vymazat prodejce";
+$wb["kunde_query"] = "Ovìøit klienta";
+$wb["kunde_insert"] = "Vytvoøit klienta";
+$wb["kunde_update"] = "Upravit klienta";
+$wb["kunde_delete"] = "Vymazat klienta";
+$wb["web_query"] = "Ovìøit web";
+$wb["web_insert"] = "Vytvoøit web";
+$wb["web_update"] = "Upravit web";
+$wb["web_delete"] = "Vymazat web";
+$wb["txt_primary_dns_records"] = "Primární záznam v DNS";
+$wb["txt_secondary_dns_records"] = "Sekundární záznam v DNS";
+$wb["txt_anbieter"] = "Prodejci";
+$wb["txt_kunden"] = "Klienti";
+$wb["txt_webs"] = "Weby";
+
+$wb["txt_move_websites"] = "Pøesunout web";
+$wb["txt_website_deleted_no_move"] = "Tento web byl ji¾ vymazán a nelze ho pøesunout.<br><br> <a href='../../frame_start.php?s=$s'>Dal¹í &gt;&gt;</a>";
+$wb["txt_customer_deleted_no_move"] = "Tento u¾ivatel byl ji¾ vymazán; web nelze pøesunout.<br><br> <a href='../../frame_start.php?s=$s'>Dal¹í &gt;&gt;</a>";
+$wb["txt_website_moved"] = "Web byl pøesunut pod vybraného u¾ivatele.<br><br> <a href='../../frame_start.php?s=$s'>Dal¹í &gt;&gt;</a>";
+$wb["txt_move_website_from"] = "z";
+$wb["txt_move_website_to"] = "do";
+$wb["txt_move_website_website"] = "Web";
+$wb["txt_move_website_submit"] = "Potvrdit";
+
+?>

@@ -1,0 +1,55 @@
+<?
+/********************************
+* ISPConfig Dictionary File
+* Version 1.0
+*********************************/
+
+$wb["Datei Upload"] = 'Upload souboru';
+$wb["Ordner neu"] = 'Nový adresáø';
+$wb["Web Auswahl"] = 'Výbìr webu';
+$wb["Web auswählen"] = 'Vyberte Web';
+$wb["Auswahl"] = 'Výbìr';
+$wb["WEB FTP"] = 'WEB FTP';
+$wb["Hilfe"] = 'Nápovìda';
+$wb["Name"] = 'Jméno';
+$wb["Grösse"] = 'Velikost';
+$wb["Datum"] = 'Datum';
+$wb["Eigentümer"] = 'Vlastník';
+$wb["Alle"] = 'V¹ichni';
+$wb["Lesen"] = 'Ètení';
+$wb["Schreiben"] = 'Zápis';
+$wb["Ausführen"] = 'Spou¹tìní';
+$wb["Verzeichnisschutz"] = 'Zaheslování adresáøe';
+$wb["Verzeichnis schützen"] = 'Zaheslovat vstup do adresáøe';
+$wb[".htaccess User"] = '.htaccess u¾ivatel';
+$wb[".htaccess Userübersicht"] = 'Pøehled .htaccess u¾ivatelù';
+$wb["Bearbeiten"] = 'Upravit';
+$wb["Hinzufügen"] = 'Pøidat';
+$wb["Parameterübergabe unvollständig"] = "Testování parametrù nekompletní";
+$wb["Ungültiges Format der web_id."] = "Nesprávný formát web_id.";
+$wb["Ungültige web_id."] = "Nesprávné web_id.";
+$wb["Konnte server_path_httpd_root nicht ermitteln."] = "Není mo¾né zjistit server_path_httpd_root.";
+$wb["Das Verzeichnis existiert nicht oder Sie haben nicht die notwendigen Berechtigungen."] = "Adresáø neexistuje nebo nemáte dostateèní práva.";
+$wb["Der Pfad enthält ungültige Zeichen."] = "Cesta obsahuje neplatné znaky.";
+$wb["Diese Funktion ist im Demo-Modus deaktiviert"] = "Tato funkce není aktivní v demo módu.";
+$wb["ist ein Link."] = "je odkaz.";
+$wb["existiert nicht."] = "neexistuje."; // Es geht um: /home/file.htm existiert nicht.
+$wb["konnte nicht gelöscht werden."] = "nelze smazat.";
+$wb["Das Verschieben der Datei ist fehlgeschlagen."] = "Pøesun souboru selhal.";
+$wb["konnte nicht gelöscht werden. Das Verzeichnis muss leer sein und Sie müssen Schreibrechte besitzen."] = "nelze smazat. Adresáø musí být prázdný a musíte mít práva k zápisu.";
+$wb["Das Verschieben des Verzeichnisses ist fehlgeschlagen."] = "Pøesun adresáøe selhal.";
+$wb["Es wurde keine Datei zum Upload ausgewählt."] = "Nebyl vybrán soubor pro upload.";
+$wb["Die Datei existiert bereits in diesem Verzeichnis."] = "Soubor ji¾ v tomto adresáøi existuje.";
+$wb["Möglicher Dateiupload Angriff."] = "Potenciální \"file upload attack\".";
+$wb["Ordner"] = "Adresáø";
+
+$wb["chmod failed."] = "chmod selhal";
+$wb["FTP: Failed to open"] = "FTP: Selhalo otevøení ";
+$wb["Failed to open"] = "Selhalo otevøení ";
+$wb["Could not connect to"] = "Nelze se pøipojit k ";
+$wb["Could not connect as user"] = "Nelze se pøipojit jako u¾ivatel ";
+$wb["Next >>"] = "<br><br>Dal¹í >>";
+
+$wb["Catalog_Name"] = "Jméno";
+
+?>

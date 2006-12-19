@@ -1,0 +1,32 @@
+<?
+
+/**********************************************
+* ISPConfig Help File
+* Version 1.2
+* Syntax: $hlp["FieldName"] = "HelpText";
+************************************************/
+
+$hlp["kunde_anrede"] = "Prosím vyberte adresu zákazníka.";
+$hlp["kunde_firma"] = "Prosím vlo¾te jméno spolecnosti zákazníka.";
+$hlp["kunde_vorname"] = "Prosím vlo¾te køestní jméno zákazníka.";
+$hlp["kunde_name"] = "Prosím vlo¾te pøíjmení zákazníka.";
+$hlp["kunde_strasse"] = "Prosím vlo¾te ulici zákazníka.";
+$hlp["kunde_plz"] = "Prosím vlo¾te PSC zákazníka.";
+$hlp["kunde_ort"] = "Prosím vlo¾te mesto zákazníka.";
+$hlp["kunde_land"] = "Prosím vlo¾te zemi zákazníka.";
+$hlp["kunde_telefon"] = "Prosím vlo¾te telefon zákazníka.";
+$hlp["kunde_fax"] = "Prosím vlo¾te faxové èíslo zákazníka.";
+$hlp["kunde_email"] = "Prosím vlo¾te emailovou adresu zákazníka.";
+$hlp["kunde_internet"] = "Prosím vlo¾te adresu www stránek zákazníka.";
+$hlp["webadmin_user"] = "Prosím vlo¾te pøihla¹ovací jméno zákazníka do administracního systému.";
+$hlp["webadmin_passwort"] = "Prosím vlo¾te pøihla¹ovací heslo zákazníka do administracního systému.";
+$hlp["rechnung_firma"] = "Prosím vlo¾te úètovací údaje (jméno spoleènosti) zákazníka.";
+$hlp["rechnung_vorname"] = "Prosím vlo¾te úètovací údaje (køestní jméno) zákazníka.";
+$hlp["rechnung_name"] = "Prosím vlo¾te úètovací údaje (pøíjmení) zákazníka.";
+$hlp["rechnung_strasse"] = "Prosím vlo¾te úètovací údaje (ulici) zákazníka.";
+$hlp["rechnung_plz"] = "Prosím vlo¾te úètovací údaje (PSÈ) zákazníka.";
+$hlp["rechnung_ort"] = "Prosím vlo¾te úètovací údaje (mìsto) zákazníka.";
+$hlp["rechnung_land"] = "Prosím vlo¾te úètovací údaje (zemi) zákazníka.";
+$hlp["rechnung_intervall"] = "Prosím vlo¾te úètovací období pro polo¾ky zákazníka.";
+$hlp["rechnung_zahlungsbedingungen"] = "Prosím vlo¾te platební podmínky pro tohoto zákazníka.";
+?>
