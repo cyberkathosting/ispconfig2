@@ -12,7 +12,7 @@ $wb["Reseller Handbuch"] = "Manual del revendedor";
 $wb["Kunden Handbuch"] = "Manual del cliente";
 $wb["Deutsch"]          = "Aleman";
 $wb["Englisch"]         = "Ingles";
-$wb["Projektfarm Support"]          = "Projektfarm Support";
+$wb["Projektfarm Support"]          = "Soporte Projektfarm";
 $wb["Online Hilfe"] = "Ayuda en linea";
 
 $wb["willkommen_kunde"] = "Bienvenido al Panel de Control ISPConfig!
@@ -27,9 +27,9 @@ $wb["CPU"]          = "CPU";
 $wb["Dienste"]      = "Servicios";
 $wb["Server Online seit"]          = "Servidor en linea desde";
 $wb["User Online"]      = "Usuarios en linea";
-$wb["System Load 1 Minute"] = "Carga de la CPU 1 Minuto";
-$wb["System Load 5 Minuten"] = "Carga de la CPU 5 Minutos";
-$wb["System Load 15 Minuten"] = "Carga de la CPU 15 Minutos";
+$wb["System Load 1 Minute"] = "Carga CPU (1 Minuto)";
+$wb["System Load 5 Minuten"] = "Carga CPU (5 Minutos)";
+$wb["System Load 15 Minuten"] = "Carga CPU (15 Minutos)";
 //////////////// Server Status Ende //////////
 
 $wb["Webs angelegt"] = "Sitios utilizados";

@@ -16,7 +16,7 @@ $wb["Ordner neu"]   = "Nueva carpeta";
 $wb["Suchen"]       = "Busqueda";
 $wb["DNS-Manager"]       = "Gestor DNS";
 $wb["Domain (SOA)"]         = "Dominio (SOA)";
-$wb["Email Admin"]         = "Email del Administrador";
+$wb["Email Admin"]         = "Email Administrador";
 $wb["Nameserver 1"]         = "DNS Primario";
 $wb["Nameserver 2"]         = "DNS Secundario";
 $wb["Refresh"]         = "Refresco";
@@ -60,9 +60,9 @@ $wb["CPU"]          = "CPU";
 $wb["Dienste"]      = "Servicios";
 $wb["Server Online seit"]          = "Servidor en linea desde";
 $wb["User Online"]      = "Usuarios en linea";
-$wb["System Load 1 Minute"] = "Carga de la CPU 1 Minuto";
-$wb["System Load 5 Minuten"] = "Carga de la CPU 5 Minutos";
-$wb["System Load 15 Minuten"] = "Carga de la CPU 15 Minutos";
+$wb["System Load 1 Minute"] = "Carga CPU (1 Minuto)";
+$wb["System Load 5 Minuten"] = "Carga CPU (5 Minutos)";
+$wb["System Load 15 Minuten"] = "Carga CPU (15 Minutos)";
 
 //////////////// Server Status Ende //////////
 

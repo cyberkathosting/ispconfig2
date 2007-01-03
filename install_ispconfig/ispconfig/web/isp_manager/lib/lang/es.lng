@@ -418,13 +418,13 @@ $wb["error_web_no_user_decrease_2"] = " user(s). You cannot decrease the number 
 $wb["error_web_no_domain_decrease_1"] = "This website already has ";
 $wb["error_web_no_domain_decrease_2"] = " domain(s). You cannot decrease the number of domains.<br>";
 
-$wb["Benutzter Diskspace"] = "Diskspace used";
-$wb["Slave Zones angelegt"] = "Slave Zones created";
-$wb["Datenbanken angelegt"] = "Databases created";
-$wb["error_web_no_database_decrease_1"] = "This website already has ";
-$wb["error_web_no_database_decrease_2"] = " database(s). You cannot decrease the number of databases.<br>";
-$wb["error_web_no_shell_access"] = "You cannot assign shell access to this website.<br>";
-$wb["error_web_no_cgi"] = "You cannot assign CGI functionality to this website.<br>";
+$wb["Benutzter Diskspace"] = "Espacio en disco utilizado";
+$wb["Slave Zones angelegt"] = "Zonas esclavas creadas";
+$wb["Datenbanken angelegt"] = "Bases de datos creadas";
+$wb["error_web_no_database_decrease_1"] = "Este sitio ya cuenta con ";
+$wb["error_web_no_database_decrease_2"] = " base de datos. No puede disminuir el numero de bases de datos.<br>";
+$wb["error_web_no_shell_access"] = "No puede asignar acceso shell a este sitio web.<br>";
+$wb["error_web_no_cgi"] = "No puede asignar la funcionalidad CGI a este sitio web.<br>";
 $wb["error_web_no_cgi_mod_perl"] = "You cannot assign CGI mod_perl functionality to this website.<br>";
 $wb["error_web_no_standard_cgi"] = "You cannot assign Standard CGIs to this website.<br>";
 $wb["error_web_no_php"] = "You cannot assign PHP functionality to this website.<br>";
@@ -468,40 +468,40 @@ $wb["txt_traffic_suspension_email_message"] = "Message";
 $wb["txt_traffic_suspension_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
 <tr>
     <td valign="top" colspan="2" class="normal">
-      <b>Include the following variables in your text:</b></td></tr>
+      <b>Incluya las siguientes variables en su texto:</b></td></tr>
         <tr>
           <td class="normal">%%%FIRST_NAME%%%</td>
           <td class="normal">
-            Client\'s First Name</td>
+            Nombres del cliente</td>
         </tr>
         <tr>
           <td class="normal">%%%LAST_NAME%%%</td>
           <td class="normal">
-            Client\'s Last Name</td>
+            Apellidos del cliente</td>
         </tr>
         <tr>
           <td class="normal">%%%WEBSITE%%%</td>
           <td class="normal">
-            Client\'s Web Site</td>
+            Sitio web del cliente</td>
         </tr>
         <tr>
           <td class="normal">%%%MONTH%%%</td>
           <td class="normal">
-            Month of Traffic Exceedance</td>
+            Exceso de trafico en el mes</td>
         </tr>
         <tr>
           <td class="normal" valign="top">%%%INCLUDED_TRAFFIC%%%</td>
           <td class="normal">
-            Traffic included in Web Site Package</td>
+            Trafico incluido en el plan del sitio web</td>
         </tr>
         <tr>
           <td class="normal" valign="top">%%%TOTAL_TRAFFIC%%%</td>
           <td class="normal">
-            Total Traffic in Month of Exceedance</td>
+            Trafico total en el mes con exceso</td>
         </tr>
         </table>';
 
-$wb["txt_traffic_notification_email_desc"] = "<b>Traffic Exceedance Notification</b>";
+$wb["txt_traffic_notification_email_desc"] = "<b>Notificacion de exceso de trafico</b>";
 $wb["txt_traffic_notification_sender_email"] = "Sender's Email";
 $wb["txt_traffic_notification_sender_name"] = "Name of Sender";
 $wb["txt_traffic_notification_email_bcc"] = "BCC Recipient";

@@ -13,9 +13,9 @@ $wb["CPU"]          = "CPU";
 $wb["Dienste"]      = "Servicios";
 $wb["Server Online seit"]          = "Servidor en linea desde";
 $wb["User Online"]      = "Usuarios en linea";
-$wb["System Load 1 Minute"] = "Carga de la CPU 1 Minuto";
-$wb["System Load 5 Minuten"] = "Carga de la CPU 5 Minutos";
-$wb["System Load 15 Minuten"] = "Carga de la CPU 15 Minutos";
+$wb["System Load 1 Minute"] = "Carga CPU (1 minuto)";
+$wb["System Load 5 Minuten"] = "Carga CPU (5 minutos)";
+$wb["System Load 15 Minuten"] = "Carga CPU (15 minutos)";
 
 //////////////// Server Status Ende //////////
 
@@ -50,7 +50,7 @@ $wb["oder"] = "o";
 $wb["Installation starten"] = "Instalar";
 $wb["Deutsch"] = "Aleman";
 $wb["Englisch"] = "Ingles";
-$wb["Spanish"] = "Español";
+$wb["Spanish"] = "Espa&ntilde;ol";
 $wb["Datei"] = "Fichero";
 
 //////////////// Administration Ende ///////////
@@ -108,8 +108,8 @@ $wb["Log speichern"] = 'Guardar log';
 $wb["BIND User"] = 'Usuario BIND';
 $wb["BIND Group"] = 'Grupo BIND';
 $wb["Zonefiles Dir."] = 'Directorio zonas';
-$wb["Default Ns1"] = 'Ns1 por defecto';
-$wb["Default Ns2"] = 'Ns2 por defecto';
+$wb["Default Ns1"] = 'NS1 por defecto';
+$wb["Default Ns2"] = 'NS2 por defecto';
 $wb["Standard MX"] = 'MX por defecto';
 $wb["Frontpage Extensions"] = 'Extensiones Frontpage';
 $wb["User Prefix"] = 'Prefijo de usuario';
@@ -146,7 +146,7 @@ $wb["Backup starten"] = 'Comenzar el respaldo';
 // NEW 1.1.12a //////////////////////////////
 
 $wb["Es wurde kein Web ausgewählt."] = "Ninguna web seleccionada.";
-$wb["Backup-Funktionen im Demo-Modus nicht verfügbar."] = "Backup-Functions not available in demo mode.";
+$wb["Backup-Funktionen im Demo-Modus nicht verfügbar."] = "Las funciones de respaldo no estan disponibles en modo demo.";
 $wb["Backup Status"] = "Estado del respaldo";
 $wb["Der Name des FTP-Servers <br>enthält ungültige Zeichen."] = "El nombre del servidor FTP <br>contiene caracteres invalidos.";
 $wb["Sie haben keinen FTP Benutzernamen angegeben."] = "No FTP-Username set.";
@@ -196,37 +196,37 @@ $wb["txt_client_salutatory_email_variables"] = '<table border="0" cellpadding="3
         <tr>
           <td class="normal">%%%PASSWORD%%%</td>
           <td class="normal">
-            Client\'s Password</td>
+            Contrase&ntilde;a del cliente</td>
         </tr>
         <tr>
           <td class="normal">%%%FIRST_NAME%%%</td>
           <td class="normal">
-            Client\'s First Name</td>
+            Nombres del cliente</td>
         </tr>
         <tr>
           <td class="normal">%%%LAST_NAME%%%</td>
           <td class="normal">
-            Client\'s Last Name</td>
+            Apellidos del cliente</td>
         </tr>
         <tr>
           <td class="normal">%%%COMPANY%%%</td>
           <td class="normal">
-            Client\'s Company</td>
+            Compa&ntilde;ia del cliente</td>
         </tr>
         <tr>
           <td class="normal">%%%EMAIL%%%</td>
           <td class="normal">
-            Client\'s Email Address</td>
+            Email del cliente</td>
         </tr>
         <tr>
           <td class="normal">%%%CP%%%</td>
           <td class="normal">
-            ISPConfig Login URL</td>
+            URL de acceso a ISPConfig</td>
         </tr>
         <tr>
           <td class="normal">%%%MANUAL%%%</td>
           <td class="normal">
-            ISPConfig Client Manual</td>
+            Manual del cliente para ISPConfig</td>
         </tr>
         </table>';
 
@@ -253,7 +253,7 @@ $wb["txt_res_salutatory_email_variables"] = '<table border="0" cellpadding="3" c
         <tr>
           <td class="normal">%%%FIRST_NAME%%%</td>
           <td class="normal">
-            Primer nombre del revendedor</td>
+            Nombres del revendedor</td>
         </tr>
         <tr>
           <td class="normal">%%%LAST_NAME%%%</td>
@@ -263,49 +263,49 @@ $wb["txt_res_salutatory_email_variables"] = '<table border="0" cellpadding="3" c
         <tr>
           <td class="normal">%%%COMPANY%%%</td>
           <td class="normal">
-            Empresa del revendedor</td>
+            Compa&ntilde;ia del revendedor</td>
         </tr>
         <tr>
           <td class="normal">%%%EMAIL%%%</td>
           <td class="normal">
-            Direccion email del revendedor</td>
+            Email del revendedor</td>
         </tr>
         <tr>
           <td class="normal">%%%CP%%%</td>
           <td class="normal">
-            ISPConfig Login URL</td>
+            URL de acceso a ISPConfig</td>
         </tr>
         <tr>
           <td class="normal">%%%MANUAL%%%</td>
           <td class="normal">
-            Manual ISPConfig para el revendedor</td>
+            Manual del revendedor para ISPConfig</td>
         </tr>
         </table>';
 $wb["txt_standard_index"] = "Standard Index<br>&nbsp;&nbsp;Page";
 $wb["txt_standard_index_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
 <tr>
     <td valign="top" colspan="2" class="normal">
-      <b>Include the following variables in your text:</b></td></tr>
+      <b>Incluya las siguientes variables en su texto:</b></td></tr>
         <tr>
           <td class="normal">%%%FQDN%%%</td>
           <td class="normal">
-            Website\'s Fully Qualified Domain Name</td>
+            Dominio completamente calificado para el sitio web</td>
         </tr>
     </table>';
-$wb["txt_user_standard_index"] = "Users' Standard<br>&nbsp;&nbsp;Index Page";
+$wb["txt_user_standard_index"] = "Pagina indice";
 $wb["txt_user_standard_index_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
 <tr>
     <td valign="top" colspan="2" class="normal">
-      <b>Include the following variables in your text:</b></td></tr>
+      <b>Incluya las siguientes variables en su texto:</b></td></tr>
         <tr>
           <td class="normal">%%%USER%%%</td>
           <td class="normal">
-            User\'s Username</td>
+            Nombre de usuario para el usuario</td>
         </tr>
         <tr>
           <td class="normal">%%%FQDN%%%</td>
           <td class="normal">
-            Website\'s Fully Qualified Domain Name</td>
+            Dominio completamente calificado para el sitio web</td>
         </tr>
         </table>';
 
@@ -342,7 +342,7 @@ $wb["txt_anbieter"] = "Revendedores";
 $wb["txt_kunden"] = "Clientes";
 $wb["txt_webs"] = "Sitios web";
 
-$wb["txt_traffic_suspension_email_desc"] = "<b>Web Site Suspension Notification (Traffic Exceedance)</b>";
+$wb["txt_traffic_suspension_email_desc"] = "<b>Notificaci&oacute;n de suspensi&oacute;n por exceso de trafico</b>";
 $wb["txt_traffic_suspension_sender_email"] = "Email del remitente";
 $wb["txt_traffic_suspension_sender_name"] = "Nombre del remitente";
 $wb["txt_traffic_suspension_email_bcc"] = "BCC Recipient";
@@ -351,11 +351,11 @@ $wb["txt_traffic_suspension_email_message"] = "Mensaje";
 $wb["txt_traffic_suspension_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
 <tr>
     <td valign="top" colspan="2" class="normal">
-      <b>Include the following variables in your text:</b></td></tr>
+      <b>Incluya las siguientes variables en su texto:</b></td></tr>
         <tr>
           <td class="normal">%%%FIRST_NAME%%%</td>
           <td class="normal">
-            Primer nombre del cliente</td>
+            Nombres del cliente</td>
         </tr>
         <tr>
           <td class="normal">%%%LAST_NAME%%%</td>
@@ -370,133 +370,133 @@ $wb["txt_traffic_suspension_email_variables"] = '<table border="0" cellpadding="
         <tr>
           <td class="normal">%%%MONTH%%%</td>
           <td class="normal">
-            Month of Traffic Exceedance</td>
+            Exceso de trafico para el mes</td>
         </tr>
         <tr>
           <td class="normal" valign="top">%%%INCLUDED_TRAFFIC%%%</td>
           <td class="normal">
-            Traffic included in Web Site Package</td>
+            Trafico incluido en el plan del sitio web</td>
         </tr>
         <tr>
           <td class="normal" valign="top">%%%TOTAL_TRAFFIC%%%</td>
           <td class="normal">
-            Total Traffic in Month of Exceedance</td>
+            Trafico total en el mes con exceso</td>
         </tr>
         </table>';
 
-$wb["txt_traffic_notification_email_desc"] = "<b>Traffic Exceedance Notification</b>";
+$wb["txt_traffic_notification_email_desc"] = "<b>Notificacion de exceso de trafico</b>";
 $wb["txt_traffic_notification_sender_email"] = "Email del remitente";
-$wb["txt_traffic_notification_sender_name"] = "Name of Sender";
+$wb["txt_traffic_notification_sender_name"] = "Nombre del remitente";
 $wb["txt_traffic_notification_email_bcc"] = "BCC Recipient";
-$wb["txt_traffic_notification_email_subject"] = "Subject";
-$wb["txt_traffic_notification_email_message"] = "Message";
+$wb["txt_traffic_notification_email_subject"] = "Asunto";
+$wb["txt_traffic_notification_email_message"] = "Mensaje";
 $wb["txt_traffic_notification_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
 <tr>
     <td valign="top" colspan="2" class="normal">
-      <b>Include the following variables in your text:</b></td></tr>
+      <b>Incluya las siguientes variables en su texto:</b></td></tr>
         <tr>
           <td class="normal">%%%FIRST_NAME%%%</td>
           <td class="normal">
-            Client\'s First Name</td>
+            Nombres del cliente</td>
         </tr>
         <tr>
           <td class="normal">%%%LAST_NAME%%%</td>
           <td class="normal">
-            Client\'s Last Name</td>
+            Apellidos del cliente</td>
         </tr>
         <tr>
           <td class="normal">%%%WEBSITE%%%</td>
           <td class="normal">
-            Client\'s Web Site</td>
+            Sitio web del cliente</td>
         </tr>
         <tr>
           <td class="normal">%%%MONTH%%%</td>
           <td class="normal">
-            Month of Traffic Exceedance</td>
+            Exceso de trafico para el mes</td>
         </tr>
         <tr>
           <td class="normal" valign="top">%%%INCLUDED_TRAFFIC%%%</td>
           <td class="normal">
-            Traffic included in Web Site Package</td>
+            Trafico incluido en el plan del sitio web</td>
         </tr>
         <tr>
           <td class="normal" valign="top">%%%TOTAL_TRAFFIC%%%</td>
           <td class="normal">
-            Total Traffic in Month of Exceedance</td>
+            Trafico total en el mes con exceso</td>
         </tr>
         </table>';
 
-$wb["txt_res_traffic_suspension_email_desc"] = "<b>Reseller Suspension Notification (Traffic Exceedance)</b>";
-$wb["txt_res_traffic_suspension_sender_email"] = "Sender's Email";
-$wb["txt_res_traffic_suspension_sender_name"] = "Name of Sender";
+$wb["txt_res_traffic_suspension_email_desc"] = "<b>Notificacion de suspension de revendedor (exceso de trafico)</b>";
+$wb["txt_res_traffic_suspension_sender_email"] = "Email del remitente";
+$wb["txt_res_traffic_suspension_sender_name"] = "Nombre del remitente";
 $wb["txt_res_traffic_suspension_email_bcc"] = "BCC Recipient";
-$wb["txt_res_traffic_suspension_email_subject"] = "Subject";
-$wb["txt_res_traffic_suspension_email_message"] = "Message";
+$wb["txt_res_traffic_suspension_email_subject"] = "Asunto";
+$wb["txt_res_traffic_suspension_email_message"] = "Mensaje";
 $wb["txt_res_traffic_suspension_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
 <tr>
     <td valign="top" colspan="2" class="normal">
-      <b>Include the following variables in your text:</b></td></tr>
+      <b>Incluya las siguientes variables en su texto:</b></td></tr>
         <tr>
           <td class="normal">%%%FIRST_NAME%%%</td>
           <td class="normal">
-            Reseller\'s First Name</td>
+            Nombres del revendedor</td>
         </tr>
         <tr>
           <td class="normal">%%%LAST_NAME%%%</td>
           <td class="normal">
-            Reseller\'s Last Name</td>
+            Apellidos del revendedor</td>
         </tr>
         <tr>
           <td class="normal">%%%MONTH%%%</td>
           <td class="normal">
-            Month of Traffic Exceedance</td>
+            Trafico excedente para el mes</td>
         </tr>
         <tr>
           <td class="normal" valign="top">%%%INCLUDED_TRAFFIC%%%</td>
           <td class="normal">
-            Traffic included for Reseller</td>
+            Trafico incluido en el plan del revendedor</td>
         </tr>
         <tr>
           <td class="normal" valign="top">%%%TOTAL_TRAFFIC%%%</td>
           <td class="normal">
-            Total Traffic in Month of Exceedance</td>
+            Trafico total en el mes con exceso</td>
         </tr>
         </table>';
 
-$wb["txt_res_traffic_notification_email_desc"] = "<b>Reseller Traffic Exceedance Notification</b>";
-$wb["txt_res_traffic_notification_sender_email"] = "Sender's Email";
-$wb["txt_res_traffic_notification_sender_name"] = "Name of Sender";
+$wb["txt_res_traffic_notification_email_desc"] = "<b>Notificacion de exceso de trafico para revendedores</b>";
+$wb["txt_res_traffic_notification_sender_email"] = "Email del remitente";
+$wb["txt_res_traffic_notification_sender_name"] = "Nombre del remitente";
 $wb["txt_res_traffic_notification_email_bcc"] = "BCC Recipient";
-$wb["txt_res_traffic_notification_email_subject"] = "Subject";
-$wb["txt_res_traffic_notification_email_message"] = "Message";
+$wb["txt_res_traffic_notification_email_subject"] = "Asunto";
+$wb["txt_res_traffic_notification_email_message"] = "Mensaje";
 $wb["txt_res_traffic_notification_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
 <tr>
     <td valign="top" colspan="2" class="normal">
-      <b>Include the following variables in your text:</b></td></tr>
+      <b>Incluya las siguientes variables en su texto:</b></td></tr>
         <tr>
           <td class="normal">%%%FIRST_NAME%%%</td>
           <td class="normal">
-            Reseller\'s First Name</td>
+            Nombres del revendedor</td>
         </tr>
         <tr>
           <td class="normal">%%%LAST_NAME%%%</td>
           <td class="normal">
-            Reseller\'s Last Name</td>
+            Apellidos del revendedor</td>
         </tr>
         <tr>
           <td class="normal">%%%MONTH%%%</td>
           <td class="normal">
-            Month of Traffic Exceedance</td>
+            Exceso de trafico para el mes</td>
         </tr>
         <tr>
           <td class="normal" valign="top">%%%INCLUDED_TRAFFIC%%%</td>
           <td class="normal">
-            Traffic included for Reseller</td>
+            Trafico incluido en el plan del revendedor</td>
         </tr>
         <tr>
           <td class="normal" valign="top">%%%TOTAL_TRAFFIC%%%</td>
           <td class="normal">
-            Total Traffic in Month of Exceedance</td>
+            Trafico total en el mes con exceso</td>
         </tr>
         </table>';
 
