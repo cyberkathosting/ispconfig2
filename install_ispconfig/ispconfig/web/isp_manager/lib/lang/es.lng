@@ -66,7 +66,7 @@ $wb["verbraucht"]   = "usado";
 $wb["Trafficübersicht"] = "Supervision del Trafico";
 $wb["Monat"]        = "Mes";
 $wb["Traffic"]      = "Trafico";
-$wb["traffic_letzte_4"] = "Trafico en los ultimos 4 anios";
+$wb["traffic_letzte_4"] = "Trafico en los ultimos 4 a&ntilde;os";
 $wb["Jahr"]         = "Anio";
 $wb["MySQL User"]        = "Usuario MySQL";
 $wb["MySQL Passwort"]    = "Clave MySQL";
@@ -109,19 +109,19 @@ $wb["error_db_exist_1"] = "Una base de datos con el nombre";
 $wb["error_db_exist_2"] = "ya existe.<br>";
 $wb["error_db_user_exist_1"] = "El usuario de la base de datos";
 $wb["error_db_user_exist_2"] = "ya existe.<br>";
-$wb["error_max_db_web"] = "The maximum number of databases for this site has been reached.<br>";
+$wb["error_max_db_web"] = "El limite de bases de datos para este sitio se ha alcanzado.<br>";
 $wb["error_max_db_anbieter"] = "The hoster's maximum number of databases has been reached.<br>";
 
 // Error Codes ispconfig_isp_domain.lib.php
 $wb["error_web_doppelt"] = "El nombre ";
-$wb["error_max_domain_web"] = "Ha sobrepasado el nzmero maximo de dominios permitido para este sitio.<br>";
-$wb["error_max_domain_anbieter"] = "Ha sobrepasado el nzmero maximo de revendedores de dominios.<br>";
+$wb["error_max_domain_web"] = "Ha sobrepasado el numero maximo de dominios permitido para este sitio.<br>";
+$wb["error_max_domain_anbieter"] = "Ha sobrepasado el numero maximo de revendedores de dominios.<br>";
 $wb["angelegt"] = " ya esta siendo utilizado por otro sitio o dominio.<br>";
-$wb["error_domain_forward"] = "The domain forward contained invalid signs and has therefore been deleted.<br>";
+$wb["error_domain_forward"] = "El 'forward' del dominio tiene caracteres invalidos y por lo tanto ha sido borrado.<br>";
 
 // Error Codes ispconfig_isp_kunde.lib.php
 $wb["error_user_exist_1"] = "El Usuario ISPConfig ";
-$wb["error_user_exist_2"] = "ya existe.  El usuario no ha sido aqadido o modificado.<br>";
+$wb["error_user_exist_2"] = "ya existe.  El usuario no ha sido a&ntilde;adido o modificado.<br>";
 $wb["error_max_user_licence"] = "El numero maximo de cuentas de usuario de ISPConfig segun su licencia ha sido excedido.<br>";
 
 
@@ -134,9 +134,9 @@ $wb["error_anbieter_no_restore"] = "El revendedor no ha podido ser restaurado.<b
 // Error Codes ispconfig_isp_user.lib.php
 $wb["error_sysuser_exist_1"] = "Ya hay un usuario con el nombre";
 $wb["error_sysuser_exist_2"] = "introducido.<br>";
-$wb["error_max_user_web"] = "Se ha sobrepasado el nzmero maximo de usuarios del sitio.<br>";
+$wb["error_max_user_web"] = "Se ha sobrepasado el numero maximo de usuarios del sitio.<br>";
 $wb["error_max_space_web"] = "El espacio en disco seleccionado excede de los lmmites de sitio.<br>";
-$wb["error_max_user_anbieter"] = "Se ha sobrepasado el nzmero maximo de usuarios del revendedor.<br>";
+$wb["error_max_user_anbieter"] = "Se ha sobrepasado el numero maximo de usuarios del revendedor.<br>";
 $wb["error_sysuser_exist"] = "El nombre de usuario ya esta en uso.<br>";
 $wb["error_admin_exist"] = "Ya existe un usuario con derechos de administrador para este sitio.<br>";
 $wb["error_admin_exist_long"] = "Ya existe un usuario con derechos de administrador. Debe borrar el otro administrador si desea asignar derechos a este usuario.<br>";
@@ -146,15 +146,15 @@ $wb["error_max_web_anbieter"] = "Se ha sobrepasado el numero maximo de sitios pa
 $wb["error_web_ssl_exist"] = "Ya existe un certificado SSL para esta IP.<br>";
 
 // Plugins
-$wb["System Load 1 Minute"] = "Carga de la CPU 1 Minuto";
-$wb["System Load 5 Minuten"] = "Carga de la CPU 5 Minutos";
-$wb["System Load 15 Minuten"] = "Carga de la CPU 15 Minutos";
+$wb["System Load 1 Minute"] = "Carga CPU (1 Minuto)";
+$wb["System Load 5 Minuten"] = "Carga CPU (5 Minutos)";
+$wb["System Load 15 Minuten"] = "Carga CPU (15 Minutos)";
 $wb["Server Online seit"] = "Servidor en linea desde";
 $wb["User Online"] = "Usuarios en linea";
 $wb["error_web_id"] = "Este Plugin necesita una ID valida.<br>";
 $wb["von"] = "de";
 $wb["Gesamt"] = "Completo";
-$wb["Traffic in den letzten 4 Jahren"] = "Trafico en los ultimos 4 anios";
+$wb["Traffic in den letzten 4 Jahren"] = "Trafico en los ultimos 4 a&ntilde;os";
 $wb["Backup von Tabelle"] = "Tabla de respaldo";
 $wb["Optimiere"] = "Optimizar";
 $wb["Reparatur"] = "Reparar";
@@ -172,7 +172,7 @@ $wb["Netto 30 Tage"] = "neto 30 dias";
 $wb["Sonstige"] = "otro";
 $wb["Neu"] = "Nuevo";
 $wb["Postfach MB"] = "Buzon Correos MB";
-$wb["email_alias_txt"] = "<b>Hint:</b> un alias por linea.";
+$wb["email_alias_txt"] = "<b>Dato:</b> un alias por linea.";
 $wb["Weiterleitung"] = "Reenviar";
 $wb["Nachricht"] = "Mensaje";
 $wb["Kein Kunde vorhanden"] = "No hay cliente disponible.<br>";
@@ -194,10 +194,10 @@ $wb["Der Username muss aus min. 4, max 25 Buchstaben oder Zahlen bestehen, wobei
 $wb['Der Username muss aus min. 4, max 32 Buchstaben oder Zahlen bestehen, wobei er mit einem Buchstaben beginnen muss.'] = 'El nombre de usuario debe contener un minimo de 4 y un maximo de 32 letras o signos y debe comenzar con una letra.<br>';
 $wb["error_reseller_licence"] = "No es posible adicionar revendedores con su licencia de ISPConfig.<br>";
 $wb["error_reseller_licence_nodelete"] = "Este revendedor no puede ser borrado.<br>";
-$wb["error_kunde_licence"] = "No es posible aqadir clientes con su licencia de ISPConfig.<br>";
+$wb["error_kunde_licence"] = "No es posible a&ntilde;adir clientes con su licencia de ISPConfig.<br>";
 $wb["error_kunde_licence_nodelete"] = "Este cliente no puede ser borrado.<br>";
 $wb["mysqldb_nicht_vorhanden"] = "No existe base de datos en el MySQL. <br>Por favor introduzca un password para crear la base de datos.<br>";
-$wb["mysql_nicht_aktiv"] = "La creacisn de bases de datos de MySQL no esta permitida para este sitio web.<br>";
+$wb["mysql_nicht_aktiv"] = "La creacion de bases de datos de MySQL no esta permitida para este sitio web.<br>";
 $wb["Datenbank Name"] = "Nombre de la Base de datos";
 $wb["Speicher belegt"] = "Tamanio de la Base de Datos";
 $wb["Kein Web angelegt"] = "No se ha creado la web.<br>";
@@ -207,14 +207,14 @@ $wb["httpd_inc_txt"] = "Directivas de Apache<br>&nbsp; (Opcional)";
 $wb["Kopie speichern"] = "Mantener Copia";
 $wb["err_0001"] = "El dominio pertenece a otro cliente.<br>";
 $wb["MySQL Remote Access"] = "Acceso Remoto MySQL";
-$wb["lokaler mailserver"] = "Servidor Local de Correo";
-$wb["externer mailserver"] = "Servidor Externo de Correo";
+$wb["lokaler mailserver"] = "Servidor Mail local";
+$wb["externer mailserver"] = "Servidor Mail externo";
 
 // NEW 1.1.12 ///////////////////////////////////
 
 $wb["Anbieternummer"] = 'Revendedor numero';
 $wb["Domain DNS"] = 'Zonas maestras (DNS)';
-$wb["HTTPD Includes"] = 'HTTPD Incluye';
+$wb["HTTPD Includes"] = 'HTTPD Includes';
 $wb["DNS-Manager"] = 'Administrador DNS';
 $wb["DNS-Domains angelegt"] = 'Dominios DNS creados';
 $wb["Kundennummer"] = 'Cliente Numero';
@@ -230,7 +230,7 @@ $wb["MailSpeicher MB"] = 'Espacio mail MB';
 $wb["Max. MailSpeicher MB"] = 'Espacio mail MB';
 $wb["Administrator"] = 'Administrador';
 $wb["Erweiterte Einstellungen"] = 'Configuracion avanzada';
-$wb["email_weiterleitung_txt"] = '<b>Hint:</b> un email por linea.';
+$wb["email_weiterleitung_txt"] = '<b>Dato:</b> un email por linea.';
 $wb["Email Alias"] = 'Alias de email';
 $wb["catchAll-Email"] = 'catchAll-Email';
 $wb["MailScan"] = 'MailScan';
@@ -243,26 +243,26 @@ $wb["CatchAll"] = 'CatchAll';
 $wb["Bitte Artikel auswählen"] = "Seleccionar item";
 $wb["Letzte Abrechnung"] = "Ultima factura";
 $wb["Artikel hinzufügen"] = "Adicionar item";
-$wb["Log-Grösse"] = "Tamanio del log";
+$wb["Log-Grösse"] = "Tama&ntilde;o del log";
 $wb["Frontpage Passwort"] = "Clave Frontpage";
 $wb["Wird automatisch vergeben."] = 'Es asignada automaticamente.';
 $wb["Email Adresse"] = "Direccion email";
 
 // new 1.2 ////////////////////////////////////////
 $wb["error_email_exist"] = "Direccion email duplicada.<br>";
-$wb["error_realname"] = "Only the following signs are allowed: a-z A-Z 0-9 - _ .<br>";
-$wb["Die Emailadresse muss aus min. 1, max 60 Buchstaben oder Zahlen bestehen."] = "The email address must contain between 1 and 60 letters or numbers.<br>";
+$wb["error_realname"] = "Solo los siguientes signos/caracteres son permitidos: a-z A-Z 0-9 - _ .<br>";
+$wb["Die Emailadresse muss aus min. 1, max 60 Buchstaben oder Zahlen bestehen."] = "La direccion de email debe contener entre 1 a 60 caracteres o numeros.<br>";
 
 // new 1.3 ////////////////////////////////////////
 $wb["Bundesland"] = "Provincia";
-$wb["Spamfilter & Antivirus"] = 'Spamfilter & Antivirus';
+$wb["Spamfilter & Antivirus"] = 'Spamfilter &amp; Antivirus';
 $wb["Spamfilter"] = 'Spamfilter';
 $wb["Antivirus"] = 'Antivirus';
 $wb["accept"] = 'aceptar';
 $wb["discard"] = 'desechar';
 $wb["Spam Strategie"] = 'Estrategia Spam';
 $wb["Spam Hits"] = 'Spam Hits';
-$wb["Rewrite Subject"] = 'Rewrite Subject';
+$wb["Rewrite Subject"] = 'Re-escribir asunto';
 $wb["Betreff"] = 'Asunto';
 $wb["SUCHE"] = 'BUSCAR';
 $wb["IP"] = 'IP';
@@ -271,23 +271,23 @@ $wb["PHP Safe Mode"] = 'PHP Safe Mode';
 $wb["WAP"] = 'WAP';
 $wb["Individuelle Fehler-Seiten"] = 'Paginas de error';
 $wb["Anzahl Datenbanken"] = 'Base de datos (Max)';
-$wb["Fehler 400<br>(Ungültige Syntax)"] = "400 Error<br>(Invalid Syntax)";
-$wb["Fehler 401<br>(Autorisierung<br>erforderlich)"] = "401 Error<br>(Authorisation<br>required)";
-$wb["Fehler 403<br>(Verboten)"] = "403 Error<br>(Forbidden)";
-$wb["Fehler 404<br>(Datei nicht<br>gefunden)"] = "404 Error<br>(File not found)";
-$wb["Fehler 405<br>(Methode nicht<br>erlaubt)"] = "405 Error<br>(Method not<br>allowed)";
-$wb["Fehler 500<br>(Interner<br>Server-Fehler)"] = "500 Error<br>(Internal Server<br>Error)";
-$wb["Fehler 503<br>(Service ist z.Zt.<br>überlastet)"] = "503 Error<br>(Service<br>unavailable)";
-$wb["Datenbanken"] = "Bases de datos";
-$wb["Datenbank"] = "Base de datos";
-$wb["Datenbankname"] = "Nombre de la base de datos";
-$wb["Datenbankuser"] = "Nombre del usuario de la base de datos";
+$wb["Fehler 400<br>(Ungültige Syntax)"] = "Error 400<br>(Sintaxis inv&aacute;lida)";
+$wb["Fehler 401<br>(Autorisierung<br>erforderlich)"] = "Error 401<br>(Autorizaci&oacute;n<br>requerida)";
+$wb["Fehler 403<br>(Verboten)"] = "Error 403<br>(No permitido - Prohibido)";
+$wb["Fehler 404<br>(Datei nicht<br>gefunden)"] = "Error 404<br>(Archivo no encontrado)";
+$wb["Fehler 405<br>(Methode nicht<br>erlaubt)"] = "Error 405<br>(Metodo no<br>permitido)";
+$wb["Fehler 500<br>(Interner<br>Server-Fehler)"] = "Error 500<br>(Error interno del<br>servidorr)";
+$wb["Fehler 503<br>(Service ist z.Zt.<br>überlastet)"] = "Error 503<br>(Servicio no disponible)";
+$wb["Datenbanken"] = "Bases de datos (BD)";
+$wb["Datenbank"] = "Base de datos (BD)";
+$wb["Datenbankname"] = "Nombre de la BD";
+$wb["Datenbankuser"] = "Usuario de la BD";
 $wb["weiter_link"] = "<br> <a href='../../isp_manager/frame_start.php?s=$s'>Mas &gt;&gt;</a>";
 $wb["Slave Zones"] = 'Zonas esclavas (DNS)';
 $wb["txt_client_salutatory_email_desc"] = "<b>Email de saludo para clientes</b>";
-$wb["txt_client_salutatory_email_sender_email"] = "Sender's Email";
-$wb["txt_client_salutatory_email_sender_name"] = "Name of Sender";
-$wb["txt_client_salutatory_email_bcc"] = "BCC Recipient";
+$wb["txt_client_salutatory_email_sender_email"] = "Email del remitente";
+$wb["txt_client_salutatory_email_sender_name"] = "Nombre del remitente";
+$wb["txt_client_salutatory_email_bcc"] = "Recipiente BCC";
 $wb["txt_client_salutatory_email_subject"] = "Asunto";
 $wb["txt_client_salutatory_email_message"] = "Mensaje";
 $wb["txt_client_salutatory_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
@@ -372,9 +372,9 @@ $wb["CPU"]          = "CPU";
 $wb["Dienste"]      = "Servicios";
 $wb["Server Online seit"]          = "Servidor en linea desde";
 $wb["User Online"]      = "Usuarios en linea";
-$wb["System Load 1 Minute"] = "Carga de la CPU 1 Minuto";
-$wb["System Load 5 Minuten"] = "Carga de la CPU 5 Minutos";
-$wb["System Load 15 Minuten"] = "Carga de la CPU 15 Minutos";
+$wb["System Load 1 Minute"] = "Carga CPU (1 Minuto)";
+$wb["System Load 5 Minuten"] = "Carga CPU (5 Minutos)";
+$wb["System Load 15 Minuten"] = "Carga CPU (15 Minutos)";
 
 //////////////// Server Status Ende //////////
 

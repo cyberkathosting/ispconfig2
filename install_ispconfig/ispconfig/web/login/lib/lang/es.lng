@@ -8,7 +8,7 @@
 *********************************/
 
 // License Manager
-$wb["Es wurde keine g&uuml;ltige Lizenzdatei gefunden."] = "No encontrado un fichero de licencia valido.";
+$wb["Es wurde keine g&uuml;ltige Lizenzdatei gefunden."] = "No se ha encontrado un fichero de licencia valido.";
 $wb["Hier k&ouml;nnen Sie ihre Lizenzdatei einspielen."] = "Puede subir el fichero de licencia desde aqui.";
 $wb["Username"] = "Usuario";
 $wb["Passwort"] = "Clave";
