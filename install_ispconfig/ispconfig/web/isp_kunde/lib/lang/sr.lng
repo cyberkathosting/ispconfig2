@@ -475,6 +475,6 @@ $wb["Catalog_Name"] = "Ime";
 $wb["Nicht scannen"] = "nemoj Skenirati";
 $wb["MX prüfen"] = "Proveri MX";
 $wb["Cyrus-Administrator"] = "Cyrus Administrator";
-$wb["Passwort Cyrus-Admin"] = "Cyrus Administrator Password";
+$wb["Passwort Cyrus-Admin"] = "Cyrus Administrator Lozinka";
 
 ?>
