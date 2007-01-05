@@ -7,7 +7,7 @@
 //////////////// Server Status ////////////////
 $wb["Arbeitsspeicher"]          = "Glavna memorija";
 $wb["CPU"]          = "CPU";
-$wb["Dienste"]      = "Sewrvisi";
+$wb["Dienste"]      = "Servisi";
 $wb["Server Online seit"]          = "Server je Online od";
 $wb["User Online"]      = "Korisnici Online";
 $wb["System Load 1 Minute"] = "Sistemsko Optereæenje 1 Minute";

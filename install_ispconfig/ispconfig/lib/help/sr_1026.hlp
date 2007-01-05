@@ -6,15 +6,15 @@
 * Syntax: $hlp["FieldName"] = "HelpText";
 ************************************************/
 
-$hlp["artikelnummer"] = "Unesite broj dela za proizvod. Možete slobodno koristiti bilo koji broj.";
-$hlp["artikeltyp"] = "Odaberite tip dela sa spiska.";
+$hlp["artikelnummer"] = "Unesite broj artikla za proizvod. Možete slobodno koristiti bilo koji broj.";
+$hlp["artikeltyp"] = "Odaberite tip artikla sa spiska.";
 $hlp["artikelbezeichnung"] = "Navedite ime dela.";
 $hlp["verrechnung"] = "Odaberite period naplate (u mesecima) za deo. Na primer 1 znaèi meseèno, 6 znaèi polugodišnje, 12 znaèi godišnje; 0 znaèi jednokratno.";
-$hlp["artikeleinheit"] = "Odaberite jedninicu dela sa liste.";
-$hlp["artikelpreis"] = "Odaberite cenu po po jedinici za deo.";
+$hlp["artikeleinheit"] = "Odaberite jedninicu artikla sa liste.";
+$hlp["artikelpreis"] = "Odaberite cenu po po jedinici za artikal.";
 $hlp["abpackung"] = "Kolièina jedinica po pakovanju.";
-$hlp["beschreibung"] = "Ovde možete opisati deo.";
-$hlp["artikelgroup"] = "Odaberite za kog preprodavca je deo važeæi. Ako ništa nije odabrano deo je važeæi za sve preprodavce.";
+$hlp["beschreibung"] = "Ovde možete opisati artikal.";
+$hlp["artikelgroup"] = "Odaberite za kog preprodavca je artikal važeæi. Ako ništa nije odabrano artikal je važeæi za sve preprodavce.";
 $hlp["weitere_artikeleinheit"] = "Jedinica za prekoraèenje potrošnje.";
 $hlp["weitere_abpackung"] = "Kolièina MB ili GB koja se naplaæuje po prekoraèenju potrošnje.";
 $hlp["weitere_artikelpreis"] = "Cena za prekoraèenje potrošnje.";
