@@ -83,21 +83,21 @@ fi
 ############# SPRACHE ####################
   PS3='Ihre Wahl: / Your Choice: / Votre Choix:' # Sets the prompt string.
 
-  echo 'Wählen Sie Ihre Sprache (deutsch/englisch/spanisch/französisch/italienisch/niederländisch/polnisch/schwedisch): / Please choose your language (German/English/Spanish/French/Italian/Dutch/Polish/Swedish):  / Merci de choisir votre langue (Allemand/Anglais/Espagnol/Français/Italien/Néerlandais/Polonais/Suédois):'
+  echo 'Wählen Sie Ihre Sprache (deutsch/englisch/spanisch/französisch/italienisch/niederländisch/polnisch/schwedisch/serbian): / Please choose your language (German/English/Spanish/French/Italian/Dutch/Polish/Swedish/Serbian):  / Merci de choisir votre langue (Allemand/Anglais/Espagnol/Français/Italien/Néerlandais/Polonais/Suédois/Serbian):'
 
-  select lang in "de" "en" "es" "fr" "it" "nl" "pl" "se"
+  select lang in "de" "en" "es" "fr" "it" "nl" "pl" "se" "sr"
   do
     echo
     break  # if no 'break' here, keeps looping forever.
   done
 
-  while [ "$lang" != "de" -a "$lang" != "en" -a "$lang" != "es" -a "$lang" != "fr" -a "$lang" != "it" -a "$lang" != "nl" -a "$lang" != "pl" -a "$lang" != "se" ]
+  while [ "$lang" != "de" -a "$lang" != "en" -a "$lang" != "es" -a "$lang" != "fr" -a "$lang" != "it" -a "$lang" != "nl" -a "$lang" != "pl" -a "$lang" != "se" -a "$lang" != "sr" ]
 do
     PS3='Ihre Wahl: / Your Choice: / Votre choix:' # Sets the prompt string.
 
-  echo 'Wählen Sie Ihre Sprache (deutsch/englisch/französisch/italienisch/spanisch): / Please choose your language (German/English/French/Italian/Spanish):  / Merci de choisir votre langue (Allemand/Anglais/Français/Italien/Espagnol):'
+  echo 'Wählen Sie Ihre Sprache (deutsch/englisch/französisch/italienisch/spanisch/serbiche): / Please choose your language (German/English/French/Italian/Spanish/Serbian):  / Merci de choisir votre langue (Allemand/Anglais/Français/Italien/Espagnol/Serbian):'
 
-  select lang in "de" "en" "es" "fr" "it" "nl" "pl" "se"
+  select lang in "de" "en" "es" "fr" "it" "nl" "pl" "se" "sr"
   do
     echo
     break  # if no 'break' here, keeps looping forever.
@@ -274,7 +274,64 @@ else
       q_ende3=" and log in:"
       q_ende4="Username: admin"
       q_ende5="Password: admin"
-
+      
+else
+    
+    if [ "$lang" == "sr" ]; then
+      q_hinweis="Tokom instalacije sistema , neke sistemske datoteke su zamenjene tamo gde su pravljena podešavanja. Ovo može dovesti do gubitka upisa u httpd.conf, named.conf kao i u Sendmail konfiguraciji."
+      q_hinweis_akzeptieren="Da li želite da nastavite sa instalacijom? [y/n]"
+      q_lizenz="Please read through the licence carefully:"
+      q_lizenz_akzeptieren="Da li prihvatate licencu? [y/n]"
+      q_install_mode="Odaberite mod instalacije. U expertskom modu treba da odgovorite na neka dodatna pitanjas. U standardnom modu uobièajene vrednosti su predpostavljene za ta pitanja."
+      q_select="Molim odaberite: "
+      q_wahl="Vaš izbor: "
+      q_anderer="drugo"
+      q_korrekt="Da li je ovo taèno? [y/n]"
+      q_mta_check="Provera za MTA..."
+      q_mta_pruefung1="ISPConfig je pronašao sledeæe MTA:"
+      q_wahl_mta="Odaberite vaš MTA: "
+      q_error1="Vaša konfiguracija sistema nije kompatibilna sa ISPConfig! Instalacijska rutina se zaustavlja ovde!"
+      q_procmail_check="Provera paketa procmail..."
+      q_quota_check="Provera paketa quota..."
+      q_ftp_check="Provera da li je FTP server instaliran..."
+      q_ftp_pruefung1="ISPConfig je pronašao sledeæi FTP server:"
+      q_wahl_ftp="Odaberite vaš FTP server: "
+      q_mysql_check="Provera paketa MySQL..."
+      q_pop3_check="Provera da li je POP3 server instaliran..."
+      q_pop3_pruefung1="ISPConfig je pronašao sledeæi POP3 server:"
+      q_wahl_pop3="Odaberite vaš POP3 server: "
+      q_openssl_check="Provera paketa openssl..."
+      q_bind_check="Provera paketa bind..."
+      q_iptables_check="Provera programa iptables/ipchains/ipfw..."
+      q_httpd_check="Provera programa httpd..."
+      q_httpd_syntax_check="Provera sintakse httpd.conf..."
+      q_httpd_syntax_check_not_ok="Sintaksa vašeg httpd.conf nije ispravna! Molim ispravite grešku. Instalaciona rutina staje ovde!"
+      q_httpd_syntax_check_ok="Sintaksa je ispravna!"
+      q_check_ende="Nejmanje jedan od potrebnih paketa nedostaje!"
+      q_mysql_running_check="MySQL ne radi! Molim ponovo pokrenite vašu MySQL bazu podataka i pokrenite ponovo ISPConfig instalaciju."
+      q_mysql_sock_check="Ne mogu pronaæi mysql.sock! Instalaciona rutina se zaustavlja ovde!"
+      q_php_check="PHP binarna datoteka koja dolazi sa ISPConfig ne radi dobro na vašem sistemu! Instalaciona rutina se zaustavlja ovde!"
+      q_prepare_files="Priprema datoteka. Molim saèekajte trenutak..."
+      q_voraussetzungen="Svi uslovi su ispunjeni."
+      q_mysql_server="Molim unesite vaš MySQL server:"
+      q_mysql_server_check="MySQL server koji ste naveli nemože biti dosegnut!"
+      q_mysql_user="Molim unesite vašeg MySQL korisnika:"
+      q_mysql_passwort="Molim unesite vašu MySQL lozinku:"
+      q_mysql_connection_check="Unešena MySQL lozinka je pogrešna!"
+      q_mysql_database="Molim unesite naziv za ISPConfig bazu podataka (npr. db_ispconfig):"
+      q_ip_address="Molim unesite IP adresu ISPConfig prezentacije (e.g. 192.168.0.1):"
+      q_ip_check="IP adresa koju ste naveli nije dostupna!"
+      q_host="Molim unesite ime hosta (npr. www):"
+      q_domain="Molim unesite domen (npr. xyz.de):"
+      q_ispconfigprotocol="Molim odaberite protokol (http ili https (SSL enkripcija)) za pristup ISPConfig sistemu:"
+      q_url_check="URL nije dostupna!"
+      q_restart="Ponovno pokretanje nekih servisa..."
+      q_ende="Èestitke! Vaš ISPConfig sistem je sada instaliran. Ako treba da instalirate kvote, molim preduzmite korake opisane u uputstvu za instalaciju. Inaèe vaš sistem je sada dostupan bez ponovnog pokretanja sistema."
+      q_ende2="Usmerite vaš internet pretraživaè ka "
+      q_ende3=" i prijavite se:"
+      q_ende4="Korisnièko ime: admin"
+      q_ende5="Lozinka: admin"
+      
     else
 
       q_hinweis="With the system installation, some system files are replaced where adjustments were made. This can lead to loss of entries in httpd.conf, named.conf as well as in the Sendmail configuration."
