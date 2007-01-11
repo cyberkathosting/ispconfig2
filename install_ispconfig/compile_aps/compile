@@ -40,6 +40,7 @@ SPAMASSASSIN=Mail-SpamAssassin-3.1.5
 CRONOLOG=cronolog-1.6.2
 ZIP=zip-2.3
 UNZIP=unzip-5.50
+AWSTATS=awstats-6.6
 
 APPLICATION_NAME=ispconfig
 INSTALL_ROOT=/root/${APPLICATION_NAME}
@@ -96,6 +97,7 @@ error ()
   rm -fr ${CRONOLOG}
   rm -fr ${ZIP}
   rm -fr ${UNZIP}
+  rm -fr ${AWSTATS}
   exit 1
 }
 
@@ -110,6 +112,7 @@ tar xvfz ${UUDEVIEW}.tar.gz || error "Could not unpack uudeview"
 tar xvfz ${CRONOLOG}.tar.gz || error "Could not unpack cronolog"
 tar xvfz ${ZIP}.tar.gz || error "Could not unpack zip"
 tar xvfz ${UNZIP}.tar.gz || error "Could not unpack unzip"
+tar xvfz ${AWSTATS}.tar.gz || error "Could not unpack AWStats"
 
 cd ${OPENSSL}
 ./config --prefix=${INSTALL_ROOT}/openssl || error "Could not configure OpenSSL"
@@ -230,6 +233,11 @@ cd ${COMPILE_DIR}
 cd ${UNZIP}
 make -f unix/Makefile generic || error "Could not make unzip"
 mv unzip ${COMPILE_DIR}/../binaries/unzip || error "Could not copy unzip"
+cd ${COMPILE_DIR}
+
+mv -f ${AWSTATS} /home/adm${APPLICATION_NAME}/${APPLICATION_NAME}/tools/ || error "Could not move AWStats"
+chmod 755  /home/adm${APPLICATION_NAME}/${APPLICATION_NAME}/tools/${AWSTATS} || error "Could not chmod AWStats"
+ln -s /home/adm${APPLICATION_NAME}/${APPLICATION_NAME}/tools/${AWSTATS} /home/adm${APPLICATION_NAME}/${APPLICATION_NAME}/tools/awstats  || error "Could not Symlink AWStats"
 cd ${COMPILE_DIR}
 
 exit 0
