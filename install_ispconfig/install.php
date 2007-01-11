@@ -1294,6 +1294,10 @@ CustomLog \"|/root/ispconfig/cronolog --symlink=/var/log/httpd/ispconfig_access_
 
 Include ".$httpd_conf_dir."/vhosts/Vhosts_ispconfig.conf
 
+### AWStats Section ###
+Alias /icon \"/home/admispconfig/ispconfig/tools/awstats/wwwroot/icon/\"
+### End of AWStats Section ###
+
 ";
 
   caselog("cp -f $httpd_conf $httpd_conf.orig", $FILE, __LINE__);
@@ -1343,7 +1347,7 @@ $cron_tsl_file = "/home/fcronisp";
 if(is_file($cron_tsl_file)) unlink($cron_tsl_file);
     exec("$dist_cron_tab -l > $cron_tsl_file");
     exec("chmod 777 $cron_tsl_file");
-$cron_job_tsl = array('30 00 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/logs.php &> /dev/null','59 23 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/ftp_logs.php &> /dev/null','59 23 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/mail_logs.php &> /dev/null','59 23 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/cleanup.php &> /dev/null','0 4 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/webalizer.php &> /dev/null','0,30 * * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/check_services.php &> /dev/null','15 3,15 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/quota_msg.php &> /dev/null','40 00 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/traffic.php &> /dev/null','05 02 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/backup.php &> /dev/null','*/5 * * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/mysql_quota.php &> /dev/null', '0 10 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/check_mx.php');
+$cron_job_tsl = array('30 00 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/logs.php &> /dev/null','59 23 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/ftp_logs.php &> /dev/null','59 23 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/mail_logs.php &> /dev/null','59 23 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/cleanup.php &> /dev/null','0 4 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/webalizer.php &> /dev/null','0 4 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/awstats.php &> /dev/null','0,30 * * * * /root/ispconfig/php/php  /root/ispconfig/scripts/shell/check_services.php &> /dev/null','15 3,15 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/quota_msg.php &> /dev/null','40 00 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/traffic.php &> /dev/null','05 02 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/backup.php &> /dev/null','*/5 * * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/mysql_quota.php &> /dev/null', '0 10 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/check_mx.php');
 foreach($cron_job_tsl as $cron_tsl){
     aftsl($cron_tsl_file, "\n".$cron_tsl."\n");
   }
@@ -1353,7 +1357,7 @@ foreach($cron_job_tsl as $cron_tsl){
 else{
   exec("crontab -u root -l > crontab.txt");
   $existing_cron_jobs = rf('crontab.txt');
-  $cron_jobs = array('30 00 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/logs.php &> /dev/null','59 23 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/ftp_logs.php &> /dev/null','59 23 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/mail_logs.php &> /dev/null','59 23 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/cleanup.php &> /dev/null','0 4 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/webalizer.php &> /dev/null','0,30 * * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/check_services.php &> /dev/null','15 3,15 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/quota_msg.php &> /dev/null','40 00 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/traffic.php &> /dev/null','05 02 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/backup.php &> /dev/null','*/5 * * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/mysql_quota.php &> /dev/null','0 10 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/check_mx.php');
+  $cron_jobs = array('30 00 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/logs.php &> /dev/null','59 23 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/ftp_logs.php &> /dev/null','59 23 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/mail_logs.php &> /dev/null','59 23 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/cleanup.php &> /dev/null','0 4 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/webalizer.php &> /dev/null','0 4 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/awstats.php &> /dev/null','0,30 * * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/check_services.php &> /dev/null','15 3,15 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/quota_msg.php &> /dev/null','40 00 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/traffic.php &> /dev/null','05 02 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/backup.php &> /dev/null','*/5 * * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/mysql_quota.php &> /dev/null','0 10 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/check_mx.php');
   foreach($cron_jobs as $cron_job){
     if(!strstr($existing_cron_jobs, $cron_job)){
       af('crontab.txt', "\n".$cron_job."\n");
@@ -1488,8 +1492,15 @@ exec("chmod 644 ".$go_info["server"]["log_file"]);
 ///////////////// CREATE CHROOT SSH ENV //////////////////
 exec("chmod +x /root/ispconfig/scripts/shell/create_chroot_env.sh");
 
-///////////////// CREATE CHROOT SSH ENV //////////////////
+///////////////// CREATE CHROOT SSH ENV ENDE //////////////////
 
+//////////////// CREATE AWStats DIR //////////////////
+if($install_art == "install"){
+	exec("mkdir /etc/awstats");
+	exec("cp -f compile_aps/awstats.shared.conf /etc/awstats/awstats.shared.conf");
+	exec("chmod 644 /etc/awstats/awstats.shared.conf");
+}
+///////////////// CREATE AWStats DIR ENDE //////////////////
 
 exec("pwconv &> /dev/null");
 exec("grpconv &> /dev/null");
