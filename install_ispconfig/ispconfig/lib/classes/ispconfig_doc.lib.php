@@ -77,7 +77,7 @@ function check($to_check, $max_len = 0)
        {
        // $to_check = addslashes($to_check);
        if(!is_array($to_check)) {
-       $to_check = strtr($to_check, "\"", "'");
+       //$to_check = strtr($to_check, "\"", "'");
        
             if($max_len != 0)
        	    {
