@@ -80,7 +80,8 @@ function check($to_check, $max_len = 0)
        {
        // $to_check = addslashes($to_check);
        if(!is_array($to_check)) {
-       $to_check = strtr($to_check, "\"", "'");
+	   // Commented out on 14. jan. 2007. Hope its really not needed, Till ;)
+       // $to_check = strtr($to_check, "\"", "'");
        
             if($max_len != 0)
        	    {
