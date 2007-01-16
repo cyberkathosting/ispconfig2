@@ -1,6 +1,6 @@
 <HTML>
 <HEAD>
-<TITLE>Bienvidos!</TITLE>
+<TITLE>Bienvenido!</TITLE>
 </HEAD>
 <BODY BGCOLOR="#FFFFFF" leftMargin=0 topMargin=0 rightMargin=0 marginheight="0" marginwidth="0">
 <CENTER>
@@ -10,7 +10,7 @@
     <HR SIZE="1" COLOR="#FFFFFF">
     <TABLE>
       <TR>
-            <TD><FONT SIZE="3" COLOR="#FFFFFF" FACE="Helvetica, Arial"><B>Bienvidos a su página  de web!</B></FONT></TD>
+            <TD><FONT SIZE="3" COLOR="#FFFFFF" FACE="Helvetica, Arial"><B>Bienvenido a su sitio web!</B></FONT></TD>
       </TR>
     </TABLE>
     <HR SIZE="1" COLOR="#FFFFFF">
@@ -19,11 +19,12 @@
   <TR>
     <TD BGCOLOR="#FFFFFF">
     <BR><BR>
-	<FONT COLOR="#000000" SIZE="2" FACE="Helvetica, Arial">Esta página esta la página normal.
-                     &nbsp;Puedes removerlo o substituir con otro archivo sin dificultad.
-          <P>Por favor, contacte el administrador de la sistema si usted tiene dudas.</FONT>
+          <center>
+	<FONT COLOR="#000000" SIZE="2" FACE="Helvetica, Arial">Esta es la p&aacute;gina principal del sitio.
+                     &nbsp;Puede cambiarla por otra simplemente reemplazando este archivo.
+          <P>Si tiene dudas o problemas, porfavor contacte al administrador del sistema.</FONT>
           <BR>
-
+          </center>
         <HR SIZE="1" WIDTH="90%">
       <CENTER>
 <FONT SIZE="1" COLOR="#000000" FACE="Verdana, Arial">powered by <A HREF="http://www.ispconfig.org">ISPConfig</A></FONT>
