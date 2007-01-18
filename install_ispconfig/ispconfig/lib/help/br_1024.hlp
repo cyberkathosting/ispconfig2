@@ -1,0 +1,14 @@
+<?
+
+/**********************************************
+* ISPCofig Help File
+* Version 1.2
+* Syntax: $hlp["FieldName"] = "HelpText";
+* Traduzido por: Horus Solaris
+************************************************/
+
+$hlp["dienst_name"] = "Nome do serviço a ser monitorado.";
+$hlp["dienst_port"] = "Porta do serviço. Ex: 80 para webserver.";
+$hlp["dienst_host"] = "Hostname ou endereço IPdo servidor a ser monitorado.";
+$hlp["dienst_typ"] = "Tipo do serviço. O sistema pode monitorar serviços em TCP e UDP.";
+?>

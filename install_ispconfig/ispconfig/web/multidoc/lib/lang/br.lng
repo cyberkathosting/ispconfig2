@@ -1,0 +1,11 @@
+<?
+/********************************
+* ISPConfig Dictionary File
+* Version 1.0
+* Traduzido por: Horus Solaris
+*********************************/
+
+$wb["Anbieter"]     = "Revendedor";
+$wb["Web"]          = "Web";
+
+?>

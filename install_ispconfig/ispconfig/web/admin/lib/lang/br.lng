@@ -1,0 +1,500 @@
+<?
+/********************************
+* ISPConfig Dictionary File
+* Version 1.0
+* Traduzido por: Horus Solaris
+*********************************/
+
+//////////////// Server Status ////////////////
+$wb["Arbeitsspeicher"]          = "Memória Principal";
+$wb["CPU"]          = "CPU";
+$wb["Dienste"]      = "Serviços";
+$wb["Server Online seit"]          = "Servidor online desde";
+$wb["User Online"]      = "Usuários conectados";
+$wb["System Load 1 Minute"] = "Carga da CPU - 1 Minuto";
+$wb["System Load 5 Minuten"] = "Carga da CPU - 5 Minutos";
+$wb["System Load 15 Minuten"] = "Carga da CPU - 15 Minutos";
+//////////////// Server Status Ende //////////
+
+///////////////// Administration ////////////////
+$wb["ISPConfig Datenbank"]    = "Banco de dados do ISPConfig";
+$wb["Backup erstellen"]       = "Cópia de segurança";
+$wb["Datenbank Check"]        = "Verificar banco de dados";
+$wb["Datenbank Optimieren"]   = "Otimizar banco de dados";
+$wb["Datenbank Reparieren"]   = "Reparar banco de dados";
+$wb["Eigenschaften"] = "Configurações";
+$wb["Server Name"]  = "Nome do servidor";
+$wb["Netzmaske"]    = "Máscara de rede";
+$wb["Sprache"]      = "Idioma";
+$wb["IP Liste"]     = "Lista de IP's";
+$wb["hinweis_ip_liste"] = "<b>Dica:</b> Coloque 1 IP por linha.";
+$wb["Pfad"]         = "Caminho";
+$wb["Programm"]     = "Programa";
+$wb["Reparatur"]    = "Reparar";
+$wb["Optimiere"]    = "Otimizar";
+$wb["Pfad httpd.conf"]    = "Caminho p/ httpd.conf";
+$wb["MTA Typ"]    = "Tipo de MTA";
+$wb["Virtuser Datei"]    = "Arquivo virtuser";
+$wb["FTP Programm"]    = "Programa de FTP";
+$wb["FTP conf. Datei"]    = "Arquivo de config. FTP";
+$wb["Userid von"]    = "Userid inicial";
+$wb["Groupid von"]    = "Groupid inicial";
+
+$wb["Backup von Tabelle"] = "Tabela de Backup";
+$wb["Optimiere"] = "Otimizar";
+$wb["Reparatur"] = "Reparar";
+$wb["oder"] = "ou";
+$wb["Installation starten"] = "Instalar";
+
+$wb["Deutsch"] = "Alemão";
+$wb["Englisch"] = "Inglês";
+$wb["Datei"] = "Arquivo";
+
+//////////////// Administration Ende ///////////
+
+//////////////// Firewall, Monitor + Dienste  ////////////////
+
+$wb["Überwachung"] = "Monitoramento";
+$wb["Firewall"] = "Firewall";
+$wb["Web-Server"] = "Servidor Web";
+$wb["FTP-Server"] = "Servidor FTP";
+$wb["SMTP-Server"] = "Servidor SMTP";
+$wb["DNS-Server"] = "Servidor DNS";
+$wb["mySQL-Server"] = "Servidor MySQL";
+$wb["An"] = "ligado";
+$wb["Aus"] = "desligado";
+$wb["neu Starten"] = "Reiniciar";
+$wb["Neu"] = "Adicionar";
+$wb["Aktionen"] = "Ações";
+$wb["Dienst"] = "Serviço";
+$wb["Hostname"] = "Nome de host";
+$wb["Port"] = "Porta";
+$wb["Typ"] = "Tipo";
+$wb["TCP"] = "TCP";
+$wb["UDP"] = "UDP";
+$wb["Der Dienst-Typ wird nur bei sonstigen-Diensten ausgewertet."] = "The type of service will only be analyzed in case of other services.";
+$wb["Sonstige"] = "Outro";
+$wb["Ja"] = "Sim";
+$wb["Nein"] = "Não";
+$wb["Offline"] = "Offline";
+$wb["ISP Dienste"] = "Serviços ISP";
+$wb["ISP Überwachung"] = "Monitor ISP";
+$wb["ISP Firewall"] = "Firewall ISP";
+$wb["Name"] = "Nome";
+$wb["Aktiv"] = "Ativo";
+$wb["Firewall Regel"] = "Regra de Firewall";
+$wb["Dieser Port kann nicht geändert werden."] = "Esta porta não pode ser alterada.<br>";
+$wb["Dieser Port kann nicht deaktiviert werden."] = "Esta porta não pode ser desativada.<br>";
+
+//////////////// Firewall ENDE ////////////////
+
+//////////////// LNG 1.1.12 BEGIN /////////////
+
+$wb["ISP Server"] = 'Servidor ISP';
+$wb["Admin Email"] = 'E-mail do Administrador';
+$wb["EMail"] = 'e-mail';
+$wb["Funktionen"] = 'Funções';
+$wb["httpd User"] = 'Usuário httpd';
+$wb["httpd Group"] = 'Grupo httpd';
+$wb["Document Root"] = 'Document Root';
+$wb["Frontpage Pfad"] = 'Caminho do Frontpage';
+$wb["access Log"] = 'Log de acessos';
+$wb["Sendmail"] = 'Sendmail';
+$wb["Sendmail CW"] = 'Sendmail CW';
+$wb["Log speichern"] = 'Gravar Log';
+$wb["BIND User"] = 'Usuário BIND';
+$wb["BIND Group"] = 'Grupo BIND';
+$wb["Zonefiles Dir."] = 'Dir. arquivos de zonas';
+$wb["Default Ns1"] = 'NS1 padrão';
+$wb["Default Ns2"] = 'NS2 padrão';
+$wb["Standard MX"] = 'MX padrão';
+$wb["Frontpage Extensions"] = 'Extensões Frontpage';
+$wb["User Prefix"] = 'Prefixo de Usuário';
+$wb["Anbieter Nr. von"] = 'Nº inicial de Revendedor';
+$wb["Kunden Nr. von"] = 'Nº inicial de Cliente';
+$wb["SOAP Server IP"] = 'IP do Servidor SOAP';
+$wb["SOAP Server Port"] = 'Porta do Servidor SOAP';
+$wb["Web-FTP"] = 'Web-FTP';
+$wb["ISP Faktura"] = 'Fatura ISP';
+$wb["Modul Manager"] = 'Gerenciador de Módulos';
+$wb["Hinzufügen"] = 'Adicionar';
+$wb["Alle anzeigen"] = 'Mostrar tudo';
+$wb["Update Manager"] = 'Gerenciador de Atualizações';
+$wb["Update"] = 'Atualizar';
+$wb["System Config"] = 'Configuração do Sistema';
+$wb["Bearbeiten"] = 'Editar';
+$wb["Importieren"] = 'Importar';
+$wb["Exportieren"] = 'Exportar';
+$wb["Allgemein"] = 'Comum';
+$wb["ISP-Manager"] = 'Gerenciador ISP';
+$wb["Faktura"] = 'Fatura';
+$wb["Übernehmen"] = 'Gravar';
+$wb["Webserver"] = 'Servidor Web';
+$wb["Bind DNS"] = 'BIND DNS';
+$wb["Mailserver"] = 'Servidor de Correio';
+$wb["POP3-Server"] = 'Servidor POP3';
+$wb["nein"] = 'não';
+$wb["ja"] = 'sim';
+$wb["ISP Server Status"] = 'Status do Servidor ISP';
+$wb["System-Datenbank"] = 'Banco de dados do sistema';
+$wb["Verzeichnis"] = 'Pasta';
+$wb["Backup starten"] = 'Cópia de Segurança';
+
+// NEW 1.1.12a //////////////////////////////
+
+$wb["Es wurde kein Web ausgewählt."] = "Nenhum site selecionado.";
+$wb["Backup-Funktionen im Demo-Modus nicht verfügbar."] = "Funções de Cópia de Segurança não estão disponíveis no modo de demonstração.";
+$wb["Backup Status"] = "Status da Cópia de Segurança";
+$wb["Der Name des FTP-Servers <br>enthält ungültige Zeichen."] = "O nome do servidor FTP <br>contém caracteres inválidos.";
+$wb["Sie haben keinen FTP Benutzernamen angegeben."] = "Nenhum nome de usuário FTP estabelecido.";
+$wb["Ftp-Verbindung nicht hergestellt!"] = "Conexão FTP falhou!";
+$wb["Verbindung mit:"] = "Conectado à:";
+$wb["als Benutzer:"] = "como usuário:";
+$wb["nicht möglich."] = "impossível.";
+$wb["Konnte nicht in Verzeichnis:"] = "mudando para o diretório:";
+$wb["wechseln."] = "falhou.";
+$wb["Wechsel in Verzeichnis:"] = "mudando para o diretório:";
+$wb["Ftp upload war fehlerhaft!"] = "Envio por FTP falhou!";
+$wb["Upload erfolgreich."] = "Envio completado com sucesso.";
+$wb["FTP-Upload Status"] = "Status do envio";
+$wb["Backup-Methode nicht unterstützt."] = "Método de cópia de segurança falhou.";
+$wb["Rechnung Nr. von"] = "Nº Fatura inicial";
+
+//////////////// LNG 1.1.12 ENDE ///////////////
+
+// NEW 1.3 /////////////////////////////////////
+
+$wb["Remoting"] = 'Controle Remoto';
+$wb["User"] = 'Usuário';
+$wb["Conf. Dir."] = 'Dir. Config.';
+$wb["Suexec"] = 'Suexec';
+$wb["Postfix"] = 'Postfix';
+$wb["Mail Log"] = 'Mail Log';
+$wb["Maildir"] = 'Maildir';
+$wb["Antivir Mailadmin"] = 'Antivirus-Admin';
+$wb["aktiv"] = "ativo";
+$wb["inaktiv"] = "inativo";
+$wb["weiter_link"] = "<br><br> <a href='../../isp_manager/frame_start.php?s=$s'>Next &gt;&gt;</a>";
+$wb["txt_client_salutatory_email_desc"] = "<b>E-mail de Boas-Vindas para Clientes</b>";
+$wb["txt_client_salutatory_email_sender_email"] = "E-mail do remetente";
+$wb["txt_client_salutatory_email_sender_name"] = "Nome do remetente";
+$wb["txt_client_salutatory_email_bcc"] = "Destinatário CCO";
+$wb["txt_client_salutatory_email_subject"] = "Assunto";
+$wb["txt_client_salutatory_email_message"] = "Mensagem";
+$wb["txt_client_salutatory_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Você pode incluir as seguintes variáveis no seu texto:</b></td></tr>
+        <tr>
+          <td class="normal">%%%USER%%%</td>
+          <td class="normal">
+            Nome de usuário do cliente</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%PASSWORD%%%</td>
+          <td class="normal">
+            Senha do cliente</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%FIRST_NAME%%%</td>
+          <td class="normal">
+            Nome do cliente</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%LAST_NAME%%%</td>
+          <td class="normal">
+            Sobrenome do cliente</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%COMPANY%%%</td>
+          <td class="normal">
+            Empresa</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%EMAIL%%%</td>
+          <td class="normal">
+            Endereço de e-mail</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%CP%%%</td>
+          <td class="normal">
+            URL do Painel de Controle</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%MANUAL%%%</td>
+          <td class="normal">
+            Manual do Cliente</td>
+        </tr>
+        </table>';
+
+$wb["txt_res_salutatory_email_desc"] = "<b>E-mail de Boas-Vindas para Revendedores</b>";
+$wb["txt_res_salutatory_email_sender_email"] = "E-mail do remetente";
+$wb["txt_res_salutatory_email_sender_name"] = "Nome do Remetente";
+$wb["txt_res_salutatory_email_bcc"] = "Destinatário CCO";
+$wb["txt_res_salutatory_email_subject"] = "Assunto";
+$wb["txt_res_salutatory_email_message"] = "Mensagem";
+$wb["txt_res_salutatory_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Você pode incluir as seguintes variáveis no seu texto:</b></td></tr>
+        <tr>
+          <td class="normal">%%%USER%%%</td>
+          <td class="normal">
+            Nome de usuário do revendedor</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%PASSWORD%%%</td>
+          <td class="normal">
+            Senha do revendedor</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%FIRST_NAME%%%</td>
+          <td class="normal">
+            Nome do revendedor</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%LAST_NAME%%%</td>
+          <td class="normal">
+            Sobrenome do revendedor</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%COMPANY%%%</td>
+          <td class="normal">
+            Empresa</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%EMAIL%%%</td>
+          <td class="normal">
+            Endereço de e-mail do revendedor</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%CP%%%</td>
+          <td class="normal">
+            URL do Painel de Controle</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%MANUAL%%%</td>
+          <td class="normal">
+            Manual do Revendedor</td>
+        </tr>
+        </table>';
+$wb["txt_standard_index"] = "Página Index padrão";
+$wb["txt_standard_index_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Você pode incluir as seguintes variáveis no seu texto:</b></td></tr>
+        <tr>
+          <td class="normal">%%%FQDN%%%</td>
+          <td class="normal">
+            Nome do domínio</td>
+        </tr>
+    </table>';
+$wb["txt_user_standard_index"] = "Página Index padrão para usuários";
+$wb["txt_user_standard_index_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Você pode incluir as seguintes variáveis no seu texto:</b></td></tr>
+        <tr>
+          <td class="normal">%%%USER%%%</td>
+          <td class="normal">
+            Nome de usuário</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%FQDN%%%</td>
+          <td class="normal">
+            Nome do domínio</td>
+        </tr>
+        </table>';
+
+//////////////// Remoting //////////////////////
+$wb["Hinzufügen"] = "Adicionar";
+$wb["Berechtigungen"] = "Permissões";
+$wb["Speichern"] = "Gravar";
+$wb["Löschen"] = "Apagar";
+$wb["Abbrechen"] = "Cancelar";
+$wb["IP-Adresse"] = "Endereço IP";
+$wb["DNS-Query"] = "Consultar registros DNS Primários";
+$wb["DNS-Insert"] = "Criar registros DNS Primários";
+$wb["DNS-Update"] = "Editar registros DNS Primários";
+$wb["DNS-Delete"] = "Apagar registros DNS Primários";
+$wb["slave_query"] = "Consultar registros DNS Secundários";
+$wb["slave_insert"] = "Criar registros DNS Secundários";
+$wb["slave_update"] = "Editar registros DNS Secundários";
+$wb["slave_delete"] = "Apagar registros DNS Secundários";
+$wb["reseller_query"] = "Consultar Revendedores";
+$wb["reseller_insert"] = "Criar Revendedores";
+$wb["reseller_update"] = "Editar Revendedores";
+$wb["reseller_delete"] = "Apagar Revendedores";
+$wb["kunde_query"] = "Consultar Clientes";
+$wb["kunde_insert"] = "Criar Clientes";
+$wb["kunde_update"] = "Editar Clientes";
+$wb["kunde_delete"] = "Apagar Clientes";
+$wb["web_query"] = "Consultar Websites";
+$wb["web_insert"] = "Criar Websites";
+$wb["web_update"] = "Editar Websites";
+$wb["web_delete"] = "Apagar Websites";
+$wb["txt_primary_dns_records"] = "Registros DNS Primários";
+$wb["txt_secondary_dns_records"] = "Registros DNS Secundários";
+$wb["txt_anbieter"] = "Revendedores";
+$wb["txt_kunden"] = "Clientes";
+$wb["txt_webs"] = "Websites";
+
+$wb["txt_traffic_suspension_email_desc"] = "<b>Notificação de suspensão de Website (Excesso de tráfego)</b>";
+$wb["txt_traffic_suspension_sender_email"] = "E-mail do remetente";
+$wb["txt_traffic_suspension_sender_name"] = "Nome do remetente";
+$wb["txt_traffic_suspension_email_bcc"] = "Destinatário CCO";
+$wb["txt_traffic_suspension_email_subject"] = "Assunto";
+$wb["txt_traffic_suspension_email_message"] = "Mensagem";
+$wb["txt_traffic_suspension_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Você pode incluir as seguintes variáveis no seu texto:</b></td></tr>
+        <tr>
+          <td class="normal">%%%FIRST_NAME%%%</td>
+          <td class="normal">
+            Nome do cliente</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%LAST_NAME%%%</td>
+          <td class="normal">
+            Sobrenome do cliente</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%WEBSITE%%%</td>
+          <td class="normal">
+            Website</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%MONTH%%%</td>
+          <td class="normal">
+            Mês do excesso de tráfego</td>
+        </tr>
+        <tr>
+          <td class="normal" valign="top">%%%INCLUDED_TRAFFIC%%%</td>
+          <td class="normal">
+            Limite de tráfego do plano de hospedagem</td>
+        </tr>
+        <tr>
+          <td class="normal" valign="top">%%%TOTAL_TRAFFIC%%%</td>
+          <td class="normal">
+            Total do tráfego excedente no mês</td>
+        </tr>
+        </table>';
+
+$wb["txt_traffic_notification_email_desc"] = "<b>Notificação de Excesso de tráfego</b>";
+$wb["txt_traffic_notification_sender_email"] = "E-mail do remetente";
+$wb["txt_traffic_notification_sender_name"] = "Nome do remetente";
+$wb["txt_traffic_notification_email_bcc"] = "Destinatário CCO";
+$wb["txt_traffic_notification_email_subject"] = "Assunto";
+$wb["txt_traffic_notification_email_message"] = "Mensagem";
+$wb["txt_traffic_notification_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Você pode incluir as seguintes variáveis no seu texto:</b></td></tr>
+        <tr>
+          <td class="normal">%%%FIRST_NAME%%%</td>
+          <td class="normal">
+            Nome do Cliente</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%LAST_NAME%%%</td>
+          <td class="normal">
+            Sobrenome do Cliente</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%WEBSITE%%%</td>
+          <td class="normal">
+            Website</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%MONTH%%%</td>
+          <td class="normal">
+            Mês do excesso de tráfego</td>
+        </tr>
+        <tr>
+          <td class="normal" valign="top">%%%INCLUDED_TRAFFIC%%%</td>
+          <td class="normal">
+            Limite de tráfego do plano de hospedagem</td>
+        </tr>
+        <tr>
+          <td class="normal" valign="top">%%%TOTAL_TRAFFIC%%%</td>
+          <td class="normal">
+            Total do tráfego excedente no mês</td>
+        </tr>
+        </table>';
+
+$wb["txt_res_traffic_suspension_email_desc"] = "<b>Notificação de suspensão de serviços (Excesso de tráfego)</b>";
+$wb["txt_res_traffic_suspension_sender_email"] = "E-mail do remetente";
+$wb["txt_res_traffic_suspension_sender_name"] = "Nome do remetente";
+$wb["txt_res_traffic_suspension_email_bcc"] = "Destinatário CCO";
+$wb["txt_res_traffic_suspension_email_subject"] = "Assunto";
+$wb["txt_res_traffic_suspension_email_message"] = "Mensagem";
+$wb["txt_res_traffic_suspension_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Você pode incluir as seguintes variáveis no seu texto:</b></td></tr>
+        <tr>
+          <td class="normal">%%%FIRST_NAME%%%</td>
+          <td class="normal">
+            Nome do revendedor</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%LAST_NAME%%%</td>
+          <td class="normal">
+            Sobrenome do revendedor</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%MONTH%%%</td>
+          <td class="normal">
+            Mês do excesso de tráfego</td>
+        </tr>
+        <tr>
+          <td class="normal" valign="top">%%%INCLUDED_TRAFFIC%%%</td>
+          <td class="normal">
+            Limite de tráfego do plano de hospedagem de revenda</td>
+        </tr>
+        <tr>
+          <td class="normal" valign="top">%%%TOTAL_TRAFFIC%%%</td>
+          <td class="normal">
+            Total do tráfego excedente no mês</td>
+        </tr>
+        </table>';
+
+$wb["txt_res_traffic_notification_email_desc"] = "<b>Notificação de Excesso de tráfego de Revenda</b>";
+$wb["txt_res_traffic_notification_sender_email"] = "E-mail do remetente";
+$wb["txt_res_traffic_notification_sender_name"] = "Nome do remetente";
+$wb["txt_res_traffic_notification_email_bcc"] = "Destinatário CCO";
+$wb["txt_res_traffic_notification_email_subject"] = "Assunto";
+$wb["txt_res_traffic_notification_email_message"] = "Mensagem";
+$wb["txt_res_traffic_notification_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Você pode incluir as seguintes variáveis no seu texto:</b></td></tr>
+        <tr>
+          <td class="normal">%%%FIRST_NAME%%%</td>
+          <td class="normal">
+            Nome do revendedor</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%LAST_NAME%%%</td>
+          <td class="normal">
+            Sobrenome do revendedor</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%MONTH%%%</td>
+          <td class="normal">
+            Mês do excesso de tráfego</td>
+        </tr>
+        <tr>
+          <td class="normal" valign="top">%%%INCLUDED_TRAFFIC%%%</td>
+          <td class="normal">
+            Limite de tráfego do plano de hospedagem de revenda</td>
+        </tr>
+        <tr>
+          <td class="normal" valign="top">%%%TOTAL_TRAFFIC%%%</td>
+          <td class="normal">
+            Total do tráfego excedente no mês</td>
+        </tr>
+        </table>';
+
+?>

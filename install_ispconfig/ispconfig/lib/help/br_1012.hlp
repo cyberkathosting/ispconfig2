@@ -1,0 +1,33 @@
+<?
+
+/**********************************************
+* ISPConfig Help File
+* Version 1.2
+* Syntax: $hlp["FieldName"] = "HelpText";
+* Traduzido por: Horus Solaris
+************************************************/
+
+$hlp["kunde_anrede"] = "Por favor selecione o endereço de e-mail para as boas-vindas ao cliente.";
+$hlp["kunde_firma"] = "Por favor entre com o nome da empresa do cliente.";
+$hlp["kunde_vorname"] = "Por favor entre com o nome do cliente.";
+$hlp["kunde_name"] = "Por favor entre com o sobrenome do cliente.";
+$hlp["kunde_strasse"] = "Por favor entre com o o endereço do cliente.";
+$hlp["kunde_plz"] = "Por favor entre com o código postal do cliente.";
+$hlp["kunde_ort"] = "Por favor entre com a cidade do cliente.";
+$hlp["kunde_land"] = "Por favor entre com o país do cliente.";
+$hlp["kunde_telefon"] = "Por favor entre com o número de telefone do cliente.";
+$hlp["kunde_fax"] = "Por favor entre com o número de fax do cliente.";
+$hlp["kunde_email"] = "Por favor entre com o endereço de e-mail do cliente.";
+$hlp["kunde_internet"] = "Por favor entre como o URL do website do cliente.";
+$hlp["webadmin_user"] = "Por favor entre com o nome de usuário para o cliente acessar o painel de controle.";
+$hlp["webadmin_passwort"] = "Por favor entre com a senha do painel de controle para o cliente.";
+$hlp["rechnung_firma"] = "Por favor entre com nome da empresa para cobrança.";
+$hlp["rechnung_vorname"] = "Por favor entre com nome do cliente para cobrança.";
+$hlp["rechnung_name"] = "Por favor entre com os sobrenome do cliente para cobrança.";
+$hlp["rechnung_strasse"] = "Por favor entre com o endereço de cobrança.";
+$hlp["rechnung_plz"] = "Por favor com o código postal de cobrança.";
+$hlp["rechnung_ort"] = "Por favor entre com a cidade de cobrança.";
+$hlp["rechnung_land"] = "Por favor entre com o país de cobrança.";
+$hlp["rechnung_intervall"] = "Por favor entre com o período de cobrança  para os itens do cliente.";
+$hlp["rechnung_zahlungsbedingungen"] = "Por favor entre com as condições de pagamento.";
+?>
