@@ -1,0 +1,48 @@
+<?
+
+/**********************************************
+* ISPConfig Help File
+* Version 1.2
+* Syntax: $hlp["FieldName"] = "HelpText";
+* Traduzido por: Horus Solaris
+************************************************/
+
+$hlp["limit_user"] = "Por favor entre com o máximo número de usuários que o revendedor pode criar.";
+$hlp["limit_disk"] = "Please especifique a quantidade máxima de espaço de armazenagem que o revendedor pode usar.";
+$hlp["limit_web"] = "Por favor entre com a quantidade máxima de websites que o revendedor pode criar.";
+$hlp["limit_domain"] = "Por favor entre com a a quantidade máxima de domínios que o revendedor pode criar";
+$hlp["limit_http_include"] = "Por favor especifique se será permitido ao revendedor criar diretivas do Apache adicionais.";
+$hlp["limit_dns_manager"] = "Por favor especifique se será permitido ao revendedor criar entradas DNS.";
+$hlp["limit_domain_dns"] = "Por favor especifique o número máximo de domínios que será permitido ao revendedor criar registros DNS primários.";
+$hlp["limit_slave_dns"] = "Por favor especifique o número máximo de domínios que será permitido ao revendedor criar registros DNS secundários.";
+
+$hlp["limit_cgi"] = "Por favor especifique se será permitido ao revendedor, disponibilizar a funcionalidade CGI a seus websites.";
+$hlp["limit_php"] = "Por favor especifique se será permitido ao revendedor, disponibilizar a funcionalidade PHP a seus websites.";
+$hlp["limit_ssi"] = "Por favor especifique se será permitido ao revendedor, disponibilizar a funcionalidade SSI a seus websites.";
+$hlp["limit_ftp"] = "Por favor especifique se será permitido ao revendedor, disponibilizar a funcionalidade FTP a seus websites.";
+$hlp["limit_frontpage"] = "Por favor especifique se será permitido ao revendedor, disponibilizar a funcionalidade FrontPage a seus websites.";
+$hlp["limit_mysql"] = "Por favor especifique se será permitido ao revendedor, disponibilizar a criação de bancos de dados MySQL a seus websites.";
+$hlp["limit_shell_access"] = "Por favor especifique se será permitido ao revendedor, disponibilizar contas de acesso ao shell a seus websites.";
+$hlp["limit_ssl"] = "Por favor especifique se será permitido ao revendedor, disponibilizar a funcionalidade SSL a seus websites. Atenção: Você só pode ter 1 website SSL por IP.";
+$hlp["limit_httpd_include"] = "Por favor especifique se será permitido ao revendedor, disponibilizar a criação de diretivas do Apache adicionais a seus websites.";
+$hlp["limit_anonftp"] = "Por favor especifique se será permitido ao revendedor, disponibilizar a funcionalidade FTP anônimo a seus websites. Atenção: Você só pode ter 1 FTP anônimo por IP.";
+$hlp["limit_wap"] = "Por favor especifique se será permitido ao revendedor, disponibilizar a funcionalidade WAP a seus websites.";
+$hlp["limit_standard_cgis"] = "Por favor especifique se será permitido ao revendedor, disponibilizar os scripts CGI padrões contidos neste servidor a seus websites.";
+$hlp["limit_mysql_anzahl_dbs"] = "Por favor especifique o número máximo de banco de dados que o revendedor poderá disponibilizar a seus websites.";
+$hlp["limit_error_pages"] = "Por favor especifique se será permitido ao revendedor, disponibilizar a criação de páginas de erros personalizadas a seus websites.";
+
+$hlp["firma"] = "Por favor entre com o nome da empresa revendedora.";
+$hlp["vorname"] = "Por favor entre com o nome do revendedor.";
+$hlp["name"] = "Por favor entre com o sobrenome do revendedor.";
+$hlp["strasse"] = "Por favor entre com o endereço do revendedor.";
+$hlp["plz"] = "Por favor entre com o código postal do revendedor.";
+$hlp["ort"] = "Por favor entre com a cidade do revendedor.";
+$hlp["land"] = "Por favor entre com o país do revendedor.";
+$hlp["telefon"] = "Por favor entre com o número de telefone do revendedor.";
+$hlp["fax"] = "Por favor entre com the o número de faz do revendedor.";
+$hlp["email"] = "Por favor entre com o endereço de e-mail do revendedor.";
+$hlp["internet"] = "Por favor entre com o site do revendedor.";
+$hlp["reseller_user"] = "Por favor entre com o nome de usuário para o revendedor acessar o painel de controle.";
+$hlp["reseller_passwort"] = "Por favor entre com a senha para o painel de controle.";
+$hlp["anrede"] = "Por favor selecione o pronome de tratamento para o revendedor.";
+?>

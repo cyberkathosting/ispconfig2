@@ -1,0 +1,98 @@
+<?
+/********************************
+* ISPConfig Dictionary File
+* Version 1.0
+* Traduzido por: Horus Solaris
+*********************************/
+
+//////////////// DNS Manager ////////////////
+$wb["Optionen"]     = "Opções";
+$wb["Ziel"]         = "Destino";
+$wb["Priorität"]   = "Prioridade";
+$wb["DNS Eintrag"]  = "Entrada DNS";
+$wb["Ordner neu"]   = "Organizar por";
+$wb["Suchen"]       = "Procura";
+$wb["DNS-Manager"]       = "Gerenciador DNS";
+$wb["Domain (SOA)"]         = "Domínio (SOA)";
+$wb["Email Admin"]         = "E-mail do administrador";
+$wb["Nameserver 1"]         = "Servidor DNS 1";
+$wb["Nameserver 2"]         = "Servidor DNS 2";
+$wb["Refresh"]         = "Atualizar";
+$wb["Retry"]         = "Nova tentativa";
+$wb["Expire"]         = "Expiração";
+$wb["TTL"]         = "TTL";
+$wb["Record"]         = "Registro";
+$wb["Record"]         = "Registros";
+$wb["Mailserver"]         = "Servidor de e-mail";
+
+$wb["Dokument"] = "Documento";
+$wb["neues Dokument anlegen"] = "novo documento";
+
+$wb["error_soa_exists_1"] = "Você já criou um domínio (Registro SOA) com este nome ";
+$wb["error_soa_exists_2"] = ".<br>";
+//////////////// DNS Manager Ende ///////////
+
+$wb["IP-Adresse ungültig."] = "Endereço IP inválido.";
+$wb["Records"] = 'Registros';
+$wb["ziel"] = 'destino';
+$wb["Neu"] = 'novo';
+
+// NEW 1.3 //////////////////////////////////////
+
+$wb["Master neu"] = 'Nova Zona Primária';
+$wb["Slave neu"] = 'Nova Zona Secundária';
+$wb["Slave Zone"] = 'Zona Secundária';
+$wb["domain"] = 'Domínio';
+$wb["DNS-Master IP"] = 'Servidor DNS Mestre';
+$wb["Name"] = 'Nome';
+$wb["Masters"] = 'DNS Primários';
+$wb["Slaves"] = 'DNS Secundários';
+$wb["SUCHE"] = 'PROCURA';
+
+
+
+//////////////// Server Status ////////////////
+$wb["Arbeitsspeicher"]          = "Memória principal";
+$wb["CPU"]          = "CPU";
+$wb["Dienste"]      = "Serviços";
+$wb["Server Online seit"]          = "Server online desde";
+$wb["User Online"]      = "Usuários conectados";
+$wb["System Load 1 Minute"] = "Carga da CPU - 1 Minuto";
+$wb["System Load 5 Minuten"] = "Carga da CPU - 5 Minutos";
+$wb["System Load 15 Minuten"] = "Carga da CPU - 15 Minutos";
+//////////////// Server Status Ende //////////
+
+$wb["Webs angelegt"] = "Sites usados";
+$wb["User angelegt"] = "Usuários usados";
+$wb["Domains angelegt"] = "Domínios usedos";
+$wb["unlimitiert"]  = "ilimitado";
+$wb["Anbieter"]     = "Revendedor";
+$wb["DNS-Domains angelegt"] = 'Domínios DNS criados';
+$wb["von"] = "de";
+$wb["Maximale Anzahl an DNS-Einträgen erreicht."] = "O número máximo de zonas para esta conta foi alcançado.<br>";
+$wb["error_no_zones_allowed"] = "A criação de zonas não é permitido para esta conta.<br>";
+$wb["error_no_dns_anbieter"] = "Esta conta não tem permissão de criar nenhum registro DNS.<br>";
+$wb["error_max_slave_dns_anbieter"] = "O número máximo de zonas secundárias foi alcançado para esta conta.<br>";
+$wb["weiter_link"] = "<br><br> <a href='../../isp_dns/frame_start.php?s=$s'>Next &gt;&gt;</a>";
+$wb["error_a_record_exists"] = "Já existe um registro A para este host nesta zona.<br>";
+$wb["error_cname_record_exists"] = "Já existe um registro CNAME para este host nesta zona.<br>";
+$wb["error_mx_record_exists"] = "Este ou um registro MX similar já existe nesta zona.<br>";
+$wb["error_spf_record_exists"] = "Este registro SPF já existre nesta zona.<br>";
+
+$wb["ja"] = "Sim";
+$wb["nein"] = "Não";
+$wb["a"] = "E-Mails serão enviados<br>&nbsp;&nbsp;a partir de um registro A?";
+$wb["mx"] = "E-Mails serão enviados<br>&nbsp;&nbsp;a partir de um registro MX?";
+$wb["ptr"] = "E-Mails serão enviados<br>&nbsp;&nbsp;a partir de todos os servidores<br>&nbsp;&nbsp;deste domínio?";
+$wb["a_break"] = "E-Mails serão enviados<br>&nbsp;&nbsp;a partir de outros registros A?";
+$wb["mx_break"] = "E-Mails serão enviados<br>&nbsp;&nbsp;a partir de outros registros MX?";
+$wb["ip4_break"] = "E-Mails serão enviados<br>&nbsp;&nbsp;a partir de outros endereços IP?";
+$wb["include_break"] = "Herdar registro SPF<br>&nbsp;&nbsp;desta zona?";
+$wb["all_"] = "As entradas acima<br>&nbsp;&nbsp;contém todos os hosts<br>&nbsp;&nbsp;autorizados a enviar e-mails<br>&nbsp;&nbsp;para este domínio?";
+
+$wb["Catalog_Name"] = "Nome";
+$wb["Feld"] = "Campo";
+$wb["Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 -"] = "Somente os seguintes caracteres são permitidos: a-z A-Z 0-9 -<br>";
+$wb["Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 - ."] = "Somente os seguintes caracteres são permitidos: a-z A-Z 0-9 - .<br>";
+
+?>

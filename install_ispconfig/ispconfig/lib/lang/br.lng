@@ -1,0 +1,108 @@
+<?
+/********************************
+* ISPConfig Dictionary File
+* Version 1.0
+* Traduzido por: Horus Solaris
+*********************************/
+
+/////////////// Allgemein - general (kommt in mehreren Modulen vor) /////////
+$wb["login_begruessung"]     = "Login:";
+$wb["Username"]     = "Usuário";
+$wb["Passwort"]     = "Senha";
+$wb["Login"]       = "Login";
+$wb["Administration"]  = "Administração";
+$wb["ISP Manager"]  = "Gerenciar ISP";
+$wb["DNS Manager"]  = "Gerenciar DNS";
+$wb["Tools"]        = "Ferramentas";
+$wb["Logout"]       = "Sair";
+$wb["Status"]       = "Status";
+$wb["neu"]          = "novo";
+$wb["Hinweis"]      = "Referência";
+$wb["Web"]          = "Web";
+$wb["Email"]        = "Email";
+$wb["FTP"]          = "FTP";
+$wb["DNS"]          = "DNS";
+$wb["Sonstiges"]    = "Outros";
+$wb["Datei"]        = "Arquivo";
+$wb["von"]          = "de"; // besser 'ab'?
+$wb["error_headline"] = "O seguinte erro ocorreu:";
+$wb["Gruppe"]       = "Grupo";
+$wb["Titel"]        = "Título";
+$wb["Server"]       = "Servidor";
+$wb["Host"]         = "Hostname";
+$wb["Domain"]       = "Domínio";
+$wb["IP Adresse"]   = "Endereço IP";
+$wb["Ordner"]       = "Pasta";
+$wb["Dokument"]     = "Documento";
+$wb["Dokument suchen"] = "Procurar documento";
+$wb["Suchmaske"]    = "Opções de busca";
+$wb["Ausgabeformat"] = "Formato de saída";
+$wb["Standard"]     = "Padrão";
+$wb["Einträge"]    = "Entradas";
+$wb["Papierkorb leeren"] = "Esvaziar lixeira";
+$wb["Stammordner"]  = "Zona Primária";
+$wb["keine Gruppe"] = "Sem grupo";
+$wb["neues Dokument anlegen"] = "novo documento criado";
+$wb["auf"]   = "expandir";
+$wb["zu"]    = "encolher";
+$wb["in_ordner"]    = "na pasta";
+$wb["Papierkorb"]   = "Lixeira";
+$wb["Wiederherstellen"]    = "Restaurar";
+$wb["Papierkorb: Einträge"]   = "Lixeira: conteúdo";
+$wb["Speichern"]    = "Gravar";
+$wb["Löschen"]    = "Apagar";
+$wb["Abbrechen"]    = "Cancelar";
+$wb["Suchen"]    = "Procurar";
+
+$wb["Herr"] = "Sr.";
+$wb["Frau"] = "Sra.";
+
+$wb["Es ist folgender Fehler aufgetreten:"] = "O seguinte erro ocorreu:";
+
+$wb["Web-FTP"] = 'Web-FTP';
+$wb["ISP Faktura"] = 'Faturas';
+
+$wb["Verzeichnis öffnen"] = "abrir";
+$wb["Verzeichnis schliessen"] = "fechar";
+$wb["Hilfe"] = 'Ajuda';
+$wb["Online Hilfe"] = 'Ajuda Online';
+$wb["schliessen"] = 'fechar';
+
+$wb["PAPIERKORB_HINWEIS"] = "<b>Nota:</b> Itens restantes na lixeira após esvaziá-la estão atualmente em estado de atualização. Por favor tente esvaziar a lixeira mais tarde.";
+
+
+// Multidoc  Allgemein ////////////////////////////////
+
+$wb["title_required"] = "Por favor entre com um nome no campo 'Título'";
+$wb["error_keine_rechte"] = "Você não tem o previlégio necessário para ler ou editar esta entrada.";
+$wb["error_doctype_nicht_vorhanden"] = "O tipo de documento solicitado não existe.";
+$wb["error_doctype_rechte"] = "Você não tem a permissão necessária para editar este tipo de documento.";
+$wb["Formular Designer"] = "Criador de Formulários";
+$wb["Geben Sie einen Wert in das Feld"] = "Por favor entre com um valor no campo";
+$wb["jscript_ein"] = " ";
+
+////////////// Allgemein Ende ///////////////////
+
+$wb["Es konnte ein Dokument nicht wiederhergestellt werden, da sich das Eltern-Dokument noch im Papierkorb befindet.\n"] = "The object cannot be restored as long as its parent object is in the recycle bin.";
+
+$wb["DNS-Domains angelegt"] = 'Zonas Primárias criadas';
+$wb["Benutzter Diskspace"] = "Espaço em disco utilizado";
+$wb["Slave Zones angelegt"] = "Zonas Secundárias criadas";
+$wb["Datenbanken angelegt"] = "Bancos de Dados criados";
+
+$wb["txt_confirm_delete"] = "Quer realmente apagar este objeto?";
+
+$wb["txt_object_currently_updated"] = "As modificações não podem ser gravadas porque este item está sendo atualizado. Por favor tente mais tarde.<br><br> <a href='../frame_start.php?s=$s'>Next &gt;&gt;</a>";
+$wb["txt_system_currently_updated_no_recycle_bin"] = "A lixeira não pode ser acessada neste momento, porque o sistema esta sendo atualizado. Por favor tente mais tarde.<br><br> <a href='../frame_start.php?s=$s'>Next &gt;&gt;</a>";
+
+$wb['no_permission_to_change_data'] = "<b>Erro: Você não tem a permissão necessária para modigicar estes dados.</b><p>
+                <br>
+                Isto é por causa de uma das seguintes razões:<br>
+                1. Você está usando o sistema em mode de teste.<br>
+                   - Acesse com seu nome de usuário e senha.<br>&nbsp;<br>
+                2. Você está tentando modificar um elemento que está alocado para outro grupo.<br>
+                   Neste grupo, você não tem permissão para gravar/editar.<br>
+                   - Por gentileza, peça ao proprietário do grupo para permitir-lhe acesso a este recurso.<br>&nbsp;<br>
+                <center><a href=\"" . $go_info["server"]["server_url"] . "/index.php?s=$s\">Next &gt;&gt;</a></center>";
+
+?>
