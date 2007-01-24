@@ -1391,6 +1391,9 @@ AddHandler cgi-script .pl";
                 if($go_info["server"]["apache2_php"] == 'addtype' or $go_info["server"]["apache2_php"] == 'both' or $go_info["server"]["apache2_php"] == 'suphp') {
                         $php .= "AddType application/x-httpd-php .php .php3 .php4 .php5\n";
                 }
+				if ($go_info["server"]["apache2_php"] == 'addhandler') {
+                        $php .= "AddHandler application/x-httpd-php .php .php3 .php4 .php5\n";
+                }
                 if($go_info["server"]["apache2_php"] == 'filter' or $go_info["server"]["apache2_php"] == 'both') {
             $php .= "<Files *.php>
     SetOutputFilter PHP
