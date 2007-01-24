@@ -1414,6 +1414,9 @@ Group web".$web["doc_id"];
                     (array_search('suphp',$a2php) !== false)) {
                         $php .= "AddType application/x-httpd-php .php .php3 .php4 .php5\n";
                 }
+				if ((array_search('addhandler',$a2php) !== false)) {
+                        $php .= "AddHandler application/x-httpd-php .php .php3 .php4 .php5\n";
+                }
                 if ((array_search('filter',$a2php) !== false) ||
                     (array_search('both',$a2php) !== false)) {
             $php .= "<Files *.php>
