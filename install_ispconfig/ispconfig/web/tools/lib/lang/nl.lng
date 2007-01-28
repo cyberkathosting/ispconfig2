@@ -6,7 +6,7 @@
 
 //////////////// Tools //////////////////////
 $wb["Tools & Optionen"] = "Tools & Opties";
-$wb["Passwort ändern"] = "Verander wachwoord";
+$wb["Passwort ändern"] = "Wijzig wachwoord";
 $wb["Allgemein"]    = "Algemeen";
 $wb["Passwort alt"] = "Oud wachwoord";
 $wb["Passwort neu"] = "Nieuw wachwoord";
@@ -55,25 +55,25 @@ $wb["Local Portscanner"] = 'Lokale Portscanner';
 
 // NEW 1.1.12a //////////////////////////////
 
-$wb["Es wurde kein Web ausgewählt."] = "No web selected.";
-$wb["Backup-Funktionen im Demo-Modus nicht verfügbar."] = "Backup-Functions not available in demo mode.";
+$wb["Es wurde kein Web ausgewählt."] = "Geen web geselecteerd.";
+$wb["Backup-Funktionen im Demo-Modus nicht verfügbar."] = "Backup-Functies niet bescikbaar in demo mode.";
 $wb["Backup Status"] = "Backup-Status";
-$wb["Der Name des FTP-Servers <br>enthält ungültige Zeichen."] = "The name of the FTP server <br>contains invalid characters.";
-$wb["Sie haben keinen FTP Benutzernamen angegeben."] = "No FTP-Username set.";
-$wb["Ftp-Verbindung nicht hergestellt!"] = "Ftp-Connection failed!";
-$wb["Verbindung mit:"] = "Connected to:";
-$wb["als Benutzer:"] = "as User:";
-$wb["nicht möglich."] = "not possible.";
-$wb["Konnte nicht in Verzeichnis:"] = "changing to folder:";
+$wb["Der Name des FTP-Servers <br>enthält ungültige Zeichen."] = "De naam van de FTP server <br>bevat ongeldige karakters.";
+$wb["Sie haben keinen FTP Benutzernamen angegeben."] = "Geen FTP-gebruikersnaam gedefinieerd.";
+$wb["Ftp-Verbindung nicht hergestellt!"] = "Ftp-verbinding mislukt!";
+$wb["Verbindung mit:"] = "Verbinding naar:";
+$wb["als Benutzer:"] = "Voeg gebruiker toe:";
+$wb["nicht möglich."] = "niet mogelijk.";
+$wb["Konnte nicht in Verzeichnis:"] = "wijzig naar folder:";
 $wb["wechseln."] = "failed.";
-$wb["Wechsel in Verzeichnis:"] = "changing to folder:";
-$wb["Ftp upload war fehlerhaft!"] = "FTP-Upload failed!";
-$wb["Upload erfolgreich."] = "Upload successful.";
+$wb["Wechsel in Verzeichnis:"] = "wijzig naar folder:";
+$wb["Ftp upload war fehlerhaft!"] = "FTP-Upload mislukt!";
+$wb["Upload erfolgreich."] = "Upload succesvol.";
 $wb["FTP-Upload Status"] = "FTP-Upload Status";
-$wb["Backup-Methode nicht unterstützt."] = "Backup-method not available.";
-$wb["Sprache ändern"] = "Change Language";
+$wb["Backup-Methode nicht unterstützt."] = "Backup-methode niet beschikbaar.";
+$wb["Sprache ändern"] = "Wijzig taal";
 $wb["Sprache (ISO)"] = "Language (ISO)";
-$wb["Software Version"] = "Software Version";
+$wb["Software Version"] = "Software Versie";
 
 
 //////////////// Tools Ende /////////////////
