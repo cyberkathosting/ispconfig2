@@ -44,5 +44,4 @@ $wb["txt_hint_spam_whitelist"] = '<b>Hint:</b> Eén gegevens invoer per regel. Ge
 $wb["txt_hint_spam_blacklist"] = '<b>Hint:</b> Eén gegevens invoer per regel. Geldige invoer van gegevens zijn bijv., friend@somewhere.com, *@isp.com, of *.domain.net.';
 $wb["txt_uribl"] = 'Gebruik <a href="http://www.uribl.com/about.shtml" target="_blank">URIBL</a>';
 
-
 ?>

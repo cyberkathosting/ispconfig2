@@ -39,14 +39,16 @@ $wb["Create DNS"]   = "Aanmaken DNS";
 $wb["Speicher MB"]     = "Space MB";
 $wb["Max. User"]        = "Max. Gebruikers";
 $wb["Max. Domain"]        = "Max. Domeinen";
-$wb["PHP Scripte"]        = "";
+$wb["PHP Scripte"]        = "PHP Scripts";
 $wb["SSI"]        = "SSI";
 $wb["FTP Zugang"]        = "FTP toegang";
 $wb["MySQL"]        = "MySQL";
 $wb["SSL"]        = "SSL";
 $wb["Shell Zugriff"]      = "Shell toegang";
 $wb["Zugang"]       = "Toegang";  // Zugriff u. Zugang zusammenfassen!/nur einen Begriff nehmen!
-$wb["CGI Scripte"]      = "CGI scripts";
+$wb["CGI Scripte"]      = "CGI Scripts";
+$wb["CGI Modus"]      = "CGI Mode";
+$wb["CGI mod_perl"]      = "CGI mod_perl";
 $wb["Bundesland"]   = "Land";
 $wb["Abteilung"]    = "Provincie";
 $wb["Gültigkeit (Tage)"]  = "Geldigheid (dagen)";
@@ -123,6 +125,7 @@ $wb["error_user_exist_1"] = "De ISPConfig gebruiker";
 $wb["error_user_exist_2"] = "bestaat al. De gebruiker is niet toegevoegd of veranderd.<br>";
 $wb["error_max_user_licence"] = "Het maximaal aantal ISPConfig gebruikers voor deze licentie is bereikt.<br>";
 
+
 // Error Codes ispconfig_isp_reseller.lib.php
 $wb["error_reseller_title"] = "Een reseller met deze titel bestaat al.<br>";
 $wb["error_reseller_group_not_found"] = "De groep is niet gevonden.<br>";
@@ -186,7 +189,6 @@ $wb["Löschen"] = "Verwijderen";
 $wb["willkommen_kunde"] = "Welkom bij ISPConfig.
 U kunt uw webpagina hier registreren. Als u vragen heeft of problemen,
 kunt u contact opnemen met uw server administrator of de ISPConfig klanten handleiding raadplegen.";
-
 $wb["Willkommen"] = "Welkom";
 
 
@@ -194,6 +196,8 @@ $wb["Willkommen"] = "Welkom";
 $wb["Es sind nur folgende Zeichen erlaubt: a-z A-Z 0-9 -"] = "Alleen de volgende tekens zijn toegestaan: a-z A-Z 0-9 -<br>";
 $wb["Es sind nur folgende Zeichen erlaubt: a-z A-Z 0-9 - ."] = "Alleen de volgende tekens zijn toegestaan: a-z A-Z 0-9 - .<br>";
 $wb["Der Username muss aus min. 4, max 25 Buchstaben oder Zahlen bestehen, wobei er mit einem Buchstaben beginnen muss."] = "De gebruikersnaam moet uit minimaal 4 en maximaal 26 tekens bestaan en moet beginnen met een letter.<br>";
+$wb['Der Username muss aus min. 4, max 32 Buchstaben oder Zahlen bestehen, wobei er mit einem Buchstaben beginnen muss.'] = 'De gebruikersnaam moet uit minimaal 4 en maximaal 32 tekens bestaan en moet beginnen met een letter.<br>';
+
 $wb["error_reseller_licence"] = "Het toevoegen van aanbieders is niet mogelijk met uw licentie van ISPConfig.<br>";
 $wb["error_reseller_licence_nodelete"] = "De reseller kan niet verwijderd worden.<br>";
 
@@ -204,6 +208,7 @@ $wb["mysqldb_nicht_vorhanden"] = "MySQL database bestaat niet.<br>Voer uw wachtw
 $wb["mysql_nicht_aktiv"] = "Het aanmaken van MySQL databases is niet toegestaan op deze website.<br>";
 $wb["Datenbank Name"] = "Database Naam";
 $wb["Speicher belegt"] = "Database grootte";
+
 $wb["Kein Web angelegt"] = "Geen site aangemaakt";
 $wb["Real Name"] = "Echte naam";
 $wb["Feld"] = "Veld";
@@ -221,7 +226,7 @@ $wb["Frontpage Passwort"] = "Frontpage wachtwoord";
 
 // NEW 1.1.12 ///////////////////////////////////
 
-$wb["Anbieternummer"] = 'Aanbieders nummers';
+$wb["Anbieternummer"] = 'Reseller nr.';
 $wb["Domain DNS"] = 'Master Zones (DNS)';
 $wb["HTTPD Includes"] = 'HTTPD Includes';
 $wb["DNS-Manager"] = 'DNS Manager';
@@ -236,6 +241,7 @@ $wb["deaktiviert"] = 'Inactief';
 $wb["ISP User"] = 'ISP Gebruiker';
 $wb["WebSpeicher MB"] = 'Webruimte MB';
 $wb["MailSpeicher MB"] = 'Mailruimte MB';
+$wb["Max. MailSpeicher MB"] = 'Max. mailruimte MB';
 $wb["Administrator"] = 'Administrator';
 $wb["Erweiterte Einstellungen"] = 'Meer Instellingen';
 $wb["email_weiterleitung_txt"] = '<b>Hint:</b> één e-mailadres per regel.';
@@ -358,29 +364,18 @@ $wb["txt_standard_index_variables"] = '<table border="0" cellpadding="3" cellspa
     <td valign="top" colspan="2" class="normal">
       <b>Gebruik de volgende variabelen in uw tekst:</b></td></tr>
         <tr>
-          <td class="normal">%%%FQDN%%%</td>
-          <td class="normal">
-            Website\'s volledig gekwalificeerde domeinnaam</td>
-        </tr>
-    </table>';
-$wb["txt_user_standard_index"] = "Gebruikers standaard<br>&nbsp;&nbsp;index pagina";
-$wb["txt_user_standard_index_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
-<tr>
-    <td valign="top" colspan="2" class="normal">
-      <b>Gebruik de volgende variabelen in uw tekst:</b></td></tr>
-        <tr>
           <td class="normal">%%%USER%%%</td>
           <td class="normal">
-            Gebruikersnaam</td>
+            User\'s Username</td>
         </tr>
         <tr>
           <td class="normal">%%%FQDN%%%</td>
           <td class="normal">
-            Website\'s volledig gekwalificeerde domeinnaam</td>
+            Website\'s Fully Qualified Domain Name</td>
         </tr>
         </table>';
-
-//////////////// ISP Manager Ende /////////////
+ 
+ //////////////// ISP Manager Ende /////////////
 
 //////////////// Server Status ////////////////
 $wb["Arbeitsspeicher"]          = "Intern geheugen";
@@ -404,7 +399,8 @@ $wb["error_anbieter_max_slavedns_ueberschritten"] = "U kunt niet meer Secondary 
 $wb["error_anbieter_httpd_include_aktiv"] = "HTTPD Includes zijn toegepast in sommige websites van de de reseller. Deze optie kan niet worden gedeactiveerd.<br>";
 $wb["error_anbieter_shell_access_aktiv"] = "Shell Access is reeds in gebruik op sommige websites van de reseller. Deze optie kan niet worden gedeactiveerd.<br>";
 $wb["error_anbieter_cgi_aktiv"] = "CGI is reeds in gebruik op sommige websites van de reseller. Deze optie kan niet worden gedeactiveerd..<br>";
-$wb["error_anbieter_standard_cgi_aktiv"] = "Standard CGIs zijn reeds in gebruik op sommige websites van de reseller. Deze optie kan niet worden gedeactiveerd.<br>";
+$wb["error_anbieter_cgi_mod_perl_aktiv"] = "CGI mod_perl is reeds in gebruik op een van de reseller's websites. Dit item kan niet worden gedeactiveerd.<br>";
+$wb["error_anbieter_standard_cgi_aktiv"] = "Standard CGIs zijn reeds in gebruik op een van de reseller's websites. Dit item kan niet worden gedeactiveerd.<br>";
 $wb["error_anbieter_php_aktiv"] = "PHP is reeds in gebruik op sommige websites van de reseller. Deze optie kan niet worden gedeactiveerd.<br>";
 $wb["error_anbieter_ssi_aktiv"] = "SSIShell is reeds in gebruik op sommige websites van de reseller. Deze optie kan niet worden gedeactiveerd.<br>";
 $wb["error_anbieter_ftp_aktiv"] = "FTPShell is reeds in gebruik op sommige websites van de reseller. Deze optie kan niet worden gedeactiveerd.<br>";
@@ -439,6 +435,7 @@ $wb["error_web_no_database_decrease_1"] = "Deze website heeft reeds ";
 $wb["error_web_no_database_decrease_2"] = " database(s). U kunt het aantal databases niet verhogen.<br>";
 $wb["error_web_no_shell_access"] = "U kunt geen shell access toekennen aan deze website.<br>";
 $wb["error_web_no_cgi"] = "U kunt geen CGI functionaliteit toekennen aan deze website.<br>";
+$wb["error_web_no_cgi_mod_perl"] = "U kunt geen CGI mod_perl functionaliteit toekennen aan deze website.<br>";
 $wb["error_web_no_standard_cgi"] = "U kunt geen Standard CGIs toekennen aan deze website.<br>";
 $wb["error_web_no_php"] = "U kunt geen PHP functionaliteit toekennen aan deze website.<br>";
 $wb["error_web_no_ssi"] = "U kunt geen SSI functionaliteit toekennen aan deze website.<br>";
@@ -474,5 +471,10 @@ $wb["aktiv"] = "Actief";
 $wb["gesperrt"] = "Opgeschort";
 
 $wb["Catalog_Name"] = "Naam";
+
+$wb["Nicht scannen"] = "Niet scannen";
+$wb["MX prüfen"] = "Check MX";
+$wb["Cyrus-Administrator"] = "Cyrus Admin";
+$wb["Passwort Cyrus-Admin"] = "Cyrus Admin wachtwoord";
 
 ?>

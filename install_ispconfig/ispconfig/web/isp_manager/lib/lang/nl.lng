@@ -39,7 +39,7 @@ $wb["Create DNS"]   = "Aanmaken DNS";
 $wb["Speicher MB"]     = "Space MB";
 $wb["Max. User"]        = "Max. Gebruikers";
 $wb["Max. Domain"]        = "Max. Domeinen";
-$wb["PHP Scripte"]        = "";
+$wb["PHP Scripte"]        = "PHP Scripts";
 $wb["SSI"]        = "SSI";
 $wb["FTP Zugang"]        = "FTP Toegang";
 $wb["MySQL"]        = "MySQL";
@@ -47,6 +47,8 @@ $wb["SSL"]        = "SSL";
 $wb["Shell Zugriff"]      = "Shell toegang";
 $wb["Zugang"]       = "Toegang";  // Zugriff u. Zugang zusammenfassen!/nur einen Begriff nehmen!
 $wb["CGI Scripte"]      = "CGI Scripts";
+$wb["CGI Modus"]      = "CGI Mode";
+$wb["CGI mod_perl"]      = "CGI mod_perl";
 $wb["Bundesland"]   = "Land";
 $wb["Abteilung"]    = "Provincie";
 $wb["Gültigkeit (Tage)"]  = "Geldigheid (dagen)";
@@ -123,6 +125,7 @@ $wb["error_user_exist_1"] = "De ISPConfig gebruiker";
 $wb["error_user_exist_2"] = "bestaat al. De gebruiker is niet toegevoegd of veranderd.<br>";
 $wb["error_max_user_licence"] = "Het maximaal aantal ISPConfig gebruikers voor deze licentie is bereikt.<br>";
 
+
 // Error Codes ispconfig_isp_reseller.lib.php
 $wb["error_reseller_title"] = "Een reseller met deze titel bestaat al.<br>";
 $wb["error_reseller_group_not_found"] = "De groep is niet gevonden.<br>";
@@ -186,7 +189,6 @@ $wb["Löschen"] = "Verwijderen";
 $wb["willkommen_kunde"] = "Welkom bij ISPConfig.
 U kunt uw webpagina hier registreren. Als u vragen heeft of problemen,
 kunt u contact opnemen met uw server administrator of de ISPConfig klanten handleiding raadplegen";
-
 $wb["Willkommen"] = "Welkom";
 
 
@@ -195,6 +197,7 @@ $wb["Es sind nur folgende Zeichen erlaubt: a-z A-Z 0-9 -"] = "Alleen de volgende
 $wb["Es sind nur folgende Zeichen erlaubt: a-z A-Z 0-9 - ."] = "Alleen de volgende tekens zijn toegestaan: a-z A-Z 0-9 - .<br>";
 $wb["Der Username muss aus min. 4, max 25 Buchstaben oder Zahlen bestehen, wobei er mit einem Buchstaben beginnen muss."] = "De gebruikersnaam moet uit minimaal 4 en maximaal 26 tekens bestaan en moet beginnen met een letter.<br>";
 $wb['Der Username muss aus min. 4, max 32 Buchstaben oder Zahlen bestehen, wobei er mit einem Buchstaben beginnen muss.'] = 'De gebruikersnaam moet uit minimaal 4 en maximaal 32 tekens bestaan en moet beginnen met een letter.<br>';
+
 $wb["error_reseller_licence"] = "Het toevoegen van aanbieders is niet mogelijk met uw licentie van ISPConfig.<br>";
 $wb["error_reseller_licence_nodelete"] = "De reseller kan niet verwijderd worden.<br>";
 
@@ -205,6 +208,7 @@ $wb["mysqldb_nicht_vorhanden"] = "MySQL database bestaat niet.<br>Voer uw wachtw
 $wb["mysql_nicht_aktiv"] = "Het aanmaken van MySQL databases is niet toegestaan op deze website.<br>";
 $wb["Datenbank Name"] = "Database naam";
 $wb["Speicher belegt"] = "Database grootte";
+
 $wb["Kein Web angelegt"] = "Geen web aangemaakt";
 $wb["Real Name"] = "Echte naam";
 $wb["Feld"] = "Veld";
@@ -220,10 +224,9 @@ $wb["externer mailserver"] = "Externe Mailserver";
 $wb["Log-Grösse"] = "Log-grootte";
 $wb["Frontpage Passwort"] = "Frontpage wachtwoord";
 
-
 // NEW 1.1.12 ///////////////////////////////////
 
-$wb["Anbieternummer"] = 'Aanbieders nummers';
+$wb["Anbieternummer"] = 'Reseller nr.';
 $wb["Domain DNS"] = 'Master zones (DNS)';
 $wb["HTTPD Includes"] = 'HTTPD includes';
 $wb["DNS-Manager"] = 'DNS manager';
@@ -233,13 +236,14 @@ $wb["Anonymous FTP"] = 'Anonymous FTP';
 $wb["Anon. FTP MB"] = 'Anon. FTP MB';
 $wb["Faktura"] = 'Factuur';
 $wb["Mailserver"] = 'Mailserver';
-$wb["aktiviert"] = 'Actief';
-$wb["deaktiviert"] = 'Inactief';
-$wb["ISP User"] = 'ISP Gebruiker';
+$wb["aktiviert"] = 'actief';
+$wb["deaktiviert"] = 'inactief';
+$wb["ISP User"] = 'ISP gebruiker';
 $wb["WebSpeicher MB"] = 'Webruimte MB';
 $wb["MailSpeicher MB"] = 'Mailruimte MB';
+$wb["Max. MailSpeicher MB"] = 'Max. Mailruimte MB';
 $wb["Administrator"] = 'Administrator';
-$wb["Erweiterte Einstellungen"] = 'Meer instellingen';
+$wb["Erweiterte Einstellungen"] = 'Geavanceerde instellingen';
 $wb["email_weiterleitung_txt"] = '<b>Hint:</b> één e-mailadres per regel.';
 $wb["Email Alias"] = 'Email alias';
 $wb["catchAll-Email"] = 'CatchAll-email';
@@ -395,6 +399,7 @@ $wb["error_anbieter_max_slavedns_ueberschritten"] = "U kunt niet meer Secondary 
 $wb["error_anbieter_httpd_include_aktiv"] = "HTTPD Includes zijn toegepast in sommige websites van de de reseller. Deze optie kan niet worden gedeactiveerd.<br>";
 $wb["error_anbieter_shell_access_aktiv"] = "Shell Access is reeds in gebruik op sommige websites van de reseller. Deze optie kan niet worden gedeactiveerd.<br>";
 $wb["error_anbieter_cgi_aktiv"] = "CGI is reeds in gebruik op sommige websites van de reseller. Deze optie kan niet worden gedeactiveerd..<br>";
+$wb["error_anbieter_cgi_mod_perl_aktiv"] = "CGI mod_perl reeds in gebruik op een van de reseller's websites. Dit item kan niet worden gedeactiveerd.<br>";
 $wb["error_anbieter_standard_cgi_aktiv"] = "Standard CGIs zijn reeds in gebruik op sommige websites van de reseller. Deze optie kan niet worden gedeactiveerd.<br>";
 $wb["error_anbieter_php_aktiv"] = "PHP is reeds in gebruik op sommige websites van de reseller. Deze optie kan niet worden gedeactiveerd.<br>";
 $wb["error_anbieter_ssi_aktiv"] = "SSIShell is reeds in gebruik op sommige websites van de reseller. Deze optie kan niet worden gedeactiveerd.<br>";
@@ -430,6 +435,7 @@ $wb["error_web_no_database_decrease_1"] = "Deze website heeft reeds ";
 $wb["error_web_no_database_decrease_2"] = " database(s). U kunt het aantal databases niet verhogen.<br>";
 $wb["error_web_no_shell_access"] = "U kunt geen shell access toekennen aan deze website.<br>";
 $wb["error_web_no_cgi"] = "U kunt geen CGI functionaliteit toekennen aan deze website.<br>";
+$wb["error_web_no_cgi_mod_perl"] = "U kunt geen CGI mod_perl functionaliteit aan deze website toekennen.<br>";
 $wb["error_web_no_standard_cgi"] = "U kunt geen Standard CGIs toekennen aan deze website.<br>";
 $wb["error_web_no_php"] = "U kunt geen PHP functionaliteit toekennen aan deze website.<br>";
 $wb["error_web_no_ssi"] = "U kunt geen SSI functionaliteit toekennen aan deze website.<br>";
@@ -549,9 +555,26 @@ $wb["txt_traffic_notification_email_variables"] = '<table border="0" cellpadding
 
 
 $wb["Catalog_Name"] = "Name";
+
+// MySQL Quota ////////////////////////////////////////
+$wb["Benutzter MySQL-Speicherplatz"] = "Database space used";
+$wb["Speicherplatz Datenbanken"] = "Diskspace Databases";
+
+// Mail Quota /////////////////////////////////////////
+$wb["error_max_mailquota_web"] = "De geselecteerde mailruimte overschrijdt de limieten van de site.<br>";
+
+$wb["Nicht scannen"] = "Niet scannen";
+$wb["MX prüfen"] = "Check MX";
+$wb["Cyrus-Administrator"] = "Cyrus Admin";
+$wb["Passwort Cyrus-Admin"] = "Cyrus Admin wachtwoord";
+
 $wb["Spam Whitelist"] = 'Spam witte lijst';
 $wb["Spam Blacklist"] = 'Spam zwarte lijst';
 $wb["spam_whitelist_txt"] = '<b>Hint:</b> Eén gegevensinvoer per regel. Geldige invoer van gegevens zijn, bijv., friend@somewhere.com, *@isp.com, of *.domain.net.';
 $wb["spam_blacklist_txt"] = '<b>Hint:</b> Eén gegevensinvoer per regel. Geldige invoer van gegevens zijn, bijv., friend@somewhere.com, *@isp.com, or *.domain.net.';
 $wb["Webalizer Stats"] = 'Webalizer<br>&nbsp;statististieken';
 $wb["Use Uribl"] = 'Use <a href="http://www.uribl.com/about.shtml" target="_blank" style="font-family:Arial,Verdana">URIBL</a>';
+$wb["Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 -"] = "Uitsluitende de volgende tekens zijn toegestaan: a-z A-Z 0-9 -<br>";
+$wb["Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 - ."] = "Uitsluitende de volgende tekens zijn toegestaan: a-z A-Z 0-9 - .<br>";
+
+?>

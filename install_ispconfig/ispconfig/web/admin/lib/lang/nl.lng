@@ -36,7 +36,7 @@ $wb["MTA Typ"]    = "MTA type";
 $wb["Virtuser Datei"]    = "Virtuele gebruikers bestand";
 $wb["FTP Programm"]    = "FTP programma";
 $wb["FTP conf. Datei"]    = "FTP conf. bestand";
-$wb["Userid von"]    = "gebruikersid van";
+$wb["Userid von"]    = "Gebruikersid van";
 $wb["Groupid von"]    = "Groepid van";
 
 $wb["Backup von Tabelle"] = "Backup tabel";
@@ -138,6 +138,27 @@ $wb["ISP Server Status"] = 'ISP server status';
 $wb["System-Datenbank"] = 'Systeem-database';
 $wb["Verzeichnis"] = 'Map';
 $wb["Backup starten"] = 'Backup';
+
+// NEW 1.1.12a //////////////////////////////
+
+$wb["Es wurde kein Web ausgewählt."] = "Geen web geselecteerd.";
+$wb["Backup-Funktionen im Demo-Modus nicht verfügbar."] = "Backup-functies niet beschikbaar in demo mode.";
+$wb["Backup Status"] = "Backup-Status";
+$wb["Der Name des FTP-Servers <br>enthält ungültige Zeichen."] = "De naam van de FTP-server<br>bevat ongeldige karakters.";
+$wb["Sie haben keinen FTP Benutzernamen angegeben."] = "Geen FTP-gebruikersnaam gedefinieerd.";
+$wb["Ftp-Verbindung nicht hergestellt!"] = "Ftp-verbinding mislukt!";
+$wb["Verbindung mit:"] = "Verbonden met:";
+$wb["als Benutzer:"] = "als gebruiker:";
+$wb["nicht möglich."] = "niet mogelijk.";
+$wb["Konnte nicht in Verzeichnis:"] = "wijzigen naar folder:";
+$wb["wechseln."] = "mislukt.";
+$wb["Wechsel in Verzeichnis:"] = "wijzigen naar folder:";
+$wb["Ftp upload war fehlerhaft!"] = "FTP-upload mislukt!";
+$wb["Upload erfolgreich."] = "Upload successvol.";
+$wb["FTP-Upload Status"] = "FTP-Upload Status";
+$wb["Backup-Methode nicht unterstützt."] = "Backup-methode niet beschikbaar.";
+$wb["Rechnung Nr. von"] = "Factuur nr. van";
+
 //////////////// LNG 1.1.12 ENDE ///////////////
 
 // NEW 1.3 /////////////////////////////////////
@@ -475,11 +496,4 @@ $wb["txt_res_traffic_notification_email_variables"] = '<table border="0" cellpad
         </tr>
         </table>';
 		
-$wb["Catalog_Name"] = "Naam";
-$wb["Spam Whitelist"] = 'Spam witte lijst';
-$wb["Spam Blacklist"] = 'Spam zwarte lijst';
-$wb["txt_hint_spam_whitelist"] = '<b>Hint:</b> Eén gegevens invoer per regel. Geldige invoer van gegevens zijn bijv., friend@somewhere.com, *@isp.com, of *.domain.net.';
-$wb["txt_hint_spam_blacklist"] = '<b>Hint:</b> Eén gegevens invoer per regel. Geldige invoer van gegevens zijn bijv., friend@somewhere.com, *@isp.com, of *.domain.net.';
-$wb["Webalizer Stats"] = 'Webalizer<br>&nbsp;Statistieken';
-$wb["txt_uribl"] = 'Gebruik <a href="http://www.uribl.com/about.shtml" target="_blank">URIBL</a>';
 ?>

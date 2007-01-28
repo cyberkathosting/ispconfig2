@@ -12,10 +12,10 @@ $wb["Passwort alt"] = "Oud wachwoord";
 $wb["Passwort neu"] = "Nieuw wachwoord";
 $wb["Passwort wiederholen"] = "Bevestig nieuw wachwoord";
 $wb["Adresse ändern"] = "Verander adres";
+
 $wb["willkommen_kunde"] = "Welkom bij ISPConfig.
 U kunt uw webpagina hier registreren. Als u vragen heeft of problemen,
 kunt u contact opnemen met uw server administrator of de ISPConfig klanten handleiding raadplegen.";
-
 $wb["Willkommen"] = "Welkom";
 
 $wb["passwort_gespeichert"] = "Wachtwoord succesvol veranderd.";
@@ -52,6 +52,29 @@ $wb["Export"] = 'Export';
 $wb["Von"] = 'Van';
 $wb["Bis"] = 'Aan';
 $wb["Local Portscanner"] = 'Lokale Portscanner';
+
+// NEW 1.1.12a //////////////////////////////
+
+$wb["Es wurde kein Web ausgewählt."] = "No web selected.";
+$wb["Backup-Funktionen im Demo-Modus nicht verfügbar."] = "Backup-Functions not available in demo mode.";
+$wb["Backup Status"] = "Backup-Status";
+$wb["Der Name des FTP-Servers <br>enthält ungültige Zeichen."] = "The name of the FTP server <br>contains invalid characters.";
+$wb["Sie haben keinen FTP Benutzernamen angegeben."] = "No FTP-Username set.";
+$wb["Ftp-Verbindung nicht hergestellt!"] = "Ftp-Connection failed!";
+$wb["Verbindung mit:"] = "Connected to:";
+$wb["als Benutzer:"] = "as User:";
+$wb["nicht möglich."] = "not possible.";
+$wb["Konnte nicht in Verzeichnis:"] = "changing to folder:";
+$wb["wechseln."] = "failed.";
+$wb["Wechsel in Verzeichnis:"] = "changing to folder:";
+$wb["Ftp upload war fehlerhaft!"] = "FTP-Upload failed!";
+$wb["Upload erfolgreich."] = "Upload successful.";
+$wb["FTP-Upload Status"] = "FTP-Upload Status";
+$wb["Backup-Methode nicht unterstützt."] = "Backup-method not available.";
+$wb["Sprache ändern"] = "Change Language";
+$wb["Sprache (ISO)"] = "Language (ISO)";
+$wb["Software Version"] = "Software Version";
+
 
 //////////////// Tools Ende /////////////////
 
@@ -97,6 +120,8 @@ $wb["SSL"]        = "SSL";
 $wb["Shell Zugriff"]      = "Shell Toegang";
 $wb["Zugang"]       = " Toegang";  // Zugriff u. Zugang zusammenfassen!/nur einen Begriff nehmen!
 $wb["CGI Scripte"]      = "CGI Scripts";
+$wb["CGI Modus"]      = "CGI Mode";
+$wb["CGI mod_perl"]      = "CGI mod_perl";
 $wb["Bundesland"]   = "Land";
 $wb["Abteilung"]    = "Afdeling";
 $wb["Gültigkeit (Tage)"]  = " Geldigheid (dagen)";
@@ -152,7 +177,6 @@ $wb["msg_beta"] = "";
 $wb["title_isp_beta"] = "";
 $wb["msg_kein_win"] = "Deze software is niet beschikbaar voor Windows operating systems..";
 
-
 // Error Codes ispconfig_isp_domain.lib.php
 $wb["error_web_doppelt"] = "Er is al een site of domein met deze naam";
 $wb["error_max_domain_web"] = "Het maximaal aantal domeinen voor deze site is bereikt";
@@ -170,7 +194,6 @@ $wb["error_reseller_title"] = "Een aanbieder met deze naam bestaat al.";
 $wb["error_reseller_group_not_found"] = "De resellersgroep is niet gevonden.";
 $wb["error_anbieter_no_delete"] = "<b>De reseller was niet verwijderd. .</b><br>&nbsp;<br>De reseller kan alleen verwijderd worden als alle sites en klanten van de reseller zijn verwijderd. Controleer ook dat de prullenbak van de reseller leeg is.";
 
-
 // Error Codes ispconfig_isp_user.lib.php
 $wb["error_sysuser_exist_1"] = "Er is al een gebruiker met die naam";
 $wb["error_sysuser_exist_2"] = "ingevoerd.<br><br> <a href='../../isp_manager/frame_start.php?s=$s'>Meer</a>";
@@ -180,7 +203,6 @@ $wb["error_max_user_anbieter"] = "Het maximaal aantal gebruikers van de aanbiede
 $wb["error_sysuser_exist"] = "De gebruikersnaam bestaat al.<br><br> <a href='../../isp_manager/frame_start.php?s=$s'>Meer</a>";
 $wb["error_admin_exist"] = "Een gebruiker met administrator rechten bestaat al voor deze site.<br><br> <a href='../../isp_manager/frame_start.php?s=$s'>Meer</a>";
 $wb["error_admin_exist_long"] = "Een gebruiker met administrator rechten bestaat al voor deze site. U moet de andere administrator verwijderen indien u rechten wilt toewijzen aan deze gebruiker.<br><br> <a href='../../isp_manager/frame_start.php?s=$s'>Meer</a>";
-
 
 // Error Codes ispconfig_isp_user.lib.php
 $wb["error_max_web_anbieter"] = "Het maximaal aantal site voor de aanbieder is bereikt";
@@ -229,11 +251,8 @@ $wb["Löschen"] = "Verwijderen";
 $wb["willkommen_kunde"] = "Welkom bij ISPConfig.
 U kunt uw webpagina hier registreren. Als u vragen heeft of problemen,
 kunt u contact opnemen met uw server administrator of de ISPConfig klanten handleiding raadplegen.";
-
 $wb["Willkommen"] = "Welkom";
-$wb["Sprache ändern"] = "Taal wijzigen";
-$wb["Sprache (ISO)"] = "Taal (ISO)";
-$wb["Software Version"] = "Software Versie";
+
 $wb["txt_client_salutatory_email_desc"] = "<b>Wekomsemail voor klanten</b>";
 $wb["txt_client_salutatory_email_sender_email"] = "Emailadres afzender";
 $wb["txt_client_salutatory_email_sender_name"] = "Naam afzender";
@@ -326,7 +345,8 @@ $wb["System Load 5 Minuten"] = "Systeem gebruik 5 Minuten";
 $wb["System Load 15 Minuten"] = "Systeem gebruik 15 Minuten";
 //////////////// Server Status Ende //////////
 
-$wb["DNS-Domains angelegt"] = 'DNS Domeinen aangelegd';
+$wb["DNS-Domains angelegt"] = 'DNS Domeinen aangemaakt';
+
 $wb["Hinzufügen"] = "Toevoegen";
 $wb["Berechtigungen"] = "Rechten";
 $wb["Speichern"] = "Opslaan";
@@ -366,7 +386,6 @@ $wb["txt_website_moved"] = "The website is verplaatst naar de door u gespecifice
 $wb["txt_move_website_from"] = "van";
 $wb["txt_move_website_to"] = "naar";
 $wb["txt_move_website_website"] = "Website";
-$wb["txt_move_website_submit"] = "Voorleggen";
-
+$wb["txt_move_website_submit"] = "Uitvoeren";
 
 ?>

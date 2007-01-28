@@ -90,5 +90,8 @@ $wb["include_break"] = "Erf SPF record<br>&nbsp;&nbsp;van deze zone?";
 $wb["all_"] = "Hebben de bovengenoemde ingangen<br>&nbsp;&nbsp;van alle hosts<br>&nbsp;&nbsp;toestemming om email te versturen<br>&nbsp;&nbsp;voor dit domein?";
 
 $wb["Catalog_Name"] = "Naam";
+$wb["Feld"] = "Field";
+$wb["Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 -"] = "Uitsluitend de volgende tekens zijn toegestaan: a-z A-Z 0-9 -<br>";
+$wb["Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 - ."] = "Uitsluitend de volgende tekens zijn toegestaan: a-z A-Z 0-9 - .<br>";
 
 ?>

@@ -13,6 +13,7 @@ $wb["Deutsch"]          = "Duits";
 $wb["Englisch"]          = "Engels";
 $wb["Projektfarm Support"]          = "Projektfarm support";
 $wb["Online Hilfe"] = "Online help";
+
 $wb["willkommen_kunde"] = "Welkom bij ISPConfig!
 U kunt uw websites hier beheren. Bij vragen en/of problemen,
 kunt u contact opnemen met de beheerder van de server of sla de ISPConfig klanten handleiding erop na.";
