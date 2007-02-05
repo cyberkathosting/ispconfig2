@@ -178,7 +178,7 @@ class isp_username_plugin {
         }
 
                    // Überprüfung email mittels regex, bei Fehler löschen
-        if(!preg_match("/^[a-zA-Z0-9][\w\.\-\_]{0,60}$/",$email)) {
+        if(!preg_match("/^[a-zA-Z0-9][\w\.\-\+\_]{0,60}$/",$email)) {
                 $go_api->db->query("DELETE from isp_isp_user where doc_id = '$doc_id'");
                         $go_api->db->query("DELETE from isp_nodes where doc_id = '$doc_id' and doctype_id = '$doctype_id'");
                 $go_api->errorMessage('<b>'.$go_api->lng("Feld").': Email</b><br>'.$go_api->lng("Die Emailadresse muss aus min. 1, max 60 Buchstaben oder Zahlen bestehen.") . "<br>&nbsp;<br>");
@@ -236,7 +236,7 @@ class isp_username_plugin {
 
 
             // Überprüfung email mittels regex, bei Fehler löschen
-        if(!preg_match("/^[a-zA-Z0-9][\w\.\-\_]{0,60}$/",$email)) {
+        if(!preg_match("/^[a-zA-Z0-9][\w\.\-\+\_]{0,60}$/",$email)) {
                 $go_api->db->query("UPDATE isp_isp_user SET user_email = user_username where doc_id = $doc_id");
                 //$go_api->db->query("DELETE from isp_isp_user where doc_id = '$doc_id'");
                 //$go_api->db->query("DELETE from isp_nodes where doc_id = '$doc_id' and doctype_id = '$doctype_id'");
