@@ -289,7 +289,7 @@ $wb["txt_standard_index_variables"] = '<table border="0" cellpadding="3" cellspa
         <tr>
           <td class="normal">%%%FQDN%%%</td>
           <td class="normal">
-            Dominio completamente calificado para el sitio web</td>
+            Dominio completamente calificado</td>
         </tr>
     </table>';
 $wb["txt_user_standard_index"] = "Pagina indice";
@@ -305,7 +305,7 @@ $wb["txt_user_standard_index_variables"] = '<table border="0" cellpadding="3" ce
         <tr>
           <td class="normal">%%%FQDN%%%</td>
           <td class="normal">
-            Dominio completamente calificado para el sitio web</td>
+            Dominio completamente calificado</td>
         </tr>
         </table>';
 

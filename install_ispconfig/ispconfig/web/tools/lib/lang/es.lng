@@ -248,10 +248,10 @@ $wb["error_reseller_licence"] = "No es posible a&ntilde;adir revendedores con su
 $wb["error_reseller_licence_nodelete"] = "Este revendedor no puede ser borrado.";
 $wb["error_kunde_licence"] = "No es posible a&ntilde;adir clientes con su licencia de ISPConfig.";
 $wb["error_kunde_licence_nodelete"] = "Este cliente no puede ser borrado.";
-$wb["mysqldb_nicht_vorhanden"] = "No existe base de datos en el MySQL. <br>Por favor introduzca un password para crear la base de datos.";
+$wb["mysqldb_nicht_vorhanden"] = "No existe base de datos en el MySQL. <br>Por favor introduzca una contrase&ntilde;a para crear la base de datos.";
 $wb["mysql_nicht_aktiv"] = "La creacion de bases de datos de MySQL no esta permitida para este sitio web.";
 $wb["Datenbank Name"] = "Nombre de la Base de datos";
-$wb["Speicher belegt"] = "Tamaqo de la Base de Datos";
+$wb["Speicher belegt"] = "Tama&ntilde;o de la Base de Datos";
 $wb["Kein Web angelegt"] = "No se ha creado la web";
 $wb["Real Name"] = "Nombre Real";
 $wb["Feld"] = "Campo";
@@ -320,7 +320,7 @@ $wb["txt_standard_index_variables"] = '<table border="0" cellpadding="3" cellspa
         <tr>
           <td class="normal">%%%FQDN%%%</td>
           <td class="normal">
-            Dominio completamente calificado del sitio web</td>
+            Dominio completamente calificado</td>
         </tr>
     </table>';
 $wb["txt_user_standard_index"] = "Pagina indice estandar del usuario";
@@ -336,7 +336,7 @@ $wb["txt_user_standard_index_variables"] = '<table border="0" cellpadding="3" ce
         <tr>
           <td class="normal">%%%FQDN%%%</td>
           <td class="normal">
-            Dominio completamente calificado del sitio web</td>
+            Dominio completamente calificado</td>
         </tr>
         </table>';
 

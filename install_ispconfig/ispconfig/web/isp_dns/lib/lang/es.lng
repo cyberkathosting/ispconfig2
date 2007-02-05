@@ -88,15 +88,15 @@ $wb["nein"] = "No";
 $wb["a"] = "Emails son enviados<br>&nbsp;&nbsp;desde entradas A?";
 $wb["mx"] = "Emails son enviados<br>&nbsp;&nbsp;desde entradas MX?";
 $wb["ptr"] = "Are emails sent<br>&nbsp;&nbsp;from all servers of<br>&nbsp;&nbsp;this domain?";
-$wb["a_break"] = "Are emails sent<br>&nbsp;&nbsp;from other A Records?";
-$wb["mx_break"] = "Are emails sent<br>&nbsp;&nbsp;from other MX Records?";
-$wb["ip4_break"] = "Are emails sent<br>&nbsp;&nbsp;from other IP addresses?";
+$wb["a_break"] = "Emails se envian<br>&nbsp;&nbsp;desde otras entradas A?";
+$wb["mx_break"] = "Emails se envian<br>&nbsp;&nbsp;desde otras entradas MX?";
+$wb["ip4_break"] = "Emails se envian<br>&nbsp;&nbsp;desde otras direcciones IP?";
 $wb["include_break"] = "Inherit SPF Record<br>&nbsp;&nbsp;from this zone?";
 $wb["all_"] = "Do the above entries<br>&nbsp;&nbsp;contain all hosts<br>&nbsp;&nbsp;allowed to send emails<br>&nbsp;&nbsp;for this domain?";
 
-$wb["Catalog_Name"] = "Name";
-$wb["Feld"] = "Field";
-$wb["Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 -"] = "Only the following signs are allowed: a-z A-Z 0-9 -<br>";
-$wb["Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 - ."] = "Only the following signs are allowed: a-z A-Z 0-9 - .<br>";
+$wb["Catalog_Name"] = "Nombre";
+$wb["Feld"] = "Campo";
+$wb["Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 -"] = "Solo los siguientes caracteres son permitidos: a-z A-Z 0-9 -<br>";
+$wb["Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 - ."] = "olo los siguientes caracteres son permitidos: a-z A-Z 0-9 - .<br>";
 
 ?>
