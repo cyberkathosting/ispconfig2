@@ -67,6 +67,13 @@ if(!empty($u_ds)){
   }
 }
 
+$l_ds = $mod->db->queryAllRecords("SELECT * FROM isp_isp_list");
+if(!empty($l_ds)){
+  foreach($l_ds as $l_d){
+    $mod->system->data["isp_isp_list"][$l_d["doc_id"]] = $l_d;
+  }
+}
+
 $mod->system->data["isp_server_ip"] = $mod->db->queryAllRecords("SELECT * FROM isp_server_ip WHERE server_id = '".$mod->system->server_id."' AND server_ip != ''");
 $mod->system->data["isp_dienste"] = $mod->db->queryOneRecord("SELECT * FROM isp_dienste");
 ////////////////////////////////////////////////////////////////
@@ -186,6 +193,17 @@ if(!empty($user_delete)){
     echo "DELETE USER: ".$doc_id."\n";
   }
 }
+
+$list_delete = $mod->db->queryAllRecords("SELECT * from isp_isp_list, isp_nodes where isp_isp_list.doc_id = isp_nodes.doc_id and isp_nodes.doctype_id = '".$isp_web->list_doctype_id."' and isp_isp_list.status = 'd'");
+if(!empty($list_delete)){
+  foreach($list_delete as $list) {
+    $doc_id = $list["doc_id"];
+    $doctype_id = $list["doctype_id"];
+    $isp_web->list_delete($doc_id,$doctype_id);
+    echo "DELETE LIST: ".$doc_id."\n";
+  }
+}
+
 $mod->mail->make_local_host_names();
 $mod->mail->make_virtusertable();
 
