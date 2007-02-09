@@ -35,6 +35,7 @@ var $directory_mode = "0770";
 var $web_doctype_id = 1013;
 var $user_doctype_id = 1014;
 var $domain_doctype_id = 1015;
+var $list_doctype_id = 1033;
 var $vhost_conf;
 var $sendmail_cw;
 var $virtusertable;
@@ -231,7 +232,15 @@ global $go_api, $go_info,$s;
                 isp_dep.child_doctype_id = $doctype_id and isp_isp_user.user_email = '".$user["user_email"]."'";
          $tmp = $go_api->db->queryOneRecord($sql);
 
-        if($tmp["anzahl"] > 1) {
+         $list_doctype_id = $this->list_doctype_id;
+
+         $sql2 = "SELECT count(*) AS anzahl FROM isp_isp_list, isp_dep where
+        isp_isp_list.doc_id = isp_dep.child_doc_id and isp_isp_list.doctype_id = isp_dep.child_doctype_id and
+        isp_dep.parent_doctype_id = $web_doctype_id and isp_dep.parent_doc_id = $web_doc_id and
+                isp_dep.child_doctype_id = $list_doctype_id and isp_isp_list.list_alias = '".$user["user_email"]."'";
+         $tmp2 = $go_api->db->queryOneRecord($sql2);
+
+        if($tmp["anzahl"] > 1 OR $tmp2["anzahl"] != 0) {
                 $status = "DELETE";
         $errorMessage .= $go_api->lng("error_email_exist");
         }
