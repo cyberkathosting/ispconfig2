@@ -45,6 +45,7 @@ var $firewall_doctype_id = 1025;
 var $slave_doctype_id = 1028;
 var $datenbank_doctype_id = 1029;
 var $spf_record_doctype_id = 1031;
+var $list_doctype_id = 1033;
 var $vhost_conf;
 var $ftp_conf;
 var $apache_user;
@@ -990,6 +991,17 @@ function user_delete($doc_id, $doctype_id) {
   $mod->db->query("update isp_isp_user SET status = '' where doc_id = '$doc_id'");
   $mod->system->data["isp_isp_user"][$doc_id]["status"] = '';
 }
+
+	function list_delete($doc_id, $doctype_id) {
+		global $mod;
+		
+		$list = $mod->system->data["isp_isp_list"][$doc_id];
+		
+  		if(empty($list)) $mod->log->ext_log("query result empty", 2, $this->FILE, __LINE__);
+
+		$mod->db->query("update isp_isp_list SET status = '' where doc_id = '$doc_id'");
+		$mod->system->data["isp_isp_list"][$doc_id]["status"] = '';
+	}
 
 /////////////////////////////////////////////////////////////////////////////
 // Helper Functions
@@ -2544,6 +2556,15 @@ function web_user_clean(){
 
           $mod->etc->delete_user_config_dir($item["name"]);
       break;
+      case 1033:
+      	// Liste Löschen
+      	$rmlist_path = "/usr/lib/mailman/bin/rmlist";
+		
+      	$list_name = $item["name"];
+
+		// Liste lï¿½schen
+		$mod->log->caselog("$rmlist_path $list_name", $this->FILE, __LINE__);
+		$mod->db->query("DELETE FROM del_status WHERE id = '".$item["id"]."'");
       }
     }
   }
