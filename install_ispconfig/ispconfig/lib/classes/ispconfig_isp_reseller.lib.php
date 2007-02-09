@@ -39,6 +39,7 @@ var $domain_doctype_id = 1015;
 var $dns_doctype_id = 1016;
 var $slave_dns_doctype_id = 1028;
 var $datenbank_doctype_id = 1029;
+var $list_doctype_id = 1033;
 var $vhost_conf;
 var $sendmail_cw;
 var $virtusertable;
@@ -368,6 +369,27 @@ function reseller_update($doc_id, $doctype_id, $die_on_error = '1') {
         $res_limit_errorMessage .= $go_api->lng("error_anbieter_max_datenbank_ueberschritten");
       }
       unset($datenbankanzahl);
+    }
+    
+    if(!$reseller["limit_list"]){
+      $listenanzahl = $go_api->db->queryOneRecord("SELECT COUNT(isp_isp_list.doc_id) AS anzahl FROM isp_nodes, isp_isp_list WHERE isp_nodes.groupid = '".$reseller["reseller_group"]."' AND isp_nodes.doctype_id = '".$this->list_doctype_id."' AND isp_nodes.doc_id = isp_isp_list.doc_id");
+      $listenanzahl = $listenanzahl["anzahl"];
+      if($listenanzahl > 0){
+        $go_api->db->query("UPDATE isp_isp_reseller SET limit_list = '1' WHERE doc_id = '$doc_id'");
+        $res_limit_errorMessage .= $go_api->lng("error_anbieter_list_aktiv");
+      }
+      unset($listenanzahl);
+    }
+
+    if(is_null($reseller["limit_listlimit"])) $reseller["limit_listlimit"] = 0;
+    if($reseller["limit_listlimit"] >= 0){
+      $listenanzahl = $go_api->db->queryOneRecord("SELECT COUNT(isp_isp_list.doc_id) AS anzahl FROM isp_nodes, isp_isp_list WHERE isp_nodes.groupid = '".$reseller["reseller_group"]."' AND isp_nodes.doctype_id = '".$this->list_doctype_id."' AND isp_nodes.doc_id = isp_isp_list.doc_id");
+      $listenanzahl = $listenanzahl["anzahl"];
+      if($listenanzahl > $reseller["limit_listlimit"]){
+        $go_api->db->query("UPDATE isp_isp_reseller SET limit_listlimit = '$listenanzahl' WHERE doc_id = '$doc_id'");
+        $res_limit_errorMessage .= $go_api->lng("error_anbieter_max_list_ueberschritten");
+      }
+      unset($listenanzahl);
     }
 
     if(!$reseller["limit_ssl"]){
