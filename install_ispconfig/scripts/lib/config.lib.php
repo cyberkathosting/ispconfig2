@@ -1970,7 +1970,7 @@ function make_ftp($server_id){
           }
           exec("chown -R ".$owner.":web".$web["doc_id"]." ".$document_root."/ftp &> /dev/null");
           $mod->log->caselog("groupadd -g ".($mod->system->server_conf["userid_von"] + 2000 + $web["doc_id"])." web".$web["doc_id"]."_anonftp &> /dev/null", $this->FILE, __LINE__);
-          $mod->log->caselog("useradd -d ".$document_root."/ftp -g web".$web["doc_id"]."_anonftp -M -s /bin/false -u ".($mod->system->server_conf["userid_von"] + 2000 + $web["doc_id"])." web".$web["doc_id"]."_anonftp &> /dev/null", $this->FILE, __LINE__);
+          $mod->log->caselog("useradd -d ".$document_root."/ftp -g web".$web["doc_id"]."_anonftp -m -s /bin/false -u ".($mod->system->server_conf["userid_von"] + 2000 + $web["doc_id"])." web".$web["doc_id"]."_anonftp &> /dev/null", $this->FILE, __LINE__);
 
           // Diskquota setzen für Anonymous FTP-User (entspricht max. Datenmenge, die per Anonymous FTP hochgeladen werfen kann)
           if(intval($web["web_anonftplimit"]) > 0){
