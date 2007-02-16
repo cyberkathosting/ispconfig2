@@ -1647,7 +1647,7 @@ CREATE TABLE `sys_user` (
   `doc_id` bigint(20) unsigned NOT NULL auto_increment,
   `doctype_id` int(10) unsigned NOT NULL default '1',
   `groupid` bigint(20) unsigned NOT NULL default '0',
-  `username` varchar(20) NOT NULL default '',
+  `username` varchar(255) NOT NULL default '',
   `passwort` varchar(255) default NULL,
   `pwcl` varchar(255) default NULL,
   `design` varchar(255) NOT NULL default 'blau',
