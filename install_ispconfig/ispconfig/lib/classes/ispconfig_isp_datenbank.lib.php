@@ -72,8 +72,8 @@ function datenbank_show($doc_id, $doctype_id) {
                  // hole DB
                  $datenbank = $go_api->db->queryOneRecord("SELECT * FROM isp_isp_datenbank WHERE doc_id = '$doc_id'");
 
-                 $doc->deck[0]->elements[0]->value = '<table width="100%"><tr><td class="normal" align="left" width="31%"><b>'.$go_api->lng("Datenbankname").':</b></b></td><td class="t2" align="left" width="69%">'.$datenbank["datenbankname"].'</td></tr></table>';
-          $doc->deck[0]->elements[1]->value = '<table width="100%"><tr><td class="normal" align="left" width="31%"><b>'.$go_api->lng("Datenbankuser").':</b></td><td class="t2" align="left" width="69%">'.$datenbank["datenbankuser"].'</td></tr></table>';
+                 $doc->deck[0]->getElementByName("datenbankname")->value = '<table width="100%"><tr><td class="normal" align="left" width="31%"><b>'.$go_api->lng("Datenbankname").':</b></b></td><td class="t2" align="left" width="69%">'.$datenbank["datenbankname"].'</td></tr></table>';
+          $doc->deck[0]->getElementByName("datenbankuser")->value = '<table width="100%"><tr><td class="normal" align="left" width="31%"><b>'.$go_api->lng("Datenbankuser").':</b></td><td class="t2" align="left" width="69%">'.$datenbank["datenbankuser"].'</td></tr></table>';
 
         } else {
           $db_ids = $go_api->db->queryAllRecords("SELECT datenbankname FROM isp_isp_datenbank WHERE web_id = '".$web["doc_id"]."'");
@@ -92,8 +92,8 @@ function datenbank_show($doc_id, $doctype_id) {
               $i++;
             }
           }
-          $doc->deck[0]->elements[0]->value = '<table width="100%"><tr><td class="normal" align="left" width="31%"><b>'.$go_api->lng("Datenbankname").':</b></td><td class="t2" align="left" width="69%">web'.$web["doc_id"].'_db'.$new_db_id.'</td></tr></table>';
-          $doc->deck[0]->elements[1]->value = '<table width="100%"><tr><td class="normal" align="left" width="31%"><b>'.$go_api->lng("Datenbankuser").':</b></td><td class="t2" align="left" width="69%">web'.$web["doc_id"].'_u'.$new_db_id.'</td></tr></table>';
+          $doc->deck[0]->getElementByName("datenbankname")->value = '<table width="100%"><tr><td class="normal" align="left" width="31%"><b>'.$go_api->lng("Datenbankname").':</b></td><td class="t2" align="left" width="69%">web'.$web["doc_id"].'_db'.$new_db_id.'</td></tr></table>';
+          $doc->deck[0]->getElementByName("datenbankuser")->value = '<table width="100%"><tr><td class="normal" align="left" width="31%"><b>'.$go_api->lng("Datenbankuser").':</b></td><td class="t2" align="left" width="69%">web'.$web["doc_id"].'_u'.$new_db_id.'</td></tr></table>';
         }
 
 }
