@@ -235,8 +235,9 @@ make -f unix/Makefile generic || error "Could not make unzip"
 mv unzip ${COMPILE_DIR}/../binaries/unzip || error "Could not copy unzip"
 cd ${COMPILE_DIR}
 
-mv -f ${AWSTATS} /home/adm${APPLICATION_NAME}/${APPLICATION_NAME}/tools/${AWSTATS} || error "Could not move AWStats"
-chmod 755  /home/adm${APPLICATION_NAME}/${APPLICATION_NAME}/tools/${AWSTATS} || error "Could not chmod AWStats"
+cp -fr ${AWSTATS} /home/adm${APPLICATION_NAME}/${APPLICATION_NAME}/tools/ || error "Could not copy AWStats"
+chmod 755 /home/adm${APPLICATION_NAME}/${APPLICATION_NAME}/tools/${AWSTATS} || error "Could not chmod AWStats"
+rm -f /home/adm${APPLICATION_NAME}/${APPLICATION_NAME}/tools/awstats
 ln -s /home/adm${APPLICATION_NAME}/${APPLICATION_NAME}/tools/${AWSTATS} /home/adm${APPLICATION_NAME}/${APPLICATION_NAME}/tools/awstats  || error "Could not Symlink AWStats"
 cd ${COMPILE_DIR}
 
