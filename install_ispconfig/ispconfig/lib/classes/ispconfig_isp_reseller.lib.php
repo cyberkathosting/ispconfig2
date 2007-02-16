@@ -74,11 +74,12 @@ function reseller_show($doc_id, $doctype_id) {
         $server_id = 1;
         $server = $go_api->db->queryOneRecord("SELECT * from isp_server where doc_id = '$server_id'");
         // Deaktiviere Frontpage
+
         if($server["server_enable_frontpage"] != 1) {
-            $doc->deck[1]->elements[18]->visible = 0;
+            $doc->deck[1]->getElementByName("limit_frontpage")->visible = 0;
         }
         if($server["server_httpd_mod_perl"] != 1) {
-            $doc->deck[1]->elements[13]->visible = 0;
+            $doc->deck[1]->getElementByName("limit_cgi_mod_perl")->visible = 0;
         }
 
         // DNS-Reseller: "Sonstiges"-Tab verstecken (Begrüßungsemail für Kunden nicht nötig)
