@@ -63,6 +63,7 @@ $this->server_conf = $server_conf;
 
 function web_show($doc_id, $doctype_id) {
     global $go_api, $go_info, $doc, $tablevalues;
+
 //print_r($doc->deck[0]);
         ///////////////////////////////////////////////////////////////////////////
         // $tablevalues enthält daten, $doc enthält dokumententyp Repräsentation.
@@ -76,13 +77,13 @@ function web_show($doc_id, $doctype_id) {
 
         // mySQL modifikationen
         if($tablevalues["web_mysql"] == 0 || $tablevalues["web_mysql_anzahl_dbs"] == 0) {
-                $doc->deck[6]->elements[0]->visible = 0;
+                $doc->deck[6]->getElementByName("optionen_db_liste")->visible = 0;
         }
         // alte MySQL-Felder immer unsichtbar schalten
-        $doc->deck[6]->elements[1]->visible = 0;
-        $doc->deck[6]->elements[2]->visible = 0;
-        $doc->deck[6]->elements[3]->visible = 0;
-        $doc->deck[6]->elements[4]->visible = 0;
+        $doc->deck[6]->getElementByName("optionen_mysql_user")->visible = 0;
+        $doc->deck[6]->getElementByName("check_database")->visible = 0;
+        $doc->deck[6]->getElementByName("optionen_mysql_passwort")->visible = 0;
+        $doc->deck[6]->getElementByName("optionen_mysql_remote_access")->visible = 0;
 
         // Listen modifikationen
         if($tablevalues["web_list"] == 0 || $tablevalues["web_listlimit"] == 0) {
@@ -92,22 +93,21 @@ function web_show($doc_id, $doctype_id) {
         // Website-Status nur anzeigen, wenn Website gesperrt ist
         $web = $go_api->db->queryOneRecord("SELECT isp_isp_web.web_traffic_status FROM isp_nodes,isp_isp_web WHERE isp_nodes.doc_id = '$doc_id' AND isp_nodes.doctype_id = '$doctype_id' AND isp_isp_web.doc_id = '$doc_id'");
         if($web['web_traffic_status'] == 2){
-          $doc->deck[0]->elements[39]->visible = 1;
+          $doc->deck[0]->getElementByName("trweb")->visible = 1;
         } else {
-          $doc->deck[0]->elements[39]->visible = 0;
+          $doc->deck[0]->getElementByName("trweb")->visible = 0;
         }
 
         // Individuelle Fehler-Seiten unsichtbar schalten, wenn nicht aktiviert
         if($tablevalues["web_individual_error_pages"] == 0) {
-                $doc->deck[6]->elements[9]->visible = 0;
-                $doc->deck[6]->elements[10]->visible = 0;
-                $doc->deck[6]->elements[11]->visible = 0;
-                $doc->deck[6]->elements[12]->visible = 0;
-                $doc->deck[6]->elements[13]->visible = 0;
-                $doc->deck[6]->elements[14]->visible = 0;
-                $doc->deck[6]->elements[15]->visible = 0;
-                $doc->deck[6]->elements[16]->visible = 0;
-                $doc->deck[6]->elements[17]->visible = 0;
+                $doc->deck[6]->getElementByName("t5")->visible = 0;
+                $doc->deck[6]->getElementByName("error_400")->visible = 0;
+                $doc->deck[6]->getElementByName("error_401")->visible = 0;
+                $doc->deck[6]->getElementByName("error_403")->visible = 0;
+                $doc->deck[6]->getElementByName("error_404")->visible = 0;
+                $doc->deck[6]->getElementByName("error_405")->visible = 0;
+                $doc->deck[6]->getElementByName("error_500")->visible = 0;
+                $doc->deck[6]->getElementByName("error_503")->visible = 0;
         }
 
         // Reseller Limits
@@ -125,49 +125,49 @@ function web_show($doc_id, $doctype_id) {
         if ($reseller) {
 
                 if($reseller["limit_dns_manager"] != 1){
-                  $doc->deck[0]->elements[5]->visible = 0;
-                  $doc->deck[0]->elements[6]->visible = 0;
+                  $doc->deck[0]->getElementByName("web_dns")->visible = 0;
+                  $doc->deck[0]->getElementByName("web_dns_mx")->visible = 0;
                 }
-                if($reseller["limit_shell_access"] != 1) $doc->deck[0]->elements[15]->visible = 0;
+                if($reseller["limit_shell_access"] != 1) $doc->deck[0]->getElementByName("web_shell")->visible = 0;
                 if($reseller["limit_cgi"] != 1 && $reseller["limit_cgi_mod_perl"] != 1){
-                  $doc->deck[0]->elements[16]->visible = 0;
-                  $doc->deck[0]->elements[17]->visible = 0;
-                  $doc->deck[0]->elements[20]->visible = 0;
+                  $doc->deck[0]->getElementByName("web_cgi")->visible = 0;
+                  $doc->deck[0]->getElementByName("web_cgi_mod_perl")->visible = 0;
+                  $doc->deck[0]->getElementByName("web_standard_cgi")->visible = 0;
                 } else {
-                  if($reseller["limit_standard_cgis"] != 1) $doc->deck[0]->elements[20]->visible = 0;
+                  if($reseller["limit_standard_cgis"] != 1) $doc->deck[0]->getElementByName("web_standard_cgi")->visible = 0;
                   if($reseller["limit_cgi"] != 1 || $reseller["limit_cgi_mod_perl"] != 1) {
                     $mode = ($reseller["limit_cgi_mod_perl"] == 1) ? 1 : 0;
-                    $doc->deck[0]->elements[17]->values = array("$mode" => $doc->deck[0]->elements[17]->values[$mode]);
+                    $doc->deck[0]->getElementByName("web_cgi_mod_perl")->values = array("$mode" => $doc->deck[0]->getElementByName("web_cgi_mod_perl")->values[$mode]);
                   }
                 }
                 if($reseller["limit_php"] != 1){
-                  $doc->deck[0]->elements[21]->visible = 0;
-                  $doc->deck[0]->elements[22]->visible = 0;
+                  $doc->deck[0]->getElementByName("web_php")->visible = 0;
+                  $doc->deck[0]->getElementByName("web_php_safe_mode")->visible = 0;
                 }
 
                                 // hide safemode checkbox when suphp is enabled
-                                if($go_info["server"]["apache2_php"] == 'suphp') $doc->deck[0]->elements[22]->visible = 0;
+                                if($go_info["server"]["apache2_php"] == 'suphp') $doc->deck[0]->getElementByName("web_php_safe_mode")->visible = 0;
 
-                if($reseller["limit_ssi"] != 1) $doc->deck[0]->elements[23]->visible = 0;
-                if($reseller["limit_ftp"] != 1) $doc->deck[0]->elements[24]->visible = 0;
+                if($reseller["limit_ssi"] != 1) $doc->deck[0]->getElementByName("web_ssi")->visible = 0;
+                if($reseller["limit_ftp"] != 1) $doc->deck[0]->getElementByName("web_ftp")->visible = 0;
                 if($reseller["limit_mysql"] != 1){
-                  $doc->deck[0]->elements[26]->visible = 0;
-                  $doc->deck[0]->elements[27]->visible = 0;
-                  $doc->deck[0]->elements[28]->visible = 0;
+                  $doc->deck[0]->getElementByName("web_mysql")->visible = 0;
+                  $doc->deck[0]->getElementByName("web_mysql_anzahl_dbs")->visible = 0;
+                  $doc->deck[0]->getElementByName("web_mysql_quota")->visible = 0;
                 }
-                if($reseller["limit_ssl"] != 1) $doc->deck[0]->elements[31]->visible = 0;
-                if($reseller["limit_anonftp"] != 1) $doc->deck[0]->elements[32]->visible = 0;
-                if($reseller["limit_anonftp"] != 1) $doc->deck[0]->elements[33]->visible = 0;
-                if($reseller["limit_wap"] != 1) $doc->deck[0]->elements[35]->visible = 0;
-                if($reseller["limit_error_pages"] != 1) $doc->deck[0]->elements[36]->visible = 0;
+                if($reseller["limit_ssl"] != 1) $doc->deck[0]->getElementByName("web_ssl")->visible = 0;
+                if($reseller["limit_anonftp"] != 1) $doc->deck[0]->getElementByName("web_anonftp")->visible = 0;
+                if($reseller["limit_anonftp"] != 1) $doc->deck[0]->getElementByName("web_anonftplimit")->visible = 0;
+                if($reseller["limit_wap"] != 1) $doc->deck[0]->getElementByName("web_wap")->visible = 0;
+                if($reseller["limit_error_pages"] != 1) $doc->deck[0]->getElementByName("web_individual_error_pages")->visible = 0;
                 if($reseller["limit_httpd_include"] != 1){
-                  $doc->deck[0]->elements[39]->visible = 0;
-                  $doc->deck[0]->elements[40]->visible = 0;
+                  $doc->deck[0]->getElementByName("trweb")->visible = 0;
+                  $doc->deck[0]->getElementByName("web_httpd_include")->visible = 0;
                 }
 
                 if($reseller["limit_frontpage"] != 1) {
-                  $doc->deck[0]->elements[23]->visible = 0;
-                  $doc->deck[6]->elements[5]->visible = 0;
+                  $doc->deck[0]->getElementByName("web_ssi")->visible = 0;
+                  $doc->deck[6]->getElementByName("optionen_frontpage_passwort")->visible = 0;
                 }
         }
 
@@ -177,13 +177,13 @@ function web_show($doc_id, $doctype_id) {
         $server = $go_api->db->queryOneRecord("SELECT * from isp_server where doc_id = '$server_id'");
         // Deaktiviere Frontpage
         if($server["server_enable_frontpage"] != 1) {
-            $doc->deck[0]->elements[25]->visible = 0;
-            $doc->deck[6]->elements[5]->visible = 0;
+            $doc->deck[0]->getElementByName("web_frontpage")->visible = 0;
+            $doc->deck[6]->getElementByName("optionen_frontpage_passwort")->visible = 0;
         }
 
                 // Deaktiviere mod_perl
                 if($server["server_httpd_mod_perl"] != 1) {
-                    $doc->deck[0]->elements[17]->visible = 0;
+                    $doc->deck[0]->getElementByName("web_cgi_mod_perl")->visible = 0;
                 }
 
                 // Deactivate mailquota field when maildir is selected.
@@ -198,31 +198,31 @@ function web_show($doc_id, $doctype_id) {
                         // Hole Vorlage
                         $vorlage = $go_api->db->queryOneRecord("SELECT * FROM isp_isp_web_template WHERE doc_id = $vorlage_id");
 
-                        $doc->deck[0]->elements[8]->value = $vorlage["web_speicher"];
-                        $doc->deck[0]->elements[9]->value = $vorlage["web_traffic"];
-                        $doc->deck[0]->elements[10]->value = $vorlage["web_traffic_ueberschreitung"];
-                        $doc->deck[0]->elements[11]->value = $vorlage["web_mailquota"];
-                        $doc->deck[0]->elements[12]->value = $vorlage["web_userlimit"];
-                        $doc->deck[0]->elements[13]->value = $vorlage["web_domainlimit"];
-                        $doc->deck[0]->elements[15]->value = $vorlage["web_shell"];
-                        $doc->deck[0]->elements[16]->value = $vorlage["web_cgi"];
-                        $doc->deck[0]->elements[17]->value = $vorlage["web_standard_cgi"];
-                        $doc->deck[0]->elements[21]->value = $vorlage["web_php"];
-                        $doc->deck[0]->elements[22]->value = $vorlage["web_php_safe_mode"];
-                        $doc->deck[0]->elements[23]->value = $vorlage["web_ssi"];
-                        $doc->deck[0]->elements[24]->value = $vorlage["web_ftp"];
-                        $doc->deck[0]->elements[25]->value = $vorlage["web_frontpage"];
-                        $doc->deck[0]->elements[26]->value = $vorlage["web_mysql"];
-                        $doc->deck[0]->elements[27]->value = $vorlage["web_mysql_anzahl_dbs"];
-                        $doc->deck[0]->elements[28]->value = $vorlage["web_mysql_quota"];
-                        $doc->deck[0]->elements[31]->value = $vorlage["web_ssl"];
-                        $doc->deck[0]->elements[32]->value = $vorlage["web_anonftp"];
-                        $doc->deck[0]->elements[33]->value = $vorlage["web_anonftplimit"];
-                        $doc->deck[0]->elements[34]->value = $vorlage["web_postgresql"];
-                        $doc->deck[0]->elements[35]->value = $vorlage["web_wap"];
-                        $doc->deck[0]->elements[36]->value = $vorlage["web_individual_error_pages"];
-                        $doc->deck[0]->elements[38]->value = $vorlage["web_mailuser_login"];
-                        $doc->deck[0]->elements[40]->value = $vorlage["web_httpd_include"];
+                        $doc->deck[0]->getElementByName("web_speicher")->value = $vorlage["web_speicher"];
+                        $doc->deck[0]->getElementByName("web_traffic")->value = $vorlage["web_traffic"];
+                        $doc->deck[0]->getElementByName("web_traffic_ueberschreitung")->value = $vorlage["web_traffic_ueberschreitung"];
+                        $doc->deck[0]->getElementByName("web_mailquota")->value = $vorlage["web_mailquota"];
+                        $doc->deck[0]->getElementByName("web_userlimit")->value = $vorlage["web_userlimit"];
+                        $doc->deck[0]->getElementByName("web_domainlimit")->value = $vorlage["web_domainlimit"];
+                        $doc->deck[0]->getElementByName("web_shell")->value = $vorlage["web_shell"];
+                        $doc->deck[0]->getElementByName("web_cgi")->value = $vorlage["web_cgi"];
+                        $doc->deck[0]->getElementByName("web_standard_cgi")->value = $vorlage["web_standard_cgi"];
+                        $doc->deck[0]->getElementByName("web_php")->value = $vorlage["web_php"];
+                        $doc->deck[0]->getElementByName("web_php_safe_mode")->value = $vorlage["web_php_safe_mode"];
+                        $doc->deck[0]->getElementByName("web_ssi")->value = $vorlage["web_ssi"];
+                        $doc->deck[0]->getElementByName("web_ftp")->value = $vorlage["web_ftp"];
+                        $doc->deck[0]->getElementByName("web_frontpage")->value = $vorlage["web_frontpage"];
+                        $doc->deck[0]->getElementByName("web_mysql")->value = $vorlage["web_mysql"];
+                        $doc->deck[0]->getElementByName("web_mysql_anzahl_dbs")->value = $vorlage["web_mysql_anzahl_dbs"];
+                        $doc->deck[0]->getElementByName("web_mysql_quota")->value = $vorlage["web_mysql_quota"];
+                        $doc->deck[0]->getElementByName("web_ssl")->value = $vorlage["web_ssl"];
+                        $doc->deck[0]->getElementByName("web_anonftp")->value = $vorlage["web_anonftp"];
+                        $doc->deck[0]->getElementByName("web_anonftplimit")->value = $vorlage["web_anonftplimit"];
+                        $doc->deck[0]->getElementByName("web_postgresql")->value = $vorlage["web_postgresql"];
+                        $doc->deck[0]->getElementByName("web_wap")->value = $vorlage["web_wap"];
+                        $doc->deck[0]->getElementByName("web_individual_error_pages")->value = $vorlage["web_individual_error_pages"];
+                        $doc->deck[0]->getElementByName("web_mailuser_login")->value = $vorlage["web_mailuser_login"];
+                        $doc->deck[0]->getElementByName("web_httpd_include")->value = $vorlage["web_httpd_include"];
                 }
 
 
