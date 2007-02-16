@@ -300,7 +300,7 @@ global $go_api, $go_info,$s;
                 $weiterleitung = $domain["domain_weiterleitung"];
                 if(stristr($weiterleitung,'http')) {
                         // Checke auf URL
-                        if(!preg_match("/^[\w\.\-\/\:]{0,}$/",$weiterleitung)) $weiterleitung = '';
+                        if(!preg_match("/^[\w\.\-\/\:\?\=\&]{0,}$/",$weiterleitung)) $weiterleitung = '';
                 } else {
                         // Checke auf Pfad
                         if(!preg_match("/^[\w\.\-\/]{0,255}$/",$weiterleitung)) $weiterleitung = '';
