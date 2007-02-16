@@ -63,7 +63,7 @@ function user_show($doc_id, $doctype_id) {
         global $go_api, $go_info, $doc, $tablevalues, $next_tree_id;
 
         //
-        if($this->server_conf["use_maildir"] == 1) $doc->deck[0]->elements[8]->visible = 0;
+        if($this->server_conf["use_maildir"] == 1) $doc->deck[0]->getElementByName("user_mailquota")->visible = 0;
 
         // Hole Web
         $web = $go_api->db->queryOneRecord("SELECT * from isp_isp_web, isp_nodes where
@@ -72,7 +72,7 @@ function user_show($doc_id, $doctype_id) {
      isp_nodes.tree_id = $next_tree_id");
 
          // Wenn Shellzugriff im Web deaktiviert ist
-         if($web["web_shell"] != '1') $doc->deck[0]->elements[11]->visible = 0;
+         if($web["web_shell"] != '1') $doc->deck[0]->getElementByName("user_shell")->visible = 0;
 
          // Spamfilter Settings deaktivieren
          if($this->server_conf["spamfilter_enable"] != 1) $doc->deck[2]->visible = 0;
@@ -83,12 +83,12 @@ function user_show($doc_id, $doctype_id) {
                  $user = $go_api->db->queryOneRecord("select * from isp_isp_user where doc_id = '$doc_id'");
                  // Autoresponder ausblenden, wenn Emailweiterleitung angekreuzt
                  if($user["user_emailweiterleitung"] != '' and $user["user_emailweiterleitung_local_copy"] != 1) {
-                         $doc->deck[1]->elements[9]->visible = 0;
-                        $doc->deck[1]->elements[10]->visible = 0;
-                        $doc->deck[1]->elements[11]->visible = 0;
+                         $doc->deck[1]->getElementByName("user_mailscan")->visible = 0;
+                        $doc->deck[1]->getElementByName("t2")->visible = 0;
+                        $doc->deck[1]->getElementByName("user_autoresponder")->visible = 0;
                  }
-                 $doc->deck[2]->elements[2]->values["accept"] = $go_api->lng("txt_accept");
-                 $doc->deck[2]->elements[2]->values["discard"] = $go_api->lng("txt_discard");
+                 $doc->deck[2]->getElementByName("spam_strategy")->values["accept"] = $go_api->lng("txt_accept");
+                 $doc->deck[2]->getElementByName("spam_strategy")->values["discard"] = $go_api->lng("txt_discard");
         }
 
                 // Deactivate user_ftp field, when FTP is not enabled for the website
