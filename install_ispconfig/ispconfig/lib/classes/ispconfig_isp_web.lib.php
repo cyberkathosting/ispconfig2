@@ -1046,9 +1046,10 @@ function _insert_dns($doc_id,$doctype_id,$web) {
         }
         $host = $go_api->db->queryOneRecord("SELECT web_host FROM isp_isp_web WHERE doc_id = $doc_id");
         $host = trim($host['web_host']);
-                if(!empty($mailserver)) {
+        if(!empty($mailserver)) {
                 //$ip_adresse = $domain["domain_ip"];
-                $sql = "INSERT INTO dns_mx (host,prioritaet,mailserver) VALUES ('$host','10','$mailserver')";
+				// We create MX records alwayas with empty host
+                $sql = "INSERT INTO dns_mx (host,prioritaet,mailserver) VALUES ('','10','$mailserver')";
                 $go_api->db->query($sql);
                 $mx_doc_id = $go_api->db->insertID();
 
@@ -1075,7 +1076,7 @@ function _insert_dns($doc_id,$doctype_id,$web) {
 
                 $sql = "INSERT INTO dns_dep (userid,parent_doc_id,parent_doctype_id,parent_tree_id,child_doc_id,child_doctype_id,child_tree_id,status) VALUES ('$userid','$parent_doc_id','$parent_doctype_id','$parent_tree_id','$child_doc_id','$child_doctype_id','$child_tree_id','$status')";
                 $go_api->db->query($sql);
-                }
+         }
       } else {
                   // hole SOA Record
                 $soa = $go_api->db->queryOneRecord("SELECT * FROM dns_isp_dns where dns_soa = '$dns_soa'");
