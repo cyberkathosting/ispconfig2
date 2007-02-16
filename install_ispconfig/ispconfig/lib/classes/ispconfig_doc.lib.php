@@ -120,6 +120,15 @@ function deck()
     // Initialisierung deck, falls notwendig
     
     }
+	
+	function getElementByName($name) {
+		foreach($this->elements as $id => $element) {
+			if($element->name == $name) {
+				reset($this->elements);
+				return $this->elements[$id];
+			}
+		}
+	}
 }
 
 class element

@@ -107,14 +107,12 @@ function web_show($doc_id, $doctype_id) {
         }
 
         // Reseller Limits
-        // Hole Reseller Daten
-        $user_node = $go_api->db->queryOneRecord("SELECT * from isp_nodes where doc_id = $doc_id and doctype_id = $doctype_id");
-            $resellerid = $user_node["groupid"];
-            unset($user_node);
 
-        // Wenn es ein Reseller ist
-        if($reseller = $go_api->db->queryOneRecord("SELECT * from isp_isp_reseller where reseller_group = $resellerid")) {
-
+        // If the logged in user is a reseller
+        if($reseller = $go_api->db->queryOneRecord("SELECT * from isp_isp_reseller where reseller_userid = ".$go_info["user"]["userid"])) {
+				
+				
+				
                 // deaktiviere Shell Access, wenn bei Resellern inaktiv
                 if($reseller["limit_shell_access"] != 1) $doc->deck[0]->elements[14]->visible = 0;
                 if($reseller["limit_cgi"] != 1){
