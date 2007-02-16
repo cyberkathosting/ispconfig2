@@ -111,12 +111,7 @@ function web_show($doc_id, $doctype_id) {
         }
 
         // Reseller Limits
-        // Hole Reseller Daten
-        $user_node = $go_api->db->queryOneRecord("SELECT * from isp_nodes where doc_id = $doc_id and doctype_id = $doctype_id");
-            $resellerid = $user_node["groupid"];
-            unset($user_node);
-
-        $reseller = $go_api->db->queryOneRecord("SELECT * from isp_isp_reseller WHERE reseller_group = $resellerid");
+        $reseller = $go_api->db->queryOneRecord("SELECT * from isp_isp_reseller where reseller_userid = ".$go_info["user"]["userid"]);
 
         if (!$reseller && $go_info["user"]["userid"] != 1 && is_array($go_api->groups->myGroups())) {
             $reseller = $go_api->db->queryOneRecord("SELECT * from isp_isp_reseller WHERE reseller_userid = " . $go_info["user"]["userid"]);
