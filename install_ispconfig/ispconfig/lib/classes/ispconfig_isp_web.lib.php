@@ -1202,7 +1202,7 @@ function _insert_dns($doc_id,$doctype_id,$web) {
         $host = trim($host['web_host']);
                 if(!empty($mailserver)) {
                 //$ip_adresse = $domain["domain_ip"];
-                $sql = "INSERT INTO dns_mx (host,prioritaet,mailserver) VALUES ('$host','10','$mailserver')";
+                $sql = "INSERT INTO dns_mx (host,prioritaet,mailserver) VALUES ('','10','$mailserver')";
                 $go_api->db->query($sql);
                 $mx_doc_id = $go_api->db->insertID();
 
