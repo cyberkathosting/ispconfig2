@@ -278,10 +278,10 @@ $wb["Fehler 404<br>(Datei nicht<br>gefunden)"] = "Error 404<br>(Archivo no encon
 $wb["Fehler 405<br>(Methode nicht<br>erlaubt)"] = "Error 405<br>(Metodo no<br>permitido)";
 $wb["Fehler 500<br>(Interner<br>Server-Fehler)"] = "Error 500<br>(Error interno del<br>servidorr)";
 $wb["Fehler 503<br>(Service ist z.Zt.<br>überlastet)"] = "Error 503<br>(Servicio no disponible)";
-$wb["Datenbanken"] = "Bases de datos (BD)";
-$wb["Datenbank"] = "Base de datos (BD)";
-$wb["Datenbankname"] = "Nombre de la BD";
-$wb["Datenbankuser"] = "Usuario de la BD";
+$wb["Datenbanken"] = "Bases de datos";
+$wb["Datenbank"] = "Base de datos";
+$wb["Datenbankname"] = "Nombre";
+$wb["Datenbankuser"] = "Usuario";
 $wb["weiter_link"] = "<br> <a href='../../isp_manager/frame_start.php?s=$s'>Mas &gt;&gt;</a>";
 $wb["Slave Zones"] = 'Zonas esclavas (DNS)';
 $wb["txt_client_salutatory_email_desc"] = "<b>Email de saludo para clientes</b>";
