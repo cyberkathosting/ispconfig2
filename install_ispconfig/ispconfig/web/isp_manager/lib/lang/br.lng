@@ -559,5 +559,6 @@ $wb["Webalizer Stats"] = 'Estatísticas Webalizer';
 $wb["Use Uribl"] = 'Utilizar <a href="http://www.uribl.com/about.shtml" target="_blank" style="font-family:Arial,Verdana">URIBL</a>';
 $wb["Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 -"] = "Somente os seguintes caracteres são permitidos: a-z A-Z 0-9 -<br>";
 $wb["Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 - ."] = "Somente os seguintes caracteres são permitidos: a-z A-Z 0-9 - .<br>";
+$wb["txt_system_currently_updated_no_recycle_bin"] = "The system is currently updating the configuration files.";
 
 ?>

@@ -705,7 +705,7 @@ function user_insert($doc_id, $doctype_id) {
 
   // User-Mail-Datei anlegen, sonst evtl. Fehler bei Autoresponder
   if(!$mod->system->server_conf["use_maildir"]){
-    if(!is_file("/var/spool/mail/".$user_username)){
+    if(!is_file("/var/spool/mail/".$user_username) && $user_username != ''){
       $mod->log->phpcaselog(touch("/var/spool/mail/".$user_username), "create /var/spool/mail/".$user_username, $this->FILE, __LINE__);
       $mod->log->caselog("chown $user_username:mail /var/spool/mail/$user_username &> /dev/null", $this->FILE, __LINE__);
       $mod->log->caselog("chmod 600 /var/spool/mail/$user_username", $this->FILE, __LINE__);

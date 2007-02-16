@@ -31,7 +31,7 @@ include("../../../lib/session.inc.php");
 
 clearstatcache();
 if(is_file('/home/admispconfig/ispconfig/.run2')){
-  $go_api->errorMessage($go_api->lng('huhutxt_system_currently_updated_no_recycle_bin'));
+  $go_api->errorMessage($go_api->lng('txt_system_currently_updated_no_recycle_bin'));
 }
 
 $tree_id = intval($_REQUEST["tree_id"]);
