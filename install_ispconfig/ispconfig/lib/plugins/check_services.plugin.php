@@ -139,11 +139,11 @@ class check_services_plugin {
         $fp = @fsockopen ($host, $port, &$errno, &$errstr, 2);
 
         if ($fp) {
+            fclose($fp);
             return true;
-            fclose($fp);
         } else {
-            return false;
             fclose($fp);
+            return false;
         }
     }
 
@@ -152,11 +152,11 @@ class check_services_plugin {
         $fp = @fsockopen ('udp://'.$host, $port, &$errno, &$errstr, 2);
 
         if ($fp) {
+            fclose($fp);
             return true;
-            fclose($fp);
         } else {
-            return false;
             fclose($fp);
+            return false;
         }
     }
 
