@@ -1,4 +1,4 @@
-        RANDFILE               = $ENV::HOME/.rnd
+        RANDFILE               = /root/ispconfig/isp/.rnd
 
         [ req ]
         default_bits           = 1024
