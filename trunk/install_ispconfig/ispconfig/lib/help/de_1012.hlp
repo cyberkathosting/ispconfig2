@@ -1,0 +1,32 @@
+<?
+
+/**********************************************
+* ISPConfig Help File
+* Version 1.2
+* Syntax: $hlp["FieldName"] = "HelpText";
+************************************************/
+
+$hlp["kunde_anrede"] = "Bitte wählen Sie hier Anrede für den Kunden aus.";
+$hlp["kunde_firma"] = "Bitte geben Sie hier den Firmennamen des Kunden ein.";
+$hlp["kunde_vorname"] = "Bitte geben Sie hier den Vornamen des Kunden ein.";
+$hlp["kunde_name"] = "Bitte geben Sie hier den Nachnamen des Kunden ein.";
+$hlp["kunde_strasse"] = "Bitte geben Sie hier den Namen der Strasse des Kunden ein.";
+$hlp["kunde_plz"] = "Bitte geben Sie hier die Postleitzahl des Kunden ein.";
+$hlp["kunde_ort"] = "Bitte geben Sie hier den Ort des Kunden ein.";
+$hlp["kunde_land"] = "Bitte geben Sie hier das Land des Kunden ein.";
+$hlp["kunde_telefon"] = "Bitte geben Sie hier die Tel.-Nummer des Kunden ein.";
+$hlp["kunde_fax"] = "Bitte geben Sie hier die Fax-Nummer des Kunden ein.";
+$hlp["kunde_email"] = "Bitte geben Sie hier die Email des Kunden ein.";
+$hlp["kunde_internet"] = "Bitte geben Sie hier die URL der Kundenwebsite ein.";
+$hlp["webadmin_user"] = "Bitte geben Sie hier den Usernamen für den Login des Kunden ein.";
+$hlp["webadmin_passwort"] = "Bitte geben Sie hier das Zugangspasswort des Kunden ein.";
+$hlp["rechnung_firma"] = "Bitte geben Sie hier die Rechnungsdaten (Firmenname) des Kunden ein.";
+$hlp["rechnung_vorname"] = "Bitte geben Sie hier die Rechnungsdaten (Vorname) des Kunden ein.";
+$hlp["rechnung_name"] = "Bitte geben Sie hier die Rechnungsdaten (Nachname) des Kunden ein.";
+$hlp["rechnung_strasse"] = "Bitte geben Sie hier die Rechnungsdaten (Strasse) des Kunden ein.";
+$hlp["rechnung_plz"] = "Bitte geben Sie hier die Rechnungsdaten (Postleitzahl) des Kunden ein.";
+$hlp["rechnung_ort"] = "Bitte geben Sie hier die Rechnungsdaten (Ort) des Kunden ein.";
+$hlp["rechnung_land"] = "Bitte geben Sie hier die Rechnungsdaten (Land) des Kunden ein.";
+$hlp["rechnung_intervall"] = "Bitte geben Sie hier die Rechnungsintervalle für die Abrechnung der Artikel des Kunden an.";
+$hlp["rechnung_zahlungsbedingungen"] = "Bitte geben Sie hier die für den Kunden vorgesehenen Zahlungsbedingungen an.";
+?>

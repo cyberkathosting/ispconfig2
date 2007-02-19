@@ -1,0 +1,44 @@
+<?
+
+/**********************************************
+* ISPConfig Help File
+* Version 1.2
+* Syntax: $hlp["FieldName"] = "HelpText";
+************************************************/
+/*
+    Danish Language Strings for ISPConfig.
+    Copyright (C) 2002-2006 by Michael R. Christensen (aka MicCo)
+
+      Web site = http://www.micco-webdesign.dk/
+      e-mail   = admin@micco-webdesign.dk
+
+    Version History :
+      v1.0 : initial release
+      v2.2.6 (28 August 2006)   : various strings updates and add-ons
+
+*/
+
+$hlp["kunde_anrede"] = "Vælg hilsen for kunden.";
+$hlp["kunde_firma"] = "Indtast kundens firmanavn.";
+$hlp["kunde_vorname"] = "Indtast kundens fornavn.";
+$hlp["kunde_name"] = "Indtast kundens efternavn.";
+$hlp["kunde_strasse"] = "Indtast kundens adresse.";
+$hlp["kunde_plz"] = "Indtast kundens post nr..";
+$hlp["kunde_ort"] = "Indtast kundens by.";
+$hlp["kunde_land"] = "Indtast kundens land.";
+$hlp["kunde_telefon"] = "Indtast kundens telefon nummer.";
+$hlp["kunde_fax"] = "Indtast kundens fax nummer.";
+$hlp["kunde_email"] = "Indtast kundens email adresse.";
+$hlp["kunde_internet"] = "Indtast URL'en for kundens webside.";
+$hlp["webadmin_user"] = "Indtast kundens brugernavn for logind til ISPConfig systemet.";
+$hlp["webadmin_passwort"] = "Indtast kundens adgangskode for logind til ISPConfig systemet.";
+$hlp["rechnung_firma"] = "Indtast kundens betalingsdata, firmanavn.";
+$hlp["rechnung_vorname"] = "Indtast kundens betalingsdata, fornavn.";
+$hlp["rechnung_name"] = "Indtast kundens betalingsdata, efternavn.";
+$hlp["rechnung_strasse"] = "Indtast kundens betalingsdata, adresse.";
+$hlp["rechnung_plz"] = "Indtast kundens betalingsdata, post nr.";
+$hlp["rechnung_ort"] = "Indtast kundens betalingsdata, by.";
+$hlp["rechnung_land"] = "Indtast kundens betalingsdata, land.";
+$hlp["rechnung_intervall"] = "Indtast kundens betalingsdata, betalingsperiode.";
+$hlp["rechnung_zahlungsbedingungen"] = "Indtast kundens betalingsdata, betalingsbetingelser.";
+?>

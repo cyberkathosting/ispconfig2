@@ -1,0 +1,47 @@
+<?
+
+/**********************************************
+* ISPConfig Help File
+* Version 1.2
+* Syntax: $hlp["FieldName"] = "HelpText";
+************************************************/
+
+$hlp["limit_user"] = "Spécifie le nombre maximal d'utilisateur que le revendeur peut créer.";
+$hlp["limit_disk"] = "Spécifie le nombre maximal d'éspace disque que le revendeur peut utiliser.";
+$hlp["limit_web"] = "Spécifie le nombre maximal de site web que le revendeur peut créer.";
+$hlp["limit_domain"] = "Spécifie le nombre maximal de domaines que le revendeur peut créer.";
+$hlp["limit_http_include"] = "Spécifie si le revendeur est autorisé à créer directives Apache additionnelles.";
+$hlp["limit_dns_manager"] = "Spécifie si le revendeur est autorisé à créer des entrées DNS.";
+$hlp["limit_domain_dns"] = "Spécifie le nombre maximal de domaines pour lequels le revendeur peut créer une zone Primaire (Maitre).";
+$hlp["limit_slave_dns"] = "Spécifie le nombre maximal de domaines pour lequels le revendeur peut créer une zone Secondaire (Esclave).";
+
+$hlp["limit_cgi"] = "Spécifie si le revendeur est autorisé à assigner la fonction CGI aux sites web de son compte.";
+$hlp["limit_php"] = "Spécifie si le revendeur est autorisé à assigner la fonction PHP aux sites web de son compte.";
+$hlp["limit_ssi"] = "Spécifie si le revendeur est autorisé à assigner la fonction SSI aux sites web de son compte.";
+$hlp["limit_ftp"] = "Spécifie si le revendeur est autorisé à assigner la fonction FTP aux sites web de son compte.";
+$hlp["limit_frontpage"] = "Spécifie si le revendeur est autorisé à assigner la fonction Frontpage aux sites web de son compte.";
+$hlp["limit_mysql"] = "Spécifie si le revendeur est autorisé à assigner la fonction des bases de donnés MySQL aux sites web de son compte.";
+$hlp["limit_shell_access"] = "Spécifie si le revendeur est autorisé à assigner des comptes Shell aux sites web de son compte.";
+$hlp["limit_ssl"] = "Spécifie si le revendeur est autorisé à assigner la fonction SSL aux sites web de son compte. Note: Vous ne pouvez avoir qu'un seul site SSL par adresse IP.";
+$hlp["limit_httpd_include"] = "Spécifie si le revendeur est autorisé à assigner des directives Apache additionnelles aux sites web de son compte.";
+$hlp["limit_anonftp"] = "Spécifie si le revendeur est autorisé à assigner la fonction FTP Anonyme aux sites web de son compte. Note: Vous ne pouvez avoir qu'un seul compte FTP anonyme par adresse IP.";
+$hlp["limit_wap"] = "Spécifie si le revendeur est autorisé à assigner la fonction WAP aux sites web de son compte.";
+$hlp["limit_standard_cgis"] = "Spécifie si les CGI standard proposé sur ce serveur sont disponibles pour les sites web de son compte.";
+$hlp["limit_mysql_anzahl_dbs"] = "Spécifie le nombre max. (total) de base de données que le revendeur peux assigner aux sites web de son compte.";
+$hlp["limit_error_pages"] = "Spécifie si le revendeur est autorisé à assigner la possibilité de créer des pages d'erreur individuelles aux sites web de son compte.";
+
+$hlp["firma"] = "Entrer la société du revendeur.";
+$hlp["vorname"] = "Entrer le prénom du revendeur.";
+$hlp["name"] = "Entrer le nom du revendeur.";
+$hlp["strasse"] = "Entrer la rue du revendeur.";
+$hlp["plz"] = "Entrer le code postal du revendeur.";
+$hlp["ort"] = "Entrer la ville du revendeur.";
+$hlp["land"] = "Entrer le pays du revendeur.";
+$hlp["telefon"] = "Entrer le numéro de téléphone du revendeur.";
+$hlp["fax"] = "Entrer le numéro de fax du revendeur.";
+$hlp["email"] = "Entrer l'adresse e-mail du revendeur.";
+$hlp["internet"] = "Entrer l'URL du site web du revendeur.";
+$hlp["reseller_user"] = "Entrer le nom d'utilisateur du revendeur pour se connecter à ISPConfig.";
+$hlp["reseller_passwort"] = "Entrer le mot de passe du revendeur pour se connecter à ISPConfig.";
+$hlp["anrede"] = "Choisir l'adresse du revendeur.";
+?>

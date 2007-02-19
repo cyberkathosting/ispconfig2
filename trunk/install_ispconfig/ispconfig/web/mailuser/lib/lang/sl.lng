@@ -1,0 +1,40 @@
+<?php
+
+$wb["txt_login_desc"] = "Za spremeniti email nastavitve se prijavite tukaj.";
+$wb["txt_error"] = "Napaka";
+$wb["txt_email_username"] = "Email-Uporabnik";
+$wb["txt_password"] = "Geslo";
+$wb["txt_login"] = "Prijavi";
+$wb["txt_autoresponder"] = "Samodejni odgovor";
+$wb["txt_nachricht"] = "Sporoèilo";
+$wb["txt_speichern"] = "Shrani";
+$wb["txt_abbrechen"] = "Preklièi";
+$wb["txt_email_account"] = "Email raèun";
+$wb["txt_user_und_email"] = "Uporanikov &amp; email";
+$wb["txt_spamfilter"] = "Spamfilter";
+$wb["txt_logout"] = "Odjavi se";
+$wb["txt_mailscan"] = "MailScan";
+$wb["txt_antivirus"] = "Antivirus";
+$wb["txt_spam_strategie"] = "Spam strategija";
+$wb["txt_spam_hits"] = "Spam toèke";
+$wb["txt_rewrite_subject"] = "Spremeni zadevo";
+$wb["txt_betreff"] = "Zadeva";
+$wb["txt_name"] = "Ime";
+$wb["txt_email_adresse"] = "Email naslov";
+$wb["txt_username"] = "Uporabnik";
+$wb["txt_web_speicher"] = "WebQuota";
+$wb["txt_mail_speicher"] = "MailQuota";
+$wb["txt_email_passwort_leer"] = "Uporabniško ime ali geslo sta prazna!";
+$wb["txt_user_unbekannt"] = "Neveljaven uporabnik.";
+$wb["txt_access_forbidden"] = "Dostop zavrnjen!";
+$wb["txt_yes"] = "Da";
+$wb["txt_no"] = "Ne";
+$wb["txt_unlimited"] = "neomejeno";
+$wb["txt_welcome"] = "Dobrodošli...";
+$wb["txt_error_spam_hits_format"] = "Število <i>".$wb["txt_spam_hits"]."</i> mora biti v tem formatu:";
+$wb["txt_accept"] = "sprejmi";
+$wb["txt_discard"] = "zavrni";
+$wb["txt_language"] = "Jezik";
+$wb["txt_no_mailuser_login"] = "Prijava je deaktivirana za vašo stran.";
+
+?>

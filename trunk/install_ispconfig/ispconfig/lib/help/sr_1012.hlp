@@ -1,0 +1,32 @@
+<?
+
+/**********************************************
+* ISPConfig Help File
+* Version 1.2
+* Syntax: $hlp["FieldName"] = "HelpText";
+************************************************/
+
+$hlp["kunde_anrede"] = "Odaberite oslovljavanje za klijenta.";
+$hlp["kunde_firma"] = "Unesite ime kompanije klijenta.";
+$hlp["kunde_vorname"] = "Unesite prvo ime klijenta.";
+$hlp["kunde_name"] = "Unesite prezime klijenta.";
+$hlp["kunde_strasse"] = "Unesite ulicu klijenta.";
+$hlp["kunde_plz"] = "Unesite poštanski broj klijenta.";
+$hlp["kunde_ort"] = "Unesite grad klijenta.";
+$hlp["kunde_land"] = "Unesite državu klijenta.";
+$hlp["kunde_telefon"] = "Unesite telefonski broj klijenta.";
+$hlp["kunde_fax"] = "Unesite broj telefaksa klijenta.";
+$hlp["kunde_email"] = "Unesite email adresu klijenta.";
+$hlp["kunde_internet"] = "Unesite URL klijentove internet prezentacije.";
+$hlp["webadmin_user"] = "Unesite korisnièko ime za prijavljivanje na ISPConfig sistem.";
+$hlp["webadmin_passwort"] = "Unesite lozinku klijenta za ISPConfig sistem.";
+$hlp["rechnung_firma"] = "Unesite podatke za naplatu (ime kompanije)klijenta.";
+$hlp["rechnung_vorname"] = "Unesite podatke za naplatu (prvo ime)klijenta.";
+$hlp["rechnung_name"] = "Unesite podatke za naplatu (prezime) klijenta.";
+$hlp["rechnung_strasse"] = "Unesite podatke za naplatu (ulicu) klijenta.";
+$hlp["rechnung_plz"] = "Unesite podatke za naplatu (poštanski broj) klijenta.";
+$hlp["rechnung_ort"] = "Unesite podatke za naplatu (grad) klijenta.";
+$hlp["rechnung_land"] = "Unesite podatke za naplatu (državu) klijenta.";
+$hlp["rechnung_intervall"] = "Unesite periode naplate za artikle klijenta.";
+$hlp["rechnung_zahlungsbedingungen"] = "Unesite uslove plaæanja za klijenta.";
+?>

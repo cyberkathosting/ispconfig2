@@ -1,0 +1,10 @@
+SHELL=/bin/sh
+
+USERNAME=`formail -xSubject:  | awk '{print $2}'`
+
+:0
+* ^Subject:.*Mailsize:*
+{
+:0
+| formail -I "" | sed -e '/^$/d' >> /home/admispconfig/mailstats/${USERNAME}
+}

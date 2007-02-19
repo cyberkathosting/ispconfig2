@@ -1,0 +1,19 @@
+<?
+/********************************
+* ISPConfig Dictionary File
+* Version 1.0
+*********************************/
+
+$wb["Anbieter"]     = "Anbieter";
+$wb["Web"]          = "Web";
+
+
+
+
+
+
+
+
+
+
+?>

@@ -1,0 +1,97 @@
+<?
+/********************************
+* ISPConfig Dictionary File
+* Version 1.0
+*********************************/
+
+/////////////// Allgemein - general (kommt in mehreren Modulen vor) /////////
+$wb["login_begruessung"]     = "登陆:";
+$wb["Username"]     = "用户名";
+$wb["Passwort"]     = "密码";
+$wb["Login"]       = "提交";
+$wb["Administration"]  = "管理";
+$wb["ISP Manager"]  = "ISP 管理";
+$wb["DNS Manager"]  = "DNS 管理";
+$wb["Tools"]        = "工具";
+$wb["Logout"]       = "退出";
+$wb["Status"]       = "状态";
+$wb["neu"]          = "添加";
+$wb["Hinweis"]      = "参考";
+$wb["Web"]          = "网站";
+$wb["Email"]        = "电子邮件";
+$wb["FTP"]          = "FTP";
+$wb["DNS"]          = "域名";
+$wb["Sonstiges"]    = "其他";
+$wb["Datei"]        = "文件";
+$wb["von"]          = "从"; // besser 'ab'?
+$wb["error_headline"] = "出现了下面的错误:";
+$wb["Gruppe"]       = "组";
+$wb["Titel"]        = "标题";
+$wb["Server"]       = "服务器";
+$wb["Host"]         = "主机名";
+$wb["Domain"]       = "域名";
+$wb["IP Adresse"]   = "IP 地址";
+$wb["Ordner"]       = "文件夹";
+$wb["Dokument"]     = "文档";
+$wb["Dokument suchen"] = "文档搜索";
+$wb["Suchmaske"]    = "搜索条目";
+$wb["Ausgabeformat"] = "输出格式";
+$wb["Standard"]     = "标准";
+$wb["Eintr鋑e"]    = "入口";
+$wb["Papierkorb leeren"] = "清空回车站";
+$wb["Stammordner"]  = "主域";
+$wb["keine Gruppe"] = "清空组";
+$wb["neues Dokument anlegen"] = "创建了新文档";
+$wb["auf"]   = "展开";
+$wb["zu"]    = "合上";
+$wb["in_ordner"]    = "进文件夹";
+$wb["Papierkorb"]   = "回收站";
+$wb["Wiederherstellen"]    = "恢复";
+$wb["Papierkorb: Eintr鋑e"]   = "回收站: 内容";
+$wb["Speichern"]    = "保存";
+$wb["L鰏chen"]    = "删除";
+$wb["Abbrechen"]    = "取消";
+$wb["Suchen"]    = "搜索";
+
+$wb["Herr"] = "先生";
+$wb["Frau"] = "女士";
+
+$wb["Es ist folgender Fehler aufgetreten:"] = "出现了下面的错误:";
+
+$wb["Web-FTP"] = 'Web-FTP';
+$wb["ISP Faktura"] = 'ISP Invoice';
+
+$wb["Verzeichnis 鰂fnen"] = "打开";
+$wb["Verzeichnis schliessen"] = "关闭";
+$wb["Hilfe"] = '帮助';
+$wb["Online Hilfe"] = '在线帮助';
+$wb["schliessen"] = '关闭';
+
+$wb["PAPIERKORB_HINWEIS"] = "<b>提示：</b>在清空被执行之前条目仍然在回收站里面. 请以后再删除.";
+
+
+// Multidoc  Allgemein ////////////////////////////////
+
+$wb["title_required"] = "标题不能为空";
+$wb["error_keine_rechte"] = "您没有相应的权限修改该条目.";
+$wb["error_doctype_nicht_vorhanden"] = "请求的文档类型不存在.";
+$wb["error_doctype_rechte"] = "您没有相应的权限修改文档类型.";
+$wb["Formular Designer"] = "表单设计";
+$wb["Geben Sie einen Wert in das Feld"] = "不能为空";
+$wb["jscript_ein"] = " ";
+
+////////////// Allgemein Ende ///////////////////
+
+$wb["Es konnte ein Dokument nicht wiederhergestellt werden, da sich das Eltern-Dokument noch im Papierkorb befindet.\n"] = "The object cannot be restored as long as its parent object is in the recycle bin.";
+
+$wb["DNS-Domains angelegt"] = '主域被创建';
+$wb["Benutzter Diskspace"] = "已使用磁盘空间";
+$wb["Slave Zones angelegt"] = "副域被创建";
+$wb["Datenbanken angelegt"] = "数据库已创建";
+
+$wb["txt_confirm_delete"] = "您确定要删除该对象?";
+
+$wb["txt_object_currently_updated"] = "Your changes cannot be saved because this item is currently being updated. Please try again later.<br><br> <a href='../frame_start.php?s=$s'>Next &gt;&gt;</a>";
+$wb["txt_system_currently_updated_no_recycle_bin"] = "The recycle bin cannot be accessed because the system is currently being updated. Please try again in a few minutes.<br><br> <a href='../frame_start.php?s=$s'>Next &gt;&gt;</a>"; 
+
+?>

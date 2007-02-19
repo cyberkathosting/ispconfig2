@@ -1,0 +1,289 @@
+#!/bin/bash
+###############################################################################
+# Copyright (c) 2005, projektfarm Gmbh, Till Brehm, Falko Timme
+# All rights reserved.
+#
+# Redistribution and use in source and binary forms, with or without modification,
+# are permitted provided that the following conditions are met:
+#
+#     * Redistributions of source code must retain the above copyright notice,
+#       this list of conditions and the following disclaimer.
+#     * Redistributions in binary form must reproduce the above copyright notice,
+#       this list of conditions and the following disclaimer in the documentation
+#       and/or other materials provided with the distribution.
+#     * Neither the name of ISPConfig nor the names of its contributors
+#       may be used to endorse or promote products derived from this software without
+#       specific prior written permission.
+#
+# THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+# ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+# WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+# IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT,
+# INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+# BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+# DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY
+# OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+# NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+# EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+###############################################################################
+
+log(){
+  LOGFILE=/var/log/ispconfig_install.log
+  echo `date` "- [ISPConfig] - "$1 >> $LOGFILE
+}
+
+error ()
+{
+  log  "ERROR: $1"
+  echo "ERROR: $1"
+  exit 1
+}
+
+ID="id -u"
+MYUID=`$ID 2>/dev/null`
+
+if [ ! -z "$MYUID" ];
+then
+  if [ $MYUID != 0 ];
+  then
+    error "Sie benötigen root-Rechte zum Ausführen dieses Skriptes! / You need root privileges to run this script! / Vous devez avoir les privileges root pour executer ce script!";
+  fi
+fi
+
+log "installation directory: `pwd`"
+
+if [ -f /etc/release ] && [ ! -h  /etc/release ]; then
+   version=`cat /etc/release | grep -i release | cut -f5 -d' '`
+   echo $version | grep \\. &> /dev/null
+   if [ $? != 0 ]; then
+     version=`echo $version.0`
+   fi
+   distversion=`echo Trustix $version`
+   echo $distversion
+   distvers=Trustix${version//./}
+   echo dist=$distvers '##' > dist.info.tmp
+   grep -i $distvers dist.txt >> dist.info.tmp
+   cp -f dist.info.tmp dist.info
+   VAR1=`cat dist.info.tmp | cut -f1 -d=`
+   for var1 in $VAR1
+   do
+     echo export $var1 >> dist.info.ende
+   done
+   cat dist.info.ende >> dist.info.tmp
+   rm -f dist.info.ende
+fi
+if [ -f /etc/SuSE-release ] && [ ! -h  /etc/SuSE-release ]; then
+   version=`cat /etc/SuSE-release | grep -i VERSION | cut -f3 -d' '`
+   echo $version | grep \\. &> /dev/null
+   if [ $? != 0 ]; then
+     version=`echo $version.0`
+   fi
+   distversion=`echo SuSE $version`
+   echo $distversion
+   distvers=suse${version//./}
+   echo dist=$distvers '##' > dist.info.tmp
+   grep -i $distvers dist.txt >> dist.info.tmp
+   cp -f dist.info.tmp dist.info
+   VAR1=`cat dist.info.tmp | cut -f1 -d=`
+   for var1 in $VAR1
+   do
+     echo export $var1 >> dist.info.ende
+   done
+   cat dist.info.ende >> dist.info.tmp
+   rm -f dist.info.ende
+fi
+if [ -f /etc/mandrake-release ] && [ ! -h  /etc/mandrake-release ]; then
+   version=`cat /etc/mandrake-release | cut -f4 -d' '`
+   echo $version | grep \\. &> /dev/null
+   if [ $? != 0 ]; then
+     version=`echo $version.0`
+   fi
+   distversion=`echo Mandrake $version`
+   echo $distversion
+   version=`echo $version | cut -f1 -dr`
+   distvers=mdk${version//./}
+   echo dist=$distvers '##' > dist.info.tmp
+   grep -i $distvers dist.txt >>  dist.info.tmp
+   cp -f dist.info.tmp dist.info
+   VAR1=`cat dist.info.tmp | cut -f1 -d=`
+   for var1 in $VAR1
+   do
+     echo export $var1 >> dist.info.ende
+   done
+   cat dist.info.ende >> dist.info.tmp
+   rm -f dist.info.ende
+fi
+if [ -f /etc/mandrakelinux-release ] && [ ! -h  /etc/mandrakelinux-release ]; then
+   version=`cat /etc/mandrake-release | cut -f3 -d' '`
+   echo $version | grep \\. &> /dev/null
+   if [ $? != 0 ]; then
+     version=`echo $version.0`
+   fi
+   distversion=`echo Mandrake $version`
+   echo $distversion
+   version=`echo $version | cut -f1 -dr`
+   distvers=mdk${version//./}
+   echo dist=$distvers '##' > dist.info.tmp
+   grep -i $distvers dist.txt >>  dist.info.tmp
+   cp -f dist.info.tmp dist.info
+   VAR1=`cat dist.info.tmp | cut -f1 -d=`
+   for var1 in $VAR1
+   do
+     echo export $var1 >> dist.info.ende
+   done
+   cat dist.info.ende >> dist.info.tmp
+   rm -f dist.info.ende
+fi
+if [ -f /etc/mandriva-release ] && [ ! -h  /etc/mandriva-release ]; then
+   version=`cat /etc/mandriva-release | cut -f4 -d' '`
+   echo $version | grep \\. &> /dev/null
+   if [ $? != 0 ]; then
+     version=`echo $version.0`
+   fi
+   distversion=`echo Mandriva $version`
+   echo $distversion
+   version=`echo $version | cut -f1 -dr`
+   distvers=mdr${version//./}
+   echo dist=$distvers '##' > dist.info.tmp
+   grep -i $distvers dist.txt >>  dist.info.tmp
+   cp -f dist.info.tmp dist.info
+   VAR1=`cat dist.info.tmp | cut -f1 -d=`
+   for var1 in $VAR1
+   do
+     echo export $var1 >> dist.info.ende
+   done
+   cat dist.info.ende >> dist.info.tmp
+   rm -f dist.info.ende
+fi
+if [ -f /etc/redhat-release ] && [ ! -h  /etc/redhat-release ]; then
+   version=`cat /etc/redhat-release | cut -f5 -d' '`
+   if [ -n '$version' ]; then
+     version=`cat /etc/redhat-release | cut -f3 -d' '`
+   fi
+   echo $version | grep \\. &> /dev/null
+   if [ $? != 0 ]; then
+     version=`echo $version.0`
+   fi
+   if [ "`cat /etc/redhat-release | cut -f1 -d' '`" == "CentOS" ]; then
+     distversion=`echo CentOS $version`
+     echo $distversion
+     distvers=centos${version//./}
+   else
+     distversion=`echo RedHat $version`
+     echo $distversion
+     distvers=rhat${version//./}
+   fi
+   echo dist=$distvers '##' > dist.info.tmp
+   grep -i $distvers dist.txt >> dist.info.tmp
+   cp -f dist.info.tmp dist.info
+   VAR1=`cat dist.info.tmp | cut -f1 -d=`
+   for var1 in $VAR1
+   do
+     echo export $var1 >> dist.info.ende
+   done
+   cat dist.info.ende >> dist.info.tmp
+   rm -f dist.info.ende
+fi
+if [ -f /etc/fedora-release ] && [ ! -h  /etc/fedora-release ]; then
+   version=`cat /etc/fedora-release | cut -f4 -d' '`
+   echo $version | grep \\. &> /dev/null
+   if [ $? != 0 ]; then
+     version=`echo $version.0`
+   fi
+   distversion=`echo Fedora $version`
+   echo $distversion
+   distvers=fedora${version//./}
+   echo dist=$distvers '##' > dist.info.tmp
+   grep -i $distvers dist.txt >> dist.info.tmp
+   cp -f dist.info.tmp dist.info
+   VAR1=`cat dist.info.tmp | cut -f1 -d=`
+   for var1 in $VAR1
+   do
+     echo export $var1 >> dist.info.ende
+   done
+   cat dist.info.ende >> dist.info.tmp
+   rm -f dist.info.ende
+fi
+if [ -f /etc/debian_version ] && [ ! -h  /etc/debian_version ]; then
+   version=`cat /etc/debian_version`
+   echo $version | grep \\. &> /dev/null
+   if [ $? != 0 ]; then
+     version=`echo $version.0`
+   fi
+   distversion=`echo Debian $version`
+   echo $distversion
+   distvers=debian${version//./}
+   echo dist=$distvers '##' > dist.info.tmp
+   grep -i $distvers dist.txt >> dist.info.tmp
+   cp -f dist.info.tmp dist.info
+   VAR1=`cat dist.info.tmp | cut -f1 -d=`
+   for var1 in $VAR1
+   do
+     echo export $var1 >> dist.info.ende
+   done
+   cat dist.info.ende >> dist.info.tmp
+   rm -f dist.info.ende
+fi
+if [ -f /etc/slackware-version ] && [ ! -h  /etc/slackware-version ]; then
+   version=`cat /etc/slackware-version | cut -f2 -d' '`
+   echo $version | grep \\. &> /dev/null
+   if [ $? != 0 ]; then
+     version=`echo $version.0`
+   fi
+   distversion=`echo Slackware $version`
+   echo $distversion
+   distvers=slackware${version//./}
+   echo dist=$distvers '##' > dist.info.tmp
+   grep -i $distvers dist.txt >> dist.info.tmp
+   cp -f dist.info.tmp dist.info
+   VAR1=`cat dist.info.tmp | cut -f1 -d=`
+   for var1 in $VAR1
+   do
+     echo export $var1 >> dist.info.ende
+   done
+   cat dist.info.ende >> dist.info.tmp
+   rm -f dist.info.ende
+fi
+if [ ! -n "$distvers" ]; then
+  os=`uname -rs |cut -f1 -d' '`
+  if [ "$os" == "FreeBSD" ]; then
+    version=`uname -rs | cut -f2 -d' ' | cut -f1 -d-`
+    echo $version | grep \\. &> /dev/null
+    if [ $? != 0 ]; then
+      version=`echo $version.0`
+    fi
+    distversion=`echo FreeBSD $version`
+    echo $distversion
+    distvers=freebsd${version//./}
+    echo dist=$distvers '##' > dist.info.tmp
+    grep -i $distvers dist.txt >> dist.info.tmp
+    cp -f dist.info.tmp dist.info
+    VAR1=`cat dist.info.tmp | cut -f1 -d=`
+    for var1 in $VAR1
+    do
+      echo export $var1 >> dist.info.ende
+    done
+    cat dist.info.ende >> dist.info.tmp
+    rm -f dist.info.ende
+  fi
+fi
+
+log "operating system: $distversion"
+dist_supported=`grep -i "$distvers" dist.txt`
+
+if [ "$dist_supported" == "" ] || [ "$distvers" == "" ]; then
+  error "Ihr Betriebssystem wird nicht unterstützt! / Your operating system is not supported! / Votre systeme d'exploitation n'est pas supporté!"
+fi
+
+if [ -d /root/ispconfig ] && [ -d /home/admispconfig ]; then
+  export install_art=upgrade
+else
+  export install_art=install
+fi
+
+sleep 3
+
+chmod 700 setup2
+./setup2
+
+exit 0;

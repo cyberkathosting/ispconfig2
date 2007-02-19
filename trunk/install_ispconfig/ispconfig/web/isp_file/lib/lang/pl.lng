@@ -1,0 +1,61 @@
+<?
+/********************************
+* ISPConfig Dictionary File
+* Version 1.0
+*
+* Tlumaczenie wersji polskiej
+* Patryk Marek --- http://kbn.pl --- info@kbn.pl
+* Wersja 1.0.2
+* Ostatnie zmiany 2005.09.12
+*********************************/
+
+$wb["Administration"]  = 'Administracja';
+$wb["Datei Upload"] = 'Za³aduj plik';
+$wb["Ordner neu"] = 'Nowy folder';
+$wb["Web Auswahl"] = 'Wybór WWW';
+$wb["Web auswählen"] = 'Wybierz WWW';
+$wb["Auswahl"] = 'Wybór';
+$wb["WEB FTP"] = 'Transfer plików (FTP)';
+$wb["Hilfe"] = 'Pomoc';
+$wb["Name"] = 'Nazwa';
+$wb["Grösse"] = 'Wielko¶æ';
+$wb["Datum"] = 'Data';
+$wb["Eigentümer"] = 'W³a¶ciciel';
+$wb["Alle"] = 'Wszystko';
+$wb["Lesen"] = 'Czytaj';
+$wb["Schreiben"] = 'Zapisz';
+$wb["Ausführen"] = 'Wykonaj';
+$wb["Verzeichnisschutz"] = 'Zabezpieczenie folderu';
+$wb["Verzeichnis schützen"] = 'Zabezpiecz folder';
+$wb[".htaccess User"] = 'U¿ytkownik .htaccess';
+$wb[".htaccess Userübersicht"] = 'Przegl±d u¿ytkowników .htaccess';
+$wb["Bearbeiten"] = 'Edycja';
+$wb["Hinzufügen"] = 'Dodaj';
+$wb["Parameterübergabe unvollständig"] = "Niekompletne przetworzenie parametrów";
+$wb["Ungültiges Format der web_id."] = "Nieprawid³owy format web_id.";
+$wb["Ungültige web_id."] = "Nieprawid³owy web_id.";
+$wb["Konnte server_path_httpd_root nicht ermitteln."] = "Nie mo¿na rozpoznaæ server_path_httpd_root.";
+$wb["Das Verzeichnis existiert nicht oder Sie haben nicht die notwendigen Berechtigungen."] = "Folder nie istnieje lub nie ma praw dostêpu.";
+$wb["Der Pfad enthält ungültige Zeichen."] = "Œcie¿ka zawiera nieprawid³owe znaki.";
+$wb["Diese Funktion ist im Demo-Modus deaktiviert"] = "Ta funkcja nie dzia³a w wersji demo.";
+$wb["ist ein Link."] = "jest linkiem.";
+$wb["existiert nicht."] = "nie istnieje."; // Es geht um: /home/file.htm existiert nicht.
+$wb["konnte nicht gelöscht werden."] = "nie mo¿e zostaæ usuniêty.";
+$wb["Das Verschieben der Datei ist fehlgeschlagen."] = "Przenoszenie pliku nie powiod³o siê.";
+$wb["konnte nicht gelöscht werden. Das Verzeichnis muss leer sein und Sie müssen Schreibrechte besitzen."] = "nie mo¿e zostaæ usuniêty. Folder musi byæ pusty a ty musisz posiadaæ prawa do zapisu.";
+$wb["Das Verschieben des Verzeichnisses ist fehlgeschlagen."] = "Przenoszenie pliku nie powiod³o siê.";
+$wb["Es wurde keine Datei zum Upload ausgewählt."] = "Nie podano pliku do za³adowania.";
+$wb["Die Datei existiert bereits in diesem Verzeichnis."] = "Taki plik ju¿ istnieje w podanym folderze.";
+$wb["Möglicher Dateiupload Angriff."] = "Potencjalna próba w³amania przy za³adowaniu pliku.";
+$wb["Ordner"] = "Folder";
+
+$wb["chmod failed."] = "chmod nie powid³o siê";
+$wb["FTP: Failed to open"] = "FTP: Nie mo¿na otworzyæ";
+$wb["Failed to open"] = "Nie mo¿na otworzyæ";
+$wb["Could not connect to"] = "Nie mo¿na po³±czyæ siê z";
+$wb["Could not connect as user"] = "Nie mo¿na po³±czyæ siê jako u¿ytkownik";
+$wb["Next >>"] = "Dalej >>";
+
+$wb["Catalog_Name"] = "Nazwa";
+
+?>

@@ -1,0 +1,480 @@
+<?
+/********************************
+* ISPConfig Dictionary File
+* Version 1.0
+*********************************/
+
+
+///////////////// ISP Manager //////////////////
+$wb["Anbieter"]     = "Aanbieder";
+$wb["Kunde"]        = "Klant";
+$wb["Suchen"]       = "Zoeken";
+$wb["Stammdaten"]   = "Stamgegevens";
+$wb["Limits"]       = "Limieten";
+$wb["Zugangsdaten"] = "Toegangsgegevens";
+$wb["Statistik"]    = "Statistiek";
+$wb["Firma"]        = "Bedrijf";
+$wb["Anrede"]       = "Titel";
+$wb["Vorname"]      = "Voornaam";
+$wb["Name"]         = "Naam";
+$wb["Strasse"]      = "Straat";
+$wb["PLZ"]          = "Postcode";
+$wb["Ort"]          = "Stad";
+$wb["Land"]         = "Land";
+$wb["Telefon"]      = "Telefoon";
+$wb["Fax"]          = "Fax";
+$wb["Internet"]     = "Internetadres";
+$wb["Öffnen"]      = "Open";
+$wb["Benutzername"] = "Gebruikersnaam"; // besser: vielleicht nur Variable $wb["username"] benutzen?
+$wb["zugangsdaten_anbieter_einleitung"] = "Hier kunt u een gebruikersnaam en wachtwoord van de reseller aanmaken.";
+$wb["zugangsdaten_kunde_einleitung"] = "Hier kunt u een gebruikersnaam en wachtwoord aanmaken voor het beheren van specifieke ruimten.<br> ";
+$wb["Web Verwaltung"] = "Site Management";
+$wb["Rechnung"]      = "Rekening";
+$wb["Rechnungsanschrift:"] = "Factuuradres:<br>";
+$wb["Intervall"]    = "Interval";
+$wb["Preis"]        = "Prijs";
+$wb["Zahlungsart"]  = "Betalingsmethode";
+$wb["Basis"]        = "Basis";
+$wb["Create DNS"]   = "Aanmaken DNS";
+$wb["Speicher MB"]     = "Space MB";
+$wb["Max. User"]        = "Max. Gebruikers";
+$wb["Max. Domain"]        = "Max. Domeinen";
+$wb["PHP Scripte"]        = "PHP Scripts";
+$wb["SSI"]        = "SSI";
+$wb["FTP Zugang"]        = "FTP toegang";
+$wb["MySQL"]        = "MySQL";
+$wb["SSL"]        = "SSL";
+$wb["Shell Zugriff"]      = "Shell toegang";
+$wb["Zugang"]       = "Toegang";  // Zugriff u. Zugang zusammenfassen!/nur einen Begriff nehmen!
+$wb["CGI Scripte"]      = "CGI Scripts";
+$wb["CGI Modus"]      = "CGI Mode";
+$wb["CGI mod_perl"]      = "CGI mod_perl";
+$wb["Bundesland"]   = "Land";
+$wb["Abteilung"]    = "Provincie";
+$wb["Gültigkeit (Tage)"]  = "Geldigheid (dagen)";
+$wb["SSL Key"]          = "SSL Sleutel";
+$wb["SSL Zertifikat"]   = "SSL certificaat";
+$wb["Aktion"]       = "Aktie";
+$wb["Zertifikat erzeugen"] = "Aanmaken certificaat";
+$wb["Zertifikat speichern"] = "Opslaan certificaat";
+$wb["Zertifikat löschen"] = "Verwijder certificaat";
+$wb["Speicherplatz gesamt"] = "Opslagruimte";
+$wb["unlimitiert"]  = "Ongelimiteerd";
+$wb["verbraucht"]   = "Gebruikt";
+$wb["Trafficübersicht"] = "Verkeer overzicht";
+$wb["Monat"]        = "Maand";
+$wb["Traffic"]      = "Verkeer";
+$wb["traffic_letzte_4"] = "Verkeer in de laatste 4 jaar";
+$wb["Jahr"]         = "Jaar";
+$wb["MySQL User"]        = "MySQL Gebruikersnaam";
+$wb["MySQL Passwort"]    = "MySQL wachtwoord";
+
+// Ergänzungen /////////////////////////////////
+$wb["Anbieter neu"] = "Nieuwe aanbieder";
+$wb["Kunde neu"]    = "Nieuwe klant";
+$wb["Web neu"]      = "Nieuwe site";
+$wb["Ordner neu"]   = "Gesorteerd op";
+$wb["Suchen"]       = "Zoeken";
+$wb["ISP Anbieter"] = "ISP reseller";
+$wb["Webs"] = "Sites";
+$wb["User"] = "Gebruiker";
+$wb["Domains"] = "Domeinen";
+$wb["Zahlung"] = "Betaling";
+$wb["ISP Kunde"] = "ISP Klant";
+$wb["ISP Web"] = "ISP Site";
+$wb["Kunden"] = "Klanten";
+$wb["Dokument suchen"] = "Document zoeken";
+
+$wb["User & Email"] = "Gebruiker & email";
+$wb["Co-Domains"] = "Co-domeinen";
+$wb["SSL"] = "SSL";
+$wb["Optionen"] = "Opties";
+
+$wb["Webs angelegt"] = "Aantal sites";
+$wb["User angelegt"] = "Aantal gebruikers";
+$wb["Domains angelegt"] = "Gebruikte domeinen";
+$wb["rechnungsanschrift"] = "Factuuradres:<br> ";
+
+$wb["neues Web anlegen"] = "Nieuwe site";
+$wb["weiter"] = "Volgende";
+$wb["SUCHE"] = "ZOEKEN";
+
+$wb["msg_beta"] = "";
+$wb["title_isp_beta"] = "";
+$wb["msg_kein_win"] = "Deze software is niet beschikbaar voor Windows operating systems.";
+
+// Error Codes ispconfig_isp_datenbank.lib.php
+$wb["error_db_nicht_erlaubt"] = "Het aanmaken van MySQL databases is niet toegestaan voor deze webruimte.<br>";
+$wb["error_db_leeres_passwort"] = "Definieer een wachtwoord a.u.b!<br>";
+$wb["error_db_exist_1"] = "Een database met de naam";
+$wb["error_db_exist_2"] = "bestaat reeds.<br>";
+$wb["error_db_user_exist_1"] = "De database gebruiker";
+$wb["error_db_user_exist_2"] = "bestaat reeds.<br>";
+$wb["error_max_db_web"] = "Het maximaal aantal databases voor deze site is bereikt.<br>";
+$wb["error_max_db_anbieter"] = "Het maximum aantal databases voor de aanbieder is bereikt.<br>";
+
+// Error Codes ispconfig_isp_domain.lib.php
+$wb["error_web_doppelt"] = "De naam";
+$wb["error_max_domain_web"] = "Het maximaal aantal domeinen voor deze site is bereikt.<br>";
+$wb["error_max_domain_anbieter"] = "Het maximaal aantal domeinen voor de aanbieder is bereikt.<br>";
+$wb["angelegt"] = " wordt al gebruikt door een andere site of domein.<br>";
+$wb["error_domain_forward"] = "De domein forward bevat ongeldige tekens en is om deze reden verwijderd.<br>";
+
+// Error Codes ispconfig_isp_kunde.lib.php
+$wb["error_user_exist_1"] = "De ISPConfig gebruiker";
+$wb["error_user_exist_2"] = "bestaat al. De gebruiker is niet toegevoegd of veranderd.<br>";
+$wb["error_max_user_licence"] = "Het maximaal aantal ISPConfig gebruikers voor deze licentie is bereikt.<br>";
+
+
+// Error Codes ispconfig_isp_reseller.lib.php
+$wb["error_reseller_title"] = "Een reseller met deze titel bestaat al.<br>";
+$wb["error_reseller_group_not_found"] = "De groep is niet gevonden.<br>";
+$wb["error_anbieter_no_delete"] = "<b>De reseller was niet verwijderd.</b><br>&nbsp;<br>De aanbieder kan alleen verwijderd worden als alle sites en klanten van de aanbieder zijn verwijderd. Controleer ook dat de prullenbak van de aanbieder leeg is.<br>";
+$wb["error_anbieter_no_restore"] = "De reseller kan niet worden terug gezet.<br>";
+
+// Error Codes ispconfig_isp_user.lib.php
+$wb["error_sysuser_exist_1"] = "Er is al een gebruiker met die naam";
+$wb["error_sysuser_exist_2"] = "ingevoerd.<br>";
+$wb["error_max_user_web"] = "Het maximaal aantal site gebruikers is bereikt.<br>";
+$wb["error_max_space_web"] = "De geselecteerde schrijfruimte overtreft de sitelimiet.<br>";
+$wb["error_max_user_anbieter"] = " Het maximaal aantal gebruikers van de aanbieder is bereikt.<br>";
+$wb["error_sysuser_exist"] = "De gebruikersnaam bestaat al.<br>";
+$wb["error_admin_exist"] = "Een gebruiker met administrator rechten bestaat al voor deze site.<br>";
+$wb["error_admin_exist_long"] = "Een gebruiker met administrator rechten bestaat al voor deze site. U moet de andere administrator verwijderen indien u rechten wilt toewijzen aan deze gebruiker.<br>";
+
+// Error Codes ispconfig_isp_user.lib.php
+$wb["error_max_web_anbieter"] = "Het maximaal aantal site voor de aanbieder is bereikt.<br>";
+$wb["error_web_ssl_exist"] = "Een SSL Certificaat bestaat al voor dit IP.<br>";
+
+// Plugins
+$wb["CPU Auslastung 1 Minute"] = "CPU Gebruik 1 Minuut";
+$wb["CPU Auslastung 5 Minuten"] = "CPU Gebruik 5 Minuten";
+$wb["CPU Auslastung 15 Minuten"] = "CPU Gebruik 15 Minuten";
+$wb["Server Online seit"] = "Server online sinds";
+$wb["User Online"] = " Gebruikers online";
+$wb["error_web_id"] = "Deze Plugin heeft een geldig web ID nodig.<br>";
+$wb["von"] = " Van";
+$wb["Gesamt"] = "Tezamen";
+$wb["Traffic in den letzten 4 Jahren"] = "Verkeer in de laatste 4 jaar";
+
+$wb["Backup von Tabelle"] = "Backup tabel";
+$wb["Optimiere"] = "Optimaliseren";
+$wb["Reparatur"] = "Repareren";
+$wb["oder"] = "of";
+$wb["Installation starten"] = "Installeren";
+
+$wb["Monatlich"] = "Maandelijks";
+$wb["Quartal"] = "Kwartaallijks";
+$wb["Halbjährlich"] = "Half-jaarlijks";
+$wb["Jährlich"] = "Jaarlijks";
+$wb["Sonstige"] = "Overig";
+
+$wb["bei Erhalt"] = "Op bestelling";
+$wb["Netto 7 Tage"] = "netto 7 dagen";
+$wb["Netto 15 Tage"] = "netto 15 dagen";
+$wb["Netto 30 Tage"] = "netto 30 dagen";
+$wb["Sonstige"] = "overig";
+$wb["Neu"] = "Nieuw";
+$wb["Postfach MB"] = "Mailbox MB";
+
+$wb["email_alias_txt"] = "<b>Hint:</b> één alias per regel.";
+$wb["Weiterleitung"] = "Doorsturen";
+$wb["Nachricht"] = "Bericht";
+$wb["Kein Kunde vorhanden"] = "Geen klant beschikbaar.<br>";
+$wb["Dieses Web können Sie nicht löschen."] = "U kunt deze website niet verwijderen.<br>";
+$wb["Ausgabeformat"] = "Lijst formaat";
+$wb["Bearbeiten"] = "Bewerken";
+$wb["Löschen"] = "Verwijderen";
+
+$wb["willkommen_kunde"] = "Welkom bij ISPConfig.
+U kunt uw webpagina hier registreren. Als u vragen heeft of problemen,
+kunt u contact opnemen met uw server administrator of de ISPConfig klanten handleiding raadplegen.";
+$wb["Willkommen"] = "Welkom";
+
+
+// Regex Fehlermeldungen
+$wb["Es sind nur folgende Zeichen erlaubt: a-z A-Z 0-9 -"] = "Alleen de volgende tekens zijn toegestaan: a-z A-Z 0-9 -<br>";
+$wb["Es sind nur folgende Zeichen erlaubt: a-z A-Z 0-9 - ."] = "Alleen de volgende tekens zijn toegestaan: a-z A-Z 0-9 - .<br>";
+$wb["Der Username muss aus min. 4, max 25 Buchstaben oder Zahlen bestehen, wobei er mit einem Buchstaben beginnen muss."] = "De gebruikersnaam moet uit minimaal 4 en maximaal 26 tekens bestaan en moet beginnen met een letter.<br>";
+$wb['Der Username muss aus min. 4, max 32 Buchstaben oder Zahlen bestehen, wobei er mit einem Buchstaben beginnen muss.'] = 'De gebruikersnaam moet uit minimaal 4 en maximaal 32 tekens bestaan en moet beginnen met een letter.<br>';
+
+$wb["error_reseller_licence"] = "Het toevoegen van aanbieders is niet mogelijk met uw licentie van ISPConfig.<br>";
+$wb["error_reseller_licence_nodelete"] = "De reseller kan niet verwijderd worden.<br>";
+
+$wb["error_kunde_licence"] = "Het toevoegen van klanten is niet mogelijk met uw licentie van ISPConfig.<br>";
+$wb["error_kunde_licence_nodelete"] = "Deze klant is niet verwijderd.<br>";
+
+$wb["mysqldb_nicht_vorhanden"] = "MySQL database bestaat niet.<br>Voer uw wachtwoord in voor het aanmaken van een database.<br>";
+$wb["mysql_nicht_aktiv"] = "Het aanmaken van MySQL databases is niet toegestaan op deze website.<br>";
+$wb["Datenbank Name"] = "Database Naam";
+$wb["Speicher belegt"] = "Database grootte";
+
+$wb["Kein Web angelegt"] = "Geen site aangemaakt";
+$wb["Real Name"] = "Echte naam";
+$wb["Feld"] = "Veld";
+$wb["httpd_inc_txt"] = "Apache Directives<br>&nbsp; (optionieel)";
+$wb["Kopie speichern"] = "Bewaar kopie";
+
+$wb["err_0001"] = "Het domein behoort toe aan een andere klant.";
+
+$wb["MySQL Remote Access"] = "MySQL Remote Access";
+$wb["lokaler mailserver"] = "Locale Mailserver";
+$wb["externer mailserver"] = "Externe Mailserver";
+
+$wb["Log-Grösse"] = "Log-grootte";
+$wb["Frontpage Passwort"] = "Frontpage wachtwoord";
+
+// NEW 1.1.12 ///////////////////////////////////
+
+$wb["Anbieternummer"] = 'Reseller nr.';
+$wb["Domain DNS"] = 'Master Zones (DNS)';
+$wb["HTTPD Includes"] = 'HTTPD Includes';
+$wb["DNS-Manager"] = 'DNS Manager';
+$wb["DNS-Domains angelegt"] = 'DNS Domein gemaakt';
+$wb["Kundennummer"] = 'Klantnummer';
+$wb["Anonymous FTP"] = 'Anonymous FTP';
+$wb["Anon. FTP MB"] = 'Anon. FTP MB';
+$wb["Faktura"] = 'Factuur';
+$wb["Mailserver"] = 'Mailserver';
+$wb["aktiviert"] = 'Actief';
+$wb["deaktiviert"] = 'Inactief';
+$wb["ISP User"] = 'ISP Gebruiker';
+$wb["WebSpeicher MB"] = 'Webruimte MB';
+$wb["MailSpeicher MB"] = 'Mailruimte MB';
+$wb["Max. MailSpeicher MB"] = 'Max. mailruimte MB';
+$wb["Administrator"] = 'Administrator';
+$wb["Erweiterte Einstellungen"] = 'Meer Instellingen';
+$wb["email_weiterleitung_txt"] = '<b>Hint:</b> één e-mailadres per regel.';
+$wb["Email Alias"] = 'Email alias';
+$wb["catchAll-Email"] = 'catchAll-Email';
+$wb["MailScan"] = 'MailScan';
+$wb["Spam-Filter"] = 'Spamfilter';
+$wb["Autoresponder"] = 'Automatisch beantwoorden';
+$wb["ISP Domain"] = 'ISP Domein';
+$wb["Create DNS MX"] = 'Aanmaken DNS MX-record';
+$wb["Admin"] = 'Admin';
+$wb["CatchAll"] = 'CatchAll';
+$wb["Bitte Artikel auswählen"] = "Selecteer item";
+$wb["Letzte Abrechnung"] = "Laatste rekening";
+$wb["Artikel hinzufügen"] = "Toevoegen item";
+$wb["Wird automatisch vergeben."] = 'Wordt automatisch toegekend.';
+$wb["Email Adresse"] = "Emailadres";
+
+// new 1.2 ////////////////////////////////////////
+$wb["error_email_exist"] = "Emailadres bestaat reeds.";
+$wb["error_realname"] = "Uitsluiten de volgende tekens zijn toegestaan: a-z A-Z 0-9 - _ .";
+$wb["Die Emailadresse muss aus min. 1, max 60 Buchstaben oder Zahlen bestehen."] = "Het emailadres moet uit min. 1 en max. 60 letters of cijfers bestaan.";
+
+// new 1.3 ////////////////////////////////////////
+$wb["Bundesland"] = "Provincie";
+$wb["Spamfilter & Antivirus"] = 'Spamfilter & Antivirus';
+$wb["Spamfilter"] = 'Spamfilter';
+$wb["Antivirus"] = 'Antivirus';
+$wb["accept"] = 'accepteren';
+$wb["discard"] = 'afwijzen';
+$wb["Spam Strategie"] = 'Spam strategie';
+$wb["Spam Hits"] = 'Spam hits';
+$wb["Rewrite Subject"] = 'Herschrijf onderwerp';
+$wb["Betreff"] = 'Onderwerp';
+$wb["SUCHE"] = 'ZOEKEN';
+$wb["IP"] = 'IP';
+$wb["Standard CGIs"] = 'Standard CGIs';
+$wb["PHP Safe Mode"] = 'PHP Safe Mode';
+$wb["WAP"] = 'WAP';
+$wb["Individuelle Fehler-Seiten"] = 'Individuele foutpaginas';
+$wb["Anzahl Datenbanken"] = 'Aantal Databases';
+$wb["Fehler 400<br>(Ungültige Syntax)"] = "400 Fout<br>(Ongeldige syntax)";
+$wb["Fehler 401<br>(Autorisierung<br>erforderlich)"] = "401 Fout<br>(Authorisatie<br>vereist)";
+$wb["Fehler 403<br>(Verboten)"] = "403 Fout<br>(Verboden)";
+$wb["Fehler 404<br>(Datei nicht<br>gefunden)"] = "404 Fout<br>(Bestand niet gevonden)";
+$wb["Fehler 405<br>(Methode nicht<br>erlaubt)"] = "405 Fout<br>(Methode niet<br>toegestaan)";
+$wb["Fehler 500<br>(Interner<br>Server-Fehler)"] = "500 Fout<br>(Interne server<br>fout)";
+$wb["Fehler 503<br>(Service ist z.Zt.<br>überlastet)"] = "503 Fout<br>(Service<br>niet beschikbaar)";
+$wb["Datenbanken"] = "Databases";
+$wb["Datenbank"] = "Database";
+$wb["Datenbankname"] = "Database name";
+$wb["Datenbankuser"] = "Database gebruiker";
+$wb["weiter_link"] = "<br> <a href='../../isp_manager/frame_start.php?s=$s'>Meer &gt;&gt;</a>";
+$wb["Slave Zones"] = 'Slave zones (DNS)';
+$wb["txt_client_salutatory_email_desc"] = "<b>Welkomsemail voor klanten</b>";
+$wb["txt_client_salutatory_email_sender_email"] = "Emailadres afzender";
+$wb["txt_client_salutatory_email_sender_name"] = "Naam afzender";
+$wb["txt_client_salutatory_email_bcc"] = "BCC Ontvanger";
+$wb["txt_client_salutatory_email_subject"] = "Onderwerp";
+$wb["txt_client_salutatory_email_message"] = "Bericht";
+$wb["txt_client_salutatory_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Gebruik de volgende variabelen in uw tekst:</b></td></tr>
+        <tr>
+          <td class="normal">%%%USER%%%</td>
+          <td class="normal">
+            Gebruikersnaam klant</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%PASSWORD%%%</td>
+          <td class="normal">
+            Wachtwoord klant</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%FIRST_NAME%%%</td>
+          <td class="normal">
+            Voornaam klant</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%LAST_NAME%%%</td>
+          <td class="normal">
+            Achternaam klant</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%COMPANY%%%</td>
+          <td class="normal">
+            Bedrijfsnaam klant</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%EMAIL%%%</td>
+          <td class="normal">
+            Emailadres klant</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%CP%%%</td>
+          <td class="normal">
+            ISPConfig login URL</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%MANUAL%%%</td>
+          <td class="normal">
+            ISPConfig klanten handleiding</td>
+        </tr>
+        </table>';
+$wb["txt_standard_index"] = "Standaard index<br>&nbsp;&nbsp;pagina";
+$wb["txt_standard_index_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Gebruik de volgende variabelen in uw tekst:</b></td></tr>
+        <tr>
+          <td class="normal">%%%FQDN%%%</td>
+          <td class="normal">
+            Website\'s volledig gekwalificeerde domeinnaam</td>
+        </tr>
+    </table>';
+$wb["txt_standard_index"] = "Standaard index<br>&nbsp;&nbsp;pagina";
+$wb["txt_standard_index_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Gebruik de volgende variabelen in uw tekst:</b></td></tr>
+        <tr>
+          <td class="normal">%%%USER%%%</td>
+          <td class="normal">
+            User\'s Username</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%FQDN%%%</td>
+          <td class="normal">
+            Website\'s Fully Qualified Domain Name</td>
+        </tr>
+        </table>';
+ 
+ //////////////// ISP Manager Ende /////////////
+
+//////////////// Server Status ////////////////
+$wb["Arbeitsspeicher"]          = "Intern geheugen";
+$wb["CPU"]          = "CPU";
+$wb["Dienste"]      = "Diensten";
+$wb["Server Online seit"]          = "Server online sinds";
+$wb["User Online"]      = "Gebruikers online";
+$wb["System Load 1 Minute"] = "Systeem gebruik 1 Minuut";
+$wb["System Load 5 Minuten"] = "Systeem gebruik 5 Minuten";
+$wb["System Load 15 Minuten"] = "Systeem gebruik 15 Minuten";
+//////////////// Server Status Ende //////////
+
+$wb["Es konnte ein Dokument nicht wiederhergestellt werden, da sich das Eltern-Dokument noch im Papierkorb befindet.\n"] = "Het object kan niet teruggezet worden zolang het parent object zich in de prullenbak bevind.";
+$wb["error_anbieter_max_webs_ueberschritten"] = "U kunt geen websites meer toekennen aan de reseller, omdat het maximum is bereikt.<br>";
+$wb["error_anbieter_max_diskspace_ueberschritten"] = "U kunt niet meer schijfruimte toekennen aan de reseller, omdat het maximum is bereikt.<br>";
+$wb["error_anbieter_max_user_ueberschritten"] = "U kunt niet meer gebruikers aan de reseller toekennen, omdat het maximum is bereikt.<br>";
+$wb["error_anbieter_max_domain_ueberschritten"] = "U kunt niet meer domeinen aan de reseller toekennen, omdat het maximum is bereikt.<br>";
+$wb["error_anbieter_dnsmanager_aktiv"] = "De reseller heeft al enige DNS-records. De DNS-manager kan niet worden gedeactiveerd..<br>";
+$wb["error_anbieter_max_dns_ueberschritten"] = "U kunt niet meer Primary DNS Records toekennen, omdat het maximum is bereikt.<br>";
+$wb["error_anbieter_max_slavedns_ueberschritten"] = "U kunt niet meer Secondary DNS Records toekennen, omdat het maximum is bereikt.<br>";
+$wb["error_anbieter_httpd_include_aktiv"] = "HTTPD Includes zijn toegepast in sommige websites van de de reseller. Deze optie kan niet worden gedeactiveerd.<br>";
+$wb["error_anbieter_shell_access_aktiv"] = "Shell Access is reeds in gebruik op sommige websites van de reseller. Deze optie kan niet worden gedeactiveerd.<br>";
+$wb["error_anbieter_cgi_aktiv"] = "CGI is reeds in gebruik op sommige websites van de reseller. Deze optie kan niet worden gedeactiveerd..<br>";
+$wb["error_anbieter_cgi_mod_perl_aktiv"] = "CGI mod_perl is reeds in gebruik op een van de reseller\'s websites. Dit item kan niet worden gedeactiveerd.<br>";
+$wb["error_anbieter_standard_cgi_aktiv"] = "Standard CGIs zijn reeds in gebruik op een van de reseller\'s websites. Dit item kan niet worden gedeactiveerd.<br>";
+$wb["error_anbieter_php_aktiv"] = "PHP is reeds in gebruik op sommige websites van de reseller. Deze optie kan niet worden gedeactiveerd.<br>";
+$wb["error_anbieter_ssi_aktiv"] = "SSIShell is reeds in gebruik op sommige websites van de reseller. Deze optie kan niet worden gedeactiveerd.<br>";
+$wb["error_anbieter_ftp_aktiv"] = "FTPShell is reeds in gebruik op sommige websites van de reseller. Deze optie kan niet worden gedeactiveerd.<br>";
+$wb["error_anbieter_anonftp_aktiv"] = "Anonymous FTP is reeds in gebruik op sommige websites van de reseller. Deze optie kan niet worden gedeactiveerd.<br>";
+$wb["error_anbieter_frontpage_aktiv"] = "Frontpage is reeds in gebruik op sommige websites van de reseller. Deze optie kan niet worden gedeactiveerd..<br>";
+$wb["error_anbieter_datenbank_aktiv"] = "MySQL databases zijn reeds in gebruik op sommige websites van de reseller. Deze optie kan niet worden gedeactiveerd.<br>";
+$wb["error_anbieter_max_datenbank_ueberschritten"] = "U kunt niet meer MySQL databases toekennen aan de reseller, omdat het maximum is bereikt.<br>";
+$wb["error_anbieter_ssl_aktiv"] = "SSL is reeds in gebruik op sommige websites van de reseller. Deze optie kan niet worden gedeactiveerd.<br>";
+$wb["error_anbieter_wap_aktiv"] = "WAP is reeds in gebruik op sommige websites van de reseller. Deze optie kan niet worden gedeactiveerd.<br>";
+$wb["error_anbieter_error_pages_aktiv"] = "Individual error pages zijn reeds in gebruik op sommige websites van de reseller. Deze optie kan niet worden gedeactiveerd.<br>";
+$wb["error_web_no_unlimited_diskspace_1"] = "U kunt geen ongelimiteerde hoeveelheid diskruimte toekennen aan deze website. Het max. schijfruimte voor deze website is ";
+$wb["error_web_no_unlimited_diskspace_2"] = " MB.<br>";
+$wb["error_web_no_diskspace_free_1"] = "U heeft nog beschikbaar ";
+$wb["error_web_no_diskspace_free_2"] = " MB wat u kunt toekennen aan deze website.<br>";
+$wb["error_web_no_unlimited_users_1"] = "U kunt geen ongelimiteerd aantal gebruikers  toekennen aan deze website. Het max. aantal gebruikers voor deze website is ";
+$wb["error_web_no_unlimited_users_2"] = ".<br>";
+$wb["error_web_no_users_free_1"] = "U heeft nog beschikbaar ";
+$wb["error_web_no_users_free_2"] = " user(s) die u kunt toekennen aan deze website.<br>";
+$wb["error_web_no_unlimited_domains_1"] = "U kunt geen ongelimiteerd aantal domeinen toekennen aan deze website. Het max. aantal domeinen voor deze website is ";
+$wb["error_web_no_unlimited_domains_2"] = ".<br>";
+$wb["error_web_no_domains_free_1"] = "U heeft nog beschikbaar ";
+$wb["error_web_no_domains_free_2"] = " domein(en) die u kunt toekennen aan deze website.<br>";
+$wb["error_web_no_user_decrease_1"] = "Deze website heeft reeds ";
+$wb["error_web_no_user_decrease_2"] = " gebruiker(s). U kunt het aantal gebruikers niet verhogen.<br>";
+$wb["error_web_no_domain_decrease_1"] = "Deze website heeft reeds ";
+$wb["error_web_no_domain_decrease_2"] = " domein(en). U kunt het aantal domeinen niet verhogen.<br>";
+
+$wb["Benutzter Diskspace"] = "Schijfruimte gebruikt";
+$wb["Slave Zones angelegt"] = "Slave zones aangemaakt";
+$wb["Datenbanken angelegt"] = "Databases aangemaakt";
+$wb["error_web_no_database_decrease_1"] = "Deze website heeft reeds ";
+$wb["error_web_no_database_decrease_2"] = " database(s). U kunt het aantal databases niet verhogen.<br>";
+$wb["error_web_no_shell_access"] = "U kunt geen shell access toekennen aan deze website.<br>";
+$wb["error_web_no_cgi"] = "U kunt geen CGI functionaliteit toekennen aan deze website.<br>";
+$wb["error_web_no_cgi_mod_perl"] = "U kunt geen CGI mod_perl functionaliteit toekennen aan deze website.<br>";
+$wb["error_web_no_standard_cgi"] = "U kunt geen Standard CGIs toekennen aan deze website.<br>";
+$wb["error_web_no_php"] = "U kunt geen PHP functionaliteit toekennen aan deze website.<br>";
+$wb["error_web_no_ssi"] = "U kunt geen SSI functionaliteit toekennen aan deze website.<br>";
+$wb["error_web_no_ftp"] = "U kunt geen FTP functionaliteit toekennen aan deze website.<br>";
+$wb["error_web_no_mysql"] = "U kunt geen MySQL databases toekennen aan deze website.<br>";
+$wb["error_web_no_databases_free_1"] = "U heeft nog beschikbaar ";
+$wb["error_web_no_databases_free_2"] = " database(s) die u kunt toekennen aan deze website.<br>";
+$wb["error_web_no_ssl"] = "U kunt geen SSL functionaliteit toekennen aan deze website.<br>";
+$wb["error_web_no_anonftp"] = "U kunt geen Anonymous FTP functionaliteit toekennen aan deze website.<br>";
+$wb["error_web_no_wap"] = "U kunt geen WAP functionaliteit toekennen aan deze website.<br>";
+$wb["error_web_no_individual_error_pages"] = "U kunt geen individual error pages toekennen aan deze website.<br>";
+$wb["error_web_no_httpd_include"] = "U kunt geen HTTPD Includes toekennen aan deze website.<br>";
+$wb["error_web_no_frontpage"] = "U kunt geen Frontpage functionaliteit toekennen aan deze website.<br>";
+$wb["Web Vorlage"] = "Hostingplan";
+$wb["ISP Web-Vorlage"] = "ISP hostingplan";
+$wb["Keine Vorlage verwenden"] = "Individuele instellingen";
+$wb["Keine Vorlage vorhanden"] = "Geen hostingplan beschikbaar";
+$wb["txt_accept"] = "accepteren";
+$wb["txt_discard"] = "afwijzen";
+$wb["Eigenschaften"] = "Eigenschappen";
+$wb["ISP Datenbank"] = "ISP Database";
+$wb["Nein"] = "Nee";
+$wb["Ja"] = "Ja";
+$wb["Web"] = "Site";
+$wb["Domain"] = "Domein";
+$wb["Unbegrenzt"] = "ongelimiteerd";
+$wb["Traffic-Überschreitung"] = "Dataverkeer-overschreiding";
+$wb["sperren"] = "Opgeschort";
+$wb["benachrichtigen"] = "Notificatie";
+$wb["keine Aktion"] = "Geen actie";
+$wb["Website-Status"] = "Website status";
+$wb["aktiv"] = "Actief";
+$wb["gesperrt"] = "Opgeschort";
+
+$wb["Catalog_Name"] = "Naam";
+
+$wb["Nicht scannen"] = "Niet scannen";
+$wb["MX prüfen"] = "Check MX";
+$wb["Cyrus-Administrator"] = "Cyrus Admin";
+$wb["Passwort Cyrus-Admin"] = "Cyrus Admin wachtwoord";
+
+?>

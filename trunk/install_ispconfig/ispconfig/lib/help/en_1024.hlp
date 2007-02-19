@@ -1,0 +1,13 @@
+<?
+
+/**********************************************
+* ISPCofig Help File
+* Version 1.2
+* Syntax: $hlp["FieldName"] = "HelpText";
+************************************************/
+
+$hlp["dienst_name"] = "Name of the service to be monitored.";
+$hlp["dienst_port"] = "Port of the service, e.g. 80 for web servers.";
+$hlp["dienst_host"] = "Hostname or IP address of the server to be monitored.";
+$hlp["dienst_typ"] = "Type of the service. The system can monitor TCP- and UDP-based services.";
+?>

@@ -1,0 +1,19 @@
+<?
+
+/**********************************************
+* ISPConfig Help File
+* Version 1.2
+* Syntax: $hlp["FieldName"] = "HelpText";
+************************************************/
+
+$hlp["dns_soa"] = "Domän SOA (Start of Authority). Skriv in domännamnet (utan www).";
+$hlp["dns_refresh"] = "DNS Refresh i sekunder.";
+$hlp["dns_retry"] = "DNS Retry i sekunder.";
+$hlp["dns_expire"] = "DNS Expire i sekunder.";
+$hlp["dns_ttl"] = "DNS TTL i sekunder.";
+$hlp["dns_ns1"] = "Skriv in primär namnserver.";
+$hlp["dns_ns2"] = "Skriv in sekundär namnserver.";
+$hlp["dns_adminmail"] = "Skriv in epost adress för Zon administratören.";
+$hlp["server_id"] = "Välj vilken server.";
+$hlp["dns_soa_ip"] = "IP adress för domänen.";
+?>

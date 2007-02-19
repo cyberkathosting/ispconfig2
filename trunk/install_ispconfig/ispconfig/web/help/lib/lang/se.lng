@@ -1,0 +1,65 @@
+<?
+/********************************
+* ISPConfig Dictionary File
+* Version 1.0
+*********************************/
+
+$wb["Anbieter"]     = "Återförsäljare";
+$wb["Web"]          = "Webb";
+$wb["Admin Handbuch"] = "Admin Manual";
+$wb["Reseller Handbuch"] = "Återförsäljar Manual";
+$wb["Kunden Handbuch"] = "Kund Manual";
+$wb["Deutsch"]          = "Tyska";
+$wb["Englisch"]          = "Engelska";
+$wb["Schwedisch"]         = "Svenska";
+$wb["Projektfarm Support"]          = "Projektfarm Support";
+$wb["Online Hilfe"] = "Online Hjälp";
+
+$wb["willkommen_kunde"] = "Välkommen till ISPConfig!
+Du kan administrera dina webbplatser här. Om du har några frågor eller problem,
+kontakta gärna din server administratör eller ta en titt i ISPConfig kund manual.";
+$wb["Willkommen"] = "Välkommen";
+
+//////////////// Server Status ////////////////
+$wb["Arbeitsspeicher"]          = "Arbetsminne";
+$wb["CPU"]          = "CPU";
+$wb["Dienste"]      = "Tjänster";
+$wb["Server Online seit"]          = "Server Online sedan";
+$wb["User Online"]      = "Användare Online";
+$wb["System Load 1 Minute"] = "System belastning senaste 1 Min";
+$wb["System Load 5 Minuten"] = "System belastning senaste 5 Min";
+$wb["System Load 15 Minuten"] = "System belastning senaste 15 Min";
+//////////////// Server Status Ende //////////
+
+$wb["Webs angelegt"] = "Antal Webbplatser";
+$wb["User angelegt"] = "Antal Användare";
+$wb["Domains angelegt"] = "Antal Domäner";
+$wb["unlimitiert"]  = "obegränsat";
+$wb["Anbieter"]     = "Återförsäljare";
+$wb["DNS-Domains angelegt"] = 'DNS Domän skapad';
+$wb["von"] = "av";
+
+// NEW 2.0.8 ///////////////////////////////////
+$wb["Französische"]     = "Franska";
+// Support Tickets System
+$wb["Unterstützungskarten"] = "Support Uppdrag";
+$wb["Geöffnete Karten"] = "Öppna Uppdrag";
+$wb["Geschlossene Karten"] = "Stängda Uppdrag";
+$wb["Neue Karte"] = "Nya Uppdrag";
+$wb["Betreff"] = "Ämne";
+$wb["Priorität"] = "Prioritet";
+$wb["Niedrig"] = "Låg";
+$wb["Mittel"] = "Medium";
+$wb["Hoch"] = "Hög";
+$wb["Ihre frage"] = "Din fråga";
+$wb["Senden"] = "Skicka";
+$wb["Fehler während der schaffung der karte"] = "Fel vid skapandet av uppdrag";
+$wb["Neue unterstützungskarte, die auf antwort wartet"] = "Ett nytt support uppdrag väntar på svar";
+$wb["Sie erhielten eine antwort"] = "Du har fått ett svar";
+$wb["geantwortet zu ihnen"] = "svar till dig";
+$wb["Datum"] = "Datum";
+$wb["Davon"] = "Från";
+$wb["Ihre antwort"] = "Ditt svar";
+$wb["Antworten"] = "Svara på";
+$wb["Schließen"] = "Stängd";
+?>

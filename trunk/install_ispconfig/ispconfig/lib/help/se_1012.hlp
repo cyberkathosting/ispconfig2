@@ -1,0 +1,32 @@
+<?
+
+/**********************************************
+* ISPConfig Help File
+* Version 1.2
+* Syntax: $hlp["FieldName"] = "HelpText";
+************************************************/
+
+$hlp["kunde_anrede"] = "Skriv in välkomstmeddelande till kunden.";
+$hlp["kunde_firma"] = "Skriv in kundens företagsnamn.";
+$hlp["kunde_vorname"] = "Skriv in förnamnet på kunden.";
+$hlp["kunde_name"] = "Skriv in efternamnet på kunden.";
+$hlp["kunde_strasse"] = "Skriv in adress till kunden.";
+$hlp["kunde_plz"] = "Skriv in postnummer till kunden.";
+$hlp["kunde_ort"] = "Skriv in postadressen för kunden.";
+$hlp["kunde_land"] = "Skriv in vilken land kunden kommer ifrån.";
+$hlp["kunde_telefon"] = "Skriv in telefonnummer till kunden.";
+$hlp["kunde_fax"] = "Skriv in fax nummer till kunden.";
+$hlp["kunde_email"] = "Skriv in kundens epostadress.";
+$hlp["kunde_internet"] = "Skriv in URL till kundens hemsida.";
+$hlp["webadmin_user"] = "Skriv in kundens användarnamn som används för inloggning till ISPConfig systemet.";
+$hlp["webadmin_passwort"] = "Skriv in kundens lösenord som används för inloggning till ISPConfig systemet.";
+$hlp["rechnung_firma"] = "Skriv in betalningsdata (företagsnamn) för kunden.";
+$hlp["rechnung_vorname"] = "Skriv in betalningsdata (förnamn) för kunden.";
+$hlp["rechnung_name"] = "Skriv in betalningsdata (efternamn) för kunden.";
+$hlp["rechnung_strasse"] = "Skriv in betalningsdata (adress) för kunden.";
+$hlp["rechnung_plz"] = "Skriv in betalningsdata (postadress) för kunden.";
+$hlp["rechnung_ort"] = "Skriv in betalningsdata (postadress) för kunden.";
+$hlp["rechnung_land"] = "Skriv in betalningsdata (land) för kunden.";
+$hlp["rechnung_intervall"] = "Skriv in vilken betalningsperiod som gäller för de artiklar som kunden valt.";
+$hlp["rechnung_zahlungsbedingungen"] = "Skriv in vilket betalningssätt som kunden använder.";
+?>

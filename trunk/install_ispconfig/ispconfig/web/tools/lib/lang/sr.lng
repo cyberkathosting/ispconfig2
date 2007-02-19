@@ -1,0 +1,391 @@
+<?
+/********************************
+* ISPConfig Dictionary File
+* Version 1.0
+*********************************/
+
+//////////////// Tools //////////////////////
+$wb["Tools & Optionen"] = "Alati i Opcije";
+$wb["Passwort ändern"] = "Promena Lozinke";
+$wb["Allgemein"]    = "Opšte";
+$wb["Passwort alt"] = "stara lozinka";
+$wb["Passwort neu"] = "nova lozinka";
+$wb["Passwort wiederholen"] = "potvrda nove lozinke";
+$wb["Adresse ändern"] = "Promena Adrese";
+
+$wb["willkommen_kunde"] = "Dobrodošli u ISPConfig!
+Možete da ureðujete vaše internet prezentacije na ovom mestu. Ako imate pitanja ili probleme,
+kontaktirajte vašeg server administratora ili pogledajte uputstvo za klijente ISPConfig-a.";
+$wb["Willkommen"] = "Dobrodošli";
+
+$wb["passwort_gespeichert"] = "Promena lozinke uspešno obavljena.";
+$wb["passwort_uebereinstimmung"] = "Dve lozinke nisu u saglasju jedna sa drugom. Proverite da li su lozinke u poljima --Nova lozinka-- i --Ponovite novu lozinku-- identiène.";
+$wb["passwort_alt"] = "Lozinka ne može biti promenjena <br>zato što stara lozinka nije ispravna.";
+
+// NEW 1.1.12 ///////////////////////////////
+
+$wb["Backup Manager"] = 'Upravitelj arhiviranja podataka';
+$wb["Backup"] = 'Arhiviranje podataka';
+$wb["Restore"] = 'Obnavljanje';
+$wb["Daten Export"] = 'Izvoz podataka';
+$wb["Update Manager"] = 'Upravitelj ažuriranja';
+$wb["Portscanner"] = 'Skener portova';
+$wb["Whois"] = 'Whois';
+$wb["Download"] = 'Preuzimanje datoteka';
+$wb["FTP-Server"] = 'FTP-Server';
+$wb["Verzeichnis"] = 'Omotnica';
+$wb["Web Daten"] = 'Podactci internet prezentacije';
+$wb["User Daten"] = 'Korisnikovi podatci';
+$wb["Log Daten"] = 'Podatci log datoteka';
+$wb["mySQL Datenbank (wenn vorhanden)"] = 'mySQL Baza podataka';
+$wb["Backup starten"] = 'Poèni Arhiviranje podataka';
+$wb["Kein Web vorhanden."] = 'Nije pronaðena internet prezentacija.';
+$wb["Web-Backup"] = 'Arhiviranje internet prezentacije';
+$wb["Kunden-Stammaten"] = 'Podatci klijentata';
+$wb["Format Einstellungen"] = 'Specifikacija Formata';
+$wb["Trennzeichen"] = 'Delilac';
+$wb["Eingeschlossen mit"] = 'obuhvaæen sa';
+$wb["Daten für folgende Anbieter exportieren"] = 'Izvoz Podataka';
+$wb["Export starten"] = 'Poèetak izvoza';
+$wb["Anbieter-Stammdaten"] = 'Podatci preprodavca';
+$wb["Export"] = 'Izoz';
+$wb["Von"] = 'Od';
+$wb["Bis"] = 'Ka';
+$wb["Local Portscanner"] = 'Lokalni skener portova';
+
+// NEW 1.1.12a //////////////////////////////
+
+$wb["Es wurde kein Web ausgewählt."] = "Nije odabrana internet prezentacija.";
+$wb["Backup-Funktionen im Demo-Modus nicht verfügbar."] = "Funkcije arhiviranja nisu dostupne u demo modu.";
+$wb["Backup Status"] = "Staus Arhiviranja";
+$wb["Der Name des FTP-Servers <br>enthält ungültige Zeichen."] = "naziv FTP servera<br>sadrži neispravne karaktere.";
+$wb["Sie haben keinen FTP Benutzernamen angegeben."] = "Nije podešeno FTP-Korisnièko ime.";
+$wb["Ftp-Verbindung nicht hergestellt!"] = "FTP-Konekcija nije uspela!";
+$wb["Verbindung mit:"] = "Konekcija na:";
+$wb["als Benutzer:"] = "kao Korisnik:";
+$wb["nicht möglich."] = "nije moguæa.";
+$wb["Konnte nicht in Verzeichnis:"] = "promena ka omotnici:";
+$wb["wechseln."] = "nije uspela.";
+$wb["Wechsel in Verzeichnis:"] = "promena ka omotnici:";
+$wb["Ftp upload war fehlerhaft!"] = "FTP-Uèitavanje nije uspelo!";
+$wb["Upload erfolgreich."] = "Uèitavanje je uspešno.";
+$wb["FTP-Upload Status"] = "FTP-Uèitavanje Status";
+$wb["Backup-Methode nicht unterstützt."] = "Metod arhiviranja podataka nije dostupan.";
+$wb["Sprache ändern"] = "Promena Jezika";
+$wb["Sprache (ISO)"] = "Jezik (ISO)";
+$wb["Software Version"] = "Verzija Programa";
+
+
+//////////////// Tools Ende /////////////////
+
+///////////////// ISP Manager //////////////////
+$wb["Anbieter"]     = "Preprodavac";
+$wb["Kunde"]        = "Klijent";
+$wb["Suchen"]       = "Pretraga";
+$wb["Stammdaten"]   = "Glavni podaci";
+$wb["Limits"]       = "Ogranièenja";
+$wb["Zugangsdaten"] = "Unos informacija";
+$wb["Statistik"]    = "Statistike";
+$wb["Firma"]        = "Kompanija";
+$wb["Anrede"]       = "Adresa";
+$wb["Vorname"]      = "Ime";
+$wb["Name"]         = "Prezime";
+$wb["Strasse"]      = "Ulica";
+$wb["PLZ"]          = "Poštanski broj";
+$wb["Ort"]          = "Grad";
+$wb["Land"]         = "Zemlja";
+$wb["Telefon"]      = "Telefon";
+$wb["Fax"]          = "Fax";
+$wb["Internet"]     = "Internet adresa";
+$wb["Öffnen"]      = "Otvori";
+$wb["Benutzername"] = "Korisnièko ime"; // besser: vielleicht nur Variable $wb["username"] benutzen?
+$wb["zugangsdaten_anbieter_einleitung"] = "Ovde možete podesiti korisnièko ime i lozinku za preprodavca.";
+$wb["zugangsdaten_kunde_einleitung"] = "Ovde možete podesiti korisnièko ime i lozinku za upravljanje <br> navedenim internet prezentacijama.<br> ";
+$wb["Web Verwaltung"] = "Upravljanje Internet prezentacijom";
+$wb["Rechnung"]      = "Raèun";
+$wb["Rechnungsanschrift:"] = "Adresa za raèune:<br>";
+$wb["Intervall"]    = "Period";
+$wb["Preis"]        = "Cena";
+$wb["Zahlungsart"]  = "Metod plaæanja";
+$wb["Basis"]        = "Osnovno";
+$wb["Create DNS"]   = "Napravi DNS";
+$wb["Speicher MB"]     = "Prostor u MB";
+$wb["Max. User"]        = "Maks. Korisnika";
+$wb["Max. Domain"]        = "Maks. Domena";
+$wb["PHP Scripte"]        = "PHP Skripte";
+$wb["SSI"]        = "SSI";
+$wb["FTP Zugang"]        = "FTP pristup";
+$wb["mySQL"]        = "mySQL";
+$wb["SSL"]        = "SSL";
+$wb["Shell Zugriff"]      = "Pristup Konzoli";
+$wb["Zugang"]       = "Pristup";  // Zugriff u. Zugang zusammenfassen!/nur einen Begriff nehmen!
+$wb["CGI Scripte"]      = "CGI Skripte";
+$wb["CGI Modus"]      = "CGI Mod";
+$wb["CGI mod_perl"]      = "CGI mod_perl";
+$wb["Bundesland"]   = "Okrug";
+$wb["Abteilung"]    = "Odeljenje";
+$wb["Gültigkeit (Tage)"]  = "Period važenja (dana)";
+$wb["SSL Key"]          = "SSL Kljuè";
+$wb["SSL Zertifikat"]   = "SSL Certifikat";
+$wb["Aktion"]       = "Akcija";
+$wb["Zertifikat erzeugen"] = "Napravi certifikat";
+$wb["Zertifikat speichern"] = "Snimi certifikat";
+$wb["Zertifikat löschen"] = "Obriši certifikat";
+$wb["Speicherplatz gesamt"] = "Prostor za uskladištenje";
+$wb["unlimitiert"]  = "neogranièeno";
+$wb["verbraucht"]   = "iskorišæeno";
+$wb["Trafficübersicht"] = "Pregled Saobraæaja";
+$wb["Monat"]        = "Mesec";
+$wb["Traffic"]      = "Saobraæaj";
+$wb["traffic_letzte_4"] = "Saobraæaj u poslednje 4 godine";
+$wb["Jahr"]         = "Godina";
+$wb["mySQL User"]        = "mySQL Korisnièko ime";
+$wb["mySQL Passwort"]    = "mySQL Lozinka";
+
+// Ergänzungen /////////////////////////////////
+$wb["Anbieter neu"] = "Novi preprodavac";
+$wb["Kunde neu"]    = "Novi klijent";
+$wb["Web neu"]      = "Nova internet prezentacija";
+$wb["Ordner neu"]   = "Sortirano po";
+$wb["Suchen"]       = "Pretraga";
+$wb["ISP Anbieter"] = "ISP Preprodavac";
+$wb["Webs"] = "Internet prezentacije";
+$wb["User"] = "Korisnik";
+$wb["Domains"] = "Domeni";
+$wb["Zahlung"] = "Plaæanje";
+$wb["ISP Kunde"] = "ISP Klijent";
+$wb["ISP Web"] = "ISP Internet prezentacija";
+$wb["Kunden"] = "Klijenti";
+$wb["Dokument suchen"] = "Pretraga dokumenata";
+
+$wb["User & Email"] = "Korisnik i e-mail";
+$wb["Co-Domains"] = "Ko-Domeni";
+$wb["SSL"] = "SSL";
+$wb["Optionen"] = "Opcije";
+
+$wb["Webs angelegt"] = "Internet prezentacija iskorišæeno";
+$wb["User angelegt"] = "Korisnika iskorišæeno";
+$wb["Domains angelegt"] = "Domena iskorišæeno";
+$wb["rechnungsanschrift"] = "Adresa za raèun:<br> ";
+
+
+$wb["neues Web anlegen"] = "Nova internet prezentacija";
+$wb["weiter"] = "sledeæe";
+$wb["SUCHE"] = "pretraga";
+
+$wb["msg_beta"] = "";
+$wb["title_isp_beta"] = "";
+$wb["msg_kein_win"] = "Ovaj program nije dostupan za Windows operativne sisteme.";
+
+// Error Codes ispconfig_isp_domain.lib.php
+$wb["error_web_doppelt"] = "Veæ postoji internet prezentacija ili domen sa tim imenom";
+$wb["error_max_domain_web"] = "Dostignut je maksimalni broj domena za ovu internet prezentaciju";
+$wb["error_max_domain_anbieter"] = "Dostignut je maksimalni broj domena za ovog preprodavca";
+$wb["angelegt"] = "iskorišæeno";
+
+// Error Codes ispconfig_isp_kunde.lib.php
+$wb["error_user_exist_1"] = "ISPConfig korinisk";
+$wb["error_user_exist_2"] = "veæ postoji.  Korisnik nije dodat ili promenjen.";
+$wb["error_max_user_licence"] = "Maksimalni broj ISPConfig korinisnièkih naloga za ovu licencu je dostignut.";
+
+
+// Error Codes ispconfig_isp_reseller.lib.php
+$wb["error_reseller_title"] = "Korisnik sa ovim nazivom veæ postoji.";
+$wb["error_reseller_group_not_found"] = "Grupa preprodavca ne može biti pronaðena.";
+$wb["error_anbieter_no_delete"] = "<b>Preprodavac nije promenjen.</b><br>&nbsp;<br>Preprodavac može biti obrisan samo ako su sve internet prezentacije i svi klijenti tog preprodavca obrisani. Takoðe proverite da li je kanta za otpatke preprodavca prazna.";
+
+// Error Codes ispconfig_isp_user.lib.php
+$wb["error_sysuser_exist_1"] = "Veæ postoji korisnik sa tim imenom";
+$wb["error_sysuser_exist_2"] = "unešeno.<br><br> <a href='../../isp_manager/frame_start.php?s=$s'>Više</a>";
+$wb["error_max_user_web"] = "maksimalni broj korisnika za internet prezentaciju je dostignut.<br><br> <a href='../../isp_manager/frame_start.php?s=$s'>Više</a>";
+$wb["error_max_space_web"] = "Odabrana velièina skladišnog prostora prevazilazi granice za interne prezentaciju.<br><br> <a href='../../isp_manager/frame_start.php?s=$s'>Više</a>";
+$wb["error_max_user_anbieter"] = "Maksimalni broj korisnika za preprodavca je dostignut.<br><br> <a href='../../isp_manager/frame_start.php?s=$s'>Više</a>";
+$wb["error_sysuser_exist"] = "Korisnièko ime je veæ u upotrebi.<br><br> <a href='../../isp_manager/frame_start.php?s=$s'>Više</a>";
+$wb["error_admin_exist"] = "Korisnik sa administratorskim pravima veæ postoji za ovu internet prezentaciju.<br><br> <a href='../../isp_manager/frame_start.php?s=$s'>Više</a>";
+$wb["error_admin_exist_long"] = "Korisnik sa administratorskim pravima veæ postoji. Morate ukloniti drugog administratora ukoliko želite da dodelite prava drugom korisniku.<br><br> <a href='../../isp_manager/frame_start.php?s=$s'>Više</a>";
+
+// Error Codes ispconfig_isp_user.lib.php
+$wb["error_max_web_anbieter"] = "maskimalni broj inetrnet prezentacija za preprodavca je veæ dostignut";
+$wb["error_web_ssl_exist"] = "SSL certifikat veæ postoji za ovu IP.";
+
+// Plugins
+$wb["CPU Auslastung 1 Minute"] = "CPU Iskorišæenje 1 Minut";
+$wb["CPU Auslastung 5 Minuten"] = "CPU Iskorišæenje 5 Minuta";
+$wb["CPU Auslastung 15 Minuten"] = "CPU Iskorišæenje 15 Minuta";
+$wb["Server Online seit"] = "Server radi od";
+$wb["User Online"] = "Korisnika Online";
+$wb["error_web_id"] = "Ovaj Plugin zahteva ispravnu ID internet prezentacije.";
+$wb["von"] = "od";
+$wb["Gesamt"] = "Sve ukupno";
+$wb["Traffic in den letzten 4 Jahren"] = "Saobraæaj u poslednje 4 godine";
+
+$wb["Backup von Tabelle"] = "Arhiviranje tabele";
+$wb["Optimiere"] = "Optimizacija";
+$wb["Reparatur"] = "Popravka";
+$wb["oder"] = "ili";
+$wb["Installation starten"] = "Instalacija";
+
+$wb["Monatlich"] = "Meseèno";
+$wb["Quartal"] = "Èetvrt godišnje";
+$wb["Halbjährlich"] = "Polu godišnje";
+$wb["Jährlich"] = "Godišnje";
+$wb["Sonstige"] = "Drugo";
+
+$wb["bei Erhalt"] = "po prijemu";
+$wb["Netto 7 Tage"] = "7 dana";
+$wb["Netto 15 Tage"] = "15 dana";
+$wb["Netto 30 Tage"] = "30 dana";
+$wb["Sonstige"] = "drugo";
+$wb["Neu"] = "Novo";
+$wb["Postfach MB"] = "Poštansko sanduèe MB";
+
+$wb["email_alias_txt"] = "<b>Napomena:</b> jedan alias po liniji.";
+$wb["Weiterleitung"] = "Prosledi";
+$wb["Nachricht"] = "Poruka";
+$wb["Kein Kunde vorhanden"] = "Nema dostupnih klijenataNo client available";
+$wb["Dieses Web können Sie nicht löschen."] = "Ne može se obrisati ova internet prezentacija.";
+$wb["Ausgabeformat"] = "List format";
+$wb["Bearbeiten"] = "Izmena";
+$wb["Löschen"] = "Brisanje";
+
+$wb["willkommen_kunde"] = "Dobrodošli u ISPConfig!
+Možete da upravljate vašim internet prezentacijama odavde. Ako imate pitanja ili probleme,
+kontaktirajte vašeg server administratora ili pogledajte uputstvo za ISPConfig klijente.";
+$wb["Willkommen"] = "Dobrodošli";
+
+$wb["txt_client_salutatory_email_desc"] = "<b>Pozdravni e-mail za klijenta</b>";
+$wb["txt_client_salutatory_email_sender_email"] = "e-mail pošiljioca";
+$wb["txt_client_salutatory_email_sender_name"] = "Ime pošiljioca";
+$wb["txt_client_salutatory_email_bcc"] = "BCC Primaoc";
+$wb["txt_client_salutatory_email_subject"] = "Tema";
+$wb["txt_client_salutatory_email_message"] = "Poruka";
+$wb["txt_client_salutatory_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Ukljuèite sledeæe promenljive u vaš tekst:</b></td></tr>
+        <tr>
+          <td class="normal">%%%USER%%%</td>
+          <td class="normal">
+            Klijentovo Korisnièko ime</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%PASSWORD%%%</td>
+          <td class="normal">
+            Klijentova lozinka</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%FIRST_NAME%%%</td>
+          <td class="normal">
+            Klijentovo Ime</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%LAST_NAME%%%</td>
+          <td class="normal">
+            Klijentovo Prezime</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%COMPANY%%%</td>
+          <td class="normal">
+            Klijentova Kompanija</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%EMAIL%%%</td>
+          <td class="normal">
+            Klijentova Email Adresa</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%CP%%%</td>
+          <td class="normal">
+            URL za Prijavu na ISPConfig</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%MANUAL%%%</td>
+          <td class="normal">
+            Uputstvo za Klijente za ISPConfig</td>
+        </tr>
+        </table>';
+$wb["txt_standard_index"] = "Standardna Indeks<br>&nbsp;&nbsp;Strana";
+$wb["txt_standard_index_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Ukljuèite sledeæe promenljive u vaš tekst:</b></td></tr>
+        <tr>
+          <td class="normal">%%%FQDN%%%</td>
+          <td class="normal">
+            Potpuno Kvalifikovano Ime Domena (FQDN) Internet Prezentacije</td>
+        </tr>
+    </table>';
+$wb["txt_user_standard_index"] = "Korisnièka Standardna<br>&nbsp;&nbsp;Index Page";
+$wb["txt_user_standard_index_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Ukljuèite sledeæe promenljive u vaš tekst:</b></td></tr>
+        <tr>
+          <td class="normal">%%%USER%%%</td>
+          <td class="normal">
+            Korisnièko Ime</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%FQDN%%%</td>
+          <td class="normal">
+            Potpuno Kvalifikovano Ime Domena (FQDN) Internet Prezentacije</td>
+        </tr>
+        </table>';
+
+//////////////// ISP Manager Ende /////////////
+
+//////////////// Server Status ////////////////
+$wb["Arbeitsspeicher"]          = "Glavna Memorija";
+$wb["CPU"]          = "CPU";
+$wb["Dienste"]      = "Servisi";
+$wb["Server Online seit"]          = "Server radi od";
+$wb["User Online"]      = "Online korisnici";
+$wb["System Load 1 Minute"] = "Optereæenje sistema 1 Minut";
+$wb["System Load 5 Minuten"] = "Optereæenje sistema 5 Minuta";
+$wb["System Load 15 Minuten"] = "Optereæenje sistema 15 Minuta";
+//////////////// Server Status Ende //////////
+
+$wb["DNS-Domains angelegt"] = 'DNS Domeni kreirani';
+
+$wb["Hinzufügen"] = "Dodavanje";
+$wb["Berechtigungen"] = "Dozvole";
+$wb["Speichern"] = "Snimanje";
+$wb["Löschen"] = "Brisanje";
+$wb["Abbrechen"] = "Opoziv";
+$wb["IP-Adresse"] = "IP-Adresa";
+$wb["DNS-Query"] = "Upit Primarnih DNS Zapisa";
+$wb["DNS-Insert"] = "Pravljenje Primarnih DNS Zapisa";
+$wb["DNS-Update"] = "Ispravka Primarnih DNS Zapisa";
+$wb["DNS-Delete"] = "Brisanje Primarnih DNS Zapisa";
+$wb["slave_query"] = "Upit Sekundarnih DNS Zapisa";
+$wb["slave_insert"] = "Pravljenje Sekundarnih DNS Zapisa";
+$wb["slave_update"] = "Izmena Sekundarnih DNS Zapisa";
+$wb["slave_delete"] = "Brisanje Sekundarnih DNS Zapisa";
+$wb["reseller_query"] = "Upit Preprodavaca";
+$wb["reseller_insert"] = "Stvaranje Preprodavaca";
+$wb["reseller_update"] = "Izmena Preprodavaca";
+$wb["reseller_delete"] = "Brisanje Preprodavaca";
+$wb["kunde_query"] = "Upit Klijenata";
+$wb["kunde_insert"] = "Stvaranje Klijenata";
+$wb["kunde_update"] = "Izmena Klijenata";
+$wb["kunde_delete"] = "Brisanje Klijenata";
+$wb["web_query"] = "Upit Internet prezentacija";
+$wb["web_insert"] = "Stvaranje Internet prezentacija";
+$wb["web_update"] = "Izmena Internet prezentacija";
+$wb["web_delete"] = "Brisanje Internet prezentacija";
+$wb["txt_primary_dns_records"] = "Primarni DNS Zapisi";
+$wb["txt_secondary_dns_records"] = "Sekundarni DNS Zapisi";
+$wb["txt_anbieter"] = "Preprodavci";
+$wb["txt_kunden"] = "Klijenti";
+$wb["txt_webs"] = "Internet prezentacije";
+
+$wb["txt_move_websites"] = "Premesti Internet prezentacija";
+$wb["txt_website_deleted_no_move"] = "Ova Internet prezentacija je obrisana i ne može biti premeštena.<br><br> <a href='../../frame_start.php?s=$s'>Sledeæe &gt;&gt;</a>";
+$wb["txt_customer_deleted_no_move"] = "Ovaj klijent je obrisan; internet prezentacija nemože biti premeštena.<br><br> <a href='../../frame_start.php?s=$s'>Sledeæe &gt;&gt;</a>";
+$wb["txt_website_moved"] = "Internet prezentacija je premeštena ka klijentu kojeg ste naveli.<br><br> <a href='../../frame_start.php?s=$s'>Sledeæe &gt;&gt;</a>";
+$wb["txt_move_website_from"] = "od";
+$wb["txt_move_website_to"] = "ka";
+$wb["txt_move_website_website"] = "Internet prezentacija";
+$wb["txt_move_website_submit"] = "Potvrdi";
+
+?>

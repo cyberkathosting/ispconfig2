@@ -1,0 +1,391 @@
+<?
+/********************************
+* ISPConfig Dictionary File
+* Version 1.0
+*********************************/
+
+//////////////// Tools //////////////////////
+$wb["Tools & Optionen"] = "Verktyg & Tillval";
+$wb["Passwort ändern"] = "Ändra lösenord";
+$wb["Allgemein"]    = "Allmänt";
+$wb["Passwort alt"] = "Gammalt lösenord";
+$wb["Passwort neu"] = "Nytt lösenord";
+$wb["Passwort wiederholen"] = "Bekräfta nytt lösenord";
+$wb["Adresse ändern"] = "Ändra Adress";
+
+$wb["willkommen_kunde"] = "Välkommen till ISPConfig!
+Du kan administrera din hemsida(or) här. Om du har frågor eller problem,
+kontakta din administratör eller använd ISPConfig kund manual.";
+$wb["Willkommen"] = "Välkommen";
+
+$wb["passwort_gespeichert"] = "Lösenordet uppdaterat.";
+$wb["passwort_uebereinstimmung"] = "De två lösenord som du angett stämmer inte överens med varandra. Kontrollera att lösenordet i fältet --Nytt lösenord-- och --Bekräfta nytt lösenord-- är identiska.";
+$wb["passwort_alt"] = "Lösenordet kunde inte uppdateras <br>på grund av att det gamla lösenordet inte är korrekt.";
+
+// NEW 1.1.12 ///////////////////////////////
+
+$wb["Backup Manager"] = 'Backup Manager';
+$wb["Backup"] = 'Backup';
+$wb["Restore"] = 'Återställa';
+$wb["Daten Export"] = 'Data Export';
+$wb["Update Manager"] = 'Uppdaterings Manager';
+$wb["Portscanner"] = 'Portskanner';
+$wb["Whois"] = 'Whois';
+$wb["Download"] = 'Ladda ner';
+$wb["FTP-Server"] = 'FTP-Server';
+$wb["Verzeichnis"] = 'Katalog';
+$wb["Web Daten"] = 'Webb Data';
+$wb["User Daten"] = 'Användar Data';
+$wb["Log Daten"] = 'Logg Data';
+$wb["mySQL Datenbank (wenn vorhanden)"] = 'MySQL Databas';
+$wb["Backup starten"] = 'Starta Backup';
+$wb["Kein Web vorhanden."] = 'Ingen domän funnen.';
+$wb["Web-Backup"] = 'Webb Backup';
+$wb["Kunden-Stammaten"] = 'Kund Data';
+$wb["Format Einstellungen"] = 'Format Specifikation';
+$wb["Trennzeichen"] = 'Separator';
+$wb["Eingeschlossen mit"] = 'Bifoga med';
+$wb["Daten für folgende Anbieter exportieren"] = 'Exportera Data';
+$wb["Export starten"] = 'Export startad';
+$wb["Anbieter-Stammdaten"] = 'Återförsäljar Data';
+$wb["Export"] = 'Export';
+$wb["Von"] = 'Från';
+$wb["Bis"] = 'Till';
+$wb["Local Portscanner"] = 'Lokal Portskanner';
+
+// NEW 1.1.12a //////////////////////////////
+
+$wb["Es wurde kein Web ausgewählt."] = "Ingen hemsida vald.";
+$wb["Backup-Funktionen im Demo-Modus nicht verfügbar."] = "Backup-Funktioner är inte tillgängliga i demo mode.";
+$wb["Backup Status"] = "Backup-Status";
+$wb["Der Name des FTP-Servers <br>enthält ungültige Zeichen."] = "Namnet på FTP servern <br>innehåller otillåtna tecken.";
+$wb["Sie haben keinen FTP Benutzernamen angegeben."] = "Inget FTP Användarnamn har angetts.";
+$wb["Ftp-Verbindung nicht hergestellt!"] = "Ftp Anslutning misslyckades!";
+$wb["Verbindung mit:"] = "Uppkopplad till:";
+$wb["als Benutzer:"] = "som Användare:";
+$wb["nicht möglich."] = "inte möjligt.";
+$wb["Konnte nicht in Verzeichnis:"] = "ändrar till katalog:";
+$wb["wechseln."] = "misslyckats.";
+$wb["Wechsel in Verzeichnis:"] = "ändrar till katalog:";
+$wb["Ftp upload war fehlerhaft!"] = "FTP-Uppladdning misslyckades!";
+$wb["Upload erfolgreich."] = "Uppladdning lyckades.";
+$wb["FTP-Upload Status"] = "FTP Uppladdning Status";
+$wb["Backup-Methode nicht unterstützt."] = "Backup metoden är inte tillgänglig.";
+$wb["Sprache ändern"] = "Byt språk";
+$wb["Sprache (ISO)"] = "Språk (ISO)";
+$wb["Software Version"] = "Mjukvaru Version";
+
+
+//////////////// Tools Ende /////////////////
+
+///////////////// ISP Manager //////////////////
+$wb["Anbieter"]     = "Återförsäljare";
+$wb["Kunde"]        = "Kund";
+$wb["Suchen"]       = "Sök";
+$wb["Stammdaten"]   = "Grund data";
+$wb["Limits"]       = "Begränsningar";
+$wb["Zugangsdaten"] = "Inloggnings Information";
+$wb["Statistik"]    = "Statistik";
+$wb["Firma"]        = "Företag";
+$wb["Anrede"]       = "Adress";
+$wb["Vorname"]      = "Förnamn";
+$wb["Name"]         = "Efternamn";
+$wb["Strasse"]      = "Gata";
+$wb["PLZ"]          = "Post nr.";
+$wb["Ort"]          = "Ort";
+$wb["Land"]         = "Land";
+$wb["Telefon"]      = "Telefon";
+$wb["Fax"]          = "Fax";
+$wb["Internet"]     = "Webb adress";
+$wb["Öffnen"]      = "Öppna";
+$wb["Benutzername"] = "Användarnamn"; // besser: vielleicht nur Variable $wb["username"] benutzen?
+$wb["zugangsdaten_anbieter_einleitung"] = "Här kan du ange Användarnamn och Lösenord för Återförsäljare.";
+$wb["zugangsdaten_kunde_einleitung"] = "Här kan du ange Användarnamn och Lösenord för <br> specificerade Webbplatser.<br> ";
+$wb["Web Verwaltung"] = "Webbplats Underhåll";
+$wb["Rechnung"]      = "Faktura";
+$wb["Rechnungsanschrift:"] = "Faktura adress:<br>";
+$wb["Intervall"]    = "Intervall";
+$wb["Preis"]        = "Pris";
+$wb["Zahlungsart"]  = "Betalningsmetod";
+$wb["Basis"]        = "Basinfo";
+$wb["Create DNS"]   = "Skapa DNS";
+$wb["Speicher MB"]     = "Utrymme MB";
+$wb["Max. User"]        = "Max. Användare";
+$wb["Max. Domain"]        = "Max. Domäner";
+$wb["PHP Scripte"]        = "PHP Skript";
+$wb["SSI"]        = "SSI";
+$wb["FTP Zugang"]        = "FTP Åtkomst";
+$wb["mySQL"]        = "mySQL";
+$wb["SSL"]        = "SSL";
+$wb["Shell Zugriff"]      = "Skal Åtkomst";
+$wb["Zugang"]       = "Åtkomst";  // Zugriff u. Zugang zusammenfassen!/nur einen Begriff nehmen!
+$wb["CGI Scripte"]      = "CGI Skript";
+$wb["CGI Modus"]      = "CGI Mode";
+$wb["CGI mod_perl"]      = "CGI mod_perl";
+$wb["Bundesland"]   = "Län";
+$wb["Abteilung"]    = "Avdelning";
+$wb["Gültigkeit (Tage)"]  = "Giltighetstid (dagar)";
+$wb["SSL Key"]          = "SSL Nyckel";
+$wb["SSL Zertifikat"]   = "SSL Certifikat";
+$wb["Aktion"]       = "Verkställ";
+$wb["Zertifikat erzeugen"] = "Skapa Certifikat";
+$wb["Zertifikat speichern"] = "Spara Certifikat";
+$wb["Zertifikat löschen"] = "Radera Certifikat";
+$wb["Speicherplatz gesamt"] = "Hårddisk utrymme";
+$wb["unlimitiert"]  = "Obegränsad";
+$wb["verbraucht"]   = "Förbrukad";
+$wb["Trafficübersicht"] = "Trafik översikt";
+$wb["Monat"]        = "Månad";
+$wb["Traffic"]      = "Trafik";
+$wb["traffic_letzte_4"] = "Trafik under de senaste 4 åren";
+$wb["Jahr"]         = "År";
+$wb["mySQL User"]        = "MySQL Användarnamn";
+$wb["mySQL Passwort"]    = "MySQL Lösenord";
+
+// Ergänzungen /////////////////////////////////
+$wb["Anbieter neu"] = "Ny Återförsäljare";
+$wb["Kunde neu"]    = "Ny Kund";
+$wb["Web neu"]      = "Ny Webbplats";
+$wb["Ordner neu"]   = "Ny Katalog";
+$wb["Suchen"]       = "Sök";
+$wb["ISP Anbieter"] = "ISP Återförsäljare";
+$wb["Webs"] = "Webbplatser";
+$wb["User"] = "Användare";
+$wb["Domains"] = "Domäner";
+$wb["Zahlung"] = "Betalningsperiod";
+$wb["ISP Kunde"] = "ISP Kund";
+$wb["ISP Web"] = "ISP Webb";
+$wb["Kunden"] = "Kunder";
+$wb["Dokument suchen"] = "Dokument sökning";
+
+$wb["User & Email"] = "Användare & Epost";
+$wb["Co-Domains"] = "Sub-Domäner";
+$wb["SSL"] = "SSL";
+$wb["Optionen"] = "Inställningar";
+
+$wb["Webs angelegt"] = "Antal Webbplatser";
+$wb["User angelegt"] = "Antal Användare";
+$wb["Domains angelegt"] = "Antal Domäner";
+$wb["rechnungsanschrift"] = "Faktura adress:<br> ";
+
+$wb["neues Web anlegen"] = "Ny Webbplats";
+$wb["weiter"] = "nästa";
+$wb["SUCHE"] = "sök";
+
+$wb["msg_beta"] = "";
+$wb["title_isp_beta"] = "";
+$wb["msg_kein_win"] = "Denna programvara är inte tillgänglig för Windows operativ system.";
+
+// Error Codes ispconfig_isp_domain.lib.php
+$wb["error_web_doppelt"] = "Det finns redan en hemsida eller domän med detta namn";
+$wb["error_max_domain_web"] = "Maximalt antal domäner för denna webbplats har uppnåtts";
+$wb["error_max_domain_anbieter"] = "Maximalt antal domäner har uppnåtts för aktuell återförsäljare";
+$wb["angelegt"] = " används redan av en annan webbplats eller domän.";
+
+// Error Codes ispconfig_isp_kunde.lib.php
+$wb["error_user_exist_1"] = "Denna ISPConfig användaren";
+$wb["error_user_exist_2"] = "existerar alla redan. Användaren lades inte till eller ändrades.";
+$wb["error_max_user_licence"] = "Maximalt antal av ISPConfig användar konton för licensen har uppnåtts.";
+
+
+// Error Codes ispconfig_isp_reseller.lib.php
+$wb["error_reseller_title"] = "En återförsäljare med denna titel existerar redan.";
+$wb["error_reseller_group_not_found"] = "Återförsäljar gruppen kunde inte hittas.";
+$wb["error_anbieter_no_delete"] = "<b>Återförsäljaren raderades inte.</b><br>&nbsp;<br>Återförsäljaren kan enbart raderas om alla hemsidor och kunder till återförsäljaren har raderats. Kontrollera även att återförsäljarens papperskorg är tom.";
+
+// Error Codes ispconfig_isp_user.lib.php
+$wb["error_sysuser_exist_1"] = "Det finns redan en användare med detta namn";
+$wb["error_sysuser_exist_2"] = "skapad.<br><br> <a href='../../isp_manager/frame_start.php?s=$s'>Mer</a>";
+$wb["error_max_user_web"] = "Maximalt antal användare har uppnåtts.<br><br> <a href='../../isp_manager/frame_start.php?s=$s'>More</a>";
+$wb["error_max_space_web"] = "Valt hårddisk utrymme överstiger hemsidans tillåtna utrymme.<br><br> <a href='../../isp_manager/frame_start.php?s=$s'>Mer</a>";
+$wb["error_max_user_anbieter"] = "Återförsäljarens maximala antal användare har uppnåtts.<br><br> <a href='../../isp_manager/frame_start.php?s=$s'>Mer</a>";
+$wb["error_sysuser_exist"] = "Användarnamnet används redan.<br><br> <a href='../../isp_manager/frame_start.php?s=$s'>Mer</a>";
+$wb["error_admin_exist"] = "En användare med administrations rättigheter existerar redan för denna domän.<br><br> <a href='../../isp_manager/frame_start.php?s=$s'>Mer</a>";
+$wb["error_admin_exist_long"] = "En användare med administrations rättigheter existerar redan. Du måste radera den andra administratören om du vill ge den nya användaren rättigheter.<br><br> <a href='../../isp_manager/frame_start.php?s=$s'>Mer</a>";
+
+// Error Codes ispconfig_isp_user.lib.php
+$wb["error_max_web_anbieter"] = "Maximalt antal domäner har uppnåtts för aktuell återförsäljare";
+$wb["error_web_ssl_exist"] = "Ett SSL certifikat existerar redan för detta IP.";
+
+// Plugins
+$wb["CPU Auslastung 1 Minute"] = "CPU belastning senaste 1 Min";
+$wb["CPU Auslastung 5 Minuten"] = "CPU belastning senaste 5 Min";
+$wb["CPU Auslastung 15 Minuten"] = "CPU belastning senaste 15 Min";
+$wb["Server Online seit"] = "Server Online sedan";
+$wb["User Online"] = "Användare Online";
+$wb["error_web_id"] = "Denna Plugin kräver ett existerande web ID.";
+$wb["von"] = "av";
+$wb["Gesamt"] = "Genomsnittlig";
+$wb["Traffic in den letzten 4 Jahren"] = "Trafik under de senaste 4 åren";
+
+$wb["Backup von Tabelle"] = "Tabell Backup";
+$wb["Optimiere"] = "Optimera";
+$wb["Reparatur"] = "Reparera";
+$wb["oder"] = "eller";
+$wb["Installation starten"] = "Installera";
+
+$wb["Monatlich"] = "Månatlig";
+$wb["Quartal"] = "Kvartal";
+$wb["Halbjährlich"] = "Halvår";
+$wb["Jährlich"] = "Årlig";
+$wb["Sonstige"] = "Annat";
+
+$wb["bei Erhalt"] = "Betalningsvillkor";
+$wb["Netto 7 Tage"] = "netto 7 dagar";
+$wb["Netto 15 Tage"] = "netto 15 dagar";
+$wb["Netto 30 Tage"] = "netto 30 dagar";
+$wb["Sonstige"] = "annan";
+$wb["Neu"] = "Ny";
+$wb["Postfach MB"] = "Epostlåda MB";
+
+$wb["email_alias_txt"] = "<b>Tips:</b> ett alias per rad.";
+$wb["Weiterleitung"] = "Vidarebefodra till";
+$wb["Nachricht"] = "Meddelande";
+$wb["Kein Kunde vorhanden"] = "Ingen Kund tillgänglig";
+$wb["Dieses Web können Sie nicht löschen."] = "Du kan inte radera denna Domän.";
+$wb["Ausgabeformat"] = "List format";
+$wb["Bearbeiten"] = "Editera";
+$wb["Löschen"] = "Radera";
+
+$wb["willkommen_kunde"] = "Välkommen till ISPConfig!
+Du kan administrera din hemsida(or) här. Om du har frågor eller problem, kontakta din administratör eller använd ISPConfig kund manual.";
+$wb["Willkommen"] = "Välkommen";
+
+$wb["txt_client_salutatory_email_desc"] = "<b>Välkomst epost för Kunder</b>";
+$wb["txt_client_salutatory_email_sender_email"] = "Avsändarens epost";
+$wb["txt_client_salutatory_email_sender_name"] = "Namn på avsändare";
+$wb["txt_client_salutatory_email_bcc"] = "BCC Mottagare";
+$wb["txt_client_salutatory_email_subject"] = "Ämne";
+$wb["txt_client_salutatory_email_message"] = "Meddelande";
+$wb["txt_client_salutatory_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Inkludera följande variabler i din text:</b></td></tr>
+        <tr>
+          <td class="normal">%%%USER%%%</td>
+          <td class="normal">
+            Kundens Användarnamn</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%PASSWORD%%%</td>
+          <td class="normal">
+            Kundens Lösenord</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%FIRST_NAME%%%</td>
+          <td class="normal">
+            Kundens Förnamn</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%LAST_NAME%%%</td>
+          <td class="normal">
+            Kundens Efternamn</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%COMPANY%%%</td>
+          <td class="normal">
+            Kundens Företagsnamn</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%EMAIL%%%</td>
+          <td class="normal">
+            Kundens Epost Adress</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%CP%%%</td>
+          <td class="normal">
+            ISPConfig Inloggnings URL</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%MANUAL%%%</td>
+          <td class="normal">
+            ISPConfig Kund Manual</td>
+        </tr>
+        </table>';
+$wb["txt_standard_index"] = "Standard Index<br>&nbsp;&nbsp;Sida";
+$wb["txt_standard_index_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Inkludera följande variabler i din text:</b></td></tr>
+        <tr>
+          <td class="normal">%%%FQDN%%%</td>
+          <td class="normal">
+            Webbplatsens Fullständiga Domän Namn</td>
+        </tr>
+    </table>';
+$wb["txt_user_standard_index"] = "Användarens Standard<br>&nbsp;&nbsp;Index Sida";
+$wb["txt_user_standard_index_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Inkludera följande variabler i din text:</b></td></tr>
+        <tr>
+          <td class="normal">%%%USER%%%</td>
+          <td class="normal">
+            Användarens Användarnamn</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%FQDN%%%</td>
+          <td class="normal">
+            Webbplatsens Fullständiga Domän Namn</td>
+        </tr>
+        </table>';
+
+//////////////// ISP Manager Ende /////////////
+
+//////////////// Server Status ////////////////
+$wb["Arbeitsspeicher"]          = "Arbetsminne";
+$wb["CPU"]          = "CPU";
+$wb["Dienste"]      = "Tjänster";
+$wb["Server Online seit"]          = "Server Online sedan";
+$wb["User Online"]      = "Användare Online";
+$wb["System Load 1 Minute"] = "System belastning senaste 1 Min";
+$wb["System Load 5 Minuten"] = "System belastning senaste 5 Min";
+$wb["System Load 15 Minuten"] = "System belastning senaste 15 Min";
+//////////////// Server Status Ende //////////
+
+$wb["DNS-Domains angelegt"] = 'DNS Domänen skapad';
+
+$wb["Hinzufügen"] = "Lägg till";
+$wb["Berechtigungen"] = "Behörighet";
+$wb["Speichern"] = "Spara";
+$wb["Löschen"] = "Ta bort";
+$wb["Abbrechen"] = "Avbryt";
+$wb["IP-Adresse"] = "IP-Adress";
+$wb["DNS-Query"] = "Primärt DNS Inläggs Fråga";
+$wb["DNS-Insert"] = "Skapa Primärt DNS Inlägg";
+$wb["DNS-Update"] = "Editera Primärt DNS Inlägg";
+$wb["DNS-Delete"] = "Ta bort Primärt DNS Inlägg";
+$wb["slave_query"] = "Sekundärt DNS Inläggs Fråga";
+$wb["slave_insert"] = "Skapa Sekundärt DNS Inlägg";
+$wb["slave_update"] = "Editera Sekundärt DNS Inlägg";
+$wb["slave_delete"] = "Ta bort Sekundärt DNS Inlägg";
+$wb["reseller_query"] = "Fråga bland Återförsäljare";
+$wb["reseller_insert"] = "Skapa Återförsäljare";
+$wb["reseller_update"] = "Editera Återförsäljare";
+$wb["reseller_delete"] = "Ta bort Återförsäljare";
+$wb["kunde_query"] = "Fråga bland Kunder";
+$wb["kunde_insert"] = "Skapa Kund";
+$wb["kunde_update"] = "Editera Kund";
+$wb["kunde_delete"] = "Ta bort Kund";
+$wb["web_query"] = "Fråga bland Webbplatser";
+$wb["web_insert"] = "Skapa Webbplats";
+$wb["web_update"] = "Editera Webbplats";
+$wb["web_delete"] = "Ta bort Webbplats";
+$wb["txt_primary_dns_records"] = "Primärt DNS Inlägg";
+$wb["txt_secondary_dns_records"] = "Sekundärt DNS Inlägg";
+$wb["txt_anbieter"] = "Återförsäljare";
+$wb["txt_kunden"] = "Kund";
+$wb["txt_webs"] = "Webbplats";
+$wb["Standard-Index-Seite"] = "Standard Index Sida";
+$wb["Client Email"] = "Kund Epost";
+
+$wb["txt_move_websites"] = "Move Websites";
+$wb["txt_website_deleted_no_move"] = "This website has been deleted and cannot be moved.<br><br> <a href='../../frame_start.php?s=$s'>Next &gt;&gt;</a>";
+$wb["txt_customer_deleted_no_move"] = "This customer has been deleted; the website cannot be moved.<br><br> <a href='../../frame_start.php?s=$s'>Next &gt;&gt;</a>";
+$wb["txt_website_moved"] = "The website has been moved to the customer you specified.<br><br> <a href='../../frame_start.php?s=$s'>Next &gt;&gt;</a>";
+$wb["txt_move_website_from"] = "from";
+$wb["txt_move_website_to"] = "to";
+$wb["txt_move_website_website"] = "Website";
+$wb["txt_move_website_submit"] = "Submit";
+
+?>

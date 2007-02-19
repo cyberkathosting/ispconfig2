@@ -1,0 +1,54 @@
+<?
+/********************************
+* 42go Dictionary File
+* Version 1.0
+* (c) projektfarm GmbH
+*********************************/
+
+$wb["Datei Upload"] = 'Datoteka dodana (File Upload)';
+$wb["Ordner neu"] = 'Nova mapa';
+$wb["Web Auswahl"] = 'Mrežna izbira';
+$wb["Web auswählen"] = 'Izberi mrežo';
+$wb["Auswahl"] = 'Izbira';
+$wb["WEB FTP"] = 'WEB FTP';
+$wb["Hilfe"] = 'Pomoè';
+$wb["Name"] = 'Ime';
+$wb["Grösse"] = 'Velikost';
+$wb["Datum"] = 'Datum';
+$wb["Eigentümer"] = 'Lastnik';
+$wb["Alle"] = 'Vse';
+$wb["Lesen"] = 'Branje';
+$wb["Schreiben"] = 'napisati';
+$wb["Ausführen"] = 'Izvesti';
+$wb["Verzeichnisschutz"] = 'Zašèiti imenik (Directory Protection)';
+$wb["Verzeichnis schützen"] = 'Zašèiten imenik (Protect Directory)';
+$wb[".htaccess User"] = '(.htaccess User)';
+$wb[".htaccess Userübersicht"] = 'Pregled (Overview of .htaccess Users)';
+$wb["Bearbeiten"] = 'Urejati';
+$wb["Hinzufügen"] = 'Dodati';
+$wb["Parameterübergabe unvollständig"] = "Parameter prenosa nekonèan (passing incomplete)";
+$wb["Ungültiges Format der web_id."] = "Neveljaven format web_id.";
+$wb["Ungültige web_id."] = " Neveljaven web_id.";
+$wb["Konnte server_path_httpd_root nicht ermitteln."] = "Ne more doloèiti server_path_httpd_root.";
+$wb["Das Verzeichnis existiert nicht oder Sie haben nicht die notwendigen Berechtigungen."] = "Imenik ne obstaja, ali nimate potrebnih dovoljenj.";
+$wb["Der Pfad enthält ungültige Zeichen."] = "Pot vsebujene ne veljavne znake.";
+$wb["Diese Funktion ist im Demo-Modus deaktiviert"] = "Ta funkcija je deaktivirana v demo naèinu.";
+$wb["ist ein Link."] = "je povezava.";
+$wb["existiert nicht."] = "ne obstaja."; // Es geht um: /home/file.htm existiert nicht.
+$wb["konnte nicht gelöscht werden."] = "se ga ne da izbrisati.";
+$wb["Das Verschieben der Datei ist fehlgeschlagen."] = "Neuspešno premikanje mape.";
+$wb["konnte nicht gelöscht werden. Das Verzeichnis muss leer sein und Sie müssen Schreibrechte besitzen."] = "Se ga ne da izbrisati. Imenik mora biti prazen in morate sami napisati dovoljejna.";
+$wb["Das Verschieben des Verzeichnisses ist fehlgeschlagen."] = "Neuspešno premikanje imenika.";
+$wb["Es wurde keine Datei zum Upload ausgewählt."] = "Ni izbranih datotek za (upload).";
+$wb["Die Datei existiert bereits in diesem Verzeichnis."] = "ta datoteka že obstaja v imeniku.";
+$wb["Möglicher Dateiupload Angriff."] = "Potencialen napad na FTP.";
+$wb["Ordner"] = "Mapa";
+
+$wb["chmod failed."] = "chmod failed";
+$wb["FTP: Failed to open"] = "FTP: Failed to open ";
+$wb["Failed to open"] = "Neuspešno odpiranje ";
+$wb["Could not connect to"] = "Se ne more povezati z";
+$wb["Could not connect as user"] = "Se ne more povezati kot uporabnik ";
+$wb["Next >>"] = "<br><br>nasednje >>";
+
+?>

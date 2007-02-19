@@ -1,0 +1,97 @@
+ 
+      
+<form method="POST" name="myform" action="insert.php" target="seiteFrame">
+  <table border="0" width="100%" cellspacing="0" cellpadding="4" bgcolor="{TABLE_H_COLOR}">
+    <tr> 
+      <td width="100%" colspan="2" height="18"> 
+        <p align="center" class="normal_bold">&nbsp; 
+      </td>
+    </tr>
+    <tr> 
+      <td width="17%" class="normal_bold">&nbsp;Titel:</td>
+      <td width="83%"> 
+        <input type="text" name="form[list_title]" size="34" maxlength="50" class="text" value="{LIST_TITLE}">
+      </td>
+    </tr>
+    <tr> 
+      <td width="17%" class="normal_bold">Dokumententyp:</td>
+      <td width="83%"> 
+        <select name="form[list_doctype]">
+          {DOCTYPES}
+        </select>
+      </td>
+    </tr>
+    <tr> 
+      <td width="17%" class="normal_bold">&nbsp;Modul:</td>
+      <td width="83%"> 
+        <select name="form[list_modul]">
+          {MODULES}
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td width="17%" class="normal_bold">Anzahl pro Seite:</td>
+      <td width="83%">
+        <input type="text" name="form[list_limit]" size="10" maxlength="50" class="text" value="{LIST_LIMIT}">
+      </td>
+    </tr>
+    <tr>
+      <td width="17%" class="normal_bold">Sortiert nach:</td>
+      <td width="83%">
+        <input type="text" name="form[orderfield]" size="34" maxlength="50" class="text" value="{ORDERFIELD}">
+      </td>
+    </tr>
+    <tr>
+      <td width="17%" class="normal_bold">min. Rechte:</td>
+      <td width="83%">
+        <select name="form[list_perms]">
+          <option value="r">Lesen</option>
+          <option value="rw">Lesen / Schreiben</option>
+          <option value="rwa">Administrator</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td width="17%" class="normal_bold">SQL Query:</td>
+      <td width="83%">
+        <textarea rows="5" name="form[list_query]" cols="34" wrap=physical>{LIST_QUERY}</textarea>
+      </td>
+    </tr>
+    <tr> 
+      <td width="17%" class="normal_bold">Breite:</td>
+      <td width="83%"> 
+        <input type="text" name="form[list_width]" size="5" maxlength="50" class="text" value="{LIST_WIDTH}">
+        (450) </td>
+    </tr>
+    <tr> 
+      <td width="17%" class="normal_bold">&nbsp;Gruppe:</td>
+      <td width="83%"> 
+        <select name="form[list_groupid]">
+          {GRUPPE}
+        </select>
+      </td>
+    </tr>
+    <tr> 
+      <td width="17%" class="normal_bold">Icon:</td>
+      <td width="83%"> 
+        <input type="text" name="form[list_icon]" size="34" maxlength="50" class="text" value="{LIST_ICON}">
+      </td>
+    </tr>
+    <tr> 
+      <td width="17%" class="normal_bold">&nbsp;Beschreibung:</td>
+      <td width="83%"> 
+        <textarea rows="5" name="form[list_description]" cols="34" wrap=physical>{LIST_DESCRIPTION}</textarea>
+      </td>
+    </tr>
+    <tr> 
+      <td width="100%" colspan="2" align="center" height="62"> 
+        <input type="submit" name="Abschicken" value="Speichern">
+      </td>
+    </tr>
+  </table>
+        
+  <input type="hidden" name="listtype_id" value="{LISTTYPE_ID}">
+  <input type="hidden" name="s" value="{S}">
+  <input type="hidden" name="art" value="listtype">
+</form>
+

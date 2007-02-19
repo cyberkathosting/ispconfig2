@@ -1,0 +1,67 @@
+<?
+/********************************
+* ISPConfig Dictionary File
+* Version 1.0
+*********************************/
+/*
+    Danish Language Strings for ISPConfig.
+    Copyright (C) 2002-2006 by Michael R. Christensen (aka MicCo)
+
+      Web site = http://www.micco-webdesign.dk/
+      e-mail   = admin@micco-webdesign.dk
+
+    Version History :
+      v1.0 : initial release
+      v2.2.6 (28 August 2006)   : various strings updates and add-ons
+
+*/
+
+$wb["Datei Upload"] = 'Fil Upload';
+$wb["Ordner neu"] = 'Ny Mappe';
+$wb["Web Auswahl"] = 'Web Valgt';
+$wb["Web auswählen"] = 'Vælg Web';
+$wb["Auswahl"] = 'Vælg';
+$wb["WEB FTP"] = 'WEB FTP';
+$wb["Hilfe"] = 'Hjælp';
+$wb["Name"] = 'Navn';
+$wb["Grösse"] = 'Str.';
+$wb["Datum"] = 'Dato';
+$wb["Eigentümer"] = 'Ejer';
+$wb["Alle"] = 'Alle';
+$wb["Lesen"] = 'Læs';
+$wb["Schreiben"] = 'Skriv';
+$wb["Ausführen"] = 'Udføre';
+$wb["Verzeichnisschutz"] = 'Bibliotek Beskyttelse';
+$wb["Verzeichnis schützen"] = 'Beskyt Bibliotek';
+$wb[".htaccess User"] = '.htaccess Bruger';
+$wb[".htaccess Userübersicht"] = 'Oversigt af .htaccess Brugere';
+$wb["Bearbeiten"] = 'Rediger';
+$wb["Hinzufügen"] = 'Tilføj';
+$wb["Parameterübergabe unvollständig"] = "Parameter overførelse ufuldstændig";
+$wb["Ungültiges Format der web_id."] = "Ugyldigt format af web_id.";
+$wb["Ungültige web_id."] = "Ugyldigt web_id.";
+$wb["Konnte server_path_httpd_root nicht ermitteln."] = "Kunne ikke bestemme server_path_httpd_root.";
+$wb["Das Verzeichnis existiert nicht oder Sie haben nicht die notwendigen Berechtigungen."] = "Biblioteket findes ikke, eller du har ikke de nødvendige tilladelser.";
+$wb["Der Pfad enthält ungültige Zeichen."] = "Stien indeholder ugyldige tegn.";
+$wb["Diese Funktion ist im Demo-Modus deaktiviert"] = "Denne funktion er deaktiverede i demo mode.";
+$wb["ist ein Link."] = "er et link.";
+$wb["existiert nicht."] = "findes ikke."; // Es geht um: /home/file.htm existiert nicht.
+$wb["konnte nicht gelöscht werden."] = "kunne ikke slettes.";
+$wb["Das Verschieben der Datei ist fehlgeschlagen."] = "Flytning af fil fejlede.";
+$wb["konnte nicht gelöscht werden. Das Verzeichnis muss leer sein und Sie müssen Schreibrechte besitzen."] = "kunne ikke slettes. Biblioteket skal være tomt og du skal have skrive rettigheder.";
+$wb["Das Verschieben des Verzeichnisses ist fehlgeschlagen."] = "Flytning af bibliotek fejlede.";
+$wb["Es wurde keine Datei zum Upload ausgewählt."] = "Ingen fil valgt for upload.";
+$wb["Die Datei existiert bereits in diesem Verzeichnis."] = "Filen findes allerede i biblioteket.";
+$wb["Möglicher Dateiupload Angriff."] = "Muligt fil upload angreb.";
+$wb["Ordner"] = "Mappe";
+
+$wb["chmod failed."] = "chmod fejled";
+$wb["FTP: Failed to open"] = "FTP: Fejl ved åbning ";
+$wb["Failed to open"] = "Fejl ved åbning ";
+$wb["Could not connect to"] = "Kunne ikke tilslutte til ";
+$wb["Could not connect as user"] = "Kunne ikke tilslutte som bruger ";
+$wb["Next >>"] = "<br><br>Næste >>";
+
+$wb["Catalog_Name"] = "Navn";
+
+?>

@@ -1,0 +1,40 @@
+    <table border="0" width="100%" height="176" cellspacing="0" cellpadding="0" bgcolor="{TABLE_H_COLOR}">
+      <tr>
+        <td width="100%" height="19"><font size="2">&nbsp;</font>
+          <form method="POST" action="passwort_speichern.php">
+            
+        <table border="0" width="100%" cellspacing="0" cellpadding="2">
+          <tr> 
+            <td width="32%" height="21" class="normal">{PASSWORT_ALT}:</td>
+            <td width="68%" height="21"> 
+              <input type="password" name="passwort" size="20" class="text">
+            </td>
+          </tr>
+          <tr> 
+            <td colspan="2" height="21" class="normal">
+              <hr size="1" noshade>
+            </td>
+          </tr>
+          <tr> 
+            <td width="32%" height="21" class="normal">{PASSWORT_NEU}:</td>
+            <td width="68%" height="21"> 
+              <input type="password" name="passwortneu" size="20" class="text">
+            </td>
+          </tr>
+          <tr> 
+            <td width="32%" height="40" class="normal">{PASSWORT_WIEDER}:</td>
+            <td width="68%" height="40"> 
+              <input type="password" name="passwortneu2" size="20" class="text">
+            </td>
+          </tr>
+          <tr> 
+            <td width="100%" colspan="2" align="center" height="60"> <input type="submit" name="speichern" value=" {SPEICHERN} " class="button">
+              &nbsp; 
+              <input type="submit" name="abbrechen" value=" {ABBRECHEN} " class="button" onClick="window.location.href = '../frame_start.php?s={S}';return false;"></td>
+          </tr>
+        </table>
+            <input type="hidden" name="s" value="{S}">
+          </form>
+        </td>
+      </tr>
+    </table>

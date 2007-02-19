@@ -1,0 +1,94 @@
+<?
+/********************************
+* ISPConfig Dictionary File
+* Version 1.0
+*********************************/
+
+/////////////// Allgemein - general (kommt in mehreren Modulen vor) /////////
+$wb["login_begruessung"]     = "Pøihlá¹ení:";
+$wb["Username"]     = "U¾ivatelské jméno";
+$wb["Passwort"]     = "Heslo";
+$wb["Login"]       = "Login";
+$wb["Administration"]  = "Správa systému";
+$wb["ISP Manager"]  = "Správa slu¾eb";
+$wb["DNS Manager"]  = "Správa DNS";
+$wb["Tools"]        = "Nástroje";
+$wb["Logout"]       = "Odhlásit";
+$wb["Status"]       = "Stav serveru";
+$wb["neu"]          = "nový";
+$wb["Hinweis"]      = "Reference";
+$wb["Web"]          = "Web";
+$wb["Email"]        = "Email";
+$wb["FTP"]          = "FTP";
+$wb["DNS"]          = "DNS";
+$wb["Sonstiges"]    = "Ostatní";
+$wb["Datei"]        = "Soubor";
+$wb["von"]          = "z"; // besser 'ab'?
+$wb["error_headline"] = "Do¹lo k následující chybì:";
+$wb["Gruppe"]       = "Skupina";
+$wb["Titel"]        = "Název";
+$wb["Server"]       = "Server";
+$wb["Host"]         = "Hostname";
+$wb["Domain"]       = "Domena";
+$wb["IP Adresse"]   = "IP Addresa";
+$wb["Ordner"]       = "Adresáø";
+$wb["Dokument"]     = "Dokumenty";
+$wb["Dokument suchen"] = "Prohledávání dokumentù";
+$wb["Suchmaske"]    = "Podmínky hledání";
+$wb["Ausgabeformat"] = "Výstupní formát";
+$wb["Standard"]     = "Standardní";
+$wb["Einträge"]    = "Entries";
+$wb["Papierkorb leeren"] = "Vyprázdnit ko¹";
+$wb["Stammordner"]  = "Master Zone";
+$wb["keine Gruppe"] = "®ádná skupina";
+$wb["neues Dokument anlegen"] = "Nový dokument vytvoøen";
+$wb["auf"]   = "rozbalit";
+$wb["zu"]    = "sbalit";
+$wb["in_ordner"]    = "in Folder";
+$wb["Papierkorb"]   = "Odpadkový ko¹";
+$wb["Wiederherstellen"]    = "Obnovit";
+$wb["Papierkorb: Einträge"]   = "Odpadkový ko¹: zobrazeno";
+$wb["Speichern"]    = "Ulo¾it";
+$wb["Löschen"]    = "Vymazat";
+$wb["Abbrechen"]    = "Zru¹it";
+$wb["Suchen"]    = "Hledat";
+
+$wb["Herr"] = "Pan";
+$wb["Frau"] = "Paní";
+
+$wb["Es ist folgender Fehler aufgetreten:"] = "Do¹lo k následující chybì:";
+
+$wb["Web-FTP"] = 'Web-FTP';
+$wb["ISP Faktura"] = 'ISP Fakturace';
+
+$wb["Verzeichnis öffnen"] = "otevøít";
+$wb["Verzeichnis schliessen"] = "zavøít";
+$wb["Hilfe"] = 'Nápovìda';
+$wb["Online Hilfe"] = 'Online Nápovìda';
+$wb["schliessen"] = 'zavøít';
+
+$wb["PAPIERKORB_HINWEIS"] = "<b>Poznámka:</b> Polo¾ky, které zùstávají v ko¹i i po jeho vyprázdnìní jsou ve stádiu aktualizace. Prosím zkuste je vymazat pozdìji.";
+
+
+// Multidoc  Allgemein ////////////////////////////////
+
+$wb["title_required"] = "Prosím vyplòte políèko 'Název'";
+$wb["error_keine_rechte"] = "Nemáte dostateèná práva pro prohlízení této polo¾ky.";
+$wb["error_doctype_nicht_vorhanden"] = "Po¾adovaný typ dokumentu neexistuje.";
+$wb["error_doctype_rechte"] = "Nemáte dostateèná práva pro editaci tohoto typu dokumentu.";
+$wb["Formular Designer"] = "Editor Formuláøù";
+$wb["Geben Sie einen Wert in das Feld"] = "Prosím vyplòte políèko.";
+$wb["jscript_ein"] = " ";
+
+////////////// Allgemein Ende ///////////////////
+
+$wb["Es konnte ein Dokument nicht wiederhergestellt werden, da sich das Eltern-Dokument noch im Papierkorb befindet.\n"] = "Objekt nelze obnovit dokud bude jeho rodièovský objekt v odpadkovém ko¹i.";
+
+$wb["DNS-Domains angelegt"] = 'Master Zona vytvoøena';
+$wb["Benutzter Diskspace"] = "Vyu¾ití diskového prostoru";
+$wb["Slave Zones angelegt"] = "Slave Zona vytvoøena";
+$wb["Datenbanken angelegt"] = "Databáze vytvoøena";
+
+$wb["txt_confirm_delete"] = "Opravdu chcete vymazat tento objekt?";
+
+?>

@@ -1,0 +1,142 @@
+<?
+/********************************
+* ISPConfig Dictionary File
+* Version 1.0 - da
+*********************************/
+
+/*
+    Danish Language Strings for ISPConfig.
+    Copyright (C) 2002-2006 by Michael R. Christensen (aka MicCo)
+
+      Web site = http://www.micco-webdesign.dk/
+      e-mail   = admin@micco-webdesign.dk
+
+    Version History :
+      v1.0 : initial release
+      v2.2.6 (28 August 2006)   : various strings updates and add-ons
+
+*/
+
+/////////////// Allgemein - general (kommt in mehreren Modulen vor) /////////
+$wb["login_begruessung"]     = "Logind:";
+$wb["Username"]     = "Brugernavn";
+$wb["Passwort"]     = "Adgangskode";
+$wb["Login"]       = "Logind";
+$wb["Administration"]  = "Administration";
+$wb["ISP Manager"]  = "ISP Admin.";
+$wb["DNS Manager"]  = "DNS Admin.";
+$wb["Tools"]        = "Værktøjer";
+$wb["Logout"]       = "Logud";
+$wb["Status"]       = "Status";
+$wb["neu"]          = "ny";
+$wb["Hinweis"]      = "Reference";
+$wb["Web"]          = "Web";
+$wb["Email"]        = "Email";
+$wb["FTP"]          = "FTP";
+$wb["DNS"]          = "DNS";
+$wb["Sonstiges"]    = "Andre";
+$wb["Datei"]        = "Fil";
+$wb["von"]          = "af";
+$wb["error_headline"] = "Følgende fejl opstod:";
+$wb["Gruppe"]       = "Gruppe";
+$wb["Titel"]        = "Titel";
+$wb["Server"]       = "Server";
+$wb["Host"]         = "Hostnavn";
+$wb["Domain"]       = "Domæne";
+$wb["IP Adresse"]   = "IP Adresse";
+$wb["Ordner"]       = "Mappe";
+$wb["Dokument"]     = "Dokument";
+$wb["Dokument suchen"] = "Dokument søgning";
+$wb["Suchmaske"]    = "Søgemaske";
+$wb["Ausgabeformat"] = "Resultat format";
+$wb["Standard"]     = "Standard";
+$wb["Einträge"]    = "Adgange";
+$wb["Papierkorb leeren"] = "Tøm papirkurven";
+$wb["Stammordner"]  = "Master Zone";
+$wb["keine Gruppe"] = "Ingen Gruppe";
+$wb["neues Dokument anlegen"] = "nyt Dokument oprettet";
+$wb["auf"]   = "Udfold";
+$wb["zu"]    = "Sammenfold";
+$wb["in_ordner"]    = "i Mappe";
+$wb["Papierkorb"]   = "Papirkurv";
+$wb["Wiederherstellen"]    = "Genskabe";
+$wb["Papierkorb: Einträge"]   = "Papirkurv: indehold";
+$wb["Speichern"]    = "Gem";
+$wb["Löschen"]    = "Slet";
+$wb["Abbrechen"]    = "Annuller";
+$wb["Suchen"]    = "Søg";
+
+$wb["Herr"] = "Hr";
+$wb["Frau"] = "Fr.";
+$wb["Es ist folgender Fehler aufgetreten:"] = "Følgende fejl opstod:";
+
+$wb["Web-FTP"] = 'Web-FTP';
+$wb["ISP Faktura"] = 'ISP Faktura';
+
+$wb["Verzeichnis öffnen"] = "åben";
+$wb["Verzeichnis schliessen"] = "luk";
+
+// Multidoc  Allgemein ////////////////////////////////
+
+$wb["title_required"] = "Indtast en tekst i feltet 'Titel'";
+$wb["error_keine_rechte"] = "Du har ikke de nødvendige rettigheder til at læse eller rediger dette emne.";
+$wb["error_doctype_nicht_vorhanden"] = "Den ønsket dokument type findes ikke.";
+$wb["error_doctype_rechte"] = "Du har ikke de nødvendige rettigheder til at rediger denne dokument type.";
+$wb["Formular Designer"] = "Form Designer";
+$wb["Geben Sie einen Wert in das Feld"] = "Indtast en tekst i feltet";
+$wb["jscript_ein"] = "EIN";  // MANGLER PLACERING OG OVERSÆTTELSE
+$wb["Hilfe"] = 'Hjælp';
+
+$wb["PAPIERKORB_HINWEIS"] = "<b>Note:</b> Emner efterladt i papirkurven efter tømning er under opdatering. Prøv at slette dem senere.";
+
+////////////// Allgemein Ende ///////////////////
+
+
+//////////////// Server Status ////////////////
+$wb["Arbeitsspeicher"]          = "Hukommelse";
+$wb["CPU"]          = "CPU";
+$wb["Dienste"]      = "Services";
+$wb["Server Online seit"]          = "Server Online i";
+$wb["User Online"]      = "Bruger Online";
+$wb["CPU Auslastung 1 Minute"] = "System Load 1 Minut";
+$wb["CPU Auslastung 5 Minuten"] = "System Load 5 Minutter";
+$wb["CPU Auslastung 15 Minuten"] = "System Load 15 Minutter";
+//////////////// Server Status Ende //////////
+
+$wb["Es konnte ein Dokument nicht wiederhergestellt werden, da sich das Eltern-Dokument noch im Papierkorb befindet.\n"] = "Dokumentet kan ikke gendannes så længe at hovededokumentet er i papirkurven.\n";
+
+$wb["DNS-Domains angelegt"] = 'Master Zoner oprettet';
+$wb["Benutzter Diskspace"] = "Disksplads brugt";
+$wb["Slave Zones angelegt"] = "Slave Zoner oprettet";
+$wb["Datenbanken angelegt"] = "Databaser oprettet";
+
+$wb["txt_confirm_delete"] = "Er du sikker på at du ønsker at slette dette ?";
+
+$wb["msg_beta"] = "";
+$wb["title_isp_beta"] = "";
+$wb["msg_kein_win"] = "Disse Informationen kan ikke bruges under Windows-Styresystemet.";
+
+$wb["txt_object_currently_updated"] = "Dine ændringer kan ikke gemmes da dette emne opdateres. Prøv igen om et øjeblik.<br><br> <a href='../frame_start.php?s=$s'>Næste &gt;&gt;</a>";
+$wb["txt_system_currently_updated_no_recycle_bin"] = "Der kan ikke opnåes adgang til papirkurven da systemet opdateres. Prøv igen om et øjeblik.<br><br> <a href='../frame_start.php?s=$s'>Næste &gt;&gt;</a>"; 
+
+
+$wb["user_perms_nowrite_hd"]         = "Error occured: You do not have the sufficient rights to change that file";
+$wb["user_perms_nowrite_reasons"]    = "Possbile reasons for that issue";
+$wb["user_perms_nowrite_reasons_1a"] = "1. You are using that system in demo mode";
+$wb["user_perms_nowrite_reasons_1b"] = "- Please log in with your username and password.";
+$wb["user_perms_nowrite_reasons_2a"] = "2. You try to change an element which belongs to another group.";
+$wb["user_perms_nowrite_reasons_2b"] = "You do not have the sufficient rights in this group for writing / changing data.";
+$wb["user_perms_nowrite_reasons_2c"] = "- Please contact the group's owner to grant you the sufficient rights.";
+
+$wb["group_perms_nowrite_hd"]         = "Error occured: You do not have the necessary group rights";
+$wb["group_perms_nowrite_reasons"]    = "Possbile reasons for that issue";
+$wb["group_perms_nowrite_reasons_1a"] = "1. You are using that system in demo mode";
+$wb["group_perms_nowrite_reasons_1b"] = "- Please log in with your username and password.";
+$wb["group_perms_nowrite_reasons_2a"] = "2. You try to change an element which belongs to another group.";
+$wb["group_perms_nowrite_reasons_2b"] = "You do not have the sufficient rights in this group for writing / changing data.";
+$wb["group_perms_nowrite_reasons_2c"] = "- Please contact the group's owner to grant you the sufficient rights.";
+
+$wb["Weiter"] = "Next";
+$wb["Zurück"] = "Back";
+
+?>

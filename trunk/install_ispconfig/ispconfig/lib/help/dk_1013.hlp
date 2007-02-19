@@ -1,0 +1,69 @@
+<?
+
+/**********************************************
+* ISPConfig Help File
+* Version 1.2
+* Syntax: $hlp["FieldName"] = "HelpText";
+************************************************/
+/*
+    Danish Language Strings for ISPConfig.
+    Copyright (C) 2002-2006 by Michael R. Christensen (aka MicCo)
+
+      Web site = http://www.micco-webdesign.dk/
+      e-mail   = admin@micco-webdesign.dk
+
+    Version History :
+      v1.0 : initial release
+      v2.2.6 (28 August 2006)   : various strings updates and add-ons
+
+*/
+
+$hlp["web_host"] = "Host for web: f.eks. www";
+$hlp["web_domain"] = "Domæne for web: f.eks. ditdomæne.dk";
+$hlp["web_speicher"] = "Størrelse af disk plads for web. F.eks. 2 står for 2 MB disk plads.";
+$hlp["web_traffic"] = "Angiv hvor meget trafik der er inkluderet i denne web pakke (f.eks. 2000 MB).";
+$hlp["web_cgi"] = "Aktivere CGI for denne web.";
+$hlp["web_php"] = "Aktivere PHP for denne web.";
+$hlp["web_ssi"] = "Aktivere SSI for denne web.";
+$hlp["web_ftp"] = "Aktivere FTP adgang for denne web.";
+$hlp["web_frontpage"] = "Aktivere Frontpage Extensions for denne web.";
+$hlp["web_mysql"] = "Tillad MySQL database for denne web.";
+$hlp["web_shell"] = "Aktivere shell access for denne web.";
+$hlp["web_ssl"] = "Aktivere SSL encryption for denne web. Flere indstillinger kan findes på fanen SSL.";
+$hlp["ssl_request"] = "Du kan sende indholdet af tekstområdet til en Certificate Authority (CA) for at få et officielt SSL certifikat.";
+$hlp["ssl_cert"] = "Du kan kopier det officielle certifikat fra din Certificate Authority (CA) ind i dette tekstområde.";
+$hlp["web_ip"] = "Vælg IP adresse for web.";
+$hlp["optionen_mysql_user"] = "Indtast brugernavn for MySQL database.";
+$hlp["optionen_mysql_passwort"] = "Indtast adgangskode for MySQL database.";
+$hlp["web_dns"] = "Ved valg af denne mulighed kan du oprette en DNS A record for denne web.";
+$hlp["web_userlimit"] = "Angiv hvor mange bruger der kan oprettes for denne web.";
+$hlp["web_domainlimit"] = "Angiv hvor mange domæner der kan oprettes for denne web.";
+$hlp["ssl_state"] = "Indtast din kommune.";
+$hlp["ssl_locality"] = "Indtast din by.";
+$hlp["ssl_organization"] = "Indtast dit firma/organisation.";
+$hlp["ssl_organization_unit"] = "Indtast afdeling for dit firma/organisation (f.eks. IT Afdeling).";
+$hlp["ssl_country"] = "Vælg dit land.";
+$hlp["web_dns_mx"] = "Ved valg af denne mulighed kan du oprette en DNS MX record for denne web.";
+$hlp["ssl_days"] = "Indtast ønsket periode af gyldighed (i dage) for SSL certifikatet (f.eks. 365).";
+$hlp["web_httpd_include"] = "Her kan du indtaste yderligere Apache directives for denne web.";
+$hlp["web_anonftp"] = "Aktiver Anonymous-FTP for denne web. Bemærk: Du kan kun have en Anonymous-FTP konto pr. IP adresse.";
+$hlp["web_anonftplimit"] = "Indtast ønsket disk plads (i MB) for den Anonymous-FTP konto.";
+$hlp["optionen_frontpage_passwort"] = "Angiv en adgangskode for Frontpage Extensions.";
+$hlp["optionen_mysql_remote_access"] = "Aktiver fjernadgang til MySQL database(r).";
+$hlp["optionen_local_mailserver"] = "Hvis du vælger \"external Mailserver\" ingen adgang til den lokale MTA vil blive oprettet.";
+$hlp["web_faktura"] = "Aktivere/deaktiver ISP-Faktura modulet for denne web.";
+$hlp["optionen_logsize"] = "Maximum logfil størrelse for Apache på denne web. Gyldige værdier er nøjaktige antal i MB eller relative antal i % (af den totale disk plads for denne web).";
+$hlp["web_php_safe_mode"] = "Hvis PHP er aktiveret for denne webside, vil PHP køre i Safe Mode.";
+$hlp["web_wap"] = "Her kan du aktiver serverens support for .wml filer. .wml filer kan fortolkes a mobil telefoner med WAP.";
+$hlp["web_standard_cgi"] = "Angiv om standard CGI scripts indstallered på denne server skal være tilgængelige for denne webside.";
+$hlp["web_mysql_anzahl_dbs"] = "Angiv max. antal af databaser der skal være tilgængelige for denne webside.";
+$hlp["web_individual_error_pages"] = "Hvis dette felt er valgt, kan du definer egne fejl sider via \"Options\" fanen.";
+$hlp["error_400"] = "Indtast HTML kode for fejl siden 400 (\"Invalid Syntax\"). Hvis Du lader dette felt være tomt, vil standard siden blive brugt.";
+$hlp["error_401"] = "Indtast HTML kode for fejl siden 401 (\"Authorisation required\"). Hvis Du lader dette felt være tomt, vil standard siden blive brugt.";
+$hlp["error_403"] = "Indtast HTML kode for fejl siden 403 (\"Forbidden\"). Hvis Du lader dette felt være tomt, vil standard siden blive brugt.";
+$hlp["error_404"] = "Indtast HTML kode for fejl siden 404 (\"File not found\"). Hvis Du lader dette felt være tomt, vil standard siden blive brugt.";
+$hlp["error_405"] = "Indtast HTML kode for fejl siden 405 (\"Method not allowed\"). Hvis Du lader dette felt være tomt, vil standard siden blive brugt.";
+$hlp["error_500"] = "Indtast HTML kode for fejl siden 500 (\"Internal Server Error\"). Hvis Du lader dette felt være tomt, vil standard siden blive brugt.";
+$hlp["error_503"] = "Indtast HTML kode for fejl siden 503 (\"Service unavailable\"). Hvis Du lader dette felt være tomt, vil standard siden blive brugt.";
+
+?>

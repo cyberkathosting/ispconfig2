@@ -1,0 +1,21 @@
+<?
+/**********************************************
+* ISPConfig Help File
+* Version 1.2
+* Syntax: $hlp["FieldName"] = "HelpText";
+************************************************/
+
+$hlp["artikelnummer"] = "Vul het item nummer in voor het product. Elk nummer kan hier worden gebruikt.";
+$hlp["artikeltyp"] = "Selecteer het item uit de lijst.";
+$hlp["artikelbezeichnung"] = "Wat is de naam van dit item";
+$hlp["verrechnung"] = "Selecteer de rekening periode (in maanden) voor dit item. Voorbeeld: 1 betekent maandelijks, 6 half half-jaarlijks, 12 jaarlijks; 0 eenmalig.";
+$hlp["artikeleinheit"] = "Selecteer de eenheid van dit item uit de lijst.";
+$hlp["artikelpreis"] = "Vul hier de prijs per eenheid in van het item.";
+$hlp["abpackung"] = "Aantal eenheden per pakket.";
+$hlp["beschreibung"] = "Plaats hier de beschrijving van het item.";
+$hlp["artikelgroup"] = "Selecteer voor welke reseller dit item geldig is. Als er niets wordt geselecteert dan is het item voor alle resellers toegangkelijk.";
+$hlp["weitere_artikeleinheit"] = "Eenheid voor IP verkeers overschrijding.";
+$hlp["weitere_abpackung"] = "Aantal MB of GB welke zullen worden verrekent bij overschrijding IP verkeers limit.";
+$hlp["weitere_artikelpreis"] = "Prijs bij overschrijden van IP verkeers limit.";
+$hlp["steuersatz"] = "Vul het BTW tarief in (e.g. 19%).";
+?>

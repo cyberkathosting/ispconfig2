@@ -1,0 +1,47 @@
+<?php
+
+$wb["txt_login_desc"] = "För att ändra din epost konfiguration, logga in här.";
+$wb["txt_error"] = "Fel";
+$wb["txt_email_username"] = "Epost-Användarnamn";
+$wb["txt_password"] = "Lösenord";
+$wb["txt_login"] = "Inloggning";
+$wb["txt_autoresponder"] = "Autosvar";
+$wb["txt_nachricht"] = "Meddelande";
+$wb["txt_speichern"] = "Spara";
+$wb["txt_abbrechen"] = "Återgå";
+$wb["txt_email_account"] = "Epost Konto";
+$wb["txt_user_und_email"] = "Användare &amp; Epost";
+$wb["txt_spamfilter"] = "Spamfilter";
+$wb["txt_logout"] = "Utloggning";
+$wb["txt_mailscan"] = "Epost Skanning";
+$wb["txt_antivirus"] = "Antivirus";
+$wb["txt_spam_strategie"] = "Spam Strategi";
+$wb["txt_spam_hits"] = "Spam Träffar";
+$wb["txt_rewrite_subject"] = "Skriv om ämnet";
+$wb["txt_betreff"] = "Ämne";
+$wb["txt_name"] = "Namn";
+$wb["txt_email_adresse"] = "Epost Adress";
+$wb["txt_username"] = "Användarnamn";
+$wb["txt_web_speicher"] = "Webb Kvot";
+$wb["txt_mail_speicher"] = "Epost Kvot";
+$wb["txt_email_passwort_leer"] = "Användarnamnet och/eller lösenordet är tomt!";
+$wb["txt_user_unbekannt"] = "Okänd Användare.";
+$wb["txt_access_forbidden"] = "Förbjuden Åtkomst!";
+$wb["txt_yes"] = "Ja";
+$wb["txt_no"] = "Nej";
+$wb["txt_unlimited"] = "obegränsat";
+$wb["txt_welcome"] = "Välkommen...";
+$wb["txt_error_spam_hits_format"] = "Värdet <i>".$wb["txt_spam_hits"]."</i> måste ha följande format:";
+$wb["txt_accept"] = "acceptera";
+$wb["txt_discard"] = "avbryt";
+$wb["txt_language"] = "Språk";
+$wb["txt_no_mailuser_login"] = "Inloggning på din webbplats är deaktiverat.";
+$wb["txt_forwarder"] = "Forwarder";
+$wb["txt_forwarder_desc"] = "<b>Hint:</b> One email per line.";
+$wb["txt_spam_whitelist"] = 'Spam Whitelist';
+$wb["txt_spam_blacklist"] = 'Spam Blacklist';
+$wb["txt_hint_spam_whitelist"] = '<b>Hint:</b> One entry per line. Valid entries are, for example, friend@somewhere.com, *@isp.com, or *.domain.net.';
+$wb["txt_hint_spam_blacklist"] = '<b>Hint:</b> One entry per line. Valid entries are, for example, friend@somewhere.com, *@isp.com, or *.domain.net.';
+$wb["txt_uribl"] = 'Use <a href="http://www.uribl.com/about.shtml" target="_blank">URIBL</a>';
+
+?>

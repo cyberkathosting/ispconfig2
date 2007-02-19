@@ -1,0 +1,89 @@
+<?
+/********************************
+* ISPConfig Dictionary File
+* Version 1.0
+* Traduzido por: Horus Solaris
+*********************************/
+
+$wb["ISP Faktura"] = 'Faturas';
+$wb["Web-FTP"] = 'Web-FTP';
+$wb["Domains"] = 'Domínios';
+$wb["Service"] = 'Serviço';
+$wb["Webs"] = 'Webs';
+$wb["Traffic"] = 'Tráfego';
+$wb["Email-Adressen"] = 'Endereços de e-mail';
+$wb["Artikel"] = 'Item';
+$wb["admin"] = 'admin';
+$wb["Artikel für"] = 'Item para';
+$wb["Dienstleistung"] = 'Serviço';
+$wb["Hardware"] = 'Hardware';
+$wb["Software"] = 'Software';
+$wb["Typ"] = 'Tipo';
+$wb["Artikel Nr."] = 'Item Nº';
+$wb["Bezeichnung"] = 'Nome';
+$wb["Beschreibung"] = 'Descrição';
+$wb["Stück"] = 'Unidade';
+$wb["MB"] = 'MB';
+$wb["GB"] = 'GB';
+$wb["Stunde"] = 'Hora';
+$wb["Einheit"] = 'Unidade';
+$wb["Menge"] = 'Quantidade';
+$wb["Preis"] = 'Preço';
+$wb["Verrechnung"] = 'Período de cobrança';
+$wb["Artikel neu"] = 'Novo Item';
+$wb["Ordner neu"] = 'Nova Pasta';
+$wb["Abrechnen"] = 'Criar Fatura';
+$wb["Artikel neu"] = 'Novo Item';
+$wb["Ordner neu"] = 'Nova Pasta';
+$wb["Produkte"] = 'Produtos';
+$wb["Abrechnen"] = 'Criar Fatura';
+$wb["Rechnungen"] = 'Faturas';
+$wb["Kunden"] = 'Clientes';
+$wb["Anbieter"] = 'Revemdedores';
+$wb["Keine Artikel zum Abrechnen gefunden."] = 'Nenhum item encontrado para criar uma fatura.';
+$wb["Abrechnung"] = 'Fatura';
+$wb["Name"] = 'Nome';
+$wb["IP-Traffic"] = 'Tráfego IP';
+$wb["Steuersatz"] = 'Imposto';
+$wb["Bei Überschreitung:"] = 'Excedente:';
+$wb["Diese Angaben sind nur für Artikel vom Typ: Traffic gültig!"] = 'Estas entradas são válidas somente para o item do tipo: Tráfego!';
+$wb["Rechnungen Kunden"] = 'Faturas de Clientes';
+$wb["Firma"] = 'Empresa';
+$wb["Vorname"] = 'Nome';
+$wb["Strasse"] = 'Endereço';
+$wb["PLZ"] = 'Código Postal';
+$wb["Ort"] = 'Cidade';
+$wb["Land"] = 'País';
+$wb["Steuernr."] = 'CNPJ/IE:';
+$wb["Rechnung"] = 'Fatura';
+$wb["Datum"] = 'Data';
+$wb["Rechnung Nr."] = 'Fatura Nº.';
+$wb["Anzahl"] = 'Quantidade';
+$wb["Art. Nr."] = 'Item Nº';
+$wb["Gesamt"] = 'Total';
+$wb["EURO"] = 'R$';
+$wb["Web gesamt"] = 'Total Web';
+$wb["enthaltene Mehrwertsteuer"] = 'Imposto Incluso';
+$wb["Gesamtbetrag"] = 'Total';
+$wb["Rechnungen Anbieter"] = 'Faturas de Revendedores';
+$wb["Kunde"] = 'Cliente';
+$wb["Rg. Nr."] = 'Fatura Nº';
+$wb["OK"] = 'OK';
+$wb["Weiter"] = "Próximo";
+$wb["Summe Anbieter"] = "Total do Revendedor";
+$wb["Summe Web"] = "Total Web";
+$wb["Summe Kunde"] = "Total Cliente";
+$wb["Abrechnung abgeschlossen."] = "Fatura Criada.";
+
+//////////////// Server Status ////////////////
+$wb["Arbeitsspeicher"]          = "Memória Principal";
+$wb["CPU"]          = "CPU";
+$wb["Dienste"]      = "Serviços";
+$wb["Server Online seit"]          = "Servidor online desde";
+$wb["User Online"]      = "Usuários conectados";
+$wb["System Load 1 Minute"] = "Carga da CPU - 1 Minuto";
+$wb["System Load 5 Minuten"] = "Carga da CPU - 5 Minutos";
+$wb["System Load 15 Minuten"] = "Carga da CPU - 15 Minutos";
+//////////////// Server Status Ende //////////
+
+?>

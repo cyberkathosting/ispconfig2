@@ -1,0 +1,56 @@
+<?
+/********************************
+* ISPConfig Dictionary File
+* Version 1.0
+* Traduzido por: Horus Solaris
+*********************************/
+
+$wb["Datei Upload"] = 'Enviar Arquivo';
+$wb["Ordner neu"] = 'Nova Pasta';
+$wb["Web Auswahl"] = 'Selecinar Web';
+$wb["Web auswählen"] = 'Escolha um site';
+$wb["Auswahl"] = 'Selecionar';   
+$wb["WEB FTP"] = 'WEB FTP';
+$wb["Hilfe"] = 'Ajuda';
+$wb["Name"] = 'Nome';
+$wb["Grösse"] = 'Tamanho';
+$wb["Datum"] = 'Data';
+$wb["Eigentümer"] = 'Proprietário';
+$wb["Alle"] = 'Todos';
+$wb["Lesen"] = 'Leitura';
+$wb["Schreiben"] = 'Gravação';
+$wb["Ausführen"] = 'Execução';
+$wb["Verzeichnisschutz"] = 'Proteção de diretório';
+$wb["Verzeichnis schützen"] = 'Proteger diretório';
+$wb[".htaccess User"] = 'Usuárioo .htaccess';
+$wb[".htaccess Userübersicht"] = 'Resumo dos usuários .htaccess';
+$wb["Bearbeiten"] = 'Editar';
+$wb["Hinzufügen"] = 'Adicionar';
+$wb["Parameterübergabe unvollständig"] = "Passagem de parâmetros incompleta";
+$wb["Ungültiges Format der web_id."] = "Formaro in'valido de web_id.";
+$wb["Ungültige web_id."] = "web_id inválida.";
+$wb["Konnte server_path_httpd_root nicht ermitteln."] = "Impossível determinar server_path_httpd_root.";
+$wb["Das Verzeichnis existiert nicht oder Sie haben nicht die notwendigen Berechtigungen."] = "O diretório não existe, ou não tem as permissões necessárias.";
+$wb["Der Pfad enthält ungültige Zeichen."] = "O caminho contém caracteres inválidos.";
+$wb["Diese Funktion ist im Demo-Modus deaktiviert"] = "Esta função está desativada no modo de demonstração.";
+$wb["ist ein Link."] = "é um atalho.";
+$wb["existiert nicht."] = "não existe."; // Es geht um: /home/file.htm existiert nicht.
+$wb["konnte nicht gelöscht werden."] = "Não pôde ser apagad.";
+$wb["Das Verschieben der Datei ist fehlgeschlagen."] = "Não foi possível mover o arquivo.";
+$wb["konnte nicht gelöscht werden. Das Verzeichnis muss leer sein und Sie müssen Schreibrechte besitzen."] = "não pôde ser apagado. O diretório deve estar vazio e você deve ter permissão de gravação.";
+$wb["Das Verschieben des Verzeichnisses ist fehlgeschlagen."] = "Não foi possivel mover o diretório.";
+$wb["Es wurde keine Datei zum Upload ausgewählt."] = "Nenhum arquivo selecionado para envio.";
+$wb["Die Datei existiert bereits in diesem Verzeichnis."] = "O arquivo já existe neste diretório.";
+$wb["Möglicher Dateiupload Angriff."] = "Possível ataque detectado!!!";
+$wb["Ordner"] = "Pasta";
+
+$wb["chmod failed."] = "chmod falhou";
+$wb["FTP: Failed to open"] = "FTP: Erro ao abrir ";
+$wb["Failed to open"] = "Erro ao abrir ";
+$wb["Could not connect to"] = "Não foi possível se conectar ";
+$wb["Could not connect as user"] = "Erro ao se conenectar como usuário ";
+$wb["Next >>"] = "<br><br>Próximo >>";
+
+$wb["Catalog_Name"] = "Nome";
+
+?>

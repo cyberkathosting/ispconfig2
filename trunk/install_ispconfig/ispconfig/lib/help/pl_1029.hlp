@@ -1,0 +1,12 @@
+<?
+
+/**********************************************
+* ISPConfig Help File
+* Version 1.2
+* Syntax: $hlp["FieldName"] = "HelpText";
+************************************************/
+
+$hlp["db_passwort"] = "Proszê pod±æ has³o dla bazy danych MySQL.";
+$hlp["remote_access"] = "Czy w³±czamy zdalny dostêp dla bazy danych MySQL.";
+
+?>

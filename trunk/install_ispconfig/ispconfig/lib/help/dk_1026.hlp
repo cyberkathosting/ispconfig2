@@ -1,0 +1,34 @@
+<?
+
+/**********************************************
+* ISPConfig Help File
+* Version 1.2
+* Syntax: $hlp["FieldName"] = "HelpText";
+************************************************/
+/*
+    Danish Language Strings for ISPConfig.
+    Copyright (C) 2002-2006 by Michael R. Christensen (aka MicCo)
+
+      Web site = http://www.micco-webdesign.dk/
+      e-mail   = admin@micco-webdesign.dk
+
+    Version History :
+      v1.0 : initial release
+      v2.2.6 (28 August 2006)   : various strings updates and add-ons
+
+*/
+
+$hlp["artikelnummer"] = "Indtast varenummer for produktet. Du kan frit bruge et hvilken som helst nummer.";
+$hlp["artikeltyp"] = "Vælg vare type fra listen.";
+$hlp["artikelbezeichnung"] = "Indtast navnet på varen.";
+$hlp["verrechnung"] = "Angiv fakturerings perioden i måneder for varen. F. eks.:<br><br> 0 = een-gangs opkrævning.<br> 1 = månedligt.<br> 6 = halv-årligt.<br> 12 = årligt.";
+$hlp["artikeleinheit"] = "Vælg enheds type for varen fra listen.";
+$hlp["artikelpreis"] = "Indtast pris pr. enhed for varen.";
+$hlp["abpackung"] = "Antal enheder pr. pakke.";
+$hlp["beschreibung"] = "Lav en beskrivelse af varen.";
+$hlp["artikelgroup"] = "Vælg for hvilken forhandler varen er gyldig. Hvis intet er valgt vil varen være gyldig for alle forhandlere.";
+$hlp["weitere_artikeleinheit"] = "Enhed for trafik overskridelse.";
+$hlp["weitere_abpackung"] = "Antal af MB eller GB som faktureres ved overskridelse.";
+$hlp["weitere_artikelpreis"] = "Pris for trafik overskridelse.";
+$hlp["steuersatz"] = "Angiv moms taksten, f.eks. 25%.";
+?>

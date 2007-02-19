@@ -1,0 +1,35 @@
+<table width="100%" cellspacing="15">
+  <tr>
+    <td>
+        <table width="100%" border="0" cellpadding="2" cellspacing="0">
+          <tr> 
+            <td height="34" class="t2b">&nbsp;{GKARTE}</td>
+          </tr>
+          <tr> 
+            <td align="center"><hr size="1" noshade></td>
+          </tr>
+		  <tr> 
+            <td>
+			  <table width="400" border="0" cellspacing="0" cellpadding="2">
+                <tr> 
+                  <th width="150" align="center">&nbsp;{SUBJECT}</th>
+                  <th width="100" align="center">&nbsp;{PRIORITY}</th>
+				  <th width="150" align="center">&nbsp;{DATE}</th>
+                </tr>
+				<tr>
+				  <td colspan="3"><hr size="1" noshade></td>
+				</tr>
+				<!-- BEGIN DYNAMIC BLOCK: liste -->
+                <tr class="normal" bgcolor="{BGCOLOR}"> 
+                  <td width="150" class="t2">&nbsp;<a href="view.php?s={S}&tid={TID}" class="link">{TSUBJECT}</a></td>
+                  <td width="100" align="center" class="t2">&nbsp;{TPRIORITY}</td>
+				  <td width="150" align="center" class="t2">&nbsp;{TDATE}</td>
+                </tr>
+				<!-- END DYNAMIC BLOCK: liste -->
+              </table>
+			</td>
+		  </tr>
+        </table>
+	</td>
+  </tr>
+</table>

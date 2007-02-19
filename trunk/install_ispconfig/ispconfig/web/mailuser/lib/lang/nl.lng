@@ -1,0 +1,47 @@
+<?php
+
+$wb["txt_login_desc"] = "Hier kunt u inloggen om uw emailconfiguratie te wijzigen.";
+$wb["txt_error"] = "Fout";
+$wb["txt_email_username"] = "Loginnaam";
+$wb["txt_password"] = "Wachtwoord";
+$wb["txt_login"] = "Inloggen";
+$wb["txt_autoresponder"] = "Automatisch beantwoorden";
+$wb["txt_nachricht"] = "Bericht";
+$wb["txt_speichern"] = "Opslaan";
+$wb["txt_abbrechen"] = "Annuleren";
+$wb["txt_email_account"] = "Email account";
+$wb["txt_user_und_email"] = "Gebruiker &amp; Email";
+$wb["txt_spamfilter"] = "Spamfilter";
+$wb["txt_logout"] = "Uitloggen";
+$wb["txt_mailscan"] = "MailScan";
+$wb["txt_antivirus"] = "Antivirus";
+$wb["txt_spam_strategie"] = "Spam strategie";
+$wb["txt_spam_hits"] = "Spam hits";
+$wb["txt_rewrite_subject"] = "Herschrijf onderwerp";
+$wb["txt_betreff"] = "Onderwerp";
+$wb["txt_name"] = "Naam";
+$wb["txt_email_adresse"] = "Emailadres";
+$wb["txt_username"] = "Gebruikersnaam";
+$wb["txt_web_speicher"] = "Webquota";
+$wb["txt_mail_speicher"] = "Mailquota";
+$wb["txt_email_passwort_leer"] = "De gebruikersnaam en/of het wachtwoord zijn niet ingevuld!";
+$wb["txt_user_unbekannt"] = "Onbekende gebruiker.";
+$wb["txt_access_forbidden"] = "Verboden toegang!";
+$wb["txt_yes"] = "Ja";
+$wb["txt_no"] = "Nee";
+$wb["txt_unlimited"] = "ongelimiteerd";
+$wb["txt_welcome"] = "Welkom, hier kunt u uw emailconfiguratie bekijken en/of wijzigen.";
+$wb["txt_error_spam_hits_format"] = "De waarde <i>".$wb["txt_spam_hits"]."</i> moet voldoen aan het volgende formaat:";
+$wb["txt_accept"] = "accepteren";
+$wb["txt_discard"] = "afwijzen";
+$wb["txt_language"] = "Taal";
+$wb["txt_no_mailuser_login"] = "Inloggen op uw domein is gedeactiveerd.";
+$wb["txt_forwarder"] = "Doorsturen";
+$wb["txt_forwarder_desc"] = "<b>Hint:</b> Eén emailadres per regel.";
+$wb["txt_spam_whitelist"] = 'Spam witte lijst';
+$wb["txt_spam_blacklist"] = 'Spam zwarte lijst';
+$wb["txt_hint_spam_whitelist"] = '<b>Hint:</b> Eén gegevens invoer per regel. Geldige invoer van gegevens zijn bijv., friend@somewhere.com, *@isp.com, of *.domain.net.';
+$wb["txt_hint_spam_blacklist"] = '<b>Hint:</b> Eén gegevens invoer per regel. Geldige invoer van gegevens zijn bijv., friend@somewhere.com, *@isp.com, of *.domain.net.';
+$wb["txt_uribl"] = 'Gebruik <a href="http://www.uribl.com/about.shtml" target="_blank">URIBL</a>';
+
+?>

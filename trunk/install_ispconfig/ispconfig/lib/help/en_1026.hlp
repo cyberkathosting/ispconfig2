@@ -1,0 +1,22 @@
+<?
+
+/**********************************************
+* ISPConfig Help File
+* Version 1.2
+* Syntax: $hlp["FieldName"] = "HelpText";
+************************************************/
+
+$hlp["artikelnummer"] = "Please enter the item number for the product. You are free to use any number.";
+$hlp["artikeltyp"] = "Please select the item type from the list.";
+$hlp["artikelbezeichnung"] = "Please specify the name of the item.";
+$hlp["verrechnung"] = "Please specify the billing period (in months) for the item. For example 1 means monthly, 6 means half-yearly, 12 means yearly; 0 means one-time.";
+$hlp["artikeleinheit"] = "Please select the unit of the item from the list.";
+$hlp["artikelpreis"] = "Please enter the price per unit of the item.";
+$hlp["abpackung"] = "Amount of units per package.";
+$hlp["beschreibung"] = "Here you can describe the item.";
+$hlp["artikelgroup"] = "Please select for which reseller the item is valid. If nothing is selected the item is valid for all resellers.";
+$hlp["weitere_artikeleinheit"] = "Unit for traffic exceedance.";
+$hlp["weitere_abpackung"] = "Amount of MB or GB that are billed on exceedance.";
+$hlp["weitere_artikelpreis"] = "Price for traffic exceedance.";
+$hlp["steuersatz"] = "Please specify the VAT rate (e.g. 16%).";
+?>

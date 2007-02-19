@@ -1,0 +1,42 @@
+<table width="100%" cellspacing="15">
+  <tr><td>
+  <form name="form1" method="post" action="export.php">
+        <table width="100%" border="0" cellpadding="2" cellspacing="0">
+          {ANBIETER_STAMMDATEN}
+          <tr>
+            <td width="25" align="center"><input type="radio" name="daten" value="kunden_stammdaten" checked>
+            </td>
+            <td class="t2">&nbsp;Client Master Data</td>
+          </tr>
+          <tr>
+            <td colspan="2" align="center"><hr size="1"></td>
+          </tr>
+          <tr align="left">
+            <td colspan="2" class="t2b">Format Settings</td>
+          </tr>
+          <tr>
+            <td align="center"><input name="trennzeichen" type="text" id="trennzeichen" value="," size="1" maxlength="1" class="text"></td>
+            <td class="t2">Separator</td>
+          </tr>
+          <tr>
+            <td align="center"><input name="einschluss" type="text" id="einschluss" value="" size="1" maxlength="1" class="text"></td>
+            <td class="t2">Enclosed by</td>
+          </tr>
+          <tr>
+            <td colspan="2" align="center"><hr size="1" noshade></td>
+          </tr>
+          <tr align="left">
+            <td colspan="2" class="t2b">Export data for the following resellers</td>
+          </tr>
+          {WEBS}
+          <tr>
+            <td colspan="2"><hr size="1" noshade></td>
+          </tr>
+          <tr>
+            <td colspan="2" align="center"><input name="s" type="hidden" value="{S}">
+              <input type="submit" name="Submit" value="Start Export" class="button"></td>
+          </tr>
+        </table>
+</form>
+</td></tr>
+</table>

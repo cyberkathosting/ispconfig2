@@ -1,0 +1,104 @@
+<?
+/********************************
+* ISPConfig Dictionary File
+* Version 1.0
+*
+* Tlumaczenie wersji polskiej
+* Patryk Marek --- http://kbn.pl --- info@kbn.pl
+* Wersja 1.0.2
+* Ostatnie zmiany 2005.09.12
+*********************************/
+
+//////////////// DNS Manager ////////////////
+$wb["Optionen"]     = "Ustawienia";
+$wb["Ziel"]         = "Cel";
+$wb["Priorität"]   = "Priorytet";
+$wb["DNS Eintrag"]  = "Wpis do DNS";
+$wb["Ordner neu"]   = "Sortuj w/g";
+$wb["Suchen"]       = "Szukaj";
+$wb["DNS-Manager"]       = "Manager DNS";
+$wb["Domain (SOA)"]         = "Domena (SOA)";
+$wb["Email Admin"]         = "Adres E-mail Administratora";
+$wb["Nameserver 1"]         = "Serwer nazw 1";
+$wb["Nameserver 2"]         = "Serwer nazw 2";
+$wb["Refresh"]         = "Refresh";
+$wb["Retry"]         = "Retry";
+$wb["Expire"]         = "Expire";
+$wb["TTL"]         = "TTL";
+$wb["Record"]         = "Rekord";
+$wb["Record"]         = "Rekordów";
+$wb["Mailserver"]         = "Serwer poczty";
+$wb["ISP Server Status"] = 'Status serwera ISP';
+$wb["Dokument"] = "Dokument";
+$wb["neues Dokument anlegen"] = "nowy Dokument";
+$wb["Web-FTP"] = 'Transfer plików (FTP)';
+$wb["Administration"]  = "Administracja";
+$wb["ISP Faktura"] = 'Faktura ISP';
+
+$wb["error_soa_exists_1"] = "Domena (Rekord SOA) o podanej nazwie ju¿ istnieje ";
+$wb["error_soa_exists_2"] = "";
+//////////////// DNS Manager Ende ///////////
+
+$wb["IP-Adresse ungültig."] = "Adres IP jest nieprawid³owy.";
+$wb["Records"] = 'Rekordów';
+$wb["ziel"] = 'cel';
+$wb["Neu"] = 'nowy';
+
+// NEW 1.3 //////////////////////////////////////
+
+$wb["Master neu"] = 'Nowy g³ówny';
+$wb["Slave neu"] = 'Nowy zapasowy';
+$wb["Slave Zone"] = 'Strefa zapasowa';
+$wb["domain"] = 'Domena';
+$wb["DNS-Master IP"] = 'Adres DNS serwera g³ównego';
+$wb["Name"] = 'Nazwa';
+$wb["Masters"] = 'G³ówne';
+$wb["Slaves"] = 'Zapasowe';
+$wb["SUCHE"] = 'SZUKAJ';
+
+
+//////////////// Server Status ////////////////
+$wb["Arbeitsspeicher"]          = "Pamiêæ g³ówna";
+$wb["CPU"]          = "CPU";
+$wb["Dienste"]      = "Serwisy";
+$wb["Server Online seit"]          = "Serwer dzia³a od";
+$wb["User Online"]      = "Zalogowanych u¿ytkowników";
+$wb["System Load 1 Minute"] = "Obci±¿enie systemu w okresie 1-minutowym";
+$wb["System Load 5 Minuten"] = "Obci±¿enie systemu w okresie 5-minutowym";
+$wb["System Load 15 Minuten"] = "Obcia¿enie systemu w okresie 15-minutowym";
+//////////////// Server Status Ende //////////
+
+$wb["Webs angelegt"] = "Stron u¿ytych";
+$wb["User angelegt"] = "U¿ytkownikow u¿ytych";
+$wb["Domains angelegt"] = "Domen u¿ytych";
+$wb["unlimitiert"]  = "nielimitowana";
+$wb["Anbieter"]     = "Sprzedawca";
+$wb["DNS-Domains angelegt"] = 'Wpisy DNS utworzone ';
+$wb["von"] = "wy³±czone";
+$wb["Maximale Anzahl an DNS-Einträgen erreicht."] = "Maxymalna liczba stref dla tego konta zosta³a przekroczona.<br>";
+$wb["error_no_zones_allowed"] = "Tworzenie stref dla tego konta jest niedozwolone.<br>";
+$wb["error_no_dns_anbieter"] = "Tworzenie wpisów DNS dla tego konta jest niedozwolone.<br>";
+$wb["error_max_slave_dns_anbieter"] = "Maxymalna liczba stref podrzednych (slave zone) zostala przekroczona.<br>";
+$wb["weiter_link"] = "<br><br> <a href='../../isp_dns/frame_start.php?s=$s'>Mas &gt;&gt;</a>";
+$wb["error_a_record_exists"] = "Jest ju¿ zapisany rekord A dla tego hosta w tej strefie.<br>";
+$wb["error_cname_record_exists"] = "Jest ju¿ zapisany rekord CNAME dla tego hosta w tej strefie.<br>";
+$wb["error_mx_record_exists"] = "Ten sam lub podobny rekord MX ju¿ istnieje w tej strefie.<br>";
+$wb["error_spf_record_exists"] = "Rekord SPF ju¿ istnieje w tej strefie.<br>";
+
+$wb["ja"] = "Tak";
+$wb["nein"] = "Nie";
+$wb["a"] = "Czy emaile s± wys³ane<br>&nbsp;&nbsp;od A rekordu?";
+$wb["mx"] = "Czy emaile s± wys³ane<br>&nbsp;&nbsp;od MX rekordu?";
+$wb["ptr"] = "Czy emaile s± wys³ane<br>&nbsp;&nbsp;od wszystkich serwerów<br>&nbsp;&nbsp;tej domeny?";
+$wb["a_break"] = "Czy emaile s± wys³ane<br>&nbsp;&nbsp;od innego rekordu A";
+$wb["mx_break"] = "Czy emaile s± wys³ane<br>&nbsp;&nbsp;od innego rekordu MX?";
+$wb["ip4_break"] = "Czy emaile s± wys³ane<br>&nbsp;&nbsp;od innego adreesu IP?";
+$wb["include_break"] = "Odziedziczyæ zapis SPF<br>&nbsp;&nbsp;z tej strefy?";
+$wb["all_"] = "Zapisz powy¿sze wpisy<br>&nbsp;&nbsp;do³±cz wszystkie hosty<br>&nbsp;&nbsp;mo¿esz wys³aæ email<br>&nbsp;&nbsp;dla tej domeny?";
+
+$wb["Catalog_Name"] = "Nazwa";
+$wb["Feld"] = "Field";
+$wb["Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 -"] = "Only the following signs are allowed: a-z A-Z 0-9 -<br>";
+$wb["Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 - ."] = "Only the following signs are allowed: a-z A-Z 0-9 - .<br>";
+
+?>

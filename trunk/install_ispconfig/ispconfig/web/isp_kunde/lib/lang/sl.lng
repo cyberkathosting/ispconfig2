@@ -1,0 +1,462 @@
+<?
+/********************************
+* 42go Dictionary File
+* Version 1.0
+* (c) projektfarm GmbH
+*********************************/
+
+
+///////////////// ISP Manager //////////////////
+$wb["Anbieter"]     = "Prodajalec";
+$wb["Kunde"]        = "Kupec";
+$wb["Suchen"]       = "Išèi";
+$wb["Stammdaten"]   = "Podatki Lastnika";
+$wb["Limits"]       = "Omejitve";
+$wb["Zugangsdaten"] = "Login Data";
+$wb["Statistik"]    = "Statistike";
+$wb["Firma"]        = "Podjetje";
+$wb["Anrede"]       = "Naslov";
+$wb["Vorname"]      = "Ime";
+$wb["Name"]         = "Priimek";
+$wb["Strasse"]      = "Ulica";
+$wb["PLZ"]          = "Poštna številjka";
+$wb["Ort"]          = "Mesto";
+$wb["Land"]         = "Država";
+$wb["Telefon"]      = "Telefon";
+$wb["Fax"]          = "Fax";
+$wb["Internet"]     = "Internetni naslov";
+$wb["Öffnen"]      = "Odpri";
+$wb["Benutzername"] = "Uporabniško ime"; // besser: vielleicht nur Variable $wb["username"] benutzen?
+$wb["zugangsdaten_anbieter_einleitung"] = "Tukaj doloèite uporabniško ime in geslo za prodajalca.";
+$wb["zugangsdaten_kunde_einleitung"] = "Tukaj doloèite uporabniško ime in geslo za kupèevo upravljanie lokacije <br> his sites.<br> ";
+$wb["Web Verwaltung"] = "Management Lokacija";
+$wb["Rechnung"]      = "Raèun";
+$wb["Rechnungsanschrift:"] = "Naslov raèuna:<br>";
+$wb["Intervall"]    = "Interval";
+$wb["Preis"]        = "Cena";
+$wb["Zahlungsart"]  = "Naèin Plaèila";
+$wb["Basis"]        = "Osnova";
+$wb["Create DNS"]   = "Ustvariti DNS";
+$wb["Speicher MB"]     = "Protor MB";
+$wb["Max. User"]        = "Max. Uporabnik";
+$wb["Max. Domain"]        = "Max. Domena";
+$wb["PHP Scripte"]        = "PHP Scripts";
+$wb["SSI"]        = "SSI";
+$wb["FTP Zugang"]        = "FTP dostop";
+$wb["MySQL"]        = "MySQL";
+$wb["SSL"]        = "SSL";
+$wb["Shell Zugriff"]      = "Shell Access";
+$wb["Zugang"]       = "Dostop";  // Zugriff u. Zugang zusammenfassen!/nur einen Begriff nehmen!
+$wb["CGI Scripte"]      = "CGI Scripts";
+$wb["Bundesland"]   = "Država";
+$wb["Abteilung"]    = "Podroèje";
+$wb["Gültigkeit (Tage)"]  = "Veljavnost (dnevov)";
+$wb["SSL Key"]          = "SSL Kljuè";
+$wb["SSL Zertifikat"]   = "SSL Potrdilo";
+$wb["Aktion"]       = "Delovanje";
+$wb["Zertifikat erzeugen"] = "Ustvari potrdilo";
+$wb["Zertifikat speichern"] = "Shrani potrdilo";
+$wb["Zertifikat löschen"] = "Izbriši potrdilo";
+$wb["Speicherplatz gesamt"] = "Shranjevanje prostora";
+$wb["unlimitiert"]  = "Ne omejeno";
+$wb["verbraucht"]   = "uporabljeno";
+$wb["Trafficübersicht"] = "Pogled prometa (Traffic overview)";
+$wb["Monat"]        = "Mesec";
+$wb["Traffic"]      = "Promet";
+$wb["traffic_letzte_4"] = "Promet v zadnjih 4 letih";
+$wb["Jahr"]         = "Leto";
+$wb["MySQL User"]        = "MySQL Uporabnik";
+$wb["MySQL Passwort"]    = "MySQL Geslo";
+
+// Ergänzungen /////////////////////////////////
+$wb["Anbieter neu"] = "Novi prodajalec";
+$wb["Kunde neu"]    = "Novi kupec";
+$wb["Web neu"]      = "Nova lokacija";
+$wb["Ordner neu"]   = "Nova mapa";
+$wb["Suchen"]       = "Išèi";
+$wb["ISP Anbieter"] = "ISP Prodajalec";
+$wb["Webs"] = "Lokacije";
+$wb["User"] = "Uporabnik";
+$wb["Domains"] = "Domena";
+$wb["Zahlung"] = "Plaèilo";
+$wb["ISP Kunde"] = "ISP Kupec";
+$wb["ISP Web"] = "ISP Lokacija";
+$wb["Kunden"] = "Kupec";
+$wb["Dokument suchen"] = "Išèi dokument";
+
+$wb["User & Email"] = "Uporabnik & Email";
+$wb["Co-Domains"] = "Co-Domena";
+$wb["SSL"] = "SSL";
+$wb["Optionen"] = "Opcije";
+
+$wb["Webs angelegt"] = "Lokacija uporabljena";
+$wb["User angelegt"] = "Uporabnik uorabljen";
+$wb["Domains angelegt"] = "Domena uporabljena";
+$wb["rechnungsanschrift"] = "Naslov fakture:<br> ";
+
+$wb["neues Web anlegen"] = "Nova lokacija";
+$wb["weiter"] = "naslednje";
+$wb["SUCHE"] = "Išèi";
+
+$wb["msg_beta"] = "Beta razlièica deluje do 30.09.2002. <br>&nbsp;<br>Za napake in vprašanje kontaktirajte email naslov: <a href='mailto:isp-beta@projektfarm.de'>isp-beta@projektfarm.de</a>.<br><br> Informacije ter navodila v PDF obliki lahko najdete na <a href='http://www.projektfarm.de'>http://www.projektfarm.de</a>.";
+$wb["title_isp_beta"] = "42go ISP-Manager Beta";
+$wb["msg_kein_win"] = "Ta software ni primeren za operativni sistem Windows.";
+
+// Napaka Kode 42go_isp_datenbank.lib.php
+$wb["error_db_nicht_erlaubt"] = "Kreacija MySQL baze podakov ni dovoljena za to mrežo.<br>";
+$wb["error_db_leeres_passwort"] = "Prosim specificirati geslo!<br>";
+$wb["error_db_exist_1"] = "Podatkovna basa z imenom";
+$wb["error_db_exist_2"] = "že obstaja.<br>";
+$wb["error_db_user_exist_1"] = "Uporabnik podatkovne baze";
+$wb["error_db_user_exist_2"] = "Že obstaja.<br>";
+$wb["error_max_db_web"] = "Maksimalno šetvilo podatkovnh bas za to lokacijo je dosežen.<br>";
+$wb["error_max_db_anbieter"] = "Maksimalno število gostiteljev za to lokacijo je doseženo.<br>";
+
+// Error Codes 42go_isp_domain.lib.php
+$wb["error_web_doppelt"] = "Ime ";
+$wb["error_max_domain_web"] = "Maksimalno število domen za to lokacijo je doseženo.<br>";
+$wb["error_max_domain_anbieter"] = "Maksimalno število gostiteljev domen je doseženo.<br>";
+$wb["angelegt"] = " je že v uporabi druga lokacija ali domena.<br>";
+$wb["error_domain_forward"] = "Sprednja domena vsebuje ne veljavna znake in zaradi tega je izbrisan.<br>";
+
+// Error Codes 42go_isp_kunde.lib.php
+$wb["error_user_exist_1"] = "The 42go-User";
+$wb["error_user_exist_2"] = "Že obstaja. Uporabnik ni bil dodan ali spremenjen.<br>";
+$wb["error_max_user_licence"] = "Maksimalno število od 42go uporabniških raèunov je doseženo.<br>";
+
+
+// Error Codes 42go_isp_reseller.lib.php
+$wb["error_reseller_title"] = "Prodajalec z tem naslovom že obstaja.<br>";
+$wb["error_reseller_group_not_found"] = "Ni najdenih skupin prodajalcev.<br>";
+$wb["error_anbieter_no_delete"] = "<b>Prodajalc ni zbrisan.</b><br>&nbsp;<br>Prodajelec je lahko samo zbrisan èe vse lokacije in kupci prodajalca so že zbrisani. Moramo se tudi preprièati, dakoš prodajalca je prazen.<br>";
+$wb["error_anbieter_no_restore"] = "Prodajalca se ne more obnoviti.<br>";
+
+// Error Codes 42go_isp_user.lib.php
+$wb["error_sysuser_exist_1"] = "Uporabnik z imenom";
+$wb["error_sysuser_exist_2"] = "že obstaja.<br>";
+$wb["error_max_user_web"] = "Maksimalno šetvil uporabniških lokacij je doseženo.<br>";
+$wb["error_max_space_web"] = "Izbran prostor na disku presega lokacijsko mejo.<br>";
+$wb["error_max_user_anbieter"] = "Prodajalèev maksimalno število upoabnikov je doseženo.<br>";
+$wb["error_sysuser_exist"] = "Uporabnik je The username je še v uporabi.<br>";
+$wb["error_admin_exist"] = "Uporabnik z pravilnim administratorjem še obstaja za to lokacijo.<br>";
+$wb["error_admin_exist_long"] = "Uporabnik z privilegiranem administratorjem še obstaja. You must remove the other administrator if you wish to assign administrator privileges to this user.<br>";
+
+// Error Codes 42go_isp_user.lib.php
+$wb["error_max_web_anbieter"] = "Maksimalno število strani na preprodajlca je že doseženo.<br>";
+$wb["error_web_ssl_exist"] = "SSL certifikat že obstaja za to IP številko.<br>";
+
+// Plugins
+$wb["CPU Auslastung 1 Minute"] = "Obremenitev procesorja v zadnji minuti";
+$wb["CPU Auslastung 5 Minuten"] = "Obremenitev procesorja v zadnjih 5 minutah;
+$wb["CPU Auslastung 15 Minuten"] = "Obremenitev procesorja v zadnjih 15 minutah";
+$wb["Server Online seit"] = "Strežnik v teku";
+$wb["User Online"] = "Prijavljeni uporabniki";
+$wb["error_web_id"] = "Dodatek potrebuje veljavnega uporabnika.";
+$wb["von"] = "od";
+$wb["Gesamt"] = "Skupno";
+$wb["Traffic in den letzten 4 Jahren"] = "Promet v zadnjih 4 letih";
+
+$wb["Backup von Tabelle"] = "Arhiviraj tabelo";
+$wb["Optimiere"] = "Optimiziraj";
+$wb["Reparatur"] = "Popravi";
+$wb["oder"] = "ali";
+$wb["Installation starten"] = "Namesti";
+
+$wb["Monatlich"] = "Meseèno";
+$wb["Quartal"] = "Èetrt-Leta";
+$wb["Halbjährlich"] = "Polovico-Leta";
+$wb["Jährlich"] = "Letno";
+$wb["Sonstige"] = "Drugo";
+
+$wb["bei Erhalt"] = "ob prejemu";
+$wb["Netto 7 Tage"] = "za 7 dni";
+$wb["Netto 15 Tage"] = "za 15 dni";
+$wb["Netto 30 Tage"] = "za 30 dni";
+$wb["Sonstige"] = "ostalo";
+$wb["Neu"] = "Nov";
+$wb["Postfach MB"] = "Mailbox MB";
+
+$wb["email_alias_txt"] = "<b>Nasvet:</b> en v vrstico.";
+$wb["Weiterleitung"] = "Posreduj";
+$wb["Nachricht"] = "sporoèilo";
+$wb["Kein Kunde vorhanden"] = "Ni strank na razpolago.<br>";
+$wb["Dieses Web können Sie nicht löschen."] = "Ne morete izbrasati te strani.<br>";
+$wb["Ausgabeformat"] = "Spisek";
+$wb["Bearbeiten"] = "Popravi";
+$wb["Löschen"] = "Izbriši";
+
+$wb["willkommen_kunde"] = "Dobrodošli v 42go-ISP-Managerju!
+Tukaj lahko administrirate vaše strani. Èe imate vprašanja ali težave,
+kontaktirajte administratorska ali preprodajalèeva 42go-ISP navodila.";
+$wb["Willkommen"] = "Dobrodošli";
+
+
+// Regex Fehlermeldungen
+$wb["Es sind nur folgende Zeichen erlaubt: a-z A-Z 0-9 -"] = "Dovoljeni so samo sledeèi znaki: a-z A-Z 0-9 -<br>";
+$wb["Es sind nur folgende Zeichen erlaubt: a-z A-Z 0-9 - ."] = "Dovoljeni so samo sledeèi znaki: a-z A-Z 0-9 - .<br>";
+$wb["Der Username muss aus min. 4, max 25 Buchstaben oder Zahlen bestehen, wobei er mit einem Buchstaben beginnen muss."] = "Uporabniško ime mora biti dolgo vsaj 4 znake ter najveè 26 znakov.<br>";
+$wb['Der Username muss aus min. 4, max 32 Buchstaben oder Zahlen bestehen, wobei er mit einem Buchstaben beginnen muss.'] = "Uporabniško ime mora biti dolgo vsaj 4 znake ter najveè 32 znakov.<br>";
+
+$wb["error_reseller_licence"] = "Dodajanje preprodajalcev ne dovoljuje vaša licenca.<br>";
+$wb["error_reseller_licence_nodelete"] = "Ta preprodajalec ne mora biti izbrisan.<br>";
+
+$wb["error_kunde_licence"] = "Dodajanje strank ne dovoljuje vaša licenca.<br>";
+$wb["error_kunde_licence_nodelete"] = "Ta stranka ne mora biti izbrisana..<br>";
+
+$wb["mysqldb_nicht_vorhanden"] = "MySQL baza ne obstaja. <br>Prosimo vnesite geslo za ustvariti bazo.<br>";
+$wb["mysql_nicht_aktiv"] = "Za to stran ni dovoljenje ustvarjanje MySQL baz..<br>";
+$wb["Datenbank Name"] = "Ime baze";
+$wb["Speicher belegt"] = "Velikost baze";
+
+$wb["Kein Web angelegt"] = "Ni strani.";
+$wb["Real Name"] = "Pravo ime";
+$wb["Feld"] = "Polje";
+$wb["httpd_inc_txt"] = "Apache Directives<br>&nbsp; (Možnost)";
+$wb["Kopie speichern"] = "Pusti kopijo";
+
+$wb["err_0001"] = "Domena pripada drugi stranki.<br>";
+
+$wb["MySQL Remote Access"] = "MySQL oddaljeni dostop";
+$wb["lokaler mailserver"] = "Lokalni poštni strežnik";
+$wb["externer mailserver"] = "Zunanji poštni strežnik";
+
+$wb["Log-Grösse"] = "Logsize";
+$wb["Frontpage Passwort"] = "Frontpage geslo;
+
+// NEW 1.1.12 ///////////////////////////////////
+
+$wb["Anbieternummer"] = 'Preprodajalec št.';
+$wb["Domain DNS"] = 'Glavnih con (DNS)';
+$wb["HTTPD Includes"] = 'HTTPD dodatki';
+$wb["DNS-Manager"] = 'DNS upravljanje';
+$wb["DNS-Domains angelegt"] = 'Glavna cona je ustvarjena';
+$wb["Kundennummer"] = 'Stranka št.';
+$wb["Anonymous FTP"] = 'Anonymous FTP';
+$wb["Anon. FTP MB"] = 'Anon. FTP MB';
+$wb["Faktura"] = 'Faktura';
+$wb["Mailserver"] = 'Poštni strežnik';
+$wb["aktiviert"] = 'aktivno';
+$wb["deaktiviert"] = 'nekativno';
+$wb["ISP User"] = 'ISP strank';
+$wb["WebSpeicher MB"] = 'Prostor v MB';
+$wb["MailSpeicher MB"] = 'Pošta v MB';
+$wb["Administrator"] = 'Skrbnik';
+$wb["Erweiterte Einstellungen"] = 'Dodatne nastavitve';
+$wb["email_weiterleitung_txt"] = '<b>Nasvet:</b> en email v vrstico.';
+$wb["Email Alias"] = 'Email alias';
+$wb["catchAll-Email"] = 'Prevzemi vse maile';
+$wb["MailScan"] = 'MailScan';
+$wb["Spam-Filter"] = 'Spam Filter';
+$wb["Autoresponder"] = 'Samodejni odgovor';
+$wb["ISP Domain"] = 'ISP domena';
+$wb["Create DNS MX"] = 'Ustvari DNS MX';
+$wb["Admin"] = 'Skrbnik';
+$wb["CatchAll"] = 'Prevzemi vse';
+$wb["Bitte Artikel auswählen"] = "Izberi";
+$wb["Letzte Abrechnung"] = "Zadnja faktura";
+$wb["Artikel hinzufügen"] = "Dodaj";
+$wb["Wird automatisch vergeben."] = 'je dodeljeno samodejno.';
+$wb["Email Adresse"] = "Email naslov";
+
+// new 1.2 ////////////////////////////////////////
+$wb["error_email_exist"] = "Dupliciran email naslov.<br>";
+$wb["error_realname"] = "Dovoljeni so znaki: a-z A-Z 0-9 - _ .<br>";
+$wb["Die Emailadresse muss aus min. 1, max 60 Buchstaben oder Zahlen bestehen."] = "Email lahko vsebuje 1 do 60 znakov.<br>";
+
+// new 1.3 ////////////////////////////////////////
+$wb["Bundesland"] = "Provinca";
+$wb["Spamfilter & Antivirus"] = 'Spamfilter & Antivirus';
+$wb["Spamfilter"] = 'Spamfilter';
+$wb["Antivirus"] = 'Antivirus';
+$wb["accept"] = 'sprejmi';
+$wb["discard"] = 'zavrži';
+$wb["Spam Strategie"] = 'Spam strategija';
+$wb["Spam Hits"] = 'Spam toèke';
+$wb["Rewrite Subject"] = 'Spremeni namen';
+$wb["Betreff"] = 'Namen';
+$wb["SUCHE"] = 'IŠÈI';
+$wb["IP"] = 'IP';
+$wb["Standard CGIs"] = 'Standard CGI';
+$wb["PHP Safe Mode"] = 'PHP Safe Mode';
+$wb["WAP"] = 'WAP';
+$wb["Individuelle Fehler-Seiten"] = 'Individual Error Pages';
+$wb["Anzahl Datenbanken"] = 'Number of Databases';
+$wb["Fehler 400<br>(Ungültige Syntax)"] = "400 Error<br>(Invalid Syntax)";
+$wb["Fehler 401<br>(Autorisierung<br>erforderlich)"] = "401 Error<br>(Authorisation<br>required)";
+$wb["Fehler 403<br>(Verboten)"] = "403 Error<br>(Forbidden)";
+$wb["Fehler 404<br>(Datei nicht<br>gefunden)"] = "404 Error<br>(File not found)";
+$wb["Fehler 405<br>(Methode nicht<br>erlaubt)"] = "405 Error<br>(Method not<br>allowed)";
+$wb["Fehler 500<br>(Interner<br>Server-Fehler)"] = "500 Error<br>(Internal Server<br>Error)";
+$wb["Fehler 503<br>(Service ist z.Zt.<br>überlastet)"] = "503 Error<br>(Service<br>unavailable)";
+$wb["Datenbanken"] = "Podatkovne baze";
+$wb["Datenbank"] = "Baze";
+$wb["Datenbankname"] = "Ime baze";
+$wb["Datenbankuser"] = "Up. ime";
+$wb["weiter_link"] = "<br><br> <a href='../../isp_manager/frame_start.php?s=$s'>Naprej &gt;&gt;</a>";
+$wb["Slave Zones"] = 'Sekundarne zone (DNS)';
+$wb["txt_client_salutatory_email_desc"] = "<b>Pozdravno sporoèilo za stranke</b>";
+$wb["txt_client_salutatory_email_sender_email"] = "Pošiljateljev email";
+$wb["txt_client_salutatory_email_sender_name"] = "Ime pošiljatelja";
+$wb["txt_client_salutatory_email_bcc"] = "BCC naslovnik";
+$wb["txt_client_salutatory_email_subject"] = "Naslov";
+$wb["txt_client_salutatory_email_message"] = "Sporoèilo";
+$wb["txt_client_salutatory_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Include the following variables in your text:</b></td></tr>
+        <tr>
+          <td class="normal">%%%USER%%%</td>
+          <td class="normal">
+            Client\'s Username</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%PASSWORD%%%</td>
+          <td class="normal">
+            Client\'s Password</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%FIRST_NAME%%%</td>
+          <td class="normal">
+            Client\'s First Name</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%LAST_NAME%%%</td>
+          <td class="normal">
+            Client\'s Last Name</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%COMPANY%%%</td>
+          <td class="normal">
+            Client\'s Company</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%EMAIL%%%</td>
+          <td class="normal">
+            Client\'s Email Address</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%CP%%%</td>
+          <td class="normal">
+            42go ISP-Manager Login URL</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%MANUAL%%%</td>
+          <td class="normal">
+            42go ISP-Manager Client Manual</td>
+        </tr>
+        </table>';
+$wb["txt_standard_index"] = "Standard Index<br>&nbsp;&nbsp;Stran";
+$wb["txt_standard_index_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Include the following variables in your text:</b></td></tr>
+        <tr>
+          <td class="normal">%%%FQDN%%%</td>
+          <td class="normal">
+            Website\'s Fully Qualified Domain Name</td>
+        </tr>
+    </table>';
+$wb["txt_user_standard_index"] = "Users' Standard<br>&nbsp;&nbsp;Index Page";
+$wb["txt_user_standard_index_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Include the following variables in your text:</b></td></tr>
+        <tr>
+          <td class="normal">%%%USER%%%</td>
+          <td class="normal">
+            User\'s Username</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%FQDN%%%</td>
+          <td class="normal">
+            Website\'s Fully Qualified Domain Name</td>
+        </tr>
+        </table>';
+
+//////////////// ISP Manager Ende /////////////
+
+//////////////// Server Status ////////////////
+$wb["Arbeitsspeicher"]          = "Glavna memorija";
+$wb["CPU"]          = "Procesor";
+$wb["Dienste"]      = "Aplikacije";
+$wb["Server Online seit"]          = "Strežnik v teku";
+$wb["User Online"]      = "Aktivni uporabniki";
+$wb["System Load 1 Minute"] = "Obremenitev sistema v zadnji minuti";
+$wb["System Load 5 Minuten"] = "Obremenitev sistema v zadnjih 5 minutah";
+$wb["System Load 15 Minuten"] = "Obremenitev sistema v zadnjih 15 minutah";
+//////////////// Server Status Ende //////////
+
+
+$wb["Es konnte ein Dokument nicht wiederhergestellt werden, da sich das Eltern-Dokument noch im Papierkorb befindet.\n"] = "Ni možno obnoviti dokler se podatkov iz koša ne prenese nazaj.";
+$wb["error_anbieter_max_webs_ueberschritten"] = "Preprodajalec že ima preseženo število strani.<br>";
+$wb["error_anbieter_max_diskspace_ueberschritten"] = "Preprodajalec že ima presežen prostor na razpolago.<br>";
+$wb["error_anbieter_max_user_ueberschritten"] = "Preprodajalec že ima preseženo število strank.<br>";
+$wb["error_anbieter_max_domain_ueberschritten"] = "Preprodajalec že ima preseženo število domen na razpolago.<br>";
+$wb["error_anbieter_dnsmanager_aktiv"] = "Preprodajalec že ima še nekaj DNS zapisov. DNS Upravnik ne more biti deaktiviran.<br>";
+$wb["error_anbieter_max_dns_ueberschritten"] = "Preprodajalec že ima preseženo število primarnih domen na razpolago.<br>";
+$wb["error_anbieter_max_slavedns_ueberschritten"] = "Preprodajalec že ima preseženo število sekundarnih domen na razpolago.<br>";
+$wb["error_anbieter_httpd_include_aktiv"] = "HTTPD Includes je še aktiviran za nekatere spletne strani.<br>";
+$wb["error_anbieter_shell_access_aktiv"] = "Shell Access je še aktiviran za nekatere spletne strani.<br>";
+$wb["error_anbieter_cgi_aktiv"] = "CGI je še aktiviran za nekatere spletne strani.<br>";
+$wb["error_anbieter_standard_cgi_aktiv"] = "Standard CGIs je še aktiviran za nekatere spletne strani.<br>";
+$wb["error_anbieter_php_aktiv"] = "PHP je še aktiviran za nekatere spletne strani.<br>";
+$wb["error_anbieter_ssi_aktiv"] = "SSI je še aktiviran za nekatere spletne strani.<br>";
+$wb["error_anbieter_ftp_aktiv"] = "FTP je še aktiviran za nekatere spletne strani.<br>";
+$wb["error_anbieter_anonftp_aktiv"] = "Anonymous FTP je še aktiviran za nekatere spletne strani.<br>";
+$wb["error_anbieter_frontpage_aktiv"] = "Frontpage je še aktiviran za nekatere spletne strani.<br>";
+$wb["error_anbieter_datenbank_aktiv"] = "MySQL je še aktiviran za nekatere spletne strani.<br>";
+$wb["error_anbieter_max_datenbank_ueberschritten"] = "Preprodajalec že ima preseženo število podatkovnih baz.<br>";
+$wb["error_anbieter_ssl_aktiv"] = "SSL je še aktiviran za nekatere spletne strani.<br>";
+$wb["error_anbieter_wap_aktiv"] = "WAP je še aktiviran za nekatere spletne strani.<br>";
+$wb["error_anbieter_error_pages_aktiv"] = "Individual je še aktiviran za nekatere spletne strani.<br>";
+$wb["error_web_no_unlimited_diskspace_1"] = "Ni možno dodeliti neomejenega prostora saj ima stran omejen prostor na ";
+$wb["error_web_no_unlimited_diskspace_2"] = " MB.<br>";
+$wb["error_web_no_diskspace_free_1"] = "Imate samo še ";
+$wb["error_web_no_diskspace_free_2"] = " MB na razpolago.<br>";
+$wb["error_web_no_unlimited_users_1"] = "Ni možno dodeliti neomejenega števila uporabnikov saj ima stran omejitev na ";
+$wb["error_web_no_unlimited_users_2"] = ".<br>";
+$wb["error_web_no_users_free_1"] = "Imate še ";
+$wb["error_web_no_users_free_2"] = " uporabnikov na voljo.<br>";
+$wb["error_web_no_unlimited_domains_1"] = "Ni možno dodeliti neomejenega števila domen saj ima stran omejeno kolièino na ";
+$wb["error_web_no_unlimited_domains_2"] = ".<br>";
+$wb["error_web_no_domains_free_1"] = "Imate še ";
+$wb["error_web_no_domains_free_2"] = " domen na voljo.<br>";
+$wb["error_web_no_user_decrease_1"] = "Stran že ima ";
+$wb["error_web_no_user_decrease_2"] = " uporabnikov. Ne morete zmanjšati tega števila.<br>";
+$wb["error_web_no_domain_decrease_1"] = "Stran že ima ";
+$wb["error_web_no_domain_decrease_2"] = " domen. Ne morete zmanjšati tega števila.<br>";
+
+$wb["Benutzter Diskspace"] = "Prostor uporabljen";
+$wb["Slave Zones angelegt"] = "Sekundarne zone narejene";
+$wb["Datenbanken angelegt"] = "Podatkovne baze ustvarjene";
+$wb["error_web_no_database_decrease_1"] = "Stran že ima ";
+$wb["error_web_no_database_decrease_2"] = " podatkovnih baz. Ne morete zmanjšati tega števila.<br>";
+$wb["error_web_no_shell_access"] = "Ne morete dodeliti shell dostopa za to stran.<br>";
+$wb["error_web_no_cgi"] = "Ne morete dodeliti CGI-ja.<br>";
+$wb["error_web_no_standard_cgi"] = "Ne morete dodeliti Standard CGI-ja.<br>";
+$wb["error_web_no_php"] = "Ne morete dodeliti PHP-ja.<br>";
+$wb["error_web_no_ssi"] = "Ne morete dodeliti SSI-ja.<br>";
+$wb["error_web_no_ftp"] = "Ne morete dodeliti FTP-ja.<br>";
+$wb["error_web_no_mysql"] = "Ne morete dodeliti MySQL-a.<br>";
+$wb["error_web_no_databases_free_1"] = "Stran ima še";
+$wb["error_web_no_databases_free_2"] = " podatkovnih baz na razpolago.<br>";
+$wb["error_web_no_ssl"] = "Ne morete dodeliti SSL-ja.<br>";
+$wb["error_web_no_anonftp"] = "Ne morete dodeliti Anonimnega FTP-ja.<br>";
+$wb["error_web_no_wap"] = "Ne mroete dodaliti WAP-a.<br>";
+$wb["error_web_no_individual_error_pages"] = "Ne morete dodeliti funkcije "Individual error pages".<br>";
+$wb["error_web_no_httpd_include"] = "Ne morete dodeliti funkcije "HTTPD includes".<br>";
+$wb["error_web_no_frontpage"] = "Ne morete dodeliti funkcije "Frontpage".<br>";
+$wb["Web Vorlage"] = "Spletni plan";
+$wb["ISP Web-Vorlage"] = "ISP spletni plan";
+$wb["Keine Vorlage verwenden"] = "Individualne nastavitve";
+$wb["Keine Vorlage vorhanden"] = "Spletni plan ni na razpolago";
+$wb["txt_accept"] = "sprejmi";
+$wb["txt_discard"] = "ne sprejmi";
+$wb["Eigenschaften"] = "Lastnosti";
+$wb["ISP Datenbank"] = "ISP baze";
+$wb["Nein"] = "Ne";
+$wb["Ja"] = "Da";
+$wb["Web"] = "Strani";
+$wb["Domain"] = "Domene";
+
+?>

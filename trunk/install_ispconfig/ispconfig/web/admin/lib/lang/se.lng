@@ -1,0 +1,502 @@
+<?
+/********************************
+* ISPConfig Dictionary File
+* Version 1.0
+*********************************/
+
+//////////////// Server Status ////////////////
+$wb["Arbeitsspeicher"]          = "Arbetsminne";
+$wb["CPU"]          = "CPU";
+$wb["Dienste"]      = "Tjänster";
+$wb["Server Online seit"]          = "Server Online sedan";
+$wb["User Online"]      = "Användare Online";
+$wb["System Load 1 Minute"] = "System belastning senaste 1 Min";
+$wb["System Load 5 Minuten"] = "System belastning senaste 5 Min";
+$wb["System Load 15 Minuten"] = "System belastning senaste 15 Min";
+//////////////// Server Status Ende //////////
+
+///////////////// Administration ////////////////
+$wb["ISPConfig Datenbank"]    = "ISPConfig Databas";
+$wb["Backup erstellen"]       = "Data Backup";
+$wb["Datenbank Check"]        = "Kontrollerar Databas";
+$wb["Datenbank Optimieren"]   = "Optimerar Databas";
+$wb["Datenbank Reparieren"]   = "Reparerar Databas";
+$wb["Eigenschaften"] = "Inställningar";
+$wb["Server Name"]  = "Server Namn";
+$wb["Netzmaske"]    = "Nätmask";
+$wb["Sprache"]      = "Språk";
+$wb["IP Liste"]     = "IP Lista";
+$wb["hinweis_ip_liste"] = "<b>OBS:</b> Skriv bara en IP Adress per rad i fältet IP Lista.";
+$wb["Pfad"]         = "Sökväg";
+$wb["Programm"]     = "Program";
+$wb["Reparatur"]    = "Reparerar";
+$wb["Optimiere"]    = "Optimerar";
+$wb["Pfad httpd.conf"]    = "Sökväg httpd.conf";
+$wb["MTA Typ"]    = "MTA Typ";
+$wb["Virtuser Datei"]    = "Virt. användar Fil";
+$wb["FTP Programm"]    = "FTP Program";
+$wb["FTP conf. Datei"]    = "FTP .conf Fil";
+$wb["Userid von"]    = "AnvändarId från";
+$wb["Groupid von"]    = "GruppId från";
+
+$wb["Backup von Tabelle"] = "Tabell Backup";
+$wb["Optimiere"] = "Optimerar";
+$wb["Reparatur"] = "Reparerar";
+$wb["oder"] = "eller";
+$wb["Installation starten"] = "Installerar";
+
+$wb["Deutsch"] = "Tyska";
+$wb["Englisch"] = "Engelska";
+$wb["Schwedisch"] = "Svenska";
+$wb["Datei"] = "Fil";
+
+//////////////// Administration Ende ///////////
+
+//////////////// Firewall, Monitor + Dienste  ////////////////
+
+$wb["Überwachung"] = "Övervakning";
+$wb["Firewall"] = "Brandvägg";
+$wb["Web-Server"] = "Webb Server";
+$wb["FTP-Server"] = "FTP Server";
+$wb["SMTP-Server"] = "SMTP Server";
+$wb["DNS-Server"] = "DNS Server";
+$wb["mySQL-Server"] = "MySQL Server";
+$wb["An"] = "På";
+$wb["Aus"] = "Av";
+$wb["neu Starten"] = "Omstart";
+$wb["Neu"] = "Lägg till";
+$wb["Aktionen"] = "Åtgärd";
+$wb["Dienst"] = "Tjänster";
+$wb["Hostname"] = "Värdnamn";
+$wb["Port"] = "Port";
+$wb["Typ"] = "Typ";
+$wb["TCP"] = "TCP";
+$wb["UDP"] = "UDP";
+$wb["Der Dienst-Typ wird nur bei sonstigen-Diensten ausgewertet."] = "Den här typen av tjänst kommer att bli analyserad tillsammans med andra tjänster.";
+$wb["Sonstige"] = "Övrigt";
+$wb["Ja"] = "Ja";
+$wb["Nein"] = "Nej";
+$wb["Offline"] = "Offline";
+$wb["ISP Dienste"] = "ISP Tjänster";
+$wb["ISP Überwachung"] = "ISP Övervakning";
+$wb["ISP Firewall"] = "ISP Brandvägg";
+$wb["Name"] = "Namn";
+$wb["Aktiv"] = "Aktiv";
+$wb["Firewall Regel"] = "Brandväggs Regler";
+$wb["Dieser Port kann nicht geändert werden."] = "Denna port kan inte ändras.";
+$wb["Dieser Port kann nicht deaktiviert werden."] = "Denna port kan inte bli deaktiverad.<br>";
+
+//////////////// Firewall ENDE ////////////////
+
+//////////////// LNG 1.1.12 BEGIN /////////////
+
+$wb["ISP Server"] = 'ISP Server';
+$wb["Admin Email"] = 'Admin Epost';
+$wb["EMail"] = 'Epost';
+$wb["Funktionen"] = 'Funktioner';
+$wb["httpd User"] = 'httpd Användare';
+$wb["httpd Group"] = 'httpd Grupp';
+$wb["Document Root"] = 'Dokument Root';
+$wb["Frontpage Pfad"] = 'Frontpage Sökväg';
+$wb["access Log"] = 'Åtkomst Logg';
+$wb["Sendmail"] = 'Sendmail';
+$wb["Sendmail CW"] = 'Sendmail CW';
+$wb["Log speichern"] = 'Spara Logg';
+$wb["BIND User"] = 'BIND Användare';
+$wb["BIND Group"] = 'BIND Grupp';
+$wb["Zonefiles Dir."] = 'Zon filers Mapp';
+$wb["Default Ns1"] = 'Standard Ns1';
+$wb["Default Ns2"] = 'Standard Ns2';
+$wb["Standard MX"] = 'Standard MX';
+$wb["Frontpage Extensions"] = 'Frontpage Extension';
+$wb["User Prefix"] = 'Användar Prefix';
+$wb["Anbieter Nr. von"] = 'Återförsäljar nr. från';
+$wb["Kunden Nr. von"] = 'Kund nr. från';
+$wb["SOAP Server IP"] = 'SOAP Server IP';
+$wb["SOAP Server Port"] = 'SOAP Server Port';
+$wb["Web-FTP"] = 'Webb FTP';
+$wb["ISP Faktura"] = 'ISP Faktura';
+$wb["Modul Manager"] = 'Modul Manager';
+$wb["Hinzufügen"] = 'Lägg till';
+$wb["Alle anzeigen"] = 'Visa Alla';
+$wb["Update Manager"] = 'Uppdaterings Manager';
+$wb["Update"] = 'Uppdatera';
+$wb["System Config"] = 'System Konfiguration';
+$wb["Bearbeiten"] = 'Editera';
+$wb["Importieren"] = 'Importera';
+$wb["Exportieren"] = 'Exportera';
+$wb["Allgemein"] = 'Allmän';
+$wb["ISP-Manager"] = 'ISP Manager';
+$wb["Faktura"] = 'Faktura';
+$wb["Übernehmen"] = 'Spara';
+$wb["Webserver"] = 'Webb server';
+$wb["Bind DNS"] = 'Bind DNS';
+$wb["Mailserver"] = 'Epost server';
+$wb["POP3-Server"] = 'POP3 Server';
+$wb["nein"] = 'nej';
+$wb["ja"] = 'ja';
+$wb["ISP Server Status"] = 'ISP Server Status';
+$wb["System-Datenbank"] = 'System Databas';
+$wb["Verzeichnis"] = 'Katalog';
+$wb["Backup starten"] = 'Backup';
+
+// NEW 1.1.12a //////////////////////////////
+
+$wb["Es wurde kein Web ausgewählt."] = "Ingen Webb adress vald.";
+$wb["Backup-Funktionen im Demo-Modus nicht verfügbar."] = "Backup funktioner finns inte tillgängliga i demo version.";
+$wb["Backup Status"] = "Backup Status";
+$wb["Der Name des FTP-Servers <br>enthält ungültige Zeichen."] = "Namnet på FTP servern <br>innehåller otillåtna tecken.";
+$wb["Sie haben keinen FTP Benutzernamen angegeben."] = "Inget FTP användarnamn är angett.";
+$wb["Ftp-Verbindung nicht hergestellt!"] = "Ftp uppladdning misslyckades!";
+$wb["Verbindung mit:"] = "Uppkopplad till:";
+$wb["als Benutzer:"] = "som Användare:";
+$wb["nicht möglich."] = "inte möjligt.";
+$wb["Konnte nicht in Verzeichnis:"] = "byter till katalog:";
+$wb["wechseln."] = "misslyckad.";
+$wb["Wechsel in Verzeichnis:"] = "byter till katalog:";
+$wb["Ftp upload war fehlerhaft!"] = "Ftp uppladdning misslyckades!";
+$wb["Upload erfolgreich."] = "Uppladdning lyckades.";
+$wb["FTP-Upload Status"] = "Ftp uppladdnings Status";
+$wb["Backup-Methode nicht unterstützt."] = "Backup metod finns inte tillgänglig.";
+$wb["Rechnung Nr. von"] = "Faktura nr. från";
+
+//////////////// LNG 1.1.12 ENDE ///////////////
+
+// NEW 1.3 /////////////////////////////////////
+
+$wb["Remoting"] = 'Remoting';
+$wb["User"] = 'Användare';
+$wb["Conf. Dir."] = 'Conf Katalog';
+$wb["Suexec"] = 'Suexec';
+$wb["Postfix"] = 'Postfix';
+$wb["Mail Log"] = 'Epost Logg';
+$wb["Maildir"] = 'Epost Mappformat';
+$wb["Antivir Mailadmin"] = 'Antivirus AdminEpost';
+$wb["aktiv"] = "aktiv";
+$wb["inaktiv"] = "inaktiv";
+$wb["weiter_link"] = "<br><br> <a href='../../isp_manager/frame_start.php?s=$s'>Nästa &gt;&gt;</a>";
+$wb["txt_client_salutatory_email_desc"] = "<b>Välkomst epost till Kunder</b>";
+$wb["txt_client_salutatory_email_sender_email"] = "Avsändarens epost";
+$wb["txt_client_salutatory_email_sender_name"] = "Avsändare";
+$wb["txt_client_salutatory_email_bcc"] = "BCC Mottagare";
+$wb["txt_client_salutatory_email_subject"] = "Ämne";
+$wb["txt_client_salutatory_email_message"] = "Meddelande";
+$wb["txt_client_salutatory_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Inkludera följande variabler i din text:</b></td></tr>
+        <tr>
+          <td class="normal">%%%USER%%%</td>
+          <td class="normal">
+            Kundens Användarnamn</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%PASSWORD%%%</td>
+          <td class="normal">
+            Kundens Lösenord</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%FIRST_NAME%%%</td>
+          <td class="normal">
+            Kundens Förnamn</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%LAST_NAME%%%</td>
+          <td class="normal">
+            Kundens Efternamn</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%COMPANY%%%</td>
+          <td class="normal">
+            Kundens Företagsnamn</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%EMAIL%%%</td>
+          <td class="normal">
+            Kundens Epost adress</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%CP%%%</td>
+          <td class="normal">
+            ISPConfig Inloggnings URL</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%MANUAL%%%</td>
+          <td class="normal">
+            ISPConfig Kund Manual</td>
+        </tr>
+        </table>';
+
+$wb["txt_res_salutatory_email_desc"] = "<b>Välkomst epost för Återförsäljare</b>";
+$wb["txt_res_salutatory_email_sender_email"] = "Avsändarens epost";
+$wb["txt_res_salutatory_email_sender_name"] = "Avsändare";
+$wb["txt_res_salutatory_email_bcc"] = "BCC Mottagare";
+$wb["txt_res_salutatory_email_subject"] = "Ämne";
+$wb["txt_res_salutatory_email_message"] = "Meddelande";
+$wb["txt_res_salutatory_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Inkludera följandevariabler i din text:</b></td></tr>
+        <tr>
+          <td class="normal">%%%USER%%%</td>
+          <td class="normal">
+            Återförsäljarens Användarnamn</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%PASSWORD%%%</td>
+          <td class="normal">
+            Återförsäljarens Lösenord</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%FIRST_NAME%%%</td>
+          <td class="normal">
+            Återförsäljarens Förnamn</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%LAST_NAME%%%</td>
+          <td class="normal">
+            Återförsäljarens Efternamn</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%COMPANY%%%</td>
+          <td class="normal">
+            Återförsäljarens Företagsnamn</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%EMAIL%%%</td>
+          <td class="normal">
+            Återförsäljarens Epost Adress</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%CP%%%</td>
+          <td class="normal">
+            ISPConfig Inloggnings URL</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%MANUAL%%%</td>
+          <td class="normal">
+            ISPConfig Återförsäljar Manual</td>
+        </tr>
+        </table>';
+$wb["txt_standard_index"] = "Standard Index<br>&nbsp;&nbsp;Sida";
+$wb["txt_standard_index_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Inkludera följande variabler i din text:</b></td></tr>
+        <tr>
+          <td class="normal">%%%FQDN%%%</td>
+          <td class="normal">
+            Webbplatsens Fullständiga Domän Namn</td>
+        </tr>
+    </table>';
+$wb["txt_user_standard_index"] = "Kundens Standard<br>&nbsp;&nbsp;Index Sida";
+$wb["txt_user_standard_index_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Inkludera följande variabler i din text:</b></td></tr>
+        <tr>
+          <td class="normal">%%%USER%%%</td>
+          <td class="normal">
+            Kundens Användarnamn</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%FQDN%%%</td>
+          <td class="normal">
+            Webbplatsens Fullständiga Domän Namn</td>
+        </tr>
+        </table>';
+
+//////////////// Remoting //////////////////////
+$wb["Hinzufügen"] = "Lägg till";
+$wb["Berechtigungen"] = "Rättigheter";
+$wb["Speichern"] = "Spara";
+$wb["Löschen"] = "Radera";
+$wb["Abbrechen"] = "Avbryt";
+$wb["IP-Adresse"] = "IP-Adress";
+$wb["DNS-Query"] = "DNS-Fråga";
+$wb["DNS-Insert"] = "DNS-Inlägg";
+$wb["DNS-Update"] = "DNS-Uppdatera";
+$wb["DNS-Delete"] = "DNS-Ta bort";
+$wb["slave_query"] = "Sekundärt DNS Inläggs Fråga";
+$wb["slave_insert"] = "Skapa Sekundärt DNS Inlägg";
+$wb["slave_update"] = "Editera Sekundärt DNS Inlägg";
+$wb["slave_delete"] = "Ta bort Sekundärt DNS Inlägg";
+$wb["reseller_query"] = "Fråga bland Återförsäljare";
+$wb["reseller_insert"] = "Skapa Återförsäljare";
+$wb["reseller_update"] = "Editera Återförsäljare";
+$wb["reseller_delete"] = "Ta bort Återförsäljare";
+$wb["kunde_query"] = "Fråga bland Kunder";
+$wb["kunde_insert"] = "Skapa Kund";
+$wb["kunde_update"] = "Editera Kund";
+$wb["kunde_delete"] = "Ta bort Kund";
+$wb["web_query"] = "Fråga bland Webbplatser";
+$wb["web_insert"] = "Skapa Webbplats";
+$wb["web_update"] = "Editera Webbplats";
+$wb["web_delete"] = "Ta bort Webbplats";
+$wb["txt_primary_dns_records"] = "Primärt DNS Inlägg";
+$wb["txt_secondary_dns_records"] = "Sekundärt DNS Inlägg";
+$wb["txt_anbieter"] = "Återförsäljare";
+$wb["txt_kunden"] = "Kunder";
+$wb["txt_webs"] = "Webbplatser";
+
+$wb["txt_traffic_suspension_email_desc"] = "<b>Avstängnings meddelande webbplats (Trafik överträdelse)</b>";
+$wb["txt_traffic_suspension_sender_email"] = "Epost avsändare";
+$wb["txt_traffic_suspension_sender_name"] = "Namn på avsändare";
+$wb["txt_traffic_suspension_email_bcc"] = "BCC Mottagare";
+$wb["txt_traffic_suspension_email_subject"] = "Ämne";
+$wb["txt_traffic_suspension_email_message"] = "Meddelande";
+$wb["txt_traffic_suspension_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Inkludera följande variabler i din text:</b></td></tr>
+        <tr>
+          <td class="normal">%%%FIRST_NAME%%%</td>
+          <td class="normal">
+            Kundens Förnamn</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%LAST_NAME%%%</td>
+          <td class="normal">
+            Kundens Efternamn</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%WEBSITE%%%</td>
+          <td class="normal">
+            Kundens Webbplats</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%MONTH%%%</td>
+          <td class="normal">
+            Månad som Trafik överträdelse avser</td>
+        </tr>
+        <tr>
+          <td class="normal" valign="top">%%%INCLUDED_TRAFFIC%%%</td>
+          <td class="normal">
+            Trafik inkluderat i Webbplats paketet</td>
+        </tr>
+        <tr>
+          <td class="normal" valign="top">%%%TOTAL_TRAFFIC%%%</td>
+          <td class="normal">
+            Total trafik i månaden som överskridits</td>
+        </tr>
+        </table>';
+
+$wb["txt_traffic_notification_email_desc"] = "<b>Trafik Överträdelse Information</b>";
+$wb["txt_traffic_notification_sender_email"] = "Avsändarens epostadress";
+$wb["txt_traffic_notification_sender_name"] = "Avsändarnamn";
+$wb["txt_traffic_notification_email_bcc"] = "BCC Mottagare";
+$wb["txt_traffic_notification_email_subject"] = "Ämne";
+$wb["txt_traffic_notification_email_message"] = "Meddelande";
+$wb["txt_traffic_notification_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Inkludera följande variabler i din text:</b></td></tr>
+        <tr>
+          <td class="normal">%%%FIRST_NAME%%%</td>
+          <td class="normal">
+            Kundens Förnamn</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%LAST_NAME%%%</td>
+          <td class="normal">
+            Kundens Efternamn</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%WEBSITE%%%</td>
+          <td class="normal">
+            Kundens Webbplats</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%MONTH%%%</td>
+          <td class="normal">
+            Månad som Trafik överträdelse avser</td>
+        </tr>
+        <tr>
+          <td class="normal" valign="top">%%%INCLUDED_TRAFFIC%%%</td>
+          <td class="normal">
+            Trafik inkluderat i Webbplats paketet</td>
+        </tr>
+        <tr>
+          <td class="normal" valign="top">%%%TOTAL_TRAFFIC%%%</td>
+          <td class="normal">
+            Total trafik i månaden som överskridits</td>
+        </tr>
+        </table>';
+
+$wb["txt_res_traffic_suspension_email_desc"] = "<b>Återförsäljare Avstängnings Meddelande (Trafik Överträdelse)</b>";
+$wb["txt_res_traffic_suspension_sender_email"] = "Avsändarens epostadress";
+$wb["txt_res_traffic_suspension_sender_name"] = "Avsändarnamn";
+$wb["txt_res_traffic_suspension_email_bcc"] = "BCC Mottagare";
+$wb["txt_res_traffic_suspension_email_subject"] = "Ämne";
+$wb["txt_res_traffic_suspension_email_message"] = "Meddelande";
+$wb["txt_res_traffic_suspension_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Inkludera följande variabler i din text:</b></td></tr>
+        <tr>
+          <td class="normal">%%%FIRST_NAME%%%</td>
+          <td class="normal">
+            Återförsäljarens Förnamn</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%LAST_NAME%%%</td>
+          <td class="normal">
+            Återförsäljarens Efternamn</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%MONTH%%%</td>
+          <td class="normal">
+            Månad som Trafik överträdelse avser</td>
+        </tr>
+        <tr>
+          <td class="normal" valign="top">%%%INCLUDED_TRAFFIC%%%</td>
+          <td class="normal">
+            Trafik inkluderat för återförsäljaren</td>
+        </tr>
+        <tr>
+          <td class="normal" valign="top">%%%TOTAL_TRAFFIC%%%</td>
+          <td class="normal">
+            Total trafik i månaden som överskridits</td>
+        </tr>
+        </table>';
+
+$wb["txt_res_traffic_notification_email_desc"] = "<b>Återförsäljare Trafik Överträdelse Information</b>";
+$wb["txt_res_traffic_notification_sender_email"] = "Avsändarens epostadress";
+$wb["txt_res_traffic_notification_sender_name"] = "Avsändarnamn";
+$wb["txt_res_traffic_notification_email_bcc"] = "BCC Mottagare";
+$wb["txt_res_traffic_notification_email_subject"] = "Ämne";
+$wb["txt_res_traffic_notification_email_message"] = "Meddelande";
+$wb["txt_res_traffic_notification_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Inkludera följande variabler i din text:</b></td></tr>
+        <tr>
+          <td class="normal">%%%FIRST_NAME%%%</td>
+          <td class="normal">
+            Återförsäljarens Förnamn</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%LAST_NAME%%%</td>
+          <td class="normal">
+            Återförsäljarens Efternamn</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%MONTH%%%</td>
+          <td class="normal">
+            Månad som Trafik överträdelse avser</td>
+        </tr>
+        <tr>
+          <td class="normal" valign="top">%%%INCLUDED_TRAFFIC%%%</td>
+          <td class="normal">
+            Trafik inkluderat för återförsäljaren</td>
+        </tr>
+        <tr>
+          <td class="normal" valign="top">%%%TOTAL_TRAFFIC%%%</td>
+          <td class="normal">
+            Total trafik i månaden som överskridits</td>
+        </tr>
+        </table>';
+
+$wb["Updates"] = "Uppdatera";
+$wb["Sonstiges"] = "Övrigt";
+?>

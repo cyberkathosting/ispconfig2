@@ -1,0 +1,23 @@
+<?
+
+/**********************************************
+* ISPConfig Help File
+* Version 1.2
+* Syntax: $hlp["FieldName"] = "HelpText";
+* Traduzido por: Horus Solaris
+************************************************/
+
+$hlp["artikelnummer"] = "Por favor digite um número/código para o produto.";
+$hlp["artikeltyp"] = "Por favor selecione o tipo de item.";
+$hlp["artikelbezeichnung"] = "Por favor especifique um nome para o item.";
+$hlp["verrechnung"] = "Por favor especifique o período de cobrança (em meses) para o item. Exemplos: 1 = mensal, 6 = semestral, 12 = anual, 0 = somente 1 vez.";
+$hlp["artikeleinheit"] = "Por favor selecione uma unidade de medida par o item.";
+$hlp["artikelpreis"] = "Por favor entre com um preço unitário para o item.";
+$hlp["abpackung"] = "Quantidade de unidades por pacote.";
+$hlp["beschreibung"] = "Aqui você pode descrever o item.";
+$hlp["artikelgroup"] = "Por favor selecione para qual revendedor o item é válido. Se nenhum for selecionado, o item será válido para todos os revendedores.";
+$hlp["weitere_artikeleinheit"] = "Unidade para excesso de tráfego.";
+$hlp["weitere_abpackung"] = "Quantidade de MB ou GB que são cobrados em excesso.";
+$hlp["weitere_artikelpreis"] = "Preço para o excesso de tráfego.";
+$hlp["steuersatz"] = "Por favor especifique o valor do imposto em % (ex: 5%).";
+?>

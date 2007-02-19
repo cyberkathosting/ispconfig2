@@ -1,0 +1,509 @@
+<?
+/********************************
+* ISPConfig Dictionary File
+* Version 1.0
+*
+* Tlumaczenie wersji polskiej
+* Patryk Marek --- http://kbn.pl --- info@kbn.pl
+* Wersja 1.0.2
+* Ostatnie zmiany 2005.09.12
+*********************************/
+
+//////////////// Server Status ////////////////
+$wb["Arbeitsspeicher"]          = "Pamiêæ g³ówna";
+$wb["CPU"]          = "CPU";
+$wb["Dienste"]      = "Serwisy";
+$wb["Server Online seit"]          = "Serwer dzia³a od";
+$wb["User Online"]      = "Zalogowanych u¿ytkowników";
+$wb["System Load 1 Minute"] = "Obci±¿enie systemu w okresie 1-minutowym";
+$wb["System Load 5 Minuten"] = "Obci±¿enie systemu w okresie 5-minutowym";
+$wb["System Load 15 Minuten"] = "Obci±¿enie systemu w okresie 15-minutowym";
+//////////////// Server Status Ende //////////
+
+///////////////// Administration ////////////////
+$wb["ISPConfig Datenbank"]    = "Baza danych ISPConfig";
+$wb["Backup erstellen"]       = "Wykonaj kopiê bazy";
+$wb["Datenbank Check"]        = "Sprawdz bazê";
+$wb["Datenbank Optimieren"]   = "Optymizuj bazê";
+$wb["Datenbank Reparieren"]   = "Napraw bazê";
+$wb["Eigenschaften"] = "Ustawienia";
+$wb["Server Name"]  = "Nazwa serwera";
+$wb["Netzmaske"]    = "Maska sieci";
+$wb["Sprache"]      = "Jêzyk";
+$wb["IP Liste"]     = "Lista adresów IP";
+$wb["hinweis_ip_liste"] = "<b>Porada:</b> Wpisuj tylko jeden adres IP w ka¿dej z linii.";
+$wb["Pfad"]         = "¶cie¿ka";
+$wb["Programm"]     = "Program";
+$wb["Reparatur"]    = "Napraw";
+$wb["Optimiere"]    = "Optymizuj";
+$wb["Pfad httpd.conf"]    = "¶cie¿ka do httpd.conf";
+$wb["MTA Typ"]    = "Typ MTA";
+$wb["Virtuser Datei"]    = "Plik Virtuser";
+$wb["FTP Programm"]    = "Program FTP";
+$wb["FTP conf. Datei"]    = "Plik FTP conf.";
+$wb["Userid von"]    = "Userid od";
+$wb["Groupid von"]    = "Groupid do";
+$wb["Web-FTP"] = "Transfer plików (FTP)";
+$wb["Administration"]  = "Administracja";
+$wb["ISP Faktura"] = 'Faktura ISP';
+
+$wb["Backup von Tabelle"] = "Kopia tabeli";
+$wb["Optimiere"] = "Optymizuj";
+$wb["Reparatur"] = "Napraw";
+$wb["oder"] = "lub";
+$wb["Installation starten"] = "Instaluj";
+
+$wb["Deutsch"] = "German";
+$wb["Englisch"] = "English";
+$wb["Polish"] = "Polish";
+$wb["Datei"] = "Plik";
+
+//////////////// Administration Ende ///////////
+
+//////////////// Firewall, Monitor + Dienste  ////////////////
+
+$wb["Überwachung"] = "Monitoring";
+$wb["Firewall"] = "Firewall";
+$wb["Web-Server"] = "Serwer WWW";
+$wb["FTP-Server"] = "Serwer FTP";
+$wb["SMTP-Server"] = "Serwer SMTP";
+$wb["DNS-Server"] = "Serwer DNS";
+$wb["mySQL-Server"] = "Serwer mySQL";
+$wb["An"] = "W³";
+$wb["Aus"] = "Wy³";
+$wb["neu Starten"] = "Restart";
+$wb["Neu"] = "Dodaj";
+$wb["Aktionen"] = "Polecenia";
+$wb["Dienst"] = "Serwis";
+$wb["Hostname"] = "Nazwa hosta";
+$wb["Port"] = "Port";
+$wb["Typ"] = "Typ";
+$wb["TCP"] = "TCP";
+$wb["UDP"] = "UDP";
+$wb["Der Dienst-Typ wird nur bei sonstigen-Diensten ausgewertet."] = "Typ serwisu bêdzie analizowany tylko w przypadku innych serwisów.";
+$wb["Sonstige"] = "Inny";
+$wb["Ja"] = "Tak";
+$wb["Nein"] = "Nie";
+$wb["Offline"] = "Offline";
+$wb["ISP Dienste"] = "Serwisy ISP";
+$wb["ISP Überwachung"] = "Monitor ISP";
+$wb["ISP Firewall"] = "Firewall ISP";
+$wb["Name"] = "Nazwa";
+$wb["Aktiv"] = "Aktywny";
+$wb["Firewall Regel"] = "Zasady regó³ Firewall\'a";
+$wb["Dieser Port kann nicht geändert werden."] = "Ten port nie mo¿e zostaæ zmieniony.";
+
+//////////////// Firewall ENDE ////////////////
+
+//////////////// LNG 1.1.12 BEGIN /////////////
+
+$wb["ISP Server"] = 'Serwer ISP';
+$wb["Admin Email"] = 'Adres E-mail Administratora';
+$wb["EMail"] = 'E-Mail';
+$wb["Funktionen"] = 'Funkcje';
+$wb["httpd User"] = 'U¿ytkownik httpd';
+$wb["httpd Group"] = 'Grupa httpd';
+$wb["Document Root"] = 'Katalog g³ówny';
+$wb["Frontpage Pfad"] = 'Œcie¿ka do strony g³ównej';
+$wb["access Log"] = 'Log access';
+$wb["Sendmail"] = 'Sendmail';
+$wb["Sendmail CW"] = 'Sendmail CW';
+$wb["Log speichern"] = 'Zapisz log';
+$wb["BIND User"] = 'U¿ytkownik BIND\'a';
+$wb["BIND Group"] = 'Grupa BIND\'a';
+$wb["Zonefiles Dir."] = 'Katalog stref';
+$wb["Default Ns1"] = 'Domy¶lny NS1';
+$wb["Default Ns2"] = 'Domy¶lny NS2';
+$wb["Standard MX"] = 'Domy¶lny MX';
+$wb["Frontpage Extensions"] = 'Rozszerzenia frontpage';
+$wb["User Prefix"] = 'Prefiks u¿ytkownika';
+$wb["Anbieter Nr. von"] = 'Numer resellera od';
+$wb["Kunden Nr. von"] = 'Numer klienta od';
+$wb["SOAP Server IP"] = 'Adres IP serwera SOAP ';
+$wb["SOAP Server Port"] = 'Port serwera SOAP';
+$wb["ISP Faktura"] = 'Faktura ISP';
+$wb["Modul Manager"] = 'Manager Modu³ów';
+$wb["Hinzufügen"] = 'Dodaj';
+$wb["Alle anzeigen"] = 'Poka¿ wszystkie';
+$wb["Update Manager"] = 'Manager Aktualizacji';
+$wb["Update"] = 'Uaktualnij';
+$wb["System Config"] = 'Konfiguracja Systemu';
+$wb["Bearbeiten"] = 'Edycja';
+$wb["Importieren"] = 'Import';
+$wb["Exportieren"] = 'Eksport';
+$wb["Allgemein"] = 'Wspólne';
+$wb["ISP-Manager"] = 'Manager ISP';
+$wb["Faktura"] = 'Faktura';
+$wb["Übernehmen"] = 'Zapisz';
+$wb["Webserver"] = 'Serwer WWW';
+$wb["Bind DNS"] = 'Serwer DNS';
+$wb["Mailserver"] = 'Serwer pocztowy';
+$wb["POP3-Server"] = 'Serwer POP3';
+$wb["nein"] = 'nie';
+$wb["ja"] = 'tak';
+$wb["ISP Server Status"] = 'Status serwera ISP';
+$wb["System-Datenbank"] = 'Systemowa baza danych';
+$wb["Verzeichnis"] = 'Folder';
+$wb["Backup starten"] = 'Kopia';
+$wb["Form Designer"] = 'Edycja formularzy';
+
+// NEW 1.1.12a //////////////////////////////
+
+$wb["Es wurde kein Web ausgewählt."] = "Nie wybrano serwisu WWW";
+$wb["Backup-Funktionen im Demo-Modus nicht verfügbar."] = "Funkcje wykonywania kopii zapasowych s± niedostêpne w wersji demo.";
+$wb["Backup Status"] = "Status kopii zapasowych";
+$wb["Der Name des FTP-Servers <br>enthält ungültige Zeichen."] = "Nazwa serwera FTP<br>zawiera nieprawid³owe znaki.";
+$wb["Sie haben keinen FTP Benutzernamen angegeben."] = "Nie podano nazwy u¿ytkownika FTP.";
+$wb["Ftp-Verbindung nicht hergestellt!"] = "Po³±czenie FTP nie powiod³o siê!";
+$wb["Verbindung mit:"] = "Pod³±czony do:";
+$wb["als Benutzer:"] = "jako u¿ytkownik:";
+$wb["nicht möglich."] = "niemo¿liwe.";
+$wb["Konnte nicht in Verzeichnis:"] = "zmieniam na folder:";
+$wb["wechseln."] = "niepoprawne.";
+$wb["Wechsel in Verzeichnis:"] = "zmieniam na folder:";
+$wb["Ftp upload war fehlerhaft!"] = "Za³adowanie pliku przez FTP nie powiod³o siê!";
+$wb["Upload erfolgreich."] = "Za³adowanie pliku powiod³o siê.";
+$wb["FTP-Upload Status"] = "Status ³adowania pliku przez FTP";
+$wb["Backup-Methode nicht unterstützt."] = "Metoda wykonywania kopii zapasowej niedostêpna.";
+$wb["Rechnung Nr. von"] = "Faktura numer od";
+
+//////////////// LNG 1.1.12 ENDE ///////////////
+
+// NEW 1.3 /////////////////////////////////////
+
+$wb["Remoting"] = 'Zdalne';
+$wb["User"] = 'U¿ytkownik';
+$wb["Conf. Dir."] = 'Folder konfiguracji';
+$wb["Suexec"] = 'Suexec';
+$wb["Postfix"] = 'Postfix';
+$wb["Mail Log"] = 'Log poczty';
+$wb["Maildir"] = 'Maildir';
+$wb["Antivir Mailadmin"] = 'Administrator antywirusa';
+$wb["aktiv"] = "aktywne";
+$wb["inaktiv"] = "nie aktywne";
+$wb["weiter_link"] = "<br><br> <a href='../../isp_manager/frame_start.php?s=$s'>Nastêpny &gt;&gt;</a>";
+//////////////// Remoting //////////////////////
+$wb["Hinzufügen"] = "Dodaj";
+$wb["Berechtigungen"] = "Uprawnienia";
+$wb["Speichern"] = "Zapisz";
+$wb["Löschen"] = "Usuñ";
+$wb["Abbrechen"] = "Anuluj";
+$wb["IP-Adresse"] = "Adresy IP";
+$wb["DNS-Query"] = "Zapytanie DNS";
+$wb["DNS-Insert"] = "Wstaw DNS";
+$wb["DNS-Update"] = "Uaktualnij DNS";
+$wb["DNS-Delete"] = "Usuñ DNS";
+$wb["slave_query"] = "Odapytaj zapasowy DNS";
+$wb["slave_insert"] = "Wstaw zapasowwy DNS";
+$wb["slave_update"] = "Uaktualnij zapasowy DNS ";
+$wb["slave_delete"] = "Usun zapasowy DNS";
+$wb["reseller_query"] = "Odpytaj sprzedawce";
+$wb["reseller_insert"] = "Utwórz sprzedawce";
+$wb["reseller_update"] = "Edytuj sprzedawce";
+$wb["reseller_delete"] = "Usun sprzedawce";
+$wb["kunde_query"] = "Odpytaj klienta";
+$wb["kunde_insert"] = "Utwórz klienta";
+$wb["kunde_update"] = "Edytuj klienta";
+$wb["kunde_delete"] = "Usun klienta";
+$wb["web_query"] = "Odpytaj witryna";
+$wb["web_insert"] = "Utwórz witryna";
+$wb["web_update"] = "Edytuj witryna";
+$wb["web_delete"] = "Usun witryna";
+$wb["txt_primary_dns_records"] = "Wpis w Podstawoym Serwerze DNS";
+$wb["txt_secondary_dns_records"] = "Wpis w Zapasowy Serwerze DNS";
+$wb["txt_anbieter"] = "Sprzedawca";
+$wb["txt_kunden"] = "Klient";
+$wb["txt_webs"] = "Witryna";
+
+
+$wb["txt_client_salutatory_email_desc"] = "<b>Email powitalny dla klient-a/ów</b>";
+$wb["txt_client_salutatory_email_sender_email"] = "Adres Email nadawcy";
+$wb["txt_client_salutatory_email_sender_name"] = "Imie nadawcy";
+$wb["txt_client_salutatory_email_bcc"] = "Odbiorca BCC";
+$wb["txt_client_salutatory_email_subject"] = "Temat";
+$wb["txt_client_salutatory_email_message"] = "Wiadomo¶æ";
+$wb["txt_client_salutatory_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Do³±czam ponizsze dane do Twojej Wiadomo¶æi:</b></td></tr>
+        <tr>
+          <td class="normal">%%%USER%%%</td>
+          <td class="normal">
+            Klient-a/ów - Nazwa uzytkownika</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%PASSWORD%%%</td>
+          <td class="normal">
+            Klient-a/ów - Haslo</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%FIRST_NAME%%%</td>
+          <td class="normal">
+            Klient-a/ów - Imie</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%LAST_NAME%%%</td>
+          <td class="normal">
+            Klient-a/ów - Nazwisko</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%COMPANY%%%</td>
+          <td class="normal">
+            Klient-a/ów - Nazwa firmy</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%EMAIL%%%</td>
+          <td class="normal">
+            Klient-a/ów - Adres Email</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%CP%%%</td>
+          <td class="normal">
+            Adres URL do panelu logowania ISPConfig</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%MANUAL%%%</td>
+          <td class="normal">
+            Instrukcja klienta ISPConfig</td>
+        </tr>
+        </table>';
+
+$wb["txt_res_salutatory_email_desc"] = "<b>Email powitalny dla Sprzedawc-a/ów</b>";
+$wb["txt_res_salutatory_email_sender_email"] = "Adres Email nadawcy";
+$wb["txt_res_salutatory_email_sender_name"] = "Imie nadawcy";
+$wb["txt_res_salutatory_email_bcc"] = "Odbiorca BCC";
+$wb["txt_res_salutatory_email_subject"] = "Temat";
+$wb["txt_res_salutatory_email_message"] = "Wiadomo¶æ";
+$wb["txt_res_salutatory_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Do³±czam ponizsze dane do Twojego tekstu:</b></td></tr>
+        <tr>
+          <td class="normal">%%%USER%%%</td>
+          <td class="normal">
+            Sprzedawc-a/ów Nazwa uzytkownika</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%PASSWORD%%%</td>
+          <td class="normal">
+            Sprzedawc-a/ów Haslo</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%FIRST_NAME%%%</td>
+          <td class="normal">
+            Sprzedawc-a/ów Imie</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%LAST_NAME%%%</td>
+          <td class="normal">
+            Sprzedawc-a/ów Nazwisko</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%COMPANY%%%</td>
+          <td class="normal">
+            Sprzedawc-a/ów Nazwa firmy</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%EMAIL%%%</td>
+          <td class="normal">
+            Sprzedawc-a/ów Adres Email </td>
+        </tr>
+        <tr>
+          <td class="normal">%%%CP%%%</td>
+          <td class="normal">
+            Adres URL do panelu logowania ISPConfig</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%MANUAL%%%</td>
+          <td class="normal">
+             Instrukcja Sprzedawcy ISPConfig</td>
+        </tr>
+        </table>';
+$wb["txt_standard_index"] = "Standardowy Index<br>&nbsp;&nbsp;strony";
+$wb["txt_standard_index_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Do³±czam ponizsze dane do Twojego tekstu:</b></td></tr>
+        <tr>
+          <td class="normal">%%%FQDN%%%</td>
+          <td class="normal">
+            Strony WWW - Pelna nazwa domeny.</td>
+        </tr>
+    </table>';
+$wb["txt_user_standard_index"] = "uzytkownika <br>&nbsp;&nbsp;strona Index";
+$wb["txt_user_standard_index_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Do³±czam ponizsze dane do Twojego tekstu:</b></td></tr>
+        <tr>
+          <td class="normal">%%%USER%%%</td>
+          <td class="normal">
+            Klient-a/ów Nazwa uzytkownika</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%FQDN%%%</td>
+          <td class="normal">
+            Strony WWW - Pelna nazwa domeny.</td>
+        </tr>
+        </table>';
+
+
+$wb["txt_traffic_suspension_email_desc"] = "< b >Powiadomienie o zawieszeniu witryny (Limit transferu przekroczony)</ b >";
+$wb["txt_traffic_suspension_sender_email"] = "Email Nadawcy";
+$wb["txt_traffic_suspension_sender_name"] = "Imie Nadawcy";
+$wb["txt_traffic_suspension_email_bcc"] = "Odbiorca BCC";
+$wb["txt_traffic_suspension_email_subject"] = "Temat";
+$wb["txt_traffic_suspension_email_message"] = "Wiadomo¶æ";
+$wb["txt_traffic_suspension_email_variables"] = '< granica stolu ="0" cellpadding"= 3" cellspacing"= 0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Do³±czam ponizsze dane do Twojego tekstu:</b></td></tr>
+        <tr>
+          <td class="normal">%%%FIRST_NAME%%%</td>
+          <td class="normal">
+            Klient-a/ów Imie</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%LAST_NAME%%%</td>
+          <td class="normal">
+            Klient-a/ów Nazwisko</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%WEBSITE%%%</td>
+          <td class="normal">
+            Klient-a/ów Strona WWW/td>
+        </tr>
+        <tr>
+          <td class="normal">%%%MONTH%%%</td>
+          <td class="normal">
+            Miesieczny limit transferu</td>
+        </tr>
+        <tr>
+          <td class="normal" valign="top">%%%INCLUDED_TRAFFIC%%%</td>
+          <td class="normal">
+            Ruch wytworzony przez strone WWW</td>
+        </tr>
+        <tr>
+          <td class="normal" valign="top">%%%TOTAL_TRAFFIC%%%</td>
+          <td class="normal">
+            Calkowity transfer w miesiacu przekroczony</td>
+        </tr>
+        </table>';
+
+$wb["txt_traffic_notification_email_desc"] = "<b>Powiadomienie o przekroczeniu limitu transferu</b>";
+$wb["txt_traffic_notification_sender_email"] = "Email Nadawcy";
+$wb["txt_traffic_notification_sender_name"] = "Imie Nadawcy";
+$wb["txt_traffic_notification_email_bcc"] = "Odbiorca BCC";
+$wb["txt_traffic_notification_email_subject"] = "Temat";
+$wb["txt_traffic_notification_email_message"] = "Wiadomo¶æ";
+$wb["txt_traffic_notification_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Do³anczam ponizsze dane do Twojego tekstu:</b></td></tr>
+        <tr>
+          <td class="normal">%%%FIRST_NAME%%%</td>
+          <td class="normal">
+            Klient-a/ów - Imie</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%LAST_NAME%%%</td>
+          <td class="normal">
+            Klient-a/ów - Nazwisko</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%WEBSITE%%%</td>
+          <td class="normal">
+            Klient-a/ów - Witryna</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%MONTH%%%</td>
+          <td class="normal">
+            Miesieczny limit transferu</td>
+        </tr>
+        <tr>
+          <td class="normal" valign="top">%%%INCLUDED_TRAFFIC%%%</td>
+          <td class="normal">
+            Ruch wytworzony przez strone WWW</td>
+        </tr>
+        <tr>
+          <td class="normal" valign="top">%%%TOTAL_TRAFFIC%%%</td>
+          <td class="normal">
+            Calkowity transfer w miesiacu przekroczony</td>
+        </tr>
+        </table>';
+
+$wb["txt_res_traffic_suspension_email_desc"] = "<b>Powiadomienie sprzedawcy o zawieszeniu witryny (Limit transferu przekroczony)</b>";
+$wb["txt_res_traffic_suspension_sender_email"] = "Email Nadawcy";
+$wb["txt_res_traffic_suspension_sender_name"] = "Imie Nadawcy";
+$wb["txt_res_traffic_suspension_email_bcc"] = "Odbiorca BCC";
+$wb["txt_res_traffic_suspension_email_subject"] = "Temat";
+$wb["txt_res_traffic_suspension_email_message"] = "Wiadomo¶æ";
+$wb["txt_res_traffic_suspension_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Do³anczam ponizsze dane do Twojego tekstu:</b></td></tr>
+        <tr>
+          <td class="normal">%%%FIRST_NAME%%%</td>
+          <td class="normal">
+            Sprzedawc-a/ów Imie</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%LAST_NAME%%%</td>
+          <td class="normal">
+            Sprzedawc-a/ów Nazwisko</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%MONTH%%%</td>
+          <td class="normal">
+            Miesieczny limit transferu</td>
+        </tr>
+        <tr>
+          <td class="normal" valign="top">%%%INCLUDED_TRAFFIC%%%</td>
+          <td class="normal">
+            Ruch wytworzony przez sprzedawce</td>
+        </tr>
+        <tr>
+          <td class="normal" valign="top">%%%TOTAL_TRAFFIC%%%</td>
+          <td class="normal">
+            Calkowity transfer w miesiacu przekroczony</td>
+        </tr>
+        </table>';
+
+$wb["txt_res_traffic_notification_email_desc"] = "<b>Powiadomienie sprzedawcy o przekroczeniu limitu transferu</b>";
+$wb["txt_res_traffic_notification_sender_email"] = "Email Nadawcy";
+$wb["txt_res_traffic_notification_sender_name"] = "Imie Nadawcy";
+$wb["txt_res_traffic_notification_email_bcc"] = "Odbiorca BCC";
+$wb["txt_res_traffic_notification_email_subject"] = "Temat";
+$wb["txt_res_traffic_notification_email_message"] = "Wiadomo¶æ";
+$wb["txt_res_traffic_notification_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Do³anczam ponizsze dane do Twojego tekstu:</b></td></tr>
+        <tr>
+          <td class="normal">%%%FIRST_NAME%%%</td>
+          <td class="normal">
+            Sprzedawc-a/ów Imie</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%LAST_NAME%%%</td>
+          <td class="normal">
+            Sprzedawc-a/ów Nazwisko</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%MONTH%%s%</td>
+          <td class="normal">
+            Miesieczny limit transferu</td>
+        </tr>
+        <tr>
+          <td class="normal" valign="top">%%%INCLUDED_TRAFFIC%%%</td>
+          <td class="normal">
+            Ruch wytworzony przez sprzedawce</td>
+        </tr>
+        <tr>
+          <td class="normal" valign="top">%%%TOTAL_TRAFFIC%%%</td>
+          <td class="normal">
+            Calkowity transfer w miesiacu przekroczony</td>
+        </tr>
+        </table>';
+
+?>

@@ -1,0 +1,26 @@
+<?
+
+/**********************************************
+* ISPConfig Help File
+* Version 1.2
+* Syntax: $hlp["FieldName"] = "HelpText";
+************************************************/
+
+$hlp["user_username"] = "Skriv in ett användarnamn. Du kan slå in vilket användarnamn som helst, bara det inte innehåller några specialtecken. Exempelvis (å,ä,ö,ü), eller special tecken som (@, %, ...) eller blanksteg. Maximalt kan du använda 26 tecken.";
+$hlp["user_passwort"] = "Skriv in ett lösenord. Du kan slå in vilket lösenord som helst, bara det inte innehåller några specialtecken. Exempelvis (å,ä,ö,ü), eller special tecken som (@, %, ...) eller blanksteg.";
+$hlp["user_speicher"] = "Slå in storlek på lagringsmängden för användaren.";
+$hlp["user_admin"] = "Gör denna användare till Administratör för denna webbplats. Endast en användare per webbplats kan vara Administratör.";
+$hlp["user_shell"] = "Ger användaren Skal access (ex.Bash).";
+$hlp["user_emailalias"] = "Här kan du skriva in fler epost alias (ex. annan stavning) för att kunna ta emot epost för dessa alias. Slå endast in delen innan \"@\"!";
+$hlp["user_name"] = "Skriv in användarens riktiga namn.";
+$hlp["user_autoresponder"] = "Aktiverar funktionen epost autosvar för användarens epost lådor.";
+$hlp["user_autoresponder_text"] = "Skriv in texten för epost autosvar.";
+$hlp["user_mailquota"] = "Skriv in storleken (quota) på användarens epost låda (i MB).";
+$hlp["user_catchallemail"] = "Om detta val markeras så kommer alla epost meddelanden som ej kan levereras till någon epost låda för denna webbplats att hamna här. Endast en användare per webbplats kan ha denna typ av epost adress.";
+$hlp["user_mailscan"] = "Detta val aktiverar virus skanning för denna epost låda. Misstänkta bifogade filer med vissa ändelser (ex. .exe-filer) kommer att bytas namn på så det ej går att öppna dessa med dubbelklickning.";
+$hlp["user_spamfilter"] = "Detta val aktiverar Spam filter för denna epost låda.";
+$hlp["user_emailweiterleitung_local_copy"] = "Om detta val väljs så kommer en kopia av all inkommande epost att sparas i den lokala epost lådan, även om eposten ska vidarebefodras till annan epost låda.";
+$hlp["user_email"] = "Skriv in namnet som ska vara framför \"@\" i epost adressen. Du kan slå in vilket namn som helst, bara det inte innehåller några specialtecken. Exempelvis (å,ä,ö,ü), eller special tecken som (@, %, ...) eller blanksteg.";
+$hlp["user_emailweiterleitung"] = "Skriv in den epost adress som ankommande epost ska bli vidarebefodrat till.";
+$hlp["user_ftp"] = "Enable FTP access for this user.";
+?>

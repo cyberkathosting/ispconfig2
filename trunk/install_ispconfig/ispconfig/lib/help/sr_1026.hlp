@@ -1,0 +1,22 @@
+<?
+
+/**********************************************
+* ISPConfig Help File
+* Version 1.2
+* Syntax: $hlp["FieldName"] = "HelpText";
+************************************************/
+
+$hlp["artikelnummer"] = "Unesite broj artikla za proizvod. Možete slobodno koristiti bilo koji broj.";
+$hlp["artikeltyp"] = "Odaberite tip artikla sa spiska.";
+$hlp["artikelbezeichnung"] = "Navedite ime dela.";
+$hlp["verrechnung"] = "Odaberite period naplate (u mesecima) za deo. Na primer 1 znaèi meseèno, 6 znaèi polugodišnje, 12 znaèi godišnje; 0 znaèi jednokratno.";
+$hlp["artikeleinheit"] = "Odaberite jedninicu artikla sa liste.";
+$hlp["artikelpreis"] = "Odaberite cenu po po jedinici za artikal.";
+$hlp["abpackung"] = "Kolièina jedinica po pakovanju.";
+$hlp["beschreibung"] = "Ovde možete opisati artikal.";
+$hlp["artikelgroup"] = "Odaberite za kog preprodavca je artikal važeæi. Ako ništa nije odabrano artikal je važeæi za sve preprodavce.";
+$hlp["weitere_artikeleinheit"] = "Jedinica za prekoraèenje potrošnje.";
+$hlp["weitere_abpackung"] = "Kolièina MB ili GB koja se naplaæuje po prekoraèenju potrošnje.";
+$hlp["weitere_artikelpreis"] = "Cena za prekoraèenje potrošnje.";
+$hlp["steuersatz"] = "Navedite stopu PDV-a (npr. 18%).";
+?>

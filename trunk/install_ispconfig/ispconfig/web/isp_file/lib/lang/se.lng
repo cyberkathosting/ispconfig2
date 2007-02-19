@@ -1,0 +1,55 @@
+<?
+/********************************
+* ISPConfig Dictionary File
+* Version 1.0
+*********************************/
+
+$wb["Datei Upload"] = 'Ladda upp fil';
+$wb["Ordner neu"] = 'Ny Katalog';
+$wb["Web Auswahl"] = 'Välj Webbplats';
+$wb["Web auswählen"] = 'Välj Webb adress';
+$wb["Auswahl"] = 'Mitt Val';
+$wb["WEB FTP"] = 'Webb FTP';
+$wb["Hilfe"] = 'Hjälp';
+$wb["Name"] = 'Namn';
+$wb["Grösse"] = 'Storlek';
+$wb["Datum"] = 'Datum';
+$wb["Eigentümer"] = 'Ägare';
+$wb["Alle"] = 'Alla';
+$wb["Lesen"] = 'Läs';
+$wb["Schreiben"] = 'Skriv';
+$wb["Ausführen"] = 'Exekvera';
+$wb["Verzeichnisschutz"] = 'Katalog Skydd';
+$wb["Verzeichnis schützen"] = 'Skydda Katalog';
+$wb[".htaccess User"] = '.htaccess Användare';
+$wb[".htaccess Userübersicht"] = 'Översikt av .htaccess Användare';
+$wb["Bearbeiten"] = 'Editera';
+$wb["Hinzufügen"] = 'Lägg till';
+$wb["Parameterübergabe unvollständig"] = "Parametern är ofullständig";
+$wb["Ungültiges Format der web_id."] = "Ogiltigt format på web_id.";
+$wb["Ungültige web_id."] = "Ogiltig web_id.";
+$wb["Konnte server_path_httpd_root nicht ermitteln."] = "Kunde inte finna server_path_httpd_root.";
+$wb["Das Verzeichnis existiert nicht oder Sie haben nicht die notwendigen Berechtigungen."] = "Katalogen existerar inte, eller så saknar du nödvändiga rättigheter.";
+$wb["Der Pfad enthält ungültige Zeichen."] = "Sökvägen innehåller otillåtna tecken.";
+$wb["Diese Funktion ist im Demo-Modus deaktiviert"] = "Denna funktion är deaktiverad i demo mode.";
+$wb["ist ein Link."] = "är en länk.";
+$wb["existiert nicht."] = "existerar inte."; // Es geht um: /home/file.htm existiert nicht.
+$wb["konnte nicht gelöscht werden."] = "kunde inte raderas.";
+$wb["Das Verschieben der Datei ist fehlgeschlagen."] = "Flyttning av fil misslyckades.";
+$wb["konnte nicht gelöscht werden. Das Verzeichnis muss leer sein und Sie müssen Schreibrechte besitzen."] = "kunde inte raderas. Katalogen måste vara tom och du måste ha skriv rättigheter.";
+$wb["Das Verschieben des Verzeichnisses ist fehlgeschlagen."] = "Flyttning av katalog misslyckades.";
+$wb["Es wurde keine Datei zum Upload ausgewählt."] = "Ingen fil vald för uppladdning.";
+$wb["Die Datei existiert bereits in diesem Verzeichnis."] = "Filen existerar redan i denna katalog.";
+$wb["Möglicher Dateiupload Angriff."] = "Filen kan vara skadad eller angripen av virus.";
+$wb["Ordner"] = "Katalog";
+
+$wb["chmod failed."] = "chmod misslyckades";
+$wb["FTP: Failed to open"] = "FTP: Kan ej öppnas";
+$wb["Failed to open"] = "Kan ej öppnas";
+$wb["Could not connect to"] = "Kunde inte ansluta till ";
+$wb["Could not connect as user"] = "Kunde inte ansluta som användare ";
+$wb["Next >>"] = "Nästa >>";
+
+$wb["Catalog_Name"] = "Namn";
+
+?>

@@ -1,0 +1,13 @@
+<?
+
+/**********************************************
+* ISPConfig Help File
+* Version 1.2
+* Syntax: $hlp["FieldName"] = "HelpText";
+************************************************/
+
+$hlp["dienst_name"] = "Name des zu überwachenden Dienstes.";
+$hlp["dienst_port"] = "Port des Dienstes, z.B. 80 für Webserver.";
+$hlp["dienst_host"] = "Hostname oder IP-Adresse des zu überwachenden Servers.";
+$hlp["dienst_typ"] = "Typ des Dienstes. Es können TCP- und UDP-basierte Dienste überwacht werden.";
+?>

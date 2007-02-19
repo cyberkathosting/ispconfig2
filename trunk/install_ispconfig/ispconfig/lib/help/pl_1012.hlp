@@ -1,0 +1,32 @@
+<?
+
+/**********************************************
+* ISPConfig Help File
+* Version 1.2
+* Syntax: $hlp["FieldName"] = "HelpText";
+************************************************/
+
+$hlp["kunde_anrede"] = "Proszê pod±æ adres klienta.";
+$hlp["kunde_firma"] = "Proszê pod±æ nazwê firmy.";
+$hlp["kunde_vorname"] = "Proszê pod±æ imiê klienta.";
+$hlp["kunde_name"] = "Proszê pod±æ nazwisko klienta.";
+$hlp["kunde_strasse"] = "Proszê pod±æ nazwê ulicy klienta.";
+$hlp["kunde_plz"] = "Proszê pod±æ kod pocztowy klienta.";
+$hlp["kunde_ort"] = "Proszê pod±æ nazwê miejscowo¶ci klienta.";
+$hlp["kunde_land"] = "Proszê pod±æ nazwê kraju klienta.";
+$hlp["kunde_telefon"] = "Proszê pod±æ numer telefonu klienta.";
+$hlp["kunde_fax"] = "Proszê pod±æ numer fax-u klienta.";
+$hlp["kunde_email"] = "Proszê pod±æ adres Emila klienta.";
+$hlp["kunde_internet"] = "Proszê pod±æ adres strony URL klienta.";
+$hlp["webadmin_user"] = "Proszê pod±æ nazwê u¿ytkownika który to bêdzie siê logowa³ do panelu administracyjnego.";
+$hlp["webadmin_passwort"] = "Proszê pod±æ has³o u¿ytkownika, który to bêdzie siê logowa³ do panelu administracyjnego.";
+$hlp["rechnung_firma"] = "Proszê pod±æ dane do faktury (nazwa firmy) klienta.";
+$hlp["rechnung_vorname"] = "Proszê pod±æ dane do faktury (imiê) klienta.";
+$hlp["rechnung_name"] = "Proszê pod±æ dane do faktury (nazwisko) klienta.";
+$hlp["rechnung_strasse"] = "Proszê pod±æ dane do faktury (nazwa ulicy) klienta.";
+$hlp["rechnung_plz"] = "Proszê pod±æ dane do faktury (kod pocztowy) klienta.";
+$hlp["rechnung_ort"] = "Proszê pod±æ dane do faktury (nazwa miejscowo¶ci) klienta.";
+$hlp["rechnung_land"] = "Proszê pod±æ dane do faktury (nazwa kraju) klienta.";
+$hlp["rechnung_intervall"] = "Proszê pod±æ okres rozliczeniowy klienta.";
+$hlp["rechnung_zahlungsbedingungen"] = "Proszê pod±æ warunki p³atno¶ci klienta.";
+?>

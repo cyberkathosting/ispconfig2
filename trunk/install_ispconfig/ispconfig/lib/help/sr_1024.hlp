@@ -1,0 +1,13 @@
+<?
+
+/**********************************************
+* ISPCofig Help File
+* Version 1.2
+* Syntax: $hlp["FieldName"] = "HelpText";
+************************************************/
+
+$hlp["dienst_name"] = "Naziv servisa koji se posmatra.";
+$hlp["dienst_port"] = "Port servisa, npr. 80 za web server.";
+$hlp["dienst_host"] = "Hostname ili IP adresa servera koji se posmatra.";
+$hlp["dienst_typ"] = "Tip servisa. Sistem može da posmatra TCP- i UDP-bazirane servise.";
+?>

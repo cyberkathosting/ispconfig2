@@ -1,0 +1,32 @@
+
+
+  
+<table border="0" width="100%" cellspacing="0" cellpadding="4">
+  <tr> 
+    <td height="18"> 
+      <p align="center" class="normal_bold">&nbsp; 
+    </td>
+  </tr>
+  <tr> 
+    <td class="normal"> 
+      <p>&nbsp;</p>
+      <p align="center"><b>Delete the Form:<br>
+        <br>
+        '{DOCTYPE_TITLE}' <br>
+        <br>
+        and all records saved in this form?<br>
+        <br>
+        </b>
+<!--		<form method="GET" action="doctype_delete.php?s={S}&doctype_id={DOCTYPE_ID}"><center><input type="button" name="cancel" value="Cancel" onClick="history.back();"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" value="Delete Form" /></center></form>
+-->
+		<form method="POST" action="doctype_delete.php" name="myform" target="seiteFrame"><center><input type="button" value="Cancel" onClick="history.back();"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" value="Delete Form" /></center><input type="hidden" name="s" value="{S}"><input type="hidden" name="doctype_id" 			   value="{DOCTYPE_ID}"></form>
+        </p>
+      <p>&nbsp;</p>
+    </td>
+  </tr>
+  <tr> 
+    <td height="18"> 
+      <p align="center" class="normal_bold">&nbsp; 
+    </td>
+  </tr>
+</table>

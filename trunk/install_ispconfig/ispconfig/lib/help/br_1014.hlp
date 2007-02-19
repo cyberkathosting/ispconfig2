@@ -1,0 +1,27 @@
+<?
+
+/**********************************************
+* ISPConfig Help File
+* Version 1.2
+* Syntax: $hlp["FieldName"] = "HelpText";
+* Traduzido por: Horus Solaris
+************************************************/
+
+$hlp["user_username"] = "Por favor especifique um nome de usuário. Você pode especificar qualquer nome, desde que não possua acentos (á, ô, é, etc...), caracteres especiais (@, %, &, etc...) ou espaços em branco. O tamanho máximo é de 26 caracteres.";
+$hlp["user_passwort"] = "Por favor especifique uma senha. Você pode especificar qualquer senha desde que não possua acentos (á, ô, é, etc...), caracteres especiais (@, %, &, etc...) ou espaços em branco.";
+$hlp["user_speicher"] = "Por favor entre com o espaço em disco permitido para o usuário.";
+$hlp["user_admin"] = "Faz do usuário, administrador para este site. Somente 1 usuário por site pode ser administrador.";
+$hlp["user_shell"] = "Habilita acesso ao shell para o usuário.";
+$hlp["user_emailalias"] = "Aqui você pode entrar com diferentes apelidos para o e-mail. Entre somente com a parte antes do  \"@\"!";
+$hlp["user_name"] = "Por favor entre com o nome completo do usuário.";
+$hlp["user_autoresponder"] = "Ativa a auto-resposta para o e-mail do usuário.";
+$hlp["user_autoresponder_text"] = "Por favor entre com um texto para o e-mail de auto-resposta.";
+$hlp["user_mailquota"] = "Por favor especifique o espaço de armazenagem de e-mail para o usuário (em MB).";
+$hlp["user_catchallemail"] = "Se esta opção for marcada, todos os e-mails com endereços incorretos serão enviados a esta caixa de correio. Somente 1 usuário por website pode ter um e-mail catchAll.";
+$hlp["user_mailscan"] = "Habilita a proteção contra vírus para esta caixa de correio. Extensões de arquivos anexos suspeitos (Ex: arquivos .EXE) serão renomeados para que não sejam executados com um clique duplo.";
+$hlp["user_spamfilter"] = "Ativa o filtro de Spam para esta caixa de correio.";
+$hlp["user_emailweiterleitung_local_copy"] = "Se esta opção for marcadam, uma cópia de todos os e-mails recebidos será mantida, mesmo que sejam encaminhados para outro endereço de e-mail.";
+$hlp["user_email"] = "Por favor, especifique o nome que deve estar na frente do \"@\" no endereço de e-mail. Você pode especificar qualquer nome, desde que não possua acentos (á, ô, é, etc...), caracteres especiais (@, %, &, etc...) ou espaços em branco.";
+$hlp["user_emailweiterleitung"] = "Especifique aqui o endereço de e-mail para o qual os e-mails recebidos devam ser encaminhados.";
+
+?>

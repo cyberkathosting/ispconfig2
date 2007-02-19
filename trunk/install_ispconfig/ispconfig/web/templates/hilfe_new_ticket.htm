@@ -1,0 +1,58 @@
+<script language="JavaScript">
+function checkform(theForm) {
+  if (document.forms[0].elements[0].value == '')
+  {
+    alert("{ERR} '{SUBJECT}'.");
+    document.forms[0].elements[0].focus();
+    return (false);
+  }
+  if (document.forms[0].elements[2].value == '')
+  {
+    alert("{ERR} '{REQUEST}'.");
+    document.forms[0].elements[2].focus();
+    return (false);
+  }
+  return true;
+}
+//-->
+</script>
+<table width="100%" cellspacing="15">
+  <tr><td>
+  <form name="form1" onsubmit="return checkform(this)" method="post" action="ticket_send.php">
+        <table width="100%" border="0" cellpadding="2" cellspacing="0">
+          <tr> 
+            <td height="34" class="t2b">&nbsp;{NKARTE}</td>
+          </tr>
+          <tr> 
+            <td align="center"><hr size="1" noshade></td>
+          </tr>
+          <tr> 
+            <td><table width="400" border="0" cellspacing="0" cellpadding="2">
+                <tr> 
+                  <td width="100" class="t2">&nbsp;{SUBJECT}:</td>
+                  <td width="300"><input name="subject" type="text" class="text" id="subject"></td>
+                </tr>
+                <tr> 
+                  <td class="t2">&nbsp;{PRIORITY}:</td>
+                  <td><select name="priority" size="1">
+				      <option value="5" selected>{LOW}</option>
+					  <option value="3">{MEDIUM}</option>
+					  <option value="1">{HIGH}</option>
+				      </select></td>
+                </tr>
+                <tr> 
+                  <td class="t2">&nbsp;{REQUEST}:</td>
+                  <td><textarea name="request" cols="30" rows="5" wrap="physical"></textarea></td>
+                </tr>
+              </table></td>
+          </tr>
+          <tr>
+            <td align="center"><hr size="1" noshade></td>
+          </tr>
+          <tr> 
+            <td align="center"><input name="s" type="hidden" value="{S}"> <input type="submit" name="Submit" value="{SEND}" class="button"></td>
+          </tr>
+        </table>
+	</form>
+</td></tr>
+</table>

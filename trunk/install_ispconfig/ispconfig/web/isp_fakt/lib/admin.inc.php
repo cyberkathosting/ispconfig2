@@ -1,0 +1,6 @@
+<?
+// Inhaltsverzeichnis des Admin Bereiches
+?>
+
+<?
+?>

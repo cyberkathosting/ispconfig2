@@ -1,0 +1,24 @@
+<?
+/********************************
+* ISPConfig Dictionary File
+* Version 1.0
+* (c) Tribal-Dolphin
+* http://www.tribal-dolphin.net
+*********************************/
+/*
+    Danish Language Strings for ISPConfig.
+    Copyright (C) 2002-2006 by Michael R. Christensen (aka MicCo)
+
+      Web site = http://www.micco-webdesign.dk/
+      e-mail   = admin@micco-webdesign.dk
+
+    Version History :
+      v1.0 : initial release
+      v2.2.6 (28 August 2006)   : various strings updates and add-ons
+
+*/
+
+$wb["Anbieter"]     = "Leverandør";
+$wb["Web"]          = "Webplads";
+
+?>

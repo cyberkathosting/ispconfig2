@@ -1,0 +1,26 @@
+<?
+/**********************************************
+* ISPConfig Help File
+* Version 1.2
+* Syntax: $hlp["FieldName"] = "HelpText";
+************************************************/
+
+$hlp["user_username"] = "Spécifier un nom d'utilisateur. You can enter any user name as long as it does not contain umlauts (ä,ö,ü), special characters (@, %, ...) and blanks. The maximum length is 26 characters.";
+$hlp["user_passwort"] = "Spécifier un mot de passe. You can enter any password as long as it does not contain umlauts (ä,ö,ü), special characters (@, %, ...) and blanks.";
+$hlp["user_speicher"] = "Enter l'espace disque pour cet utilisateur.";
+$hlp["user_admin"] = "Cet utilisateur seras l'administrateur du site. Seul un utilisateur par site peut être administrateur.";
+$hlp["user_shell"] = "Activer l'accès Shell de cet utilisateur.";
+$hlp["user_emailalias"] = "Ici vous pouvez entrer plusierus alias e-mail (e.g. orthographes différentes) afin de recevoir les e-mails envoyés sur ces alias. Entrer seulement la partie avant le \"@\"!";
+$hlp["user_name"] = "Entrer le nom réel de l'utilisateur.";
+$hlp["user_autoresponder"] = "Active le répondeur automatique sur la boite e-mail de cet utilisateur.";
+$hlp["user_autoresponder_text"] = "Entrer le texte pour le répondeur automatique.";
+$hlp["user_mailquota"] = "Specifier le quota de la boite e-mail de l'utilisateur (en MB).";
+$hlp["user_catchallemail"] = "Si cette case est cochée, tous les mails non remis pour ce site seront redirigés sur cette boite e-mail. Seul un utilisateur par site peut avoir le \"catchAll\".";
+$hlp["user_mailscan"] = "Activer le scanner anti-virus pour cette boite e-mail. Les extensions suspectes des pièces jointes (e.g. .exe, .bat) seront renommés pour interdire l'ouverture par un double-clique.";
+$hlp["user_spamfilter"] = "Activer le filtre anti-spam pour cette boite mail.";
+$hlp["user_emailweiterleitung_local_copy"] = "Si cette case est cochée, une copie locale de tous les mails reçus seras conservée si cet adresse e-mail est redirigée vers une autre adresse e-mail.";
+$hlp["user_email"] = "Specifier le nom précédant le \"@\" dans l'adresse e-mail. Vous pouvez entrer à n'importe quel nom tant qu'il ne contient pas de trémas (ä, ö, ü), des caractères spéciaux (@, %, ...) et des espaces.";
+$hlp["user_emailweiterleitung"] = "Ici vous pouvez entrer les adresses e-mail vers lequelles les mails entrant seront redirigés.";
+$hlp["user_ftp"] = "Enable FTP access for this user.";
+
+?>

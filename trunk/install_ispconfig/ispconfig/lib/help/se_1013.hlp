@@ -1,0 +1,57 @@
+<?
+
+/**********************************************
+* ISPConfig Help File
+* Version 1.2
+* Syntax: $hlp["FieldName"] = "HelpText";
+************************************************/
+
+$hlp["web_host"] = "Värdnamn för webbplatsen: ex. www";
+$hlp["web_domain"] = "Domännamn för webbplatsen: ex. projektfarm.de";
+$hlp["web_speicher"] = "Storlek på tillåtet utrymme för webbplatsen. Exempelvis, skriv 2 så betyder det 2 MB av utrymme.";
+$hlp["web_traffic"] = "Specificerar hur mycket trafik som är inkluderat för denna webbplats (ex. 2000 MB).";
+$hlp["web_cgi"] = "Aktiverar CGI för denna webbplats.";
+$hlp["web_php"] = "Aktiverar PHP för denna webbplats.";
+$hlp["web_ssi"] = "Aktiverar SSI för denna webbplats.";
+$hlp["web_ftp"] = "Aktiverar FTP åtkomst för denna webbplats.";
+$hlp["web_frontpage"] = "Aktiverar Frontpage Extensions för denna webbplats.";
+$hlp["web_mysql"] = "Aktiverar MySQL databas för denna webbplats.";
+$hlp["web_shell"] = "Aktiverar tillgång av Skal (ex. bash) för denna webbplats.";
+$hlp["web_ssl"] = "Aktiverar SSL kryptering för denna webbplats. Fler inställningar hittas under flik SSL.";
+$hlp["ssl_request"] = "Du kan skicka innehållet i textrutan till en Certificate Authority (CA) för att få ett officiellt SSL certifikat.";
+$hlp["ssl_cert"] = "Du kan kopiera in ditt officiella certifikat från din Certificate Authority (CA) i denna textruta.";
+$hlp["web_ip"] = "Välj IP adress för denna webbplats.";
+$hlp["optionen_mysql_user"] = "Skriv in användarnamnet för MySQL databasen.";
+$hlp["optionen_mysql_passwort"] = "Skriv in lösenordet för MySQL databasen.";
+$hlp["web_dns"] = "Om markerar detta alternativ så kan du skapa DNS A registering för denna webbplats.";
+$hlp["web_userlimit"] = "Hur många användare som kan skapas för denna webbplats.";
+$hlp["web_domainlimit"] = "Hur många domäner som kan skapas för denna webbplats.";
+$hlp["ssl_state"] = "Skriv in ditt Landskap.";
+$hlp["ssl_locality"] = "Skriv in din Stad.";
+$hlp["ssl_organization"] = "Skriv in ditt Företag/Organisation.";
+$hlp["ssl_organization_unit"] = "Skriv in vilken avdelning på ditt företag/organisation (ex. IT Avdelning).";
+$hlp["ssl_country"] = "Skriv in ditt Land.";
+$hlp["web_dns_mx"] = "Om du markerar detta alternativ så kan du skapa DNS MX registrering för denna webbplats.";
+$hlp["ssl_days"] = "Skriv in hur länge (i dagar) som detta SSL certifikat är giltigt (ex. 365).";
+$hlp["web_httpd_include"] = "Här kan du skriva in extra Apache direktiv för denna webbplats.";
+$hlp["web_anonftp"] = "Aktiverar Anonym-FTP (Anonymous-FTP) för denna webbplats. Notera detta: för varje IP address kan du bara ha ett Anonym-FTP konto.";
+$hlp["web_anonftplimit"] = "Skriv in önskad storlek (i MB) på tillåten utrymmestorlek för det Anonyma-FTP kontot.";
+$hlp["optionen_frontpage_passwort"] = "Skriv in lösenord för Frontpage Extensions.";
+$hlp["optionen_mysql_remote_access"] = "Tillåter extern access till webbplatsens MySQL databas.";
+$hlp["optionen_local_mailserver"] = "Om du väljer \"extern Epostserver\" skapas ingen konfigurering i den lokala MTA.";
+$hlp["web_faktura"] = "Aktiverar/avaktiverar ISP-betalmodul för denna webbplats.";
+$hlp["optionen_logsize"] = "Maximal storlek för Apache loggfil för denna webbplats. Giltiga värden är värde uttryckt i MB eller i % (av totala utrymmet för webbplatsen).";
+$hlp["web_php_safe_mode"] = "Om PHP är aktiverat för denna webbplats, kommer den att köras i Safe Mode.";
+$hlp["web_wap"] = "Här kan du aktivera att servern klarar av .wml filer. Dessa .wml filer kan tolkas av mobiltelefoner med WAP stöd.";
+$hlp["web_standard_cgi"] = "Specificera här om standard CGI skript som används på huvudservern ska finnas tillgängliga för denna webbplats.";
+$hlp["web_mysql_anzahl_dbs"] = "Hur många databaser ska kunna skapas för denna webbplats.";
+$hlp["web_individual_error_pages"] = "Om detta val är markerat , så kan du skapa egna felmeddelande sidor på fliken \"Tillval\".";
+$hlp["error_400"] = "Skriv in HTML kod för felmeddelande sida 400 (\"Felaktig Syntax\"). Om du ej skriver något här, så kommer stardard sidan att användas.";
+$hlp["error_401"] = "Skriv in HTML kod för felmeddelande sida 401 (\"Behörighet Krävs\"). Om du ej skriver något här, så kommer stardard sidan att användas.";
+$hlp["error_403"] = "Skriv in HTML kod för felmeddelande sida 403 (\"Förbjuden\"). Om du ej skriver något här, så kommer stardard sidan att användas.";
+$hlp["error_404"] = "Skriv in HTML kod för felmeddelande sida 404 (\"Filen hittades ej\"). Om du ej skriver något här, så kommer stardard sidan att användas.";
+$hlp["error_405"] = "Skriv in HTML kod för felmeddelande sida 405 (\"Metoden tillåts ej\"). Om du ej skriver något här, så kommer stardard sidan att användas.";
+$hlp["error_500"] = "Skriv in HTML kod för felmeddelande sida 500 (\"Internt server fel\"). Om du ej skriver något här, så kommer stardard sidan att användas.";
+$hlp["error_503"] = "Skriv in HTML kod för felmeddelande sida 503 (\"Tjänsten ej åtkomlig\"). Om du ej skriver något här, så kommer stardard sidan att användas.";
+
+?>

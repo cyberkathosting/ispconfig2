@@ -1,0 +1,55 @@
+<?
+/********************************
+* ISPConfig Dictionary File
+* Version 1.0
+*********************************/
+
+$wb["Datei Upload"] = 'File Upload';
+$wb["Ordner neu"] = 'Nuova Cartella';
+$wb["Web Auswahl"] = 'Web Selection';
+$wb["Web auswählen"] = 'Select Web';
+$wb["Auswahl"] = 'Selezione';
+$wb["WEB FTP"] = 'WEB FTP';
+$wb["Hilfe"] = 'Aiuto';
+$wb["Name"] = 'Nome';
+$wb["Grösse"] = 'Size';
+$wb["Datum"] = 'Data';
+$wb["Eigentümer"] = 'Owner';
+$wb["Alle"] = 'Tutto';
+$wb["Lesen"] = 'Leggi';
+$wb["Schreiben"] = 'Scrivi';
+$wb["Ausführen"] = 'Execute';
+$wb["Verzeichnisschutz"] = 'Directory Protection';
+$wb["Verzeichnis schützen"] = 'Protect Directory';
+$wb[".htaccess User"] = '.htaccess User';
+$wb[".htaccess Userübersicht"] = 'Overview of .htaccess Users';
+$wb["Bearbeiten"] = 'Modifica';
+$wb["Hinzufügen"] = 'Aggiungi';
+$wb["Parameterübergabe unvollständig"] = "Parameter passing incomplete";
+$wb["Ungültiges Format der web_id."] = "Invalid format of web_id.";
+$wb["Ungültige web_id."] = "Invalid web_id.";
+$wb["Konnte server_path_httpd_root nicht ermitteln."] = "Could not determine server_path_httpd_root.";
+$wb["Das Verzeichnis existiert nicht oder Sie haben nicht die notwendigen Berechtigungen."] = "The directory does not exist, or you do not have the necessary permissions.";
+$wb["Der Pfad enthält ungültige Zeichen."] = "The path contains invalid signs.";
+$wb["Diese Funktion ist im Demo-Modus deaktiviert"] = "This function is deactivated in demo mode.";
+$wb["ist ein Link."] = "e' un link.";
+$wb["existiert nicht."] = "non esiste."; // Es geht um: /home/file.htm existiert nicht.
+$wb["konnte nicht gelöscht werden."] = "non puo' essere cancellato.";
+$wb["Das Verschieben der Datei ist fehlgeschlagen."] = "Moving the file failed.";
+$wb["konnte nicht gelöscht werden. Das Verzeichnis muss leer sein und Sie müssen Schreibrechte besitzen."] = "could not be deleted. The directory must be empty and you must own write permissions.";
+$wb["Das Verschieben des Verzeichnisses ist fehlgeschlagen."] = "Moving the directory failed.";
+$wb["Es wurde keine Datei zum Upload ausgewählt."] = "No file selected for upload.";
+$wb["Die Datei existiert bereits in diesem Verzeichnis."] = "The file already exists in this directory.";
+$wb["Möglicher Dateiupload Angriff."] = "Potential file upload attack.";
+$wb["Ordner"] = "Cartella";
+
+$wb["chmod failed."] = "chmod fallito";
+$wb["FTP: Failed to open"] = "FTP: Failed to open ";
+$wb["Failed to open"] = "Failed to open ";
+$wb["Could not connect to"] = "Could not connect to ";
+$wb["Could not connect as user"] = "Could not connect as user ";
+$wb["Next >>"] = "<br><br>Prossimo >>";
+
+$wb["Catalog_Name"] = "Nome";
+
+?>

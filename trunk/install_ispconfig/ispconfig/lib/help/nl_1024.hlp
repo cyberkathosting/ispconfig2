@@ -1,0 +1,12 @@
+<?
+/**********************************************
+* ISPConfig Help File
+* Version 1.2
+* Syntax: $hlp["FieldName"] = "HelpText";
+************************************************/
+
+$hlp["dienst_name"] = "Naam van de te monitoren service.";
+$hlp["dienst_port"] = "Poort van de services. Bijv. 80=www/25=smtp/110=pop3/21=ftp";
+$hlp["dienst_host"] = "Hostnaam of IP adres van de de te monitoren server ";
+$hlp["dienst_typ"] = "Type service. Dit kan TCP of UDP zijn.";
+?>

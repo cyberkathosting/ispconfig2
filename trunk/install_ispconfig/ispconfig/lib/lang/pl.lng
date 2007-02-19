@@ -1,0 +1,122 @@
+<?
+/********************************
+* ISPConfig Dictionary File
+* Version 1.0
+*
+* Tlumaczenie wersji polskiej
+* Patryk Marek --- http://kbn.pl --- info@kbn.pl
+* Wersja 1.0.2
+* Ostatnie zmiany 2005.09.12
+*********************************/
+
+/////////////// Allgemein - general (kommt in mehreren Modulen vor) /////////
+$wb["login_begruessung"]     = "Login:";
+$wb["Username"]     = "Nazwa u¿ytkownika";
+$wb["Passwort"]     = "Has³o";
+$wb["Login"]       = "Login";
+$wb["Administration"]  = "Administracja";
+$wb["ISP Manager"]  = "Manager ISP";
+$wb["DNS Manager"]  = "Manager DNS";
+$wb["Tools"]        = "Narzêdzia";
+$wb["Logout"]       = "Wyloguj siê";
+$wb["Status"]       = "Status";
+$wb["neu"]          = "nowy";
+$wb["Hinweis"]      = "PodpowiedŸ";
+$wb["Web"]          = "WWW";
+$wb["Email"]        = "E-mail";
+$wb["FTP"]          = "FTP";
+$wb["DNS"]          = "DNS";
+$wb["Sonstiges"]    = "Inny";
+$wb["Datei"]        = "Plik";
+$wb["von"]          = "od"; // besser 'ab'?
+$wb["error_headline"] = "Wyst±pi³ nastêpuj±cy b³±d:";
+$wb["Gruppe"]       = "Grupa";
+$wb["Titel"]        = "Tytu³";
+$wb["Server"]       = "Serwer";
+$wb["Host"]         = "Nazwa hosta";
+$wb["Domain"]       = "Domena";
+$wb["IP Adresse"]   = "Adres IP";
+$wb["Ordner"]       = "Folder";
+$wb["Dokument"]     = "Dokument";
+$wb["Dokument suchen"] = "Szukaj dokumentu";
+$wb["Suchmaske"]    = "Poszukiwane wyra¿enie";
+$wb["Ausgabeformat"] = "Format wy¶wietlania";
+$wb["Standard"]     = "Standard";
+$wb["Einträge"]    = "Wpisy";
+$wb["Papierkorb leeren"] = "Kosz jest pusty";
+$wb["Stammordner"]  = "Strefa g³ówna";
+$wb["keine Gruppe"] = "Nie ma grupy";
+$wb["neues Dokument anlegen"] = "utworzono nowy dokument";
+$wb["auf"]   = "rozwiñ";
+$wb["zu"]    = "zwiñ";
+$wb["in_ordner"]    = "w Folderze";
+$wb["Papierkorb"]   = "Kosz";
+$wb["Wiederherstellen"]    = "Odtwórz";
+$wb["Papierkorb: Einträge"]   = "Kosz: zawarto¶æ";
+$wb["Speichern"]    = "Zapisz";
+$wb["Löschen"]    = "Usuñ";
+$wb["Abbrechen"]    = "Anuluj";
+$wb["Suchen"]    = "Szukaj";
+
+$wb["Herr"] = "Pan";
+$wb["Frau"] = "Pani";
+
+$wb["Es ist folgender Fehler aufgetreten:"] = "Wyst±pi³ nastêpuj±cy b³±d:";
+
+$wb["Web-FTP"] = 'Transfer plików (FTP)';
+$wb["Administration"]  = "Administracja";
+$wb["ISP Faktura"] = 'Faktura ISP';
+
+$wb["Verzeichnis öffnen"] = "otwórz";
+$wb["Verzeichnis schliessen"] = "zamknij";
+$wb["Hilfe"] = 'Pomoc';
+$wb["Online Hilfe"] = 'Pomoc oline';
+$wb["schliessen"] = 'zamknij';
+
+$wb["PAPIERKORB_HINWEIS"] = "<b>Uwaga:</b> Elementy znajduj±ce siê w koszu znajduj± siê aktualnie w stanie aktualizacji. Proszê spróbowaæ skasowaæ je pó¼niej.";
+
+
+// Multidoc  Allgemein ////////////////////////////////
+
+$wb["title_required"] = "Proszê uzupe³nic pole 'Tytu³'";
+$wb["error_keine_rechte"] = "Nie masz wystarczaj±cych praw dostêpu by edytowaæ ten wpis.";
+$wb["error_doctype_nicht_vorhanden"] = "¯±dany dokument nie istnieje.";
+$wb["error_doctype_rechte"] = "Nie masz wystarczaj±cych praw by edytowaæ ten typ dokumentu.";
+$wb["Formular Designer"] = "Kreator formularzy";
+$wb["Geben Sie einen Wert in das Feld"] = "Proszê podaæ warto¶æ w polu";
+$wb["jscript_ein"] = " ";
+
+////////////// Allgemein Ende ///////////////////
+
+$wb["Es konnte ein Dokument nicht wiederhergestellt werden, da sich das Eltern-Dokument noch im Papierkorb befindet.\n"] = "The object cannot be restored as long as its parent object is in the recycle bin.";
+
+$wb["DNS-Domains angelegt"] = 'Master Zones created';
+$wb["Benutzter Diskspace"] = "Diskspace used";
+$wb["Slave Zones angelegt"] = "Slave Zones created";
+$wb["Datenbanken angelegt"] = "Databases created";
+
+$wb["txt_confirm_delete"] = "Do you really want to delete this object?";
+
+$wb["txt_object_currently_updated"] = "Your changes cannot be saved because this item is currently being updated. Please try again later.<br><br> <a href='../frame_start.php?s=$s'>Next &gt;&gt;</a>";
+$wb["txt_system_currently_updated_no_recycle_bin"] = "The recycle bin cannot be accessed because the system is currently being updated. Please try again in a few minutes.<br><br> <a href='../frame_start.php?s=$s'>Next &gt;&gt;</a>"; 
+
+$wb["user_perms_nowrite_hd"]         = "Error occured: You do not have the sufficient rights to change that file";
+$wb["user_perms_nowrite_reasons"]    = "Possbile reasons for that issue";
+$wb["user_perms_nowrite_reasons_1a"] = "1. You are using that system in demo mode";
+$wb["user_perms_nowrite_reasons_1b"] = "- Please log in with your username and password.";
+$wb["user_perms_nowrite_reasons_2a"] = "2. You try to change an element which belongs to another group.";
+$wb["user_perms_nowrite_reasons_2b"] = "You do not have the sufficient rights in this group for writing / changing data.";
+$wb["user_perms_nowrite_reasons_2c"] = "- Please contact the group's owner to grant you the sufficient rights.";
+
+$wb["group_perms_nowrite_hd"]         = "Error occured: You do not have the necessary group rights";
+$wb["group_perms_nowrite_reasons"]    = "Possbile reasons for that issue";
+$wb["group_perms_nowrite_reasons_1a"] = "1. You are using that system in demo mode";
+$wb["group_perms_nowrite_reasons_1b"] = "- Please log in with your username and password.";
+$wb["group_perms_nowrite_reasons_2a"] = "2. You try to change an element which belongs to another group.";
+$wb["group_perms_nowrite_reasons_2b"] = "You do not have the sufficient rights in this group for writing / changing data.";
+$wb["group_perms_nowrite_reasons_2c"] = "- Please contact the group's owner to grant you the sufficient rights.";
+
+$wb["Weiter"] = "Next";
+$wb["Zurück"] = "Back";
+
+?>

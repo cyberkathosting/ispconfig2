@@ -1,0 +1,66 @@
+<?
+/********************************
+* ISPConfig Dictionary File
+* Version 1.0
+* Enhanced by danf.1979@gmail.com
+*********************************/
+
+$wb["Anbieter"]     = "Revendedor";
+$wb["Web"]          = "Web";
+$wb["Admin Handbuch"] = "Manual del administrador";
+$wb["Reseller Handbuch"] = "Manual del revendedor";
+$wb["Kunden Handbuch"] = "Manual del cliente";
+$wb["Deutsch"]          = "Aleman";
+$wb["Englisch"]         = "Ingles";
+$wb["Projektfarm Support"]          = "Soporte Projektfarm";
+$wb["Online Hilfe"] = "Ayuda en linea";
+
+$wb["willkommen_kunde"] = "Bienvenido al Panel de Control ISPConfig!
+Ud. puede administrar sus sitios web desde aqui. Si tiene alguna pregunta o problemas
+por favor contacte al administrador del servidor o dirijase al manual del cliente
+ISPConfig en la seccion ayuda.";
+$wb["Willkommen"] = "Bienvenido";
+
+//////////////// Server Status ////////////////
+$wb["Arbeitsspeicher"]          = "Memoria principal";
+$wb["CPU"]          = "CPU";
+$wb["Dienste"]      = "Servicios";
+$wb["Server Online seit"]          = "Servidor en linea desde";
+$wb["User Online"]      = "Usuarios en linea";
+$wb["System Load 1 Minute"] = "Carga CPU (1 Minuto)";
+$wb["System Load 5 Minuten"] = "Carga CPU (5 Minutos)";
+$wb["System Load 15 Minuten"] = "Carga CPU (15 Minutos)";
+//////////////// Server Status Ende //////////
+
+$wb["Webs angelegt"] = "Sitios utilizados";
+$wb["User angelegt"] = "Usuarios utilizados";
+$wb["Domains angelegt"] = "Dominios utilizados";
+$wb["unlimitiert"]  = "ilimitado";
+$wb["Anbieter"]     = "Revendedor";
+$wb["DNS-Domains angelegt"] = 'Dominios DNS creados';
+$wb["von"] = "de";
+
+// NEW 2.0.8 ///////////////////////////////////
+$wb["Französische"]     = "Frances";
+// Support Tickets System
+$wb["Unterstützungskarten"] = "Tickets de soporte";
+$wb["Geöffnete Karten"] = "Tickets abiertos";
+$wb["Geschlossene Karten"] = "Tickets cerrados";
+$wb["Neue Karte"] = "Nuevo ticket";
+$wb["Betreff"] = "Asunto";
+$wb["Priorität"] = "Prioridad";
+$wb["Niedrig"] = "Baja";
+$wb["Mittel"] = "Media";
+$wb["Hoch"] = "Alta";
+$wb["Ihre frage"] = "Su pregunta";
+$wb["Senden"] = "Enviar";
+$wb["Fehler während der schaffung der karte"] = "Error durante la creacion del ticket";
+$wb["Neue unterstützungskarte, die auf antwort wartet"] = "Ticket de soporte esperando respuesta";
+$wb["Sie erhielten eine antwort"] = "Ha recibido una respuesta";
+$wb["geantwortet zu ihnen"] = "le ha contestado";
+$wb["Datum"] = "Fecha";
+$wb["Davon"] = "De";
+$wb["Ihre antwort"] = "Su respuesta";
+$wb["Antworten"] = "Contestar";
+$wb["Schließen"] = "Cerrar";
+?>

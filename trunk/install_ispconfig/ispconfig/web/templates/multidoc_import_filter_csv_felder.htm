@@ -1,0 +1,105 @@
+
+                  
+<form method="POST" action="import4.php" name="myform" enctype="multipart/form-data">
+  <table border="0" width="99%" cellspacing="0" cellpadding="4" height="62" bgcolor="{TABLE_H_COLOR}">
+    <tr>
+      <td width="31%" height="21" class="normal_bold">Title:</td>
+      <td width="69%" height="21">
+        <select name="form[title]">
+          <option></option>
+		  {CSV_FELDER}
+        </select>
+      </td>
+    </tr>
+    <tr> 
+      <td width="31%" height="21" class="normal_bold">Folder</td>
+      <td width="69%" height="21"> 
+        <select name="form[ordner_dyn_type]">
+          <option value="none">Kein</option>
+          <option value="name">Name</option>
+          <option value="id">ID</option>
+        </select>
+        <select name="form[ordner_dyn_feld]">
+          <option></option>
+		  {CSV_FELDER}
+        </select>
+      </td>
+    </tr>
+    <tr> 
+      <td width="31%" height="21" class="normal_bold">Ordnerauswahl</td>
+      <td width="69%" height="21"> 
+        <select name="form[ordner]">
+          <option value="root">Stammordner</option>
+		  {ORDNER}
+        </select>
+      </td>
+    </tr>
+    <tr> 
+      <td width="31%" height="21" class="normal_bold">Events ausf&uuml;hren</td>
+      <td width="69%" height="21"> 
+        <input type="checkbox" name="form[events]" value="1">
+      </td>
+    </tr>
+    <tr> 
+      <td colspan="2" height="21" class="normal_bold"> 
+        <hr size="1">
+      </td>
+    </tr>
+    <tr> 
+      <td width="31%" height="21" class="normal_bold">Checke Duplikate:</td>
+      <td width="69%" height="21"> 
+        <input type="checkbox" name="form[check_duplicates]" value="1">
+      </td>
+    </tr>
+    <tr> 
+      <td colspan="2" height="21" class="normal_bold"> 
+        <hr size="1">
+      </td>
+    </tr>
+    <tr> 
+      <td width="31%" height="21" class="normal_bold">Formular Feld</td>
+      <td width="69%" height="21"><font face="Verdana, Arial, Helvetica, sans-serif" size="2">Funktion 
+        - CSV Feld</font></td>
+    </tr>
+    <!-- BEGIN DYNAMIC BLOCK: felder -->
+    <tr> 
+      <td width="31%" height="21" class="normal_bold">{FELD_TITLE}</td>
+      <td width="69%" height="21"> = 
+        <select name="feld[{FELD_NAME}][function]">
+		<option></option>
+          <option value="PASSWORD">PASSWORD</option>
+          <option value="TRIM">TRIM</option>
+          <option value="STRIPSLASHES">STRIPSLASHES</option>
+          <option value="UCASE">UCASE</option>
+          <option value="LCASE">LCASE</option>
+          <option value="TIMESTAMP">TIMESTAMP</option>
+		  <option value="CURRENCY">CURRENCY</option>
+        </select>
+        - 
+        <select name="feld[{FELD_NAME}][feld]">
+          <option></option>
+		  {CSV_FELDER}
+        </select>
+      </td>
+    </tr>
+    <!-- END DYNAMIC BLOCK: felder -->
+    <tr> 
+      <td width="100%" colspan="2" height="1" align="center">&nbsp;</td>
+    </tr>
+    <tr> 
+      <td width="100%" colspan="2" height="1" align="center"> 
+        <p align="center"> 
+          <input border="0" src="../../{DESIGNPATH}/btn_speichern.gif" name="I1" type="image">
+          <a href="../frame_start.php?{SESSION}" target="_self"><img border="0" src="../../{DESIGNPATH}/btn_abbrechen.gif"></a> 
+      </td>
+    </tr>
+  </table>
+  <input type="hidden" name="s" value="{S}">
+  <input type="hidden" name="form[doctype_id]" value="{DOCTYPE_ID}">
+  <input type="hidden" name="form[filename]" value="{FILENAME}">
+  <input type="hidden" name="form[feld_trenner]" value="{FELD_TRENNER}">
+  <input type="hidden" name="form[zeilen_trenner]" value="{ZEILEN_TRENNER}">
+  <input type="hidden" name="form[zeile_ueberschrift]" value="{ZEILE_UEBERSCHRIFT}">
+  <input type="hidden" name="importfilter" value="csv">
+</form>
+ 

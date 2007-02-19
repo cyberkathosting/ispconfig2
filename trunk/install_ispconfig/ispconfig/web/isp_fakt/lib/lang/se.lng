@@ -1,0 +1,88 @@
+<?
+/********************************
+* ISPConfig Dictionary File
+* Version 1.0
+*********************************/
+
+$wb["ISP Faktura"] = 'ISP Faktura';
+$wb["Web-FTP"] = 'Webb-FTP';
+$wb["Domains"] = 'Domäner';
+$wb["Service"] = 'Tjänster';
+$wb["Webs"] = 'Webbplatser';
+$wb["Traffic"] = 'Trafik';
+$wb["Email-Adressen"] = 'Epost Adresser';
+$wb["Artikel"] = 'Artikel';
+$wb["admin"] = 'admin';
+$wb["Artikel für"] = 'Artikel för';
+$wb["Dienstleistung"] = 'Service';
+$wb["Hardware"] = 'Hårdvara';
+$wb["Software"] = 'Mjukvara';
+$wb["Typ"] = 'Typ';
+$wb["Artikel Nr."] = 'Artikel nr.';
+$wb["Bezeichnung"] = 'Namn';
+$wb["Beschreibung"] = 'Beskrivning';
+$wb["Stück"] = 'Antal';
+$wb["MB"] = 'MB';
+$wb["GB"] = 'GB';
+$wb["Stunde"] = 'Timmar';
+$wb["Einheit"] = 'Enhet';
+$wb["Menge"] = 'Volym';
+$wb["Preis"] = 'Pris';
+$wb["Verrechnung"] = 'Fakturaperiod';
+$wb["Artikel neu"] = 'Ny Artikel';
+$wb["Ordner neu"] = 'Ny Katalog';
+$wb["Abrechnen"] = 'Skapa Faktura';
+$wb["Artikel neu"] = 'Ny Artikel';
+$wb["Ordner neu"] = 'Ny Katalog';
+$wb["Produkte"] = 'Produkter';
+$wb["Abrechnen"] = 'Skapa Faktura';
+$wb["Rechnungen"] = 'Fakturor';
+$wb["Kunden"] = 'Kunder';
+$wb["Anbieter"] = 'Återförsäljare';
+$wb["Keine Artikel zum Abrechnen gefunden."] = 'Inga artiklar funna för att skapa en faktura.';
+$wb["Abrechnung"] = 'Faktura';
+$wb["Name"] = 'Namn';
+$wb["IP-Traffic"] = 'IP Trafik';
+$wb["Steuersatz"] = 'Moms';
+$wb["Bei Überschreitung:"] = 'Vid försening:';
+$wb["Diese Angaben sind nur für Artikel vom Typ: Traffic gültig!"] = 'Dessa värden används enbart till Trafik debitering!';
+$wb["Rechnungen Kunden"] = 'Kund Fakturor';
+$wb["Firma"] = 'Företag';
+$wb["Vorname"] = 'Förnamn';
+$wb["Strasse"] = 'Gata';
+$wb["PLZ"] = 'Post nr.';
+$wb["Ort"] = 'Ort';
+$wb["Land"] = 'Land';
+$wb["Steuernr."] = 'Org. nr.';
+$wb["Rechnung"] = 'Faktura';
+$wb["Datum"] = 'Datum';
+$wb["Rechnung Nr."] = 'Faktura nr.';
+$wb["Anzahl"] = 'Antal';
+$wb["Art. Nr."] = 'Artikel nr.';
+$wb["Gesamt"] = 'Total';
+$wb["EURO"] = 'SEK';
+$wb["Web gesamt"] = 'Webb Total';
+$wb["enthaltene Mehrwertsteuer"] = 'Inkluderad moms';
+$wb["Gesamtbetrag"] = 'Total';
+$wb["Rechnungen Anbieter"] = 'Återförsäljar Faktura';
+$wb["Kunde"] = 'Kund';
+$wb["Rg. Nr."] = 'Faktura nr.';
+$wb["OK"] = 'OK';
+$wb["Weiter"] = "Nästa";
+$wb["Summe Anbieter"] = "Återförsäljar Total";
+$wb["Summe Web"] = "Webb Total";
+$wb["Summe Kunde"] = "Kund Total";
+$wb["Abrechnung abgeschlossen."] = "Faktura skapad.";
+
+//////////////// Server Status ////////////////
+$wb["Arbeitsspeicher"]          = "Arbetsminne";
+$wb["CPU"]          = "CPU";
+$wb["Dienste"]      = "Tjänster";
+$wb["Server Online seit"]          = "Server Online sedan";
+$wb["User Online"]      = "Användare Online";
+$wb["System Load 1 Minute"] = "System belastning senaste 1 Min";
+$wb["System Load 5 Minuten"] = "System belastning senaste 5 Min";
+$wb["System Load 15 Minuten"] = "System belastning senaste 15 Min";
+//////////////// Server Status Ende //////////
+
+?>

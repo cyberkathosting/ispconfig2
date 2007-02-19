@@ -1,0 +1,127 @@
+<?
+/********************************
+* ISPConfig Dictionary File
+* Version 1.0
+* Allgemein
+*********************************/
+
+/////////////// Allgemein - general (kommt in mehreren Modulen vor) /////////
+$wb["login_begruessung"]     = "Connessione:";
+$wb["Username"]     = "Nome Utente";
+$wb["Passwort"]     = "Password";
+$wb["Login"]       = "Connessione";
+$wb["Administration"]  = "Gestione";
+$wb["ISP Manager"]  = "Gestore ISP";
+$wb["DNS Manager"]  = "Gestore DNS";
+$wb["Tools"]        = "Strumenti";
+$wb["Logout"]       = "Disconnessione";
+$wb["Status"]       = "Stato";
+$wb["neu"]          = "Nuovo";
+$wb["Hinweis"]      = "Riferimento";
+$wb["Web"]          = "Web";
+$wb["Email"]        = "Email";
+$wb["FTP"]          = "FTP";
+$wb["DNS"]          = "DNS";
+$wb["Sonstiges"]    = "Altro";
+$wb["Datei"]        = "File";
+$wb["von"]          = "Da";
+$wb["error_headline"] = "Si è verificato il seguente errore:";
+$wb["Gruppe"]       = "Gruppo";
+$wb["Titel"]        = "Titolo";
+$wb["Server"]       = "Server";
+$wb["Host"]         = "Nome Host";
+$wb["Domain"]       = "Dominio";
+$wb["IP Adresse"]   = "Indirizzo IP";
+$wb["Ordner"]       = "Tipo";
+$wb["Dokument"]     = "Documento";
+$wb["Dokument suchen"] = "Ricerca documento";
+$wb["Suchmaske"]    = "Termini di ricerca";
+$wb["Ausgabeformat"] = "Formato del file di output";
+$wb["Standard"]     = "Standard";
+$wb["Einträge"]    = "Inserimento dati";
+$wb["Papierkorb leeren"] = "Svuota cestino";
+$wb["Stammordner"]  = "Zona Master";
+$wb["keine Gruppe"] = "Nessun gruppo";
+$wb["neues Dokument anlegen"] = "E stato creato un nuovo documento";
+$wb["auf"]   = "Ingrandire";
+$wb["zu"]    = "Ridurre";
+$wb["in_ordner"]    = "Ordina per";
+$wb["Papierkorb"]   = "Cestino";
+$wb["Wiederherstellen"]    = "Ripristina";
+$wb["Papierkorb: Einträge"]   = "Cestino: contenuti";
+$wb["Speichern"]    = "Salva";
+$wb["Löschen"]    = "Elimina";
+$wb["Abbrechen"]    = "Annulla";
+$wb["Suchen"]    = "Cerca";
+
+$wb["Herr"] = "Sig.";
+$wb["Frau"] = "Sig.ra";
+
+$wb["Es ist folgender Fehler aufgetreten:"] = "Si è verificato il seguente errore:";
+
+$wb["Web-FTP"] = 'Web-FTP';
+$wb["ISP Faktura"] = 'ISP Invoice';
+
+$wb["Verzeichnis öffnen"] = "apri";
+$wb["Verzeichnis schliessen"] = "chiudi";
+$wb["Hilfe"] = 'Aiuto';
+$wb["Online Hilfe"] = 'Aiuto Online';
+$wb["schliessen"] = 'chiudi';
+
+$wb["PAPIERKORB_HINWEIS"] = "<b>Nota:</b> Gli oggetti rimasti nel cestino dopo la cancellazione sono attualmente in  aggiornamento. Prova a cancellarli in un altro momento.";
+
+
+// Multidoc  Allgemein ////////////////////////////////
+
+$wb["title_required"] = "Inserire una voce nel campo 'Titolo'";
+$wb["error_keine_rechte"] = "Non avete i privilegi necessari per leggere o inserire questa voce.";
+$wb["error_doctype_nicht_vorhanden"] = "Il tipo di documento richiesto non esiste.";
+$wb["error_doctype_rechte"] = "Non avete i privilegi necessari per creare un documento di questo tipo.";
+$wb["Formular Designer"] = "Progettista Modulo";
+$wb["Geben Sie einen Wert in das Feld"] = "Inserire un valore nell'apposito campo";
+$wb["jscript_ein"] = " ";
+
+////////////// Allgemein Ende ///////////////////
+
+$wb["Es konnte ein Dokument nicht wiederhergestellt werden, da sich das Eltern-Dokument noch im Papierkorb befindet.\n"] = "L'oggetto non puo' essere ripristinato a causa di altri oggetti collegati ad esso trovati nel cestino.";
+
+$wb["DNS-Domains angelegt"] = 'Zona Master creata';
+$wb["Benutzter Diskspace"] = "Spazio disco usato";
+$wb["Slave Zones angelegt"] = "Zona Slave creata";
+$wb["Datenbanken angelegt"] = "Database creato";
+
+$wb["txt_confirm_delete"] = "Vuoi veramente cancellare questo oggetto?";
+
+////////////// Hello add ////////////////////////
+
+$wb['Geöffnete Karten'] = "Ticket aperti";
+$wb['Geschlossene Karten'] = "Ticket chiusi";
+$wb['Unterstützungskarten'] = "Supporto tecnico";
+$wb['Betreff'] = "Riferimento";
+$wb['Priorität'] = "Priorit&agrave;";
+$wb['Datum'] = "Data";
+
+$wb["txt_object_currently_updated"] = "Your changes cannot be saved because this item is currently being updated. Please try again later.<br><br> <a href='../frame_start.php?s=$s'>Next &gt;&gt;</a>";
+$wb["txt_system_currently_updated_no_recycle_bin"] = "The recycle bin cannot be accessed because the system is currently being updated. Please try again in a few minutes.<br><br> <a href='../frame_start.php?s=$s'>Next &gt;&gt;</a>"; 
+
+$wb["user_perms_nowrite_hd"]         = "Error occured: You do not have the sufficient rights to change that file";
+$wb["user_perms_nowrite_reasons"]    = "Possbile reasons for that issue";
+$wb["user_perms_nowrite_reasons_1a"] = "1. You are using that system in demo mode";
+$wb["user_perms_nowrite_reasons_1b"] = "- Please log in with your username and password.";
+$wb["user_perms_nowrite_reasons_2a"] = "2. You try to change an element which belongs to another group.";
+$wb["user_perms_nowrite_reasons_2b"] = "You do not have the sufficient rights in this group for writing / changing data.";
+$wb["user_perms_nowrite_reasons_2c"] = "- Please contact the group's owner to grant you the sufficient rights.";
+
+$wb["group_perms_nowrite_hd"]         = "Error occured: You do not have the necessary group rights";
+$wb["group_perms_nowrite_reasons"]    = "Possbile reasons for that issue";
+$wb["group_perms_nowrite_reasons_1a"] = "1. You are using that system in demo mode";
+$wb["group_perms_nowrite_reasons_1b"] = "- Please log in with your username and password.";
+$wb["group_perms_nowrite_reasons_2a"] = "2. You try to change an element which belongs to another group.";
+$wb["group_perms_nowrite_reasons_2b"] = "You do not have the sufficient rights in this group for writing / changing data.";
+$wb["group_perms_nowrite_reasons_2c"] = "- Please contact the group's owner to grant you the sufficient rights.";
+
+$wb["Weiter"] = "Next";
+$wb["Zurück"] = "Back";
+
+
+?>

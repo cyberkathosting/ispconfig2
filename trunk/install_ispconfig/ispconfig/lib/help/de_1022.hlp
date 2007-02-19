@@ -1,0 +1,48 @@
+<?
+
+/**********************************************
+* ISPConfig Help File
+* Version 1.2
+* Syntax: $hlp["FieldName"] = "HelpText";
+************************************************/
+
+$hlp["limit_user"] = "Bitte geben Sie hier die max. Anzahl der User des Resellers an.";
+$hlp["limit_disk"] = "Bitte geben Sie hier den max. Speicherplatz des Resellers an.";
+$hlp["limit_web"] = "Bitte geben Sie hier die max. Anzahl an Webs des Resellers an.";
+$hlp["limit_domain"] = "Bitte geben Sie hier die max. Anzahl an Domains des Resellers an.";
+$hlp["limit_http_include"] = "Bitte geben Sie hier an, ob der Reseller zusätzliche Apache-Direktiven selber verwalten darf.";
+$hlp["limit_dns_manager"] = "Bitte geben Sie hier an, ob der Reseller DNS-Einträge selbst verwalten darf.";
+$hlp["limit_domain_dns"] = "Bitte geben Sie hier die max. Anzahl an Domains an, für die der Reseller Primäre (Master) DNS-Records anlegen darf.";
+$hlp["limit_slave_dns"] = "Bitte geben Sie hier die max. Anzahl an Domains an, für die der Reseller Sekundäre (Slave) DNS-Records anlegen darf.";
+
+$hlp["limit_cgi"] = "Bitte geben Sie an, ob der Reseller den ihm zugeordneten Websites CGI-Funktionalität zuweisen darf.";
+$hlp["limit_cgi_mod_perl"] = "Bitte geben Sie an, ob der Reseller den ihm zugeordneten Websites CGI-Funktionalität mit mod_perl zuweisen darf.";
+$hlp["limit_php"] = "Bitte geben Sie an, ob der Reseller den ihm zugeordneten Websites PHP-Funktionalität zuweisen darf.";
+$hlp["limit_ssi"] = "Bitte geben Sie an, ob der Reseller den ihm zugeordneten Websites SSI-Funktionalität zuweisen darf.";
+$hlp["limit_ftp"] = "Bitte geben Sie an, ob der Reseller den ihm zugeordneten Websites FTP-Funktionalität zuweisen darf.";
+$hlp["limit_frontpage"] = "Bitte geben Sie an, ob der Reseller den ihm zugeordneten Websites Frontpage-Funktionalität zuweisen darf.";
+$hlp["limit_mysql"] = "Bitte geben Sie an, ob der Reseller den ihm zugeordneten Websites MySQL-Datenbanken zuweisen darf.";
+$hlp["limit_shell_access"] = "Bitte geben Sie an, ob der Reseller den ihm zugeordneten Websites Shell-Zugänge zuweisen darf.";
+$hlp["limit_ssl"] = "Bitte geben Sie an, ob der Reseller den ihm zugeordneten Websites SSL-Funktionalität zuweisen darf. Bitte beachten Sie: pro IP-Adresse kann es nur eine SSL-Website geben.";
+$hlp["limit_httpd_include"] = "Bitte geben Sie an, ob der Reseller den ihm zugeordneten Websites zusätzliche Apache-Direktiven zuweisen darf.";
+$hlp["limit_anonftp"] = "Bitte geben Sie an, ob der Reseller den ihm zugeordneten Websites Anonymous-FTP-Funktionalität zuweisen darf. Bitte beachten Sie: pro IP-Adresse kann es nur einen Anonymous-FTP-Zugang geben.";
+$hlp["limit_wap"] = "Bitte geben Sie an, ob der Reseller den ihm zugeordneten Websites WAP-Funktionalität zuweisen darf.";
+$hlp["limit_standard_cgis"] = "Bitte geben Sie an, ob der Reseller den ihm zugeordneten Websites die auf dem Server vorhandenen Standard-CGI-Skripte zuweisen darf.";
+$hlp["limit_mysql_anzahl_dbs"] = "Bitte geben Sie die max. Anzahl (Gesamtsumme) an Datenbanken an, die der Reseller den ihm zugeordneten Websites zuweisen kann.";
+$hlp["limit_error_pages"] = "Bitte geben Sie an, ob der Reseller den ihm zugeordneten Websites die Möglichkeit zuweisen darf, individuelle Fehler-Seiten zu verwenden.";
+
+$hlp["firma"] = "Bitte geben Sie hier den Firmennamen des Resellers ein.";
+$hlp["vorname"] = "Bitte geben Sie hier den Vornamen des Resellers ein.";
+$hlp["name"] = "Bitte geben Sie hier den Nachnamen des Resellers ein.";
+$hlp["strasse"] = "Bitte geben Sie hier die Strasse des Resellers ein.";
+$hlp["plz"] = "Bitte geben Sie hier die Postleitzahl des Resellers ein.";
+$hlp["ort"] = "Bitte geben Sie hier den Ort des Resellers ein.";
+$hlp["land"] = "Bitte geben Sie hier das Land des Resellers ein.";
+$hlp["telefon"] = "Bitte geben Sie hier die Tel.-Nummer des Resellers ein.";
+$hlp["fax"] = "Bitte geben Sie hier die Fax-Nummer des Resellers ein.";
+$hlp["email"] = "Bitte geben Sie hier die Email-Adresse des Resellers ein.";
+$hlp["internet"] = "Bitte geben Sie hier die URL der Resellerwebsite ein.";
+$hlp["reseller_user"] = "Bitte geben Sie hier den Usernamen für den Login des Resellers ein.";
+$hlp["reseller_passwort"] = "Bitte geben Sie hier das Zugangspasswort des Resellers ein.";
+$hlp["anrede"] = "Bitte geben Sie hier die Anrede für den Reseller an.";
+?>

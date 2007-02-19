@@ -1,0 +1,22 @@
+<?
+
+/**********************************************
+* ISPConfig Help File
+* Version 1.2
+* Syntax: $hlp["FieldName"] = "HelpText";
+************************************************/
+
+$hlp["artikelnummer"] = "Bitte geben Sie hier die Artikelnummer für das Produkt an. Sie können die Nummer frei wählen.";
+$hlp["artikeltyp"] = "Bitte wählen Sie hier den entsprechenden Artikeltyp aus der vorgegebenen Liste aus.";
+$hlp["artikelbezeichnung"] = "Bitte geben Sie hier den Namen des Artikels ein.";
+$hlp["verrechnung"] = "Geben Sie hier den Verrechnungszeitraum für den Artikel in Monaten an, z.B. 0 = einmalig, 1 = monatlich, 6 = halbjährlich, 12 = jährlich.";
+$hlp["artikeleinheit"] = "Bitte wählen Sie aus der vorgegebenen Liste die Art der Einheit aus.";
+$hlp["artikelpreis"] = "Bitte geben Sie hier den Preis je Einheit des Artikels an.";
+$hlp["abpackung"] = "Anzahl der Einheiten pro Packung des Artikels.";
+$hlp["beschreibung"] = "Hier haben Sie die Möglichkeit, den Artikel näher zu beschreiben.";
+$hlp["artikelgroup"] = "Wählen Sie aus, für welche Anbieter der Artikel gültig ist. Wenn Sie nichts auswählen, ist der Artikel für alle Anbieter gültig.";
+$hlp["weitere_artikeleinheit"] = "Einheit, die der Berechnung von Traffic-Überschreitungen zu Grunde liegt.";
+$hlp["weitere_abpackung"] = "Anzahl der MB oder GB, die bei Überschreitung abgerechnet werden.";
+$hlp["weitere_artikelpreis"] = "Preis bei Traffic-Überschreitung.";
+$hlp["steuersatz"] = "Geben Sie hier den für den Artikel geltenden Steuersatz an, z.B. 16%.";
+?>

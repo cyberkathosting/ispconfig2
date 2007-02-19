@@ -1,0 +1,47 @@
+<?php
+
+$wb["txt_login_desc"] = "To change your email configuration please login here.";
+$wb["txt_error"] = "Error";
+$wb["txt_email_username"] = "Email-Username";
+$wb["txt_password"] = "Password";
+$wb["txt_login"] = "Login";
+$wb["txt_autoresponder"] = "Autoresponder";
+$wb["txt_nachricht"] = "Message";
+$wb["txt_speichern"] = "Save";
+$wb["txt_abbrechen"] = "Abort";
+$wb["txt_email_account"] = "Email Account";
+$wb["txt_user_und_email"] = "User &amp; Email";
+$wb["txt_spamfilter"] = "Spamfilter";
+$wb["txt_logout"] = "Logout";
+$wb["txt_mailscan"] = "MailScan";
+$wb["txt_antivirus"] = "Antivirus";
+$wb["txt_spam_strategie"] = "Spam Strategy";
+$wb["txt_spam_hits"] = "Spam Hits";
+$wb["txt_rewrite_subject"] = "Rewrite Subject";
+$wb["txt_betreff"] = "Subject";
+$wb["txt_name"] = "Name";
+$wb["txt_email_adresse"] = "Email Address";
+$wb["txt_username"] = "Username";
+$wb["txt_web_speicher"] = "WebQuota";
+$wb["txt_mail_speicher"] = "MailQuota";
+$wb["txt_email_passwort_leer"] = "The username and/or the password are empty!";
+$wb["txt_user_unbekannt"] = "Unknown User.";
+$wb["txt_access_forbidden"] = "Access Forbidden!";
+$wb["txt_yes"] = "Yes";
+$wb["txt_no"] = "No";
+$wb["txt_unlimited"] = "unlimited";
+$wb["txt_welcome"] = "Welcome...";
+$wb["txt_error_spam_hits_format"] = "The value <i>".$wb["txt_spam_hits"]."</i> must have the following format:";
+$wb["txt_accept"] = "accept";
+$wb["txt_discard"] = "discard";
+$wb["txt_language"] = "Language";
+$wb["txt_no_mailuser_login"] = "The login is deactivated for your web.";
+$wb["txt_forwarder"] = "Forwarder";
+$wb["txt_forwarder_desc"] = "<b>Hint:</b> One email per line.";
+$wb["txt_spam_whitelist"] = 'Spam Whitelist';
+$wb["txt_spam_blacklist"] = 'Spam Blacklist';
+$wb["txt_hint_spam_whitelist"] = '<b>Hint:</b> One entry per line. Valid entries are, for example, friend@somewhere.com, *@isp.com, or *.domain.net.';
+$wb["txt_hint_spam_blacklist"] = '<b>Hint:</b> One entry per line. Valid entries are, for example, friend@somewhere.com, *@isp.com, or *.domain.net.';
+$wb["txt_uribl"] = 'Use <a href="http://www.uribl.com/about.shtml" target="_blank">URIBL</a>';
+
+?>

@@ -1,0 +1,66 @@
+<?
+/********************************
+* ISPConfig Dictionary File
+* Version 1.0
+* (c) Tribal-Dolphin
+* http://www.tribal-dolphin.net
+*********************************/
+
+$wb["Anbieter"]     = "Revendeur";
+$wb["Web"]          = "Web";
+$wb["Admin Handbuch"] = "Manuel Administrateur";
+$wb["Reseller Handbuch"] = "Manuel Revendeur";
+$wb["Kunden Handbuch"] = "Manuel Utilisateur";
+$wb["Deutsch"]          = "Allemand";
+$wb["Englisch"]         = "Anglais";
+$wb["Projektfarm Support"]          = "Support Projektfarm";
+$wb["Online Hilfe"] = "Aide en Ligne";
+
+$wb["willkommen_kunde"] = "Bienenue sur ISPConfig!
+Vous pouvez administrer votre (vos) site(s) web. Si vous avez des questions ou problèmes,
+merci de contacter l'administrateur du serveur ou consulter le manuel ISPConfig.";
+$wb["Willkommen"] = "Bienvenue";
+
+//////////////// Server Status ////////////////
+$wb["Arbeitsspeicher"]          = "Memoire principale";
+$wb["CPU"]          = "CPU";
+$wb["Dienste"]      = "Services";
+$wb["Server Online seit"]          = "Serveur en ligne depuis";
+$wb["User Online"]      = "Utilisateurs en ligne";
+$wb["System Load 1 Minute"] = "Charge système sur 1 Minute";
+$wb["System Load 5 Minuten"] = "Charge système sur 5 Minutes";
+$wb["System Load 15 Minuten"] = "Charge système sur 15 Minutes";
+//////////////// Server Status Ende //////////
+
+$wb["Webs angelegt"] = "Sites utilisés";
+$wb["User angelegt"] = "Utilisateurs utilisés";
+$wb["Domains angelegt"] = "Domaines utilisés";
+$wb["unlimitiert"]  = "ilimité";
+$wb["Anbieter"]     = "Revendeur";
+$wb["DNS-Domains angelegt"] = "Domaines DNS créé";
+$wb["von"] = "de";
+
+// NEW 2.0.8 ///////////////////////////////////
+$wb["Französische"]     = "Français";
+// Support Tickets System
+$wb["Unterstützungskarten"] = "Tickets Support";
+$wb["Geöffnete Karten"] = "Billets Ouverts";
+$wb["Geschlossene Karten"] = "Billets Fermés";
+$wb["Neue Karte"] = "Nouveau Billet";
+$wb["Betreff"] = "Sujet";
+$wb["Priorität"] = "Priorité";
+$wb["Niedrig"] = "Faible";
+$wb["Mittel"] = "Moyenne";
+$wb["Hoch"] = "Forte";
+$wb["Ihre frage"] = "Votre question";
+$wb["Senden"] = "Envoyer";
+$wb["Fehler während der schaffung der karte"] = "Erreur lors de la création du billet";
+$wb["Neue unterstützungskarte, die auf antwort wartet"] = "Un nouveau billet est en attente d'une réponse.";
+$wb["Sie erhielten eine antwort"] = "Vous avez reçu une réponse";
+$wb["geantwortet zu ihnen"] = "Vous à répondu";
+$wb["Datum"] = "Date";
+$wb["Davon"] = "De";
+$wb["Ihre antwort"] = "Votre réponse";
+$wb["Antworten"] = "Répondre";
+$wb["Schließen"] = "Fermer";
+?>

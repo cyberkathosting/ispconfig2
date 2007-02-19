@@ -1,0 +1,53 @@
+<?
+/********************************
+* ISPConfig Dictionary File
+* Version 1.0
+* Enhanced by danf.1979@gmail.com
+*********************************/
+
+$wb["Datei Upload"] = 'Enviar archivo';
+$wb["Ordner neu"] = 'Nueva carpeta';
+$wb["Web Auswahl"] = 'Seleccion de la web';
+$wb["Web auswählen"] = 'Seleccion Web';
+$wb["Auswahl"] = 'Aceptar';
+$wb["WEB FTP"] = 'WEB FTP';
+$wb["Hilfe"] = 'Ayuda';
+$wb["Name"] = 'Nombre';
+$wb["Grösse"] = 'Tama&ntilde;o';
+$wb["Datum"] = 'Fecha';
+$wb["Eigentümer"] = 'Due&ntilde;o';
+$wb["Alle"] = 'Todos';
+$wb["Lesen"] = 'Lectura';
+$wb["Schreiben"] = 'Escritura';
+$wb["Ausführen"] = 'Ejecucion';
+$wb["Verzeichnisschutz"] = 'Proteccion de directorio';
+$wb["Verzeichnis schützen"] = 'Proteger directorio';
+$wb[".htaccess User"] = 'Usuario .htaccess';
+$wb[".htaccess Userübersicht"] = 'Vista de usuarios .htaccess';
+$wb["Bearbeiten"] = 'Editar';
+$wb["Hinzufügen"] = 'Adicionar';
+$wb["Parameterübergabe unvollständig"] = "Paso de parametros incompleto";
+$wb["Ungültiges Format der web_id."] = "Formato invalido para web_id.";
+$wb["Ungültige web_id."] = "web_id invalida.";
+$wb["Konnte server_path_httpd_root nicht ermitteln."] = "No se pudo determinar server_path_httpd_root.";
+$wb["Das Verzeichnis existiert nicht oder Sie haben nicht die notwendigen Berechtigungen."] = "El directorio no existe, o no se tienen los permisos necesarios para leerlo.";
+$wb["Der Pfad enthält ungültige Zeichen."] = "La ruta contiene caracteres invalidos.";
+$wb["Diese Funktion ist im Demo-Modus deaktiviert"] = "Esta funcion esta desactivada en el modo demo.";
+$wb["ist ein Link."] = "es un enlace.";
+$wb["existiert nicht."] = "no existe."; // Es geht um: /home/file.htm existiert nicht.
+$wb["konnte nicht gelöscht werden."] = "no se pudo borrar.";
+$wb["Das Verschieben der Datei ist fehlgeschlagen."] = "No se pudo mover el archivo.";
+$wb["konnte nicht gelöscht werden. Das Verzeichnis muss leer sein und Sie müssen Schreibrechte besitzen."] = "no se pudo borrar. El directorio debe estar vacio y usted debe tener permisos de escritura para borrarlo.";
+$wb["Das Verschieben des Verzeichnisses ist fehlgeschlagen."] = "No se pudo mover el directorio.";
+$wb["Es wurde keine Datei zum Upload ausgewählt."] = "No se seleccion&oacute;o ningun archivo para subir.";
+$wb["Die Datei existiert bereits in diesem Verzeichnis."] = "El archivo ya existe en este directorio.";
+$wb["Möglicher Dateiupload Angriff."] = "Potential file upload attack.";
+$wb["Ordner"] = "Carpeta";
+
+$wb["chmod failed."] = "Fallo el chmod";
+$wb["FTP: Failed to open"] = "FTP: No se pudo abrir ";
+$wb["Failed to open"] = "No se pudo abrir ";
+$wb["Could not connect to"] = "No se pudo conectar a ";
+$wb["Could not connect as user"] = "No se pudo conectar como el usuario ";
+$wb["Next >>"] = "<br><br>Siguiente >>";
+?>

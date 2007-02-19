@@ -1,0 +1,55 @@
+<?
+/********************************
+* ISPConfig Dictionary File
+* Version 1.0
+*********************************/
+
+$wb["Datei Upload"] = 'Bestand uploaden';
+$wb["Ordner neu"] = 'Nieuwe map';
+$wb["Web Auswahl"] = 'Web Selectie';
+$wb["Web auswählen"] = 'Selecteer web';
+$wb["Auswahl"] = 'Selectie';
+$wb["WEB FTP"] = 'WEB FTP';
+$wb["Hilfe"] = 'Help';
+$wb["Name"] = 'Naam';
+$wb["Grösse"] = 'Grootte';
+$wb["Datum"] = 'Datum';
+$wb["Eigentümer"] = 'Eigenaar';
+$wb["Alle"] = 'Alle';
+$wb["Lesen"] = 'Lezen';
+$wb["Schreiben"] = 'Schrijf';
+$wb["Ausführen"] = 'Uitvoerbaar';
+$wb["Verzeichnisschutz"] = 'Directory Beveiliging';
+$wb["Verzeichnis schützen"] = 'Beveilig Directory';
+$wb[".htaccess User"] = '.htaccess gebruiker';
+$wb[".htaccess Userübersicht"] = 'Overzicht van .htaccess gebruikers';
+$wb["Bearbeiten"] = 'Wijzig';
+$wb["Hinzufügen"] = 'Voeg toe';
+$wb["Parameterübergabe unvollständig"] = "Parameter opgave onvolledig";
+$wb["Ungültiges Format der web_id."] = "Ongeldig web_id formaat.";
+$wb["Ungültige web_id."] = "Ongeldig web_id.";
+$wb["Konnte server_path_httpd_root nicht ermitteln."] = "Kan server_path_httpd_root niet uitlezen.";
+$wb["Das Verzeichnis existiert nicht oder Sie haben nicht die notwendigen Berechtigungen."] = "De directory bestaat niet, of u mist de nodige rechten.";
+$wb["Der Pfad enthält ungültige Zeichen."] = "Het pad bevat ongeldige karakters.";
+$wb["Diese Funktion ist im Demo-Modus deaktiviert"] = "Deze functie is niet actief in de demo versie.";
+$wb["ist ein Link."] = "is een link.";
+$wb["existiert nicht."] = "bestaat niet."; // Es geht um: /home/file.htm existiert nicht.
+$wb["konnte nicht gelöscht werden."] = "kon niet worden verwijdert.";
+$wb["Das Verschieben der Datei ist fehlgeschlagen."] = "Verplaatsen van bestand is mislukt.";
+$wb["konnte nicht gelöscht werden. Das Verzeichnis muss leer sein und Sie müssen Schreibrechte besitzen."] = "kon niet worden verwijderd. De directory moet leeg zijn en u moet schrijf rechten op hebben.";
+$wb["Das Verschieben des Verzeichnisses ist fehlgeschlagen."] = "Het verplaatsen van de directory is mislukt.";
+$wb["Es wurde keine Datei zum Upload ausgewählt."] = "Geen bestand geselecteerd voor upload.";
+$wb["Die Datei existiert bereits in diesem Verzeichnis."] = "Het bestand bestaat al in deze directory.";
+$wb["Möglicher Dateiupload Angriff."] = "Potentiele bestand upload aanval.";
+$wb["Ordner"] = "Map";
+
+$wb["chmod failed."] = "chmod mislukt.";
+$wb["FTP: Failed to open"] = "FTP: niet geslaagd om te openen ";
+$wb["Failed to open"] = "Niet geslaagd om te openen ";
+$wb["Could not connect to"] = "Kon geen verbinding maken met ";
+$wb["Could not connect as user"] = "Kon geen verbinding maken als gebruiker ";
+$wb["Next >>"] = "<br><br>Next >>";
+
+$wb["Catalog_Name"] = "Naam";
+
+?>

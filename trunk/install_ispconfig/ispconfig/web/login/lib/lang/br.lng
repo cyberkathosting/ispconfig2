@@ -1,0 +1,26 @@
+<?
+/********************************
+* ISPConfig Dictionary File
+* Version 1.0
+* Traduzido por: Horus Solaris
+*********************************/
+
+// License Manager
+$wb["Es wurde keine g&uuml;ltige Lizenzdatei gefunden."] = "Não foi encontrado nenhum arquivo com a licença.";
+$wb["Hier k&ouml;nnen Sie ihre Lizenzdatei einspielen."] = "Faça o envio do arquivo aqui.";
+$wb["Username"] = "Usuário";
+$wb["Passwort"] = "Senha";
+$wb["Lizenzdatei"] = "Arquivo com a licença";
+$wb["Weiter"] = "Seguinte";
+$wb["Die Lizenzdatei wurde eingespielt.<br>Sie k&ouml;nnen sich jetzt einloggen."] = "O arquivo com a licença foi gravado.<br> Você pode agora acessar o sistema.";
+$wb["Ihre Nutzersitzung wurde beendet."] = "A sua sessão expirou.";
+$wb["Hier können Sie sich neu einloggen"] = "Entre com seus dados novamente";
+
+$wb["FEHLER 101: Username oder Passwort Falsch."] = "ERRO 101: Usuário ou senha inválida.";
+$wb["FEHLER 102: Account inaktiv."] = "ERRO 102: Conta desativada.";
+$wb["FEHLER 103: Es wurde kein Username oder Passwort angegeben."] = "ERRO 103: Entre com seu nome de usuário e senha novamente.";
+$wb["FEHLER 104: Die Nutzersession wurde beendet."] = "ERRO 104: A sessão expirou.";
+$wb["<br>&nbsp;<br>Hier können Sie sich erneut einloggen:"] = "<br>&nbsp;<br>Entre com seus dados novamente:";
+$wb["Hier können Sie sich einloggen:"] = "Por favor informe seus dados";
+
+?>

@@ -1,0 +1,102 @@
+       
+<form method="POST" action="client.php" target="_self" name="myform">
+                    <table width="600" border="0" cellspacing="0" cellpadding="2">
+                      <tr class="normal_bold">
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                      </tr>
+                      <tr class="normal_bold">
+                        <td>&nbsp;</td>
+                        <td>Firma: </td>
+                        <td width="84%">{COMPANY}</td>
+                      </tr>
+                      <tr class="normal_bold">
+                        <td>&nbsp;</td>
+                        <td>Vorname:</td>
+                        <td>{FORENAME}</td>
+                      </tr>
+                      <tr class="normal_bold">
+                        <td>&nbsp;</td>
+                        <td>Name:</td>
+                        <td>{SURNAME}</td>
+                      </tr>
+                      <tr class="normal_bold">
+                        <td>&nbsp;</td>
+                        <td>Strasse:</td>
+                        <td>{STREET}</td>
+                      </tr>
+                      <tr class="normal_bold">
+                        <td>&nbsp;</td>
+                        <td>PLZ:</td>
+                        <td>{ZIP}</td>
+                      </tr>
+                      <tr class="normal_bold">
+                        <td>&nbsp;</td>
+                        <td>Ort:</td>
+                        <td>{TOWN}</td>
+                      </tr>
+                      <tr class="normal_bold">
+                        <td>&nbsp;</td>
+                        <td>Land:</td>
+                        <td>{COUNTRY}</td>
+                      </tr>
+                      <tr class="normal_bold">
+                        <td>&nbsp;</td>
+                        <td>Steuernr.:</td>
+                        <td>{VATNR}</td>
+                      </tr>
+                      <tr class="normal_bold">
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                      </tr>
+					  <tr class="normal_bold">
+                        <td width="2" height="23" bgcolor="#CCCCCC">&nbsp;</td>
+                        <td width="14" bgcolor="#CCCCCC">Web:</td>
+                        <td bgcolor="#CCCCCC">{HOST}</td>
+                      </tr>
+                      <tr class="normal_bold">
+                        <td height="23">&nbsp;</td>
+                        <td colspan="2"><table width="100%" border="0" cellspacing="0" cellpadding="2">
+                          <tr>
+                            <td width="10%">Anzahl</td>
+                            <td width="14%">Art. Nr. </td>
+                            <td width="50%">Artikel</td>
+                            <td width="12%">Preis</td>
+                            <td width="14%">Gesamt</td>
+                          </tr>
+						  <tr>
+                            <td>5</td>
+                            <td>TF6554</td>
+                            <td>{NAME}</td>
+                            <td align="right" valign="baseline">55,00 &euro;</td>
+                            <td align="right" valign="baseline">433,00 &euro;</td>
+                          </tr>
+						  <tr>
+                            <td>&nbsp;</td>
+                            <td colspan="2">&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                          </tr>
+                          <tr>
+                            <td colspan="5"><hr size="1" noshade></td>
+                          </tr>
+                          <tr align="right">
+                            <td colspan="5">Gesamt: {GWPRICE} &euro;</td>
+                          </tr>
+                        </table></td>
+                      </tr>
+                      <tr>
+                        <td>&nbsp;</td>
+                        <td colspan="2" align="right">&nbsp;</td>
+                      </tr>
+                      <tr>
+                        <td>&nbsp;</td>
+                        <td colspan="2">&nbsp;</td>
+                      </tr>
+  					</table>
+                        <input type="hidden" name="art" value="v">
+                        <input type="hidden" name="id" value="{ID}">
+                        <input type="hidden" name="s" value="{S}">
+</form>

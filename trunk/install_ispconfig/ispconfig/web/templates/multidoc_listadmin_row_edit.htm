@@ -1,0 +1,39 @@
+      <form method="POST" name="myform" action="insert.php" target="seiteFrame">
+        
+  <table border="0" width="100%" cellspacing="0" cellpadding="4" bgcolor="{TABLE_H_COLOR}">
+    <tr> 
+      <td colspan="2" height="18"> 
+        <p align="center" class="normal_bold">&nbsp; 
+      </td>
+    </tr>
+    <tr> 
+      <td width="30%" class="normal_bold">&nbsp;Titel:</td>
+      <td width="70%"> 
+        <input type="text" name="form[row_title]" size="30" maxlength="50" class="text" value="{ROW_TITLE}">
+      </td>
+    </tr>
+    <tr>
+      <td width="30%" class="normal_bold">Edit Button:</td>
+      <td width="70%"> 
+        <input type="checkbox" name="form[row_edit]" value="1" {EDIT}>
+      </td>
+    </tr>
+    <tr>
+      <td width="30%" class="normal_bold">Delete Button:</td>
+      <td width="70%"> 
+        <input type="checkbox" name="form[row_delete]" value="1" {DELETE}>
+      </td>
+    </tr>
+    <tr> 
+      <td colspan="2" align="center" height="62"> 
+        <input type="submit" name="Abschicken" value="Speichern">
+      </td>
+    </tr>
+  </table>
+        
+  <input type="hidden" name="row_id" value="{ROW_ID}">
+  <input type="hidden" name="s" value="{S}">
+  <input type="hidden" name="art" value="row">
+  <input type="hidden" name="listtype_id" value="{LISTTYPE_ID}">
+</form>
+

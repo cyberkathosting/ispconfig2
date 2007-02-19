@@ -1,0 +1,57 @@
+<?
+/********************************
+* ISPConfig Dictionary File
+* Version 1.0
+* (c) Tribal-Dolphin
+* http://www.tribal-dolphin.net
+*********************************/
+
+$wb["Datei Upload"] = 'Envoi de Fichier';
+$wb["Ordner neu"] = 'Nouveau Dossier';
+$wb["Web Auswahl"] = 'Choix du Site';
+$wb["Web auswählen"] = 'Choississez un Site';
+$wb["Auswahl"] = 'Sélection';
+$wb["WEB FTP"] = 'WEB FTP';
+$wb["Hilfe"] = 'Aide';
+$wb["Name"] = 'Nom';
+$wb["Grösse"] = 'Taille';
+$wb["Datum"] = 'Date';
+$wb["Eigentümer"] = 'Propriétaire';
+$wb["Alle"] = 'Tous';
+$wb["Lesen"] = 'Lecture';
+$wb["Schreiben"] = 'Ecriture';
+$wb["Ausführen"] = 'Execution';
+$wb["Verzeichnisschutz"] = 'Protection de Répertoire';
+$wb["Verzeichnis schützen"] = 'Protéger ce Répertoire';
+$wb[".htaccess User"] = 'Utilisateur .htaccess';
+$wb[".htaccess Userübersicht"] = "Vue d'ensemble des utilisateurs du .htaccess";
+$wb["Bearbeiten"] = 'Editer';
+$wb["Hinzufügen"] = 'Ajouter';
+$wb["Parameterübergabe unvollständig"] = "Transmission de paramètre incomplète";
+$wb["Ungültiges Format der web_id."] = "Format invalide du web_id.";
+$wb["Ungültige web_id."] = "web_id Invalide.";
+$wb["Konnte server_path_httpd_root nicht ermitteln."] = "Impossible de déterminer le server_path_httpd_root.";
+$wb["Das Verzeichnis existiert nicht oder Sie haben nicht die notwendigen Berechtigungen."] = "Le répertoire n'existe pas, ou vous n'avez pas les permissions nécessaires.";
+$wb["Der Pfad enthält ungültige Zeichen."] = "Le chemin contient les signes invalides.";
+$wb["Diese Funktion ist im Demo-Modus deaktiviert"] = "Cette fonction est désactivé en mode démo.";
+$wb["ist ein Link."] = "est un lien.";
+$wb["existiert nicht."] = "n'existe pas."; // Es geht um: /home/file.htm existiert nicht.
+$wb["konnte nicht gelöscht werden."] = "ne peut être effacé.";
+$wb["Das Verschieben der Datei ist fehlgeschlagen."] = "Le déplacement du fichier à échoué.";
+$wb["konnte nicht gelöscht werden. Das Verzeichnis muss leer sein und Sie müssen Schreibrechte besitzen."] = "ne peut être effacé. Le répertoire doit être vide et vous devez avoir les droits en écriture.";
+$wb["Das Verschieben des Verzeichnisses ist fehlgeschlagen."] = "Le déplacement du répertoire à échoué.";
+$wb["Es wurde keine Datei zum Upload ausgewählt."] = "Aucun fichier sélectionné pour l'envoie.";
+$wb["Die Datei existiert bereits in diesem Verzeichnis."] = "Ce fichier existe déjà dans le répertoire.";
+$wb["Möglicher Dateiupload Angriff."] = "Attaque potentielle détecté.";
+$wb["Ordner"] = "Dossier";
+
+$wb["chmod failed."] = "CHMOD : Opération impossible";
+$wb["FTP: Failed to open"] = "FTP: Impossible d'ouvrir ";
+$wb["Failed to open"] = "Impossible d'ouvrir ";
+$wb["Could not connect to"] = "Impossible de se connecter à ";
+$wb["Could not connect as user"] = "Impossible de se connecter comme utilisateur ";
+$wb["Next >>"] = "<br><br>Suivant >>";
+
+$wb["Catalog_Name"] = "Nom";
+
+?>

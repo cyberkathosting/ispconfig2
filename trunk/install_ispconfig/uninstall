@@ -1,0 +1,226 @@
+#!/root/ispconfig/php/php -q
+<?
+/*
+Copyright (c) 2005, projektfarm Gmbh, Till Brehm, Falko Timme
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without modification,
+are permitted provided that the following conditions are met:
+
+    * Redistributions of source code must retain the above copyright notice,
+      this list of conditions and the following disclaimer.
+    * Redistributions in binary form must reproduce the above copyright notice,
+      this list of conditions and the following disclaimer in the documentation
+      and/or other materials provided with the distribution.
+    * Neither the name of ISPConfig nor the names of its contributors
+      may be used to endorse or promote products derived from this software without
+      specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT,
+INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY
+OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+*/
+set_time_limit(0);
+
+include("/root/ispconfig/scripts/lib/config.inc.php");
+include("/root/ispconfig/scripts/lib/server.inc.php");
+
+function getInput($length = 255) {
+  $fr = fopen("php://stdin", "r");
+  $input = fgets($fr, $length);
+  $input = rtrim($input);
+  fclose($fr);
+  return $input;
+}
+
+echo "You chose to uninstall the ISPConfig system! Do you also want to uninstall the objects (webs, users, databases, DNS entries etc.) created by the system? [y/n] ";
+$answer = getInput();
+
+$db_server = $go_info["server"]["db_host"];
+$db_user = $go_info["server"]["db_user"];
+$db_password = $go_info["server"]["db_password"];
+$db = $go_info["server"]["db_name"];
+$httpd_conf = $mod->system->server_conf["dist_httpd_conf"];
+/*
+if($answer == "y"){
+  $link = @mysql_connect($db_server, $db_user, $db_password)
+or die("Could not connect to MySQL server!");
+  mysql_select_db($db);
+  mysql_query("UPDATE dns_isp_dns SET status = 'd'");
+  mysql_query("UPDATE isp_isp_datenbank SET status = 'd'");
+  mysql_query("UPDATE isp_isp_domain SET status = 'd'");
+  mysql_query("UPDATE isp_isp_user SET status = 'd'");
+  mysql_query("UPDATE isp_isp_web SET status = 'd'");
+  mysql_query("UPDATE dns_nodes SET status = '0'");
+  mysql_query("UPDATE isp_nodes SET status = '0'");
+  mysql_close($link);
+  exec("/root/ispconfig/php/php -q /root/ispconfig/scripts/writeconf.php &> /dev/null");
+}
+*/
+$replace = "<Directory /var/www/sharedip>
+    Options +Includes -Indexes
+    AllowOverride None
+    AllowOverride Indexes AuthConfig Limit FileInfo
+    Order allow,deny
+    Allow from all
+    <Files ~ \"^\\.ht\">
+    Deny from all
+    </Files>
+</Directory>
+
+###############ispconfig_log###############
+LogFormat \"%v||||%b||||%h %l %u %t \\\"%r\\\" %>s %b \\\"%{Referer}i\\\" \\\"%{User-Agent}i\\\"\" combined_ispconfig
+CustomLog \"|/root/ispconfig/cronolog --symlink=/var/log/httpd/ispconfig_access_log /var/log/httpd/ispconfig_access_log_%Y_%m_%d\" combined_ispconfig
+
+<Directory ".$mod->system->server_conf["server_path_httpd_root"]."/*/web>
+    Options +Includes -Indexes -ExecCGI
+    AllowOverride None
+    AllowOverride Indexes AuthConfig Limit FileInfo
+    Order allow,deny
+    Allow from all
+    <Files ~ \"^\\.ht\">
+    Deny from all
+    </Files>
+</Directory>
+
+<Directory ".$mod->system->server_conf["server_path_httpd_root"]."/*/user/*/web>
+    Options +Includes -Indexes -ExecCGI
+    AllowOverride None
+    AllowOverride Indexes AuthConfig Limit FileInfo
+    Order allow,deny
+    Allow from all
+    <Files ~ \"^\\.ht\">
+    Deny from all
+    </Files>
+</Directory>
+
+<Directory ".$mod->system->server_conf["server_path_httpd_root"]."/*/cgi-bin>
+    Options ExecCGI -Indexes
+    AllowOverride None
+    AllowOverride Indexes AuthConfig Limit FileInfo
+    Order allow,deny
+    Allow from all
+    <Files ~ \"^\\.ht\">
+    Deny from all
+    </Files>
+</Directory>
+
+Include ".$mod->system->server_conf["server_path_httpd_conf"]."/vhosts/Vhosts_ispconfig.conf";
+
+$fp = fopen ($httpd_conf, "r");
+$conf = fread($fp, filesize ($httpd_conf));
+fclose($fp);
+$conf = str_replace($replace, "", $conf);
+$fp = fopen ($httpd_conf, "w");
+fwrite($fp,$conf);
+fclose($fp);
+
+exec("apachectl restart &> /dev/null");
+exec("apache2ctl restart &> /dev/null");
+
+if($mod->system->server_conf["server_ftp_typ"] == "proftpd"){
+  $fp = fopen ($mod->system->server_conf["server_proftpd_conf_datei"], "r");
+  $conf = fread($fp, filesize ($mod->system->server_conf["server_proftpd_conf_datei"]));
+  fclose($fp);
+  $conf = str_replace("Include /etc/proftpd_ispconfig.conf", "", $conf);
+  $fp = fopen ($mod->system->server_conf["server_proftpd_conf_datei"], "w");
+  fwrite($fp,$conf);
+  fclose($fp);
+  if($mod->system->server_conf["dist_ftp_version"] == "standalone"){
+    $mod->system->daemon_init($mod->system->server_conf["server_ftp_typ"], "restart");
+  } else {
+    $mod->system->daemon_init($mod->system->server_conf["dist_ftp_version"], "restart");
+  }
+}
+if($mod->system->server_conf["server_ftp_typ"] == "vsftpd"){
+  if(is_file($mod->system->server_conf["dist_init_scripts"]."/ispconfig_tcpserver")){
+    $mod->system->daemon_init("ispconfig_tcpserver", "stop");
+    unlink($mod->system->server_conf["dist_init_scripts"]."/ispconfig_tcpserver");
+  }
+  $mod->system->rc_edit("ispconfig_tcpserver", "2,3,5", "off");
+  //if($mod->system->server_conf["dist_ftp_version"] == "inetd"){
+  //  exec("mv -f /etc/inetd.conf.backup /etc/inetd.conf &> /dev/null");
+  //  exec($mod->system->server_conf["dist_init_scripts"]."/inetd restart");
+  //}
+  //if($mod->system->server_conf["dist_ftp_version"] == "xinetd"){
+  //  exec("mv -f /etc/vsftpd_xinetd.backup /etc/xinetd.d/vsftpd &> /dev/null");
+  //  exec($mod->system->server_conf["dist_init_scripts"]."/xinetd restart");
+  //}
+  exec("rm -f /etc/vsftpd_*.conf");
+}
+
+$cron_jobs = array('30 00 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/logs.php &> /dev/null','59 23 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/ftp_logs.php &> /dev/null','59 23 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/mail_logs.php &> /dev/null','59 23 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/cleanup.php &> /dev/null','0 4 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/webalizer.php &> /dev/null','0,30 * * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/check_services.php &> /dev/null','15 3,15 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/quota_msg.php &> /dev/null','40 00 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/traffic.php &> /dev/null','05 02 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/backup.php &> /dev/null','*/5 * * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/mysql_quota.php &> /dev/null');
+
+if($mod->system->server_conf["dist_cron_daemon"] == "fcron"){
+  //$cron_tsl_unfile = "/home/unfcronisp";
+  exec("/usr/bin/fcrontab -l > /home/unfcronisp");
+  exec("chmod 777 /home/unfcronisp");
+  $fptsl = fopen ("/home/unfcronisp", "r");
+  $conftsl = fread($fptsl, filesize ("/home/unfcronisp"));
+  fclose($fptsl);
+  foreach($cron_jobs as $cron_job){
+    $conftsl = str_replace($cron_job, "", $conftsl);
+  }
+  $fptsl= fopen ("/home/unfcronisp", "w");
+  fwrite($fptsl,$conftsl);
+  fclose($fptsl);
+  $mod->file->remove_blank_lines("/home/unfcronisp");
+  exec("/usr/bin/fcrontab /home/unfcronisp");
+  exec("rm -f /home/unfcronisp");
+} else {
+  $fp = fopen ($mod->system->server_conf["dist_cron_tab"], "r");
+  $conf = fread($fp, filesize ($mod->system->server_conf["dist_cron_tab"]));
+  fclose($fp);
+  foreach($cron_jobs as $cron_job){
+    $conf = str_replace($cron_job, "", $conf);
+  }
+  $fp = fopen ($mod->system->server_conf["dist_cron_tab"], "w");
+  fwrite($fp,$conf);
+  fclose($fp);
+  $mod->file->remove_blank_lines($mod->system->server_conf["dist_cron_tab"]);
+}
+$mod->system->daemon_init($mod->system->server_conf["dist_cron_daemon"], "restart");
+
+$link = mysql_connect($db_server, $db_user, $db_password)
+    or die("Could not connect");
+echo "Connected successfully\n";
+mysql_query("DROP DATABASE ".$db);
+
+$mod->system->daemon_init("ispconfig_server", "stop");
+$mod->system->deluser("admispconfig");
+$mod->system->delgroup("admispconfig");
+if(is_file("/var/spool/mail/admispconfig")){
+  unlink("/var/spool/mail/admispconfig");
+}
+$mod->system->rc_edit("ispconfig_server", "2,3,5", "off");
+unlink($mod->system->server_conf["dist_init_scripts"]."/ispconfig_server");
+
+exec("rm -fr /home/admispconfig");
+exec("rm -fr /root/ispconfig");
+
+///////// Töten aller laufenden ispconfig-Prozesse ////////////
+function nicht_leer($var) {
+    return ($var != "");
+}
+
+exec("ps ax | grep ispconfig | grep -v uninstall", $results);
+
+foreach($results as $result){
+  $values = explode(" ", $result);
+  $werte = array_filter($values, "nicht_leer");
+  foreach($werte as $wert){
+    $arr[] = $wert;
+  }
+
+  exec("kill -9 ".$arr[0]." &> /dev/null");
+  unset($arr);
+}
+//////////////////////////////////////////////////////
+?>

@@ -1,0 +1,64 @@
+<?
+/********************************
+* ISPConfig Dictionary File
+* Version 1.0
+*********************************/
+
+$wb["Anbieter"]     = "Реселлер";
+$wb["Web"]          = "Веб";
+$wb["Admin Handbuch"] = "Руководство Администратора";
+$wb["Reseller Handbuch"] = "Руководство Реселлера";
+$wb["Kunden Handbuch"] = "Руководство Клиента";
+$wb["Deutsch"]          = "Немецкий";
+$wb["Englisch"]         = "Английский";
+$wb["Projektfarm Support"]          = "Поддержка Projektfarm";
+$wb["Online Hilfe"] = "Онлайн Помощь";
+
+$wb["willkommen_kunde"] = "Добро пожаловать в панель управления ISPConfig!
+Здесь Вы можете администрировать свой сайт (сайты). Если у Вас есть вопросы по работе панели или Вы испытываете какие-либо трудности,
+просьба связаться с администратором сервера или обратиться к Руководству Клиента.";
+$wb["Willkommen"] = "Добро Пожаловать";
+
+//////////////// Server Status ////////////////
+$wb["Arbeitsspeicher"]          = "Основная Память";
+$wb["CPU"]          = "Процессор";
+$wb["Dienste"]      = "Службы";
+$wb["Server Online seit"]          = "Время Работы Сервера";
+$wb["User Online"]      = "Количество Подключений";
+$wb["System Load 1 Minute"] = "Загрузка Системы за 1 Минуту";
+$wb["System Load 5 Minuten"] = "Загрузка Системы за 5 Минут";
+$wb["System Load 15 Minuten"] = "Загрузка Системы за 15 Минут";
+//////////////// Server Status Ende //////////
+
+$wb["Webs angelegt"] = "Сайтов";
+$wb["User angelegt"] = "Пользователей";
+$wb["Domains angelegt"] = "Доменов";
+$wb["unlimitiert"]  = "неограниченно";
+$wb["Anbieter"]     = "Реселлер";
+$wb["DNS-Domains angelegt"] = 'DNS Доменов создано';
+$wb["von"] = "от";
+
+// NEW 2.0.8 ///////////////////////////////////
+$wb["FranzЖsische"]     = "Французский";
+// Support Tickets System
+$wb["UnterstЭtzungskarten"] = "Карты Поддержки";
+$wb["GeЖffnete Karten"] = "Открытые Карты";
+$wb["Geschlossene Karten"] = "Закрытые Карты";
+$wb["Neue Karte"] = "Новая Карта";
+$wb["Betreff"] = "Тема";
+$wb["PrioritДt"] = "Приоритет";
+$wb["Niedrig"] = "Низкий";
+$wb["Mittel"] = "Средний";
+$wb["Hoch"] = "Высокий";
+$wb["Ihre frage"] = "Ваш вопрос";
+$wb["Senden"] = "Отправить";
+$wb["Fehler wДhrend der schaffung der karte"] = "Ошибка при создании карты";
+$wb["Neue unterstЭtzungskarte, die auf antwort wartet"] = "Новая карта поддержки ожидает ответа";
+$wb["Sie erhielten eine antwort"] = "Вы получили ответ";
+$wb["geantwortet zu ihnen"] = "было отвечено";
+$wb["Datum"] = "Дата";
+$wb["Davon"] = "От";
+$wb["Ihre antwort"] = "Ваш ответ";
+$wb["Antworten"] = "Ответить";
+$wb["Schlieъen"] = "Закрыть";
+?>

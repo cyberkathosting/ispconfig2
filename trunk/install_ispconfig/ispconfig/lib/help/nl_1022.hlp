@@ -1,0 +1,29 @@
+<?
+/**********************************************
+* ISPConfig Help File
+* Version 1.2
+* Syntax: $hlp["FieldName"] = "HelpText";
+************************************************/
+
+$hlp["limit_user"] = "Wat is het maximum aantal gebruikers welke door een reseller mogen worden aangemaakt.";
+$hlp["limit_disk"] = "Wat is het maximum aantal disk ruimte welke door een reseller mag worden aangewezen.";
+$hlp["limit_web"] = "Wat is het maximum aantal website welke door een reseller mogen worden aangemaakt.";
+$hlp["limit_domain"] = "Wat is het maximum aantal domeinen welke door een reseller mogen worden aangemaakt.";
+$hlp["limit_http_include"] = "Geeft aan of reseller extra Apache directives mag aanmaken.";
+$hlp["limit_dns_manager"] = "Geeft aan of de reseller DNS wijzingen/toevoegingen mag doen.";
+$hlp["limit_domain_dns"] = "Wat is het maximum aantal DNS wijzingen/toevoegingen welke door een reseller mogen worden gedaan.";
+$hlp["firma"] = "Firmanaam van reseller.";
+$hlp["vorname"] = "Vul de voornaam in van de reseller.";
+$hlp["name"] = "Vul de achternaam in van de reseller.";
+$hlp["strasse"] = "Vul het adres in van de reseller.";
+$hlp["plz"] = "Vul de postcode in van de reseller.";
+$hlp["ort"] = "Vul de plaatsnaam in van de reseller.";
+$hlp["land"] = "Vul het land in van de reseller.";
+$hlp["telefon"] = "Vul het telefoon nummer in van de reseller.";
+$hlp["fax"] = "Vul het fax nummer in van reseller";
+$hlp["email"] = "Vul het email adres in van de reseller.";
+$hlp["internet"] = "Vul het internet adres in de reseller.";
+$hlp["reseller_user"] = "Vul gebruikersnaam in van de reseller voor toegang tot het ISPConfig systeem.";
+$hlp["reseller_passwort"] = "Vul wachtwoord in van de reseller voor toegang tot het ISPConfig systeem.";
+$hlp["anrede"] = "Selecteer het welkomsadres van de reseller.";
+?>

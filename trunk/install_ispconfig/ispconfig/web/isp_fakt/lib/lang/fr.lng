@@ -1,0 +1,85 @@
+<?
+/********************************
+* ISPConfig Dictionary File
+* Version 1.0
+*********************************/
+
+$wb["ISP Faktura"] = 'Facturation ISP';
+$wb["Web-FTP"] = 'Web-FTP';
+$wb["Domains"] = 'Domaine';
+$wb["Service"] = 'Service';
+$wb["Webs"] = 'Site Web';
+$wb["Traffic"] = 'Trafic';
+$wb["Email-Adressen"] = 'Adresses e-mail';
+$wb["Artikel"] = 'Article';
+$wb["admin"] = 'admin';
+$wb["Artikel für"] = 'Article pour';
+$wb["Dienstleistung"] = 'Service';
+$wb["Hardware"] = 'Matériel';
+$wb["Software"] = 'Logiciel';
+$wb["Typ"] = 'Type';
+$wb["Artikel Nr."] = 'Code Article';
+$wb["Bezeichnung"] = 'Nom';
+$wb["Beschreibung"] = 'Description';
+$wb["Stück"] = 'Pièce';
+$wb["MB"] = 'MB';
+$wb["GB"] = 'GB';
+$wb["Stunde"] = 'Heure';
+$wb["Einheit"] = 'Unité';
+$wb["Menge"] = 'Quantité';
+$wb["Preis"] = 'Prix';
+$wb["Verrechnung"] = 'Billing Period';
+$wb["Artikel neu"] = 'Nouvel Article';
+$wb["Ordner neu"] = 'Nouveau Dossier';
+$wb["Abrechnen"] = 'Créer Facture';
+$wb["Produkte"] = 'Produits';
+$wb["Rechnungen"] = 'Factures';
+$wb["Kunden"] = 'Clients';
+$wb["Anbieter"] = 'Revendeurs';
+$wb["Keine Artikel zum Abrechnen gefunden."] = 'Auncun articles troué pour créer la facture.';
+$wb["Abrechnung"] = 'Facture';
+$wb["Name"] = 'Nom';
+$wb["IP-Traffic"] = 'Trafic IP';
+$wb["Steuersatz"] = 'Taux de Taxe';
+$wb["Bei Überschreitung:"] = 'Sur dépassement:';
+$wb["Diese Angaben sind nur für Artikel vom Typ: Traffic gültig!"] = 'Cette entrée n\'est valide que pour les articles de type : Trafic!';
+$wb["Rechnungen Kunden"] = 'Factures Clients';
+$wb["Firma"] = 'Société';
+$wb["Vorname"] = 'Nom';
+$wb["Strasse"] = 'Rue';
+$wb["PLZ"] = 'Code Postal';
+$wb["Ort"] = 'Ville';
+$wb["Land"] = 'Pays';
+$wb["Steuernr."] = 'No. TVA';
+$wb["Rechnung"] = 'Facture';
+$wb["Datum"] = 'Date';
+$wb["Rechnung Nr."] = 'No. Facture';
+$wb["Anzahl"] = 'Quantité';
+$wb["Art. Nr."] = 'Code Article';
+$wb["Gesamt"] = 'Total';
+$wb["EURO"] = 'EURO';
+$wb["Web gesamt"] = 'Total Web';
+$wb["enthaltene Mehrwertsteuer"] = 'TVA Incluse';
+$wb["Gesamtbetrag"] = 'Total';
+$wb["Rechnungen Anbieter"] = 'Factures Revendeur';
+$wb["Kunde"] = 'Client';
+$wb["Rg. Nr."] = 'No. Facture';
+$wb["OK"] = 'OK';
+$wb["Weiter"] = "Suivant";
+$wb["Summe Anbieter"] = "Total Revendeur";
+$wb["Summe Web"] = "Total Web";
+$wb["Summe Kunde"] = "Total Client";
+$wb["Abrechnung abgeschlossen."] = "Facture créée.";
+
+//////////////// Server Status ////////////////
+$wb["Arbeitsspeicher"]          = "Mémoire principale";
+$wb["CPU"]          = "CPU";
+$wb["Dienste"]      = "Services";
+$wb["Server Online seit"]          = "Serveur en ligne depuis";
+$wb["User Online"]      = "Utilisateurs en ligne";
+$wb["System Load 1 Minute"] = "Charge système sur 1 Minute";
+$wb["System Load 5 Minuten"] = "Charge système sur 5 Minutes";
+$wb["System Load 15 Minuten"] = "Charge système sur 15 Minutes";
+//////////////// Server Status Ende //////////
+
+?>

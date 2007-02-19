@@ -1,0 +1,37 @@
+      <form method="POST" name="myform" action="insert.php" target="seiteFrame">
+        
+  <table border="0" width="100%" cellspacing="0" cellpadding="4" bgcolor="{TABLE_H_COLOR}">
+    <tr> 
+      <td colspan="2" height="18"> <p align="center" class="normal_bold">&nbsp; 
+      </td>
+    </tr>
+    <tr> 
+      <td width="29%" class="normal_bold">Layer:</td>
+      <td width="71%"> {DECKS}</td>
+    </tr>
+    <tr> 
+      <td width="29%" class="normal_bold">Fieldname:</td>
+      <td width="71%"> <input type="text" name="form[name]" size="34" maxlength="50" class="text" value="{NAME}"> 
+      </td>
+    </tr>
+    <tr> 
+      <td width="29%" class="normal_bold">CSS Class:</td>
+      <td width="71%"> <input type="text" name="form[css_class]" size="34" maxlength="50" class="text" value="{CSS_CLASS}"> 
+      </td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="normal_bold"><hr size="1"></td>
+    </tr>
+{OPTIONS}
+    <tr> 
+      <td colspan="2" align="center" height="62"> <input type="submit" name="Abschicken" value="Save"> 
+      </td>
+    </tr>
+  </table>
+        
+  <input type="hidden" name="element_id" value="{ID}">
+  <input type="hidden" name="s" value="{S}">
+  <input type="hidden" name="art" value="pluginField">
+  <input type="hidden" name="doctype_id" value="{DOCTYPE_ID}">
+</form>
+

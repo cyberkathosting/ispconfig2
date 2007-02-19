@@ -1,0 +1,65 @@
+<?
+/********************************
+* ISPConfig Dictionary File
+* Version 1.0
+* Traduzido por: Horus Solaris
+*********************************/
+
+$wb["Anbieter"]     = "Revendedor";
+$wb["Web"]          = "Web";
+$wb["Admin Handbuch"] = "Manual do Administrador";
+$wb["Reseller Handbuch"] = "Manual do Revendedor";
+$wb["Kunden Handbuch"] = "Manual do Cliente";
+$wb["Deutsch"]          = "Alemão";
+$wb["Englisch"]         = "Inglês";
+$wb["Projektfarm Support"]          = "Suporte ao projeto";
+$wb["Online Hilfe"] = "Ajuda online";
+
+$wb["willkommen_kunde"] = "Bem-Vindo ao ISPConfig!
+Você pode contactar o administrador do seu website(s) aqui. Se tiver questões ou problemas,
+por favor contacte o seu administrador ou consulte o manual de cliente do ISPConfig.";
+$wb["Willkommen"] = "Bem-Vindo";
+
+//////////////// Server Status ////////////////
+$wb["Arbeitsspeicher"]          = "Memória Principal";
+$wb["CPU"]          = "CPU";
+$wb["Dienste"]      = "Serviços";
+$wb["Server Online seit"]          = "Servidor online desde";
+$wb["User Online"]      = "Usuários conectados";
+$wb["System Load 1 Minute"] = "Carga da CPU - 1 Minuto";
+$wb["System Load 5 Minuten"] = "Carga da CPU - 5 Minutos";
+$wb["System Load 15 Minuten"] = "Carga da CPU - 15 Minutos";
+//////////////// Server Status Ende //////////
+
+$wb["Webs angelegt"] = "Sites usados";
+$wb["User angelegt"] = "Usuários usados";
+$wb["Domains angelegt"] = "Domínios usados";
+$wb["unlimitiert"]  = "ilimitado";
+$wb["Anbieter"]     = "Revendedor";
+$wb["DNS-Domains angelegt"] = 'Domínios DNS criados';
+$wb["von"] = "de";
+
+// NEW 2.0.8 ///////////////////////////////////
+$wb["Französische"]     = "Francês";
+// Support Tickets System
+$wb["Unterstützungskarten"] = "Tickets de Suporte Técnico";
+$wb["Geöffnete Karten"] = "Tickets abertos";
+$wb["Geschlossene Karten"] = "Tickets fechados";
+$wb["Neue Karte"] = "Novo ticket";
+$wb["Betreff"] = "Assunto";
+$wb["Priorität"] = "Prioridade";
+$wb["Niedrig"] = "Baixa";
+$wb["Mittel"] = "Média";
+$wb["Hoch"] = "Alta";
+$wb["Ihre frage"] = "A sua questão:";
+$wb["Senden"] = "Enviar";
+$wb["Fehler während der schaffung der karte"] = "Erro durante a criação do ticket";
+$wb["Neue unterstützungskarte, die auf antwort wartet"] = "Novo ticket de suporte à espera de resposta";
+$wb["Sie erhielten eine antwort"] = "Você recebeu uma resposta";
+$wb["geantwortet zu ihnen"] = "respondidos a você";
+$wb["Datum"] = "Data";
+$wb["Davon"] = "De";
+$wb["Ihre antwort"] = "Sua resposta";
+$wb["Antworten"] = "Reencaminhar";
+$wb["Schließen"] = "Fechado";
+?>

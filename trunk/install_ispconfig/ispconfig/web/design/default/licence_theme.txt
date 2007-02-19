@@ -1,0 +1,2 @@
+The Default theme and icons are copyrighted by projectfarm GmbH
+and may only be used together with the software ISPConfig.

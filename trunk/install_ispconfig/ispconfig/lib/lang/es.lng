@@ -1,0 +1,116 @@
+<?
+/********************************
+* ISPConfig Dictionary File
+* Version 1.0
+* Allgemein
+* Comentarios de la traduccion a danf.1979@gmail.com
+*********************************/
+
+/////////////// Allgemein - general (kommt in mehreren Modulen vor) /////////
+$wb["login_begruessung"]     = "Autentificacion:";
+$wb["Username"]     = "Usuario";
+$wb["Passwort"]     = "Clave";
+$wb["Login"]       = "Autentificacion";
+$wb["Administration"]  = "Administracion";
+$wb["ISP Manager"]  = "Gestor ISP";
+$wb["DNS Manager"]  = "Gestor DNS";
+$wb["Tools"]        = "Herramientas";
+$wb["Logout"]       = "Finalizar";
+$wb["Status"]       = "Estado";
+$wb["neu"]          = "nuevo";
+$wb["Hinweis"]      = "Referencia";
+$wb["Web"]          = "Web";
+$wb["Email"]        = "Email";
+$wb["FTP"]          = "FTP";
+$wb["DNS"]          = "DNS";
+$wb["Sonstiges"]    = "Otro";
+$wb["Datei"]        = "Fichero";
+$wb["von"]          = "de";
+$wb["error_headline"] = "Ha ocurrido lo siguiente:";
+$wb["Gruppe"]       = "Grupo";
+$wb["Titel"]        = "Titulo";
+$wb["Server"]       = "Servidor";
+$wb["Host"]         = "Nombre del host";
+$wb["Domain"]       = "Dominio";
+$wb["IP Adresse"]   = "Direccion IP";
+$wb["Ordner"]       = "Ordenar";
+$wb["Dokument"]     = "Documento";
+$wb["Dokument suchen"] = "Buscar Documento";
+$wb["Suchmaske"]    = "Buscar Terminos";
+$wb["Ausgabeformat"] = "Formato de Salida";
+$wb["Standard"]     = "Estandar";
+$wb["Eintrdge"]    = "Entradas";
+$wb["Papierkorb leeren"] = "Vaciar Papelera";
+$wb["Stammordner"]  = "Zona Principal";
+$wb["keine Gruppe"] = "Sin Grupo";
+$wb["neues Dokument anlegen"] = "creado nuevo documento";
+$wb["auf"]   = "expandir";
+$wb["zu"]    = "colapsar";
+$wb["in_ordner"]    = "Ordenar por";
+$wb["Papierkorb"]   = "Papelera";
+$wb["Wiederherstellen"]    = "Restaurar";
+$wb["Papierkorb: Einträge"]   = "Papelera: contenido";
+$wb["Speichern"]    = "Guardar";
+$wb["Löschen"]    = "Borrar";
+$wb["Abbrechen"]    = "Cancelar";
+$wb["Suchen"]    = "Buscar";
+
+$wb["Herr"] = "Sr.";
+$wb["Frau"] = "Sra.";
+
+$wb["Es ist folgender Fehler aufgetreten:"] = "Ha ocurrido lo siguiente:";
+
+$wb["Web-FTP"] = 'Web-FTP';
+$wb["ISP Faktura"] = 'ISP Factura';
+
+$wb["Verzeichnis öffnen"] = "abrir";
+$wb["Verzeichnis schliessen"] = "cerrar";
+$wb["Hilfe"] = 'Ayuda';
+$wb["Online Hilfe"] = 'Ayuda en linea';
+$wb["schliessen"] = 'cerrar';
+
+$wb["PAPIERKORB_HINWEIS"] = "<b>Note:</b> Los itemes que quedan en la papelera luego de vaciarla estan en estado de actualizacion. Intente borrarlas mas tarde.";
+
+// Multidoc  Allgemein ////////////////////////////////
+
+$wb["title_required"] = "Por favor, introduzca un valor en el campo 'Titulo'";
+$wb["error_keine_rechte"] = "No tiene los privilegios necesarios para leer o editar esta entrada.";
+$wb["error_doctype_nicht_vorhanden"] = "El tipo de documento solicitado no existe.";
+$wb["error_doctype_rechte"] = "No tiene los privilegios necesarios para editar este tipo de documento.";
+$wb["Formular Designer"] = "Creador de formularios";
+$wb["Geben Sie einen Wert in das Feld"] = "Por favor, introduzca un valor en el campo";
+$wb["jscript_ein"] = " ";
+
+////////////// Allgemein Ende ///////////////////
+
+$wb["Es konnte ein Dokument nicht wiederhergestellt werden, da sich das Eltern-Dokument noch im Papierkorb befindet.\n"] = "El objeto no puede ser restaurado mientras su objeto 'padre' esta en la papelera de reciclaje. Porfavor restaure el objeto 'padre'.";
+
+$wb["DNS-Domains angelegt"] = 'Zonas maestras creadas';
+$wb["Benutzter Diskspace"] = "Uso de disco";
+$wb["Slave Zones angelegt"] = "Zonas esclavas creadas";
+$wb["Datenbanken angelegt"] = "Base de datos creada";
+
+$wb["txt_confirm_delete"] = "Realmente quiere borrar este objeto?";
+
+$wb["txt_object_currently_updated"] = "Los cambios no pueden ser guardados porque este item esta sufriendo actualmente una actualizacion. Porfavor intentelo mas tarde.<br><br> <a href='../frame_start.php?s=$s'>Next &gt;&gt;</a>";
+$wb["txt_system_currently_updated_no_recycle_bin"] = "La papelera de reciclaje no puede ser accesada porque el sistema esta siendo actualizado en este momento. Porfavor intentelo de nuevo en algunos minutos.<br><br> <a href='../frame_start.php?s=$s'>Next &gt;&gt;</a>"; 
+
+$wb["user_perms_nowrite_hd"]         = "Ha ocurrido un error. Usted no tiene los privilegios necesarios para modificar ese archivo.";
+$wb["user_perms_nowrite_reasons"]    = "Las posibles razones del hecho";
+$wb["user_perms_nowrite_reasons_1a"] = "1. Esta utilizando el sistema en modo demo";
+$wb["user_perms_nowrite_reasons_1b"] = "- Porfavor ingrese con su nombre de usuario y clave.";
+$wb["user_perms_nowrite_reasons_2a"] = "2. Intenta modificar un elemento que pertenece a otro grupo.";
+$wb["user_perms_nowrite_reasons_2b"] = "Usted no tiene los suficientes privilegios en este grupo para escribir o modificar datos.";
+$wb["user_perms_nowrite_reasons_2c"] = "- Porfavor contacte al due&ntilde; del grupo para obtener mayores privilegios.";
+
+$wb["group_perms_nowrite_hd"]         = "Ha ocurrido un error. Usted no tiene los privilegios de grupo necesarios";
+$wb["group_perms_nowrite_reasons"]    = "Las posibles razones del hecho";
+$wb["group_perms_nowrite_reasons_1a"] = "1. Esta utilizando el sistema en modo demo";
+$wb["group_perms_nowrite_reasons_1b"] = "- Porfavor ingrese con su nombre de usuario y clave.";
+$wb["group_perms_nowrite_reasons_2a"] = "2. Intenta modificar un elemento que pertenece a otro grupo.";
+$wb["group_perms_nowrite_reasons_2b"] = "Usted no tiene los suficientes privilegios en este grupo para escribir o modificar datos.";
+$wb["group_perms_nowrite_reasons_2c"] = "- Porfavor contacte al due&ntilde; del grupo para obtener mayores privilegios.";
+
+$wb["Weiter"] = "Siguiente";
+$wb["Zurück"] = "Atr&aacute;";
+?>

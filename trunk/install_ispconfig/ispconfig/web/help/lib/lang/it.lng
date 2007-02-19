@@ -1,0 +1,41 @@
+<?
+/********************************
+* ISPConfig Dictionary File
+* Version 1.0
+*********************************/
+
+$wb["Anbieter"]     = "Rivenditore";
+$wb["Web"]          = "Web";
+$wb["Admin Handbuch"] = "Manuale Administrator";
+$wb["Reseller Handbuch"] = "Manuale Rivenditore";
+$wb["Kunden Handbuch"] = "Manuale Cliente";
+$wb["Deutsch"]          = "Tedesco";
+$wb["Englisch"]          = "Inglese";
+$wb["Projektfarm Support"]          = "Supporto Projektfarm";
+$wb["Online Hilfe"] = "Aiuto Online";
+$wb["willkommen_kunde"] = "Benvenuto in ISPConfig!
+Puoi amministrare i tuoi siti Web qui. Se hai domande o problemi,
+contatta l'amministratore del server o guarda il manuale client di ISPConfig.";
+$wb["Willkommen"] = "Benvenuto";
+
+//////////////// Server Status ////////////////
+$wb["Arbeitsspeicher"] = "Memoria Principale";
+$wb["CPU"]          = "CPU";
+$wb["Dienste"]      = "Servizi";
+$wb["Server Online seit"] = "Il Server è online dal";
+$wb["User Online"]      = "Utenti online";
+$wb["CPU Auslastung 1 Minute"] = "Utilizzo CPU 1 Minuto";
+$wb["CPU Auslastung 5 Minuten"] = "Utilizzo CPU 5 Minuti";
+$wb["CPU Auslastung 15 Minuten"] = "Utilizzo CPU 15 Minuti";
+//////////////// Server Status Ende //////////
+
+$wb["Webs angelegt"] = "Siti usati";
+$wb["User angelegt"] = "Utenti usati";
+$wb["Domains angelegt"] = "Domini usati";
+$wb["unlimitiert"]  = "illimitato";
+$wb["Anbieter"]     = "Rivenditore";
+$wb["DNS-Domains angelegt"] = 'DNS Domain creato';
+$wb["von"] = "di";
+
+
+?>

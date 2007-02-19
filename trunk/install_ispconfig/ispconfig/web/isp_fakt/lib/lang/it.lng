@@ -1,0 +1,88 @@
+<?
+/********************************
+* ISPConfig Dictionary File
+* Version 1.0
+*********************************/
+
+$wb["ISP Faktura"] = 'ISP Invoice';
+$wb["Web-FTP"] = 'Web-FTP';
+$wb["Domains"] = 'Domains';
+$wb["Service"] = 'Service';
+$wb["Webs"] = 'Webs';
+$wb["Traffic"] = 'Traffic';
+$wb["Email-Adressen"] = 'Email Addresses';
+$wb["Artikel"] = 'Item';
+$wb["admin"] = 'admin';
+$wb["Artikel für"] = 'Item for';
+$wb["Dienstleistung"] = 'Service';
+$wb["Hardware"] = 'Hardware';
+$wb["Software"] = 'Software';
+$wb["Typ"] = 'Type';
+$wb["Artikel Nr."] = 'Item No.';
+$wb["Bezeichnung"] = 'Name';
+$wb["Beschreibung"] = 'Description';
+$wb["Stück"] = 'Piece';
+$wb["MB"] = 'MB';
+$wb["GB"] = 'GB';
+$wb["Stunde"] = 'Hour';
+$wb["Einheit"] = 'Unit';
+$wb["Menge"] = 'Quantity';
+$wb["Preis"] = 'Price';
+$wb["Verrechnung"] = 'Billing Period';
+$wb["Artikel neu"] = 'New Item';
+$wb["Ordner neu"] = 'New Folder';
+$wb["Abrechnen"] = 'Create Invoice';
+$wb["Artikel neu"] = 'New Item';
+$wb["Ordner neu"] = 'New Folder';
+$wb["Produkte"] = 'Products';
+$wb["Abrechnen"] = 'Create Invoice';
+$wb["Rechnungen"] = 'Invoices';
+$wb["Kunden"] = 'Customers';
+$wb["Anbieter"] = 'Resellers';
+$wb["Keine Artikel zum Abrechnen gefunden."] = 'No items found to create an invoice.';
+$wb["Abrechnung"] = 'Invoice';
+$wb["Name"] = 'Name';
+$wb["IP-Traffic"] = 'IP Traffic';
+$wb["Steuersatz"] = 'Tax Rate';
+$wb["Bei Überschreitung:"] = 'On Exceedance:';
+$wb["Diese Angaben sind nur für Artikel vom Typ: Traffic gültig!"] = 'These entries are only valid for items of the type: Traffic!';
+$wb["Rechnungen Kunden"] = 'Customer Invoices';
+$wb["Firma"] = 'Company';
+$wb["Vorname"] = 'First Name';
+$wb["Strasse"] = 'Street';
+$wb["PLZ"] = 'ZIP Code';
+$wb["Ort"] = 'Town';
+$wb["Land"] = 'Country';
+$wb["Steuernr."] = 'Tax No.';
+$wb["Rechnung"] = 'Invoice';
+$wb["Datum"] = 'Date';
+$wb["Rechnung Nr."] = 'Invoice No.';
+$wb["Anzahl"] = 'Quantity';
+$wb["Art. Nr."] = 'Item No.';
+$wb["Gesamt"] = 'Total';
+$wb["EURO"] = 'EURO';
+$wb["Web gesamt"] = 'Web Total';
+$wb["enthaltene Mehrwertsteuer"] = 'Included VAT';
+$wb["Gesamtbetrag"] = 'Total';
+$wb["Rechnungen Anbieter"] = 'Reseller Invoices';
+$wb["Kunde"] = 'Customer';
+$wb["Rg. Nr."] = 'Invoice No.';
+$wb["OK"] = 'OK';
+$wb["Weiter"] = "Next";
+$wb["Summe Anbieter"] = "Reseller Total";
+$wb["Summe Web"] = "Web Total";
+$wb["Summe Kunde"] = "Customer Total";
+$wb["Abrechnung abgeschlossen."] = "Invoice created.";
+
+//////////////// Server Status ////////////////
+$wb["Arbeitsspeicher"]          = "Memoria Principale";
+$wb["CPU"]          = "CPU";
+$wb["Dienste"]      = "Servizi";
+$wb["Server Online seit"]          = "Server Online da";
+$wb["User Online"]      = "Utenti Online";
+$wb["System Load 1 Minute"] = "System Load 1 Minute";
+$wb["System Load 5 Minuten"] = "System Load 5 Minutes";
+$wb["System Load 15 Minuten"] = "System Load 15 Minutes";
+//////////////// Server Status Ende //////////
+
+?>

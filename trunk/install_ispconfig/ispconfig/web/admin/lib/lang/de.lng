@@ -1,0 +1,497 @@
+<?
+/********************************
+* ISPConfig Dictionary File
+* Version 1.0
+*********************************/
+
+//////////////// Server Status ////////////////
+$wb["Arbeitsspeicher"]          = "Arbeitsspeicher";
+$wb["CPU"]          = "CPU";
+$wb["Dienste"]      = "Dienste";
+$wb["Server Online seit"]          = "Server Online seit";
+$wb["User Online"]      = "User Online";
+$wb["CPU Auslastung 1 Minute"] = "System Load 1 Minute";
+$wb["CPU Auslastung 5 Minuten"] = "System Load 5 Minuten";
+$wb["CPU Auslastung 15 Minuten"] = "System Load 15 Minuten";
+//////////////// Server Status Ende //////////
+
+///////////////// Administration ////////////////
+$wb["ISPConfig Datenbank"]    = "ISPConfig-Datenbank";
+$wb["Backup erstellen"]       = "Backup erstellen";
+$wb["Datenbank Check"]        = "Datenbank Check";
+$wb["Datenbank Optimieren"]   = "Datenbank Optimieren";
+$wb["Datenbank Reparieren"]   = "Datenbank Reparieren";
+$wb["Eigenschaften"] = "Eigenschaften";
+$wb["Server Name"]  = "Server Name";
+$wb["Netzmaske"]    = "Netzmaske";
+$wb["Sprache"]      = "Sprache";
+$wb["IP Liste"]     = "IP Liste";
+$wb["hinweis_ip_liste"] = "<b>Hinweis:</b> Im Feld -IP-Liste- nur eine IP pro Zeile eintragen.";
+$wb["Pfad"]         = "Pfad";
+$wb["Programm"]     = "Programm";
+$wb["Reparatur"]    = "Reperatur";
+$wb["Optimiere"]    = "Optimiere";
+$wb["Pfad httpd.conf"]    = "Path httpd.conf";
+$wb["MTA Typ"]    = "MTA Typ";
+$wb["Virtuser Datei"]    = "Virtuser Datei";
+$wb["FTP Programm"]    = "FTP Programm";
+$wb["FTP conf. Datei"]    = "FTP conf. Datei";
+$wb["Userid von"]    = "Userid von";
+$wb["Groupid von"]    = "Groupid von";
+
+$wb["Backup von Tabelle"] = "Backup von Tabelle";
+$wb["Optimiere"] = "Optimiere";
+$wb["Reparatur"] = "Reparatur";
+$wb["oder"] = "oder";
+$wb["Installation starten"] = "Installation starten";
+$wb["Deutsch"] = "Deutsch";
+$wb["Englisch"] = "Englisch";
+$wb["Datei"] = "Datei";
+
+// NEW 1.1.12 //////////////////////////////////
+
+$wb["ISP Server"] = 'ISP Server';
+$wb["Admin Email"] = 'Admin Email';
+$wb["EMail"] = 'EMail';
+$wb["Funktionen"] = 'Funktionen';
+$wb["httpd User"] = 'httpd User';
+$wb["httpd Group"] = 'httpd Group';
+$wb["Document Root"] = 'Document Root';
+$wb["Frontpage Pfad"] = 'Frontpage Pfad';
+$wb["access Log"] = 'access Log';
+$wb["Sendmail"] = 'Sendmail';
+$wb["Sendmail CW"] = 'Sendmail CW';
+$wb["Log speichern"] = 'Log speichern';
+$wb["BIND User"] = 'BIND User';
+$wb["BIND Group"] = 'BIND Group';
+$wb["Zonefiles Dir."] = 'Zonefiles Dir.';
+$wb["Default Ns1"] = 'Default Ns1';
+$wb["Default Ns2"] = 'Default Ns2';
+$wb["Standard MX"] = 'Standard MX';
+$wb["Frontpage Extensions"] = 'Frontpage Extensions';
+$wb["User Prefix"] = 'User Prefix';
+$wb["Anbieter Nr. von"] = 'Anbieter Nr. von';
+$wb["Kunden Nr. von"] = 'Kunden Nr. von';
+$wb["SOAP Server IP"] = 'SOAP Server IP';
+$wb["SOAP Server Port"] = 'SOAP Server Port';
+$wb["Web-FTP"] = 'Web-FTP';
+$wb["ISP Faktura"] = 'ISP Faktura';
+$wb["Modul Manager"] = 'Modul Manager';
+$wb["Hinzufügen"] = 'Hinzufügen';
+$wb["Alle anzeigen"] = 'Alle anzeigen';
+$wb["Update Manager"] = 'Update Manager';
+$wb["Update"] = 'Update';
+$wb["System Config"] = 'System Config';
+$wb["Bearbeiten"] = 'Bearbeiten';
+$wb["Importieren"] = 'Importieren';
+$wb["Exportieren"] = 'Exportieren';
+$wb["Allgemein"] = 'Allgemein';
+$wb["ISP-Manager"] = 'ISP-Manager';
+$wb["Faktura"] = 'Faktura';
+$wb["Übernehmen"] = 'Übernehmen';
+$wb["Webserver"] = 'Webserver';
+$wb["Bind DNS"] = 'Bind DNS';
+$wb["Mailserver"] = 'Mailserver';
+$wb["POP3-Server"] = 'POP3-Server';
+$wb["nein"] = 'nein';
+$wb["ja"] = 'ja';
+$wb["ISP Server Status"] = 'ISP Server Status';
+$wb["System-Datenbank"] = 'System-Datenbank';
+$wb["Verzeichnis"] = 'Verzeichnis';
+$wb["Backup starten"] = 'Backup starten';
+
+// NEW 1.1.12a /////////////////////////////////
+
+$wb["Backup-Funktionen im Demo-Modus nicht verfügbar."] = "Backup-Funktionen im Demo-Modus nicht verfügbar.";
+$wb["Backup Status"] = "Backup Status";
+$wb["Der Name des FTP-Servers <br>enthält ungültige Zeichen."] = "Der Name des FTP-Servers <br>enthält ungültige Zeichen.";
+$wb["Sie haben keinen FTP Benutzernamen angegeben."] = "Sie haben keinen FTP Benutzernamen angegeben.";
+$wb["Ftp-Verbindung nicht hergestellt!"] = "Ftp-Verbindung nicht hergestellt!";
+$wb["Verbindung mit:"] = "Verbindung mit:";
+$wb["als Benutzer:"] = "als Benutzer:";
+$wb["nicht möglich."] = "nicht möglich.";
+$wb["Konnte nicht in Verzeichnis:"] = "Konnte nicht in Verzeichnis:";
+$wb["wechseln."] = "wechseln.";
+$wb["Wechsel in Verzeichnis:"] = "Wechsel in Verzeichnis:";
+$wb["Ftp upload war fehlerhaft!"] = "Ftp upload war fehlerhaft!";
+$wb["Upload erfolgreich."] = "Upload erfolgreich.";
+$wb["FTP-Upload Status"] = "FTP-Upload Status";
+$wb["Backup-Methode nicht unterstützt."] = "Backup-Methode nicht unterstützt.";
+
+// NEW 1.3 /////////////////////////////////////
+
+$wb["Remoting"] = 'Remoting';
+$wb["User"] = 'User';
+$wb["Conf. Dir."] = 'Conf. Dir.';
+$wb["Suexec"] = 'Suexec';
+$wb["Postfix"] = 'Postfix';
+$wb["Mail Log"] = 'Mail Log';
+$wb["Maildir"] = 'Maildir';
+$wb["Antivir Mailadmin"] = 'Antivirus-Admin';
+$wb["aktiv"] = "aktiv";
+$wb["inaktiv"] = "inaktiv";
+
+//////////////// Administration Ende ///////////
+
+//////////////// UPDATE Manager ////////////////
+
+$wb["tmp_dir_error"] = "Konnte temporäres Verzeichnis nicht erstellen.";
+$wb["file_copy_error"] = "Konnte Datei nicht kopieren.";
+$wb["file_open_error"] = "Konnte entfernte Datei nicht öffnen.";
+$wb["md5_error"] = "MD5 Hash stimmt nicht mit der Datei überein. Die Installation wurde abgebrochen.";
+$wb["Installation Beendet"] = "Installation Beendet";
+
+//////////////// UPDATE Manager  Ende //////////
+
+//////////////// Firewall, Monitor + Dienste  ////////////////
+
+$wb["Überwachung"] = "Überwachung";
+$wb["Firewall"] = "Firewall";
+$wb["Web-Server"] = "Web-Server";
+$wb["FTP-Server"] = "FTP-Server";
+$wb["SMTP-Server"] = "SMTP-Server";
+$wb["DNS-Server"] = "DNS-Server";
+$wb["mySQL-Server"] = "mySQL-Server";
+$wb["An"] = "An";
+$wb["Aus"] = "Aus";
+$wb["neu Starten"] = "neu Starten";
+$wb["Neu"] = "Neu";
+$wb["Aktionen"] = "Aktionen";
+$wb["Dienst"] = "Dienst";
+$wb["Hostname"] = "Hostname";
+$wb["Port"] = "Port";
+$wb["Typ"] = "Typ";
+$wb["TCP"] = "TCP";
+$wb["UDP"] = "UDP";
+$wb["Der Dienst-Typ wird nur bei sonstigen-Diensten ausgewertet."] = "Der Dienst-Typ wird nur bei sonstigen-Diensten ausgewertet.";
+$wb["Sonstige"] = "Sonstige";
+$wb["Ja"] = "Ja";
+$wb["Nein"] = "Nein";
+$wb["Offline"] = "Offline";
+$wb["ISP Dienste"] = "ISP Dienste";
+$wb["ISP Überwachung"] = "ISP Überwachung";
+$wb["ISP Firewall"] = "ISP Firewall";
+$wb["Name"] = "Name";
+$wb["Aktiv"] = "Aktiv";
+$wb["Firewall Regel"] = "Firewall Regel";
+$wb["Dieser Port kann nicht geändert werden."] = "Dieser Port kann nicht geändert werden.<br>";
+
+//////////////// Firewall ENDE ////////////////
+
+$wb["weiter_link"] = "<br><br> <a href='../../isp_manager/frame_start.php?s=$s'>Weiter &gt;&gt;</a>";
+$wb["txt_client_salutatory_email_desc"] = "<b>Begrüßungsemail für Kunden</b>";
+$wb["txt_client_salutatory_email_sender_email"] = "Absender-Email";
+$wb["txt_client_salutatory_email_sender_name"] = "Absender-Name";
+$wb["txt_client_salutatory_email_bcc"] = "BCC-Empfänger";
+$wb["txt_client_salutatory_email_subject"] = "Betreff";
+$wb["txt_client_salutatory_email_message"] = "Nachricht";
+$wb["txt_client_salutatory_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Benutzen Sie die folgenden Variablen in Ihrem Text:</b></td></tr>
+        <tr>
+          <td class="normal">%%%USER%%%</td>
+          <td class="normal">
+            Username des Kunden</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%PASSWORD%%%</td>
+          <td class="normal">
+            Passwort des Kunden</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%FIRST_NAME%%%</td>
+          <td class="normal">
+            Vorname des Kunden</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%LAST_NAME%%%</td>
+          <td class="normal">
+            Nachname des Kunden</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%COMPANY%%%</td>
+          <td class="normal">
+            Firma des Kunden</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%EMAIL%%%</td>
+          <td class="normal">
+            Email-Adresse des Kunden</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%CP%%%</td>
+          <td class="normal">
+            ISPConfig Login-URL</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%MANUAL%%%</td>
+          <td class="normal">
+            ISPConfig Kundenhandbuch</td>
+        </tr>
+        </table>';
+
+$wb["txt_res_salutatory_email_desc"] = "<b>Begrüßungsemail für Anbieter</b>";
+$wb["txt_res_salutatory_email_sender_email"] = "Absender-Email";
+$wb["txt_res_salutatory_email_sender_name"] = "Absender-Name";
+$wb["txt_res_salutatory_email_bcc"] = "BCC-Empfänger";
+$wb["txt_res_salutatory_email_subject"] = "Betreff";
+$wb["txt_res_salutatory_email_message"] = "Nachricht";
+$wb["txt_res_salutatory_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Benutzen Sie die folgenden Variablen in Ihrem Text:</b></td></tr>
+        <tr>
+          <td class="normal">%%%USER%%%</td>
+          <td class="normal">
+            Username des Anbieters</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%PASSWORD%%%</td>
+          <td class="normal">
+            Passwort des Anbieters</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%FIRST_NAME%%%</td>
+          <td class="normal">
+            Vorname des Anbieters</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%LAST_NAME%%%</td>
+          <td class="normal">
+            Nachname des Anbieters</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%COMPANY%%%</td>
+          <td class="normal">
+            Firma des Anbieters</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%EMAIL%%%</td>
+          <td class="normal">
+            Email-Adresse des Anbieters</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%CP%%%</td>
+          <td class="normal">
+            ISPConfig Login-URL</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%MANUAL%%%</td>
+          <td class="normal">
+            ISPConfig Anbieterhandbuch</td>
+        </tr>
+        </table>';
+$wb["txt_standard_index"] = "Standard-Index-<br>&nbsp;&nbsp;Seite";
+$wb["txt_standard_index_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Benutzen Sie die folgenden Variablen in Ihrem Text:</b></td></tr>
+        <tr>
+          <td class="normal">%%%FQDN%%%</td>
+          <td class="normal">
+            Fully Qualified Domain Name der Website</td>
+        </tr>
+    </table>';
+$wb["txt_user_standard_index"] = "User-Standard-<br>&nbsp;&nbsp;Index-Seite";
+$wb["txt_user_standard_index_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Benutzen Sie die folgenden Variablen in Ihrem Text:</b></td></tr>
+        <tr>
+          <td class="normal">%%%USER%%%</td>
+          <td class="normal">
+            Username des Users</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%FQDN%%%</td>
+          <td class="normal">
+            Fully Qualified Domain Name der Website</td>
+        </tr>
+        </table>';
+
+$wb["DNS-Query"] = "Primary DNS-Records abfragen";
+$wb["DNS-Insert"] = "Primary DNS-Records anlegen";
+$wb["DNS-Update"] = "Primary DNS-Records bearbeiten";
+$wb["DNS-Delete"] = "Primary DNS-Records löschen";
+$wb["slave_query"] = "Secondary DNS-Records abfragen";
+$wb["slave_insert"] = "Secondary DNS-Records anlegen";
+$wb["slave_update"] = "Secondary DNS-Records bearbeiten";
+$wb["slave_delete"] = "Secondary DNS-Records löschen";
+$wb["reseller_query"] = "Anbieter abfragen";
+$wb["reseller_insert"] = "Anbieter anlegen";
+$wb["reseller_update"] = "Anbieter bearbeiten";
+$wb["reseller_delete"] = "Anbieter löschen";
+$wb["kunde_query"] = "Kunden abfragen";
+$wb["kunde_insert"] = "Kunden anlegen";
+$wb["kunde_update"] = "Kunden bearbeiten";
+$wb["kunde_delete"] = "Kunden löschen";
+$wb["web_query"] = "Websites abfragen";
+$wb["web_insert"] = "Websites anlegen";
+$wb["web_update"] = "Websites bearbeiten";
+$wb["web_delete"] = "Websites löschen";
+$wb["txt_primary_dns_records"] = "Primary DNS-Records";
+$wb["txt_secondary_dns_records"] = "Secondary DNS-Records";
+$wb["txt_anbieter"] = "Anbieter";
+$wb["txt_kunden"] = "Kunden";
+$wb["txt_webs"] = "Websites";
+
+$wb["txt_traffic_suspension_email_desc"] = "<b>Benachrichtigung über Website-Sperrung (Traffic-Überschreitung)</b>";
+$wb["txt_traffic_suspension_sender_email"] = "Absender-Email";
+$wb["txt_traffic_suspension_sender_name"] = "Absender-Name";
+$wb["txt_traffic_suspension_email_bcc"] = "BCC-Empfänger";
+$wb["txt_traffic_suspension_email_subject"] = "Betreff";
+$wb["txt_traffic_suspension_email_message"] = "Nachricht";
+$wb["txt_traffic_suspension_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Benutzen Sie die folgenden Variablen in Ihrem Text:</b></td></tr>
+        <tr>
+          <td class="normal">%%%FIRST_NAME%%%</td>
+          <td class="normal">
+            Vorname des Kunden</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%LAST_NAME%%%</td>
+          <td class="normal">
+            Nachname des Kunden</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%WEBSITE%%%</td>
+          <td class="normal">
+            Betroffene Website</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%MONTH%%%</td>
+          <td class="normal">
+            Monat der Traffic-Überschreitung</td>
+        </tr>
+        <tr>
+          <td class="normal" valign="top">%%%INCLUDED_TRAFFIC%%%</td>
+          <td class="normal">
+            Inklusiv-Traffic der Website</td>
+        </tr>
+        <tr>
+          <td class="normal" valign="top">%%%TOTAL_TRAFFIC%%%</td>
+          <td class="normal">
+            Gesamt-Traffic im Monat der Überschreitung</td>
+        </tr>
+        </table>';
+
+$wb["txt_traffic_notification_email_desc"] = "<b>Benachrichtigung über Traffic-Überschreitung</b>";
+$wb["txt_traffic_notification_sender_email"] = "Absender-Email";
+$wb["txt_traffic_notification_sender_name"] = "Absender-Name";
+$wb["txt_traffic_notification_email_bcc"] = "BCC-Empfänger";
+$wb["txt_traffic_notification_email_subject"] = "Betreff";
+$wb["txt_traffic_notification_email_message"] = "Nachricht";
+$wb["txt_traffic_notification_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Benutzen Sie die folgenden Variablen in Ihrem Text:</b></td></tr>
+        <tr>
+          <td class="normal">%%%FIRST_NAME%%%</td>
+          <td class="normal">
+            Vorname des Kunden</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%LAST_NAME%%%</td>
+          <td class="normal">
+            Nachname des Kunden</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%WEBSITE%%%</td>
+          <td class="normal">
+            Betroffene Website</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%MONTH%%%</td>
+          <td class="normal">
+            Monat der Traffic-Überschreitung</td>
+        </tr>
+        <tr>
+          <td class="normal" valign="top">%%%INCLUDED_TRAFFIC%%%</td>
+          <td class="normal">
+            Inklusiv-Traffic der Website</td>
+        </tr>
+        <tr>
+          <td class="normal" valign="top">%%%TOTAL_TRAFFIC%%%</td>
+          <td class="normal">
+            Gesamt-Traffic im Monat der Überschreitung</td>
+        </tr>
+        </table>';
+
+$wb["txt_res_traffic_suspension_email_desc"] = "<b>Benachrichtigung über Anbieter-Sperrung (Traffic-Überschreitung)</b>";
+$wb["txt_res_traffic_suspension_sender_email"] = "Absender-Email";
+$wb["txt_res_traffic_suspension_sender_name"] = "Absender-Name";
+$wb["txt_res_traffic_suspension_email_bcc"] = "BCC-Empfänger";
+$wb["txt_res_traffic_suspension_email_subject"] = "Betreff";
+$wb["txt_res_traffic_suspension_email_message"] = "Nachricht";
+$wb["txt_res_traffic_suspension_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Benutzen Sie die folgenden Variablen in Ihrem Text:</b></td></tr>
+        <tr>
+          <td class="normal">%%%FIRST_NAME%%%</td>
+          <td class="normal">
+            Vorname des Anbieters</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%LAST_NAME%%%</td>
+          <td class="normal">
+            Nachname des Anbieters</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%MONTH%%%</td>
+          <td class="normal">
+            Monat der Traffic-Überschreitung</td>
+        </tr>
+        <tr>
+          <td class="normal" valign="top">%%%INCLUDED_TRAFFIC%%%</td>
+          <td class="normal">
+            Inklusiv-Traffic des Anbieters</td>
+        </tr>
+        <tr>
+          <td class="normal" valign="top">%%%TOTAL_TRAFFIC%%%</td>
+          <td class="normal">
+            Gesamt-Traffic im Monat der Überschreitung</td>
+        </tr>
+        </table>';
+
+$wb["txt_res_traffic_notification_email_desc"] = "<b>Anbieter-Benachrichtigung über Traffic-Überschreitung</b>";
+$wb["txt_res_traffic_notification_sender_email"] = "Absender-Email";
+$wb["txt_res_traffic_notification_sender_name"] = "Absender-Name";
+$wb["txt_res_traffic_notification_email_bcc"] = "BCC-Empfänger";
+$wb["txt_res_traffic_notification_email_subject"] = "Betreff";
+$wb["txt_res_traffic_notification_email_message"] = "Nachricht";
+$wb["txt_res_traffic_notification_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Benutzen Sie die folgenden Variablen in Ihrem Text:</b></td></tr>
+        <tr>
+          <td class="normal">%%%FIRST_NAME%%%</td>
+          <td class="normal">
+            Vorname des Anbieters</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%LAST_NAME%%%</td>
+          <td class="normal">
+            Nachname des Anbieters</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%MONTH%%%</td>
+          <td class="normal">
+            Monat der Traffic-Überschreitung</td>
+        </tr>
+        <tr>
+          <td class="normal" valign="top">%%%INCLUDED_TRAFFIC%%%</td>
+          <td class="normal">
+            Inklusiv-Traffic des Anbieters</td>
+        </tr>
+        <tr>
+          <td class="normal" valign="top">%%%TOTAL_TRAFFIC%%%</td>
+          <td class="normal">
+            Gesamt-Traffic im Monat der Überschreitung</td>
+        </tr>
+        </table>';
+
+?>

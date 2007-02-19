@@ -1,0 +1,97 @@
+<?
+/********************************
+* ISPConfig Dictionary File
+* Version 1.0
+* (c) Tribal-Dolphin
+* http://www.tribal-dolphin.net
+*********************************/
+
+//////////////// DNS Manager ////////////////
+$wb["Optionen"]     = "Options";
+$wb["Ziel"]         = "Cible";
+$wb["Priorität"]   = "Priorité";
+$wb["DNS Eintrag"]  = "Entrée DNS";
+$wb["Ordner neu"]   = "Trier par";
+$wb["Suchen"]       = "Chercher";
+$wb["DNS-Manager"]       = "Gestion des DNS";
+$wb["Domain (SOA)"]         = "Domaine (SOA)";
+$wb["Email Admin"]         = "E-Mail de l'Admin";
+$wb["Nameserver 1"]         = "Nameserver 1";
+$wb["Nameserver 2"]         = "Nameserver 2";
+$wb["Refresh"]         = "Refresh";
+$wb["Retry"]         = "Retry";
+$wb["Expire"]         = "Expire";
+$wb["TTL"]         = "TTL";
+$wb["Record"]         = "Enregistrement";
+$wb["Mailserver"]         = "Serveur de courier";
+
+$wb["Dokument"] = "Document";
+$wb["neues Dokument anlegen"] = "nouveau Document";
+
+$wb["error_soa_exists_1"] = "Un domaine (SOA) avec le nom ";
+$wb["error_soa_exists_2"] = "existe déjà.<br>";
+//////////////// DNS Manager Ende ///////////
+
+$wb["IP-Adresse ungültig."] = "Adresse IP invalide.";
+$wb["Records"] = 'Enregistrements';
+$wb["ziel"] = 'cible';
+$wb["Neu"] = 'nouveau';
+
+// NEW 1.3 //////////////////////////////////////
+
+$wb["Master neu"] = 'Nouveau Maître';
+$wb["Slave neu"] = 'Nouvel Esclave';
+$wb["Slave Zone"] = 'Zone Esclave';
+$wb["domain"] = 'Domaine';
+$wb["DNS-Master IP"] = 'IP du DNS Maître';
+$wb["Name"] = 'Nom';
+$wb["Masters"] = 'Maître';
+$wb["Slaves"] = 'Esclave';
+$wb["SUCHE"] = 'CHERCHER';
+
+//////////////// Server Status ////////////////
+$wb["Arbeitsspeicher"]          = "Mémoire principale";
+$wb["CPU"]          = "CPU";
+$wb["Dienste"]      = "Services";
+$wb["Server Online seit"]          = "Serveur en ligne depuis";
+$wb["User Online"]      = "Utilisateurs en ligne";
+$wb["System Load 1 Minute"] = "Charge système sur 1 Minute";
+$wb["System Load 5 Minuten"] = "Charge système sur 5 Minutes";
+$wb["System Load 15 Minuten"] = "Charge système sur 15 Minutes";
+//////////////// Server Status Ende //////////
+
+$wb["Webs angelegt"] = "Sites utilisés";
+$wb["User angelegt"] = "Utilisateurs utilisés";
+$wb["Domains angelegt"] = "Domaines utilisés";
+$wb["unlimitiert"]  = "ilimité";
+$wb["Anbieter"]     = "Revendeur";
+$wb["DNS-Domains angelegt"] = "Domaines DNS créé";
+$wb["von"] = "de";
+
+$wb["Maximale Anzahl an DNS-Einträgen erreicht."] = "Le nombre max. de zones pour ce compte à été atteinte.<br>";
+$wb["error_no_zones_allowed"] = "La création de zone n'est pas autorisé pour ce compte.<br>";
+$wb["error_no_dns_anbieter"] = "Ce compte n'est pas autorisé à créer des enregistrements DNS.<br>";
+$wb["error_max_slave_dns_anbieter"] = "Le nombre max. de zones esclave à été atteinte pour ce compte.<br>";
+$wb["weiter_link"] = "<br><br> <a href='../../isp_dns/frame_start.php?s=$s'>Suivant &gt;&gt;</a>";
+$wb["error_a_record_exists"] = "Il y à déjà un enregistrement A pour cet hôte dans cette zone.<br>";
+$wb["error_cname_record_exists"] = "Il y à déjà un enregistrement CNAME pour cet hôte dans cette zone.<br>";
+$wb["error_mx_record_exists"] = "Cet enregistrement MX (ou un enregistrement semblable) existe déjà dans cette zone.<br>";
+$wb["error_spf_record_exists"] = "Cet enregistrement SPF existe déjà dans cette zone.<br>";
+
+$wb["ja"] = "Oui";
+$wb["nein"] = "Non";
+$wb["a"] = "Est-ce que les e-mails sont envoyés<br>&nbsp;&nbsp;depuis un enregistrement A?";
+$wb["mx"] = "Est-ce que les e-mails sont envoyés<br>&nbsp;&nbsp;depuis un enregistrement MX?";
+$wb["ptr"] = "Est-ce que les e-mails sont envoyés<br>&nbsp;&nbsp;de tous les serveurs<br>&nbsp;&nbsp;de ce domaine?";
+$wb["a_break"] = "Est-ce que les e-mails sont envoyés<br>&nbsp;&nbsp;d'un autre enregistrement A?";
+$wb["mx_break"] = "Est-ce que les e-mails sont envoyés<br>&nbsp;&nbsp;d'un autre enregistrement MX?";
+$wb["ip4_break"] = "Est-ce que les e-mails sont envoyés<br>&nbsp;&nbsp;d'un autre adresse IP?";
+$wb["include_break"] = "Héritez de l'enregistrement SPF<br>&nbsp;&nbsp;de cette zone?";
+$wb["all_"] = "Les entrées ci dessus<br>&nbsp;&nbsp;contiennent elle tous les hôtes<br>&nbsp;&nbsp;autorisés à envoyer des e-mails<br>&nbsp;&nbsp;pour ce domaine?";
+
+$wb["Catalog_Name"] = "Nom";
+$wb["Feld"] = "Field";
+$wb["Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 -"] = "Only the following signs are allowed: a-z A-Z 0-9 -<br>";
+$wb["Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 - ."] = "Only the following signs are allowed: a-z A-Z 0-9 - .<br>";
+
+?>

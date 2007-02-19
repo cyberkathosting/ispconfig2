@@ -1,0 +1,1223 @@
+#!/bin/bash
+###############################################################################
+# Copyright (c) 2005, projektfarm Gmbh, Till Brehm, Falko Timme
+# All rights reserved.
+#
+# Redistribution and use in source and binary forms, with or without modification,
+# are permitted provided that the following conditions are met:
+#
+#     * Redistributions of source code must retain the above copyright notice,
+#       this list of conditions and the following disclaimer.
+#     * Redistributions in binary form must reproduce the above copyright notice,
+#       this list of conditions and the following disclaimer in the documentation
+#       and/or other materials provided with the distribution.
+#     * Neither the name of ISPConfig nor the names of its contributors
+#       may be used to endorse or promote products derived from this software without
+#       specific prior written permission.
+#
+# THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+# ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+# WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+# IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT,
+# INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+# BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+# DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY
+# OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+# NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+# EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+###############################################################################
+
+export PATH="/sbin:/usr/sbin:/usr/local/sbin:/root/bin:/usr/local/bin:/bin:/usr/bin:/usr/X11R6/bin:/usr/local/libexec"
+
+log(){
+  LOGFILE=/var/log/ispconfig_install.log
+  echo `date` "- [ISPConfig] - "$1 >> $LOGFILE
+}
+
+error ()
+{
+  log  "ERROR: $1"
+  echo "ERROR: $1"
+  rm -f dist.info*
+  exit 1
+}
+
+caselog(){
+  if [ $? != 0 ]; then
+    log "WARNING: $2"
+  else
+    log "$1"
+  fi
+}
+
+ID="id -u"
+MYUID=`$ID 2>/dev/null`
+
+if [ ! -z "$MYUID" ];
+then
+  if [ $MYUID != 0 ];
+  then
+    error "Sie benötigen root-Rechte zum Ausführen dieses Skriptes! / You need root privileges to run this script! / Vous devez avoir les privileges root pour executer ce script!";
+  fi
+fi
+
+. dist.info.tmp
+
+############# INSTALLATIONSART #################
+  if [ "$install_art" == "upgrade" ]; then
+    echo "Upgrade einer existierenden ISPConfig-Installation. / Upgrading an existing ISPConfig installation. / Mise à jour d'une installation d'ISPConfig existante."
+    log "Upgrade einer existierenden ISPConfig-Installation. / Upgrading an existing ISPConfig installation. / Mise à jour d'une installation d'ISPConfig existante."
+    echo
+    echo 'Das Upgrade wird von Ihnen geänderte Templates/Dateien von ISPConfig überspielen. Wenn Sie diese Dateien sichern möchten, sollten Sie jetzt eine zweite Shell öffnen, um ein Backup der betroffenen Dateien durchzuführen.'
+    echo 'The upgrade will overwrite your manual changes to files/templates of ISPConfig. In order to save those files you should open a second shell to make a backup of the affected files.'
+    echo 'En uppgradering kommer att skriva över manuella ändringar gjorda på filer/mallar i ISPConfig.För att spara dessa ändringar bör du öppna ett andra skal fönster för att göra en backup på berörda filer.'
+    echo "Cette mise à jour va supprimer vos changements dans les fichiers des manuels/modeles d'ISPConfig. Pour sauvegarder ces fichiers vous devez ouvrir une seconde fenêtre shell et enregistrer les fichiers concernés."
+    $dist_init_scripts/ispconfig_server stop
+    log "ISPConfig server stopped"
+  else
+    echo "Neuinstallation eines ISPConfig-Systems. / Installation of a new ISPConfig system. / Installation d'ISPConfig sur un nouveau système."
+    log "Neuinstallation eines ISPConfig-Systems. / Installation of a new ISPConfig system. / Installation d'ISPConfig sur un nouveau système."
+  fi
+############### INSTALLATIONSART ENDE ##########
+
+############# SPRACHE ####################
+  PS3='Ihre Wahl: / Your Choice: / Votre Choix:' # Sets the prompt string.
+
+  echo 'Wählen Sie Ihre Sprache (deutsch/englisch/spanisch/französisch/italienisch/niederländisch/polnisch/schwedisch/serbian): / Please choose your language (German/English/Spanish/French/Italian/Dutch/Polish/Swedish/Serbian):  / Merci de choisir votre langue (Allemand/Anglais/Espagnol/Français/Italien/Néerlandais/Polonais/Suédois/Serbian):'
+
+  select lang in "de" "en" "es" "fr" "it" "nl" "pl" "se" "sr"
+  do
+    echo
+    break  # if no 'break' here, keeps looping forever.
+  done
+
+  while [ "$lang" != "de" -a "$lang" != "en" -a "$lang" != "es" -a "$lang" != "fr" -a "$lang" != "it" -a "$lang" != "nl" -a "$lang" != "pl" -a "$lang" != "se" -a "$lang" != "sr" ]
+do
+    PS3='Ihre Wahl: / Your Choice: / Votre choix:' # Sets the prompt string.
+
+  echo 'Wählen Sie Ihre Sprache (deutsch/englisch/französisch/italienisch/spanisch/serbiche): / Please choose your language (German/English/French/Italian/Spanish/Serbian):  / Merci de choisir votre langue (Allemand/Anglais/Français/Italien/Espagnol/Serbian):'
+
+  select lang in "de" "en" "es" "fr" "it" "nl" "pl" "se" "sr"
+  do
+    echo
+    break  # if no 'break' here, keeps looping forever.
+  done
+done
+
+log "selected language: "$lang
+
+if [ "$lang" == "de" ]; then
+  q_hinweis="Bei der Installation auf Systemen, auf denen bereits Einstellungen vorgenommen wurden, werden einige System-Dateien ersetzt. Dies kann zum Verlust von Einträgen in httpd.conf, named.conf sowie in der Sendmail-Konfiguration führen."
+  q_hinweis_akzeptieren="Wollen Sie mit der Installation fortfahren? [y/n]"
+  q_lizenz="Lesen Sie sich die Lizenz sorgfältig durch:"
+  q_lizenz_akzeptieren="Akzeptieren Sie die Lizenz? [y/n]"
+  q_install_mode="Bitte wählen Sie den Installationsmodus. Im Expertenmodus werden Ihnen zusätzliche Fragen gestellt. Im Standardmodus werden für diese Fragen Standardwerte angenommen."
+  q_select="Bitte wählen Sie: "
+  q_wahl="Ihre Wahl: "
+  q_anderer="anderer"
+  q_korrekt="Ist das korrekt? [y/n]"
+  q_mta_check="Checke, ob ein MTA installiert ist..."
+  q_mta_pruefung1="ISPConfig hat den folgenden MTA gefunden:"
+  q_wahl_mta="Bitte wählen Sie Ihren MTA aus: "
+  q_error1="Ihre Systemkonfiguration ist nicht kompatibel zu ISPConfig! Die Installation bricht hier ab!"
+  q_procmail_check="Checke, ob Paket procmail installiert ist..."
+  q_quota_check="Checke, ob Paket quota installiert ist..."
+  q_ftp_check="Checke, ob ein FTP-Server installiert ist..."
+  q_ftp_pruefung1="ISPConfig hat den folgenden FTP-Server gefunden:"
+  q_wahl_ftp="Bitte wählen Sie Ihren FTP-Server aus: "
+  q_mysql_check="Checke, ob Paket MySQL installiert ist..."
+  q_pop3_check="Checke, ob ein POP3-Server installiert ist..."
+  q_pop3_pruefung1="ISPConfig hat den folgenden POP3-Server gefunden:"
+  q_wahl_pop3="Bitte wählen Sie Ihren POP3-Server aus: "
+  q_openssl_check="Checke, ob Paket openssl installiert ist..."
+  q_bind_check="Checke, ob Paket bind installiert ist..."
+  q_iptables_check="Checke, ob Programm iptables/ipchains/ipfw installiert ist..."
+  q_httpd_check="Checke, ob Programm httpd installiert ist..."
+  q_httpd_syntax_check="Überprüfe die Syntax der httpd.conf..."
+  q_httpd_syntax_check_not_ok="Die Syntax der httpd.conf ist nicht ok! Bitte korrigieren Sie den Fehler. Die Installation bricht hier ab!"
+  q_httpd_syntax_check_ok="Die Syntax ist ok!"
+  q_check_ende="Sie muessen einige Pakete nachinstallieren!"
+  q_mysql_running_check="MySQL laeuft nicht! Bitte starten Sie die MySQL-Datenbank und rufen Sie dann das ISPConfig-Setup erneut auf."
+  q_mysql_sock_check="Konnte mysql.sock nicht finden! Die Installation bricht hier ab!"
+  q_php_check="Das mitgelieferte PHP-Binary funktioniert auf Ihrem System nicht! Die Installation bricht hier ab!"
+  q_prepare_files="Dateien werden vorbereitet. Bitte warten Sie einen Moment..."
+  q_voraussetzungen="Alle Voraussetzungen erfuellt."
+  q_mysql_server="Wie heisst der MySQL-Server?"
+  q_mysql_server_check="Der angegebene MySQL-Server kann nicht erreicht werden!"
+  q_mysql_user="Wie heisst der MySQL-User?"
+  q_mysql_passwort="Wie heisst das MySQL-Passwort?"
+  q_mysql_connection_check="Ihr MySQL-Passwort ist falsch!"
+  q_mysql_database="Vergeben Sie einen Namen für die ISPConfig-Datenbank (z.B. db_ispconfig):"
+  q_ip_address="Geben Sie die IP-Adresse des ISPConfig-Webs an (z.B. 192.168.0.1):"
+  q_ip_check="Die IP-Adresse ist nicht erreichbar!"
+  q_host="Geben Sie den Host-Namen an (z.B. www):"
+  q_domain="Geben Sie die Domain an (z.B. xyz.de):"
+  q_ispconfigprotocol="Bitte wählen Sie aus, über welches Protokoll (http oder https (SSL-Verschlüsselung)) Ihr ISPConfig-System erreichbar sein soll:"
+  q_url_check="Die URL ist nicht erreichbar!"
+  q_restart="Neustart einiger Dienste..."
+  q_ende="Herzlichen Glueckwunsch! Ihr ISPConfig-System ist jetzt installiert. Falls Sie Quota nachinstalliert haben, fuehren Sie noch die in der Installationsanleitung beschriebenen Schritte durch. Ansonsten ist Ihr System jetzt ohne Reboot einsatzbereit."
+  q_ende2="Bitte gehen Sie mit Ihrem Browser auf "
+  q_ende3=" und loggen sich ein:"
+  q_ende4="Benutzername: admin"
+  q_ende5="Passwort: admin"
+
+else
+
+  if [ "$lang" == "fr" ]; then
+    q_hinweis="Avec ce systeme d'installation, certains fichiers systeme seront modifies et quelques ajustements seront realises. Cela veut dire que vous pouvez perdre des entrees dans httpd.conf, named.conf tout comme dans la configuration de Sendmail."
+    q_hinweis_akzeptieren="Voulez vous continuer l'installation? [Oui=y/Non=n]"
+    q_lizenz="Merci de lire la license avec attention:"
+    q_lizenz_akzeptieren="Acceptez vous la license ? [Oui=y/Non=n]"
+    q_install_mode="Choississez le mode d'installation . En mode expert mode vous devez repondre a quelques questions additionnelles. En mode standard les valeurs par defaut sont appliquees."
+    q_select="Choississez: "
+    q_wahl="Votre choix: "
+    q_anderer="autre"
+    q_korrekt="Est-ce correct ? [Oui=y/Non=n]"
+    q_mta_check="Recherche du MTA..."
+    q_mta_pruefung1="ISPConfig a trouve le MTA suivant:"
+    q_wahl_mta="Merci de choisir votre MTA: "
+    q_error1="Votre configuration systeme n'est pas compatible avec ISPConfig! La routine d'installation s'arrete ici!"
+    q_procmail_check="Recherche du paquet procmail..."
+    q_quota_check="Recherche du paquet quota..."
+    q_ftp_check="Recherche d'un serveur FTP installe..."
+    q_ftp_pruefung1="ISPConfig a trouve le serveur FTP:"
+    q_wahl_ftp="Choississez votre serveur FTP: "
+    q_mysql_check="Recherche du paquet MySQL..."
+    q_pop3_check="Recherche d'un serveur POP3 installe..."
+    q_pop3_pruefung1="ISPConfig a trouve le serveur POP3:"
+    q_wahl_pop3="Choississez votre serveur POP3: "
+    q_openssl_check="Recherche du paquet openssl..."
+    q_bind_check="Recherche du paquet bind..."
+    q_iptables_check="Recherche des programmes iptables/ipchains/ipfw..."
+    q_httpd_check="Recherche du programme httpd..."
+    q_httpd_syntax_check="Verification de la syntaxe de httpd.conf..."
+    q_httpd_syntax_check_not_ok="Votre syntaxe de httpd.conf est incorrecte ! Merci de corriger les erreurs. La routine d'installation s'arrete ici!"
+    q_httpd_syntax_check_ok="La syntaxe est ok!"
+    q_check_ende="Au moins un des paquets requis est manquant!"
+    q_mysql_running_check="MySQL ne fonctionne pas ! Merci de demarrer MySQL et de relancer l'installation d'ISPConfig."
+    q_mysql_sock_check="Impossible de trouver mysql.sock! La routine d'installation s'arrete ici!"
+    q_php_check="L'executable PHP fournis avec ISPConfig ne fonctionne pas correctement avec votre systeme! La routine d'installation s'arrete ici!"
+    q_prepare_files="Preparation des fichiers. Merci de patienter quelques instants..."
+    q_voraussetzungen="Tous les pre-requis sont valides."
+    q_mysql_server="Entrez le nom d'hote de votre serveur MySQL:"
+    q_mysql_server_check="The MySQL server you specified cannot be reached!"
+    q_mysql_user="Entrez votre nom d'utilisateur MySQL:"
+    q_mysql_passwort="Entrez votre mot de passe MySQL:"
+    q_mysql_connection_check="Le mot de passe MySQL fournis est faux!"
+    q_mysql_database="Entrez le nom a donner à la base de donnees d'ISPConfig (ex: db_ispconfig):"
+    q_ip_address="Entrez l'adresse IP ou installer le panel ISPConfig (ex: 192.168.0.1):"
+    q_ip_check="L'adresse IP fournis est introuvable sur ce serveur!"
+    q_host="Merci d'entrer le nom d'hote (e.g. ispconfig):"
+    q_domain="Merci d'entrer votre domaine (e.g. xyz.fr):"
+    q_ispconfigprotocol="Merci de selectionner un protocole (http ou https (Cryptage SSL) pour acceder au systeme ISPConfig:"
+    q_url_check="L'URL est injoignable!"
+    q_restart="Redemarrage des services..."
+    q_ende="Felicitations! Votre systeme ISPConfig est maintenant installe. Si vous devez installer le paquet quota, merci de suivre les etapes inscrites dans le manuel d'installation. Sinon votre systeme est maintenant accessible sans redemarrer."
+    q_ende2="Please direct your browser to "
+    q_ende3=" and log in:"
+    q_ende4="Username: admin"
+    q_ende5="Password: admin"
+
+ else
+
+    if [ "$lang" == "se" ]; then
+      q_hinweis="I och med system installation, kommer en del system filer att bytas ut där justeringar görs. Detta kan leda till förlorade information i httpd.conf, named.conf och i Sendmail filerna."
+      q_hinweis_akzeptieren="Vill du fortsätta med installationen? [y/n]"
+      q_lizenz="Läs noggrant igenom licens avtalet:"
+      q_lizenz_akzeptieren="Accepterar du licens avtalet? [y/n]"
+      q_install_mode="Var vänlig välj installations läge. I expert läget måste du svara på ett antal frågor. I standard läget kommer förinställda värden att användas på frågorna."
+      q_select="Vänligen välj: "
+      q_wahl="Ditt val: "
+      q_anderer="andra"
+      q_korrekt="Är detta helt rätt? [y/n]"
+      q_mta_check="Letar efter MTA..."
+      q_mta_pruefung1="ISPConfig hittade följande MTA:"
+      q_wahl_mta="Vänligen välj din MTA: "
+      q_error1="Ditt system är inte kompatibelt med ISPConfig! Installationen avslutas här!"
+      q_procmail_check="Letar efter paket procmail..."
+      q_quota_check="Letar efter paket quota..."
+      q_ftp_check="Kontrollerar om FTP server finns installerat..."
+      q_ftp_pruefung1="ISPConfig hittade följande FTP server:"
+      q_wahl_ftp="Vänligen välj din FTP server: "
+      q_mysql_check="Letar efter paket MySQL..."
+      q_pop3_check="Kontrollerar om POP3 server finns installerat..."
+      q_pop3_pruefung1="ISPConfig hittade följande POP3 server:"
+      q_wahl_pop3="Vänligen välj din POP3 server: "
+      q_openssl_check="Letar efter paket openssl..."
+      q_bind_check="Letar efter paket bind..."
+      q_iptables_check="Letar efter program iptables/ipchains/ipfw..."
+      q_httpd_check="Letar efter program httpd..."
+      q_httpd_syntax_check="Kontrollerar syntaxen på httpd.conf..."
+      q_httpd_syntax_check_not_ok="Syntaxen på din httpd.conf är inte ok! Vänligen korrigera dessa fel. Installationen avslutas här!"
+      q_httpd_syntax_check_ok="Syntaxen är ok!"
+      q_check_ende="Det saknas minst ett paket utav de som är obligatoriska!"
+      q_mysql_running_check="MySQL är inte uppstartad! Vänligen starta din MySQL databas och kör ISPConfig installationen igen."
+      q_mysql_sock_check="Kunde inte hitta mysql.sock! Installationen avslutas här!"
+      q_php_check="Den binära PHP som kommer med ISPConfig fungerar inte korrekt på ditt system! Installationen avslutas här!"
+      q_prepare_files="Förbereder filer. Vänta ett ögonblick..."
+      q_voraussetzungen="Alla förberedelser är klara."
+      q_mysql_server="Skriv in din MySQL server:"
+      q_mysql_server_check="The MySQL server you specified cannot be reached!"
+      q_mysql_user="Skriv in användare för MySQL:"
+      q_mysql_passwort="Skriv in lösenord för MySQL:"
+      q_mysql_connection_check="Det inskrivna lösenordet för MySQL är felaktigt!"
+      q_mysql_database="Skriv in ett namn för ISPConfig databasen (ex. db_ispconfig):"
+      q_ip_address="Skriv in IP adressen för din ISPConfig web (ex. 192.168.0.1):"
+      q_ip_check="Den IP address du angav är inte åtkomstbar!"
+      q_host="Skriv in ditt värdamn (ex. www):"
+      q_domain="Skriv in ditt domännamn (ex. xyz.de):"
+      q_ispconfigprotocol="Välj vilket protokoll (http eller https (SSL kryptering)) att använda för access till ISPConfig systemet:"
+      q_url_check="Denna URL är inte åtkomstbar!"
+      q_restart="Gör omstart på en del program..."
+      q_ende="Gratulerar! Ditt ISPConfig system är nu installerat. Om du behöver installera quota, så följ då de steg som finns beskrivet i installations manualen. Annars är ditt system klart att användas utan omstart."
+      q_ende2="Please direct your browser to "
+      q_ende3=" and log in:"
+      q_ende4="Username: admin"
+      q_ende5="Password: admin"
+
+else
+
+      if [ "$lang" == "sr" ]; then
+        q_hinweis="Tokom instalacije sistema , neke sistemske datoteke su zamenjene tamo gde su pravljena podešavanja. Ovo može dovesti do gubitka upisa u httpd.conf, named.conf kao i u Sendmail konfiguraciji."
+        q_hinweis_akzeptieren="Da li želite da nastavite sa instalacijom? [y/n]"
+        q_lizenz="Please read through the licence carefully:"
+        q_lizenz_akzeptieren="Da li prihvatate licencu? [y/n]"
+        q_install_mode="Odaberite mod instalacije. U expertskom modu treba da odgovorite na neka dodatna pitanjas. U standardnom modu uobièajene vrednosti su predpostavljene za ta pitanja."
+        q_select="Molim odaberite: "
+        q_wahl="Vaš izbor: "
+        q_anderer="drugo"
+        q_korrekt="Da li je ovo taèno? [y/n]"
+        q_mta_check="Provera za MTA..."
+        q_mta_pruefung1="ISPConfig je pronašao sledeæe MTA:"
+        q_wahl_mta="Odaberite vaš MTA: "
+        q_error1="Vaša konfiguracija sistema nije kompatibilna sa ISPConfig! Instalacijska rutina se zaustavlja ovde!"
+        q_procmail_check="Provera paketa procmail..."
+        q_quota_check="Provera paketa quota..."
+        q_ftp_check="Provera da li je FTP server instaliran..."
+        q_ftp_pruefung1="ISPConfig je pronašao sledeæi FTP server:"
+        q_wahl_ftp="Odaberite vaš FTP server: "
+        q_mysql_check="Provera paketa MySQL..."
+        q_pop3_check="Provera da li je POP3 server instaliran..."
+        q_pop3_pruefung1="ISPConfig je pronašao sledeæi POP3 server:"
+        q_wahl_pop3="Odaberite vaš POP3 server: "
+        q_openssl_check="Provera paketa openssl..."
+        q_bind_check="Provera paketa bind..."
+        q_iptables_check="Provera programa iptables/ipchains/ipfw..."
+        q_httpd_check="Provera programa httpd..."
+        q_httpd_syntax_check="Provera sintakse httpd.conf..."
+        q_httpd_syntax_check_not_ok="Sintaksa vašeg httpd.conf nije ispravna! Molim ispravite grešku. Instalaciona rutina staje ovde!"
+        q_httpd_syntax_check_ok="Sintaksa je ispravna!"
+        q_check_ende="Nejmanje jedan od potrebnih paketa nedostaje!"
+        q_mysql_running_check="MySQL ne radi! Molim ponovo pokrenite vašu MySQL bazu podataka i pokrenite ponovo ISPConfig instalaciju."
+        q_mysql_sock_check="Ne mogu pronaæi mysql.sock! Instalaciona rutina se zaustavlja ovde!"
+        q_php_check="PHP binarna datoteka koja dolazi sa ISPConfig ne radi dobro na vašem sistemu! Instalaciona rutina se zaustavlja ovde!"
+        q_prepare_files="Priprema datoteka. Molim saèekajte trenutak..."
+        q_voraussetzungen="Svi uslovi su ispunjeni."
+        q_mysql_server="Molim unesite vaš MySQL server:"
+        q_mysql_server_check="MySQL server koji ste naveli nemože biti dosegnut!"
+        q_mysql_user="Molim unesite vašeg MySQL korisnika:"
+        q_mysql_passwort="Molim unesite vašu MySQL lozinku:"
+        q_mysql_connection_check="Unešena MySQL lozinka je pogrešna!"
+        q_mysql_database="Molim unesite naziv za ISPConfig bazu podataka (npr. db_ispconfig):"
+        q_ip_address="Molim unesite IP adresu ISPConfig prezentacije (e.g. 192.168.0.1):"
+        q_ip_check="IP adresa koju ste naveli nije dostupna!"
+        q_host="Molim unesite ime hosta (npr. www):"
+        q_domain="Molim unesite domen (npr. xyz.de):"
+        q_ispconfigprotocol="Molim odaberite protokol (http ili https (SSL enkripcija)) za pristup ISPConfig sistemu:"
+        q_url_check="URL nije dostupna!"
+        q_restart="Ponovno pokretanje nekih servisa..."
+        q_ende="Èestitke! Vaš ISPConfig sistem je sada instaliran. Ako treba da instalirate kvote, molim preduzmite korake opisane u uputstvu za instalaciju. Inaèe vaš sistem je sada dostupan bez ponovnog pokretanja sistema."
+        q_ende2="Usmerite vaš internet pretraživaè ka "
+        q_ende3=" i prijavite se:"
+        q_ende4="Korisnièko ime: admin"
+        q_ende5="Lozinka: admin"
+
+    else
+
+        q_hinweis="With the system installation, some system files are replaced where adjustments were made. This can lead to loss of entries in httpd.conf, named.conf as well as in the Sendmail configuration."
+        q_hinweis_akzeptieren="Do you want to continue with the installation? [y/n]"
+        q_lizenz="Please read through the licence carefully:"
+        q_lizenz_akzeptieren="Do you accept the licence? [y/n]"
+        q_install_mode="Please select the installation mode. In expert mode you have to answer some additional questions. In standard mode standard values are assumed for these questions."
+        q_select="Please select: "
+        q_wahl="Your Choice: "
+        q_anderer="other"
+        q_korrekt="Is this correct? [y/n]"
+        q_mta_check="Checking for MTA..."
+        q_mta_pruefung1="ISPConfig found the following MTA:"
+        q_wahl_mta="Please select your MTA: "
+        q_error1="Your system configuration is not compatible with ISPConfig! The installation routine stops here!"
+        q_procmail_check="Checking for package procmail..."
+        q_quota_check="Checking for package quota..."
+        q_ftp_check="Checking if an FTP server is installed..."
+        q_ftp_pruefung1="ISPConfig found the following FTP server:"
+        q_wahl_ftp="Please select your FTP server: "
+        q_mysql_check="Checking for package MySQL..."
+        q_pop3_check="Checking if a POP3 server is installed..."
+        q_pop3_pruefung1="ISPConfig found the following POP3 server:"
+        q_wahl_pop3="Please select your POP3 server: "
+        q_openssl_check="Checking for package openssl..."
+        q_bind_check="Checking for package bind..."
+        q_iptables_check="Checking for program iptables/ipchains/ipfw..."
+        q_httpd_check="Checking for program httpd..."
+        q_httpd_syntax_check="Checking the syntax of the httpd.conf..."
+        q_httpd_syntax_check_not_ok="The syntax of your httpd.conf is not ok! Please correct the error. The installation routine stops here!"
+        q_httpd_syntax_check_ok="The syntax is ok!"
+        q_check_ende="At least one of the required packages is missing!"
+        q_mysql_running_check="MySQL is not running! Please start your MySQL database and run the ISPConfig setup again."
+        q_mysql_sock_check="Could not find mysql.sock! The installation routine stops here!"
+        q_php_check="The PHP binary coming with ISPConfig does not work properly on your system! The installation routine stops here!"
+        q_prepare_files="Preparing files. Please wait a moment..."
+        q_voraussetzungen="All prerequisites are fulfilled."
+        q_mysql_server="Please enter your MySQL server:"
+        q_mysql_server_check="The MySQL server you specified cannot be reached!"
+        q_mysql_user="Please enter your MySQL user:"
+        q_mysql_passwort="Please enter your MySQL password:"
+        q_mysql_connection_check="The provided MySQL password is wrong!"
+        q_mysql_database="Please enter a name for the ISPConfig database (e.g. db_ispconfig):"
+        q_ip_address="Please enter the IP address of the ISPConfig web (e.g. 192.168.0.1):"
+        q_ip_check="The IP address you provided is not reachable!"
+        q_host="Please enter the host name (e.g. www):"
+        q_domain="Please enter the domain (e.g. xyz.de):"
+        q_ispconfigprotocol="Please select the protocol (http or https (SSL encryption)) to use to access the ISPConfig system:"
+        q_url_check="The URL is not reachable!"
+        q_restart="Restarting some services..."
+        q_ende="Congratulations! Your ISPConfig system is now installed. If you had to install quota, please take the steps described in the installation manual. Otherwise your system is now available without reboot."
+        q_ende2="Please direct your browser to "
+        q_ende3=" and log in:"
+        q_ende4="Username: admin"
+        q_ende5="Password: admin"
+      fi
+    fi
+  fi
+fi
+
+waehl(){
+  PS3=$q_wahl # Sets the prompt string.
+  select var1
+      do
+        break  # if no 'break' here, keeps looping forever.
+      done
+  echo $var1
+}
+
+verify(){
+  for home in `grep -iw $1 $2`
+    do
+      key=`echo $home | cut -f1 -d:`
+      val=`echo $home | cut -f2 -d:`
+      label=`echo $home | cut -f3 -d:`
+      methode=`echo $home | cut -f4 -d:`
+      optionen=(`echo $home | cut -f5 -d: | tr '|' ' '`)
+
+      if [ "$3" == "standard" ]; then
+        methode="noquestion"
+      fi
+
+      if [ "$methode" != "noquestion" ]; then
+        echo $label: $val
+        echo -n "$q_korrekt"
+        read korrekt
+        echo
+
+        while [ "$korrekt" == "" ]
+        do
+          echo $label: $val
+          echo -n "$q_korrekt"
+          read korrekt
+          echo
+        done
+        if [ "$korrekt" != "y" ]; then
+          if [ "$methode" == "select" ]; then
+            echo "$q_select"
+            val=`waehl \`element_count=${#optionen[@]}
+               index=0
+               while [ "$index" -lt "$element_count" ]
+               do
+                 echo "${optionen[$index]}"
+                 let "index = $index + 1"
+               done
+    \``
+
+            while [ `element_count=${#optionen[@]}
+               index=0
+               while [ "$index" -lt "$element_count" ]
+               do
+                 echo "\"$val\" != \"${optionen[$index]}\" -a"
+                 let "index = $index + 1"
+               done
+    ` "$val" != " " ]
+            do
+              echo "$q_select"
+              val=`waehl \`element_count=${#optionen[@]}
+               index=0
+               while [ "$index" -lt "$element_count" ]
+               do
+                 echo "${optionen[$index]}"
+                 let "index = $index + 1"
+               done
+    \``
+            done
+          fi
+          if [ "$methode" == "read" ]; then
+            echo -n "$label:"
+            read val
+            echo
+          fi
+          if [ "$methode" == "exit" ]; then
+            error "$q_error1";
+          fi
+        fi
+      fi
+      echo "$key=$val ##" >> dist.info
+      log "$key=$val ##"
+   done
+}
+
+abfrage(){
+  echo $3
+  array=(`ls mod/$1/`)
+  element_count=${#array[@]}
+  index=0
+  check=0
+  while [ "$index" -lt "$element_count" ]
+  do
+    which ${array[$index]}
+    if [ $? == 0 ]; then
+      server=${array[$index]}
+      echo OK
+      let check=1
+      break
+    fi
+    let "index = $index + 1"
+  done
+
+  if [ $check == 0 ]; then
+    error "$q_error1";
+  else
+    echo
+    echo $4
+    echo $server
+    echo -n $q_korrekt
+    read pruefung
+    echo
+
+    while [ "$pruefung" == "" ]
+    do
+      echo $4
+      echo $server
+      echo -n $q_korrekt
+      read pruefung
+      echo
+    done
+    if [ "$pruefung" != "y" ]; then
+      echo $5
+      server=`waehl \`element_count=${#array[@]}
+               index=0
+               while [ "$index" -lt "$element_count" ]
+               do
+                 echo "${array[$index]}"
+                 let "index = $index + 1"
+               done
+    \` "$q_anderer"`
+
+      while [ `element_count=${#array[@]}
+               index=0
+               while [ "$index" -lt "$element_count" ]
+               do
+                 echo "\"$server\" != \"${array[$index]}\" -a"
+                 let "index = $index + 1"
+               done
+    ` "$server" != "$q_anderer" ]
+      do
+        echo $5
+        server=`waehl \`element_count=${#array[@]}
+               index=0
+               while [ "$index" -lt "$element_count" ]
+               do
+                 echo "${array[$index]}"
+                 let "index = $index + 1"
+               done
+    \` "$q_anderer"`
+      done
+    fi
+
+    if [ "$server" == "$q_anderer" ]; then
+      error "$q_error1";
+    else
+      log "$1: $server"
+      echo "dist_$1=$server ##" >> dist.info
+      log  "dist_$1=$server ##"
+      verify $dist mod/$1/"$server" $2
+    fi
+  fi
+}
+
+#################### SPRACHE ENDE ################
+
+  if [ "$install_art" == "install" ]; then
+    echo $q_hinweis
+    echo
+    echo -n $q_hinweis_akzeptieren
+    read hinweis
+    echo
+
+    while [ "$hinweis" == "" ]
+    do
+      echo -n $q_hinweis_akzeptieren
+      read hinweis
+      echo
+    done
+
+    if [ "$hinweis" != "y" ]; then
+      exit 1;
+    fi
+    log "installation note accepted"
+  fi
+
+################ LIZENZ ##################
+echo $q_lizenz
+echo
+
+  cat license.txt | more
+
+  echo
+  echo -n $q_lizenz_akzeptieren
+  read lizenz
+  echo
+
+while [ "$lizenz" == "" ]
+do
+    echo -n $q_lizenz_akzeptieren
+    read lizenz
+    echo
+done
+
+if [ "$lizenz" != "y" ]; then
+  exit 1;
+fi
+log "licence accepted"
+################# LIZENZ ENDE #############
+
+if [ "$install_art" == "install" ]; then  ## install_art == install
+
+  ################ INSTALLATIONSMODUS ############
+  echo $q_install_mode
+  install_mode=`waehl "standard" "expert"`
+
+  while [ "$install_mode" != "standard" -a "$install_mode" != "expert" ]
+  do
+    echo $q_install_mode
+    install_mode=`waehl "standard" "expert"`
+  done
+  log "installation mode: "$install_mode
+  ############### INSTALLATIONSMODUS ENDE ###########
+
+  ############ MTA #############
+  echo
+  echo "########## MAIL SERVER ##########"
+  echo
+  abfrage mail $install_mode "$q_mta_check" "$q_mta_pruefung1" "$q_wahl_mta"
+  ############## MTA ENDE ################
+
+  ############ POP3 ################
+  #echo
+  #echo "########## POP3 SERVER ##########"
+  #echo
+  #abfrage pop3 $install_mode "$q_pop3_check" "$q_pop3_pruefung1" "$q_wahl_pop3"
+  ############### POP3 ENDE ##############
+
+  ############## FTP ################
+  echo
+  echo "########## FTP SERVER ##########"
+  echo
+  abfrage ftp $install_mode "$q_ftp_check" "$q_ftp_pruefung1" "$q_wahl_ftp"
+  ############# FTP ENDE #############
+
+  echo
+  echo "########## PROCMAIL ##########"
+  echo
+  echo $q_procmail_check
+  which procmail
+  if [ $? != 0 ]; then
+    error "procmail not found!";
+  else
+    log "procmail found: `which procmail`"
+    echo OK
+  fi
+
+  echo
+  echo "########## QUOTA ##########"
+  echo
+  echo $q_quota_check
+  which quota
+  if [ $? != 0 ]; then
+    error "quota not found!";
+  else
+    log "quota found: `which quota`"
+    echo OK
+  fi
+
+  echo
+  echo "########## MYSQL SERVER ##########"
+  echo
+  echo $q_mysql_check
+  which mysql
+  if [ $? != 0 ]; then
+    error "mysql not found!";
+  else
+    log "mysql found: `which mysql`"
+    echo OK
+  fi
+
+  echo
+  echo "########## OPENSSL ##########"
+  echo
+  echo $q_openssl_check
+  which openssl
+  if [ $? != 0 ]; then
+    error "openssl not found!";
+  else
+    log "openssl found: `which openssl`"
+    echo OK
+  fi
+
+  echo
+  echo "########## DNS SERVER ##########"
+  echo
+  echo $q_bind_check
+  which named
+  if [ $? != 0 ]; then
+    error "named not found!";
+  else
+    log "named found: `which named`"
+    echo OK
+  fi
+
+  echo
+  echo "########## IPTABLES/IPCHAINS/IPFW ##########"
+  echo
+  echo $q_iptables_check
+  which iptables
+  if [ $? != 0 ]; then
+    which ipchains
+    if [ $? != 0 ]; then
+      which ipfw
+      if [ $? != 0 ]; then
+        error "iptables/ipchains/ipfw not found!";
+      else
+        log "ipfw found: `which ipfw`"
+        echo OK
+      fi
+    else
+      log "ipchains found: `which ipchains`"
+      echo OK
+    fi
+  else
+    log "iptables found: `which iptables`"
+    echo OK
+  fi
+
+  echo
+  echo "########## WEB SERVER ##########"
+  echo
+  which httpd > /dev/null
+  if [ $? != 0 ]; then
+    which apache > /dev/null
+    if [ $? == 0 ]; then
+      ln -s `which apache` /usr/bin/httpd
+    fi
+    which apache2 > /dev/null
+    if [ $? == 0 ]; then
+      ln -s `which apache2` /usr/bin/httpd
+    fi
+  fi
+
+  echo $q_httpd_check
+  which httpd
+  if [ $? != 0 ]; then
+    which httpd2
+    if [ $? != 0 ]; then
+      error "httpd not found!";
+    else
+      ln -s `which httpd2` /usr/sbin/httpd
+      echo OK
+    fi
+  else
+    log "httpd found: `which httpd`"
+    echo OK
+  fi
+fi  ## install_art == install
+
+  echo $q_httpd_syntax_check
+  httpd -t
+  if [ $? != 0 ]; then
+    error "$q_httpd_syntax_check_not_ok";
+  fi
+  echo $q_httpd_syntax_check_ok
+  log "httpd syntax ok!"
+
+  if [ "$install_art" == "install" ]; then
+    verify $dist mod/httpd/httpd $install_mode
+  fi
+
+  echo
+  echo "########## gcc ##########"
+  echo
+  which gcc
+  if [ $? != 0 ]; then
+    error "gcc not found!";
+  else
+    log "gcc found: `which gcc`"
+    echo OK
+  fi
+
+  echo
+  echo "########## make ##########"
+  echo
+  which make
+  if [ $? != 0 ]; then
+    error "make not found!";
+  else
+    log "make found: `which make`"
+    echo OK
+  fi
+
+  echo
+  echo "########## lex ##########"
+  echo
+  which lex
+  if [ $? != 0 ]; then
+    error "flex not found!";
+  else
+    log "flex found: `which lex`"
+    echo OK
+  fi
+
+  echo
+  echo "########## g++ ##########"
+  echo
+  which g++
+  if [ $? != 0 ]; then
+    error "g++ not found!";
+  else
+    log "g++ found: `which g++`"
+    echo OK
+  fi
+
+  echo
+  echo "########## INSTALLATION ##########"
+  echo
+  if [ -f /etc/my.cnf ]; then
+     mv -f /etc/my.cnf /etc/my.cnf_orig
+     grep -wv "skip-networking" /etc/my.cnf_orig > /etc/my.cnf
+     /etc/init.d/mysql restart &> /dev/null
+     /etc/init.d/mysqld restart &> /dev/null
+  fi
+  if [ -f /etc/mysql/my.cnf ]; then
+     mv -f /etc/mysql/my.cnf /etc/mysql/my.cnf_orig
+     grep -wv "skip-networking" /etc/mysql/my.cnf_orig > /etc/mysql/my.cnf
+     /etc/init.d/mysql restart &> /dev/null
+     /etc/init.d/mysqld restart &> /dev/null
+  fi
+  netstat -ta | grep -i mysql > /dev/null
+  if [ $? != 0 ]; then
+    error "$q_mysql_running_check";
+  else
+    if [ ! -S /var/lib/mysql/mysql.sock ] && [ ! -h  /var/lib/mysql/mysql.sock ] && [ -S  /tmp/mysql.sock ]; then
+       if [ ! -d /var/lib/mysql ]; then
+          mkdir -p /var/lib/mysql
+          caselog "directory /var/lib/mysql created" "directory /var/lib/mysql  could not be created!"
+       fi
+       ln -s /tmp/mysql.sock /var/lib/mysql/mysql.sock
+       caselog "symbolic link from /var/lib/mysql/mysql.sock to /tmp/mysql.sock created" "symbolic link from /var/lib/mysql/mysql.sock to /tmp/mysql.sock could not be created!"
+    fi
+    if [ ! -S /var/lib/mysql/mysql.sock ] && [ ! -h  /var/lib/mysql/mysql.sock ] && [ -S  /var/run/mysqld/mysqld.sock ]; then
+       if [ ! -d /var/lib/mysql ]; then
+          mkdir -p /var/lib/mysql
+          caselog "directory /var/lib/mysql created" "directory /var/lib/mysql  could not be created!"
+       fi
+       ln -s /var/run/mysqld/mysqld.sock /var/lib/mysql/mysql.sock
+       caselog "symbolic link from /var/lib/mysql/mysql.sock to /var/run/mysqld/mysqld.sock created" "symbolic link from /var/lib/mysql/mysql.sock to /var/run/mysqld/mysqld.sock could not be created!"
+    fi
+    if [ ! -S /var/lib/mysql/mysql.sock ] && [ ! -h  /var/lib/mysql/mysql.sock ] && [ -S  /var/run/mysql/mysql.sock ]; then
+       if [ ! -d /var/lib/mysql ]; then
+          mkdir -p /var/lib/mysql
+          caselog "directory /var/lib/mysql created" "directory /var/lib/mysql  could not be created!"
+       fi
+       ln -s /var/run/mysql/mysql.sock /var/lib/mysql/mysql.sock
+       caselog "symbolic link from /var/lib/mysql/mysql.sock to /var/run/mysql/mysql.sock created" "symbolic link from /var/lib/mysql/mysql.sock to /var/run/mysql/mysql.sock could not be created!"
+    fi
+    if [ ! -S /var/lib/mysql/mysql.sock ] && [ ! -h  /var/lib/mysql/mysql.sock ] && [ ! -S  /tmp/mysql.sock ] && [ ! -h  /tmp/mysql.sock ] && [ ! -S  /var/run/mysqld/mysqld.sock ] && [ ! -h  /var/run/mysqld/mysqld.sock ] && [ ! -S  /var/run/mysql/mysql.sock ] && [ ! -h  /var/run/mysql/mysql.sock ]; then
+       error "$q_mysql_sock_check";
+    fi
+  fi
+
+  if [ ! -S /var/www/sharedip ]; then
+    mkdir -p /var/www/sharedip
+        log "Directory /var/www/sharedip created."
+        cp isp/sharedip_index.html_$lang /var/www/sharedip/index.html
+        log "Use sharedip_index.html_$lang as SharedIP default page."
+  fi
+
+  VAR1=`cat dist.info | cut -f1 -d=`
+  for var1 in $VAR1
+   do
+     echo export $var1 >> dist.info.ende
+   done
+  cat dist.info.ende >> dist.info
+  rm -f dist.info.ende
+  if [ "$install_art" == "upgrade" ] && [ -f  /root/ispconfig/dist.info ]; then
+    cat /root/ispconfig/dist.info | grep -wv dist_httpd_conf_dir | grep -wv dist_ip > dist.info
+  fi
+  . dist.info
+
+  echo $q_prepare_files
+
+  if [ "$install_art" == "upgrade" ]; then
+    cp -f /home/admispconfig/ispconfig/lib/config.inc.php ./
+    caselog "saved /home/admispconfig/ispconfig/lib/config.inc.php" "could not save /home/admispconfig/ispconfig/lib/config.inc.php"
+    cp -f /home/admispconfig/ispconfig/users ./
+    caselog "saved /home/admispconfig/ispconfig/users" "could not save /home/admispconfig/ispconfig/users"
+    cp -f /home/admispconfig/ispconfig/adminmail.txt ./
+    caselog "saved /home/admispconfig/ispconfig/adminmail.txt" "could not save /home/admispconfig/ispconfig/adminmail.txt"
+
+    tar -pczf root_ispconfig.tar.gz /root/ispconfig/ &> /dev/null
+    caselog "created backup of directory /root/ispconfig/" "could not create backup of directory /root/ispconfig/"
+    tar -pczf home_admispconfig.tar.gz /home/admispconfig/ &> /dev/null
+    caselog "created backup of directory /home/admispconfig/" "could not create backup of directory /home/admispconfig/"
+
+    rm -fr /root/ispconfig
+    caselog "deleted directory /root/ispconfig/" "could not delete directory /root/ispconfig/"
+  fi
+
+  cd compile_aps/
+  chmod 700 compile
+  ./compile || (cd `pwd`/../.. && rm -fr install_ispconfig && exit 1)
+  cd ..
+
+  mv -f binaries/aps.tar.gz ./aps.tar.gz
+  mv -f binaries/spamassassin.tar.gz ./spamassassin.tar.gz
+  mv -f binaries/uudeview.tar.gz ./uudeview.tar.gz
+  mv -f binaries/clamav.tar.gz ./clamav.tar.gz
+  mv -f binaries/cronolog ./cronolog
+  mv -f binaries/cronosplit ./cronosplit
+  mv -f binaries/ispconfig_tcpserver ispconfig/tools/tcpserver/ispconfig_tcpserver
+  mv -f binaries/zip ispconfig/tools/zip/zip
+  mv -f binaries/unzip ispconfig/tools/unzip/unzip
+  tar xfz spamassassin.tar.gz
+  mv -f spamassassin ispconfig/tools/spamassassin
+  tar xfz uudeview.tar.gz
+  mv -f uudeview ispconfig/tools/uudeview
+  tar xfz clamav.tar.gz
+  mv -f clamav ispconfig/tools/clamav
+  tar xfz aps.tar.gz
+  caselog "unpacked ISPConfig system" "could not unpack ISPConfig system"
+
+  ###### Prüfen, ob PHP korrekt funktioniert ######
+  ispconfig_tmp/php/bin/php -n -q check.php
+  if [ ! -f php_check ]; then
+    if [ "$install_art" == "upgrade" ]; then
+      `echo $dist_init_scripts`/ispconfig_server restart &> /dev/null
+    fi
+    error "$q_php_check";
+  fi
+  ###### Prüfen, ob PHP korrekt funktioniert ENDE ######
+
+  mv -f ispconfig_tmp /root/ispconfig
+  caselog "moved directory ispconfig_tmp to /root/ispconfig" "could not move directory ispconfig_tmp to /root/ispconfig"
+  cp -f dist.info /root/ispconfig
+  echo $q_voraussetzungen
+  echo Here we go...
+  chmod 700 ./install.php
+
+  if [ "$install_art" == "install" ]; then
+    echo -n $q_mysql_server
+    read mysql_server
+    while [ "$mysql_server" == "" ]
+    do
+      echo -n $q_mysql_server
+      read mysql_server
+    done
+    ping -c3 `echo $mysql_server` &> /dev/null
+    while [ $? != 0 ]
+    do
+      echo "$q_mysql_server_check"
+      echo -n $q_mysql_server
+      read mysql_server
+      while [ "$mysql_server" == "" ]
+      do
+        echo -n $q_mysql_server
+        read mysql_server
+      done
+      ping -c3 `echo $mysql_server` &> /dev/null
+    done
+
+    echo OK
+
+    echo -n $q_mysql_user
+    read mysql_user
+    while [ "$mysql_user" == "" ]
+    do
+      echo -n $q_mysql_user
+      read mysql_user
+    done
+    stty -echo
+    echo -n $q_mysql_passwort
+    read mysql_passwort
+    stty echo
+    echo
+
+    if [ "$mysql_passwort" == "" ]; then
+      mysql -h `echo $mysql_server` --exec=quit -u `echo $mysql_user`
+    else
+      mysql -h `echo $mysql_server` --exec=quit -u `echo $mysql_user` -p`echo $mysql_passwort`
+    fi
+
+    while [ $? != 0 ]
+    do
+      echo "$q_mysql_connection_check"
+      echo -n $q_mysql_server
+      read mysql_server
+      while [ "$mysql_server" == "" ]
+      do
+        echo -n $q_mysql_server
+        read mysql_server
+      done
+      ping -c3 `echo $mysql_server` &> /dev/null
+      while [ $? != 0 ]
+      do
+        echo "$q_mysql_server_check"
+        echo -n $q_mysql_server
+        read mysql_server
+        while [ "$mysql_server" == "" ]
+        do
+          echo -n $q_mysql_server
+          read mysql_server
+        done
+        ping -c3 `echo $mysql_server` &> /dev/null
+      done
+
+      echo OK
+
+      echo -n $q_mysql_user
+      read mysql_user
+      while [ "$mysql_user" == "" ]
+      do
+        echo -n $q_mysql_user
+        read mysql_user
+      done
+      stty -echo
+      echo -n $q_mysql_passwort
+      read mysql_passwort
+      stty echo
+      echo
+
+      if [ "$mysql_passwort" == "" ]; then
+        mysql -h `echo $mysql_server` --exec=quit -u `echo $mysql_user`
+      else
+        mysql -h `echo $mysql_server` --exec=quit -u `echo $mysql_user` -p`echo $mysql_passwort`
+      fi
+    done
+
+    echo OK
+
+    echo -n $q_mysql_database
+    read mysql_db
+    while [ "$mysql_db" == "" ]
+    do
+      echo -n $q_mysql_database
+      read mysql_db
+    done
+
+    echo -n $q_ip_address
+    read ip
+    while [ "$ip" == "" ]
+    do
+      echo -n $q_ip_address
+      read ip
+    done
+
+    ping -c3 `echo $ip` &> /dev/null
+    while [ $? != 0 ]
+    do
+      echo "$q_ip_check"
+      echo -n $q_ip_address
+      read ip
+      while [ "$ip" == "" ]
+      do
+        echo -n $q_ip_address
+        read ip
+      done
+      ping -c3 `echo $ip` &> /dev/null
+    done
+
+    echo OK
+
+    echo -n $q_host
+    read server_host
+    echo -n $q_domain
+    read server_domain
+    while [ "$server_domain" == "" ]
+    do
+      echo -n $q_domain
+      read server_domain
+    done
+
+    if [ "$server_host" == "" ]; then
+      ping=`echo $server_domain`
+    else
+      ping=`echo $server_host`.`echo $server_domain`
+    fi
+    ping -c3 `echo $ping` &> /dev/null
+
+    while [ $? != 0 ]
+    do
+      echo "$q_url_check"
+      echo -n $q_host
+      read server_host
+      echo -n $q_domain
+      read server_domain
+      while [ "$server_domain" == "" ]
+      do
+        echo -n $q_domain
+        read server_domain
+      done
+
+      if [ "$server_host" == "" ]; then
+        ping=`echo $server_domain`
+      else
+        ping=`echo $server_host`.`echo $server_domain`
+      fi
+      ping -c3 `echo $ping` &> /dev/null
+    done
+
+    echo OK
+
+    echo $q_ispconfigprotocol
+    server_ispconfigprotocol=`waehl "HTTPS" "HTTP"`
+
+    while [ "$server_ispconfigprotocol" != "HTTPS" -a "$server_ispconfigprotocol" != "HTTP" ]
+    do
+      echo $q_ispconfigprotocol
+      server_ispconfigprotocol=`waehl "HTTPS" "HTTP"`
+    done
+  else
+    mysql_server=
+    mysql_user=
+    mysql_passwort=
+    mysql_db=
+    ip=
+    server_host=
+    server_domain=
+    server_ispconfigprotocol=
+  fi
+
+  echo
+  {
+  echo $mysql_server
+  echo $mysql_user
+  echo $mysql_passwort
+  echo $mysql_db
+  echo $ip
+  echo $server_host
+  echo $server_domain
+  echo `which procmail`
+  echo $lang
+  echo $install_art
+  echo $server_ispconfigprotocol
+  } > mysql_config
+  httpd -V > httpd
+  awk -F"\"" '$1==" -D HTTPD_ROOT="{print $2}'  httpd > httpd2
+  awk -F"\"" '$1==" -D SERVER_CONFIG_FILE="{print $2}'  httpd >> httpd2
+  which ip &> /dev/null
+  if [ $? != 0 ]; then
+    OS=`uname -s`
+    if [ "$OS" == "FreeBSD" ]; then
+      ifconfig | grep -iw 'inet' | grep -iv 'inet6' | cut -f2 -d' ' > ip_addresses
+    else
+      ifconfig | grep -iw 'inet' | cut -f2 -d: | cut -f1 -d' ' > ip_addresses
+    fi
+  else
+    ip addr show | grep -iw 'inet' | awk '{print $2}' | cut -f1 -d/ > ip_addresses
+  fi
+  /root/ispconfig/php/php -q ./install.php
+  . /root/ispconfig/dist.info
+  rm -f mysql_config
+
+  ########## sysconfig schreiben #############
+  uname -a > /home/admispconfig/ispconfig/sysconf.txt
+  httpd -V >> /home/admispconfig/ispconfig/sysconf.txt
+  ############################################
+  echo $q_restart
+  which apachectl > /dev/null
+  if [ $? != 0 ]; then
+    apache2ctl restart
+  else
+    apachectl restart
+  fi
+  caselog "httpd restart successful" "httpd did not restart!"
+
+  if [ -f `echo $dist_init_scripts`/`echo $dist_mail` ] && [ -x  `echo $dist_init_scripts`/`echo $dist_mail` ]; then
+    `echo $dist_init_scripts`/`echo $dist_mail` stop
+    `echo $dist_init_scripts`/`echo $dist_mail` start
+    caselog $dist_mail" restart successful" $dist_mail" did not restart!"
+  fi
+  if [ -f /etc/rc.d/`echo $dist_mail` ] && [ -x  /etc/rc.d/`echo $dist_mail` ]; then
+    /etc/rc.d/`echo $dist_mail` stop
+    /etc/rc.d/`echo $dist_mail` start
+    caselog $dist_mail" restart successful" $dist_mail" did not restart!"
+  fi
+
+  ##############################################
+  if [ $dist_ftp_version == "standalone" ]; then
+    if [ -f `echo $dist_init_scripts`/`echo $dist_ftp` ] && [ -x  `echo $dist_init_scripts`/`echo $dist_ftp` ]; then
+      `echo $dist_init_scripts`/`echo $dist_ftp` restart
+    fi
+    if [ -f /etc/rc.d/`echo $dist_ftp` ] && [ -x  /etc/rc.d/`echo $dist_ftp` ]; then
+      /etc/rc.d/`echo $dist_ftp` restart
+    fi
+  else
+    if [ -f `echo $dist_init_scripts`/`echo $dist_ftp_version` ] && [ -x  `echo $dist_init_scripts`/`echo $dist_ftp_version` ]; then
+      `echo $dist_init_scripts`/`echo $dist_ftp_version` restart &> /dev/null
+    fi
+    if [ -f /etc/rc.d/`echo $dist_ftp_version` ] && [ -x  /etc/rc.d/`echo $dist_ftp_version` ]; then
+      /etc/rc.d/`echo $dist_ftp_version` restart
+    fi
+  fi
+  ##############################################
+
+  if [ "$install_art" == "upgrade" ]; then
+    `echo $dist_init_scripts`/ispconfig_server restart
+  else
+    `echo $dist_init_scripts`/ispconfig_server start
+  fi
+
+  echo $q_ende
+  if [ "$install_art" == "install" ]; then
+    echo $q_ende2
+    echo
+    if [ "$server_ispconfigprotocol" == "HTTPS" ]; then
+      ISPCONFIGURL="https://"
+    else
+      ISPCONFIGURL="http://"
+    fi
+    if [ "$server_host" == "" ]; then
+      ISPCONFIGURL="${ISPCONFIGURL}${server_domain}:81"
+    else
+      ISPCONFIGURL="${ISPCONFIGURL}${server_host}.${server_domain}:81"
+    fi
+    echo $ISPCONFIGURL
+    echo
+    echo $q_ende3
+    echo $q_ende4
+    echo $q_ende5
+  fi
+  echo
+  rm -f /root/ispconfig/dist.info
+  caselog "file /root/ispconfig/dist.info deleted" "could not delete file /root/ispconfig/dist.info"
+  cd `pwd`/..
+  rm -fr install_ispconfig
+  caselog "directory install_ispconfig deleted" "could not delete directory install_ispconfig"
+  log "##############################"
+exit 0;

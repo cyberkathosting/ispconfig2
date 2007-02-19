@@ -1,0 +1,27 @@
+<?
+/********************************
+* ISPConfig Dictionary File
+* Version 1.0
+* (c) Tribal-Dolphin
+* http://www.tribal-dolphin.net
+*********************************/
+
+// License Manager
+$wb["Es wurde keine g&uuml;ltige Lizenzdatei gefunden."] = "Aucun fichier de license trouvé.";
+$wb["Hier k&ouml;nnen Sie ihre Lizenzdatei einspielen."] = "Vous pouvez envoyer votre fichier de licence ici.";
+$wb["Username"] = "Nom d'utilisateur";
+$wb["Passwort"] = "Mot de passe";
+$wb["Lizenzdatei"] = "Fichier licence";
+$wb["Weiter"] = "suivant";
+$wb["Die Lizenzdatei wurde eingespielt.<br>Sie k&ouml;nnen sich jetzt einloggen."] = "Le fichier de licence à été envoyé.<br> Vous pouvez maintenant vous enregistrer.";
+$wb["Ihre Nutzersitzung wurde beendet."] = "Votre session à expirée.";
+$wb["Hier können Sie sich neu einloggen"] = "Ici vous pouvez vous enregistrer à nouveau";
+
+$wb["FEHLER 101: Username oder Passwort Falsch."] = "ERREUR 101: Nom d'utilisateur ou mot de passe incorrect.";
+$wb["FEHLER 102: Account inaktiv."] = "ERREUR 102: Compte inactif.";
+$wb["FEHLER 103: Es wurde kein Username oder Passwort angegeben."] = "ERREUR 103: Nom d'utilisateur ou mot de passe non saisis.";
+$wb["FEHLER 104: Die Nutzersession wurde beendet."] = "ERREUR 104: Session expirée.";
+$wb["<br>&nbsp;<br>Hier können Sie sich erneut einloggen:"] = "<br>&nbsp;<br>Ici vous pouvez vous enregistrer à nouveau :";
+$wb["Hier können Sie sich einloggen:"] = "Ici vous pouvez vous enregistrer à nouveau :";
+
+?>
