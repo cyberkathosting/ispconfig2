@@ -60,7 +60,8 @@ function make_local_host_names() {
     }
     /////////// write the HOSTNAMES IN local-host-names END ////////////////
 	
-		// Get all website domains
+	/*
+	// Get all website domains
     $webs = $mod->db->queryAllRecords("SELECT * FROM isp_nodes,isp_isp_web WHERE isp_nodes.doc_id = isp_isp_web.doc_id AND isp_nodes.doctype_id = '".$isp_web->web_doctype_id."' AND isp_nodes.status = '1'");
     if(!empty($webs)){
       foreach($webs as $web){
@@ -77,7 +78,7 @@ function make_local_host_names() {
       }
     }
 	
-		// Get all co-domains
+	// Get all co-domains
     $webs = $mod->db->queryAllRecords("SELECT * FROM isp_dep,isp_isp_domain WHERE isp_dep.child_doc_id = isp_isp_domain.doc_id AND isp_dep.child_doctype_id ='".$isp_web->domain_doctype_id."' AND isp_dep.parent_doctype_id = '".$isp_web->web_doctype_id."' AND isp_isp_domain.status != 'd'");
 
     foreach($webs as $web){
@@ -92,6 +93,10 @@ function make_local_host_names() {
           $hostnames[] = $domain;
         }
     }
+	*/
+	
+	$hostnames = array_merge($hostnames,$this->get_local_hostnames());
+	
   } else { // POSTFIX-STYLE
     /////////// HOSTNAMES IN local-host-names SCHREIBEN ////////////////
 		$hostnames[] = "localhost";
@@ -130,7 +135,7 @@ function make_local_host_names() {
 
 
 function make_virtusertable() {
-  global $isp_web, $mod, $go_info;
+  global $isp_web, $mod, $go_info, $isp_list;
   
   	// This array contains all email addresses in the form 
 	// $virtusertable_email[DOMAIN][LOCAL_PART] = USERNAME
@@ -139,15 +144,16 @@ function make_virtusertable() {
 	// This array contains all email addresses in the form 
 	// $virtusertable_catchall[DOMAIN][LOCAL_PART] = USERNAME
 	$virtusertable_catchall = array();
+	
+	// Set a default mailman domain
+	$isp_list->default_mailman_domain = "lists.example.com";
 		
 	// get all users from the database
     $users = $mod->db->queryAllRecords("select * from isp_nodes,isp_isp_user WHERE isp_nodes.doc_id = isp_isp_user.doc_id AND isp_nodes.doctype_id = '".$isp_web->user_doctype_id."' AND isp_nodes.status = '1'");
 		
-	// get all email domains from local-host-names file
-	$tmp_local_host_names = file_get_contents($mod->system->server_conf["server_sendmail_cw"]);
-	$local_host_names = explode("\n",$tmp_local_host_names);
-	unset($tmp_local_host_names);
-		
+	// get all local email domains
+	$local_host_names = $this->get_local_hostnames();
+	
 	// go trough each user record to create the $virtusertable_email
 	// and $virtusertable_catchall arrays. See comments above for the
 	// structure of these arrays.
@@ -159,7 +165,7 @@ function make_virtusertable() {
 					$tmp_domain = trim($tmp_domain);
 					$tmp_email = $user["user_email"];
 					// Check if domain is not empty and if the domain is on the local mailserver
-					if($tmp_domain != '' && in_array($tmp_domain,$local_host_names)) {
+					if($tmp_domain != '' && @in_array($tmp_domain,$local_host_names)) {
 						if($user["user_catchallemail"]) {
 							// add catchall
 							$virtusertable_catchall[$tmp_domain] = $user["user_username"];
@@ -207,7 +213,7 @@ function make_virtusertable() {
 					$virtusertable_text .= $email."@".$domain."    ".$username."\n";
 				} // end foreach
 				if($virtusertable_catchall[$domain]) {
-					$virtusertable_text .= "@".$domain."    ".$username."\n";
+					$virtusertable_text .= "@".$domain."    ".$virtusertable_catchall[$domain]."\n";
 				} // end if
 			} // end foreach
 		} // end if
@@ -249,7 +255,7 @@ function make_virtusertable() {
 					$virtusertable_text .= $email."@".$domain."    ".$username."\n";
 				} // end foreach
 				if($virtusertable_catchall[$domain]) {
-					$virtusertable_text .= "@".$domain."    ".$username."\n";
+					$virtusertable_text .= "@".$domain."    ".$virtusertable_catchall[$domain]."\n";
 				} // end if
 			} // end foreach
 		} // end if
@@ -285,6 +291,52 @@ function smtp_restart(){
   } else {
     $mod->system->daemon_init($mod->system->server_conf["server_mta"], "restart");
   }
+}
+
+// This function returns a array with all local domains
+
+function get_local_hostnames() {
+	global $mod, $go_info, $isp_web;
+	
+	// Get all website domains
+	$sendmail_exclude_domains = array();
+    $webs = $mod->db->queryAllRecords("SELECT * FROM isp_nodes,isp_isp_web WHERE isp_nodes.doc_id = isp_isp_web.doc_id AND isp_nodes.doctype_id = '".$isp_web->web_doctype_id."' AND isp_nodes.status = '1'");
+    if(!empty($webs)){
+      foreach($webs as $web){
+        if(!empty($web["web_host"])){
+          $domain = $web["web_host"].".".$web["web_domain"];
+        } else {
+          $domain = $web["web_domain"];
+        }
+        if(!$web["optionen_local_mailserver"]) $sendmail_exclude_domains[] = $domain;
+        // Variablen zuweisen
+        if(!in_array($domain, $sendmail_exclude_domains) && $domain != ''){
+          $hostnames[] = $domain;
+        }
+      }
+    }
+	unset($webs);
+	
+	// Get all co-domains
+    $codomains = $mod->db->queryAllRecords("SELECT * FROM isp_dep,isp_isp_domain WHERE isp_dep.child_doc_id = isp_isp_domain.doc_id AND isp_dep.child_doctype_id ='".$isp_web->domain_doctype_id."' AND isp_dep.parent_doctype_id = '".$isp_web->web_doctype_id."' AND isp_isp_domain.status != 'd'");
+
+    foreach($codomains as $web){
+      if(!empty($web["domain_host"])){
+        $domain = $web["domain_host"].".".$web["domain_domain"];
+      } else {
+        $domain = $web["domain_domain"];
+      }
+      if(!$web["domain_local_mailserver"]) $sendmail_exclude_domains[] = $domain;
+      // Variablen zuweisen
+      if(!in_array($domain, $sendmail_exclude_domains) && $domain != ''){
+          $hostnames[] = $domain;
+        }
+    }
+	unset($codomains);
+	$local_host_names = @array_unique($hostnames);
+	unset($hostnames);
+	
+	return $local_host_names;
 }
 
 }

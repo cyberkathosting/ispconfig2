@@ -39,8 +39,6 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 #############################################################
 
-if(CONFIG_LOADED != 1) die('Direct access not permitted.');
-
 class isp_list_plugin {
 
 	var	$list_members_path = "/usr/lib/mailman/bin/list_members";
@@ -59,7 +57,7 @@ class isp_list_plugin {
 
 		if ($ml_name){
 			$html_out = '<nobr><b>&nbsp; Delete E-Mail address: </b></nobr><br />';
-			exec("$list_members_path $ml_name", $results);
+			exec("$list_members_path ".escapeshellcmd($ml_name), $results);
 
 
 			foreach($results as $result) {
@@ -124,7 +122,7 @@ class isp_list_plugin {
 			foreach($plugin_vars["emails"] as $email) {
 				$add_str .= " $email";
 			}
-			$exec = exec("$rem_members_path $ml_name$add_str", $results);
+			$exec = exec("$rem_members_path ".escapeshellcmd($ml_name.$add_str), $results);
 			if (!$exec){
 				$stat = false;
 			}
@@ -136,12 +134,12 @@ class isp_list_plugin {
 				if(!preg_match("/^([a-z0-9_\+\.-]+\@[a-z0-9\.-]+)$/",$email)) {
 					$go_api->errorMessage('<b>'.$go_api->lng("Feld").': Username</b><br>'.$go_api->lng("Der Username muss aus min. 4, max 32 Buchstaben oder Zahlen bestehen, wobei er mit einem Buchstaben beginnen muss.") . "<br>&nbsp;<br>");
 				} else {
-					$add_str .= "$email\\n";
+					$add_str .= escapeshellcmd($email)."\\n";
 				}
 			}
 
 			$add_str .= "'";
-			$exec = exec("$add_str | $add_members_path -r - -w n $ml_name", $results);
+			$exec = exec("$add_str | $add_members_path -r - -w n ".escapeshellcmd($ml_name), $results);
 			if (!$exec){
 				$stat = false;
 			}
