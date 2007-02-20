@@ -1,5 +1,7 @@
 <?
 
+if(CONFIG_LOADED != 1) die('Direct access not permitted.');
+
 /*
         CVS Revision. 1.1.0
 */

@@ -39,6 +39,8 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 #############################################################
 
+if(CONFIG_LOADED != 1) die('Direct access not permitted.');
+
 class isp_list_plugin {
 
 	var	$list_members_path = "/usr/lib/mailman/bin/list_members";

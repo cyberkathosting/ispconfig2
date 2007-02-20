@@ -37,6 +37,8 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  # Datum:       01.03.2002
  #
  #############################################################
+ 
+ if(CONFIG_LOADED != 1) die('Direct access not permitted.');
 
 class reseller_stats_plugin {
 

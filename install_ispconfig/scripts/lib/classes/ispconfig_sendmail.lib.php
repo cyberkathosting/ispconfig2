@@ -27,6 +27,8 @@ NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
 EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
+if(CONFIG_LOADED != 1) die('Direct access not permitted.');
+
 /*
 	The postfix library contains code for postfix and sendmail style setups,
 	instead of copying it, I will include it and set the configuration style to

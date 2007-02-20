@@ -27,6 +27,8 @@ NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
 EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
+if(CONFIG_LOADED != 1) die('Direct access not permitted.');
+
 if(isset($_REQUEST["go_info"]) or count($_REQUEST) > 0) die('http request to shell script not allowed!');
 if(!defined('SERVER_ROOT')) die('Direct calls to this file are not allowed.');
 

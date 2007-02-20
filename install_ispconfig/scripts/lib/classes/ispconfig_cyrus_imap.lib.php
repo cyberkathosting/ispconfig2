@@ -30,6 +30,8 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 */
 
+if(CONFIG_LOADED != 1) die('Direct access not permitted.');
+
 class cyrus_imap {
 
   var $FILE = "/root/ispconfig/scripts/lib/classes/ispconfig_cyrus_imap.lib.php";

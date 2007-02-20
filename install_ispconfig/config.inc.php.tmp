@@ -148,4 +148,8 @@ $go_info["server"]["log_device"] = "FILE"; // FILE, SYSTEM, MAIL
 **********************************************/
 
 $go_info["demo"]["web_path"] = "";
+
+define("CONFIG_LOADED",1);
+
+
 ?>

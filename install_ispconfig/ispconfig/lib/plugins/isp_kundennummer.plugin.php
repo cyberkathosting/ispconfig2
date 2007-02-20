@@ -38,6 +38,8 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  # Datum: 10.03.2003
  #
  #############################################################
+ 
+ if(CONFIG_LOADED != 1) die('Direct access not permitted.');
 
 class isp_kundennummer_plugin {
 
