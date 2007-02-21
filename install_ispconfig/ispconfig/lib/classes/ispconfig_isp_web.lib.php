@@ -154,6 +154,10 @@ function web_show($doc_id, $doctype_id) {
                   $doc->deck[0]->getElementByName("web_mysql_anzahl_dbs")->visible = 0;
                   $doc->deck[0]->getElementByName("web_mysql_quota")->visible = 0;
                 }
+                if($reseller["limit_list"] != 1){
+                  $doc->deck[0]->getElementByName("web_list")->visible = 0;
+                  $doc->deck[0]->getElementByName("web_listlimit")->visible = 0;
+                }
                 if($reseller["limit_ssl"] != 1) $doc->deck[0]->getElementByName("web_ssl")->visible = 0;
                 if($reseller["limit_anonftp"] != 1) $doc->deck[0]->getElementByName("web_anonftp")->visible = 0;
                 if($reseller["limit_anonftp"] != 1) $doc->deck[0]->getElementByName("web_anonftplimit")->visible = 0;
@@ -214,6 +218,8 @@ function web_show($doc_id, $doctype_id) {
                         $doc->deck[0]->getElementByName("web_mysql")->value = $vorlage["web_mysql"];
                         $doc->deck[0]->getElementByName("web_mysql_anzahl_dbs")->value = $vorlage["web_mysql_anzahl_dbs"];
                         $doc->deck[0]->getElementByName("web_mysql_quota")->value = $vorlage["web_mysql_quota"];
+                        $doc->deck[0]->getElementByName("web_list")->value = $vorlage["web_list"];
+                        $doc->deck[0]->getElementByName("web_listlimit")->value = $vorlage["web_listlimit"];
                         $doc->deck[0]->getElementByName("web_ssl")->value = $vorlage["web_ssl"];
                         $doc->deck[0]->getElementByName("web_anonftp")->value = $vorlage["web_anonftp"];
                         $doc->deck[0]->getElementByName("web_anonftplimit")->value = $vorlage["web_anonftplimit"];
