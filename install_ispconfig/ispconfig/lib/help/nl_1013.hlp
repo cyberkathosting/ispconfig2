@@ -38,7 +38,7 @@ $hlp["web_anonftplimit"] = "Vul hier de ftp ruimte (in MBs) in voor anonieme FTP
 $hlp["optionen_frontpage_passwort"] = "Vul een wachtwoord in om voor Frontpage Extensies te gebruiken.";
 $hlp["optionen_mysql_remote_access"] = "Laat remote toegang toe tot DB op Mysql server.";
 $hlp["optionen_local_mailserver"] = "Als u \"externe Mailserver\" selecteert, zullen er geen veranderingen voor de lokake MTA worden gedaan.";
-$hlp["web_faktura"] = "Activeert/Deactiveert de ISP-Faktuur module voor deze website";
+$hlp["web_faktura"] = "Activeert/Deactiveert de ISP-Factuur module voor deze website";
 $hlp["optionen_logsize"] = "Maximale grootte van de Apache logfiles van deze website. Waarde moet een absolute waarde hebben in MegaBytes of relatieve waarde uitgedrukt in % (van de totale grootte van de website).";
 
 ?>

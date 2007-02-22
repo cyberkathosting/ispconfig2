@@ -8,12 +8,12 @@
 $wb["Optionen"]     = "Opties";
 $wb["Ziel"]         = "Doel";
 $wb["Priorität"]   = "Prioriteit";
-$wb["DNS Eintrag"]  = "DNS Invoer";
+$wb["DNS Eintrag"]  = "DNS invoer";
 $wb["Ordner neu"]   = "Gesorteerd op";
 $wb["Suchen"]       = "Zoeken";
-$wb["DNS-Manager"]  = "DNS-Manager";
+$wb["DNS-Manager"]  = "DNS-manager";
 $wb["Domain (SOA)"] = "Domein (SOA)";
-$wb["Email Admin"]  = "Admin Email";
+$wb["Email Admin"]  = "Admin email";
 $wb["Nameserver 1"] = "Nameserver 1";
 $wb["Nameserver 2"] = "Nameserver 2";
 $wb["Refresh"]      = "Vernieuwen";
@@ -25,28 +25,28 @@ $wb["Record"]       = "Records";
 $wb["Mailserver"]   = "Mailserver";
 
 $wb["Dokument"] = "Document";
-$wb["neues Dokument anlegen"] = "Nieuw Dokument";
+$wb["neues Dokument anlegen"] = "Nieuw document";
 
 $wb["error_soa_exists_1"] = "U heeft reeds een domein (SOA Record) aangemaakt met de naam ";
 $wb["error_soa_exists_2"] = ".<br>";
 //////////////// DNS Manager Ende ///////////
 
-$wb["IP-Adresse ungültig."] = "IP-Adres ongeldig.";
+$wb["IP-Adresse ungültig."] = "IP-adres ongeldig.";
 $wb["Records"] = 'Records';
 $wb["ziel"] = 'Doel';
 $wb["Neu"] = 'Nieuw';
 
 // NEW 1.3 //////////////////////////////////////
 
-$wb["Master neu"] = 'New Master';
-$wb["Slave neu"] = 'New Slave';
-$wb["Slave Zone"] = 'Slave Zone';
-$wb["domain"] = 'Domain';
-$wb["DNS-Master IP"] = 'DNS-Master IP';
+$wb["Master neu"] = 'Nieuwe master';
+$wb["Slave neu"] = 'Nieuwe slave';
+$wb["Slave Zone"] = 'Slave zone';
+$wb["domain"] = 'Domein';
+$wb["DNS-Master IP"] = 'DNS-master IP';
 $wb["Name"] = 'Name';
 $wb["Masters"] = 'Masters';
 $wb["Slaves"] = 'Slaves';
-$wb["SUCHE"] = 'SEARCH';
+$wb["SUCHE"] = 'ZOEKEN';
 
 
 
@@ -55,43 +55,43 @@ $wb["Arbeitsspeicher"]          = "Intern geheugen";
 $wb["CPU"]          = "CPU";
 $wb["Dienste"]      = "Diensten";
 $wb["Server Online seit"]          = "Server online sinds";
-$wb["User Online"]      = "Gebruikers Online";
-$wb["System Load 1 Minute"] = "Systeem gebruik 1 Minuut";
-$wb["System Load 5 Minuten"] = "Systeem gebruik 5 Minuten";
-$wb["System Load 15 Minuten"] = "Systeem gebruik 15 Minuten";
+$wb["User Online"]      = "Gebruikers online";
+$wb["System Load 1 Minute"] = "Systeem gebruik 1 minuut";
+$wb["System Load 5 Minuten"] = "Systeem gebruik 5 minuten";
+$wb["System Load 15 Minuten"] = "Systeem gebruik 15 minuten";
 //////////////// Server Status Ende //////////
 
-$wb["Webs angelegt"] = "Sites used";
-$wb["User angelegt"] = "Users used";
-$wb["Domains angelegt"] = "Domains used";
-$wb["unlimitiert"]  = "unlimited";
+$wb["Webs angelegt"] = "Sites aangemaakt";
+$wb["User angelegt"] = "Gebruikers aangemaakt";
+$wb["Domains angelegt"] = "Domeinen aangemaakt";
+$wb["unlimitiert"]  = "ongelimiteerd";
 $wb["Anbieter"]     = "Reseller";
-$wb["DNS-Domains angelegt"] = 'DNS Domains created';
-$wb["von"] = "of";
-$wb["Maximale Anzahl an DNS-Einträgen erreicht."] = "The max. number of zones for this account has been reached.<br>";
-$wb["error_no_zones_allowed"] = "The creation of zones is not allowed for this account.<br>";
-$wb["error_no_dns_anbieter"] = "This account is not allowed to create any DNS records.<br>";
-$wb["error_max_slave_dns_anbieter"] = "The max. number of slave zones has been reached for this account.<br>";
+$wb["DNS-Domains angelegt"] = 'DNS Domeinen aangemaakt';
+$wb["von"] = "van";
+$wb["Maximale Anzahl an DNS-Einträgen erreicht."] = "Het max. aantal zones voor deze account is bereikt.<br>";
+$wb["error_no_zones_allowed"] = "Het aanmaken van zones is niet toegestaan met deze account.<br>";
+$wb["error_no_dns_anbieter"] = "Deze account heeft geen rechten voor het aanmaken van DNS records.<br>";
+$wb["error_max_slave_dns_anbieter"] = "Het max. aantal slave zones is bereikt voor deze account.<br>";
 $wb["weiter_link"] = "<br><br> <a href='../../isp_dns/frame_start.php?s=$s'>Meer &gt;&gt;</a>";
-$wb["error_a_record_exists"] = "There is already an A Record entry for this host in this zone.<br>";
-$wb["error_cname_record_exists"] = "There is already a CNAME Record entry for this host in this zone.<br>";
-$wb["error_mx_record_exists"] = "This or a similar MX Record does already exist in this zone.<br>";
-$wb["error_spf_record_exists"] = "This SPF Record does already exist in this zone.<br>";
+$wb["error_a_record_exists"] = "Er bestaat reeds een A record ingang voor deze host in deze zone.<br>";
+$wb["error_cname_record_exists"] = "Er bestaat reeds een CNAME Record ingang voor deze host in deze zone.<br>";
+$wb["error_mx_record_exists"] = "Deze of een a gelijkaardig MX Record bestaat reeds in deze zone.<br>";
+$wb["error_spf_record_exists"] = "Dit SPF record bestaat reeds in deze zone.<br>";
 
-$wb["ja"] = "Yes";
-$wb["nein"] = "No";
-$wb["a"] = "Are emails sent<br>&nbsp;&nbsp;from A Record?";
-$wb["mx"] = "Are emails sent<br>&nbsp;&nbsp;from MX Record?";
-$wb["ptr"] = "Are emails sent<br>&nbsp;&nbsp;from all servers of<br>&nbsp;&nbsp;this domain?";
-$wb["a_break"] = "Are emails sent<br>&nbsp;&nbsp;from other A Records?";
-$wb["mx_break"] = "Are emails sent<br>&nbsp;&nbsp;from other MX Records?";
-$wb["ip4_break"] = "Are emails sent<br>&nbsp;&nbsp;from other IP addresses?";
-$wb["include_break"] = "Inherit SPF Record<br>&nbsp;&nbsp;from this zone?";
-$wb["all_"] = "Do the above entries<br>&nbsp;&nbsp;contain all hosts<br>&nbsp;&nbsp;allowed to send emails<br>&nbsp;&nbsp;for this domain?";
+$wb["ja"] = "Ja";
+$wb["nein"] = "Ja";
+$wb["a"] = "Zijn emails verstuurd<br>&nbsp;&nbsp;van A record?";
+$wb["mx"] = "Zijn emails verstuurd<br>&nbsp;&nbsp;van MX record?";
+$wb["ptr"] = "Zijn emails verstuurd<br>&nbsp;&nbsp;van alle servers van<br>&nbsp;&nbsp;dit domein?";
+$wb["a_break"] = "Zijn emails verstuurd<br>&nbsp;&nbsp;van andere A records?";
+$wb["mx_break"] = "Zijn emails verstuurd<br>&nbsp;&nbsp;van andere MX records?";
+$wb["ip4_break"] = "Zijn emails verstuurd<br>&nbsp;&nbsp;van andere IP addressen?";
+$wb["include_break"] = "Erf SPF record<br>&nbsp;&nbsp;van deze zone?";
+$wb["all_"] = "Hebben de bovengenoemde ingangen<br>&nbsp;&nbsp;van alle hosts<br>&nbsp;&nbsp;toestemming om email te versturen<br>&nbsp;&nbsp;voor dit domein?";
 
-$wb["Catalog_Name"] = "Name";
+$wb["Catalog_Name"] = "Naam";
 $wb["Feld"] = "Field";
-$wb["Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 -"] = "Only the following signs are allowed: a-z A-Z 0-9 -<br>";
-$wb["Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 - ."] = "Only the following signs are allowed: a-z A-Z 0-9 - .<br>";
+$wb["Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 -"] = "Uitsluitend de volgende tekens zijn toegestaan: a-z A-Z 0-9 -<br>";
+$wb["Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 - ."] = "Uitsluitend de volgende tekens zijn toegestaan: a-z A-Z 0-9 - .<br>";
 
 ?>

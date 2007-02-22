@@ -7,7 +7,7 @@
 /////////////// Allgemein - general (kommt in mehreren Modulen vor) /////////
 $wb["login_begruessung"]     = "Login:";
 $wb["Username"]     = "Gebruikersnaam";
-$wb["Passwort"]     = "Password";
+$wb["Passwort"]     = "Wachtwoord";
 $wb["Login"]       = "Login";
 $wb["Administration"]  = "Management";
 $wb["ISP Manager"]  = "ISP Manager";
@@ -15,7 +15,7 @@ $wb["DNS Manager"]  = "DNS Manager";
 $wb["Tools"]        = "Tools";
 $wb["Logout"]       = "Uitloggen";
 $wb["Status"]       = "Status";
-$wb["neu"]          = "Nieuw";
+$wb["neu"]          = "nieuw";
 $wb["Hinweis"]      = "Referentie";
 $wb["Web"]          = "Web";
 $wb["Email"]        = "Email";
@@ -26,25 +26,25 @@ $wb["Datei"]        = "Bestand";
 $wb["von"]          = "van"; // besser 'ab'?
 $wb["error_headline"] = "De volgende fout is opgetreden:";
 $wb["Gruppe"]       = "Groep";
-$wb["Titel"]        = " Titel";
+$wb["Titel"]        = "Titel";
 $wb["Server"]       = "Server";
 $wb["Host"]         = "Hostnaam";
 $wb["Domain"]       = "Domein";
-$wb["IP Adresse"]   = " IP Adressen";
-$wb["Ordner"]       = "Sorteren";
+$wb["IP Adresse"]   = "IP Adres";
+$wb["Ordner"]       = "Map";
 $wb["Dokument"]     = "Document";
-$wb["Dokument suchen"] = "Dokument zoeken";
+$wb["Dokument suchen"] = "Document zoeken";
 $wb["Suchmaske"]    = "Zoektermen";
 $wb["Ausgabeformat"] = "Output formaat";
 $wb["Standard"]     = "Standaard";
 $wb["Einträge"]    = "Ingave";
-$wb["Papierkorb leeren"] = " Leeg prullenbak";
-$wb["Stammordner"]  = "Stamdossier";
+$wb["Papierkorb leeren"] = "Leeg prullenbak";
+$wb["Stammordner"]  = "Master zone";
 $wb["keine Gruppe"] = "Geen groep";
-$wb["neues Dokument anlegen"] = "Nieuw dokument gemaakt";
-$wb["auf"]   = "Uitklappen";
-$wb["zu"]    = "Inklappen";
-$wb["in_ordner"]    = "gesorteerd op";
+$wb["neues Dokument anlegen"] = "Nieuw document gemaakt";
+$wb["auf"]   = "uitklappen";
+$wb["zu"]    = "inklappen";
+$wb["in_ordner"]    = "in map";
 $wb["Papierkorb"]   = "Prullenbak";
 $wb["Wiederherstellen"]    = "Herstellen";
 $wb["Papierkorb: Einträge"]   = "Prullenbak: inhoud";
@@ -56,24 +56,18 @@ $wb["Suchen"]    = "Zoeken";
 $wb["Herr"] = "Dhr";
 $wb["Frau"] = "Mevr";
 
-$wb["Verzeichnis öffnen"] = "open";
-$wb["Verzeichnis schliessen"] = "close";
-$wb["Hilfe"] = 'Help';
-$wb["Online Hilfe"] = 'Online Help';
-$wb["schliessen"] = 'close';
-
 $wb["Es ist folgender Fehler aufgetreten:"] = "De volgende fout is opgetreden:";
 
-$wb["Web-FTP"] = 'Web-FTP';
-$wb["ISP Faktura"] = 'ISP faktuur';
+$wb["Web-FTP"] = "Web-FTP";
+$wb["ISP Faktura"] = 'ISP factuur';
 
-$wb["Verzeichnis öffnen"] = "open";
-$wb["Verzeichnis schliessen"] = "close";
-$wb["Hilfe"] = 'Help';
-$wb["Online Hilfe"] = 'Online Help';
-$wb["schliessen"] = 'close';
+$wb["Verzeichnis öffnen"] = "openen";
+$wb["Verzeichnis schliessen"] = "sluiten";
+$wb["Hilfe"] = "Help";
+$wb["Online Hilfe"] = "Online Help";
+$wb["schliessen"] = "sluiten";
 
-$wb["PAPIERKORB_HINWEIS"] = "<b>Note:</b> Items remaining in recycle bin after emptying are currently in update state. Please try to delete them later.";
+$wb["PAPIERKORB_HINWEIS"] = "<b>Note:</b> Items die zich in de prullenbak bevinden worden op dit moment geupdate. Probeer het later nog eens.";
 
 
 // Multidoc  Allgemein ////////////////////////////////
@@ -88,29 +82,35 @@ $wb["jscript_ein"] = " ";
 
 ////////////// Allgemein Ende ///////////////////
 
-$wb["Es konnte ein Dokument nicht wiederhergestellt werden, da sich das Eltern-Dokument noch im Papierkorb befindet.\n"] = "The object cannot be restored as long as its parent object is in the recycle bin.";
+$wb["Es konnte ein Dokument nicht wiederhergestellt werden, da sich das Eltern-Dokument noch im Papierkorb befindet.\n"] = "Het object kan niet hersteld worden zolang het parent object zich in de prullenbak bevind.";
 
-$wb["DNS-Domains angelegt"] = 'Master Zones created';
-$wb["Benutzter Diskspace"] = "Diskspace used";
-$wb["Slave Zones angelegt"] = "Slave Zones created";
-$wb["Datenbanken angelegt"] = "Databases created";
+$wb["DNS-Domains angelegt"] = 'Master zones aangemaakt';
+$wb["Benutzter Diskspace"] = "Schijfruimte gebruikt";
+$wb["Slave Zones angelegt"] = "Slave zones aangemaakt";
+$wb["Datenbanken angelegt"] = "Databases aangemaakt";
 
-$wb["txt_confirm_delete"] = "Do you really want to delete this object?";
+$wb["txt_confirm_delete"] = "Wilt u dit object echt verwijderen?";
 
-$wb["txt_object_currently_updated"] = "Your changes cannot be saved because this item is currently being updated. Please try again later.<br><br> <a href='../frame_start.php?s=$s'>Next &gt;&gt;</a>";
-$wb["txt_system_currently_updated_no_recycle_bin"] = "The recycle bin cannot be accessed because the system is currently being updated. Please try again in a few minutes.<br><br> <a href='../frame_start.php?s=$s'>Next &gt;&gt;</a>";
+$wb["txt_object_currently_updated"] = "Uw wijzigingen kunnen niet worden opgeslagen, omdat dit item op dit moment wordt geupdate. Probeert u het later nog eens.<br><br> <a href='../frame_start.php?s=$s'>Volgende &gt;&gt;</a>";
+$wb["txt_system_currently_updated_no_recycle_bin"] = "U heeft op dit moment geen toegang tot de prullenbak, omdat het systeem op dt moment wordt geupdate. Probeer het over een paar minuten nog eens.<br><br> <a href='../frame_start.php?s=$s'>Volgende &gt;&gt;</a>"; 
 
-$wb['no_permission_to_change_data'] = "<b>Error: You don't have the necessary permissions to change these data.</b><p>
-                <br>
-                This is because of one of the following reasons:<br>
-                1. You are using the system in test mode.<br>
-                   - Log in with your username and password.<br>&nbsp;<br>
-                2. You are trying to change an element which is allocated to another group.<br>
-                   In this group you don't have permission to write / edit data.<br>
-                   - Please ask the owner of the group to grant write access to this resource to you.<br>&nbsp;<br>
-                <center><a href=\"" . $go_info["server"]["server_url"] . "/index.php?s=$s\">Next &gt;&gt;</a></center>";
+$wb["user_perms_nowrite_hd"]         = "Foutmelding: U heeft geen rechten om dit bestand te wijzigen";
+$wb["user_perms_nowrite_reasons"]    = "Mogelijke oorzaken zijn";
+$wb["user_perms_nowrite_reasons_1a"] = "1. U gebruikt het systeem in demo mode";
+$wb["user_perms_nowrite_reasons_1b"] = "- Log a.u.b. in met uw gebruikersnaam en wachtwoord.";
+$wb["user_perms_nowrite_reasons_2a"] = "2. U probeert een item te wijzigen dat toebehoort aan een andere groep.";
+$wb["user_perms_nowrite_reasons_2b"] = "U heeft in deze groep geen schrijfrechten / veranderen data.";
+$wb["user_perms_nowrite_reasons_2c"] = "- Neem a.u.b. contact op met de eigenaar van de groep en vraag de benodigde rechten aan.";
 
-$wb["Weiter"] = "Next";
-$wb["Zurück"] = "Back";
+$wb["group_perms_nowrite_hd"]         = "Foutmelding: U heeft niet de benodigde rechten voor deze groep";
+$wb["group_perms_nowrite_reasons"]    = "Mogelijke oorzaken zijn";
+$wb["group_perms_nowrite_reasons_1a"] = "1. U gebruikt het systeem in demo mode";
+$wb["group_perms_nowrite_reasons_1b"] = "- Log a.u.b. in met uw gebruikersnaam en wachtwoord.";
+$wb["group_perms_nowrite_reasons_2a"] = "2. U probeert een item te wijzigen dat toebehoort aan een andere groep.";
+$wb["group_perms_nowrite_reasons_2b"] = "U heeft in deze groep geen schrijfrechten / veranderen data.";
+$wb["group_perms_nowrite_reasons_2c"] = "- Neem a.u.b. contact op met de eigenaar van de groep en vraag de benodigde rechten aan.";
+
+$wb["Weiter"] = "Volgende";
+$wb["Zurück"] = "Terug";
 
 ?>

@@ -8,19 +8,19 @@
 $wb["Arbeitsspeicher"]          = "Geheugen";
 $wb["CPU"]          = "CPU";
 $wb["Dienste"]      = "Services";
-$wb["Server Online seit"]          = "Server Online sinds";
-$wb["User Online"]      = "Gebruikers Online";
-$wb["System Load 1 Minute"] = "System gebruik 1 Minuut";
-$wb["System Load 5 Minuten"] = "System gebruik 5 Minuten";
-$wb["System Load 15 Minuten"] = "System gebruik 15 Minuten";
+$wb["Server Online seit"]          = "Server online sinds";
+$wb["User Online"]      = "Gebruikers online";
+$wb["System Load 1 Minute"] = "System gebruik 1 minuut";
+$wb["System Load 5 Minuten"] = "System gebruik 5 minuten";
+$wb["System Load 15 Minuten"] = "System gebruik 15 minuten";
 //////////////// Server Status Ende //////////
 
 ///////////////// Administration ////////////////
-$wb["ISPConfig Datenbank"]    = "ISPConfig Database";
-$wb["Backup erstellen"]       = "Backup Data";
-$wb["Datenbank Check"]        = "Controleer Database";
-$wb["Datenbank Optimieren"]   = "Optimaliseer Database";
-$wb["Datenbank Reparieren"]   = "Repareer Database";
+$wb["ISPConfig Datenbank"]    = "ISPConfig database";
+$wb["Backup erstellen"]       = "Backup data";
+$wb["Datenbank Check"]        = "Controleer database";
+$wb["Datenbank Optimieren"]   = "Optimaliseer database";
+$wb["Datenbank Reparieren"]   = "Repareer database";
 $wb["Eigenschaften"] = "Instellingen";
 $wb["Server Name"]  = "Server Naam";
 $wb["Netzmaske"]    = "Netmask";
@@ -32,14 +32,14 @@ $wb["Programm"]     = "Programma";
 $wb["Reparatur"]    = "Repareer";
 $wb["Optimiere"]    = "Optimaliseer";
 $wb["Pfad httpd.conf"]    = "Pad naar httpd.conf";
-$wb["MTA Typ"]    = "MTA Type";
-$wb["Virtuser Datei"]    = "Virtuele gebruikers File";
-$wb["FTP Programm"]    = "FTP Programma";
+$wb["MTA Typ"]    = "MTA type";
+$wb["Virtuser Datei"]    = "Virtuele gebruikers bestand";
+$wb["FTP Programm"]    = "FTP programma";
 $wb["FTP conf. Datei"]    = "FTP conf. bestand";
-$wb["Userid von"]    = "gebruikersid van";
+$wb["Userid von"]    = "Gebruikersid van";
 $wb["Groupid von"]    = "Groepid van";
 
-$wb["Backup von Tabelle"] = "Backup Tabel";
+$wb["Backup von Tabelle"] = "Backup tabel";
 $wb["Optimiere"] = "Optimaliseer";
 $wb["Reparatur"] = "Repareer";
 $wb["oder"] = "of";
@@ -55,11 +55,11 @@ $wb["Data"] = "Bestand";
 
 $wb["Überwachung"] = "Monitoring";
 $wb["Firewall"] = "Firewall";
-$wb["Web-Server"] = "Web Server";
-$wb["FTP-Server"] = "FTP Server";
-$wb["SMTP-Server"] = "SMTP Server";
-$wb["DNS-Server"] = "DNS Server";
-$wb["mySQL-Server"] = "mySQL Server";
+$wb["Web-Server"] = "Web server";
+$wb["FTP-Server"] = "FTP server";
+$wb["SMTP-Server"] = "SMTP server";
+$wb["DNS-Server"] = "DNS server";
+$wb["mySQL-Server"] = "mySQL server";
 $wb["An"] = "Aan";
 $wb["Aus"] = "Uit";
 $wb["neu Starten"] = "Herstarten";
@@ -76,122 +76,143 @@ $wb["Sonstige"] = "Andere";
 $wb["Ja"] = "Ja";
 $wb["Nein"] = "Nee";
 $wb["Offline"] = "Offline";
-$wb["ISP Dienste"] = "ISP Diensten";
-$wb["ISP Überwachung"] = "ISP Monitor";
-$wb["ISP Firewall"] = "ISP Firewall";
+$wb["ISP Dienste"] = "ISP diensten";
+$wb["ISP Überwachung"] = "ISP monitor";
+$wb["ISP Firewall"] = "ISP firewall";
 $wb["Name"] = "Naam";
 $wb["Aktiv"] = "Actief";
-$wb["Firewall Regel"] = "Firewall Regel";
+$wb["Firewall Regel"] = "Firewall regel";
 $wb["Dieser Port kann nicht geändert werden."] = "Deze poort kan niet veranderd worden.<br>";
-$wb["Dieser Port kann nicht deaktiviert werden."] = "This port cannot be deactivated.<br>";
+$wb["Dieser Port kann nicht deaktiviert werden."] = "Deze poort kan niet gedeactiveerd worden.<br>";
 
 //////////////// Firewall ENDE ////////////////
 
 //////////////// LNG 1.1.12 BEGIN /////////////
 
-$wb["ISP Server"] = 'ISP Server';
-$wb["Admin Email"] = 'Admin Email';
+$wb["ISP Server"] = 'ISP server';
+$wb["Admin Email"] = 'Admin email';
 $wb["EMail"] = 'Email';
 $wb["Funktionen"] = 'Functie';
-$wb["httpd User"] = 'httpd User';
-$wb["httpd Group"] = 'httpd Group';
-$wb["Document Root"] = 'Document Root';
-$wb["Frontpage Pfad"] = 'Frontpage Pad';
-$wb["access Log"] = 'access Log';
+$wb["httpd User"] = 'httpd gebruiker';
+$wb["httpd Group"] = 'httpd groep';
+$wb["Document Root"] = 'Document root';
+$wb["Frontpage Pfad"] = 'Frontpage pad';
+$wb["access Log"] = 'Toegang log';
 $wb["Sendmail"] = 'Sendmail';
 $wb["Sendmail CW"] = 'Sendmail CW';
-$wb["Log speichern"] = 'Bewaar Log';
+$wb["Log speichern"] = 'Bewaar log';
 $wb["BIND User"] = 'BIND User';
-$wb["BIND Group"] = 'BIND Group';
-$wb["Zonefiles Dir."] = 'Zonefiles Dir.';
-$wb["Default Ns1"] = 'Standaard Ns1';
-$wb["Default Ns2"] = 'Standaard Ns2';
+$wb["BIND Group"] = 'BIND groep';
+$wb["Zonefiles Dir."] = 'Zonefiles dir.';
+$wb["Default Ns1"] = 'Standaard ns1';
+$wb["Default Ns2"] = 'Standaard ns2';
 $wb["Standard MX"] = 'Standaard MX';
-$wb["Frontpage Extensions"] = 'Frontpage Extensies';
+$wb["Frontpage Extensions"] = 'Frontpage extensies';
 $wb["User Prefix"] = 'Gebruikers voorvoegsel';
-$wb["Anbieter Nr. von"] = 'Wederverkoper no. van';
+$wb["Anbieter Nr. von"] = 'Reseller no. van';
 $wb["Kunden Nr. von"] = 'Klant no. van';
-$wb["SOAP Server IP"] = 'SOAP Server IP';
-$wb["SOAP Server Port"] = 'SOAP Server Port';
+$wb["SOAP Server IP"] = 'SOAP server IP';
+$wb["SOAP Server Port"] = 'SOAP server port';
 $wb["Web-FTP"] = 'Web-FTP';
-$wb["ISP Faktura"] = 'ISP Factuur';
-$wb["Modul Manager"] = 'Module Manager';
+$wb["ISP Faktura"] = 'ISP factuur';
+$wb["Modul Manager"] = 'Module manager';
 $wb["Hinzufügen"] = 'Toevoegen';
 $wb["Alle anzeigen"] = 'Laat alles zien';
-$wb["Update Manager"] = 'Update Manager';
+$wb["Update Manager"] = 'Update manager';
 $wb["Update"] = 'Update';
-$wb["System Config"] = 'System Configuratie';
+$wb["System Config"] = 'Systemconfiguratie';
 $wb["Bearbeiten"] = 'Bewerk';
 $wb["Importieren"] = 'Importeer';
 $wb["Exportieren"] = 'Exporteer';
 $wb["Allgemein"] = 'Algemeen';
-$wb["ISP-Manager"] = 'ISP Manager';
+$wb["ISP-Manager"] = 'ISP manager';
 $wb["Faktura"] = 'Factuur';
 $wb["Übernehmen"] = 'Opslaan';
 $wb["Webserver"] = 'Webserver';
 $wb["Bind DNS"] = 'Bind DNS';
 $wb["Mailserver"] = 'Mailserver';
-$wb["POP3-Server"] = 'POP3 Server';
+$wb["POP3-Server"] = 'POP3 server';
 $wb["nein"] = 'Nee';
 $wb["ja"] = 'Ja';
-$wb["ISP Server Status"] = 'ISP Server Status';
-$wb["System-Datenbank"] = 'Systeem-Database';
+$wb["ISP Server Status"] = 'ISP server status';
+$wb["System-Datenbank"] = 'Systeem-database';
 $wb["Verzeichnis"] = 'Map';
 $wb["Backup starten"] = 'Backup';
+
+// NEW 1.1.12a //////////////////////////////
+
+$wb["Es wurde kein Web ausgewählt."] = "Geen web geselecteerd.";
+$wb["Backup-Funktionen im Demo-Modus nicht verfügbar."] = "Backup-functies niet beschikbaar in demo mode.";
+$wb["Backup Status"] = "Backup-Status";
+$wb["Der Name des FTP-Servers <br>enthält ungültige Zeichen."] = "De naam van de FTP-server<br>bevat ongeldige karakters.";
+$wb["Sie haben keinen FTP Benutzernamen angegeben."] = "Geen FTP-gebruikersnaam gedefinieerd.";
+$wb["Ftp-Verbindung nicht hergestellt!"] = "Ftp-verbinding mislukt!";
+$wb["Verbindung mit:"] = "Verbonden met:";
+$wb["als Benutzer:"] = "als gebruiker:";
+$wb["nicht möglich."] = "niet mogelijk.";
+$wb["Konnte nicht in Verzeichnis:"] = "wijzigen naar folder:";
+$wb["wechseln."] = "mislukt.";
+$wb["Wechsel in Verzeichnis:"] = "wijzigen naar folder:";
+$wb["Ftp upload war fehlerhaft!"] = "FTP-upload mislukt!";
+$wb["Upload erfolgreich."] = "Upload successvol.";
+$wb["FTP-Upload Status"] = "FTP-Upload Status";
+$wb["Backup-Methode nicht unterstützt."] = "Backup-methode niet beschikbaar.";
+$wb["Rechnung Nr. von"] = "Factuur nr. van";
+
 //////////////// LNG 1.1.12 ENDE ///////////////
 
 // NEW 1.3 /////////////////////////////////////
 
 $wb["Remoting"] = 'Remoting';
-$wb["User"] = 'User';
+$wb["User"] = 'Gebruiker';
 $wb["Conf. Dir."] = 'Conf. Dir.';
 $wb["Suexec"] = 'Suexec';
 $wb["Postfix"] = 'Postfix';
-$wb["Mail Log"] = 'Mail Log';
+$wb["Mail Log"] = 'Mail log';
 $wb["Maildir"] = 'Maildir';
-$wb["Antivir Mailadmin"] = 'Antivirus-Admin';
+$wb["Antivir Mailadmin"] = 'Antivirus-admin';
 $wb["aktiv"] = "active";
 $wb["inaktiv"] = "inactive";
 $wb["weiter_link"] = "<br><br> <a href='../../isp_manager/frame_start.php?s=$s'>Meer &gt;&gt;</a>";
-$wb["txt_client_salutatory_email_desc"] = "<b>Salutatory Email for Clients</b>";
-$wb["txt_client_salutatory_email_sender_email"] = "Sender's Email";
-$wb["txt_client_salutatory_email_sender_name"] = "Name of Sender";
-$wb["txt_client_salutatory_email_bcc"] = "BCC Recipient";
-$wb["txt_client_salutatory_email_subject"] = "Subject";
-$wb["txt_client_salutatory_email_message"] = "Message";
+$wb["txt_client_salutatory_email_desc"] = "<b>Welkomsemail voor klanten</b>";
+$wb["txt_client_salutatory_email_sender_email"] = "Emailadres afzender";
+$wb["txt_client_salutatory_email_sender_name"] = "Naam afzender";
+$wb["txt_client_salutatory_email_bcc"] = "BCC ontvanger";
+$wb["txt_client_salutatory_email_subject"] = "Onderwerp";
+$wb["txt_client_salutatory_email_message"] = "Bericht";
 $wb["txt_client_salutatory_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
 <tr>
     <td valign="top" colspan="2" class="normal">
-      <b>Include the following variables in your text:</b></td></tr>
+      <b>Gebruik de volgende variabelen in uw tekst:</b></td></tr>
         <tr>
           <td class="normal">%%%USER%%%</td>
           <td class="normal">
-            Client\'s Username</td>
+            Gebruikersnaam</td>
         </tr>
         <tr>
           <td class="normal">%%%PASSWORD%%%</td>
           <td class="normal">
-            Client\'s Password</td>
+            Wachtwoord klant</td>
         </tr>
         <tr>
           <td class="normal">%%%FIRST_NAME%%%</td>
           <td class="normal">
-            Client\'s First Name</td>
+            Voornaam klant</td>
         </tr>
         <tr>
           <td class="normal">%%%LAST_NAME%%%</td>
           <td class="normal">
-            Client\'s Last Name</td>
+            Achternaam klant</td>
         </tr>
         <tr>
           <td class="normal">%%%COMPANY%%%</td>
           <td class="normal">
-            Client\'s Company</td>
+            Bedrijfsnaam klant</td>
         </tr>
         <tr>
           <td class="normal">%%%EMAIL%%%</td>
           <td class="normal">
-            Client\'s Email Address</td>
+            Emailadres klant</td>
         </tr>
         <tr>
           <td class="normal">%%%CP%%%</td>
@@ -201,49 +222,49 @@ $wb["txt_client_salutatory_email_variables"] = '<table border="0" cellpadding="3
         <tr>
           <td class="normal">%%%MANUAL%%%</td>
           <td class="normal">
-            ISPConfig Client Manual</td>
+            ISPConfig klanten handleiding</td>
         </tr>
         </table>';
 
-$wb["txt_res_salutatory_email_desc"] = "<b>Salutatory Email for Resellers</b>";
-$wb["txt_res_salutatory_email_sender_email"] = "Sender's Email";
-$wb["txt_res_salutatory_email_sender_name"] = "Name of Sender";
-$wb["txt_res_salutatory_email_bcc"] = "BCC Recipient";
-$wb["txt_res_salutatory_email_subject"] = "Subject";
-$wb["txt_res_salutatory_email_message"] = "Message";
+$wb["txt_res_salutatory_email_desc"] = "<b>Welkomsemail voor resellers</b>";
+$wb["txt_res_salutatory_email_sender_email"] = "Emailadres afzender";
+$wb["txt_res_salutatory_email_sender_name"] = "Naam afzender";
+$wb["txt_res_salutatory_email_bcc"] = "BCC ontvanger";
+$wb["txt_res_salutatory_email_subject"] = "Onderwerp";
+$wb["txt_res_salutatory_email_message"] = "Bericht";
 $wb["txt_res_salutatory_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
 <tr>
     <td valign="top" colspan="2" class="normal">
-      <b>Include the following variables in your text:</b></td></tr>
+      <b>Gebruik de volgende variabelen in uw tekst:</b></td></tr>
         <tr>
           <td class="normal">%%%USER%%%</td>
           <td class="normal">
-            Reseller\'s Username</td>
+            Gebruikersnaam reseller</td>
         </tr>
         <tr>
           <td class="normal">%%%PASSWORD%%%</td>
           <td class="normal">
-            Reseller\'s Password</td>
+            Wachtwoord reseller</td>
         </tr>
         <tr>
           <td class="normal">%%%FIRST_NAME%%%</td>
           <td class="normal">
-            Reseller\'s First Name</td>
+            Voornaam reseller</td>
         </tr>
         <tr>
           <td class="normal">%%%LAST_NAME%%%</td>
           <td class="normal">
-            Reseller\'s Last Name</td>
+            Achternaam reseller</td>
         </tr>
         <tr>
           <td class="normal">%%%COMPANY%%%</td>
           <td class="normal">
-            Reseller\'s Company</td>
+            Bedrijfsnaam reseller</td>
         </tr>
         <tr>
           <td class="normal">%%%EMAIL%%%</td>
           <td class="normal">
-            Reseller\'s Email Address</td>
+            Emailadres reseller</td>
         </tr>
         <tr>
           <td class="normal">%%%CP%%%</td>
@@ -253,160 +274,160 @@ $wb["txt_res_salutatory_email_variables"] = '<table border="0" cellpadding="3" c
         <tr>
           <td class="normal">%%%MANUAL%%%</td>
           <td class="normal">
-            ISPConfig Reseller Manual</td>
+            ISPConfig reseller handleiding</td>
         </tr>
         </table>';
-$wb["txt_standard_index"] = "Standard Index<br>&nbsp;&nbsp;Page";
+$wb["txt_standard_index"] = "Standaard index<br>&nbsp;&nbsp;pagina";
 $wb["txt_standard_index_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
 <tr>
     <td valign="top" colspan="2" class="normal">
-      <b>Include the following variables in your text:</b></td></tr>
+      <b>Gebruik de volgende variabelen in uw tekst:</b></td></tr>
         <tr>
           <td class="normal">%%%FQDN%%%</td>
           <td class="normal">
-            Website\'s Fully Qualified Domain Name</td>
+            Website\'s volledig gekwalificeerde domeinnaam</td>
         </tr>
     </table>';
-$wb["txt_user_standard_index"] = "Users' Standard<br>&nbsp;&nbsp;Index Page";
+$wb["txt_user_standard_index"] = "Gebruikers' standaard<br>&nbsp;&nbsp;index pagina";
 $wb["txt_user_standard_index_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
 <tr>
     <td valign="top" colspan="2" class="normal">
-      <b>Include the following variables in your text:</b></td></tr>
+      <b>Gebruik de volgende variabelen in uw tekst:</b></td></tr>
         <tr>
           <td class="normal">%%%USER%%%</td>
           <td class="normal">
-            User\'s Username</td>
+            Gebruikersnaam</td>
         </tr>
         <tr>
           <td class="normal">%%%FQDN%%%</td>
           <td class="normal">
-            Website\'s Fully Qualified Domain Name</td>
+            Website\'s volledig gekwalificeerde domeinnaam</td>
         </tr>
         </table>';
 
 //////////////// Remoting //////////////////////
-$wb["Hinzufügen"] = "Add";
-$wb["Berechtigungen"] = "Permissions";
-$wb["Speichern"] = "Save";
-$wb["Löschen"] = "Delete";
-$wb["Abbrechen"] = "Cancel";
-$wb["IP-Adresse"] = "IP-Address";
-$wb["DNS-Query"] = "Query Primary DNS Records";
-$wb["DNS-Insert"] = "Create Primary DNS Records";
-$wb["DNS-Update"] = "Edit Primary DNS Records";
-$wb["DNS-Delete"] = "Delete Primary DNS Records";
-$wb["slave_query"] = "Query Secondary DNS Records";
-$wb["slave_insert"] = "Create Secondary DNS Records";
-$wb["slave_update"] = "Edit Secondary DNS Records";
-$wb["slave_delete"] = "Delete Secondary DNS Records";
-$wb["reseller_query"] = "Query Resellers";
-$wb["reseller_insert"] = "Create Resellers";
-$wb["reseller_update"] = "Edit Resellers";
-$wb["reseller_delete"] = "Delete Resellers";
-$wb["kunde_query"] = "Query Clients";
-$wb["kunde_insert"] = "Create Clients";
-$wb["kunde_update"] = "Edit Clients";
-$wb["kunde_delete"] = "Delete Clients";
-$wb["web_query"] = "Query Websites";
-$wb["web_insert"] = "Create Websites";
-$wb["web_update"] = "Edit Websites";
-$wb["web_delete"] = "Delete Websites";
-$wb["txt_primary_dns_records"] = "Primary DNS Records";
-$wb["txt_secondary_dns_records"] = "Secondary DNS Records";
+$wb["Hinzufügen"] = "Toevoegen";
+$wb["Berechtigungen"] = "Rechten";
+$wb["Speichern"] = "Opslaan";
+$wb["Löschen"] = "Verwijderen";
+$wb["Abbrechen"] = "Annuleren";
+$wb["IP-Adresse"] = "IP-adres";
+$wb["DNS-Query"] = "Opvragen Primary DNS records";
+$wb["DNS-Insert"] = "Aanmaken Primary DNS records";
+$wb["DNS-Update"] = "Bewerken Primary DNS records";
+$wb["DNS-Delete"] = "Verwijderen Primary DNS records";
+$wb["slave_query"] = "Opvragen Secondary DNS records";
+$wb["slave_insert"] = "Aanmaken Secondary DNS records";
+$wb["slave_update"] = "Bewerken Secondary DNS Records";
+$wb["slave_delete"] = "Bewerken Secondary DNS records";
+$wb["reseller_query"] = "Opvragen resellers";
+$wb["reseller_insert"] = "Aanmaken resellers";
+$wb["reseller_update"] = "Bewerken resellers";
+$wb["reseller_delete"] = "Verwijderen resellers";
+$wb["kunde_query"] = "Opvragen klanten";
+$wb["kunde_insert"] = "Aanmaken klanten";
+$wb["kunde_update"] = "Bewerken klanten";
+$wb["kunde_delete"] = "Verwijderen klanten";
+$wb["web_query"] = "Opvragen websites";
+$wb["web_insert"] = "Aanmaken websites";
+$wb["web_update"] = "Bewerken websites";
+$wb["web_delete"] = "Verwijderen websites";
+$wb["txt_primary_dns_records"] = "Primary DNS records";
+$wb["txt_secondary_dns_records"] = "Secondary DNS records";
 $wb["txt_anbieter"] = "Resellers";
-$wb["txt_kunden"] = "Clients";
+$wb["txt_kunden"] = "Klanten";
 $wb["txt_webs"] = "Websites";
 
-$wb["txt_traffic_suspension_email_desc"] = "<b>Web Site Suspension Notification (Traffic Exceedance)</b>";
-$wb["txt_traffic_suspension_sender_email"] = "Sender's Email";
-$wb["txt_traffic_suspension_sender_name"] = "Name of Sender";
-$wb["txt_traffic_suspension_email_bcc"] = "BCC Recipient";
-$wb["txt_traffic_suspension_email_subject"] = "Subject";
-$wb["txt_traffic_suspension_email_message"] = "Message";
+$wb["txt_traffic_suspension_email_desc"] = "<b>Notficatie: website opgeschort - teveel dataverkeer gebruikt.</b>";
+$wb["txt_traffic_suspension_sender_email"] = "Emailadres afzender";
+$wb["txt_traffic_suspension_sender_name"] = "Naam van afzender";
+$wb["txt_traffic_suspension_email_bcc"] = "BCC ontvanger";
+$wb["txt_traffic_suspension_email_subject"] = "Onderwerp";
+$wb["txt_traffic_suspension_email_message"] = "Bericht";
 $wb["txt_traffic_suspension_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
 <tr>
     <td valign="top" colspan="2" class="normal">
-      <b>Include the following variables in your text:</b></td></tr>
+      <b>Gebruik de volgende variabelen in uw tekst:</b></td></tr>
         <tr>
           <td class="normal">%%%FIRST_NAME%%%</td>
           <td class="normal">
-            Client\'s First Name</td>
+            Voornaam klant</td>
         </tr>
         <tr>
           <td class="normal">%%%LAST_NAME%%%</td>
           <td class="normal">
-            Client\'s Last Name</td>
+            Achternaam klant</td>
         </tr>
         <tr>
           <td class="normal">%%%WEBSITE%%%</td>
           <td class="normal">
-            Client\'s Web Site</td>
+            Website klant</td>
         </tr>
         <tr>
           <td class="normal">%%%MONTH%%%</td>
           <td class="normal">
-            Month of Traffic Exceedance</td>
+            Maand met teveel dataverkeer</td>
         </tr>
         <tr>
           <td class="normal" valign="top">%%%INCLUDED_TRAFFIC%%%</td>
           <td class="normal">
-            Traffic included in Web Site Package</td>
+            Dataverkeer inbegrepen in hostingpakket</td>
         </tr>
         <tr>
           <td class="normal" valign="top">%%%TOTAL_TRAFFIC%%%</td>
           <td class="normal">
-            Total Traffic in Month of Exceedance</td>
+            Totaal aan dataverkeer in betreffende maand</td>
         </tr>
         </table>';
 
-$wb["txt_traffic_notification_email_desc"] = "<b>Traffic Exceedance Notification</b>";
-$wb["txt_traffic_notification_sender_email"] = "Sender's Email";
-$wb["txt_traffic_notification_sender_name"] = "Name of Sender";
-$wb["txt_traffic_notification_email_bcc"] = "BCC Recipient";
-$wb["txt_traffic_notification_email_subject"] = "Subject";
-$wb["txt_traffic_notification_email_message"] = "Message";
+$wb["txt_traffic_notification_email_desc"] = "<b>Notificatie - teveel dataverkeer gebruikt</b>";
+$wb["txt_traffic_notification_sender_email"] = "Emailadres afzender";
+$wb["txt_traffic_notification_sender_name"] = "Naam afzender";
+$wb["txt_traffic_notification_email_bcc"] = "BCC ontvanger";
+$wb["txt_traffic_notification_email_subject"] = "Onderwerp";
+$wb["txt_traffic_notification_email_message"] = "Bericht";
 $wb["txt_traffic_notification_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
 <tr>
     <td valign="top" colspan="2" class="normal">
-      <b>Include the following variables in your text:</b></td></tr>
+      <b>Gebruik de volgende variabelen in uw tekst:</b></td></tr>
         <tr>
           <td class="normal">%%%FIRST_NAME%%%</td>
           <td class="normal">
-            Client\'s First Name</td>
+            Voornaam klant</td>
         </tr>
         <tr>
           <td class="normal">%%%LAST_NAME%%%</td>
           <td class="normal">
-            Client\'s Last Name</td>
+            Achternaam klant</td>
         </tr>
         <tr>
           <td class="normal">%%%WEBSITE%%%</td>
           <td class="normal">
-            Client\'s Web Site</td>
+            Website klant</td>
         </tr>
         <tr>
           <td class="normal">%%%MONTH%%%</td>
           <td class="normal">
-            Month of Traffic Exceedance</td>
+            Maand met teveel dataverkeer</td>
         </tr>
         <tr>
           <td class="normal" valign="top">%%%INCLUDED_TRAFFIC%%%</td>
           <td class="normal">
-            Traffic included in Web Site Package</td>
+            Dataverkeer inbegrepen in hostingpakket</td>
         </tr>
         <tr>
           <td class="normal" valign="top">%%%TOTAL_TRAFFIC%%%</td>
           <td class="normal">
-            Total Traffic in Month of Exceedance</td>
+            Totaal aan dataverkeer in betreffende maand</td>
         </tr>
         </table>';
 
-$wb["txt_res_traffic_suspension_email_desc"] = "<b>Reseller Suspension Notification (Traffic Exceedance)</b>";
-$wb["txt_res_traffic_suspension_sender_email"] = "Sender's Email";
-$wb["txt_res_traffic_suspension_sender_name"] = "Name of Sender";
-$wb["txt_res_traffic_suspension_email_bcc"] = "BCC Recipient";
-$wb["txt_res_traffic_suspension_email_subject"] = "Subject";
-$wb["txt_res_traffic_suspension_email_message"] = "Message";
+$wb["txt_res_traffic_suspension_email_desc"] = "<b>Notficatie: reseller opgeschort - teveel dataverkeer gebruikt.</b>";
+$wb["txt_res_traffic_suspension_sender_email"] = "Emailadres afzender";
+$wb["txt_res_traffic_suspension_sender_name"] = "Naam afzender";
+$wb["txt_res_traffic_suspension_email_bcc"] = "BCC ontvanger";
+$wb["txt_res_traffic_suspension_email_subject"] = "Onderwerp";
+$wb["txt_res_traffic_suspension_email_message"] = "Bericht";
 $wb["txt_res_traffic_suspension_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
 <tr>
     <td valign="top" colspan="2" class="normal">
@@ -414,65 +435,65 @@ $wb["txt_res_traffic_suspension_email_variables"] = '<table border="0" cellpaddi
         <tr>
           <td class="normal">%%%FIRST_NAME%%%</td>
           <td class="normal">
-            Reseller\'s First Name</td>
+            Voornaam reseller</td>
         </tr>
         <tr>
           <td class="normal">%%%LAST_NAME%%%</td>
           <td class="normal">
-            Reseller\'s Last Name</td>
+            Achternaam reseller</td>
         </tr>
         <tr>
           <td class="normal">%%%MONTH%%%</td>
           <td class="normal">
-            Month of Traffic Exceedance</td>
+            Maand met teveel dataverkeer</td>
         </tr>
         <tr>
           <td class="normal" valign="top">%%%INCLUDED_TRAFFIC%%%</td>
           <td class="normal">
-            Traffic included for Reseller</td>
+            Dataverkeer inbegrepen voor reseller</td>
         </tr>
         <tr>
           <td class="normal" valign="top">%%%TOTAL_TRAFFIC%%%</td>
           <td class="normal">
-            Total Traffic in Month of Exceedance</td>
+            Total aan dataverkeer voor betreffende maand</td>
         </tr>
         </table>';
 
-$wb["txt_res_traffic_notification_email_desc"] = "<b>Reseller Traffic Exceedance Notification</b>";
-$wb["txt_res_traffic_notification_sender_email"] = "Sender's Email";
-$wb["txt_res_traffic_notification_sender_name"] = "Name of Sender";
-$wb["txt_res_traffic_notification_email_bcc"] = "BCC Recipient";
-$wb["txt_res_traffic_notification_email_subject"] = "Subject";
-$wb["txt_res_traffic_notification_email_message"] = "Message";
+$wb["txt_res_traffic_notification_email_desc"] = "<b>Notficatie: reseller - teveel dataverkeer gebruikt.</b>";
+$wb["txt_res_traffic_notification_sender_email"] = "Emailadres afzender";
+$wb["txt_res_traffic_notification_sender_name"] = "Naam van afzender";
+$wb["txt_res_traffic_notification_email_bcc"] = "BCC ontvanger";
+$wb["txt_res_traffic_notification_email_subject"] = "Onderwerp";
+$wb["txt_res_traffic_notification_email_message"] = "Bericht";
 $wb["txt_res_traffic_notification_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
 <tr>
     <td valign="top" colspan="2" class="normal">
-      <b>Include the following variables in your text:</b></td></tr>
+      <b>Gebruik de volgende variabelen in uw tekst:</b></td></tr>
         <tr>
           <td class="normal">%%%FIRST_NAME%%%</td>
           <td class="normal">
-            Reseller\'s First Name</td>
+            Voornaam reseller</td>
         </tr>
         <tr>
           <td class="normal">%%%LAST_NAME%%%</td>
           <td class="normal">
-            Reseller\'s Last Name</td>
+            Achternaam reseller</td>
         </tr>
         <tr>
           <td class="normal">%%%MONTH%%%</td>
           <td class="normal">
-            Month of Traffic Exceedance</td>
+            Maand met teveel dataverkeer</td>
         </tr>
         <tr>
           <td class="normal" valign="top">%%%INCLUDED_TRAFFIC%%%</td>
           <td class="normal">
-            Traffic included for Reseller</td>
+            Dataverkeer inbegrepen voor reseller</td>
         </tr>
         <tr>
           <td class="normal" valign="top">%%%TOTAL_TRAFFIC%%%</td>
           <td class="normal">
-            Total Traffic in Month of Exceedance</td>
+            Totaal aan dataverkeer in betreffende maand</td>
         </tr>
         </table>';
-
+		
 ?>

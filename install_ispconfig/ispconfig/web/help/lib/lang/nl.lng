@@ -6,36 +6,59 @@
 
 $wb["Anbieter"]     = "Reseller";
 $wb["Web"]          = "Web";
-$wb["Admin Handbuch"] = "Administrator Handleiding";
-$wb["Reseller Handbuch"] = "Reseller Handleiding";
-$wb["Kunden Handbuch"] = "Klant Handleiding";
+$wb["Admin Handbuch"] = "Administrator handleiding";
+$wb["Reseller Handbuch"] = "Reseller handleiding";
+$wb["Kunden Handbuch"] = "Klanten handleiding";
 $wb["Deutsch"]          = "Duits";
 $wb["Englisch"]          = "Engels";
-$wb["Projektfarm Support"]          = "Projektfarm Support";
-$wb["Online Hilfe"] = "Online Help";
-$wb["willkommen_kunde"] = "Welcome to ISPConfig!
-You can administrate your website(s) here. If you have questions or problems,
-please contact your server administrator or refer to the ISPConfig client manual.";
-$wb["Willkommen"] = "Welcome";
+$wb["Projektfarm Support"]          = "Projektfarm support";
+$wb["Online Hilfe"] = "Online help";
+
+$wb["willkommen_kunde"] = "Welkom bij ISPConfig!
+U kunt uw websites hier beheren. Bij vragen en/of problemen,
+kunt u contact opnemen met de beheerder van de server of sla de ISPConfig klanten handleiding erop na.";
+$wb["Willkommen"] = "Welkom";
 
 //////////////// Server Status ////////////////
 $wb["Arbeitsspeicher"]          = "Intern geheugen";
 $wb["CPU"]          = "CPU";
 $wb["Dienste"]      = "Diensten";
 $wb["Server Online seit"]          = "Server online sinds";
-$wb["User Online"]      = "Gebruikers Online";
+$wb["User Online"]      = "Gebruikers online";
 $wb["System Load 1 Minute"] = "Systeem gebruik 1 Minuut";
 $wb["System Load 5 Minuten"] = "Systeem gebruik 5 Minuten";
 $wb["System Load 15 Minuten"] = "Systeem gebruik 15 Minuten";
 //////////////// Server Status Ende //////////
 
-$wb["Webs angelegt"] = "Sites used";
-$wb["User angelegt"] = "Users used";
-$wb["Domains angelegt"] = "Domains used";
-$wb["unlimitiert"]  = "unlimited";
+$wb["Webs angelegt"] = "Sites aangemaakt";
+$wb["User angelegt"] = "Gebruikers aangemaakt";
+$wb["Domains angelegt"] = "Domeinen aangemaakt";
+$wb["unlimitiert"]  = "ongelimiteerd";
 $wb["Anbieter"]     = "Reseller";
-$wb["DNS-Domains angelegt"] = 'DNS Domains created';
-$wb["von"] = "of";
+$wb["DNS-Domains angelegt"] = 'DNS Domeinen aangemaakt';
+$wb["von"] = "van";
 
-
+// NEW 2.0.8 ///////////////////////////////////
+$wb["Französische"]     = "Frans";
+// Support Tickets System
+$wb["Unterstützungskarten"] = "Support tickets";
+$wb["Geöffnete Karten"] = "Geopende tickets";
+$wb["Geschlossene Karten"] = "Gesloten tickets";
+$wb["Neue Karte"] = "Nieuwe ticket";
+$wb["Betreff"] = "Onderwerp";
+$wb["Priorität"] = "Prioriteit";
+$wb["Niedrig"] = "Laag";
+$wb["Mittel"] = "Normaal";
+$wb["Hoch"] = "Hoog";
+$wb["Ihre frage"] = "Uw vraag";
+$wb["Senden"] = "Verzenden";
+$wb["Fehler während der schaffung der karte"] = "Er is een fout opgetreden, tijdens het aanmaken van de ticket";
+$wb["Neue unterstützungskarte, die auf antwort wartet"] = "Nieuw support ticket wacht op antwoord";
+$wb["Sie erhielten eine antwort"] = "U heeft een antwoord ontvangen";
+$wb["geantwortet zu ihnen"] = "aan u beantwoord";
+$wb["Datum"] = "Datum";
+$wb["Davon"] = "Van";
+$wb["Ihre antwort"] = "Uw antwoord";
+$wb["Antworten"] = "Antwoorden";
+$wb["Schließen"] = "Sluiten";
 ?>
