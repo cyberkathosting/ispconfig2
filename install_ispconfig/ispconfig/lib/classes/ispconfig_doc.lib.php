@@ -72,8 +72,15 @@ function doctype_get($doctype_id)
     global $go_api, $go_info;
     
 	$doctype_id =intval($doctype_id);
-    $row = $go_api->db->queryOneRecord("SELECT * from doctype where doctype_id = '$doctype_id'");
-    return unserialize($row["doctype_def"]);
+	// Loading the doctype definition from file
+	$filename = SERVER_ROOT.DIR_TRENNER.'lib'.DIR_TRENNER.'doctypes'.DIR_TRENNER.'doctype_'.$doctype_id.'.dtd';
+	if(is_file("$filename")) {
+		$serialized_doctype = file_get_contents($filename);
+	} else {
+		die("Doctype $doctype_id does not exist.");
+	}
+	
+    return unserialize($serialized_doctype);
     
     }
 function check($to_check, $max_len = 0)

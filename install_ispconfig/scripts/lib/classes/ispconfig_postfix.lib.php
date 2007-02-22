@@ -62,41 +62,6 @@ function make_local_host_names() {
     }
     /////////// write the HOSTNAMES IN local-host-names END ////////////////
 	
-	/*
-	// Get all website domains
-    $webs = $mod->db->queryAllRecords("SELECT * FROM isp_nodes,isp_isp_web WHERE isp_nodes.doc_id = isp_isp_web.doc_id AND isp_nodes.doctype_id = '".$isp_web->web_doctype_id."' AND isp_nodes.status = '1'");
-    if(!empty($webs)){
-      foreach($webs as $web){
-        if(!empty($web["web_host"])){
-          $domain = $web["web_host"].".".$web["web_domain"];
-        } else {
-          $domain = $web["web_domain"];
-        }
-        if(!$web["optionen_local_mailserver"]) $sendmail_exclude_domains[] = $domain;
-        // Variablen zuweisen
-        if(!in_array($domain, $sendmail_exclude_domains) && $domain != ''){
-          $hostnames[] = $domain;
-        }
-      }
-    }
-	
-	// Get all co-domains
-    $webs = $mod->db->queryAllRecords("SELECT * FROM isp_dep,isp_isp_domain WHERE isp_dep.child_doc_id = isp_isp_domain.doc_id AND isp_dep.child_doctype_id ='".$isp_web->domain_doctype_id."' AND isp_dep.parent_doctype_id = '".$isp_web->web_doctype_id."' AND isp_isp_domain.status != 'd'");
-
-    foreach($webs as $web){
-      if(!empty($web["domain_host"])){
-        $domain = $web["domain_host"].".".$web["domain_domain"];
-      } else {
-        $domain = $web["domain_domain"];
-      }
-      if(!$web["domain_local_mailserver"]) $sendmail_exclude_domains[] = $domain;
-      // Variablen zuweisen
-      if(!in_array($domain, $sendmail_exclude_domains) && $domain != ''){
-          $hostnames[] = $domain;
-        }
-    }
-	*/
-	
 	$hostnames = array_merge($hostnames,$this->get_local_hostnames());
 	
   } else { // POSTFIX-STYLE
@@ -171,19 +136,18 @@ function make_virtusertable() {
 						if($user["user_catchallemail"]) {
 							// add catchall
 							$virtusertable_catchall[$tmp_domain] = $user["user_username"];
-						} else {
-							// add primary user address
-							$virtusertable_email[$tmp_domain][$tmp_email] = $user["user_username"];
-							// add aliases
-							$tmp_aliases = explode("\n", $user["user_emailalias"]);
-							foreach($tmp_aliases as $tmp_alias) {
-								$tmp_alias = trim($tmp_alias);
-								if($tmp_alias != '') $virtusertable_email[$tmp_domain][$tmp_alias] = $user["user_username"];
-							}
-							unset($tmp_aliases);
-							unset($tmp_alias);
-							unset($tmp_email);
 						} // end if
+						// add primary user address
+						$virtusertable_email[$tmp_domain][$tmp_email] = $user["user_username"];
+						// add aliases
+						$tmp_aliases = explode("\n", $user["user_emailalias"]);
+						foreach($tmp_aliases as $tmp_alias) {
+							$tmp_alias = trim($tmp_alias);
+							if($tmp_alias != '') $virtusertable_email[$tmp_domain][$tmp_alias] = $user["user_username"];
+						}
+						unset($tmp_aliases);
+						unset($tmp_alias);
+						unset($tmp_email); 
 					} // end if
 				} // end foreach
 				unset($tmp_domains);
