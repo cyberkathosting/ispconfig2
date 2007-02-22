@@ -31,23 +31,22 @@ if(CONFIG_LOADED != 1) die('Direct access not permitted.');
 
 class isp_list
 {
-
-	var $path_mailman_dir;
+  var $mailman_domain;
 	var $web_doctype_id = 1013;
 	var $user_doctype_id = 1014;
 	var $list_doctype_id = 1033;
-	var $default_mailman_domain = "lists.example.com";
 	var $new_list_path = "/usr/lib/mailman/bin/newlist";
 	var $config_list_path = "/usr/lib/mailman/bin/config_list";
 
 	//Constructor
-	//function isp_list() {
-	//global $go_api, $go_info;
-	//
-	//}
+function isp_list() {
+  global $go_api;
+
+  $server_conf = $go_api->db->queryOneRecord("SELECT server_mailman_domain from isp_server");
+  $this->mailman_domain = $server_conf["server_mailman_domain"];
+	}
 
 	function list_show($doc_id, $doctype_id) {
-		//global $go_api, $go_info, $doc, $tablevalues, $next_tree_id;
 		global $go_api, $go_info, $doc, $next_tree_id;
 
 		if($doc_id > 0) {
@@ -174,7 +173,7 @@ class isp_list
 			$filename = "/tmp/Mailman-".$list["list_name"].".conf";
 
 			if ($handle = fopen($filename, 'w')) {
-				fwrite($handle, "advertised = 0\n"."subject_prefix = \"[".$list["list_alias"]."]\"\n"."host_name = \"".$this->default_mailman_domain."\"\n"."msg_footer = \"\"" );
+				fwrite($handle, "advertised = 0\n"."subject_prefix = \"[".$list["list_alias"]."]\"\n"."host_name = \"".$this->mailman_domain."\"\n"."msg_footer = \"\"" );
 			}
 
 			exec($this->config_list_path." -i "."/tmp/Mailman-".$list["list_name"].".conf ".$list["list_name"]);
