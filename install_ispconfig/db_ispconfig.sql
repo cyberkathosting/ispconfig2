@@ -1255,6 +1255,7 @@ CREATE TABLE `isp_server` (
   `cyrus_password` varchar(255) default NULL,
   `server_httpd_mod_perl` smallint(6) default NULL,
   `server_mail_check_mx` char(1) default NULL,
+  `server_mailman_domain` varchar(255) default NULL,
   PRIMARY KEY  (`doc_id`),
   KEY `doctype_id` (`doctype_id`)
 ) TYPE=MyISAM;
