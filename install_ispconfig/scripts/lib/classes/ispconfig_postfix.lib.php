@@ -113,7 +113,7 @@ function make_virtusertable() {
 	$virtusertable_catchall = array();
 	
 	// Set a default mailman domain
-	$isp_list->default_mailman_domain = "lists.example.com";
+	$isp_list->default_mailman_domain = $go_info["server"]["mailman"]["default_mailman_domain"];
 		
 	// get all users from the database
     $users = $mod->db->queryAllRecords("select * from isp_nodes,isp_isp_user WHERE isp_nodes.doc_id = isp_isp_user.doc_id AND isp_nodes.doctype_id = '".$isp_web->user_doctype_id."' AND isp_nodes.status = '1'");
@@ -158,6 +158,63 @@ function make_virtusertable() {
 	unset($user);
 	unset($local_host_names);
 	}
+	
+	// Handle mailing lists
+	$lists = $mod->db->queryAllRecords("select * from isp_nodes,isp_isp_list WHERE isp_nodes.doc_id = isp_isp_list.doc_id AND isp_nodes.doctype_id = '".$isp_web->list_doctype_id."' AND isp_nodes.status = '1'");
+	if(is_array($lists)) {
+		foreach($lists as $list) {
+			// Get the web of this list
+			$doc_id = $list["doc_id"];
+			$sql = "SELECT * FROM isp_dep WHERE child_doc_id = '$doc_id' AND child_doctype_id = '".$isp_web->list_doctype_id."'";
+			$web_dep = $mod->db->queryOneRecord($sql);
+			$web_doc_id = $web_dep["parent_doc_id"];
+			$web = $mod->system->data["isp_isp_web"][$web_doc_id];
+			
+			$alias_list = "";
+			$list_alias = $list["list_alias"];
+			$list_name = $list["list_name"];
+			
+			// Adding the list alias for the main domain
+			if(!empty($list_name) && $web["optionen_local_mailserver"]){
+				if(!empty($web["web_host"])){
+					$tmp_domain = $web["web_host"].".".$web["web_domain"];
+					$virtusertable_email[$tmp_domain][$list_alias] = $list_name."@".$isp_list->default_mailman_domain;
+					$alias_list .= "\\n".$list_alias."@".$tmp_domain;
+				} else {
+					$tmp_domain = $web["web_domain"];
+					$virtusertable_email[$tmp_domain][$list_alias] = $list_name."@".$isp_list->default_mailman_domain;
+					$alias_list .= "\\n".$list_alias."@".$tmp_domain;
+				} // end if
+			} // end if
+			// Adding the list alias for the co-domains
+			$codomains = $mod->db->queryAllRecords("SELECT * from isp_dep,isp_isp_domain where isp_dep.child_doc_id = isp_isp_domain.doc_id and isp_dep.child_doctype_id ='".$isp_web->domain_doctype_id."' and isp_dep.parent_doctype_id = '".$isp_web->web_doctype_id."' and isp_dep.parent_doc_id = '".$web_doc_id."' and isp_isp_domain.status != 'd'");
+			if(!empty($codomains)){
+				foreach($codomains as $codomain){
+					if(!empty($list_name) && $codomain["domain_local_mailserver"]){
+						if(!empty($codomain["domain_host"])){
+							$tmp_domain = $codomain["domain_host"].".".$codomain["domain_domain"];
+							$virtusertable_email[$tmp_domain][$list_alias] = $list_name."@".$isp_list->default_mailman_domain;
+							$alias_list .= "\\n".$list_alias."@".$tmp_domain;
+						} else {
+							$tmp_domain = $codomain["domain_domain"];
+							$virtusertable_email[$tmp_domain][$list_alias] = $list_name."@".$isp_list->default_mailman_domain;
+							 $alias_list .= "\\n".$list_alias."@".$tmp_domain;
+						} // end if
+					} // end if
+				} // end foreach
+			} // end if
+			
+			$filename = "/tmp/Mailman-".escapeshellcmd($list["list_name"]).".aliases";
+			if ($handle = fopen($filename, 'w')) {
+				fwrite($handle, "acceptable_aliases = \"$alias_list\"" );
+				fclose($handle);
+				$mod->log->caselog($go_info["server"]["mailman"]["config_list_path"]." -i "."/tmp/Mailman-".escapeshellcmd($list["list_name"]).".aliases ".escapeshellcmd($list["list_name"]), $this->FILE, __LINE__);
+				unset($filename);
+			}
+			
+		} // end foreach
+	} // end if
+	unset($lists);
 	
 	// We support two types of configuration, postfix and sendmail style.
 	// First we create the file in sendmail style

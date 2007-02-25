@@ -109,6 +109,10 @@ $go_info["server"]["httpd_check"] = {HTTPD_CHECK};
 $go_info["server"]["salutatory_email_charset"] = '{SALUTATORY_EMAIL_CHARSET}'; // possible values are iso-8859-1, iso-8859-2, ..., us-ascii, koi8-r (Russian), ...; if no charset is specified, unknown-8bit is assumed.
 $go_info["server"]["mysql_quota_privs"] = '{MYSQL_QUOTA_PRIVS}';
 
+$go_info["server"]["mailman"]["default_mailman_domain"] = "lists.example.com";
+$go_info["server"]["mailman"]["new_list_path"] = "/usr/lib/mailman/bin/newlist";
+$go_info["server"]["mailman"]["config_list_path"] = "/usr/lib/mailman/bin/config_list";
+
 
 /**********************************************
 * Tools Settings
