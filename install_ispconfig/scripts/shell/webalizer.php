@@ -59,7 +59,7 @@ while ($dir = @readdir ($handle)) {
 
             $webname = $dir;
             $web_doc_id = str_replace("web", "", $webname);
-            if($web_data = $mod->db->queryOneRecord("SELECT * FROM isp_isp_web WHERE doc_id = '$web_doc_id' AND webalizer_stats = '1'")){
+            if($web_data = $mod->db->queryOneRecord("SELECT * FROM isp_isp_web WHERE doc_id = '$web_doc_id' AND web_stats = 'webalizer'")){
               $web_path = $web_home . "/$webname/web";
               $stats_path = $web_path . "/stats";
               $logfile = $web_home . "/$webname/log/web.log";
