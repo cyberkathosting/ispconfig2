@@ -1524,11 +1524,9 @@ AddType image/vnd.wap.wbmp .wbmp";
   $stats_alias = "";
   
    if($web["web_stats"] == "awstats"){
-     $stats_alias = "Alias /stats \"".$document_root."/awstats\"
-Alias /stats/ \"".$document_root."/awstats\"";
+     $stats_alias = "Alias /stats \"".$document_root."/awstats\"";
    } elseif ($web["web_stats"] == "webalizer") {
-     $stats_alias = "Alias /stats \"".$document_root."/webalizer\"
-Alias /stats/ \"".$document_root."/webalizer\"";
+     $stats_alias = "Alias /stats \"".$document_root."/webalizer\"";
    }
   ////////////// END of Web Statistics ////////////////////
 
