@@ -278,7 +278,7 @@ INSERT INTO `doctype` (`doctype_id`, `userid`, `groupid`, `doctype_modul`, `doct
 INSERT INTO `doctype` (`doctype_id`, `userid`, `groupid`, `doctype_modul`, `doctype_name`, `doctype_title`, `doctype_def`, `doctype_tree`) VALUES (1021, 1, 1, 'sys', 'serverstatus', 'ISP Server Status', '', 0);
 INSERT INTO `doctype` (`doctype_id`, `userid`, `groupid`, `doctype_modul`, `doctype_name`, `doctype_title`, `doctype_def`, `doctype_tree`) VALUES (1022, 1, 1, 'isp', 'isp_reseller', 'ISP Anbieter', '', 1);
 INSERT INTO `doctype` (`doctype_id`, `userid`, `groupid`, `doctype_modul`, `doctype_name`, `doctype_title`, `doctype_def`, `doctype_tree`) VALUES (1023, 1, 1, 'sys', 'dienste', 'ISP Dienste', '', 0);
-INSERT INTO `doctype` (`doctype_id`, `userid`, `groupid`, `doctype_modul`, `doctype_name`, `doctype_title`, `doctype_def`, `doctype_tree`) VALUES (1024, 1, 1, 'sys', 'monitor', 'ISP ï¿½erwachung', '', 0);
+INSERT INTO `doctype` (`doctype_id`, `userid`, `groupid`, `doctype_modul`, `doctype_name`, `doctype_title`, `doctype_def`, `doctype_tree`) VALUES (1024, 1, 1, 'sys', 'monitor', 'ISP Überwachung', '', 0);
 INSERT INTO `doctype` (`doctype_id`, `userid`, `groupid`, `doctype_modul`, `doctype_name`, `doctype_title`, `doctype_def`, `doctype_tree`) VALUES (1025, 1, 1, 'sys', 'firewall', 'ISP Firewall', '', 0);
 INSERT INTO `doctype` (`doctype_id`, `userid`, `groupid`, `doctype_modul`, `doctype_name`, `doctype_title`, `doctype_def`, `doctype_tree`) VALUES (1026, 1, 1, 'isp_fakt', 'artikel', 'Artikel', '', 1);
 INSERT INTO `doctype` (`doctype_id`, `userid`, `groupid`, `doctype_modul`, `doctype_name`, `doctype_title`, `doctype_def`, `doctype_tree`) VALUES (1027, 1, 1, 'sys', 'config', 'System Config', '', 0);
@@ -471,7 +471,7 @@ INSERT INTO `isp_dienste` (`doc_id`, `doctype_id`, `dienst_www_status`, `dienst_
 -- --------------------------------------------------------
 
 #
-# Tabellenstruktur fr Tabelle `isp_fakt_artikel`
+# Tabellenstruktur für Tabelle `isp_fakt_artikel`
 #
 
 CREATE TABLE isp_fakt_artikel (
@@ -495,18 +495,18 @@ CREATE TABLE isp_fakt_artikel (
 ) TYPE=MyISAM;
 
 #
-# Daten fr Tabelle `isp_fakt_artikel`
+# Daten für Tabelle `isp_fakt_artikel`
 #
 
-INSERT INTO isp_fakt_artikel (doc_id, doctype_id, artikelnummer, artikeltyp, artikelbezeichnung, verrechnung, artikeleinheit, artikelpreis, abpackung, beschreibung, artikelgroup, steuersatz, weitere_artikeleinheit, weitere_abpackung, weitere_artikelpreis) VALUES (2, 1026, 'de0001', 'Domain', 'Domain .tld', '0', 'Stck', '0', 1, '', '', '16%', NULL, NULL, NULL);
-INSERT INTO isp_fakt_artikel (doc_id, doctype_id, artikelnummer, artikeltyp, artikelbezeichnung, verrechnung, artikeleinheit, artikelpreis, abpackung, beschreibung, artikelgroup, steuersatz, weitere_artikeleinheit, weitere_abpackung, weitere_artikelpreis) VALUES (3, 1026, 'wp0001', 'Web', 'Web Package 1', '12', 'Stck', '0', 1, 'Demo Web-Package', '', '16%', NULL, NULL, NULL);
-INSERT INTO isp_fakt_artikel (doc_id, doctype_id, artikelnummer, artikeltyp, artikelbezeichnung, verrechnung, artikeleinheit, artikelpreis, abpackung, beschreibung, artikelgroup, steuersatz, weitere_artikeleinheit, weitere_abpackung, weitere_artikelpreis) VALUES (4, 1026, 'SV0001', 'Dienstleistung', 'Service Vertrag Basis', '0', 'Stck', '0', 1, '', '', '16%', NULL, NULL, NULL);
+INSERT INTO isp_fakt_artikel (doc_id, doctype_id, artikelnummer, artikeltyp, artikelbezeichnung, verrechnung, artikeleinheit, artikelpreis, abpackung, beschreibung, artikelgroup, steuersatz, weitere_artikeleinheit, weitere_abpackung, weitere_artikelpreis) VALUES (2, 1026, 'de0001', 'Domain', 'Domain .tld', '0', 'Stück', '0', 1, '', '', '16%', NULL, NULL, NULL);
+INSERT INTO isp_fakt_artikel (doc_id, doctype_id, artikelnummer, artikeltyp, artikelbezeichnung, verrechnung, artikeleinheit, artikelpreis, abpackung, beschreibung, artikelgroup, steuersatz, weitere_artikeleinheit, weitere_abpackung, weitere_artikelpreis) VALUES (3, 1026, 'wp0001', 'Web', 'Web Package 1', '12', 'Stück', '0', 1, 'Demo Web-Package', '', '16%', NULL, NULL, NULL);
+INSERT INTO isp_fakt_artikel (doc_id, doctype_id, artikelnummer, artikeltyp, artikelbezeichnung, verrechnung, artikeleinheit, artikelpreis, abpackung, beschreibung, artikelgroup, steuersatz, weitere_artikeleinheit, weitere_abpackung, weitere_artikelpreis) VALUES (4, 1026, 'SV0001', 'Dienstleistung', 'Service Vertrag Basis', '0', 'Stück', '0', 1, '', '', '16%', NULL, NULL, NULL);
 INSERT INTO isp_fakt_artikel (doc_id, doctype_id, artikelnummer, artikeltyp, artikelbezeichnung, verrechnung, artikeleinheit, artikelpreis, abpackung, beschreibung, artikelgroup, steuersatz, weitere_artikeleinheit, weitere_abpackung, weitere_artikelpreis) VALUES (5, 1026, 'TF17782', 'Traffic', 'Traffic 5 GB', '1', 'GB', '0', 5, '', '', '16%', 'GB', 1, '0');
-INSERT INTO isp_fakt_artikel (doc_id, doctype_id, artikelnummer, artikeltyp, artikelbezeichnung, verrechnung, artikeleinheit, artikelpreis, abpackung, beschreibung, artikelgroup, steuersatz, weitere_artikeleinheit, weitere_abpackung, weitere_artikelpreis) VALUES (6, 1026, 'EM0001', 'Email', 'Email Adresse', '1', 'Stck', '0', 1, 'Demo Email Acoount', '', '16%', NULL, NULL, NULL);
+INSERT INTO isp_fakt_artikel (doc_id, doctype_id, artikelnummer, artikeltyp, artikelbezeichnung, verrechnung, artikeleinheit, artikelpreis, abpackung, beschreibung, artikelgroup, steuersatz, weitere_artikeleinheit, weitere_abpackung, weitere_artikelpreis) VALUES (6, 1026, 'EM0001', 'Email', 'Email Adresse', '1', 'Stück', '0', 1, 'Demo Email Acoount', '', '16%', NULL, NULL, NULL);
 # --------------------------------------------------------
 
 #
-# Tabellenstruktur fr Tabelle `isp_fakt_dep`
+# Tabellenstruktur für Tabelle `isp_fakt_dep`
 #
 
 CREATE TABLE isp_fakt_dep (
@@ -527,13 +527,13 @@ CREATE TABLE isp_fakt_dep (
 ) TYPE=MyISAM PACK_KEYS=1;
 
 #
-# Daten fr Tabelle `isp_fakt_dep`
+# Daten für Tabelle `isp_fakt_dep`
 #
 
 # --------------------------------------------------------
 
 #
-# Tabellenstruktur fr Tabelle `isp_fakt_nodes`
+# Tabellenstruktur für Tabelle `isp_fakt_nodes`
 #
 
 CREATE TABLE isp_fakt_nodes (
@@ -555,7 +555,7 @@ CREATE TABLE isp_fakt_nodes (
 ) TYPE=MyISAM PACK_KEYS=1;
 
 #
-# Daten fr Tabelle `isp_fakt_nodes`
+# Daten für Tabelle `isp_fakt_nodes`
 #
 
 INSERT INTO isp_fakt_nodes (tree_id, userid, groupid, parent, type, doctype_id, status, icon, modul, doc_id, title) VALUES (2, 1, 1, '3', 'i', 1026, '1', '', '', 2, 'domain .tld');
@@ -571,7 +571,7 @@ INSERT INTO isp_fakt_nodes (tree_id, userid, groupid, parent, type, doctype_id, 
 # --------------------------------------------------------
 
 #
-# Tabellenstruktur fr Tabelle `isp_fakt_rechnung`
+# Tabellenstruktur für Tabelle `isp_fakt_rechnung`
 #
 
 CREATE TABLE isp_fakt_rechnung (
@@ -587,13 +587,13 @@ CREATE TABLE isp_fakt_rechnung (
 ) TYPE=MyISAM;
 
 #
-# Daten fr Tabelle `isp_fakt_rechnung`
+# Daten für Tabelle `isp_fakt_rechnung`
 #
 
 # --------------------------------------------------------
 
 #
-# Tabellenstruktur fr Tabelle `isp_fakt_record`
+# Tabellenstruktur für Tabelle `isp_fakt_record`
 #
 
 CREATE TABLE isp_fakt_record (
@@ -614,7 +614,7 @@ CREATE TABLE isp_fakt_record (
 ) TYPE=MyISAM;
 
 #
-# Daten fr Tabelle `isp_fakt_record`
+# Daten für Tabelle `isp_fakt_record`
 #
 
 # --------------------------------------------------------
@@ -1032,7 +1032,6 @@ CREATE TABLE `isp_isp_web` (
   `web_mysql_quota_used_fract` float NOT NULL default '0',
   `web_mailquota` varchar(10) default NULL,
   `web_cgi_mod_perl` varchar(255) default NULL,
-  `web_webalizer` char(1) default NULL,
   `web_stats` varchar(255) default 'none',
   PRIMARY KEY  (`doc_id`),
   KEY `doctype_id` (`doctype_id`)
