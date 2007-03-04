@@ -61,7 +61,7 @@ while ($dir = @readdir ($handle)) {
             $web_doc_id = str_replace("web", "", $webname);
             if($web_data = $mod->db->queryOneRecord("SELECT * FROM isp_isp_web WHERE doc_id = '$web_doc_id' AND web_stats = 'webalizer'")){
               $web_path = $web_home . "/$webname/web";
-              $stats_path = $web_path . "/stats";
+              $stats_path = $web_path . "/webalizer";
               $logfile = $web_home . "/$webname/log/web.log";
               $web_user = fileowner($web_path);
               $web_group = filegroup($web_path);
@@ -75,7 +75,7 @@ while ($dir = @readdir ($handle)) {
               }
 
 
-              // Experimentell: erstelle .htaccess Dateien mit Zugangsberechtigung für Gruppe des Webs
+              // Experimentell: erstelle .htaccess Dateien mit Zugangsberechtigung fï¿½r Gruppe des Webs
               if(!@is_dir($stats_path."/.htaccess")) {
 
                   $ht_file = "AuthType Basic
