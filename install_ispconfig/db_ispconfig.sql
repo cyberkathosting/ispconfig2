@@ -1763,3 +1763,39 @@ CREATE TABLE `user_groups` (
 --
 
 INSERT INTO `user_groups` (`usergroupid`, `groupid`, `userid`, `perms`, `userstatus`, `username`, `online`) VALUES (1, 1, 1, 'rwa', 1, 'admin', 0);
+
+CREATE TABLE remote_session (
+  sid varchar(255) NOT NULL default '',
+  ruserid int(11) NOT NULL default '0',
+  data text NOT NULL,
+  tstamp int(11) unsigned NOT NULL default '0',
+  KEY rsid (sid)
+) TYPE=MyISAM;
+
+CREATE TABLE remote_user (
+  ruserid int(11) NOT NULL auto_increment,
+  username varchar(255) NOT NULL default '',
+  passwort varchar(255) NOT NULL default '',
+  ip varchar(100) NOT NULL default '',
+  dns_query tinyint(4) NOT NULL default '0',
+  dns_insert tinyint(4) NOT NULL default '0',
+  dns_update tinyint(4) NOT NULL default '0',
+  dns_delete tinyint(4) NOT NULL default '0',
+  slave_query tinyint(4) NOT NULL default '0',
+  slave_insert tinyint(4) NOT NULL default '0',
+  slave_update tinyint(4) NOT NULL default '0',
+  slave_delete tinyint(4) NOT NULL default '0',
+  reseller_query tinyint(4) NOT NULL default '0',
+  reseller_insert tinyint(4) NOT NULL default '0',
+  reseller_update tinyint(4) NOT NULL default '0',
+  reseller_delete tinyint(4) NOT NULL default '0',
+  kunde_query tinyint(4) NOT NULL default '0',
+  kunde_insert tinyint(4) NOT NULL default '0',
+  kunde_update tinyint(4) NOT NULL default '0',
+  kunde_delete tinyint(4) NOT NULL default '0',
+  web_query tinyint(4) NOT NULL default '0',
+  web_insert tinyint(4) NOT NULL default '0',
+  web_update tinyint(4) NOT NULL default '0',
+  web_delete tinyint(4) NOT NULL default '0',
+  PRIMARY KEY  (ruserid)
+) TYPE=MyISAM;
