@@ -774,6 +774,7 @@ if($install_art == "install"){
   } else {
     caselog("mysqldump -h $db_server -u $db_user -p$db_password -c -t --add-drop-table --add-locks --all --quick --lock-tables $new_db > existing_db.sql", $FILE, __LINE__,"dumped old db to file existing_db.sql","could not dump old db to file existing_db.sql");
   }
+  exec("chmod 600 existing_db.sql");
   caselog("mv -f root_ispconfig.tar.gz /tmp/root_ispconfig_".date("m_d_Y__H_i_s", $current_date).".tar.gz", $FILE, __LINE__,"moved root_ispconfig.tar.gz to /tmp/root_ispconfig_".date("m_d_Y__H_i_s", $current_date).".tar.gz","could not move root_ispconfig.tar.gz to /tmp/root_ispconfig_".date("m_d_Y__H_i_s", $current_date).".tar.gz");
   caselog("mv -f home_admispconfig.tar.gz /tmp/home_admispconfig_".date("m_d_Y__H_i_s", $current_date).".tar.gz", $FILE, __LINE__,"moved home_admispconfig.tar.gz to /tmp/home_admispconfig_".date("m_d_Y__H_i_s", $current_date).".tar.gz","could not move home_admispconfig.tar.gz to /tmp/home_admispconfig_".date("m_d_Y__H_i_s", $current_date).".tar.gz");
   caselog("cp -f existing_db.sql /tmp/existing_db_".date("m_d_Y__H_i_s", $current_date).".sql", $FILE, __LINE__,"copied existing_db.sql to /tmp/existing_db_".date("m_d_Y__H_i_s", $current_date).".sql","could not copy existing_db.sql to /tmp/existing_db_".date("m_d_Y__H_i_s", $current_date).".sql");

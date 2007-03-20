@@ -825,8 +825,10 @@ fi  ## install_art == install
     caselog "saved /home/admispconfig/ispconfig/adminmail.txt" "could not save /home/admispconfig/ispconfig/adminmail.txt"
 
     tar -pczf root_ispconfig.tar.gz /root/ispconfig/ &> /dev/null
+    chmod 600 root_ispconfig.tar.gz &> /dev/null
     caselog "created backup of directory /root/ispconfig/" "could not create backup of directory /root/ispconfig/"
     tar -pczf home_admispconfig.tar.gz /home/admispconfig/ &> /dev/null
+    chmod 600 home_admispconfig.tar.gz &> /dev/null
     caselog "created backup of directory /home/admispconfig/" "could not create backup of directory /home/admispconfig/"
 
     rm -fr /root/ispconfig
