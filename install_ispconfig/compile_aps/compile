@@ -158,7 +158,7 @@ rm -fr ${INSTALL_ROOT_TMP}
 cd ${COMPILE_DIR}
 
 cd ${CLAMAV}
-./configure --prefix=/home/adm${APPLICATION_NAME}/${APPLICATION_NAME}/tools/clamav --sysconfdir=/home/adm${APPLICATION_NAME}/${APPLICATION_NAME}/tools/clamav/etc --with-user=adm${APPLICATION_NAME} --with-group=adm${APPLICATION_NAME} --disable-clamav --disable-bzip2 || error "Could not configure ClamAV"
+./configure --prefix=/home/adm${APPLICATION_NAME}/${APPLICATION_NAME}/tools/clamav --sysconfdir=/home/adm${APPLICATION_NAME}/${APPLICATION_NAME}/tools/clamav/etc --with-user=adm${APPLICATION_NAME} --with-group=adm${APPLICATION_NAME} --disable-clamav --disable-bzip2 --disable-zlib-vcheck || error "Could not configure ClamAV"
 make || error "Could not make ClamAV"
 make install || error "Could not install ClamAV"
 cp -f COPYING /home/adm${APPLICATION_NAME}/${APPLICATION_NAME}/tools/clamav/
