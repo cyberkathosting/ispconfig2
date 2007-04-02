@@ -87,6 +87,13 @@ $wb["Sprache ändern"] = "Skift Sprog";
 $wb["Sprache (ISO)"] = "Sprog (ISO)";
 $wb["Software Version"] = "Software Version";
 
+//////////////// New in next version ////////////////////
+$wb["TYPO3 Mysql host"] = "Mysql host";
+$wb["TYPO3 Mysql Username"] = "Mysql Brugernavn";
+$wb["TYPO3 Mysql passwort"] = "Mysql password";
+$wb["TYPO3 Mysql Datenbank"] = "Mysql Database";
+$wb["TYPO3 Install passwort"] = "Install password";
+$wb["TYPO3 Admin passwort"] = "Admin password";
 
 //////////////// Tools Ende /////////////////
 
