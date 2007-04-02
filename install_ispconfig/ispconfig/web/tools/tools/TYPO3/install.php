@@ -51,11 +51,23 @@ if(!is_string($webs)) $go_api->msg($go_api->lng("Es wurde kein Web ausgewählt.")
 // Überprüfe Variablen
 if(!preg_match("/^[a-zA-Z0-9\-\.]{0,255}$/",$mysql_server)) $go_api->errorMessage($go_api->lng("Der Name des FTP-Servers <br>enthält ungültige Zeichen."));
 
-
 // bestimme Web-Pfad
 $server = $go_api->db->queryOneRecord("SELECT * from isp_server");
 $httpd_root = $server["server_path_httpd_root"];
 unset($server);
+
+// check connection to mysql server
+$link = mysql_connect($mysql_server, $mysql_user, $mysql_password)
+if (!$link) $go_api->errorMessage('Could not connect: ' . mysql_error());
+
+$res =  mysql_select_db($mysql_database);
+if (!$res) $go_api->errorMessage('Could not select database');
+ 
+// check webpath exists
+
+// fill database table with data
+
+// touch .run file
 
 $go_api->errorMessage("Test TYPO3 install:".$admin_passwort." ".$install_passwort." ".$mysql_server." ".$mysql_user." ".$mysql_passwort." ".$httpd_root);
 

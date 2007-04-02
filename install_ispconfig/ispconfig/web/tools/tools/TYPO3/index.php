@@ -52,6 +52,7 @@ $go_api->content->assign( array(    TITLE => "$session_site TYPO3",
                                                             TXT_TYPO3_MYSQL_HOST => $go_api->lng("TYPO3 Mysql host"),
                                                             TXT_TYPO3_MYSQL_USER => $go_api->lng("TYPO3 Mysql Username"),
                                                             TXT_TYPO3_MYSQL_PASSWORT => $go_api->lng("TYPO3 Mysql passwort"),
+                                                            TXT_TYPO3_MYSQL_DB => $go_api->lng("TYPO3 Mysql Datenbank"),
                                                             TXT_TYPO3_INSTALL_PASSWORT => $go_api->lng("TYPO3 Install passwort"),
                                                             TXT_TYPO3_ADMIN_PASSWORT => $go_api->lng("TYPO3 Admin passwort"),
                                                             TXT_BACKUP_STARTEN => $go_api->lng("Start Install")
