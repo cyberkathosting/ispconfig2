@@ -160,6 +160,7 @@ if [ "$lang" == "de" ]; then
   q_ende3=" und loggen sich ein:"
   q_ende4="Benutzername: admin"
   q_ende5="Passwort: admin"
+  $q_mailman="Möchten Sie Mailman zusammen mit ISPConfig benutzen? [y/n]"
 
 else
 
@@ -217,6 +218,7 @@ else
     q_ende3=" and log in:"
     q_ende4="Username: admin"
     q_ende5="Password: admin"
+    $q_mailman="Do you want to use Mailman together with ISPConfig? [y/n]"
 
  else
 
@@ -274,6 +276,7 @@ else
       q_ende3=" and log in:"
       q_ende4="Username: admin"
       q_ende5="Password: admin"
+      $q_mailman="Do you want to use Mailman together with ISPConfig? [y/n]"
 
 else
 
@@ -331,6 +334,7 @@ else
         q_ende3=" i prijavite se:"
         q_ende4="Korisnièko ime: admin"
         q_ende5="Lozinka: admin"
+        $q_mailman="Do you want to use Mailman together with ISPConfig? [y/n]"
 
     else
 
@@ -387,6 +391,7 @@ else
         q_ende3=" and log in:"
         q_ende4="Username: admin"
         q_ende5="Password: admin"
+        $q_mailman="Do you want to use Mailman together with ISPConfig? [y/n]"
       fi
     fi
   fi
@@ -760,6 +765,28 @@ fi  ## install_art == install
   if [ "$install_art" == "install" ]; then
     verify $dist mod/httpd/httpd $install_mode
   fi
+
+  ################ MAILMAN ##################
+  if [ "$install_art" == "install" ]; then
+    echo
+    echo -n $q_mailman
+    read mailman
+    echo
+
+    while [ "$mailman" == "" ]
+    do
+      echo -n $q_mailman
+      read mailman
+      echo
+    done
+
+    if [ "$mailman" != "y" ]; then
+      dist_mailman="0"
+    else
+      dist_mailman="1"
+    fi
+  fi
+  ################# MAAILMAN ENDE #############
 
   echo
   echo "########## gcc ##########"
