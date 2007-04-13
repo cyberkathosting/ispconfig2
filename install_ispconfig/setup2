@@ -769,13 +769,13 @@ fi  ## install_art == install
   ################ MAILMAN ##################
   if [ "$install_art" == "install" ]; then
     echo
-    echo -n q_mailman
+    echo -n $q_mailman
     read mailman
     echo
 
     while [ "$mailman" == "" ]
     do
-      echo -n q_mailman
+      echo -n $q_mailman
       read mailman
       echo
     done
