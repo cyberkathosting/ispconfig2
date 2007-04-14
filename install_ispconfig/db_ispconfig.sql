@@ -1032,7 +1032,6 @@ CREATE TABLE `isp_isp_web` (
   `web_mysql_quota_used_fract` float NOT NULL default '0',
   `web_mailquota` varchar(10) default NULL,
   `web_cgi_mod_perl` varchar(255) default NULL,
-  `web_webalizer` char(1) default NULL,
   `web_stats` varchar(255) default 'none',
   PRIMARY KEY  (`doc_id`),
   KEY `doctype_id` (`doctype_id`)
