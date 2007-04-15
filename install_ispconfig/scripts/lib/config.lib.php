@@ -1363,7 +1363,7 @@ Group web".$web["doc_id"];
             if(substr($domain["domain_weiterleitung"],-1) == "/") $domain["domain_weiterleitung"] = substr($domain["domain_weiterleitung"],0,-1);
             $rewrite_rule .= "\nRewriteRule ^/(.*)         ".$domain["domain_weiterleitung"]."/$1 [L,R]";
           } else {
-            if(substr($domain["domain_weiterleitung"],-1) != "/") $domain["domain_weiterleitung"] .= "/";
+            //if(substr($domain["domain_weiterleitung"],-1) != "/") $domain["domain_weiterleitung"] .= "/";
             if(substr($domain["domain_weiterleitung"],0,1) != "/") $domain["domain_weiterleitung"] = "/".$domain["domain_weiterleitung"];
             $rewrite_rule .= "\nRewriteRule   ^/(.*)$  http://".$servername.$domain["domain_weiterleitung"]."$1  [R]";
           }
