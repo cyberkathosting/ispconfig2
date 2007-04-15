@@ -98,9 +98,11 @@ unset($domain_arr);
 $traffic = 0;
 
 $fd = fopen("$dist_mail_log.$vhost", "r");
-while(!feof($fd)){
-$buffer = trim(fgets($fd, 4096));
-  if(is_numeric($buffer)) $traffic += $buffer;
+if ($fd) {
+	while(!feof($fd)){
+		$buffer = trim(fgets($fd, 4096));
+  		if(is_numeric($buffer)) $traffic += $buffer;
+	}
 }
 fclose ($fd);
 
@@ -111,10 +113,12 @@ if(!empty($users)){
   foreach($users as $user){
     if(is_file("/home/admispconfig/mailstats/".$user["user_username"])){
       $fd = fopen("/home/admispconfig/mailstats/".$user["user_username"], "r");
-      while(!feof($fd)){
-        $buffer = trim(fgets($fd, 4096));
-        if(is_numeric($buffer)) $traffic += $buffer;
-      }
+	  if ($fd) {
+      	while(!feof($fd)){
+        	$buffer = trim(fgets($fd, 4096));
+        	if(is_numeric($buffer)) $traffic += $buffer;
+      	}
+	  }
       fclose ($fd);
       $mod->log->caselog("rm -f /home/admispconfig/mailstats/".$user["user_username"], $FILE, __LINE__);
     }
