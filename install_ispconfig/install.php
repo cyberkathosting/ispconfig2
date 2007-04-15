@@ -1243,6 +1243,17 @@ wf($conf_datei, $conf);
 caselog("chmod 600 $conf_datei", $FILE, __LINE__);
 caselog("chown admispconfig:admispconfig $conf_datei", $FILE, __LINE__);
 
+$mailman_vhost_entry = "";
+
+if($dist_mailman){
+	$mailman_vhost_entry = "### Mailman Section ###
+ScriptAlias /mailman/ /usr/lib/cgi-bin/mailman/
+ScriptAlias /cgi-bin/mailman/ /usr/lib/cgi-bin/mailman/
+Alias /images/mailman/ /usr/share/images/mailman/
+### End of Mailman Section ###";
+
+}
+
 if($install_art == "install"){
   $vhost = "
 <Directory /var/www/sharedip>
@@ -1298,6 +1309,8 @@ Include ".$httpd_conf_dir."/vhosts/Vhosts_ispconfig.conf
 ### AWStats Section ###
 Alias /icon \"/home/admispconfig/ispconfig/tools/awstats/wwwroot/icon/\"
 ### End of AWStats Section ###
+
+".$mailman_vhost_entry."
 
 ";
 
@@ -1413,6 +1426,56 @@ if($dist_mail == "postfix"){
     wf($pf_main_cf, str_replace("virtual_alias_maps", "#virtual_alias_maps", rf($pf_main_cf)));
     ilog("commented out virtual_alias_maps entry in $pf_main_cf");
   }
+	if($dist_mailman) {
+		$dist_mail_transport_table = "/etc/postfix/transport";$pf_master_cf = "/etc/postfix/master.cf";
+
+		//// Transport Maps ////
+		if(strstr($postfix_main_cf, "transport_maps = hash:$dist_mail_transport_table")){
+			ilog("transport table entry already in $pf_main_cf");
+		} else {
+			wf($pf_main_cf, str_replace("transport_maps", "#transport_maps", rf($pf_main_cf)));
+			af($pf_main_cf, "\ntransport_maps = hash:$dist_mail_transport_table\n");
+			ilog("created transport table entry in $pf_main_cf");
+			if(!is_file($dist_mail_transport_table)) phpcaselog(touch($dist_mail_transport_table), "create ".$dist_mail_transport_table, $FILE, __LINE__);
+			caselog("postmap $dist_mail_transport_table", $FILE, __LINE__);
+		}
+		
+		//// Mailman destination recipient limit ////
+		if(strstr($postfix_main_cf, "mailman_destination_recipient_limit = 1")){
+			ilog("Mailman destination recipient limit entry already in $pf_main_cf");
+		} else {
+			wf($pf_main_cf, str_replace("mailman_destination_recipient_limit", "#mailman_destination_recipient_limit", rf($pf_main_cf)));
+			af($pf_main_cf, "\nmailman_destination_recipient_limit = 1\n");
+			ilog("Mailman destination recipient limit entry in $pf_main_cf");
+		}
+		
+		//// Master.cf ////
+		$pf_master_cf = "/etc/postfix/master.cf";
+		caselog("cp -f $pf_master_cf $pf_master_cf.orig", $FILE, __LINE__);
+		$postfix_master_cf = no_comments($pf_master_cf);
+		$mailman_master_cf_line = 'mailman   unix  -       n       n       -       -       pipe flags=FR user=list argv=/var/lib/mailman/bin/postfix-to-mailman.py ${nexthop} ${user}';
+		
+		if(strstr($postfix_master_cf, $mailman_master_cf_line)){
+			ilog("transport table entry already in $pf_master_cf");
+		} else {
+			wf($pf_master_cf, str_replace("mailman", "#mailman", rf($pf_master_cf)));
+			af($pf_master_cf, "\n$mailman_master_cf_line\n");
+			ilog("created mailman entry in $pf_master_cf");
+		}
+		
+		//// mm_cfg.py ////
+		$mm_cfg = "/etc/mailman/mm_cfg.py";
+		caselog("cp -f $mm_cfg $mm_cfg.orig", $FILE, __LINE__);
+		$mailman_mm_cfg = no_comments($mm_cfg);
+		
+		if(strstr($mailman_mm_cfg, "MTA=None")){
+			ilog("MTA=None entry already in $mm_cfg");
+		} else {
+			wf($mm_cfg, str_replace("MTA", "#MTA", rf($mm_cfg)));
+			af($mm_cfg, "\nMTA=None\n");
+			ilog("created MTA=None entry in $mm_cfg");
+		}
+	}
 }
 /////////////// POSTFIX ENDE //////////////////
 
