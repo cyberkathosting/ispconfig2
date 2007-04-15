@@ -568,34 +568,41 @@ function _insert_dns($doc_id,$doctype_id,$domain,$web) {
         } else {
           $mailserver = trim($server["server_host"]).'.'.trim($server["server_domain"]);
         }
-        //$ip_adresse = $domain["domain_ip"];
-        $sql = "INSERT INTO dns_mx (host,prioritaet,mailserver) VALUES ('$host','10','$mailserver')";
-        $go_api->db->query($sql);
-        $a_doc_id = $go_api->db->insertID();
+		
+		// Check, ob es den MX nicht schon gibt
+		$sql_test = "SELECT * FROM dns_dep, dns_mx WHERE dns_dep.child_doc_id = dns_mx.doc_id AND dns_dep.child_doctype_id = dns_mx.doctype_id
+		and dns_dep.parent_doc_id = $dns_record[doc_id] and host = '$host' and mailserver = '$mailserver'";
+		
+		if(!$go_api->db->queryOneRecord($sql_test)) {
+        	//$ip_adresse = $domain["domain_ip"];
+        	$sql = "INSERT INTO dns_mx (host,prioritaet,mailserver) VALUES ('$host','10','$mailserver')";
+        	$go_api->db->query($sql);
+        	$a_doc_id = $go_api->db->insertID();
 
-        $userid = $go_info["user"]["userid"];
-        $groupid = $web["groupid"];
-        $type = 'a';
-        $parent = '';
-        $status = 1;
-        $title = '';
+        	$userid = $go_info["user"]["userid"];
+        	$groupid = $web["groupid"];
+        	$type = 'a';
+        	$parent = '';
+        	$status = 1;
+        	$title = '';
 
-        $sql = "INSERT INTO dns_nodes (userid,groupid,parent,type,doctype_id,status,doc_id,title) VALUES ('$userid','$groupid','$parent','$type','$mx_record_doctype_id','$status','$a_doc_id','$title')";
-        $go_api->db->query($sql);
-        $a_tree_id = $go_api->db->insertID();
-        $status = 1;
+        	$sql = "INSERT INTO dns_nodes (userid,groupid,parent,type,doctype_id,status,doc_id,title) VALUES ('$userid','$groupid','$parent','$type','$mx_record_doctype_id','$status','$a_doc_id','$title')";
+        	$go_api->db->query($sql);
+       		$a_tree_id = $go_api->db->insertID();
+        	$status = 1;
 
-        $parent_doctype_id = $dns_doctype_id;
-        $child_doctype_id = $mx_record_doctype_id;
+        	$parent_doctype_id = $dns_doctype_id;
+        	$child_doctype_id = $mx_record_doctype_id;
 
-        $parent_doc_id = $dns_record["doc_id"];
-        $child_doc_id = $a_doc_id;
+        	$parent_doc_id = $dns_record["doc_id"];
+        	$child_doc_id = $a_doc_id;
 
-        $parent_tree_id = $dns_record["tree_id"];
-        $child_tree_id = $a_tree_id;
+        	$parent_tree_id = $dns_record["tree_id"];
+        	$child_tree_id = $a_tree_id;
 
-        $sql = "INSERT INTO dns_dep (userid,parent_doc_id,parent_doctype_id,parent_tree_id,child_doc_id,child_doctype_id,child_tree_id,status) VALUES ('$userid','$parent_doc_id','$parent_doctype_id','$parent_tree_id','$child_doc_id','$child_doctype_id','$child_tree_id','$status')";
-        $go_api->db->query($sql);
+        	$sql = "INSERT INTO dns_dep (userid,parent_doc_id,parent_doctype_id,parent_tree_id,child_doc_id,child_doctype_id,child_tree_id,status) VALUES ('$userid','$parent_doc_id','$parent_doctype_id','$parent_tree_id','$child_doc_id','$child_doctype_id','$child_tree_id','$status')";
+        	$go_api->db->query($sql);
+		}
     }
 
         $go_api->db->query("UPDATE dns_isp_dns SET status = 'u' where status != 'n' and doc_id = '".$dns_record["doc_id"]."'");
