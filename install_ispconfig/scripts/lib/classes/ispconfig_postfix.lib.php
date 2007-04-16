@@ -362,5 +362,27 @@ function get_local_hostnames() {
 	return $local_host_names;
 }
 
+ function make_mailman_transport() {
+                global $isp_web, $mod, $go_info;
+
+                if ($go_info["server"]["mailman"]["default_mailman_domain"] != "") {
+
+                        $sendmail_header = '###################################
+#
+# ISPConfig transport Map Configuration File
+#         Version 1.1
+#
+###################################
+';
+
+                        $sendmail_text = $sendmail_header.($go_info["server"]["mailman"]["default_mailman_domain"]." mailman:");
+                        $sendmail_text .= "\n#### MAKE MANUAL ENTRIES BELOW THIS LINE! ####";
+                        $sendmail_text .= $mod->file->manual_entries("/etc/postfix/transport");
+
+                        $mod->log->caselog("cp -fr /etc/postfix/transport /etc/postfix/transport~", $this->FILE, __LINE__);
+                        $mod->file->wf("/etc/postfix/transport", $sendmail_text);
+                }
+        }
+
 }
 ?>
