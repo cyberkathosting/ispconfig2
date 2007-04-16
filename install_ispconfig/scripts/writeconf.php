@@ -206,6 +206,7 @@ if(!empty($list_delete)){
 
 $mod->mail->make_local_host_names();
 $mod->mail->make_virtusertable();
+$mod->mail->make_mailman_transport();
 
 $isp_web->make_vhost($mod->system->server_id);
 
