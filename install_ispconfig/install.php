@@ -125,7 +125,7 @@ function unix_nl($input){
 }
 
 function remove_blank_lines($input, $file = 1){
-  //Leerzeilen löschen
+  //Leerzeilen lï¿½schen
   if($file){
     $content = unix_nl(rf($input));
   } else {
@@ -623,6 +623,10 @@ $admispconfig_uid = $admispconfig_gid = find_uid_gid(100, 3000);
 if(!is_group("admispconfig")) phpcaselog(addgroup("admispconfig", $admispconfig_gid, "admispconfig"), 'create group admispconfig', $FILE, __LINE__);
 if(!is_user("admispconfig")) phpcaselog(adduser("admispconfig", $admispconfig_uid, $admispconfig_gid, "Administrator ISPConfig", "/home/admispconfig", "/bin/bash", '!'), 'create user admispconfig', $FILE, __LINE__);
 
+if($dist_mailman){
+  if(!is_user("admispconfig")) phpcaselog(add_user_to_group("list", "admispconfig")), 'added admispconfig to group list', $FILE, __LINE__);
+}
+
 /////////// Symlink von /var/spool/mail auf /var/mail ////////////
 if(is_dir("/var/mail") && !file_exists("/var/spool/mail")){
   phpcaselog(@symlink("/var/mail", "/var/spool/mail"), 'create symlink from /var/spool/mail to /var/mail', $FILE, __LINE__);
@@ -820,7 +824,7 @@ if($install_art == "install"){
     unset($tables);
     caselog("mysql -f -s -h $db_server -u $db_user -p$db_password $new_db < existing_db.sql &> /dev/null", $FILE, __LINE__,"imported existing_db.sql","could not import existing_db.sql");
   }
-  //////////// Nachträge in neuer DB machen /////////////
+  //////////// Nachtrï¿½ge in neuer DB machen /////////////
   //$conn = mysql_query("SELECT * FROM sys_user WHERE doc_id > 1");
   if( FALSE === ($conn = mysql_query("SELECT * FROM sys_user WHERE doc_id > 1") ) ) {
              ilog('UPDATE - MySQL-Error on Line: '.__LINE__.' : '.mysql_error($link));
@@ -910,10 +914,10 @@ if($install_art == "install"){
                   $web_id = $web["doc_id"];
                   $beschreibung = $web["web_host"].".".$web["web_domain"];
 
-                  // Web Record hinzufügen
+                  // Web Record hinzufï¿½gen
                            $sql = "INSERT INTO isp_fakt_record (web_id,doc_id,doctype_id,typ,notiz) VALUES ('$web_id','$web_id','1013','Web','$beschreibung')";
                   mysql_query($sql);
-                  // Traffic Record hinzufügen
+                  // Traffic Record hinzufï¿½gen
                   $sql = "INSERT INTO isp_fakt_record (web_id,typ,notiz) VALUES ('$web_id','Traffic','$beschreibung')";
                   mysql_query($sql);
 
@@ -942,7 +946,7 @@ if($install_art == "install"){
     }
   }
   */
-  //////////// Nachträge in neuer DB machen ENDE /////////////
+  //////////// Nachtrï¿½ge in neuer DB machen ENDE /////////////
   caselog("rm -f $sql_file", $FILE, __LINE__,"deleted $sql_file","could not delete $sql_file");
   caselog("rm -f existing_db.sql", $FILE, __LINE__,"deleted existing_db.sql","could not delete existing_db.sql");
 }
