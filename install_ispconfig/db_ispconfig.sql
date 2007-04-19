@@ -1041,6 +1041,28 @@ CREATE TABLE `isp_isp_web` (
 -- Dumping data for table `isp_isp_web`
 --
 
+--
+-- Table structure for table `isp_isp_web_package`
+--
+
+
+CREATE TABLE `isp_isp_web_package` (
+  `doc_id` bigint(20) NOT NULL auto_increment,
+  `mysqlhost` varchar(255) default NULL,
+  `mysqluser` varchar(255) default NULL,
+  `mysqlpw` varchar(255) default NULL,
+  `mysqldb` varchar(255) default NULL,
+  `installpw` varchar(255) default NULL,
+  `adminpw` varchar(255) default NULL,
+  `web_id` varchar(255) default NULL,
+  `pending` int(1) default NULL,
+  `result` varchar(255) default NULL,
+  PRIMARY KEY  (`doc_id`),
+) TYPE=MyISAM;
+
+--
+-- Dumping data for table `isp_isp_web`
+--
 
 -- --------------------------------------------------------
 
@@ -1256,6 +1278,7 @@ CREATE TABLE `isp_server` (
   `server_httpd_mod_perl` smallint(6) default NULL,
   `server_mail_check_mx` char(1) default NULL,
   `server_mailman_domain` varchar(255) default NULL,
+  `typo3_script_repository` varchar(255) default NULL,
   PRIMARY KEY  (`doc_id`),
   KEY `doctype_id` (`doctype_id`)
 ) TYPE=MyISAM;
