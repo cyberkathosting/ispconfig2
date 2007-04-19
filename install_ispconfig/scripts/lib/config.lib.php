@@ -114,15 +114,15 @@ function TYPO3_install() {
   $webpath = $httpd_root.'/web'.$res['arg7'].'/web/';
 
   if ($handle = opendir($webpath)) {
-    echo "Directory handle: $handle\n";
-    echo "Files:\n";
+//    echo "Directory handle: $handle\n";
+//    echo "Files:\n";
     while (false !== ($file = readdir($handle))) {
     //  echo "$file\n";
       $files[] = $file;
     }
     foreach ($files as $f) {
       if (($f != ".") and ($f != "..") and ($f != "error") and ($f != "stats")) {
-        echo "File: $f\n";
+//        echo "File: $f\n";
         shell_exec('rm -rf '.$webpath.$f); 
       }
     }
