@@ -111,9 +111,6 @@ function make_virtusertable() {
 	// This array contains all email addresses in the form 
 	// $virtusertable_catchall[DOMAIN][LOCAL_PART] = USERNAME
 	$virtusertable_catchall = array();
-	
-	// Set a default mailman domain
-	$isp_list->default_mailman_domain = $go_info["server"]["mailman"]["default_mailman_domain"];
 		
 	// get all users from the database
     $users = $mod->db->queryAllRecords("select * from isp_nodes,isp_isp_user WHERE isp_nodes.doc_id = isp_isp_user.doc_id AND isp_nodes.doctype_id = '".$isp_web->user_doctype_id."' AND isp_nodes.status = '1'");
@@ -178,11 +175,11 @@ function make_virtusertable() {
 			if(!empty($list_name) && $web["optionen_local_mailserver"]){
 				if(!empty($web["web_host"])){
 					$tmp_domain = $web["web_host"].".".$web["web_domain"];
-					$virtusertable_email[$tmp_domain][$list_alias] = $list_name."@".$isp_list->default_mailman_domain;
+					$virtusertable_email[$tmp_domain][$list_alias] = $list_name."@".$go_info["server"]["mailman"]["default_mailman_domain"];
 					$alias_list .= "\\n".$list_alias."@".$tmp_domain;
 				} else {
 					$tmp_domain = $web["web_domain"];
-					$virtusertable_email[$tmp_domain][$list_alias] = $list_name."@".$isp_list->default_mailman_domain;
+					$virtusertable_email[$tmp_domain][$list_alias] = $list_name."@".$go_info["server"]["mailman"]["default_mailman_domain"];
 					$alias_list .= "\\n".$list_alias."@".$tmp_domain;
 				} // end if
 			} // end if
@@ -193,11 +190,11 @@ function make_virtusertable() {
 					if(!empty($list_name) && $codomain["domain_local_mailserver"]){
 						if(!empty($codomain["domain_host"])){
 							$tmp_domain = $codomain["domain_host"].".".$codomain["domain_domain"];
-							$virtusertable_email[$tmp_domain][$list_alias] = $list_name."@".$isp_list->default_mailman_domain;
+							$virtusertable_email[$tmp_domain][$list_alias] = $list_name."@".$go_info["server"]["mailman"]["default_mailman_domain"];
 							$alias_list .= "\\n".$list_alias."@".$tmp_domain;
 						} else {
 							$tmp_domain = $codomain["domain_domain"];
-							$virtusertable_email[$tmp_domain][$list_alias] = $list_name."@".$isp_list->default_mailman_domain;
+							$virtusertable_email[$tmp_domain][$list_alias] = $list_name."@".$go_info["server"]["mailman"]["default_mailman_domain"];
 							 $alias_list .= "\\n".$list_alias."@".$tmp_domain;
 						} // end if
 					} // end if
