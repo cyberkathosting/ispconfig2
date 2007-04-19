@@ -27,8 +27,6 @@ NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
 EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-if(CONFIG_LOADED != 1) die('Direct access not permitted.');
-
 class isp_web
 {
 
@@ -47,7 +45,6 @@ var $firewall_doctype_id = 1025;
 var $slave_doctype_id = 1028;
 var $datenbank_doctype_id = 1029;
 var $spf_record_doctype_id = 1031;
-var $list_doctype_id = 1033;
 var $vhost_conf;
 var $ftp_conf;
 var $apache_user;
@@ -65,6 +62,127 @@ function isp_web() {
   $this->apache_user = $this->apache_user();
 }
 
+function TYPO3_install() {
+  include("/home/admispconfig/ispconfig/lib/config.inc.php");
+  $go_info["isp"]["httpd"]["use_old_conf_on_errors"] = 1; // if httpd syntax check gives back errors, use old, working configuration
+
+//////////////// DO NOT EDIT BELOW !!! //////////////////
+  $go_info["isp"]["server_root"] = "/root/ispconfig";
+  $go_info["isp"]["include_root"] = $go_info["isp"]["server_root"] . $go_info["server"]["dir_trenner"] ."scripts".$go_info["server"]["dir_trenner"]."lib";
+  $go_info["isp"]["classes_root"] = $go_info["isp"]["include_root"] . $go_info["server"]["dir_trenner"] ."classes";
+  $go_info["isp"]["server_id"] = 1;
+
+/**************************************
+* Server Einstellungen
+* V1.0 ISPConfig SERVER Modules
+***************************************/
+  $link = @mysql_connect($go_info["server"]["db_host"], $go_info["server"]["db_user"], $go_info["server"]["db_password"])
+  or die("Could not connect to MySQL server!");
+  mysql_select_db($go_info["server"]["db_name"]);
+  $server_params = mysql_query("SELECT * FROM isp_isp_web_package WHERE pending = 1");
+
+  $res = mysql_fetch_array($server_params);
+  if (!is_array($res)) exit;
+  $result = mysql_query("SELECT * from isp_server");
+  $server = mysql_fetch_assoc ( $result );
+  $httpd_root = $server["server_path_httpd_root"];
+  $typo3_path = $server["typo3_script_repository"];
+  unset($server);
+
+
+// clear database
+  $typo3db = @mysql_connect($res['arg1'], $res['arg2'], $res['arg3'])
+  or die("Could not connect to TYPO3 MySQL server!");
+  mysql_select_db($res['arg4']);
+  $sql = "SHOW TABLES";
+  $result = mysql_query($sql);
+   
+  if (!$result) {
+    echo "DB Error, could not list tables\n";
+    echo 'MySQL Error: ' . mysql_error();
+    exit;
+  }
+  while ($row = mysql_fetch_row($result)) {
+//  echo "Table: {$row[0]}\n";
+    $table[] = $row[0];
+  }
+  foreach ($table as $t) {
+    $sql = "drop table ".$t;
+    mysql_query($sql);
+  }
+// clear directory
+  $webpath = $httpd_root.'/web'.$res['arg7'].'/web/';
+
+  if ($handle = opendir($webpath)) {
+    echo "Directory handle: $handle\n";
+    echo "Files:\n";
+    while (false !== ($file = readdir($handle))) {
+    //  echo "$file\n";
+      $files[] = $file;
+    }
+    foreach ($files as $f) {
+      if (($f != ".") and ($f != "..") and ($f != "error") and ($f != "stats")) {
+        echo "File: $f\n";
+        shell_exec('rm -rf '.$webpath.$f); 
+      }
+    }
+  }
+
+// load new database content
+  $dbfile = $typo3_path.$res['arg8'].'/mysql.dump';
+  if (is_file($dbfile)) {
+    $output = shell_exec('mysql -u'.$res['arg2'].' -p'.$res['arg3'].' '.$res['arg4'].' < '.$dbfile.'');
+    //echo "<pre>$output</pre>";
+  }
+// copy directory content
+  $TYPO3dir = $typo3_path.$res['arg8'].'/dummy/';
+  if (is_dir($TYPO3dir)) {
+    shell_exec('cp -a '.$TYPO3dir.'* '.$webpath);
+  }
+// copy TYPO3 source
+  $TYPO3src = $typo3_path.$res['arg8'].'/typo3_src-'.$res['arg8'].'/';
+  if (is_dir($TYPO3src)) {
+    shell_exec('cp -a '.$TYPO3src.' '.$webpath);
+  }
+// Set ownership and permissions
+  shell_exec('chown -R www-data.web'.$res['arg7'].' '.$webpath);
+
+// set install password
+  $localconf = fopen($webpath.'typo3conf/localconf.php', 'r+');
+  fseek($localconf, -2, SEEK_END);
+  fwrite($localconf, '$TYPO3_CONF_VARS[\'BE\'][\'installToolPassword\'] = \''.md5($res['arg5']).'\';
+');
+  fwrite($localconf, '$TYPO3_CONF_VARS[\'SYS\'][\'encryptionKey\'] = \''.md5(uniqid(rand(),true)).'\';
+');
+  fwrite($localconf, '$typo_db_username = '.$res['arg2'].';  //  Modified or inserted by TYPO3 Install Tool.
+');
+  fwrite($localconf, '$typo_db_password = '.$res['arg3'].';  //  Modified or inserted by TYPO3 Install Tool.
+');
+  fwrite($localconf, '$typo_db_host = '.$res['arg1'].';  //  Modified or inserted by TYPO3 Install Tool.
+');
+  fwrite($localconf, '$typo_db = '.$res['arg4'].';  //  Modified or inserted by TYPO3 Install Tool.
+');
+  fwrite($localconf, '
+?>');
+  fclose($localconf);
+
+// set admin password
+  $typo3db = @mysql_connect($res['arg1'], $res['arg2'], $res['arg3'])
+  or die("Could not connect to TYPO3 MySQL server!");
+  mysql_select_db($res['arg4']);
+  $sql = 'update be_users set password=\''.md5($res['arg6']).'\' where uid=1;';
+  mysql_query($sql);
+
+// set pending = 0, because we are finished
+  $link = @mysql_connect($go_info["server"]["db_host"], $go_info["server"]["db_user"], $go_info["server"]["db_password"])
+  or die("Could not connect to MySQL server!");
+  mysql_select_db($go_info["server"]["db_name"]);
+
+  $sql = 'update isp_isp_web_package set pending = 0 where doc_id = '.$res['doc_id'].';';
+  mysql_query($sql);
+}
+
+
 function web_insert($doc_id, $doctype_id, $server_id) {
   global $go_info, $mod;
   // Daten des Webs aus DB holen
@@ -78,7 +196,7 @@ function web_insert($doc_id, $doctype_id, $server_id) {
     $this->make_ssl($doc_id);
   }
 
-  //Status zurï¿½cksetzen
+  //Status zurücksetzen
   $mod->db->query("update isp_isp_web SET status = '' where doc_id = '$doc_id'");
   $mod->system->data["isp_isp_web"][$doc_id]["status"] = "";
 
@@ -212,7 +330,7 @@ function web_insert($doc_id, $doctype_id, $server_id) {
     }
   }
 
-    $result = mysql_query('FLUSH PRIVILEGES'); //ï¿½nderungen wirksam werden lassen
+    $result = mysql_query('FLUSH PRIVILEGES'); //Änderungen wirksam werden lassen
     if($result){
       $mod->log->ext_log("MySQL FLUSH PRIVILEGES", 1, $this->FILE, __LINE__);
     } else {
@@ -238,12 +356,12 @@ function web_update($doc_id,$doctype_id,$server_id) {
   if($web["web_ssl"] && (!empty($web["ssl_action"]))){
     $this->make_ssl($doc_id);
   }
-  //SSL-Web: IP-Adresse ï¿½ndern -> SSL-Web mit IP existiert schon -> Delete Certificate ermï¿½glichen
+  //SSL-Web: IP-Adresse ändern -> SSL-Web mit IP existiert schon -> Delete Certificate ermöglichen
   if(!$web["web_ssl"] && ($web["ssl_action"] == "delete")){
     $this->make_ssl($doc_id);
   }
 
-  //Status zurï¿½cksetzen
+  //Status zurücksetzen
   $mod->db->query("update isp_isp_web SET status = '' where doc_id = '$doc_id'");
   $mod->system->data["isp_isp_web"][$doc_id]["status"] = "";
 
@@ -270,7 +388,7 @@ function web_update($doc_id,$doctype_id,$server_id) {
   }
 
 
-  //MySQL-User ï¿½ndern
+  //MySQL-User ändern
   $datenbanken = $mod->db->queryAllRecords("SELECT * FROM isp_isp_datenbank WHERE web_id = '$doc_id' AND (status = 'n' OR status = 'u' OR status = 'd')");
   $db_server = $go_info["server"]["db_host"];
   $db_user = $go_info["server"]["db_user"];
@@ -397,7 +515,7 @@ function web_update($doc_id,$doctype_id,$server_id) {
     }
 
   } else {
-    //DB u. DB-User lï¿½schen
+    //DB u. DB-User löschen
     if($new_db_exists){
       @mysql_query("DROP DATABASE ".$new_db);
       $sql = "DELETE FROM `user` WHERE `Host` = 'localhost' AND `User` = '$mysql_user'";
@@ -438,7 +556,7 @@ function web_update($doc_id,$doctype_id,$server_id) {
   }
 
 
-  // Alle User des Web mit Status = u setzen (wenn z.B. Shell-Access gewï¿½hrt wird)
+  // Alle User des Web mit Status = u setzen (wenn z.B. Shell-Access gewährt wird)
     $sql = "SELECT * from isp_dep, isp_isp_user where isp_dep.parent_doc_id = $doc_id
     and isp_dep.parent_doctype_id = $doctype_id and isp_dep.child_doc_id = isp_isp_user.doc_id and isp_dep.child_doctype_id = ".$this->user_doctype_id."";
 
@@ -448,7 +566,7 @@ function web_update($doc_id,$doctype_id,$server_id) {
     }
     unset($users);
 
-  //gibt es Admin-User fï¿½r das Web? Wenn er gelï¿½scht wurde, evtl. vorh. Autoresponder-Dateien lï¿½schen
+  //gibt es Admin-User für das Web? Wenn er gelöscht wurde, evtl. vorh. Autoresponder-Dateien löschen
   $sql = "SELECT * FROM isp_nodes, isp_dep, isp_isp_user WHERE isp_dep.parent_doc_id = '".$doc_id."' AND isp_dep.parent_doctype_id = '".$this->web_doctype_id."' AND isp_dep.child_doc_id = isp_isp_user.doc_id AND isp_dep.child_doctype_id = '".$this->user_doctype_id."' AND isp_isp_user.user_admin = '1' AND isp_nodes.doc_id = isp_isp_user.doc_id AND isp_nodes.doctype_id = '".$this->user_doctype_id."' AND isp_nodes.status = '1'";
 
     $user = $mod->db->queryOneRecord($sql);
@@ -473,7 +591,7 @@ function web_update($doc_id,$doctype_id,$server_id) {
      $admin_user = $user['user_username'];
     }
 
-    // gesperrte Webs wieder aktivieren, wenn gewï¿½nscht
+    // gesperrte Webs wieder aktivieren, wenn gewünscht
     if($web['web_traffic_status'] == 1){
       exec("chown ".$admin_user." ".$web_path." &> /dev/null");
       exec("chmod 755 ".$web_path." &> /dev/null");
@@ -494,7 +612,7 @@ function web_delete($doc_id,$doctype_id,$server_id) {
   }
 
 /*
-  //Verzeichnisse lï¿½schen
+  //Verzeichnisse löschen
   $web_path = $mod->system->server_conf["server_path_httpd_root"] ."/". "web" . $doc_id;
   $mod->log->caselog("cp -fr $web_path /root/ispconfig/scripts", $this->FILE, __LINE__); //Backup erstellen
   exec("cd /root/ispconfig/scripts; tar -pczf web$doc_id.tar.gz web$doc_id"); //Backup
@@ -506,7 +624,7 @@ function web_delete($doc_id,$doctype_id,$server_id) {
   $mod->db->query("update isp_isp_web SET status = '' where doc_id = '$doc_id'");
   $mod->system->data["isp_isp_web"][$doc_id]["status"] = "";
 
-  //MySQL-User lï¿½schen
+  //MySQL-User löschen
   $datenbanken = $mod->db->queryAllRecords("SELECT * FROM isp_isp_datenbank WHERE web_id = '$doc_id'");
   $db_server = $go_info["server"]["db_host"];
   $db_user = $go_info["server"]["db_user"];
@@ -536,7 +654,7 @@ function web_delete($doc_id,$doctype_id,$server_id) {
       }
       $i++;
     }
-    //DB lï¿½schen
+    //DB löschen
     if($new_db_exists){
     //DB-Backup
     // $mod->log->caselog("mysqldump -h $db_server -u $db_user -p$db_password -c --add-drop-table --add-locks --all --quick --lock-tables $new_db >/root/ispconfig/scripts/$new_db.sql", $this->FILE, __LINE__);
@@ -596,7 +714,7 @@ function user_insert($doc_id, $doctype_id) {
   $web = $mod->system->data["isp_isp_web"][$web_doc_id];
   if(empty($web)) $mod->log->ext_log("query result empty", 2, $this->FILE, __LINE__);
 
-  // user zum System hinzufï¿½gen
+  // user zum System hinzufügen
   $userid = $mod->system->server_conf["userid_von"] + $user["doc_id"];
   $user_name = $user["user_name"];
   $user_username = $user["user_username"];
@@ -604,7 +722,7 @@ function user_insert($doc_id, $doctype_id) {
   if($user["user_shell"] && $web["web_shell"]){
     $shell = "/bin/bash"; //Shell u. FTP
   } else {
-    if($web["web_ftp"] && $user["user_ftp"]){
+    if($web["web_ftp"]){
       $shell = "/bin/false"; //nur FTP
     } else {
       $shell = "/dev/null"; //weder Shell noch FTP
@@ -648,7 +766,7 @@ function user_insert($doc_id, $doctype_id) {
   }
 */
 
-  // Gehï¿½rt User einem Reseller oder dem admin?
+  // Gehört User einem Reseller oder dem admin?
   if($reseller = $mod->db->queryOneRecord("SELECT isp_isp_reseller.user_standard_index FROM isp_nodes, isp_isp_reseller WHERE isp_nodes.doc_id = $doc_id AND isp_nodes.doctype_id = '".$doctype_id."' AND isp_nodes.groupid = isp_isp_reseller.reseller_group")){
     $user_standard_index_page = trim($reseller["user_standard_index"]);
   } else {
@@ -661,7 +779,7 @@ function user_insert($doc_id, $doctype_id) {
   if(!is_dir($web_path."/user/".$user_username."/web")) mkdir($web_path."/user/".$user_username."/web", $directory_mode);
   if(!is_file($web_path."/user/".$user_username."/web/index.html")){
     if($user_standard_index_page == ""){
-      $mod->log->caselog("cp -fr /root/ispconfig/isp/user_standard_index.html_".$go_info["server"]["lang"]." ".$web_path."/user/$user_username/web/index.html", $this->FILE, __LINE__); //Standard-Index-Seite einfï¿½gen
+      $mod->log->caselog("cp -fr /root/ispconfig/isp/user_standard_index.html_".$go_info["server"]["lang"]." ".$web_path."/user/$user_username/web/index.html", $this->FILE, __LINE__); //Standard-Index-Seite einfügen
       $inhalt = $mod->file->rf($web_path."/user/".$user_username."/web/index.html");
       $inhalt = str_replace("{USER_USERNAME}", $user_username, $inhalt);
     } else {
@@ -680,7 +798,7 @@ function user_insert($doc_id, $doctype_id) {
   exec("chmod -R 775 $web_path/user/$user_username");
   exec("chmod 755 $web_path/user/$user_username");
 
-  //wenn User Admin-User des Webs, Owner des Webs ï¿½ndern, aber nicht Owner der User-Verzeichnisse!
+  //wenn User Admin-User des Webs, Owner des Webs ändern, aber nicht Owner der User-Verzeichnisse!
   if($user["user_admin"]){
     //exec("usermod -G web".$web_doc_id." ".$user_username."");
     // alten admin herausfinden
@@ -702,20 +820,17 @@ function user_insert($doc_id, $doctype_id) {
     $mod->system->usermod($user_username, "users");
   }
 
-  //Passwort in ISPConfig-DB lï¿½schen
+  //Passwort in ISPConfig-DB löschen
   $mod->db->query("UPDATE isp_isp_user SET user_passwort = '' where doc_id = '$doc_id'");
   $mod->system->data["isp_isp_user"]["user_passwort"] = '';
 
   // User-Mail-Datei anlegen, sonst evtl. Fehler bei Autoresponder
   if(!$mod->system->server_conf["use_maildir"]){
-    if(!is_file("/var/spool/mail/".$user_username)){
+    if(!is_file("/var/spool/mail/".$user_username) && $user_username != ''){
       $mod->log->phpcaselog(touch("/var/spool/mail/".$user_username), "create /var/spool/mail/".$user_username, $this->FILE, __LINE__);
       $mod->log->caselog("chown $user_username:mail /var/spool/mail/$user_username &> /dev/null", $this->FILE, __LINE__);
       $mod->log->caselog("chmod 600 /var/spool/mail/$user_username", $this->FILE, __LINE__);
     }
-  } else if ($mod->system->server_conf["use_maildir"] == 2) {
-    // Cyrus IMAP, Mailbox anlegen
-    $mod->cyrus_imap->add($user["user_username"], $user["user_mailquota"]);
   }
 
   // Diskquota setzen
@@ -748,7 +863,7 @@ function user_insert($doc_id, $doctype_id) {
     $mod->log->caselog($mod->system->server_conf["server_path_frontpage"]." -o install -u admin -pw ".$web["optionen_frontpage_passwort"]." -p 80 -m ".$fp_servername." -s ".$this->vhost_conf." -xu ".$user["user_username"]." -xg web".$web["doc_id"]." &> /dev/null", $this->FILE, __LINE__);
   }
 
-  //Status zurï¿½cksetzen
+  //Status zurücksetzen
   $mod->db->query("update isp_isp_user SET status = '' where doc_id = '$doc_id'");
   $mod->system->data["isp_isp_user"][$doc_id]["status"] = '';
 
@@ -759,6 +874,9 @@ function user_insert($doc_id, $doctype_id) {
   if($go_info["server"]["ssh_chroot"] == 1) {
           exec("/root/ispconfig/scripts/shell/create_chroot_env.sh $user_username");
   }
+
+
+
 }
 
 function user_update($doc_id, $doctype_id) {
@@ -774,7 +892,7 @@ function user_update($doc_id, $doctype_id) {
   $web = $mod->system->data["isp_isp_web"][$web_doc_id];
   if(empty($web)) $mod->log->ext_log("query result empty", 2, $this->FILE, __LINE__);
 
-  // user zum System hinzufï¿½gen
+  // user zum System hinzufügen
   $userid = $mod->system->server_conf["userid_von"] + $user["doc_id"];
   $user_name = $user["user_name"];
   $user_username = $user["user_username"];
@@ -828,13 +946,9 @@ function user_update($doc_id, $doctype_id) {
       $mod->log->caselog("chown $user_username:mail /var/spool/mail/$user_username &> /dev/null", $this->FILE, __LINE__);
       $mod->log->caselog("chmod 600 /var/spool/mail/$user_username", $this->FILE, __LINE__);
     }
-  } else if ($mod->system->server_conf["use_maildir"] == 2) {
-    // Cyrus IMAP, Mailbox-Quota anpassen
-    $mod->cyrus_imap->update($user["user_username"], $user["user_mailquota"]);
   }
-  exec("whoami >> /root/tempout");
 
-  // Gehï¿½rt User einem Reseller oder dem admin?
+  // Gehört User einem Reseller oder dem admin?
   if($reseller = $mod->db->queryOneRecord("SELECT isp_isp_reseller.user_standard_index FROM isp_nodes, isp_isp_reseller WHERE isp_nodes.doc_id = $doc_id AND isp_nodes.doctype_id = '".$doctype_id."' AND isp_nodes.groupid = isp_isp_reseller.reseller_group")){
     $user_standard_index_page = trim($reseller["user_standard_index"]);
   } else {
@@ -848,7 +962,7 @@ function user_update($doc_id, $doctype_id) {
     if(!is_dir($web_path."/user/".$user_username."/web")) mkdir($web_path."/user/".$user_username."/web", $directory_mode);
     if(!is_file($web_path."/user/".$user_username."/web/index.html")){
       if($user_standard_index_page == ""){
-        $mod->log->caselog("cp -fr /root/ispconfig/isp/user_standard_index.html_".$go_info["server"]["lang"]." ".$web_path."/user/$user_username/web/index.html", $this->FILE, __LINE__); //Standard-Index-Seite einfï¿½gen
+        $mod->log->caselog("cp -fr /root/ispconfig/isp/user_standard_index.html_".$go_info["server"]["lang"]." ".$web_path."/user/$user_username/web/index.html", $this->FILE, __LINE__); //Standard-Index-Seite einfügen
         $inhalt = $mod->file->rf($web_path."/user/".$user_username."/web/index.html");
         $inhalt = str_replace("{USER_USERNAME}", $user_username, $inhalt);
       } else {
@@ -869,7 +983,8 @@ function user_update($doc_id, $doctype_id) {
   }
   ////////// Verzeichnisse erzeugen ENDE ///////////
 
-  //wenn User Admin-User des Webs, Owner des Webs ï¿½ndern, aber nicht Owner der User-Verzeichnisse!
+
+  //wenn User Admin-User des Webs, Owner des Webs ändern, aber nicht Owner der User-Verzeichnisse!
   if($user["user_admin"]){
     //exec("usermod -G web".$web_doc_id." ".$user_username."");
     // alten admin herausfinden
@@ -910,7 +1025,7 @@ function user_update($doc_id, $doctype_id) {
   $mod->procmail->make_procmailrc($doc_id);
   $mod->procmail->make_recipes($doc_id);
 
-  //Status zurï¿½cksetzen
+  //Status zurücksetzen
   $mod->db->query("update isp_isp_user SET status = '' where doc_id = '$doc_id'");
   $mod->system->data["isp_isp_user"][$doc_id]["status"] = '';
 
@@ -939,7 +1054,7 @@ function user_delete($doc_id, $doctype_id) {
   $web_path = $mod->system->server_conf["server_path_httpd_root"]."/web".$web_doc_id;
 
 /*
-  //User-Verzeichnis lï¿½schen
+  //User-Verzeichnis löschen
   if(is_dir($web_path."/user/".$user_username)){
     $mod->log->caselog("cp -fr $web_path/user/$user_username /root/ispconfig/scripts", $this->FILE, __LINE__); //Backup erstellen
     exec("cd /root/ispconfig/scripts; tar -pczf $user_username.tar.gz $user_username &"); //Backup
@@ -948,7 +1063,7 @@ function user_delete($doc_id, $doctype_id) {
   }
 */
 
-  // wenn Admin-User gelï¿½scht wird, soll der Hauptordner wieder dem Apache-User gehï¿½ren
+  // wenn Admin-User gelöscht wird, soll der Hauptordner wieder dem Apache-User gehören
   if($user["user_admin"] && is_dir($web_path)){
     // alten admin herausfinden
     $old_admin_uid = fileowner($web_path);
@@ -985,7 +1100,7 @@ function user_delete($doc_id, $doctype_id) {
   //$mod->system->deluser($user_username);
   $mod->system->deactivateuser($user_username);
 
-  // User-Mail-Datei lï¿½schen
+  // User-Mail-Datei löschen
   if(is_file("/var/spool/mail/".$user_username)){
       $mod->log->caselog("rm -f /var/spool/mail/$user_username", $this->FILE, __LINE__);
   }
@@ -993,17 +1108,6 @@ function user_delete($doc_id, $doctype_id) {
   $mod->db->query("update isp_isp_user SET status = '' where doc_id = '$doc_id'");
   $mod->system->data["isp_isp_user"][$doc_id]["status"] = '';
 }
-
-	function list_delete($doc_id, $doctype_id) {
-		global $mod;
-		
-		$list = $mod->system->data["isp_isp_list"][$doc_id];
-		
-  		if(empty($list)) $mod->log->ext_log("query result empty", 2, $this->FILE, __LINE__);
-
-		$mod->db->query("update isp_isp_list SET status = '' where doc_id = '$doc_id'");
-		$mod->system->data["isp_isp_list"][$doc_id]["status"] = '';
-	}
 
 /////////////////////////////////////////////////////////////////////////////
 // Helper Functions
@@ -1032,7 +1136,7 @@ function make_docroot($doc_id,$hostname,$domainname,$web_quota,$update) {
   }
 */
 
-  // Gehï¿½rt Web einem Reseller oder dem admin?
+  // Gehört Web einem Reseller oder dem admin?
   if($reseller = $mod->db->queryOneRecord("SELECT isp_isp_reseller.standard_index FROM isp_nodes, isp_isp_reseller WHERE isp_nodes.doc_id = $doc_id AND isp_nodes.doctype_id = '".$this->web_doctype_id."' AND isp_nodes.groupid = isp_isp_reseller.reseller_group")){
     $standard_index_page = trim($reseller["standard_index"]);
   } else {
@@ -1086,7 +1190,7 @@ function make_docroot($doc_id,$hostname,$domainname,$web_quota,$update) {
     }
   }
   if(is_file($web_path."/web/index.html")){
-  /////////////// index.html: Adresse einfï¿½gen //////////////////
+  /////////////// index.html: Adresse einfügen //////////////////
     $index_html_inhalt = $mod->file->rf($web_path."/web/index.html");
     if(substr_count($index_html_inhalt, "<!--ADRESSE//-->") == 2){
       $index_html_arr = explode("<!--ADRESSE//-->", $index_html_inhalt);
@@ -1108,7 +1212,7 @@ function make_docroot($doc_id,$hostname,$domainname,$web_quota,$update) {
       $mod->file->wf($web_path."/web/index.html", $index_html_inhalt);
     }
     clearstatcache();
-  /////////////// index.html: Adresse einfï¿½gen ENDE //////////////////
+  /////////////// index.html: Adresse einfügen ENDE //////////////////
   }
 
   // symbolischen Link erzeugen
@@ -1130,9 +1234,9 @@ function make_docroot($doc_id,$hostname,$domainname,$web_quota,$update) {
   //if(!$mod->system->is_group("web".$doc_id)) $mod->log->caselog("groupadd -g $groupid web$doc_id &> /dev/null", $this->FILE, __LINE__);
   if(!$mod->system->is_group("web".$doc_id)) $mod->system->addgroup("web".$doc_id, $groupid);
 
-  ///////////////// admispconfig der Gruppe hinzufï¿½gen ////////////////
+  ///////////////// admispconfig der Gruppe hinzufügen ////////////////
   $mod->system->add_user_to_group("web".$doc_id);
-  //////////////////// admispconfig der Gruppe hinzufï¿½gen ENDE //////////////
+  //////////////////// admispconfig der Gruppe hinzufügen ENDE //////////////
 
   $apache_user = $this->apache_user;
   if($update == 0 || $dir_new){
@@ -1142,7 +1246,7 @@ function make_docroot($doc_id,$hostname,$domainname,$web_quota,$update) {
     exec("chmod -R 775 $web_path_realname");
     exec("chmod 755 $web_path");
     exec("chmod 755 $web_path_realname");
-    exec("chmod 755 $web_path/user"); // user-Verzeichnis sollte nicht group-writable sein, weil Sendmail sonst warnings ausgeben kï¿½nnte wg. der .forward-Datei
+    exec("chmod 755 $web_path/user"); // user-Verzeichnis sollte nicht group-writable sein, weil Sendmail sonst warnings ausgeben könnte wg. der .forward-Datei
     exec("chmod 755 $web_path/log");
     exec("chmod 755 $web_path/ssl");
     exec("chmod 777 $web_path/phptmp");
@@ -1152,7 +1256,7 @@ function make_docroot($doc_id,$hostname,$domainname,$web_quota,$update) {
     exec("chmod 664 $web_path/web/error/*");
     exec("chmod 664 $web_path/web/index.html");
   } else {
-    //gibt es Admin-User fï¿½r das Web? Wenn er gelï¿½scht wurde, evtl. vorh. Autoresponder-Dateien lï¿½schen
+    //gibt es Admin-User für das Web? Wenn er gelöscht wurde, evtl. vorh. Autoresponder-Dateien löschen
     $sql = "SELECT * FROM isp_nodes, isp_dep, isp_isp_user WHERE isp_dep.parent_doc_id = '".$doc_id."' AND isp_dep.parent_doctype_id = '".$this->web_doctype_id."' AND isp_dep.child_doc_id = isp_isp_user.doc_id AND isp_dep.child_doctype_id = '".$this->user_doctype_id."' AND isp_isp_user.user_admin = '1' AND isp_nodes.doc_id = isp_isp_user.doc_id AND isp_nodes.doctype_id = '".$this->user_doctype_id."' AND isp_nodes.status = '1'";
     $admin_user = $mod->db->queryOneRecord($sql);
     if(!empty($admin_user)){
@@ -1184,17 +1288,17 @@ function make_docroot($doc_id,$hostname,$domainname,$web_quota,$update) {
   if(is_file($crt_file)) exec("chmod 644 $crt_file");
 
   $root_gruppe = $mod->system->root_group();
-  exec("chmod 1400 $web_path/user/.no_delete");
+  exec("chmod 400 $web_path/user/.no_delete");
   exec("chown root:$root_gruppe $web_path/user/.no_delete");
-  exec("chmod 1400 $web_path/log/.no_delete");
+  exec("chmod 400 $web_path/log/.no_delete");
   exec("chown root:$root_gruppe $web_path/log/.no_delete");
-  exec("chmod 1400 $web_path/cgi-bin/.no_delete");
+  exec("chmod 400 $web_path/cgi-bin/.no_delete");
   exec("chown root:$root_gruppe $web_path/cgi-bin/.no_delete");
-  exec("chmod 1400 $web_path/ssl/.no_delete");
+  exec("chmod 400 $web_path/ssl/.no_delete");
   exec("chown root:$root_gruppe $web_path/ssl/.no_delete");
-  exec("chmod 1400 $web_path/phptmp/.no_delete");
+  exec("chmod 400 $web_path/phptmp/.no_delete");
   exec("chown root:$root_gruppe $web_path/phptmp/.no_delete");
-  exec("chmod 1400 $web_path/web/error/.no_delete");
+  exec("chmod 400 $web_path/web/error/.no_delete");
   exec("chown root:$root_gruppe $web_path/web/error/.no_delete");
 
   ////////////// Standard CGIs ////////////////////
@@ -1269,7 +1373,7 @@ function make_vhost($server_id) {
     unset($suexec_arr);
   }
 
-  // Template ï¿½ffnen
+  // Template Öffnen
   $mod->tpl->clear_all();
   $mod->tpl->define( array(table    => "vhost.conf.master"));
   $mod->tpl->define_dynamic( "vhost", "table" );
@@ -1344,7 +1448,7 @@ Group web".$web["doc_id"];
                         $suexec = "";
                 }
 
-        // TB: SuExec ï¿½berprï¿½fung abschaltbar
+        // TB: SuExec Überprüfung abschaltbar
                 if($go_info["server"]["suexec_check_disable"] != true) {
                         $suexec = $this->httpd_syntax_check($web["doc_id"], $suexec, 0);
                         $mod->log->msg("HTTPD_SYNTAX_CHECK: suexec");
@@ -1380,7 +1484,7 @@ Group web".$web["doc_id"];
             if(substr($domain["domain_weiterleitung"],-1) == "/") $domain["domain_weiterleitung"] = substr($domain["domain_weiterleitung"],0,-1);
             $rewrite_rule .= "\nRewriteRule ^/(.*)         ".$domain["domain_weiterleitung"]."/$1 [L,R]";
           } else {
-            //if(substr($domain["domain_weiterleitung"],-1) != "/") $domain["domain_weiterleitung"] .= "/";
+            if(substr($domain["domain_weiterleitung"],-1) != "/") $domain["domain_weiterleitung"] .= "/";
             if(substr($domain["domain_weiterleitung"],0,1) != "/") $domain["domain_weiterleitung"] = "/".$domain["domain_weiterleitung"];
             $rewrite_rule .= "\nRewriteRule   ^/(.*)$  http://".$servername.$domain["domain_weiterleitung"]."$1  [R]";
           }
@@ -1395,44 +1499,23 @@ Group web".$web["doc_id"];
     }
 
     $cgi = "";
-    if ($web["web_cgi"] == 1) {
-        $cgi = "ScriptAlias  /cgi-bin/ ".$mod->system->server_conf["server_path_httpd_root"]."/"."web".$web["doc_id"]."/"."cgi-bin/";
-
-        if ($web["web_cgi_mod_perl"] == 1 && $server["server_httpd_mod_perl"] == 1) {
-            $cgi .= "\nPerlOptions +Enable";
-            $cgi_handler = "\tSetHandler perl-script
-\tPerlResponseHandler ModPerl::Registry
-\tPerlOptions +ParseHeaders";
-        } else {
-            $cgi_handler = "\tSetHandler cgi-script";
-        }
-
-        $cgi .= "\n<Location /cgi-bin>\n$cgi_handler\n</Location>";
-    }
+    if($web["web_cgi"] == 1) $cgi = "ScriptAlias  /cgi-bin/ ".$mod->system->server_conf["server_path_httpd_root"]."/"."web".$web["doc_id"]."/"."cgi-bin/
+AddHandler cgi-script .cgi
+AddHandler cgi-script .pl";
 
     if($web["web_php"]){
       if($apache_version == 1){
         $php = "AddType application/x-httpd-php .php .php3 .php4 .php5";
       }
       if($apache_version == 2){
-                $a2php = $go_info["server"]["apache2_php"];
-                if (!is_array($a2php)) {
-                        $a2php = explode(',', $a2php);
-                }
-                $php = '';
-                if (array_search('engine',$a2php) !== false) {
-                        $php .= "php_admin_flag engine on\n";
-                }
-                if ((array_search('addtype',$a2php) !== false) ||
-                    (array_search('both',$a2php) !== false) ||
-                    (array_search('suphp',$a2php) !== false)) {
+                  $php = '';
+                if($go_info["server"]["apache2_php"] == 'addtype' or $go_info["server"]["apache2_php"] == 'both' or $go_info["server"]["apache2_php"] == 'suphp') {
                         $php .= "AddType application/x-httpd-php .php .php3 .php4 .php5\n";
                 }
-				if ((array_search('addhandler',$a2php) !== false)) {
+				if ($go_info["server"]["apache2_php"] == 'addhandler') {
                         $php .= "AddHandler application/x-httpd-php .php .php3 .php4 .php5\n";
                 }
-                if ((array_search('filter',$a2php) !== false) ||
-                    (array_search('both',$a2php) !== false)) {
+                if($go_info["server"]["apache2_php"] == 'filter' or $go_info["server"]["apache2_php"] == 'both') {
             $php .= "<Files *.php>
     SetOutputFilter PHP
     SetInputFilter PHP
@@ -1451,36 +1534,26 @@ Group web".$web["doc_id"];
 </Files>";
                 }
       }
-
-          if(array_search('suphp',$a2php) !== false){
+          if($go_info["server"]["apache2_php"] == 'suphp'){
                   $php .= "suPHP_Engine on\n";
                   $php .= "suPHP_UserGroup ".$webadmin." web".$web["doc_id"]."\n";
                   $php .= "AddHandler x-httpd-php .php .php3 .php4 .php5\n";
                   $php .= "suPHP_AddHandler x-httpd-php\n";
           }
 
-          if(array_search('suphp',$a2php) !== false) {
-      if($web["web_php_safe_mode"]){
-        $php .= "\nphp_admin_flag safe_mode On
+          if($go_info["server"]["apache2_php"] != 'suphp') {
+              if($web["web_php_safe_mode"]){
+                $php .= "\nphp_admin_flag safe_mode On
 php_admin_value open_basedir ".$mod->system->server_conf["server_path_httpd_root"]."/"."web".$web["doc_id"]."/
 php_admin_value file_uploads 1
 php_admin_value upload_tmp_dir ".$mod->system->server_conf["server_path_httpd_root"]."/"."web".$web["doc_id"]."/phptmp/
 php_admin_value session.save_path ".$mod->system->server_conf["server_path_httpd_root"]."/"."web".$web["doc_id"]."/phptmp/";
-      } else {
-        $php .= "\nphp_admin_flag safe_mode Off";
-      }
-          }
+              } else {
+                $php .= "\nphp_admin_flag safe_mode Off";
+              }
+        }
     } else {
       $php = "";
-      if($apache_version == 2){
-        $a2php = $go_info["server"]["apache2_php"];
-        if (!is_array($a2php)) {
-          $a2php = explode(',', $a2php);
-        }
-        if (array_search('engine',$a2php) !== false) {
-          $php .= "php_admin_flag engine off\n";
-        }
-      }
     }
 
     if($web["web_ssi"]){
@@ -1519,16 +1592,6 @@ AddType image/vnd.wap.wbmp .wbmp";
    if($apache_version == 2){
      $error_alias = "Alias /error/ \"".$document_root."/error/\"";
    }
-  
-  ////////////// Web Statistics ////////////////////
-  $stats_alias = "";
-  
-   if($web["web_stats"] == "awstats"){
-     $stats_alias = "Alias /stats \"".$document_root."/awstats\"";
-   } elseif ($web["web_stats"] == "webalizer") {
-     $stats_alias = "Alias /stats \"".$document_root."/webalizer\"";
-   }
-  ////////////// END of Web Statistics ////////////////////
 
   ////////////// Error Pages ////////////////////
    if($web["web_individual_error_pages"]){
@@ -1592,7 +1655,6 @@ ErrorLog ".$mod->system->server_conf["server_path_httpd_root"]."/web".$web["doc_
 SSLEngine on
 SSLCertificateFile ".$mod->system->server_conf["server_path_httpd_root"]."/web".$web["doc_id"]."/ssl/".$web["web_host"].".".$web["web_domain"].".crt
 SSLCertificateKeyFile ".$mod->system->server_conf["server_path_httpd_root"]."/web".$web["doc_id"]."/ssl/".$web["web_host"].".".$web["web_domain"].".key
-".$stats_alias."
 ".$error_alias."
 ".$error."
 AliasMatch ^/~([^/]+)(/(.*))? ".$mod->system->server_conf["server_path_httpd_root"]."/web".$web["doc_id"]."/user/$1/web/$3
@@ -1625,7 +1687,6 @@ clearstatcache();
                         PHP => $php,
                         SSI => $ssi,
                         WAP => $wap,
-                        STATSALIAS => $stats_alias,
                         ERRORALIAS => $error_alias,
                         ERROR => $error,
                         WEB => "web".$web["doc_id"],
@@ -1680,7 +1741,7 @@ clearstatcache();
   }
 
   $mod->file->wf($this->vhost_conf, $vhost_text);
-  //Leerzeilen lï¿½schen
+  //Leerzeilen löschen
   $mod->file->remove_blank_lines($this->vhost_conf);
 
   if(!empty($fp_webs) && is_file($mod->system->server_conf["server_path_frontpage"])){
@@ -1691,7 +1752,7 @@ clearstatcache();
         } else {
           $fp_servername = $fp_web["web_host"].".".$fp_web["web_domain"];
         }
-        //gibt es Admin-User fï¿½r das Web?
+        //gibt es Admin-User für das Web?
         $admin_user = $mod->db->queryOneRecord("SELECT * FROM isp_nodes, isp_dep, isp_isp_user WHERE isp_dep.parent_doc_id = '".$fp_web["doc_id"]."' AND isp_dep.parent_doctype_id = '".$this->web_doctype_id."' AND isp_dep.child_doc_id = isp_isp_user.doc_id AND isp_dep.child_doctype_id = '".$this->user_doctype_id."' AND isp_isp_user.user_admin = '1' AND isp_nodes.doc_id = isp_isp_user.doc_id AND isp_nodes.doctype_id = '".$this->user_doctype_id."' AND isp_nodes.status = '1'");
         if(!empty($admin_user)){
           $fp_owner_user = $admin_user["user_username"];
@@ -1740,7 +1801,7 @@ function backup($doc_id){
 function make_openssl_cnf($doc_id,$ssl_password) {
   global $mod;
 
-  // Template ï¿½ffnen
+  // Template Öffnen
   $mod->tpl->clear_all();
   $mod->tpl->define( array(table    => "openssl.cnf.master"));
 
@@ -1951,7 +2012,7 @@ function make_ftp($server_id){
     $mod->log->caselog("cp -fr $this->ftp_conf $this->ftp_conf~", $this->FILE, __LINE__);
   }
 
-  // Template ï¿½ffnen
+  // Template Öffnen
   if($mod->system->server_conf["server_ftp_typ"] == "proftpd"){
     $mod->tpl->clear_all();
     $mod->tpl->define( array(table    => "proftpd_ispconfig.conf.master"));
@@ -1974,7 +2035,7 @@ function make_ftp($server_id){
           if(!is_dir($document_root."/ftp/incoming")) mkdir($document_root."/ftp/incoming", $directory_mode);
           exec("chmod 775 ".$document_root."/ftp &> /dev/null");
           exec("chmod 773 ".$document_root."/ftp/incoming &> /dev/null");
-          //gibt es Admin-User fï¿½r das Web? Wenn er gelï¿½scht wurde, evtl. vorh. Autoresponder-Dateien lï¿½schen
+          //gibt es Admin-User für das Web? Wenn er gelöscht wurde, evtl. vorh. Autoresponder-Dateien löschen
           $sql = "SELECT * FROM isp_nodes, isp_dep, isp_isp_user WHERE isp_dep.parent_doc_id = '".$web["doc_id"]."' AND isp_dep.parent_doctype_id = '".$this->web_doctype_id."' AND isp_dep.child_doc_id = isp_isp_user.doc_id AND isp_dep.child_doctype_id = '".$this->user_doctype_id."' AND isp_isp_user.user_admin = '1' AND isp_nodes.doc_id = isp_isp_user.doc_id AND isp_nodes.doctype_id = '".$this->user_doctype_id."' AND isp_nodes.status = '1'";
           $admin_user = $mod->db->queryOneRecord($sql);
           if(!empty($admin_user)){
@@ -1986,7 +2047,7 @@ function make_ftp($server_id){
           $mod->log->caselog("groupadd -g ".($mod->system->server_conf["userid_von"] + 2000 + $web["doc_id"])." web".$web["doc_id"]."_anonftp &> /dev/null", $this->FILE, __LINE__);
           $mod->log->caselog("useradd -d ".$document_root."/ftp -g web".$web["doc_id"]."_anonftp -m -s /bin/false -u ".($mod->system->server_conf["userid_von"] + 2000 + $web["doc_id"])." web".$web["doc_id"]."_anonftp &> /dev/null", $this->FILE, __LINE__);
 
-          // Diskquota setzen fï¿½r Anonymous FTP-User (entspricht max. Datenmenge, die per Anonymous FTP hochgeladen werfen kann)
+          // Diskquota setzen für Anonymous FTP-User (entspricht max. Datenmenge, die per Anonymous FTP hochgeladen werfen kann)
           if(intval($web["web_anonftplimit"]) > 0){
             $blocks_soft = $web["web_anonftplimit"] * 1024;
             $blocks_hard = $blocks_soft + 1024;
@@ -2053,7 +2114,7 @@ function make_ftp($server_id){
         $vhost_text = $mod->tpl->fetch();
 
         $mod->file->wf("/etc/vsftpd_".$ip["server_ip"].".conf", $vhost_text);
-        //Leerzeilen lï¿½schen
+        //Leerzeilen löschen
         $mod->file->remove_blank_lines("/etc/vsftpd_".$ip["server_ip"].".conf");
       }
 
@@ -2065,12 +2126,12 @@ function make_ftp($server_id){
     $vhost_text = $mod->tpl->fetch();
 
     $mod->file->wf($this->ftp_conf, $vhost_text);
-    //Leerzeilen lï¿½schen
+    //Leerzeilen löschen
     $mod->file->remove_blank_lines($this->ftp_conf);
   }
 
   /*
-  // Anonymous FTP-User lï¿½schen, wenn nicht mehr gebraucht
+  // Anonymous FTP-User löschen, wenn nicht mehr gebraucht
   $webs = $mod->db->queryAllRecords("SELECT * FROM isp_isp_web WHERE server_id = '$server_id' AND web_anonftp != '1'");
   if(!empty($webs)){
     foreach($webs as $web){
@@ -2084,7 +2145,7 @@ function make_ftp($server_id){
   }
   */
 
-  // Anonymous FTP-User lï¿½schen, wenn nicht mehr gebraucht
+  // Anonymous FTP-User löschen, wenn nicht mehr gebraucht
   ob_start();
   system("grep _anonftp /home/admispconfig/ispconfig/users | grep web");
   $output = trim(ob_get_contents());
@@ -2114,7 +2175,7 @@ function make_firewall(){
   $new_firewall_config = $mod->db->queryAllRecords("SELECT * FROM isp_firewall WHERE status != ''");
 
   if(!empty($new_firewall_config)){
-    // Template ï¿½ffnen
+    // Template öffnen
     $mod->tpl->clear_all();
 
     if(!strstr($mod->system->server_conf["dist"], "freebsd")){
@@ -2381,7 +2442,7 @@ function monitor(){
   $new_monitor_config = $mod->db->queryAllRecords("SELECT * FROM isp_monitor WHERE status != ''");
 
   if(!empty($new_monitor_config)){
-    // Template ï¿½ffnen
+    // Template Öffnen
     $mod->tpl->clear_all();
     $mod->tpl->define( array(table    => "check_services.php.master"));
     $mod->tpl->define_dynamic( "monitor", "table" );
@@ -2526,7 +2587,7 @@ function web_user_clean(){
     foreach($items as $item){
       switch ($item["doctype_id"]) {
       case 1013:
-          //Verzeichnisse lï¿½schen
+          //Verzeichnisse löschen
           $web_path = $item["pfad"];
           if($item["web_host"] == ""){
             $web_path_realname = $mod->system->server_conf["server_path_httpd_root"] ."/". $item["web_domain"];
@@ -2536,7 +2597,7 @@ function web_user_clean(){
           $mod->log->caselog("rm -fr $web_path_realname", $this->FILE, __LINE__);
           $mod->log->caselog("rm -fr $web_path", $this->FILE, __LINE__);
 
-          // Gruppe des Webs lï¿½schen
+          // Gruppe des Webs löschen
           if(!is_dir($web_path)){
             if(!strstr($mod->system->server_conf["dist"], "freebsd")){
               $mod->log->caselog("setquota -g web".$item['doc_id']." 0 0 0 0 -a &> /dev/null", $this->FILE, __LINE__);
@@ -2556,29 +2617,13 @@ function web_user_clean(){
           $mod->db->query("DELETE FROM del_status WHERE id = '".$item["id"]."'");
       break;
       case 1014:
-          //User-Verzeichnis lï¿½schen
+          //User-Verzeichnis löschen
           if(is_dir($item["pfad"])){
             $mod->log->caselog("rm -fr ".$item["pfad"], $this->FILE, __LINE__);
           }
           $mod->system->deluser($item["name"]);
           $mod->db->query("DELETE FROM del_status WHERE id = '".$item["id"]."'");
-
-          if ($mod->system->server_conf["use_maildir"] == 2) {
-            // Cyrus IMAP, Mailbox lï¿½schen
-            $mod->cyrus_imap->del($item["name"]);
-          }
-
-          $mod->etc->delete_user_config_dir($item["name"]);
       break;
-      case 1033:
-      	// Liste Lï¿½schen
-      	$rmlist_path = "/usr/lib/mailman/bin/rmlist";
-		
-      	$list_name = $item["name"];
-
-		// Liste lï¿½schen
-		$mod->log->caselog("$rmlist_path $list_name", $this->FILE, __LINE__);
-		$mod->db->query("DELETE FROM del_status WHERE id = '".$item["id"]."'");
       }
     }
   }
