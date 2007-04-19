@@ -381,6 +381,9 @@ function get_local_hostnames() {
 
                         $mod->log->caselog("cp -fr /etc/postfix/transport /etc/postfix/transport~", $this->FILE, __LINE__);
                         $mod->file->wf("/etc/postfix/transport", $sendmail_text);
+
+                        //Creating the transport.db file
+                        $mod->log->caselog("postmap hash:/etc/postfix/transport", $this->FILE, __LINE__);
                 }
         }
 
