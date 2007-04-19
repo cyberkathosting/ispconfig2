@@ -34,6 +34,7 @@ include("../../../../lib/session.inc.php");
 $go_api->content->define(   array(
                                     main    => "main.htm",
                                     table   => "tools_tools_TYPO3.htm",
+//                                    table   => "tools_tools_ispbackup.htm",
                                     stylesheet => "style.css"));
 
 $go_api->content->assign( array(    TITLE => "$session_site TYPO3",
@@ -49,22 +50,47 @@ $go_api->content->assign( array(    TITLE => "$session_site TYPO3",
                                                             CHARSET => $go_info["theme"]["charset"],
                                     SERVERURL => $go_info["server"]["server_url"],
                                                             S => $s,
-                                                            TXT_TYPO3_MYSQL_HOST => $go_api->lng("TYPO3 Mysql host"),
-                                                            TXT_TYPO3_MYSQL_USER => $go_api->lng("TYPO3 Mysql Username"),
-                                                            TXT_TYPO3_MYSQL_PASSWORT => $go_api->lng("TYPO3 Mysql passwort"),
-                                                            TXT_TYPO3_MYSQL_DB => $go_api->lng("TYPO3 Mysql Datenbank"),
-                                                            TXT_TYPO3_INSTALL_PASSWORT => $go_api->lng("TYPO3 Install passwort"),
-                                                            TXT_TYPO3_ADMIN_PASSWORT => $go_api->lng("TYPO3 Admin passwort"),
-                                                            TXT_BACKUP_STARTEN => $go_api->lng("Start Install")
-                                    ) );
+                                                            TXT_TYPO3_MYSQL_HOST => $go_api->lng("Mysql host"),
+                                                            TXT_TYPO3_MYSQL_USER => $go_api->lng("Mysql Username"),
+                                                            TXT_TYPO3_MYSQL_PASSWORT => $go_api->lng("Mysql password"),
+                                                            TXT_TYPO3_MYSQL_DB => $go_api->lng("Mysql Database "),
+                                                            TXT_TYPO3_INSTALL_PASSWORT => $go_api->lng("Install password"),
+                                                            TXT_TYPO3_ADMIN_PASSWORT => $go_api->lng("Admin password"),
+                                                            TXT_TYPO3_VERSION => $go_api->lng("TYPO3 Version"),
+                                                            TXT_INSTALL_STARTEN => $go_api->lng("Start Install")
+                                    ));
 
 // BEGIN TOOL ###########################################################################
 
-// Wenn admin, dann alle Webs der Reseller anzeigen
+// Find and show available versions.
+// Find TYPO3 source path
+$server = $go_api->db->queryOneRecord("SELECT * from isp_server");
+$typo3_path = $server["typo3_script_repository"];
+unset($server);
+// Find directories in path
+if ($handle = opendir($typo3_path)) {
+  while (false !== ($file = readdir($handle))) {
+    $files[] = $file;
+  }
+$versions  = '<tr bgcolor="#E0E0E0">
+            <td colspan="2" class="t2b"><font color="#666666">&nbsp;TYPO3 Version:</font></td>
+          </tr>';
+// add version if dummy dir and mysql.dump exists
+  foreach ($files as $f) {
+    if ((is_readable($typo3_path.$f.'/mysql.dump')) and (is_readable($typo3_path.$f.'/dummy'))) {
+$versions .= '<tr>
+              <td width="25"> <div align="center"><input name="T3version" value="'.$f.'" type="radio"></div></td>
+              <td width="859" class="t2">&nbsp;Version '.$f.'</td>
+              </tr>';
+    }
+  }
+}
+
+// If you are admin, then show all webs
 $gruppen = $go_api->groups->myGroups();
 $webs = '';
 if(is_array($gruppen)) {
-// Es ist Admin oder Reseller
+// you are Admin or Reseller
         foreach($gruppen as $gid => $gval) {
                 if($gval["userstatus"] == 1 and $gval["groupstatus"] == 1) {
 
@@ -72,7 +98,7 @@ if(is_array($gruppen)) {
             <td colspan="2" class="t2b"><font color="#666666">&nbsp;'.$gval["name"].'</font></td>
           </tr>';
                   $n = 0;
-                  // füge Webs der Gruppe ein
+                  // add Webs from Group
                   $web_nodes = $go_api->db->queryAllRecords("SELECT * FROM isp_nodes where doctype_id = 1013 and groupid = $gid");
                           foreach($web_nodes as $wn) {
                                 $webs .= '<tr>
@@ -82,7 +108,7 @@ if(is_array($gruppen)) {
                                   $n++;
                         }
                         if($n == 0) {
-                                // Kein Web vorhanden
+                                // No Web available
                                 $webs .= '<tr>
                     <td width="859" colspan="2" class="t2">&nbsp;'.$go_api->lng("Kein Web vorhanden.").'</td>
                           </tr>';
@@ -92,13 +118,13 @@ if(is_array($gruppen)) {
                 }
         }
 } else {
-// Es ist ein Kunde
+// It is a customer
 
                 $webs .= '<tr bgcolor="#E0E0E0">
             <td colspan="2" class="t2b"><font color="#666666">&nbsp;'.$go_api->lng("Web(s)").'</font></td>
           </tr>';
                   $n = 0;
-                  // füge Webs der Gruppe ein
+                  // add Webs from Group
                   $web_nodes = $go_api->db->queryAllRecords("SELECT * FROM isp_nodes where doctype_id = 1013 and userid = ".$go_info["user"]["userid"]);
                           foreach($web_nodes as $wn) {
                                 $webs .= '<tr>
@@ -108,7 +134,7 @@ if(is_array($gruppen)) {
                                   $n++;
                         }
                         if($n == 0) {
-                                // Kein Web vorhanden
+                                // No Webs available
                                 $webs .= '<tr>
                     <td width="859" colspan="2" class="t2">&nbsp;'.$go_api->lng("Kein Web vorhanden.").'</td>
                           </tr>';
@@ -119,6 +145,7 @@ if(is_array($gruppen)) {
 
 // END TOOL #############################################################################
 
+$go_api->content->assign( array( VERSIONS => $versions));
 $go_api->content->assign( array( WEBS => $webs));
 $go_api->content->parse(STYLESHEET, stylesheet);
 $go_api->content->parse(MAIN, array("table","main"));
