@@ -52,6 +52,12 @@ echo "start\n";
 
 $old_web_root_file = "/root/ispconfig/.old_path_httpd_root";
 
+/////////////// Do TYPO3 package install /////////////
+$w_ds = $mod->db->queryAllRecords("SELECT * FROM isp_isp_web_package WHERE pending = 1");
+if(!empty($w_ds)){
+  $isp_web->TYPO3_install();
+}
+
 /////////////// Web- u. Userdaten aus DB holen ////////////////
 $w_ds = $mod->db->queryAllRecords("SELECT * FROM isp_isp_web");
 if(!empty($w_ds)){
@@ -64,13 +70,6 @@ $u_ds = $mod->db->queryAllRecords("SELECT * FROM isp_isp_user");
 if(!empty($u_ds)){
   foreach($u_ds as $u_d){
     $mod->system->data["isp_isp_user"][$u_d["doc_id"]] = $u_d;
-  }
-}
-
-$l_ds = $mod->db->queryAllRecords("SELECT * FROM isp_isp_list");
-if(!empty($l_ds)){
-  foreach($l_ds as $l_d){
-    $mod->system->data["isp_isp_list"][$l_d["doc_id"]] = $l_d;
   }
 }
 
@@ -193,20 +192,8 @@ if(!empty($user_delete)){
     echo "DELETE USER: ".$doc_id."\n";
   }
 }
-
-$list_delete = $mod->db->queryAllRecords("SELECT * from isp_isp_list, isp_nodes where isp_isp_list.doc_id = isp_nodes.doc_id and isp_nodes.doctype_id = '".$isp_web->list_doctype_id."' and isp_isp_list.status = 'd'");
-if(!empty($list_delete)){
-  foreach($list_delete as $list) {
-    $doc_id = $list["doc_id"];
-    $doctype_id = $list["doctype_id"];
-    $isp_web->list_delete($doc_id,$doctype_id);
-    echo "DELETE LIST: ".$doc_id."\n";
-  }
-}
-
 $mod->mail->make_local_host_names();
 $mod->mail->make_virtusertable();
-$mod->mail->make_mailman_transport();
 
 $isp_web->make_vhost($mod->system->server_id);
 
