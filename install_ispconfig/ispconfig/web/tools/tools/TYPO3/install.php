@@ -37,39 +37,60 @@ if($go_info["server"]["mode"] == "demo") $go_api->errorMessage($go_api->lng("Pac
 set_time_limit(1800);// 30 Minuten
 //ignore_user_abort(1);
 
-// importiere Variablen
+// import Variables
 $mysql_server = addslashes($HTTP_POST_VARS["mysql_server"]);
 $mysql_user = addslashes($HTTP_POST_VARS["mysql_user"]);
 $mysql_passwort = addslashes($HTTP_POST_VARS["mysql_passwort"]);
+$mysql_database = addslashes($HTTP_POST_VARS["mysql_db"]);
 $install_passwort = addslashes($HTTP_POST_VARS["install_passwort"]);
 $admin_passwort = addslashes($HTTP_POST_VARS["admin_passwort"]);
 
 
 $webs = $HTTP_POST_VARS["webs"];
-if(!is_string($webs)) $go_api->msg($go_api->lng("Es wurde kein Web ausgewählt."),$go_api->lng("Backup Status"));
+if(!is_string($webs)) $go_api->msg($go_api->lng("No web was selected."),$go_api->lng("Install Status"));
 
-// Überprüfe Variablen
-if(!preg_match("/^[a-zA-Z0-9\-\.]{0,255}$/",$mysql_server)) $go_api->errorMessage($go_api->lng("Der Name des FTP-Servers <br>enthält ungültige Zeichen."));
+$T3version = $HTTP_POST_VARS["T3version"];
+if(!is_string($T3version)) $go_api->msg($go_api->lng("No TYPO3 version was selected."));
 
-// bestimme Web-Pfad
+
+// check mysql server hostname
+if(!preg_match("/^[a-zA-Z0-9\-\.]{0,255}$/",$mysql_server)) $go_api->errorMessage($go_api->lng("The hostname of the Mysql Server <br>is invalid."));
+
+// find Web Path
 $server = $go_api->db->queryOneRecord("SELECT * from isp_server");
 $httpd_root = $server["server_path_httpd_root"];
 unset($server);
 
 // check connection to mysql server
-$link = mysql_connect($mysql_server, $mysql_user, $mysql_password)
-if (!$link) $go_api->errorMessage('Could not connect: ' . mysql_error());
+$link = @mysql_connect($mysql_server, $mysql_user, $mysql_passwort);
+if (!$link) $go_api->errorMessage($go_api->lng("Could not connect") . mysql_error());
 
-$res =  mysql_select_db($mysql_database);
-if (!$res) $go_api->errorMessage('Could not select database');
+$res =  @mysql_select_db($mysql_database);
+if (!$res) $go_api->errorMessage($go_api->lng("Could not select database"));
  
 // check webpath exists
-
+$path = $httpd_root.'/web'.substr($webs,4).'/web/';
+if (!is_dir($path)) $go_api->errorMessage($go_api->lng("Install path does not exist:").$path.':.');
 // fill database table with data
+$install_data = array (
+  'crdate' => time(),
+  'arg1' => $mysql_server,
+  'arg2' => $mysql_user,
+  'arg3'   => $mysql_passwort,
+  'arg4'   => $mysql_database,
+  'arg5' => $install_passwort,
+  'arg6'   => $admin_passwort,
+  'arg7'    => substr($webs,4),
+  'arg8'   => $T3version,
+  'pending'   => 1
+);
 
+$go_api->db->insert('isp_isp_web_package',$install_data);
 // touch .run file
+touch('/home/admispconfig/ispconfig/.run');
 
-$go_api->errorMessage("Test TYPO3 install:".$admin_passwort." ".$install_passwort." ".$mysql_server." ".$mysql_user." ".$mysql_passwort." ".$httpd_root);
+$go_api->msg($go_api->lng("TYPO3 install started."));
+
 
 
 ?>
