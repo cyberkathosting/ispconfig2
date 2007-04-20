@@ -175,11 +175,11 @@ function make_virtusertable() {
 			if(!empty($list_name) && $web["optionen_local_mailserver"]){
 				if(!empty($web["web_host"])){
 					$tmp_domain = $web["web_host"].".".$web["web_domain"];
-					$virtusertable_email[$tmp_domain][$list_alias] = $list_name."@".$go_info["server"]["mailman"]["default_mailman_domain"];
+					$virtusertable_email[$tmp_domain][$list_alias] = $list_name."@".$go_info["isp"]["server_conf"]["server_mailman_domain"];
 					$alias_list .= "\\n".$list_alias."@".$tmp_domain;
 				} else {
 					$tmp_domain = $web["web_domain"];
-					$virtusertable_email[$tmp_domain][$list_alias] = $list_name."@".$go_info["server"]["mailman"]["default_mailman_domain"];
+					$virtusertable_email[$tmp_domain][$list_alias] = $list_name."@".$go_info["isp"]["server_conf"]["server_mailman_domain"];
 					$alias_list .= "\\n".$list_alias."@".$tmp_domain;
 				} // end if
 			} // end if
@@ -190,11 +190,11 @@ function make_virtusertable() {
 					if(!empty($list_name) && $codomain["domain_local_mailserver"]){
 						if(!empty($codomain["domain_host"])){
 							$tmp_domain = $codomain["domain_host"].".".$codomain["domain_domain"];
-							$virtusertable_email[$tmp_domain][$list_alias] = $list_name."@".$go_info["server"]["mailman"]["default_mailman_domain"];
+							$virtusertable_email[$tmp_domain][$list_alias] = $list_name."@".$go_info["isp"]["server_conf"]["server_mailman_domain"];
 							$alias_list .= "\\n".$list_alias."@".$tmp_domain;
 						} else {
 							$tmp_domain = $codomain["domain_domain"];
-							$virtusertable_email[$tmp_domain][$list_alias] = $list_name."@".$go_info["server"]["mailman"]["default_mailman_domain"];
+							$virtusertable_email[$tmp_domain][$list_alias] = $list_name."@".$go_info["isp"]["server_conf"]["server_mailman_domain"];
 							 $alias_list .= "\\n".$list_alias."@".$tmp_domain;
 						} // end if
 					} // end if
@@ -362,7 +362,7 @@ function get_local_hostnames() {
  function make_mailman_transport() {
                 global $isp_web, $mod, $go_info;
 
-                if ($go_info["server"]["mailman"]["default_mailman_domain"] != "") {
+                if ($go_info["isp"]["server_conf"]["server_mailman_domain"] != "") {
 
                         $sendmail_header = '###################################
 #
@@ -372,7 +372,7 @@ function get_local_hostnames() {
 ###################################
 ';
 
-                        $sendmail_text = $sendmail_header.($go_info["server"]["mailman"]["default_mailman_domain"]." mailman:");
+                        $sendmail_text = $sendmail_header.($go_info["isp"]["server_conf"]["server_mailman_domain"]." mailman:");
                         $sendmail_text .= "\n#### MAKE MANUAL ENTRIES BELOW THIS LINE! ####";
                         $sendmail_text .= $mod->file->manual_entries("/etc/postfix/transport");
 
