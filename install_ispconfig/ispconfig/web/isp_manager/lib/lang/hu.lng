@@ -1,0 +1,580 @@
+<?
+/********************************
+* ISPConfig Dictionary File
+* Version 1.0
+*********************************/
+
+
+///////////////// ISP Manager //////////////////
+$wb["Anbieter"]     = "Viszonteladó";
+$wb["Kunde"]        = "Ügyfél";
+$wb["Suchen"]       = "Keresés";
+$wb["Stammdaten"]   = "Adatok";
+$wb["Limits"]       = "Korlátok";
+$wb["Zugangsdaten"] = "Bejelentkezési adat";
+$wb["Statistik"]    = "Statisztikák";
+$wb["Firma"]        = "Cég";
+$wb["Anrede"]       = "Megnevezés";
+$wb["Vorname"]      = "Keresztnév";
+$wb["Name"]         = "Vezetéknév";
+$wb["Strasse"]      = "Utca";
+$wb["PLZ"]          = "Irányítószám";
+$wb["Ort"]          = "Város";
+$wb["Land"]         = "Ország";
+$wb["Telefon"]      = "Telefon";
+$wb["Fax"]          = "Fax";
+$wb["Internet"]     = "Web cím";
+$wb["Öffnen"]      = "Nyit";
+$wb["Benutzername"] = "Felhasználónév"; // besser: vielleicht nur Variable $wb["username"] benutzen?
+$wb["zugangsdaten_anbieter_einleitung"] = "Itt állíthat be felhasználónevet és jelszót a viszonteladónak.";
+$wb["zugangsdaten_kunde_einleitung"] = "Itt állíthat be felhasználónevet és jelszót az ügyfél számára <br> a saját werboldalai karbantartásához.<br> ";
+$wb["Web Verwaltung"] = "Site Felügyelet";
+$wb["Rechnung"]      = "Számla";
+$wb["Rechnungsanschrift:"] = "Számlázási cím:<br>";
+$wb["Intervall"]    = "Idököz";
+$wb["Preis"]        = "Ár";
+$wb["Zahlungsart"]  = "Fizetési metódus";
+$wb["Basis"]        = "Alap adatok";
+$wb["Create DNS"]   = "DNS létrehozása";
+$wb["Speicher MB"]     = "Tárhely MB";
+$wb["Max. User"]        = "Max. felhasználó";
+$wb["Max. Domain"]        = "Max. Domain";
+$wb["PHP Scripte"]        = "PHP Szkriptek";
+$wb["SSI"]        = "SSI";
+$wb["FTP Zugang"]        = "FTP hozzáférés";
+$wb["MySQL"]        = "MySQL";
+$wb["SSL"]        = "SSL";
+$wb["Shell Zugriff"]      = "Shell hozzáférés";
+$wb["Zugang"]       = "Hozzáférés";  // Zugriff u. Zugang zusammenfassen!/nur einen Begriff nehmen!
+$wb["CGI Scripte"]      = "CGI Sszkriptek";
+$wb["CGI Modus"]      = "CGI Mod";
+$wb["CGI mod_perl"]      = "CGI mod_perl";
+$wb["Bundesland"]   = "Megye";
+$wb["Abteilung"]    = "Osztály";
+$wb["Gültigkeit (Tage)"]  = "Érvényesség (days)";
+$wb["SSL Key"]          = "SSL Kulcs";
+$wb["SSL Zertifikat"]   = "SSL Tanusítvány";
+$wb["Aktion"]       = "Akció";
+$wb["Zertifikat erzeugen"] = "Tanusítvány létrehozása";
+$wb["Zertifikat speichern"] = "Tanusítvány mentése";
+$wb["Zertifikat löschen"] = "Tanusítvány törlése";
+$wb["Speicherplatz gesamt"] = "Tárhely méret";
+$wb["unlimitiert"]  = "korlátlan";
+$wb["verbraucht"]   = "foglalt tárhely";
+$wb["Trafficübersicht"] = "Forgalmi statisztika";
+$wb["Monat"]        = "Hónap";
+$wb["Traffic"]      = "Forgalom";
+$wb["traffic_letzte_4"] = "Forgalom az elmúlt 4 évben";
+$wb["Jahr"]         = "Év";
+$wb["MySQL User"]        = "MySQL felhasználónév";
+$wb["MySQL Passwort"]    = "MySQL jelszó";
+
+// Ergänzungen /////////////////////////////////
+$wb["Anbieter neu"] = "Új viszonteladó";
+$wb["Kunde neu"]    = "Új kliens";
+$wb["Web neu"]      = "Új web";
+$wb["Ordner neu"]   = "Új mappa";
+$wb["Suchen"]       = "Keresés";
+$wb["ISP Anbieter"] = "ISP viszonteladó";
+$wb["Webs"] = "Tárhelyek";
+$wb["User"] = "Felhasználó";
+$wb["Domains"] = "Domain";
+$wb["Zahlung"] = "Fizetés";
+$wb["ISP Kunde"] = "ISP Ügyfél";
+$wb["ISP Web"] = "ISP Web";
+$wb["Kunden"] = "Ügyfelek";
+$wb["Dokument suchen"] = "Dokumentum keresés";
+
+$wb["User & Email"] = "Felhasználó és email";
+$wb["Co-Domains"] = "Co-Domain";
+$wb["SSL"] = "SSL";
+$wb["Optionen"] = "Opció";
+
+$wb["Webs angelegt"] = "Létrehozott tárhelyek";
+$wb["User angelegt"] = "Létrehozott felhasználók";
+$wb["Domains angelegt"] = "Létrehozott domainek";
+$wb["rechnungsanschrift"] = "Számla cím:<br> ";
+
+$wb["neues Web anlegen"] = "Új web";
+$wb["weiter"] = "következõ";
+$wb["SUCHE"] = "keresés";
+
+$wb["msg_beta"] = "";
+$wb["title_isp_beta"] = "";
+$wb["msg_kein_win"] = "Ez a szoftver nem fut Windows operációs rendszeren.";
+
+// Error Codes ispconfig_isp_datenbank.lib.php
+$wb["error_db_nicht_erlaubt"] = "Ehhez a weboldalhoz nem lehet MySQL adatbázist létrehozni.<br>";
+$wb["error_db_leeres_passwort"] = "Kérjük adjon meg jelszót!<br>";
+$wb["error_db_exist_1"] = "Adatbázis ilyen névvel";
+$wb["error_db_exist_2"] = "már létezik.<br>";
+$wb["error_db_user_exist_1"] = "Az adatbázis felhasználó";
+$wb["error_db_user_exist_2"] = "már létezik.<br>";
+$wb["error_max_db_web"] = "Ez a weboldal elérte a létrehozható maximális adatbázis számot.<br>";
+$wb["error_max_db_anbieter"] = "Az ügyfél elérte a létrehozható maximális adatbázis számot.<br>";
+
+// Error Codes ispconfig_isp_domain.lib.php
+$wb["error_web_doppelt"] = "Ez a név ";
+$wb["error_max_domain_web"] = "Ez a weboldal elérte a létrehozható maximális domain számot.<br>";
+$wb["error_max_domain_anbieter"] = "Az viszonteladó elérte a létrehozható maximális domain számot.<br>";
+$wb["angelegt"] = " már foglalt egy másik weboldal vagy domain által.<br>";
+$wb["error_domain_forward"] = "A domain továbbítás érvénytelen karaktereket tartalmazott ezért törölve lett.<br>";
+
+// Error Codes ispconfig_isp_kunde.lib.php
+$wb["error_user_exist_1"] = "Ez az ISPConfig felhasználó";
+$wb["error_user_exist_2"] = "már létezik. A felhasználó nem lett létrehozva vagy módosítva.<br>";
+$wb["error_max_user_licence"] = "Elérte a licensz szerinti maximális felhasználó számot.<br>";
+
+
+// Error Codes ispconfig_isp_reseller.lib.php
+$wb["error_reseller_title"] = "Viszonteladó ilyen megnevezéssel már létezik.<br>";
+$wb["error_reseller_group_not_found"] = "A viszonteladói csoport nem található.<br>";
+$wb["error_anbieter_no_delete"] = "<b>A viszonteladó nem lett törölve.</b><br>&nbsp;<br>Viszonteladót csak akkor lehet törölni, amennyiben minden ügyfele és weboldal el lett távolítva vagy mozgatva. Ellenörizze továbbá azt is, hogy a viszonteladó Kukája is üres legyen.<br>";
+$wb["error_anbieter_no_restore"] = "A viszonteladót nem lehet helyreállítani.<br>";
+
+// Error Codes ispconfig_isp_user.lib.php
+$wb["error_sysuser_exist_1"] = "Felhasználó ilyen névvel";
+$wb["error_sysuser_exist_2"] = "már létezik.<br>";
+$wb["error_max_user_web"] = "Elérte a létrehozható maximális felhasználószámot.<br>";
+$wb["error_max_space_web"] = "A beállított tárhely méret nagyobb mint a megengedett maximális tárhely méret.<br>";
+$wb["error_max_user_anbieter"] = "A viszonteladó elérte a számára engedélyezett felhasználó számot.<br>";
+$wb["error_sysuser_exist"] = "Ez a felhasználónév foglalt.<br>";
+$wb["error_admin_exist"] = "Egy adminisztrátor már létezik ehhez a weboldalhoz.<br>";
+$wb["error_admin_exist_long"] = "Egy adminisztrátor már létezik ehhez a weboldalhoz. Elõbb törölnie kell az adminisztrátort, mielõtt ennek a felhasználónak állít be administrátori jogosultságot.<br>";
+
+// Error Codes ispconfig_isp_user.lib.php
+$wb["error_max_web_anbieter"] = "A viszonteladó elérte a számára engedléyezett maximális weboldal számot.<br>";
+$wb["error_web_ssl_exist"] = "Egy SSL tanusítvány már létezik ehhez az IP címhez.<br>";
+
+// Plugins
+$wb["CPU Auslastung 1 Minute"] = "Processzor használat 1 Perc";
+$wb["CPU Auslastung 5 Minuten"] = "Processzor használat 5 Perc";
+$wb["CPU Auslastung 15 Minuten"] = "Processzor használat 15 Perc";
+$wb["Server Online seit"] = "Szerver Online";
+$wb["User Online"] = "Felhasználók Online";
+$wb["error_web_id"] = "Ehhez a plugin-hez érvényes web ID szükséges.";
+$wb["von"] = "/";
+$wb["Gesamt"] = "Összesen";
+$wb["Traffic in den letzten 4 Jahren"] = "Forgalom az elmult 4 évben";
+
+$wb["Backup von Tabelle"] = "Tábla mentés";
+$wb["Optimiere"] = "Optimalizálás";
+$wb["Reparatur"] = "Javítás";
+$wb["oder"] = "vagy";
+$wb["Installation starten"] = "Telepítés";
+
+$wb["Monatlich"] = "Havi";
+$wb["Quartal"] = "Negyedév";
+$wb["Halbjährlich"] = "Fél év";
+$wb["Jährlich"] = "Éves";
+$wb["Sonstige"] = "Egyéb";
+
+$wb["bei Erhalt"] = "on receipt";
+$wb["Netto 7 Tage"] = "7 nap";
+$wb["Netto 15 Tage"] = "15 nap";
+$wb["Netto 30 Tage"] = "30 nap";
+$wb["Sonstige"] = "egyéb";
+$wb["Neu"] = "Új";
+$wb["Postfach MB"] = "Mailbox MB";
+
+$wb["email_alias_txt"] = "<b>Tipp:</b> egy alias soronként.";
+$wb["Weiterleitung"] = "Továbbítás";
+$wb["Nachricht"] = "Üzenet";
+$wb["Kein Kunde vorhanden"] = "Nincs kliens létrehozva.<br>";
+$wb["Dieses Web können Sie nicht löschen."] = "Nem lehet törölni ezt a webet.<br>";
+$wb["Ausgabeformat"] = "Listázás formája";
+$wb["Bearbeiten"] = "Szerkeszt";
+$wb["Löschen"] = "Töröl";
+
+$wb["willkommen_kunde"] = "Üdvözöljük az ISPConfig-ban!
+Ezen a felületen keresztül van lehetõsége felügyelnie a weboldalait. Bérmely kérdésével vagy problémájával
+forduljon bizalommal a szerver adminisztrátorához vagy használja az ISPConfig ügyfél kézikönyvet.";
+$wb["Willkommen"] = "Üdvözöljük";
+
+
+// Regex Fehlermeldungen
+$wb["Es sind nur folgende Zeichen erlaubt: a-z A-Z 0-9 -"] = "Csak a következõ írásjeleket használhatja: a-z A-Z 0-9 -<br>";
+$wb["Es sind nur folgende Zeichen erlaubt: a-z A-Z 0-9 - ."] = "Csak a következõ írásjeleket használhatja: a-z A-Z 0-9 - .<br>";
+$wb["Der Username muss aus min. 4, max 25 Buchstaben oder Zahlen bestehen, wobei er mit einem Buchstaben beginnen muss."] = "A felhasználónév legalább 4 és legfeljebb 25 írásjelet tartalmazhat és betûvel kell kezdõdnie.<br>";
+$wb['Der Username muss aus min. 4, max 32 Buchstaben oder Zahlen bestehen, wobei er mit einem Buchstaben beginnen muss.'] = 'A felhasználónév legalább 4 és legfeljebb 32 írásjelet tartalmazhat és betûvel kell kezdõdnie.<br>';
+
+$wb["error_reseller_licence"] = "Az Ön ISPconfig licesze nem teszi lehetõõvé viszonteladó hozzáadását.<br>";
+$wb["error_reseller_licence_nodelete"] = "Ezt a viszonteladót nem lehet törölni.<br>";
+
+$wb["error_kunde_licence"] = "z Ön ISPconfig licesze nem teszi lehetõvé ügyfelek hozzáadását.<br>";
+$wb["error_kunde_licence_nodelete"] = "Ezt az ügyfelet nem lehet törölni.<br>";
+
+$wb["mysqldb_nicht_vorhanden"] = "Nincs MySQL adatbázis. <br>Kérjük adja meg a jelszót az adatbázis létrehozásáhozas.<br>";
+$wb["mysql_nicht_aktiv"] = "Ehhez a webhez nem lehet MySQL adatbázist létrehozni.<br>";
+$wb["Datenbank Name"] = "Adatbázis neve";
+$wb["Speicher belegt"] = "Adatbázis méret";
+
+$wb["Kein Web angelegt"] = "Nem lett web létrehozva.";
+$wb["Real Name"] = "Valódi név";
+$wb["Feld"] = "Mezõ";
+$wb["httpd_inc_txt"] = "Apache paraméterek<br>&nbsp; (Opcionális)";
+$wb["Kopie speichern"] = "Maradjon másolat";
+
+$wb["err_0001"] = "A domain másik ügyfélhez tartozik.";
+
+$wb["MySQL Remote Access"] = "MySQL távol elérés";
+$wb["lokaler mailserver"] = "Helyi levelezõ szerver";
+$wb["externer mailserver"] = "Külsõ levelezõ szerver";
+
+$wb["Log-Grösse"] = "Log méret";
+$wb["Frontpage Passwort"] = "Frontpage jelszó";
+
+// NEW 1.1.12 ///////////////////////////////////
+
+$wb["Anbieternummer"] = 'Viszonteladó No.';
+$wb["Domain DNS"] = 'Master zónák (DNS)';
+$wb["HTTPD Includes"] = 'HTTPD beállítások';
+$wb["DNS-Manager"] = 'DNS Manager';
+$wb["DNS-Domains angelegt"] = 'Master zóna létrehozva';
+$wb["Kundennummer"] = 'Ügyfél No.';
+$wb["Anonymous FTP"] = 'Anonymous FTP';
+$wb["Anon. FTP MB"] = 'Anon. FTP MB';
+$wb["Faktura"] = 'Számla';
+$wb["Mailserver"] = 'Mailserver';
+$wb["aktiviert"] = 'aktív';
+$wb["deaktiviert"] = 'inaktív';
+$wb["ISP User"] = 'ISP falhasználó';
+$wb["WebSpeicher MB"] = 'Web tárhely MB';
+$wb["MailSpeicher MB"] = 'Mail tárhely MB';
+$wb["Max. MailSpeicher MB"] = 'Max. Mail tárhely MB';
+$wb["Administrator"] = 'Administrator';
+$wb["Erweiterte Einstellungen"] = 'Speciális beállítások';
+$wb["email_weiterleitung_txt"] = '<b>Tipp:</b> egy email cím soronként.';
+$wb["Email Alias"] = 'Email Alias';
+$wb["catchAll-Email"] = 'catchAll-Email';
+$wb["MailScan"] = 'MailScan';
+$wb["Spam-Filter"] = 'Spam szûrõ';
+$wb["Autoresponder"] = 'Automatikus válasz';
+$wb["ISP Domain"] = 'ISP Domain';
+$wb["Create DNS MX"] = 'DNS MX létrehozása';
+$wb["Admin"] = 'Admin';
+$wb["CatchAll"] = 'CatchAll';
+$wb["Bitte Artikel auswählen"] = "Kérem válasszon...";
+$wb["Letzte Abrechnung"] = "Utolsó számla";
+$wb["Artikel hinzufügen"] = "Tétel hozzáadása";
+$wb["Wird automatisch vergeben."] = 'Automatikusan hozzárendelve.';
+$wb["Email Adresse"] = "Email cím";
+
+// new 1.2 ////////////////////////////////////////
+$wb["error_email_exist"] = "Ilyen cím már létezik.<br>";
+$wb["error_realname"] = "Csak a következõ írásjeleket használhatja: a-z A-Z 0-9 - _ .<br>";
+$wb["Die Emailadresse muss aus min. 1, max 60 Buchstaben oder Zahlen bestehen."] = "Az email cím legalabb 1, legfeljebb 60 karaktert tartalmazhat.<br>";
+
+// new 1.3 ////////////////////////////////////////
+$wb["Bundesland"] = "Megye";
+$wb["Spamfilter & Antivirus"] = 'Spamszûrõ & Antivirus';
+$wb["Spamfilter"] = 'Spamszûrõ';
+$wb["Antivirus"] = 'Antivirus';
+$wb["accept"] = 'elfogad';
+$wb["discard"] = 'mégse';
+$wb["Spam Strategie"] = 'Spam Stratégia';
+$wb["Spam Hits"] = 'Spam találatok';
+$wb["Rewrite Subject"] = 'Tárgy átírása';
+$wb["Betreff"] = 'Tárgy';
+$wb["SUCHE"] = 'KERES';
+$wb["IP"] = 'IP';
+$wb["Standard CGIs"] = 'Standard CGIs';
+$wb["PHP Safe Mode"] = 'PHP Safe Mode';
+$wb["WAP"] = 'WAP';
+$wb["Individuelle Fehler-Seiten"] = 'Egyedi hiba lapok';
+$wb["Anzahl Datenbanken"] = 'Adatbázisok száma';
+$wb["Fehler 400<br>(Ungültige Syntax)"] = "400-as Hibar<br>(Hibás szintaxis)";
+$wb["Fehler 401<br>(Autorisierung<br>erforderlich)"] = "401-s Hiba<br>(Authorizáció<br>szükséges)";
+$wb["Fehler 403<br>(Verboten)"] = "403-as Hiba<br>(Megtiltva)";
+$wb["Fehler 404<br>(Datei nicht<br>gefunden)"] = "404-es Hiba<br>(Állomány nem található)";
+$wb["Fehler 405<br>(Methode nicht<br>erlaubt)"] = "405-ös Hiba<br>(Metódus nem<br>engedélyezett)";
+$wb["Fehler 500<br>(Interner<br>Server-Fehler)"] = "500-as Hiba<br>(Belsõ szerver<br>hiba)";
+$wb["Fehler 503<br>(Service ist z.Zt.<br>überlastet)"] = "503-as Hiba<br>(Szolgáltatás<br>nem elérhetõ)";
+$wb["Datenbanken"] = "Adatbázisok";
+$wb["Datenbank"] = "Adatbázis";
+$wb["Datenbankname"] = "Adatbázis név";
+$wb["Datenbankuser"] = "Adatbázis felhasználó";
+$wb["weiter_link"] = "<br><br> <a href='../../isp_manager/frame_start.php?s=$s'>Köv. &gt;&gt;</a>";
+$wb["Slave Zones"] = 'Slave zónák (DNS)';
+$wb["txt_client_salutatory_email_desc"] = "<b>Üdvözlõ email a kliens számára</b>";
+$wb["txt_client_salutatory_email_sender_email"] = "A feladó email címe";
+$wb["txt_client_salutatory_email_sender_name"] = "A feladó neve";
+$wb["txt_client_salutatory_email_bcc"] = "BCC címzett";
+$wb["txt_client_salutatory_email_subject"] = "Tárgy";
+$wb["txt_client_salutatory_email_message"] = "Üzenet";
+$wb["txt_client_salutatory_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>A következõ változókat használhatja üzenetében:</b></td></tr>
+        <tr>
+          <td class="normal">%%%USER%%%</td>
+          <td class="normal">
+            A kliens felhasználóneve</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%PASSWORD%%%</td>
+          <td class="normal">
+            A kliens jelszava</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%FIRST_NAME%%%</td>
+          <td class="normal">
+            A kliens keresztneve</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%LAST_NAME%%%</td>
+          <td class="normal">
+            A kliens vezetékneve</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%COMPANY%%%</td>
+          <td class="normal">
+            A kliens cége</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%EMAIL%%%</td>
+          <td class="normal">
+            A kliens email címe</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%CP%%%</td>
+          <td class="normal">
+            Belépési felület ISPConfig rendszerbe (URL)</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%MANUAL%%%</td>
+          <td class="normal">
+            ISPConfig kézikönyv kliensek részére</td>
+        </tr>
+        </table>';
+$wb["txt_standard_index"] = "Standard Index<br>&nbsp;&nbsp;oldal";
+$wb["txt_standard_index_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <bA következõ változókat használhatja üzenetében:</b></td></tr>
+        <tr>
+          <td class="normal">%%%FQDN%%%</td>
+          <td class="normal">
+            A weboldal teljes domain neve</td>
+        </tr>
+    </table>';
+$wb["txt_user_standard_index"] = "A felhasználók standard<br>&nbsp;&nbsp;Index oldala";
+$wb["txt_user_standard_index_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>A következõ változókat használhatja üzenetében:</b></td></tr>
+        <tr>
+          <td class="normal">%%%USER%%%</td>
+          <td class="normal">
+            Felhasználónév</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%FQDN%%%</td>
+          <td class="normal">
+            A weboldal teljes domain neve</td>
+        </tr>
+        </table>';
+
+//////////////// ISP Manager Ende /////////////
+
+//////////////// Server Status ////////////////
+$wb["Arbeitsspeicher"]          = "Memória";
+$wb["CPU"]          = "Processzor";
+$wb["Dienste"]      = "Szolgáltatások";
+$wb["Server Online seit"]          = "Szerver Online";
+$wb["User Online"]      = "Online felhasználók";
+$wb["System Load 1 Minute"] = "System Load 1 Perc";
+$wb["System Load 5 Minuten"] = "System Load 5 Perc";
+$wb["System Load 15 Minuten"] = "System Load 15 Perc";
+//////////////// Server Status Ende //////////
+
+$wb["Es konnte ein Dokument nicht wiederhergestellt werden, da sich das Eltern-Dokument noch im Papierkorb befindet.\n"] = "Ez az objektum addig nem visszaállítható, míg szülõ objektuma a Kukában van.";
+$wb["error_anbieter_max_webs_ueberschritten"] = "Az viszonteladónak már most több kliense van, mint amennyit engedélyezni szeretne a számára.<br>";
+$wb["error_anbieter_max_diskspace_ueberschritten"] = "A viszonteladó jelenleg nagyobb tárhelyet foglal, mint amennyit engedélyezni szeretne a számára.<br>";
+$wb["error_anbieter_max_user_ueberschritten"] = "A viszonteladónak már most több felhasználója van, mint amennyit engedélyezni szeretne a számára.<br>";
+$wb["error_anbieter_max_domain_ueberschritten"] = "A viszonteladó már most több domain-el rendelkezik, mint amennyit engedélyezni szeretne a számára.<br>";
+$wb["error_anbieter_dnsmanager_aktiv"] = "A viszonetaldó rendelkezik aktív DNS bejegyzésekkel. A DNS Manager-t nem tilthatja le.<br>";
+$wb["error_anbieter_max_dns_ueberschritten"] = "A viszonteladó már most több elsõdleges DNS bejegyzésse rendelkezik, mint amennyit engedélyezni szeretne a számára.<br>";
+$wb["error_anbieter_max_slavedns_ueberschritten"] = "A viszonteladó már most több másodlagos DNS bejegyzésse rendelkezik, mint amennyit engedélyezni szeretne a számára.<br>";
+$wb["error_anbieter_httpd_include_aktiv"] = "A viszonteladó rendelkezik aktív HTTP Include bejegyzésekkel, ezt az opciót nem tilthatja le a számára.<br>";
+$wb["error_anbieter_shell_access_aktiv"] = "A viszonteladó valamelyik kliensénél engedélyezve van a Shell elérés, ezt az opciót nem tilthatja le.<br>";
+$wb["error_anbieter_cgi_aktiv"] = "CGI használat engedélyezve van a viszonteladó valamelyik kliensénél, ezt az opciót nem tilthatja le.<br>";
+$wb["error_anbieter_cgi_mod_perl_aktiv"] = "CGI mod_perl használat engedélyezve van a viszonteladó valamelyik kliensénél, ezt az opciót nem tilthatja le.<br>";
+$wb["error_anbieter_standard_cgi_aktiv"] = "A Standard CGI-k használata engedélyezve van a viszonteladó valamelyik kliensénél, ezt az opciót nem tilthatja le.<br>";
+$wb["error_anbieter_php_aktiv"] = "PHP használata engedélyezve van a viszonteladó valamelyik kliensénél, ezt az opciót nem tilthatja le.<br>";
+$wb["error_anbieter_ssi_aktiv"] = "SSI használata engedélyezve van a viszonteladó valamelyik kliensénél, ezt az opciót nem tilthatja le.<br>";
+$wb["error_anbieter_ftp_aktiv"] = "FTP használata engedélyezve van a viszonteladó valamelyik kliensénél, ezt az opciót nem tilthatja le.<br>";
+$wb["error_anbieter_anonftp_aktiv"] = "Anonymous FTP használata engedélyezve van a viszonteladó valamelyik kliensénél, ezt az opciót nem tilthatja le.<br>";
+$wb["error_anbieter_frontpage_aktiv"] = "Frontpage használata engedélyezve van a viszonteladó valamelyik kliensénél, ezt az opciót nem tilthatja le.<br>";
+$wb["error_anbieter_datenbank_aktiv"] = "MySQL használata engedélyezve van a viszonteladó valamelyik kliensénél, ezt az opciót nem tilthatja le.<br>";
+$wb["error_anbieter_max_datenbank_ueberschritten"] = "A viszonteladó már most több létrehozott MySQL adatbázissal rendelkezik, mint amennyit engedélyezni szeretne a számára.<br>";
+$wb["error_anbieter_ssl_aktiv"] = "SSL használata engedélyezve van a viszonteladó valamelyik kliensénél, ezt az opciót nem tilthatja le.<br>";
+$wb["error_anbieter_wap_aktiv"] = "WAP használata engedélyezve van a viszonteladó valamelyik kliensénél, ezt az opciót nem tilthatja le.<br>";
+$wb["error_anbieter_error_pages_aktiv"] = "Egyedi hibalapok használata engedélyezve van a viszonteladó valamelyik kliensénél, ezt az opciót nem tilthatja le.<br>";
+$wb["error_web_no_unlimited_diskspace_1"] = "Nem engedélyezhet korlátlan tárhely használatot ennek a webnek a részére. A web által elfoglalható maximális tárhely méret ";
+$wb["error_web_no_unlimited_diskspace_2"] = " MB.<br>";
+$wb["error_web_no_diskspace_free_1"] = "Önnek legfeljebb ";
+$wb["error_web_no_diskspace_free_2"] = " MB szabad tárhelye van, amelyet ehhez a webhez rendelhet.<br>";
+$wb["error_web_no_unlimited_users_1"] = "Nem engedélyezhet korlátlan számú felhasználót ehhez a webhez. A webhez rendelhetó maximális felhasználó szám ";
+$wb["error_web_no_unlimited_users_2"] = ".<br>";
+$wb["error_web_no_users_free_1"] = "Önnek legfeljebb ";
+$wb["error_web_no_users_free_2"] = " létrehozható felhasználója van, melyeket ehhez a webhez rendelhet.<br>";
+$wb["error_web_no_unlimited_domains_1"] = "Nem engedélyezhet korlátlan számú domaint ennek a webnek a részére. A webhez létrehozható maximális domain szám ";
+$wb["error_web_no_unlimited_domains_2"] = ".<br>";
+$wb["error_web_no_domains_free_1"] = "Ön legfeljebb ";
+$wb["error_web_no_domains_free_2"] = " domaint hozhat létre, melyeket ehhez a webhez rendelhet.<br>";
+$wb["error_web_no_user_decrease_1"] = "Ez a web már rendelkezik ";
+$wb["error_web_no_user_decrease_2"] = " létrehozott falhasználóval. Nem csökkentheti a felhasználók számát.<br>";
+$wb["error_web_no_domain_decrease_1"] = "Ez a web már rendelkezik ";
+$wb["error_web_no_domain_decrease_2"] = " domainnel. Nem csökkentheti a domainek számát.<br>";
+
+$wb["Benutzter Diskspace"] = "Foglalt tárhely";
+$wb["Slave Zones angelegt"] = "Slave Zónák létrehozva";
+$wb["Datenbanken angelegt"] = "Adatbázisok létrehozva";
+$wb["error_web_no_database_decrease_1"] = "Ez a web már rendelkezik ";
+$wb["error_web_no_database_decrease_2"] = " darab adatbázissal. Nem csökkentheti az adatbázisok számát.<br>";
+$wb["error_web_no_shell_access"] = "Nem engedélyezhet shell hozzáférést ehhez a webhez.<br>";
+$wb["error_web_no_cgi"] = "Nem engedélyezhet CGI futtatást ennek a webnek.<br>";
+$wb["error_web_no_cgi_mod_perl"] = "Nem engedélyezhet CGI mod_perl futtatást ennek a webnek.<br>";
+$wb["error_web_no_standard_cgi"] = "Nem engedélyzehet Standard CGI futtatást ennek a webnek.<br>";
+$wb["error_web_no_php"] = "Nem engedélyzehet PHP futtatást ennek a webnek.<br>";
+$wb["error_web_no_ssi"] = "Nem engedélyzehet SSI-t ennek a webnek.<br>";
+$wb["error_web_no_ftp"] = "Nem engedélyzehet FTP-t ennek a webnek.<br>";
+$wb["error_web_no_mysql"] = "Nem hozhat létre MySQL adatbázist ennek a webnek.<br>";
+$wb["error_web_no_databases_free_1"] = "Ön legfeljebb ";
+$wb["error_web_no_databases_free_2"] = " adatbázist hozhat létre ennek a webnek a részére.<br>";
+$wb["error_web_no_ssl"] = "Nem engedélyzehet SSL-t ennek a webnek.<br>";
+$wb["error_web_no_anonftp"] = "Nem engedélyzehet Anonymous FTP-t ennek a webnek.<br>";
+$wb["error_web_no_wap"] = "Nem engedélyzehet WAP elérést ennek a webnek.<br>";
+$wb["error_web_no_individual_error_pages"] = "Nem engedélyzeheti egyedi hibalapok használatát ennek a webnek.<br>";
+$wb["error_web_no_httpd_include"] = "Nem engedélyzeheti HTTPD Include-ok használatát ennek a webnek.<br>";
+$wb["error_web_no_frontpage"] = "Nem engedélyzeheti Frontpage használatát ennek a webnek.<br>";
+$wb["Web Vorlage"] = "Hosting terv";
+$wb["ISP Web-Vorlage"] = "ISP hosting terv";
+$wb["Keine Vorlage verwenden"] = "Egyedi beállítások";
+$wb["Keine Vorlage vorhanden"] = "Nincs hosting terv létrehozva";
+$wb["txt_accept"] = "elfogad";
+$wb["txt_discard"] = "mégse";
+$wb["Eigenschaften"] = "Tulajdonságok";
+$wb["ISP Datenbank"] = "ISP Adatbázis";
+$wb["Nein"] = "Nem";
+$wb["Ja"] = "Igen";
+$wb["Web"] = "Site";
+$wb["Domain"] = "Domain";
+$wb["Traffic-Überschreitung"] = "Forgalmi korlátozás";
+$wb["sperren"] = "Felfüggeszt";
+$wb["benachrichtigen"] = "Értesít";
+$wb["keine Aktion"] = "Nincs megszorítás";
+$wb["Website-Status"] = "Website Státusz";
+$wb["aktiv"] = "Aktív";
+$wb["gesperrt"] = "Felfüggesztve";
+
+$wb["txt_traffic_suspension_email_desc"] = "<b>Weboldal felfüggesztési értesítés (Forgalmi kvóta túllépés)</b>";
+$wb["txt_traffic_suspension_sender_email"] = "Feladó email címe";
+$wb["txt_traffic_suspension_sender_name"] = "Feladó neve";
+$wb["txt_traffic_suspension_email_bcc"] = "BCC címzett";
+$wb["txt_traffic_suspension_email_subject"] = "Tárgy";
+$wb["txt_traffic_suspension_email_message"] = "Üzenet";
+$wb["txt_traffic_suspension_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>A következõ változókat használhatja üzenetében:</b></td></tr>
+        <tr>
+          <td class="normal">%%%FIRST_NAME%%%</td>
+          <td class="normal">
+            A kliens keresztneve</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%LAST_NAME%%%</td>
+          <td class="normal">
+            A kliens vezetékneve</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%WEBSITE%%%</td>
+          <td class="normal">
+            A kliens weboldala</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%MONTH%%%</td>
+          <td class="normal">
+            A forgalmi kvóta átlépésének hónapja</td>
+        </tr>
+        <tr>
+          <td class="normal" valign="top">%%%INCLUDED_TRAFFIC%%%</td>
+          <td class="normal">
+            Engedélyezett forgalmi kvóta</td>
+        </tr>
+        <tr>
+          <td class="normal" valign="top">%%%TOTAL_TRAFFIC%%%</td>
+          <td class="normal">
+            Összes forgalom a kvóta túllépésének havában</td>
+        </tr>
+        </table>';
+
+$wb["txt_traffic_notification_email_desc"] = "<b>Forgalmi kvóta átlépése</b>";
+$wb["txt_traffic_notification_sender_email"] = "Feladó email címe";
+$wb["txt_traffic_notification_sender_name"] = "Feladó neve";
+$wb["txt_traffic_notification_email_bcc"] = "BCC címzett";
+$wb["txt_traffic_notification_email_subject"] = "Tárgy";
+$wb["txt_traffic_notification_email_message"] = "Üzenet";
+$wb["txt_traffic_notification_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>A következõ változókat használhatja üzenetében:</b></td></tr>
+        <tr>
+          <td class="normal">%%%FIRST_NAME%%%</td>
+          <td class="normal">
+            A kliens keresztneve</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%LAST_NAME%%%</td>
+          <td class="normal">
+            A kliens vezetékneve</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%WEBSITE%%%</td>
+          <td class="normal">
+            A kliens weboldala</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%MONTH%%%</td>
+          <td class="normal">
+            A forgalmi korlátozás átlépésének hónapja</td>
+        </tr>
+        <tr>
+          <td class="normal" valign="top">%%%INCLUDED_TRAFFIC%%%</td>
+          <td class="normal">
+            Engedélyezett forgalmi kvóta</td>
+        </tr>
+        <tr>
+          <td class="normal" valign="top">%%%TOTAL_TRAFFIC%%%</td>
+          <td class="normal">
+            Összes forgalom a kvóta átlépésének havában</td>
+        </tr>
+        </table>';
+
+
+$wb["Catalog_Name"] = "Név";
+
+// MySQL Quota ////////////////////////////////////////
+$wb["Benutzter MySQL-Speicherplatz"] = "Foglalt adatbázis tárhely";
+$wb["Speicherplatz Datenbanken"] = "Adatbázis méret";
+
+// Mail Quota /////////////////////////////////////////
+$wb["error_max_mailquota_web"] = "The selected mailspace exceeds site's limits.<br>";
+
+$wb["Nicht scannen"] = "Ne legyen szkennelve";
+$wb["MX prüfen"] = "MX ellenõrzés";
+$wb["Cyrus-Administrator"] = "Cyrus Admin";
+$wb["Passwort Cyrus-Admin"] = "Cyrus Admin jelszó";
+
+$wb["Spam Whitelist"] = 'Spam engedély lista';
+$wb["Spam Blacklist"] = 'Spam tiltó lista';
+$wb["spam_whitelist_txt"] = '<b>Tipp:</b> Egy bejegyzés soronként. Érvényes bejegyzések például: friend@somewhere.com, *@isp.com vagy *.domain.net.';
+$wb["spam_blacklist_txt"] = '<b>Tipp:</b> Egy bejegyzés soronként. Érvényes bejegyzések például: friend@somewhere.com, *@isp.com vagy *.domain.net.';
+$wb["Webalizer Stats"] = 'Webalizer<br>&nbsp;Statis';
+$wb["Use Uribl"] = '<a href="http://www.uribl.com/about.shtml" target="_blank" style="font-family:Arial,Verdana">URIBL</a> engedélyezése';
+$wb["Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 -"] = "Csak a következõ karakterek használata megengedett: a-z A-Z 0-9 -<br>";
+$wb["Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 - ."] = "Csak a következõ karakterek használata megengedett: a-z A-Z 0-9 - .<br>";
+
+?>
