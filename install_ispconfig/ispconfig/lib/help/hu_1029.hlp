@@ -1,0 +1,12 @@
+<?
+
+/**********************************************
+* ISPConfig Help File
+* Version 1.2
+* Syntax: $hlp["FieldName"] = "HelpText";
+************************************************/
+
+$hlp["db_passwort"] = "Kérjük adja meg a MySQl adatbázis jelszavát.";
+$hlp["remote_access"] = "Itt engedélyezheti az adott weboldalhoz tartozó MySQL adatbázis távoli elérését.";
+
+?>

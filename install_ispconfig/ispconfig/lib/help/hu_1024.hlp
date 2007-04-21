@@ -1,0 +1,13 @@
+<?
+
+/**********************************************
+* ISPCofig Help File
+* Version 1.2
+* Syntax: $hlp["FieldName"] = "HelpText";
+************************************************/
+
+$hlp["dienst_name"] = "A monitorozni kívánt szolgáltatás neve.";
+$hlp["dienst_port"] = "A szolgáltatás által használt port (pld.: a web szerverek általában a 80-as portot használják).";
+$hlp["dienst_host"] = "A monitorozni kívánt szerver hosztneve vagy IP címe.";
+$hlp["dienst_typ"] = "A szolgáltatás típusa. Ez a monitorozó rendszer TCP és UDP alapú szolgáltatásokat tud monitorozni.";
+?>

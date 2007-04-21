@@ -1,0 +1,32 @@
+<?
+
+/**********************************************
+* ISPConfig Help File
+* Version 1.2
+* Syntax: $hlp["FieldName"] = "HelpText";
+************************************************/
+
+$hlp["kunde_anrede"] = "Kérjük adja meg az ügyfél email címét, melyre az üdvözlõ levelet küldjük.";
+$hlp["kunde_firma"] = "Kérjük adja meg a partner cég nevét!";
+$hlp["kunde_vorname"] = "Kérjük adja meg az ügyfél keresztnevét.";
+$hlp["kunde_name"] = "Kérjük adja meg az ügyfél vezetéknevét.";
+$hlp["kunde_strasse"] = "Kérjük adja meg az ügyfél címét.";
+$hlp["kunde_plz"] = "Kérjük adja meg az ügyfél irányítószámát.";
+$hlp["kunde_ort"] = "Kérjük adja meg ügyfelének lakóhelyét/telephelyét.";
+$hlp["kunde_land"] = "Kérjük adja meg az ügyfél országának nevét.";
+$hlp["kunde_telefon"] = "Kérük adja meg ügyfele telefonszámát.";
+$hlp["kunde_fax"] = "Kérjük adja meg ügyfele fax számát.";
+$hlp["kunde_email"] = "Kérjük adja meg ügyfele email címét.";
+$hlp["kunde_internet"] = "Kérjük adja meg az ügyfél honlapjának címét.";
+$hlp["webadmin_user"] = "Kérjük adja meg az ügyfél felhasználónevét mellyel belép majd az ISPConfig rendszerbe.";
+$hlp["webadmin_passwort"] = "Kérjük adja meg az ügyféle jelszavát, mellyel belép majd az ISPConfig rendszerbe.";
+$hlp["rechnung_firma"] = "Kérjük adja meg az ügyfél következõ számlázási adatát: cégnév.";
+$hlp["rechnung_vorname"] = "Kérjük adja meg az ügyfél következõ számlázási adatát: keresztnév.";
+$hlp["rechnung_name"] = "Kérjük adja meg az ügyfél következõ számlázási adatát: vezetéknév.";
+$hlp["rechnung_strasse"] = "Kérjük adja meg az ügyfél következõ számlázási adatát: cím.";
+$hlp["rechnung_plz"] = "Kérjük adja meg az ügyfél következõ számlázási adatát: irányítószám.";
+$hlp["rechnung_ort"] = "Kérjük adja meg az ügyfél következõ számlázási adatát: város.";
+$hlp["rechnung_land"] = "Kérjük adja meg az ügyfél következõ számlázási adatát: ország";
+$hlp["rechnung_intervall"] = "Kérjük adja meg a számla készítés gyakoriságát.";
+$hlp["rechnung_zahlungsbedingungen"] = "Kérjük adja meg a fizetési feltételeket.";
+?>

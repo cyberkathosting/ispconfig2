@@ -1,0 +1,59 @@
+<?
+
+/**********************************************
+* ISPConfig Help File
+* Version 1.2
+* Syntax: $hlp["FieldName"] = "HelpText";
+************************************************/
+
+$hlp["web_host"] = "A webszerver host neve, pld.: www";
+$hlp["web_domain"] = "A webszerver domain neve, pld.: projektfarm.de";
+$hlp["web_speicher"] = "Az engedélyezett tárhely méret. Például: aemnnyiben 2MB tárhelyet kívánunk rendelni az adott domainhez írjunk 2-t.";
+$hlp["web_traffic"] = "Az engedélyezett forgalom mennyisége (pld.: 2000 MB).";
+$hlp["web_cgi"] = "CGI engedélyezése a weboldalra.";
+$hlp["web_php"] = "PHP engedélyezése a weboldalra.";
+$hlp["web_ssi"] = "SSI engedélyezése a weboldalra.";
+$hlp["web_ftp"] = "FTP elérés engedélyezése a weboldalra.";
+$hlp["web_frontpage"] = "Frontpage kiterjesztés engedélyezése a weboldalra.";
+$hlp["web_mysql"] = "MySQL adatbázis engedélyezése a weboldalhoz.";
+$hlp["web_shell"] = "Shell elérés engedélyezése a weboldalra.";
+$hlp["web_ssl"] = "SSL titkosítás engedélyezése a weboldalhoz. További beállítások elvégezhetõek az SSL fülön.";
+$hlp["ssl_request"] = "Amennyiben hivatalos Tanusítványkiadó Központtól (CA) szeretne hivatalos kulcsot igényelni ennek a mezõnek az adatait kell elküldeni.";
+$hlp["ssl_cert"] = "Ebbe a mezõbe másolja be a Tanusítványkiadó Központtól (CA) kapott hivatalos tanusítványát.";
+$hlp["web_ip"] = "Válassza ki a weboldal IP címét.";
+$hlp["optionen_mysql_user"] = "Kérjük adja meg a MySQL adatbázishoz a felhasználó nevet.";
+$hlp["optionen_mysql_passwort"] = "Kérjük adja meg a MySQL adatbázishoz a jelszót.";
+$hlp["web_dns"] = "Pipát rakva a jelölõnégyzetbe automatikusan DNS A rekordot készíthet az adott hostnévhez.";
+$hlp["web_userlimit"] = "Maximális felhasználó szám.";
+$hlp["web_domainlimit"] = "Maximális domain szám.";
+$hlp["ssl_state"] = "Kérjük adja meg megyéje/tartománya nevét.";
+$hlp["ssl_locality"] = "Kérjük adja meg városa nevét.";
+$hlp["ssl_organization"] = "Kérjük adja meg a cége nevét.";
+$hlp["ssl_organization_unit"] = "Kérjük adja meg céges részlegének nevét (pld.: IT Részleg).";
+$hlp["ssl_country"] = "Kérjük válassza ki országának nevét.";
+$hlp["web_dns_mx"] = "Bejelölve ezt a mezõt automatikusan DNS MX rekordot hozhat létre az adott webhez.";
+$hlp["ssl_days"] = "Kérjük adja meg SSL tanusítványának kívánt érvényességi idejét napokban (pld.: 365).";
+$hlp["web_httpd_include"] = "Amennyiben szüksége van további Apache paraméterekre azt itt megadhatja.";
+$hlp["web_anonftp"] = "Anonymous-FTP engedélyezése ehhez az oldalhoz. Megjegyzés: egy IP címen csak egy Anonymous-FTP szolgáltatás mûködhet.";
+$hlp["web_anonftplimit"] = "Kérjük adja meg a kívánt tárhely méretet megabájtban (MB) az Anonymous-FTP szolgáltatás részére.";
+$hlp["optionen_frontpage_passwort"] = "Kérjük adja meg a Frontpage kiterjesztéshez szükséges jelszót.";
+$hlp["optionen_mysql_remote_access"] = "Engedélyezi az oldalhoz létrehozott MySQL adatbázis távoli elérését.";
+$hlp["optionen_local_mailserver"] = "Amennyiben az \"External Mailserver\"-t választja nem jön létre bejegyzés a helyi mailszerverben errõl a domain-rõl.";
+$hlp["web_faktura"] = "Engedélyezi/tiltja az ISP-Számlázás modult.";
+$hlp["optionen_logsize"] = "Az Apache logfájl maximalis mérete. Érvényes bejegyzések: egész szám megabájtban vagy valós szám a teljes weboldal engedélyezett méretének százalékában.";
+$hlp["web_php_safe_mode"] = "Amennyiben a PHP szkriptek futtatása engedélyezve van erre az oldalra, akkor azok Safe Mode-ban fognak futni.";
+$hlp["web_wap"] = ".wml állományok futtatásának engedélyezése. A .wml kiterjesztésü állományok mobiltelefonokról WAP-on keresztül nézhetõek.";
+$hlp["web_standard_cgi"] = "Elérhetõek legyenek-e a szerveren tárolt standard CGI fájlok?";
+$hlp["web_mysql_anzahl_dbs"] = "Határozza meg a weboldal számára engedélyezett SQL adatbázisok számát.";
+$hlp["web_mysql_quota"] = "A tárhelyben létrehozott adatbázis számára engedélyezett méret.";
+$hlp["web_mailquota"] = "A tárhelyben létrehozott mailboxok számára engedélyezett méret.";
+$hlp["web_individual_error_pages"] = "Amennyiben ez a mezõ be van jelölve lehetõsége lesz egyéni hibaoldalak létrehozására a \"Beállítások\" fülön.";
+$hlp["error_400"] = "Kérjük írja be a 400-es hibaoldalhoz tartozó HTML kódot. (\"Invalid Syntax\"). Amennyiben a mezõt üresen hagyja a standard hibaoldal lesz használatos.";
+$hlp["error_401"] = "Kérjük írja be a 401-es hibaoldalhoz tartozó HTML kódot. (\"Authorisation required\"). Amennyiben a mezõt üresen hagyja a standard hibaoldal lesz használatos.";
+$hlp["error_403"] = "Kérjük írja be a 403-es hibaoldalhoz tartozó HTML kódot. (\"Forbidden\"). Amennyiben a mezõt üresen hagyja a standard hibaoldal lesz használatos.";
+$hlp["error_404"] = "Kérjük írja be a 404-es hibaoldalhoz tartozó HTML kódot. (\"File not found\"). Amennyiben a mezõt üresen hagyja a standard hibaoldal lesz használatos.";
+$hlp["error_405"] = "Kérjük írja be a 405-es hibaoldalhoz tartozó HTML kódot. (\"Method not allowed\"). Amennyiben a mezõt üresen hagyja a standard hibaoldal lesz használatos.";
+$hlp["error_500"] = "Kérjük írja be a 500-es hibaoldalhoz tartozó HTML kódot. (\"Internal Server Error\"). Amennyiben a mezõt üresen hagyja a standard hibaoldal lesz használatos.";
+$hlp["error_503"] = "Kérjük írja be a 503-es hibaoldalhoz tartozó HTML kódot. (\"Service unavailable\"). Amennyiben a mezõt üresen hagyja a standard hibaoldal lesz használatos.";
+
+?>
