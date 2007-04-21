@@ -364,6 +364,7 @@ function get_local_hostnames() {
 
                 if ($go_info["isp"]["server_conf"]["server_mailman_domain"] != "") {
 
+			// Transport Table
                         $sendmail_header = '###################################
 #
 # ISPConfig transport Map Configuration File
@@ -381,6 +382,25 @@ function get_local_hostnames() {
 
                         //Creating the transport.db file
                         $mod->log->caselog("postmap hash:/etc/postfix/transport", $this->FILE, __LINE__);
+
+			// Relay Domain
+                        $sendmail_header = '###################################
+#
+# ISPConfig Relay Domain Configuration File
+#         Version 1.1
+#
+###################################
+';
+
+                        $sendmail_text = $sendmail_header.($go_info["isp"]["server_conf"]["server_mailman_domain"]);
+                        $sendmail_text .= "\n#### MAKE MANUAL ENTRIES BELOW THIS LINE! ####";
+                        $sendmail_text .= $mod->file->manual_entries("/etc/postfix/relay-host-names");
+
+                        $mod->log->caselog("cp -fr /etc/postfix/relay-host-names /etc/postfix/relay-host-names~", $this->FILE, __LINE__);
+                        $mod->file->wf("/etc/postfix/relay-host-names", $sendmail_text);
+
+                        //Creating the transport.db file
+                        $mod->log->caselog("postmap hash:/etc/postfix/relay-host-names", $this->FILE, __LINE__);
                 }
         }
 
