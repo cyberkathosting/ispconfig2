@@ -1,0 +1,25 @@
+<?
+/********************************
+* ISPConfig Dictionary File
+* Version 1.0
+*********************************/
+
+// License Manager
+$wb["Es wurde keine g&uuml;ltige Lizenzdatei gefunden."] = " Nem találtam évényes licensz fájl-t.";
+$wb["Hier k&ouml;nnen Sie ihre Lizenzdatei einspielen."] = "Itt feltöltheti licensz állományát.";
+$wb["Username"] = "Felhasználónév";
+$wb["Passwort"] = "Jelszó";
+$wb["Lizenzdatei"] = "licensz fájl";
+$wb["Weiter"] = "köv.";
+$wb["Die Lizenzdatei wurde eingespielt.<br>Sie k&ouml;nnen sich jetzt einloggen."] = "A licensz fájlt sikeresen feltöltötte,<br> most már bejelentkezhet.";
+$wb["Ihre Nutzersitzung wurde beendet."] = "A munkafolyamatra szánt idö lejárt.";
+$wb["Hier können Sie sich neu einloggen"] = "Lépjen be újra.";
+
+$wb["FEHLER 101: Username oder Passwort Falsch."] = "HIBA 101: rossz felhasználónév vagy jelszó.";
+$wb["FEHLER 102: Account inaktiv."] = "HIBA 102: Az account le van tiltva.";
+$wb["FEHLER 103: Es wurde kein Username oder Passwort angegeben."] = "HIBA 103: Nem adott meg felhasználónevet vegy jelszót.";
+$wb["FEHLER 104: Die Nutzersession wurde beendet."] = "HIBA 104: A munkafolyamatra szánt idö lejárt.";
+$wb["<br>&nbsp;<br>Hier können Sie sich erneut einloggen:"] = "<br>&nbsp;<br>jelenkezzen be újra:";
+$wb["Hier können Sie sich einloggen:"] = "Jelentkezzen be:";
+
+?>
