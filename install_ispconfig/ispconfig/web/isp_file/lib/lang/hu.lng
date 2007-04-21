@@ -1,0 +1,55 @@
+<?
+/********************************
+* ISPConfig Dictionary File
+* Version 1.0
+*********************************/
+
+$wb["Datei Upload"] = 'Fájl feltöltés';
+$wb["Ordner neu"] = 'Új mappa';
+$wb["Web Auswahl"] = 'Web lista';
+$wb["Web auswählen"] = 'Válasszon Web-et';
+$wb["Auswahl"] = 'Kiválaszt';
+$wb["WEB FTP"] = 'WEB FTP';
+$wb["Hilfe"] = 'Segítség';
+$wb["Name"] = 'Név';
+$wb["Grösse"] = 'Méret';
+$wb["Datum"] = 'Dátum';
+$wb["Eigentümer"] = 'Tulajdonos';
+$wb["Alle"] = 'Mind';
+$wb["Lesen"] = 'Olvas';
+$wb["Schreiben"] = 'Ír';
+$wb["Ausführen"] = 'Futtat';
+$wb["Verzeichnisschutz"] = 'Könyvtár védelem';
+$wb["Verzeichnis schützen"] = 'Könyvtár levédése';
+$wb[".htaccess User"] = '.htaccess felhasználó';
+$wb[".htaccess Userübersicht"] = '.htaccess felhasználó tulajdonságai';
+$wb["Bearbeiten"] = 'Szerkeszt';
+$wb["Hinzufügen"] = 'Hozzáad';
+$wb["Parameterübergabe unvollständig"] = "Hiányos paraméterek";
+$wb["Ungültiges Format der web_id."] = "Hibás web_id formátum";
+$wb["Ungültige web_id."] = "Hibás web_id.";
+$wb["Konnte server_path_httpd_root nicht ermitteln."] = "Meghatározhatatlan server_path_httpd_root.";
+$wb["Das Verzeichnis existiert nicht oder Sie haben nicht die notwendigen Berechtigungen."] = "A megadott könyvtár nem létezik, vagy nem rendelkezik a megfelelõ jogosultságokkal.";
+$wb["Der Pfad enthält ungültige Zeichen."] = "Az megadott útvonal érvénytelen karatereket tartalmaz.";
+$wb["Diese Funktion ist im Demo-Modus deaktiviert"] = "Ez a funkció a demó módban nem elérhetõ.";
+$wb["ist ein Link."] = "egy link.";
+$wb["existiert nicht."] = "nem létezik."; // Es geht um: /home/file.htm existiert nicht.
+$wb["konnte nicht gelöscht werden."] = "nem lehet törölni.";
+$wb["Das Verschieben der Datei ist fehlgeschlagen."] = "A fájl mozgatása nem sikerült.";
+$wb["konnte nicht gelöscht werden. Das Verzeichnis muss leer sein und Sie müssen Schreibrechte besitzen."] = "nem lehet törölni. A könyvtárnak üresnek kell lennie és Önnek rendelkeznie kell írási joggal hozzá.";
+$wb["Das Verschieben des Verzeichnisses ist fehlgeschlagen."] = "A könyvtár mozgatása nem sikerült.";
+$wb["Es wurde keine Datei zum Upload ausgewählt."] = "Nincs állomány kiválasztva feltöltésre.";
+$wb["Die Datei existiert bereits in diesem Verzeichnis."] = "Ilyen nevü állomány már létezik ebben a könyvtárban.";
+$wb["Möglicher Dateiupload Angriff."] = "Lehetséges állomány feltöltési támadás.";
+$wb["Ordner"] = "Mappa";
+
+$wb["chmod failed."] = "a chmod nem sikerült";
+$wb["FTP: Failed to open"] = "FTP: nem sikerült megnyitni ";
+$wb["Failed to open"] = "Nem sikerült megnyitni ";
+$wb["Could not connect to"] = "Nem sikerült csatlakozni a ";
+$wb["Could not connect as user"] = "Nem sikerült felhasználóként csatlakozni ";
+$wb["Next >>"] = "<br><br>Köv. >>";
+
+$wb["Catalog_Name"] = "Név";
+
+?>
