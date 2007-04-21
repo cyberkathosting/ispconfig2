@@ -1,0 +1,64 @@
+<?
+/********************************
+* ISPConfig Dictionary File
+* Version 1.0
+*********************************/
+
+$wb["Anbieter"]     = "Viszonteladó";
+$wb["Web"]          = "Web";
+$wb["Admin Handbuch"] = "Adminisztrátor kézikönyv";
+$wb["Reseller Handbuch"] = "Viszonteladó kézikönyv";
+$wb["Kunden Handbuch"] = "Felhasználó kézikönyv";
+$wb["Deutsch"]          = "German";
+$wb["Englisch"]         = "English";
+$wb["Projektfarm Support"]          = "Projektfarm Support";
+$wb["Online Hilfe"] = "Online Segítségnyújtás";
+
+$wb["willkommen_kunde"] = "Üdvözöljük az ISPConfig-ban!
+Ezen a felületen keresztül van lehetõsége felügyelnie a weboldalait. Bérmely kérdésével vagy problémájával
+forduljon bizalommal a szerver adminisztrátorához vagy használja az ISPConfig ügyfél kézikönyvet.";
+$wb["Willkommen"] = "Üdvözöljük";
+
+//////////////// Server Status ////////////////
+$wb["Arbeitsspeicher"]          = "Memória";
+$wb["CPU"]          = "Processzor";
+$wb["Dienste"]      = "Szolgáltatások";
+$wb["Server Online seit"]          = "Szerver Online";
+$wb["User Online"]      = "Online felhasználók";
+$wb["System Load 1 Minute"] = "System Load 1 perc";
+$wb["System Load 5 Minuten"] = "System Load 5 perc";
+$wb["System Load 15 Minuten"] = "System Load 15 perc";
+//////////////// Server Status Ende //////////
+
+$wb["Webs angelegt"] = "Létrehozott weboldalak";
+$wb["User angelegt"] = "Létrehozott felhasználók";
+$wb["Domains angelegt"] = "Létrehozott domainek";
+$wb["unlimitiert"]  = "korlátlan";
+$wb["Anbieter"]     = "Viszonteladó";
+$wb["DNS-Domains angelegt"] = 'DNS domain létrehozva';
+$wb["von"] = "/";
+
+// NEW 2.0.8 ///////////////////////////////////
+$wb["Französische"]     = "French";
+// Support Tickets System
+$wb["Unterstützungskarten"] = "Hibajegy";
+$wb["Geöffnete Karten"] = "Nyitott hibajegyek";
+$wb["Geschlossene Karten"] = "Bezárt hibajegyek";
+$wb["Neue Karte"] = "Új hibjegy";
+$wb["Betreff"] = "Tárgy";
+$wb["Priorität"] = "Prioritás";
+$wb["Niedrig"] = "Alacsony";
+$wb["Mittel"] = "Közepes";
+$wb["Hoch"] = "Magas";
+$wb["Ihre frage"] = "Üzenet";
+$wb["Senden"] = "Küld";
+$wb["Fehler während der schaffung der karte"] = "Hiba történt a jegy létrehozásakor";
+$wb["Neue unterstützungskarte, die auf antwort wartet"] = "Új hibajegye érkezett";
+$wb["Sie erhielten eine antwort"] = "Válasz jött a hibejegyére";
+$wb["geantwortet zu ihnen"] = "válaszolt Önnek";
+$wb["Datum"] = "Dátum";
+$wb["Davon"] = "Feladó";
+$wb["Ihre antwort"] = "Az Ön válasza";
+$wb["Antworten"] = "Válasz";
+$wb["Schließen"] = "Bezár";
+?>
