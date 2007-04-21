@@ -1431,7 +1431,9 @@ if($dist_mail == "postfix"){
     ilog("commented out virtual_alias_maps entry in $pf_main_cf");
   }
 	if($dist_mailman) {
-		$dist_mail_transport_table = "/etc/postfix/transport";$pf_master_cf = "/etc/postfix/master.cf";
+		$dist_mail_transport_table = "/etc/postfix/transport";
+		$pf_master_cf = "/etc/postfix/master.cf";
+		$dist_relay_hostname_table = "/etc/postfix/relay-host-names";
 
 		//// Transport Maps ////
 		if(strstr($postfix_main_cf, "transport_maps = hash:$dist_mail_transport_table")){
@@ -1442,6 +1444,17 @@ if($dist_mail == "postfix"){
 			ilog("created transport table entry in $pf_main_cf");
 			if(!is_file($dist_mail_transport_table)) phpcaselog(touch($dist_mail_transport_table), "create ".$dist_mail_transport_table, $FILE, __LINE__);
 			caselog("postmap $dist_mail_transport_table", $FILE, __LINE__);
+		}
+
+		//// Relay Hostnames Maps ////
+		if(strstr($postfix_main_cf, "relay_domains = hash:$dist_relay_hostname_table")){
+			ilog("Relay Hostnames entry already in $pf_main_cf");
+		} else {
+			wf($pf_main_cf, str_replace("relay_domains", "#relay_domains", rf($pf_main_cf)));
+			af($pf_main_cf, "\nrelay_domains = hash:$dist_relay_hostname_table\n");
+			ilog("created Relay Hostnames entry in $pf_main_cf");
+			if(!is_file($dist_relay_hostname_table)) phpcaselog(touch($dist_relay_hostname_table), "create ".$dist_relay_hostname_table, $FILE, __LINE__);
+			caselog("postmap $dist_relay_hostname_table", $FILE, __LINE__);
 		}
 		
 		//// Mailman destination recipient limit ////
