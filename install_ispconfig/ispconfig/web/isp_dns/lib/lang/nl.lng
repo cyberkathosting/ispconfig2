@@ -9,7 +9,7 @@ $wb["Optionen"]     = "Opties";
 $wb["Ziel"]         = "Doel";
 $wb["Priorität"]   = "Prioriteit";
 $wb["DNS Eintrag"]  = "DNS invoer";
-$wb["Ordner neu"]   = "Gesorteerd op";
+$wb["Ordner neu"]   = "Nieuwe Map";
 $wb["Suchen"]       = "Zoeken";
 $wb["DNS-Manager"]  = "DNS-manager";
 $wb["Domain (SOA)"] = "Domein (SOA)";
@@ -79,7 +79,7 @@ $wb["error_mx_record_exists"] = "Deze of een a gelijkaardig MX Record bestaat re
 $wb["error_spf_record_exists"] = "Dit SPF record bestaat reeds in deze zone.<br>";
 
 $wb["ja"] = "Ja";
-$wb["nein"] = "Ja";
+$wb["nein"] = "Nee";
 $wb["a"] = "Zijn emails verstuurd<br>&nbsp;&nbsp;van A record?";
 $wb["mx"] = "Zijn emails verstuurd<br>&nbsp;&nbsp;van MX record?";
 $wb["ptr"] = "Zijn emails verstuurd<br>&nbsp;&nbsp;van alle servers van<br>&nbsp;&nbsp;dit domein?";
