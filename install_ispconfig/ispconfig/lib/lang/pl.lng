@@ -4,24 +4,24 @@
 * Version 1.0
 *
 * Tlumaczenie wersji polskiej
-* Patryk Marek --- http://kbn.pl --- info@kbn.pl
-* Wersja 1.0.2
-* Ostatnie zmiany 2005.09.12
+* Leszek Taczkowski
+* Wersja 1.0.0
+* Ostatnie zmiany 19.12.2006
 *********************************/
 
 /////////////// Allgemein - general (kommt in mehreren Modulen vor) /////////
-$wb["login_begruessung"]     = "Login:";
+$wb["login_begruessung"]     = "U¿ytkownik:";
 $wb["Username"]     = "Nazwa u¿ytkownika";
 $wb["Passwort"]     = "Has³o";
 $wb["Login"]       = "Login";
 $wb["Administration"]  = "Administracja";
-$wb["ISP Manager"]  = "Manager ISP";
-$wb["DNS Manager"]  = "Manager DNS";
+$wb["ISP Manager"]  = "Menad¿er ISP";
+$wb["DNS Manager"]  = "Menad¿er DNS";
 $wb["Tools"]        = "Narzêdzia";
 $wb["Logout"]       = "Wyloguj siê";
 $wb["Status"]       = "Status";
 $wb["neu"]          = "nowy";
-$wb["Hinweis"]      = "PodpowiedŸ";
+$wb["Hinweis"]      = "Podpowied¼";
 $wb["Web"]          = "WWW";
 $wb["Email"]        = "E-mail";
 $wb["FTP"]          = "FTP";
@@ -88,29 +88,29 @@ $wb["jscript_ein"] = " ";
 
 ////////////// Allgemein Ende ///////////////////
 
-$wb["Es konnte ein Dokument nicht wiederhergestellt werden, da sich das Eltern-Dokument noch im Papierkorb befindet.\n"] = "The object cannot be restored as long as its parent object is in the recycle bin.";
+$wb["Es konnte ein Dokument nicht wiederhergestellt werden, da sich das Eltern-Dokument noch im Papierkorb befindet.\n"] = "Obiekt nie mo¿e zostaæ przywrócony dopóki jego nadrzêdny obiekt znajduje siê w koszu.";
 
-$wb["DNS-Domains angelegt"] = 'Master Zones created';
-$wb["Benutzter Diskspace"] = "Diskspace used";
-$wb["Slave Zones angelegt"] = "Slave Zones created";
-$wb["Datenbanken angelegt"] = "Databases created";
+$wb["DNS-Domains angelegt"] = 'Strefy g³ówne (master) zosta³y utworzone';
+$wb["Benutzter Diskspace"] = "U¿yta przestrzeñ";
+$wb["Slave Zones angelegt"] = "Strefy podrzêdne (slave) zosta³y utworzone";
+$wb["Datenbanken angelegt"] = "Bazy danych zosta³y utworzone";
 
-$wb["txt_confirm_delete"] = "Do you really want to delete this object?";
+$wb["txt_confirm_delete"] = "Czy naprawdê chcesz usun±æ ten obiekt?";
 
-$wb["txt_object_currently_updated"] = "Your changes cannot be saved because this item is currently being updated. Please try again later.<br><br> <a href='../frame_start.php?s=$s'>Next &gt;&gt;</a>";
-$wb["txt_system_currently_updated_no_recycle_bin"] = "The recycle bin cannot be accessed because the system is currently being updated. Please try again in a few minutes.<br><br> <a href='../frame_start.php?s=$s'>Next &gt;&gt;</a>";
+$wb["txt_object_currently_updated"] = "Twoje zmiany nie mog± zostaæ zapisane poniewa¿ ten obiekt jest w³a¶nie aktualizowany.Proszê spróbowaæ pó¼niej.<br><br> <a href='../frame_start.php?s=$s'>Dalej &gt;&gt;</a>";
+$wb["txt_system_currently_updated_no_recycle_bin"] = "Nie mo¿na uzyskaæ dostêpu do kosza poniewa¿ system jest w³a¶nie aktualizowany. Proszê spróbowaæ ponownie za kilka minut.<br><br> <a href='../frame_start.php?s=$s'>Dalej &gt;&gt;</a>";
 
-$wb['no_permission_to_change_data'] = "<b>Error: You don't have the necessary permissions to change these data.</b><p>
+$wb['no_permission_to_change_data'] = "<b>B³±d: Nie masz wystarczaj±cych uprawnieñ do zmiany tych danych.</b><p>
                 <br>
-                This is because of one of the following reasons:<br>
-                1. You are using the system in test mode.<br>
-                   - Log in with your username and password.<br>&nbsp;<br>
-                2. You are trying to change an element which is allocated to another group.<br>
-                   In this group you don't have permission to write / edit data.<br>
-                   - Please ask the owner of the group to grant write access to this resource to you.<br>&nbsp;<br>
-                <center><a href=\"" . $go_info["server"]["server_url"] . "/index.php?s=$s\">Next &gt;&gt;</a></center>";
+                Mo¿e to byæ spowodowane:<br>
+                1. U¿ywaniem systemu w trybie testowym.<br>
+                   - Zaloguj siê ze swoj± nazw± u¿ytkownika i has³em.<br>&nbsp;<br>
+                2. Próbujesz zmieniæ element,który przydzielony jest do innej grupy.<br>
+                   W tej grupie nie masz uprawnieñ do zapisu/edycji danych.<br>
+                   - Zwróæ siê do w³a¶ciciela tej grupy o prawa zapisu tego zasobu.<br>&nbsp;<br>
+                <center><a href=\"" . $go_info["server"]["server_url"] . "/index.php?s=$s\">Dalej &gt;&gt;</a></center>";
 
-$wb["Weiter"] = "Next";
-$wb["Zurück"] = "Back";
+$wb["Weiter"] = "Dalej";
+$wb["Zurück"] = "Wstecz";
 
 ?>

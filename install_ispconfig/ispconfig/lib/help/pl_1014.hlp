@@ -4,23 +4,24 @@
 * ISPConfig Help File
 * Version 1.2
 * Syntax: $hlp["FieldName"] = "HelpText";
+* autor: Leszek Taczkowski leszek.t@simplusnet.pl
 ************************************************/
 
-$hlp["user_username"] = "Peoszê podac nazwê u¿ytkownika. You can enter any user name as long as it does not contain umlauts (ä, ö,ü), special characters (@, %, ...) and blanks. The maximum length is 26 characters.";
-$hlp["user_passwort"] = "Please specify a password. You can enter any password as long as it does not contain umlauts (ä, ö,ü), special characters (@, %, ...) and blanks.";
-$hlp["user_speicher"] = "Please enter the storage space for the user.";
-$hlp["user_admin"] = "Makes the user the administrator for this web. Only one user per web can be an administrator.";
-$hlp["user_shell"] = "Enables shell access for the user.";
-$hlp["user_emailalias"] = "Here you can enter further email aliases (e.g. different spellings) in order to be able to receive emails for those aliases. Enter only the part in front of \"@\"!";
-$hlp["user_name"] = "Please enter the real name of the user.";
-$hlp["user_autoresponder"] = "Activates the email autoresponder for the email boxes of the user.";
-$hlp["user_autoresponder_text"] = "Please enter a text for the email autoresponder.";
-$hlp["user_mailquota"] = "Please specify the quota of the user's mailbox (in MB).";
-$hlp["user_catchallemail"] = "If this box is checked all undeliverable emails for this web end up in this mailbox. Only one user per web can have a catchAll email address.";
-$hlp["user_mailscan"] = "Enables the virus scanner for this mailbox. Extensions of suspicious attachments (e.g. .exe-files) will be renamed so that they cannot be opened by double-click.";
-$hlp["user_spamfilter"] = "Activates the spam filter for this mailbox.";
-$hlp["user_emailweiterleitung_local_copy"] = "If this box is checked a local copy of all incoming emails will be kept even if the emails are forwarded to other email addresses.";
-$hlp["user_email"] = "Please specify the name that should be in front of the \"@\" in the email address. You can enter any name as long as it does not contain umlauts (ä, ö,ü), special characters (@, %, ...) and blanks.";
-$hlp["user_emailweiterleitung"] = "Here you can enter email addresses to which incoming emails should be forwarded.";
+$hlp["user_username"] = "Proszê podaæ nazwê u¿ytkownika. Mo¿esz wpisaæ dowoln± nazwê,która nie zawiera znaków specialnych (@, %, ...) i spacji. Maksymalna d³ugo¶æ to 26 znaków.";
+$hlp["user_passwort"] = "Proszê podaæ has³o. Mo¿esz wpisaæ dowolne has³o,które nie zawiera znaków specialnych (@, %, ...) i spacji..";
+$hlp["user_speicher"] = "Proszê podaæ pojemno¶æ konta dla tego u¿ytkownika.";
+$hlp["user_admin"] = "Nadaje u¿ytkownikowi prawa administratora dla tej witryny. Tylko jeden u¿ytkownik na witrynê mo¿e byæ administratorem.";
+$hlp["user_shell"] = "Umo¿liwia u¿ytkownikowi dostêp do pow³oki.";
+$hlp["user_emailalias"] = "Tu mo¿esz podaæ dodatkowe aliasy adresów email.Aby móc otrzymywaæ pocztê na te aliasy musisz podaæ fragment adresu do znaku ma³py \"@\"!";
+$hlp["user_name"] = "Proszê podaæ prawdziw± nazwê u¿ytkownika.";
+$hlp["user_autoresponder"] = "Aktywuje autoresponder dla kont pocztowych tego u¿ytkownika.";
+$hlp["user_autoresponder_text"] = "Proszê podaæ tekst dla autorespondera email.";
+$hlp["user_mailquota"] = "Proszê okre¶liæ pojemno¶æ (quota) konta pocztowego u¿ytkownika (w MB).";
+$hlp["user_catchallemail"] = "Je¿eli to pole jest zaznaczone,to wszystkie wiadomo¶ci które nie mog³y zostaæ dostarczone do adresata,zostan± przekazane do tej skrzynki. Tylko jeden u¿ytkownik mo¿e mieæ adres,przechwytuj±cy pocztê (funkcja \"Catch-all\").";
+$hlp["user_mailscan"] = "Uruchamia skaner antywirusowy dla tego konta poczty. Rozszerzenia podejrzanych za³±czników (np. plików .exe) zostan± zmienione aby uniemo¿liwiæ ich przypadkowe uruchomienie.";
+$hlp["user_spamfilter"] = "Uruchamia skaner antyspamowy dla tego konta pocztowego.";
+$hlp["user_emailweiterleitung_local_copy"] = "Je¿eli to pole jest zaznaczone,to lokalna kopia wszystkich przychodz±cych wiadomo¶ci email bêdzie przechowywana nawet je¿eli by³y to listy przekierowywane na inne adresy pocztowe.";
+$hlp["user_email"] = "Proszê okre¶liæ nazwê,która powinna byæ przed znakiem ma³py \"@\" w adresie pocztowym. Mo¿esz podaæ dowoln± nazwê,która nie zawiera znaków specjalnych (@, %, ...) ani spacji.";
+$hlp["user_emailweiterleitung"] = "Tutaj mo¿esz podaæ adresy pocztowe,na które powinna byæ przekazywana przychodz±ca poczta.";
 
 ?>

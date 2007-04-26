@@ -4,19 +4,20 @@
 * ISPConfig Help File
 * Version 1.2
 * Syntax: $hlp["FieldName"] = "HelpText";
+* autor: Leszek Taczkowski leszek.t@simplusnet.pl
 ************************************************/
 
-$hlp["artikelnummer"] = "Proszê pod±æ numer. Mo¿esz u¿yæ jakiejkolwiek liczby.";
-$hlp["artikeltyp"] = "Proszê wybraæ typ z listy.";
-$hlp["artikelbezeichnung"] = "Prosze podac nazwê.";
-$hlp["verrechnung"] = "Proszê sprecyzowaæ czas us³ug w (miesi±cach). Np. 1 oznacza 1 miesi±c.";
-$hlp["artikeleinheit"] = "Proszê wybierz czê¶æ rzeczy z listy.";
-$hlp["artikelpreis"] = "Proszê pod±æ cenê jednostkow±.";
-$hlp["abpackung"] = "Ilo¶æ czê¶ci przypadaj±cych na paczkê.";
-$hlp["beschreibung"] = "Jak mo¿esz opisaæ przedmiot.";
-$hlp["artikelgroup"] = "Proszê wybraæ prawid³owego sprzedawcê dla tego przedmiotu. Je¶li nie wybierasz przedmiotu wtedy ustawienia s± u¿ywane dla wszystkich sprzedawców.";
-$hlp["weitere_artikeleinheit"] = "Jednostka miary przy przekroczeniu.";
-$hlp["weitere_abpackung"] = "Ilo¶æ MB albo GB, który jest zewidencjonowany przy przekroczeniu.";
+$hlp["artikelnummer"] = "Proszê pod±æ numer pozycji. Mo¿esz u¿yæ jakiejkolwiek liczby.";
+$hlp["artikeltyp"] = "Proszê wybraæ typ pozycji z listy.";
+$hlp["artikelbezeichnung"] = "Proszê podaæ nazwê pozycji.";
+$hlp["verrechnung"] = "Proszê sprecyzowaæ okres naliczania op³at za us³ugi w (miesi±cach). Np. 1-miesiêcznie,6-co pó³ roku,12-co rok lub 0-jednorazowo.";
+$hlp["artikeleinheit"] = "Proszê wybraæ z listy jednostkê pozycji.";
+$hlp["artikelpreis"] = "Proszê pod±æ jednostkow± cenê pozycji.";
+$hlp["abpackung"] = "Ilo¶æ jednostek przypadaj±cych na paczkê.";
+$hlp["beschreibung"] = "Tutaj mo¿esz opisaæ pozycjê.";
+$hlp["artikelgroup"] = "Proszê wybraæ sprzedawcê,dla którego ta pozycja jest wa¿na.Je¿eli ¿aden nie zosta³ wybrany,to pozycja bêdzie wa¿na dla wszystkich sprzedawców.";
+$hlp["weitere_artikeleinheit"] = "Jednostka przy przekroczeniu transferu.";
+$hlp["weitere_abpackung"] = "Ilo¶æ MB lub GB,za które op³ata bêdzie dopisana do rachunku w przypadku przekroczenia transferu.";
 $hlp["weitere_artikelpreis"] = "Cena za przekroczenie limitu transferu.";
 $hlp["steuersatz"] = "Proszê sprecyzowaæ stawkê podatkow± (np. 22%).";
 

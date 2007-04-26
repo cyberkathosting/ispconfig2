@@ -4,9 +4,9 @@
 * Version 1.0
 *
 * Tlumaczenie wersji polskiej
-* Patryk Marek --- http://kbn.pl --- info@kbn.pl
-* Wersja 1.0.2
-* Ostatnie zmiany 2005.09.12
+* Leszek Taczkowski
+* Wersja 1.0.0
+* Ostatnie zmiany 19.12.2006
 *********************************/
 
 $wb["Administration"]  = 'Administracja';

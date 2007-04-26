@@ -3,17 +3,17 @@
 * ISPConfig Dictionary File
 * Version 1.0
 *
-* T³umaczenie wersji polskiej
-* Digital Gospel http://www.digital-gospel.com
-* Wersja 1.0
-* Ostatnie zmiany 2004.06.21
+* Tlumaczenie wersji polskiej
+* Leszek Taczkowski
+* Wersja 1.0.0
+* Ostatnie zmiany 19.12.2006
 *********************************/
 
 $wb["ISP Faktura"] = 'Faktura ISP';
 $wb["Web-FTP"] = 'Web-FTP';
 $wb["Domains"] = 'Domeny';
-$wb["Service"] = 'Serwisy';
-$wb["Webs"] = 'Serwisy WWW';
+$wb["Service"] = 'Us³ugi';
+$wb["Webs"] = 'Witryny WWW';
 $wb["Traffic"] = 'Ruch';
 $wb["Email-Adressen"] = 'Adresy E-mail';
 $wb["Artikel"] = 'Artyku³';
@@ -26,12 +26,12 @@ $wb["Typ"] = 'Typ';
 $wb["Artikel Nr."] = 'Numer artyku³u';
 $wb["Bezeichnung"] = 'Nazwa';
 $wb["Beschreibung"] = 'Opis';
-$wb["Stück"] = 'Iloœæ';
+$wb["Stück"] = 'Ilo¶æ';
 $wb["MB"] = 'MB';
 $wb["GB"] = 'GB';
 $wb["Stunde"] = 'Godzina';
 $wb["Einheit"] = 'Jednostka';
-$wb["Menge"] = 'Iloœæ';
+$wb["Menge"] = 'Ilo¶æ';
 $wb["Preis"] = 'Cena';
 $wb["Verrechnung"] = 'Okres rozliczeniowy';
 $wb["Artikel neu"] = 'Nozy artyku³';
@@ -43,38 +43,38 @@ $wb["Produkte"] = 'Produkty';
 $wb["Abrechnen"] = 'Utwórz fakturê';
 $wb["Rechnungen"] = 'Faktury';
 $wb["Kunden"] = 'Klienci';
-$wb["Anbieter"] = 'Resellerzy';
+$wb["Anbieter"] = 'Sprzedawcy';
 $wb["Keine Artikel zum Abrechnen gefunden."] = 'Nie mo¿na utworzyæ faktury poniewa¿ nie zawiera ¿adnego artyku³u.';
 $wb["Abrechnung"] = 'Faktura';
 $wb["Name"] = 'Nazwa';
 $wb["IP-Traffic"] = 'Ruch IP';
 $wb["Steuersatz"] = 'Podatek VAT';
 $wb["Bei Überschreitung:"] = 'W imieniu:';
-$wb["Diese Angaben sind nur für Artikel vom Typ: Traffic gültig!"] = 'Te wpisy s¹ wa¿ne wy³¹cznie dla artyku³ów typu: Ruch!';
+$wb["Diese Angaben sind nur für Artikel vom Typ: Traffic gültig!"] = 'Te wpisy s± wa¿ne wy³±cznie dla artyku³ów typu: Ruch!';
 $wb["Rechnungen Kunden"] = 'Faktury dla klientów';
 $wb["Firma"] = 'Nazwa firmy';
 $wb["Vorname"] = 'Imiê';
 $wb["Strasse"] = 'Ulica';
 $wb["PLZ"] = 'Kod pocztowy';
-$wb["Ort"] = 'Miejscowoœæ';
+$wb["Ort"] = 'Miejscowo¶æ';
 $wb["Land"] = 'Kraj';
 $wb["Steuernr."] = 'VAT';
 $wb["Rechnung"] = 'Faktura';
 $wb["Datum"] = 'Data';
 $wb["Rechnung Nr."] = 'Numer faktury';
-$wb["Anzahl"] = 'Iloœæ';
+$wb["Anzahl"] = 'Ilo¶æ';
 $wb["Art. Nr."] = 'Numer artyku³u';
 $wb["Gesamt"] = 'W sumie';
 $wb["EURO"] = 'Z£';
 $wb["Web gesamt"] = 'Suma WWW';
 $wb["enthaltene Mehrwertsteuer"] = 'Zawiera VAT';
 $wb["Gesamtbetrag"] = 'Suma';
-$wb["Rechnungen Anbieter"] = 'Faktury dla resellera';
+$wb["Rechnungen Anbieter"] = 'Faktury dla sprzedawcy';
 $wb["Kunde"] = 'Klient';
 $wb["Rg. Nr."] = 'Numer faktury';
 $wb["OK"] = 'OK';
 $wb["Weiter"] = "Dalej";
-$wb["Summe Anbieter"] = "Suma Resellera";
+$wb["Summe Anbieter"] = "Suma sprzedawcy";
 $wb["Summe Web"] = "Suma WWW";
 $wb["Summe Kunde"] = "Suma Klienta";
 $wb["Abrechnung abgeschlossen."] = "Faktura zosta³a utworzona.";
@@ -85,9 +85,9 @@ $wb["CPU"]          = "CPU";
 $wb["Dienste"]      = "Serwisy";
 $wb["Server Online seit"]          = "Serwer dzia³a od";
 $wb["User Online"]      = "Zalogowanych u¿ytkowników";
-$wb["System Load 1 Minute"] = "Obci¹¿enie systemu w okresie 1-minutowym";
-$wb["System Load 5 Minuten"] = "Obci¹¿enie systemu w okresie 5-minutowym";
-$wb["System Load 15 Minuten"] = "Obci¹¿enie systemu w okresie 15-minutowym";
+$wb["System Load 1 Minute"] = "Obci±¿enie systemu w okresie 1-minutowym";
+$wb["System Load 5 Minuten"] = "Obci±¿enie systemu w okresie 5-minutowym";
+$wb["System Load 15 Minuten"] = "Obci±¿enie systemu w okresie 15-minutowym";
 //////////////// Server Status Ende //////////
 
 ?>

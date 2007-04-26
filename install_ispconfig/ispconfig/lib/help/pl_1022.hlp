@@ -4,44 +4,45 @@
 * ISPConfig Help File
 * Version 1.2
 * Syntax: $hlp["FieldName"] = "HelpText";
+* autor: Leszek Taczkowski leszek.t@simplusnet.pl
 ************************************************/
 
-$hlp["limit_user"] = "Please enter the maximum amount of users the reseller is allowed to create.";
-$hlp["limit_disk"] = "Please specify the maximum amount of storage space the reseller is allowed to use.";
-$hlp["limit_web"] = "Please enter the maximum amount of webs the reseller is allowed to create.";
-$hlp["limit_domain"] = "Please enter the maximum amount of domains the reseller is allowed to create";
-$hlp["limit_http_include"] = "Please specify if the reseller is allowed to create additional Apache directives.";
-$hlp["limit_dns_manager"] = "Please specify if the reseller is allowed to create DNS entries.";
-$hlp["limit_domain_dns"] = "Please specify the maximum number of domains for which the reseller is allowed to create Primary (Master) DNS records.";
-$hlp["limit_slave_dns"] = "Please specify the maximum number of domains for which the reseller is allowed to create Secondary (Slave) DNS records.";
+$hlp["limit_user"] = "Proszê podaæ maksymaln± liczbê u¿ytkowników,których sprzedawca mo¿e utworzyæ.";
+$hlp["limit_disk"] = "Proszê okre¶liæ maksymaln± przestrzeñ dyskow±,któr± sprzedawca mo¿e wykorzystaæ.";
+$hlp["limit_web"] = "Proszê podaæ maksymaln± liczbê witryn,któr± sprzedawca mo¿e utworzyæ.";
+$hlp["limit_domain"] = "Proszê podaæ maksymaln± liczbê domen,które sprzedawca mo¿e utworzyæ";
+$hlp["limit_http_include"] = "Proszê okre¶liæ,czy sprzedawca mo¿e tworzyæ dodatkowe dyrektywy serwera Apache.";
+$hlp["limit_dns_manager"] = "Proszê okre¶liæ,czy sprzedawca mo¿e tworzyæ wpisy w DNS.";
+$hlp["limit_domain_dns"] = "Proszê okre¶liæ maksymaln± liczbê domen,dla których sprzedawca mo¿e tworzyæ podstawowe (g³ówne) rekordy DNS.";
+$hlp["limit_slave_dns"] = "Proszê okre¶liæ maksymaln± liczbê domen,dla których sprzedawca mo¿e tworzyæ zapasowe (podrzêdne) rekordy DNS.";
 
-$hlp["limit_cgi"] = "Please specify if the reseller is allowed to assign CGI functionality to the websites under his account.";
-$hlp["limit_php"] = "Please specify if the reseller is allowed to assign PHP functionality to the websites under his account.";
-$hlp["limit_ssi"] = "Please specify if the reseller is allowed to assign SSI functionality to the websites under his account.";
-$hlp["limit_ftp"] = "Please specify if the reseller is allowed to assign FTP functionality to the websites under his account.";
-$hlp["limit_frontpage"] = "Please specify if the reseller is allowed to assign Frontpage functionality to the websites under his account.";
-$hlp["limit_mysql"] = "Please specify if the reseller is allowed to assign MySQL databases to the websites under his account.";
-$hlp["limit_shell_access"] = "Please specify if the reseller is allowed to assign shell accounts to the websites under his account.";
-$hlp["limit_ssl"] = "Please specify if the reseller is allowed to assign SSL functionality to the websites under his account. Please note: per IP address you can have only one SSL website.";
-$hlp["limit_httpd_include"] = "Please specify if the reseller is allowed to assign additional Apache directives to the websites under his account.";
-$hlp["limit_anonftp"] = "Please specify if the reseller is allowed to assign Anonymous FTP functionality to the websites under his account. Please note: per IP address you can have only one Anonymous-FTP account.";
-$hlp["limit_wap"] = "Please specify if the reseller is allowed to assign WAP functionality to the websites under his account.";
-$hlp["limit_standard_cgis"] = "Please specify if the standard CGI scripts provided on this server should be available for the websites under this reseller's account.";
-$hlp["limit_mysql_anzahl_dbs"] = "Please specify the max. number (total) of databases that the reseller can assign to the websites under his account.";
-$hlp["limit_error_pages"] = "Please specify if the reseller is allowed to assign the ability to create individual error pages to the websites under his account.";
+$hlp["limit_cgi"] = "Proszê okre¶liæ,czy sprzedawca mo¿e przypisywaæ funkcjonalno¶æ CGI do witryn na swoim koncie.";
+$hlp["limit_php"] = "Proszê okre¶liæ,czy sprzedawca mo¿e przypisywaæ funkcjonalno¶æ PHP do witryn na swoim koncie.";
+$hlp["limit_ssi"] = "Proszê okre¶liæ,czy sprzedawca mo¿e przypisywaæ funkcjonalno¶æ SSI do witryn na swoim koncie.";
+$hlp["limit_ftp"] = "Proszê okre¶liæ,czy sprzedawca mo¿e przypisywaæ funkcjonalno¶æ FTP do witryn na swoim koncie.";
+$hlp["limit_frontpage"] = "Proszê okre¶liæ,czy sprzedawca mo¿e przypisywaæ funkcjonalno¶æ rozszerzeñ Frontpage do witryn na swoim koncie.";
+$hlp["limit_mysql"] = "Proszê okre¶liæ,czy sprzedawca mo¿e przypisywaæ funkcjonalno¶æ baz danych MySQL do witryn na swoim koncie.";
+$hlp["limit_shell_access"] = "Proszê okre¶liæ,czy sprzedawca mo¿e przypisywaæ konta shell (dostêp do pow³oki systemu) witrynom na swoim koncie .";
+$hlp["limit_ssl"] = "Proszê okre¶liæ,czy sprzedawca mo¿e przypisywaæ funkcjonalno¶æ SSL do witryn na swoim koncie.Mo¿esz mieæ tylko jedn± witrynê z obs³ug± SSL dla jednego adresu IP.";
+$hlp["limit_httpd_include"] = "Proszê okre¶liæ,czy sprzedawca mo¿e tworzyæ dodatkowe dyrektywy serwera Apache dla witryn na swoim koncie.";
+$hlp["limit_anonftp"] = "Proszê okre¶liæ,czy sprzedawca mo¿e przypisywaæ funkcjonalno¶æ anonimowego FTP dla witryn na swoim koncie.Mo¿esz mieæ tylko jedn± witrynê z obs³ug± Anonimowego FTP dla jednego adresu IP";
+$hlp["limit_wap"] = "Proszê okre¶liæ,czy sprzedawca mo¿e przypisywaæ funkcjonalno¶æ WAP dla witryn na swoim koncie.";
+$hlp["limit_standard_cgis"] = "Proszê okre¶liæ,czy standardowe skrypty CGI,znajduj±ce siê na tym serwerze powinny byæ dostêpne dla witryn w ramach konta sprzedawcy.";
+$hlp["limit_mysql_anzahl_dbs"] = "Proszê okre¶liæ maksymaln± liczbê baz danych,które sprzedawca mo¿e przypisaæ do witryn na swoim koncie.";
+$hlp["limit_error_pages"] = "Proszê okre¶liæ,czy sprzedawca mo¿e tworzyæ indywidualne strony b³êdów dla witryn na swoim koncie.";
 
-$hlp["firma"] = "Please enter the company of the reseller.";
-$hlp["vorname"] = "Please enter the first name of the reseller.";
-$hlp["name"] = "Please enter the surname of the reseller.";
-$hlp["strasse"] = "Please enter the street of the reseller.";
-$hlp["plz"] = "Please enter the ZIP code of the reseller.";
-$hlp["ort"] = "Please enter the town of the reseller.";
-$hlp["land"] = "Please enter the country of the reseller.";
-$hlp["telefon"] = "Please enter the telephone number of the reseller.";
-$hlp["fax"] = "Please enter the fax number of the reseller.";
-$hlp["email"] = "Please enter the email address of the reseller.";
-$hlp["internet"] = "Please enter the URL of the reseller's website.";
-$hlp["reseller_user"] = "Please enter the reseller's user name for the login to the ISPConfig system.";
-$hlp["reseller_passwort"] = "Please enter the reseller's password for the ISPConfig system.";
-$hlp["anrede"] = "Please select the salutatory address of the reseller.";
+$hlp["firma"] = "Proszê podaæ nazwê firmy sprzedawcy.";
+$hlp["vorname"] = "Proszê podaæ imiê sprzedawcy.";
+$hlp["name"] = "Proszê podaæ nazwisko sprzedawcy.";
+$hlp["strasse"] = "Proszê podaæ ulicê.";
+$hlp["plz"] = "Proszê podaæ kod pocztowy.";
+$hlp["ort"] = "Proszê podaæ miejscowo¶æ.";
+$hlp["land"] = "Proszê podaæ kraj.";
+$hlp["telefon"] = "Proszê podaæ numer telefonu.";
+$hlp["fax"] = "Proszê podaæ numer faksu.";
+$hlp["email"] = "Proszê podaæ adres email.";
+$hlp["internet"] = "Proszê podaæ adres witryny sprzedawcy.";
+$hlp["reseller_user"] = "Proszê podaæ nazwê u¿ytkownika sprzedawcy,potrzebn± do zalogowania siê w systemie ISPConfig.";
+$hlp["reseller_passwort"] = "Proszê podaæ has³o sprzedawcy dla systemu ISPConfig.";
+$hlp["anrede"] = "Proszê wybraæ adres powitalny dla sprzedawcy.";
 ?>

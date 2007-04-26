@@ -4,10 +4,11 @@
 * ISPCofig Help File
 * Version 1.2
 * Syntax: $hlp["FieldName"] = "HelpText";
+* autor: Leszek Taczkowski leszek.t@simplusnet.pl
 ************************************************/
 
 $hlp["dienst_name"] = "Nazwa monitorowanej us³ugi.";
-$hlp["dienst_port"] = "Port, na jakim, us³uga dzia³a, np. 80 dla serwerów WWW.";
-$hlp["dienst_host"] = "Nazwa hosta lub IP serwera monitorowanego.";
-$hlp["dienst_typ"] = "Typ us³ugi. System mo¿e monitorowaæ TCP i UDP us³ugi.";
+$hlp["dienst_port"] = "Port, na którym us³uga dzia³a, np. 80 dla serwerów WWW.";
+$hlp["dienst_host"] = "Nazwa hosta lub IP monitorowanego serwera.";
+$hlp["dienst_typ"] = "Typ us³ugi.System mo¿e monitorowaæ us³ugi oparte o TCP i UDP.";
 ?>

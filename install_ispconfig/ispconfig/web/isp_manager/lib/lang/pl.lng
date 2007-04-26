@@ -4,20 +4,20 @@
 * Version 1.0
 *
 * Tlumaczenie wersji polskiej
-* Patryk Marek --- http://kbn.pl --- info@kbn.pl
-* Wersja 1.0.2
-* Ostatnie zmiany 2005.09.12
+* Leszek Taczkowski
+* Wersja 1.0.1
+* Ostatnie zmiany 17.02.2007
 *********************************/
 
 
 ///////////////// ISP Manager //////////////////
 $wb["Mailuser Login"]     = "Logowanie u¿ytkownika email";
-$wb["Anbieter"]     = "Reseller";
+$wb["Anbieter"]     = "Sprzedawcy";
 $wb["Navigation"]     = "Nawigacja";
 $wb["Web Vorlage"]     = "Plan hostingu";
 $wb["Kunde"]        = "Klient";
 $wb["Suchen"]       = "Szukaj";
-$wb["Stammdaten"]   = "Master data";
+$wb["Stammdaten"]   = "Dane g³ówne";
 $wb["Limits"]       = "Limity";
 $wb["Zugangsdaten"] = "Podaj informacjê";
 $wb["Statistik"]    = "Statystyki";
@@ -34,9 +34,9 @@ $wb["Fax"]          = "Faks";
 $wb["Internet"]     = "Strona WWW";
 $wb["Öffnen"]      = "Otwórz";
 $wb["Benutzername"] = "U¿ytkownik"; // besser: vielleicht nur Variable $wb["username"] benutzen?
-$wb["zugangsdaten_anbieter_einleitung"] = "Tutaj mo¿esz podaæ nazwê u¿ytkownika i has³o dla resellera.";
+$wb["zugangsdaten_anbieter_einleitung"] = "Tutaj mo¿esz podaæ nazwê u¿ytkownika i has³o dla sprzedawcy.";
 $wb["zugangsdaten_kunde_einleitung"] = "Tutaj mo¿esz podaæ nazwê u¿ytkownika i has³o do zarz±dzania<br> podanymi serwerami.<br> ";
-$wb["Web Verwaltung"] = "Zarz±dzanie serwerem";
+$wb["Web Verwaltung"] = "Zarz±dzanie witryn±";
 $wb["Rechnung"]      = "P³atno¶ci";
 $wb["Rechnungsanschrift:"] = "Adres p³atnika:<br>";
 $wb["Intervall"]    = "Czêstotliwo¶æ";
@@ -63,7 +63,7 @@ $wb["SSL Zertifikat"]   = "Certyfikat SSL";
 $wb["Aktion"]       = "Polecenie";
 $wb["Zertifikat erzeugen"] = "Utwórz certyfikat";
 $wb["Zertifikat speichern"] = "Zapisz certyfikat";
-$wb["Zertifikat löschen"] = "Usun certyfikat";
+$wb["Zertifikat löschen"] = "Usuñ certyfikat";
 $wb["Speicherplatz gesamt"] = "Pojemno¶æ dysku";
 $wb["unlimitiert"]  = "nielimitowana";
 $wb["verbraucht"]   = "zajête";
@@ -79,13 +79,13 @@ $wb["ISP Server Status"] = 'Status serwera ISP';
 $wb["Administration"]  = "Administracja";
 
 // Ergänzungen /////////////////////////////////
-$wb["Anbieter neu"] = "Nowy reseller";
+$wb["Anbieter neu"] = "Nowy sprzedawca";
 $wb["Kunde neu"]    = "Nowy klient";
-$wb["Web neu"]      = "Nowy serwer";
+$wb["Web neu"]      = "Nowa witryna";
 $wb["Ordner neu"]   = "Nowy folder";
-$wb["Suchen"]       = "Szuka";
-$wb["ISP Anbieter"] = "Reseller ISP";
-$wb["Webs"] = "Serwery";
+$wb["Suchen"]       = "Szukaj";
+$wb["ISP Anbieter"] = "Sprzedawca ISP";
+$wb["Webs"] = "Witryny";
 $wb["User"] = "U¿ytkownik";
 $wb["Domains"] = "Domeny";
 $wb["Zahlung"] = "P³atno¶æ";
@@ -99,24 +99,24 @@ $wb["Co-Domains"] = "Subdomeny";
 $wb["SSL"] = "SSL";
 $wb["Optionen"] = "Opcje";
 
-$wb["Webs angelegt"] = "U¿ywanych serwerów";
+$wb["Webs angelegt"] = "U¿ywanych witryn";
 $wb["User angelegt"] = "Zainstalowanych kont";
 $wb["Domains angelegt"] = "U¿ywanych domen";
 $wb["rechnungsanschrift"] = "Adres do faktury:<br> ";
 
 
-$wb["neues Web anlegen"] = "Nowy serwer";
+$wb["neues Web anlegen"] = "Nowa witryna";
 $wb["weiter"] = "dalej";
 $wb["SUCHE"] = "szukaj";
 
 $wb["msg_beta"] = "";
 $wb["title_isp_beta"] = "";
-$wb["msg_kein_win"] = "This software is not available for the Windows operating systems.";
+$wb["msg_kein_win"] = "To oprogramowanie nie jest dostêpne dla systemów Windows.";
 
 // Error Codes ispconfig_isp_domain.lib.php
 $wb["error_web_doppelt"] = "Nazwa ";
 $wb["error_max_domain_web"] = "Osi±gniêto maksymaln± liczbê domen dla tego serwera";
-$wb["error_max_domain_anbieter"] = "Osi±gniêto maksymaln± liczbê domen dla resellera";
+$wb["error_max_domain_anbieter"] = "Osi±gniêto maksymaln± liczbê domen dla sprzedawcy";
 $wb["angelegt"] = " jest ju¿ u¿ywana przez inny serwer lub domenê.";
 
 // Error Codes ispconfig_isp_kunde.lib.php
@@ -127,21 +127,21 @@ $wb["error_max_user_licence"] = "Zosta³a osi±gniêta maksymalna liczba licencjono
 
 // Error Codes ispconfig_isp_reseller.lib.php
 $wb["error_reseller_title"] = "U¿ytkownik o podanej nazwie ju¿ istnieje.";
-$wb["error_reseller_group_not_found"] = "Nie znaleziono podanej grupy resellerów.";
-$wb["error_anbieter_no_delete"] = "<b>Reseller nie zosta³ uzuniêty.</b><br>&nbsp;<br>Reseller mo¿e zostaæ usuniêty tylko wtedy, gdy zostan± usuniêci wszyscy jego klienci oraz serwery. Upewnij siê tak¿e, czy kosz resellera jest pusty.";
+$wb["error_reseller_group_not_found"] = "Nie znaleziono podanej grupy sprzedawców.";
+$wb["error_anbieter_no_delete"] = "<b>Sprzedawca nie zosta³ usuniêty.</b><br>&nbsp;<br>Sprzedawca mo¿e zostaæ usuniêty tylko wtedy, gdy zostan± usuniêci wszyscy jego klienci oraz serwery. Upewnij siê tak¿e, czy kosz sprzedawcy jest pusty.";
 
 // Error Codes ispconfig_isp_user.lib.php
 $wb["error_sysuser_exist_1"] = "U¿ytkownik po podanej nazwie ju¿ istnieje";
 $wb["error_sysuser_exist_2"] = "podano.<br><br> <a href='../../isp_manager/frame_start.php?s=$s'>Wiêcej</a>";
 $wb["error_max_user_web"] = "Osi±gniêto maksymaln± liczbê u¿ytkowników serwera.<br><br> <a href='../../isp_manager/frame_start.php?s=$s'>Wiêcej</a>";
-$wb["error_max_space_web"] = "Wybrana pojemnoœæ dysku przekracza limit dla serwera.<br><br> <a href='../../isp_manager/frame_start.php?s=$s'>Wiêcej</a>";
-$wb["error_max_user_anbieter"] = "Osi±gniêto maksymaln± liczbê u¿ytkowników dla resellera.<br><br> <a href='../../isp_manager/frame_start.php?s=$s'>Wiêcej</a>";
+$wb["error_max_space_web"] = "Wybrana pojemno¶æ dysku przekracza limit dla serwera.<br><br> <a href='../../isp_manager/frame_start.php?s=$s'>Wiêcej</a>";
+$wb["error_max_user_anbieter"] = "Osi±gniêto maksymaln± liczbê u¿ytkowników dla sprzedawcy.<br><br> <a href='../../isp_manager/frame_start.php?s=$s'>Wiêcej</a>";
 $wb["error_sysuser_exist"] = "Podana nazwa u¿ytkownika jest ju¿ u¿ywana.<br><br> <a href='../../isp_manager/frame_start.php?s=$s'>Wiêcej</a>";
 $wb["error_admin_exist"] = "Dla tego serwera ju¿ istnieje u¿ytkownik z prawami administratora.<br><br> <a href='../../isp_manager/frame_start.php?s=$s'>Wiêcej</a>";
-$wb["error_admin_exist_long"] = "U¿ytkownik z prawami administratora ju¿ istnieje. Musisz usun±æ innego u¿ytkownika lub odebraæ mu uprawnienia administratora jeœli chcesz je przypisaæ temu u¿ytkownikowi.<br><br> <a href='../../isp_manager/frame_start.php?s=$s'>Wiêcej</a>";
+$wb["error_admin_exist_long"] = "U¿ytkownik z prawami administratora ju¿ istnieje. Musisz usun±æ innego u¿ytkownika lub odebraæ mu uprawnienia administratora je¶li chcesz je przypisaæ temu u¿ytkownikowi.<br><br> <a href='../../isp_manager/frame_start.php?s=$s'>Wiêcej</a>";
 
 // Error Codes ispconfig_isp_user.lib.php
-$wb["error_max_web_anbieter"] = "Osi±gniêto maksymaln± liczbê u¿ytkowników dla resellera";
+$wb["error_max_web_anbieter"] = "Osi±gniêto maksymaln± liczbê u¿ytkowników dla sprzedawcy";
 $wb["error_web_ssl_exist"] = "Dla tego adresu IP juz istnieje certyfikat SSL .";
 
 // Plugins
@@ -156,7 +156,7 @@ $wb["Gesamt"] = "Ca³y";
 $wb["Traffic in den letzten 4 Jahren"] = "Ruch w ci±gu ostatnich 4 lat";
 
 $wb["Backup von Tabelle"] = "Zapisz tabelê";
-$wb["Optimiere"] = "Optymizuj";
+$wb["Optimiere"] = "Optymalizuj";
 $wb["Reparatur"] = "Napraw";
 $wb["oder"] = "lub";
 $wb["Installation starten"] = "Instaluj";
@@ -196,8 +196,8 @@ $wb["Es sind nur folgende Zeichen erlaubt: a-z A-Z 0-9 - ."] = "Dozwolone s± zna
 $wb["Der Username muss aus min. 4, max 25 Buchstaben oder Zahlen bestehen, wobei er mit einem Buchstaben beginnen muss."] = "Nazwa u¿ytkownika musi zawieraæ od 4 do 26 znaków i musi siê zaczynaæ od litery.";
 $wb['Der Username muss aus min. 4, max 32 Buchstaben oder Zahlen bestehen, wobei er mit einem Buchstaben beginnen muss.'] = 'Nazwa u¿ytkownika musi zawieraæ od 4 do 32 znaków i musi siê zaczynaæ od litery.<br>';
 
-$wb["error_reseller_licence"] = "Twoja licencja na system ISPConfig nie zezwala na dodawanie resellerów.";
-$wb["error_reseller_licence_nodelete"] = "Tego resellera nie mo¿na sun±æ.";
+$wb["error_reseller_licence"] = "Twoja licencja na system ISPConfig nie zezwala na dodawanie sprzedawców.";
+$wb["error_reseller_licence_nodelete"] = "Tego sprzedawcy nie mo¿na usun±æ.";
 
 $wb["error_kunde_licence"] = "Twoja licencja na system ISPConfig nie zezwala na dodawanie klientów.";
 $wb["error_kunde_licence_nodelete"] = "Tego klienta nie mo¿na usun±æ.";
@@ -224,10 +224,10 @@ $wb["Frontpage Passwort"] = "Has³o do Frontpage";
 
 // NEW 1.1.12 ///////////////////////////////////
 
-$wb["Anbieternummer"] = 'Numer resellera';
+$wb["Anbieternummer"] = 'Numer sprzedawcy';
 $wb["Domain DNS"] = 'Domena w DNS';
 $wb["HTTPD Includes"] = 'HTTPD Includes';
-$wb["DNS-Manager"] = 'Manager DNS';
+$wb["DNS-Manager"] = 'Menad¿er DNS';
 $wb["DNS-Domains angelegt"] = 'Domeny utworzone w DNS';
 $wb["Kundennummer"] = 'Numer klienta';
 $wb["Anonymous FTP"] = 'Anonimowy FTP';
@@ -276,7 +276,7 @@ $wb["Rewrite Subject"] = 'Zmieñ temat';
 $wb["Betreff"] = 'Temat';
 $wb["SUCHE"] = 'SZUKAJ';
 $wb["IP"] = 'IP';
-$wb["Standard CGIs"] = 'Standard CGIs';
+$wb["Standard CGIs"] = 'Standardowe CGI';
 $wb["PHP Safe Mode"] = 'PHP Safe Mode';
 $wb["WAP"] = 'WAP';
 
@@ -286,7 +286,7 @@ $wb["Anzahl Datenbanken"] = 'Ilo¶æ baz';
 $wb["Fehler 400<br>(Ungültige Syntax)"] = "400 B³±d<br>(Z³a sk³adnia)";
 $wb["Fehler 401<br>(Autorisierung<br>erforderlich)"] = "401 B³±d<br>(Autoryzacja<br>wymagana)";
 $wb["Fehler 403<br>(Verboten)"] = "403 B³±d<br>(Pominiêto)";
-$wb["Fehler 404<br>(Datei nicht<br>gefunden)"] = "404 B³±d<br>(Pliku nie znaleziono)";
+$wb["Fehler 404<br>(Datei nicht<br>gefunden)"] = "404 B³±d<br>(Nie znaleziono pliku)";
 $wb["Fehler 405<br>(Methode nicht<br>erlaubt)"] = "405 B³±d<br>(Metoda nie<br>dozwolona)";
 $wb["Fehler 500<br>(Interner<br>Server-Fehler)"] = "500 B³±d<br>(Wewnêtrzny B³±d<br>serwera)";
 $wb["Fehler 503<br>(Service ist z.Zt.<br>überlastet)"] = "503 B³±d<br>(Us³uga<br>niedostêpna)";
@@ -294,8 +294,8 @@ $wb["Datenbanken"] = "Bazy";
 $wb["Datenbank"] = "Baza";
 $wb["Datenbankname"] = "Nazwa bazy";
 $wb["Datenbankuser"] = "U¿ytkownik bazy";
-$wb["weiter_link"] = "<br><br> <a href='../../isp_manager/frame_start.php?s=$s'>Nastêpny &gt;&gt;</a>";
-$wb["Slave Zones"] = 'Strefa zapasowa(DNS)';
+$wb["weiter_link"] = "<br><br> <a href='../../isp_manager/frame_start.php?s=$s'>Dalej &gt;&gt;</a>";
+$wb["Slave Zones"] = 'Strefa zapasowa (DNS)';
 $wb["txt_client_salutatory_email_desc"] = "<b>Email powitalny dla klient-a/ów</b>";
 $wb["txt_client_salutatory_email_sender_email"] = "Adres Email nadawcy";
 $wb["txt_client_salutatory_email_sender_name"] = "Imiê nadawcy";
@@ -305,21 +305,21 @@ $wb["txt_client_salutatory_email_message"] = "Wiadomo¶æ";
 $wb["txt_client_salutatory_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
 <tr>
     <td valign="top" colspan="2" class="normal">
-      <b>Do³±czam ponizsze dane do Twojej Wiadomo¶æi:</b></td></tr>
+      <b>Do³±czam poni¿sze dane do Twojej Wiadomo¶æi:</b></td></tr>
         <tr>
           <td class="normal">%%%USER%%%</td>
           <td class="normal">
-            Klient-a/ów - Nazwa Uzytkownika</td>
+            Klient-a/ów - Nazwa U¿ytkownika</td>
         </tr>
         <tr>
           <td class="normal">%%%PASSWORD%%%</td>
           <td class="normal">
-            Klient-a/ów - Haslo</td>
+            Klient-a/ów - Has³o</td>
         </tr>
         <tr>
           <td class="normal">%%%FIRST_NAME%%%</td>
           <td class="normal">
-            Klient-a/ów - Imie</td>
+            Klient-a/ów - Imiê</td>
         </tr>
         <tr>
           <td class="normal">%%%LAST_NAME%%%</td>
@@ -352,19 +352,19 @@ $wb["txt_standard_index"] = "Standardowy Index<br>&nbsp;&nbsp;strony";
 $wb["txt_standard_index_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
 <tr>
     <td valign="top" colspan="2" class="normal">
-      <b>Do³±czam ponizsze dane do Twojego tekstu:</b></td></tr>
+      <b>Do³±czam poni¿sze dane do Twojego tekstu:</b></td></tr>
         <tr>
           <td class="normal">%%%FQDN%%%</td>
           <td class="normal">
-            Strony WWW - Pelna nazwa domeny.</td>
+            Strony WWW - Pe³na nazwa domeny.</td>
         </tr>
     </table>';
 
-$wb["txt_user_standard_index"] = "Uzytkownika standardowy Index<br>&nbsp;&nbsp;strony";
+$wb["txt_user_standard_index"] = "Standardowy Index<br>&nbsp;&nbsp;strony u¿ytkownika";
 $wb["txt_user_standard_index_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
 <tr>
     <td valign="top" colspan="2" class="normal">
-      <b>Do³±czam ponizsze dane do Twojego tekstu:</b></td></tr>
+      <b>Do³±czam poni¿sze dane do Twojego tekstu:</b></td></tr>
         <tr>
           <td class="normal">%%%USER%%%</td>
           <td class="normal">
@@ -373,7 +373,7 @@ $wb["txt_user_standard_index_variables"] = '<table border="0" cellpadding="3" ce
         <tr>
           <td class="normal">%%%FQDN%%%</td>
           <td class="normal">
-            Strony WWW - Pelna nazwa domeny.</td>
+            Strony WWW - Pe³na nazwa domeny.</td>
         </tr>
         </table>';
 
@@ -395,18 +395,18 @@ $wb["gesperrt"] = "Zawieszona";
 
 $wb["txt_traffic_suspension_email_desc"] = "< b >Powiadomienie o zawieszeniu witryny (Limit transferu przekroczony)</ b >";
 $wb["txt_traffic_suspension_sender_email"] = "Email Nadawcy";
-$wb["txt_traffic_suspension_sender_name"] = "Imie Nadawcy";
+$wb["txt_traffic_suspension_sender_name"] = "Imiê Nadawcy";
 $wb["txt_traffic_suspension_email_bcc"] = "Odbiorca BCC";
 $wb["txt_traffic_suspension_email_subject"] = "Temat";
 $wb["txt_traffic_suspension_email_message"] = "Wiadomo¶æ";
-$wb["txt_traffic_suspension_email_variables"] = '< granica stolu ="0" cellpadding"= 3" cellspacing"= 0">
+$wb["txt_traffic_suspension_email_variables"] = '<table border ="0" cellpadding"= 3" cellspacing"= 0">
 <tr>
     <td valign="top" colspan="2" class="normal">
-      <b>Do³±czam ponizsze dane do Twojego tekstu:</b></td></tr>
+      <b>Do³±czam poni¿sze dane do Twojego tekstu:</b></td></tr>
         <tr>
           <td class="normal">%%%FIRST_NAME%%%</td>
           <td class="normal">
-            Klient-a/ów Imie</td>
+            Klient-a/ów Imiê</td>
         </tr>
         <tr>
           <td class="normal">%%%LAST_NAME%%%</td>
@@ -426,7 +426,7 @@ $wb["txt_traffic_suspension_email_variables"] = '< granica stolu ="0" cellpaddin
         <tr>
           <td class="normal" valign="top">%%%INCLUDED_TRAFFIC%%%</td>
           <td class="normal">
-            Ruch wytworzony przez strone WWW</td>
+            Ruch wygenerowany przez strone WWW</td>
         </tr>
         <tr>
           <td class="normal" valign="top">%%%TOTAL_TRAFFIC%%%</td>
@@ -444,11 +444,11 @@ $wb["txt_traffic_notification_email_message"] = "Wiadomo¶æ";
 $wb["txt_traffic_notification_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
 <tr>
     <td valign="top" colspan="2" class="normal">
-      <b>Do³±czam ponizsze dane do Twojego tekstu:</b></td></tr>
+      <b>Do³±czam poni¿sze dane do Twojego tekstu:</b></td></tr>
         <tr>
           <td class="normal">%%%FIRST_NAME%%%</td>
           <td class="normal">
-            Klient-a/ów - Imie</td>
+            Klient-a/ów - Imiê</td>
         </tr>
         <tr>
           <td class="normal">%%%LAST_NAME%%%</td>
@@ -463,34 +463,34 @@ $wb["txt_traffic_notification_email_variables"] = '<table border="0" cellpadding
         <tr>
           <td class="normal">%%%MONTH%%%</td>
           <td class="normal">
-            Miesieczny limit transferu</td>
+            Miesiêczny limit transferu</td>
         </tr>
         <tr>
           <td class="normal" valign="top">%%%INCLUDED_TRAFFIC%%%</td>
           <td class="normal">
-            Ruch wytworzony przez strone WWW</td>
+            Ruch wygenerowany przez stronê WWW</td>
         </tr>
         <tr>
           <td class="normal" valign="top">%%%TOTAL_TRAFFIC%%%</td>
           <td class="normal">
-            Calkowity transfer w miesiacu przekroczony</td>
+            Ca³kowity transfer w miesi±cu przekroczony</td>
         </tr>
         </table>';
 
 $wb["txt_res_traffic_suspension_email_desc"] = "<b>Powiadomienie sprzedawcy o zawieszeniu witryny (Limit transferu przekroczony)</b>";
 $wb["txt_res_traffic_suspension_sender_email"] = "Email Nadawcy";
-$wb["txt_res_traffic_suspension_sender_name"] = "Imie Nadawcy";
+$wb["txt_res_traffic_suspension_sender_name"] = "Imiê Nadawcy";
 $wb["txt_res_traffic_suspension_email_bcc"] = "Odbiorca BCC";
 $wb["txt_res_traffic_suspension_email_subject"] = "Temat";
 $wb["txt_res_traffic_suspension_email_message"] = "Wiadomo¶æ";
 $wb["txt_res_traffic_suspension_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
 <tr>
     <td valign="top" colspan="2" class="normal">
-      <b>Do³±czam ponizsze dane do Twojego tekstu:</b></td></tr>
+      <b>Do³±czam poni¿sze dane do Twojego tekstu:</b></td></tr>
         <tr>
           <td class="normal">%%%FIRST_NAME%%%</td>
           <td class="normal">
-            Sprzedawc-a/ów Imie</td>
+            Sprzedawc-a/ów Imiê</td>
         </tr>
         <tr>
           <td class="normal">%%%LAST_NAME%%%</td>
@@ -500,34 +500,34 @@ $wb["txt_res_traffic_suspension_email_variables"] = '<table border="0" cellpaddi
         <tr>
           <td class="normal">%%%MONTH%%%</td>
           <td class="normal">
-            Miesieczny limit transferu</td>
+            Miesiêczny limit transferu</td>
         </tr>
         <tr>
           <td class="normal" valign="top">%%%INCLUDED_TRAFFIC%%%</td>
           <td class="normal">
-            Ruch wytworzony przez sprzedawce</td>
+            Ruch wytworzony przez sprzedawcê</td>
         </tr>
         <tr>
           <td class="normal" valign="top">%%%TOTAL_TRAFFIC%%%</td>
           <td class="normal">
-            Calkowity transfer w miesiacu przekroczony</td>
+            Ca³kowity transfer w miesi±cu przekroczony</td>
         </tr>
         </table>';
 
 $wb["txt_res_traffic_notification_email_desc"] = "<b>Powiadomienie sprzedawcy o przekroczeniu limitu transferu</b>";
 $wb["txt_res_traffic_notification_sender_email"] = "Email Nadawcy";
-$wb["txt_res_traffic_notification_sender_name"] = "Imie Nadawcy";
+$wb["txt_res_traffic_notification_sender_name"] = "Imiê Nadawcy";
 $wb["txt_res_traffic_notification_email_bcc"] = "Odbiorca BCC";
 $wb["txt_res_traffic_notification_email_subject"] = "Temat";
 $wb["txt_res_traffic_notification_email_message"] = "Wiadomo¶æ";
 $wb["txt_res_traffic_notification_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
 <tr>
     <td valign="top" colspan="2" class="normal">
-      <b>Do³±czam ponizsze dane do Twojego tekstu:</b></td></tr>
+      <b>Do³±czam poni¿sze dane do Twojego tekstu:</b></td></tr>
         <tr>
           <td class="normal">%%%FIRST_NAME%%%</td>
           <td class="normal">
-            Sprzedawc-a/ów Imie</td>
+            Sprzedawc-a/ów Imiê</td>
         </tr>
         <tr>
           <td class="normal">%%%LAST_NAME%%%</td>
@@ -537,22 +537,22 @@ $wb["txt_res_traffic_notification_email_variables"] = '<table border="0" cellpad
         <tr>
           <td class="normal">%%%MONTH%%s%</td>
           <td class="normal">
-            Miesieczny limit transferu</td>
+            Miesiêczny limit transferu</td>
         </tr>
         <tr>
           <td class="normal" valign="top">%%%INCLUDED_TRAFFIC%%%</td>
           <td class="normal">
-            Ruch wytworzony przez sprzedawce</td>
+            Ruch wytworzony przez sprzedawcê</td>
         </tr>
         <tr>
           <td class="normal" valign="top">%%%TOTAL_TRAFFIC%%%</td>
           <td class="normal">
-            Calkowity transfer w miesiacu przekroczony</td>
+            Ca³kowity transfer w miesi±cu przekroczony</td>
         </tr>
         </table>';
 
 //////////////// Server Status ////////////////
-$wb["Arbeitsspeicher"]          = "Pamiêæ g³ówna";
+$wb["Arbeitsspeicher"]          = "Pamiêæ operacyjna";
 $wb["CPU"]          = "CPU";
 $wb["Dienste"]      = "Serwisy";
 $wb["Server Online seit"]          = "Serwer dzia³a od";
@@ -563,14 +563,13 @@ $wb["System Load 15 Minuten"] = "Obci±¿enie systemu w okresie 15-minutowym";
 //////////////// Server Status Ende //////////
 
 $wb["Catalog_Name"] = "Nazwa";
-$wb["Spam Whitelist"] = 'Spam Whitelist';
-$wb["Spam Blacklist"] = 'Spam Blacklist';
-$wb["spam_whitelist_txt"] = '<b>Hint:</b> One entry per line. Valid entries are, for example, friend@somewhere.com, *@isp.com, or *.domain.net.';
-$wb["spam_blacklist_txt"] = '<b>Hint:</b> One entry per line. Valid entries are, for example, friend@somewhere.com, *@isp.com, or *.domain.net.';
-$wb["Webalizer Stats"] = 'Webalizer<br>&nbsp;Statistics';
-$wb["Use Uribl"] = 'Use <a href="http://www.uribl.com/about.shtml" target="_blank" style="font-family:Arial,Verdana">URIBL</a>';
-$wb["Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 -"] = "Only the following signs are allowed: a-z A-Z 0-9 -<br>";
-$wb["Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 - ."] = "Only the following signs are allowed: a-z A-Z 0-9 - .<br>";
-$wb["txt_system_currently_updated_no_recycle_bin"] = "The system is currently updating the configuration files.";
+$wb["Spam Whitelist"] = 'Bia³a lista spamu';
+$wb["Spam Blacklist"] = 'Czarna lista spamu';
+$wb["spam_whitelist_txt"] = '<b>Podpowied¼:</b> Jeden wpis na jedn± liniê. Takimi wpisami s± np. przyjaciel@gdzies.pl, *@isp.pl, or *.domena.net.';
+$wb["spam_blacklist_txt"] = '<b>Podpowied¼:</b> Jeden wpis na jedn± liniê. Takimi wpisami s± np. przyjaciel@gdzies.pl, *@isp.pl, or *.domena.net.';
+$wb["Webalizer Stats"] = 'Statystyki<br>&nbsp;webalizer';
+$wb["Use Uribl"] = 'U¿yj <a href="http://www.uribl.com/about.shtml" target="_blank" style="font-family:Arial,Verdana">URIBL</a>';
+$wb["Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 -"] = "Tylko nastêpuj±ce znaki s± dozwolone: a-z A-Z 0-9 -<br>";
+$wb["Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 - ."] = "Tylko nastêpuj±ce znaki s± dozwolone: a-z A-Z 0-9 - .<br>";
 
 ?>

@@ -4,16 +4,16 @@
 * Version 1.0
 *
 * Tlumaczenie wersji polskiej
-* Patryk Marek --- http://kbn.pl --- info@kbn.pl
-* Wersja 1.0.2
-* Ostatnie zmiany 2005.09.12
+* Leszek Taczkowski
+* Wersja 1.0.0
+* Ostatnie zmiany 19.12.2006
 *********************************/
 
-$wb["txt_login_desc"] = "By zmienic konfiguracjê E-mail - proszê siê zalogowaæ.";
+$wb["txt_login_desc"] = "Aby zmieniæ konfiguracjê E-mail - proszê siê zalogowaæ.";
 $wb["txt_error"] = "B³±d";
 $wb["txt_email_username"] = "Nazwa u¿ytkownika Email";
 $wb["txt_password"] = "Has³o";
-$wb["txt_login"] = "Login";
+$wb["txt_login"] = "Zaloguj";
 $wb["txt_autoresponder"] = "Autoresponder";
 $wb["txt_nachricht"] = "Wiadomo¶æ";
 $wb["txt_speichern"] = "Zapisz";
@@ -23,7 +23,7 @@ $wb["txt_user_und_email"] = "U¿ytkownik &amp; Email";
 $wb["txt_spamfilter"] = "Filtr Spamu";
 $wb["txt_logout"] = "Wyloguj";
 $wb["txt_mailscan"] = "Skanowanie Poczty";
-$wb["txt_antivirus"] = "Antivirus";
+$wb["txt_antivirus"] = "Antywirus";
 $wb["txt_spam_strategie"] = "Strategia Spamu";
 $wb["txt_spam_hits"] = "Trafienie Spamu";
 $wb["txt_rewrite_subject"] = "Przepisaæ temat";
@@ -40,16 +40,16 @@ $wb["txt_yes"] = "Tak";
 $wb["txt_no"] = "Nie";
 $wb["txt_unlimited"] = "nielimitowana";
 $wb["txt_welcome"] = "Witamy...";
-$wb["txt_error_spam_hits_format"] = "Wart¶æ <i>".$wb["txt_spam_hits"]."</i> musi mieæ okre¶lony format.";
-$wb["txt_accept"] = "akceptuje";
+$wb["txt_error_spam_hits_format"] = "Warto¶æ <i>".$wb["txt_spam_hits"]."</i> musi mieæ okre¶lony format.";
+$wb["txt_accept"] = "akceptujê";
 $wb["txt_discard"] = "odrzucam";
 $wb["txt_language"] = "Jêzyk";
 $wb["txt_no_mailuser_login"] = "Logowanie zosta³o wy³±czone dla tej strony.";
 $wb["txt_forwarder"] = "Forwarder";
-$wb["txt_forwarder_desc"] = "<b>Hint:</b> One email per line.";
-$wb["txt_spam_whitelist"] = 'Spam Whitelist';
-$wb["txt_spam_blacklist"] = 'Spam Blacklist';
-$wb["txt_hint_spam_whitelist"] = '<b>Hint:</b> One entry per line. Valid entries are, for example, friend@somewhere.com, *@isp.com, or *.domain.net.';
-$wb["txt_hint_spam_blacklist"] = '<b>Hint:</b> One entry per line. Valid entries are, for example, friend@somewhere.com, *@isp.com, or *.domain.net.';
-$wb["txt_uribl"] = 'Use <a href="http://www.uribl.com/about.shtml" target="_blank">URIBL</a>'; 
+$wb["txt_forwarder_desc"] = "<b>Podpowied¼:</b> Jeden adres email na jedn± liniê.";
+$wb["txt_spam_whitelist"] = 'Bia³a lista spamu';
+$wb["txt_spam_blacklist"] = 'Czarna lista spamu';
+$wb["txt_hint_spam_whitelist"] = '<b>Podpowied¼:</b> Jeden wpis na jedn± liniê. Takimi wpisami s± np. przyjaciel@gdzies.pl, *@isp.pl, or *.domena.net.';
+$wb["txt_hint_spam_blacklist"] = '<b>Podpowied¼:</b> Jeden wpis na jedn± liniê. Takimi wpisami s± np. przyjaciel@gdzies.pl, *@isp.pl, or *.domena.net.';
+$wb["txt_uribl"] = 'U¿yj <a href="http://www.uribl.com/about.shtml" target="_blank">URIBL</a>'; 
 ?>
