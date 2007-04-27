@@ -40,7 +40,7 @@ $wb["Userid von"]    = "Userid kezdete";
 $wb["Groupid von"]    = "Groupid kezdete";
 
 $wb["Backup von Tabelle"] = "Backup tábla";
-$wb["Optimiere"] = "Optimizálás";
+$wb["Optimiere"] = "Optimalizálás";
 $wb["Reparatur"] = "Javítás";
 $wb["oder"] = "vagy";
 $wb["Installation starten"] = "Telepít";
