@@ -831,7 +831,7 @@ fi  ## install_art == install
     log "g++ found: `which g++`"
     echo OK
   fi
-  
+
   echo
   echo "########## xml2-dev ##########"
   echo
@@ -1166,6 +1166,7 @@ fi  ## install_art == install
   echo $lang
   echo $install_art
   echo $server_ispconfigprotocol
+  echo $dist_mailman
   } > mysql_config
   httpd -V > httpd
   awk -F"\"" '$1==" -D HTTPD_ROOT="{print $2}'  httpd > httpd2

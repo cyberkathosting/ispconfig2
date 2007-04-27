@@ -337,7 +337,7 @@ $sql_file = "db_ispconfig.sql";
 $pfad = "/home/admispconfig";
 
 $mysql = rf("mysql_config");
-list($db_server,$db_user,$db_password,$new_db,$ip,$server_host,$server_domain,$procmail,$lang,$install_art,$server_ispconfigprotocol) = explode("\n",$mysql);
+list($db_server,$db_user,$db_password,$new_db,$ip,$server_host,$server_domain,$procmail,$lang,$install_art,$server_ispconfigprotocol,$dist_mailman) = explode("\n",$mysql);
 $server_ispconfigprotocol = strtolower(trim($server_ispconfigprotocol));
 
 $conf = rf("/root/ispconfig/dist.info");
@@ -1250,7 +1250,7 @@ caselog("chown admispconfig:admispconfig $conf_datei", $FILE, __LINE__);
 $mailman_vhost_entry = "";
 
 if($dist_mailman){
-	$mailman_vhost_entry = "### Mailman Section ###
+        $mailman_vhost_entry = "### Mailman Section ###
 ScriptAlias /mailman/ /usr/lib/cgi-bin/mailman/
 ScriptAlias /cgi-bin/mailman/ /usr/lib/cgi-bin/mailman/
 Alias /images/mailman/ /usr/share/images/mailman/
@@ -1430,69 +1430,69 @@ if($dist_mail == "postfix"){
     wf($pf_main_cf, str_replace("virtual_alias_maps", "#virtual_alias_maps", rf($pf_main_cf)));
     ilog("commented out virtual_alias_maps entry in $pf_main_cf");
   }
-	if($dist_mailman) {
-		$dist_mail_transport_table = "/etc/postfix/transport";
-		$pf_master_cf = "/etc/postfix/master.cf";
-		$dist_relay_hostname_table = "/etc/postfix/relay-host-names";
+        if($dist_mailman) {
+                $dist_mail_transport_table = "/etc/postfix/transport";
+                $pf_master_cf = "/etc/postfix/master.cf";
+                $dist_relay_hostname_table = "/etc/postfix/relay-host-names";
 
-		//// Transport Maps ////
-		if(strstr($postfix_main_cf, "transport_maps = hash:$dist_mail_transport_table")){
-			ilog("transport table entry already in $pf_main_cf");
-		} else {
-			wf($pf_main_cf, str_replace("transport_maps", "#transport_maps", rf($pf_main_cf)));
-			af($pf_main_cf, "\ntransport_maps = hash:$dist_mail_transport_table\n");
-			ilog("created transport table entry in $pf_main_cf");
-			if(!is_file($dist_mail_transport_table)) phpcaselog(touch($dist_mail_transport_table), "create ".$dist_mail_transport_table, $FILE, __LINE__);
-			caselog("postmap $dist_mail_transport_table", $FILE, __LINE__);
-		}
+                //// Transport Maps ////
+                if(strstr($postfix_main_cf, "transport_maps = hash:$dist_mail_transport_table")){
+                        ilog("transport table entry already in $pf_main_cf");
+                } else {
+                        wf($pf_main_cf, str_replace("transport_maps", "#transport_maps", rf($pf_main_cf)));
+                        af($pf_main_cf, "\ntransport_maps = hash:$dist_mail_transport_table\n");
+                        ilog("created transport table entry in $pf_main_cf");
+                        if(!is_file($dist_mail_transport_table)) phpcaselog(touch($dist_mail_transport_table), "create ".$dist_mail_transport_table, $FILE, __LINE__);
+                        caselog("postmap $dist_mail_transport_table", $FILE, __LINE__);
+                }
 
-		//// Relay Hostnames Maps ////
-		if(strstr($postfix_main_cf, "relay_domains = hash:$dist_relay_hostname_table")){
-			ilog("Relay Hostnames entry already in $pf_main_cf");
-		} else {
-			wf($pf_main_cf, str_replace("relay_domains", "#relay_domains", rf($pf_main_cf)));
-			af($pf_main_cf, "\nrelay_domains = hash:$dist_relay_hostname_table\n");
-			ilog("created Relay Hostnames entry in $pf_main_cf");
-			if(!is_file($dist_relay_hostname_table)) phpcaselog(touch($dist_relay_hostname_table), "create ".$dist_relay_hostname_table, $FILE, __LINE__);
-			caselog("postmap $dist_relay_hostname_table", $FILE, __LINE__);
-		}
-		
-		//// Mailman destination recipient limit ////
-		if(strstr($postfix_main_cf, "mailman_destination_recipient_limit = 1")){
-			ilog("Mailman destination recipient limit entry already in $pf_main_cf");
-		} else {
-			wf($pf_main_cf, str_replace("mailman_destination_recipient_limit", "#mailman_destination_recipient_limit", rf($pf_main_cf)));
-			af($pf_main_cf, "\nmailman_destination_recipient_limit = 1\n");
-			ilog("Mailman destination recipient limit entry in $pf_main_cf");
-		}
-		
-		//// Master.cf ////
-		$pf_master_cf = "/etc/postfix/master.cf";
-		caselog("cp -f $pf_master_cf $pf_master_cf.orig", $FILE, __LINE__);
-		$postfix_master_cf = no_comments($pf_master_cf);
-		$mailman_master_cf_line = 'mailman   unix  -       n       n       -       -       pipe flags=FR user=list argv=/var/lib/mailman/bin/postfix-to-mailman.py ${nexthop} ${user}';
-		
-		if(strstr($postfix_master_cf, $mailman_master_cf_line)){
-			ilog("transport table entry already in $pf_master_cf");
-		} else {
-			wf($pf_master_cf, str_replace("mailman", "#mailman", rf($pf_master_cf)));
-			af($pf_master_cf, "\n$mailman_master_cf_line\n");
-			ilog("created mailman entry in $pf_master_cf");
-		}
-		
-		//// mm_cfg.py ////
-		$mm_cfg = "/etc/mailman/mm_cfg.py";
-		caselog("cp -f $mm_cfg $mm_cfg.orig", $FILE, __LINE__);
-		$mailman_mm_cfg = no_comments($mm_cfg);
-		
-		if(strstr($mailman_mm_cfg, "MTA=None")){
-			ilog("MTA=None entry already in $mm_cfg");
-		} else {
-			wf($mm_cfg, str_replace("MTA", "#MTA", rf($mm_cfg)));
-			af($mm_cfg, "\nMTA=None\n");
-			ilog("created MTA=None entry in $mm_cfg");
-		}
-	}
+                //// Relay Hostnames Maps ////
+                if(strstr($postfix_main_cf, "relay_domains = hash:$dist_relay_hostname_table")){
+                        ilog("Relay Hostnames entry already in $pf_main_cf");
+                } else {
+                        wf($pf_main_cf, str_replace("relay_domains", "#relay_domains", rf($pf_main_cf)));
+                        af($pf_main_cf, "\nrelay_domains = hash:$dist_relay_hostname_table\n");
+                        ilog("created Relay Hostnames entry in $pf_main_cf");
+                        if(!is_file($dist_relay_hostname_table)) phpcaselog(touch($dist_relay_hostname_table), "create ".$dist_relay_hostname_table, $FILE, __LINE__);
+                        caselog("postmap $dist_relay_hostname_table", $FILE, __LINE__);
+                }
+
+                //// Mailman destination recipient limit ////
+                if(strstr($postfix_main_cf, "mailman_destination_recipient_limit = 1")){
+                        ilog("Mailman destination recipient limit entry already in $pf_main_cf");
+                } else {
+                        wf($pf_main_cf, str_replace("mailman_destination_recipient_limit", "#mailman_destination_recipient_limit", rf($pf_main_cf)));
+                        af($pf_main_cf, "\nmailman_destination_recipient_limit = 1\n");
+                        ilog("Mailman destination recipient limit entry in $pf_main_cf");
+                }
+
+                //// Master.cf ////
+                $pf_master_cf = "/etc/postfix/master.cf";
+                caselog("cp -f $pf_master_cf $pf_master_cf.orig", $FILE, __LINE__);
+                $postfix_master_cf = no_comments($pf_master_cf);
+                $mailman_master_cf_line = 'mailman   unix  -       n       n       -       -       pipe flags=FR user=list argv=/var/lib/mailman/bin/postfix-to-mailman.py ${nexthop} ${user}';
+
+                if(strstr($postfix_master_cf, $mailman_master_cf_line)){
+                        ilog("transport table entry already in $pf_master_cf");
+                } else {
+                        wf($pf_master_cf, str_replace("mailman", "#mailman", rf($pf_master_cf)));
+                        af($pf_master_cf, "\n$mailman_master_cf_line\n");
+                        ilog("created mailman entry in $pf_master_cf");
+                }
+
+                //// mm_cfg.py ////
+                $mm_cfg = "/etc/mailman/mm_cfg.py";
+                caselog("cp -f $mm_cfg $mm_cfg.orig", $FILE, __LINE__);
+                $mailman_mm_cfg = no_comments($mm_cfg);
+
+                if(strstr($mailman_mm_cfg, "MTA=None")){
+                        ilog("MTA=None entry already in $mm_cfg");
+                } else {
+                        wf($mm_cfg, str_replace("MTA", "#MTA", rf($mm_cfg)));
+                        af($mm_cfg, "\nMTA=None\n");
+                        ilog("created MTA=None entry in $mm_cfg");
+                }
+        }
 }
 /////////////// POSTFIX ENDE //////////////////
 
