@@ -624,7 +624,7 @@ if(!is_group("admispconfig")) phpcaselog(addgroup("admispconfig", $admispconfig_
 if(!is_user("admispconfig")) phpcaselog(adduser("admispconfig", $admispconfig_uid, $admispconfig_gid, "Administrator ISPConfig", "/home/admispconfig", "/bin/bash", '!'), 'create user admispconfig', $FILE, __LINE__);
 
 if($dist_mailman){
-  if(is_group("list")) phpcaselog(add_user_to_group("list", "admispconfig")), 'added admispconfig to group list', $FILE, __LINE__);
+  if(is_group("list")) phpcaselog(add_user_to_group("list", "admispconfig"), 'added admispconfig to group list', $FILE, __LINE__);
 }
 
 /////////// Symlink von /var/spool/mail auf /var/mail ////////////
