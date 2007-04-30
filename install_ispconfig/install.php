@@ -475,6 +475,31 @@ function addgroup($group, $gid, $members = ''){
   }
 }
 
+function add_user_to_group($group, $user = 'admispconfig'){
+  global $dist_group, $dist_shadow, $dist_group;
+  $group_file = rf($dist_group);
+  $group_file_lines = explode("\n", $group_file);
+  foreach($group_file_lines as $group_file_line){
+    list($group_name,$group_x,$group_id,$group_users) = explode(":",$group_file_line);
+    if($group_name == $group){
+      $group_users = explode(",", str_replace(" ", "", $group_users));
+      if(!in_array($user, $group_users)){
+        $group_users[] = $user;
+      }
+      $group_users = implode(",", $group_users);
+      if(substr($group_users,0,1) == ",") $group_users = substr($group_users,1);
+      $group_file_line = $group_name.":".$group_x.":".$group_id.":".$group_users;
+    }
+    $new_group_file[] = $group_file_line;
+  }
+  $new_group_file = implode("\n", $new_group_file);
+  wf($dist_group, $new_group_file);
+  remove_blank_lines($dist_group);
+  if($dist_shadow != "/etc/shadow"){
+    caselog("pwd_mkdb ".$dist_shadow." &> /dev/null", $FILE, __LINE__);
+  }
+}
+
 function find_uid_gid($min, $max){
   global $dist_passwd, $dist_group;
   if($min < $max && $min >= 0 && $max >= 0 && $min <= 65536 && $max <= 65536 && is_int($min) && is_int($max)){
