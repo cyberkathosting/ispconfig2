@@ -1059,7 +1059,7 @@ CREATE TABLE `isp_isp_web_package` (
   `arg8` varchar(255) default NULL,
   `pending` int(1) default NULL,
   `result` varchar(255) default NULL,
-  PRIMARY KEY  (`doc_id`),
+  PRIMARY KEY  (`doc_id`)
 ) TYPE=MyISAM;
 
 --
