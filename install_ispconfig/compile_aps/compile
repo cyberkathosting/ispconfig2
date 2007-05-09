@@ -73,6 +73,12 @@ else
   WITH_ZLIB_DIR=""
 fi
 
+if [ "$install_art" == "upgrade" ]; then
+  SSL_CERTS="--with-key=/root/ispconfig/httpd/conf/ssl.key/server.key --with-crt=/root/ispconfig/httpd/conf/ssl.crt/server.crt"
+else
+  SSL_CERTS=""
+fi
+
 error ()
 {
   echo "ERROR: $1"
@@ -117,7 +123,7 @@ make || error "Could not make OpenSSL"
 make install || error "Could not install OpenSSL"
 
 cd ../${MOD_SSL}
-./configure --with-apache=../${APACHE} --with-ssl=${INSTALL_ROOT}/openssl --prefix=${INSTALL_ROOT}/httpd --enable-module=so || error "Could not configure Apache"
+./configure --with-apache=../${APACHE} --with-ssl=${INSTALL_ROOT}/openssl --prefix=${INSTALL_ROOT}/httpd --enable-module=so ${SSL_CERTS} || error "Could not configure Apache"
 cd ../${APACHE}
 make || error "Could not make Apache"
 make certificate TYPE=custom  || error "Could not make certificate for Apache"
