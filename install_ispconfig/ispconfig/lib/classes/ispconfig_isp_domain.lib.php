@@ -251,7 +251,7 @@ global $go_api, $go_info,$s;
       }
       unset($tmp_webs);
     }
-    
+
     $go_api->db->query("UPDATE isp_isp_domain SET status = 'u' where status != 'n' and doc_id = '$doc_id'");
     //$domain = $go_api->db->queryOneRecord("select * from isp_isp_domain where doc_id = '$doc_id'");
     // IP Adresse der Domain vom Web holen
@@ -427,6 +427,7 @@ function _insert_dns($doc_id,$doctype_id,$domain,$web) {
     $dns_doctype_id = 1016;
     $a_record_doctype_id = 1018;
     $mx_record_doctype_id = 1020;
+    $spf_record_doctype_id = 1031;
 
     // erzeuge DNS Records für Web
     $dns_soa = trim($domain["domain_domain"]);
@@ -526,41 +527,77 @@ function _insert_dns($doc_id,$doctype_id,$domain,$web) {
         } else {
           $mailserver = trim($server["server_host"]).'.'.trim($server["server_domain"]);
         }
-		
-		// Check, ob es den MX nicht schon gibt
-		$sql_test = "SELECT * FROM dns_dep, dns_mx WHERE dns_dep.child_doc_id = dns_mx.doc_id AND dns_dep.child_doctype_id = dns_mx.doctype_id
-		and dns_dep.parent_doc_id = $dns_record[doc_id] and host = '$host' and mailserver = '$mailserver'";
-		
-		if(!$go_api->db->queryOneRecord($sql_test)) {
-        	//$ip_adresse = $domain["domain_ip"];
-        	$sql = "INSERT INTO dns_mx (host,prioritaet,mailserver) VALUES ('$host','10','$mailserver')";
-        	$go_api->db->query($sql);
-        	$a_doc_id = $go_api->db->insertID();
 
-        	$userid = $go_info["user"]["userid"];
-        	$groupid = $web["groupid"];
-        	$type = 'a';
-        	$parent = '';
-        	$status = 1;
-        	$title = '';
+                // Check, ob es den MX nicht schon gibt
+                $sql_test = "SELECT * FROM dns_dep, dns_mx WHERE dns_dep.child_doc_id = dns_mx.doc_id AND dns_dep.child_doctype_id = dns_mx.doctype_id and dns_dep.parent_doc_id = $dns_record[doc_id] and host = '$host' and mailserver = '$mailserver'";
 
-        	$sql = "INSERT INTO dns_nodes (userid,groupid,parent,type,doctype_id,status,doc_id,title) VALUES ('$userid','$groupid','$parent','$type','$mx_record_doctype_id','$status','$a_doc_id','$title')";
-        	$go_api->db->query($sql);
-        	$a_tree_id = $go_api->db->insertID();
-        	$status = 1;
+                $exist_spf_record = $go_api->db->queryOneRecord("SELECT * from dns_dep, dns_spf where dns_dep.child_doc_id = dns_spf.doc_id and dns_dep.child_doctype_id = $spf_record_doctype_id and dns_dep.parent_doc_id = $dns_record[doc_id] and dns_spf.host = ''");
 
-        	$parent_doctype_id = $dns_doctype_id;
-        	$child_doctype_id = $mx_record_doctype_id;
+                if(!$go_api->db->queryOneRecord($sql_test)) {
+                //$ip_adresse = $domain["domain_ip"];
+                $sql = "INSERT INTO dns_mx (host,prioritaet,mailserver) VALUES ('$host','10','$mailserver')";
+                $go_api->db->query($sql);
+                $a_doc_id = $go_api->db->insertID();
 
-        	$parent_doc_id = $dns_record["doc_id"];
-        	$child_doc_id = $a_doc_id;
+                $userid = $go_info["user"]["userid"];
+                $groupid = $web["groupid"];
+                $type = 'a';
+                $parent = '';
+                $status = 1;
+                $title = '';
 
-        	$parent_tree_id = $dns_record["tree_id"];
-        	$child_tree_id = $a_tree_id;
+                $sql = "INSERT INTO dns_nodes (userid,groupid,parent,type,doctype_id,status,doc_id,title) VALUES ('$userid','$groupid','$parent','$type','$mx_record_doctype_id','$status','$a_doc_id','$title')";
+                $go_api->db->query($sql);
+                $a_tree_id = $go_api->db->insertID();
+                $status = 1;
 
-        	$sql = "INSERT INTO dns_dep (userid,parent_doc_id,parent_doctype_id,parent_tree_id,child_doc_id,child_doctype_id,child_tree_id,status) VALUES ('$userid','$parent_doc_id','$parent_doctype_id','$parent_tree_id','$child_doc_id','$child_doctype_id','$child_tree_id','$status')";
-        	$go_api->db->query($sql);
-		}
+                $parent_doctype_id = $dns_doctype_id;
+                $child_doctype_id = $mx_record_doctype_id;
+
+                $parent_doc_id = $dns_record["doc_id"];
+                $child_doc_id = $a_doc_id;
+
+                $parent_tree_id = $dns_record["tree_id"];
+                $child_tree_id = $a_tree_id;
+
+                $sql = "INSERT INTO dns_dep (userid,parent_doc_id,parent_doctype_id,parent_tree_id,child_doc_id,child_doctype_id,child_tree_id,status) VALUES ('$userid','$parent_doc_id','$parent_doctype_id','$parent_tree_id','$child_doc_id','$child_doctype_id','$child_tree_id','$status')";
+                $go_api->db->query($sql);
+                }
+
+                //////////////////////
+                // Create SPF Record
+                //////////////////////
+                $exist_spf_record = $go_api->db->queryOneRecord("SELECT * from dns_dep, dns_spf where dns_dep.child_doc_id = dns_spf.doc_id and dns_dep.child_doctype_id = $spf_record_doctype_id and dns_dep.parent_doc_id = $dns_record[doc_id] and dns_spf.host = ''");
+
+                if(!$exist_spf_record){
+                  $sql = "INSERT INTO dns_spf (host, a, mx, ptr, a_break, mx_break, ip4_break, include_break, all_) VALUES ('$host', '1', '1', '1', '', '', '', '', '1')";
+                  $go_api->db->query($sql);
+                  $spf_doc_id = $go_api->db->insertID();
+
+                  $userid = $go_info["user"]["userid"];
+                  $groupid = $web["groupid"];
+                  $type = 'a';
+                  $parent = '';
+                  $status = 1;
+                  $title = '';
+
+                  $sql = "INSERT INTO dns_nodes (userid,groupid,parent,type,doctype_id,status,doc_id,title) VALUES ('1','$groupid','$parent','$type','$spf_record_doctype_id','$status','$spf_doc_id','$title')";
+                  $go_api->db->query($sql);
+                  $spf_tree_id = $go_api->db->insertID();
+                  $status = 1;
+
+                  $parent_doctype_id = $dns_doctype_id;
+                  $child_doctype_id = $spf_record_doctype_id;
+
+                  $parent_doc_id = $dns_record["doc_id"];
+                  $child_doc_id = $spf_doc_id;
+
+                  $parent_tree_id = $dns_record["tree_id"];
+                  $child_tree_id = $spf_tree_id;
+
+                  $sql = "INSERT INTO dns_dep (userid,parent_doc_id,parent_doctype_id,parent_tree_id,child_doc_id,child_doctype_id,child_tree_id,status) VALUES ('$userid','$parent_doc_id','$parent_doctype_id','$parent_tree_id','$child_doc_id','$child_doctype_id','$child_tree_id','$status')";
+                  $go_api->db->query($sql);
+                }
     }
 
         $go_api->db->query("UPDATE dns_isp_dns SET status = 'u' where status != 'n' and doc_id = '".$dns_record["doc_id"]."'");
