@@ -827,6 +827,10 @@ fi  ## install_art == install
     # Save the SSL certificates so we don't have to create them again
     cp -pfr /root/ispconfig/httpd/conf/ssl.* ./
 
+    # Save custom templates
+    mkdir -p /root/ispconfig/isp/conf/customized_templates &> /dev/null
+    cp -pfr /root/ispconfig/isp/conf/customized_templates ./ &> /dev/null
+
     tar -pczf root_ispconfig.tar.gz /root/ispconfig/ &> /dev/null
     chmod 600 root_ispconfig.tar.gz &> /dev/null
     caselog "created backup of directory /root/ispconfig/" "could not create backup of directory /root/ispconfig/"
@@ -841,7 +845,7 @@ fi  ## install_art == install
   cd compile_aps/
   chmod 700 compile
   if [ "$install_art" == "upgrade" ]; then
-    mkdir -p /root/ispconfig/httpd/conf
+    mkdir -p /root/ispconfig/httpd/conf &> /dev/null
     cp -pfr ../ssl.* /root/ispconfig/httpd/conf/
   fi
   ./compile || (cd `pwd`/../.. && rm -fr install_ispconfig && exit 1)
@@ -1095,6 +1099,13 @@ fi  ## install_art == install
   /root/ispconfig/php/php -q ./install.php
   . /root/ispconfig/dist.info
   rm -f mysql_config
+
+  # Restore custom templates
+  mkdir -p /root/ispconfig/isp/conf/customized_templates &> /dev/null
+  if [ "$install_art" == "upgrade" ]; then
+    cp -pf customized_templates/* /root/ispconfig/isp/conf/customized_templates/ &> /dev/null
+    rm -fr customized_templates/ &> /dev/null
+  fi
 
   ########## sysconfig schreiben #############
   uname -a > /home/admispconfig/ispconfig/sysconf.txt
