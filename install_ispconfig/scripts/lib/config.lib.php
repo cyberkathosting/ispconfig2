@@ -775,6 +775,7 @@ function user_update($doc_id, $doctype_id) {
   $userid = $mod->system->server_conf["userid_von"] + $user["doc_id"];
   $user_name = $user["user_name"];
   $user_username = $user["user_username"];
+  $all_user_groups = $mod->system->get_user_groups($user_username);
   $user_speicher = intval($user["user_speicher"]);
   if($user["user_shell"] && $web["web_shell"]){
     $shell = "/bin/bash"; //Shell u. FTP
@@ -868,7 +869,7 @@ function user_update($doc_id, $doctype_id) {
     //exec("usermod -G web".$web_doc_id." ".$user_username."");
     // alten admin herausfinden
     $old_admin_uid = fileowner($web_path);
-    $mod->system->usermod($user_username, "web".$web_doc_id);
+    $mod->system->usermod($user_username, "web".$web_doc_id.($all_user_groups != "" ? ",".$all_user_groups : ""));
     exec("chown $user_username $web_path &> /dev/null");
     //exec("chown $user_username $web_path/cgi-bin &> /dev/null");
     exec("chown -R --from=$old_admin_uid $user_username $web_path/cgi-bin &> /dev/null");
@@ -882,7 +883,7 @@ function user_update($doc_id, $doctype_id) {
     exec("chown -R $user_username $web_path/log/* &> /dev/null");
   } else {
     //exec("usermod -G users ".$user_username."");
-    $mod->system->usermod($user_username, "users");
+    $mod->system->usermod($user_username, "users".($all_user_groups != "" ? ",".$all_user_groups : ""));
   }
 
   // Diskquota setzen
@@ -1391,7 +1392,7 @@ AddHandler cgi-script .pl";
                 if($go_info["server"]["apache2_php"] == 'addtype' or $go_info["server"]["apache2_php"] == 'both' or $go_info["server"]["apache2_php"] == 'suphp') {
                         $php .= "AddType application/x-httpd-php .php .php3 .php4 .php5\n";
                 }
-				if ($go_info["server"]["apache2_php"] == 'addhandler') {
+                                if ($go_info["server"]["apache2_php"] == 'addhandler') {
                         $php .= "AddHandler application/x-httpd-php .php .php3 .php4 .php5\n";
                 }
                 if($go_info["server"]["apache2_php"] == 'filter' or $go_info["server"]["apache2_php"] == 'both') {

@@ -429,6 +429,28 @@ function root_group(){
   return false;
 }
 
+function get_user_groups($username){
+  global $mod;
+  $user_groups = array();
+  $group_datei = $this->server_conf["group_datei"];
+  $groups = $mod->file->no_comments($group_datei);
+  $lines = explode("\n", $groups);
+  if(is_array($lines)){
+    foreach($lines as $line){
+      if(trim($line) != ""){
+        list($f1, $f2, $f3, $f4) = explode(":", $line);
+        if(intval($f3) < intval($this->server_conf["groupid_von"]) && trim($f1) != 'users'){
+          $tmp_group_users = explode(',', str_replace(' ', '', $f4));
+          if(in_array($username, $tmp_group_users) && trim($f1) != '') $user_groups[] = $f1;
+          unset($tmp_group_users);
+        }
+      }
+    }
+  }
+  if(!empty($user_groups)) return implode(',', $user_groups);
+  return '';
+}
+
 function getpasswd($user){
   global $mod;
   if($this->is_user($user)){
