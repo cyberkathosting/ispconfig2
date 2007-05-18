@@ -1033,6 +1033,7 @@ CREATE TABLE `isp_isp_web` (
   `web_mailquota` varchar(10) default NULL,
   `web_cgi_mod_perl` varchar(255) default NULL,
   `web_stats` varchar(255) default 'none',
+  `webalizer_stats` char(1) default NULL,
   PRIMARY KEY  (`doc_id`),
   KEY `doctype_id` (`doctype_id`)
 ) ENGINE=MyISAM;
