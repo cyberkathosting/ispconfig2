@@ -944,7 +944,7 @@ CREATE TABLE `isp_isp_user` (
   `user_lang` char(2) NOT NULL default '',
   `user_emailweiterleitung_no_scan` char(1) default NULL,
   `user_ftp` char(1) default NULL,
-  `user_emaildomain` text NOT NULL,
+  `user_emaildomain` text,
   `spam_whitelist` text,
   `spam_blacklist` text,
   `use_uribl` char(1) default '0',
