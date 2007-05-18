@@ -10,8 +10,8 @@
 $wb["login_begruessung"]     = "Autentificacion:";
 $wb["Username"]     = "Usuario";
 $wb["Passwort"]     = "Clave";
-$wb["Login"]       = "Autentificacion";
-$wb["Administration"]  = "Administracion";
+$wb["Login"]       = "Autenticación";
+$wb["Administration"]  = "Administración";
 $wb["ISP Manager"]  = "Gestor ISP";
 $wb["DNS Manager"]  = "Gestor DNS";
 $wb["Tools"]        = "Herramientas";
@@ -24,29 +24,29 @@ $wb["Email"]        = "Email";
 $wb["FTP"]          = "FTP";
 $wb["DNS"]          = "DNS";
 $wb["Sonstiges"]    = "Otro";
-$wb["Datei"]        = "Fichero";
+$wb["Datei"]        = "Archivo";
 $wb["von"]          = "de";
-$wb["error_headline"] = "Ha ocurrido lo siguiente:";
+$wb["error_headline"] = "Ha ocurrido el siguiente error:";
 $wb["Gruppe"]       = "Grupo";
-$wb["Titel"]        = "Titulo";
+$wb["Titel"]        = "Título";
 $wb["Server"]       = "Servidor";
 $wb["Host"]         = "Nombre del host";
 $wb["Domain"]       = "Dominio";
-$wb["IP Adresse"]   = "Direccion IP";
-$wb["Ordner"]       = "Ordenar";
+$wb["IP Adresse"]   = "Dirección IP";
+$wb["Ordner"]       = "Carpeta";
 $wb["Dokument"]     = "Documento";
-$wb["Dokument suchen"] = "Buscar Documento";
-$wb["Suchmaske"]    = "Buscar Terminos";
-$wb["Ausgabeformat"] = "Formato de Salida";
-$wb["Standard"]     = "Estandar";
+$wb["Dokument suchen"] = "Buscar documento";
+$wb["Suchmaske"]    = "Buscar términos";
+$wb["Ausgabeformat"] = "Formato de salida";
+$wb["Standard"]     = "Estándar";
 $wb["Eintrdge"]    = "Entradas";
 $wb["Papierkorb leeren"] = "Vaciar Papelera";
 $wb["Stammordner"]  = "Zona Principal";
 $wb["keine Gruppe"] = "Sin Grupo";
 $wb["neues Dokument anlegen"] = "creado nuevo documento";
 $wb["auf"]   = "expandir";
-$wb["zu"]    = "colapsar";
-$wb["in_ordner"]    = "Ordenar por";
+$wb["zu"]    = "plegar";
+$wb["in_ordner"]    = "en la Carpeta";
 $wb["Papierkorb"]   = "Papelera";
 $wb["Wiederherstellen"]    = "Restaurar";
 $wb["Papierkorb: Einträge"]   = "Papelera: contenido";
@@ -66,17 +66,17 @@ $wb["ISP Faktura"] = 'ISP Factura';
 $wb["Verzeichnis öffnen"] = "abrir";
 $wb["Verzeichnis schliessen"] = "cerrar";
 $wb["Hilfe"] = 'Ayuda';
-$wb["Online Hilfe"] = 'Ayuda en linea';
+$wb["Online Hilfe"] = 'Ayuda en línea';
 $wb["schliessen"] = 'cerrar';
 
-$wb["PAPIERKORB_HINWEIS"] = "<b>Note:</b> Los itemes que quedan en la papelera luego de vaciarla estan en estado de actualizacion. Intente borrarlas mas tarde.";
+$wb["PAPIERKORB_HINWEIS"] = "<b>Nota:</b> Los ítem que quedan en la papelera tras vaciarla están en estado de actualización. Intente borrarlos más tarde.";
 
 // Multidoc  Allgemein ////////////////////////////////
 
-$wb["title_required"] = "Por favor, introduzca un valor en el campo 'Titulo'";
-$wb["error_keine_rechte"] = "No tiene los privilegios necesarios para leer o editar esta entrada.";
+$wb["title_required"] = "Por favor, introduzca un valor en el campo 'Título'";
+$wb["error_keine_rechte"] = "No tiene los privilegios suficientes para leer o editar esta entrada.";
 $wb["error_doctype_nicht_vorhanden"] = "El tipo de documento solicitado no existe.";
-$wb["error_doctype_rechte"] = "No tiene los privilegios necesarios para editar este tipo de documento.";
+$wb["error_doctype_rechte"] = "No tiene los privilegios suficientes para editar este tipo de documento.";
 $wb["Formular Designer"] = "Creador de formularios";
 $wb["Geben Sie einen Wert in das Feld"] = "Por favor, introduzca un valor en el campo";
 $wb["jscript_ein"] = " ";
@@ -85,27 +85,27 @@ $wb["jscript_ein"] = " ";
 
 $wb["Es konnte ein Dokument nicht wiederhergestellt werden, da sich das Eltern-Dokument noch im Papierkorb befindet.\n"] = "El objeto no puede ser restaurado mientras su objeto 'padre' esta en la papelera de reciclaje. Porfavor restaure el objeto 'padre'.";
 
-$wb["DNS-Domains angelegt"] = 'Zonas maestras creadas';
-$wb["Benutzter Diskspace"] = "Uso de disco";
-$wb["Slave Zones angelegt"] = "Zonas esclavas creadas";
+$wb["DNS-Domains angelegt"] = 'Zonas Maestras creadas';
+$wb["Benutzter Diskspace"] = "Espacio de disco utilizado";
+$wb["Slave Zones angelegt"] = "Zonas Esclavas creadas";
 $wb["Datenbanken angelegt"] = "Base de datos creada";
 
-$wb["txt_confirm_delete"] = "Realmente quiere borrar este objeto?";
+$wb["txt_confirm_delete"] = "¿Está seguro de querer borrar este objeto?";
 
-$wb["txt_object_currently_updated"] = "Your changes cannot be saved because this item is currently being updated. Please try again later.<br><br> <a href='../frame_start.php?s=$s'>Next &gt;&gt;</a>";
-$wb["txt_system_currently_updated_no_recycle_bin"] = "The recycle bin cannot be accessed because the system is currently being updated. Please try again in a few minutes.<br><br> <a href='../frame_start.php?s=$s'>Next &gt;&gt;</a>";
+$wb["txt_object_currently_updated"] = "Sus cambios no han podido ser guardados ya que este ítem está siendo actualizado en estos momentos. Inténtelo más tarde.<br><br> <a href='../frame_start.php?s=$s'>Siguiente &gt;&gt;</a>";
+$wb["txt_system_currently_updated_no_recycle_bin"] = "La papelera no está accesible ya que el sistema se está actualizando en estos momentos. Por favor, inténtelo dentro de unos minutos.<br><br> <a href='../frame_start.php?s=$s'>Siguiente &gt;&gt;</a>";
 
-$wb['no_permission_to_change_data'] = "<b>Error: You don't have the necessary permissions to change these data.</b><p>
+$wb['no_permission_to_change_data'] = "<b>Error: No tiene los permisos suficientes para cambiar estos datos.</b><p>
                 <br>
-                This is because of one of the following reasons:<br>
-                1. You are using the system in test mode.<br>
-                   - Log in with your username and password.<br>&nbsp;<br>
-                2. You are trying to change an element which is allocated to another group.<br>
-                   In this group you don't have permission to write / edit data.<br>
-                   - Please ask the owner of the group to grant write access to this resource to you.<br>&nbsp;<br>
-                <center><a href=\"" . $go_info["server"]["server_url"] . "/index.php?s=$s\">Next &gt;&gt;</a></center>";
+                Puede ser debido a una de las siguientes razones:<br>
+                1. Está utilizando el sistema en modo test.<br>
+                   - Autentíquese con su nombre de usuario y contraseña.<br>&nbsp;<br>
+                2. Está intentado cambiar un elemento localizado en otro grupo.<br>
+                   En este grupo, no tiene permisos para escribir / editar datos.<br>
+                   - Solicítele al propietario del grupo que le conceda acceso de escritura a este recurso.<br>&nbsp;<br>
+                <center><a href=\"" . $go_info["server"]["server_url"] . "/index.php?s=$s\">Siguiente &gt;&gt;</a></center>";
 
-$wb["Weiter"] = "Next";
-$wb["Zurück"] = "Back";
+$wb["Weiter"] = "Siguiente";
+$wb["Zurück"] = "Atrás";
 
 ?>

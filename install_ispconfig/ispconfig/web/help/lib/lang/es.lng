@@ -10,26 +10,26 @@ $wb["Web"]          = "Web";
 $wb["Admin Handbuch"] = "Manual del administrador";
 $wb["Reseller Handbuch"] = "Manual del revendedor";
 $wb["Kunden Handbuch"] = "Manual del cliente";
-$wb["Deutsch"]          = "Aleman";
-$wb["Englisch"]         = "Ingles";
-$wb["Projektfarm Support"]          = "Projektfarm Support";
-$wb["Online Hilfe"] = "Ayuda en linea";
+$wb["Deutsch"]          = "Alemán";
+$wb["Englisch"]         = "Inglés";
+$wb["Projektfarm Support"]          = "Soporte al proyectot";
+$wb["Online Hilfe"] = "Ayuda en línea";
 
-$wb["willkommen_kunde"] = "Bienvenido al Panel de Control ISPConfig!
-Ud. puede administrar sus sitios web desde aqui. Si tiene alguna pregunta o problemas
-por favor contacte al administrador del servidor o dirijase al manual del cliente
-ISPConfig en la seccion ayuda.";
+$wb["willkommen_kunde"] = "Bienvenido al Panel de Control ISPConfig.
+Podrá administrar sus sitios web desde aquí. Si tiene alguna pregunta o problema,
+contacte al administrador del servidor o bien acuda al manual del cliente
+ISPConfig en la seccion de ayuda.";
 $wb["Willkommen"] = "Bienvenido";
 
 //////////////// Server Status ////////////////
 $wb["Arbeitsspeicher"]          = "Memoria principal";
 $wb["CPU"]          = "CPU";
 $wb["Dienste"]      = "Servicios";
-$wb["Server Online seit"]          = "Servidor en linea desde";
-$wb["User Online"]      = "Usuarios en linea";
-$wb["System Load 1 Minute"] = "Carga de la CPU 1 Minuto";
-$wb["System Load 5 Minuten"] = "Carga de la CPU 5 Minutos";
-$wb["System Load 15 Minuten"] = "Carga de la CPU 15 Minutos";
+$wb["Server Online seit"]          = "Servidor conectado desde";
+$wb["User Online"]      = "Usuarios conectados";
+$wb["System Load 1 Minute"] = "Carga de la CPU - 1 minuto";
+$wb["System Load 5 Minuten"] = "Carga de la CPU - 5 minutos";
+$wb["System Load 15 Minuten"] = "Carga de la CPU - 15 minutos";
 //////////////// Server Status Ende //////////
 
 $wb["Webs angelegt"] = "Sitios utilizados";
@@ -41,12 +41,12 @@ $wb["DNS-Domains angelegt"] = 'Dominios DNS creados';
 $wb["von"] = "de";
 
 // NEW 2.0.8 ///////////////////////////////////
-$wb["Französische"]     = "Frances";
+$wb["Französische"]     = "Francés";
 // Support Tickets System
-$wb["Unterstützungskarten"] = "Tickets de soporte";
-$wb["Geöffnete Karten"] = "Tickets abiertos";
-$wb["Geschlossene Karten"] = "Tickets cerrados";
-$wb["Neue Karte"] = "Nuevo ticket";
+$wb["Unterstützungskarten"] = "Soporte de incidencias";
+$wb["Geöffnete Karten"] = "Incidencias abiertas";
+$wb["Geschlossene Karten"] = "Incidencias cerradas";
+$wb["Neue Karte"] = "Nueva incidencia";
 $wb["Betreff"] = "Asunto";
 $wb["Priorität"] = "Prioridad";
 $wb["Niedrig"] = "Baja";
@@ -54,8 +54,8 @@ $wb["Mittel"] = "Media";
 $wb["Hoch"] = "Alta";
 $wb["Ihre frage"] = "Su pregunta";
 $wb["Senden"] = "Enviar";
-$wb["Fehler während der schaffung der karte"] = "Error durante la creacion del ticket";
-$wb["Neue unterstützungskarte, die auf antwort wartet"] = "Ticket de soporte esperando respuesta";
+$wb["Fehler während der schaffung der karte"] = "Error durante la creación de la incidencia";
+$wb["Neue unterstützungskarte, die auf antwort wartet"] = "Incidencia esperando respuesta";
 $wb["Sie erhielten eine antwort"] = "Ha recibido una respuesta";
 $wb["geantwortet zu ihnen"] = "le ha contestado";
 $wb["Datum"] = "Fecha";
