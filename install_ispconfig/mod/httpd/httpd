@@ -56,6 +56,8 @@ dist_path_httpd_root:/var/www:Web-Root:read::centos43
 
 dist_path_httpd_root:/var/www:Web-Root:read::centos44
 
+dist_path_httpd_root:/var/www:Web-Root:read::centos45
+
 dist_path_httpd_root:/var/www:Web-Root:read::centos50
 
 dist_path_httpd_root:/var/www:Web-Root:read::rhat73
