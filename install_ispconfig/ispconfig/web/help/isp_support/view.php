@@ -92,7 +92,7 @@ if($go_info["user"]["language"] == "en") {
           $vtemp["TDATE"] = $tjour."/".$tmois."/".$tannee." ".$theure;
 }
 $vtemp["TFROM"] = $TFROM;
-$vtemp["TMESS"] = $first_ticket["ticket_message"];
+$vtemp["TMESS"] = stripslashes($first_ticket["ticket_message"]);
 
 $go_api->content->assign($vtemp);
 $go_api->content->parse(LISTE,".liste");
