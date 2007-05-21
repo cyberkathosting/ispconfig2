@@ -1,0 +1,25 @@
+<?
+/********************************
+* ISPConfig Dictionary File
+* Version 1.0
+*********************************/
+
+// License Manager
+$wb["Es wurde keine g&uuml;ltige Lizenzdatei gefunden."] = "Nu a fost gasit nici un fisier de licenta valid.";
+$wb["Hier k&ouml;nnen Sie ihre Lizenzdatei einspielen."] = "Puteti incarca fisierul de licenta de aici.";
+$wb["Username"] = "Utilizator";
+$wb["Passwort"] = "Parola";
+$wb["Lizenzdatei"] = "fisierul de licenta";
+$wb["Weiter"] = "urmatorul pas";
+$wb["Die Lizenzdatei wurde eingespielt.<br>Sie k&ouml;nnen sich jetzt einloggen."] = "FIsierul de licenta a fost incarcat.<br> Puteti sa intrati.";
+$wb["Ihre Nutzersitzung wurde beendet."] = "Sesiunea dumneavoastra a expirat.";
+$wb["Hier können Sie sich neu einloggen"] = "Aici puteti sa intrati";
+
+$wb["FEHLER 101: Username oder Passwort Falsch."] = "EROARE 101: utilizator sau parola gresite.";
+$wb["FEHLER 102: Account inaktiv."] = "EROARE 102: Cont inactiv.";
+$wb["FEHLER 103: Es wurde kein Username oder Passwort angegeben."] = "EROARE 103: Nu a fost furnizat nici un utilizator sau parola.";
+$wb["FEHLER 104: Die Nutzersession wurde beendet."] = "EROARE 104: Sesiune expirata.";
+$wb["<br>&nbsp;<br>Hier können Sie sich erneut einloggen:"] = "<br>&nbsp;<br>Intrare Ambra Hosting:";
+$wb["Hier können Sie sich einloggen:"] = "Intrare Ambra Hosting:";
+
+?>

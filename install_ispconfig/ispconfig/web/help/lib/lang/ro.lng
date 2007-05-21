@@ -1,0 +1,64 @@
+<?
+/********************************
+* ISPConfig Dictionary File
+* Version 1.0
+*********************************/
+
+$wb["Anbieter"]     = "Distribuitor";
+$wb["Web"]          = "Web";
+$wb["Admin Handbuch"] = "Manualul Administratorului";
+$wb["Reseller Handbuch"] = "Manualul Distribuitorului";
+$wb["Kunden Handbuch"] = "Manualul Clientului";
+$wb["Deutsch"]          = "Germana";
+$wb["Englisch"]         = "Engleza";
+$wb["Projektfarm Support"]          = "Projektfarm Support";
+$wb["Online Hilfe"] = "Ajutor Online";
+
+$wb["willkommen_kunde"] = "Bine ati venit la Ambra Hosting!
+Aici puteti administra domeniile dumneavoastra. Daca aveti intrebari sau probleme 
+adresativa administratorului de server sau cititi manualul clientului.";
+$wb["Willkommen"] = "Bine ati venit";
+
+//////////////// Server Status ////////////////
+$wb["Arbeitsspeicher"]          = "Memorie";
+$wb["CPU"]          = "Procesor";
+$wb["Dienste"]      = "Servicii";
+$wb["Server Online seit"]          = "Server pornit de";
+$wb["User Online"]      = "Utilizatori conectati";
+$wb["System Load 1 Minute"] = "Incarcare sistem la 1 minut";
+$wb["System Load 5 Minuten"] = "Incarcare sistem la 5 minute";
+$wb["System Load 15 Minuten"] = "Incarcare sistem la 15 minute";
+//////////////// Server Status Ende //////////
+
+$wb["Webs angelegt"] = "Pagini WEB folosite";
+$wb["User angelegt"] = "Utilizatori folositi";
+$wb["Domains angelegt"] = "Domenii folosite";
+$wb["unlimitiert"]  = "nelimitat";
+$wb["Anbieter"]     = "Distribuitor";
+$wb["DNS-Domains angelegt"] = 'Domenii DNS create';
+$wb["von"] = "oprit";
+
+// NEW 2.0.8 ///////////////////////////////////
+$wb["Französische"]     = "Franceza";
+// Support Tickets System
+$wb["Unterstützungskarten"] = "Tichete de suport";
+$wb["Geöffnete Karten"] = "Tichete deschise";
+$wb["Geschlossene Karten"] = "Tichete inchise";
+$wb["Neue Karte"] = "Tichet nou";
+$wb["Betreff"] = "Subiect";
+$wb["Priorität"] = "Prioritate";
+$wb["Niedrig"] = "Mica";
+$wb["Mittel"] = "Medie";
+$wb["Hoch"] = "Mare";
+$wb["Ihre frage"] = "Intrebarea ta";
+$wb["Senden"] = "Trimite";
+$wb["Fehler während der schaffung der karte"] = "Eroarela crearea tichetului";
+$wb["Neue unterstützungskarte, die auf antwort wartet"] = "Tichet nou care asteapta rezolvarea";
+$wb["Sie erhielten eine antwort"] = "Atiprimit un raspuns";
+$wb["geantwortet zu ihnen"] = "raspuns catre dumneavoastra";
+$wb["Datum"] = "Data";
+$wb["Davon"] = "De La";
+$wb["Ihre antwort"] = "Raspunsul tau";
+$wb["Antworten"] = "Raspunde";
+$wb["Schließen"] = "Inchide";
+?>
