@@ -1,0 +1,382 @@
+<?
+/********************************
+* ISPConfig Dictionary File
+* Version 1.0
+*********************************/
+
+//////////////// Tools //////////////////////
+$wb["Tools & Optionen"] = "Unelte & Optiuni";
+$wb["Passwort ändern"] = "Schimba parola";
+$wb["Allgemein"]    = "General";
+$wb["Passwort alt"] = "parola veche";
+$wb["Passwort neu"] = "parola noua";
+$wb["Passwort wiederholen"] = "confirmare parola noua";
+$wb["Adresse ändern"] = "Schimba adresa";
+
+$wb["willkommen_kunde"] = "Bine ati venit la Ambra Hosting!
+Aici puteti sa va administrati domeniile. Daca aveti probleme sau intrebari
+va rugam sa contactati administratorul serverului sau sa va referiri la manualul
+de utilizare din setiunea ajutor.";
+$wb["Willkommen"] = "Bine ati venit";
+
+$wb["passwort_gespeichert"] = "Parola actualizata cu succes.";
+$wb["passwort_uebereinstimmung"] = "Cele doua  parole pe care le-ati introdus nu se potrivesc. Va rugam sa va asigurati ca parolele din campurile --parola noua-- si --confirmare parola noua-- sunt identice.";
+$wb["passwort_alt"] = "Parola nu a putut fi actualizata <br> pentru ca parola veche nu este corecta.";
+
+// NEW 1.1.12 ///////////////////////////////
+
+$wb["Backup Manager"] = 'Manager de Backup';
+$wb["Backup"] = 'Backup';
+$wb["Restore"] = 'Restaurare';
+$wb["Daten Export"] = 'Data Export';
+$wb["Update Manager"] = 'Manager de actualizare';
+$wb["Portscanner"] = 'Scanner de porturi';
+$wb["Whois"] = 'Whois';
+$wb["Download"] = 'Descarcare';
+$wb["FTP-Server"] = 'Server FTP';
+$wb["Verzeichnis"] = 'Director';
+$wb["Web Daten"] = 'Date Web';
+$wb["User Daten"] = 'Date Utilizator';
+$wb["Log Daten"] = 'Date Log';
+$wb["mySQL Datenbank (wenn vorhanden)"] = 'Baze de date mySQL';
+$wb["Backup starten"] = 'Start Backup';
+$wb["Kein Web vorhanden."] = 'Nu a fost gasit nici un web.';
+$wb["Web-Backup"] = 'Web Backup';
+$wb["Kunden-Stammaten"] = 'Date Clienti';
+$wb["Format Einstellungen"] = 'Specificatii de format';
+$wb["Trennzeichen"] = 'Separator';
+$wb["Eingeschlossen mit"] = 'incadrate de';
+$wb["Daten für folgende Anbieter exportieren"] = 'Date Export';
+$wb["Export starten"] = 'Start export';
+$wb["Anbieter-Stammdaten"] = 'Date Distribuitor';
+$wb["Export"] = 'Export';
+$wb["Von"] = 'De la';
+$wb["Bis"] = 'La';
+$wb["Local Portscanner"] = 'Scaner de porturi local';
+
+// NEW 1.1.12a //////////////////////////////
+
+$wb["Es wurde kein Web ausgewählt."] = "Nici un web selectat.";
+$wb["Backup-Funktionen im Demo-Modus nicht verfügbar."] = "Backup-Functiile nu sunt disponibile in modul demo.";
+$wb["Backup Status"] = "Backup-Stare";
+$wb["Der Name des FTP-Servers <br>enthält ungültige Zeichen."] = "Numele serverului de FTP <br>Contine caractere invalide.";
+$wb["Sie haben keinen FTP Benutzernamen angegeben."] = "Nu a fost stat nici un user de FTP.";
+$wb["Ftp-Verbindung nicht hergestellt!"] = "Conexiunea FTP nu a fost reusita!";
+$wb["Verbindung mit:"] = "Conectat la:";
+$wb["als Benutzer:"] = "ca utilizator:";
+$wb["nicht möglich."] = "imposibil.";
+$wb["Konnte nicht in Verzeichnis:"] = "schimbare la fisier:";
+$wb["wechseln."] = "nereusit.";
+$wb["Wechsel in Verzeichnis:"] = "se schimba directorul la:";
+$wb["Ftp upload war fehlerhaft!"] = "Upload FTP nereusit";
+$wb["Upload erfolgreich."] = "Upload cu succes.";
+$wb["FTP-Upload Status"] = "Statusul uploadului FTP";
+$wb["Backup-Methode nicht unterstützt."] = "Metoda de Backup nu este disponibila.";
+$wb["Sprache ändern"] = "Schimba limba";
+$wb["Sprache (ISO)"] = "Limba (ISO)";
+$wb["Software Version"] = "Versiuna Software";
+
+
+//////////////// Tools Ende /////////////////
+
+///////////////// ISP Manager //////////////////
+$wb["Anbieter"]     = "Distribuitor";
+$wb["Kunde"]        = "Client";
+$wb["Suchen"]       = "Cauta";
+$wb["Stammdaten"]   = "Date Master";
+$wb["Limits"]       = "Limite";
+$wb["Zugangsdaten"] = "Intorduceti informatiile";
+$wb["Statistik"]    = "Statistici";
+$wb["Firma"]        = "Firma";
+$wb["Anrede"]       = "Adresa";
+$wb["Vorname"]      = "Primul nume";
+$wb["Name"]         = "Al doilea nume";
+$wb["Strasse"]      = "Strada";
+$wb["PLZ"]          = "Cod postal";
+$wb["Ort"]          = "Oras";
+$wb["Land"]         = "Tara";
+$wb["Telefon"]      = "Telefon";
+$wb["Fax"]          = "Fax";
+$wb["Internet"]     = "Pagina de Web";
+$wb["Öffnen"]      = "Deschide";
+$wb["Benutzername"] = "Utilizator"; // besser: vielleicht nur Variable $wb["username"] benutzen?
+$wb["zugangsdaten_anbieter_einleitung"] = "Aici puteti sa stabiliti un utilizator si o parola pentru distribuitor.";
+$wb["zugangsdaten_kunde_einleitung"] = "Aici puteti sa stabiliti un utilizator si o parola pentru administrarea <br> domeniului specificat<br>";
+$wb["Web Verwaltung"] = "Administrare domeniu";
+$wb["Rechnung"]      = "Facturare";
+$wb["Rechnungsanschrift:"] = "Adresa de facturare:<br>";
+$wb["Intervall"]    = "Interval";
+$wb["Preis"]        = "Pret";
+$wb["Zahlungsart"]  = "Metoda de plata";
+$wb["Basis"]        = "Baza";
+$wb["Create DNS"]   = "Creza DNS";
+$wb["Speicher MB"]     = "Spatiu in MB";
+$wb["Max. User"]        = "Max. Utilizator";
+$wb["Max. Domain"]        = "Max. Domenii";
+$wb["PHP Scripte"]        = "Scripturi PHP";
+$wb["SSI"]        = "SSI";
+$wb["FTP Zugang"]        = "Acces FTP";
+$wb["mySQL"]        = "mySQL";
+$wb["SSL"]        = "SSL";
+$wb["Shell Zugriff"]      = "Acces Shell";
+$wb["Zugang"]       = "Acces";  // Zugriff u. Zugang zusammenfassen!/nur einen Begriff nehmen!
+$wb["CGI Scripte"]      = "Scripturi CGI";
+$wb["Bundesland"]   = "Tara";
+$wb["Abteilung"]    = "Departament";
+$wb["Gültigkeit (Tage)"]  = "Validitate (zile)";
+$wb["SSL Key"]          = "Cheya SSL";
+$wb["SSL Zertifikat"]   = "Certifica SSL";
+$wb["Aktion"]       = "Actiune";
+$wb["Zertifikat erzeugen"] = "Creaza certificat";
+$wb["Zertifikat speichern"] = "Salveaza certificat";
+$wb["Zertifikat löschen"] = "Sterge sertificat";
+$wb["Speicherplatz gesamt"] = "Capacitate stocare";
+$wb["unlimitiert"]  = "nelimitat";
+$wb["verbraucht"]   = "folosit";
+$wb["Trafficübersicht"] = "Vizualizare trafic";
+$wb["Monat"]        = "Luna";
+$wb["Traffic"]      = "Trafic";
+$wb["traffic_letzte_4"] = "Trafic in ultimii 4 ani";
+$wb["Jahr"]         = "An";
+$wb["mySQL User"]        = "Utilizator mySQL";
+$wb["mySQL Passwort"]    = "Parola mySQL";
+
+// Ergänzungen /////////////////////////////////
+$wb["Anbieter neu"] = "Distribuitor nou";
+$wb["Kunde neu"]    = "Client nou";
+$wb["Web neu"]      = "Domeniu nou";
+$wb["Ordner neu"]   = "Sortare dupa";
+$wb["Suchen"]       = "Cautare";
+$wb["ISP Anbieter"] = "Distribuitor ISP";
+$wb["Webs"] = "Pagini WEB";
+$wb["User"] = "Utilizator";
+$wb["Domains"] = "Domenii";
+$wb["Zahlung"] = "Plata";
+$wb["ISP Kunde"] = "CLient ISP";
+$wb["ISP Web"] = "Setari Pagina WEB";
+$wb["Kunden"] = "Client";
+$wb["Dokument suchen"] = "Cautare documente";
+
+$wb["User & Email"] = "Utilizatori & Email-uri";
+$wb["Co-Domains"] = "Sub-Domenii";
+$wb["SSL"] = "SSL";
+$wb["Optionen"] = "Optiuni & MySQL";
+
+$wb["Webs angelegt"] = "Pagini WEB folsite";
+$wb["User angelegt"] = "Utilizatori folositi";
+$wb["Domains angelegt"] = "Domenii folosite";
+$wb["rechnungsanschrift"] = "Adresa de facturare:<br> ";
+
+
+$wb["neues Web anlegen"] = "Pagina web noua";
+$wb["weiter"] = "urmatorul";
+$wb["SUCHE"] = "cautare";
+
+$wb["msg_beta"] = "";
+$wb["title_isp_beta"] = "";
+$wb["msg_kein_win"] = "Acest software nu este disponibil pentru sistemul de operare windows.";
+
+// Error Codes ispconfig_isp_domain.lib.php
+$wb["error_web_doppelt"] = "Exista deja o pagina web sau un domeniu cu acest nume.";
+$wb["error_max_domain_web"] = "A fost atins numarul maxim de domenii";
+$wb["error_max_domain_anbieter"] = "A fost atins numarul maxim de domenii pentru acest distribuitor";
+$wb["angelegt"] = "used";
+
+// Error Codes ispconfig_isp_kunde.lib.php
+$wb["error_user_exist_1"] = "Utilizatorul ISPConfig";
+$wb["error_user_exist_2"] = "deja exista. Utilizatorul nu a fost adaugat sau modificat.";
+$wb["error_max_user_licence"] = "A fost atins numarul maxim de conturi pentru aceasta licenta.";
+
+
+// Error Codes ispconfig_isp_reseller.lib.php
+$wb["error_reseller_title"] = "Deja exista un distribuitor cu acest titlu.";
+$wb["error_reseller_group_not_found"] = "Grupul distribuitorului nu a fost gasit.";
+$wb["error_anbieter_no_delete"] = "<b>Distribuitorul nu a fost sters.</b><br>&nbsp;<br>
+Distribuitorul poate fi sters doar daca toate domeniile si clientii acelui distribuitor au fost sterse. De asemenea asigurativa sa waste-paper backet al distribuitorului este gol";
+
+// Error Codes ispconfig_isp_user.lib.php
+$wb["error_sysuser_exist_1"] = "Exista deja un utilizator cu acest nume";
+$wb["error_sysuser_exist_2"] = "introdus.<br><br> <a href='../../isp_manager/frame_start.php?s=$s'>Detalii</a>";
+$wb["error_max_user_web"] = "A fost atins numarul maxim de utilizatori.<br><br> <a href='../../isp_manager/frame_start.php?s=$s'>Detalii</a>";
+$wb["error_max_space_web"] = "Spatiul selectat depaseste limitele paginii.<br><br> <a href='../../isp_manager/frame_start.php?s=$s'>Detalii</a>";
+$wb["error_max_user_anbieter"] = "Numarul maxim de useri pentru acest distribuitor a fost atins.<br><br> <a href='../../isp_manager/frame_start.php?s=$s'>Detalii</a>";
+$wb["error_sysuser_exist"] = "Utilizatorul este deja folosit.<br><br> <a href='../../isp_manager/frame_start.php?s=$s'>Detalii</a>";
+$wb["error_admin_exist"] = "Deja exista un user cu drepturi de administrator pentru acest domeniu.<br><br> <a href='../../isp_manager/frame_start.php?s=$s'>Detalii</a>";
+$wb["error_admin_exist_long"] = "Deja exista un user cu drepturi de administrator pentru acest domeniu.<br><br> <a href='../../isp_manager/frame_start.php?s=$s'>Detalii</a>";
+
+// Error Codes ispconfig_isp_user.lib.php
+$wb["error_max_web_anbieter"] = "A fost atins numarul maxim de domenii pentru acest distribuitor.";
+$wb["error_web_ssl_exist"] = "Deja exista un certificat SSL pentru acest IP.";
+
+// Plugins
+$wb["CPU Auslastung 1 Minute"] = "Utilizare CPU la 1 minut";
+$wb["CPU Auslastung 5 Minuten"] = "Utilizare CPU la 5 minute";
+$wb["CPU Auslastung 15 Minuten"] = "Utilizare CPU la 15 minut";
+$wb["Server Online seit"] = "Serverul pornit de";
+$wb["User Online"] = "Utilizatori conectati";
+$wb["error_web_id"] = "Acest Plugin necerita un WEB id valid.";
+$wb["von"] = "de";
+$wb["Gesamt"] = "Sumar";
+$wb["Traffic in den letzten 4 Jahren"] = "Trafic in ultimii 4 ani";
+
+$wb["Backup von Tabelle"] = "Programare Backup";
+$wb["Optimiere"] = "Optimizare";
+$wb["Reparatur"] = "Reparare";
+$wb["oder"] = "sau";
+$wb["Installation starten"] = "Instalaeaza";
+
+$wb["Monatlich"] = "Luna";
+$wb["Quartal"] = "Trimestrial";
+$wb["Halbjährlich"] = "Semestrial";
+$wb["Jährlich"] = "Anual";
+$wb["Sonstige"] = "Altele";
+
+$wb["bei Erhalt"] = "la receptie";
+$wb["Netto 7 Tage"] = "net 7 zile";
+$wb["Netto 15 Tage"] = "net 15 zile";
+$wb["Netto 30 Tage"] = "net 30 zile";
+$wb["Sonstige"] = "altele";
+$wb["Neu"] = "Nou";
+$wb["Postfach MB"] = "MB Email";
+
+$wb["email_alias_txt"] = "<b>Indiciu:</b> un alias pe linie.";
+$wb["Weiterleitung"] = "Inaintare Emailuri";
+$wb["Nachricht"] = "Mesaj";
+$wb["Kein Kunde vorhanden"] = "u exista nici un client disponibil";
+$wb["Dieses Web können Sie nicht löschen."] = "Nu puteti sterge acest domeniu.";
+$wb["Ausgabeformat"] = "Format lista.";
+$wb["Bearbeiten"] = "Editare";
+$wb["Löschen"] = "Stergere";
+
+$wb["willkommen_kunde"] = "Bine ati venit la Ambra Hosting!
+Aici puteti sa administrati domeniile dumneavoastra. Daca aveti intrebari sau problema adresati-va
+administratorului sau cititi manualul clientului din sectiunea Ajutor..";
+$wb["Willkommen"] = "Bine ati venit";
+
+$wb["txt_client_salutatory_email_desc"] = "<b>Email de intampinare</b>";
+$wb["txt_client_salutatory_email_sender_email"] = "Adresa sursa de email ";
+$wb["txt_client_salutatory_email_sender_name"] = "Numele sursei";
+$wb["txt_client_salutatory_email_bcc"] = "Recipient BCC";
+$wb["txt_client_salutatory_email_subject"] = "Subiect";
+$wb["txt_client_salutatory_email_message"] = "Mesaj";
+$wb["txt_client_salutatory_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Include the following variables in your text:</b></td></tr>
+        <tr>
+          <td class="normal">%%%USER%%%</td>
+          <td class="normal">
+            Utilizatorul clientului</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%PASSWORD%%%</td>
+          <td class="normal">
+            Parola clientului</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%FIRST_NAME%%%</td>
+          <td class="normal">
+            Primul nume al clientului</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%LAST_NAME%%%</td>
+          <td class="normal">
+            Ultimul nume al clientului</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%COMPANY%%%</td>
+          <td class="normal">
+            Firma clientului</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%EMAIL%%%</td>
+          <td class="normal">
+            Adresa de email</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%CP%%%</td>
+          <td class="normal">
+            ISPConfig Login URL</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%MANUAL%%%</td>
+          <td class="normal">
+            Manualul clientului</td>
+        </tr>
+        </table>';
+$wb["txt_standard_index"] = "Index standard <br>&nbsp;&nbsp; Pagina";
+$wb["txt_standard_index_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Includeti urmatoarele variabile in mesaj:</b></td></tr>
+        <tr>
+          <td class="normal">%%%FQDN%%%</td>
+          <td class="normal">
+            Numele domeniului</td>
+        </tr>
+    </table>';
+$wb["txt_user_standard_index"] = "Standard utilizatori<br>&nbsp;&nbsp;Pagina Index";
+$wb["txt_user_standard_index_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Includeti urmatoarele variabile in mesaj:</b></td></tr>
+        <tr>
+          <td class="normal">%%%USER%%%</td>
+          <td class="normal">
+            Utilizatorul userului</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%FQDN%%%</td>
+          <td class="normal">
+            Numele domeniului</td>
+        </tr>
+        </table>';
+
+//////////////// ISP Manager Ende /////////////
+
+//////////////// Server Status ////////////////
+$wb["Arbeitsspeicher"]          = "Memorie";
+$wb["CPU"]          = "Procesor";
+$wb["Dienste"]      = "Servicii";
+$wb["Server Online seit"]          = "Server pornit de";
+$wb["User Online"]      = "Utilizatori conectati";
+$wb["System Load 1 Minute"] = "Incarcare sistem la 1 Minut";
+$wb["System Load 5 Minuten"] = "Incarcare sistem la 5 Minute";
+$wb["System Load 15 Minuten"] = "Incarcare sistem la 15 Minute";
+//////////////// Server Status Ende //////////
+
+$wb["DNS-Domains angelegt"] = 'Inregistrari DNS Create';
+
+$wb["Hinzufügen"] = "Adauga";
+$wb["Berechtigungen"] = "Permisiuni";
+$wb["Speichern"] = "Salvare";
+$wb["Löschen"] = "Stergere";
+$wb["Abbrechen"] = "Anulare";
+$wb["IP-Adresse"] = "Adresa IP";
+$wb["DNS-Query"] = "Aflare inregistrari DNS primare";
+$wb["DNS-Insert"] = "Creare inregistrari DNS primare";
+$wb["DNS-Update"] = "Editare inregistrari DNS primare";
+$wb["DNS-Delete"] = "Sterge inregistrari DNS primare";
+$wb["slave_query"] = "Aflare inregistrari DNS secundare";
+$wb["slave_insert"] = "Creare inregistrari DNS secundare";
+$wb["slave_update"] = "Editare inregistrari DNS secundare";
+$wb["slave_delete"] = "Sterge inregistrari DNS secundare";
+$wb["reseller_query"] = "Aflare distribuitori";
+$wb["reseller_insert"] = "Create distributori";
+$wb["reseller_update"] = "Editare distribuitori";
+$wb["reseller_delete"] = "Sterge distribuitori";
+$wb["kunde_query"] = "Aflare clienti";
+$wb["kunde_insert"] = "Creare clienti";
+$wb["kunde_update"] = "Editare clienti";
+$wb["kunde_delete"] = "Sterge clienti";
+$wb["web_query"] = "Aflare domenii";
+$wb["web_insert"] = "Creare domenii";
+$wb["web_update"] = "Editare domenii";
+$wb["web_delete"] = "Sterge domenii";
+$wb["txt_primary_dns_records"] = "Inregistrari DNS primare";
+$wb["txt_secondary_dns_records"] = "Inregistrari DNS secundare";
+$wb["txt_anbieter"] = "Distribuitori";
+$wb["txt_kunden"] = "Clienti";
+$wb["txt_webs"] = "Domenii";
+
+?>

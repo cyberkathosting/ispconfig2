@@ -1,0 +1,88 @@
+<?
+/********************************
+* ISPConfig Dictionary File
+* Version 1.0
+*********************************/
+
+$wb["ISP Faktura"] = 'Factura ISP';
+$wb["Web-FTP"] = 'Web-FTP';
+$wb["Domains"] = 'Domenii';
+$wb["Service"] = 'Servicii';
+$wb["Webs"] = 'Webs';
+$wb["Traffic"] = 'Trafic';
+$wb["Email-Adressen"] = 'Adrese Email';
+$wb["Artikel"] = 'Articole';
+$wb["admin"] = 'admin';
+$wb["Artikel für"] = 'Articole pentru';
+$wb["Dienstleistung"] = 'Servicii';
+$wb["Hardware"] = 'Hardware';
+$wb["Software"] = 'Software';
+$wb["Typ"] = 'Tip';
+$wb["Artikel Nr."] = 'Articol Nr.';
+$wb["Bezeichnung"] = 'Nume';
+$wb["Beschreibung"] = 'Descriere';
+$wb["Stück"] = 'Piesa';
+$wb["MB"] = 'MB';
+$wb["GB"] = 'GB';
+$wb["Stunde"] = 'Ora';
+$wb["Einheit"] = 'Unitate';
+$wb["Menge"] = 'Contitate';
+$wb["Preis"] = 'Pret';
+$wb["Verrechnung"] = 'Perioada facturate';
+$wb["Artikel neu"] = 'Articol facturat';
+$wb["Ordner neu"] = 'Director nou';
+$wb["Abrechnen"] = 'Creazafactura';
+$wb["Artikel neu"] = 'Articol nou';
+$wb["Ordner neu"] = 'Director nou';
+$wb["Produkte"] = 'Produse';
+$wb["Abrechnen"] = 'Creaza factura';
+$wb["Rechnungen"] = 'Facturi';
+$wb["Kunden"] = 'Clienti';
+$wb["Anbieter"] = 'Distribuitori';
+$wb["Keine Artikel zum Abrechnen gefunden."] = 'Nu a fost gasit nici un articol pentru a crea factura.';
+$wb["Abrechnung"] = 'Factura';
+$wb["Name"] = 'Nume';
+$wb["IP-Traffic"] = 'IP Trafic';
+$wb["Steuersatz"] = 'Procent Taxa';
+$wb["Bei Überschreitung:"] = 'Cu expirare:';
+$wb["Diese Angaben sind nur für Artikel vom Typ: Traffic gültig!"] = 'Aceste intrari sunt valide doar pentru articolele de tip trafic!';
+$wb["Rechnungen Kunden"] = 'Facturi Clienti';
+$wb["Firma"] = 'Firma';
+$wb["Vorname"] = 'Primul nume';
+$wb["Strasse"] = 'Strada';
+$wb["PLZ"] = 'Cod postal';
+$wb["Ort"] = 'Oras';
+$wb["Land"] = 'Tara';
+$wb["Steuernr."] = 'Nr. Taxa.';
+$wb["Rechnung"] = 'Factura';
+$wb["Datum"] = 'Data';
+$wb["Rechnung Nr."] = 'Numar Factura.';
+$wb["Anzahl"] = 'Cantitate';
+$wb["Art. Nr."] = 'Articol Nr..';
+$wb["Gesamt"] = 'Total';
+$wb["EURO"] = 'EURO';
+$wb["Web gesamt"] = 'Web Total';
+$wb["enthaltene Mehrwertsteuer"] = 'Included VAT';
+$wb["Gesamtbetrag"] = 'Total';
+$wb["Rechnungen Anbieter"] = 'Facturi distribuitor';
+$wb["Kunde"] = 'Clienti';
+$wb["Rg. Nr."] = 'Factura numarul.';
+$wb["OK"] = 'OK';
+$wb["Weiter"] = "Urmatorul";
+$wb["Summe Anbieter"] = "Total distribuitor";
+$wb["Summe Web"] = "Total Web";
+$wb["Summe Kunde"] = "Total Clienti";
+$wb["Abrechnung abgeschlossen."] = "Factura creata.";
+
+//////////////// Server Status ////////////////
+$wb["Arbeitsspeicher"]          = "Memorie";
+$wb["CPU"]          = "Procesor";
+$wb["Dienste"]      = "Servicii";
+$wb["Server Online seit"]          = "Server Pornit de";
+$wb["User Online"]      = "Utilizatori conectati";
+$wb["System Load 1 Minute"] = "Incarcare sistem la 1 minut";
+$wb["System Load 5 Minuten"] = "Incarcare sistem la 5 minut";
+$wb["System Load 15 Minuten"] = "Incarcare sistem la 15 minut";
+//////////////// Server Status Ende //////////
+
+?>

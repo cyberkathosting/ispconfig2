@@ -1,0 +1,94 @@
+<?
+/********************************
+* ISPConfig Dictionary File
+* Version 1.0
+*********************************/
+
+/////////////// Allgemein - general (kommt in mehreren Modulen vor) /////////
+$wb["login_begruessung"]     = "Intrare:";
+$wb["Username"]     = "Utilizator";
+$wb["Passwort"]     = "Parola";
+$wb["Login"]       = "Intrare";
+$wb["Administration"]  = "Administrare";
+$wb["ISP Manager"]  = "Administrator ISP";
+$wb["DNS Manager"]  = "Administrator DNS";
+$wb["Tools"]        = "Unelte";
+$wb["Logout"]       = "Iesire";
+$wb["Status"]       = "Stare";
+$wb["neu"]          = "nou";
+$wb["Hinweis"]      = "Referinta";
+$wb["Web"]          = "Web";
+$wb["Email"]        = "Email";
+$wb["FTP"]          = "FTP";
+$wb["DNS"]          = "DNS";
+$wb["Sonstiges"]    = "Altele";
+$wb["Datei"]        = "Fisier";
+$wb["von"]          = "de la"; // besser 'ab'?
+$wb["error_headline"] = "Eroare:";
+$wb["Gruppe"]       = "Grup";
+$wb["Titel"]        = "Titlu";
+$wb["Server"]       = "Server";
+$wb["Host"]         = "Prefix";
+$wb["Domain"]       = "Domeniu";
+$wb["IP Adresse"]   = "Adresa IP";
+$wb["Ordner"]       = "Director";
+$wb["Dokument"]     = "Document";
+$wb["Dokument suchen"] = "Cauta document";
+$wb["Suchmaske"]    = "Conditiile Cautarii";
+$wb["Ausgabeformat"] = "Formatul Iesirii";
+$wb["Standard"]     = "Standard";
+$wb["Einträge"]    = "Intrari";
+$wb["Papierkorb leeren"] = "Goleste cosul de reciclare";
+$wb["Stammordner"]  = "Zona Master";
+$wb["keine Gruppe"] = "Nici un grup";
+$wb["neues Dokument anlegen"] = "document nou creat";
+$wb["auf"]   = "extinde";
+$wb["zu"]    = "compacteaza";
+$wb["in_ordner"]    = "in director";
+$wb["Papierkorb"]   = "Cosul de reciclare";
+$wb["Wiederherstellen"]    = "Restaureaza";
+$wb["Papierkorb: Einträge"]   = "Cosul de reciclare: continut";
+$wb["Speichern"]    = "Salveaza";
+$wb["Löschen"]    = "Sterge";
+$wb["Abbrechen"]    = "Anuleaza";
+$wb["Suchen"]    = "Cauta";
+
+$wb["Herr"] = "Dl";
+$wb["Frau"] = "Dna";
+
+$wb["Es ist folgender Fehler aufgetreten:"] = "Eroare:";
+
+$wb["Web-FTP"] = 'Web-FTP';
+$wb["ISP Faktura"] = 'Factura ISP';
+
+$wb["Verzeichnis öffnen"] = "deschide";
+$wb["Verzeichnis schliessen"] = "inchide";
+$wb["Hilfe"] = 'Ajutor';
+$wb["Online Hilfe"] = 'Ajutor Online';
+$wb["schliessen"] = 'inchide';
+
+$wb["PAPIERKORB_HINWEIS"] = "<b>Note:</b>Elemente ramase in cosul de reciclare dupa golire sunt in ca in starea de actualizare. Va rugam sa incercati sa le stergeti mai tarziu.";
+
+
+// Multidoc  Allgemein ////////////////////////////////
+
+$wb["title_required"] = "Va rugam sa intorduceti o valoare in campul 'Titlu'";
+$wb["error_keine_rechte"] = "Nu aveti prigilegiile necesare pentru a citi sau edita aceste date.";
+$wb["error_doctype_nicht_vorhanden"] = "Tipul de document cerut nu exista.";
+$wb["error_doctype_rechte"] = "Nu aveti prigilegiile necesare pentru a citi sau edita aceste date.";
+$wb["Formular Designer"] = "Arhitect de Forma";
+$wb["Geben Sie einen Wert in das Feld"] = "Va rugam sa introduceti o valoare valida in campul ";
+$wb["jscript_ein"] = " ";
+
+////////////// Allgemein Ende ///////////////////
+
+$wb["Es konnte ein Dokument nicht wiederhergestellt werden, da sich das Eltern-Dokument noch im Papierkorb befindet.\n"] = "Obiectul nu poate fi restaurat atat timp cat parintele sau este in cosul de reciclare.";
+
+$wb["DNS-Domains angelegt"] = 'Zona Master creata';
+$wb["Benutzter Diskspace"] = "Spatiu de disc utilizat";
+$wb["Slave Zones angelegt"] = "Zona Slave creata";
+$wb["Datenbanken angelegt"] = "Baza de date creata";
+
+$wb["txt_confirm_delete"] = "Sigur doriti stergerea acestui obiect?";
+
+?>

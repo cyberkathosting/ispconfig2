@@ -1,0 +1,55 @@
+<?
+/********************************
+* ISPConfig Dictionary File
+* Version 1.0
+*********************************/
+
+$wb["Datei Upload"] = 'Incarcare Fisier';
+$wb["Ordner neu"] = 'Director Nou';
+$wb["Web Auswahl"] = 'Selectie Web';
+$wb["Web auswählen"] = 'Selectare Web';
+$wb["Auswahl"] = 'Selectie';
+$wb["WEB FTP"] = 'WEB FTP';
+$wb["Hilfe"] = 'Ajutor';
+$wb["Name"] = 'Nume';
+$wb["Grösse"] = 'Dimensiune';
+$wb["Datum"] = 'Data';
+$wb["Eigentümer"] = 'Proprietar';
+$wb["Alle"] = 'Toate';
+$wb["Lesen"] = 'Citire';
+$wb["Schreiben"] = 'Scriere';
+$wb["Ausführen"] = 'Executare';
+$wb["Verzeichnisschutz"] = 'Protectie director';
+$wb["Verzeichnis schützen"] = 'Director protejat';
+$wb[".htaccess User"] = '.htaccess Utilizator';
+$wb[".htaccess Userübersicht"] = 'Sumar .htaccess utilizatori';
+$wb["Bearbeiten"] = 'Editare';
+$wb["Hinzufügen"] = 'Adauga';
+$wb["Parameterübergabe unvollständig"] = "Parametru incomplet";
+$wb["Ungültiges Format der web_id."] = "Format invalid pentru web_id.";
+$wb["Ungültige web_id."] = "web_id invalid.";
+$wb["Konnte server_path_httpd_root nicht ermitteln."] = "Nu s-a putut determina valoare variabilei server_path_httpd_root.";
+$wb["Das Verzeichnis existiert nicht oder Sie haben nicht die notwendigen Berechtigungen."] = "Directorul nu exista sau nu aveti drepturile necesare.";
+$wb["Der Pfad enthält ungültige Zeichen."] = "Calea contine semne invalide.";
+$wb["Diese Funktion ist im Demo-Modus deaktiviert"] = "Aceasta functie este dezactivata.";
+$wb["ist ein Link."] = "este un link.";
+$wb["existiert nicht."] = "nu exista."; // Es geht um: /home/file.htm existiert nicht.
+$wb["konnte nicht gelöscht werden."] = "nu a putut fi sters.";
+$wb["Das Verschieben der Datei ist fehlgeschlagen."] = "Mutarea fisierului a esuat.";
+$wb["konnte nicht gelöscht werden. Das Verzeichnis muss leer sein und Sie müssen Schreibrechte besitzen."] = "nu a putut fi sters. Directorul trebui sa fie gol si sa aveti dreptul de stergere.";
+$wb["Das Verschieben des Verzeichnisses ist fehlgeschlagen."] = "Mutarea a esuat.";
+$wb["Es wurde keine Datei zum Upload ausgewählt."] = "Nu a fost selectat nici un fisier pentru upload.";
+$wb["Die Datei existiert bereits in diesem Verzeichnis."] = "Fisierul exista deja in acest director.";
+$wb["Möglicher Dateiupload Angriff."] = "Posibil atac cu upload.";
+$wb["Ordner"] = "Director";
+
+$wb["chmod failed."] = "comanda chmod a esuat";
+$wb["FTP: Failed to open"] = "FTP: Eroare la deschidere ";
+$wb["Failed to open"] = "Eroare la deschidere ";
+$wb["Could not connect to"] = "Nu m-am putut conecta ";
+$wb["Could not connect as user"] = "Nu m-am putut conecta ca utilizator ";
+$wb["Next >>"] = "<br><br>Urmatorul >>";
+
+$wb["Catalog_Name"] = "Nume";
+
+?>
