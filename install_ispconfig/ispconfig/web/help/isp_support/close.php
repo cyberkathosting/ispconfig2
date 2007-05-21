@@ -63,7 +63,7 @@ $opened_tickets = $go_api->db->queryAllRecords($sql);
 if(is_array($opened_tickets)) {
         foreach($opened_tickets as $row) {
                 $vtemp["TID"] = $row["doc_id"];
-                $vtemp["TSUBJECT"] = $row["ticket_subject"];
+                $vtemp["TSUBJECT"] = stripslashes($row["ticket_subject"]);
                 switch($row["ticket_urgency"]) {
                         case "1" : $vtemp["TPRIORITY"] = $go_api->lng("Hoch"); break;
                         case "3" : $vtemp["TPRIORITY"] = $go_api->lng("Mittel"); break;

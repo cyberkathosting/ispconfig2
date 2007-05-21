@@ -54,8 +54,8 @@ if(is_array($go_api->groups->myGroups())) {
 }
 
 $from_id = $go_info["user"]["userid"];
-$subject = stripslashes($subject);
-$request = stripslashes($request);
+$subject = addslashes(strip_tags($subject));
+$request = addslashes(strip_tags($request));
 
 // Insert into database
 $sql = "INSERT INTO help_tickets (ticket_from,ticket_to,ticket_status,ticket_urgency,ticket_subject,ticket_message,ticket_date) VALUES ($from_id,$to_id,\"O\",\"$priority\",\"$subject\",\"$request\",NOW())";
