@@ -24,34 +24,34 @@ $wb["passwort_alt"] = "Het wachtwoord kon niet gewijzigd worden <br> omdat het o
 
 // NEW 1.1.12 ///////////////////////////////
 
-$wb["Backup Manager"] = 'Backup manager';
-$wb["Backup"] = 'Backup';
-$wb["Restore"] = 'Terugzetten';
-$wb["Daten Export"] = 'Data export';
-$wb["Update Manager"] = 'Update manager';
-$wb["Portscanner"] = 'Portscanner';
-$wb["Whois"] = 'Whois';
-$wb["Download"] = 'Download';
-$wb["FTP-Server"] = 'FTP-server';
-$wb["Verzeichnis"] = 'Map';
-$wb["Web Daten"] = 'Web data';
-$wb["User Daten"] = 'Gebruikers data';
-$wb["Log Daten"] = 'Log data';
-$wb["mySQL Datenbank (wenn vorhanden)"] = 'mySQL Database';
-$wb["Backup starten"] = 'Backup starten';
-$wb["Kein Web vorhanden."] = 'Geen web gevonden.';
-$wb["Web-Backup"] = 'Web backup';
-$wb["Kunden-Stammaten"] = 'Klantgegevens';
-$wb["Format Einstellungen"] = 'Format specificatie';
-$wb["Trennzeichen"] = 'Scheidingsteken';
-$wb["Eingeschlossen mit"] = 'bijgevoegd';
-$wb["Daten für folgende Anbieter exportieren"] = 'Export data';
-$wb["Export starten"] = 'Export starten';
-$wb["Anbieter-Stammdaten"] = 'Reseller stamgegevens';
-$wb["Export"] = 'Export';
-$wb["Von"] = 'Van';
+$wb["Backup Manager"] = "Backup manager";
+$wb["Backup"] = "Backup";
+$wb["Restore"] = "Terugzetten";
+$wb["Daten Export"] = "Data export";
+$wb["Update Manager"] = "Update manager";
+$wb["Portscanner"] = "Portscanner";
+$wb["Whois"] = "Whois";
+$wb["Download"] = "Download";
+$wb["FTP-Server"] = "FTP-server";
+$wb["Verzeichnis"] = "Map";
+$wb["Web Daten"] = "Web data";
+$wb["User Daten"] = "Gebruikers data";
+$wb["Log Daten"] = "Log data";
+$wb["mySQL Datenbank (wenn vorhanden)"] = "mySQL Database";
+$wb["Backup starten"] = "Backup starten";
+$wb["Kein Web vorhanden."] = "Geen web gevonden.";
+$wb["Web-Backup"] = "Web backup";
+$wb["Kunden-Stammaten"] = "Klantgegevens";
+$wb["Format Einstellungen"] = "Format specificatie";
+$wb["Trennzeichen"] = "Scheidingsteken";
+$wb["Eingeschlossen mit"] = "bijgevoegd";
+$wb["Daten für folgende Anbieter exportieren"] = "Export data";
+$wb["Export starten"] = "Export starten";
+$wb["Anbieter-Stammdaten"] = "Reseller stamgegevens";
+$wb["Export"] = "Export";
+$wb["Von"] = "Van";
 $wb["Bis"] = 'Aan';
-$wb["Local Portscanner"] = 'Lokale Portscanner';
+$wb["Local Portscanner"] = "Lokale Portscanner";
 
 // NEW 1.1.12a //////////////////////////////
 
@@ -146,7 +146,7 @@ $wb["mySQL Passwort"]    = "mySQL wachtwoord";
 $wb["Anbieter neu"] = "Nieuwe aanbieder";
 $wb["Kunde neu"]    = "Nieuwe klant";
 $wb["Web neu"]      = "Nieuwe site";
-$wb["Ordner neu"]   = "Nieuwe Map";
+$wb["Ordner neu"]   = "Gesorteerd op";
 $wb["Suchen"]       = "Zoeken";
 $wb["ISP Anbieter"] = "ISP aanbieder";
 $wb["Webs"] = "Sites";
@@ -175,7 +175,7 @@ $wb["SUCHE"] = "Zoeken";
 
 $wb["msg_beta"] = "";
 $wb["title_isp_beta"] = "";
-$wb["msg_kein_win"] = "Deze software is niet beschikbaar voor Windows operating systems..";
+$wb["msg_kein_win"] = "Deze software is niet beschikbaar voor Windows operating systems.";
 
 // Error Codes ispconfig_isp_domain.lib.php
 $wb["error_web_doppelt"] = "Er is al een site of domein met deze naam";
@@ -185,8 +185,8 @@ $wb["angelegt"] = "Gebruikt";
 
 // Error Codes ispconfig_isp_kunde.lib.php
 $wb["error_user_exist_1"] = "De ISPConfig gebruiker";
-$wb["error_user_exist_2"] = "bestaat al. De gebruiker is niet gewijzigd of toegevoegd..";
-$wb["error_max_user_licence"] = "Het maximaal aantal ISPConfig gebruiker voor deze licentie is bereikt..";
+$wb["error_user_exist_2"] = "bestaat al. De gebruiker is niet gewijzigd of toegevoegd.";
+$wb["error_max_user_licence"] = "Het maximaal aantal ISPConfig gebruiker voor deze licentie is bereikt.";
 
 
 // Error Codes ispconfig_isp_reseller.lib.php
@@ -345,7 +345,7 @@ $wb["System Load 5 Minuten"] = "Systeem gebruik 5 Minuten";
 $wb["System Load 15 Minuten"] = "Systeem gebruik 15 Minuten";
 //////////////// Server Status Ende //////////
 
-$wb["DNS-Domains angelegt"] = 'DNS Domeinen aangemaakt';
+$wb["DNS-Domains angelegt"] = "DNS Domeinen aangemaakt";
 
 $wb["Hinzufügen"] = "Toevoegen";
 $wb["Berechtigungen"] = "Rechten";

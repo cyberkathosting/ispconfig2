@@ -35,7 +35,7 @@ $wb["User angelegt"] = "Gebruikers aangemaakt";
 $wb["Domains angelegt"] = "Domeinen aangemaakt";
 $wb["unlimitiert"]  = "ongelimiteerd";
 $wb["Anbieter"]     = "Reseller";
-$wb["DNS-Domains angelegt"] = 'DNS Domeinen aangemaakt';
+$wb["DNS-Domains angelegt"] = "DNS Domeinen aangemaakt";
 $wb["von"] = "van";
 
 // NEW 2.0.8 ///////////////////////////////////
