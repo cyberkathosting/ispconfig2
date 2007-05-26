@@ -39,7 +39,7 @@ if(CONFIG_LOADED != 1) die('Direct access not permitted.');
 include_once('/root/ispconfig/scripts/lib/classes/ispconfig_postfix.lib.php');
 
 // Override settings and set the configuration style to sendmail
-$go_info["server"]["postfix_config"] == 1
+$go_info["server"]["postfix_config"] = 1;
 
 // Make a sendmail class out of the postfix class code.
 class sendmail extends postfix{

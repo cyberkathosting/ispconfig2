@@ -49,7 +49,7 @@ class go_api
 
       $dbclass = CLASSES_ROOT . DIR_TRENNER ."ispconfig_db_".DB_TYPE.".lib.php";
       include_once($dbclass);
-          $dbname = 'db_'.BD_TYPE;
+          $dbname = 'db_'.DB_TYPE;
       $this->db = new $dbname;
 
       $this->language = $go_info["server"]["lang"];
