@@ -387,5 +387,3 @@ MenuSchriftGroesse = '1';                   // die Schriftgröße - nicht zu groß 
 
 
 
-
-
