@@ -185,7 +185,11 @@ if [ -f /etc/redhat-release ] && [ ! -h  /etc/redhat-release ]; then
    rm -f dist.info.ende
 fi
 if [ -f /etc/fedora-release ] && [ ! -h  /etc/fedora-release ]; then
-   version=`cat /etc/fedora-release | cut -f4 -d' '`
+   if [ "`cat /etc/fedora-release | cut -f2 -d' '`" == "Core" ]; then
+     version=`cat /etc/fedora-release | cut -f4 -d' '`
+   else
+     version=`cat /etc/fedora-release | cut -f3 -d' '`
+   fi
    echo $version | grep \\. &> /dev/null
    if [ $? != 0 ]; then
      version=`echo $version.0`
