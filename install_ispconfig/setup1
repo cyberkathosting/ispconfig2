@@ -156,9 +156,11 @@ if [ -f /etc/mandriva-release ] && [ ! -h  /etc/mandriva-release ]; then
    rm -f dist.info.ende
 fi
 if [ -f /etc/redhat-release ] && [ ! -h  /etc/redhat-release ]; then
-   version=`cat /etc/redhat-release | cut -f5 -d' '`
-   if [ -n '$version' ]; then
-     version=`cat /etc/redhat-release | cut -f3 -d' '`
+   grep -wi "core" /etc/fedora-release &> /dev/null
+   if [ $? != 0 ]; then
+     version=`cat /etc/fedora-release | cut -f3 -d' '`
+   else
+     version=`cat /etc/fedora-release | cut -f4 -d' '`
    fi
    echo $version | grep \\. &> /dev/null
    if [ $? != 0 ]; then
