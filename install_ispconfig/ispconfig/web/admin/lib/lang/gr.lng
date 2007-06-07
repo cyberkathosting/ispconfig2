@@ -1,0 +1,499 @@
+<?
+/********************************
+* ISPConfig Dictionary File
+* Version 1.0
+*********************************/
+
+//////////////// Server Status ////////////////
+$wb["Arbeitsspeicher"]          = "Κύρια Μνήμη";
+$wb["CPU"]          = "Επεξεργαστής";
+$wb["Dienste"]      = "Υπηρεσίες";
+$wb["Server Online seit"]          = "Χρόνος λειτουργίας διακομιστή";
+$wb["User Online"]      = "Χρήστες σε σύνδεση";
+$wb["System Load 1 Minute"] = "Φόρτος συστήματος 1 λεπτού";
+$wb["System Load 5 Minuten"] = "Φόρτος συστήματος 5 λεπτών";
+$wb["System Load 15 Minuten"] = "Φόρτος συστήματος 15 λεπτών";
+//////////////// Server Status Ende //////////
+
+///////////////// Administration ////////////////
+$wb["ISPConfig Datenbank"]    = "Βάση δεδομένων ISPConfig";
+$wb["Backup erstellen"]       = "Δημιουργία Backup";
+$wb["Datenbank Check"]        = "Έλεγχος βάσης δεδομένων";
+$wb["Datenbank Optimieren"]   = "Βελτιστοποίηση βάσης δεδομένων";
+$wb["Datenbank Reparieren"]   = "Επιδιόρθωση βάσης δεδομένων";
+$wb["Eigenschaften"] = "Ρυθμίσεις";
+$wb["Server Name"]  = "Όνομα διακομιστή";
+$wb["Netzmaske"]    = "Μάσκα δικτύου";
+$wb["Sprache"]      = "Γλώσσα";
+$wb["IP Liste"]     = "Λίστα διευθύνσεων IP";
+$wb["hinweis_ip_liste"] = "<b>Σύσταση: </b> Μια IP ανά γραμμή στη λίστα διευθύνσεων IP";
+$wb["Pfad"]         = "Διαδρομή";
+$wb["Programm"]     = "Εφαρμογή";
+$wb["Reparatur"]    = "Επιδιόρθωση";
+$wb["Optimiere"]    = "Βελτιστοποίηση";
+$wb["Pfad httpd.conf"]    = "Διαδρομή httpd.conf";
+$wb["MTA Typ"]    = "MTA Μορφή";
+$wb["Virtuser Datei"]    = "Virtuser Αρχείο";
+$wb["FTP Programm"]    = "FTP Εφαρμογή";
+$wb["FTP conf. Datei"]    = "FTP conf. Αρχείο";
+$wb["Userid von"]    = "Userid από";
+$wb["Groupid von"]    = "Groupid από";
+
+$wb["Backup von Tabelle"] = "Backup Πίνακα";
+$wb["Optimiere"] = "Βελτιστοποίηση";
+$wb["Reparatur"] = "Επιδιόρθωση";
+$wb["oder"] = "ή";
+$wb["Installation starten"] = "Εγκατάσταση";
+
+$wb["Deutsch"] = "Γερμανικά";
+$wb["Englisch"] = "Αγγλικα";
+$wb["Datei"] = "Αρχείο";
+
+//////////////// Administration Ende ///////////
+
+//////////////// Firewall, Monitor + Dienste  ////////////////
+
+$wb["άberwachung"] = "Παρακολούθηση";
+$wb["Firewall"] = "Τείχος Προστασίας";
+$wb["Web-Server"] = "Διακομιστής WEB";
+$wb["FTP-Server"] = "Διακομιστής FTP";
+$wb["SMTP-Server"] = "Διακομιστής SMTP";
+$wb["DNS-Server"] = "Διακομιστής DNS";
+$wb["mySQL-Server"] = "Διακομιστής MySQL";
+$wb["An"] = "Ενεργό";
+$wb["Aus"] = "Ανενεργό";
+$wb["neu Starten"] = "Επανεκκίνηση";
+$wb["Neu"] = "Προσθήκη";
+$wb["Aktionen"] = "Ενέργειες";
+$wb["Dienst"] = "Υπηρεσία";
+$wb["Hostname"] = "Όνομα";
+$wb["Port"] = "Θύρα";
+$wb["Typ"] = "Τύπος";
+$wb["TCP"] = "TCP";
+$wb["UDP"] = "UDP";
+$wb["Der Dienst-Typ wird nur bei sonstigen-Diensten ausgewertet."] = "Ο τύπος της υπηρεσίας θα αναλυθεί μόνο σε σχέση με άλλες υπηρεσίες.";
+$wb["Sonstige"] = "Λοιπές";
+$wb["Ja"] = "Ναι";
+$wb["Nein"] = "Όχι";
+$wb["Offline"] = "Εκτός λειτουργίας";
+$wb["ISP Dienste"] = "ISP Υπηρεσίες";
+$wb["ISP άberwachung"] = "ISP Παρακολούθηση";
+$wb["ISP Firewall"] = "ISP Τείχος Προστασίας";
+$wb["Name"] = "Όνομα";
+$wb["Aktiv"] = "Ενεργό";
+$wb["Firewall Regel"] = "Κανόνας τείχους προστασίας";
+$wb["Dieser Port kann nicht geδndert werden."] = "Αυτή η θύρα δεν μπορεί να τροποποιηθεί.<br>";
+$wb["Dieser Port kann nicht deaktiviert werden."] = "Αυτή η θύρα δεν μπορεί να απενεργοποιηθεί.<br>";
+
+//////////////// Firewall ENDE ////////////////
+
+//////////////// LNG 1.1.12 BEGIN /////////////
+
+$wb["ISP Server"] = 'ISP Διακομιστής';
+$wb["Admin Email"] = 'Email Διαχειριστή';
+$wb["EMail"] = 'EMail';
+$wb["Funktionen"] = 'Λειτουργίες';
+$wb["httpd User"] = 'httpd Χρήστης';
+$wb["httpd Group"] = 'httpd Ομάδα';
+$wb["Document Root"] = 'Ριζικός κατάλογος';
+$wb["Frontpage Pfad"] = 'Frontpage Διαδρομή';
+$wb["access Log"] = 'Στατιστικά πρόσβασης';
+$wb["Sendmail"] = 'Sendmail';
+$wb["Sendmail CW"] = 'Sendmail CW';
+$wb["Log speichern"] = 'Αποθήκευση στατιστικών';
+$wb["BIND User"] = 'BIND Χρήστης';
+$wb["BIND Group"] = 'BIND Ομάδα';
+$wb["Zonefiles Dir."] = 'Zonefiles Dir.';
+$wb["Default Ns1"] = 'Προεπιλεγμένος Ns1';
+$wb["Default Ns2"] = 'Προεπιλεγμένος Ns2';
+$wb["Standard MX"] = 'Προεπιλεγμένη εγγραφή MX';
+$wb["Frontpage Extensions"] = 'Frontpage επεκτάσεις';
+$wb["User Prefix"] = 'User Prefix';
+$wb["Anbieter Nr. von"] = 'Αριθμός μεταπωλητή από';
+$wb["Kunden Nr. von"] = 'Αριθμός πελάτη από';
+$wb["SOAP Server IP"] = 'SOAP διακομιστης IP';
+$wb["SOAP Server Port"] = 'SOAP θύρα διακομιστή';
+$wb["Web-FTP"] = 'Web-FTP';
+$wb["ISP Faktura"] = 'ISP Κοστολόγηση';
+$wb["Modul Manager"] = 'Διαχειριστής Αρθρωμάτων';
+$wb["Hinzufόgen"] = 'Προσθήκη';
+$wb["Alle anzeigen"] = 'Προβολή όλων';
+$wb["Update Manager"] = 'Διαχειριστής ενημερώσεων';
+$wb["Update"] = 'Ενημέρωση';
+$wb["System Config"] = 'Ρύθμιση συστήματος';
+$wb["Bearbeiten"] = 'Επεξεργασία';
+$wb["Importieren"] = 'Εισαγωγή';
+$wb["Exportieren"] = 'Έξοδος';
+$wb["Allgemein"] = 'Γενικά';
+$wb["ISP-Manager"] = 'ISP Διαχειριστής';
+$wb["Faktura"] = 'Κοστολόγηση';
+$wb["άbernehmen"] = 'Αποθήκευση';
+$wb["Webserver"] = 'WEB Διακομιστής';
+$wb["Bind DNS"] = 'Bind DNS Διακομιστής';
+$wb["Mailserver"] = 'Mail Διακομιστής';
+$wb["POP3-Server"] = 'POP3 Διακομιστής';
+$wb["nein"] = 'ναι';
+$wb["ja"] = 'όχι';
+$wb["ISP Server Status"] = 'Κατάσταση ISP διακομιστή';
+$wb["System-Datenbank"] = 'Βάση δεδομένων συστήματος';
+$wb["Verzeichnis"] = 'Φάκελος';
+$wb["Backup starten"] = 'Δημιουργία';
+
+// NEW 1.1.12a //////////////////////////////
+
+$wb["Es wurde kein Web ausgewδhlt."] = "Δεν έχετε επιλέξει δικτυακό τόπο.";
+$wb["Backup-Funktionen im Demo-Modus nicht verfόgbar."] = "Στη δοκιμαστική λειτουργία δεν είναι διαθέσιμη η λειτουργία Backup.";
+$wb["Backup Status"] = "Κατάσταση Backup";
+$wb["Der Name des FTP-Servers <br>enthδlt ungόltige Zeichen."] = "Το όνομα του FTP διακομιστή <br>περιέχει μη έγκυρους χαρακτήρες.";
+$wb["Sie haben keinen FTP Benutzernamen angegeben."] = "Δεν έχει οριστεί χρήστης FTP.";
+$wb["Ftp-Verbindung nicht hergestellt!"] = "H FTP σύνδεση απέτυχε!";
+$wb["Verbindung mit:"] = "Σύνδεση με:";
+$wb["als Benutzer:"] = "Ως χρήστης";
+$wb["nicht mφglich."] = "αδύνατη.";
+$wb["Konnte nicht in Verzeichnis:"] = "Αδύνατη η αλλαγή στο φακέλο:";
+$wb["wechseln."] = "Αποτυχία.";
+$wb["Wechsel in Verzeichnis:"] = "Αλλαγή στο φακέλο:";
+$wb["Ftp upload war fehlerhaft!"] = "Η FTP μεταφορά απέτυχε!";
+$wb["Upload erfolgreich."] = "Επιτυχής μεταφορά";
+$wb["FTP-Upload Status"] = "Κατάσταση FTP μεταφοράς";
+$wb["Backup-Methode nicht unterstόtzt."] = "Δεν υποστηρίζεται αυτή η μέθοδος Backup.";
+$wb["Rechnung Nr. von"] = "Αριθμός κοστολόγησης από";
+
+//////////////// LNG 1.1.12 ENDE ///////////////
+
+// NEW 1.3 /////////////////////////////////////
+
+$wb["Remoting"] = 'Απομακρυσμένα';
+$wb["User"] = 'Χρήστης';
+$wb["Conf. Dir."] = 'Conf. Dir.';
+$wb["Suexec"] = 'Suexec';
+$wb["Postfix"] = 'Postfix';
+$wb["Mail Log"] = 'Στατιστικά Mail';
+$wb["Maildir"] = 'Maildir';
+$wb["Antivir Mailadmin"] = 'Διαχειριστής Antivirus';
+$wb["aktiv"] = "ενεργό";
+$wb["inaktiv"] = "ανενεργό";
+$wb["weiter_link"] = "<br><br> <a href='../../isp_manager/frame_start.php?s=$s'>Επόμενο &gt;&gt;</a>";
+$wb["txt_client_salutatory_email_desc"] = "<b>Μήνυμα χαιρετισμού πελατών</b>";
+$wb["txt_client_salutatory_email_sender_email"] = "Η ηλεκτρονική διεύθυνση του αποστολέα";
+$wb["txt_client_salutatory_email_sender_name"] = "Το όνομα του αποστολέα";
+$wb["txt_client_salutatory_email_bcc"] = "BCC κοινοποίηση";
+$wb["txt_client_salutatory_email_subject"] = "Θέμα";
+$wb["txt_client_salutatory_email_message"] = "Μήνυμα";
+$wb["txt_client_salutatory_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Συμπερίληψη των παρακάτω μεταβλητών στο κείμενό σας:</b></td></tr>
+        <tr>
+          <td class="normal">%%%USER%%%</td>
+          <td class="normal">
+            Το όνομα χρήστη του πελάτη</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%PASSWORD%%%</td>
+          <td class="normal">
+            Ο κωδικός πρόσβασης του πελάτη</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%FIRST_NAME%%%</td>
+          <td class="normal">
+            Το όνομα του πελάτη</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%LAST_NAME%%%</td>
+          <td class="normal">
+            Το επίθετο του πελάτη</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%COMPANY%%%</td>
+          <td class="normal">
+            Η εταιρία του πελάτη</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%EMAIL%%%</td>
+          <td class="normal">
+            Η ηλεκτρονική διεύθυνση αλληλογραφίας του πελάτη</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%CP%%%</td>
+          <td class="normal">
+            Διαδρομή εισόδου URL στη εφαρμογή ISPConfig</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%MANUAL%%%</td>
+          <td class="normal">
+            Εγχειρίδιο χρήσης της εφαρμογής ISPConfig</td>
+        </tr>
+        </table>';
+
+$wb["txt_res_salutatory_email_desc"] = "<b>Μήνυμα χαιρετισμού για τους μεταπωλητές</b>";
+$wb["txt_res_salutatory_email_sender_email"] = "Η ηλεκτρονική διεύθυνση του αποστολέα";
+$wb["txt_res_salutatory_email_sender_name"] = "Το όνομα του αποστολέα";
+$wb["txt_res_salutatory_email_bcc"] = "BCC κοινοποίηση";
+$wb["txt_res_salutatory_email_subject"] = "Θέμα";
+$wb["txt_res_salutatory_email_message"] = "Μήνυμα";
+$wb["txt_res_salutatory_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Συμπερίληψη των παρακάτω μεταβλητών στο κείμενό σας:</b></td></tr>
+        <tr>
+          <td class="normal">%%%USER%%%</td>
+          <td class="normal">
+            Το όνομα χρήστη του μεταπωλητή</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%PASSWORD%%%</td>
+          <td class="normal">
+            Ο κωδικός πρόσβασης του μεταπωλητή</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%FIRST_NAME%%%</td>
+          <td class="normal">
+            Το όνομα του μεταπωλητή</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%LAST_NAME%%%</td>
+          <td class="normal">
+            Το επίθετο του μεταπωλητή</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%COMPANY%%%</td>
+          <td class="normal">
+            Η εταιρία του μεταπωλητή</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%EMAIL%%%</td>
+          <td class="normal">
+            Η ηλεκτρονική διεύθυνση αλληλογραφίας του μεταπωλητή</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%CP%%%</td>
+          <td class="normal">
+            Διαδρομή εισόδου URL στην εφαρμογή ISPConfig</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%MANUAL%%%</td>
+          <td class="normal">
+            Εγχειρίδιο χρήσης για μεταπωλητές της εφαρμογής ISPConfig</td>
+        </tr>
+        </table>';
+$wb["txt_standard_index"] = "Προεπιλεγμένη Αρχική<br>&nbsp;&nbsp;Σελίδα";
+$wb["txt_standard_index_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Συμπερίληψη των παρακάτω μεταβλητών στο κείμενό σας:</b></td></tr>
+        <tr>
+          <td class="normal">%%%FQDN%%%</td>
+          <td class="normal">
+            Το κατοχυρωμένο κύριο όνομα του δικτυακού τόπου FQDN</td>
+        </tr>
+    </table>';
+$wb["txt_user_standard_index"] = "Προεπιλεγμένη Αρχική Σελίδα<br>&nbsp;&nbsp;Χρήστη";
+$wb["txt_user_standard_index_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Συμπερίληψη των παρακάτω μεταβλητών στο κείμενό σας:</b></td></tr>
+        <tr>
+          <td class="normal">%%%USER%%%</td>
+          <td class="normal">
+            Το όνομα χρήστη</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%FQDN%%%</td>
+          <td class="normal">
+            Το κατοχυρωμένο κύριο όνομα του δικτυακού τόπου FQDN</td>
+        </tr>
+        </table>';
+
+//////////////// Remoting //////////////////////
+$wb["Hinzufόgen"] = "Προσθήκη";
+$wb["Berechtigungen"] = "Δικαιώματα";
+$wb["Speichern"] = "Αποθήκευση";
+$wb["Lφschen"] = "Διαγραφή";
+$wb["Abbrechen"] = "Ακύρωση";
+$wb["IP-Adresse"] = "Διεύθυνση IP";
+$wb["DNS-Query"] = "Επερώτηση εγγραφών κύριου διακομιστή ονομάτων DNS";
+$wb["DNS-Insert"] = "Εισαγωγή εγγραφών κύριου διακομιστή ονομάτων DNS";
+$wb["DNS-Update"] = "Ενημέρωση εγγραφών κύριου διακομιστή ονομάτων DNS";
+$wb["DNS-Delete"] = "Διαγραφή εγγραφών κύριου διακομιστή ονομάτων DNS";
+$wb["slave_query"] = "Επερώτηση εγγραφών εναλλακτικού διακομιστή ονομάτων DNS";
+$wb["slave_insert"] = "Εισαγωγή εγγραφών εναλλακτικού διακομιστή ονομάτων DNS";
+$wb["slave_update"] = "Ενημέρωση εγγραφών εναλλακτικού διακομιστή ονομάτων DNS";
+$wb["slave_delete"] = "Διαγραφή εγγραφών εναλλακτικού διακομιστή ονομάτων DNS";
+$wb["reseller_query"] = "Επερώτηση μεταπωλητή";
+$wb["reseller_insert"] = "Δημιουργία μεταπωλητή";
+$wb["reseller_update"] = "Επεξεργασία μεταπωλητή";
+$wb["reseller_delete"] = "Διαγραφή μεταπωλητή";
+$wb["kunde_query"] = "Επερώτηση πελάτη";
+$wb["kunde_insert"] = "Δημιουργία πελάτη";
+$wb["kunde_update"] = "Επεξεργασία πελάτη";
+$wb["kunde_delete"] = "Διαγραφή πελάτη";
+$wb["web_query"] = "Επερώτηση δικτυακού τόπου";
+$wb["web_insert"] = "Δημιουργία δικτυακού τόπου";
+$wb["web_update"] = "Επεξεργασία δικτυακού τόπου";
+$wb["web_delete"] = "Διαγραφή δικτυακού τόπου";
+$wb["txt_primary_dns_records"] = "Κύριες εγγραφές διακομιστή ονομάτων DNS";
+$wb["txt_secondary_dns_records"] = "Εναλλακτικές εγγραφές διακομιστή ονομάτων DNS";
+$wb["txt_anbieter"] = "Μεταπωλητές";
+$wb["txt_kunden"] = "Πελάτες";
+$wb["txt_webs"] = "Δικτυακοί τόποι";
+
+$wb["txt_traffic_suspension_email_desc"] = "<b>Αναστολή λειτουργίας δικτυακού τόπου (Υπέρβαση ορίου κίνησης δεδομένων)</b>";
+$wb["txt_traffic_suspension_sender_email"] = "Η ηλεκτρονική διεύθυνση του αποστολέα";
+$wb["txt_traffic_suspension_sender_name"] = "Το όνομα του αποστολέα";
+$wb["txt_traffic_suspension_email_bcc"] = "BCC κοινοποίηση";
+$wb["txt_traffic_suspension_email_subject"] = "Θέμα";
+$wb["txt_traffic_suspension_email_message"] = "Μήνυμα";
+$wb["txt_traffic_suspension_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Συμπερίληψη των παρακάτω μεταβλητών στο κείμενό σας:</b></td></tr>
+        <tr>
+          <td class="normal">%%%FIRST_NAME%%%</td>
+          <td class="normal">
+            Το όνομα του πελάτη</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%LAST_NAME%%%</td>
+          <td class="normal">
+            Το επίθετο του πελάτη</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%WEBSITE%%%</td>
+          <td class="normal">
+            Ο δικτυακός τόπος του πελάτη</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%MONTH%%%</td>
+          <td class="normal">
+            Ο μήνας της υπέρβασης του ορίου κίνησης δεδομένων</td>
+        </tr>
+        <tr>
+          <td class="normal" valign="top">%%%INCLUDED_TRAFFIC%%%</td>
+          <td class="normal">
+            Η συνολική επιτρεπτή κίνηση του πακέτου φιλοξενίας</td>
+        </tr>
+        <tr>
+          <td class="normal" valign="top">%%%TOTAL_TRAFFIC%%%</td>
+          <td class="normal">
+            Συνολική κίνηση του μήνα της υπέρβασης του ορίου</td>
+        </tr>
+        </table>';
+
+$wb["txt_traffic_notification_email_desc"] = "<b>Υπέρβαση του ορίου κίνησης δεδομένων</b>";
+$wb["txt_traffic_notification_sender_email"] = "Η ηλεκτρονική διεύθυνση του αποστολέα";
+$wb["txt_traffic_notification_sender_name"] = "Το όνομα του αποστολέα";
+$wb["txt_traffic_notification_email_bcc"] = "BCC κοινοποίηση";
+$wb["txt_traffic_notification_email_subject"] = "Θέμα";
+$wb["txt_traffic_notification_email_message"] = "Μήνυμα";
+$wb["txt_traffic_notification_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Συμπερίληψη των παρακάτω μεταβλητών στο κείμενό σας:</b></td></tr>
+        <tr>
+          <td class="normal">%%%FIRST_NAME%%%</td>
+          <td class="normal">
+            Το όνομα του πελάτη</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%LAST_NAME%%%</td>
+          <td class="normal">
+            Το επίθετο του πελάτη</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%WEBSITE%%%</td>
+          <td class="normal">
+            Ο δικτυακός τόπος του πελάτη</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%MONTH%%%</td>
+          <td class="normal">
+            Ο μήνας της υπέρβασης του ορίου κίνησης δεδομένων</td>
+        </tr>
+        <tr>
+          <td class="normal" valign="top">%%%INCLUDED_TRAFFIC%%%</td>
+          <td class="normal">
+            Η συνολική επιτρεπτή κίνηση του πακέτου φιλοξενίας</td>
+        </tr>
+        <tr>
+          <td class="normal" valign="top">%%%TOTAL_TRAFFIC%%%</td>
+          <td class="normal">
+            Συνολική κίνηση του μήνα της υπέρβασης του ορίου</td>
+        </tr>
+        </table>';
+
+$wb["txt_res_traffic_suspension_email_desc"] = "<b>Ενημέρωση φραγής μεταπωλητή (Υπέρβαση ορίου κίνησης δεδομένων)</b>";
+$wb["txt_res_traffic_suspension_sender_email"] = "Η ηλεκτρονική διεύθυνση του αποστολέα";
+$wb["txt_res_traffic_suspension_sender_name"] = "Το όνομα του αποστολέα";
+$wb["txt_res_traffic_suspension_email_bcc"] = "BCC κοινοποίηση";
+$wb["txt_res_traffic_suspension_email_subject"] = "Θέμα";
+$wb["txt_res_traffic_suspension_email_message"] = "Μήνυμα";
+$wb["txt_res_traffic_suspension_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Συμπερίληψη των παρακάτω μεταβλητών στο κείμενό σας:</b></td></tr>
+        <tr>
+          <td class="normal">%%%FIRST_NAME%%%</td>
+          <td class="normal">
+            Το όνομα του μεταπωλητή</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%LAST_NAME%%%</td>
+          <td class="normal">
+            Το επίθετο του μεταπωλητή</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%MONTH%%%</td>
+          <td class="normal">
+            Ο μήνας της υπέρβασης του ορίου</td>
+        </tr>
+        <tr>
+          <td class="normal" valign="top">%%%INCLUDED_TRAFFIC%%%</td>
+          <td class="normal">
+            Η συνολική επιτρεπτή κίνηση του μεταπωλητή</td>
+        </tr>
+        <tr>
+          <td class="normal" valign="top">%%%TOTAL_TRAFFIC%%%</td>
+          <td class="normal">
+            Συνολική κίνηση του μήνα της υπέρβασης του ορίου</td>
+        </tr>
+        </table>';
+
+$wb["txt_res_traffic_notification_email_desc"] = "<b>Υπέρβαση του ορίου κίνησης δεδομένων μεταπωλητή</b>";
+$wb["txt_res_traffic_notification_sender_email"] = "Η ηλεκτρονική διεύθυνση του αποστολέα";
+$wb["txt_res_traffic_notification_sender_name"] = "Το όνομα του αποστολέα";
+$wb["txt_res_traffic_notification_email_bcc"] = "BCC κοινοποίηση";
+$wb["txt_res_traffic_notification_email_subject"] = "Θέμα";
+$wb["txt_res_traffic_notification_email_message"] = "Μήνυμα";
+$wb["txt_res_traffic_notification_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Συμπερίληψη των παρακάτω μεταβλητών στο κείμενό σας:</b></td></tr>
+        <tr>
+          <td class="normal">%%%FIRST_NAME%%%</td>
+          <td class="normal">
+            Το όνομα του μεταπωλητή</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%LAST_NAME%%%</td>
+          <td class="normal">
+            Το επίθετο του μεταπωλητή</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%MONTH%%%</td>
+          <td class="normal">
+            Ο μήνας της υπέρβασης του ορίου</td>
+        </tr>
+        <tr>
+          <td class="normal" valign="top">%%%INCLUDED_TRAFFIC%%%</td>
+          <td class="normal">
+            Η συνολική επιτρεπτή κίνηση του μεταπωλητή</td>
+        </tr>
+        <tr>
+          <td class="normal" valign="top">%%%TOTAL_TRAFFIC%%%</td>
+          <td class="normal">
+            Συνολική κίνηση του μήνα της υπέρβασης του ορίου</td>
+        </tr>
+        </table>';
+
+?>

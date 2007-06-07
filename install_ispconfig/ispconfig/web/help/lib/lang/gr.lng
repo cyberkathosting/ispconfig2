@@ -1,0 +1,64 @@
+<?
+/********************************
+* ISPConfig Dictionary File
+* Version 1.0
+*********************************/
+
+$wb["Anbieter"]     = "Μεταπωλητής";
+$wb["Web"]          = "Δικτυακός τόπος";
+$wb["Admin Handbuch"] = "Εγχειρίδιο διαχειριστή";
+$wb["Reseller Handbuch"] = "Εγχειρίδιο μεταπωλητή";
+$wb["Kunden Handbuch"] = "Εγχειρίδιο πελάτη";
+$wb["Deutsch"]          = "Γερμανικά";
+$wb["Englisch"]         = "Αγλικά";
+$wb["Projektfarm Support"]          = "Υποστήριξη από την Projektfarm";
+$wb["Online Hilfe"] = "Βοήθεια στο διαδίκτυο";
+
+$wb["willkommen_kunde"] = "Καλώς ήρθατε στην εφαρμογή ISPConfig!
+Εδώ μπορείτε να διαχειριστείτε το δικτυακό σας τόπο. Για απορίες ή προβλήματα,
+παρακαλώ επικοινωνήστε με το διαχειριστή του διακομιστή ή ανατρέξτε στο εγχειρίδιο χρήσης πελάτη.";
+$wb["Willkommen"] = "Καλώς ήρθατε";
+
+//////////////// Server Status ////////////////
+$wb["Arbeitsspeicher"]          = "Κύρια Μνήμη";
+$wb["CPU"]          = "Επεξεργαστής";
+$wb["Dienste"]      = "Υπηρεσίες";
+$wb["Server Online seit"]          = "Χρόνος λειτουργίας διακομιστή";
+$wb["User Online"]      = "Χρήστες σε σύνδεση";
+$wb["System Load 1 Minute"] = "Φόρτος συστήματος 1 λεπτού";
+$wb["System Load 5 Minuten"] = "Φόρτος συστήματος 5 λεπτών";
+$wb["System Load 15 Minuten"] = "Φόρτος συστήματος 15 λεπτών";
+//////////////// Server Status Ende //////////
+
+$wb["Webs angelegt"] = "Δικτυακοί τόποι σε χρήση";
+$wb["User angelegt"] = "Ενεργοί χρήστες";
+$wb["Domains angelegt"] = "Κύρια ονόματα σε χρήση";
+$wb["unlimitiert"]  = "χωρίς όριο";
+$wb["Anbieter"]     = "Μεταπωλητής";
+$wb["DNS-Domains angelegt"] = 'Κύρια ονόματα DNS σε χρήση';
+$wb["von"] = "από";
+
+// NEW 2.0.8 ///////////////////////////////////
+$wb["Franzφsische"]     = "Γαλλικά";
+// Support Tickets System
+$wb["Unterstόtzungskarten"] = "Αιτήματα υποστήριξης";
+$wb["Geφffnete Karten"] = "αναπάντητα αιτήματα";
+$wb["Geschlossene Karten"] = "απαντηθέντα αιτήματα";
+$wb["Neue Karte"] = "Νέο αίτημα";
+$wb["Betreff"] = "Θέμα";
+$wb["Prioritδt"] = "Προτεραιότητα";
+$wb["Niedrig"] = "Χαμηλή";
+$wb["Mittel"] = "Μεσαία";
+$wb["Hoch"] = "Υψηλή";
+$wb["Ihre frage"] = "Η ερώτησή σας";
+$wb["Senden"] = "Αποστολή";
+$wb["Fehler wδhrend der schaffung der karte"] = "Σφάλμα κατά τη δημιουργία του αιτήματος";
+$wb["Neue unterstόtzungskarte, die auf antwort wartet"] = "Νέο αναπάντητο αίτημα υποστήριξης";
+$wb["Sie erhielten eine antwort"] = "Έχετε λάβει απάντηση";
+$wb["geantwortet zu ihnen"] = "απαντήθηκε για σας";
+$wb["Datum"] = "Ημερομηνία";
+$wb["Davon"] = "Από";
+$wb["Ihre antwort"] = "Η απάντησή σας";
+$wb["Antworten"] = "Απάντηση";
+$wb["Schlieίen"] = "Έξοδος";
+?>

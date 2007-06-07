@@ -1,0 +1,55 @@
+<?
+/********************************
+* ISPConfig Dictionary File
+* Version 1.0
+*********************************/
+
+$wb["Datei Upload"] = 'Αποστολή αρχείου';
+$wb["Ordner neu"] = 'Νέος φάκελος';
+$wb["Web Auswahl"] = 'Επιλογή δικτυακού τόπου';
+$wb["Web auswδhlen"] = 'Επιλέξτε δικτυακό τόπο';
+$wb["Auswahl"] = 'Επιλογή';
+$wb["WEB FTP"] = 'WEB FTP';
+$wb["Hilfe"] = 'Βοήθεια';
+$wb["Name"] = 'Όνομα';
+$wb["Grφsse"] = 'Μέγεθος';
+$wb["Datum"] = 'Ημερομηνία';
+$wb["Eigentόmer"] = 'Ιδιοκτήτης';
+$wb["Alle"] = 'Όλα';
+$wb["Lesen"] = 'Ανάγνωση';
+$wb["Schreiben"] = 'Εγγραφή';
+$wb["Ausfόhren"] = 'Εκτέλεση';
+$wb["Verzeichnisschutz"] = 'Προστασία καταλόγου';
+$wb["Verzeichnis schόtzen"] = 'Προστατέψτε τον κατάλογο';
+$wb[".htaccess User"] = '.htaccess χρήστης';
+$wb[".htaccess Userόbersicht"] = 'Επισκόπηση των .htaccess χρηστών';
+$wb["Bearbeiten"] = 'Επεξεργασία';
+$wb["Hinzufόgen"] = 'Προσθήκη';
+$wb["Parameterόbergabe unvollstδndig"] = "Μη έγκυρη παράμετρος";
+$wb["Ungόltiges Format der web_id."] = "Μη έγκυρη μορφή web_id.";
+$wb["Ungόltige web_id."] = "¶κυρο web_id.";
+$wb["Konnte server_path_httpd_root nicht ermitteln."] = "Η διαδρομή server_path_httpd_root δε βρέθηκε.";
+$wb["Das Verzeichnis existiert nicht oder Sie haben nicht die notwendigen Berechtigungen."] = "Ο κατάλογος δεν υπάρχει ή δεν έχετε τα απαραίτητα δικαιώματα.";
+$wb["Der Pfad enthδlt ungόltige Zeichen."] = "Η διαδρομή περιέχει μη έγκυρους χαρακτήρες.";
+$wb["Diese Funktion ist im Demo-Modus deaktiviert"] = "Αυτή η λειτουργία είναι απενεργοποιημένη στη δοκιμαστική έκδοση.";
+$wb["ist ein Link."] = "είναι παραπομπή.";
+$wb["existiert nicht."] = "δεν υπάρχει."; // Es geht um: /home/file.htm existiert nicht.
+$wb["konnte nicht gelφscht werden."] = "αδύνατη η διαγραφή.";
+$wb["Das Verschieben der Datei ist fehlgeschlagen."] = "Η μετακίνηση του αρχείου απέτυχε.";
+$wb["konnte nicht gelφscht werden. Das Verzeichnis muss leer sein und Sie mόssen Schreibrechte besitzen."] = "αδύνατη η διαγραφή. Ο κατάλογος πρέπει να είναι άδειος και να έχετε δικαιώματα εγγραφής.";
+$wb["Das Verschieben des Verzeichnisses ist fehlgeschlagen."] = "Η μετακίνηση του καταλόγου απέτυχε.";
+$wb["Es wurde keine Datei zum Upload ausgewδhlt."] = "Δεν έχετε επιλέξει δεδομένα προς αποστολή.";
+$wb["Die Datei existiert bereits in diesem Verzeichnis."] = "Αυτό το αρχείο υπάρχει ήδη σε αυτό το φάκελο.";
+$wb["Mφglicher Dateiupload Angriff."] = "Πιθανή επίθεση παράνομης αποστολής αρχείου.";
+$wb["Ordner"] = "Φάκελος";
+
+$wb["chmod failed."] = "chmod απέτυχε";
+$wb["FTP: Failed to open"] = "FTP: Αποτυχία ανοίγματος ";
+$wb["Failed to open"] = "Αποτυχία ανοίγματος ";
+$wb["Could not connect to"] = "Αδύνατη η σύνδεση σε ";
+$wb["Could not connect as user"] = "Αδύνατη η σύνδεση ως χρήστης ";
+$wb["Next >>"] = "<br><br>Επόμενο >>";
+
+$wb["Catalog_Name"] = "Όνομα";
+
+?>

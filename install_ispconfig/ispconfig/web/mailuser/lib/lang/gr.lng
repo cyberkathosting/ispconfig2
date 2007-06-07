@@ -1,0 +1,47 @@
+<?php
+
+$wb["txt_login_desc"] = "Για να αλλάξετε τις ρυθμίσεις του λογαριασμού σας πληκτρολογήστε τα στοιχεία πρόσβασης εδώ.";
+$wb["txt_error"] = "Σφάλμα";
+$wb["txt_email_username"] = "Όνομα χρήστη Email";
+$wb["txt_password"] = "Κωδικός";
+$wb["txt_login"] = "Είσοδος";
+$wb["txt_autoresponder"] = "Αυτόματη απάντηση";
+$wb["txt_nachricht"] = "Μήνυμα";
+$wb["txt_speichern"] = "Αποθήκευση";
+$wb["txt_abbrechen"] = "Απόρριψη";
+$wb["txt_email_account"] = "Λογαριασμός Email";
+$wb["txt_user_und_email"] = "Χρήστης &amp; διεύθυνση Email";
+$wb["txt_spamfilter"] = "Φίλτρο SPAM";
+$wb["txt_logout"] = "Έξοδος";
+$wb["txt_mailscan"] = "Σάρωση μηνυμάτων";
+$wb["txt_antivirus"] = "Antivirus";
+$wb["txt_spam_strategie"] = "Πολιτική SPAM";
+$wb["txt_spam_hits"] = "Spam Hits";
+$wb["txt_rewrite_subject"] = "Διόρθωση θέματος";
+$wb["txt_betreff"] = "Θέμα";
+$wb["txt_name"] = "Όνομα";
+$wb["txt_email_adresse"] = "Διεύθυνση Email";
+$wb["txt_username"] = "Όνομα χρήστη";
+$wb["txt_web_speicher"] = "Όριο δίσκου δικτυακού τόπου";
+$wb["txt_mail_speicher"] = "Όριο δίσκου μηνυμάτων";
+$wb["txt_email_passwort_leer"] = "Το όνομα χρήστη και/ή ο κωδικός είναι κενά!";
+$wb["txt_user_unbekannt"] = "¶γνωστος χρήστης.";
+$wb["txt_access_forbidden"] = "¶ρνηση πρόσβασης!";
+$wb["txt_yes"] = "Ναι";
+$wb["txt_no"] = "Όχι";
+$wb["txt_unlimited"] = "απεριόριστο";
+$wb["txt_welcome"] = "Καλώς ήρθατε...";
+$wb["txt_error_spam_hits_format"] = "Η τιμή <i>".$wb["txt_spam_hits"]."</i> πρέπει να έχει την ακόλουθη μορφή:";
+$wb["txt_accept"] = "Αποδοχή";
+$wb["txt_discard"] = "Απόρριψη";
+$wb["txt_language"] = "Γλώσσα";
+$wb["txt_no_mailuser_login"] = "Η είσοδος χρήστη έχει απενεργοποιηθεί για αυτό το δικτυακό τόπο.";
+$wb["txt_forwarder"] = "Προώθηση";
+$wb["txt_forwarder_desc"] = "<b>Σύσταση:</b> Ένα μήνυμα ανά γραμμή";
+$wb["txt_spam_whitelist"] = 'Λευκή λίστα Spam';
+$wb["txt_spam_blacklist"] = 'Μαύρη λίστα Spam';
+$wb["txt_hint_spam_whitelist"] = '<b>Σύσταση:</b> Μια εγγραφή ανά γραμμή. Έγκυρες εγγραφές είναι, π.χ. friend@somewhere.com, *@isp.com, or *.domain.net.';
+$wb["txt_hint_spam_blacklist"] = '<b>Σύσταση:</b> Μια εγγραφή ανά γραμμή. Έγκυρες εγγραφές είναι, π.χ. friend@somewhere.com, *@isp.com, or *.domain.net.';
+$wb["txt_uribl"] = 'Χρήση <a href="http://www.uribl.com/about.shtml" target="_blank">URIBL</a>'; 
+
+?>

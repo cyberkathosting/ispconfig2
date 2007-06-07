@@ -1,0 +1,88 @@
+<?
+/********************************
+* ISPConfig Dictionary File
+* Version 1.0
+*********************************/
+
+$wb["ISP Faktura"] = 'ISP Κοστολόγηση';
+$wb["Web-FTP"] = 'Web-FTP';
+$wb["Domains"] = 'Κύρια ονόματα';
+$wb["Service"] = 'Υπηρεσία';
+$wb["Webs"] = 'Δικτυακοί τόποι';
+$wb["Traffic"] = 'κίνηση';
+$wb["Email-Adressen"] = 'Διευθύνσεις ηλεκτρονικού ταχυδρομείου';
+$wb["Artikel"] = 'Προϊόν';
+$wb["admin"] = 'Διαχειριστής';
+$wb["Artikel fόr"] = 'Προϊόν για';
+$wb["Dienstleistung"] = 'Υπηρεσία';
+$wb["Hardware"] = 'Υλικό';
+$wb["Software"] = 'Λογισμικό';
+$wb["Typ"] = 'Τύπος';
+$wb["Artikel Nr."] = 'Αριθμός προϊόντος';
+$wb["Bezeichnung"] = 'Όνομα';
+$wb["Beschreibung"] = 'Περιγραφή';
+$wb["Stόck"] = 'Τεμάχιο';
+$wb["MB"] = 'MB';
+$wb["GB"] = 'GB';
+$wb["Stunde"] = 'Ώρα';
+$wb["Einheit"] = 'Μονάδα';
+$wb["Menge"] = 'Ποσότητα';
+$wb["Preis"] = 'Τιμή';
+$wb["Verrechnung"] = 'Περίοδος χρέωσης';
+$wb["Artikel neu"] = 'Νέο προϊόν';
+$wb["Ordner neu"] = 'Νέος φάκελος';
+$wb["Abrechnen"] = 'Δημιουργία κοστολόγησης';
+$wb["Artikel neu"] = 'Νέο προϊόν';
+$wb["Ordner neu"] = 'Νέος φάκελος';
+$wb["Produkte"] = 'Προϊόντα';
+$wb["Abrechnen"] = 'Δημιουργία κοστολόγησης';
+$wb["Rechnungen"] = 'Κοστολογήσεις';
+$wb["Kunden"] = 'Πελάτες';
+$wb["Anbieter"] = 'Μεταπωλητές';
+$wb["Keine Artikel zum Abrechnen gefunden."] = 'Δεν βρέθηκαν προϊόντα προς κοστολόγηση';
+$wb["Abrechnung"] = 'Κοστολόγηση';
+$wb["Name"] = 'Όνομα';
+$wb["IP-Traffic"] = 'IP κίνηση';
+$wb["Steuersatz"] = 'Φόρος';
+$wb["Bei άberschreitung:"] = 'On Exceedance:';
+$wb["Diese Angaben sind nur fόr Artikel vom Typ: Traffic gόltig!"] = 'Αυτές οι καταχωρήσεις είναι έγκυρες μόνο για προϊόντα τύπου: Κίνηση δεδομένων!';
+$wb["Rechnungen Kunden"] = 'Κοστολογήσεις πελατών';
+$wb["Firma"] = 'Εταιρία';
+$wb["Vorname"] = 'Όνομα';
+$wb["Strasse"] = 'Οδός';
+$wb["PLZ"] = 'Ταχυδρομικώς κώδικας';
+$wb["Ort"] = 'Πόλη';
+$wb["Land"] = 'Χώρα';
+$wb["Steuernr."] = 'Α.Φ.Μ';
+$wb["Rechnung"] = 'Κοστολόγηση';
+$wb["Datum"] = 'Ημερομηνία';
+$wb["Rechnung Nr."] = 'Αριθμός κοστολόγησης';
+$wb["Anzahl"] = 'Ποσότητα';
+$wb["Art. Nr."] = 'Αριθμός προϊόντος';
+$wb["Gesamt"] = 'Σύνολο';
+$wb["EURO"] = 'ΕΥΡΩ';
+$wb["Web gesamt"] = 'Σύνολο';
+$wb["enthaltene Mehrwertsteuer"] = 'Με Φ.Π.Α';
+$wb["Gesamtbetrag"] = 'Σύνολο';
+$wb["Rechnungen Anbieter"] = 'Κοστολόγηση μεταπωλητών';
+$wb["Kunde"] = 'Πελάτης';
+$wb["Rg. Nr."] = 'Αριθμός κοστολόγησης';
+$wb["OK"] = 'Εντάξει';
+$wb["Weiter"] = "Επόμενο";
+$wb["Summe Anbieter"] = "Σύνολο μεταπωλητή";
+$wb["Summe Web"] = "Σύνολο";
+$wb["Summe Kunde"] = "Σύνολο πελάτη";
+$wb["Abrechnung abgeschlossen."] = "Η κοστολόγηση δημιουργήθηκε";
+
+//////////////// Server Status ////////////////
+$wb["Arbeitsspeicher"]          = "Κύρια Μνήμη";
+$wb["CPU"]          = "Επεξεργαστής";
+$wb["Dienste"]      = "Υπηρεσίες";
+$wb["Server Online seit"]          = "Χρόνος λειτουργίας διακομιστή";
+$wb["User Online"]      = "Χρήστες σε σύνδεση";
+$wb["System Load 1 Minute"] = "Φόρτος συστήματος 1 λεπτού";
+$wb["System Load 5 Minuten"] = "Φόρτος συστήματος 5 λεπτών";
+$wb["System Load 15 Minuten"] = "Φόρτος συστήματος 15 λεπτών";
+//////////////// Server Status Ende //////////
+
+?>

@@ -1,0 +1,97 @@
+<?
+/********************************
+* ISPConfig Dictionary File
+* Version 1.0
+*********************************/
+
+//////////////// DNS Manager ////////////////
+$wb["Optionen"]     = "Επιλογές";
+$wb["Ziel"]         = "Στόχος";
+$wb["Prioritδt"]   = "Προτεραιότητα";
+$wb["DNS Eintrag"]  = "DNS καταχώρηση";
+$wb["Ordner neu"]   = "Ταξινόμηση ανά";
+$wb["Suchen"]       = "Αναζήτηση";
+$wb["DNS-Manager"]       = "Διαχειριστής DNS";
+$wb["Domain (SOA)"]         = "Κύριο όνομα (SOA)";
+$wb["Email Admin"]         = "Email διαχειριστή";
+$wb["Nameserver 1"]         = "Διακομιστής ονομάτων 1";
+$wb["Nameserver 2"]         = "διακομιστής ονομάτων 2";
+$wb["Refresh"]         = "Ανανέωση";
+$wb["Retry"]         = "Επανάληψη";
+$wb["Expire"]         = "Λήξη";
+$wb["TTL"]         = "TTL";
+$wb["Record"]         = "Εγγραφή";
+$wb["Record"]         = "Εγγραφές";
+$wb["Mailserver"]         = "Διακομιστής Mail";
+
+$wb["Dokument"] = "Έγγραφο";
+$wb["neues Dokument anlegen"] = "Νέο έγγραφο";
+
+$wb["error_soa_exists_1"] = "υπάρχει ήδη μια εγγραφή με αυτό το κύριο όνομα (SOA Record)";
+$wb["error_soa_exists_2"] = ".<br>";
+//////////////// DNS Manager Ende ///////////
+
+$wb["IP-Adresse ungόltig."] = "Μη έγκυρη διεύθυνση IP.";
+$wb["Records"] = 'Εγγραφές';
+$wb["ziel"] = 'Στόχος';
+$wb["Neu"] = 'Νέο';
+
+// NEW 1.3 //////////////////////////////////////
+
+$wb["Master neu"] = 'Νέα κύρια εγγραφή';
+$wb["Slave neu"] = 'Νέα εναλλακτική εγγραφή';
+$wb["Slave Zone"] = 'Εναλλακτική ζώνη';
+$wb["domain"] = 'Κύριο όνομα';
+$wb["DNS-Master IP"] = 'IP Διεύθυνση του κύριου διακομιστή ονομάτων';
+$wb["Name"] = 'Όνομα';
+$wb["Masters"] = 'Κύριοι διακομιστές';
+$wb["Slaves"] = 'Εναλλακτικοί διακομιστές';
+$wb["SUCHE"] = 'ΑΝΑΖΗΤΗΣΗ';
+
+
+
+//////////////// Server Status ////////////////
+$wb["Arbeitsspeicher"]          = "Κύρια Μνήμη";
+$wb["CPU"]          = "Επεξεργαστής";
+$wb["Dienste"]      = "Υπηρεσίες";
+$wb["Server Online seit"]          = "Χρόνος λειτουργίας διακομιστή";
+$wb["User Online"]      = "Χρήστες σε σύνδεση";
+$wb["System Load 1 Minute"] = "Φόρτος συστήματος 1 λεπτού";
+$wb["System Load 5 Minuten"] = "Φόρτος συστήματος 5 λεπτών";
+$wb["System Load 15 Minuten"] = "Φόρτος συστήματος 15 λεπτών";
+//////////////// Server Status Ende //////////
+
+$wb["Webs angelegt"] = "Δικτυακοί τόποι σε χρήση";
+$wb["User angelegt"] = "Ενεργοί χρήστες";
+$wb["Domains angelegt"] = "Κύρια ονόματα σε χρήση";
+$wb["unlimitiert"]  = "χωρίς όριο";
+$wb["Anbieter"]     = "Μεταπωλητής";
+$wb["DNS-Domains angelegt"] = 'Κύρια ονόματα DNS σε χρήση';
+$wb["von"] = "από";
+$wb["Maximale Anzahl an DNS-Eintrδgen erreicht."] = "Ο μέγιστος αριθμός ζωνών για αυτό το λογαριασμό έχει καλυφθεί.<br>";
+$wb["error_no_zones_allowed"] = "Η δημιουργία ζωνών για αυτό το λογαριασμό δεν επιτρέπεται.<br>";
+$wb["error_no_dns_anbieter"] = "Η δημιουργία DNS εγγραφών για αυτό το λογαριασμό δεν επιτρέπεται.<br>";
+$wb["error_max_slave_dns_anbieter"] = "Ο μέγιστος αριθμός εναλλακτικών ζωνών για αυτό το λογαριασμό έχει καλυφθεί.<br>";
+$wb["weiter_link"] = "<br><br> <a href='../../isp_dns/frame_start.php?s=$s'>Επόμενο &gt;&gt;</a>";
+$wb["error_a_record_exists"] = "Υπάρχει ήδη μια εγγραφή τύπου Α σε αυτή τη ζώνη.<br>";
+$wb["error_cname_record_exists"] = "Υπάρχει ήδη μια εγγραφή τύπου CNAME σε αυτή τη ζώνη.<br>";
+$wb["error_mx_record_exists"] = "Αυτή ή μια παρόμοια εγγραφή τύπου MX υπάρχει ήδη σε αυτή τη ζώνη.<br>";
+$wb["error_spf_record_exists"] = "Υπάρχει ήδη μια εγγραφή τύπου SPF σε αυτή τη ζώνη.<br>";
+
+$wb["ja"] = "Ναι";
+$wb["nein"] = "Όχι";
+$wb["a"] = "Τα μηνύματα στέλνονται από<br>&nbsp;&nbsp;εγγραφή τύπου Α;";
+$wb["mx"] = "Τα μηνύματα στέλνονται από<br>&nbsp;&nbsp;εγγραφή τύπου MX;";
+$wb["ptr"] = "Τα μηνύματα στέλνονται από<br>&nbsp;&nbsp;όλους τους διακομιστές<br>&nbsp;&nbsp;αυτού του κύριου ονόματος;";
+$wb["a_break"] = "Τα μηνύματα στέλνονται από<br>&nbsp;&nbsp;άλλες εγγραφές τύπου A;";
+$wb["mx_break"] = "Τα μηνύματα στέλνονται από<br>&nbsp;&nbsp;άλλες εγγραφές τύπου MX;";
+$wb["ip4_break"] = "Τα μηνύματα στέλνονται από<br>&nbsp;&nbsp;άλλες διευθύνσεις IP;";
+$wb["include_break"] = "Ανάθεση εγγραφών SPF<br>&nbsp;&nbsp;από αυτή τη ζώνη;";
+$wb["all_"] = "Οι παραπάνω εγγραφές<br>&nbsp;&nbsp;περιλαμβάνουν όλους τους πελάτες<br>&nbsp;&nbsp;που επιτρέπεται να στείλουν μηνύματα<br>&nbsp;&nbsp;για αυτό το κύριο όνομα;";
+
+$wb["Catalog_Name"] = "Όνομα";
+$wb["Feld"] = "Πεδίο";
+$wb["Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 -"] = "Επιτρέπονται μόνο οι χαρακτήρες a-z A-Z 0-9 -<br>";
+$wb["Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 - ."] = "Επιτρέπονται μόνο οι χαρακτήρες a-z A-Z 0-9 - .<br>";
+
+?>

@@ -1,0 +1,563 @@
+<?
+/********************************
+* ISPConfig Dictionary File
+* Version 1.0
+*********************************/
+
+
+///////////////// ISP Manager //////////////////
+$wb["Anbieter"]     = "Μεταπωλητής";
+$wb["Kunde"]        = "Πελάτης";
+$wb["Suchen"]       = "Αναζήτηση";
+$wb["Stammdaten"]   = "Βασικές πληροφορίες";
+$wb["Limits"]       = "Όρια";
+$wb["Zugangsdaten"] = "Στοιχεία πρόσβασης";
+$wb["Statistik"]    = "Στατιστικά";
+$wb["Firma"]        = "Εταιρία";
+$wb["Anrede"]       = "Τίτλος";
+$wb["Vorname"]      = "Όνομα";
+$wb["Name"]         = "Επίθετο";
+$wb["Strasse"]      = "Οδός";
+$wb["PLZ"]          = "Ταχυδρομικός κώδικας";
+$wb["Ort"]          = "Πόλη";
+$wb["Land"]         = "Χώρα";
+$wb["Telefon"]      = "Τηλέφωνο";
+$wb["Fax"]          = "Φαξ";
+$wb["Internet"]     = "Δικτυακός τόπος";
+$wb["Φffnen"]      = "Άνοιγμα";
+$wb["Benutzername"] = "Όνομα χρήστη"; // besser: vielleicht nur Variable $wb["username"] benutzen?
+$wb["zugangsdaten_anbieter_einleitung"] = "Εδώ μπορείτε να ορίσετε το όνομα χρήστη και τον κωδικό του μεταπωλητή.";
+$wb["zugangsdaten_kunde_einleitung"] = "Εδώ μπορείτε να ορίσετε το όνομα χρήστη και τον κωδικό του πελάτη για τη διαχείριση του<br> δικτυακού του τόπου.<br> ";
+$wb["Web Verwaltung"] = "Διαχείριση δικτυακού τόπου";
+$wb["Rechnung"]      = "Τιμολόγιο";
+$wb["Rechnungsanschrift:"] = "Διεύθυνση τιμολόγησης:<br>";
+$wb["Intervall"]    = "Διάρκεια";
+$wb["Preis"]        = "Τιμή";
+$wb["Zahlungsart"]  = "Τρόπος εξόφλησης";
+$wb["Basis"]        = "Βάση";
+$wb["Create DNS"]   = "Δημιουργία DNS";
+$wb["Speicher MB"]     = "Χώρος σε MB";
+$wb["Max. User"]        = "Μέγιστο όριο χρηστών";
+$wb["Max. Domain"]        = "Μέγιστο όριο δικτυακών τόπων";
+$wb["PHP Scripte"]        = "Σενάρια PHP";
+$wb["SSI"]        = "SSI";
+$wb["FTP Zugang"]        = "Πρόσβαση FTP";
+$wb["MySQL"]        = "MySQL";
+$wb["SSL"]        = "SSL";
+$wb["Shell Zugriff"]      = "Πρόσβαση κελύφους";
+$wb["Zugang"]       = "Πρόσβαση";  // Zugriff u. Zugang zusammenfassen!/nur einen Begriff nehmen!
+$wb["CGI Scripte"]      = "Σενάρια CGI";
+$wb["Bundesland"]   = "Περιοχή";
+$wb["Abteilung"]    = "Τμήμα";
+$wb["Gόltigkeit (Tage)"]  = "Διάρκεια (ημέρες)";
+$wb["SSL Key"]          = "Κλειδί SSL";
+$wb["SSL Zertifikat"]   = "Πιστοποιητικό SSL";
+$wb["Aktion"]       = "Ενέργεια";
+$wb["Zertifikat erzeugen"] = "Δημιουργία πιστοποιητικού";
+$wb["Zertifikat speichern"] = "Αποθήκευση πιστοποιητικού";
+$wb["Zertifikat lφschen"] = "Διαγραφή πιστοποιητικού";
+$wb["Speicherplatz gesamt"] = "Αποθηκευτικός χώρος";
+$wb["unlimitiert"]  = "απεριόριστο";
+$wb["verbraucht"]   = "σε χρήση";
+$wb["Trafficόbersicht"] = "Στατιστικά κίνησης";
+$wb["Monat"]        = "Μήνας";
+$wb["Traffic"]      = "Κίνηση";
+$wb["traffic_letzte_4"] = "Κίνηση των τελευταίων 4 ετών";
+$wb["Jahr"]         = "Έτος";
+$wb["MySQL User"]        = "Όνομα χρήστη MySQL";
+$wb["MySQL Passwort"]    = "Κωδικός πρόσβασης MySQL";
+
+// Ergδnzungen /////////////////////////////////
+$wb["Anbieter neu"] = "Νέος μεταπωλητής";
+$wb["Kunde neu"]    = "Νέος πελάτης";
+$wb["Web neu"]      = "Νέος δικτυακός τόπος";
+$wb["Ordner neu"]   = "Νέος φάκελος";
+$wb["Suchen"]       = "Αναζήτηση";
+$wb["ISP Anbieter"] = "ISP μεταπωλητής";
+$wb["Webs"] = "Δικτυακοί τόποι";
+$wb["User"] = "Χρήστης";
+$wb["Domains"] = "Κύρια ονόματα";
+$wb["Zahlung"] = "Πληρωμή";
+$wb["ISP Kunde"] = "ISP πελάτης";
+$wb["ISP Web"] = "ISP δικτυακός τόπος";
+$wb["Kunden"] = "Πελάτες";
+$wb["Dokument suchen"] = "Αναζήτηση εγγράφου";
+
+$wb["User & Email"] = "Χρήστες & λογαριασμοί";
+$wb["Co-Domains"] = "Επιπλέον κύρια ονόματα";
+$wb["SSL"] = "SSL";
+$wb["Optionen"] = "Επιλογές";
+
+$wb["Webs angelegt"] = "Ενεργοί δικτυακοί τόποι";
+$wb["User angelegt"] = "Ενεργοί χρήστες";
+$wb["Domains angelegt"] = "Ενεργά κύρια ονόματα";
+$wb["rechnungsanschrift"] = "Διεύθυνση κοστολόγησης:<br> ";
+
+$wb["neues Web anlegen"] = "Νέος δικτυακός τόπος";
+$wb["weiter"] = "Επόμενο";
+$wb["SUCHE"] = "Αναζήτηση";
+
+$wb["msg_beta"] = "";
+$wb["title_isp_beta"] = "";
+$wb["msg_kein_win"] = "Αυτό το λογισμικό δεν είναι διαθέσιμο για Λ/Σ Windows.";
+
+// Error Codes ispconfig_isp_datenbank.lib.php
+$wb["error_db_nicht_erlaubt"] = "Η δημιουργία βάσεων δεδομένων MySQL δεν επιτρέπεται σε αυτόν το δικτυακό τόπο.<br>";
+$wb["error_db_leeres_passwort"] = "Παρακαλώ ορίστε ένα κωδικό πρόσβασης!<br>";
+$wb["error_db_exist_1"] = "Μια βάση δεδομένων με το όνομα ";
+$wb["error_db_exist_2"] = " υπάρχει ήδη.<br>";
+$wb["error_db_user_exist_1"] = "Το όνομα χρήστη της βάσης δεδομένων ";
+$wb["error_db_user_exist_2"] = " υπάρχει ήδη.<br>";
+$wb["error_max_db_web"] = "Ο δικτυακός τόπος χρησιμοποιείται ήδη το μέγιστο επιτρεπτό όριο βάσεων δεδομένων.<br>";
+$wb["error_max_db_anbieter"] = "Ο μεταπωλητής χρησιμοποιεί ήδη το μέγιστο επιτρεπτό όριο βάσεων δεδομένων.<br>";
+
+// Error Codes ispconfig_isp_domain.lib.php
+$wb["error_web_doppelt"] = "Το όνομα ";
+$wb["error_max_domain_web"] = "Ο δικτυακός τόπος χρησιμοποιεί ήδη το μέγιστο επιτρεπτό όριο κυρίων ονομάτων.<br>";
+$wb["error_max_domain_anbieter"] = "Ο μεταπωλητής χρησιμοποιεί ήδη το μέγιστο επιτρεπτό όριο κυρίων ονομάτων.<br>";
+$wb["angelegt"] = " χρησιμοποιείται ήδη από άλλο δικτυακό τόπο ή κύριο όνομα.<br>";
+$wb["error_domain_forward"] = "Η προώθηση κυρίου ονόματος έχει διαγραφεί διότι περιέχει μη έγκυρους χαρακτήρες.<br>";
+
+// Error Codes ispconfig_isp_kunde.lib.php
+$wb["error_user_exist_1"] = "Ο ISPConfig χρήστης";
+$wb["error_user_exist_2"] = " υπάρχει ήδη. Ο χρήστης δεν έχει δημιουργηθεί ή τροποποιηθεί.<br>";
+$wb["error_max_user_licence"] = "Χρησιμοποιείται ήδη ο μέγιστος αριθμός ISPConfig λογαριασμών χρηστών για αυτή την άδεια.<br>";
+
+
+// Error Codes ispconfig_isp_reseller.lib.php
+$wb["error_reseller_title"] = "Υπάρχει ήδη ένας μεταπωλητής με αυτόν τον τίτλο.<br>";
+$wb["error_reseller_group_not_found"] = "Δε βρέθηκε αυτή η ομάδα μεταπωλητών.<br>";
+$wb["error_anbieter_no_delete"] = "<b>Ο μεταπωλητής δε μπορεί να διαγραφεί.</b><br>&nbsp;<br>Ο μεταπωλητής μπορεί να διαγραφεί εφόσον διαγραφούν οι δικτυακοί τόποι και τα κύρια ονόματα που έχει δημιουργήσει. Αδειάστε  επίσης και τα περιεχόμενα του Κάδου Ανακύκλωσης του μεταπωλητή.<br>";
+$wb["error_anbieter_no_restore"] = "Ο μεταπωλητής δε μπορεί να ανακτηθεί.<br>";
+
+// Error Codes ispconfig_isp_user.lib.php
+$wb["error_sysuser_exist_1"] = "Ο χρήστης με το όνομα ";
+$wb["error_sysuser_exist_2"] = " υπάρχει ήδη.<br>";
+$wb["error_max_user_web"] = "Χρησιμοποιείται ήδη ο μέγιστος αριθμός χρηστών αυτού του δικτυακού τόπου.<br>";
+$wb["error_max_space_web"] = "Το επιλεγμένο όριο δίσκου υπερβαίνει τα όρια αυτού του δικτυακού τόπου.<br>";
+$wb["error_max_user_anbieter"] = "Ο μεταπωλητής έχει υπερβεί το μέγιστο επιτρεπτό όριο χρηστών.<br>";
+$wb["error_sysuser_exist"] = "Το όνομα χρήστη χρησιμοποιείται ήδη.<br>";
+$wb["error_admin_exist"] = "Υπάρχει ήδη χρήστης με δικαιώματα διαχειριστή σε αυτό το δικτυακό τόπο.<br>";
+$wb["error_admin_exist_long"] = "Υπάρχει ήδη χρήστης με δικαιώματα διαχειριστή. Πρέπει να αφαιρέσετε τα δικαιώματα διαχειριστή του άλλου χρήστη πρώτα και κατόπιν να τα μεταφέρετε σε αυτόν το χρήστη.<br>";
+
+// Error Codes ispconfig_isp_user.lib.php
+$wb["error_max_web_anbieter"] = "Ο μεταπωλητής χρησιμοποιεί ήδη το μέγιστο επιτρεπτό όριο δικτυακών τόπων.<br>";
+$wb["error_web_ssl_exist"] = "Ένα SSL πιστοποιητικό χρησιμοποιείται ήδη σε αυτή τη διεύθυνση IP.<br>";
+
+// Plugins
+$wb["CPU Auslastung 1 Minute"] = "Χρήση επεξεργαστή 1 λεπτού";
+$wb["CPU Auslastung 5 Minuten"] = "Χρήση επεξεργαστή 5 λεπτών";
+$wb["CPU Auslastung 15 Minuten"] = "Χρήση επεξεργαστή 15 λεπτών";
+$wb["Server Online seit"] = "Χρόνος λειτουργίας διακομιστή";
+$wb["User Online"] = "Χρήστες σε σύνδεση";
+$wb["error_web_id"] = "Αυτό το πρόσθετο χρειάζεται ένα έγκυρο ID δικτυακού τόπου.";
+$wb["von"] = "από";
+$wb["Gesamt"] = "Συνολικά";
+$wb["Traffic in den letzten 4 Jahren"] = "Κίνηση δεδομένων τα τελευταία 4 έτη.";
+
+$wb["Backup von Tabelle"] = "Backup Πίνακα";
+$wb["Optimiere"] = "Βελτιστοποίηση";
+$wb["Reparatur"] = "Επιδιόρθωση";
+$wb["oder"] = "ή";
+$wb["Installation starten"] = "Εγκατάσταση";
+
+$wb["Monatlich"] = "Ανά μήνα";
+$wb["Quartal"] = "Ανά τρίμηνο";
+$wb["Halbjδhrlich"] = "Ανά εξάμηνο";
+$wb["Jδhrlich"] = "Ανά έτος";
+$wb["Sonstige"] = "Άλλο";
+
+$wb["bei Erhalt"] = "Με την παραλαβή";
+$wb["Netto 7 Tage"] = "Καθαρή αξία για 7 ημέρες";
+$wb["Netto 15 Tage"] = "Καθαρή αξία για 15 ημέρες";
+$wb["Netto 30 Tage"] = "Καθαρή αξία για 30 ημέρες";
+$wb["Sonstige"] = "Άλλο";
+$wb["Neu"] = "Νέο";
+$wb["Postfach MB"] = "Όριο δίσκου Email σε MB";
+
+$wb["email_alias_txt"] = "<b>Σύσταση:</b> Ένα ψευδώνυμο Email ανά γραμμή.";
+$wb["Weiterleitung"] = "Προώθηση";
+$wb["Nachricht"] = "Μήνυμα";
+$wb["Kein Kunde vorhanden"] = "Δεν υπάρχει πελάτης.<br>";
+$wb["Dieses Web kφnnen Sie nicht lφschen."] = "Δε μπορείτε να διαγράψετε αυτό το δικτυακό τόπο.<br>";
+$wb["Ausgabeformat"] = "Μορφή λίστας";
+$wb["Bearbeiten"] = "Επεξεργασία";
+$wb["Lφschen"] = "Διαγραφή";
+
+$wb["willkommen_kunde"] = "Καλώς ήρθατε στην εφαρμογή ISPConfig!
+Εδώ μπορείτε να διαχειριστείτε το δικτυακό σας τόπο.
+Για απορίες ή προβλήματα επικοινωνήστε με το διαχειριστή του διακομιστή ή ανατρέξτε στα εγχειρίδια χρήσης.";
+$wb["Willkommen"] = "Καλώς ήρθατε";
+
+
+// Regex Fehlermeldungen
+$wb["Es sind nur folgende Zeichen erlaubt: a-z A-Z 0-9 -"] = "Επιτρέπονται μόνο οι ακόλουθοι χαρακτήρες: a-z A-Z 0-9 -<br>";
+$wb["Es sind nur folgende Zeichen erlaubt: a-z A-Z 0-9 - ."] = "Επιτρέπονται μόνο οι ακόλουθοι χαρακτήρες: a-z A-Z 0-9 - .<br>";
+$wb["Der Username muss aus min. 4, max 25 Buchstaben oder Zahlen bestehen, wobei er mit einem Buchstaben beginnen muss."] = "Το όνομα χρήστη πρέπει να περιέχει από 4 έως 26 χαρακτήρες ή ειδικά σύμβολα και πρέπει να ξεκινά με γράμμα.<br>";
+$wb['Der Username muss aus min. 4, max 32 Buchstaben oder Zahlen bestehen, wobei er mit einem Buchstaben beginnen muss.'] = 'Το όνομα χρήστη πρέπει να περιέχει από 4 έως 26 χαρακτήρες ή ειδικά σύμβολα και πρέπει να ξεκινά με γράμμα.<br>';
+
+$wb["error_reseller_licence"] = "Η προσθήκη μεταπωλητών δεν είναι εφικτή με αυτή την άδεια της εφαρμογής ISPConfig.<br>";
+$wb["error_reseller_licence_nodelete"] = "Αυτός ο μεταπωλητής δε μπορεί να διαγραφεί.<br>";
+
+$wb["error_kunde_licence"] = "Η προσθήκη πελατών δεν είναι εφικτή με αυτή την άδεια της εφαρμογής ISPConfig.<br>";
+$wb["error_kunde_licence_nodelete"] = "Αυτός ο πελάτης δε μπορεί να διαγραφεί.<br>";
+
+$wb["mysqldb_nicht_vorhanden"] = "Η βάση δεδομένων MySQL δεν υπάρχει.<br>Παρακαλώ ορίστε ένα κωδικό πρόσβασης για τη δημιουργία της βάσης δεδομένων.<br>";
+$wb["mysql_nicht_aktiv"] = "Δεν επιτρέπεται η δημιουργία βάσεων δεδομένων σε αυτό το δικτυακό τόπο.<br>";
+$wb["Datenbank Name"] = "Όνομα βάσης δεδομένων";
+$wb["Speicher belegt"] = "Μέγεθος βάσης δεδομένων";
+
+$wb["Kein Web angelegt"] = "Δεν έχει δημιουργηθεί δικτυακός τόπος.";
+$wb["Real Name"] = "Ονοματεπώνυμο";
+$wb["Feld"] = "Πεδίο";
+$wb["httpd_inc_txt"] = "Οδηγίες Apache<br>&nbsp; (προαιρετικό)";
+$wb["Kopie speichern"] = "Δημιουργία αντιγράφου";
+
+$wb["err_0001"] = "Το κύριο όνομα ανήκει σε άλλο πελάτη.";
+
+$wb["MySQL Remote Access"] = "Απομακρυσμένη πρόσβαση MySQL";
+$wb["lokaler mailserver"] = "Τοπικός διακομιστής Mail";
+$wb["externer mailserver"] = "Εξωτερικός διακομιστής Mail";
+
+$wb["Log-Grφsse"] = "Μέγεθος αρχείου στατιστικών";
+$wb["Frontpage Passwort"] = "Κωδικός Frontpage";
+
+// NEW 1.1.12 ///////////////////////////////////
+
+$wb["Anbieternummer"] = 'Αριθμός μεταπωλητή';
+$wb["Domain DNS"] = 'Κύριες ζώνες DNS';
+$wb["HTTPD Includes"] = 'HTTPD Includes';
+$wb["DNS-Manager"] = 'Διαχειριστής DNS';
+$wb["DNS-Domains angelegt"] = 'Κύριες ζώνες σε χρήση';
+$wb["Kundennummer"] = 'Αριθμός πελάτη';
+$wb["Anonymous FTP"] = 'Ανώνυμη πρόσβαση FTP';
+$wb["Anon. FTP MB"] = 'Ανων. FTP σε MB';
+$wb["Faktura"] = 'Κοστολόγηση';
+$wb["Mailserver"] = 'Διακομιστής Mail';
+$wb["aktiviert"] = 'Ενεργό';
+$wb["deaktiviert"] = 'Ανενεργό';
+$wb["ISP User"] = 'Χρήστης ISP';
+$wb["WebSpeicher MB"] = 'Χώρος σε MB';
+$wb["MailSpeicher MB"] = 'Χώρος Mail σε MB';
+$wb["Administrator"] = 'Διαχειριστής';
+$wb["Erweiterte Einstellungen"] = 'Προχωρημένες ρυθμίσεις';
+$wb["email_weiterleitung_txt"] = '<b>Σύσταση:</b> ένα Email ανά γραμμή.';
+$wb["Email Alias"] = 'Ψευδώνυμα Email';
+$wb["catchAll-Email"] = 'Παραλαβή όλων (CatchAll)';
+$wb["MailScan"] = 'Σάρωση Mail';
+$wb["Spam-Filter"] = 'Φίλτρο Spam';
+$wb["Autoresponder"] = 'Αυτόματη απάντηση';
+$wb["ISP Domain"] = 'Κύριο όνομα ISP';
+$wb["Create DNS MX"] = 'Δημιουργία DNS MX';
+$wb["Admin"] = 'Διαχειριστής';
+$wb["CatchAll"] = 'CatchAll';
+$wb["Bitte Artikel auswδhlen"] = "Επιλογή προϊόντος";
+$wb["Letzte Abrechnung"] = "Τελευταία κοστολόγηση";
+$wb["Artikel hinzufόgen"] = "Προσθήκη προϊόντος";
+$wb["Wird automatisch vergeben."] = 'Ανατίθεται αυτόματα.';
+$wb["Email Adresse"] = "Διεύθυνση ηλεκτρονικού ταχυδρομείου";
+
+// new 1.2 ////////////////////////////////////////
+$wb["error_email_exist"] = "Διπλή εγγραφή διεύθυνσης ηλεκτρονικού ταχυδρομείου<br>";
+$wb["error_realname"] = "Επιτρέπονται μόνο οι ακόλουθοι χαρακτήρες: a-z A-Z 0-9 - _ .<br>";
+$wb["Die Emailadresse muss aus min. 1, max 60 Buchstaben oder Zahlen bestehen."] = "Η διεύθυνση ηλεκτρονικού ταχυδρομείου μπορεί να περιέχει από 1 έως 60 χαρακτήρες ή αριθμούς.<br>";
+
+// new 1.3 ////////////////////////////////////////
+$wb["Bundesland"] = "Περιοχή";
+$wb["Spamfilter & Antivirus"] = 'Φίλτρο Spam & Antivirus';
+$wb["Spamfilter"] = 'Φίλτρο Spam';
+$wb["Antivirus"] = 'Antivirus';
+$wb["accept"] = 'αποδοχή';
+$wb["discard"] = 'απόρριψη';
+$wb["Spam Strategie"] = 'Πολιτική Spam';
+$wb["Spam Hits"] = 'Spam Hits';
+$wb["Rewrite Subject"] = 'Μετονομασία θέματος';
+$wb["Betreff"] = 'Θέμα';
+$wb["SUCHE"] = 'ΑΝΑΖΗΤΗΣΗ';
+$wb["IP"] = 'IP';
+$wb["Standard CGIs"] = 'Προεγκατεστημένα σενάρια CGI';
+$wb["PHP Safe Mode"] = 'Ασφαλής λειτουργία PHP';
+$wb["WAP"] = 'WAP';
+$wb["Individuelle Fehler-Seiten"] = 'Ορισμένες από το χρήστη σελίδες σφάλματος';
+$wb["Anzahl Datenbanken"] = 'Αριθμός βάσεων δεδομένων';
+$wb["Fehler 400<br>(Ungόltige Syntax)"] = "400 Σφάλμα<br>(Μη έγκυρη σύνταξη)";
+$wb["Fehler 401<br>(Autorisierung<br>erforderlich)"] = "401 Σφάλμα<br>(Απαιτείται<br>πιστοποίηση χρήστη)";
+$wb["Fehler 403<br>(Verboten)"] = "403 Error<br>( Άρνηση πρόσβασης)";
+$wb["Fehler 404<br>(Datei nicht<br>gefunden)"] = "404 Σφάλμα<br>(Το αρχείο δε βρέθηκε)";
+$wb["Fehler 405<br>(Methode nicht<br>erlaubt)"] = "405 Σφάλμα<br>(Μη έγκυρη<br>μέθοδος)";
+$wb["Fehler 500<br>(Interner<br>Server-Fehler)"] = "500 Σφάλμα<br>(Δυσλειτουργία<br>διακομιστή)";
+$wb["Fehler 503<br>(Service ist z.Zt.<br>όberlastet)"] = "503 Σφάλμα<br>(Η υπηρεσία<br>δεν είναι διαθέσιμη)";
+$wb["Datenbanken"] = "Βάσεις δεδομένων";
+$wb["Datenbank"] = "Βάση δεδομένων";
+$wb["Datenbankname"] = "Όνομα βάσης δεδομένων";
+$wb["Datenbankuser"] = "Χρήστης βάσης δεδομένων";
+$wb["weiter_link"] = "<br><br> <a href='../../isp_manager/frame_start.php?s=$s'>Επόμενο &gt;&gt;</a>";
+$wb["Slave Zones"] = 'Εναλλακτικές ζώνες DNS';
+$wb["txt_client_salutatory_email_desc"] = "<b>Μήνυμα χαιρετισμού πελατών</b>";
+$wb["txt_client_salutatory_email_sender_email"] = "Η ηλεκτρονική διεύθυνση του αποστολέα";
+$wb["txt_client_salutatory_email_sender_name"] = "Το όνομα του αποστολέα";
+$wb["txt_client_salutatory_email_bcc"] = "BCC κοινοποίηση";
+$wb["txt_client_salutatory_email_subject"] = "Θέμα";
+$wb["txt_client_salutatory_email_message"] = "Μήνυμα";
+$wb["txt_client_salutatory_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Συμπερίληψη των παρακάτω μεταβλητών στο κείμενό σας:</b></td></tr>
+        <tr>
+          <td class="normal">%%%USER%%%</td>
+          <td class="normal">
+            Το όνομα χρήστη του πελάτη</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%PASSWORD%%%</td>
+          <td class="normal">
+            Ο κωδικός πρόσβασης του πελάτη</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%FIRST_NAME%%%</td>
+          <td class="normal">
+            Το όνομα του πελάτη</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%LAST_NAME%%%</td>
+          <td class="normal">
+            Το επίθετο του πελάτη</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%COMPANY%%%</td>
+          <td class="normal">
+            Η εταιρία του πελάτη</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%EMAIL%%%</td>
+          <td class="normal">
+            Η ηλεκτρονική διεύθυνση αλληλογραφίας του πελάτη</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%CP%%%</td>
+          <td class="normal">
+            Διαδρομή εισόδου URL στη εφαρμογή ISPConfig</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%MANUAL%%%</td>
+          <td class="normal">
+            Εγχειρίδιο χρήσης της εφαρμογής ISPConfig</td>
+        </tr>
+        </table>';
+$wb["txt_standard_index"] = "Προεπιλεγμένη Αρχική<br>&nbsp;&nbsp;Σελίδα";
+$wb["txt_standard_index_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Συμπερίληψη των παρακάτω μεταβλητών στο κείμενό σας:</b></td></tr>
+        <tr>
+          <td class="normal">%%%FQDN%%%</td>
+          <td class="normal">
+            Το κατοχυρωμένο κύριο όνομα του δικτυακού τόπου FQDN</td>
+        </tr>
+    </table>';
+$wb["txt_user_standard_index"] = "Προεπιλεγμένη Αρχική Σελίδα<br>&nbsp;&nbsp;Χρήστη";
+$wb["txt_user_standard_index_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Συμπερίληψη των παρακάτω μεταβλητών στο κείμενό σας:</b></td></tr>
+        <tr>
+          <td class="normal">%%%USER%%%</td>
+          <td class="normal">
+            Το όνομα χρήστη</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%FQDN%%%</td>
+          <td class="normal">
+            Το κατοχυρωμένο κύριο όνομα του δικτυακού τόπου FQDN</td>
+        </tr>
+        </table>';
+
+//////////////// ISP Manager Ende /////////////
+
+//////////////// Server Status ////////////////
+$wb["Arbeitsspeicher"]          = "Κύρια Μνήμη";
+$wb["CPU"]          = "Επεξεργαστής";
+$wb["Dienste"]      = "Υπηρεσίες";
+$wb["Server Online seit"]          = "Χρόνος λειτουργίας διακομιστή";
+$wb["User Online"]      = "Χρήστες σε σύνδεση";
+$wb["System Load 1 Minute"] = "Φόρτος συστήματος 1 λεπτού";
+$wb["System Load 5 Minuten"] = "Φόρτος συστήματος 5 λεπτών";
+$wb["System Load 15 Minuten"] = "Φόρτος συστήματος 15 λεπτών";
+//////////////// Server Status Ende //////////
+
+$wb["Es konnte ein Dokument nicht wiederhergestellt werden, da sich das Eltern-Dokument noch im Papierkorb befindet.\n"] = "Το αντικείμενο δε μπορεί να ανακτηθεί διότι το γονικό του αντικείμενο βρίσκεται στον Κάδο Ανακύκλωσης.";
+$wb["error_anbieter_max_webs_ueberschritten"] = "Ο μεταπωλητής έχει ήδη υπερβεί το όριο δικτυακών τόπων που του παρέχετε.<br>";
+$wb["error_anbieter_max_diskspace_ueberschritten"] = "Ο μεταπωλητής έχει ήδη υπερβεί το όριο χρήσης δίσκου που του παρέχετε.<br>";
+$wb["error_anbieter_max_user_ueberschritten"] = "Ο μεταπωλητής έχει ήδη υπερβεί το όριο δημιουργίας χρηστών που του παρέχετε.<br>";
+$wb["error_anbieter_max_domain_ueberschritten"] = "Ο μεταπωλητής έχει ήδη υπερβεί το όριο κύριων ονομάτων που του παρέχετε.<br>";
+$wb["error_anbieter_dnsmanager_aktiv"] = "Ο μεταπωλητής έχει ήδη εγγραφές DNS. Ο διαχειριστής DNS δεν μπορεί να απενεργοποιηθεί.<br>";
+$wb["error_anbieter_max_dns_ueberschritten"] = "Ο μεταπωλητής έχει ήδη υπερβεί το όριο κύριων εγγραφών DNS που του παρέχετε.<br>";
+$wb["error_anbieter_max_slavedns_ueberschritten"] = "Ο μεταπωλητής έχει ήδη υπερβεί το όριο εναλλακτικών εγγραφών DNS που του παρέχετε.<br>";
+$wb["error_anbieter_httpd_include_aktiv"] = "Τιμές HTTPD Includes χρησιμοποιούνται ήδη σε δικτυακούς τόπους του μεταπωλητή. Αυτή η λειτουργία δε μπορεί να απενεργοποιηθεί.<br>";
+$wb["error_anbieter_shell_access_aktiv"] = "Η πρόσβαση κελύφους χρησιμοποιείται ήδη σε δικτυακούς τόπους του μεταπωλητή. Αυτή η λειτουργία δε μπορεί να απενεργοποιηθεί.<br>";
+$wb["error_anbieter_cgi_aktiv"] = "Η λειτουργία CGI χρησιμοποιείται ήδη σε δικτυακούς τόπους του μεταπωλητή. Αυτή η λειτουργία δε μπορεί να απενεργοποιηθεί.<br>";
+$wb["error_anbieter_standard_cgi_aktiv"] = "Η λειτουργία προεγκατεστημένων σεναρίων CGI χρησιμοποιείται ήδη σε δικτυακούς τόπους του μεταπωλητή. Αυτή η λειτουργία δε μπορεί να απενεργοποιηθεί.<br>";
+$wb["error_anbieter_php_aktiv"] = "Η λειτουργία PHP χρησιμοποιείται ήδη σε δικτυακούς τόπους του μεταπωλητή. Αυτή η λειτουργία δε μπορεί να απενεργοποιηθεί.<br>";
+$wb["error_anbieter_ssi_aktiv"] = "Η λειτουργία SSI χρησιμοποιείται ήδη σε δικτυακούς τόπους του μεταπωλητή. Αυτή η λειτουργία δε μπορεί να απενεργοποιηθεί.<br>";
+$wb["error_anbieter_ftp_aktiv"] = "Η λειτουργία FTP χρησιμοποιείται ήδη σε δικτυακούς τόπους του μεταπωλητή. Αυτή η λειτουργία δε μπορεί να απενεργοποιηθεί.<br>";
+$wb["error_anbieter_anonftp_aktiv"] = "Η λειτουργία ανώνυμης πρόσβασης FTP χρησιμοποιείται ήδη σε δικτυακούς τόπους του μεταπωλητή. Αυτή η λειτουργία δε μπορεί να απενεργοποιηθεί.<br>";
+$wb["error_anbieter_frontpage_aktiv"] = "Η λειτουργία Frontpage χρησιμοποιείται ήδη σε δικτυακούς τόπους του μεταπωλητή. Αυτή η λειτουργία δε μπορεί να απενεργοποιηθεί.<br>";
+$wb["error_anbieter_datenbank_aktiv"] = "Βάσεις δεδομένων MySQL χρησιμοποιούνται ήδη σε δικτυακούς τόπους του μεταπωλητή. Αυτή η λειτουργία δε μπορεί να απενεργοποιηθεί.<br>";
+$wb["error_anbieter_max_datenbank_ueberschritten"] = "Ο μεταπωλητής έχει ήδη υπερβεί το όριο βάσεων δεδομένων MySQL που του παρέχετε.<br>";
+$wb["error_anbieter_ssl_aktiv"] = "Η λειτουργία SSL χρησιμοποιείται ήδη σε δικτυακούς τόπους του μεταπωλητή. Αυτή η λειτουργία δε μπορεί να απενεργοποιηθεί.<br>";
+$wb["error_anbieter_wap_aktiv"] = "Η λειτουργία WAP χρησιμοποιείται ήδη σε δικτυακούς τόπους του μεταπωλητή. Αυτή η λειτουργία δε μπορεί να απενεργοποιηθεί.<br>";
+$wb["error_anbieter_error_pages_aktiv"] = "Ορισμένες από το χρήστη σελίδες σφάλματος χρησιμοποιούνται ήδη σε δικτυακούς τόπους του μεταπωλητή. Αυτή η λειτουργία δε μπορεί να απενεργοποιηθεί.<br>";
+$wb["error_web_no_unlimited_diskspace_1"] = "Δε μπορείτε να ορίσετε απεριόριστο χώρο δίσκου σε αυτό το δικτυακό τόπο. Το μέγιστο όριο χρήσης δίσκου για αυτό το δικτυακό τόπο είναι ";
+$wb["error_web_no_unlimited_diskspace_2"] = " MB.<br>";
+$wb["error_web_no_diskspace_free_1"] = "Απομένουν μόνο ";
+$wb["error_web_no_diskspace_free_2"] = " MB που μπορείτε να ορίσετε σε αυτό το δικτυακό τόπο.<br>";
+$wb["error_web_no_unlimited_users_1"] = "Δε μπορείτε να ορίσετε απεριόριστους χρήστες σε αυτό το δικτυακό τόπο. Το μέγιστο όριο χρηστών για αυτό το δικτυακό τόπο είναι ";
+$wb["error_web_no_unlimited_users_2"] = ".<br>";
+$wb["error_web_no_users_free_1"] = "απομένει(ουν) ";
+$wb["error_web_no_users_free_2"] = " χρήστης(ες) που μπορείτε να ορίσετε σε αυτό το δικτυακό τόπο.<br>";
+$wb["error_web_no_unlimited_domains_1"] = "Δε μπορείτε να ορίσετε απεριόριστα κύρια ονόματα σε αυτό το δικτυακό τόπο. Το μέγιστο όριο κύριων ονομάτων για αυτό το δικτυακό τόπο είναι ";
+$wb["error_web_no_unlimited_domains_2"] = ".<br>";
+$wb["error_web_no_domains_free_1"] = "Απομένει(ουν) ";
+$wb["error_web_no_domains_free_2"] = " κύριο(α) όνομα(τα) που μπορείτε να ορίσετε σε αυτό το δικτυακό τόπο.<br>";
+$wb["error_web_no_user_decrease_1"] = "Αυτός ο δικτυακός τόπος έχει ήδη ";
+$wb["error_web_no_user_decrease_2"] = " Χρήστη(ες). Δε μπορείτε να αυξήσετε τον αριθμό τους.<br>";
+$wb["error_web_no_domain_decrease_1"] = "Αυτός ο δικτυακός τόπος έχει ήδη ";
+$wb["error_web_no_domain_decrease_2"] = " κύριο(α) όνομα(τα). Δε μπορείτε να αυξήσετε τον αριθμό τους.<br>";
+
+$wb["Benutzter Diskspace"] = "Χώρος δίσκου σε χρήση";
+$wb["Slave Zones angelegt"] = "Εναλλακτικές ζώνες σε χρήση";
+$wb["Datenbanken angelegt"] = "Βάσεις δεδομένων σε χρήση";
+$wb["error_web_no_database_decrease_1"] = "Αυτός ο δικτυακός τόπος έχει ήδη ";
+$wb["error_web_no_database_decrease_2"] = " βάση(εις) δεδομένων. Δε μπορείτε να αυξήσετε τον αριθμό τους.<br>";
+$wb["error_web_no_shell_access"] = "Δε μπορείτε να ορίσετε πρόσβαση κελύφους σε αυτό το δικτυακό τόπο.<br>";
+$wb["error_web_no_cgi"] = "Δε μπορείτε να ορίσετε λειτουργία CGI σε αυτό το δικτυακό τόπο.<br>";
+$wb["error_web_no_standard_cgi"] = "Δε μπορείτε να ορίσετε λειτουργία προεγκατεστημένων σεναρίων CGI σε αυτό το δικτυακό τόπο.<br>";
+$wb["error_web_no_php"] = "Δε μπορείτε να ορίσετε λειτουργία PHP σε αυτό το δικτυακό τόπο.<br>";
+$wb["error_web_no_ssi"] = "Δε μπορείτε να ορίσετε λειτουργία SSI σε αυτό το δικτυακό τόπο.<br>";
+$wb["error_web_no_ftp"] = "Δε μπορείτε να ορίσετε λειτουργία FTP σε αυτό το δικτυακό τόπο.<br>";
+$wb["error_web_no_mysql"] = "Δε μπορείτε να ορίσετε βάσεις δεδομένων σε αυτό το δικτυακό τόπο.<br>";
+$wb["error_web_no_databases_free_1"] = "Απομένει(ουν) ";
+$wb["error_web_no_databases_free_2"] = " βάση(εις) δεδομένων που μπορείτε να ορίσετε σε αυτό το δικτυακό τόπο.<br>";
+$wb["error_web_no_ssl"] = "Δε μπορείτε να ορίσετε λειτουργία SSL σε αυτό το δικτυακό τόπο.<br>";
+$wb["error_web_no_anonftp"] = "Δε μπορείτε να ορίσετε λειτουργία ανώνυμης πρόσβασης FTP σε αυτό το δικτυακό τόπο.<br>";
+$wb["error_web_no_wap"] = "Δε μπορείτε να ορίσετε λειτουργία WAP σε αυτό το δικτυακό τόπο.<br>";
+$wb["error_web_no_individual_error_pages"] = "Δε μπορείτε να ορίσετε λειτουργία σελίδων σφάλματος ορισμένες από τους χρήστες σε αυτό το δικτυακό τόπο.<br>";
+$wb["error_web_no_httpd_include"] = "Δε μπορείτε να ορίσετε λειτουργία HTTPD Includes σε αυτό το δικτυακό τόπο.<br>";
+$wb["error_web_no_frontpage"] = "Δε μπορείτε να ορίσετε λειτουργία Frontpage σε αυτό το δικτυακό τόπο.<br>";
+$wb["Web Vorlage"] = "Πακέτο φιλοξενίας";
+$wb["ISP Web-Vorlage"] = "ISP Πακέτο φιλοξενίας";
+$wb["Keine Vorlage verwenden"] = "Προσωπικές ρυθμίσεις";
+$wb["Keine Vorlage vorhanden"] = "Κανένα πακέτο φιλοξενίας";
+$wb["txt_accept"] = "Αποδοχή";
+$wb["txt_discard"] = "Απόρριψη";
+$wb["Eigenschaften"] = "Ιδιότητες";
+$wb["ISP Datenbank"] = "Βάση δεδομένων ISP";
+$wb["Nein"] = "Όχι";
+$wb["Ja"] = "Ναι";
+$wb["Web"] = "Δικτυακός τόπος";
+$wb["Domain"] = "Κύριο όνομα";
+$wb["Traffic-άberschreitung"] = "Υπέρβαση ορίου κίνησης";
+$wb["sperren"] = "Αναστολή";
+$wb["benachrichtigen"] = "Ενημέρωση";
+$wb["keine Aktion"] = "Καμία ενέργεια";
+$wb["Website-Status"] = "Κατάσταση δικτυακού τόπου";
+$wb["aktiv"] = "Σε λειτουργία";
+$wb["gesperrt"] = "Σε αναστολή";
+
+$wb["txt_traffic_suspension_email_desc"] = "<b>Αναστολή λειτουργίας δικτυακού τόπου (Υπέρβαση ορίου κίνησης δεδομένων)</b>";
+$wb["txt_traffic_suspension_sender_email"] = "Η ηλεκτρονική διεύθυνση του αποστολέα";
+$wb["txt_traffic_suspension_sender_name"] = "Το όνομα του αποστολέα";
+$wb["txt_traffic_suspension_email_bcc"] = "BCC κοινοποίηση";
+$wb["txt_traffic_suspension_email_subject"] = "Θέμα";
+$wb["txt_traffic_suspension_email_message"] = "Μήνυμα";
+$wb["txt_traffic_suspension_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Συμπερίληψη των παρακάτω μεταβλητών στο κείμενό σας:</b></td></tr>
+        <tr>
+          <td class="normal">%%%FIRST_NAME%%%</td>
+          <td class="normal">
+            Το όνομα του πελάτη</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%LAST_NAME%%%</td>
+          <td class="normal">
+            Το επίθετο του πελάτη</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%WEBSITE%%%</td>
+          <td class="normal">
+            Ο δικτυακός τόπος του πελάτη</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%MONTH%%%</td>
+          <td class="normal">
+            Ο μήνας της υπέρβασης του ορίου κίνησης δεδομένων</td>
+        </tr>
+        <tr>
+          <td class="normal" valign="top">%%%INCLUDED_TRAFFIC%%%</td>
+          <td class="normal">
+            Η συνολική επιτρεπτή κίνηση του πακέτου φιλοξενίας</td>
+        </tr>
+        <tr>
+          <td class="normal" valign="top">%%%TOTAL_TRAFFIC%%%</td>
+          <td class="normal">
+            Συνολική κίνηση του μήνα της υπέρβασης του ορίου</td>
+        </tr>
+        </table>';
+
+$wb["txt_traffic_notification_email_desc"] = "<b>Υπέρβαση του ορίου κίνησης δεδομένων</b>";
+$wb["txt_traffic_notification_sender_email"] = "Η ηλεκτρονική διεύθυνση του αποστολέα";
+$wb["txt_traffic_notification_sender_name"] = "Το όνομα του αποστολέα";
+$wb["txt_traffic_notification_email_bcc"] = "BCC κοινοποίηση";
+$wb["txt_traffic_notification_email_subject"] = "Θέμα";
+$wb["txt_traffic_notification_email_message"] = "Μήνυμα";
+$wb["txt_traffic_notification_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Συμπερίληψη των παρακάτω μεταβλητών στο κείμενό σας:</b></td></tr>
+        <tr>
+          <td class="normal">%%%FIRST_NAME%%%</td>
+          <td class="normal">
+            Το όνομα του πελάτη</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%LAST_NAME%%%</td>
+          <td class="normal">
+            Το επίθετο του πελάτη</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%WEBSITE%%%</td>
+          <td class="normal">
+            Ο δικτυακός τόπος του πελάτη</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%MONTH%%%</td>
+          <td class="normal">
+            Ο μήνας της υπέρβασης του ορίου κίνησης δεδομένων</td>
+        </tr>
+        <tr>
+          <td class="normal" valign="top">%%%INCLUDED_TRAFFIC%%%</td>
+          <td class="normal">
+            Η συνολική επιτρεπτή κίνηση του πακέτου φιλοξενίας</td>
+        </tr>
+        <tr>
+          <td class="normal" valign="top">%%%TOTAL_TRAFFIC%%%</td>
+          <td class="normal">
+            Συνολική κίνηση του μήνα της υπέρβασης του ορίου</td>
+        </tr>
+        </table>';
+
+
+$wb["Catalog_Name"] = "Όνομα";
+$wb["Spam Whitelist"] = 'Λευκή λίστα Spam';
+$wb["Spam Blacklist"] = 'Μαύρη λίστα Spam';
+$wb["spam_whitelist_txt"] = '<b>Σύσταση:</b> Μία εγγραφή ανά γραμμή. Έγκυρες εγγραφές είναι π.χ. friend@somewhere.com, *@isp.com, or *.domain.net.';
+$wb["spam_blacklist_txt"] = '<b>Σύσταση:</b> Μία εγγραφή ανά γραμμή. Έγκυρες εγγραφές είναι π.χ. friend@somewhere.com, *@isp.com, or *.domain.net.';
+$wb["Webalizer Stats"] = 'Webalizer<br>&nbsp;Στατιστικά';
+$wb["Use Uribl"] = 'Χρήση <a href="http://www.uribl.com/about.shtml" target="_blank" style="font-family:Arial,Verdana">URIBL</a>';
+$wb["Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 -"] = "Επιτρέπονται μόνο οι ακόλουθοι χαρακτήρες: a-z A-Z 0-9 -<br>";
+$wb["Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 - ."] = "Επιτρέπονται μόνο οι ακόλουθοι χαρακτήρες: a-z A-Z 0-9 - .<br>";
+
+
+?>
