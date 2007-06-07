@@ -1,0 +1,25 @@
+<?
+/********************************
+* ISPConfig Dictionary File
+* Version 1.0
+*********************************/
+
+// License Manager
+$wb["Es wurde keine g&uuml;ltige Lizenzdatei gefunden."] = "Δε βρέθηκε το αρχείο έγκυρης άδειας.";
+$wb["Hier k&ouml;nnen Sie ihre Lizenzdatei einspielen."] = "Μπορείτε να στείλετε το αρχείο άδειας εδώ";
+$wb["Username"] = "Όνομα χρήστη";
+$wb["Passwort"] = "Κωδικός";
+$wb["Lizenzdatei"] = "Αρχείο άδειας";
+$wb["Weiter"] = "Επόμενο";
+$wb["Die Lizenzdatei wurde eingespielt.<br>Sie k&ouml;nnen sich jetzt einloggen."] = "Το αρχείο άδειας έχει σταλεί<br> Είσοδος στο σύστημα τώρα.";
+$wb["Ihre Nutzersitzung wurde beendet."] = "Η συνεδρία σας έχει λήξει.";
+$wb["Hier kφnnen Sie sich neu einloggen"] = "Επανάληψη εισόδου στο σύστημα.";
+
+$wb["FEHLER 101: Username oder Passwort Falsch."] = "ΣΦΑΛΜΑ 101: Εσφαλμένο όνομα χρήστη ή κωδικός.";
+$wb["FEHLER 102: Account inaktiv."] = "ΣΦΑΛΜΑ 102: Ανενεργός λογαριασμός.";
+$wb["FEHLER 103: Es wurde kein Username oder Passwort angegeben."] = "ΣΦΑΛΜΑ 103: Δεν έχει πληκτρολογηθεί όνομα χρήστη ή κωδικός";
+$wb["FEHLER 104: Die Nutzersession wurde beendet."] = "ΣΦΑΛΜΑ 104: Η συνεδρία έχει λήξει";
+$wb["<br>&nbsp;<br>Hier kφnnen Sie sich erneut einloggen:"] = "<br>&nbsp;<br>Επανάληψη εισόδου στο σύστημα:";
+$wb["Hier kφnnen Sie sich einloggen:"] = "Είσοδος στο σύστημα:";
+
+?>

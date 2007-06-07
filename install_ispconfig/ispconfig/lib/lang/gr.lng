@@ -1,0 +1,112 @@
+<?
+/********************************
+* ISPConfig Dictionary File
+* Version 1.0
+*********************************/
+
+/////////////// Allgemein - general (kommt in mehreren Modulen vor) /////////
+$wb["login_begruessung"]     = "Είσοδος:";
+$wb["Username"]     = "Χρήστης";
+$wb["Passwort"]     = "Κωδικός";
+$wb["Login"]       = "Είσοδος";
+$wb["Administration"]  = "Διαχείριση";
+$wb["ISP Manager"]  = "ISP Διαχειριστής";
+$wb["DNS Manager"]  = "DNS Διαχειριστής";
+$wb["Tools"]        = "Εργαλεία";
+$wb["Logout"]       = "Έξοδος";
+$wb["Status"]       = "Κατάσταση";
+$wb["neu"]          = "Δημιουργία";
+$wb["Hinweis"]      = "Αναφορά";
+$wb["Web"]          = "Δικτυακός τόπος";
+$wb["Email"]        = "Email";
+$wb["FTP"]          = "FTP";
+$wb["DNS"]          = "DNS";
+$wb["Sonstiges"]    = "Άλλο";
+$wb["Datei"]        = "Αρχείο";
+$wb["von"]          = "Από"; // besser 'ab'?
+$wb["error_headline"] = "Προέκυψε το ακόλουθο σφάλμα:";
+$wb["Gruppe"]       = "Ομάδα";
+$wb["Titel"]        = "Τίτλος";
+$wb["Server"]       = "Διακομιστής";
+$wb["Host"]         = "Όνομα";
+$wb["Domain"]       = "Κύριο όνομα";
+$wb["IP Adresse"]   = "Διεύθυνση IP";
+$wb["Ordner"]       = "Φάκελος";
+$wb["Dokument"]     = "έγγραφο";
+$wb["Dokument suchen"] = "Αναζήτηση εγγράφου";
+$wb["Suchmaske"]    = "Αναζήτηση όρων";
+$wb["Ausgabeformat"] = "Μορφή αρχείου εξόδου";
+$wb["Standard"]     = "πρότυπο";
+$wb["Eintrδge"]    = "Εγγραφές";
+$wb["Papierkorb leeren"] = "Άδειασμα κάδου ανακύκλωσης";
+$wb["Stammordner"]  = "Ριζικός κατάλογος";
+$wb["keine Gruppe"] = "Καμία ομάδα";
+$wb["neues Dokument anlegen"] = "Δημιουργία νέου εγγράφου";
+$wb["auf"]   = "Ανάπτυξη";
+$wb["zu"]    = "Σύμπτυξη";
+$wb["in_ordner"]    = "στο φάκελο";
+$wb["Papierkorb"]   = "Κάδος Ανακύλωσης";
+$wb["Wiederherstellen"]    = "Επαναφορά";
+$wb["Papierkorb: Eintrδge"]   = "Κάδος Ανακύκλωσης: Περιεχόμενα";
+$wb["Speichern"]    = "Αποθήκευση";
+$wb["Lφschen"]    = "Διαγραφή";
+$wb["Abbrechen"]    = "Ακύρωση";
+$wb["Suchen"]    = "Αναζήτηση";
+
+$wb["Herr"] = "Κύριος";
+$wb["Frau"] = "Κυρία";
+
+$wb["Es ist folgender Fehler aufgetreten:"] = "Το ακόλουθο σφάλμα προέκυψε";
+
+$wb["Web-FTP"] = 'Web-FTP';
+$wb["ISP Faktura"] = 'ISP Κοστολόγηση';
+
+$wb["Verzeichnis φffnen"] = "Άνοιγμα";
+$wb["Verzeichnis schliessen"] = "Κλείσιμο";
+$wb["Hilfe"] = 'Βοήθεια';
+$wb["Online Hilfe"] = 'Βοήθεια στο διαδίκτυο';
+$wb["schliessen"] = 'κλείσιμο';
+
+$wb["PAPIERKORB_HINWEIS"] = "<b>Σημείωση:</b> Η διαγραφή των αρχείων του Κάδου Ανακύκλωσης βρίσκεται σε εξέλιξη. Παρακαλώ προσπαθήστε πάλι σε λίγα λεπτά.";
+
+
+// Multidoc  Allgemein ////////////////////////////////
+
+$wb["title_required"] = "Παρακαλώ επιλέξτε τιμή για το πεδίο 'Τίτλος'";
+$wb["error_keine_rechte"] = "Δεν έχετε τα απαραίτητα δικαιώματα προβολής και επεξεργασίας αυτής της εγγραφής.";
+$wb["error_doctype_nicht_vorhanden"] = "Ο συγκεκριμένος τύπος εγγράφου δεν υπάρχει.";
+$wb["error_doctype_rechte"] = "Δεν έχετε τα απαραίτητα δικαιώματα επεξεργασίας αυτού του τύπου εγγράφου.";
+$wb["Formular Designer"] = "Σχεδιαστής φόρμας";
+$wb["Geben Sie einen Wert in das Feld"] = "Παρακαλώ επιλέξτε τιμή για το πεδίο";
+$wb["jscript_ein"] = " ";
+
+
+////////////// Allgemein Ende ///////////////////
+
+$wb["Es konnte ein Dokument nicht wiederhergestellt werden, da sich das Eltern-Dokument noch im Papierkorb befindet.\n"] = "Το αντικείμενο δεν μπορεί να ανακτηθεί διότι το γονικό του αντικείμενο βρίσκεται στον Κάδο Ανακύκλωσης.";
+
+$wb["DNS-Domains angelegt"] = 'Η κύρια ζώνη δημιουργήθηκε';
+$wb["Benutzter Diskspace"] = "Διαθέσιμος χώρος δίσκου σε χρήση";
+$wb["Slave Zones angelegt"] = "Οι εναλλακτικές ζώνες δημιουργήθηκαν";
+$wb["Datenbanken angelegt"] = "Οι βάσεις δεδομένων δημιουργήθηκαν";
+
+$wb["txt_confirm_delete"] = "Είστε σίγουροι ότι θέλετε τη διαγραφή αυτού του αντικειμένου";
+
+$wb["txt_object_currently_updated"] = "Οι αλλαγές σας δεν μπορούν να αποθηκευτούν διότι η ενημέρωση αυτού του στοιχείου βρίσκεται σε εξέλιξη. Παρακαλώ προσπαθήστε πάλι σε λίγα λεπτά.<br><br> <a href='../frame_start.php?s=$s'>Επόμενο &gt;&gt;</a>";
+$wb["txt_system_currently_updated_no_recycle_bin"] = "Δεν έχετε πρόσβαση στον Κάδο Ανακύκλωσης διότι η ενημέρωση του συστήματος βρίσκεται σε εξέλιξη. Παρακαλώ προσπαθήστε πάλι σε λίγα λεπτά.<br><br> <a href='../frame_start.php?s=$s'>Επόμενο &gt;&gt;</a>";
+
+$wb['no_permission_to_change_data'] = "<b>Σφάλμα: Δεν έχετε τα απαραίτητα δικαιώματα για την τροποποίηση αυτών των δεδομένων.</b><p>
+                <br>
+                Για έναν από τους παρακάτω λόγους:<br>
+                1. Χρησιμοποιείτε το σύστημα σε δοκιμαστική λειτουργία.<br>
+                   - Εισέλθετε στην εφαρμογή με όνομα χρήστη και κωδικό.<br>&nbsp;<br>
+                2. Προσπαθείτε να τροποποίησετε ένα στοιχείο το οποίο ανήκει σε άλλη ομάδα.<br>
+                   Σε αυτή την ομάδα δεν έχετε δικαιώματα προβολής / επεξεργασίας.<br>
+                   - Παρακαλώ ζητήστε από τον ιδιοκτήτη της ομάδας αυτής να σας διαθέσει τα απαραίτητα δικαιώματα.<br>&nbsp;<br>
+                <center><a href=\"" . $go_info["server"]["server_url"] . "/index.php?s=$s\">Επόμενο &gt;&gt;</a></center>";
+
+$wb["Weiter"] = "Επόμενο";
+$wb["Zurόck"] = "Επιστροφή";
+
+
+?>

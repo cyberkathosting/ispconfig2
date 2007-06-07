@@ -1,0 +1,36 @@
+<html>
+<head>
+<title>Καλώς ήρθατε!</title>
+</head>
+<body BGCOLOR="#FFFFFF" leftMargin=0 topMargin=0 rightMargin=0 marginheight="0" marginwidth="0">
+<center>
+<table BORDER="0" WIDTH="100%" CELLSPACING="0">
+  <tr>
+    <td BGCOLOR="#025CCA" ALIGN="CENTER">
+    <hr SIZE="1" COLOR="#FFFFFF">
+    <table>
+      <tr>
+        <td><font SIZE="3" COLOR="#FFFFFF" FACE="Helvetica, Arial"><b>Κοινόχρηστη διεύθυνση IP.</b></font></td>
+      </tr>
+    </table>
+    <hr SIZE="1" COLOR="#FFFFFF">
+    </td>
+  </tr>
+  <tr>
+    <td BGCOLOR="#FFFFFF">
+    <br><br>
+          <center>
+              <p><font COLOR="#000000" SIZE="2" FACE="Helvetica, Arial"><br>
+          Αυτή η διεύθυνση δικτύου είναι κοινόχρηστη. Για να δείτε το δικτυακό τόπο που αναζητάτε, εισάγετε το όνομά του και όχι τη διεύθυνση IP.</font></p>
+              <p><font COLOR="#000000" SIZE="2" FACE="Helvetica, Arial">Για απορίες ή προβλήματα παρακαλώ επικοινωνήστε με το διαχειριστή του διακομιστή.</font></p>
+      </center>
+      <hr SIZE="1" WIDTH="90%">
+      <center>
+<font SIZE="1" COLOR="#000000" FACE="Verdana, Arial">powered by <a HREF="http://www.ispconfig.org">ISPConfig</a></font>
+      </center>
+    </td>
+  </tr>
+</table>
+</center>
+</body>
+</html>
