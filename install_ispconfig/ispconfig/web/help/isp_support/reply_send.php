@@ -32,6 +32,8 @@ include("../../../lib/session.inc.php");
 
 if($go_info["server"]["mode"] == 'demo') $go_api->errorMessage("Aktion im Demo-Modus nicht möglich.");
 
+$tid = intval($tid);
+
 switch($Submit){
 	case $go_api->lng("Antworten") :
 		$sql = "SELECT ticket_from,ticket_to,ticket_urgency FROM help_tickets WHERE doc_id=$tid";
