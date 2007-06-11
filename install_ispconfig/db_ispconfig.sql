@@ -1588,6 +1588,21 @@ INSERT INTO `sys_dep` (`dep_id`, `userid`, `groupid`, `parent_doc_id`, `parent_d
 
 -- --------------------------------------------------------
 
+-- 
+-- Table structure for table `sys_login`
+-- 
+
+CREATE TABLE `sys_login` (
+  `id` int(10) unsigned NOT NULL auto_increment,
+  `username` varchar(255) NOT NULL,
+  `ip` varchar(15) NOT NULL,
+  `logintime` int(10) unsigned NOT NULL,
+  `status` enum('success','failure') NOT NULL default 'success',
+  PRIMARY KEY  (`id`)
+)
+
+-- --------------------------------------------------------
+
 --
 -- Table structure for table `sys_modules`
 --

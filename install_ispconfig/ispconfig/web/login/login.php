@@ -39,23 +39,54 @@ $db = new $dbname;
 $username = addslashes($username);
 $passwort = addslashes($passwort);
 
+if (empty($username) or empty($passwort))
+{
+  header("Location: ../login.php?err=103");
+  exit; 
+}
+
+$sql = sprintf('SELECT COUNT(id) as anzahl from sys_login WHERE ip = "%s" AND logintime >= (UNIX_TIMESTAMP() - 1800) AND status = "failure"', addslashes($_SERVER['REMOTE_ADDR']));
+$res = $db->queryOneRecord($sql);
+if ($res['anzahl'] >= 6)
+{
+  header("Location: ../login.php?err=105");
+  exit;  
+}
+
 $laston = date("y-m-d H:i:s");
 //$conn = mysql_query("SELECT * FROM sys_user where username = '$username'");
 $sql = "SELECT * FROM sys_user WHERE username = '$username' AND (passwort = '".md5($passwort)."' OR passwort = PASSWORD('$passwort'))";
 //die($sql);
-if ($row = $db->queryOneRecord($sql) and $passwort != ""){
-  if ($row["doc_id"] != 0 and $row["gueltig"] == "1"){
+
+if ($row = $db->queryOneRecord($sql) and $passwort != "")
+{
+  if ($row["doc_id"] != 0 and $row["gueltig"] == "1")
+  {
     include("../../lib/session.inc.php");
     $time = mktime()+86400;
     $date = date("l, d-M-y H:i:s", ($time));
     header("Set-Cookie: sessionispconfig=$s; expires=0 GMT; path=/;");
     echo("<head><meta http-equiv='refresh' content='0;URL=trylogin.php?s=$s&v=$version'></head>");
+    
+    // Logging of the Login-Attempt (success)
+    $db->query(sprintf('INSERT INTO sys_login (username, ip, logintime, status) VALUES("%s", "%s", %d, "%s")', $username, addslashes($_SERVER['REMOTE_ADDR']), time(), 'success'));
 
-  } else {
+    $db->query('DELETE FROM sys_login WHERE logintime < (UNIX_TIMESTAMP() - 7*24*3600)');
+  } 
+  else 
+  {
+    // Logging of the Login-Attempt (failure)
+    $db->query(sprintf('INSERT INTO sys_login (username, ip, logintime, status) VALUES("%s", "%s", %d, "%s")', $username, $_SERVER['REMOTE_ADDR'], time(), 'failure'));
+
     header("Location: ../login.php?err=102");
     exit;
   }
-} else {
+}
+else
+{
+  // Logging of the Login-Attempt (failure)
+  $db->query(sprintf('INSERT INTO sys_login (username, ip, logintime, status) VALUES("%s", "%s", %d, "%s")', $username, $_SERVER['REMOTE_ADDR'], time(), 'failure'));
+
   header("Location: ../login.php?err=101");
   exit;
 }
