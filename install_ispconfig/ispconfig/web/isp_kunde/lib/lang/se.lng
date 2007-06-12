@@ -475,5 +475,6 @@ $wb["SSL Request"] = "SSL Begäran";
 $wb["Web-Manager"] = "Webb Manager";
 $wb["Web-FTP"] = "Webb FTP";
 $wb["Webs"] = "Webbplatser";
+$wb["error_domain_delete_client"] = "You cannot delete this domain.";
 
 ?>

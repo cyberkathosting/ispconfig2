@@ -223,9 +223,18 @@ global $go_api, $go_info;
 
 
 function domain_update($doc_id, $doctype_id, $die_on_error = '1') {
-global $go_api, $go_info,$s;
+global $go_api, $go_info,$s,$old_form_data;
 
-    // Remove http:// and https:// and spaces from domains and hosts
+    // If the currently logged in user is not admin or reseller, we will not allow 
+	// him to change the domain and hostname
+	$tmp_groups = $go_api->groups->myGroups();
+	if(!is_array($tmp_groups)) {
+		$sql = "UPDATE isp_isp_domain SET domain_host = '$old_form_data[domain_host]', domain_domain = '$old_form_data[domain_domain]' WHERE doc_id = '$doc_id'";
+		$go_api->db->query($sql);
+	}
+	
+	
+	// Remove http:// and https:// and spaces from domains and hosts
     if($tmp_domains = $go_api->db->queryAllRecords("SELECT * FROM isp_isp_domain WHERE domain_host LIKE 'http://%' OR domain_host LIKE 'https://%' OR domain_host LIKE ' %' OR domain_host LIKE '% ' OR domain_domain LIKE 'http://%' OR domain_domain LIKE 'https://%' OR domain_domain LIKE ' %' OR domain_domain LIKE '% '")){
       foreach($tmp_domains as $tmp_domain){
         $tmp_domain['domain_host'] = str_replace('http://', '', $tmp_domain['domain_host']);
@@ -318,6 +327,15 @@ global $go_api, $go_info,$s;
 
 function domain_delete($doc_id, $doctype_id, $action, $die_on_error = '1') {
 global $go_api, $go_info;
+
+	// If the currently logged in user is not admin or reseller, we will not allow 
+	// him to delete this record
+	$tmp_groups = $go_api->groups->myGroups();
+	if(!is_array($tmp_groups)) {
+		$sql = "UPDATE isp_nodes SET status = 1 WHERE doc_id = '$doc_id' AND doctype_id = '$doctype_id'";
+		$go_api->db->query($sql);
+		$go_api->errorMessage($go_api->lng("error_domain_delete_client").$go_api->lng("weiter_link"));
+	}
 
 ###########################
     $web = $go_api->db->queryOneRecord("SELECT * from isp_isp_web, isp_dep where

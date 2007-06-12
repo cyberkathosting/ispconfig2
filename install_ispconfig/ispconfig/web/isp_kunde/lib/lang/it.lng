@@ -451,5 +451,6 @@ $wb["aktiv"] = "Attivo";
 $wb["gesperrt"] = "Sospeso";
 
 $wb["Catalog_Name"] = "Nome";
+$wb["error_domain_delete_client"] = "You cannot delete this domain.";
 
 ?>

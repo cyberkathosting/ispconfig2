@@ -558,6 +558,7 @@ $wb["Webalizer Stats"] = 'Webalizer<br>&nbsp;Statistics';
 $wb["Use Uribl"] = 'Use <a href="http://www.uribl.com/about.shtml" target="_blank" style="font-family:Arial,Verdana">URIBL</a>';
 $wb["Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 -"] = "Only the following signs are allowed: a-z A-Z 0-9 -<br>";
 $wb["Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 - ."] = "Only the following signs are allowed: a-z A-Z 0-9 - .<br>";
+$wb["error_domain_delete_client"] = "You cannot delete this domain.";
 
 
 ?>

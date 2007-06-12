@@ -80,7 +80,7 @@ if($action == "update") {
 
     // Datensatz holen + Überprüfung ob user Eigentümer ist
     if(isset($doc_id)){
-    $daten = $go_api->db->queryOneRecord("select * from ".$doc->storage_path." where doc_id = '$doc_id'");
+    $old_form_data = $go_api->db->queryOneRecord("select * from ".$doc->storage_path." where doc_id = '$doc_id'");
     // Check ob der aktuelle User der Eigentümer ist
     }
     }
