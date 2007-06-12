@@ -38,7 +38,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  # Datum:
  #
  #############################################################
- 
+
  if(CONFIG_LOADED != 1) die('Direct access not permitted.');
 
 class reseller_traffic_plugin {
@@ -93,7 +93,7 @@ class reseller_traffic_plugin {
            //echo "web_id: ".$web_id."<br>";
            //print_r($traffics);
            $html_out .= '<tr>
-       <td colspan="5" align="center" bgcolor="#EFEFEF"><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><b>'.$web_data["web_domain"].'</b></font></td>
+       <td colspan="5" align="center" bgcolor="#EFEFEF"><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><b>'.($web_data["web_host"] != "" ? $web_data["web_host"]."." : "").$web_data["web_domain"].'</b></font></td>
     </tr>';
 
            if(is_array($traffics)) {
