@@ -45,7 +45,7 @@ switch($Submit){
 			$new_ticket_from = $ticket_data["ticket_from"];
 			$new_ticket_to = $go_info["user"]["userid"];
 		}
-		$answer = addslashes($answer);
+    $answer = addslashes(strip_tags($answer));
 		$sql = "INSERT INTO help_tickets (ticket_from,ticket_to,ticket_reply,ticket_message,ticket_date) VALUES ($new_ticket_from,$new_ticket_to,$tid,\"$answer\",NOW())";
 		$go_api->db->query($sql);
 		// Send Mail
@@ -87,7 +87,7 @@ switch($Submit){
 			$new_ticket_from = $ticket_data["ticket_from"];
 			$new_ticket_to = $go_info["user"]["userid"];
 		}
-		$answer = addslashes($answer);
+    $answer = addslashes(strip_tags($answer));
 		$sql = "INSERT INTO help_tickets (ticket_from,ticket_to,ticket_reply,ticket_message,ticket_date) VALUES ($new_ticket_from,$new_ticket_to,$tid,\"$answer\",NOW())";
 		$go_api->db->query($sql);
 		// Send Mail

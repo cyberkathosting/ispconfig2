@@ -56,8 +56,8 @@ if(is_array($go_api->groups->myGroups())) {
 
 
 $from_id = $go_info["user"]["userid"];
-$subject = addslashes($subject);
-$request = addslashes($request);
+$subject = addslashes(strip_tags($subject));
+$request = addslashes(strip_tags($request));
 $priority = (isset($priority) ? null : intval($priority));
 
 // Insert into database

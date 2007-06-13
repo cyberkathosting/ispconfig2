@@ -129,7 +129,7 @@ if(is_array($other_ticket)) {
                   $theure = substr($row["ticket_date"],11,8);
                   $vtemp["TDATE"] = $tjour."/".$tmois."/".$tannee." ".$theure;
                 }
-                $vtemp["TMESS"] = $row["ticket_message"];
+                $vtemp["TMESS"] = stripslashes($row["ticket_message"]);
 
                 $go_api->content->assign($vtemp);
                    $go_api->content->parse(LISTE,".liste");
