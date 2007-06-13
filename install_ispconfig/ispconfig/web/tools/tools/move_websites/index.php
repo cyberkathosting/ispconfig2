@@ -71,7 +71,7 @@ if($_POST['web_doc_id'] > 0 && $_POST['old_customer_doc_id'] > 0 && $_POST['new_
   // Website
   $isp_nodes_web = $go_api->db->queryOneRecord("SELECT * FROM isp_nodes WHERE doc_id = '".$_POST['web_doc_id']."' AND doctype_id = '1013' AND userid = '".$old_sys_user['doc_id']."'");
   $go_api->db->query("UPDATE isp_nodes SET userid = '".$new_sys_user['doc_id']."' WHERE doc_id = '".$_POST['web_doc_id']."' AND doctype_id = '1013' AND userid = '".$old_sys_user['doc_id']."'");
-  $go_api->db->query("UPDATE isp_dep SET parent_doc_id = '".$_POST['new_customer_doc_id']."' WHERE child_tree_id = '".$isp_nodes_web['tree_id']."' AND child_doctype_id = '1013' AND child_doc_id = '".$_POST['web_doc_id']."' AND parent_doctype_id = '1012' AND parent_doc_id = '".$_POST['old_customer_doc_id']."'");
+  $go_api->db->query("UPDATE isp_dep SET parent_doc_id = '".$_POST['new_customer_doc_id']."', parent_tree_id = '".$new_customer['tree_id']."' WHERE child_tree_id = '".$isp_nodes_web['tree_id']."' AND child_doctype_id = '1013' AND child_doc_id = '".$_POST['web_doc_id']."' AND parent_doctype_id = '1012' AND parent_doc_id = '".$_POST['old_customer_doc_id']."'");
 
   // Co-Domains
   if($codomains = $go_api->db->queryAllRecords("SELECT * FROM isp_isp_domain, isp_dep WHERE isp_isp_domain.doc_id = isp_dep.child_doc_id AND isp_isp_domain.doctype_id = isp_dep.child_doctype_id AND isp_dep.parent_doctype_id = '1013' AND isp_dep.parent_doc_id = '".$_POST['web_doc_id']."' AND isp_dep.child_doctype_id = '1015'")){

@@ -70,7 +70,7 @@ class client_traffic_plugin {
     $traffics = $go_api->db->queryAllRecords("SELECT * FROM isp_traffic WHERE web_id = '$web_id' ORDER BY jahr DESC, monat DESC LIMIT 0,36");
 
     $html_out .= '<tr>
-       <td colspan="5" align="center" bgcolor="#9F9F9F"><font face="Verdana, Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"><b>'.$web_data["web_domain"].'</b></font></td>
+       <td colspan="5" align="center" bgcolor="#9F9F9F"><font face="Verdana, Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"><b>'.($web_data["web_host"] != "" ? $web_data["web_host"]."." : "").$web_data["web_domain"].'</b></font></td>
     </tr>';
         if(is_array($traffics)) {
     foreach($traffics as $traffic){
