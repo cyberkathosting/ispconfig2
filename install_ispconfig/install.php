@@ -1525,6 +1525,7 @@ if($dist_mail == "postfix"){
 if(!strstr($dist, "freebsd")){
   if(is_dir("/etc/Bastille")) caselog("mv -f /etc/Bastille /etc/Bastille.backup_".date("m_d_Y__H_i_s", $current_date), $FILE, __LINE__);
   @mkdir("/etc/Bastille", octdec($directory_mode));
+  if(is_dir("/etc/Bastille.backup_".date("m_d_Y__H_i_s", $current_date)."/firewall.d")) caselog("cp -pfr /etc/Bastille.backup_".date("m_d_Y__H_i_s", $current_date)."/firewall.d /etc/Bastille/", $FILE, __LINE__);             
   caselog("cp -f isp/conf/bastille-firewall.cfg.master /etc/Bastille/bastille-firewall.cfg", $FILE, __LINE__);
   caselog("chmod 644 /etc/Bastille/bastille-firewall.cfg", $FILE, __LINE__);
   $conf = rf("/etc/Bastille/bastille-firewall.cfg");

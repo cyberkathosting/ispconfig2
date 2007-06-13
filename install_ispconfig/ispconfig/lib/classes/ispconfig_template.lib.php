@@ -506,7 +506,11 @@ class FastTemplate {
         {
                 while ( list ($FileTag,$FileName) = each ($fileList) )
                 {
-                        $this->FILELIST["$FileTag"] = $FileName;
+                        if(is_file($this->ROOT.'/customized_templates/'.$FileName)){
+                        $this->FILELIST["$FileTag"] = '/customized_templates/'.$FileName;
+                        } else {
+                          $this->FILELIST["$FileTag"] = $FileName;
+                        }
                 }
                 return true;
         }

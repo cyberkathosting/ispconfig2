@@ -123,7 +123,9 @@ cd ../${MOD_SSL}
 ./configure --with-apache=../${APACHE} --with-ssl=${INSTALL_ROOT}/openssl --prefix=${INSTALL_ROOT}/httpd --enable-module=so || error "Could not configure Apache"
 cd ../${APACHE}
 make || error "Could not make Apache"
-make certificate TYPE=custom  || error "Could not make certificate for Apache"
+if [ "$install_art" == "install" ]; then
+  make certificate TYPE=custom  || error "Could not make certificate for Apache"
+fi
 make install || error "Could not install Apache"
 
 cd ../${PHP}
