@@ -538,6 +538,7 @@ global $go_api, $go_info, $old_form_data;
 
     $web = $go_api->db->queryOneRecord("select * from isp_nodes,isp_isp_web where isp_nodes.doc_id = '$doc_id' and isp_nodes.doctype_id = '1013' and isp_isp_web.doc_id = '$doc_id'");
 
+	
 
     /////////////////////////////////////////////
     // Check Ob Domainname bereits vergeben
