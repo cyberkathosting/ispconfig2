@@ -67,14 +67,14 @@ switch($Submit){
 			$from_name = $go_info["user"]["lastname"]." ".$go_info["user"]["firstname"];
 		}
 		$message = $from_name." ".$go_api->lng("geantwortet zu ihnen");
-		$headers  = "From: ".$from_name." <".$from_mail.">\r\n";
-		$headers .= "Reply-To: <".$from_mail.">\r\n";
-		$headers .= "Return-Path: <".$from_mail.">\r\n";
-		$headers .= "X-Sender: <".$from_mail.">\r\n";
-		$headers .= "X-Mailer: PHP5\r\n"; //mailer
-		$headers .= "X-Priority: ".$ticket_data["ticket_urgency"]."\r\n";
-		$headers .= "MIME-Version: 1.0\r\n";
-		$headers .= "Content-Type: text/plain\r\n";
+    $headers  = "From: ".$from_name." <".$from_mail.">\n";
+    $headers .= "Reply-To: <".$from_mail.">\n";
+    $headers .= "Return-Path: <".$from_mail.">\n";
+    $headers .= "X-Sender: <".$from_mail.">\n";
+    $headers .= "X-Mailer: PHP5\n"; //mailer
+    $headers .= "X-Priority: ".$ticket_data["ticket_urgency"]."\n";
+    $headers .= "MIME-Version: 1.0\n";
+    $headers .= "Content-Type: text/plain\n";
 		mail($to_mail, $go_api->lng("Sie erhielten eine antwort"), $message, $headers);		
 	break;
 	case $go_api->lng("Antworten")."&".$go_api->lng("Schließen") :
@@ -109,14 +109,14 @@ switch($Submit){
 			$from_name = $go_info["user"]["lastname"]." ".$go_info["user"]["firstname"];
 		}
 		$message = $from_name." ".$go_api->lng("geantwortet zu ihnen");
-		$headers  = "From: ".$from_name." <".$from_mail.">\r\n";
-		$headers .= "Reply-To: <".$from_mail.">\r\n";
-		$headers .= "Return-Path: <".$from_mail.">\r\n";
-		$headers .= "X-Sender: <".$from_mail.">\r\n";
-		$headers .= "X-Mailer: PHP5\r\n"; //mailer
-		$headers .= "X-Priority: ".$ticket_data["ticket_urgency"]."\r\n";
-		$headers .= "MIME-Version: 1.0\r\n";
-		$headers .= "Content-Type: text/plain\r\n";
+    $headers  = "From: ".$from_name." <".$from_mail.">\n";
+    $headers .= "Reply-To: <".$from_mail.">\n";
+    $headers .= "Return-Path: <".$from_mail.">\n";
+    $headers .= "X-Sender: <".$from_mail.">\n";
+    $headers .= "X-Mailer: PHP5\n"; //mailer
+    $headers .= "X-Priority: ".$ticket_data["ticket_urgency"]."\n";
+    $headers .= "MIME-Version: 1.0\n";
+    $headers .= "Content-Type: text/plain\n";
 		mail($to_mail, $go_api->lng("Sie erhielten eine antwort"), $message, $headers);		
 		// Close Ticket
 		$sql = "UPDATE help_tickets SET ticket_status='C' WHERE doc_id=$tid";

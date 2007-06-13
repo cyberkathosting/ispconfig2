@@ -71,14 +71,14 @@ $from_mail = $go_info["user"]["email"];
 $message = $go_api->lng("Neue unterstützungskarte, die auf antwort wartet");
 
 // Creating E-Mail message
-$headers  = "From: ".$from_name." <".$from_mail.">\r\n";
-$headers .= "Reply-To: <".$from_mail.">\r\n";
-$headers .= "Return-Path: <".$from_mail.">\r\n";
-$headers .= "X-Sender: <".$from_mail.">\r\n";
-$headers .= "X-Mailer: PHP5\r\n"; //mailer
-$headers .= "X-Priority: ".$priority."\r\n"; //1 UrgentMessage, 3 Normal
-$headers .= "MIME-Version: 1.0\r\n";
-$headers .= "Content-Type: text/plain\r\n";
+$headers  = "From: ".$from_name." <".$from_mail.">\n";
+$headers .= "Reply-To: <".$from_mail.">\n";
+$headers .= "Return-Path: <".$from_mail.">\n";
+$headers .= "X-Sender: <".$from_mail.">\n";
+$headers .= "X-Mailer: PHP5\n"; //mailer
+$headers .= "X-Priority: ".$priority."\n"; //1 UrgentMessage, 3 Normal
+$headers .= "MIME-Version: 1.0\n";
+$headers .= "Content-Type: text/plain\n";
 
 mail($to_mail, $go_api->lng("Neue Karte")." ".$subject, $message, $headers);
 
