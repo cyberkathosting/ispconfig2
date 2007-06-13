@@ -458,5 +458,6 @@ $wb["Nein"] = "Ne";
 $wb["Ja"] = "Da";
 $wb["Web"] = "Strani";
 $wb["Domain"] = "Domene";
+$wb["error_domain_delete_client"] = "You cannot delete this domain.";
 
 ?>

@@ -476,5 +476,6 @@ $wb["Nicht scannen"] = "nemoj Skenirati";
 $wb["MX prüfen"] = "Proveri MX";
 $wb["Cyrus-Administrator"] = "Cyrus Administrator";
 $wb["Passwort Cyrus-Admin"] = "Cyrus Administrator Lozinka";
+$wb["error_domain_delete_client"] = "You cannot delete this domain.";
 
 ?>

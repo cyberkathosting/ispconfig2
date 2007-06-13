@@ -550,5 +550,6 @@ $wb["txt_traffic_notification_email_variables"] = '<table border="0" cellpadding
 
 
 $wb["Catalog_Name"] = "Nume";
+$wb["error_domain_delete_client"] = "You cannot delete this domain.";
 
 ?>

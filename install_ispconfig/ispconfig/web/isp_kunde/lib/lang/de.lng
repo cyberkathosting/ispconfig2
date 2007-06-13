@@ -456,5 +456,6 @@ $wb["Nicht scannen"] = "Nicht scannen";
 $wb["MX prüfen"] = "MX prüfen";
 $wb["Cyrus-Administrator"] = "Cyrus-Administrator";
 $wb["Passwort Cyrus-Admin"] = "Passwort Cyrus-Admin";
+$wb["error_domain_delete_client"] = "Sie können diese Domain nicht löschen.";
 
 ?>
