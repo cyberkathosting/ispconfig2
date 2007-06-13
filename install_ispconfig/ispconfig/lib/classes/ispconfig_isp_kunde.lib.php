@@ -143,7 +143,7 @@ function kunde_update($doc_id, $doctype_id, $die_on_error = '1') {
           $manual_lng = $manual_lng["language"];
         }
 
-        if($kunde["kunde_email"] != "" && eregi("[0-9a-z]([-_.]?[0-9a-z])*@[0-9a-z]([-.]?[0-9a-z])*\\.[a-z]{2,6}$", $kunde["kunde_email"]) && !strstr($kunde["kunde_email"], " ") && !strstr($kunde["kunde_email"], "!") && !strstr($kunde["kunde_email"], "?") && !strstr($kunde["kunde_email"], "\"") && !strstr($kunde["kunde_email"], "(") && !strstr($kunde["kunde_email"], ")") && !strstr($kunde["kunde_email"], "[") && !strstr($kunde["kunde_email"], "]") && !strstr($kunde["kunde_email"], "{") && !strstr($kunde["kunde_email"], "}") && !strstr($kunde["kunde_email"], "/") && !strstr($kunde["kunde_email"], "#") && $absender_email != "" && eregi("[0-9a-z]([-_.]?[0-9a-z])*@[0-9a-z]([-.]?[0-9a-z])*\\.[a-z]{2,6}$", $absender_email) && !strstr($absender_email, " ") && !strstr($absender_email, "!") && !strstr($absender_email, "?") && !strstr($absender_email, "\"") && !strstr($absender_email, "(") && !strstr($absender_email, ")") && !strstr($absender_email, "[") && !strstr($absender_email, "]") && !strstr($absender_email, "{") && !strstr($absender_email, "}") && !strstr($absender_email, "/") && !strstr($absender_email, "#") && $absender_name != "" && $subject != "" && $message != ""){
+             if($kunde["kunde_email"] != "" && eregi("^[a-z0-9,!#\$%&'\*\+/=\?\^_`\{\|}~-]+(\.[a-z0-9,!#\$%&'\*\+/=\?\^_`\{\|}~-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*\.([a-z]{2,})$", $kunde["kunde_email"]) && $absender_email != "" && eregi("^[a-z0-9,!#\$%&'\*\+/=\?\^_`\{\|}~-]+(\.[a-z0-9,!#\$%&'\*\+/=\?\^_`\{\|}~-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*\.([a-z]{2,})$", $absender_email) && $absender_name != "" && $subject != "" && $message != ""){
 
           $message = str_replace("%%%USER%%%", $kunde["webadmin_user"], $message);
           $message = str_replace("%%%PASSWORD%%%", $kunde["webadmin_passwort"], $message);
@@ -161,7 +161,7 @@ function kunde_update($doc_id, $doctype_id, $die_on_error = '1') {
           }
 
           $headers  = "From: ".$absender_name." <".$absender_email.">\r\n";
-          if($bcc != "" && eregi("[0-9a-z]([-_.]?[0-9a-z])*@[0-9a-z]([-.]?[0-9a-z])*\\.[a-z]{2,6}$", $bcc) && !strstr($bcc, " ") && !strstr($bcc, "!") && !strstr($bcc, "?") && !strstr($bcc, "\"") && !strstr($bcc, "(") && !strstr($bcc, ")") && !strstr($bcc, "[") && !strstr($bcc, "]") && !strstr($bcc, "{") && !strstr($bcc, "}") && !strstr($bcc, "/") && !strstr($bcc, "#")) $headers .= "Bcc: ".$bcc."\r\n";
+          if($bcc != "" && eregi("^[a-z0-9,!#\$%&'\*\+/=\?\^_`\{\|}~-]+(\.[a-z0-9,!#\$%&'\*\+/=\?\^_`\{\|}~-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*\.([a-z]{2,})$", $bcc)) $headers .= "Bcc: ".$bcc."\n";
           $headers .= "Reply-To: <".$absender_email.">\r\n";
           $headers .= "X-Sender: <".$absender_email.">\r\n";
           $headers .= "X-Mailer: PHP4\r\n"; //mailer
