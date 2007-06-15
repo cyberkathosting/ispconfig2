@@ -71,7 +71,7 @@ $wb["Port"] = "Poort";
 $wb["Typ"] = "Type";
 $wb["TCP"] = "TCP";
 $wb["UDP"] = "UDP";
-$wb["Der Dienst-Typ wird nur bei sonstigen-Diensten ausgewertet."] = "Dit type service wordt alleen geanalyseerd in geval van andere services.";
+$wb["Der Dienst-Typ wird nur bei sonstigen-Diensten ausgewertet."] = "Dit type service wordt alleen geanaliseerd in geval van andere services.";
 $wb["Sonstige"] = "Andere";
 $wb["Ja"] = "Ja";
 $wb["Nein"] = "Nee";
@@ -89,55 +89,55 @@ $wb["Dieser Port kann nicht deaktiviert werden."] = "Deze poort kan niet gedeact
 
 //////////////// LNG 1.1.12 BEGIN /////////////
 
-$wb["ISP Server"] = 'ISP server';
-$wb["Admin Email"] = 'Admin email';
-$wb["EMail"] = 'Email';
-$wb["Funktionen"] = 'Functie';
-$wb["httpd User"] = 'httpd gebruiker';
-$wb["httpd Group"] = 'httpd groep';
-$wb["Document Root"] = 'Document root';
-$wb["Frontpage Pfad"] = 'Frontpage pad';
-$wb["access Log"] = 'Toegang log';
-$wb["Sendmail"] = 'Sendmail';
-$wb["Sendmail CW"] = 'Sendmail CW';
-$wb["Log speichern"] = 'Bewaar log';
-$wb["BIND User"] = 'BIND User';
-$wb["BIND Group"] = 'BIND groep';
-$wb["Zonefiles Dir."] = 'Zonefiles dir.';
-$wb["Default Ns1"] = 'Standaard ns1';
-$wb["Default Ns2"] = 'Standaard ns2';
-$wb["Standard MX"] = 'Standaard MX';
-$wb["Frontpage Extensions"] = 'Frontpage extensies';
-$wb["User Prefix"] = 'Gebruikers voorvoegsel';
-$wb["Anbieter Nr. von"] = 'Reseller no. van';
-$wb["Kunden Nr. von"] = 'Klant no. van';
-$wb["SOAP Server IP"] = 'SOAP server IP';
-$wb["SOAP Server Port"] = 'SOAP server port';
-$wb["Web-FTP"] = 'Web-FTP';
-$wb["ISP Faktura"] = 'ISP factuur';
-$wb["Modul Manager"] = 'Module manager';
-$wb["Hinzufügen"] = 'Toevoegen';
-$wb["Alle anzeigen"] = 'Laat alles zien';
-$wb["Update Manager"] = 'Update manager';
-$wb["Update"] = 'Update';
-$wb["System Config"] = 'Systemconfiguratie';
-$wb["Bearbeiten"] = 'Bewerk';
-$wb["Importieren"] = 'Importeer';
-$wb["Exportieren"] = 'Exporteer';
-$wb["Allgemein"] = 'Algemeen';
-$wb["ISP-Manager"] = 'ISP manager';
-$wb["Faktura"] = 'Factuur';
-$wb["Übernehmen"] = 'Opslaan';
-$wb["Webserver"] = 'Webserver';
-$wb["Bind DNS"] = 'Bind DNS';
-$wb["Mailserver"] = 'Mailserver';
-$wb["POP3-Server"] = 'POP3 server';
-$wb["nein"] = 'Nee';
-$wb["ja"] = 'Ja';
-$wb["ISP Server Status"] = 'ISP server status';
-$wb["System-Datenbank"] = 'Systeem-database';
-$wb["Verzeichnis"] = 'Map';
-$wb["Backup starten"] = 'Backup';
+$wb["ISP Server"] = "ISP server";
+$wb["Admin Email"] = "Admin email";
+$wb["EMail"] = "Email";
+$wb["Funktionen"] = "Functie";
+$wb["httpd User"] = "httpd gebruiker";
+$wb["httpd Group"] = "httpd groep";
+$wb["Document Root"] = "Document root";
+$wb["Frontpage Pfad"] = "Frontpage pad";
+$wb["access Log"] = "Toegang log";
+$wb["Sendmail"] = "Sendmail";
+$wb["Sendmail CW"] = "Sendmail CW";
+$wb["Log speichern"] = "Bewaar log";
+$wb["BIND User"] = "BIND User";
+$wb["BIND Group"] = "BIND groep";
+$wb["Zonefiles Dir."] = "Zonefiles dir.";
+$wb["Default Ns1"] = "Standaard ns1";
+$wb["Default Ns2"] = "Standaard ns2";
+$wb["Standard MX"] = "Standaard MX";
+$wb["Frontpage Extensions"] = "Frontpage extensies";
+$wb["User Prefix"] = "Gebruikers voorvoegsel";
+$wb["Anbieter Nr. von"] = "Reseller no. van";
+$wb["Kunden Nr. von"] = "Klant no. van";
+$wb["SOAP Server IP"] = "SOAP server IP";
+$wb["SOAP Server Port"] = "SOAP server port";
+$wb["Web-FTP"] = "Web-FTP";
+$wb["ISP Faktura"] = "ISP factuur";
+$wb["Modul Manager"] = "Module manager";
+$wb["Hinzufügen"] = "Toevoegen";
+$wb["Alle anzeigen"] = "Laat alles zien";
+$wb["Update Manager"] = "Update manager";
+$wb["Update"] = "Update";
+$wb["System Config"] = "Systemconfiguratie";
+$wb["Bearbeiten"] = "Bewerk";
+$wb["Importieren"] = "Importeer";
+$wb["Exportieren"] = "Exporteer";
+$wb["Allgemein"] = "Algemeen";
+$wb["ISP-Manager"] = "ISP manager";
+$wb["Faktura"] = "Factuur";
+$wb["Übernehmen"] = "Opslaan";
+$wb["Webserver"] = "Webserver";
+$wb["Bind DNS"] = "Bind DNS";
+$wb["Mailserver"] = "Mailserver";
+$wb["POP3-Server"] = "POP3 server";
+$wb["nein"] = "Nee";
+$wb["ja"] = "Ja";
+$wb["ISP Server Status"] = "ISP server status";
+$wb["System-Datenbank"] = "Systeem-database";
+$wb["Verzeichnis"] = "Map";
+$wb["Backup starten"] = "Backup";
 
 // NEW 1.1.12a //////////////////////////////
 
@@ -163,14 +163,14 @@ $wb["Rechnung Nr. von"] = "Factuur nr. van";
 
 // NEW 1.3 /////////////////////////////////////
 
-$wb["Remoting"] = 'Remoting';
-$wb["User"] = 'Gebruiker';
-$wb["Conf. Dir."] = 'Conf. Dir.';
-$wb["Suexec"] = 'Suexec';
-$wb["Postfix"] = 'Postfix';
-$wb["Mail Log"] = 'Mail log';
-$wb["Maildir"] = 'Maildir';
-$wb["Antivir Mailadmin"] = 'Antivirus-admin';
+$wb["Remoting"] = "Remoting";
+$wb["User"] = "Gebruiker";
+$wb["Conf. Dir."] = "Conf. Dir.";
+$wb["Suexec"] = "Suexec";
+$wb["Postfix"] = "Postfix";
+$wb["Mail Log"] = "Mail log";
+$wb["Maildir"] = "Maildir";
+$wb["Antivir Mailadmin"] = "Antivirus-admin";
 $wb["aktiv"] = "active";
 $wb["inaktiv"] = "inactive";
 $wb["weiter_link"] = "<br><br> <a href='../../isp_manager/frame_start.php?s=$s'>Meer &gt;&gt;</a>";
@@ -288,7 +288,7 @@ $wb["txt_standard_index_variables"] = '<table border="0" cellpadding="3" cellspa
             Website\'s volledig gekwalificeerde domeinnaam</td>
         </tr>
     </table>';
-$wb["txt_user_standard_index"] = "Gebruikers' standaard<br>&nbsp;&nbsp;index pagina";
+$wb["txt_user_standard_index"] = "Gebruiker\'s standaard<br>&nbsp;&nbsp;index pagina";
 $wb["txt_user_standard_index_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
 <tr>
     <td valign="top" colspan="2" class="normal">

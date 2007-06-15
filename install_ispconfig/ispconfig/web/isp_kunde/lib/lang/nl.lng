@@ -73,7 +73,7 @@ $wb["MySQL Passwort"]    = "MySQL wachtwoord";
 $wb["Anbieter neu"] = "Nieuwe aanbieder";
 $wb["Kunde neu"]    = "Nieuwe klant";
 $wb["Web neu"]      = "Nieuwe site";
-$wb["Ordner neu"]   = "Nieuwe Map";
+$wb["Ordner neu"]   = "Gesorteerd op";
 $wb["Suchen"]       = "Zoeken";
 $wb["ISP Anbieter"] = "ISP reseller";
 $wb["Webs"] = "Sites";
@@ -226,38 +226,38 @@ $wb["Frontpage Passwort"] = "Frontpage wachtwoord";
 
 // NEW 1.1.12 ///////////////////////////////////
 
-$wb["Anbieternummer"] = 'Reseller nr.';
-$wb["Domain DNS"] = 'Master Zones (DNS)';
-$wb["HTTPD Includes"] = 'HTTPD Includes';
-$wb["DNS-Manager"] = 'DNS Manager';
-$wb["DNS-Domains angelegt"] = 'DNS Domein gemaakt';
-$wb["Kundennummer"] = 'Klantnummer';
-$wb["Anonymous FTP"] = 'Anonymous FTP';
-$wb["Anon. FTP MB"] = 'Anon. FTP MB';
-$wb["Faktura"] = 'Factuur';
-$wb["Mailserver"] = 'Mailserver';
-$wb["aktiviert"] = 'Actief';
-$wb["deaktiviert"] = 'Inactief';
-$wb["ISP User"] = 'ISP Gebruiker';
-$wb["WebSpeicher MB"] = 'Webruimte MB';
-$wb["MailSpeicher MB"] = 'Mailruimte MB';
-$wb["Max. MailSpeicher MB"] = 'Max. mailruimte MB';
-$wb["Administrator"] = 'Administrator';
-$wb["Erweiterte Einstellungen"] = 'Meer Instellingen';
-$wb["email_weiterleitung_txt"] = '<b>Hint:</b> één e-mailadres per regel.';
-$wb["Email Alias"] = 'Email alias';
-$wb["catchAll-Email"] = 'catchAll-Email';
-$wb["MailScan"] = 'MailScan';
-$wb["Spam-Filter"] = 'Spamfilter';
-$wb["Autoresponder"] = 'Automatisch beantwoorden';
-$wb["ISP Domain"] = 'ISP Domein';
-$wb["Create DNS MX"] = 'Aanmaken DNS MX-record';
-$wb["Admin"] = 'Admin';
-$wb["CatchAll"] = 'CatchAll';
+$wb["Anbieternummer"] = "Reseller nr.";
+$wb["Domain DNS"] = "Master Zones (DNS)";
+$wb["HTTPD Includes"] = "HTTPD Includes";
+$wb["DNS-Manager"] = "DNS Manager";
+$wb["DNS-Domains angelegt"] = "DNS Domein gemaakt";
+$wb["Kundennummer"] = "Klantnummer";
+$wb["Anonymous FTP"] = "Anonymous FTP";
+$wb["Anon. FTP MB"] = "Anon. FTP MB";
+$wb["Faktura"] = "Factuur";
+$wb["Mailserver"] = "Mailserver";
+$wb["aktiviert"] = "Actief";
+$wb["deaktiviert"] = "Inactief";
+$wb["ISP User"] = "ISP Gebruiker";
+$wb["WebSpeicher MB"] = "Webruimte MB";
+$wb["MailSpeicher MB"] = "Mailruimte MB";
+$wb["Max. MailSpeicher MB"] = "Max. mailruimte MB";
+$wb["Administrator"] = "Administrator";
+$wb["Erweiterte Einstellungen"] = "Meer Instellingen";
+$wb["email_weiterleitung_txt"] = "<b>Hint:</b> één e-mailadres per regel.";
+$wb["Email Alias"] = "Email alias";
+$wb["catchAll-Email"] = "catchAll-Email";
+$wb["MailScan"] = "MailScan";
+$wb["Spam-Filter"] = "Spamfilter";
+$wb["Autoresponder"] = "Automatisch beantwoorden";
+$wb["ISP Domain"] = "ISP Domein";
+$wb["Create DNS MX"] = "Aanmaken DNS MX-record";
+$wb["Admin"] = "Admin";
+$wb["CatchAll"] = "CatchAll";
 $wb["Bitte Artikel auswählen"] = "Selecteer item";
 $wb["Letzte Abrechnung"] = "Laatste rekening";
 $wb["Artikel hinzufügen"] = "Toevoegen item";
-$wb["Wird automatisch vergeben."] = 'Wordt automatisch toegekend.';
+$wb["Wird automatisch vergeben."] = "Wordt automatisch toegekend.";
 $wb["Email Adresse"] = "Emailadres";
 
 // new 1.2 ////////////////////////////////////////
@@ -268,21 +268,21 @@ $wb["Die Emailadresse muss aus min. 1, max 60 Buchstaben oder Zahlen bestehen."]
 // new 1.3 ////////////////////////////////////////
 $wb["Bundesland"] = "Provincie";
 $wb["Spamfilter & Antivirus"] = 'Spamfilter & Antivirus';
-$wb["Spamfilter"] = 'Spamfilter';
-$wb["Antivirus"] = 'Antivirus';
-$wb["accept"] = 'accepteren';
-$wb["discard"] = 'afwijzen';
-$wb["Spam Strategie"] = 'Spam strategie';
-$wb["Spam Hits"] = 'Spam hits';
-$wb["Rewrite Subject"] = 'Herschrijf onderwerp';
-$wb["Betreff"] = 'Onderwerp';
-$wb["SUCHE"] = 'ZOEKEN';
-$wb["IP"] = 'IP';
-$wb["Standard CGIs"] = 'Standard CGIs';
-$wb["PHP Safe Mode"] = 'PHP Safe Mode';
-$wb["WAP"] = 'WAP';
-$wb["Individuelle Fehler-Seiten"] = 'Individuele foutpaginas';
-$wb["Anzahl Datenbanken"] = 'Aantal Databases';
+$wb["Spamfilter"] = "Spamfilter";
+$wb["Antivirus"] = "Antivirus";
+$wb["accept"] = "accepteren";
+$wb["discard"] = "afwijzen";
+$wb["Spam Strategie"] = "Spam strategie";
+$wb["Spam Hits"] = "Spam hits";
+$wb["Rewrite Subject"] = "Herschrijf onderwerp";
+$wb["Betreff"] = "Onderwerp";
+$wb["SUCHE"] = "ZOEKEN";
+$wb["IP"] = "IP";
+$wb["Standard CGIs"] = "Standard CGIs";
+$wb["PHP Safe Mode"] = "PHP Safe Mode";
+$wb["WAP"] = "WAP";
+$wb["Individuelle Fehler-Seiten"] = "Individuele foutpaginas";
+$wb["Anzahl Datenbanken"] = "Aantal Databases";
 $wb["Fehler 400<br>(Ungültige Syntax)"] = "400 Fout<br>(Ongeldige syntax)";
 $wb["Fehler 401<br>(Autorisierung<br>erforderlich)"] = "401 Fout<br>(Authorisatie<br>vereist)";
 $wb["Fehler 403<br>(Verboten)"] = "403 Fout<br>(Verboden)";
@@ -292,10 +292,10 @@ $wb["Fehler 500<br>(Interner<br>Server-Fehler)"] = "500 Fout<br>(Interne server<
 $wb["Fehler 503<br>(Service ist z.Zt.<br>überlastet)"] = "503 Fout<br>(Service<br>niet beschikbaar)";
 $wb["Datenbanken"] = "Databases";
 $wb["Datenbank"] = "Database";
-$wb["Datenbankname"] = "Database name";
+$wb["Datenbankname"] = "Database naam";
 $wb["Datenbankuser"] = "Database gebruiker";
 $wb["weiter_link"] = "<br> <a href='../../isp_manager/frame_start.php?s=$s'>Meer &gt;&gt;</a>";
-$wb["Slave Zones"] = 'Slave zones (DNS)';
+$wb["Slave Zones"] = "Slave zones (DNS)";
 $wb["txt_client_salutatory_email_desc"] = "<b>Welkomsemail voor klanten</b>";
 $wb["txt_client_salutatory_email_sender_email"] = "Emailadres afzender";
 $wb["txt_client_salutatory_email_sender_name"] = "Naam afzender";
@@ -374,7 +374,7 @@ $wb["txt_standard_index_variables"] = '<table border="0" cellpadding="3" cellspa
             Website\'s Fully Qualified Domain Name</td>
         </tr>
         </table>';
-
+ 
  //////////////// ISP Manager Ende /////////////
 
 //////////////// Server Status ////////////////
@@ -476,6 +476,5 @@ $wb["Nicht scannen"] = "Niet scannen";
 $wb["MX prüfen"] = "Check MX";
 $wb["Cyrus-Administrator"] = "Cyrus Admin";
 $wb["Passwort Cyrus-Admin"] = "Cyrus Admin wachtwoord";
-$wb["error_domain_delete_client"] = "You cannot delete this domain.";
 
 ?>

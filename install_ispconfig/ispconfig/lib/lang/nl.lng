@@ -72,7 +72,7 @@ $wb["PAPIERKORB_HINWEIS"] = "<b>Note:</b> Items die zich in de prullenbak bevind
 
 // Multidoc  Allgemein ////////////////////////////////
 
-$wb["title_required"] = "Vul aub het veld ' titel' in'";
+$wb["title_required"] = "Vul aub het veld 'titel' in'";
 $wb["error_keine_rechte"] = "U heeft niet de bevoegdheid om deze regel te lezen of wijzigen.";
 $wb["error_doctype_nicht_vorhanden"] = "Het gevraagde document bestaat niet.";
 $wb["error_doctype_rechte"] = "U heeft niet de bevoegdheid om dit document type te wijzigen.";
@@ -84,7 +84,7 @@ $wb["jscript_ein"] = " ";
 
 $wb["Es konnte ein Dokument nicht wiederhergestellt werden, da sich das Eltern-Dokument noch im Papierkorb befindet.\n"] = "Het object kan niet hersteld worden zolang het parent object zich in de prullenbak bevind.";
 
-$wb["DNS-Domains angelegt"] = 'Master zones aangemaakt';
+$wb["DNS-Domains angelegt"] = "Master zones aangemaakt";
 $wb["Benutzter Diskspace"] = "Schijfruimte gebruikt";
 $wb["Slave Zones angelegt"] = "Slave zones aangemaakt";
 $wb["Datenbanken angelegt"] = "Databases aangemaakt";

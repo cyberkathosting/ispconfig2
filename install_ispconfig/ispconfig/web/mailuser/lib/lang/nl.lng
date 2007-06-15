@@ -38,10 +38,10 @@ $wb["txt_language"] = "Taal";
 $wb["txt_no_mailuser_login"] = "Inloggen op uw domein is gedeactiveerd.";
 $wb["txt_forwarder"] = "Doorsturen";
 $wb["txt_forwarder_desc"] = "<b>Hint:</b> Eén emailadres per regel.";
-$wb["txt_spam_whitelist"] = 'Spam witte lijst';
-$wb["txt_spam_blacklist"] = 'Spam zwarte lijst';
-$wb["txt_hint_spam_whitelist"] = '<b>Hint:</b> Eén gegevens invoer per regel. Geldige invoer van gegevens zijn bijv., friend@somewhere.com, *@isp.com, of *.domain.net.';
-$wb["txt_hint_spam_blacklist"] = '<b>Hint:</b> Eén gegevens invoer per regel. Geldige invoer van gegevens zijn bijv., friend@somewhere.com, *@isp.com, of *.domain.net.';
+$wb["txt_spam_whitelist"] = "Spam witte lijst";
+$wb["txt_spam_blacklist"] = "Spam zwarte lijst";
+$wb["txt_hint_spam_whitelist"] = "<b>Hint:</b> Eén gegevens invoer per regel. Geldige invoer van gegevens zijn bijv., friend@somewhere.com, *@isp.com, of *.domain.net.";
+$wb["txt_hint_spam_blacklist"] = "<b>Hint:</b> Eén gegevens invoer per regel. Geldige invoer van gegevens zijn bijv., friend@somewhere.com, *@isp.com, of *.domain.net.";
 $wb["txt_uribl"] = 'Gebruik <a href="http://www.uribl.com/about.shtml" target="_blank">URIBL</a>';
 
 ?>
