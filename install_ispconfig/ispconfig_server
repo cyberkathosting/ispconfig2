@@ -44,6 +44,7 @@ case "$1" in
         sleep 3
         /root/ispconfig/httpd/bin/apachectl startssl
         /root/ispconfig/sv/ispconfig_wconf &> /dev/null &
+		mkdir -p /var/lock/subsys
         /root/ispconfig/php/php -q /root/ispconfig/scripts/shell/firewall.php
         if ps ax | grep -iw '/home/admispconfig/ispconfig/tools/clamav/bin/freshclam' | grep -iv 'grep' &> /dev/null ;then
           echo "FreshClam is already running!"
