@@ -1262,8 +1262,9 @@ function make_vhost($server_id) {
   $ips = $mod->system->data["isp_server_ip"];
 
   foreach($ips as $ip){
-    $ip_test = $mod->db->queryAllRecords("SELECT * FROM isp_isp_web,isp_nodes WHERE isp_isp_web.web_ip = '".$ip["server_ip"]."' AND isp_isp_web.server_id = '$server_id' AND isp_nodes.doc_id = isp_isp_web.doc_id AND isp_nodes.doctype_id = '".$this->web_doctype_id."' AND isp_nodes.status = '1'");
-
+    //$ip_test = $mod->db->queryAllRecords("SELECT * FROM isp_isp_web,isp_nodes WHERE isp_isp_web.web_ip = '".$ip["server_ip"]."' AND isp_isp_web.server_id = '$server_id' AND isp_nodes.doc_id = isp_isp_web.doc_id AND isp_nodes.doctype_id = '".$this->web_doctype_id."' AND isp_nodes.status = '1'");
+	$ip_test = 1;
+	
       //NameVirtualHost schreiben
       if(!empty($ip_test)){
         // Variablen zuweisen
