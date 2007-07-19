@@ -375,5 +375,6 @@ $wb["txt_move_website_from"] = "de";
 $wb["txt_move_website_to"] = "a";
 $wb["txt_move_website_website"] = "Sitio Web";
 $wb["txt_move_website_submit"] = "Enviar";
+$wb["no_permission_to_change_data"] = "Permission denied.";
 
 ?>

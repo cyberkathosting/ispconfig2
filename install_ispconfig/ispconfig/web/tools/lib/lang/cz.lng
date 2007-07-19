@@ -425,5 +425,6 @@ $wb["txt_move_website_from"] = "z";
 $wb["txt_move_website_to"] = "do";
 $wb["txt_move_website_website"] = "Web";
 $wb["txt_move_website_submit"] = "Potvrdit";
+$wb["no_permission_to_change_data"] = "Permission denied.";
 
 ?>

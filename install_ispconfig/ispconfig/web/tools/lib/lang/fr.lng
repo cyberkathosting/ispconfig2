@@ -382,5 +382,6 @@ $wb["txt_move_website_from"] = "from";
 $wb["txt_move_website_to"] = "to";
 $wb["txt_move_website_website"] = "Website";
 $wb["txt_move_website_submit"] = "Submit";
+$wb["no_permission_to_change_data"] = "Permission denied.";
 
 ?>

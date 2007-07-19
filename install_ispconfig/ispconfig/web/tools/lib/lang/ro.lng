@@ -378,5 +378,6 @@ $wb["txt_secondary_dns_records"] = "Inregistrari DNS secundare";
 $wb["txt_anbieter"] = "Distribuitori";
 $wb["txt_kunden"] = "Clienti";
 $wb["txt_webs"] = "Domenii";
+$wb["no_permission_to_change_data"] = "Permission denied.";
 
 ?>

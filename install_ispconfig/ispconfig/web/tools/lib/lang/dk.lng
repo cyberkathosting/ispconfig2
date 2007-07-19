@@ -396,5 +396,6 @@ $wb["txt_move_website_from"] = "fra";
 $wb["txt_move_website_to"] = "til";
 $wb["txt_move_website_website"] = "Webside";
 $wb["txt_move_website_submit"] = "Udføre";
+$wb["no_permission_to_change_data"] = "Permission denied.";
 
 ?>

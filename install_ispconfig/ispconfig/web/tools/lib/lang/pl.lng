@@ -412,5 +412,6 @@ $wb["txt_move_website_from"] = "nadawca";
 $wb["txt_move_website_to"] = "adresat";
 $wb["txt_move_website_website"] = "Witryna";
 $wb["txt_move_website_submit"] = "Wy¶lij";
+$wb["no_permission_to_change_data"] = "Permission denied.";
 
 ?>
