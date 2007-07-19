@@ -1511,7 +1511,7 @@ CREATE TABLE `session` (
   `site` varchar(100) NOT NULL default '',
   `domain` varchar(100) NOT NULL default '',
   `pid` bigint(21) NOT NULL default '0',
-  `datas` text NOT NULL,
+  `datas` mediumtext NOT NULL,
   `remote_addr` varchar(255) NOT NULL default '',
   PRIMARY KEY  (`id`),
   KEY `sessionid` (`sessionid`,`userid`),
