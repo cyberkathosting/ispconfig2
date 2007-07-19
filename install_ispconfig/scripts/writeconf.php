@@ -126,7 +126,7 @@ if(!empty($web_update)){
     $doctype_id = $web["doctype_id"];
     $isp_web->web_update($doc_id,$doctype_id,$mod->system->server_id);
     echo "UPDATE: ".$doc_id."\n";
-    if($web["ssl_action"] == "save") $web_update_ssl_action += 1;
+    if($web["ssl_action"] != '') $web_update_ssl_action += 1;
   }
 }
 
@@ -213,7 +213,8 @@ if($dienst["dienst_www_status"] == "on"){
 
   if($vhostcompare1 != $vhostcompare2){
 
-    if($sslcompare1 != $sslcompare2 || $web_update_ssl_action != 0){
+    //if($sslcompare1 != $sslcompare2 || $web_update_ssl_action != 0){
+	if($web_update_ssl_action > 0){
       $isp_web->apache_restart();
       unset($web_update_ssl_action);
     } else {
