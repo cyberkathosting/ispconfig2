@@ -99,4 +99,6 @@ cp /lib/libnss_compat.so.2 /lib/libnsl.so.1 /lib/libnss_files.so.2 ./lib/
 mkdir ${HOMEDIR}/var
 mkdir ${HOMEDIR}/var/run
 mkdir ${HOMEDIR}/var/run/mysqld
+# delete the old one, because it changes sometimes its location
+rm ${HOMEDIR}/var/run/mysqld/mysqld.sock
 ln /var/run/mysqld/mysqld.sock ${HOMEDIR}/var/run/mysqld/mysqld.sock
