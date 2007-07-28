@@ -40,7 +40,7 @@ SPAMASSASSIN=Mail-SpamAssassin-3.2.1
 CRONOLOG=cronolog-1.6.2
 ZIP=zip-2.3
 UNZIP=unzip-5.52
-AWSTATS=awstats-6.6
+AWSTATS=awstats-6.7
 
 APPLICATION_NAME=ispconfig
 INSTALL_ROOT=/root/${APPLICATION_NAME}
