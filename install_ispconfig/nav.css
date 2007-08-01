@@ -5,7 +5,9 @@
      border: 0;
      }
 #block-user-1 h2 {
-     overflow: hidden; width: 148px;
+     background: #EDF2F2 url(/themes/howtoforge/images/menu_head.png) top right repeat-x;
+     overflow: hidden;
+     width: 148px;
      margin-left: 6px;
      }
 #block-user-1 > h2 {
@@ -20,10 +22,11 @@
 #block-user-1 h2:before {
      line-height: 0.1;
      font-size: 1px;
+     background: transparent url(/themes/howtoforge/images/menu_tr.gif) no-repeat top right;
      margin: 0;
      height: 9px;
      display: block;
-     content: url(images/key-point_tl.gif);
+     content: url(/themes/howtoforge/images/key-point_tl.gif);
      }
 .block-user .menu:after {
      display: block;
@@ -31,11 +34,13 @@
      padding-top: 0;
      line-height: 0.1;
      font-size: 1px;
-     content:  url(images/key-point_bl.gif);
+     content:  url(/themes/howtoforge/images/key-point_bl.gif);
      margin: 0;
      height: 8px;
+     background: transparent url(/themes/howtoforge/images/menu_br.gif) scroll no-repeat bottom right ;
      }
 .block-user .menu {
+        background: #EDF2F2 url(/themes/howtoforge/images/menu_back.gif) right repeat-y;
         margin-bottom: 1.0em;
         }
 .block-user .menu, .block-user .menu ul {
@@ -44,6 +49,8 @@
         list-style: none;
         }
 .block-user .menu ul {
+    border-left: 1px solid #D0D9D9;
+    border-bottom: 1px solid #D0D9D9;
     padding: 0.3em 0;
     }
 .block-user .menu ul li {
@@ -54,13 +61,13 @@
         list-style-image: none;
     }
 .block-user .menu li.expanded {
-    background: url(images/icons_expanded.png) 0px 6px no-repeat;
+    background: url(/themes/howtoforge/images/icons_expanded.png) 0px 6px no-repeat;
     }
 .block-user .menu li.leaf {
-    background: url(images/icons_leaf.png) 0px 6px no-repeat;
+    background: url(/themes/howtoforge/images/icons_leaf.png) 0px 6px no-repeat;
     }
 .block-user .menu li.collapsed {
-    background: url(images/icons_collapsed.png) 0px 6px no-repeat;
+    background: url(/themes/howtoforge/images/icons_collapsed.png) 0px 6px no-repeat;
     }
 .block-user .menu li.expanded:hover {
     background-position: -200px 6px ;
@@ -77,7 +84,7 @@
      padding-left: 10px;
           margin: 0;
      text-decoration: none;
-     font-size:110%;
+     font-size:11px;
      }
 .block-user .menu li a.active {
      font-weight: bold;
