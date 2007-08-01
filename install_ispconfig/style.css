@@ -2,6 +2,7 @@
 /* SpreadFirefox */
 /*<group=HTML>*/
 
+/*
 body {
   color: #333;
   font-family: verdana, sans-serif;
@@ -9,6 +10,8 @@ body {
   margin: 0;
   background-color: #fff;
 }
+*/
+/*
 p {
   padding: 0;
   margin: 0;
@@ -18,6 +21,11 @@ hr {
   border: 1px dashed #666;
 }
 pre {
+  /*background-color: #efefef;
+  padding: 0.75em 1.5em;
+  border: 1px solid #ddd;
+  /*width: 90%;*/
+  overflow: scroll;*/
   background-color: #efefef;
   margin:0px;
   padding:6px;
@@ -57,16 +65,17 @@ h3 {
 h6 {
   border: 0;
 }
-
+*/
   /*</group>*/
 
 /*<group=Typography>*/
 
 /* Font sizes, font faces, font-style */
-
+/*
 body {
   font-size: 76%;
 }
+*/
 code {
   font-family: 'andale mono', 'Courier New', Monaco, monospace;
 }
@@ -79,7 +88,7 @@ h1, h2, .form-item label, .main-content .node .links {
 blockquote, .description, #help, .main-content .links .read-more {
   font-style: italic;
 }
-h3, h4, h5, h6, #site-name, #site-slogan, .main-content .breadcrumb, .comment .title, .comment-folded .subject, #help:before, fieldset legend, input[type="submit"], .comment .new, .comment-folded .new, #block-user-1 h2 span {
+h3, h4, h5, h6, #site-name, #site-slogan, .main-content .breadcrumb, .comment .title, .comment-folded .subject, #help:before, fieldset legend, .comment .new, .comment-folded .new, #block-user-1 h2 span {
   font-weight: bold;
 }
 #site-name {
@@ -91,20 +100,23 @@ h3, h4, h5, h6, #site-name, #site-slogan, .main-content .breadcrumb, .comment .t
 #content-title, #title, h1, #maintitle, .main-content h2, .main-content .box h2, .main-content .node h2 {
   font-size: 160%;
 }
-h2, pre, #site-slogan, form #body, .form-item textarea, form #signature {
+h2, #site-slogan, form #body, .form-item textarea, form #signature {
   font-size: 150%;
 }
+
 h3, .sidebar .block h2, .item-list .title, .comment .title, .comment-folded .subject, button.form-submit, form #title, #block-user-1 h2 span, code {
-  font-size: 120%;
+  font-size: 100%;
 }
+
 #block-affiliates-0 .user-status {
   font-size: 110%;
 }
 h4, h5, h6, #search .form-text, #sidebar-left h2, .sidebar .block-search .form-submit, .sidebar .block .content, #main-nav a, fieldset legend, .form-item label, .comment select, #pager, input, textarea, #footer, #block-user-1 .content .menu  {
   font-size: 100%;
 }
+/*
 #sidebar-left .block .content {
-  font-size: 100%;
+  font-size: 95%;
 }
 .main-content .node .info, #header form label, #header form input, #header form #submit, #breadcrumbs, .main-content .breadcrumb, .main-content td, .main-content th, #help, #recent-affiliate, #block-affiliates-0, #block-block-25 .earners, #block-block-25 .h-nav-list, #block-user-0 .item-list {
   font-size: 90%;
@@ -112,6 +124,7 @@ h4, h5, h6, #search .form-text, #sidebar-left h2, .sidebar .block-search .form-s
 .node .links, .comment .links, .comment .new, .comment .author, span.credit, .comment-folded .new, .box select {
   font-size: 100%;
 }
+*/
   /*</group>*/
 
 /*<group=Header>*/
@@ -119,14 +132,14 @@ h4, h5, h6, #search .form-text, #sidebar-left h2, .sidebar .block-search .form-s
 /* Header */
 
 #header {
-  background: #105D90 url(images/bg_header_bottom_left5.png) bottom left repeat-x;
+  background: #105D90 url(/themes/howtoforge/images/bg_header_bottom_left2.png) bottom left repeat-x;
   position: relative;
   height: 90px;
   margin: 0;
   margin-bottom: 1em;
   voice-family: "\"}\"";
   voice-family: inherit;
-  padding: 0px 10px;
+  padding: 4px 4px;
 }
 #ignored {
 }
@@ -137,6 +150,8 @@ h4, h5, h6, #search .form-text, #sidebar-left h2, .sidebar .block-search .form-s
   margin: 0;
   font-size: 2px;
   border: none;
+  /*background: url(/themes/howtoforge/images/bg_header_top_left.gif) no-repeat;*/
+  background: url(/themes/howtoforge/images/bg_header_top_left.gif) no-repeat top left;
   height: 8px;
   z-index: 100; /* above the UL */
 }
@@ -154,6 +169,7 @@ h4, h5, h6, #search .form-text, #sidebar-left h2, .sidebar .block-search .form-s
   top: 0;
   right: 0;
   padding: 12px 20px 0 0;
+  background: url(/themes/howtoforge/images/bg_header_top_right.gif) no-repeat top right;
   margin: 0; /* need for IE Mac */
   margin-right: 0px;
   text-align: right; /* need for IE Mac */
@@ -176,7 +192,7 @@ h4, h5, h6, #search .form-text, #sidebar-left h2, .sidebar .block-search .form-s
   width: 170px;
   font-size: 85%;
   border:  1px solid #9097A2;
-  background: #EAEBEB url(images/bg_input.png) bottom repeat-x;
+  background: #EAEBEB url(/themes/howtoforge/images/bg_input.png) bottom repeat-x;
   padding: 2px;
 }
 #header form #q:hover, #header form #q:focus {
@@ -186,10 +202,20 @@ h4, h5, h6, #search .form-text, #sidebar-left h2, .sidebar .block-search .form-s
   color: #fff;
   text-decoration: none;
 }
-
 #site-name {
+  margin: 1px 1px 1px 1px;
+}
+
+
+#banner {
+  position: absolute;
+  left: 120px;
+  top: 2px;
   margin: 0px;
-  padding-top:3px;
+  padding: 0px;
+  width: 468px;
+  height: 60px;
+  border: none;
 }
 
   /*</group>*/
@@ -204,11 +230,12 @@ h4, h5, h6, #search .form-text, #sidebar-left h2, .sidebar .block-search .form-s
   margin-right: 0px;
   padding: 0 15px 0 0;
   list-style: none;
+  background: url(/themes/howtoforge/images/bg_header_bottom_right.gif) no-repeat bottom right;
   z-index: 90; /* below the H1 */
 }
 #header li {
   float: right;
-  background: transparent url(images/header_tab6.png) 100% -600px no-repeat;
+  background: transparent url(/themes/howtoforge/images/header_tab.png) 100% -600px no-repeat;
   padding: 0 6px 0 0;
   margin: 0 1px 0 0;
   display: inline;
@@ -219,7 +246,8 @@ h4, h5, h6, #search .form-text, #sidebar-left h2, .sidebar .block-search .form-s
   float: left;
   display: block;
   padding: 4px 4px 4px 10px;
-  background: transparent url(images/header_tab6.png) 0% -600px no-repeat;
+  background: transparent url(/themes/howtoforge/images/header_tab.png) 0% -600px no-repeat;
+  font-size: 12px;
   font-weight: bold;
   color: #fff;
   text-decoration: none;
@@ -298,6 +326,8 @@ h4, h5, h6, #search .form-text, #sidebar-left h2, .sidebar .block-search .form-s
   padding: 0;
   border: none;
   background-color: transparent;
+  font-weight: bold;
+  font-size: 11px;
 }
   /*</group>*/
 /*<group=Footer>*/
@@ -313,9 +343,11 @@ h4, h5, h6, #search .form-text, #sidebar-left h2, .sidebar .block-search .form-s
 }
 #footer span, #footer a {
   white-space: nowrap;
+  /* padding: 0 1em; */
 }
 #footer p span, #footer p a {
   white-space: nowrap;
+  /* padding: 0 0.3em; */
 }
 #footer span a {
   padding: 0;
@@ -355,7 +387,7 @@ h4, h5, h6, #search .form-text, #sidebar-left h2, .sidebar .block-search .form-s
   width:  440px;
   padding: 0;
   margin: 0;
-  background: top left no-repeat;
+  background: /* url(/themes/howtoforge/images/feature_h2.png) */ top left no-repeat;
   border: 0;
 }
 #feature-content p, #feature-content .download {
@@ -380,10 +412,11 @@ div.extrainfo {
 #mission:before {
   line-height: 0.1;
   font-size: 1px;
-  background: transparent url(images/menu_tr.gif) no-repeat top right;
+  background: transparent url(/themes/howtoforge/images/menu_tr.gif) no-repeat top right;
   margin: 0;
   height: 9px;
   display: block;
+  /*content: url(/themes/howtoforge/images/key-point_tl.gif);*/
 }
 #mission h2 {
   padding: 0 0.5em 0 0.5em;
@@ -393,19 +426,19 @@ div.extrainfo {
   border-right: 1px solid #D1D1B8;
 }
 #mission {
-  padding: 15px 20px 0 15px;
-  /*border: dotted 2px;
-  background: #D7F4D7;*/
-  background: transparent url(images/mission_border.png) no-repeat top left;
+  background-color: #ffffc5;
+  padding: 0 0.5em 0 0.5em;
+  border: 1px solid #D1D1B8;
 }
 #mission:after {
   display: block;
   padding-top: 0;
   line-height: 0.1;
   font-size: 1px;
+  /* content:  url(/themes/howtoforge/images/feature_bl.png); */
   margin: 0;
   height: 8px;
-  background: transparent url(images/feature_br.png) scroll no-repeat bottom right;
+  background: transparent url(/themes/howtoforge/images/feature_br.png) scroll no-repeat bottom right;
 }
 
   /*</group>*/
@@ -414,7 +447,7 @@ div.extrainfo {
   margin: 1.0em 0 6px 0;
   line-height: 1.4em;
   color: #333;
-  background: url(images/bg_message.gif) top left repeat;
+  background: url(/themes/howtoforge/images/bg_message.gif) top left repeat;
 }
 #content-title, #title {
   padding: 0;
@@ -453,6 +486,7 @@ div.extrainfo {
   padding: 5px 10px;
   margin: 0;
   font-size:12px;
+  /*width: 2000px;*/
 }
 .main-content .node .info {
   margin: 0;
@@ -498,6 +532,7 @@ div.extrainfo {
   padding: 0.5em;
 }
 /* Comments & Related Tools */
+/*
 .comment {
   padding: 1.0em;
   margin: 0.5em 0;
@@ -534,6 +569,7 @@ div.extrainfo {
   padding-top: 0.5em;
   margin-left: 1.0em;
 }
+*/
 .description, #help {
   padding: 0.5em 1.0em;
   margin: 1.0em 0 6px 0;
@@ -550,7 +586,7 @@ div.extrainfo {
 }
 #help {
   cursor: help;
-  background: url(images/bg_help.gif) top left repeat;
+  background: url(/themes/howtoforge/images/bg_help.gif) top left repeat;
 }
 #help:before {
   content: "Help: ";
@@ -569,19 +605,15 @@ div.extrainfo {
   border: 0;
 }
 .sidebar .block h2 {
-  padding-left: 10px;
+  padding: 5px;
   margin: 0;
   margin-top: 1.0em;
-  color:  #000000;
-  border-bottom: none;
+/*  color: #3579B2; */
+  color:  #1D9101;
 }
 .sidebar .block {
   margin-left: 0;
-  margin-bottom: 15px;
   padding: 0;
-  padding-top: 2px;
-  padding-right: 5px;
-  background: transparent url(images/menu_border.png) no-repeat top right;
 }
 .sidebar .block .content {
   padding: 0;
@@ -598,7 +630,7 @@ div.extrainfo {
   padding: 1.0em 0;
 }
 .sidebar .block input.form-text {
-  width: 105px;
+  width: 120px;
 }
 .sidebar .block-search input.form-text {
   width: 100px;
@@ -673,16 +705,37 @@ div.extrainfo {
   border: 2px solid #C0E5A1;
 }
   /*</group>*/
+#sidebar-left-green .block {
+  width: 140px;
+  background: repeat-y left top url(/themes/howtoforge/images/sidebar_box_bg.png);
+  margin-left:5px;
+  padding: 0;
+}
+#sidebar-left-green .block h2 {
+  background: no-repeat top left url(/themes/howtoforge/images/sidebar_box_top4.png);
+  margin: 0;
+  width: auto;
+  padding: 0.8em 1.0em 0.5em 0.9em;
+  color: #1D9101;
+  font-weight: bold;
+  border: none;
+}
+#sidebar-left-green .block .content {
+  background: no-repeat bottom left url(/themes/howtoforge/images/sidebar_box_bottom4.png);
+  width: auto;
+  margin: 0;
+  padding: 0 0.3em 1.5em 0.3em;
+}
 /*<group=Sidebar Right>*/
 
 #sidebar-right .block {
   width: 160px;
-  background: repeat-y left top url(images/sidebar_box_bg.png);
+  background: repeat-y left top url(/themes/howtoforge/images/sidebar_box_bg.png);
   margin: 0;
   padding: 0;
 }
 #sidebar-right .block h2 {
-  background: no-repeat top left url(images/sidebar_box_top2.png);
+  background: no-repeat top left url(/themes/howtoforge/images/sidebar_box_top2.png);
   margin: 0;
   width: auto;
   padding: 0.8em 1.0em 0.5em 0.9em;
@@ -691,7 +744,7 @@ div.extrainfo {
   border: none;
 }
 #sidebar-right .block .content {
-  background: no-repeat bottom left url(images/sidebar_box_bottom2.png);
+  background: no-repeat bottom left url(/themes/howtoforge/images/sidebar_box_bottom2.png);
   width: auto;
   margin: 0;
   padding: 0 0.3em 1.5em 0.3em;
@@ -710,10 +763,10 @@ div.extrainfo {
   height: 40px;
 }
 #sidebar-right #block-block-5 {
-  background-image: url(images/sidebar_box_blue_bg.png);
+  background-image: url(/themes/howtoforge/images/sidebar_box_blue_bg.png);
 }
 .sidebar #block-block-5 .content {
-  background: no-repeat bottom left url(images/sidebar_box_blue_bottom.png);
+  background: no-repeat bottom left url(/themes/howtoforge/images/sidebar_box_blue_bottom.png);
   padding: 0 1.0em 92px 1.0em;
 }
 /* block-contact */
@@ -724,8 +777,11 @@ div.extrainfo {
   /*</group>*/
 
 /*<group=Tables>*/
-
+/*
 .main-content table {
+  /*width: 99%; /* needed for IE */*/
+  /*overflow: scroll;
+  border: 1px solid #BDCEE1;*/
   border: 1px;
   border-color: #FFFFFF;
   border-style: solid;
@@ -734,7 +790,10 @@ div.extrainfo {
   margin-bottom: 1.0em;
   background-color: #FFFFFF;
 }
+*/
+/*
 td, th, .main-content td {
+  /*border: 1px solid #BDCEE1;*/
   padding: 2px;
   margin: 0;
   vertical-align: top;
@@ -758,10 +817,12 @@ td.watchdog-special {
 td.watchdog-user {
   background-color: #EFEAC9;
 }
+*/
   /*</group>*/
 
 /*<group=Forms>*/
 /*<group=Fieldset>*/
+/*
 .main-content fieldset legend {
   display: block;
   color: #039;
@@ -774,69 +835,9 @@ td.watchdog-user {
   background-color: #f7f7f7;
   padding: 1.0em 0.5em;
 }
+*/
   /*</group>*/
 
-/*<group=Content Creation Elements>*/
-.main-content form .form-text,
-.main-content form textarea,
-.main-content form#node-form textarea#body,
-.main-content form textarea{
-  width: 93%;
-}
-form #message {
-  background-image: none;
-}
-  /*</group>*/
-
-/*<group=Form Element Styles>*/
-/*<group=Labels>*/
-form label:hover, form .form-item label {
-  color: #333;
-  cursor: pointer;
-}
-form label:hover {
-  color: #039;
-  border-bottom: 1px solid #039;
-}
-  /*</group>*/
-form #title,
-.form-text,
-.form-password,
-textarea {
-  color: #333;
-  padding: 2px 4px;
-  background-color: #fff;
-  border-width: 1px;
-  border-style: solid;
-  border-color: #e7e7e7;
-  border-top-color: #999;
-  border-left-color: #999;
-}
-.form-radio, .form-checkbox {
-  background-color: transparent;
-  border: 0;
-}
-input[name="edit[pass1]"],
-input#pass,
-.block-user .form-submit {
-  margin-bottom: 0.25em;
-}
-select {
-  background-color: #fff;
-  color: inherit;
-}
-  /*</group>*/
-
-/*<group=Submit Button>*/
-input[type="submit"] {
-    font-size: 135%;
-    margin-top: 2px;
-    padding: 3px 10px;
-}
-
-  /*</group>*/
-
-/*<group=Blocks>*/
 
 #block-sitemenu-0 {
   border: 1px solid #D0D9D9;
@@ -845,6 +846,7 @@ input[type="submit"] {
 }
 #block-sitemenu-0 .title {
   font-weight: bold;
+  /*display: none; */
 }
 #block-sitemenu-0 .item-list ul, #block-sitemenu-0 .item-list li {
   display: inline;
@@ -859,6 +861,9 @@ input[type="submit"] {
 }
 /* User Login Block */
 #block-user-0 {
+  border: 1px solid #D0D9D9;
+  padding: 10px;
+  background-color: #EDF2F2;
 }
 #block-user-0 .title {
   display: none;
@@ -912,17 +917,17 @@ input[type="submit"] {
   background-repeat: no-repeat;
   background-position: 0 50%;
 }
-.icon-mp3 {  background-image: url(images/icon_mp3.png);}
-.icon-avi {  background-image: url(images/icon_avi.png);}
-.icon-divx {  background-image: url(images/icon_divx.png);}
-.icon-tif {  background-image: url(images/icon_tif.png);}
-.icon-ai {  background-image: url(images/icon_ai.png);}
-.icon-psd {  background-image: url(images/icon_psd.png);}
-.icon-eps {  background-image: url(images/icon_eps.png);}
-.icon-png {  background-image: url(images/icon_png.png);}
-.icon-svg {  background-image: url(images/icon_svg.png);}
-.icon-zip {  background-image: url(images/icon_zip.png);}
-.icon-sit {  background-image: url(images/icon_sit.png);}
+.icon-mp3 {  background-image: url(/themes/howtoforge/images/icon_mp3.png);}
+.icon-avi {  background-image: url(/themes/howtoforge/images/icon_avi.png);}
+.icon-divx {  background-image: url(/themes/howtoforge/images/icon_divx.png);}
+.icon-tif {  background-image: url(/themes/howtoforge/images/icon_tif.png);}
+.icon-ai {  background-image: url(/themes/howtoforge/images/icon_ai.png);}
+.icon-psd {  background-image: url(/themes/howtoforge/images/icon_psd.png);}
+.icon-eps {  background-image: url(/themes/howtoforge/images/icon_eps.png);}
+.icon-png {  background-image: url(/themes/howtoforge/images/icon_png.png);}
+.icon-svg {  background-image: url(/themes/howtoforge/images/icon_svg.png);}
+.icon-zip {  background-image: url(/themes/howtoforge/images/icon_zip.png);}
+.icon-sit {  background-image: url(/themes/howtoforge/images/icon_sit.png);}
 
 /*</group>*/
 
@@ -1017,11 +1022,12 @@ a:active {
   clear: both; /* for IE */
 }
 .accesskey {
+/*  text-decoration: underline; */
 }
 .update {
   border: 1px solid yellow;
   padding: 10px;
-  background: url(images/bg_help.gif) repeat scroll 0%;
+  background: url(/themes/howtoforge/images/bg_help.gif) repeat scroll 0%;
 }
 :before {
   color: #004D81;
@@ -1069,6 +1075,7 @@ div.picture {
 #pager {
   color: #004D81;
   text-align: center;
+  width: 50%;
   border-top: 1px solid #BDCEE1;
   padding: 0.5em 0 1.0em 0;
   margin: 1.0em auto 0 auto;
@@ -1076,17 +1083,11 @@ div.picture {
 #pager a {
   color: #004D81;
 }
-#pager a:hover {
-  color: #DF0000;
-}
 #pager :visited {
   color: #666;
 }
 .container-inline div {
   display: inline;
-}
-.pager-list {
-  font-size: 160%;
 }
 .lfloat {
   float: left;
@@ -1112,7 +1113,7 @@ div.picture {
 .tabs ul.primary li{display:inline;
 }
 .tabs ul.primary li a{padding:3px 10px 3px 10px;
-        background:#fff url(images/tabs-off.png) left top no-repeat;
+        background:#fff url(/themes/howtoforge/images/tabs-off.png) left top no-repeat;
         border-color:#6699CC;
         border-width:2px;
         border-style:none solid none none;
@@ -1121,7 +1122,7 @@ div.picture {
         text-decoration:none;
         text-transform:lowercase;
 }
-.tabs ul.primary li.active a {background:#336699 url(images/tabs-on.png) left top no-repeat;
+.tabs ul.primary li.active a {background:#336699 url(/themes/howtoforge/images/tabs-on.png) left top no-repeat;
         border-right:2px solid #336699;
         color:#fff;
 }
@@ -1143,53 +1144,14 @@ div.picture {
         text-decoration:none;
         border-right:none;
 }
-.tabs ul.secondary li a{background:#fff url(images/tabs-option-off.png) left center no-repeat;
+.tabs ul.secondary li a{background:#fff url(/themes/howtoforge/images/tabs-option-off.png) left center no-repeat;
         padding:10px 0 10px 25px;
         margin:0 0 0 0;
 }
-.tabs ul.secondary li a.active{background:#fff url(images/tabs-option-on.png) left center no-repeat;
+.tabs ul.secondary li a.active{background:#fff url(/themes/howtoforge/images/tabs-option-on.png) left center no-repeat;
         color:#369;
         border-bottom:none;
 }
-.tabs ul.secondary li a:hover {background:#fff url(images/tabs-option-hover.png) left center no-repeat;
+.tabs ul.secondary li a:hover {background:#fff url(/themes/howtoforge/images/tabs-option-hover.png) left center no-repeat;
         color:#FF4500
-}
-#block-sidecontent-0 {
-  padding-top: 2px;
-  padding-bottom: 5px;
-}
-#block-sidecontent-0 .title {
-  color: #324395;
-}
-#block-block-2 {
-  padding-top: 2px;
-  padding-bottom: 5px;
-  background-color: #FFFFFF;
-}
-#block-block-2 .title {
-  color: #324395;
-}
-#block-block-3 {
-  border: 1px solid #D0D9D9;
-  padding-top: 0px;
-  padding-bottom: 5px;
-  margin: 5px;
-  background-color: #FFF4B7;
-}
-#block-block-3 .title {
-  color: #324395;
-}
-#block-statistics-0 {
-  border: 1px solid #D0D9D9;
-  padding-top: 0px;
-  padding-bottom: 5px;
-  margin: 5px;
-  background-color: #FFF4B7;
-}
-#block-statistics-0 .title {
-  color: #324395;
-}
-div .download {
-  background: transparent url(images/star_vmware_image_red.gif) no-repeat top right;
-  padding-right: 100px;
 }
