@@ -6,12 +6,12 @@
   margin: 0;
   padding: 0 15px 0 0;
   list-style: none;
-  background: url(images/bg_header_bottom_right.gif) no-repeat bottom right;
+  background: url(/themes/howtoforge/images/bg_header_bottom_right.gif) no-repeat bottom right;
   z-index: 90; /* below the H1 */
 }
 #header li {
   float: right;
-  background: transparent url(images/header_tab.png) 100% -600px no-repeat;
+  background: transparent url(/themes/howtoforge/images/header_tab.png) 100% -600px no-repeat;
   padding: 0 6px 0 0;
   margin: 0 1px 0 0;
   display: inline;
@@ -22,7 +22,7 @@
   float: left;
   display: block;
   padding: 4px 4px 4px 10px;
-  background: transparent url(images/header_tab.png) 0% -600px no-repeat;
+  background: transparent url(/themes/howtoforge/images/header_tab.png) 0% -600px no-repeat;
   font-weight: bold;
   color: #fff;
   text-decoration: none;
@@ -62,7 +62,7 @@
         text-decoration:none;
         text-transform:lowercase;
 }
-.tabs ul.primary li.active a {background:#336699 url(images/tabs-on.png) left top no-repeat;
+.tabs ul.primary li.active a {background:#336699 url(/themes/howtoforge/images/tabs-on.png) left top no-repeat;
         border-right:2px solid #336699;
         color:#fff;
 }
@@ -84,14 +84,14 @@
         text-decoration:none;
         border-right:none;
 }
-.tabs ul.secondary li a{background:#fff url(images/tabs-option-off.png) left center no-repeat;
+.tabs ul.secondary li a{background:#fff url(/themes/howtoforge/images/tabs-option-off.png) left center no-repeat;
         padding:10px 0 10px 25px;
         margin:0 0 0 0;
 }
-.tabs ul.secondary li a.active{background:#fff url(images/tabs-option-on.png) left center no-repeat;
+.tabs ul.secondary li a.active{background:#fff url(/themes/howtoforge/images/tabs-option-on.png) left center no-repeat;
         color:#369;
         border-bottom:none;
 }
-.tabs ul.secondary li a:hover {background:#fff url(images/tabs-option-hover.png) left center no-repeat;
+.tabs ul.secondary li a:hover {background:#fff url(/themes/howtoforge/images/tabs-option-hover.png) left center no-repeat;
         color:#FF4500
 }
