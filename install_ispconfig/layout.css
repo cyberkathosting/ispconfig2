@@ -5,12 +5,12 @@ html, body
         {
         margin-top                                : 0px;
         margin-bottom: 0px;
-        margin-left: 0px;
-        margin-right: 0px;
+        margin-left: 10px;
+        margin-right: 10px;
         padding                                : 0px;
         color                                : #000;
         background-color        : #fff;
-        /*background                        : url(images/bg_head.gif) repeat-x;*/
+        background                        : url(/themes/howtoforge/images/bg_head.gif) repeat-x;
         /*width: 1000px;*/
         }
 /* bizarrely IE6 seems to want to shift to the right by 3px
@@ -32,12 +32,11 @@ div
         padding                                : 0px;
         }
 
-/*
 #wrapper1 {
         min-width: 710px;
         max-width: 1200px;
     }
-*/
+
 #wrapper1, #wrapper2
         {
         margin                                : 0px;
@@ -48,7 +47,7 @@ div
 #wrapper1
         {
         /*/*/
-/*        background-image        : url(images/bg_right.png);
+/*        background-image        : url(/themes/howtoforge/images/bg_right.png);
         background-position        : right top;
         background-repeat        : repeat-y;*/
         /* */
@@ -56,7 +55,7 @@ div
 #wrapper2
         {
         /*/*/
-/*        background-image        : url(images/bg_left.png);
+/*        background-image        : url(/themes/howtoforge/images/bg_left.png);
         background-repeat        : repeat-y;*/
         /* */
         }
@@ -97,7 +96,7 @@ div
         border                : none;
         margin-top        : 0px;
         background-color: transparent;
-        /* background: url(images/bg_sidebar_box_bottom.png) top repeat-x; */
+        /* background: url(/themes/howtoforge/images/bg_sidebar_box_bottom.png) top repeat-x; */
 /* */
         }
 
@@ -129,7 +128,7 @@ make sure that .rightcolumn's width is equal to .centercolumn's margin-right
         {
         /*position                        : static;*/
         float                                : right;
-        width                                : 0px;
+        width                                : 160px;
         margin                                : 0px;
         padding                                : 0px;
         }
@@ -191,7 +190,7 @@ margin-right is set to the value of the overriding values for .rightcolumn's wid
 /* reset IE*/
 * html body .centercolumn
         {
-        margin-right                : 00px;
+        margin-right                : 0px;
         margin-left                : 150px;
         }
 
@@ -230,8 +229,8 @@ margin-right is set to the value of the overriding values for .rightcolumn's wid
     padding-left: 0;
     }
 .centerpadding {
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 0px;
+    padding-right: 0px;
     }
 
      /*</group>*/
