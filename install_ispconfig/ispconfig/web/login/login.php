@@ -37,14 +37,14 @@ include_once($dbclass);
 $dbname = 'db_'.DB_TYPE;
 $db = new $dbname;
 
-$username = addslashes($username);
-$passwort = addslashes($passwort);
+$username = mysql_real_escape_string(substr($username,0,255));
+$passwort = mysql_real_escape_string(substr($passwort,0,255));
 
 $laston = date("y-m-d H:i:s");
 //$conn = mysql_query("SELECT * FROM sys_user where username = '$username'");
-$sql = "SELECT * FROM sys_user WHERE username = '$username' AND (passwort = '".md5($passwort)."' OR passwort = PASSWORD('$passwort'))";
+$sql = "SELECT * FROM sys_user WHERE username = '".$username."' AND (passwort = '".md5($passwort)."' OR passwort = PASSWORD('".$passwort."'))";
 //die($sql);
-if ($row = $db->queryOneRecord($sql) and $passwort != ""){
+if ($passwort != "" && $row = $db->queryOneRecord($sql)){
   if ($row["doc_id"] != 0 and $row["gueltig"] == "1"){
     include("../../lib/session.inc.php");
     $time = mktime()+86400;
