@@ -177,42 +177,35 @@ HostAliases=\"$host_alias\"";
 							chmod("/etc/awstats/awstats.".$web_real_name.".conf",0644);
 						}
 
-
-
-						// Experimentell: erstelle eine index.html Datei
-						if(!@is_dir("$stats_path/index.php") AND !@file_exists("$stats_path/index.php")) {
-
-							$index_file = "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0 Transitional//EN\">
-<html>
-<body>
-<?php
-\$dir = \".\";
-
-if( \$dh = opendir(\$dir)) {
-	while ((\$file = readdir(\$dh)) !== false) {
-		\$pattern = 'awstats\..*\.[0-9]{4}-[0-9]{2}\.html';
-		if (ereg(\$pattern, \$file)) {
-			echo \"<a href=\\\"\$file\\\">\$file</a><br />\";
-		}
-	}
-}
-?>
-</body>
-</html>";
-
-							$fp = fopen ("$stats_path/index.php", "w");
-							fwrite($fp,$index_file);
-							fclose($fp);
-							chmod("$stats_path/index.php",0644);
-						}
-
 						$lastDay = time() - (24 * 60 * 60);
 						$year = date('Y', $lastDay);
 						$month = date('m', $lastDay);
 
 						$message .= exec("perl /home/admispconfig/ispconfig/tools/awstats/tools/awstats_buildstaticpages.pl -year=$year -month=$month -update -config=$web_real_name -awstatsprog=/home/admispconfig/ispconfig/tools/awstats/wwwroot/cgi-bin/awstats.pl -builddate=$year-$month -dir=$stats_path")."\n";
-					}
 
+						// Experimentell: erstelle eine index.html Datei
+						if(!@is_dir("$stats_path/index.html")) {
+							$index_file = "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0 Transitional//EN\">
+<html>
+<body>";
+							if( $dh = opendir($stats_path)){
+								while (($file = readdir($dh)) !== false) {
+									$pattern = 'awstats\..*\.[0-9]{4}-[0-9]{2}\.html';
+									if (ereg($pattern, $file)) {
+										$index_file .= "<a href=\"$file\">$file</a><br />";
+		}
+	}
+							}
+
+							$index_file .= "</body>
+</html>";
+
+							$fp = fopen ("$stats_path/index.html", "w");
+							fwrite($fp,$index_file);
+							fclose($fp);
+							chmod("$stats_path/index.html",0644);
+						}
+					}
 					exec("chown -R $web_user:$web_group $stats_path &> /dev/null");
 				}
 
