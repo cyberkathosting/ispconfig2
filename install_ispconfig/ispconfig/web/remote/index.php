@@ -1,4 +1,13 @@
 <?php
+/**
+ * ISPConfig - Remoting server side script
+ * 
+ * @author Till Brehm, 
+ * @author Falko Timme
+ * @copyright 2007, projektfarm Gmbh, Till Brehm, Falko Timme
+ * @version 1.0
+ * @package ISPConfig - Remoting
+*/
 
 /*
 Copyright (c) 2007, projektfarm Gmbh, Till Brehm, Falko Timme
@@ -29,26 +38,22 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
 
-include("../../lib/config.inc.php");
-include("../../lib/app.inc.php");
+include('../../lib/config.inc.php');
+include('../../lib/app.inc.php');
 
-// Lade Soap Klasse
-$go_api->uses_obj("soap");
-
+//* Load SOAP class
+$go_api->uses_obj('soap');
 
 $s = new soap_server;
-
-
 $s->register('service');
 $s->register('login');
 $s->register('logout');
-
 
 function login($user, $pass) {
 
         global $go_api, $go_info;
 
-        // alte Sessions löschen
+        // alte Sessions lï¿½schen
         $go_api->db->query("DELETE FROM remote_session WHERE tstamp < '".(time() - 1800)."'");
 
         if(empty($user) or empty($pass)) {
@@ -95,10 +100,10 @@ function logout($sid) {
 function service($sid, $module, $function, $params) {
         global $go_api, $go_info;
 
-        // prüfe ob session aktiv
+        // prï¿½fe ob session aktiv
         $session = addslashes($session);
 
-        // lösche abgelaufene session records ( älter als 30 minuten)
+        // lï¿½sche abgelaufene session records ( ï¿½lter als 30 minuten)
         $go_api->db->query("DELETE FROM remote_session WHERE tstamp < ".time() + 1800);
 
         // hole Session
@@ -118,7 +123,7 @@ function service($sid, $module, $function, $params) {
         $allowed_modules[] = 'kunde';
         $allowed_modules[] = 'web';
 
-        // überprüfen ob modul und funktion übergeben wurden
+        // ï¿½berprï¿½fen ob modul und funktion ï¿½bergeben wurden
 
 
         // Checke IP
