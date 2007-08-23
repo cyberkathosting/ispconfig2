@@ -731,6 +731,12 @@ function user_insert($doc_id, $doctype_id) {
   $mod->procmail->make_forward($doc_id);
   $mod->procmail->make_procmailrc($doc_id);
   $mod->procmail->make_recipes($doc_id);
+  
+  // Spamassassin directory anlegen
+  if(!is_dir($web_path."/user/".$user_username."/.spamassassin")) mkdir($web_path."/user/".$user_username."/.spamassassin", 0700);
+  if(!is_link($web_path."/user/".$user_username."/.spamassassin/user_prefs")) {
+  	symlink($web_path."/user/".$user_username."/.user_prefs",$web_path."/user/".$user_username."/.spamassassin/user_prefs");
+  }
 
   // wenn User Admin-User eines FP-Webs, Frontpage-Update aufrufen
   if($user["user_admin"] && $web["web_frontpage"] && is_file($mod->system->server_conf["server_path_frontpage"]) && !empty($web["optionen_frontpage_passwort"])){
