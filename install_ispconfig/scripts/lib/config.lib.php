@@ -733,7 +733,10 @@ function user_insert($doc_id, $doctype_id) {
   $mod->procmail->make_recipes($doc_id);
   
   // Spamassassin directory anlegen
-  if(!is_dir($web_path."/user/".$user_username."/.spamassassin")) mkdir($web_path."/user/".$user_username."/.spamassassin", 0700);
+  if(!is_dir($web_path."/user/".$user_username."/.spamassassin")) {
+  	mkdir($web_path."/user/".$user_username."/.spamassassin", 0700);
+	$mod->log->caselog("chown ".$user_username.":web".$web_doc_id." ".$web_path."/user/".$user_username."/.spamassassin");
+  }
   if(!is_link($web_path."/user/".$user_username."/.spamassassin/user_prefs")) {
   	symlink($web_path."/user/".$user_username."/.user_prefs",$web_path."/user/".$user_username."/.spamassassin/user_prefs");
   }
@@ -910,6 +913,15 @@ function user_update($doc_id, $doctype_id) {
   $mod->procmail->make_forward($doc_id);
   $mod->procmail->make_procmailrc($doc_id);
   $mod->procmail->make_recipes($doc_id);
+  
+  // Spamassassin directory anlegen
+  if(!is_dir($web_path."/user/".$user_username."/.spamassassin")) {
+  	mkdir($web_path."/user/".$user_username."/.spamassassin", 0700);
+	$mod->log->caselog("chown ".$user_username.":web".$web_doc_id." ".$web_path."/user/".$user_username."/.spamassassin");
+  }
+  if(!is_link($web_path."/user/".$user_username."/.spamassassin/user_prefs")) {
+  	symlink($web_path."/user/".$user_username."/.user_prefs",$web_path."/user/".$user_username."/.spamassassin/user_prefs");
+  }
 
   //Status zurücksetzen
   $mod->db->query("update isp_isp_user SET status = '' where doc_id = '$doc_id'");
