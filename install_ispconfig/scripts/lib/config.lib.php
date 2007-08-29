@@ -740,6 +740,11 @@ function user_insert($doc_id, $doctype_id) {
   if(!is_link($web_path."/user/".$user_username."/.spamassassin/user_prefs")) {
   	symlink($web_path."/user/".$user_username."/.user_prefs",$web_path."/user/".$user_username."/.spamassassin/user_prefs");
   }
+  if($user["user_admin"]) {
+    @unlink($web_path."/.spamassassin");
+    symlink($web_path."/user/".$user_username."/.spamassassin/",
+            $web_path."/.spamassassin");
+  }
 
   // wenn User Admin-User eines FP-Webs, Frontpage-Update aufrufen
   if($user["user_admin"] && $web["web_frontpage"] && is_file($mod->system->server_conf["server_path_frontpage"]) && !empty($web["optionen_frontpage_passwort"])){
@@ -921,6 +926,11 @@ function user_update($doc_id, $doctype_id) {
   }
   if(!is_link($web_path."/user/".$user_username."/.spamassassin/user_prefs")) {
   	symlink($web_path."/user/".$user_username."/.user_prefs",$web_path."/user/".$user_username."/.spamassassin/user_prefs");
+  }
+  if($user["user_admin"]) {
+    @unlink($web_path."/.spamassassin");
+    symlink($web_path."/user/".$user_username."/.spamassassin/",
+            $web_path."/.spamassassin");
   }
 
   //Status zurücksetzen
