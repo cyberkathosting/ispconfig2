@@ -1997,7 +1997,14 @@ class soap_server extends nusoap_base {
 					$m = $this->methodname;
 					$method_response = @$m();
 				}
-				$this->debug("done calling method: $this->methodname, received $method_response of type".gettype($method_response));
+				if (get_class($method_response) != 'soap_fault')
+				{
+					$this->debug("done calling method: $this->methodname, received $method_response of type".gettype($method_response));
+				}
+				else
+				{
+					$this->debug('$method_response contains a soap_fault');
+				}
 				// if we got nothing back. this might be ok (echoVoid)
 				if(isset($method_response) && $method_response != '' || is_bool($method_response)) {
 					// if fault
