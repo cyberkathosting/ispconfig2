@@ -289,13 +289,24 @@ global $go_api, $go_info;
 	}
 	
 	// Check if the adminmail is valid
-	if (!preg_match("/^([a-z0-9\-\@]+\.)+[a-z]{2,6}$/ix", $soa["dns_adminmail"])) {
+	if ($soa["dns_adminmail"] != '' && !preg_match("/^([a-z0-9\-\@]+\.)+[a-z]{2,6}$/ix", $soa["dns_adminmail"])) {
 		$go_api->db->query("DELETE from dns_isp_dns where doc_id = '$doc_id'");
         $go_api->db->query("DELETE from dns_nodes where doc_id = '$doc_id' and doctype_id = '$doctype_id'");
         if($die_on_error){
         $go_api->errorMessage($go_api->lng("Invalid admin email address").': '.$soa["dns_adminmail"].$go_api->lng("weiter_link"));
         } else {
           return $go_api->lng("Invalid admin email address").': '.$soa["dns_adminmail"];
+        }
+	}
+	
+	// Check that IP address is not 127.0.0.1
+	if($soa["dns_soa_ip"] == '127.0.0.1') {
+		$go_api->db->query("DELETE from dns_isp_dns where doc_id = '$doc_id'");
+        $go_api->db->query("DELETE from dns_nodes where doc_id = '$doc_id' and doctype_id = '$doctype_id'");
+        if($die_on_error){
+        $go_api->errorMessage($go_api->lng("Invalid IP address").': '.$soa["dns_soa_ip"].$go_api->lng("weiter_link"));
+        } else {
+          return $go_api->lng("Invalid IP address").': '.$soa["dns_so_ip"];
         }
 	}
 
@@ -595,13 +606,24 @@ function soa_update($doc_id, $doctype_id, $die_on_error = '1') {
 	}
 	
 	// Check if the adminmail is valid
-	if (!preg_match("/^([a-z0-9\-\@]+\.)+[a-z]{2,6}$/ix", $soa["dns_adminmail"])) {
+	if ($soa["dns_adminmail"] != '' && !preg_match("/^([a-z0-9\-\@]+\.)+[a-z]{2,6}$/ix", $soa["dns_adminmail"])) {
 		$old_dns_adminmail = addslashes($old_form_data["dns_adminmail"]);
 		$go_api->db->query("UPDATE dns_isp_dns SET dns_adminmail = '$old_dns_adminmail' where doc_id = '$doc_id'");
         if($die_on_error){
         $go_api->errorMessage($go_api->lng("Invalid admin email address").': '.$soa["dns_adminmail"].$go_api->lng("weiter_link"));
         } else {
           return $go_api->lng("Invalid admin email address").': '.$soa["dns_adminmail"];
+        }
+	}
+	
+	// Check that IP address is not 127.0.0.1
+	if($soa["dns_soa_ip"] == '127.0.0.1') {
+		$old_dns_soa_ip = addslashes($old_form_data["dns_soa_ip"]);
+		$go_api->db->query("UPDATE dns_isp_dns SET dns_soa_ip = '$old_dns_soa_ip' where doc_id = '$doc_id'");
+        if($die_on_error){
+        $go_api->errorMessage($go_api->lng("Invalid IP address").': '.$soa["dns_soa_ip"].$go_api->lng("weiter_link"));
+        } else {
+          return $go_api->lng("Invalid IP address").': '.$soa["dns_so_ip"];
         }
 	}
 
