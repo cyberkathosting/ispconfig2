@@ -276,6 +276,17 @@ global $go_api, $go_info;
           return $go_api->lng("error_soa_exists_1").$soa["dns_soa"].$go_api->lng("error_soa_exists_2");
         }
     }
+	
+	// Check if the domain is valid
+	if (!preg_match("/^([a-z0-9\-]+\.)+[a-z]{2,6}$/ix", $soa["dns_soa"])) {
+		$go_api->db->query("DELETE from dns_isp_dns where doc_id = '$doc_id'");
+        $go_api->db->query("DELETE from dns_nodes where doc_id = '$doc_id' and doctype_id = '$doctype_id'");
+        if($die_on_error){
+        $go_api->errorMessage($go_api->lng("Invalid domain name").': '.$soa["dns_soa"].$go_api->lng("weiter_link"));
+        } else {
+          return $go_api->lng("Invalid domain name").': '.$soa["dns_soa"];
+        }
+	}
 
         //////////////////////////////////////////////////////
         // Checke ob maximale Anzahl DNS-Domains erreicht ist
@@ -558,7 +569,19 @@ function soa_update($doc_id, $doctype_id, $die_on_error = '1') {
         }
 
     }
-
+	
+	
+	// Check if the domain is valid
+	$soa = $go_api->db->queryOneRecord("select * from dns_nodes,dns_isp_dns where dns_isp_dns.doc_id = '$doc_id' and dns_nodes.doc_id = dns_isp_dns.doc_id and dns_nodes.doctype_id = $doctype_id");
+	if (!preg_match("/^([a-z0-9\-]+\.)+[a-z]{2,6}$/ix", $soa["dns_soa"])) {
+		$old_dns_soa = addslashes($old_form_data["dns_soa"]);
+		$go_api->db->query("UPDATE dns_isp_dns SET dns_soa = '$old_dns_soa' where doc_id = '$doc_id'");
+        if($die_on_error){
+        $go_api->errorMessage($go_api->lng("Invalid domain name").': '.$soa["dns_soa"].$go_api->lng("weiter_link"));
+        } else {
+          return $go_api->lng("Invalid domain name").': '.$soa["dns_soa"];
+        }
+	}
 
     $go_api->db->query("UPDATE dns_isp_dns SET status = 'u' where status != 'n' and doc_id = '$doc_id'");
 
