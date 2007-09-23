@@ -287,6 +287,17 @@ global $go_api, $go_info;
           return $go_api->lng("Invalid domain name").': '.$soa["dns_soa"];
         }
 	}
+	
+	// Check if the adminmail is valid
+	if (!preg_match("/^([a-z0-9\-\@]+\.)+[a-z]{2,6}$/ix", $soa["dns_adminmail"])) {
+		$go_api->db->query("DELETE from dns_isp_dns where doc_id = '$doc_id'");
+        $go_api->db->query("DELETE from dns_nodes where doc_id = '$doc_id' and doctype_id = '$doctype_id'");
+        if($die_on_error){
+        $go_api->errorMessage($go_api->lng("Invalid admin email address").': '.$soa["dns_adminmail"].$go_api->lng("weiter_link"));
+        } else {
+          return $go_api->lng("Invalid admin email address").': '.$soa["dns_adminmail"];
+        }
+	}
 
         //////////////////////////////////////////////////////
         // Checke ob maximale Anzahl DNS-Domains erreicht ist
@@ -580,6 +591,17 @@ function soa_update($doc_id, $doctype_id, $die_on_error = '1') {
         $go_api->errorMessage($go_api->lng("Invalid domain name").': '.$soa["dns_soa"].$go_api->lng("weiter_link"));
         } else {
           return $go_api->lng("Invalid domain name").': '.$soa["dns_soa"];
+        }
+	}
+	
+	// Check if the adminmail is valid
+	if (!preg_match("/^([a-z0-9\-\@]+\.)+[a-z]{2,6}$/ix", $soa["dns_adminmail"])) {
+		$old_dns_adminmail = addslashes($old_form_data["dns_adminmail"]);
+		$go_api->db->query("UPDATE dns_isp_dns SET dns_adminmail = '$old_dns_adminmail' where doc_id = '$doc_id'");
+        if($die_on_error){
+        $go_api->errorMessage($go_api->lng("Invalid admin email address").': '.$soa["dns_adminmail"].$go_api->lng("weiter_link"));
+        } else {
+          return $go_api->lng("Invalid admin email address").': '.$soa["dns_adminmail"];
         }
 	}
 
