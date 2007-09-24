@@ -461,7 +461,19 @@ function web_insert($doc_id, $doctype_id, $die_on_error = '1') {
                 $go_api->db->query("UPDATE isp_isp_web SET optionen_local_mailserver = '' WHERE doc_id = '$doc_id'");
             }
         }
-
+	
+	// Check domain name with regex, if user is not logged in with client login
+	  $group_list = $go_api->groups->myGroups();
+	  if(is_array($group_list)) {
+	    $tmp_web = $go_api->db->queryOneRecord("select web_domain from isp_isp_web where doc_id = '$doc_id'");
+	  	if(!preg_match("/^([a-z0-9\-]+\.)+[a-z]{2,6}$/ix", $tmp_web["web_domain"])) {
+		  $go_api->db->query("DELETE from isp_isp_web where doc_id = '$doc_id'");
+          $go_api->db->query("DELETE from isp_nodes where doc_id = '$doc_id' and doctype_id = '$doctype_id'");
+		  $limit_errors = $go_api->lng("Invalid domain name").': "'.$tmp_web["web_domain"].'"';
+		  $go_api->errorMessage($limit_errors.$go_api->lng("weiter_link"));
+		}
+	  }
+	  unset($tmp_web);
 
     //////////////////////////////////////////////////////
     // Check ob bereits ein SSL Cert auf der IP Existiert
@@ -897,7 +909,20 @@ global $go_api, $go_info, $old_form_data;
 
     // Web neu holen
     $web = $go_api->db->queryOneRecord("select * from isp_nodes,isp_isp_web where isp_nodes.doc_id = '$doc_id' and isp_nodes.doctype_id = '1013' and isp_isp_web.doc_id = '$doc_id'");
-
+	
+	// Check domain name with regex, if user is not logged in with client login
+	  $group_list = $go_api->groups->myGroups();
+	  if(is_array($group_list)) {
+	  	if(!preg_match("/^([a-z0-9\-]+\.)+[a-z]{2,6}$/ix", $web["web_domain"])) {
+		  $errorMessage .= $go_api->lng("Invalid domain name").': "'.$web["web_domain"].'"';
+		  $status = "NOTIFY";
+		  $web["web_domain"] = $old_form_data["web_domain"];
+		  $old_web_domain = addslashes($old_form_data["web_domain"]);
+		  $go_api->db->query("UPDATE isp_isp_web SET web_domain = '$old_web_domain' where doc_id = '$doc_id'");
+          
+		}
+	  }
+	
     /////////////////////////////////////////////
     // mySQL Passwort verschlüsseln
     /////////////////////////////////////////////

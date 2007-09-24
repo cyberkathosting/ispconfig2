@@ -350,7 +350,19 @@ global $go_api, $go_info,$s,$old_form_data;
                 $go_api->db->query("UPDATE isp_isp_domain SET domain_local_mailserver = '' WHERE doc_id = '$doc_id'");
             }
         }
-
+	
+	// Checke, wenn die Domain bereits existiert, es sich also faktisch um eine
+    // Sub-Domain handelt, ob der Eigentümer identisch des neuen Eintrages mit dem
+    // Hauptdomain-eigentümer identisch ist.
+	$domain = $go_api->db->queryOneRecord("SELECT * from isp_nodes, isp_isp_domain where isp_nodes.doc_id = isp_isp_domain.doc_id and isp_nodes.doctype_id = '1015' and isp_isp_domain.doc_id = '$doc_id'");
+    $haupt_domain = $go_api->db->queryOneRecord("SELECT * from isp_nodes, isp_isp_domain where isp_nodes.doc_id = isp_isp_domain.doc_id and isp_nodes.doctype_id = '1015' and isp_isp_domain.domain_domain = '".$domain["domain_domain"]."'");
+	if($old_form_data["domain_domain"] != $domain["domain_domain"] && $haupt_domain["userid"] != $domain["userid"]) {
+		$old_domain = addslashes($old_form_data["domain_domain"]);
+        $go_api->db->query("UPDATE isp_isp_domain SET domain_domain = '$old_domain' WHERE doc_id = $doc_id");
+		$status = 'NOTIFY';
+        $errorMessage .= $go_api->lng("err_0001");
+    }
+    unset($haupt_domain);
 
     // Web Status auf update setzen
     $go_api->db->query("UPDATE isp_isp_web SET status = 'u' where status != 'n' and doc_id = '$web_doc_id'");
@@ -364,6 +376,19 @@ global $go_api, $go_info,$s,$old_form_data;
 
         // ISPConfig Rechte in nodes Table checken
         $go_api->isp->check_perms($doc_id, $doctype_id);
+	
+	///////////////////////////////////
+    // NOTIFY Error Handler
+    ///////////////////////////////////
+
+    // Dieses muss die letzte Eintrag der Funktion sein
+    if($status == "NOTIFY"){
+      if($die_on_error){
+        $go_api->errorMessage($errorMessage.$go_api->lng("weiter_link"));
+      } else {
+        return $errorMessage;
+      }
+    }
 
 }
 

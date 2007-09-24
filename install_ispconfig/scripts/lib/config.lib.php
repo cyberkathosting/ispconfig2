@@ -863,7 +863,7 @@ function user_insert($doc_id, $doctype_id) {
   	symlink($web_path."/user/".$user_username."/.user_prefs",$web_path."/user/".$user_username."/.spamassassin/user_prefs");
   }
   if($user["user_admin"]) {
-    @unlink($web_path."/.spamassassin");
+    $mod->file->rmdirr($web_path."/.spamassassin");
     symlink($web_path."/user/".$user_username."/.spamassassin/",
             $web_path."/.spamassassin");
   }
@@ -1050,7 +1050,7 @@ function user_update($doc_id, $doctype_id) {
   	symlink($web_path."/user/".$user_username."/.user_prefs",$web_path."/user/".$user_username."/.spamassassin/user_prefs");
   }
   if($user["user_admin"]) {
-    @unlink($web_path."/.spamassassin");
+    $mod->file->rmdirr($web_path."/.spamassassin");
     symlink($web_path."/user/".$user_username."/.spamassassin/",
             $web_path."/.spamassassin");
   }
