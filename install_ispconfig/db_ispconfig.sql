@@ -1599,7 +1599,7 @@ CREATE TABLE `sys_login` (
   `logintime` int(10) unsigned NOT NULL,
   `status` enum('success','failure') NOT NULL default 'success',
   PRIMARY KEY  (`id`)
-)
+) TYPE=MyISAM PACK_KEYS=1;
 
 -- --------------------------------------------------------
 
