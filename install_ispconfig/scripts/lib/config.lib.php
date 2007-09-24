@@ -723,7 +723,7 @@ function user_insert($doc_id, $doctype_id) {
   if($user["user_shell"] && $web["web_shell"]){
     $shell = "/bin/bash"; //Shell u. FTP
   } else {
-    if($web["web_ftp"]){
+    if($web["web_ftp"] && $user["user_ftp"]){
       $shell = "/bin/false"; //nur FTP
     } else {
       $shell = "/dev/null"; //weder Shell noch FTP
@@ -916,7 +916,7 @@ function user_update($doc_id, $doctype_id) {
   if($user["user_shell"] && $web["web_shell"]){
     $shell = "/bin/bash"; //Shell u. FTP
   } else {
-    if($web["web_ftp"]){
+    if($web["web_ftp"] && $user["user_ftp"]){
       $shell = "/bin/false"; //nur FTP
     } else {
       $shell = "/dev/null"; //weder Shell noch FTP

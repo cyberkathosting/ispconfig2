@@ -94,13 +94,13 @@ class isp_username_plugin {
         *****************************************************/
 
                 // Selecting all co-domains
-                $co_domains = $go_api->db->queryAllRecords("SELECT domain_host, domain_domain FROM isp_dep, isp_isp_domain WHERE isp_dep.parent_doc_id = ".$web["doc_id"]." and isp_dep.parent_doctype_id = ".$web["doctype_id"]." and isp_dep.child_doc_id = isp_isp_domain.doc_id and isp_dep.child_doctype_id = isp_isp_domain.doctype_id");
+                $co_domains = $go_api->db->queryAllRecords("SELECT domain_host, domain_domain FROM isp_dep, isp_isp_domain WHERE isp_dep.parent_doc_id = ".$web["doc_id"]." and isp_dep.parent_doctype_id = ".$web["doctype_id"]." and isp_dep.child_doc_id = isp_isp_domain.doc_id and isp_dep.child_doctype_id = isp_isp_domain.doctype_id and isp_isp_domain.domain_local_mailserver = 1");
 
                 // get the domains, if we are in edit mode
                 if($doc_id > 0) {
                         $email_domains = explode("\n",$user["user_emaildomain"]);
                 } else {
-                        $email_domains[0] = ($web["web_host"] != '')?$web["web_host"].'.'.$web["web_domain"]:$web["web_domain"];
+						$email_domains[0] = ($web["web_host"] != '')?$web["web_host"].'.'.$web["web_domain"]:$web["web_domain"];
                         foreach($co_domains as $co_domain) {
                                 $email_domains[] = ($co_domain["domain_host"] != '')?$co_domain["domain_host"].'.'.$co_domain["domain_domain"]:$co_domain["domain_domain"];
                         }

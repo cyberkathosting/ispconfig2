@@ -356,6 +356,8 @@ function get_local_hostnames() {
 	$local_host_names = @array_unique($hostnames);
 	unset($hostnames);
 	
+	if(!is_array($local_host_names)) $local_host_names = array();
+	
 	return $local_host_names;
 }
 
