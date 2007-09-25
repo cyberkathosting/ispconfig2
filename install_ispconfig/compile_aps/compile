@@ -121,7 +121,7 @@ cd ../${MOD_SSL}
 cd ../${APACHE}
 make || error "Could not make Apache"
 if [ "$install_art" == "install" ]; then
-  make certificate TYPE=dummy  || error "Could not make certificate for Apache"
+  make certificate TYPE=dummy || error "Could not make certificate for Apache"
 fi
 make install || error "Could not install Apache"
 
