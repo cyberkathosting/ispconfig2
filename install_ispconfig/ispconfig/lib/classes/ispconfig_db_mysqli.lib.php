@@ -309,19 +309,19 @@ if(CONFIG_LOADED != 1) die('Direct access not permitted.');
        	return $this->query($sql);
        }
 
-       // gibt Array mit Tabellennamen zurück
+       // gibt Array mit Tabellennamen zurï¿½ck
        function getTables($database_name) {
             $sql = "SHOW TABLES FROM ".$database_name;
 			$result = $this->query($sql);
 			$i = 0;
 			while($row = mysqli_fetch_row($result)) {
 				$tb_names[$i] = $row[0];
-				$i++
+				$i++;
 			}
             return $tb_names;
        }
 
-       // gibt Feldinformationen zur Tabelle zurück
+       // gibt Feldinformationen zur Tabelle zurï¿½ck
        /*
        $columns = array(action =>   add | alter | drop
                         name =>     Spaltenname
@@ -443,7 +443,7 @@ if(CONFIG_LOADED != 1) die('Direct access not permitted.');
             return 'char';
        break;
        case 'varchar':
-            if($typeValue < 1) $go_api->errorMessage("Datenbank Fehler: Für diesen Datentyp ist eine Längenangabe notwendig.");
+            if($typeValue < 1) $go_api->errorMessage("Datenbank Fehler: Fï¿½r diesen Datentyp ist eine Lï¿½ngenangabe notwendig.");
             return 'varchar('.$typeValue.')';
        break;
        case 'text':
