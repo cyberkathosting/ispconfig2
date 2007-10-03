@@ -316,7 +316,7 @@ if(CONFIG_LOADED != 1) die('Direct access not permitted.');
 			$i = 0;
 			while($row = mysqli_fetch_row($result)) {
 				$tb_names[$i] = $row[0];
-				$i++
+				$i++;
 			}
             return $tb_names;
        }
