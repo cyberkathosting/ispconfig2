@@ -114,6 +114,8 @@ dist_path_httpd_root:/var/www:Web-Root:read::debian40
 
 dist_path_httpd_root:/var/www:Web-Root:read::debiantesting/unstable0
 
+dist_path_httpd_root:/var/www:Web-Root:read::debianlenny/sid0
+
 dist_path_httpd_root:/home/www:Web-Root:read::freebsd50
 
 dist_path_httpd_root:/home/www:Web-Root:read::freebsd51
