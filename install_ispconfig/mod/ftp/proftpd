@@ -134,6 +134,10 @@ dist_ftp_conf:/etc/proftpd.conf:Config-File:read::fedora70
 dist_ftp_version:standalone:Server-Version:exit::fedora70
 dist_ftp_log:/var/log/xferlog:Log-File:read::fedora70
 
+dist_ftp_conf:/etc/proftpd.conf:Config-File:read::fedora80
+dist_ftp_version:standalone:Server-Version:exit::fedora80
+dist_ftp_log:/var/log/xferlog:Log-File:read::fedora80
+
 dist_ftp_conf:/etc/proftpd.conf:Config-File:read::suse72
 dist_ftp_version:standalone:Server-Version:exit::suse72
 dist_ftp_log:/var/log/xferlog:Log-File:read::suse72
