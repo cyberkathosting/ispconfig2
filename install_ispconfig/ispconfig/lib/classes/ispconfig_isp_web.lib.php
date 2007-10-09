@@ -463,6 +463,7 @@ function web_insert($doc_id, $doctype_id, $die_on_error = '1') {
         }
 	
 	// Check domain name with regex, if user is not logged in with client login
+	 if(!isset($go_api->groups)) $go_api->uses('groups');
 	  $group_list = $go_api->groups->myGroups();
 	  if(is_array($group_list)) {
 	    $tmp_web = $go_api->db->queryOneRecord("select web_domain from isp_isp_web where doc_id = '$doc_id'");
@@ -911,6 +912,7 @@ global $go_api, $go_info, $old_form_data;
     $web = $go_api->db->queryOneRecord("select * from isp_nodes,isp_isp_web where isp_nodes.doc_id = '$doc_id' and isp_nodes.doctype_id = '1013' and isp_isp_web.doc_id = '$doc_id'");
 	
 	// Check domain name with regex, if user is not logged in with client login
+	  if(!isset($go_api->groups)) $go_api->uses('groups');
 	  $group_list = $go_api->groups->myGroups();
 	  if(is_array($group_list)) {
 	  	if(!preg_match("/^([a-z0-9\-]+\.)+[a-z]{2,6}$/ix", $web["web_domain"])) {
