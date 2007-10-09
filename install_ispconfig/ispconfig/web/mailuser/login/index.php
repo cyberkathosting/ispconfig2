@@ -37,6 +37,12 @@ if(count($_POST) > 1) {
 
                 $username         = $_POST["username"];
                 $passwort         = $_POST["passwort"];
+				
+				// Dovecot @ username hack
+				if(stristr($username, '@')) {
+					list ($loginusername, $logindomain) = split('[/@-]', $username);
+					$username = "${logindomain}_$loginusername";
+				}
 
                 // Checke, ob es den User in ISPConfig DB gibt
                 $user = $app->db->queryOneRecord("SELECT * FROM isp_isp_user WHERE user_username = '".addslashes($username)."'");

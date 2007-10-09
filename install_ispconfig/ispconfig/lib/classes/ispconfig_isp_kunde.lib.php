@@ -175,13 +175,13 @@ function kunde_update($doc_id, $doctype_id, $die_on_error = '1') {
 
         $kunde = $go_api->db->queryOneRecord("select * from isp_nodes,isp_isp_kunde where isp_nodes.doc_id = isp_isp_kunde.doc_id and isp_nodes.doc_id = '$doc_id' and isp_nodes.doctype_id = '$doctype_id'");
     }
-
+	
+    
 
     // User für Kunde hinzufügen, wenn noch nicht angelegt
     if($kunde["webadmin_userid"] == 0 and $kunde["webadmin_user"] != ""){
         // Check Ob User noch nicht in sys_user existiert
-        $sys_user_count = $go_api->db->queryOneRecord("SELECT count(doc_id) as documents from sys_user where username = '".trim($kunde["webadmin_user"])."'");
-
+        $sys_user_count = $go_api->db->queryOneRecord("SELECT userid, count(doc_id) as documents from sys_user where username = '".trim($kunde["webadmin_user"])."'");
 
         if($sys_user_count["documents"] >= 1) {
             // Es existiert bereits ein ISPConfig User dieses Namens, Löschen der Reseller_userfelder und Fehlermeldung
@@ -237,7 +237,7 @@ function kunde_update($doc_id, $doctype_id, $die_on_error = '1') {
         if($kunde["webadmin_user"] != "") {
             // Check Ob User noch nicht in sys_user existiert
             $sys_user_count = $go_api->db->queryOneRecord("SELECT count(doc_id) as documents from sys_user where username = '".trim($kunde["webadmin_user"])."' and doc_id != ".$kunde["webadmin_userid"]);
-            if($sys_user_count["documents"] == 0) {
+			if($sys_user_count["documents"] == 0) {
                 $go_api->db->query("update sys_user set username = '".$kunde["webadmin_user"]."' where doc_id = ".$kunde["webadmin_userid"]);
             } else {
                 $go_api->db->query("update isp_isp_kunde set webadmin_user = '".$sys_user["username"]."' where doc_id = $doc_id");

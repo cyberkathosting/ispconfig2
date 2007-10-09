@@ -107,7 +107,7 @@ function make_procmailrc($doc_id) {
 
     if(!is_dir($web_path."/user/".$user_username."/Maildir")) $mod->log->phpcaselog(mkdir($web_path."/user/".$user_username."/Maildir", 0700), "create ".$web_path."/user/".$user_username."/Maildir", $this->FILE, __LINE__);
     exec("chown -R ".$user_username.":web".$web_doc_id." ".$web_path."/user/".$user_username."/Maildir");
-    exec("chmod 700 ".$user_username.":web".$web_doc_id." ".$web_path."/user/".$user_username."/Maildir");
+    exec("chmod 700 ".$web_path."/user/".$user_username."/Maildir");
     if($user["user_admin"]){
       exec("rm -f $web_path/Maildir &> /dev/null");
       $mod->log->phpcaselog(@symlink($web_path."/user/".$user_username."/Maildir", $web_path."/Maildir"), "symlink ".$web_path."/Maildir", $this->FILE, __LINE__);
