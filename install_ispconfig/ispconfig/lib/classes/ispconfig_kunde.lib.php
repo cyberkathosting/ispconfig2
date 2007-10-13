@@ -190,18 +190,18 @@ class kunde {
                 // überprüfe Parameter
                 if(empty($params["reseller_title"]) && empty($params["reseller_group"]))                 $this->errorMessage         .= "Parameter: reseller_title or reseller_group is required.\r\n";
                 if(empty($params["kunde_title"]))                 $this->errorMessage         .= "Parameter: kunde_title is required.\r\n";
-                if(empty($params["kunde_firma"]))                 $this->errorMessage         .= "Parameter: kunde_firma is required.\r\n";
-                if(empty($params["kunde_anrede"]))         $this->errorMessage         .= "Parameter: kunde_anrede is required.\r\n";
+                //if(empty($params["kunde_firma"]))                 $this->errorMessage         .= "Parameter: kunde_firma is required.\r\n";
+                //if(empty($params["kunde_anrede"]))         $this->errorMessage         .= "Parameter: kunde_anrede is required.\r\n";
                 if(empty($params["kunde_vorname"]))         $this->errorMessage         .= "Parameter: kunde_vorname is required.\r\n";
                 if(empty($params["kunde_name"]))         $this->errorMessage         .= "Parameter: kunde_name is required.\r\n";
-                if(empty($params["kunde_strasse"]))         $this->errorMessage         .= "Parameter: kunde_strasse is required.\r\n";
-                if(empty($params["kunde_plz"]))         $this->errorMessage         .= "Parameter: kunde_plz is required.\r\n";
-                if(empty($params["kunde_ort"]))         $this->errorMessage         .= "Parameter: kunde_ort is required.\r\n";
-                if(empty($params["kunde_province"]))         $this->errorMessage         .= "Parameter: kunde_province is required.\r\n";
-                if(empty($params["kunde_land"]))         $this->errorMessage         .= "Parameter: kunde_land is required.\r\n";
-                if(empty($params["kunde_telefon"]))         $this->errorMessage         .= "Parameter: kunde_telefon is required.\r\n";
-                if(empty($params["webadmin_user"]))         $this->errorMessage         .= "Parameter: webadmin_user is required.\r\n";
-                if(empty($params["webadmin_passwort"]))         $this->errorMessage         .= "Parameter: webadmin_passwort is required.\r\n";
+                //if(empty($params["kunde_strasse"]))         $this->errorMessage         .= "Parameter: kunde_strasse is required.\r\n";
+                //if(empty($params["kunde_plz"]))         $this->errorMessage         .= "Parameter: kunde_plz is required.\r\n";
+                //if(empty($params["kunde_ort"]))         $this->errorMessage         .= "Parameter: kunde_ort is required.\r\n";
+                //if(empty($params["kunde_province"]))         $this->errorMessage         .= "Parameter: kunde_province is required.\r\n";
+                //if(empty($params["kunde_land"]))         $this->errorMessage         .= "Parameter: kunde_land is required.\r\n";
+                //if(empty($params["kunde_telefon"]))         $this->errorMessage         .= "Parameter: kunde_telefon is required.\r\n";
+                //if(empty($params["webadmin_user"]))         $this->errorMessage         .= "Parameter: webadmin_user is required.\r\n";
+                //if(empty($params["webadmin_passwort"]))         $this->errorMessage         .= "Parameter: webadmin_passwort is required.\r\n";
 
                 if($this->errorMessage != '') return false;
 
