@@ -29,7 +29,7 @@
 
 PATH="/home/admispconfig/ispconfig/tools/clamav/bin:/sbin:/usr/sbin:/usr/local/sbin:/root/bin:/usr/local/bin:/bin:/usr/bin:/usr/X11R6/bin:/usr/local/libexec"
 
-OPENSSL=openssl-0.9.8e
+OPENSSL=openssl-0.9.8g
 APACHE=apache_1.3.39
 MOD_SSL=mod_ssl-2.8.30-1.3.39
 PHP=php-5.2.4
