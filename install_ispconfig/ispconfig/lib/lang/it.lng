@@ -101,27 +101,27 @@ $wb['Betreff'] = "Riferimento";
 $wb['Priorität'] = "Priorit&agrave;";
 $wb['Datum'] = "Data";
 
-$wb["txt_object_currently_updated"] = "Your changes cannot be saved because this item is currently being updated. Please try again later.<br><br> <a href='../frame_start.php?s=$s'>Next &gt;&gt;</a>";
-$wb["txt_system_currently_updated_no_recycle_bin"] = "The recycle bin cannot be accessed because the system is currently being updated. Please try again in a few minutes.<br><br> <a href='../frame_start.php?s=$s'>Next &gt;&gt;</a>"; 
+$wb["txt_object_currently_updated"] = "Le tue modifiche non possono essere salvati a causa dell'aggiornamento di questo oggetto in corso. Riprova pi&ugrave; tardi.<br><br> <a href='../frame_start.php?s=$s'>Next &gt;&gt;</a>";
+$wb["txt_system_currently_updated_no_recycle_bin"] = "Non si pu&ograve; accedere al cestino a causa dell'aggiornamento del sistema in corso. Riprova fra qualche minuto.<br><br> <a href='../frame_start.php?s=$s'>Next &gt;&gt;</a>"; 
 
-$wb["user_perms_nowrite_hd"]         = "Error occured: You do not have the sufficient rights to change that file";
-$wb["user_perms_nowrite_reasons"]    = "Possbile reasons for that issue";
-$wb["user_perms_nowrite_reasons_1a"] = "1. You are using that system in demo mode";
-$wb["user_perms_nowrite_reasons_1b"] = "- Please log in with your username and password.";
-$wb["user_perms_nowrite_reasons_2a"] = "2. You try to change an element which belongs to another group.";
-$wb["user_perms_nowrite_reasons_2b"] = "You do not have the sufficient rights in this group for writing / changing data.";
-$wb["user_perms_nowrite_reasons_2c"] = "- Please contact the group's owner to grant you the sufficient rights.";
+$wb["user_perms_nowrite_hd"]         = "Errore: Non hai i permessi necessari per modificare questo file";
+$wb["user_perms_nowrite_reasons"]    = "Possibili ragioni per questo errore";
+$wb["user_perms_nowrite_reasons_1a"] = "1. Stai usando il sistema in modalit&agrave; demo";
+$wb["user_perms_nowrite_reasons_1b"] = "- Esegui il login con il tuo nome utente e password.";
+$wb["user_perms_nowrite_reasons_2a"] = "2. Stai provando a cambiare un elemento di un altro gruppo.";
+$wb["user_perms_nowrite_reasons_2b"] = "Non hai i permessi sufficenti per scrivere / modificare dati.";
+$wb["user_perms_nowrite_reasons_2c"] = "- Contatta l'amministratore del gruppo per i permessi necessari.";
 
-$wb["group_perms_nowrite_hd"]         = "Error occured: You do not have the necessary group rights";
-$wb["group_perms_nowrite_reasons"]    = "Possbile reasons for that issue";
-$wb["group_perms_nowrite_reasons_1a"] = "1. You are using that system in demo mode";
-$wb["group_perms_nowrite_reasons_1b"] = "- Please log in with your username and password.";
-$wb["group_perms_nowrite_reasons_2a"] = "2. You try to change an element which belongs to another group.";
-$wb["group_perms_nowrite_reasons_2b"] = "You do not have the sufficient rights in this group for writing / changing data.";
-$wb["group_perms_nowrite_reasons_2c"] = "- Please contact the group's owner to grant you the sufficient rights.";
+$wb["group_perms_nowrite_hd"]         = "Errore: Non hai i permessi necessari per modificare questo file";
+$wb["group_perms_nowrite_reasons"]    = "Possibili ragioni per questo errore";
+$wb["group_perms_nowrite_reasons_1a"] = "1. Stai usando il sistema in modalit&agrave; demo";
+$wb["group_perms_nowrite_reasons_1b"] = "- Esegui il login con il tuo nome utente e password.";
+$wb["group_perms_nowrite_reasons_2a"] = "2. Stai provando a cambiare un elemento di un altro gruppo.";
+$wb["group_perms_nowrite_reasons_2b"] = "Non hai i permessi sufficenti per scrivere / modificare dati.";
+$wb["group_perms_nowrite_reasons_2c"] = "- Contatta l'amministratore del gruppo per i permessi necessari.";
 
-$wb["Weiter"] = "Next";
-$wb["Zurück"] = "Back";
+$wb["Weiter"] = "Avanti";
+$wb["Zurück"] = "Indietro";
 
 
 ?>
