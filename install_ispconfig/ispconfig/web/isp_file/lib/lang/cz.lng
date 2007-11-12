@@ -5,7 +5,7 @@
 *********************************/
 
 $wb["Datei Upload"] = 'Upload souboru';
-$wb["Ordner neu"] = 'Nový adresáø';
+$wb["Ordner neu"] = 'Nová slo¾ka';
 $wb["Web Auswahl"] = 'Výbìr webu';
 $wb["Web auswählen"] = 'Vyberte Web';
 $wb["Auswahl"] = 'Výbìr';
@@ -19,8 +19,8 @@ $wb["Alle"] = 'V¹ichni';
 $wb["Lesen"] = 'Ètení';
 $wb["Schreiben"] = 'Zápis';
 $wb["Ausführen"] = 'Spou¹tìní';
-$wb["Verzeichnisschutz"] = 'Zaheslování adresáøe';
-$wb["Verzeichnis schützen"] = 'Zaheslovat vstup do adresáøe';
+$wb["Verzeichnisschutz"] = 'Zaheslování slo¾ky';
+$wb["Verzeichnis schützen"] = 'Zaheslovat vstup do slo¾ky';
 $wb[".htaccess User"] = '.htaccess u¾ivatel';
 $wb[".htaccess Userübersicht"] = 'Pøehled .htaccess u¾ivatelù';
 $wb["Bearbeiten"] = 'Upravit';
@@ -29,19 +29,19 @@ $wb["Parameterübergabe unvollständig"] = "Testování parametrù nekompletní";
 $wb["Ungültiges Format der web_id."] = "Nesprávný formát web_id.";
 $wb["Ungültige web_id."] = "Nesprávné web_id.";
 $wb["Konnte server_path_httpd_root nicht ermitteln."] = "Není mo¾né zjistit server_path_httpd_root.";
-$wb["Das Verzeichnis existiert nicht oder Sie haben nicht die notwendigen Berechtigungen."] = "Adresáø neexistuje nebo nemáte dostateèní práva.";
+$wb["Das Verzeichnis existiert nicht oder Sie haben nicht die notwendigen Berechtigungen."] = "Slo¾ka neexistuje nebo nemáte dostateèná práva.";
 $wb["Der Pfad enthält ungültige Zeichen."] = "Cesta obsahuje neplatné znaky.";
 $wb["Diese Funktion ist im Demo-Modus deaktiviert"] = "Tato funkce není aktivní v demo módu.";
 $wb["ist ein Link."] = "je odkaz.";
 $wb["existiert nicht."] = "neexistuje."; // Es geht um: /home/file.htm existiert nicht.
 $wb["konnte nicht gelöscht werden."] = "nelze smazat.";
 $wb["Das Verschieben der Datei ist fehlgeschlagen."] = "Pøesun souboru selhal.";
-$wb["konnte nicht gelöscht werden. Das Verzeichnis muss leer sein und Sie müssen Schreibrechte besitzen."] = "nelze smazat. Adresáø musí být prázdný a musíte mít práva k zápisu.";
-$wb["Das Verschieben des Verzeichnisses ist fehlgeschlagen."] = "Pøesun adresáøe selhal.";
+$wb["konnte nicht gelöscht werden. Das Verzeichnis muss leer sein und Sie müssen Schreibrechte besitzen."] = "nelze smazat. Slo¾ka musí být prázdná a musíte mít práva k zápisu.";
+$wb["Das Verschieben des Verzeichnisses ist fehlgeschlagen."] = "Pøesun slo¾ky selhal.";
 $wb["Es wurde keine Datei zum Upload ausgewählt."] = "Nebyl vybrán soubor pro upload.";
-$wb["Die Datei existiert bereits in diesem Verzeichnis."] = "Soubor ji¾ v tomto adresáøi existuje.";
+$wb["Die Datei existiert bereits in diesem Verzeichnis."] = "Soubor ji¾ v této slo¾ce existuje.";
 $wb["Möglicher Dateiupload Angriff."] = "Potenciální \"file upload attack\".";
-$wb["Ordner"] = "Adresáø";
+$wb["Ordner"] = "Slo¾ka";
 
 $wb["chmod failed."] = "chmod selhal";
 $wb["FTP: Failed to open"] = "FTP: Selhalo otevøení ";

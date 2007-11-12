@@ -6,8 +6,8 @@
 * Syntax: $hlp["FieldName"] = "HelpText";
 ************************************************/
 
-$hlp["dienst_name"] = "Jméno slu¾by, která bude monitorována.";
-$hlp["dienst_port"] = "Port slu¾by, napr. 80 pro web server.";
-$hlp["dienst_host"] = "Hostname nebo IP adresa serveru který bude monitorován.";
-$hlp["dienst_typ"] = "Typ slu¾by. Systém je schopen monitorovat TCP- a UDP- slu¾by.";
+$hlp["dienst_name"] = "Jméno slu¾by, která bude sledována.";
+$hlp["dienst_port"] = "Port slu¾by, napø. 80 pro web server.";
+$hlp["dienst_host"] = "Hostname nebo IP adresa serveru který bude sledován.";
+$hlp["dienst_typ"] = "Typ slu¾by. Systém je schopen sledovat TCP- a UDP- slu¾by.";
 ?>

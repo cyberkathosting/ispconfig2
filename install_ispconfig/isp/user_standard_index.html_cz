@@ -1,7 +1,7 @@
 <HTML>
 <HEAD>
 <META http-equiv="Content-Type" content="text/html; charset=iso-8859-2">
-<TITLE>500 Chyba - Interní chyba serveru!</TITLE>
+<TITLE>Vítejte!</TITLE>
 </HEAD>
 <BODY BGCOLOR="#FFFFFF" leftMargin=0 topMargin=0 rightMargin=0 marginheight="0" marginwidth="0">
 <CENTER>
@@ -11,22 +11,19 @@
     <HR SIZE="1" COLOR="#FFFFFF">
     <TABLE>
       <TR>
-        <TD><FONT SIZE="3" COLOR="#FFFFFF" FACE="Helvetica, Arial"><B>500 Chyba - Interní chyba serveru!</B></FONT></TD>
+        <TD><FONT SIZE="3" COLOR="#FFFFFF" FACE="Helvetica, Arial"><B>Vítejte na svém webu!</B></FONT></TD>
       </TR>
     </TABLE>
     <HR SIZE="1" COLOR="#FFFFFF">
     </TD>
   </TR>
-    <TR>
-  <TD><BR><BR><BR>
-  <CENTER><FONT COLOR="#000000" SIZE="2" FACE="Helvetica, Arial"><B><U>Vyskytla se následující chyba:</U></B></FONT></CENTER>
-  <BR></TD>
-  </TR>
   <TR>
     <TD BGCOLOR="#FFFFFF">
+    <BR><BR>
       <CENTER>
-          <FONT COLOR="#000000" SIZE="2" FACE="Helvetica, Arial">Nastala vnitřní chyba a server nebyl schopen dokončit Váš požadavek.
-          <P>V případě, že se tato chyba objevuje opakovaně, kontaktujte webmastera tohoto serveru.</FONT>
+          <FONT COLOR="#000000" SIZE="2" FACE="Helvetica, Arial">Toto je výchozí stránka uživatele <b>{USER_USERNAME}</b>.
+                   Můžete ji bez obav vymazat nebo nahradit jiným souborem. Toto je soubor index.html v adresáři <B>user/{USER_USERNAME}/web</B>.
+          <P>Pokud máte jakékoli dotazy, kontaktujte administrátora serveru.</FONT>
       </CENTER>
       <BR>
       <HR SIZE="1" WIDTH="90%">

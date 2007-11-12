@@ -7,6 +7,6 @@
 ************************************************/
 
 $hlp["db_passwort"] = "Prosím vlo¾te heslo pro MySQL databázi.";
-$hlp["remote_access"] = "Povolí vzdálený pøístup k MySQL databázi webu.";
+$hlp["remote_access"] = "Povolí vzdálený pøístup k MySQL databázi.";
 
 ?>

@@ -6,6 +6,6 @@
 * Syntax: $hlp["FieldName"] = "HelpText";
 ************************************************/
 
-$hlp["dienst_port"] = "Enter a single port (e.g. 2000), or use a colon to enter port ranges (e.g. 2000:2100).";
+$hlp["dienst_port"] = "Vlo¾te èíslo portu (napø. 2000), nebo celý rozsah oddìlený dvojteèkou (napø. 2000:2100).";
 
 ?>

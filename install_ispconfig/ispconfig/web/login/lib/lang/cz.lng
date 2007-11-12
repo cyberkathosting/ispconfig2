@@ -6,20 +6,20 @@
 
 // License Manager
 $wb["Es wurde keine g&uuml;ltige Lizenzdatei gefunden."] = "Nebyl nalezen soubor s platnou licencí.";
-$wb["Hier k&ouml;nnen Sie ihre Lizenzdatei einspielen."] = "Mù¾ete uploadovat svou licenci zde.";
-$wb["Username"] = "U¾ivatelské jméno";
-$wb["Passwort"] = "U¾ivatelské heslo";
+$wb["Hier k&ouml;nnen Sie ihre Lizenzdatei einspielen."] = "Mù¾ete nahrát svou licenci zde.";
+$wb["Username"] = "U¾ivatel";
+$wb["Passwort"] = "Heslo";
 $wb["Lizenzdatei"] = "Soubor s licencí";
 $wb["Weiter"] = "dal¹í";
-$wb["Die Lizenzdatei wurde eingespielt.<br>Sie k&ouml;nnen sich jetzt einloggen."] = "Licence byla uploadována.<br> Nyní se mù¾ete pøihlásit.";
+$wb["Die Lizenzdatei wurde eingespielt.<br>Sie k&ouml;nnen sich jetzt einloggen."] = "Licence byla nahrána.<br>Nyní se mù¾ete pøihlásit.";
 $wb["Ihre Nutzersitzung wurde beendet."] = "Va¹e sezení vypr¹elo.";
 $wb["Hier können Sie sich neu einloggen"] = "Zde se mù¾ete znovu pøihlásit";
 
-$wb["FEHLER 101: Username oder Passwort Falsch."] = "ERROR 101: ¹patné u¾ivatelské jméno nebo heslo.";
-$wb["FEHLER 102: Account inaktiv."] = "ERROR 102: Úèet není aktivní.";
-$wb["FEHLER 103: Es wurde kein Username oder Passwort angegeben."] = "ERROR 103: Nebylo vyplnìno u¾ivatelské jméno nebo heslo.";
-$wb["FEHLER 104: Die Nutzersession wurde beendet."] = "ERROR 104: Sezení vypr¹elo.";
-$wb["<br>&nbsp;<br>Hier können Sie sich erneut einloggen:"] = "<br>&nbsp;<br>Zde se mù¾ete znovu zalogovat:";
-$wb["Hier können Sie sich einloggen:"] = "Pro správu Va¹eho webu se pøihla¹te:";
+$wb["FEHLER 101: Username oder Passwort Falsch."] = "CHYBA 101: ¹patné u¾ivatelské jméno nebo heslo.";
+$wb["FEHLER 102: Account inaktiv."] = "CHYBA 102: Úèet není aktivní.";
+$wb["FEHLER 103: Es wurde kein Username oder Passwort angegeben."] = "CHYBA 103: Nebylo vyplnìno u¾ivatelské jméno nebo heslo.";
+$wb["FEHLER 104: Die Nutzersession wurde beendet."] = "CHYBA 104: Sezení vypr¹elo.";
+$wb["<br>&nbsp;<br>Hier können Sie sich erneut einloggen:"] = "<br>&nbsp;<br>Zde se mù¾ete znovu pøihlásit:";
+$wb["Hier können Sie sich einloggen:"] = "Pro správu svého webu se pøihla¹te:";
 
 ?>

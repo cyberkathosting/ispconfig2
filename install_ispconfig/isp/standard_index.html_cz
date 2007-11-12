@@ -1,6 +1,7 @@
 <HTML>
 <HEAD>
-<TITLE>Vitejte!</TITLE>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-2">
+<TITLE>Vítejte!</TITLE>
 </HEAD>
 <BODY BGCOLOR="#FFFFFF" leftMargin=0 topMargin=0 rightMargin=0 marginheight="0" marginwidth="0">
 <CENTER>
@@ -10,11 +11,7 @@
     <HR SIZE="1" COLOR="#FFFFFF">
     <TABLE>
       <TR>
-            <TD><FONT SIZE="3" COLOR="#FFFFFF" FACE="Helvetica, Arial"><B>Vitejte na
-              <!--ADRESSE//-->
-              Vasem webu!
-              <!--ADRESSE//-->
-              </B></FONT></TD>
+            <TD><FONT SIZE="3" COLOR="#FFFFFF" FACE="Helvetica, Arial"><B>Vítejte na svém webu!</B></FONT></TD>
       </TR>
     </TABLE>
     <HR SIZE="1" COLOR="#FFFFFF">
@@ -23,13 +20,13 @@
   <TR>
     <TD BGCOLOR="#FFFFFF">
     <BR><BR><CENTER>
-        <FONT COLOR="#000000" SIZE="2" FACE="Helvetica, Arial">Toto je standardni stranka Vaseho webu. Muzete ji bez obav vymazat nebo nahradit jinym souborem. Toto je soubor index.html v adresari <B>web</B>.
-        <P>Pokud mate jakekoliv dotazy prosim kontaktuje administratora serveru.</FONT> </CENTER>
+        <FONT COLOR="#000000" SIZE="2" FACE="Helvetica, Arial">Toto je výchozí stránka Vašeho webu. Můžete ji bez obav vymazat nebo nahradit jiným souborem. Toto je soubor index.html v adresáři <B>web</B>.
+        <P>Pokud máte jakékoli dotazy, kontaktujte administrátora serveru.</FONT> </CENTER>
           <BR>
 
         <HR SIZE="1" WIDTH="90%">
       <CENTER>
-<FONT SIZE="1" COLOR="#000000" FACE="Verdana, Arial">powered by <A HREF="http://www.ispconfig.org">ISPConfig</A> on <a href="http://www.zserver.cz">Zserver s.r.o.</a></FONT>
+<FONT SIZE="1" COLOR="#000000" FACE="Verdana, Arial">powered by <A HREF="http://www.ispconfig.org">ISPConfig</A></FONT>
       </CENTER>
     </TD>
   </TR>

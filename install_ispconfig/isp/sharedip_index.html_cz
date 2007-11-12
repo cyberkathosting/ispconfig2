@@ -1,6 +1,7 @@
 <html>
 <head>
-<title>Willkommen!</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-2">
+<title>Vítejte!</title>
 </head>
 <body BGCOLOR="#FFFFFF" leftMargin=0 topMargin=0 rightMargin=0 marginheight="0" marginwidth="0">
 <center>
@@ -10,7 +11,7 @@
     <hr SIZE="1" COLOR="#FFFFFF">
     <table>
       <tr>
-        <td><font SIZE="3" COLOR="#FFFFFF" FACE="Helvetica, Arial"><b>Geteilte IP-Adresse</b></font></td>
+        <td><font SIZE="3" COLOR="#FFFFFF" FACE="Helvetica, Arial"><b>Sdílená IP adresa</b></font></td>
       </tr>
     </table>
     <hr SIZE="1" COLOR="#FFFFFF">
@@ -21,12 +22,12 @@
     <br><br>
           <center>
               <p><font COLOR="#000000" SIZE="2" FACE="Helvetica, Arial"><br>
-          Diese IP-Adresse wird mehrfach genutzt. Um die gewünschte Website zu erreichen, geben Sie ihre Domain anstelle der IP-Adresse in der Adresszeile des Browsers ein.</font></p>
-              <p><font COLOR="#000000" SIZE="2" FACE="Helvetica, Arial">Bei Fragen oder Problemen wenden Sie sich bitte an den Server-Administrator.</font></p>
+          Tato IP adresa je sdílena více weby na stejném serveru. Pro přístup na web, který hledáte, zadejte jeho doménové jméno, nikoli IP adresu.</font></p>
+              <p><font COLOR="#000000" SIZE="2" FACE="Helvetica, Arial">Pokud máte jakékoli dotazy, kontaktujte administrátora serveru.</font></p>
       </center>
       <hr SIZE="1" WIDTH="90%">
       <center>
-<font SIZE="1" COLOR="#000000" FACE="Verdana, Arial">powered by <a HREF="http://www.ispconfig.de">ISPConfig</a></font>
+<font SIZE="1" COLOR="#000000" FACE="Verdana, Arial">powered by <a HREF="http://www.ispconfig.org">ISPConfig</a></font>
       </center>
     </td>
   </tr>
