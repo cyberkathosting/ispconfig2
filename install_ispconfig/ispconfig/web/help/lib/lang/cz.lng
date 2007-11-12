@@ -11,29 +11,29 @@ $wb["Reseller Handbuch"] = "Manuál prodejce";
 $wb["Kunden Handbuch"] = "Manuál u¾ivatele";
 $wb["Deutsch"]          = "Nìmecky";
 $wb["Englisch"]         = "Anglicky";
-$wb["Projektfarm Support"]          = "Projektfarm Support";
-$wb["Online Hilfe"] = "Online Nápovìda";
+$wb["Projektfarm Support"]          = "Projektfarm podpora";
+$wb["Online Hilfe"] = "Online nápovìda";
 
-$wb["willkommen_kunde"] = "Vítejte v administraèním rozhraní Zserver s.r.o.! Mù¾ete zde upravovat nastavení Va¹eho webu.<br>
+$wb["willkommen_kunde"] = "Vítejte v administraèním rozhraní ISPConfig! Mù¾ete zde upravovat nastavení Va¹eho webu.<br>
 &nbsp;<br>
 <div style=\"font-size:80%;text-align:left\">
 <h5>U¾ivatelé:</h5>
 <strong>Vytvoøení u¾ivatele:</strong><p>Web-Manager => Weby => \"vybrat web\" => U¾ivatelé & Emaily => Vytvoøit</p>
-Ka¾dý u¾ivatel má vlastní emailovou schránku ve formátu <span style=\"color:red\">email_ktery_jste_zadali@vase_domena</span> a také vlastní www stránky na adrese<span style=\"color:red\"> http://vase_domena/~uzivatelske_jmeno</span>, které jsou fyzicky umístìny v adresaøi <span style=\"color:red\">users/uzivatelske_jmeno</span>.<br>&nbsp;<br>
-	<em>Tipy:</em><br>
-	1. Pouze u¾ivatel se za¹krtnutým polem administrátor má pøístup k hlavnímu webu. Ostatní mají pøístup pouze ke svým webùm v users/uzivatel.<br>
-	2. Velikost prostoru pro u¾ivatelský web mù¾ete definovat v políèku \"Prostor pro web MB\".
+Ka¾dý u¾ivatel má vlastní emailovou schránku ve formátu <span style=\"color:red\">email_ktery_jste_zadali@vase_domena</span> a také vlastní www stránky na adrese<span style=\"color:red\"> http://vase_domena/~uzivatelske_jmeno</span>, které jsou fyzicky umístìny ve slo¾ce <span style=\"color:red\">users/uzivatelske_jmeno</span>.<br>&nbsp;<br>
+        <em>Tipy:</em><br>
+        1. Pouze u¾ivatel se za¹krtnutým polem administrátor má pøístup k hlavnímu webu. Ostatní mají pøístup pouze ke svým webùm v users/uzivatel.<br>
+        2. Velikost prostoru pro u¾ivatelský web mù¾ete definovat v políèku \"Prostor pro web MB\".
 <h5>Web-FTP:</h5>
-Jednoduchý klient pro upload souborù a úpravy pøístupových práv k souborùm a adresáøùm.<br>&nbsp;<br>
-	<strong>Zaheslování pøístupu k vybranému adresáøi</strong>
-	lze jednodu¹e dosáhnout vybráním zvoleného adresáøe ve web-ftp klientovi a kliknutím na [zaheslovat adresáø]
+Jednoduchý klient pro upload souborù a úpravy pøístupových práv k souborùm a slo¾kám.<br>&nbsp;<br>
+        <strong>Zaheslování pøístupu k vybrané slo¾ce</strong>
+        lze jednodu¹e dosáhnout vybráním zvolené slo¾ky ve web-ftp klientovi a kliknutím na [zaheslovat slo¾ku]
 <h5>Databáze:</h5>
 <strong>Vytvoøení databáze:</strong>
-	<p>Web-Manager => Weby => \"vybrat web\" => Mo¾nosti => Databáze [Vytvoøit]</p>
+        <p>Web-Manager => Weby => \"vybrat web\" => Mo¾nosti => Databáze [Vytvoøit]</p>
 <strong>Webové rozhraní:</strong>
-	<p>Nástroje => phpMyAdmin</p>
+        <p>Nástroje => phpMyAdmin</p>
 <h5>Statistiky:</h5>
-	Ka¾dý web ma vlastní statistiku pøístupù na adrese <span style=\"color:red\">http://vase_domena/stats</span>
+        Ka¾dý web ma vlastní statistiku pøístupù na adrese <span style=\"color:red\">http://vase_domena/stats</span>
 <h5>Problémy:</h5>
 V pøípadì problému s administraèním rozhraním webhostingu kontaktujte technickou podporu webhostingu zasláním po¾adavku na podporu:
 <p>Nápovìda => Po¾adavky na podporu => Nový po¾adavek</p></div>";
@@ -43,8 +43,8 @@ $wb["Willkommen"] = "Vítejte";
 $wb["Arbeitsspeicher"]          = "Operaèní pamì»";
 $wb["CPU"]          = "CPU";
 $wb["Dienste"]      = "Slu¾by";
-$wb["Server Online seit"]          = "Server Online po dobu";
-$wb["User Online"]      = "Poèet u¾ivatelù Online";
+$wb["Server Online seit"]          = "Server bì¾í po dobu";
+$wb["User Online"]      = "Poèet pøipojených u¾ivatelù";
 $wb["System Load 1 Minute"] = "Zatí¾ení v poslední 1 minutì";
 $wb["System Load 5 Minuten"] = "Zatí¾ení v posledních 5 minutách";
 $wb["System Load 15 Minuten"] = "Zatí¾ení v posledních 15 minutách";
@@ -55,7 +55,7 @@ $wb["User angelegt"] = "Poèet u¾ivatelù";
 $wb["Domains angelegt"] = "Poèet domén";
 $wb["unlimitiert"]  = "neomezenì";
 $wb["Anbieter"]     = "Prodejce";
-$wb["DNS-Domains angelegt"] = 'DNS Domény vytvoøeny';
+$wb["DNS-Domains angelegt"] = 'DNS domény vytvoøeny';
 $wb["von"] = "z";
 
 // NEW 2.0.8 ///////////////////////////////////

@@ -8,21 +8,21 @@
 $wb["Arbeitsspeicher"]          = "Operaèní pamì»";
 $wb["CPU"]          = "CPU";
 $wb["Dienste"]      = "Slu¾by";
-$wb["Server Online seit"]          = "Server Online po dobu";
-$wb["User Online"]      = "Poèet u¾ivatelù Online";
+$wb["Server Online seit"]          = "Server bì¾í po dobu";
+$wb["User Online"]      = "Poèet pøipojených u¾ivatelù";
 $wb["System Load 1 Minute"] = "Zatí¾ení v poslední 1 minutì";
 $wb["System Load 5 Minuten"] = "Zatí¾ení v posledních 5 minutách";
 $wb["System Load 15 Minuten"] = "Zatí¾ení v posledních 15 minutách";
 //////////////// Server Status Ende //////////
 
 ///////////////// Administration ////////////////
-$wb["ISPConfig Datenbank"]    = "ISPConfig Databáze";
+$wb["ISPConfig Datenbank"]    = "ISPConfig databáze";
 $wb["Backup erstellen"]       = "Zálohovat data";
 $wb["Datenbank Check"]        = "Provìøit databázi";
 $wb["Datenbank Optimieren"]   = "Optimalizovat databázi";
 $wb["Datenbank Reparieren"]   = "Opravit databázi";
 $wb["Eigenschaften"] = "Nastavení";
-$wb["Server Name"]  = "Jméno server";
+$wb["Server Name"]  = "Jméno serveru";
 $wb["Netzmaske"]    = "Sí»ová maska";
 $wb["Sprache"]      = "Jazyk";
 $wb["IP Liste"]     = "Seznam IP adres";
@@ -34,12 +34,12 @@ $wb["Optimiere"]    = "Optimalizovat";
 $wb["Pfad httpd.conf"]    = "Cesta k httpd.conf";
 $wb["MTA Typ"]    = "Typ MTA";
 $wb["Virtuser Datei"]    = "Soubor s virtuser";
-$wb["FTP Programm"]    = "FTP Program";
+$wb["FTP Programm"]    = "FTP program";
 $wb["FTP conf. Datei"]    = "Soubor FTP conf.";
-$wb["Userid von"]    = "Userid od";
-$wb["Groupid von"]    = "Groupid od";
+$wb["Userid von"]    = "UserID od";
+$wb["Groupid von"]    = "GroupID od";
 
-$wb["Backup von Tabelle"] = "Zálo¾ní Tabulka";
+$wb["Backup von Tabelle"] = "Zálo¾ní tabulka";
 $wb["Optimiere"] = "Optimalizovat";
 $wb["Reparatur"] = "Opravit";
 $wb["oder"] = "nebo";
@@ -53,15 +53,15 @@ $wb["Datei"] = "Soubor";
 
 //////////////// Firewall, Monitor + Dienste  ////////////////
 
-$wb["Überwachung"] = "Monitoring";
+$wb["Überwachung"] = "Sledování";
 $wb["Firewall"] = "Firewall";
-$wb["Web-Server"] = "Web Server";
-$wb["FTP-Server"] = "FTP Server";
-$wb["SMTP-Server"] = "SMTP Server";
-$wb["DNS-Server"] = "DNS Server";
-$wb["mySQL-Server"] = "mySQL Server";
-$wb["An"] = "On";
-$wb["Aus"] = "Off";
+$wb["Web-Server"] = "Web server";
+$wb["FTP-Server"] = "FTP server";
+$wb["SMTP-Server"] = "SMTP server";
+$wb["DNS-Server"] = "DNS server";
+$wb["mySQL-Server"] = "MySQL server";
+$wb["An"] = "Zapnuto";
+$wb["Aus"] = "Vypnuto";
 $wb["neu Starten"] = "Restart";
 $wb["Neu"] = "Vlo¾it";
 $wb["Aktionen"] = "Akce";
@@ -71,72 +71,72 @@ $wb["Port"] = "Port";
 $wb["Typ"] = "Typ";
 $wb["TCP"] = "TCP";
 $wb["UDP"] = "UDP";
-$wb["Der Dienst-Typ wird nur bei sonstigen-Diensten ausgewertet."] = "Typ slu¾by bude identifikovám pouze v pøípadì, ¾e u¾ tato slu¾ba existuje.";
+$wb["Der Dienst-Typ wird nur bei sonstigen-Diensten ausgewertet."] = "Typ slu¾by bude identifikován pouze v pøípadì, ¾e u¾ tato slu¾ba existuje.";
 $wb["Sonstige"] = "Jiná";
 $wb["Ja"] = "Ano";
 $wb["Nein"] = "Ne";
 $wb["Offline"] = "Offline";
-$wb["ISP Dienste"] = "ISP Services";
-$wb["ISP Überwachung"] = "ISP Monitor";
-$wb["ISP Firewall"] = "ISP Firewall";
+$wb["ISP Dienste"] = "ISP slu¾by";
+$wb["ISP Überwachung"] = "ISP monitor";
+$wb["ISP Firewall"] = "ISP firewall";
 $wb["Name"] = "Jméno";
 $wb["Aktiv"] = "Aktivní";
-$wb["Firewall Regel"] = "Pravidlo Firewallu";
-$wb["Dieser Port kann nicht geändert werden."] = "Tento port nemú¾e být zmìnìn.<br>";
+$wb["Firewall Regel"] = "Pravidlo firewallu";
+$wb["Dieser Port kann nicht geändert werden."] = "Tento port nemù¾e být zmìnìn.<br>";
 $wb["Dieser Port kann nicht deaktiviert werden."] = "Tento port nemù¾e být deaktivován.<br>";
 
 //////////////// Firewall ENDE ////////////////
 
 //////////////// LNG 1.1.12 BEGIN /////////////
 
-$wb["ISP Server"] = 'ISP Server';
+$wb["ISP Server"] = 'ISP server';
 $wb["Admin Email"] = 'Email administrátora';
-$wb["EMail"] = 'EMail';
+$wb["EMail"] = 'Email';
 $wb["Funktionen"] = 'Funkce';
-$wb["httpd User"] = 'httpd User';
-$wb["httpd Group"] = 'httpd Group';
-$wb["Document Root"] = 'Document Root';
-$wb["Frontpage Pfad"] = 'Frontpage Cesta';
-$wb["access Log"] = 'access Log';
+$wb["httpd User"] = 'httpd user';
+$wb["httpd Group"] = 'httpd jroup';
+$wb["Document Root"] = 'Document root';
+$wb["Frontpage Pfad"] = 'Frontpage cesta';
+$wb["access Log"] = 'access log';
 $wb["Sendmail"] = 'Sendmail';
 $wb["Sendmail CW"] = 'Sendmail CW';
-$wb["Log speichern"] = 'Ukládat Log';
-$wb["BIND User"] = 'BIND User';
-$wb["BIND Group"] = 'BIND Group';
-$wb["Zonefiles Dir."] = 'Zonefiles Adresáø';
-$wb["Default Ns1"] = 'Defaultní Ns1';
-$wb["Default Ns2"] = 'Defaultní Ns2';
+$wb["Log speichern"] = 'Ukládat log';
+$wb["BIND User"] = 'BIND user';
+$wb["BIND Group"] = 'BIND group';
+$wb["Zonefiles Dir."] = 'Zonefiles adresáø';
+$wb["Default Ns1"] = 'Defaultní NS1';
+$wb["Default Ns2"] = 'Defaultní NS2';
 $wb["Standard MX"] = 'Defaultní MX';
 $wb["Frontpage Extensions"] = 'Frontpage roz¹íøení';
 $wb["User Prefix"] = 'Pøedpona u¾iv. jména';
 $wb["Anbieter Nr. von"] = 'Prodejci è. od';
 $wb["Kunden Nr. von"] = 'Klienti è. od';
-$wb["SOAP Server IP"] = 'SOAP Server IP';
-$wb["SOAP Server Port"] = 'SOAP Server Port';
+$wb["SOAP Server IP"] = 'SOAP server IP';
+$wb["SOAP Server Port"] = 'SOAP server Port';
 $wb["Web-FTP"] = 'Web-FTP';
-$wb["ISP Faktura"] = 'ISP Fakturace';
-$wb["Modul Manager"] = 'Modul Manager';
+$wb["ISP Faktura"] = 'ISP fakturace';
+$wb["Modul Manager"] = 'Modul mana¾er';
 $wb["Hinzufügen"] = 'Vlo¾it';
 $wb["Alle anzeigen"] = 'Zobrazit v¹e';
-$wb["Update Manager"] = 'Update Mana¾er';
+$wb["Update Manager"] = 'Update mana¾er';
 $wb["Update"] = 'Update';
 $wb["System Config"] = 'Konfigurace systému';
 $wb["Bearbeiten"] = 'Upravit';
 $wb["Importieren"] = 'Importovat';
 $wb["Exportieren"] = 'Exportovat';
 $wb["Allgemein"] = 'Obecné';
-$wb["ISP-Manager"] = 'ISP Mana¾er';
+$wb["ISP-Manager"] = 'ISP mana¾er';
 $wb["Faktura"] = 'Upomínka';
 $wb["Übernehmen"] = 'Ulo¾it';
-$wb["Webserver"] = 'Webserver';
+$wb["Webserver"] = 'Web server';
 $wb["Bind DNS"] = 'Bind DNS';
-$wb["Mailserver"] = 'Mailserver';
-$wb["POP3-Server"] = 'POP3 Server';
+$wb["Mailserver"] = 'Po¹tovní server';
+$wb["POP3-Server"] = 'POP3 server';
 $wb["nein"] = 'ne';
 $wb["ja"] = 'ano';
-$wb["ISP Server Status"] = 'ISP Server Status';
-$wb["System-Datenbank"] = 'Systemová databáze';
-$wb["Verzeichnis"] = 'Adresáø';
+$wb["ISP Server Status"] = 'ISP server stav';
+$wb["System-Datenbank"] = 'Systémová databáze';
+$wb["Verzeichnis"] = 'Slo¾ka';
 $wb["Backup starten"] = 'Záloha';
 
 // NEW 1.1.12a //////////////////////////////
@@ -145,17 +145,17 @@ $wb["Es wurde kein Web ausgewählt."] = "Nebyl vybrán ¾ádný web.";
 $wb["Backup-Funktionen im Demo-Modus nicht verfügbar."] = "Funkce zálohy nejsou v demoverzi dostupné.";
 $wb["Backup Status"] = "Stav zálohy";
 $wb["Der Name des FTP-Servers <br>enthält ungültige Zeichen."] = "Jméno FTP serveru <br>obsahuje neplatné znaky.";
-$wb["Sie haben keinen FTP Benutzernamen angegeben."] = "Nebylo nastaveno u¾ivatelské jméno na FTP.";
+$wb["Sie haben keinen FTP Benutzernamen angegeben."] = "Nebylo nastaveno u¾ivatelské jméno pro FTP.";
 $wb["Ftp-Verbindung nicht hergestellt!"] = "FTP spojení selhalo!";
 $wb["Verbindung mit:"] = "Pøipojeno k:";
-$wb["als Benutzer:"] = "jako U¾ivatel:";
+$wb["als Benutzer:"] = "jako u¾ivatel:";
 $wb["nicht möglich."] = "není mo¾né.";
-$wb["Konnte nicht in Verzeichnis:"] = "zmìna adresáøe:";
-$wb["wechseln."] = "selhalhání.";
-$wb["Wechsel in Verzeichnis:"] = "zmìnìno na adresáø:";
-$wb["Ftp upload war fehlerhaft!"] = "FTP-Upload selhal!";
+$wb["Konnte nicht in Verzeichnis:"] = "zmìna slo¾ky:";
+$wb["wechseln."] = "selhání.";
+$wb["Wechsel in Verzeichnis:"] = "zmìnìno na slo¾ku:";
+$wb["Ftp upload war fehlerhaft!"] = "FTP upload selhal!";
 $wb["Upload erfolgreich."] = "Upload úspì¹ný.";
-$wb["FTP-Upload Status"] = "Stav FTP-Uploadu";
+$wb["FTP-Upload Status"] = "Stav FTP uploadu";
 $wb["Backup-Methode nicht unterstützt."] = "Tato metoda zálohování není dostupná.";
 $wb["Rechnung Nr. von"] = "Upomínky è. od";
 
@@ -170,14 +170,14 @@ $wb["Suexec"] = 'Suexec';
 $wb["Postfix"] = 'Postfix';
 $wb["Mail Log"] = 'Mail Log';
 $wb["Maildir"] = 'Maildir';
-$wb["Antivir Mailadmin"] = 'Antivirus-Admin';
+$wb["Antivir Mailadmin"] = 'Antivirus administrátor';
 $wb["aktiv"] = "aktivní";
 $wb["inaktiv"] = "neaktivní";
 $wb["weiter_link"] = "<br><br> <a href='../../isp_manager/frame_start.php?s=$s'>Next &gt;&gt;</a>";
 $wb["txt_client_salutatory_email_desc"] = "<b>Uvítací email pro klienty</b>";
 $wb["txt_client_salutatory_email_sender_email"] = "Email odesílatele";
 $wb["txt_client_salutatory_email_sender_name"] = "Jméno odesílatele";
-$wb["txt_client_salutatory_email_bcc"] = "BCC Adresát";
+$wb["txt_client_salutatory_email_bcc"] = "BCC pøíjemce";
 $wb["txt_client_salutatory_email_subject"] = "Pøedmìt zprávy";
 $wb["txt_client_salutatory_email_message"] = "Zpráva";
 $wb["txt_client_salutatory_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
@@ -229,7 +229,7 @@ $wb["txt_client_salutatory_email_variables"] = '<table border="0" cellpadding="3
 $wb["txt_res_salutatory_email_desc"] = "<b>Uvítací email pro prodejce</b>";
 $wb["txt_res_salutatory_email_sender_email"] = "Email odesílatele";
 $wb["txt_res_salutatory_email_sender_name"] = "Jméno odesílatele";
-$wb["txt_res_salutatory_email_bcc"] = "BCC Adresát";
+$wb["txt_res_salutatory_email_bcc"] = "BCC pøíjemce";
 $wb["txt_res_salutatory_email_subject"] = "Pøedmìt zprávy";
 $wb["txt_res_salutatory_email_message"] = "Zpráva";
 $wb["txt_res_salutatory_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
@@ -277,7 +277,7 @@ $wb["txt_res_salutatory_email_variables"] = '<table border="0" cellpadding="3" c
             Manuál prodejce ISPConfig</td>
         </tr>
         </table>';
-$wb["txt_standard_index"] = "Standardní Index<br>&nbsp;&nbsp;Page";
+$wb["txt_standard_index"] = "Standardní index<br>&nbsp;&nbsp;page";
 $wb["txt_standard_index_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
 <tr>
     <td valign="top" colspan="2" class="normal">
@@ -288,7 +288,7 @@ $wb["txt_standard_index_variables"] = '<table border="0" cellpadding="3" cellspa
             Celá adresa stránky (FQDN)</td>
         </tr>
     </table>';
-$wb["txt_user_standard_index"] = "Standardní u¾ivatelská<br>&nbsp;&nbsp;Index page";
+$wb["txt_user_standard_index"] = "Standardní u¾ivatelská<br>&nbsp;&nbsp;index page";
 $wb["txt_user_standard_index_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
 <tr>
     <td valign="top" colspan="2" class="normal">
@@ -311,29 +311,29 @@ $wb["Berechtigungen"] = "Oprávnìní";
 $wb["Speichern"] = "Ulo¾it";
 $wb["Löschen"] = "Smazat";
 $wb["Abbrechen"] = "Zru¹it";
-$wb["IP-Adresse"] = "IP Adresa";
-$wb["DNS-Query"] = "Query Primary DNS Records";
-$wb["DNS-Insert"] = "Create Primary DNS Records";
-$wb["DNS-Update"] = "Edit Primary DNS Records";
-$wb["DNS-Delete"] = "Delete Primary DNS Records";
-$wb["slave_query"] = "Query Secondary DNS Records";
-$wb["slave_insert"] = "Create Secondary DNS Records";
-$wb["slave_update"] = "Edit Secondary DNS Records";
-$wb["slave_delete"] = "Delete Secondary DNS Records";
-$wb["reseller_query"] = "Query Resellers";
-$wb["reseller_insert"] = "Create Resellers";
-$wb["reseller_update"] = "Edit Resellers";
-$wb["reseller_delete"] = "Delete Resellers";
-$wb["kunde_query"] = "Query Clients";
+$wb["IP-Adresse"] = "IP adresa";
+$wb["DNS-Query"] = "Ovìøit primární DNS záznamy";
+$wb["DNS-Insert"] = "Vytvoøit primární DNS záznamy";
+$wb["DNS-Update"] = "Upravit primární DNS záznamy";
+$wb["DNS-Delete"] = "Smazat primární DNS záznamy";
+$wb["slave_query"] = "Ovìøit sekundární DNS záznamy";
+$wb["slave_insert"] = "Vytvoøit sekundární DNS záznamy";
+$wb["slave_update"] = "Upravit sekundární DNS záznamy";
+$wb["slave_delete"] = "Smazat sekundární DNS záznamy";
+$wb["reseller_query"] = "Ovìøit prodejce";
+$wb["reseller_insert"] = "Vytvoøit prodejce";
+$wb["reseller_update"] = "Upravit prodejce";
+$wb["reseller_delete"] = "Smazat prodejce";
+$wb["kunde_query"] = "Ovìøit klienty";
 $wb["kunde_insert"] = "Vytvoøit klienty";
 $wb["kunde_update"] = "Upravit klienty";
 $wb["kunde_delete"] = "Vymazat klienty";
-$wb["web_query"] = "Query Websites";
+$wb["web_query"] = "Ovìøit weby";
 $wb["web_insert"] = "Vytvoøit weby";
-$wb["web_update"] = "Editovat weby";
+$wb["web_update"] = "Upravit weby";
 $wb["web_delete"] = "Odstranit weby";
-$wb["txt_primary_dns_records"] = "Primární DNS Záznamy";
-$wb["txt_secondary_dns_records"] = "Sekundární DNS Záznamy";
+$wb["txt_primary_dns_records"] = "Primární DNS záznamy";
+$wb["txt_secondary_dns_records"] = "Sekundární DNS záznamy";
 $wb["txt_anbieter"] = "Prodejci";
 $wb["txt_kunden"] = "Klienti";
 $wb["txt_webs"] = "Weby";
@@ -376,14 +376,14 @@ $wb["txt_traffic_suspension_email_variables"] = '<table border="0" cellpadding="
         <tr>
           <td class="normal" valign="top">%%%TOTAL_TRAFFIC%%%</td>
           <td class="normal">
-            Celkové mno¾ství pøenesených dat za mìsíc kdy do¹lo k pøekroèení limitu pøenosu dat</td>
+            Celkové mno¾ství pøenesených dat za mìsíc, kdy do¹lo k pøekroèení limitu pøenosu dat</td>
         </tr>
         </table>';
 
 $wb["txt_traffic_notification_email_desc"] = "<b>Oznámení o pøekroèení limitu pøenosu dat</b>";
 $wb["txt_traffic_notification_sender_email"] = "Email odesílatele";
 $wb["txt_traffic_notification_sender_name"] = "Jméno odesílatele";
-$wb["txt_traffic_notification_email_bcc"] = "BCC adresát";
+$wb["txt_traffic_notification_email_bcc"] = "BCC pøíjemce";
 $wb["txt_traffic_notification_email_subject"] = "Pøedmìt zprávy";
 $wb["txt_traffic_notification_email_message"] = "Zpráva";
 $wb["txt_traffic_notification_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
@@ -418,7 +418,7 @@ $wb["txt_traffic_notification_email_variables"] = '<table border="0" cellpadding
         <tr>
           <td class="normal" valign="top">%%%TOTAL_TRAFFIC%%%</td>
           <td class="normal">
-            Celkové mno¾ství pøenesených dat za mìsíc kdy do¹lok pøekroèení limitu pøenosu dat</td>
+            Celkové mno¾ství pøenesených dat za mìsíc, kdy do¹lo k pøekroèení limitu pøenosu dat</td>
         </tr>
         </table>';
 

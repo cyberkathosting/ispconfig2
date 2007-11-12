@@ -1,12 +1,11 @@
 <?
 
 /**********************************************
-* ISPConfig Help File
+* ISPCofig Help File
 * Version 1.2
 * Syntax: $hlp["FieldName"] = "HelpText";
 ************************************************/
 
-$hlp["db_passwort"] = "Prosím vlo¾te heslo pro MySQL databázi.";
-$hlp["remote_access"] = "Povolí vzdálený pøístup k MySQL databázi.";
+$hlp["dienst_port"] = "Vlo¾te èíslo portu (napø. 2000), nebo celý rozsah oddìlený dvojteèkou (napø. 2000:2100).";
 
 ?>
