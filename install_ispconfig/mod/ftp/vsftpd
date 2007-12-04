@@ -90,9 +90,17 @@ dist_ftp_conf:/etc/vsftpd/vsftpd.conf:Config-File:read::centos45
 dist_ftp_version:standalone:Server-Version:select:standalone|inetd|xinetd:centos45
 dist_ftp_log:/var/log/vsftpd.log:Log-File:read::centos45
 
+dist_ftp_conf:/etc/vsftpd/vsftpd.conf:Config-File:read::centos46
+dist_ftp_version:standalone:Server-Version:select:standalone|inetd|xinetd:centos46
+dist_ftp_log:/var/log/vsftpd.log:Log-File:read::centos46
+
 dist_ftp_conf:/etc/vsftpd/vsftpd.conf:Config-File:read::centos50
 dist_ftp_version:standalone:Server-Version:select:standalone|inetd|xinetd:centos50
 dist_ftp_log:/var/log/vsftpd.log:Log-File:read::centos50
+
+dist_ftp_conf:/etc/vsftpd/vsftpd.conf:Config-File:read::centos51
+dist_ftp_version:standalone:Server-Version:select:standalone|inetd|xinetd:centos51
+dist_ftp_log:/var/log/vsftpd.log:Log-File:read::centos51
 
 dist_ftp_conf:/etc/vsftpd.conf:Config-File:read::rhat73
 dist_ftp_version:xinetd:Server-Version:select:standalone|inetd|xinetd:rhat73
