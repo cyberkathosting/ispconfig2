@@ -1,0 +1,47 @@
+<?php
+
+$wb["txt_login_desc"] = "За да промените вашите Е-майл конфигурации първо Влезте.";
+$wb["txt_error"] = "Грешка";
+$wb["txt_email_username"] = "Е-майл- Потребителско Име";
+$wb["txt_password"] = "Парола";
+$wb["txt_login"] = "Вход";
+$wb["txt_autoresponder"] = "Автоматичен отговор";
+$wb["txt_nachricht"] = "Съобщение";
+$wb["txt_speichern"] = "Запази";
+$wb["txt_abbrechen"] = "Откажи";
+$wb["txt_email_account"] = "Е-майл Акаунт";
+$wb["txt_user_und_email"] = "Потребител &amp; Е-майл";
+$wb["txt_spamfilter"] = "Спам филтър";
+$wb["txt_logout"] = "Изход";
+$wb["txt_mailscan"] = "Сканиране на Майл";
+$wb["txt_antivirus"] = "Антивирусна";
+$wb["txt_spam_strategie"] = "Спам Стратегия";
+$wb["txt_spam_hits"] = "Спам попадения";
+$wb["txt_rewrite_subject"] = "Пренаписване на Тема";
+$wb["txt_betreff"] = "Тема";
+$wb["txt_name"] = "Име";
+$wb["txt_email_adresse"] = "Е-майл адрес";
+$wb["txt_username"] = "Потребителско Име";
+$wb["txt_web_speicher"] = "Уеб квота";
+$wb["txt_mail_speicher"] = "Майл квота";
+$wb["txt_email_passwort_leer"] = "Потребителското име и/или паролата са празни!";
+$wb["txt_user_unbekannt"] = "Неразпознат Потребител.";
+$wb["txt_access_forbidden"] = "Достъп забранен!";
+$wb["txt_yes"] = "Да";
+$wb["txt_no"] = "Не";
+$wb["txt_unlimited"] = "Неограничен";
+$wb["txt_welcome"] = "Добре Дошли...";
+$wb["txt_error_spam_hits_format"] = "Стойността <i>".$wb["txt_spam_hits"]."</i> трябва да е в следния формат:";
+$wb["txt_accept"] = "Приеми";
+$wb["txt_discard"] = "Откажи";
+$wb["txt_language"] = "Език";
+$wb["txt_no_mailuser_login"] = "Входа е деактивиран за този сайт.";
+$wb["txt_forwarder"] = "Изпращач";
+$wb["txt_forwarder_desc"] = "<b>Съвет:</b> Един майл на линия.";
+$wb["txt_spam_whitelist"] = 'Спам Бялалиста';
+$wb["txt_spam_blacklist"] = 'Спам Черналиста';
+$wb["txt_hint_spam_whitelist"] = '<b>Съвет:</b> Един запис на линия. Валидни записи са, за пример, friend@somewhere.com, *@isp.com, or *.domain.net.';
+$wb["txt_hint_spam_blacklist"] = '<b>Съвет:</b> Един запис на линия. Валидни записи са, за пример, friend@somewhere.com, *@isp.com, or *.domain.net.';
+$wb["txt_uribl"] = 'Use <a href="http://www.uribl.com/about.shtml" target="_blank">URIBL</a>'; 
+
+?>

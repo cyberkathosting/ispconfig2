@@ -1,0 +1,112 @@
+<?
+/********************************
+* ISPConfig Dictionary File
+* Version 1.0
+*********************************/
+
+/////////////// Allgemein - general (kommt in mehreren Modulen vor) /////////
+$wb["login_begruessung"]     = "Вход:";
+$wb["Username"]     = "Потребителско Име";
+$wb["Passwort"]     = "Парола";
+$wb["Login"]       = "Вход";
+$wb["Administration"]  = "Управление";
+$wb["ISP Manager"]  = "ISP управление";
+$wb["DNS Manager"]  = "DNS управление";
+$wb["Tools"]        = "Инструменти";
+$wb["Logout"]       = "Изход";
+$wb["Status"]       = "Статус";
+$wb["neu"]          = "Нов";
+$wb["Hinweis"]      = "Настройки";
+$wb["Web"]          = "Уеб";
+$wb["Email"]        = "Е-маил";
+$wb["FTP"]          = "FTP";
+$wb["DNS"]          = "DNS";
+$wb["Sonstiges"]    = "Друг";
+$wb["Datei"]        = "Файл";
+$wb["von"]          = "От"; // besser 'ab'?
+$wb["error_headline"] = "Открихме следните грешки:";
+$wb["Gruppe"]       = "Група";
+$wb["Titel"]        = "Заглавие";
+$wb["Server"]       = "Сървър";
+$wb["Host"]         = "Име на хостинга";
+$wb["Domain"]       = "Домеин";
+$wb["IP Adresse"]   = "IP Адрес";
+$wb["Ordner"]       = "Папка";
+$wb["Dokument"]     = "Документ";
+$wb["Dokument suchen"] = "Търсене на документ";
+$wb["Suchmaske"]    = "Търсене на период";
+$wb["Ausgabeformat"] = "Изходящ формат";
+$wb["Standard"]     = "Стандарт";
+$wb["Eintrдge"]    = "Входни";
+$wb["Papierkorb leeren"] = "Изпразни кошчето";
+$wb["Stammordner"]  = "Мастер зона";
+$wb["keine Gruppe"] = "Без група";
+$wb["neues Dokument anlegen"] = "Новия документ е създаден";
+$wb["auf"]   = "Разширение";
+$wb["zu"]    = "Пропаднали";
+$wb["in_ordner"]    = "в Фаил";
+$wb["Papierkorb"]   = "Кошче";
+$wb["Wiederherstellen"]    = "Възтанови";
+$wb["Papierkorb: Eintrдge"]   = "Кошче: Съдържание";
+$wb["Speichern"]    = "Запамети";
+$wb["Lцschen"]    = "Изтрий";
+$wb["Abbrechen"]    = "Отказ";
+$wb["Suchen"]    = "Търсене";
+
+$wb["Herr"] = "Мистър";
+$wb["Frau"] = "Мис";
+
+$wb["Es ist folgender Fehler aufgetreten:"] = "Открихме следните грешки:";
+
+$wb["Web-FTP"] = 'Уеб-FTP';
+$wb["ISP Faktura"] = 'ISP фактура';
+
+$wb["Verzeichnis цffnen"] = "Отвори";
+$wb["Verzeichnis schliessen"] = "Затвори";
+$wb["Hilfe"] = 'Помощ';
+$wb["Online Hilfe"] = 'Online Помощ';
+$wb["schliessen"] = 'Затвори';
+
+$wb["PAPIERKORB_HINWEIS"] = "<b>Забележка:</b> Фаиловете оставащи в кошчето след изпразването са в моментно активно състояние. Моля опитайте се да ги изтриете по късно.";
+
+
+// Multidoc  Allgemein ////////////////////////////////
+
+$wb["title_required"] = "Моля въведете съдържание в полето 'Заглавие'";
+$wb["error_keine_rechte"] = "Вие нямате необходимите привилегии да разглеждате или да редактирате този запис.";
+$wb["error_doctype_nicht_vorhanden"] = "Търсения запис не съществува.";
+$wb["error_doctype_rechte"] = "Вие нямате необходимите привилегии да редактирате този документов формат.";
+$wb["Formular Designer"] = "Дизайнер на форма";
+$wb["Geben Sie einen Wert in das Feld"] = "Моля въведете съдържание в полето";
+$wb["jscript_ein"] = " ";
+
+
+////////////// Allgemein Ende ///////////////////
+
+$wb["Es konnte ein Dokument nicht wiederhergestellt werden, da sich das Eltern-Dokument noch im Papierkorb befindet.\n"] = "Обекта не може да се възстанови докато неговия предходен обект/папка е в кошчето.";
+
+$wb["DNS-Domains angelegt"] = 'Създадена е Мастер зона';
+$wb["Benutzter Diskspace"] = "Използвано дисково пространство";
+$wb["Slave Zones angelegt"] = "Създадена е Робска зона";
+$wb["Datenbanken angelegt"] = "Създадена е База Данни";
+
+$wb["txt_confirm_delete"] = "Наистина ли искате да изтриете този обект?";
+
+$wb["txt_object_currently_updated"] = "Вашите промени не могат да бъдат запаметени защото този запис в момента се обновява. Моля опитайте отново по- късно.<br><br> <a href='../frame_start.php?s=$s'>Следващо &gt;&gt;</a>";
+$wb["txt_system_currently_updated_no_recycle_bin"] = "Кошчето не може да бъде достигнато защото в момента се обновява. Моля пробвайте отново след няколко минутки.<br><br> <a href='../frame_start.php?s=$s'>Следващо &gt;&gt;</a>";
+
+$wb['no_permission_to_change_data'] = "<b>Грешка: Вие нямате необходимите привилегии да редактирате този запис..</b><p>
+                <br>
+                Поради една от следните причини:<br>
+                1. Вие използвате системата в тест модел.<br>
+                   - Влезте с вашите потребителско име и парола.<br>&nbsp;<br>
+                2. Вие се опитвате да промените елемент който се намира в друга група.<br>
+                   В тази група вие нямате прривилегии да променяте записи.<br>
+                   - Моля попитайте собственика на групата да ви даде достъп и права за дадената група.<br>&nbsp;<br>
+                <center><a href=\"" . $go_info["server"]["server_url"] . "/index.php?s=$s\">Следващо &gt;&gt;</a></center>";
+
+$wb["Weiter"] = "Следващо";
+$wb["Zurьck"] = "Назад";
+
+
+?>
