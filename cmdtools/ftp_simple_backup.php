@@ -56,7 +56,7 @@ if(!is_dir($backup_tmp)) exec("mkdir -p $backup_tmp");
 // If a backup shuld be kept
 if($keep_yesterday_backup == 1) {
 	exec("rm -f ".$backup_tmp."backup_yesterday.tar.gz");
-	if(is_file($backup_tmp."backup_yesterday.tar.gz")) {
+	if(is_file($backup_file)) {
 		exec("mv ".$backup_file." ".$backup_tmp."backup_yesterday.tar.gz");
 	}
 	exec("chmod 700 ".$backup_tmp."backup_yesterday.tar.gz");
