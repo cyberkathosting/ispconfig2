@@ -648,6 +648,10 @@ $admispconfig_uid = $admispconfig_gid = find_uid_gid(100, 3000);
 if(!is_group("admispconfig")) phpcaselog(addgroup("admispconfig", $admispconfig_gid, "admispconfig"), 'create group admispconfig', $FILE, __LINE__);
 if(!is_user("admispconfig")) phpcaselog(adduser("admispconfig", $admispconfig_uid, $admispconfig_gid, "Administrator ISPConfig", "/home/admispconfig", "/bin/bash", '!'), 'create user admispconfig', $FILE, __LINE__);
 
+// Add a user with uid 20000 as last user in the ISPConfig user range
+$ispconfigend_uid = $ispconfigend_gid = find_uid_gid(20000, 30000);
+if(!is_user("ispconfigend")) caselog("useradd -u $ispconfigend_uid -s /sbin/nologin ispconfigend -g ispconfigend", $FILE, __LINE__);
+
 if($dist_mailman){
   if(is_group("list")) phpcaselog(add_user_to_group("list", "admispconfig"), 'added admispconfig to group list', $FILE, __LINE__);
 }
