@@ -1506,6 +1506,8 @@ Group web".$web["doc_id"];
         if(!empty($domain["domain_weiterleitung"])){
           if($domain["domain_host"] == "") {
             $rewrite_cond_url = str_replace(".", "\\.", $domain["domain_domain"]);
+		  } elseif ($domain["domain_host"] == "*") {
+		  	$rewrite_cond_url = "(.*)\.".str_replace(".", "\\.", $domain["domain_domain"]);
           } else {
             $rewrite_cond_url = str_replace(".", "\\.", $domain["domain_host"].".".$domain["domain_domain"]);
           }
