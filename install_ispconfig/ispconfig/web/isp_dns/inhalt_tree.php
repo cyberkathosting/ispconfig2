@@ -267,7 +267,7 @@ function ladeDaten() {
 // Für weitere Informationen sieh in der JS-Menü-Dokumentation nach.
 //-->
 
-menuDaten.neu(new HauptverzeichnisEintrag('root','<? echo $go_api->lng("ISP Manager")?>','frame_start.php?<? echo $session?>&tpl=start','','','Archiv'));
+menuDaten.neu(new HauptverzeichnisEintrag('root','<? echo $go_api->lng("DNS Manager")?>','frame_start.php?<? echo $session?>&tpl=start','','','Archiv'));
 <?
 /*******************************************
 * News Einträge erzeugen
