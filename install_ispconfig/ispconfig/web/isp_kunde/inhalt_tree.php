@@ -266,7 +266,7 @@ function ladeDaten() {
 // Für weitere Informationen sieh in der JS-Menü-Dokumentation nach.
 //-->
 
-menuDaten.neu(new HauptverzeichnisEintrag('root','Navigation','frame_start.php?<? echo $session?>&tpl=start','','','Archiv'));
+menuDaten.neu(new HauptverzeichnisEintrag('root','<? echo $go_api->lng("Navigation")?>','frame_start.php?<? echo $session?>&tpl=start','','','Archiv'));
 <?
 /*******************************************
 * News Einträge erzeugen

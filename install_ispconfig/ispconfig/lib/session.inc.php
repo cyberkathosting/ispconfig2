@@ -37,6 +37,7 @@ if($set_header == 1) {
     header("Last-Modified: " . gmdate("D, d M Y H:i:s") . " GMT"); // always modified
     header("Cache-Control: no-cache, must-revalidate");           // HTTP/1.1
     header("Pragma: no-cache");
+	header("Content-type: text/html; charset=". $go_info["theme"]["charset"]);
     ob_start("ob_gzhandler");
 }
 
