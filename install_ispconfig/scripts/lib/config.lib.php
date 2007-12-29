@@ -155,13 +155,13 @@ function TYPO3_install() {
 ');
   fwrite($localconf, '$TYPO3_CONF_VARS[\'SYS\'][\'encryptionKey\'] = \''.md5(uniqid(rand(),true)).'\';
 ');
-  fwrite($localconf, '$typo_db_username = '.$res['arg2'].';  //  Modified or inserted by TYPO3 Install Tool.
+  fwrite($localconf, '$typo_db_username = \''.$res['arg2'].'\';  //  Modified or inserted by TYPO3 Install Tool.
 ');
-  fwrite($localconf, '$typo_db_password = '.$res['arg3'].';  //  Modified or inserted by TYPO3 Install Tool.
+  fwrite($localconf, '$typo_db_password = \''.$res['arg3'].'\';  //  Modified or inserted by TYPO3 Install Tool.
 ');
-  fwrite($localconf, '$typo_db_host = '.$res['arg1'].';  //  Modified or inserted by TYPO3 Install Tool.
+  fwrite($localconf, '$typo_db_host = \''.$res['arg1'].'\';  //  Modified or inserted by TYPO3 Install Tool.
 ');
-  fwrite($localconf, '$typo_db = '.$res['arg4'].';  //  Modified or inserted by TYPO3 Install Tool.
+  fwrite($localconf, '$typo_db = \''.$res['arg4'].'\';  //  Modified or inserted by TYPO3 Install Tool.
 ');
   fwrite($localconf, '
 ?>');
