@@ -101,8 +101,8 @@ global $go_api, $go_info;
     $web = $go_api->db->queryOneRecord($sql);
     $go_api->db->query("UPDATE isp_isp_domain SET domain_ip = '".$web["web_ip"]."' where doc_id = $doc_id");
     $domain["domain_ip"] = $web["web_ip"];
-
-    // Web Status auf update setzen
+	
+	// Web Status auf update setzen
     $web_doc_id = $web["doc_id"];
     $go_api->db->query("UPDATE isp_isp_web SET status = 'u' where status != 'n' and doc_id = '$web_doc_id'");
 
@@ -186,6 +186,13 @@ global $go_api, $go_info;
         $errorMessage .= $go_api->lng("err_0001");
     }
     unset($haupt_domain);
+	
+	// Check domain against regex
+	$tmp_fqdn = ($domain["domain_host"] != '')?$domain["domain_host"].'.'.$domain["domain_domain"]:$domain["domain_domain"];
+	if(!preg_match("/^([a-z0-9\-]+\.)+[a-z]{2,6}$/ix", $tmp_fqdn)) {
+		$status = "DELETE";
+        $errorMessage .= $go_api->lng("Invalid domain name").': "'.$tmp_fqdn.'"';
+	}
 
 
     if($status == "DELETE") {
@@ -309,6 +316,15 @@ global $go_api, $go_info,$s,$old_form_data;
                 }
 
         }
+	
+	// Check domain against regex
+	$tmp_fqdn = ($domain["domain_host"] != '')?$domain["domain_host"].'.'.$domain["domain_domain"]:$domain["domain_domain"];
+	if(!preg_match("/^([a-z0-9\-]+\.)+[a-z]{2,6}$/ix", $tmp_fqdn)) {
+		$old_domain = addslashes($old_form_data["domain_domain"]);
+        $go_api->db->query("UPDATE isp_isp_domain SET domain_domain = '$old_domain' WHERE doc_id = $doc_id");
+		$status = 'NOTIFY';
+        $errorMessage .= $go_api->lng("Invalid domain name").': "'.$tmp_fqdn.'"';
+	}
 	
 	// Checke, wenn die Domain bereits existiert, es sich also faktisch um eine
     // Sub-Domain handelt, ob der Eigentümer identisch des neuen Eintrages mit dem
