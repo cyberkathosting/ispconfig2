@@ -136,6 +136,20 @@ function remove_blank_lines($input, $file = 1){
   }
 }
 
+function add_trailing_newline($input, $file = 1) {
+  if($file){
+    $content = $this->unix_nl($this->rf($input));
+  } else {
+    $content = $input;
+  }
+  $content .= "\n";
+  if($file){
+    $this->wf($input, $content);
+  } else {
+    return $content;
+  }
+}
+
 function unix_nl($input){
   $output = str_replace("\r\n", "\n", $input);
   $output = str_replace("\r", "\n", $output);

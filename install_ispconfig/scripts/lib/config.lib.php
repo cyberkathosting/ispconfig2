@@ -2213,6 +2213,9 @@ function make_ftp($server_id){
     $mod->file->wf($this->ftp_conf, $vhost_text);
     //Leerzeilen löschen
     $mod->file->remove_blank_lines($this->ftp_conf);
+	
+	// add a blank line at the end of the ispconfig proftpd.conf file.
+	$mod->file->add_trailing_newline($this->ftp_conf);
   }
 
   /*
