@@ -1755,6 +1755,60 @@ clearstatcache();
   $mod->tpl->assign( array( FP_RESOURCE_CONFIG => $fp_resource_config,
                        FP_ACCESS_CONFIG => $fp_access_config));
   $mod->tpl->parse(TABLE, table);
+  
+  /*
+  HERE Add webdav ssl access to /web directories
+*/
+  if ($go_info["server"]["webdav"] == 1) {
+  $myserver = trim(shell_exec("hostname -f"), "\r\n");
+  $webdav = "
+<VirtualHost ".$web["web_ip"].":443>
+	ServerName ".$myserver.":443
+	ServerAdmin webmaster@".$web["web_domain"]."
+	DocumentRoot /var/www/sharedip
+	SetEnvIf User-Agent \".*MSIE.*\" nokeepalive ssl-unclean-shutdown downgrade-1.0 force-response-1.0
+	<IfModule mod_ssl.c>
+		NameVirtualHost ".$myserver.":443
+		SSLEngine on
+		SSLCertificateFile /etc/apache2/ssl/new.cert.cert
+		SSLCertificateKeyFile /etc/apache2/ssl/new.cert.key
+	</IfModule>
+	";
+
+	foreach ($webs as $web)
+	{
+	$webdav_root = $mod->system->server_conf["server_path_httpd_root"]."/"."web".$web["doc_id"]."/"."web";
+	$my_quota = $web["web_speicher"]."000";
+	$webdav .= "Alias /".$web["web_host"].".".$web["web_domain"]." ".$webdav_root;
+	$mod->log("Update QUOTA for ".$web["web_host"].".".$web["web_domain"].": ".$web["web_speicher"]." Mo - Webdav access ".$webdav_root);
+
+	$webdav .= "
+	<Location /".$web["web_host"].".".$web["web_domain"].">
+		DAV On
+		AddType text/plain .html
+		AddType text/plain .htm
+		AddType text/plain .js
+		AddType text/plain .css
+		AddType text/plain .xml
+		AddType text/plain .php
+	   
+		DAVSATMaxAreaSize ".$my_quota."
+		AuthType Basic
+		AuthName \"Data Webdav Access\"
+		Auth_MySQL_DB webdav
+		Auth_MySQL_Password_Table users
+		Auth_MySQL_Username_Field login
+		Auth_MySQL_Password_Field pass
+		Auth_MySQL_Empty_Passwords off
+		Auth_MySQL_Encryption_Types PHP_MD5
+		<Limit PUT POST DELETE PROPFIND PROPPATCH MKCOL COPY MOVE LOCK UNLOCK>
+			Require user ".$web["web_host"].".".$web["web_domain"]."
+		</Limit>
+	</Location>";
+  }
+$webdav .= "
+</VirtualHost>";
+}
 
   if(!empty($webs)){
   $vhost_text = $mod->tpl->fetch();

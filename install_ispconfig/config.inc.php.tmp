@@ -113,6 +113,8 @@ $go_info["server"]["mailman"]["default_mailman_domain"] = "lists.example.com";
 $go_info["server"]["mailman"]["new_list_path"] = "/usr/lib/mailman/bin/newlist";
 $go_info["server"]["mailman"]["config_list_path"] = "/usr/lib/mailman/bin/config_list";
 
+$go_info["server"]["webdav"] = 0;
+
 
 /**********************************************
 * Tools Settings
