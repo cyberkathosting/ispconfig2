@@ -210,7 +210,7 @@ global $go_api, $go_info;
         }
 	
 	// Check domain against regex
-	$tmp_fqdn = ($domain["domain_host"] != '')?$domain["domain_host"].'.'.$domain["domain_domain"]:$domain["domain_domain"];
+	$tmp_fqdn = ($domain["domain_host"] != '' && $domain["domain_host"] != '*')?$domain["domain_host"].'.'.$domain["domain_domain"]:$domain["domain_domain"];
 	if(!preg_match("/^([a-z0-9\-]+\.)+[a-z]{2,6}$/ix", $tmp_fqdn)) {
 		$status = "DELETE";
         $errorMessage .= $go_api->lng("Invalid domain name").': "'.$tmp_fqdn.'"';
@@ -358,10 +358,11 @@ global $go_api, $go_info,$s,$old_form_data;
         }
 	
 	// Check domain against regex
-	$tmp_fqdn = ($domain["domain_host"] != '')?$domain["domain_host"].'.'.$domain["domain_domain"]:$domain["domain_domain"];
+	$tmp_fqdn = ($domain["domain_host"] != '' && $domain["domain_host"] != '*')?$domain["domain_host"].'.'.$domain["domain_domain"]:$domain["domain_domain"];
 	if(!preg_match("/^([a-z0-9\-]+\.)+[a-z]{2,6}$/ix", $tmp_fqdn)) {
 		$old_domain = addslashes($old_form_data["domain_domain"]);
-        $go_api->db->query("UPDATE isp_isp_domain SET domain_domain = '$old_domain' WHERE doc_id = $doc_id");
+		$old_host = addslashes($old_form_data["domain_host"]);
+        $go_api->db->query("UPDATE isp_isp_domain SET domain_domain = '$old_domain', domain_host = '$old_host' WHERE doc_id = $doc_id");
 		$status = 'NOTIFY';
         $errorMessage .= $go_api->lng("Invalid domain name").': "'.$tmp_fqdn.'"';
 	}
