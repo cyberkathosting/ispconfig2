@@ -606,7 +606,7 @@ function soa_update($doc_id, $doctype_id, $die_on_error = '1') {
 	}
 	
 	// Check if the adminmail is valid
-	if ($soa["dns_adminmail"] != '' && !preg_match("/^([a-z0-9\-\@]+\.)+[a-z]{2,6}$/ix", $soa["dns_adminmail"])) {
+	if ($soa["dns_adminmail"] != '' && $soa["dns_adminmail"] != 'root@localhost' && !preg_match("/^([a-z0-9\-\@]+\.)+[a-z]{2,6}$/ix", $soa["dns_adminmail"])) {
 		$old_dns_adminmail = addslashes($old_form_data["dns_adminmail"]);
 		$go_api->db->query("UPDATE dns_isp_dns SET dns_adminmail = '$old_dns_adminmail' where doc_id = '$doc_id'");
         if($die_on_error){
