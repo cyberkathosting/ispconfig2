@@ -62,7 +62,7 @@ $this->sendmail_cw = $server_conf["server_sendmail_cw"];
 
 
 function server_insert($doc_id, $doctype_id) {
-        global $go_api, $go_info;
+        global $go_api, $go_info, $old_form_data;
         $server = $go_api->db->queryOneRecord("SELECT * from isp_server where doc_id = '$doc_id'");
 
         if(substr($server["server_path_httpd_conf"],-1) == "/") $server["server_path_httpd_conf"] = substr($server["server_path_httpd_conf"],0,-1);
@@ -80,6 +80,12 @@ function server_insert($doc_id, $doctype_id) {
         if(!is_link($server["dist_init_scripts"])) $server["dist_init_scripts"] = realpath($server["dist_init_scripts"]);
         if(!is_link($server["dist_runlevel"])) $server["dist_runlevel"] = realpath($server["dist_runlevel"]);
         if(!is_link($server["dist_smrsh"])) $server["dist_smrsh"] = realpath($server["dist_smrsh"]);
+		
+		// Check if the BIND adminmail is valid
+		if ($server["server_bind_adminmail_default"] != 'root@localhost' && !preg_match("/^([a-z0-9\-\@]+\.)+[a-z]{2,6}$/ix", $server["server_bind_adminmail_default"])) {
+			$old_dns_adminmail = addslashes($old_form_data["server_bind_adminmail_default"]);
+			$go_api->db->query("UPDATE isp_server SET server_bind_adminmail_default = '$old_dns_adminmail' where doc_id = '1'");
+		}
 
         $go_api->db->query("UPDATE isp_server SET server_path_httpd_conf = '".$server["server_path_httpd_conf"]."', server_path_httpd_root = '".realpath($server["server_path_httpd_root"])."', server_path_httpd_error = '".$server["server_path_httpd_error"]."', server_bind_zonefile_dir = '".$server["server_bind_zonefile_dir"]."', dist_init_scripts = '".$server["dist_init_scripts"]."', dist_runlevel = '".$server["dist_runlevel"]."', dist_smrsh = '".$server["dist_smrsh"]."' WHERE doc_id = '".$doc_id."'");
 
