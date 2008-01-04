@@ -115,7 +115,7 @@ function server_insert($doc_id, $doctype_id) {
 
 
 function server_update($doc_id, $doctype_id) {
-global $go_api, $go_info;
+		global $go_api, $go_info, $old_form_data;
 
         $server = $go_api->db->queryOneRecord("SELECT * from isp_server where doc_id = '$doc_id'");
 
