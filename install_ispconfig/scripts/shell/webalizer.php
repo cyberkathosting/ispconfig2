@@ -156,7 +156,7 @@ function dir_array($dir){
   $directory_array = array();
   if ($dirstream = @opendir($dir)) {
     while (false !== ($filename = readdir($dirstream))) {
-      if ($filename!="." && $filename!=".."){
+      if ($filename!="." && $filename!=".." && $filename!=".no_delete"){
         if (is_file($dir."/".$filename) && !is_link($dir."/".$filename)){
           $directory_array[$dir."/".$filename] = filemtime($dir."/".$filename);
         }
