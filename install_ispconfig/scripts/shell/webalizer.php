@@ -35,6 +35,10 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 ***************************/
 set_time_limit(0);
 
+//** 1 = Debugging enabled, 0 = Debugging disabled -----------------
+$webalizer_debug = 1;
+// -----------------------------------------------------------------
+
 include("/root/ispconfig/scripts/lib/config.inc.php");
 include("/root/ispconfig/scripts/lib/server.inc.php");
 $server_id = $mod->system->server_id;
@@ -172,17 +176,21 @@ function dir_array($dir){
 $webs = $mod->db->queryAllRecords("SELECT * FROM isp_isp_web");
 if(!empty($webs)){
   foreach($webs as $web){
+    if($webalizer_debug == 1) echo "Domain: $web[web_domain]\n";
     $log_dir = $path_httpd_root."/web".$web["doc_id"]."/log";
     if(is_dir($log_dir)){
+	  if($webalizer_debug == 1) echo "Log Dir: $log_dir\n";
       $max_directory_size = str_replace(",", ".", trim($web["optionen_logsize"]));
       if(strstr($max_directory_size, '%')){
         if($web["web_speicher"] == -1){
           $log_check = false;
+		  if($webalizer_debug == 1) echo "We do not check the logsize as Quota is set to unlimited.\n";
         } else {
           $parts = explode('%', $max_directory_size);
           if(is_numeric(trim($parts[0])) && trim($parts[0]) >= 0){
             $max_directory_size = str_replace(",", ".", $web["web_speicher"]) * 1048576 * floatval($max_directory_size) / 100;
             $log_check = true;
+			if($webalizer_debug == 1) echo "Max Log size: $max_directory_size\n";
           } else {
             $log_check = false;
           }
@@ -192,11 +200,13 @@ if(!empty($webs)){
         if(is_numeric($max_directory_size) && $max_directory_size >= 0){
           $max_directory_size = $max_directory_size * 1048576;
           $log_check = true;
+		  if($webalizer_debug == 1) echo "Max Log size: $max_directory_size\n";
         } else {
           $log_check = false;
         }
       }
       $directory_size = dir_size($log_dir);
+	  if($webalizer_debug == 1) echo "Current Log size: $directory_size\n";
 
       if($log_check){
         while($directory_size >= $max_directory_size){
@@ -206,6 +216,7 @@ if(!empty($webs)){
             $files = array_slice ($files, 0, 1);
             foreach($files as $key => $val){
               if(is_file($key)) unlink($key);
+			  if($webalizer_debug == 1) echo "Deleting logfile $key\n";
             }
           } else {
             break;
