@@ -626,7 +626,7 @@ CREATE TABLE `isp_firewall` (
   `doc_id` bigint(20) NOT NULL auto_increment,
   `doctype_id` bigint(20) NOT NULL default '1025',
   `dienst_name` varchar(255) default NULL,
-  `dienst_port` varchar(10) default NULL,
+  `dienst_port` varchar(11) default NULL,
   `dienst_aktiv` varchar(255) default NULL,
   `dienst_typ` varchar(255) default NULL,
   `status` char(1) default NULL,
