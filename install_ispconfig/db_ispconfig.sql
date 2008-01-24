@@ -627,7 +627,7 @@ CREATE TABLE `isp_firewall` (
   `doc_id` bigint(20) NOT NULL auto_increment,
   `doctype_id` bigint(20) NOT NULL default '1025',
   `dienst_name` varchar(255) default NULL,
-  `dienst_port` varchar(10) default NULL,
+  `dienst_port` varchar(11) default NULL,
   `dienst_aktiv` varchar(255) default NULL,
   `dienst_typ` varchar(255) default NULL,
   `status` char(1) default NULL,
@@ -811,9 +811,9 @@ CREATE TABLE `isp_isp_kunde` (
 
 -- --------------------------------------------------------
 
--- 
+--
 -- Table structure for table `isp_isp_list`
--- 
+--
 
 CREATE TABLE `isp_isp_list` (
   `doc_id` bigint(20) NOT NULL auto_increment,
@@ -827,9 +827,9 @@ CREATE TABLE `isp_isp_list` (
   KEY `doctype_id` (`doctype_id`)
 ) TYPE=MyISAM;
 
--- 
+--
 -- Dumping data for table `isp_isp_list`
--- 
+--
 
 
 -- --------------------------------------------------------
@@ -1588,9 +1588,9 @@ INSERT INTO `sys_dep` (`dep_id`, `userid`, `groupid`, `parent_doc_id`, `parent_d
 
 -- --------------------------------------------------------
 
--- 
+--
 -- Table structure for table `sys_login`
--- 
+--
 
 CREATE TABLE `sys_login` (
   `id` int(10) unsigned NOT NULL auto_increment,
