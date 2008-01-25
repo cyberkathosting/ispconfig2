@@ -27,6 +27,8 @@ NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
 EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
+if(CONFIG_LOADED != 1) die('Direct access not permitted.');
+
 class isp_web
 {
 
@@ -832,6 +834,9 @@ function user_insert($doc_id, $doctype_id) {
       $mod->log->caselog("chown $user_username:mail /var/spool/mail/$user_username &> /dev/null", $this->FILE, __LINE__);
       $mod->log->caselog("chmod 600 /var/spool/mail/$user_username", $this->FILE, __LINE__);
     }
+  } else if ($mod->system->server_conf["use_maildir"] == 2) {
+    // Cyrus IMAP, Mailbox anlegen
+    $mod->cyrus_imap->add($user["user_username"], $user["user_mailquota"]);
   }
 
   // Diskquota setzen
@@ -962,7 +967,11 @@ function user_update($doc_id, $doctype_id) {
       $mod->log->caselog("chown $user_username:mail /var/spool/mail/$user_username &> /dev/null", $this->FILE, __LINE__);
       $mod->log->caselog("chmod 600 /var/spool/mail/$user_username", $this->FILE, __LINE__);
     }
+  } else if ($mod->system->server_conf["use_maildir"] == 2) {
+    // Cyrus IMAP, Mailbox-Quota anpassen
+    $mod->cyrus_imap->update($user["user_username"], $user["user_mailquota"]);
   }
+  exec("whoami >> /root/tempout");
 
   // Gehört User einem Reseller oder dem admin?
   if($reseller = $mod->db->queryOneRecord("SELECT isp_isp_reseller.user_standard_index FROM isp_nodes, isp_isp_reseller WHERE isp_nodes.doc_id = $doc_id AND isp_nodes.doctype_id = '".$doctype_id."' AND isp_nodes.groupid = isp_isp_reseller.reseller_group")){
@@ -1138,6 +1147,17 @@ function user_delete($doc_id, $doctype_id) {
   $mod->db->query("update isp_isp_user SET status = '' where doc_id = '$doc_id'");
   $mod->system->data["isp_isp_user"][$doc_id]["status"] = '';
 }
+
+	function list_delete($doc_id, $doctype_id) {
+		global $mod;
+		
+		$list = $mod->system->data["isp_isp_list"][$doc_id];
+		
+  		if(empty($list)) $mod->log->ext_log("query result empty", 2, $this->FILE, __LINE__);
+
+		$mod->db->query("update isp_isp_list SET status = '' where doc_id = '$doc_id'");
+		$mod->system->data["isp_isp_list"][$doc_id]["status"] = '';
+	}
 
 /////////////////////////////////////////////////////////////////////////////
 // Helper Functions
@@ -1318,17 +1338,17 @@ function make_docroot($doc_id,$hostname,$domainname,$web_quota,$update) {
   if(is_file($crt_file)) exec("chmod 644 $crt_file");
 
   $root_gruppe = $mod->system->root_group();
-  exec("chmod 400 $web_path/user/.no_delete");
+  exec("chmod 1400 $web_path/user/.no_delete");
   exec("chown root:$root_gruppe $web_path/user/.no_delete");
-  exec("chmod 400 $web_path/log/.no_delete");
+  exec("chmod 1400 $web_path/log/.no_delete");
   exec("chown root:$root_gruppe $web_path/log/.no_delete");
-  exec("chmod 400 $web_path/cgi-bin/.no_delete");
+  exec("chmod 1400 $web_path/cgi-bin/.no_delete");
   exec("chown root:$root_gruppe $web_path/cgi-bin/.no_delete");
-  exec("chmod 400 $web_path/ssl/.no_delete");
+  exec("chmod 1400 $web_path/ssl/.no_delete");
   exec("chown root:$root_gruppe $web_path/ssl/.no_delete");
-  exec("chmod 400 $web_path/phptmp/.no_delete");
+  exec("chmod 1400 $web_path/phptmp/.no_delete");
   exec("chown root:$root_gruppe $web_path/phptmp/.no_delete");
-  exec("chmod 400 $web_path/web/error/.no_delete");
+  exec("chmod 1400 $web_path/web/error/.no_delete");
   exec("chown root:$root_gruppe $web_path/web/error/.no_delete");
 
   ////////////// Standard CGIs ////////////////////
@@ -1517,7 +1537,7 @@ Group web".$web["doc_id"];
             if(substr($domain["domain_weiterleitung"],-1) == "/") $domain["domain_weiterleitung"] = substr($domain["domain_weiterleitung"],0,-1);
             $rewrite_rule .= "\nRewriteRule ^/(.*)         ".$domain["domain_weiterleitung"]."/$1 [L,R]";
           } else {
-            if(substr($domain["domain_weiterleitung"],-1) != "/") $domain["domain_weiterleitung"] .= "/";
+            //if(substr($domain["domain_weiterleitung"],-1) != "/") $domain["domain_weiterleitung"] .= "/";
             if(substr($domain["domain_weiterleitung"],0,1) != "/") $domain["domain_weiterleitung"] = "/".$domain["domain_weiterleitung"];
             $rewrite_rule .= "\nRewriteRule   ^/(.*)$  http://".$servername.$domain["domain_weiterleitung"]."$1  [R]";
           }
@@ -1532,23 +1552,44 @@ Group web".$web["doc_id"];
     }
 
     $cgi = "";
-    if($web["web_cgi"] == 1) $cgi = "ScriptAlias  /cgi-bin/ ".$mod->system->server_conf["server_path_httpd_root"]."/"."web".$web["doc_id"]."/"."cgi-bin/
-AddHandler cgi-script .cgi
-AddHandler cgi-script .pl";
+    if ($web["web_cgi"] == 1) {
+        $cgi = "ScriptAlias  /cgi-bin/ ".$mod->system->server_conf["server_path_httpd_root"]."/"."web".$web["doc_id"]."/"."cgi-bin/";
+
+        if ($web["web_cgi_mod_perl"] == 1 && $server["server_httpd_mod_perl"] == 1) {
+            $cgi .= "\nPerlOptions +Enable";
+            $cgi_handler = "\tSetHandler perl-script
+\tPerlResponseHandler ModPerl::Registry
+\tPerlOptions +ParseHeaders";
+        } else {
+            $cgi_handler = "\tSetHandler cgi-script";
+        }
+
+        $cgi .= "\n<Location /cgi-bin>\n$cgi_handler\n</Location>";
+    }
 
     if($web["web_php"]){
       if($apache_version == 1){
         $php = "AddType application/x-httpd-php .php .php3 .php4 .php5";
       }
       if($apache_version == 2){
+                $a2php = $go_info["server"]["apache2_php"];
+                if (!is_array($a2php)) {
+                        $a2php = explode(',', $a2php);
+                }
                   $php = '';
-                if($go_info["server"]["apache2_php"] == 'addtype' or $go_info["server"]["apache2_php"] == 'both' or $go_info["server"]["apache2_php"] == 'suphp') {
+                if (array_search('engine',$a2php) !== false) {
+                        $php .= "php_admin_flag engine on\n";
+                }
+                if ((array_search('addtype',$a2php) !== false) ||
+                    (array_search('both',$a2php) !== false) ||
+                    (array_search('suphp',$a2php) !== false)) {
                         $php .= "AddType application/x-httpd-php .php .php3 .php4 .php5\n";
                 }
-                if ($go_info["server"]["apache2_php"] == 'addhandler') {
+				if ((array_search('addhandler',$a2php) !== false)) {
                         $php .= "AddHandler application/x-httpd-php .php .php3 .php4 .php5\n";
                 }
-                if($go_info["server"]["apache2_php"] == 'filter' or $go_info["server"]["apache2_php"] == 'both') {
+                if ((array_search('filter',$a2php) !== false) ||
+                    (array_search('both',$a2php) !== false)) {
             $php .= "<Files *.php>
     SetOutputFilter PHP
     SetInputFilter PHP
@@ -1567,14 +1608,15 @@ AddHandler cgi-script .pl";
 </Files>";
                 }
       }
-          if($go_info["server"]["apache2_php"] == 'suphp'){
+
+          if(array_search('suphp',$a2php) !== false){
                   $php .= "suPHP_Engine on\n";
                   $php .= "suPHP_UserGroup ".$webadmin." web".$web["doc_id"]."\n";
                   $php .= "AddHandler x-httpd-php .php .php3 .php4 .php5\n";
                   $php .= "suPHP_AddHandler x-httpd-php\n";
           }
 
-          if($go_info["server"]["apache2_php"] != 'suphp') {
+          if(array_search('suphp',$a2php) !== false) {
               if($web["web_php_safe_mode"]){
                 $php .= "\nphp_admin_flag safe_mode On
 php_admin_value open_basedir ".$mod->system->server_conf["server_path_httpd_root"]."/"."web".$web["doc_id"]."/
@@ -1587,6 +1629,15 @@ php_admin_value session.save_path ".$mod->system->server_conf["server_path_httpd
         }
     } else {
       $php = "";
+      if($apache_version == 2){
+        $a2php = $go_info["server"]["apache2_php"];
+        if (!is_array($a2php)) {
+          $a2php = explode(',', $a2php);
+        }
+        if (array_search('engine',$a2php) !== false) {
+          $php .= "php_admin_flag engine off\n";
+        }
+      }
     }
 
     if($web["web_ssi"]){
@@ -1625,6 +1676,16 @@ AddType image/vnd.wap.wbmp .wbmp";
    if($apache_version == 2){
      $error_alias = "Alias /error/ \"".$document_root."/error/\"";
    }
+
+  ////////////// Web Statistics ////////////////////
+  $stats_alias = "";
+  
+   if($web["web_stats"] == "awstats"){
+     $stats_alias = "Alias /stats \"".$document_root."/awstats\"";
+   } elseif ($web["web_stats"] == "webalizer") {
+     $stats_alias = "Alias /stats \"".$document_root."/webalizer\"";
+   }
+  ////////////// END of Web Statistics ////////////////////
 
   ////////////// Error Pages ////////////////////
    if($web["web_individual_error_pages"]){
@@ -1688,6 +1749,7 @@ ErrorLog ".$mod->system->server_conf["server_path_httpd_root"]."/web".$web["doc_
 SSLEngine on
 SSLCertificateFile ".$mod->system->server_conf["server_path_httpd_root"]."/web".$web["doc_id"]."/ssl/".$web["web_host"].".".$web["web_domain"].".crt
 SSLCertificateKeyFile ".$mod->system->server_conf["server_path_httpd_root"]."/web".$web["doc_id"]."/ssl/".$web["web_host"].".".$web["web_domain"].".key
+".$stats_alias."
 ".$error_alias."
 ".$error."
 AliasMatch ^/~([^/]+)(/(.*))? ".$mod->system->server_conf["server_path_httpd_root"]."/web".$web["doc_id"]."/user/$1/web/$3
@@ -1720,6 +1782,7 @@ clearstatcache();
                         PHP => $php,
                         SSI => $ssi,
                         WAP => $wap,
+                        STATSALIAS => $stats_alias,
                         ERRORALIAS => $error_alias,
                         ERROR => $error,
                         WEB => "web".$web["doc_id"],
@@ -2713,7 +2776,23 @@ function web_user_clean(){
           }
           $mod->system->deluser($item["name"]);
           $mod->db->query("DELETE FROM del_status WHERE id = '".$item["id"]."'");
+
+          if ($mod->system->server_conf["use_maildir"] == 2) {
+            // Cyrus IMAP, Mailbox lï¿½schen
+            $mod->cyrus_imap->del($item["name"]);
+          }
+
+          $mod->etc->delete_user_config_dir($item["name"]);
       break;
+      case 1033:
+      	// Liste Lï¿½schen
+      	$rmlist_path = "/usr/lib/mailman/bin/rmlist";
+		
+      	$list_name = $item["name"];
+
+		// Liste lï¿½schen
+		$mod->log->caselog("$rmlist_path $list_name", $this->FILE, __LINE__);
+		$mod->db->query("DELETE FROM del_status WHERE id = '".$item["id"]."'");
       }
     }
   }
