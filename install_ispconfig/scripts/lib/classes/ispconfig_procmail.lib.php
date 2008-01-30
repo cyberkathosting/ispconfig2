@@ -56,7 +56,11 @@ function make_forward($doc_id) {
   } else {
     $datei = $web_path."/user/".$user_username."/.forward";
   }
-  $mod->log->caselog("cp -f /root/ispconfig/isp/conf/forward.master $datei", $this->FILE, __LINE__);
+  if(is_file('/root/ispconfig/isp/conf/customized_templates/forward.master')){
+    $mod->log->caselog("cp -f /root/ispconfig/isp/conf/customized_templates/forward.master $datei", $this->FILE, __LINE__);
+  } else {
+    $mod->log->caselog("cp -f /root/ispconfig/isp/conf/forward.master $datei", $this->FILE, __LINE__);
+  }
   exec("chown $user_username:web$web_doc_id $datei &> /dev/null");
   exec("chmod 600 $datei");
 
@@ -297,8 +301,11 @@ function make_recipes($doc_id) {
 
   //quota.rc erstellen
   $datei3 = $web_path."/user/".$user_username."/.quota.rc";
-  $mod->file->wf($datei3, $mod->file->rf($go_info["isp"]["server_root"].'/isp/conf/quota.rc.master'));
-
+  if(is_file($go_info["isp"]["server_root"].'/isp/conf/customized_templates/quota.rc.master')){
+    $mod->file->wf($datei3, $mod->file->rf($go_info["isp"]["server_root"].'/isp/conf/customized_templates/quota.rc.master'));
+  } else {
+    $mod->file->wf($datei3, $mod->file->rf($go_info["isp"]["server_root"].'/isp/conf/quota.rc.master'));
+  }
   exec("chown root:$root_gruppe $datei3 &> /dev/null");
   exec("chmod 644 $datei3");
 
@@ -363,19 +370,35 @@ function make_recipes($doc_id) {
   exec("chown root:$root_gruppe $datei6 &> /dev/null");
   exec("chmod 644 $datei6");
 
-  exec("cp -f /root/ispconfig/isp/conf/html-trap.rc.master ".$recipe_dir."/.html-trap.rc");
+  if(is_file('/root/ispconfig/isp/conf/customized_templates/html-trap.rc.master')){
+    exec("cp -f /root/ispconfig/isp/conf/customized_templates/html-trap.rc.master ".$recipe_dir."/.html-trap.rc");
+  } else {
+    exec("cp -f /root/ispconfig/isp/conf/html-trap.rc.master ".$recipe_dir."/.html-trap.rc");
+  }
   exec("chown root:".$root_gruppe." ".$recipe_dir."/.html-trap.rc &> /dev/null");
   exec("chmod 644 ".$recipe_dir."/.html-trap.rc");
 
-  exec("cp -f /root/ispconfig/isp/conf/local-rules.rc.master ".$recipe_dir."/.local-rules.rc");
+  if(is_file('/root/ispconfig/isp/conf/customized_templates/local-rules.rc.master')){
+    exec("cp -f /root/ispconfig/isp/conf/customized_templates/local-rules.rc.master ".$recipe_dir."/.local-rules.rc");
+  } else {
+    exec("cp -f /root/ispconfig/isp/conf/local-rules.rc.master ".$recipe_dir."/.local-rules.rc");
+  }
   exec("chown root:".$root_gruppe." ".$recipe_dir."/.local-rules.rc &> /dev/null");
   exec("chmod 644 ".$recipe_dir."/.local-rules.rc");
 
-  exec("cp -f /root/ispconfig/isp/conf/mailsize.rc.master ".$recipe_dir."/.mailsize.rc");
+  if(is_file('/root/ispconfig/isp/conf/customized_templates/mailsize.rc.master')){
+    exec("cp -f /root/ispconfig/isp/conf/customized_templates/mailsize.rc.master ".$recipe_dir."/.mailsize.rc");
+  } else {
+    exec("cp -f /root/ispconfig/isp/conf/mailsize.rc.master ".$recipe_dir."/.mailsize.rc");
+  }
   exec("chown root:".$root_gruppe." ".$recipe_dir."/.mailsize.rc &> /dev/null");
   exec("chmod 644 ".$recipe_dir."/.mailsize.rc");
 
-  exec("cp -f /root/ispconfig/isp/conf/antivirus.rc.master ".$recipe_dir."/.antivirus.rc");
+  if(is_file('/root/ispconfig/isp/conf/customized_templates/antivirus.rc.master')){
+    exec("cp -f /root/ispconfig/isp/conf/customized_templates/antivirus.rc.master ".$recipe_dir."/.antivirus.rc");
+  } else {
+    exec("cp -f /root/ispconfig/isp/conf/antivirus.rc.master ".$recipe_dir."/.antivirus.rc");
+  }
   exec("chown root:".$root_gruppe." ".$recipe_dir."/.antivirus.rc &> /dev/null");
   exec("chmod 644 ".$recipe_dir."/.antivirus.rc");
 }
