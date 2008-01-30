@@ -187,6 +187,7 @@ function make_zonefile($doc_id) {
 
   foreach($arecords as $arecord){
 
+    if(trim($arecord["host"]) == '') $arecord["host"] = $dns["dns_soa"].'.';
     // Variablen zuweisen
     $mod->tpl->assign( array( 'A_HOST' => $arecord["host"],
                          'A_IP' => $arecord["ip_adresse"]));
@@ -291,7 +292,7 @@ function make_zonefile($doc_id) {
       $mod->system->chown($bind_file."~", $mod->system->server_conf["server_bind_user"], $mod->system->server_conf["server_bind_group"]);
     }
     $mod->file->wf($bind_file, $zonefile_text);
-	$mod->file->add_trailing_newline($bind_file);
+        $mod->file->add_trailing_newline($bind_file);
     $bind_restart = 1;
   } else {
     $bind_restart = 0;
