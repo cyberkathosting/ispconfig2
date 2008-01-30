@@ -338,7 +338,7 @@ DocumentRoot "/home/admispconfig/ispconfig/web"
 # directory if a ~user request is received.
 #
 <IfModule mod_userdir.c>
-    UserDir public_html
+    UserDir disabled
 </IfModule>
 
 #
@@ -505,7 +505,8 @@ CustomLog /root/ispconfig/httpd/logs/access_log common
 # Set to "EMail" to also include a mailto: link to the ServerAdmin.
 # Set to one of:  On | Off | EMail
 #
-ServerSignature On
+ServerSignature Off
+ServerTokens Prod
 
 # EBCDIC configuration:
 # (only for mainframes using the EBCDIC codeset, currently one of:
