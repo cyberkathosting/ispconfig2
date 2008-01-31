@@ -65,7 +65,7 @@ if($keep_yesterday_backup == 1) {
 // Create the backup
 $umask_orig = umask();
 umask("0077");
-exec("tar --exclude=$backup_file -czf $backup_file $backup_data 2>/dev/null");
+exec("tar --exclude=$backup_file -pczf $backup_file $backup_data 2>/dev/null");
 umask($umask_orig);
 
 // Store backup on FTP server
