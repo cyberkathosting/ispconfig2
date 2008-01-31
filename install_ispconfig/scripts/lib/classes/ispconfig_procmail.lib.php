@@ -321,7 +321,7 @@ function make_recipes($doc_id) {
     $spam_comment = "";
   }
 
-  if(substr($go_info->server_conf["dist"],0,3) == 'mdk' || substr($go_info->server_conf["dist"],0,3) == 'mdr'){
+  if(is_file('/home/admispconfig/ispconfig/tools/spamassassin/usr/local/bin/spamassassin')){
     $spamassassin_path = '/home/admispconfig/ispconfig/tools/spamassassin/usr/local/bin/spamassassin';
   } else {
     $spamassassin_path = '/home/admispconfig/ispconfig/tools/spamassassin/usr/bin/spamassassin';
