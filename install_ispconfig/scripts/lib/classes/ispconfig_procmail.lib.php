@@ -321,9 +321,16 @@ function make_recipes($doc_id) {
     $spam_comment = "";
   }
 
+  if(substr($go_info->server_conf["dist"],0,3) == 'mdk' || substr($go_info->server_conf["dist"],0,3) == 'mdr'){
+    $spamassassin_path = '/home/admispconfig/ispconfig/tools/spamassassin/usr/local/bin/spamassassin';
+  } else {
+    $spamassassin_path = '/home/admispconfig/ispconfig/tools/spamassassin/usr/bin/spamassassin';
+  }
+
   // Variablen zuweisen
   $mod->tpl->assign( array(PREFS_FILE => $recipe_dir."/.user_prefs",
                            SPAM_COMMENT => $spam_comment,
+                           SPAMASSASSIN_PATH => $spamassassin_path,
                            USERNAME => $user_username));
 
   $mod->tpl->parse(TABLE, table);

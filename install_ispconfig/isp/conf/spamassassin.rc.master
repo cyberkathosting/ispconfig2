@@ -8,7 +8,7 @@
 # SpamAssassin to its knees.
 :0fw
 * < 256000
-| /home/admispconfig/ispconfig/tools/spamassassin/usr/bin/spamassassin --prefs-file={PREFS_FILE}
+| {SPAMASSASSIN_PATH} --prefs-file={PREFS_FILE}
 
 # Mails with a score of 15 or higher are almost certainly spam (with 0.05%
 # false positives according to rules/STATISTICS.txt). Let's put them in a
