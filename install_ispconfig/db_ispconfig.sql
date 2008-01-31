@@ -647,8 +647,9 @@ INSERT INTO `isp_firewall` (`doc_id`, `doctype_id`, `dienst_name`, `dienst_port`
 INSERT INTO `isp_firewall` (`doc_id`, `doctype_id`, `dienst_name`, `dienst_port`, `dienst_aktiv`, `dienst_typ`, `status`) VALUES (6, 1025, 'WWW', '80', 'ja', 'tcp', NULL);
 INSERT INTO `isp_firewall` (`doc_id`, `doctype_id`, `dienst_name`, `dienst_port`, `dienst_aktiv`, `dienst_typ`, `status`) VALUES (7, 1025, 'ISPConfig', '81', 'ja', 'tcp', '');
 INSERT INTO `isp_firewall` (`doc_id`, `doctype_id`, `dienst_name`, `dienst_port`, `dienst_aktiv`, `dienst_typ`, `status`) VALUES (8, 1025, 'POP3', '110', 'ja', 'tcp', NULL);
-INSERT INTO `isp_firewall` (`doc_id`, `doctype_id`, `dienst_name`, `dienst_port`, `dienst_aktiv`, `dienst_typ`, `status`) VALUES (9, 1025, 'SSL (www)', '443', 'ja', 'tcp', NULL);
-INSERT INTO `isp_firewall` (`doc_id`, `doctype_id`, `dienst_name`, `dienst_port`, `dienst_aktiv`, `dienst_typ`, `status`) VALUES (10, 1025, 'Webmin', '10000', 'ja', 'tcp', NULL);
+INSERT INTO `isp_firewall` (`doc_id`, `doctype_id`, `dienst_name`, `dienst_port`, `dienst_aktiv`, `dienst_typ`, `status`) VALUES (9, 1025, 'IMAP2', '143', 'ja', 'tcp', NULL);
+INSERT INTO `isp_firewall` (`doc_id`, `doctype_id`, `dienst_name`, `dienst_port`, `dienst_aktiv`, `dienst_typ`, `status`) VALUES (10, 1025, 'SSL (www)', '443', 'ja', 'tcp', NULL);
+INSERT INTO `isp_firewall` (`doc_id`, `doctype_id`, `dienst_name`, `dienst_port`, `dienst_aktiv`, `dienst_typ`, `status`) VALUES (11, 1025, 'Webmin', '10000', 'ja', 'tcp', NULL);
 
 -- --------------------------------------------------------
 
