@@ -11,6 +11,8 @@ EMAIL=`formail -zxTo:`
               | formail -rD 8192 {PFAD}/.vacation.cache
 
                 :0 ehc         # if the name was not in the cache
+                * ! ^X-Spam-Flag: YES
+                # don't autoreply to potential spam
                 | (formail -rI"From: {EMAIL_ADDRESS}" -I"Precedence: junk" \
                      -A"X-Loop: ${EMAIL}" ; \
                    cat {PFAD}/.vacation.msg \
