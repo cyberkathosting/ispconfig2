@@ -497,4 +497,8 @@ $wb["txt_res_traffic_notification_email_variables"] = '<table border="0" cellpad
         </tr>
         </table>';
 
+$wb["txt_global_stats"] = "<b>Global Webalizer Website Statistics Login</b>";
+$wb["txt_global_stats_user"] = "Global Statistics User";
+$wb["txt_global_stats_password"] = "Password";
+
 ?>
