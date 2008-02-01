@@ -36,5 +36,6 @@ $wb["txt_accept"] = "sprejmi";
 $wb["txt_discard"] = "zavrni";
 $wb["txt_language"] = "Jezik";
 $wb["txt_no_mailuser_login"] = "Prijava je deaktivirana za vašo stran.";
+$wb["txt_keep_local_copy"] = 'Keep Copy';
 
 ?>

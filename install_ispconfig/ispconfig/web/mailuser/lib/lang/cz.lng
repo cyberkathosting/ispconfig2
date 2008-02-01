@@ -43,5 +43,6 @@ $wb["txt_spam_blacklist"] = 'Èerná listina';
 $wb["txt_hint_spam_whitelist"] = '<b>Tip:</b> Jednu adresu na øádek. Platné adresy jsou napøíklad: kamarad@netmania.cz, *@example.com, nebo *.example.net.';
 $wb["txt_hint_spam_blacklist"] = '<b>Tip:</b> Jednu adresu na øádek. Platné adresy jsou napøíklad: zlyspamer@netmania.cz, *@example.com, nebo *.example.net.';
 $wb["txt_uribl"] = 'Pou¾ívat <a href="http://www.uribl.com/about.shtml" target="_blank">URIBL</a>';
+$wb["txt_keep_local_copy"] = 'Ponechat kopii';
 
 ?>

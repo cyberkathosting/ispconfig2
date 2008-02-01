@@ -42,6 +42,7 @@ $wb["txt_spam_whitelist"] = 'Lista blanca de Spam';
 $wb["txt_spam_blacklist"] = 'Lista negra de Spam';
 $wb["txt_hint_spam_whitelist"] = '<b>Atención:</b> Una entrada por línea. Ejemplos de entradas válidas: fulanito@dominio.com, *@isp.com, o *.dominio.net.';
 $wb["txt_hint_spam_blacklist"] = '<b>Atención:</b> Una entrada por línea. Ejemplos de entradas válidas: fulanito@dominio.com, *@isp.com, o *.dominio.net.';
-$wb["txt_uribl"] = 'Utilizar <a href="http://www.uribl.com/about.shtml" target="_blank">URIBL</a>'; 
+$wb["txt_uribl"] = 'Utilizar <a href="http://www.uribl.com/about.shtml" target="_blank">URIBL</a>';
+$wb["txt_keep_local_copy"] = 'Mantener una copia';
 
 ?>

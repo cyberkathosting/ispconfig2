@@ -43,5 +43,6 @@ $wb["txt_spam_blacklist"] = 'Spam-Blacklist';
 $wb["txt_hint_spam_whitelist"] = '<b>Hinweis:</b> Ein Eintrag pro Zeile. Gültige Einträge sind z.B. friend@somewhere.com, *@isp.com oder *.domain.net.';
 $wb["txt_hint_spam_blacklist"] = '<b>Hinweis:</b> Ein Eintrag pro Zeile. Gültige Einträge sind z.B. friend@somewhere.com, *@isp.com oder *.domain.net.';
 $wb["txt_uribl"] = '<a href="http://www.uribl.com/about.shtml" target="_blank">URIBL</a> nutzen';
+$wb["txt_keep_local_copy"] = 'Kopie speichern';
 
 ?>

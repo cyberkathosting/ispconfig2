@@ -42,6 +42,7 @@ $wb["txt_spam_whitelist"] = 'Spam engedély lista';
 $wb["txt_spam_blacklist"] = 'Spam tiltó lista';
 $wb["txt_hint_spam_whitelist"] = '<b>Hint:</b> Egy bejegyzés soronként. Érvényes bejegyzések például: friend@somewhere.com, *@isp.com vagy *.domain.net.';
 $wb["txt_hint_spam_blacklist"] = '<b>Hint:</b> Egy bejegyzés soronként. Érvényes bejegyzések például: friend@somewhere.com, *@isp.com vagy *.domain.net.';
-$wb["txt_uribl"] = '<a href="http://www.uribl.com/about.shtml" target="_blank">URIBL</a> engedélyezése'; 
+$wb["txt_uribl"] = '<a href="http://www.uribl.com/about.shtml" target="_blank">URIBL</a> engedélyezése';
+$wb["txt_keep_local_copy"] = 'Keep Copy';
 
 ?>

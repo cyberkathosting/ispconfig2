@@ -43,5 +43,6 @@ $wb["txt_spam_blacklist"] = 'Spam Crna lista';
 $wb["txt_hint_spam_whitelist"] = '<b>Napomena:</b> Jedan upis po liniji. Važeæi upisi su, na primer, friend@somewhere.com, *@isp.com, or *.domain.net.';
 $wb["txt_hint_spam_blacklist"] = '<b>Napomena:</b> Jedan upis po liniji. Važeæi upisi su, na primer, friend@somewhere.com, *@isp.com, or *.domain.net.';
 $wb["txt_uribl"] = 'Koristi <a href="http://www.uribl.com/about.shtml" target="_blank">URIBL</a>';
+$wb["txt_keep_local_copy"] = 'Keep Copy';
 
 ?>

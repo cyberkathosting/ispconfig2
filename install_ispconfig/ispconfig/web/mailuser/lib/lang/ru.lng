@@ -42,6 +42,7 @@ $wb["txt_spam_whitelist"] = 'Белый Спам-Список';
 $wb["txt_spam_blacklist"] = 'Черный Спам-Список';
 $wb["txt_hint_spam_whitelist"] = '<b>Подсказка:</b> Одна запись на строчку. Правильными записями, например, являются friend@somewhere.com, *@isp.com, или *.domain.net.';
 $wb["txt_hint_spam_blacklist"] = '<b>Подсказка:</b> Одна запись на строчку. Правильными записями, например, являются friend@somewhere.com, *@isp.com, или *.domain.net.';
-$wb["txt_uribl"] = 'Используйте <a href="http://www.uribl.com/about.shtml" target="_blank">URIBL</a>'; 
+$wb["txt_uribl"] = 'Используйте <a href="http://www.uribl.com/about.shtml" target="_blank">URIBL</a>';
+$wb["txt_keep_local_copy"] = 'Сохранять Копию';
 
 ?>

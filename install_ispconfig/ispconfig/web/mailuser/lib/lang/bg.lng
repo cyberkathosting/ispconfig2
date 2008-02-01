@@ -42,6 +42,7 @@ $wb["txt_spam_whitelist"] = 'Спам Бялалиста';
 $wb["txt_spam_blacklist"] = 'Спам Черналиста';
 $wb["txt_hint_spam_whitelist"] = '<b>Съвет:</b> Един запис на линия. Валидни записи са, за пример, friend@somewhere.com, *@isp.com, or *.domain.net.';
 $wb["txt_hint_spam_blacklist"] = '<b>Съвет:</b> Един запис на линия. Валидни записи са, за пример, friend@somewhere.com, *@isp.com, or *.domain.net.';
-$wb["txt_uribl"] = 'Use <a href="http://www.uribl.com/about.shtml" target="_blank">URIBL</a>'; 
+$wb["txt_uribl"] = 'Use <a href="http://www.uribl.com/about.shtml" target="_blank">URIBL</a>';
+$wb["txt_keep_local_copy"] = 'Keep Copy';
 
 ?>
