@@ -113,15 +113,15 @@ Your web site has been suspended for the rest of this month!';
               $message = str_replace("%%%INCLUDED_TRAFFIC%%%", number_format($web['web_traffic'], 2, '.', '').'MB', $message);
               $message = str_replace("%%%TOTAL_TRAFFIC%%%", number_format(($total_traffic/1048576), 2, '.', '').'MB', $message);
             }
-            $headers  = "From: ".$absender_name." <".$absender_email.">\r\n";
-            if($bcc != "" && eregi("[0-9a-z]([-_.]?[0-9a-z])*@[0-9a-z]([-.]?[0-9a-z])*\\.[a-z]{2,6}$", $bcc) && !strstr($bcc, " ") && !strstr($bcc, "!") && !strstr($bcc, "?") && !strstr($bcc, "\"") && !strstr($bcc, "(") && !strstr($bcc, ")") && !strstr($bcc, "[") && !strstr($bcc, "]") && !strstr($bcc, "{") && !strstr($bcc, "}") && !strstr($bcc, "/") && !strstr($bcc, "#")) $headers .= "Bcc: ".$bcc."\r\n";
-            $headers .= "Reply-To: <".$absender_email.">\r\n";
-            $headers .= "X-Sender: <".$absender_email.">\r\n";
-            $headers .= "X-Mailer: PHP4\r\n"; //mailer
-            $headers .= "X-Priority: 3\r\n"; //1 UrgentMessage, 3 Normal
-            $headers .= "Return-Path: <".$absender_email.">\r\n";
-            $headers .= "MIME-Version: 1.0\r\n";
-            $headers .= "Content-Type: text/plain\r\n";
+            $headers  = "From: ".$absender_name." <".$absender_email.">\n";
+            if($bcc != "" && eregi("[0-9a-z]([-_.]?[0-9a-z])*@[0-9a-z]([-.]?[0-9a-z])*\\.[a-z]{2,6}$", $bcc) && !strstr($bcc, " ") && !strstr($bcc, "!") && !strstr($bcc, "?") && !strstr($bcc, "\"") && !strstr($bcc, "(") && !strstr($bcc, ")") && !strstr($bcc, "[") && !strstr($bcc, "]") && !strstr($bcc, "{") && !strstr($bcc, "}") && !strstr($bcc, "/") && !strstr($bcc, "#")) $headers .= "Bcc: ".$bcc."\n";
+            $headers .= "Reply-To: <".$absender_email.">\n";
+            $headers .= "X-Sender: <".$absender_email.">\n";
+            $headers .= "X-Mailer: PHP4\n"; //mailer
+            $headers .= "X-Priority: 3\n"; //1 UrgentMessage, 3 Normal
+            $headers .= "Return-Path: <".$absender_email.">\n";
+            $headers .= "MIME-Version: 1.0\n";
+            $headers .= "Content-Type: text/plain\n";
             mail($kunde["kunde_email"], $subject, $message, $headers);
           }
         }
@@ -157,15 +157,15 @@ However, your web site will stay online, but you might have to pay for the extra
             $message = str_replace("%%%INCLUDED_TRAFFIC%%%", number_format($web['web_traffic'], 2, '.', '').'MB', $message);
             $message = str_replace("%%%TOTAL_TRAFFIC%%%", number_format(($total_traffic/1048576), 2, '.', '').'MB', $message);
           }
-          $headers  = "From: ".$absender_name." <".$absender_email.">\r\n";
-          if($bcc != "" && eregi("[0-9a-z]([-_.]?[0-9a-z])*@[0-9a-z]([-.]?[0-9a-z])*\\.[a-z]{2,6}$", $bcc) && !strstr($bcc, " ") && !strstr($bcc, "!") && !strstr($bcc, "?") && !strstr($bcc, "\"") && !strstr($bcc, "(") && !strstr($bcc, ")") && !strstr($bcc, "[") && !strstr($bcc, "]") && !strstr($bcc, "{") && !strstr($bcc, "}") && !strstr($bcc, "/") && !strstr($bcc, "#")) $headers .= "Bcc: ".$bcc."\r\n";
-          $headers .= "Reply-To: <".$absender_email.">\r\n";
-          $headers .= "X-Sender: <".$absender_email.">\r\n";
-          $headers .= "X-Mailer: PHP4\r\n"; //mailer
-          $headers .= "X-Priority: 3\r\n"; //1 UrgentMessage, 3 Normal
-          $headers .= "Return-Path: <".$absender_email.">\r\n";
-          $headers .= "MIME-Version: 1.0\r\n";
-          $headers .= "Content-Type: text/plain\r\n";
+          $headers  = "From: ".$absender_name." <".$absender_email.">\n";
+          if($bcc != "" && eregi("[0-9a-z]([-_.]?[0-9a-z])*@[0-9a-z]([-.]?[0-9a-z])*\\.[a-z]{2,6}$", $bcc) && !strstr($bcc, " ") && !strstr($bcc, "!") && !strstr($bcc, "?") && !strstr($bcc, "\"") && !strstr($bcc, "(") && !strstr($bcc, ")") && !strstr($bcc, "[") && !strstr($bcc, "]") && !strstr($bcc, "{") && !strstr($bcc, "}") && !strstr($bcc, "/") && !strstr($bcc, "#")) $headers .= "Bcc: ".$bcc."\n";
+          $headers .= "Reply-To: <".$absender_email.">\n";
+          $headers .= "X-Sender: <".$absender_email.">\n";
+          $headers .= "X-Mailer: PHP4\n"; //mailer
+          $headers .= "X-Priority: 3\n"; //1 UrgentMessage, 3 Normal
+          $headers .= "Return-Path: <".$absender_email.">\n";
+          $headers .= "MIME-Version: 1.0\n";
+          $headers .= "Content-Type: text/plain\n";
           mail($kunde["kunde_email"], $subject, $message, $headers);
         }
       break;
@@ -219,15 +219,15 @@ All your web sites have been suspended until the end of this month!';
               $message = str_replace("%%%INCLUDED_TRAFFIC%%%", number_format($reseller['limit_traffic'], 2, '.', '').'MB', $message);
               $message = str_replace("%%%TOTAL_TRAFFIC%%%", number_format(($total_traffic/1048576), 2, '.', '').'MB', $message);
             }
-            $headers  = "From: ".$absender_name." <".$absender_email.">\r\n";
-            if($bcc != "" && eregi("[0-9a-z]([-_.]?[0-9a-z])*@[0-9a-z]([-.]?[0-9a-z])*\\.[a-z]{2,6}$", $bcc) && !strstr($bcc, " ") && !strstr($bcc, "!") && !strstr($bcc, "?") && !strstr($bcc, "\"") && !strstr($bcc, "(") && !strstr($bcc, ")") && !strstr($bcc, "[") && !strstr($bcc, "]") && !strstr($bcc, "{") && !strstr($bcc, "}") && !strstr($bcc, "/") && !strstr($bcc, "#")) $headers .= "Bcc: ".$bcc."\r\n";
-            $headers .= "Reply-To: <".$absender_email.">\r\n";
-            $headers .= "X-Sender: <".$absender_email.">\r\n";
-            $headers .= "X-Mailer: PHP4\r\n"; //mailer
-            $headers .= "X-Priority: 3\r\n"; //1 UrgentMessage, 3 Normal
-            $headers .= "Return-Path: <".$absender_email.">\r\n";
-            $headers .= "MIME-Version: 1.0\r\n";
-            $headers .= "Content-Type: text/plain\r\n";
+            $headers  = "From: ".$absender_name." <".$absender_email.">\n";
+            if($bcc != "" && eregi("[0-9a-z]([-_.]?[0-9a-z])*@[0-9a-z]([-.]?[0-9a-z])*\\.[a-z]{2,6}$", $bcc) && !strstr($bcc, " ") && !strstr($bcc, "!") && !strstr($bcc, "?") && !strstr($bcc, "\"") && !strstr($bcc, "(") && !strstr($bcc, ")") && !strstr($bcc, "[") && !strstr($bcc, "]") && !strstr($bcc, "{") && !strstr($bcc, "}") && !strstr($bcc, "/") && !strstr($bcc, "#")) $headers .= "Bcc: ".$bcc."\n";
+            $headers .= "Reply-To: <".$absender_email.">\n";
+            $headers .= "X-Sender: <".$absender_email.">\n";
+            $headers .= "X-Mailer: PHP4\n"; //mailer
+            $headers .= "X-Priority: 3\n"; //1 UrgentMessage, 3 Normal
+            $headers .= "Return-Path: <".$absender_email.">\n";
+            $headers .= "MIME-Version: 1.0\n";
+            $headers .= "Content-Type: text/plain\n";
             mail($reseller["email"], $subject, $message, $headers);
           }
 
@@ -255,15 +255,15 @@ However, your web sites will stay online, but you might have to pay for the extr
               $message = str_replace("%%%INCLUDED_TRAFFIC%%%", number_format($reseller['limit_traffic'], 2, '.', '').'MB', $message);
               $message = str_replace("%%%TOTAL_TRAFFIC%%%", number_format(($total_traffic/1048576), 2, '.', '').'MB', $message);
             }
-            $headers  = "From: ".$absender_name." <".$absender_email.">\r\n";
-            if($bcc != "" && eregi("[0-9a-z]([-_.]?[0-9a-z])*@[0-9a-z]([-.]?[0-9a-z])*\\.[a-z]{2,6}$", $bcc) && !strstr($bcc, " ") && !strstr($bcc, "!") && !strstr($bcc, "?") && !strstr($bcc, "\"") && !strstr($bcc, "(") && !strstr($bcc, ")") && !strstr($bcc, "[") && !strstr($bcc, "]") && !strstr($bcc, "{") && !strstr($bcc, "}") && !strstr($bcc, "/") && !strstr($bcc, "#")) $headers .= "Bcc: ".$bcc."\r\n";
-            $headers .= "Reply-To: <".$absender_email.">\r\n";
-            $headers .= "X-Sender: <".$absender_email.">\r\n";
-            $headers .= "X-Mailer: PHP4\r\n"; //mailer
-            $headers .= "X-Priority: 3\r\n"; //1 UrgentMessage, 3 Normal
-            $headers .= "Return-Path: <".$absender_email.">\r\n";
-            $headers .= "MIME-Version: 1.0\r\n";
-            $headers .= "Content-Type: text/plain\r\n";
+            $headers  = "From: ".$absender_name." <".$absender_email.">\n";
+            if($bcc != "" && eregi("[0-9a-z]([-_.]?[0-9a-z])*@[0-9a-z]([-.]?[0-9a-z])*\\.[a-z]{2,6}$", $bcc) && !strstr($bcc, " ") && !strstr($bcc, "!") && !strstr($bcc, "?") && !strstr($bcc, "\"") && !strstr($bcc, "(") && !strstr($bcc, ")") && !strstr($bcc, "[") && !strstr($bcc, "]") && !strstr($bcc, "{") && !strstr($bcc, "}") && !strstr($bcc, "/") && !strstr($bcc, "#")) $headers .= "Bcc: ".$bcc."\n";
+            $headers .= "Reply-To: <".$absender_email.">\n";
+            $headers .= "X-Sender: <".$absender_email.">\n";
+            $headers .= "X-Mailer: PHP4\n"; //mailer
+            $headers .= "X-Priority: 3\n"; //1 UrgentMessage, 3 Normal
+            $headers .= "Return-Path: <".$absender_email.">\n";
+            $headers .= "MIME-Version: 1.0\n";
+            $headers .= "Content-Type: text/plain\n";
             mail($reseller["email"], $subject, $message, $headers);
           }
 
