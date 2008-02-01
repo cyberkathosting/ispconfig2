@@ -38,5 +38,6 @@ $wb["txt_language"] = "Limba";
 $wb["txt_no_mailuser_login"] = "Loginul este dezactivat pentru pagina dumneavoastra web.";
 $wb["txt_forwarder"] = "Innaintare";
 $wb["txt_forwarder_desc"] = "<b>Indiciu:</b> Un email pe linie.";
+$wb["txt_keep_local_copy"] = 'Pastreaza copie';
 
 ?>

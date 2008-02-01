@@ -42,6 +42,7 @@ $wb["txt_spam_whitelist"] = 'Λευκή λίστα Spam';
 $wb["txt_spam_blacklist"] = 'Μαύρη λίστα Spam';
 $wb["txt_hint_spam_whitelist"] = '<b>Σύσταση:</b> Μια εγγραφή ανά γραμμή. Έγκυρες εγγραφές είναι, π.χ. friend@somewhere.com, *@isp.com, or *.domain.net.';
 $wb["txt_hint_spam_blacklist"] = '<b>Σύσταση:</b> Μια εγγραφή ανά γραμμή. Έγκυρες εγγραφές είναι, π.χ. friend@somewhere.com, *@isp.com, or *.domain.net.';
-$wb["txt_uribl"] = 'Χρήση <a href="http://www.uribl.com/about.shtml" target="_blank">URIBL</a>'; 
+$wb["txt_uribl"] = 'Χρήση <a href="http://www.uribl.com/about.shtml" target="_blank">URIBL</a>';
+$wb["txt_keep_local_copy"] = 'Δημιουργία αντιγράφου';
 
 ?>

@@ -54,5 +54,6 @@ $wb["txt_spam_blacklist"] = 'Spam-Blacklist';
 $wb["txt_hint_spam_whitelist"] = '<b>Hint:</b> En adresse pr. linie. Gyldige adresser er f.eks., friend@somewhere.com, *@isp.com, eller *.domain.net.';
 $wb["txt_hint_spam_blacklist"] = '<b>Hint:</b> En adresse pr. linie. Gyldige adresser er f.eks., friend@somewhere.com, *@isp.com, eller *.domain.net.';
 $wb["txt_uribl"] = 'Brug <a href="http://www.uribl.com/about.shtml" target="_blank">URIBL</a>';
+$wb["txt_keep_local_copy"] = 'Behold Kopi';
 
 ?>

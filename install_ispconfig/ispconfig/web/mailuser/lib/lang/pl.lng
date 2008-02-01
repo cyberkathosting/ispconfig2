@@ -51,5 +51,7 @@ $wb["txt_spam_whitelist"] = 'Bia³a lista spamu';
 $wb["txt_spam_blacklist"] = 'Czarna lista spamu';
 $wb["txt_hint_spam_whitelist"] = '<b>Podpowied¼:</b> Jeden wpis na jedn± liniê. Takimi wpisami s± np. przyjaciel@gdzies.pl, *@isp.pl, or *.domena.net.';
 $wb["txt_hint_spam_blacklist"] = '<b>Podpowied¼:</b> Jeden wpis na jedn± liniê. Takimi wpisami s± np. przyjaciel@gdzies.pl, *@isp.pl, or *.domena.net.';
-$wb["txt_uribl"] = 'U¿yj <a href="http://www.uribl.com/about.shtml" target="_blank">URIBL</a>'; 
+$wb["txt_uribl"] = 'U¿yj <a href="http://www.uribl.com/about.shtml" target="_blank">URIBL</a>';
+$wb["txt_keep_local_copy"] = 'Zachowaj kopiê';
+
 ?>
