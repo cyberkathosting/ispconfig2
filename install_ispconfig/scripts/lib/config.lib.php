@@ -1410,9 +1410,14 @@ Group web".$web["doc_id"];
     }
 
     $cgi = "";
+    if($web["web_cgi"] == 1) $cgi = "Alias  /cgi-bin/ ".$mod->system->server_conf["server_path_httpd_root"]."/"."web".$web["doc_id"]."/"."cgi-bin/
+AddHandler cgi-script .cgi
+AddHandler cgi-script .pl";
+    /*
     if($web["web_cgi"] == 1) $cgi = "ScriptAlias  /cgi-bin/ ".$mod->system->server_conf["server_path_httpd_root"]."/"."web".$web["doc_id"]."/"."cgi-bin/
 AddHandler cgi-script .cgi
 AddHandler cgi-script .pl";
+    */
 
     if($web["web_php"]){
       if($apache_version == 1){
