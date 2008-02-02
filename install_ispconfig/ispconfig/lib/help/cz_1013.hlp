@@ -12,6 +12,7 @@ $hlp["web_speicher"] = "Místo na disku pro tento web. Napøíklad 2 pro 2 MB disko
 $hlp["web_traffic"] = "Specifikujte mno¾ství pøenesených dat v cenì pro tento web (napø. 2000 MB).";
 $hlp["web_cgi"] = "Aktivovat CGI pro tento web.";
 $hlp["web_php"] = "Aktivovat PHP pro tento web.";
+$hlp["web_ruby"] = "Aktivovat Ruby pro tento web.";
 $hlp["web_ssi"] = "Aktivovat SSI pro tento web.";
 $hlp["web_ftp"] = "Aktivovat FTP pøístup pro tento web.";
 $hlp["web_frontpage"] = "Aktivovat Frontpage roz¹íøení pro tento web.";

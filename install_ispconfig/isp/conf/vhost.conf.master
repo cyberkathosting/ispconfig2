@@ -30,6 +30,7 @@ DocumentRoot {DOCUMENTROOT}
 {CGI}
 ErrorLog {WEB_ERROR_LOG}
 {PHP}
+{RUBY}
 {SSI}
 {WAP}
 {ERRORALIAS}

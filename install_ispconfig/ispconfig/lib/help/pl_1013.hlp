@@ -13,6 +13,7 @@ $hlp["web_speicher"] = "Proszê podac ilo¶c przestrzeni dyskowej dla strony www. 
 $hlp["web_traffic"] = "Proszê sprecyzowaæ ile transferu jest przeznaczone na strone www (np. 5000 MB).";
 $hlp["web_cgi"] = "W³±czamy obs³ugê skryptów CGI.";
 $hlp["web_php"] = "W³±czamy obs³ugê skryptów PHP.";
+$hlp["web_ruby"] = "W³±czamy obs³ugê skryptów Ruby.";
 $hlp["web_ssi"] = "W³±czamy obs³ugê SSI.";
 $hlp["web_ftp"] = "W³±czamy dostêp do FTP dla tej strony .";
 $hlp["web_frontpage"] = "W³±czamy obs³ugê rozszerzeñ Frontpage.";

@@ -731,14 +731,14 @@ function user_insert($doc_id, $doctype_id) {
   $mod->procmail->make_forward($doc_id);
   $mod->procmail->make_procmailrc($doc_id);
   $mod->procmail->make_recipes($doc_id);
-  
+
   // Spamassassin directory anlegen
   if(!is_dir($web_path."/user/".$user_username."/.spamassassin")) {
-  	mkdir($web_path."/user/".$user_username."/.spamassassin", 0700);
-	$mod->log->caselog("chown ".$user_username.":web".$web_doc_id." ".$web_path."/user/".$user_username."/.spamassassin");
+          mkdir($web_path."/user/".$user_username."/.spamassassin", 0700);
+        $mod->log->caselog("chown ".$user_username.":web".$web_doc_id." ".$web_path."/user/".$user_username."/.spamassassin");
   }
   if(!is_link($web_path."/user/".$user_username."/.spamassassin/user_prefs")) {
-  	symlink($web_path."/user/".$user_username."/.user_prefs",$web_path."/user/".$user_username."/.spamassassin/user_prefs");
+          symlink($web_path."/user/".$user_username."/.user_prefs",$web_path."/user/".$user_username."/.spamassassin/user_prefs");
   }
   if($user["user_admin"]) {
     $mod->file->rmdirr($web_path."/.spamassassin");
@@ -918,14 +918,14 @@ function user_update($doc_id, $doctype_id) {
   $mod->procmail->make_forward($doc_id);
   $mod->procmail->make_procmailrc($doc_id);
   $mod->procmail->make_recipes($doc_id);
-  
+
   // Spamassassin directory anlegen
   if(!is_dir($web_path."/user/".$user_username."/.spamassassin")) {
-  	mkdir($web_path."/user/".$user_username."/.spamassassin", 0700);
-	$mod->log->caselog("chown ".$user_username.":web".$web_doc_id." ".$web_path."/user/".$user_username."/.spamassassin");
+          mkdir($web_path."/user/".$user_username."/.spamassassin", 0700);
+        $mod->log->caselog("chown ".$user_username.":web".$web_doc_id." ".$web_path."/user/".$user_username."/.spamassassin");
   }
   if(!is_link($web_path."/user/".$user_username."/.spamassassin/user_prefs")) {
-  	symlink($web_path."/user/".$user_username."/.user_prefs",$web_path."/user/".$user_username."/.spamassassin/user_prefs");
+          symlink($web_path."/user/".$user_username."/.user_prefs",$web_path."/user/".$user_username."/.spamassassin/user_prefs");
   }
   if($user["user_admin"]) {
     $mod->file->rmdirr($web_path."/.spamassassin");
@@ -1291,8 +1291,8 @@ function make_vhost($server_id) {
 
   foreach($ips as $ip){
     //$ip_test = $mod->db->queryAllRecords("SELECT * FROM isp_isp_web,isp_nodes WHERE isp_isp_web.web_ip = '".$ip["server_ip"]."' AND isp_isp_web.server_id = '$server_id' AND isp_nodes.doc_id = isp_isp_web.doc_id AND isp_nodes.doctype_id = '".$this->web_doctype_id."' AND isp_nodes.status = '1'");
-	$ip_test = 1;
-	
+        $ip_test = 1;
+
       //NameVirtualHost schreiben
       if(!empty($ip_test)){
         // Variablen zuweisen
@@ -1384,8 +1384,8 @@ Group web".$web["doc_id"];
         if(!empty($domain["domain_weiterleitung"])){
           if($domain["domain_host"] == "") {
             $rewrite_cond_url = str_replace(".", "\\.", $domain["domain_domain"]);
-		  } elseif ($domain["domain_host"] == "*") {
-		  	$rewrite_cond_url = "(.*)\.".str_replace(".", "\\.", $domain["domain_domain"]);
+                  } elseif ($domain["domain_host"] == "*") {
+                          $rewrite_cond_url = "(.*)\.".str_replace(".", "\\.", $domain["domain_domain"]);
           } else {
             $rewrite_cond_url = str_replace(".", "\\.", $domain["domain_host"].".".$domain["domain_domain"]);
           }
@@ -1465,6 +1465,25 @@ php_admin_value session.save_path ".$mod->system->server_conf["server_path_httpd
         }
     } else {
       $php = "";
+    }
+
+    $ruby = '';
+    if($web["web_ruby"]){
+      $ruby = '<IfModule mod_ruby.c>
+  <Directory '.$document_root.'>
+    Options +ExecCGI
+  </Directory>
+  RubyRequire apache/ruby-run
+  #RubySafeLevel 0
+  <Files *.rb>
+    SetHandler ruby-object
+    RubyHandler Apache::RubyRun.instance
+  </Files>
+  <Files *.rbx>
+    SetHandler ruby-object
+    RubyHandler Apache::RubyRun.instance
+  </Files>
+</IfModule>';
     }
 
     if($web["web_ssi"]){
@@ -1561,6 +1580,7 @@ DocumentRoot ".$document_root."
 ".$cgi."
 ErrorLog ".$mod->system->server_conf["server_path_httpd_root"]."/web".$web["doc_id"]."/log/error.log
 ".$php."
+".$ruby."
 ".$ssi."
 ".$wap."
 SSLEngine on
@@ -1596,6 +1616,7 @@ clearstatcache();
                         WEB_ERROR_LOG => $mod->system->server_conf["server_path_httpd_root"]."/web".$web["doc_id"]."/log/error.log",
                         SERVERADMIN => "webmaster@".$web["web_domain"],
                         PHP => $php,
+                        RUBY => $ruby,
                         SSI => $ssi,
                         WAP => $wap,
                         ERRORALIAS => $error_alias,
@@ -1619,6 +1640,7 @@ clearstatcache();
                         WEB_ERROR_LOG => "",
                         SERVERADMIN => "",
                         PHP => "",
+                        RUBY => "",
                         SSI => "",
                         WAP => "",
                         ERRORALIAS => "",
@@ -1635,7 +1657,7 @@ clearstatcache();
   $mod->tpl->assign( array( FP_RESOURCE_CONFIG => $fp_resource_config,
                        FP_ACCESS_CONFIG => $fp_access_config));
   $mod->tpl->parse(TABLE, table);
-  
+
   /*
   HERE Add webdav ssl access to /web directories
 */
@@ -1643,48 +1665,48 @@ clearstatcache();
   $myserver = trim(shell_exec("hostname -f"), "\r\n");
   $webdav = "
 <VirtualHost ".$web["web_ip"].":443>
-	ServerName ".$myserver.":443
-	ServerAdmin webmaster@".$web["web_domain"]."
-	DocumentRoot /var/www/sharedip
-	SetEnvIf User-Agent \".*MSIE.*\" nokeepalive ssl-unclean-shutdown downgrade-1.0 force-response-1.0
-	<IfModule mod_ssl.c>
-		NameVirtualHost ".$myserver.":443
-		SSLEngine on
-		SSLCertificateFile /etc/apache2/ssl/new.cert.cert
-		SSLCertificateKeyFile /etc/apache2/ssl/new.cert.key
-	</IfModule>
-	";
+        ServerName ".$myserver.":443
+        ServerAdmin webmaster@".$web["web_domain"]."
+        DocumentRoot /var/www/sharedip
+        SetEnvIf User-Agent \".*MSIE.*\" nokeepalive ssl-unclean-shutdown downgrade-1.0 force-response-1.0
+        <IfModule mod_ssl.c>
+                NameVirtualHost ".$myserver.":443
+                SSLEngine on
+                SSLCertificateFile /etc/apache2/ssl/new.cert.cert
+                SSLCertificateKeyFile /etc/apache2/ssl/new.cert.key
+        </IfModule>
+        ";
 
-	foreach ($webs as $web)
-	{
-	$webdav_root = $mod->system->server_conf["server_path_httpd_root"]."/"."web".$web["doc_id"]."/"."web";
-	$my_quota = $web["web_speicher"]."000";
-	$webdav .= "Alias /".$web["web_host"].".".$web["web_domain"]." ".$webdav_root;
-	$mod->log("Update QUOTA for ".$web["web_host"].".".$web["web_domain"].": ".$web["web_speicher"]." Mo - Webdav access ".$webdav_root);
+        foreach ($webs as $web)
+        {
+        $webdav_root = $mod->system->server_conf["server_path_httpd_root"]."/"."web".$web["doc_id"]."/"."web";
+        $my_quota = $web["web_speicher"]."000";
+        $webdav .= "Alias /".$web["web_host"].".".$web["web_domain"]." ".$webdav_root;
+        $mod->log("Update QUOTA for ".$web["web_host"].".".$web["web_domain"].": ".$web["web_speicher"]." Mo - Webdav access ".$webdav_root);
 
-	$webdav .= "
-	<Location /".$web["web_host"].".".$web["web_domain"].">
-		DAV On
-		AddType text/plain .html
-		AddType text/plain .htm
-		AddType text/plain .js
-		AddType text/plain .css
-		AddType text/plain .xml
-		AddType text/plain .php
-	   
-		DAVSATMaxAreaSize ".$my_quota."
-		AuthType Basic
-		AuthName \"Data Webdav Access\"
-		Auth_MySQL_DB webdav
-		Auth_MySQL_Password_Table users
-		Auth_MySQL_Username_Field login
-		Auth_MySQL_Password_Field pass
-		Auth_MySQL_Empty_Passwords off
-		Auth_MySQL_Encryption_Types PHP_MD5
-		<Limit PUT POST DELETE PROPFIND PROPPATCH MKCOL COPY MOVE LOCK UNLOCK>
-			Require user ".$web["web_host"].".".$web["web_domain"]."
-		</Limit>
-	</Location>";
+        $webdav .= "
+        <Location /".$web["web_host"].".".$web["web_domain"].">
+                DAV On
+                AddType text/plain .html
+                AddType text/plain .htm
+                AddType text/plain .js
+                AddType text/plain .css
+                AddType text/plain .xml
+                AddType text/plain .php
+
+                DAVSATMaxAreaSize ".$my_quota."
+                AuthType Basic
+                AuthName \"Data Webdav Access\"
+                Auth_MySQL_DB webdav
+                Auth_MySQL_Password_Table users
+                Auth_MySQL_Username_Field login
+                Auth_MySQL_Password_Field pass
+                Auth_MySQL_Empty_Passwords off
+                Auth_MySQL_Encryption_Types PHP_MD5
+                <Limit PUT POST DELETE PROPFIND PROPPATCH MKCOL COPY MOVE LOCK UNLOCK>
+                        Require user ".$web["web_host"].".".$web["web_domain"]."
+                </Limit>
+        </Location>";
   }
 $webdav .= "
 </VirtualHost>";
@@ -2100,9 +2122,9 @@ function make_ftp($server_id){
     $mod->file->wf($this->ftp_conf, $vhost_text);
     //Leerzeilen löschen
     $mod->file->remove_blank_lines($this->ftp_conf);
-	
-	// add a blank line at the end of the ispconfig proftpd.conf file.
-	$mod->file->add_trailing_newline($this->ftp_conf);
+
+        // add a blank line at the end of the ispconfig proftpd.conf file.
+        $mod->file->add_trailing_newline($this->ftp_conf);
   }
 
   /*
