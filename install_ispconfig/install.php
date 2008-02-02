@@ -993,6 +993,11 @@ $conf = rf("mailstats/.forward");
 $conf = str_replace("{PROCMAIL}", $procmail, $conf);
 wf($pfad."/.forward", $conf);
 
+if(is_file('/etc/suphp.conf')) exec("mv /etc/suphp.conf /etc/suphp.conf_".$datum);
+$conf = rf("suphp.conf");
+$conf = str_replace("{APACHE_USER}", $dist_http_user, $conf);
+wf("/etc/suphp.conf", $conf);
+
 exec("cp -f mailstats/.procmailrc $pfad");
 mkdirs($pfad."/mailstats");
 mkdirs($pfad."/ispconfig");
