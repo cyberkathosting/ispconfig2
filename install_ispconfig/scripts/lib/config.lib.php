@@ -99,7 +99,7 @@ function TYPO3_install() {
   mysql_select_db($res['arg4']);
   $sql = "SHOW TABLES";
   $result = mysql_query($sql);
-   
+
   if (!$result) {
     echo "DB Error, could not list tables\n";
     echo 'MySQL Error: ' . mysql_error();
@@ -126,7 +126,7 @@ function TYPO3_install() {
     foreach ($files as $f) {
       if (($f != ".") and ($f != "..") and ($f != "error") and ($f != "stats")) {
 //        echo "File: $f\n";
-        shell_exec('rm -rf '.$webpath.$f); 
+        shell_exec('rm -rf '.$webpath.$f);
       }
     }
   }
@@ -858,14 +858,14 @@ function user_insert($doc_id, $doctype_id) {
   $mod->procmail->make_forward($doc_id);
   $mod->procmail->make_procmailrc($doc_id);
   $mod->procmail->make_recipes($doc_id);
-  
+
   // Spamassassin directory anlegen
   if(!is_dir($web_path."/user/".$user_username."/.spamassassin")) {
-  	mkdir($web_path."/user/".$user_username."/.spamassassin", 0700);
-	$mod->log->caselog("chown ".$user_username.":web".$web_doc_id." ".$web_path."/user/".$user_username."/.spamassassin");
+          mkdir($web_path."/user/".$user_username."/.spamassassin", 0700);
+        $mod->log->caselog("chown ".$user_username.":web".$web_doc_id." ".$web_path."/user/".$user_username."/.spamassassin");
   }
   if(!is_link($web_path."/user/".$user_username."/.spamassassin/user_prefs")) {
-  	symlink($web_path."/user/".$user_username."/.user_prefs",$web_path."/user/".$user_username."/.spamassassin/user_prefs");
+          symlink($web_path."/user/".$user_username."/.user_prefs",$web_path."/user/".$user_username."/.spamassassin/user_prefs");
   }
   if($user["user_admin"]) {
     $mod->file->rmdirr($web_path."/.spamassassin");
@@ -1049,14 +1049,14 @@ function user_update($doc_id, $doctype_id) {
   $mod->procmail->make_forward($doc_id);
   $mod->procmail->make_procmailrc($doc_id);
   $mod->procmail->make_recipes($doc_id);
-  
+
   // Spamassassin directory anlegen
   if(!is_dir($web_path."/user/".$user_username."/.spamassassin")) {
-  	mkdir($web_path."/user/".$user_username."/.spamassassin", 0700);
-	$mod->log->caselog("chown ".$user_username.":web".$web_doc_id." ".$web_path."/user/".$user_username."/.spamassassin");
+          mkdir($web_path."/user/".$user_username."/.spamassassin", 0700);
+        $mod->log->caselog("chown ".$user_username.":web".$web_doc_id." ".$web_path."/user/".$user_username."/.spamassassin");
   }
   if(!is_link($web_path."/user/".$user_username."/.spamassassin/user_prefs")) {
-  	symlink($web_path."/user/".$user_username."/.user_prefs",$web_path."/user/".$user_username."/.spamassassin/user_prefs");
+          symlink($web_path."/user/".$user_username."/.user_prefs",$web_path."/user/".$user_username."/.spamassassin/user_prefs");
   }
   if($user["user_admin"]) {
     $mod->file->rmdirr($web_path."/.spamassassin");
@@ -1148,16 +1148,16 @@ function user_delete($doc_id, $doctype_id) {
   $mod->system->data["isp_isp_user"][$doc_id]["status"] = '';
 }
 
-	function list_delete($doc_id, $doctype_id) {
-		global $mod;
-		
-		$list = $mod->system->data["isp_isp_list"][$doc_id];
-		
-  		if(empty($list)) $mod->log->ext_log("query result empty", 2, $this->FILE, __LINE__);
+        function list_delete($doc_id, $doctype_id) {
+                global $mod;
 
-		$mod->db->query("update isp_isp_list SET status = '' where doc_id = '$doc_id'");
-		$mod->system->data["isp_isp_list"][$doc_id]["status"] = '';
-	}
+                $list = $mod->system->data["isp_isp_list"][$doc_id];
+
+                  if(empty($list)) $mod->log->ext_log("query result empty", 2, $this->FILE, __LINE__);
+
+                $mod->db->query("update isp_isp_list SET status = '' where doc_id = '$doc_id'");
+                $mod->system->data["isp_isp_list"][$doc_id]["status"] = '';
+        }
 
 /////////////////////////////////////////////////////////////////////////////
 // Helper Functions
@@ -1433,8 +1433,8 @@ function make_vhost($server_id) {
 
   foreach($ips as $ip){
     // $ip_test = $mod->db->queryAllRecords("SELECT * FROM isp_isp_web,isp_nodes WHERE isp_isp_web.web_ip = '".$ip["server_ip"]."' AND isp_isp_web.server_id = '$server_id' AND isp_nodes.doc_id = isp_isp_web.doc_id AND isp_nodes.doctype_id = '".$this->web_doctype_id."' AND isp_nodes.status = '1'");
-	$ip_test = 1;
-	
+        $ip_test = 1;
+
       //NameVirtualHost schreiben
       if(!empty($ip_test)){
         // Variablen zuweisen
@@ -1526,8 +1526,8 @@ Group web".$web["doc_id"];
         if(!empty($domain["domain_weiterleitung"])){
           if($domain["domain_host"] == "") {
             $rewrite_cond_url = str_replace(".", "\\.", $domain["domain_domain"]);
-		  } elseif ($domain["domain_host"] == "*") {
-		  	$rewrite_cond_url = "(.*)\.".str_replace(".", "\\.", $domain["domain_domain"]);
+                  } elseif ($domain["domain_host"] == "*") {
+                          $rewrite_cond_url = "(.*)\.".str_replace(".", "\\.", $domain["domain_domain"]);
           } else {
             $rewrite_cond_url = str_replace(".", "\\.", $domain["domain_host"].".".$domain["domain_domain"]);
           }
@@ -1553,7 +1553,10 @@ Group web".$web["doc_id"];
 
     $cgi = "";
     if ($web["web_cgi"] == 1) {
-        $cgi = "ScriptAlias  /cgi-bin/ ".$mod->system->server_conf["server_path_httpd_root"]."/"."web".$web["doc_id"]."/"."cgi-bin/";
+        //$cgi = "ScriptAlias  /cgi-bin/ ".$mod->system->server_conf["server_path_httpd_root"]."/"."web".$web["doc_id"]."/"."cgi-bin/";
+        $cgi = "Alias  /cgi-bin/ ".$mod->system->server_conf["server_path_httpd_root"]."/"."web".$web["doc_id"]."/"."cgi-bin/
+AddHandler cgi-script .cgi
+AddHandler cgi-script .pl";
 
         if ($web["web_cgi_mod_perl"] == 1 && $server["server_httpd_mod_perl"] == 1) {
             $cgi .= "\nPerlOptions +Enable";
@@ -1585,7 +1588,7 @@ Group web".$web["doc_id"];
                     (array_search('suphp',$a2php) !== false)) {
                         $php .= "AddType application/x-httpd-php .php .php3 .php4 .php5\n";
                 }
-				if ((array_search('addhandler',$a2php) !== false)) {
+                                if ((array_search('addhandler',$a2php) !== false)) {
                         $php .= "AddHandler application/x-httpd-php .php .php3 .php4 .php5\n";
                 }
                 if ((array_search('filter',$a2php) !== false) ||
@@ -1679,7 +1682,7 @@ AddType image/vnd.wap.wbmp .wbmp";
 
   ////////////// Web Statistics ////////////////////
   $stats_alias = "";
-  
+
    if($web["web_stats"] == "awstats"){
      $stats_alias = "Alias /stats \"".$document_root."/awstats\"";
    } elseif ($web["web_stats"] == "webalizer") {
@@ -1820,7 +1823,7 @@ clearstatcache();
   $mod->tpl->assign( array( FP_RESOURCE_CONFIG => $fp_resource_config,
                        FP_ACCESS_CONFIG => $fp_access_config));
   $mod->tpl->parse(TABLE, table);
-  
+
   /*
   HERE Add webdav ssl access to /web directories
 */
@@ -1828,48 +1831,48 @@ clearstatcache();
   $myserver = trim(shell_exec("hostname -f"), "\r\n");
   $webdav = "
 <VirtualHost ".$web["web_ip"].":443>
-	ServerName ".$myserver.":443
-	ServerAdmin webmaster@".$web["web_domain"]."
-	DocumentRoot /var/www/sharedip
-	SetEnvIf User-Agent \".*MSIE.*\" nokeepalive ssl-unclean-shutdown downgrade-1.0 force-response-1.0
-	<IfModule mod_ssl.c>
-		NameVirtualHost ".$myserver.":443
-		SSLEngine on
-		SSLCertificateFile /etc/apache2/ssl/new.cert.cert
-		SSLCertificateKeyFile /etc/apache2/ssl/new.cert.key
-	</IfModule>
-	";
+        ServerName ".$myserver.":443
+        ServerAdmin webmaster@".$web["web_domain"]."
+        DocumentRoot /var/www/sharedip
+        SetEnvIf User-Agent \".*MSIE.*\" nokeepalive ssl-unclean-shutdown downgrade-1.0 force-response-1.0
+        <IfModule mod_ssl.c>
+                NameVirtualHost ".$myserver.":443
+                SSLEngine on
+                SSLCertificateFile /etc/apache2/ssl/new.cert.cert
+                SSLCertificateKeyFile /etc/apache2/ssl/new.cert.key
+        </IfModule>
+        ";
 
-	foreach ($webs as $web)
-	{
-	$webdav_root = $mod->system->server_conf["server_path_httpd_root"]."/"."web".$web["doc_id"]."/"."web";
-	$my_quota = $web["web_speicher"]."000";
-	$webdav .= "Alias /".$web["web_host"].".".$web["web_domain"]." ".$webdav_root;
-	$mod->log("Update QUOTA for ".$web["web_host"].".".$web["web_domain"].": ".$web["web_speicher"]." Mo - Webdav access ".$webdav_root);
+        foreach ($webs as $web)
+        {
+        $webdav_root = $mod->system->server_conf["server_path_httpd_root"]."/"."web".$web["doc_id"]."/"."web";
+        $my_quota = $web["web_speicher"]."000";
+        $webdav .= "Alias /".$web["web_host"].".".$web["web_domain"]." ".$webdav_root;
+        $mod->log("Update QUOTA for ".$web["web_host"].".".$web["web_domain"].": ".$web["web_speicher"]." Mo - Webdav access ".$webdav_root);
 
-	$webdav .= "
-	<Location /".$web["web_host"].".".$web["web_domain"].">
-		DAV On
-		AddType text/plain .html
-		AddType text/plain .htm
-		AddType text/plain .js
-		AddType text/plain .css
-		AddType text/plain .xml
-		AddType text/plain .php
-	   
-		DAVSATMaxAreaSize ".$my_quota."
-		AuthType Basic
-		AuthName \"Data Webdav Access\"
-		Auth_MySQL_DB webdav
-		Auth_MySQL_Password_Table users
-		Auth_MySQL_Username_Field login
-		Auth_MySQL_Password_Field pass
-		Auth_MySQL_Empty_Passwords off
-		Auth_MySQL_Encryption_Types PHP_MD5
-		<Limit PUT POST DELETE PROPFIND PROPPATCH MKCOL COPY MOVE LOCK UNLOCK>
-			Require user ".$web["web_host"].".".$web["web_domain"]."
-		</Limit>
-	</Location>";
+        $webdav .= "
+        <Location /".$web["web_host"].".".$web["web_domain"].">
+                DAV On
+                AddType text/plain .html
+                AddType text/plain .htm
+                AddType text/plain .js
+                AddType text/plain .css
+                AddType text/plain .xml
+                AddType text/plain .php
+
+                DAVSATMaxAreaSize ".$my_quota."
+                AuthType Basic
+                AuthName \"Data Webdav Access\"
+                Auth_MySQL_DB webdav
+                Auth_MySQL_Password_Table users
+                Auth_MySQL_Username_Field login
+                Auth_MySQL_Password_Field pass
+                Auth_MySQL_Empty_Passwords off
+                Auth_MySQL_Encryption_Types PHP_MD5
+                <Limit PUT POST DELETE PROPFIND PROPPATCH MKCOL COPY MOVE LOCK UNLOCK>
+                        Require user ".$web["web_host"].".".$web["web_domain"]."
+                </Limit>
+        </Location>";
   }
 $webdav .= "
 </VirtualHost>";
@@ -2278,9 +2281,9 @@ function make_ftp($server_id){
     $mod->file->wf($this->ftp_conf, $vhost_text);
     //Leerzeilen löschen
     $mod->file->remove_blank_lines($this->ftp_conf);
-	
-	// add a blank line at the end of the ispconfig proftpd.conf file.
-	$mod->file->add_trailing_newline($this->ftp_conf);
+
+        // add a blank line at the end of the ispconfig proftpd.conf file.
+        $mod->file->add_trailing_newline($this->ftp_conf);
   }
 
   /*
@@ -2785,14 +2788,14 @@ function web_user_clean(){
           $mod->etc->delete_user_config_dir($item["name"]);
       break;
       case 1033:
-      	// Liste Lï¿½schen
-      	$rmlist_path = "/usr/lib/mailman/bin/rmlist";
-		
-      	$list_name = $item["name"];
+              // Liste Lï¿½schen
+              $rmlist_path = "/usr/lib/mailman/bin/rmlist";
 
-		// Liste lï¿½schen
-		$mod->log->caselog("$rmlist_path $list_name", $this->FILE, __LINE__);
-		$mod->db->query("DELETE FROM del_status WHERE id = '".$item["id"]."'");
+              $list_name = $item["name"];
+
+                // Liste lï¿½schen
+                $mod->log->caselog("$rmlist_path $list_name", $this->FILE, __LINE__);
+                $mod->db->query("DELETE FROM del_status WHERE id = '".$item["id"]."'");
       }
     }
   }
