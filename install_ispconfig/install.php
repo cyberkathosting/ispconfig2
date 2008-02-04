@@ -997,6 +997,10 @@ if(is_file('/etc/suphp.conf')) exec("mv /etc/suphp.conf /etc/suphp.conf_".$datum
 $conf = rf("suphp.conf");
 $conf = str_replace("{APACHE_USER}", $dist_http_user, $conf);
 wf("/etc/suphp.conf", $conf);
+if(is_file('/etc/suphp/suphp.conf')){
+  exec("mv /etc/suphp/suphp.conf /etc/suphp/suphp.conf_".$datum);
+  symlink('/etc/suphp.conf', '/etc/suphp/suphp.conf');
+}
 
 exec("cp -f mailstats/.procmailrc $pfad");
 mkdirs($pfad."/mailstats");
