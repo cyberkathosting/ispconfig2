@@ -1100,7 +1100,7 @@ fi  ## install_art == install
   . /root/ispconfig/dist.info
   rm -f mysql_config
 
-  chmod 755 /home/admispconfig/ispconfig/tools/suphp/usr/bin/php5-wrapper
+  chmod 755 /home/admispconfig/ispconfig/tools/suphp/usr/bin/php-wrapper
 
   # Restore custom templates
   mkdir -p /root/ispconfig/isp/conf/customized_templates &> /dev/null
