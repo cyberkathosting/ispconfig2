@@ -1519,6 +1519,7 @@ INSERT INTO `sys_dep` (`dep_id`, `userid`, `groupid`, `parent_doc_id`, `parent_d
 INSERT INTO `sys_dep` (`dep_id`, `userid`, `groupid`, `parent_doc_id`, `parent_doctype_id`, `parent_tree_id`, `child_doc_id`, `child_doctype_id`, `child_tree_id`, `status`) VALUES (11, 1, 0, 1, 1023, 15, 8, 1025, 31, 1);
 INSERT INTO `sys_dep` (`dep_id`, `userid`, `groupid`, `parent_doc_id`, `parent_doctype_id`, `parent_tree_id`, `child_doc_id`, `child_doctype_id`, `child_tree_id`, `status`) VALUES (12, 1, 0, 1, 1023, 15, 9, 1025, 32, 1);
 INSERT INTO `sys_dep` (`dep_id`, `userid`, `groupid`, `parent_doc_id`, `parent_doctype_id`, `parent_tree_id`, `child_doc_id`, `child_doctype_id`, `child_tree_id`, `status`) VALUES (13, 1, 0, 1, 1023, 15, 10, 1025, 33, 1);
+INSERT INTO `sys_dep` (`dep_id`, `userid`, `groupid`, `parent_doc_id`, `parent_doctype_id`, `parent_tree_id`, `child_doc_id`, `child_doctype_id`, `child_tree_id`, `status`) VALUES (14, 1, 0, 1, 1023, 15, 11, 1025, 34, 1);
 
 -- --------------------------------------------------------
 
@@ -1633,6 +1634,7 @@ INSERT INTO `sys_nodes` (`tree_id`, `userid`, `groupid`, `parent`, `type`, `doct
 INSERT INTO `sys_nodes` (`tree_id`, `userid`, `groupid`, `parent`, `type`, `doctype_id`, `status`, `icon`, `modul`, `doc_id`, `title`) VALUES (31, 1, 0, '', 'a', 1025, '1', '', '', 8, '');
 INSERT INTO `sys_nodes` (`tree_id`, `userid`, `groupid`, `parent`, `type`, `doctype_id`, `status`, `icon`, `modul`, `doc_id`, `title`) VALUES (32, 1, 0, '', 'a', 1025, '1', '', '', 9, '');
 INSERT INTO `sys_nodes` (`tree_id`, `userid`, `groupid`, `parent`, `type`, `doctype_id`, `status`, `icon`, `modul`, `doc_id`, `title`) VALUES (33, 1, 0, '', 'a', 1025, '1', '', '', 10, '');
+INSERT INTO `sys_nodes` (`tree_id`, `userid`, `groupid`, `parent`, `type`, `doctype_id`, `status`, `icon`, `modul`, `doc_id`, `title`) VALUES (34, 1, 0, '', 'a', 1025, '1', '', '', 11, '');
 INSERT INTO `sys_nodes` (`tree_id`, `userid`, `groupid`, `parent`, `type`, `doctype_id`, `status`, `icon`, `modul`, `doc_id`, `title`) VALUES (35, 1, 0, '', 'a', 1023, '1', '', '', 2, '');
 INSERT INTO `sys_nodes` (`tree_id`, `userid`, `groupid`, `parent`, `type`, `doctype_id`, `status`, `icon`, `modul`, `doc_id`, `title`) VALUES (36, 1, 0, '', 'a', 1023, '1', '', '', 3, '');
 INSERT INTO `sys_nodes` (`tree_id`, `userid`, `groupid`, `parent`, `type`, `doctype_id`, `status`, `icon`, `modul`, `doc_id`, `title`) VALUES (39, 1, 0, '', 'a', 1027, '1', '', '', 0, '');
