@@ -1451,15 +1451,17 @@ AddHandler cgi-script .pl";
                 }
       }
           if($go_info["server"]["apache2_php"] == 'suphp'){
-                  $php .= "suPHP_Engine on\n";
-                  $php .= "suPHP_UserGroup ".$webadmin." web".$web["doc_id"]."\n";
-                  $php .= "AddHandler x-httpd-php .php .php3 .php4 .php5\n";
-                  $php .= "suPHP_AddHandler x-httpd-php\n";
+                  $php .= "<Directory ".$document_root.">\n";
+                  $php .= "  suPHP_Engine on\n";
+                  $php .= "  suPHP_UserGroup ".$webadmin." web".$web["doc_id"]."\n";
+                  $php .= "  AddHandler x-httpd-php .php .php3 .php4 .php5\n";
+                  $php .= "  suPHP_AddHandler x-httpd-php\n";
                   if($web["web_php_safe_mode"]){
-                    $php .= "SetEnv php_safe_mode On\n";
+                    $php .= "  SetEnv php_safe_mode On\n";
                   } else {
-                    $php .= "SetEnv php_safe_mode Off\n";
+                    $php .= "  SetEnv php_safe_mode Off\n";
                   }
+                  $php .= "</Directory>\n";
           }
 
           if($go_info["server"]["apache2_php"] != 'suphp') {

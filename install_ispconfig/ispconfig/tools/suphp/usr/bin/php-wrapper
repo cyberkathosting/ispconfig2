@@ -11,4 +11,4 @@ else
 SAFE_MODE="On"
 fi
 
-exec php5-cgi -d open_basedir=${BASEDIR} -d upload_tmp_dir=${TMPDIR} -d session.save_path=${SESSDIR} -d safe_mode=${SAFE_MODE}
+exec php-cgi -d open_basedir=${BASEDIR} -d upload_tmp_dir=${TMPDIR} -d session.save_path=${SESSDIR} -d safe_mode=${SAFE_MODE}
