@@ -61,4 +61,5 @@ $wb["Davon"] = "Od";
 $wb["Ihre antwort"] = "Twoja odpowiedz";
 $wb["Antworten"] = "Odpowied¼";
 $wb["Schließen"] = "Zamykanie";
+$wb["Dutch"]         = "Dutch";
 ?>

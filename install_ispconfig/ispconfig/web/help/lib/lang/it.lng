@@ -36,6 +36,7 @@ $wb["unlimitiert"]  = "illimitato";
 $wb["Anbieter"]     = "Rivenditore";
 $wb["DNS-Domains angelegt"] = 'DNS Domain creato';
 $wb["von"] = "di";
+$wb["Dutch"]         = "Dutch";
 
 
 ?>

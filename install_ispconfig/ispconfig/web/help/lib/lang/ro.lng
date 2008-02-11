@@ -15,7 +15,7 @@ $wb["Projektfarm Support"]          = "Projektfarm Support";
 $wb["Online Hilfe"] = "Ajutor Online";
 
 $wb["willkommen_kunde"] = "Bine ati venit la Ambra Hosting!
-Aici puteti administra domeniile dumneavoastra. Daca aveti intrebari sau probleme 
+Aici puteti administra domeniile dumneavoastra. Daca aveti intrebari sau probleme
 adresativa administratorului de server sau cititi manualul clientului.";
 $wb["Willkommen"] = "Bine ati venit";
 
@@ -61,4 +61,5 @@ $wb["Davon"] = "De La";
 $wb["Ihre antwort"] = "Raspunsul tau";
 $wb["Antworten"] = "Raspunde";
 $wb["Schließen"] = "Inchide";
+$wb["Dutch"]         = "Dutch";
 ?>
