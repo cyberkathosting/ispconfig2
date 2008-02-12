@@ -86,7 +86,11 @@ function datenbank_show($doc_id, $doctype_id) {
           } else {
             // kleinste freie ID finden
             foreach($db_ids as $db_id){
-              $db_nr[] = str_replace('web'.$web["doc_id"].'_db', '', $db_id["datenbankname"]);
+              if(strpos($db_id["datenbankname"], '_')){
+                $db_nr[] = str_replace('web'.$web["doc_id"].'_db', '', $db_id["datenbankname"]);
+              } else {
+                $db_nr[] = str_replace('web'.$web["doc_id"].'db', '', $db_id["datenbankname"]);
+              }
             }
             sort($db_nr, SORT_NUMERIC);
             reset($db_nr);
@@ -129,7 +133,11 @@ global $go_api, $go_info,$s;
           } else {
             // kleinste freie ID finden
             foreach($db_ids as $db_id){
-              $db_nr[] = str_replace('web'.$web["doc_id"].'_db', '', $db_id["datenbankname"]);
+              if(strpos($db_id["datenbankname"], '_')){
+                $db_nr[] = str_replace('web'.$web["doc_id"].'_db', '', $db_id["datenbankname"]);
+              } else {
+                $db_nr[] = str_replace('web'.$web["doc_id"].'db', '', $db_id["datenbankname"]);
+              }
             }
             sort($db_nr, SORT_NUMERIC);
             reset($db_nr);
