@@ -878,7 +878,7 @@ CREATE TABLE `isp_isp_reseller` (
   `limit_ruby` char(1) default '1',
   PRIMARY KEY  (`doc_id`),
   KEY `doctype_id` (`doctype_id`)
-) ENGINE=MyISAM;
+) TYPE=MyISAM;
 
 --
 -- Dumping data for table `isp_isp_reseller`
@@ -1001,7 +1001,7 @@ CREATE TABLE `isp_isp_web` (
   `web_ruby` char(1) default NULL,
   PRIMARY KEY  (`doc_id`),
   KEY `doctype_id` (`doctype_id`)
-) ENGINE=MyISAM;
+) TYPE=MyISAM;
 
 --
 -- Dumping data for table `isp_isp_web`
@@ -1042,7 +1042,7 @@ CREATE TABLE `isp_isp_web_template` (
   `web_ruby` char(1) default NULL,
   PRIMARY KEY  (`doc_id`),
   KEY `doctype_id` (`doctype_id`)
-) ENGINE=MyISAM;
+) TYPE=MyISAM;
 
 --
 -- Dumping data for table `isp_isp_web_template`
@@ -1217,7 +1217,7 @@ CREATE TABLE `isp_server` (
   `global_stats_password` varchar(255) default NULL,
   PRIMARY KEY  (`doc_id`),
   KEY `doctype_id` (`doctype_id`)
-) ENGINE=MyISAM;
+) TYPE=MyISAM;
 
 
 --
