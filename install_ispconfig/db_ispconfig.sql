@@ -951,7 +951,7 @@ CREATE TABLE `isp_isp_user` (
   `use_uribl` char(1) default '0',
   PRIMARY KEY  (`doc_id`),
   KEY `doctype_id` (`doctype_id`)
-) ENGINE=MyISAM;
+) TYPE=MyISAM;
 
 --
 -- Dumping data for table `isp_isp_user`
@@ -1037,7 +1037,7 @@ CREATE TABLE `isp_isp_web` (
   `webalizer_stats` char(1) default NULL,
   PRIMARY KEY  (`doc_id`),
   KEY `doctype_id` (`doctype_id`)
-) ENGINE=MyISAM;
+) TYPE=MyISAM;
 
 --
 -- Dumping data for table `isp_isp_web`
