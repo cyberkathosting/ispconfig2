@@ -39,6 +39,7 @@ class web {
         var $reseller_doctype_id = 1022;
         var $slave_doctype_id = 1028;
         var $datenbank_doctype_id = 1029;
+		var $list_doctype_id = 1033;
 
         /*
         #############################################################
@@ -1193,6 +1194,521 @@ class web {
 
         /*
         #############################################################
+        # Lists
+        #############################################################
+        */
+
+        /*
+        Function: list_list
+        Params: web_id oder web_title
+        Return: list of lists Array
+        */
+
+        function list_list($session,$params) {
+                global $go_api, $go_info;
+
+                // überprüfe Rechte
+                if($session["user"]["web_query"] != 1) {
+                        $this->errorMessage .= "method not allowed for user\r\n";
+                        return false;
+                }
+
+                // überprüfe Parameter
+                if(empty($params["web_title"]) && empty($params["web_id"])) {
+                        $this->errorMessage .= "Parameters: web_title or web_id are required.\r\n";
+                        return false;
+                }
+
+                // Hole Web ID
+                if(empty($params["web_id"])) {
+                        $web_id = $this->web_get_id($session,$params);
+                } else {
+                        $web_id = intval($params["web_id"]);
+                }
+
+                if(empty($web_id)) {
+                        $this->errorMessage .= "web_id cannot be resolved.\r\n";
+                        return false;
+                }
+
+                $sql = "SELECT isp_isp_list.* FROM isp_dep, isp_isp_list WHERE isp_dep.parent_doc_id = $web_id AND isp_dep.parent_doctype_id = '".$this->web_doctype_id."' and isp_dep.child_doc_id = isp_isp_list.doc_id and isp_dep.child_doctype_id = '".$this->list_doctype_id."'";
+
+                // hole List
+                $lists = $go_api->db->queryAllRecords($sql);
+
+                if(!empty($lists)){
+                  foreach($lists as $list) {
+                        $list["list_id"] = $list["doc_id"];
+                        $out[$list["list_name"]] = $list;
+
+                  }
+                  return $out;
+                } else {
+                  $this->errorMessage .= "no records found\r\n";
+                  return false;
+                }
+
+        }
+
+        function list_get_id($session,$params) {
+                global $go_api, $go_info;
+
+                // überprüfe Rechte
+                if($session["user"]["web_query"] != 1) {
+                        $this->errorMessage .= "method not allowed for user\r\n";
+                        return false;
+                }
+
+                if(isset($params["list_id"]) && !empty($params["list_id"])) return intval($params["list_id"]);
+
+                // überprüfe Parameter
+                if(empty($params["list_name"])) {
+                        $this->errorMessage .= "Parameter: list_name is required.\r\n";
+                        return false;
+                }
+
+                // Hole List ID
+                $list_name = addslashes($params["list_name"]);
+
+                if($list = $go_api->db->queryOneRecord("SELECT doc_id FROM isp_isp_list WHERE list_name = '$list_name'")){
+                  return $list["doc_id"];
+                } else {
+                  return false;
+                }
+
+
+        }
+
+        function list_get($session,$params) {
+                global $go_api, $go_info;
+
+                // überprüfe Rechte
+                if($session["user"]["web_query"] != 1) {
+                        $this->errorMessage .= "method not allowed for user\r\n";
+                        return false;
+                }
+
+                // überprüfe Parameter
+                if(empty($params["list_name"]) && empty($params["list_id"])) {
+                        $this->errorMessage .= "Parameters: list_name or list_id are required.\r\n";
+                        return false;
+                }
+
+                // Hole List ID
+                if(empty($params["list_id"])) {
+                        $list_id = $this->list_get_id($session,$params);
+                } else {
+                        $list_id = intval($params["list_id"]);
+                }
+
+                if(empty($list_id)) {
+                        $this->errorMessage .= "list_id cannot be resolved\r\n";
+                        return false;
+                }
+
+                $list = $go_api->db->queryOneRecord("SELECT * FROM isp_isp_list WHERE doc_id = $list_id");
+
+                // überprüfe, ob List gefunden wurde
+                if(!is_array($list)) {
+                        $this->errorMessage .= "no records found\r\n";
+                        return false;
+                }
+
+                $list["list_id"] = $list["list_id"];
+                $out = $list;
+
+                return $out;
+        }
+
+        /*function list_add($session,$params) {
+                global $go_api, $go_info;
+
+                // überprüfe Rechte
+                if($session["user"]["web_insert"] != 1) {
+                        $this->errorMessage .= "method not allowed for user\r\n";
+                        return false;
+                }
+
+                // überprüfe Parameter
+                if(empty($params["web_title"]) && empty($params["web_id"])) {
+                        $this->errorMessage .= "Parameters: web_title or web_id are required.\r\n";
+                        return false;
+                }
+
+                // Hole Web ID
+                if(empty($params["web_id"])) {
+                        $web_id = $this->web_get_id($session,$params);
+                } else {
+                        $web_id = intval($params["web_id"]);
+                }
+
+                if(empty($web_id)) {
+                        $this->errorMessage .= "web_id cannot be resolved\r\n";
+                        return false;
+                }
+
+                // überprüfe Parameter für Record
+                if(!isset($params["user_name"])) $this->errorMessage .= "Parameter: user_name is required.\r\n";
+                if(empty($params["user_email"])) $this->errorMessage .= "Parameter: user_email is required.\r\n";
+                if(empty($params["user_username"])) $this->errorMessage .= "Parameter: user_username is required.\r\n";
+                if(empty($params["user_passwort"])) $this->errorMessage .= "Parameter: user_passwort is required.\r\n";
+                if(!isset($params["user_speicher"])) $this->errorMessage .= "Parameter: user_speicher is required.\r\n";
+                if(!isset($params["user_mailquota"])) $this->errorMessage .= "Parameter: user_mailquota is required.\r\n";
+                if(!isset($params["user_admin"])) $this->errorMessage .= "Parameter: user_admin is required.\r\n";
+                if($this->errorMessage != "") return false;
+
+                // Hole Daten zu Parent Record (Web)
+                $sql = "SELECT * FROM isp_nodes WHERE doc_id = $web_id and doctype_id = '".$this->web_doctype_id."'";
+                $web_record = $go_api->db->queryOneRecord($sql);
+
+                if(empty($web_record["userid"])) {
+                        $this->errorMessage .= "web user cannot be resolved.\r\n";
+                        return false;
+                }
+
+                // Checke ob User bereits existiert
+                $user_id = $this->user_get_id($session,$params);
+                if(!empty($user_id)) {
+                        $this->errorMessage .= "User: ".$params["user_username"]." already exists\r\n";
+                        return false;
+                }
+
+                // Füge User ein
+                $sql = "INSERT INTO isp_isp_user (doctype_id,user_name,user_email,user_username,user_passwort,user_speicher,user_mailquota,user_admin) VALUES ('".$this->user_doctype_id."','".addslashes($params["user_name"])."','".addslashes($params["user_email"])."','".addslashes($params["user_username"])."','".addslashes($params["user_passwort"])."','".addslashes($params["user_speicher"])."','".addslashes($params["user_mailquota"])."','".addslashes($params["user_admin"])."')";
+                $go_api->db->query($sql);
+                $user_id = $doc_id = $go_api->db->insertID();
+
+                // Node einfügen
+                $sql = "INSERT INTO isp_nodes ( userid, groupid, parent, type, doctype_id, status, icon, modul, doc_id, title
+                                ) VALUES (
+                                ".intval($web_record["userid"]).",
+                                ".intval($web_record["groupid"]).",
+                                '',
+                                'a',
+                                '".$this->user_doctype_id."',
+                                '1',
+                                '',
+                                '',
+                                $user_id,
+                                ''
+                                )";
+
+                $go_api->db->query($sql);
+                $user_tree_id = $go_api->db->insertID();
+
+                // DEP-Record einfügen
+                $sql = "INSERT INTO isp_dep (userid, groupid, parent_doc_id, parent_doctype_id, parent_tree_id, child_doc_id, child_doctype_id, child_tree_id, status)
+                VALUES (
+                ".intval($web_record["userid"]).",
+                ".intval($web_record["groupid"]).",
+                ".intval($web_record["doc_id"]).",
+                '".$this->web_doctype_id."',
+                ".intval($web_record["tree_id"]).",
+                $user_id,
+                '".$this->user_doctype_id."',
+                $user_tree_id,
+                1)";
+
+                $go_api->db->query($sql);
+
+                /////////////////////////
+                $go_api->uses('doc,auth,log');
+                $go_info["user"]["licence"]["p"] = "42go_isp_pro";
+                $go_info["user"]["perms"] = 'rw';
+                $go_info["user"]["userid"] = 1;
+                $go_api->language = "en";
+
+                if(!$doc = $go_api->doc->doctype_get($this->user_doctype_id)) $this->errorMessage .= $go_api->lng("error_doctype_nicht_vorhanden");
+
+                if($doc->event_class != "") {
+                  $event_class = $doc->event_class;
+
+                  if(!class_exists($event_class)){
+                    $go_api->uses($doc->event_class);
+                  }
+
+                  if($doc->event_insert != "") {
+                    $event_insert = $doc->event_insert;
+                    $this->errorMessage .= $go_api->$event_class->$event_insert($doc_id,$this->user_doctype_id, 0);
+                  }
+
+                }
+
+                /////////////////////////
+                if($this->errorMessage != "") return false;
+                return $user_id;
+
+        }*/
+
+        /*function user_update($session,$params) {
+                global $go_api, $go_info;
+
+                // überprüfe Rechte
+                if($session["user"]["web_update"] != 1) {
+                        $this->errorMessage .= "method not allowed for user\r\n";
+                        return false;
+                }
+
+                // überprüfe Parameter für Record
+                if(empty($params["user_username"]) && empty($params["user_id"])){
+                  $this->errorMessage .= "Parameter: user_id or user_username is required.\r\n";
+                  return false;
+                }
+
+                // Hole User ID
+                if(empty($params["user_id"])) {
+                        $user_id = $this->user_get_id($session,$params);
+                } else {
+                        $user_id = intval($params["user_id"]);
+                }
+
+                if(empty($user_id)) {
+                        $this->errorMessage .= "user_id cannot be resolved\r\n";
+                        return false;
+                }
+
+                // checke ob User schon existiert
+                $sql = "SELECT doc_id FROM isp_isp_user where user_username = '".addslashes($params["user_username"])."' and isp_isp_user.doc_id != $user_id";
+
+                $tmp = $go_api->db->queryOneRecord($sql);
+                if($tmp["doc_id"] > 0) {
+                        $this->errorMessage .= "User alredy exists with other user_id.\r\n";
+                        return false;
+                }
+
+                // Liegt Objekt im Papierkorb?
+                if($this->user_is_suspended($session,$params)){
+                  $this->errorMessage .= "This user is suspended.\r\n";
+                  return false;
+                }
+
+                // Ist Status-Feld leer (d.h., ist writeconf.php fertig)?
+                if(!$this->user_status_empty($session,$params)){
+                  $this->errorMessage .= "Status field is not empty.\r\n";
+                  return false;
+                }
+
+                $fields = $go_api->db->queryAllRecords("SHOW COLUMNS FROM isp_isp_user");
+                foreach($fields as $field){
+                  $field_arr[] = $field["Field"];
+                }
+
+                $changes = "";
+                foreach($params as $key => $val){
+                  if($key != "user_id" && $key != "doc_id" && $key != "doctype_id" && $key != "user_username" && $key != "status" && in_array($key, $field_arr)) $changes .= $key." = '".addslashes($val)."',";
+                }
+                $changes = substr($changes, 0, -1);
+
+                $sql = "UPDATE isp_isp_user SET ".$changes." WHERE doc_id = ".$user_id;
+
+                if(!$go_api->db->query($sql)) $this->errorMessage  .= "Database could not be updated.\r\n";
+                if($this->errorMessage != '') return false;
+
+                /////////////////////////
+                $go_api->uses('doc,auth,log');
+                $go_info["user"]["licence"]["p"] = "42go_isp_pro";
+                $go_info["user"]["perms"] = 'rw';
+                $go_info["user"]["userid"] = 1;
+                $go_api->language = "en";
+
+                if(!$doc = $go_api->doc->doctype_get($this->user_doctype_id)) $this->errorMessage .= $go_api->lng("error_doctype_nicht_vorhanden");
+
+                if($doc->event_class != "") {
+                  $event_class = $doc->event_class;
+
+                  if(!class_exists($event_class)){
+                    $go_api->uses($doc->event_class);
+                  }
+
+                  if($doc->event_update != "") {
+                    $event_update = $doc->event_update;
+                    $this->errorMessage .= $go_api->$event_class->$event_update($user_id,$this->user_doctype_id, 0);
+                  }
+
+                }
+
+                /////////////////////////
+                if($this->errorMessage != "") return false;
+
+                return $this->user_get($session,$params);
+
+        }*/
+
+        function list_suspend($session,$params) {
+                global $go_api, $go_info;
+
+                // überprüfe Rechte
+                if($session["user"]["web_update"] != 1) {
+                        $this->errorMessage .= "method not allowed for user\r\n";
+                        return false;
+                }
+
+                // überprüfe Parameter für Record
+                if(empty($params["list_id"]) && empty($params["list_name"])) {
+                        $this->errorMessage .= "Parameters: list_name or list_id are required.\r\n";
+                        return false;
+                }
+
+                if(empty($params["list_id"])) {
+                        $list_id = $this->list_get_id($session,$params);
+                } else {
+                        $list_id = intval($params["list_id"]);
+                }
+                if(empty($list_id)) {
+                        $this->errorMessage .= "list_id cannot be resolved\r\n";
+                        return false;
+                }
+
+                if($this->list_is_suspended($session,$params)) return true;
+
+                // Ist Status-Feld leer (d.h., ist writeconf.php fertig)?
+                if(!$this->list_status_empty($session,$params)){
+                  $this->errorMessage .= "Status field is not empty.\r\n";
+                  return false;
+                }
+
+                // suspend durchführen
+                $sql = "UPDATE isp_nodes SET status = 0 WHERE doc_id = $list_id and doctype_id = '".$this->list_doctype_id."'";
+                $go_api->db->query($sql);
+
+                /////////////////////////
+                $go_api->uses('doc,auth,log');
+                $go_info["user"]["licence"]["p"] = "42go_isp_pro";
+                $go_info["user"]["perms"] = 'rw';
+                $go_info["user"]["userid"] = 1;
+                $go_api->language = "en";
+
+                if(!$doc = $go_api->doc->doctype_get($this->list_doctype_id)) $this->errorMessage .= $go_api->lng("error_doctype_nicht_vorhanden");
+
+                if($doc->event_class != "") {
+                  $event_class = $doc->event_class;
+
+                  if(!class_exists($event_class)){
+                    $go_api->uses($doc->event_class);
+                  }
+
+                  if($doc->event_delete != "") {
+                    $event_delete = $doc->event_delete;
+                    $this->errorMessage .= $go_api->$event_class->$event_delete($list_id,$this->list_doctype_id, 'do', 0);
+                  }
+
+                }
+                /////////////////////////
+                if($this->errorMessage != "") return false;
+
+                return true;
+        }
+
+        function list_unsuspend($session,$params) {
+                global $go_api, $go_info;
+
+                // überprüfe Rechte
+                if($session["user"]["web_update"] != 1) {
+                        $this->errorMessage .= "method not allowed for user\r\n";
+                        return false;
+                }
+
+                // überprüfe Parameter für Record
+                if(empty($params["list_id"]) && empty($params["list_name"])) {
+                        $this->errorMessage .= "Parameters: list_name or list_id are required.\r\n";
+                        return false;
+                }
+
+                if(empty($params["list_id"])) {
+                        $list_id = $this->list_get_id($session,$params);
+                } else {
+                        $list_id = intval($params["list_id"]);
+                }
+                if(empty($list_id)) {
+                        $this->errorMessage .= "list_id cannot be resolved\r\n";
+                        return false;
+                }
+
+                if(!$this->list_is_suspended($session,$params)) return true;
+
+                // Ist Status-Feld leer (d.h., ist writeconf.php fertig)?
+                if(!$this->list_status_empty($session,$params)){
+                  $this->errorMessage .= "Status field is not empty.\r\n";
+                  return false;
+                }
+
+                // unsuspend durchführen
+                $sql = "UPDATE isp_nodes SET status = 1 WHERE doc_id = $list_id and doctype_id = '".$this->list_doctype_id."'";
+                $go_api->db->query($sql);
+
+                /////////////////////////
+                $go_api->uses('doc,auth,log');
+                $go_info["user"]["licence"]["p"] = "42go_isp_pro";
+                $go_info["user"]["perms"] = 'rw';
+                $go_info["user"]["userid"] = 1;
+                $go_api->language = "en";
+
+                if(!$doc = $go_api->doc->doctype_get($this->list_doctype_id)) $this->errorMessage .= $go_api->lng("error_doctype_nicht_vorhanden");
+
+                if($doc->event_class != "") {
+                  $event_class = $doc->event_class;
+
+                  if(!class_exists($event_class)){
+                    $go_api->uses($doc->event_class);
+                  }
+
+                  if($doc->event_delete != "") {
+                    $event_delete = $doc->event_delete;
+                    $this->errorMessage .= $go_api->$event_class->$event_delete($list_id,$this->list_doctype_id, 'undo', 0);
+                  }
+
+                }
+                /////////////////////////
+                if($this->errorMessage != "") return false;
+
+                return true;
+        }
+
+        function list_delete($session,$params) {
+                global $go_api, $go_info;
+
+                // überprüfe Rechte
+                if($session["user"]["web_delete"] != 1) {
+                        $this->errorMessage .= "method not allowed for user\r\n";
+                        return false;
+                }
+
+                // überprüfe Parameter für Record
+                if(empty($params["list_id"]) && empty($params["list_name"])) {
+                        $this->errorMessage .= "Parameters: list_name or list_id are required.\r\n";
+                        return false;
+                }
+
+                if(empty($params["list_id"])) {
+                        $list_id = $this->list_get_id($session,$params);
+                } else {
+                        $list_id = intval($params["list_id"]);
+                }
+                if(empty($list_id)) {
+                        $this->errorMessage .= "list_id cannot be resolved\r\n";
+                        return false;
+                }
+
+                // Ist List suspended?
+                if(!$this->list_is_suspended($session,$params)){
+                        $this->errorMessage .= "The record must be suspended before it can be deleted.\r\n";
+                        return false;
+                }
+
+                // Ist Status-Feld leer (d.h., ist writeconf.php fertig)?
+                if(!$this->list_status_empty($session,$params)){
+                  $this->errorMessage .= "Status field is not empty.\r\n";
+                  return false;
+                }
+
+                // DELETE durchführen
+                $go_api->db->query("DELETE FROM isp_dep WHERE child_doc_id = '".$list_id."' AND child_doctype_id = '".$this->list_doctype_id."' AND parent_doctype_id = '".$this->web_doctype_id."'");
+                $sql = "DELETE isp_nodes.*, isp_isp_list.* FROM isp_nodes, isp_isp_list WHERE isp_nodes.doc_id = '$list_id' and isp_nodes.doctype_id = '".$this->list_doctype_id."' and isp_nodes.status != '1' AND isp_nodes.doc_id = isp_isp_list.doc_id AND isp_nodes.doctype_id = isp_isp_list.doctype_id";
+                return $go_api->db->query($sql);
+        }
+        
+        /*
+        #############################################################
         # Databases
         #############################################################
         */
@@ -1844,7 +2360,65 @@ class web {
                 }
 
         }
+        
+        function list_is_suspended($session,$params) {
+                global $go_api, $go_info;
 
+                // überprüfe Parameter
+                if(empty($params["list_name"]) && empty($params["list_id"])) {
+                        $this->errorMessage .= "Parameters: list_name or list_id are required.\r\n";
+                        return false;
+                }
+
+                // Hole List ID
+                if(empty($params["list_id"])) {
+                        $list_id = $this->list_get_id($session,$params);
+                } else {
+                        $list_id = intval($params["list_id"]);
+                }
+
+                if(empty($list_id)) {
+                        $this->errorMessage .= "list_id cannot be resolved\r\n";
+                        return false;
+                }
+
+                if($go_api->db->queryOneRecord("SELECT * FROM isp_nodes WHERE doc_id = '".$list_id."' AND doctype_id = '".$this->list_doctype_id."' AND status != '1'")){
+                  return true;
+                } else {
+                  return false;
+                }
+
+        }
+
+        function list_status_empty($session,$params) {
+                global $go_api, $go_info;
+
+                // überprüfe Parameter
+                if(empty($params["list_name"]) && empty($params["list_id"])) {
+                        $this->errorMessage .= "Parameters: list_name or list_id are required.\r\n";
+                        return false;
+                }
+
+                // Hole User ID
+                if(empty($params["list_id"])) {
+                        $list_id = $this->list_get_id($session,$params);
+                } else {
+                        $list_id = intval($params["list_id"]);
+                }
+
+                if(empty($list_id)) {
+                        $this->errorMessage .= "list_id cannot be resolved\r\n";
+                        return false;
+                }
+
+                if($go_api->db->queryOneRecord("SELECT * FROM isp_isp_list WHERE doc_id = '".$list_id."' AND status != ''")){
+                  return false;
+                } else {
+                  return true;
+                }
+
+        }
+        
         function datenbank_is_suspended($session,$params) {
                 global $go_api, $go_info;
 
