@@ -1283,6 +1283,8 @@ CREATE TABLE `isp_server` (
   `server_mail_check_mx` char(1) default NULL,
   `server_mailman_domain` varchar(255) default NULL,
   `typo3_script_repository` varchar(255) default NULL,
+  `global_stats_user` varchar(255) default NULL,
+  `global_stats_password` varchar(255) default NULL,
   PRIMARY KEY  (`doc_id`),
   KEY `doctype_id` (`doctype_id`)
 ) TYPE=MyISAM;
