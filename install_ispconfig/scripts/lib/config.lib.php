@@ -1986,7 +1986,11 @@ DocumentRoot /home
   $mod->file->af($this->vhost_conf, $test_vhost);
 
   if($go_info["server"]["httpd_check"] == 1) {
-    $httpd_syntax_check = $mod->log->caselog("httpd -t &> /dev/null", $this->FILE, __LINE__);
+    if(is_file('/etc/apache2/envvars')){
+      $httpd_syntax_check = $mod->log->caselog(". /etc/apache2/envvars && httpd -t &> /dev/null", $this->FILE, __LINE__);
+    } else {
+      $httpd_syntax_check = $mod->log->caselog("httpd -t &> /dev/null", $this->FILE, __LINE__);
+    }
   } else {
     // return always 0 = check OK
     $httpd_syntax_check = 0;
@@ -2516,7 +2520,11 @@ function apache_restart(){
   $dist_httpd_conf_dir = $mod->system->server_conf["server_path_httpd_conf"];
 
   if($go_info["server"]["httpd_check"] == 1) {
-    $ret_val = $mod->log->caselog("httpd -t  &> /dev/null", $this->FILE, __LINE__);
+    if(is_file('/etc/apache2/envvars')){
+      $ret_val = $mod->log->caselog(". /etc/apache2/envvars && httpd -t  &> /dev/null", $this->FILE, __LINE__);
+    } else {
+      $ret_val = $mod->log->caselog("httpd -t  &> /dev/null", $this->FILE, __LINE__);
+    }
   } else {
     // return always 0 = check OK
     $ret_val = 0;
@@ -2544,7 +2552,11 @@ function apache_reload(){
   $dist_httpd_conf_dir = $mod->system->server_conf["server_path_httpd_conf"];
 
   if($go_info["server"]["httpd_check"] == 1) {
-    $ret_val = $mod->log->caselog("httpd -t  &> /dev/null", $this->FILE, __LINE__);
+    if(is_file('/etc/apache2/envvars')){
+      $ret_val = $mod->log->caselog(". /etc/apache2/envvars && httpd -t  &> /dev/null", $this->FILE, __LINE__);
+    } else {
+      $ret_val = $mod->log->caselog("httpd -t  &> /dev/null", $this->FILE, __LINE__);
+    }
   } else {
     // return always 0 = check OK
     $ret_val = 0;

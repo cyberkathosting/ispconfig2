@@ -692,7 +692,11 @@ if [ "$install_art" == "install" ]; then  ## install_art == install
 fi  ## install_art == install
 
   echo $q_httpd_syntax_check
-  httpd -t
+  if [ -f /etc/apache2/envvars ]; then
+    . /etc/apache2/envvars && httpd -t
+  else
+    httpd -t
+  fi
   if [ $? != 0 ]; then
     error "$q_httpd_syntax_check_not_ok";
   fi
