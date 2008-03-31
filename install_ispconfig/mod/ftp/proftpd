@@ -70,6 +70,14 @@ dist_ftp_conf:/etc/proftpd.conf:Config-File:read::mdr20071
 dist_ftp_version:standalone:Server-Version:exit::mdr20071
 dist_ftp_log:/var/log/xferlog:Log-File:read::mdr20071
 
+dist_ftp_conf:/etc/proftpd.conf:Config-File:read::mdr20080
+dist_ftp_version:standalone:Server-Version:exit::mdr20080
+dist_ftp_log:/var/log/xferlog:Log-File:read::mdr20080
+
+dist_ftp_conf:/etc/proftpd.conf:Config-File:read::mdr20081
+dist_ftp_version:standalone:Server-Version:exit::mdr20081
+dist_ftp_log:/var/log/xferlog:Log-File:read::mdr20081
+
 dist_ftp_conf:/etc/proftpd.conf:Config-File:read::centos41
 dist_ftp_version:standalone:Server-Version:exit::centos41
 dist_ftp_log:/var/log/xferlog:Log-File:read::centos41
@@ -145,6 +153,10 @@ dist_ftp_log:/var/log/xferlog:Log-File:read::fedora70
 dist_ftp_conf:/etc/proftpd.conf:Config-File:read::fedora80
 dist_ftp_version:standalone:Server-Version:exit::fedora80
 dist_ftp_log:/var/log/xferlog:Log-File:read::fedora80
+
+dist_ftp_conf:/etc/proftpd.conf:Config-File:read::fedora90
+dist_ftp_version:standalone:Server-Version:exit::fedora90
+dist_ftp_log:/var/log/xferlog:Log-File:read::fedora90
 
 dist_ftp_conf:/etc/proftpd.conf:Config-File:read::suse72
 dist_ftp_version:standalone:Server-Version:exit::suse72

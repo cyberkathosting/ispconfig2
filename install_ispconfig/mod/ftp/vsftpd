@@ -70,6 +70,14 @@ dist_ftp_conf:/etc/vsftpd.conf:Config-File:read::mdr20071
 dist_ftp_version:xinetd:Server-Version:select:standalone|inetd|xinetd:mdr20071
 dist_ftp_log:/var/log/vsftpd.log:Log-File:read::mdr20071
 
+dist_ftp_conf:/etc/vsftpd.conf:Config-File:read::mdr20080
+dist_ftp_version:xinetd:Server-Version:select:standalone|inetd|xinetd:mdr20080
+dist_ftp_log:/var/log/vsftpd.log:Log-File:read::mdr20080
+
+dist_ftp_conf:/etc/vsftpd.conf:Config-File:read::mdr20081
+dist_ftp_version:xinetd:Server-Version:select:standalone|inetd|xinetd:mdr20081
+dist_ftp_log:/var/log/vsftpd.log:Log-File:read::mdr20081
+
 dist_ftp_conf:/etc/vsftpd/vsftpd.conf:Config-File:read::centos41
 dist_ftp_version:standalone:Server-Version:select:standalone|inetd|xinetd:centos41
 dist_ftp_log:/var/log/vsftpd.log:Log-File:read::centos41
@@ -145,6 +153,10 @@ dist_ftp_log:/var/log/vsftpd.log:Log-File:read::fedora70
 dist_ftp_conf:/etc/vsftpd/vsftpd.conf:Config-File:read::fedora80
 dist_ftp_version:standalone:Server-Version:select:standalone|inetd|xinetd:fedora80
 dist_ftp_log:/var/log/vsftpd.log:Log-File:read::fedora80
+
+dist_ftp_conf:/etc/vsftpd/vsftpd.conf:Config-File:read::fedora90
+dist_ftp_version:standalone:Server-Version:select:standalone|inetd|xinetd:fedora90
+dist_ftp_log:/var/log/vsftpd.log:Log-File:read::fedora90
 
 dist_ftp_conf:/etc/vsftpd.conf:Config-File:read::suse72
 dist_ftp_version:inetd:Server-Version:select:standalone|inetd|xinetd:suse72

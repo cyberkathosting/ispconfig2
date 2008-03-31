@@ -1198,6 +1198,8 @@ fi  ## install_art == install
   . /root/ispconfig/dist.info
   rm -f mysql_config
 
+  chmod 755 /home/admispconfig/ispconfig/tools/suphp/usr/bin/php5-wrapper
+
   ########## sysconfig schreiben #############
   uname -a > /home/admispconfig/ispconfig/sysconf.txt
   httpd -V >> /home/admispconfig/ispconfig/sysconf.txt

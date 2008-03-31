@@ -1617,6 +1617,11 @@ AddHandler cgi-script .pl";
                   $php .= "suPHP_UserGroup ".$webadmin." web".$web["doc_id"]."\n";
                   $php .= "AddHandler x-httpd-php .php .php3 .php4 .php5\n";
                   $php .= "suPHP_AddHandler x-httpd-php\n";
+                  if($web["web_php_safe_mode"]){
+                    $php .= "SetEnv php_safe_mode On\n";
+                  } else {
+                    $php .= "SetEnv php_safe_mode Off\n";
+                  }
           }
 
           if(array_search('suphp',$a2php) !== false) {
