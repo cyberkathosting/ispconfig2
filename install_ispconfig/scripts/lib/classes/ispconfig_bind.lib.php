@@ -61,7 +61,13 @@ function make_named($server_id) {
   //$ips = $mod->system->data["isp_server_ip"];
   $ips = $mod->db->queryAllRecords("SELECT dns_isp_dns.doc_id, dns_isp_dns.server_id, dns_isp_dns.dns_soa, dns_isp_dns.dns_soa_ip AS server_ip FROM dns_nodes, dns_isp_dns WHERE dns_isp_dns.server_id = '$server_id' AND dns_nodes.doc_id = dns_isp_dns.doc_id AND dns_nodes.doctype_id = '".$isp_web->dns_doctype_id."' AND dns_nodes.status = '1'");
 
-  foreach($ips as $ip){
+  $ips1 = $mod->db->queryAllRecords("SELECT dns_isp_dns.dns_soa_ip AS server_ip FROM dns_nodes, dns_isp_dns WHERE dns_isp_dns.server_id = '$server_id' AND dns_nodes.doc_id = dns_isp_dns.doc_id AND dns_nodes.doctype_id = '".$isp_web->dns_doctype_id."' AND dns_nodes.status = '1'");
+
+  $ips2 = $mod->db->queryAllRecords("SELECT dns_a.ip_adresse AS server_ip FROM dns_nodes, dns_a WHERE dns_nodes.doc_id = dns_a.doc_id AND dns_nodes.doctype_id = '".$isp_web->a_record_doctype_id."' AND dns_nodes.status = '1'");
+
+  $ips3 = array_merge($ips1, $ips2);
+
+  foreach($ips3 as $ip){
     list($ip1,$ip2,$ip3,$ip4) = explode(".", $ip["server_ip"]);
     $ip_addresses[] = $ip3.".".$ip2.".".$ip1;
   }
@@ -315,7 +321,15 @@ function make_reverse_zonefile($server_id) {
 
   $server = $mod->system->server_conf;
 
-  $ips = $mod->db->queryAllRecords("SELECT dns_isp_dns.doc_id, dns_isp_dns.server_id, dns_isp_dns.dns_soa_ip AS server_ip FROM dns_nodes, dns_isp_dns WHERE dns_isp_dns.server_id = '$server_id' AND dns_nodes.doc_id = dns_isp_dns.doc_id AND dns_nodes.doctype_id = '".$isp_web->dns_doctype_id."' AND dns_nodes.status = '1'");
+  //$ips = $mod->db->queryAllRecords("SELECT dns_isp_dns.doc_id, dns_isp_dns.server_id, dns_isp_dns.dns_soa_ip AS server_ip FROM dns_nodes, dns_isp_dns WHERE dns_isp_dns.server_id = '$server_id' AND dns_nodes.doc_id = dns_isp_dns.doc_id AND dns_nodes.doctype_id = '".$isp_web->dns_doctype_id."' AND dns_nodes.status = '1'");
+
+  $ips1 = $mod->db->queryAllRecords("SELECT dns_isp_dns.dns_soa_ip AS server_ip FROM dns_nodes, dns_isp_dns WHERE dns_isp_dns.server_id = '$server_id' AND dns_nodes.doc_id = dns_isp_dns.doc_id AND dns_nodes.doctype_id = '".$isp_web->dns_doctype_id."' AND dns_nodes.status = '1'");
+
+  //$ips2 = $mod->db->queryAllRecords("SELECT dns_a.ip_adresse AS server_ip FROM dns_dep, dns_a WHERE dns_dep.child_doc_id = dns_a.doc_id AND dns_dep.child_doctype_id = '".$isp_web->a_record_doctype_id."'");
+
+  $ips2 = $mod->db->queryAllRecords("SELECT dns_a.ip_adresse AS server_ip FROM dns_nodes, dns_a WHERE dns_nodes.doc_id = dns_a.doc_id AND dns_nodes.doctype_id = '".$isp_web->a_record_doctype_id."' AND dns_nodes.status = '1'");
+
+  $ips = array_merge($ips1, $ips2);
 
   foreach($ips as $ip){
     if(trim($ip["server_ip"]) != ""){
@@ -357,23 +371,30 @@ function make_reverse_zonefile($server_id) {
 
     $dnss = $mod->db->queryAllRecords("select * from dns_nodes,dns_isp_dns WHERE dns_isp_dns.server_id = '$server_id' and dns_nodes.doc_id = dns_isp_dns.doc_id AND dns_nodes.doctype_id = '".$isp_web->dns_doctype_id."' AND dns_nodes.status = '1' AND dns_isp_dns.dns_soa_ip LIKE '".$ip_address."%'");
 
+    $ptrs_already_assigned = array();
+
     foreach($dnss as $dns){
 
-      $domain = $dns["dns_soa"];
-      list($ip1,$ip2,$ip3,$ip4) = explode(".", $dns["dns_soa_ip"]);
-      $ip_ende = $ip4;
-      // Variablen zuweisen
-      $mod->tpl->assign( array( 'DNS_SOA' => $domain,
-                           'IP_ENDE' => $ip_ende));
-      $mod->tpl->parse('REVERSE_RECORDS',".reverse_records");
+      if(!in_array($dns["dns_soa_ip"], $ptrs_already_assigned)){
+        $domain = $dns["dns_soa"];
+        list($ip1,$ip2,$ip3,$ip4) = explode(".", $dns["dns_soa_ip"]);
+        $ip_ende = $ip4;
+        // Variablen zuweisen
+        $mod->tpl->assign( array('DNS_SOA' => $domain,
+                                 'IP_ENDE' => $ip_ende));
+        $mod->tpl->parse('REVERSE_RECORDS',".reverse_records");
+        $ptrs_already_assigned[] = $dns["dns_soa_ip"];
+      }
+    }
 
-      /////////////////
-      $tree_id = $dns["tree_id"];
-      // A Records
-      $a_records = $mod->db->queryAllRecords("SELECT * FROM dns_dep, dns_a WHERE dns_dep.parent_tree_id = '$tree_id' AND dns_dep.child_doc_id = dns_a.doc_id AND dns_dep.child_doctype_id = '".$isp_web->a_record_doctype_id."' AND dns_a.ip_adresse LIKE '".$ip_address."%'");
-      if(!empty($a_records)){
-        foreach($a_records as $a_record){
-          if(!empty($a_record["host"])){
+    /////////////////
+    // A Records
+    $a_records = $mod->db->queryAllRecords("SELECT * FROM dns_dep, dns_a, dns_nodes WHERE dns_dep.child_doc_id = dns_a.doc_id AND dns_dep.child_doctype_id = '".$isp_web->a_record_doctype_id."' AND dns_a.ip_adresse LIKE '".$ip_address."%' AND dns_nodes.doc_id = dns_a.doc_id AND dns_nodes.doctype_id = '".$isp_web->a_record_doctype_id."' AND dns_nodes.status = '1'");
+
+    if(!empty($a_records)){
+      foreach($a_records as $a_record){
+        if(!empty($a_record["host"])){
+          if(!in_array($a_record["ip_adresse"], $ptrs_already_assigned)){
             $domain_with_host = $a_record["host"].".".$domain;
             list($ip1,$ip2,$ip3,$ip4) = explode(".", $a_record["ip_adresse"]);
             $ip_ende = $ip4;
@@ -381,11 +402,13 @@ function make_reverse_zonefile($server_id) {
             $mod->tpl->assign( array( 'DNS_SOA' => $domain_with_host,
                                       'IP_ENDE' => $ip_ende));
             $mod->tpl->parse('REVERSE_RECORDS',".reverse_records");
+            $ptrs_already_assigned[] = $a_record["ip_adresse"];
           }
         }
       }
-      /////////////////
     }
+    /////////////////
+
     if(empty($dnss)) $mod->tpl->clear_dynamic('reverse_records');
     $mod->tpl->parse('TABLE', table);
 
