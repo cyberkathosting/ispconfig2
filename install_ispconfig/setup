@@ -34,11 +34,11 @@ if [ ! -f /bin/bash ] && [ -f  /usr/local/bin/bash ]; then
   ln -s /usr/local/bin/bash /bin/bash
 fi
 
-if [ ! -f /bin/false ] && [ -f  /sbin/nologin ]; then
+if [ ! -f /bin/false ] && [ `which nologin` ]; then
   if [ -e /bin/false ]; then
     mv -f /bin/false /bin/false_orig
   fi
-  ln -s /sbin/nologin /bin/false
+  ln -s `which nologin` /bin/false
 fi
 
 chmod 700 setup1

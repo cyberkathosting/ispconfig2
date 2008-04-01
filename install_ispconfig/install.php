@@ -626,7 +626,7 @@ if(!is_user("admispconfig")) phpcaselog(adduser("admispconfig", $admispconfig_ui
 // Add a user with uid 20000 as last user in the ISPConfig user range
 $ispconfigend_uid = $ispconfigend_gid = find_uid_gid(20000, 30000);
 if(!is_group("ispconfigend")) caselog("groupadd -g $ispconfigend_gid ispconfigend", $FILE, __LINE__);
-if(!is_user("ispconfigend")) caselog("useradd -u $ispconfigend_uid -s /sbin/nologin ispconfigend -g ispconfigend", $FILE, __LINE__);
+if(!is_user("ispconfigend")) caselog("useradd -u $ispconfigend_uid -s `which nologin` ispconfigend -g ispconfigend", $FILE, __LINE__);
 
 
 
