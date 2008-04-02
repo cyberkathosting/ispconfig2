@@ -380,4 +380,24 @@ $wb["txt_kunden"] = "Clienti";
 $wb["txt_webs"] = "Domenii";
 $wb["no_permission_to_change_data"] = "Permission denied.";
 
+$wb["weiter_link"] = "<br><br> <a href='../../../isp_manager/frame_start.php?s=$s'>Next &gt;&gt;</a>";
+$wb["error_mv_diskspace"] = "This web site's disk space is bigger than the disk space that is left for this reseller.";
+$wb["error_mv_users"] = "This web site's amount of users is bigger than the amount of users that is left for this reseller.";
+$wb["error_mv_domains"] = "This web site's amount of domains is bigger than the amount of domains that is left for this reseller.";
+$wb["error_mv_no_shell"] = "This web site is using shell access which is not allowed for this reseller.";
+$wb["error_mv_no_cgi"] = "This web site is using CGI which is not allowed for this reseller.";
+$wb["error_mv_no_standard_cgis"] = "This web site is using standard CGIs which is not allowed for this reseller.";
+$wb["error_mv_no_php"] = "This web site is using PHP which is not allowed for this reseller.";
+$wb["error_mv_no_ruby"] = "This web site is using Ruby which is not allowed for this reseller.";
+$wb["error_mv_no_ssi"] = "This web site is using SSI which is not allowed for this reseller.";
+$wb["error_mv_no_ftp"] = "This web site is using FTP which is not allowed for this reseller.";
+$wb["error_mv_no_mysql"] = "This web site is using MySQL which is not allowed for this reseller.";
+$wb["error_mv_mysql"] = "This web site's amount of MySQL databases is bigger than the amount of databases that is left for this reseller.";
+$wb["error_mv_no_ssl"] = "This web site is using SSL which is not allowed for this reseller.";
+$wb["error_mv_no_anonftp"] = "This web site is using Anonymous FTP which is not allowed for this reseller.";
+$wb["error_mv_no_wap"] = "This web site is using WAP which is not allowed for this reseller.";
+$wb["error_mv_no_individual_error_pages"] = "This web site is using individual error pages which is not allowed for this reseller.";
+$wb["error_mv_no_apache_directives"] = "This web site is using custom Apache directives which is not allowed for this reseller.";
+$wb["error_mv_no_frontpage"] = "This web site is using Frontpage which is not allowed for this reseller.";
+
 ?>

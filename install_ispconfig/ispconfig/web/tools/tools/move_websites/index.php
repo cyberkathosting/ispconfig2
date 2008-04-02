@@ -70,13 +70,104 @@ if($_POST['web_doc_id'] > 0 && $_POST['old_customer_doc_id'] > 0 && $_POST['new_
 
   // Website
   $isp_nodes_web = $go_api->db->queryOneRecord("SELECT * FROM isp_nodes WHERE doc_id = '".$_POST['web_doc_id']."' AND doctype_id = '1013' AND userid = '".$old_sys_user['doc_id']."'");
-  $go_api->db->query("UPDATE isp_nodes SET userid = '".$new_sys_user['doc_id']."' WHERE doc_id = '".$_POST['web_doc_id']."' AND doctype_id = '1013' AND userid = '".$old_sys_user['doc_id']."'");
+
+  $isp_dep_web = $go_api->db->queryOneRecord("SELECT * FROM isp_dep WHERE child_tree_id = '".$isp_nodes_web['tree_id']."' AND child_doctype_id = '1013' AND child_doc_id = '".$_POST['web_doc_id']."' AND parent_doctype_id = '1012' AND parent_doc_id = '".$_POST['old_customer_doc_id']."'");
+
+  $isp_nodes_web_tree_id = $go_api->db->queryOneRecord("SELECT tree_id FROM isp_nodes WHERE title = 'Webs' AND groupid = '".$new_customer['groupid']."'");
+
+  /////// Prüfen, ob Diskspace, User- und Domainanzahl innerhalb der Grenzen des Resellers liegen ////////
+    $website = $go_api->db->queryOneRecord("select * from isp_nodes,isp_isp_web where isp_nodes.doc_id = '".$_POST['web_doc_id']."' and isp_nodes.doctype_id = '1013' and isp_isp_web.doc_id = '".$_POST['web_doc_id']."'");
+    $resellerid = $new_customer['groupid'];
+    if($reseller = $go_api->db->queryOneRecord("SELECT * from isp_isp_reseller where reseller_group = $resellerid")) {
+      // Diskspace
+      if($reseller["limit_disk"] >= 0){
+        $diskspace = $go_api->db->queryOneRecord("SELECT sum(isp_isp_web.web_speicher) as diskspace from isp_isp_web,isp_nodes where isp_isp_web.doc_id = isp_nodes.doc_id and isp_nodes.groupid = '$resellerid' and isp_nodes.doctype_id = 1013");
+        $diskspace = $diskspace["diskspace"];
+        if($website["web_speicher"] < 0){
+          $diskspace -= $website["web_speicher"];
+          $free = $reseller["limit_disk"] - $diskspace;
+          $limit_errors .= $go_api->lng("error_mv_diskspace");
+        } else {
+          $free = $reseller["limit_disk"] - $diskspace;
+          if($free < 0){
+            $max_free = $free + $website["web_speicher"];
+            $limit_errors .= $go_api->lng("error_mv_diskspace");
+          }
+        }
+      }
+      // Useranzahl
+      if($reseller["limit_user"] >= 0){
+        $useranzahl = $go_api->db->queryOneRecord("SELECT sum(isp_isp_web.web_userlimit) as useranzahl from isp_isp_web,isp_nodes where isp_isp_web.doc_id = isp_nodes.doc_id and  isp_nodes.groupid = '$resellerid' and isp_nodes.doctype_id = 1013");
+        $useranzahl = $useranzahl["useranzahl"];
+        if($website["web_userlimit"] < 0){
+          $useranzahl -= $website["web_userlimit"];
+          $free = $reseller["limit_user"] - $useranzahl;
+          $limit_errors .= $go_api->lng("error_mv_users");
+        } else {
+          $free = $reseller["limit_user"] - $useranzahl;
+          if($free < 0){
+            $max_free = $free + $website["web_userlimit"];
+            $limit_errors .= $go_api->lng("error_mv_users");
+          }
+        }
+      }
+      // Domains
+      if($reseller["limit_domain"] >= 0){
+        $domainanzahl = $go_api->db->queryOneRecord("SELECT sum(isp_isp_web.web_domainlimit) as domainanzahl from isp_isp_web,isp_nodes where isp_isp_web.doc_id = isp_nodes.doc_id and  isp_nodes.groupid = '$resellerid' and isp_nodes.doctype_id = 1013");
+        $domainanzahl = $domainanzahl["domainanzahl"];
+        if($web["web_domainlimit"] < 0){
+          $domainanzahl -= $website["web_domainlimit"];
+          $free = $reseller["limit_domain"] - $domainanzahl;
+          $limit_errors .= $go_api->lng("error_mv_domains");
+        } else {
+          $free = $reseller["limit_domain"] - $domainanzahl;
+          if($free < 0){
+            $max_free = $free + $website["web_domainlimit"];
+            $limit_errors .= $go_api->lng("error_mv_domains");
+          }
+        }
+      }
+      // andere Limits
+      if($reseller["limit_shell_access"] != 1 && $website["web_shell"] == 1) $limit_errors .= $go_api->lng("error_mv_no_shell");
+      if($reseller["limit_cgi"] != 1 && $website["web_cgi"] == 1) $limit_errors .= $go_api->lng("error_mv_no_cgi");
+      if(($reseller["limit_standard_cgis"] != 1 || $reseller["limit_cgi"] != 1) && $website["web_standard_cgi"] == 1) $limit_errors .= $go_api->lng("error_mv_no_standard_cgis");
+      if($reseller["limit_php"] != 1 && ($website["web_php"] == 1 || $website[" web_php_safe_mode"] == 1)) $limit_errors .= $go_api->lng("error_mv_no_php");
+      if($reseller["limit_ruby"] != 1 && $website["web_ruby"] == 1) $limit_errors .= $go_api->lng("error_mv_no_ruby");
+      if($reseller["limit_ssi"] != 1 && $website["web_ssi"] == 1) $limit_errors .= $go_api->lng("error_mv_no_ssi");
+      if($reseller["limit_ftp"] != 1 && $website["ftp"] == 1) $limit_errors .= $go_api->lng("error_mv_no_ftp");
+      if($reseller["limit_mysql"] != 1 && $website["web_mysql"] == 1) $limit_errors .= $go_api->lng("error_mv_no_mysql");
+      // Datenbanken
+      if($website["web_mysql"] == 1 && $reseller["limit_mysql_anzahl_dbs"] >= 0){
+        $datenbankanzahl = $go_api->db->queryOneRecord("SELECT sum(isp_isp_web.web_mysql_anzahl_dbs) AS datenbankanzahl FROM isp_isp_web,isp_nodes WHERE isp_isp_web.doc_id = isp_nodes.doc_id AND isp_nodes.groupid = '$resellerid' AND isp_nodes.doctype_id = 1013 AND isp_isp_web.web_mysql = 1");
+        $datenbankanzahl = $datenbankanzahl["datenbankanzahl"];
+        $free = $reseller["limit_mysql_anzahl_dbs"] - $datenbankanzahl;
+        if($free < 0){
+          $max_free = $free + $website["web_mysql_anzahl_dbs"];
+          $limit_errors .= $go_api->lng("error_mv_mysql");
+        }
+      }
+      if($reseller["limit_ssl"] != 1 && $website["web_ssl"] == 1) $limit_errors .= $go_api->lng("error_mv_no_ssl");
+      if($reseller["limit_anonftp"] != 1 && $website["web_anonftp"] == 1) $limit_errors .= $go_api->lng("error_mv_no_anonftp");
+      if($reseller["limit_wap"] != 1 && $website["web_wap"] == 1) $limit_errors .= $go_api->lng("error_mv_no_wap");
+      if($reseller["limit_error_pages"] != 1 && $website["web_individual_error_pages"] == 1) $limit_errors .= $go_api->lng("error_mv_no_individual_error_pages");
+      if($reseller["limit_httpd_include"] != 1 && $website["web_httpd_include"] != "") $limit_errors .= $go_api->lng("error_mv_no_apache_directives");
+      if($reseller["limit_frontpage"] != 1 && $website["web_frontpage"] == 1) $limit_errors .= $go_api->lng("error_mv_no_frontpage");
+
+      if(isset($limit_errors)){
+        $go_api->errorMessage($limit_errors.$go_api->lng("weiter_link"));
+      }
+    }
+
+    /////// Prüfen, ob Diskspace, User- und Domainanzahl innerhalb der Grenzen des Resellers liegen ENDE ////////
+
+  $go_api->db->query("UPDATE isp_nodes SET userid = '".$new_sys_user['doc_id']."', groupid = '".$new_customer['groupid']."', parent = '".$isp_nodes_web_tree_id['tree_id']."' WHERE doc_id = '".$_POST['web_doc_id']."' AND doctype_id = '1013' AND userid = '".$old_sys_user['doc_id']."'");
+
   $go_api->db->query("UPDATE isp_dep SET parent_doc_id = '".$_POST['new_customer_doc_id']."', parent_tree_id = '".$new_customer['tree_id']."' WHERE child_tree_id = '".$isp_nodes_web['tree_id']."' AND child_doctype_id = '1013' AND child_doc_id = '".$_POST['web_doc_id']."' AND parent_doctype_id = '1012' AND parent_doc_id = '".$_POST['old_customer_doc_id']."'");
 
   // Co-Domains
   if($codomains = $go_api->db->queryAllRecords("SELECT * FROM isp_isp_domain, isp_dep WHERE isp_isp_domain.doc_id = isp_dep.child_doc_id AND isp_isp_domain.doctype_id = isp_dep.child_doctype_id AND isp_dep.parent_doctype_id = '1013' AND isp_dep.parent_doc_id = '".$_POST['web_doc_id']."' AND isp_dep.child_doctype_id = '1015'")){
     foreach($codomains as $codomain){
-      $go_api->db->query("UPDATE isp_nodes SET userid = '".$new_sys_user['doc_id']."' WHERE doc_id = '".$codomain['doc_id']."' AND doctype_id = '1015' AND userid = '".$old_sys_user['doc_id']."'");
+      $go_api->db->query("UPDATE isp_nodes SET userid = '".$new_sys_user['doc_id']."', groupid = '".$new_customer['groupid']."' WHERE doc_id = '".$codomain['doc_id']."' AND doctype_id = '1015' AND userid = '".$old_sys_user['doc_id']."'");
     }
   }
   unset($codomains);
@@ -84,7 +175,7 @@ if($_POST['web_doc_id'] > 0 && $_POST['old_customer_doc_id'] > 0 && $_POST['new_
   // Users
   if($users = $go_api->db->queryAllRecords("SELECT * FROM isp_isp_user, isp_dep WHERE isp_isp_user.doc_id = isp_dep.child_doc_id AND isp_isp_user.doctype_id = isp_dep.child_doctype_id AND isp_dep.parent_doctype_id = '1013' AND isp_dep.parent_doc_id = '".$_POST['web_doc_id']."' AND isp_dep.child_doctype_id = '1014'")){
     foreach($users as $user){
-      $go_api->db->query("UPDATE isp_nodes SET userid = '".$new_sys_user['doc_id']."' WHERE doc_id = '".$user['doc_id']."' AND doctype_id = '1014' AND userid = '".$old_sys_user['doc_id']."'");
+      $go_api->db->query("UPDATE isp_nodes SET userid = '".$new_sys_user['doc_id']."', groupid = '".$new_customer['groupid']."' WHERE doc_id = '".$user['doc_id']."' AND doctype_id = '1014' AND userid = '".$old_sys_user['doc_id']."'");
     }
   }
   unset($users);
@@ -92,7 +183,7 @@ if($_POST['web_doc_id'] > 0 && $_POST['old_customer_doc_id'] > 0 && $_POST['new_
   // Databases
   if($databases = $go_api->db->queryAllRecords("SELECT * FROM isp_isp_datenbank, isp_dep WHERE isp_isp_datenbank.doc_id = isp_dep.child_doc_id AND isp_isp_datenbank.doctype_id = isp_dep.child_doctype_id AND isp_dep.parent_doctype_id = '1013' AND isp_dep.parent_doc_id = '".$_POST['web_doc_id']."' AND isp_dep.child_doctype_id = '1029'")){
     foreach($databases as $database){
-      $go_api->db->query("UPDATE isp_nodes SET userid = '".$new_sys_user['doc_id']."' WHERE doc_id = '".$database['doc_id']."' AND doctype_id = '1029' AND userid = '".$old_sys_user['doc_id']."'");
+      $go_api->db->query("UPDATE isp_nodes SET userid = '".$new_sys_user['doc_id']."', groupid = '".$new_customer['groupid']."' WHERE doc_id = '".$database['doc_id']."' AND doctype_id = '1029' AND userid = '".$old_sys_user['doc_id']."'");
     }
   }
   unset($databases);

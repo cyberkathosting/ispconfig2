@@ -368,4 +368,24 @@ $wb["txt_move_website_website"] = "Website";
 $wb["txt_move_website_submit"] = "Abschicken";
 $wb["no_permission_to_change_data"] = "Permission denied.";
 
+$wb["weiter_link"] = "<br><br> <a href='../../../isp_manager/frame_start.php?s=$s'>Weiter &gt;&gt;</a>";
+$wb["error_mv_diskspace"] = "Diese Website belegt mehr Festplattenplatz als dem Reseller noch zustehen.";
+$wb["error_mv_users"] = "Diese Website hat mehr User als dem Reseller noch zustehen.";
+$wb["error_mv_domains"] = "Diese Website hat mehr Domains als dem Reseller noch zustehen.";
+$wb["error_mv_no_shell"] = "Diese Website benutzt Shell Access, was dem Reseller nicht zusteht.";
+$wb["error_mv_no_cgi"] = "Diese Website benutzt CGI, was dem Reseller nicht zusteht.";
+$wb["error_mv_no_standard_cgis"] = "Diese Website benutzt Standard-CGIs, was dem Reseller nicht zusteht.";
+$wb["error_mv_no_php"] = "Diese Website benutzt PHP, was dem Reseller nicht zusteht.";
+$wb["error_mv_no_ruby"] = "Diese Website benutzt Ruby, was dem Reseller nicht zusteht.";
+$wb["error_mv_no_ssi"] = "Diese Website benutzt SSI, was dem Reseller nicht zusteht.";
+$wb["error_mv_no_ftp"] = "Diese Website benutzt FTP, was dem Reseller nicht zusteht.";
+$wb["error_mv_no_mysql"] = "Diese Website benutzt MySQL, was dem Reseller nicht zusteht.";
+$wb["error_mv_mysql"] = "Diese Website benutzt mehr MySQL-Datenbanken als dem Reseller noch zustehen.";
+$wb["error_mv_no_ssl"] = "Diese Website benutzt SSL, was dem Reseller nicht zusteht.";
+$wb["error_mv_no_anonftp"] = "Diese Website benutzt Anonymous-FTP, was dem Reseller nicht zusteht.";
+$wb["error_mv_no_wap"] = "Diese Website benutzt WAP, was dem Reseller nicht zusteht.";
+$wb["error_mv_no_individual_error_pages"] = "Diese Website benutzt individuelle Fehler-Seiten, was dem Reseller nicht zusteht.";
+$wb["error_mv_no_apache_directives"] = "Diese Website benutzt individuelle Apache-Direktiven, was dem Reseller nicht zusteht.";
+$wb["error_mv_no_frontpage"] = "Diese Website benutzt Frontpage, was dem Reseller nicht zusteht.";
+
 ?>
