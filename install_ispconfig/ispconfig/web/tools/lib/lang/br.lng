@@ -391,6 +391,8 @@ $wb["weiter_link"] = "<br><br> <a href='../../../isp_manager/frame_start.php?s=$
 $wb["error_mv_diskspace"] = "This web site's disk space is bigger than the disk space that is left for this reseller.";
 $wb["error_mv_users"] = "This web site's amount of users is bigger than the amount of users that is left for this reseller.";
 $wb["error_mv_domains"] = "This web site's amount of domains is bigger than the amount of domains that is left for this reseller.";
+$wb["error_mv_websites"] = "This web site exceeds the reseller's web site limit.";
+$wb["error_mv_traffic"] = "This web site's traffic limit  is bigger than the traffic limit that is left for this reseller.";
 $wb["error_mv_no_shell"] = "This web site is using shell access which is not allowed for this reseller.";
 $wb["error_mv_no_cgi"] = "This web site is using CGI which is not allowed for this reseller.";
 $wb["error_mv_no_standard_cgis"] = "This web site is using standard CGIs which is not allowed for this reseller.";

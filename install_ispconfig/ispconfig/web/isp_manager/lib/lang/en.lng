@@ -388,6 +388,7 @@ $wb["System Load 15 Minuten"] = "System Load 15 Minutes";
 $wb["Es konnte ein Dokument nicht wiederhergestellt werden, da sich das Eltern-Dokument noch im Papierkorb befindet.\n"] = "The object cannot be restored as long as its parent object is in the recycle bin.";
 $wb["error_anbieter_max_webs_ueberschritten"] = "The reseller already has more websites than you want to assign to him.<br>";
 $wb["error_anbieter_max_diskspace_ueberschritten"] = "The reseller already uses more diskspace than you want to assign to him.<br>";
+$wb["error_anbieter_max_traffic_ueberschritten"] = "The reseller already uses more traffic than you want to assign to him.<br>"; 
 $wb["error_anbieter_max_user_ueberschritten"] = "The reseller already has more users than you want to assign to him.<br>";
 $wb["error_anbieter_max_domain_ueberschritten"] = "The reseller already has more domains than you want to assign to him.<br>";
 $wb["error_anbieter_dnsmanager_aktiv"] = "The reseller already has some DNS Records. The DNS Manager cannot be deactivated.<br>";

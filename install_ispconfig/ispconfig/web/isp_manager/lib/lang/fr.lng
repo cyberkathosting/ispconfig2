@@ -387,6 +387,7 @@ $wb["System Load 15 Minuten"] = "Charge système sur 15 Minutes";
 $wb["Es konnte ein Dokument nicht wiederhergestellt werden, da sich das Eltern-Dokument noch im Papierkorb befindet.\n"] = "Cet élément ne pourras être restaurer tant que son parent est dans la corbeille.";
 $wb["error_anbieter_max_webs_ueberschritten"] = "Le revendeur possède plus de sites que vous voulez lui assigner.<br>";
 $wb["error_anbieter_max_diskspace_ueberschritten"] = "Le revendeur utilise plus d'espace disque que vous voulez lui assigner.<br>";
+$wb["error_anbieter_max_traffic_ueberschritten"] = "The reseller already uses more traffic than you want to assign to him.<br>";
 $wb["error_anbieter_max_user_ueberschritten"] = "Le revendeur possède plus d'utilisateur que vous voulez lui assigner.<br>";
 $wb["error_anbieter_max_domain_ueberschritten"] = "Le revendeur possède plus de domaine que vous voulez lui assigner.<br>";
 $wb["error_anbieter_dnsmanager_aktiv"] = "Le revendeur possède des enregistrements DNS. Ils est donc impossible de désactiver le DNS Manager.<br>";

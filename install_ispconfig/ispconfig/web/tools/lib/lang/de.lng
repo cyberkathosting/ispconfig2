@@ -372,6 +372,8 @@ $wb["weiter_link"] = "<br><br> <a href='../../../isp_manager/frame_start.php?s=$
 $wb["error_mv_diskspace"] = "Diese Website belegt mehr Festplattenplatz als dem Reseller noch zustehen.";
 $wb["error_mv_users"] = "Diese Website hat mehr User als dem Reseller noch zustehen.";
 $wb["error_mv_domains"] = "Diese Website hat mehr Domains als dem Reseller noch zustehen.";
+$wb["error_mv_websites"] = "Mit dieser Website würde das Website-Limit des Resellers überschritten.";
+$wb["error_mv_traffic"] = "Das Traffic-Limit dieser Website überschreitet das Traffic-Kontingent des Resellers.";
 $wb["error_mv_no_shell"] = "Diese Website benutzt Shell Access, was dem Reseller nicht zusteht.";
 $wb["error_mv_no_cgi"] = "Diese Website benutzt CGI, was dem Reseller nicht zusteht.";
 $wb["error_mv_no_standard_cgis"] = "Diese Website benutzt Standard-CGIs, was dem Reseller nicht zusteht.";

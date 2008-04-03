@@ -81,13 +81,11 @@ if($_POST['web_doc_id'] > 0 && $_POST['old_customer_doc_id'] > 0 && $_POST['new_
     if($reseller = $go_api->db->queryOneRecord("SELECT * from isp_isp_reseller where reseller_group = $resellerid")) {
       // Diskspace
       if($reseller["limit_disk"] >= 0){
-        $diskspace = $go_api->db->queryOneRecord("SELECT sum(isp_isp_web.web_speicher) as diskspace from isp_isp_web,isp_nodes where isp_isp_web.doc_id = isp_nodes.doc_id and isp_nodes.groupid = '$resellerid' and isp_nodes.doctype_id = 1013");
-        $diskspace = $diskspace["diskspace"];
         if($website["web_speicher"] < 0){
-          $diskspace -= $website["web_speicher"];
-          $free = $reseller["limit_disk"] - $diskspace;
           $limit_errors .= $go_api->lng("error_mv_diskspace");
         } else {
+          $diskspace = $go_api->db->queryOneRecord("SELECT sum(isp_isp_web.web_speicher) as diskspace from isp_isp_web,isp_nodes where isp_isp_web.doc_id = isp_nodes.doc_id and isp_nodes.groupid = '$resellerid' and isp_nodes.doctype_id = 1013");
+          $diskspace = $diskspace["diskspace"] + $website["web_speicher"];
           $free = $reseller["limit_disk"] - $diskspace;
           if($free < 0){
             $max_free = $free + $website["web_speicher"];
@@ -97,13 +95,11 @@ if($_POST['web_doc_id'] > 0 && $_POST['old_customer_doc_id'] > 0 && $_POST['new_
       }
       // Useranzahl
       if($reseller["limit_user"] >= 0){
-        $useranzahl = $go_api->db->queryOneRecord("SELECT sum(isp_isp_web.web_userlimit) as useranzahl from isp_isp_web,isp_nodes where isp_isp_web.doc_id = isp_nodes.doc_id and  isp_nodes.groupid = '$resellerid' and isp_nodes.doctype_id = 1013");
-        $useranzahl = $useranzahl["useranzahl"];
         if($website["web_userlimit"] < 0){
-          $useranzahl -= $website["web_userlimit"];
-          $free = $reseller["limit_user"] - $useranzahl;
           $limit_errors .= $go_api->lng("error_mv_users");
         } else {
+          $useranzahl = $go_api->db->queryOneRecord("SELECT sum(isp_isp_web.web_userlimit) as useranzahl from isp_isp_web,isp_nodes where isp_isp_web.doc_id = isp_nodes.doc_id and  isp_nodes.groupid = '$resellerid' and isp_nodes.doctype_id = 1013");
+          $useranzahl = $useranzahl["useranzahl"] + $website["web_userlimit"];
           $free = $reseller["limit_user"] - $useranzahl;
           if($free < 0){
             $max_free = $free + $website["web_userlimit"];
@@ -113,20 +109,41 @@ if($_POST['web_doc_id'] > 0 && $_POST['old_customer_doc_id'] > 0 && $_POST['new_
       }
       // Domains
       if($reseller["limit_domain"] >= 0){
-        $domainanzahl = $go_api->db->queryOneRecord("SELECT sum(isp_isp_web.web_domainlimit) as domainanzahl from isp_isp_web,isp_nodes where isp_isp_web.doc_id = isp_nodes.doc_id and  isp_nodes.groupid = '$resellerid' and isp_nodes.doctype_id = 1013");
-        $domainanzahl = $domainanzahl["domainanzahl"];
-        if($web["web_domainlimit"] < 0){
-          $domainanzahl -= $website["web_domainlimit"];
-          $free = $reseller["limit_domain"] - $domainanzahl;
+        if($website["web_domainlimit"] < 0){
           $limit_errors .= $go_api->lng("error_mv_domains");
         } else {
+          $domainanzahl = $go_api->db->queryOneRecord("SELECT sum(isp_isp_web.web_domainlimit) as domainanzahl from isp_isp_web,isp_nodes where isp_isp_web.doc_id = isp_nodes.doc_id and  isp_nodes.groupid = '$resellerid' and isp_nodes.doctype_id = 1013");
+          $domainanzahl = $domainanzahl["domainanzahl"] + $website["web_domainlimit"];
           $free = $reseller["limit_domain"] - $domainanzahl;
           if($free < 0){
-            $max_free = $free + $website["web_domainlimit"];
             $limit_errors .= $go_api->lng("error_mv_domains");
           }
         }
       }
+
+      // Web Sites
+      if($reseller["limit_web"] >= 0){
+        $webanzahl = $go_api->db->queryOneRecord("SELECT COUNT(isp_isp_web.doc_id) AS anzahl FROM isp_nodes, isp_isp_web WHERE isp_nodes.groupid = '$resellerid' AND isp_nodes.doctype_id = '1013' AND isp_nodes.doc_id = isp_isp_web.doc_id");
+        $webanzahl = $webanzahl["anzahl"] + 1;
+        if($webanzahl > $reseller["limit_web"]){
+          $limit_errors .= $go_api->lng("error_mv_websites");
+        }
+      }
+
+      // Traffic
+      if($reseller["limit_traffic"] >= 0){
+        if($website["web_traffic"] < 0){
+          $limit_errors .= $go_api->lng("error_mv_traffic");
+        } else {
+          $traffic = $go_api->db->queryOneRecord("SELECT sum(isp_isp_web.web_traffic) as traffic from isp_isp_web,isp_nodes where isp_isp_web.doc_id = isp_nodes.doc_id and  isp_nodes.groupid = '$resellerid' and isp_nodes.doctype_id = 1013");
+          $traffic = $traffic["traffic"] + $website["web_traffic"];
+          $free = $reseller["limit_traffic"] - $traffic;
+          if($free < 0){
+            $limit_errors .= $go_api->lng("error_mv_traffic");
+          }
+        }
+      }
+
       // andere Limits
       if($reseller["limit_shell_access"] != 1 && $website["web_shell"] == 1) $limit_errors .= $go_api->lng("error_mv_no_shell");
       if($reseller["limit_cgi"] != 1 && $website["web_cgi"] == 1) $limit_errors .= $go_api->lng("error_mv_no_cgi");
@@ -134,15 +151,14 @@ if($_POST['web_doc_id'] > 0 && $_POST['old_customer_doc_id'] > 0 && $_POST['new_
       if($reseller["limit_php"] != 1 && ($website["web_php"] == 1 || $website[" web_php_safe_mode"] == 1)) $limit_errors .= $go_api->lng("error_mv_no_php");
       if($reseller["limit_ruby"] != 1 && $website["web_ruby"] == 1) $limit_errors .= $go_api->lng("error_mv_no_ruby");
       if($reseller["limit_ssi"] != 1 && $website["web_ssi"] == 1) $limit_errors .= $go_api->lng("error_mv_no_ssi");
-      if($reseller["limit_ftp"] != 1 && $website["ftp"] == 1) $limit_errors .= $go_api->lng("error_mv_no_ftp");
+      if($reseller["limit_ftp"] != 1 && $website["web_ftp"] == 1) $limit_errors .= $go_api->lng("error_mv_no_ftp");
       if($reseller["limit_mysql"] != 1 && $website["web_mysql"] == 1) $limit_errors .= $go_api->lng("error_mv_no_mysql");
       // Datenbanken
       if($website["web_mysql"] == 1 && $reseller["limit_mysql_anzahl_dbs"] >= 0){
         $datenbankanzahl = $go_api->db->queryOneRecord("SELECT sum(isp_isp_web.web_mysql_anzahl_dbs) AS datenbankanzahl FROM isp_isp_web,isp_nodes WHERE isp_isp_web.doc_id = isp_nodes.doc_id AND isp_nodes.groupid = '$resellerid' AND isp_nodes.doctype_id = 1013 AND isp_isp_web.web_mysql = 1");
-        $datenbankanzahl = $datenbankanzahl["datenbankanzahl"];
+        $datenbankanzahl = $datenbankanzahl["datenbankanzahl"] + $website['web_mysql_anzahl_dbs'];
         $free = $reseller["limit_mysql_anzahl_dbs"] - $datenbankanzahl;
         if($free < 0){
-          $max_free = $free + $website["web_mysql_anzahl_dbs"];
           $limit_errors .= $go_api->lng("error_mv_mysql");
         }
       }

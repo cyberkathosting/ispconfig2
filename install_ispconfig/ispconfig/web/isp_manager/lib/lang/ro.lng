@@ -389,6 +389,7 @@ $wb["System Load 15 Minuten"] = "Incarcare sistem la 15 minute";
 $wb["Es konnte ein Dokument nicht wiederhergestellt werden, da sich das Eltern-Dokument noch im Papierkorb befindet.\n"] = "Obiectul nu poate fi restaurat atat timp cat parintele sau se afla in recicle bin.";
 $wb["error_anbieter_max_webs_ueberschritten"] = "Distribuitorul are deja mai multe siteuri decat cate doriti sa alocati.<br>";
 $wb["error_anbieter_max_diskspace_ueberschritten"] = "Distribuitorul are daja maim mult spatiu decat doriti sa alocati.<br>";
+$wb["error_anbieter_max_traffic_ueberschritten"] = "The reseller already uses more traffic than you want to assign to him.<br>";
 $wb["error_anbieter_max_user_ueberschritten"] = "Distribuitorul are deja mai multi useri decat doriti sa alocati.<br>";
 $wb["error_anbieter_max_domain_ueberschritten"] = "Distribuitorul are deja mai multe domenii decat doriti sa alocati.<br>";
 $wb["error_anbieter_dnsmanager_aktiv"] = "Distribuitorul are deja niste inregistrari DNS. Administratorul DNS NU poate fi dezactivat.<br>";

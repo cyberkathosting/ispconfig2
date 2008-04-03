@@ -407,6 +407,7 @@ $wb["System Load 15 Minuten"] = "Zatí¾ení v posledních 15 minutách";
 $wb["Es konnte ein Dokument nicht wiederhergestellt werden, da sich das Eltern-Dokument noch im Papierkorb befindet.\n"] = "Objekt nemù¾e být obnoven dokud bude jeho rodièovský objekt v odpadkovém ko¹i.";
 $wb["error_anbieter_max_webs_ueberschritten"] = "Prodejce ji¾ má více webù ne¾ mu chcete pøidìlit.<br>";
 $wb["error_anbieter_max_diskspace_ueberschritten"] = "Prodejce ji¾ vyu¾ívá více diskového prostoru ne¾ mu chcete pøidìlit.<br>";
+$wb["error_anbieter_max_traffic_ueberschritten"] = "The reseller already uses more traffic than you want to assign to him.<br>";
 $wb["error_anbieter_max_user_ueberschritten"] = "Prodejce ji¾ má více u¾ivatelù ne¾ mu chcete pøidìlit.<br>";
 $wb["error_anbieter_max_domain_ueberschritten"] = "Prodejce ji¾ má více domén ne¾ mu chcete pøidìlit.<br>";
 $wb["error_anbieter_dnsmanager_aktiv"] = "Prodejce ji¾ má nìjaké DNS záznamy. DNS mana¾er nemù¾e být deaktivován.<br>";

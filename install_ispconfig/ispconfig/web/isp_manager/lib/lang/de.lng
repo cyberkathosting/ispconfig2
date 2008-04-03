@@ -364,6 +364,7 @@ $wb["txt_user_standard_index_variables"] = '<table border="0" cellpadding="3" ce
 $wb["Es konnte ein Dokument nicht wiederhergestellt werden, da sich das Eltern-Dokument noch im Papierkorb befindet.\n"] = "Es konnte ein Dokument nicht wiederhergestellt werden, da sich das Eltern-Dokument noch im Papierkorb befindet.\n";
 $wb["error_anbieter_max_webs_ueberschritten"] = "Der Anbieter hat schon mehr Webs, als Sie ihm zuordnen möchten.<br>";
 $wb["error_anbieter_max_diskspace_ueberschritten"] = "Der Anbieter benutzt mehr Diskspace, als Sie ihm zuordnen möchten.<br>";
+$wb["error_anbieter_max_traffic_ueberschritten"] = "Der Anbieter benutzt mehr Traffic, als Sie ihm zuordnen möchten.<br>";
 $wb["error_anbieter_max_user_ueberschritten"] = "Der Anbieter hat schon mehr User, als Sie ihm zuordnen möchten.<br>";
 $wb["error_anbieter_max_domain_ueberschritten"] = "Der Anbieter hat schon mehr Domains, als Sie ihm zuordnen möchten.<br>";
 $wb["error_anbieter_dnsmanager_aktiv"] = "Der Anbieter besitzt schon einige DNS-Records. Der DNS-Manager kann nicht deaktiviert werden.<br>";

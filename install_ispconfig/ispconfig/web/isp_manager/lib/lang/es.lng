@@ -381,6 +381,7 @@ $wb["System Load 15 Minuten"] = "Carga de la CPU - 15 minutos";
 $wb["Es konnte ein Dokument nicht wiederhergestellt werden, da sich das Eltern-Dokument noch im Papierkorb befindet.\n"] = "El objeto no podrá ser restaurado mientras su objeto padre se encuentre en la papelera de reciclaje.";
 $wb["error_anbieter_max_webs_ueberschritten"] = "El revendedor ya tiene más sitios web de los que tiene permiso para gestionar.<br>";
 $wb["error_anbieter_max_diskspace_ueberschritten"] = "El revendedor ya utiliza más espacio de disco que el que puede usar.<br>";
+$wb["error_anbieter_max_traffic_ueberschritten"] = "The reseller already uses more traffic than you want to assign to him.<br>";
 $wb["error_anbieter_max_user_ueberschritten"] = "El revendedor ya tiene más usuarios de los que tiene permiso para gestionar.<br>";
 $wb["error_anbieter_max_domain_ueberschritten"] = "El revendedor ya tiene mas dominios que los que usted desea asignarle.<br>";
 $wb["error_anbieter_dnsmanager_aktiv"] = "El revendedor ya tiene algunos registros DNS. El Gestor de DNS no puede ser desactivado.<br>";

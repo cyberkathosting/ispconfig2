@@ -386,6 +386,7 @@ $wb["System Load 15 Minuten"] = "System belastning senaste 15 Min";
 $wb["Es konnte ein Dokument nicht wiederhergestellt werden, da sich das Eltern-Dokument noch im Papierkorb befindet.\n"] = "Detta objekt kan ej återställas så länge överliggande objekt finns i papperskorgen.";
 $wb["error_anbieter_max_webs_ueberschritten"] = "Denna återförsäljare har redan fler webbplatser än det du vill tilldela honom.<br>";
 $wb["error_anbieter_max_diskspace_ueberschritten"] = "Denna återförsäljare har redan mer utrymme på hårddisken än det du tänker tilldela honom.<br>";
+$wb["error_anbieter_max_traffic_ueberschritten"] = "The reseller already uses more traffic than you want to assign to him.<br>";
 $wb["error_anbieter_max_user_ueberschritten"] = "Denna återförsäljare har redan fler användare än det du tänker tilldela honom.<br>";
 $wb["error_anbieter_max_domain_ueberschritten"] = "Denna återförsäljare har fler domäner än det du tänker tilldela honom.<br>";
 $wb["error_anbieter_dnsmanager_aktiv"] = "Denna återförsäljaren har alla redan några DNS Inlägg. DNS Manager kan inte bli deaktiverad.<br>";

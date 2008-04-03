@@ -304,7 +304,7 @@ function web_insert($doc_id, $doctype_id, $die_on_error = '1') {
       if($reseller["limit_php"] != 1 && ($web["web_php"] == 1 || $web[" web_php_safe_mode"] == 1)) $limit_errors .= $go_api->lng("error_web_no_php");
       if($reseller["limit_ruby"] != 1 && $web["web_ruby"] == 1) $limit_errors .= $go_api->lng("error_web_no_ruby");
       if($reseller["limit_ssi"] != 1 && $web["web_ssi"] == 1) $limit_errors .= $go_api->lng("error_web_no_ssi");
-      if($reseller["limit_ftp"] != 1 && $web["ftp"] == 1) $limit_errors .= $go_api->lng("error_web_no_ftp");
+      if($reseller["limit_ftp"] != 1 && $web["web_ftp"] == 1) $limit_errors .= $go_api->lng("error_web_no_ftp");
       if($reseller["limit_mysql"] != 1 && $web["web_mysql"] == 1) $limit_errors .= $go_api->lng("error_web_no_mysql");
       // Datenbanken
       if($web["web_mysql"] == 1 && $reseller["limit_mysql_anzahl_dbs"] >= 0){
@@ -692,7 +692,7 @@ global $go_api, $go_info, $old_form_data;
         $go_api->db->query("UPDATE isp_isp_web SET web_ssi = '0' WHERE doc_id = '".$doc_id."'");
         $errorMessage .= $go_api->lng("error_web_no_ssi");
       }
-      if($reseller["limit_ftp"] != 1 && $web["ftp"] == 1){
+      if($reseller["limit_ftp"] != 1 && $web["web_ftp"] == 1){
         $status = "NOTIFY";
         $go_api->db->query("UPDATE isp_isp_web SET web_ftp = '0' WHERE doc_id = '".$doc_id."'");
         $errorMessage .= $go_api->lng("error_web_no_ftp");

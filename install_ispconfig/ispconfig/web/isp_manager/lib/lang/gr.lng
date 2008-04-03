@@ -388,6 +388,7 @@ $wb["System Load 15 Minuten"] = "Φόρτος συστήματος 15 λεπτών";
 $wb["Es konnte ein Dokument nicht wiederhergestellt werden, da sich das Eltern-Dokument noch im Papierkorb befindet.\n"] = "Το αντικείμενο δε μπορεί να ανακτηθεί διότι το γονικό του αντικείμενο βρίσκεται στον Κάδο Ανακύκλωσης.";
 $wb["error_anbieter_max_webs_ueberschritten"] = "Ο μεταπωλητής έχει ήδη υπερβεί το όριο δικτυακών τόπων που του παρέχετε.<br>";
 $wb["error_anbieter_max_diskspace_ueberschritten"] = "Ο μεταπωλητής έχει ήδη υπερβεί το όριο χρήσης δίσκου που του παρέχετε.<br>";
+$wb["error_anbieter_max_traffic_ueberschritten"] = "The reseller already uses more traffic than you want to assign to him.<br>";
 $wb["error_anbieter_max_user_ueberschritten"] = "Ο μεταπωλητής έχει ήδη υπερβεί το όριο δημιουργίας χρηστών που του παρέχετε.<br>";
 $wb["error_anbieter_max_domain_ueberschritten"] = "Ο μεταπωλητής έχει ήδη υπερβεί το όριο κύριων ονομάτων που του παρέχετε.<br>";
 $wb["error_anbieter_dnsmanager_aktiv"] = "Ο μεταπωλητής έχει ήδη εγγραφές DNS. Ο διαχειριστής DNS δεν μπορεί να απενεργοποιηθεί.<br>";
