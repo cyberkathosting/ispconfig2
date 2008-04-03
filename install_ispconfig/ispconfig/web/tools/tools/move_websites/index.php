@@ -167,7 +167,7 @@ if($_POST['web_doc_id'] > 0 && $_POST['old_customer_doc_id'] > 0 && $_POST['new_
   // Co-Domains
   if($codomains = $go_api->db->queryAllRecords("SELECT * FROM isp_isp_domain, isp_dep WHERE isp_isp_domain.doc_id = isp_dep.child_doc_id AND isp_isp_domain.doctype_id = isp_dep.child_doctype_id AND isp_dep.parent_doctype_id = '1013' AND isp_dep.parent_doc_id = '".$_POST['web_doc_id']."' AND isp_dep.child_doctype_id = '1015'")){
     foreach($codomains as $codomain){
-      $go_api->db->query("UPDATE isp_nodes SET userid = '".$new_sys_user['doc_id']."', groupid = '".$new_customer['groupid']."' WHERE doc_id = '".$codomain['doc_id']."' AND doctype_id = '1015' AND userid = '".$old_sys_user['doc_id']."'");
+      $go_api->db->query("UPDATE isp_nodes SET userid = '".$new_sys_user['doc_id']."', groupid = '".$new_customer['groupid']."', parent = 'group".$new_customer['groupid']."' WHERE doc_id = '".$codomain['doc_id']."' AND doctype_id = '1015' AND userid = '".$old_sys_user['doc_id']."'");
     }
   }
   unset($codomains);
@@ -175,7 +175,7 @@ if($_POST['web_doc_id'] > 0 && $_POST['old_customer_doc_id'] > 0 && $_POST['new_
   // Users
   if($users = $go_api->db->queryAllRecords("SELECT * FROM isp_isp_user, isp_dep WHERE isp_isp_user.doc_id = isp_dep.child_doc_id AND isp_isp_user.doctype_id = isp_dep.child_doctype_id AND isp_dep.parent_doctype_id = '1013' AND isp_dep.parent_doc_id = '".$_POST['web_doc_id']."' AND isp_dep.child_doctype_id = '1014'")){
     foreach($users as $user){
-      $go_api->db->query("UPDATE isp_nodes SET userid = '".$new_sys_user['doc_id']."', groupid = '".$new_customer['groupid']."' WHERE doc_id = '".$user['doc_id']."' AND doctype_id = '1014' AND userid = '".$old_sys_user['doc_id']."'");
+      $go_api->db->query("UPDATE isp_nodes SET userid = '".$new_sys_user['doc_id']."', groupid = '".$new_customer['groupid']."', parent = 'group".$new_customer['groupid']."' WHERE doc_id = '".$user['doc_id']."' AND doctype_id = '1014' AND userid = '".$old_sys_user['doc_id']."'");
     }
   }
   unset($users);
@@ -183,7 +183,7 @@ if($_POST['web_doc_id'] > 0 && $_POST['old_customer_doc_id'] > 0 && $_POST['new_
   // Databases
   if($databases = $go_api->db->queryAllRecords("SELECT * FROM isp_isp_datenbank, isp_dep WHERE isp_isp_datenbank.doc_id = isp_dep.child_doc_id AND isp_isp_datenbank.doctype_id = isp_dep.child_doctype_id AND isp_dep.parent_doctype_id = '1013' AND isp_dep.parent_doc_id = '".$_POST['web_doc_id']."' AND isp_dep.child_doctype_id = '1029'")){
     foreach($databases as $database){
-      $go_api->db->query("UPDATE isp_nodes SET userid = '".$new_sys_user['doc_id']."', groupid = '".$new_customer['groupid']."' WHERE doc_id = '".$database['doc_id']."' AND doctype_id = '1029' AND userid = '".$old_sys_user['doc_id']."'");
+      $go_api->db->query("UPDATE isp_nodes SET userid = '".$new_sys_user['doc_id']."', groupid = '".$new_customer['groupid']."', parent = 'group".$new_customer['groupid']."' WHERE doc_id = '".$database['doc_id']."' AND doctype_id = '1029' AND userid = '".$old_sys_user['doc_id']."'");
     }
   }
   unset($databases);
