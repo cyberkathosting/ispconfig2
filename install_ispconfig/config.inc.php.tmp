@@ -147,6 +147,12 @@ $go_info["server"]["log_device"] = "FILE"; // FILE, SYSTEM, MAIL
 
 $go_info["demo"]["web_path"] = "";
 
+/**********************************************
+* Localisation Settings
+**********************************************/
+
+$go_info["localisation"]["dec_point"] = ",";
+$go_info["localisation"]["thousands_sep"] = ".";
 
 define("CONFIG_LOADED",1);
 
