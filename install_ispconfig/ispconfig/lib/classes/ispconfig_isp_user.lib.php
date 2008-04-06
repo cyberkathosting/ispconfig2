@@ -158,7 +158,7 @@ global $go_api, $go_info,$s;
 
      // wenn Quotalimits gesetzt sind
      if($quotalimit >= 0) {
-        if($user["user_speicher"] > $quotalimit) {
+        if($user["user_speicher"] > $quotalimit || $user["user_speicher"] == -1) {
         $status = "DELETE";
         $errorMessage .= $go_api->lng("error_max_space_web");
         }
@@ -376,8 +376,9 @@ global $go_api, $go_info,$s,$HTTP_POST_VARS,$old_form_data;
      // wenn Quotalimits gesetzt sind
      $quotalimit = $web["web_speicher"];
      if($quotalimit > 0) {
-        if($user["user_speicher"] > $quotalimit) {
-          $go_api->db->query("UPDATE isp_isp_user SET user_speicher = '".$web["web_speicher"]."' where doc_id = $doc_id");
+        if($user["user_speicher"] > $quotalimit || $user["user_speicher"] == -1) {
+          //$go_api->db->query("UPDATE isp_isp_user SET user_speicher = '".$web["web_speicher"]."' where doc_id = $doc_id");
+          $go_api->db->query("UPDATE isp_isp_user SET user_speicher = '".$old_form_data["user_speicher"]."' where doc_id = $doc_id");
           if($die_on_error){
             $go_api->errorMessage($go_api->lng("error_max_space_web").$go_api->lng("weiter_link"));
           } else {
