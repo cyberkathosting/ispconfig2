@@ -153,6 +153,7 @@ $go_info["demo"]["web_path"] = "";
 
 $go_info["localisation"]["dec_point"] = ",";
 $go_info["localisation"]["thousands_sep"] = ".";
+$go_info["localisation"]["currency"] = "USD";
 
 define("CONFIG_LOADED",1);
 

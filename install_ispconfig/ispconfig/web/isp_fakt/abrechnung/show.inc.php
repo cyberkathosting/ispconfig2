@@ -121,7 +121,7 @@ foreach($rechnung as $web_id => $records) {
     <td width="33" bgcolor="#FEFEFE">&nbsp;</td>
     <td width="24" bgcolor="#FEFEFE" class="t2b"><input type="checkbox" name="frm_record[<? echo $record_id?>]" value="1" checked></td>
     <td bgcolor="#FEFEFE" class="t2b"><? echo $record["name"]?></td>
-    <td align="right" width="150" bgcolor="#FEFEFE" class="t2"><? echo $record["anzahl"]?> x <? echo sprintf("%01.2f", $record["preis"])?> EUR</td>
+    <td align="right" width="150" bgcolor="#FEFEFE" class="t2"><? echo $record["anzahl"]?> x <? echo number_format($record["preis"], 2, $go_info["localisation"]["dec_point"], $go_info["localisation"]["thousands_sep"]); ?> <? echo $go_info["localisation"]["currency"]; ?></td>
   </tr>
   <tr>
     <td bgcolor="#CCCCCC">&nbsp;</td>
@@ -146,7 +146,7 @@ foreach($rechnung as $web_id => $records) {
     <td bgcolor="#EEEEEE">&nbsp;</td>
     <td bgcolor="#FEFEFE">&nbsp;</td>
     <td colspan="2" align="right" bgcolor="#FEFEFE"><? echo $go_api->lng("Summe Web")?>:</td>
-    <td align="right" bgcolor="#FEFEFE"><? echo sprintf("%01.2f", $web_preis_gesamt)." ".$go_api->lng("EUR")?></td>
+    <td align="right" bgcolor="#FEFEFE"><? echo number_format($web_preis_gesamt, 2, $go_info["localisation"]["dec_point"], $go_info["localisation"]["thousands_sep"])." ".$go_info["localisation"]["currency"]; ?></td>
   </tr>
   <tr>
     <td bgcolor="#CCCCCC">&nbsp;</td>
@@ -167,7 +167,7 @@ foreach($rechnung as $web_id => $records) {
     <td bgcolor="#EEEEEE">&nbsp;</td>
     <td bgcolor="#EEEEEE">&nbsp;</td>
     <td colspan="2" align="right" bgcolor="#EEEEEE"><? echo $go_api->lng("Summe Kunde")?>:</td>
-    <td align="right" bgcolor="#EEEEEE"><? echo sprintf("%01.2f", $kunde_preis_gesamt)." ".$go_api->lng("EUR")?></td>
+    <td align="right" bgcolor="#EEEEEE"><? echo number_format($kunde_preis_gesamt, 2, $go_info["localisation"]["dec_point"], $go_info["localisation"]["thousands_sep"])." ".$go_info["localisation"]["currency"]; ?></td>
   </tr>
   <tr>
     <td bgcolor="#CCCCCC">&nbsp;</td>
@@ -186,7 +186,7 @@ foreach($rechnung as $web_id => $records) {
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td colspan="2" align="right"><? echo $go_api->lng("Summe Anbieter")?>:</td>
-    <td align="right"><? echo sprintf("%01.2f", $reseller_preis_gesamt)." ".$go_api->lng("EUR")?></td>
+    <td align="right"><? echo number_format($reseller_preis_gesamt, 2, $go_info["localisation"]["dec_point"], $go_info["localisation"]["thousands_sep"])." ".$go_info["localisation"]["currency"]; ?></td>
   </tr>
   <tr bgcolor="#CCCCCC">
     <td colspan="6"><hr size="1" noshade></td>
