@@ -72,6 +72,11 @@ function af($file, $content){
   }
 }
 
+function is_file_lfs($path){
+    exec('[ -f "'.$path.'" ]', $tmp, $ret);
+    return $ret == 0;
+}
+
 function no_comments($file, $comment = '#'){
   $content = $this->unix_nl($this->rf($file));
   $lines = explode("\n", $content);

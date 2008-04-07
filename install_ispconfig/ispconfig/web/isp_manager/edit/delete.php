@@ -49,17 +49,17 @@ $go_api->tree->set_table($go_info["modul"]["table_name"]);
 if($action == "") $action = "do";
 // versuche Tree_id zu bestimmen
 if($tree_id < 1 and !empty($doc_id) and !empty($doctype_id)) {
-$tree_row = $go_api->db->queryOneRecord("SELECT tree_id from ".$go_info["modul"]["table_name"]."_nodes where doc_id = '$doc_id' and doctype_id = '$doctype_id'");
-if(!empty($tree_row["tree_id"])) $tree_id = $tree_row["tree_id"];
-unset($tree_row);
+  $tree_row = $go_api->db->queryOneRecord("SELECT tree_id from ".$go_info["modul"]["table_name"]."_nodes where doc_id = '$doc_id' and doctype_id = '$doctype_id'");
+  if(!empty($tree_row["tree_id"])) $tree_id = $tree_row["tree_id"];
+  unset($tree_row);
 }
 
 if($tree_id < 1) $go_api->errorMessage("Fehler beim Löschen des Dokumentes, tree_id konnte nicht ermittelt werden");
 
 if($type == "n") {
-$err_msg = $go_api->tree->node_delete($tree_id,$gid,$action);
+  $err_msg = $go_api->tree->node_delete($tree_id,$gid,$action);
 } else {
-$err_msg = $go_api->tree->item_delete($tree_id,$gid,$action);
+  $err_msg = $go_api->tree->item_delete($tree_id,$gid,$action);
 }
 
 if($err_msg != "") $go_api->errorMessage($err_msg);
@@ -68,6 +68,5 @@ if($err_msg != "") $go_api->errorMessage($err_msg);
 header("Location: ../../index.php?$session");
 exit;
 ?>
-
 
 

@@ -39,11 +39,6 @@ set_time_limit(0);
 $webalizer_debug = 1;
 // -----------------------------------------------------------------
 
-function is_file_lfs($path){
-    exec('[ -f "'.$path.'" ]', $tmp, $ret);
-    return $ret == 0;
-}
-
 include("/root/ispconfig/scripts/lib/config.inc.php");
 include("/root/ispconfig/scripts/lib/server.inc.php");
 $server_id = $mod->system->server_id;
@@ -143,7 +138,7 @@ require valid-user
 
 
               // Starte Webalizer
-              if(@is_file_lfs($logfile)) {
+              if(@$mod->file->is_file_lfs($logfile)) {
                   if(!empty($web_data["web_host"])){
                     $web_real_name = $web_data["web_host"].".".$web_data["web_domain"];
                   } else {
@@ -166,11 +161,12 @@ echo $message;
 ////////////// LOGSIZE //////////////////
 
 function dir_size($dir) {
+  global $mod;
   $totalsize=0;
   if ($dirstream = @opendir($dir)) {
     while (false !== ($filename = readdir($dirstream))) {
       if ($filename!="." && $filename!=".."){
-        if (is_file_lfs($dir."/".$filename) && !is_link($dir."/".$filename)){
+        if ($mod->file->is_file_lfs($dir."/".$filename) && !is_link($dir."/".$filename)){
           $totalsize += exec('wc -c '.$dir.'/'.$filename.' | cut -f1 -d " "');
           //$totalsize+=filesize($dir."/".$filename);
         }
@@ -184,11 +180,12 @@ function dir_size($dir) {
 }
 
 function dir_array($dir){
+  global $mod;
   $directory_array = array();
   if ($dirstream = @opendir($dir)) {
     while (false !== ($filename = readdir($dirstream))) {
       if ($filename!="." && $filename!=".." && $filename!=".no_delete"){
-        if (is_file_lfs($dir."/".$filename) && !is_link($dir."/".$filename)){
+        if ($mod->file->is_file_lfs($dir."/".$filename) && !is_link($dir."/".$filename)){
           //$directory_array[$dir."/".$filename] = filemtime($dir."/".$filename);
           $directory_array[$dir."/".$filename] = exec('stat -c %Y '.$dir.'/'.$filename);
         }
@@ -244,7 +241,7 @@ if(!empty($webs)){
             asort($files);
             $files = array_slice ($files, 0, 1);
             foreach($files as $key => $val){
-              if(is_file_lfs($key)) unlink($key);
+              if($mod->file->is_file_lfs($key)) unlink($key);
                           if($webalizer_debug == 1) echo "Deleting logfile $key\n";
             }
           } else {
