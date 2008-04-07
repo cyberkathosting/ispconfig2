@@ -31,6 +31,7 @@ $FILE = "/root/ispconfig/scripts/shell/mail_logs.php";
 $monat = date("m/Y");
 $monat_kurz = date("M");
 $jahr = date("Y");
+$tag = date("j");
 $datum = date("d-m-y_H-i-s");
 $current_time = time();
 $web_doctype_id = 1013;
@@ -42,14 +43,14 @@ $server_id = $mod->system->server_id;
 $dist_mail_log = $mod->system->server_conf["dist_mail_log"];
 $dist_init_scripts = $mod->system->server_conf["dist_init_scripts"];
 
-if(!is_file($dist_mail_log)) die();
+if(!$mod->file->is_file_lfs($dist_mail_log)) die();
 $server = $mod->system->server_conf;
 
 $path_httpd_root = stripslashes($server["server_path_httpd_root"]);
 $dienst = $mod->db->queryOneRecord("SELECT * FROM isp_dienste");
 
 if($dienst["dienst_smtp_status"] == "on") $mod->system->daemon_init($mod->system->server_conf["server_mta"], "stop");
-
+/*
 $mod->log->caselog("cp -f $dist_mail_log $dist_mail_log.$datum", $FILE, __LINE__);
 if($server["server_mail_log_save"]){
   $mod->log->caselog("touch $dist_mail_log.ispconfigsave", $FILE, __LINE__);
@@ -59,6 +60,14 @@ if($server["server_mail_log_save"]){
 $fp = fopen($dist_mail_log, "w");
 fwrite($fp, "");
 fclose($fp);
+*/
+
+exec("grep -iw \"".$monat_kurz.str_pad($tag,3,' ',STR_PAD_LEFT)."\" ".$dist_mail_log.".0 > ".$dist_mail_log.".".$datum);
+exec("grep -iw \"".$monat_kurz.str_pad($tag,3,' ',STR_PAD_LEFT)."\" ".$dist_mail_log." >> ".$dist_mail_log.".".$datum);
+if($server["server_mail_log_save"]){
+  $mod->log->caselog("touch $dist_mail_log.ispconfigsave", $FILE, __LINE__);
+  $mod->log->caselog("cat $dist_mail_log.$datum >> $dist_mail_log.ispconfigsave", $FILE, __LINE__);
+}
 
 if($dienst["dienst_smtp_status"] == "on") $mod->system->daemon_init($mod->system->server_conf["server_mta"], "start");
 
@@ -99,10 +108,10 @@ $traffic = 0;
 
 $fd = fopen("$dist_mail_log.$vhost", "r");
 if ($fd) {
-	while(!feof($fd)){
-		$buffer = trim(fgets($fd, 4096));
-  		if(is_numeric($buffer)) $traffic += $buffer;
-	}
+        while(!feof($fd)){
+                $buffer = trim(fgets($fd, 4096));
+                  if(is_numeric($buffer)) $traffic += $buffer;
+        }
 }
 fclose ($fd);
 
@@ -113,12 +122,12 @@ if(!empty($users)){
   foreach($users as $user){
     if(is_file("/home/admispconfig/mailstats/".$user["user_username"])){
       $fd = fopen("/home/admispconfig/mailstats/".$user["user_username"], "r");
-	  if ($fd) {
-      	while(!feof($fd)){
-        	$buffer = trim(fgets($fd, 4096));
-        	if(is_numeric($buffer)) $traffic += $buffer;
-      	}
-	  }
+          if ($fd) {
+              while(!feof($fd)){
+                $buffer = trim(fgets($fd, 4096));
+                if(is_numeric($buffer)) $traffic += $buffer;
+              }
+          }
       fclose ($fd);
       $mod->log->caselog("rm -f /home/admispconfig/mailstats/".$user["user_username"], $FILE, __LINE__);
     }
@@ -129,9 +138,9 @@ if(!empty($users)){
 
 $verify = $mod->db->queryAllRecords("SELECT * FROM isp_traffic WHERE web_id = '$web_id' AND monat = '$monat'");
 if(empty($verify)){
-$mod->db->query("INSERT INTO isp_traffic (web_id, monat, jahr, bytes_mail, datum) VALUES ('$web_id','$monat','$jahr','$traffic','$current_time')");
+  $mod->db->query("INSERT INTO isp_traffic (web_id, monat, jahr, bytes_mail, datum) VALUES ('$web_id','$monat','$jahr','$traffic','$current_time')");
 } else {
-$mod->db->query("UPDATE isp_traffic SET bytes_mail = bytes_mail + $traffic WHERE web_id = '$web_id' AND monat = '$monat'");
+  $mod->db->query("UPDATE isp_traffic SET bytes_mail = bytes_mail + $traffic WHERE web_id = '$web_id' AND monat = '$monat'");
 }
 $mod->log->caselog("rm -f $dist_mail_log.$vhost", $FILE, __LINE__);
 }
