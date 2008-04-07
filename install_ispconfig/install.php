@@ -669,6 +669,9 @@ if($install_art == "install"){
   $httpd_check = '1';
   $salutatory_email_charset = 'iso-8859-1';
   $conf_webdav = '0';
+  $dec_point = ',';
+  $thousands_sep = '.';
+  $currency = 'EUR';
 } else {
   include("config.inc.php");
   $postfix_config = (isset($go_info["server"]["postfix_config"]) ? $go_info["server"]["postfix_config"] : '1');
@@ -682,6 +685,9 @@ if($install_art == "install"){
   $httpd_check = (isset($go_info["server"]["httpd_check"]) ? ($go_info["server"]["httpd_check"] == false ? '0' : '1') : '1');
   $salutatory_email_charset = (isset($go_info["server"]["salutatory_email_charset"]) ? $go_info["server"]["salutatory_email_charset"] : 'iso-8859-1');
   $conf_webdav = (isset($go_info["server"]["conf_webdav"]) ? ($go_info["server"]["conf_webdav"] == false ? '0' : '1') : '0');
+  $dec_point = (isset($go_info["localisation"]["dec_point"]) ? $go_info["localisation"]["dec_point"] : ',');
+  $thousands_sep = (isset($go_info["localisation"]["thousands_sep"]) ? $go_info["localisation"]["thousands_sep"] : '.');
+  $currency = (isset($go_info["localisation"]["currency"]) ? $go_info["localisation"]["currency"] : 'EUR');
   $old_version = str_pad(str_replace(".", "", $go_info["server"]["version"]), 4, "0", STR_PAD_RIGHT);
   $server_url = $go_info["server"]["server_url"];
   $server_ispconfigprotocol = parse_url($server_url);
@@ -1191,6 +1197,9 @@ $conf = str_replace("{SSH_CHROOT}", $ssh_chroot, $conf);
 $conf = str_replace("{HTTPD_CHECK}", $httpd_check, $conf);
 $conf = str_replace("{SALUTATORY_EMAIL_CHARSET}", $salutatory_email_charset, $conf);
 $conf = str_replace("{WEBDAV}", $conf_webdav, $conf);
+$conf = str_replace("{DEC_POINT}", $dec_point, $conf);
+$conf = str_replace("{THOUSANDS_SEP}", $thousands_sep, $conf);
+$conf = str_replace("{CURRENCY}", $currency, $conf);
 if($install_art == "upgrade"){
   if($old_version < 2000){
     $conf = str_replace('$go_info["theme"]["page"]["nav_color"] = "025CCA";', '$go_info["theme"]["page"]["nav_color"] = "E0E0E0";', $conf);
