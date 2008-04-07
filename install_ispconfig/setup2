@@ -61,6 +61,17 @@ then
   fi
 fi
 
+NEEDED_SPACE=524288 # 512MB
+AVAILABLE_SPACE_CUR_DIR=`df . | awk '{print $4}' | tr '\n' ' ' | cut -f2 -d ' '`
+AVAILABLE_SPACE_ROOT_DIR=`df /root | awk '{print $4}' | tr '\n' ' ' | cut -f2 -d ' '`
+
+if [ "$AVAILABLE_SPACE_CUR_DIR" -lt "$NEEDED_SPACE" ]; then
+  error "Sie benötigen mind. 512MB Platz im jetzigen Verzeichnis, um ISPConfig zu installieren! / You need at least 512MB of disk space in the current directory to install ISPConfig!"
+fi
+if [ "$AVAILABLE_SPACE_ROOT_DIR" -lt "$NEEDED_SPACE" ]; then
+  error "Sie benötigen mind. 512MB Platz im /root-Verzeichnis, um ISPConfig zu installieren! / You need at least 512MB of disk space in the /root directory to install ISPConfig!"
+fi
+
 . dist.info.tmp
 
 ############# INSTALLATIONSART #################
