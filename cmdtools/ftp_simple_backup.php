@@ -71,8 +71,23 @@ umask($umask_orig);
 // Store backup on FTP server
 $conn_id = ftp_connect($ftp_server) or die('Unable to connect to FTP server.');
 $login_result = ftp_login ($conn_id, $ftp_user, $ftp_password) or die('Unable to login to FTP server.');
+ftp_pasv($conn_id, true);
 $upload = ftp_put ($conn_id, $backup_dest_file, $backup_file, FTP_BINARY) or die('Unable to upload file to FTP server.');
 ftp_close($conn_id);
+
+
+/*
+$filew="ftp://$ftp_user:$ftp_password@$ftp_server/$backup_dest_file";
+$opts = array('ftp' => array('overwrite' => true));
+$context = stream_context_create($opts);
+$src = fopen($backup_file, 'r');
+$dst = fopen($filew,'w',false,$context);
+stream_copy_to_stream($src, $dst)
+fclose($src);
+fclose($dst);
+*/
+
+//$strwri = file_put_contents($filew,$str,LOCK_EX,$context);
 
 
 
