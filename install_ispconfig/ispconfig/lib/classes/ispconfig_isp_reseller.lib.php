@@ -605,7 +605,7 @@ function reseller_delete($doc_id, $doctype_id, $action, $die_on_error = '1') {
     // beim löschen
     if($action == 'do') {
     $anbieter = $go_api->db->queryOneRecord("SELECT * FROM isp_isp_reseller where doc_id = $doc_id");
-print_r($anbieter);
+//print_r($anbieter);
     $groupid = $anbieter["reseller_group"];
 
     if($groupid != 0) {
