@@ -115,4 +115,4 @@ cp /usr/lib/libkrb5support.so.0 usr/lib/
 mkdir ${HOMEDIR}/var
 mkdir ${HOMEDIR}/var/run
 mkdir ${HOMEDIR}/var/run/mysqld
-ln /var/run/mysqld/mysqld.sock ${HOMEDIR}/var/run/mysqld/mysqld.sock
+ln -s /var/run/mysqld/mysqld.sock ${HOMEDIR}/var/run/mysqld/mysqld.sock
