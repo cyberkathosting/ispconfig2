@@ -891,7 +891,7 @@ fi  ## install_art == install
     fi
   fi
 
-  if [ ! -S /var/www/sharedip ]; then
+  if [ ! -d /var/www/sharedip ]; then
     mkdir -p /var/www/sharedip
         log "Directory /var/www/sharedip created."
         cp isp/sharedip_index.html_$lang /var/www/sharedip/index.html
