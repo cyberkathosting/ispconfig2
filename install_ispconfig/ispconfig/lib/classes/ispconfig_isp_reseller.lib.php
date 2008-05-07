@@ -458,6 +458,7 @@ function reseller_update($doc_id, $doctype_id, $die_on_error = '1') {
 
         if($reseller["email"] != "" && eregi("^[a-z0-9,!#\$%&'\*\+/=\?\^_`\{\|}~-]+(\.[a-z0-9,!#\$%&'\*\+/=\?\^_`\{\|}~-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*\.([a-z]{2,})$", $reseller["email"]) && $absender_email != "" && eregi("^[a-z0-9,!#\$%&'\*\+/=\?\^_`\{\|}~-]+(\.[a-z0-9,!#\$%&'\*\+/=\?\^_`\{\|}~-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*\.([a-z]{2,})$", $absender_email) && $absender_name != "" && $subject != "" && $message != ""){
 
+          $message = str_replace("\r\n", "\n", $message);
           $message = str_replace("%%%USER%%%", $reseller["reseller_user"], $message);
           $message = str_replace("%%%PASSWORD%%%", $reseller["reseller_passwort"], $message);
           $message = str_replace("%%%FIRST_NAME%%%", $reseller["vorname"], $message);

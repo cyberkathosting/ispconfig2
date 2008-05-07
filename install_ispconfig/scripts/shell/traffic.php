@@ -106,6 +106,7 @@ if($webs = $mod->db->queryAllRecords("SELECT isp_traffic.web_id, isp_traffic.byt
               $message = 'The traffic limit for '.$web['web_host'].($web['web_host'] == "" ? "" : ".").$web['web_domain'].' ('.$web['web_traffic'].'MB) has been exceeded in '.$month.'.
 Your web site has been suspended for the rest of this month!';
             } else {
+              $message = str_replace("\r\n", "\n", $message);
               $message = str_replace("%%%FIRST_NAME%%%", $kunde["kunde_vorname"], $message);
               $message = str_replace("%%%LAST_NAME%%%", $kunde["kunde_name"], $message);
               $message = str_replace("%%%WEBSITE%%%", $web['web_host'].($web['web_host'] == "" ? "" : ".").$web['web_domain'], $message);
@@ -150,6 +151,7 @@ Your web site has been suspended for the rest of this month!';
             $message = 'The traffic limit for '.$web['web_host'].($web['web_host'] == "" ? "" : ".").$web['web_domain'].' ('.$web['web_traffic'].'MB) has been exceeded in '.$month.'.
 However, your web site will stay online, but you might have to pay for the extra traffic!';
           } else {
+            $message = str_replace("\r\n", "\n", $message);
             $message = str_replace("%%%FIRST_NAME%%%", $kunde["kunde_vorname"], $message);
             $message = str_replace("%%%LAST_NAME%%%", $kunde["kunde_name"], $message);
             $message = str_replace("%%%WEBSITE%%%", $web['web_host'].($web['web_host'] == "" ? "" : ".").$web['web_domain'], $message);
@@ -213,6 +215,7 @@ if($resellers = $mod->db->queryAllRecords("SELECT isp_isp_reseller.doc_id, isp_i
               $message = 'The traffic limit for your reseller account ('.$reseller['limit_traffic'].'MB) has been exceeded in '.$month.'.
 All your web sites have been suspended until the end of this month!';
             } else {
+              $message = str_replace("\r\n", "\n", $message);
               $message = str_replace("%%%FIRST_NAME%%%", $reseller["vorname"], $message);
               $message = str_replace("%%%LAST_NAME%%%", $reseller["name"], $message);
               $message = str_replace("%%%MONTH%%%", $month, $message);
@@ -249,6 +252,7 @@ All your web sites have been suspended until the end of this month!';
               $message = 'The traffic limit for your reseller account ('.$reseller['limit_traffic'].'MB) has been exceeded in '.$month.'.
 However, your web sites will stay online, but you might have to pay for the extra traffic!';
             } else {
+              $message = str_replace("\r\n", "\n", $message);
               $message = str_replace("%%%FIRST_NAME%%%", $reseller["vorname"], $message);
               $message = str_replace("%%%LAST_NAME%%%", $reseller["name"], $message);
               $message = str_replace("%%%MONTH%%%", $month, $message);
