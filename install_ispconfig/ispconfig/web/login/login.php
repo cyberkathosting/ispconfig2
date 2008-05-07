@@ -62,6 +62,7 @@ if ($row = $db->queryOneRecord($sql) and $passwort != "")
 {
   if ($row["doc_id"] != 0 and $row["gueltig"] == "1")
   {
+    $username = stripslashes($username);
     $passwort = stripslashes($passwort);
     include("../../lib/session.inc.php");
     $time = mktime()+86400;
