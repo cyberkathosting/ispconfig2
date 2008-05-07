@@ -145,6 +145,7 @@ function kunde_update($doc_id, $doctype_id, $die_on_error = '1') {
 
              if($kunde["kunde_email"] != "" && eregi("^[a-z0-9,!#\$%&'\*\+/=\?\^_`\{\|}~-]+(\.[a-z0-9,!#\$%&'\*\+/=\?\^_`\{\|}~-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*\.([a-z]{2,})$", $kunde["kunde_email"]) && $absender_email != "" && eregi("^[a-z0-9,!#\$%&'\*\+/=\?\^_`\{\|}~-]+(\.[a-z0-9,!#\$%&'\*\+/=\?\^_`\{\|}~-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*\.([a-z]{2,})$", $absender_email) && $absender_name != "" && $subject != "" && $message != ""){
 
+          $message = str_replace("\r\n", "\n", $message);
           $message = str_replace("%%%USER%%%", $kunde["webadmin_user"], $message);
           $message = str_replace("%%%PASSWORD%%%", $kunde["webadmin_passwort"], $message);
           $message = str_replace("%%%FIRST_NAME%%%", $kunde["kunde_vorname"], $message);
