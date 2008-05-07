@@ -55,13 +55,14 @@ if ($res['anzahl'] >= 6)
 
 $laston = date("y-m-d H:i:s");
 //$conn = mysql_query("SELECT * FROM sys_user where username = '$username'");
-$sql = "SELECT * FROM sys_user WHERE username = '$username' AND (passwort = '".md5($passwort)."' OR passwort = PASSWORD('$passwort'))";
+$sql = "SELECT * FROM sys_user WHERE username = '{$username}' AND (passwort = md5('{$passwort}') OR passwort = PASSWORD('{$passwort}'))";
 //die($sql);
 
 if ($row = $db->queryOneRecord($sql) and $passwort != "")
 {
   if ($row["doc_id"] != 0 and $row["gueltig"] == "1")
   {
+    $passwort = stripslashes($passwort);
     include("../../lib/session.inc.php");
     $time = mktime()+86400;
     $date = date("l, d-M-y H:i:s", ($time));

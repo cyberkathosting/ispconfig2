@@ -50,9 +50,9 @@ class auth
                 /* Check nach login PUT Variablen*/
                 if (($username != "") && ($passwort != "")) {
                     $username = addslashes($username);
-					$passwort = addslashes($passwort);
+                    $passwort = addslashes($passwort);
 
-                    if ($row = $go_api->db->queryOneRecord("SELECT username,doc_id FROM sys_user WHERE username = '$username' AND (passwort = PASSWORD('$passwort') OR passwort = '".md5($passwort)."')")) {
+                    if ($row = $go_api->db->queryOneRecord("SELECT username,doc_id FROM sys_user WHERE username = '{$username}' AND (passwort = PASSWORD('{$passwort}') OR passwort = md5('{$passwort}'))")) {
                         if($row["username"] == $username)
                             {
                             $this->status = "ok";
