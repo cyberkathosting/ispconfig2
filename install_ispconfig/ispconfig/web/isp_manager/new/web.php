@@ -93,7 +93,7 @@ if(!empty($anbieter)) {
 
         // Kunden des Anbieters suchen
         $x = 0;
-    $rows = $go_api->db->queryAllRecords("select * from isp_nodes where doctype_id = '1012' and groupid = '$anbieter' ORDER BY title");
+    $rows = $go_api->db->queryAllRecords("SELECT * FROM isp_nodes WHERE doctype_id = '1012' AND groupid = '$anbieter' AND status = '1' ORDER BY title");
     $kunden = "";
     while (list($key, $row) = each($rows))
         {

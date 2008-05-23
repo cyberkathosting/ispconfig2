@@ -73,4 +73,5 @@ $wb["Davon"] = "Fra";
 $wb["Ihre antwort"] = "Dit svar";
 $wb["Antworten"] = "Besvare";
 $wb["Schließen"] = "Luk";
+$wb["Dutch"]         = "Dutch";
 ?>

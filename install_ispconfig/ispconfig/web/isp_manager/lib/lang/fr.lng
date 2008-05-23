@@ -48,8 +48,6 @@ $wb["SSL"]        = "SSL";
 $wb["Shell Zugriff"]      = "Accès Shell";
 $wb["Zugang"]       = "Accès";  // Zugriff u. Zugang zusammenfassen!/nur einen Begriff nehmen!
 $wb["CGI Scripte"]      = "Scripts CGI";
-$wb["CGI Modus"]      = "CGI Mode";
-$wb["CGI mod_perl"]      = "CGI mod_perl";
 $wb["Bundesland"]   = "Région";
 $wb["Abteilung"]    = "Départment";
 $wb["Gültigkeit (Tage)"]  = "Validité (jours)";
@@ -240,7 +238,6 @@ $wb["deaktiviert"] = 'inactif';
 $wb["ISP User"] = 'Utilisateur ISP';
 $wb["WebSpeicher MB"] = 'Espace Web MB';
 $wb["MailSpeicher MB"] = 'Espace Mail MB';
-$wb["Max. MailSpeicher MB"] = 'Espace Mail MB';
 $wb["Administrator"] = 'Administrateur';
 $wb["Erweiterte Einstellungen"] = 'Paramètres Avançés';
 $wb["email_weiterleitung_txt"] = '<b>Attention :</b> un e-mail par ligne.';
@@ -390,6 +387,7 @@ $wb["System Load 15 Minuten"] = "Charge système sur 15 Minutes";
 $wb["Es konnte ein Dokument nicht wiederhergestellt werden, da sich das Eltern-Dokument noch im Papierkorb befindet.\n"] = "Cet élément ne pourras être restaurer tant que son parent est dans la corbeille.";
 $wb["error_anbieter_max_webs_ueberschritten"] = "Le revendeur possède plus de sites que vous voulez lui assigner.<br>";
 $wb["error_anbieter_max_diskspace_ueberschritten"] = "Le revendeur utilise plus d'espace disque que vous voulez lui assigner.<br>";
+$wb["error_anbieter_max_traffic_ueberschritten"] = "The reseller already uses more traffic than you want to assign to him.<br>";
 $wb["error_anbieter_max_user_ueberschritten"] = "Le revendeur possède plus d'utilisateur que vous voulez lui assigner.<br>";
 $wb["error_anbieter_max_domain_ueberschritten"] = "Le revendeur possède plus de domaine que vous voulez lui assigner.<br>";
 $wb["error_anbieter_dnsmanager_aktiv"] = "Le revendeur possède des enregistrements DNS. Ils est donc impossible de désactiver le DNS Manager.<br>";
@@ -398,9 +396,9 @@ $wb["error_anbieter_max_slavedns_ueberschritten"] = "Le revendeur utilise plus d
 $wb["error_anbieter_httpd_include_aktiv"] = "Les HTTPD Includes sont en service sur certains des sites Web du revendeur. Cette option ne peut être désactivée.<br>";
 $wb["error_anbieter_shell_access_aktiv"] = "L'Accès Shell est en service sur certains des sites Web du revendeur. Cette option ne peut être désactivée.<br>";
 $wb["error_anbieter_cgi_aktiv"] = "L'option CGI est en service sur certains des sites Web du revendeur. Cette option ne peut être désactivée.<br>";
-$wb["error_anbieter_cgi_mod_perl_aktiv"] = "L'option CGI mod_perl est en service sur certains des sites Web du revendeur. Cette option ne peut être désactivée.<br>";
 $wb["error_anbieter_standard_cgi_aktiv"] = "L'option CGIs Standard est en service sur certains des sites Web du revendeur. Cette option ne peut être désactivée.<br>";
 $wb["error_anbieter_php_aktiv"] = "PHP est en service sur certains des sites Web du revendeur. Cette option ne peut être désactivée.<br>";
+$wb["error_anbieter_ruby_aktiv"] = "Ruby est en service sur certains des sites Web du revendeur. Cette option ne peut être désactivée.<br>";
 $wb["error_anbieter_ssi_aktiv"] = "SSI est en service sur certains des sites Web du revendeur. Cette option ne peut être désactivée.<br>";
 $wb["error_anbieter_ftp_aktiv"] = "FTP est en service sur certains des sites Web du revendeur. Cette option ne peut être désactivée.<br>";
 $wb["error_anbieter_anonftp_aktiv"] = "FTP anonyme est en service sur certains des sites Web du revendeur. Cette option ne peut être désactivée.<br>";
@@ -434,9 +432,9 @@ $wb["error_web_no_database_decrease_1"] = "Ce site utilise déjà ";
 $wb["error_web_no_database_decrease_2"] = " Base(s) de données. Vous ne pouvez pas en diminuer le nombre.<br>";
 $wb["error_web_no_shell_access"] = "Vous ne pouvez pas assigner l'Accès Shell à ce site.<br>";
 $wb["error_web_no_cgi"] = "Vous ne pouvez pas assigner l'option CGI à ce site.<br>";
-$wb["error_web_no_cgi_mod_perl"] = "Vous ne pouvez pas assigner l'option CGI mod_perl à ce site.<br>";
 $wb["error_web_no_standard_cgi"] = "Vous ne pouvez pas assigner l'option CGIs Standard à ce site.<br>";
 $wb["error_web_no_php"] = "Vous ne pouvez pas assigner la fonction PHP à ce site.<br>";
+$wb["error_web_no_ruby"] = "Vous ne pouvez pas assigner la fonction Ruby à ce site.<br>";
 $wb["error_web_no_ssi"] = "Vous ne pouvez pas assigner la fonction SSI à ce site.<br>";
 $wb["error_web_no_ftp"] = "Vous ne pouvez pas assigner la fonction FTP à ce site.<br>";
 $wb["error_web_no_mysql"] = "Vous ne pouvez pas assigner de BDD MySQL à ce site.<br>";
@@ -553,19 +551,6 @@ $wb["txt_traffic_notification_email_variables"] = '<table border="0" cellpadding
         </table>';
 
 $wb["Catalog_Name"] = "Nom";
-
-// MySQL Quota ////////////////////////////////////////
-$wb["Benutzter MySQL-Speicherplatz"] = "Database space used";
-$wb["Speicherplatz Datenbanken"] = "Diskspace Databases";
-
-// Mail Quota /////////////////////////////////////////
-$wb["error_max_mailquota_web"] = "The selected mailspace exceeds site's limits.<br>";
-
-$wb["Nicht scannen"] = "Don't scan";
-$wb["MX prüfen"] = "Check MX";
-$wb["Cyrus-Administrator"] = "Cyrus Admin";
-$wb["Passwort Cyrus-Admin"] = "Cyrus Admin Password";
-
 $wb["Spam Whitelist"] = 'Spam Whitelist';
 $wb["Spam Blacklist"] = 'Spam Blacklist';
 $wb["spam_whitelist_txt"] = '<b>Hint:</b> One entry per line. Valid entries are, for example, friend@somewhere.com, *@isp.com, or *.domain.net.';
@@ -574,5 +559,6 @@ $wb["Webalizer Stats"] = 'Webalizer<br>&nbsp;Statistics';
 $wb["Use Uribl"] = 'Use <a href="http://www.uribl.com/about.shtml" target="_blank" style="font-family:Arial,Verdana">URIBL</a>';
 $wb["Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 -"] = "Only the following signs are allowed: a-z A-Z 0-9 -<br>";
 $wb["Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 - ."] = "Only the following signs are allowed: a-z A-Z 0-9 - .<br>";
+$wb["txt_system_currently_updated_no_recycle_bin"] = "The system is currently updating the configuration files.";
 
 ?>

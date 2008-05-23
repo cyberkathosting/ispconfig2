@@ -13,6 +13,7 @@ $hlp["web_speicher"] = "Tamanho do espaço de armazenagem para o site (em MB)";
 $hlp["web_traffic"] = "Especifica quanto tráfego é permitido para site (em MB).";
 $hlp["web_cgi"] = "Ativa CGI para este site.";
 $hlp["web_php"] = "Ativa PHP para este site.";
+$hlp["web_ruby"] = "Ativa Ruby para este site.";
 $hlp["web_ssi"] = "Ativa SSI para este site.";
 $hlp["web_ftp"] = "Ativa acesso FTP para este site.";
 $hlp["web_frontpage"] = "Ativa Extensões Frontpage para este site.";

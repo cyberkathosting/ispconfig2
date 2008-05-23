@@ -29,7 +29,6 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 if(CONFIG_LOADED != 1) die('Direct access not permitted.');
 
-
 class doc 
 {
 var $userid;
@@ -72,15 +71,8 @@ function doctype_get($doctype_id)
     global $go_api, $go_info;
     
 	$doctype_id =intval($doctype_id);
-	// Loading the doctype definition from file
-	$filename = SERVER_ROOT.DIR_TRENNER.'lib'.DIR_TRENNER.'doctypes'.DIR_TRENNER.'doctype_'.$doctype_id.'.dtd';
-	if(is_file("$filename")) {
-		$serialized_doctype = file_get_contents($filename);
-	} else {
-		die("Doctype $doctype_id does not exist.");
-	}
-	
-    return unserialize($serialized_doctype);
+    $row = $go_api->db->queryOneRecord("SELECT * from doctype where doctype_id = '$doctype_id'");
+    return unserialize($row["doctype_def"]);
     
     }
 function check($to_check, $max_len = 0)
@@ -88,7 +80,8 @@ function check($to_check, $max_len = 0)
        {
        // $to_check = addslashes($to_check);
        if(!is_array($to_check)) {
-       //$to_check = strtr($to_check, "\"", "'");
+	   // Commented out on 14. jan. 2007. Hope its really not needed, Till ;)
+       // $to_check = strtr($to_check, "\"", "'");
        
             if($max_len != 0)
        	    {
@@ -136,7 +129,6 @@ function deck()
 			}
 		}
 	}
-	
 }
 
 class element

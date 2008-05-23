@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>Welkom!</title>
+<title>Welcome!</title>
 </head>
 <body BGCOLOR="#FFFFFF" leftMargin=0 topMargin=0 rightMargin=0 marginheight="0" marginwidth="0">
 <center>
@@ -10,7 +10,7 @@
     <hr SIZE="1" COLOR="#FFFFFF">
     <table>
       <tr>
-        <td><font SIZE="3" COLOR="#FFFFFF" FACE="Helvetica, Arial"><b>Gedeeld IP-adres</b></font></td>
+        <td><font SIZE="3" COLOR="#FFFFFF" FACE="Helvetica, Arial"><b>Shared IP</b></font></td>
       </tr>
     </table>
     <hr SIZE="1" COLOR="#FFFFFF">
@@ -21,8 +21,8 @@
     <br><br>
           <center>
               <p><font COLOR="#000000" SIZE="2" FACE="Helvetica, Arial"><br>
-          Dit is een gedeeld IP-adres. Voor toegang naar de website waar u naar op zoek bent, geeft u het adres op i.p.v. het IP-nummer.</font></p>
-              <p><font COLOR="#000000" SIZE="2" FACE="Helvetica, Arial">Voor vragen of problemen, kunt u contact opnemen met de beheerder van de server.</font></p>
+          This IP address is shared. For access to the web site which you look for, enter its address instead of its IP.</font></p>
+              <p><font COLOR="#000000" SIZE="2" FACE="Helvetica, Arial">For questions or problems please contact the server administrator.</font></p>
       </center>
       <hr SIZE="1" WIDTH="90%">
       <center>

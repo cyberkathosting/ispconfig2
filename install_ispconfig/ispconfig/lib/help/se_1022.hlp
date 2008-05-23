@@ -17,6 +17,7 @@ $hlp["limit_slave_dns"] = "Skriv in hur många domäner maximalt som återförsäljar
 
 $hlp["limit_cgi"] = "Markera om återförsäljaren kan tilldela CGI funktion till de webbplatser som finns på dennes konto.";
 $hlp["limit_php"] = "Markera om återförsäljaren kan tilldela PHP funktion till de webbplatser som finns på dennes konto.";
+$hlp["limit_ruby"] = "Markera om återförsäljaren kan tilldela Ruby funktion till de webbplatser som finns på dennes konto.";
 $hlp["limit_ssi"] = "Markera om återförsäljaren kan tilldela SSI funktion till de webbplatser som finns på dennes konto.";
 $hlp["limit_ftp"] = "Markera om återförsäljaren kan tilldela FTP funktion till de webbplatser som finns på dennes konto.";
 $hlp["limit_frontpage"] = "Markera om återförsäljaren kan tilldela Frontpage funktion till de webbplatser som finns på dennes konto.";

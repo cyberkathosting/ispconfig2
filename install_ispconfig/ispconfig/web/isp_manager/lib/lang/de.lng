@@ -47,8 +47,6 @@ $wb["SSL"]        = "SSL";
 $wb["Shell Zugriff"]      = "Shell Zugriff";
 $wb["Zugang"]       = "Zugang";  // Zugriff u. Zugang zusammenfassen!/nur einen Begriff nehmen!
 $wb["CGI Scripte"]      = "CGI Scripte";
-$wb["CGI Modus"]      = "CGI Modus";
-$wb["CGI mod_perl"]      = "CGI mod_perl";
 $wb["Bundesland"]   = "Bundesland";
 $wb["Abteilung"]    = "Abteilung";
 $wb["Gültigkeit"]  = "Gültigkeit";
@@ -128,7 +126,7 @@ $wb["error_anbieter_no_restore"] = "Der Anbieter kann nicht wiederhergestellt we
 $wb["error_sysuser_exist_1"] = "Sie haben bereits einen User mit dem Namen";
 $wb["error_sysuser_exist_2"] = "angelegt.<br>";
 $wb["error_max_user_web"] = "Die maximale Anzahl User des Web wurde erreicht.<br>";
-$wb["error_max_space_web"] = "Der angegebene Speicher überschreitet das Limit des Web-Speicherplatzes.<br>";
+$wb["error_max_space_web"] = "Der angegebene Speicher überschreitet das Limit des Web Speicherplatzes.<br>";
 $wb["error_max_user_anbieter"] = "Die maximale Anzahl User des Anbieters wurde erreicht.<br>";
 $wb["error_sysuser_exist"] = "Der Username ist bereits vergeben.<br>";
 $wb["error_admin_exist"] = "Es existiert bereits ein User mit Administratorrechten in diesem Web.<br>";
@@ -231,7 +229,6 @@ $wb["deaktiviert"] = 'deaktiviert';
 $wb["ISP User"] = 'ISP User';
 $wb["WebSpeicher MB"] = 'WebSpeicher MB';
 $wb["MailSpeicher MB"] = 'MailSpeicher MB';
-$wb["Max. MailSpeicher MB"] = 'Max. MailSpeicher MB';
 $wb["Administrator"] = 'Administrator';
 $wb["Erweiterte Einstellungen"] = 'Erweiterte Einstellungen';
 $wb["Email Alias"] = 'Email-Alias';
@@ -367,6 +364,7 @@ $wb["txt_user_standard_index_variables"] = '<table border="0" cellpadding="3" ce
 $wb["Es konnte ein Dokument nicht wiederhergestellt werden, da sich das Eltern-Dokument noch im Papierkorb befindet.\n"] = "Es konnte ein Dokument nicht wiederhergestellt werden, da sich das Eltern-Dokument noch im Papierkorb befindet.\n";
 $wb["error_anbieter_max_webs_ueberschritten"] = "Der Anbieter hat schon mehr Webs, als Sie ihm zuordnen möchten.<br>";
 $wb["error_anbieter_max_diskspace_ueberschritten"] = "Der Anbieter benutzt mehr Diskspace, als Sie ihm zuordnen möchten.<br>";
+$wb["error_anbieter_max_traffic_ueberschritten"] = "Der Anbieter benutzt mehr Traffic, als Sie ihm zuordnen möchten.<br>";
 $wb["error_anbieter_max_user_ueberschritten"] = "Der Anbieter hat schon mehr User, als Sie ihm zuordnen möchten.<br>";
 $wb["error_anbieter_max_domain_ueberschritten"] = "Der Anbieter hat schon mehr Domains, als Sie ihm zuordnen möchten.<br>";
 $wb["error_anbieter_dnsmanager_aktiv"] = "Der Anbieter besitzt schon einige DNS-Records. Der DNS-Manager kann nicht deaktiviert werden.<br>";
@@ -375,9 +373,9 @@ $wb["error_anbieter_max_slavedns_ueberschritten"] = "Der Anbieter hat schon mehr
 $wb["error_anbieter_httpd_include_aktiv"] = "HTTPD-Includes werden auf einigen Webs des Resellers verwendet. Dieses Feature kann nicht deaktiviert werden.<br>";
 $wb["error_anbieter_shell_access_aktiv"] = "Shell-Zugang wird auf einigen Webs des Resellers verwendet. Dieses Feature kann nicht deaktiviert werden.<br>";
 $wb["error_anbieter_cgi_aktiv"] = "CGI wird auf einigen Webs des Resellers verwendet. Dieses Feature kann nicht deaktiviert werden.<br>";
-$wb["error_anbieter_cgi_mod_perl_aktiv"] = "CGI mod_perl wird auf einigen Webs des Resellers verwendet. Dieses Feature kann nicht deaktiviert werden.<br>";
 $wb["error_anbieter_standard_cgi_aktiv"] = "Standard-CGIs werden auf einigen Webs des Resellers verwendet. Dieses Feature kann nicht deaktiviert werden.<br>";
 $wb["error_anbieter_php_aktiv"] = "PHP wird auf einigen Webs des Resellers verwendet. Dieses Feature kann nicht deaktiviert werden.<br>";
+$wb["error_anbieter_ruby_aktiv"] = "Ruby wird auf einigen Webs des Resellers verwendet. Dieses Feature kann nicht deaktiviert werden.<br>";
 $wb["error_anbieter_ssi_aktiv"] = "SSI wird auf einigen Webs des Resellers verwendet. Dieses Feature kann nicht deaktiviert werden.<br>";
 $wb["error_anbieter_ftp_aktiv"] = "FTP wird auf einigen Webs des Resellers verwendet. Dieses Feature kann nicht deaktiviert werden.<br>";
 $wb["error_anbieter_anonftp_aktiv"] = "Anonymous-FTP wird auf einigen Webs des Resellers verwendet. Dieses Feature kann nicht deaktiviert werden.<br>";
@@ -411,9 +409,9 @@ $wb["error_web_no_database_decrease_1"] = "Dieses Web besitzt schon ";
 $wb["error_web_no_database_decrease_2"] = " Datenbank(en). Sie können die Datenbankanzahl nicht verringern.<br>";
 $wb["error_web_no_shell_access"] = "Sie können diesem Web keinen Shell-Zugang zuordnen.<br>";
 $wb["error_web_no_cgi"] = "Sie können diesem Web keine CGI-Funktionalität zuordnen.<br>";
-$wb["error_web_no_cgi_mod_perl"] = "Sie können diesem Web keine CGI-Funktionalität mit mod_perl zuordnen.<br>";
 $wb["error_web_no_standard_cgi"] = "Sie können diesem Web keine Standard-CGI-Skripte zuordnen.<br>";
 $wb["error_web_no_php"] = "Sie können diesem Web keine PHP-Funktionalität zuordnen.<br>";
+$wb["error_web_no_ruby"] = "Sie können diesem Web keine Ruby-Funktionalität zuordnen.<br>";
 $wb["error_web_no_ssi"] = "Sie können diesem Web keine SSI-Funktionalität zuordnen.<br>";
 $wb["error_web_no_ftp"] = "Sie können diesem Web keine FTP-Funktionalität zuordnen.<br>";
 $wb["error_web_no_mysql"] = "Sie können diesem Web keine MySQL-Datenbanken zuordnen.<br>";
@@ -530,19 +528,6 @@ $wb["txt_traffic_notification_email_variables"] = '<table border="0" cellpadding
         </table>';
 
 $wb["Catalog_Name"] = "Name";
-
-// MySQL Quota ////////////////////////////////////////
-$wb["Benutzter MySQL-Speicherplatz"] = "Benutzter MySQL-Speicherplatz";
-$wb["Speicherplatz Datenbanken"] = "Speicherplatz Datenbanken";
-
-// Mail Quota /////////////////////////////////////////
-$wb["error_max_mailquota_web"] = "Der angegebene Mail-Speicher überschreitet das Limit des verfügbaren Mail-Speicherplatzes.<br>";
-
-$wb["Nicht scannen"] = "Nicht scannen";
-$wb["MX prüfen"] = "MX prüfen";
-$wb["Cyrus-Administrator"] = "Cyrus-Administrator";
-$wb["Passwort Cyrus-Admin"] = "Passwort Cyrus-Admin";
-
 $wb["Spam Whitelist"] = 'Spam-Whitelist';
 $wb["Spam Blacklist"] = 'Spam-Blacklist';
 $wb["spam_whitelist_txt"] = '<b>Hinweis:</b> Ein Eintrag pro Zeile. Gültige Einträge sind z.B. friend@somewhere.com, *@isp.com oder *.domain.net.';
@@ -551,5 +536,6 @@ $wb["Webalizer Stats"] = 'Webalizer-<br>&nbsp;Statistiken';
 $wb["Use Uribl"] = '<a href="http://www.uribl.com/about.shtml" target="_blank" style="font-family:Arial,Verdana">URIBL</a> nutzen';
 $wb["Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 -"] = "Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 -<br>";
 $wb["Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 - ."] = "Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 - .<br>";
+$wb["txt_system_currently_updated_no_recycle_bin"] = "Die Konfigurationsdateien werden aktualisiert.";
 
 ?>

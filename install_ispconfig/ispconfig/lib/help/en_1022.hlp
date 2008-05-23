@@ -16,8 +16,8 @@ $hlp["limit_domain_dns"] = "Please specify the maximum number of domains for whi
 $hlp["limit_slave_dns"] = "Please specify the maximum number of domains for which the reseller is allowed to create Secondary (Slave) DNS records.";
 
 $hlp["limit_cgi"] = "Please specify if the reseller is allowed to assign CGI functionality to the websites under his account.";
-$hlp["limit_cgi_mod_perl"] = "Please specify if the reseller is allowed to assign CGI functionality using mod_perl to the websites under his account.";
 $hlp["limit_php"] = "Please specify if the reseller is allowed to assign PHP functionality to the websites under his account.";
+$hlp["limit_ruby"] = "Please specify if the reseller is allowed to assign Ruby functionality to the websites under his account.";
 $hlp["limit_ssi"] = "Please specify if the reseller is allowed to assign SSI functionality to the websites under his account.";
 $hlp["limit_ftp"] = "Please specify if the reseller is allowed to assign FTP functionality to the websites under his account.";
 $hlp["limit_frontpage"] = "Please specify if the reseller is allowed to assign Frontpage functionality to the websites under his account.";

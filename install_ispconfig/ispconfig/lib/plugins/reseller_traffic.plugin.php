@@ -38,7 +38,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  # Datum:
  #
  #############################################################
- 
+
  if(CONFIG_LOADED != 1) die('Direct access not permitted.');
 
 class reseller_traffic_plugin {
@@ -75,7 +75,7 @@ class reseller_traffic_plugin {
       foreach($kunden as $kunde){
        $kunden_ident = $kunde["kunde_firma"].' '.$kunde["kunde_vorname"].' '.$kunde["kunde_name"];
        $html_out .= '<tr>
-       <td colspan="5" align="center" bgcolor="#EFEFEF"><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><b>'.($web_data["web_host"] != "" ? $web_data["web_host"]."." : "").$web_data["web_domain"].'</b></font></td>
+       <td colspan="5" align="center" bgcolor="#9F9F9F"><font face="Verdana, Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"><b>'.$kunden_ident.'</b></font></td>
     </tr>';
 
        //$webs = $go_api->db->queryAllRecords("SELECT child_doc_id FROM isp_dep WHERE parent_doc_id = '".$kunde["doc_id"]."' AND parent_doctype_id = '1012' AND child_doctype_id = '1013'");
@@ -93,7 +93,7 @@ class reseller_traffic_plugin {
            //echo "web_id: ".$web_id."<br>";
            //print_r($traffics);
            $html_out .= '<tr>
-       <td colspan="5" align="center" bgcolor="#EFEFEF"><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><b>'.$web_data["web_domain"].'</b></font></td>
+       <td colspan="5" align="center" bgcolor="#EFEFEF"><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><b>'.($web_data["web_host"] != "" ? $web_data["web_host"]."." : "").$web_data["web_domain"].'</b></font></td>
     </tr>';
 
            if(is_array($traffics)) {

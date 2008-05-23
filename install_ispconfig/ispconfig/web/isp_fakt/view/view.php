@@ -150,8 +150,8 @@ $mwst_gesamt = 0;
                             <td class="normal"><? echo $record["anzahl"]?></td>
                             <td class="normal"><? echo $record["nummer"]?></td>
                             <td class="normal"><? echo $record["name"]?></td>
-                            <td align="right" valign="baseline" class="normal"><? echo sprintf("%01.2f", $record["preis"])?> <? echo $go_api->lng("EURO")?></td>
-                            <td align="right" valign="baseline" class="normal"><? echo sprintf("%01.2f", $record["preis"] * $record["anzahl"])?> <? echo $go_api->lng("EURO")?></td>
+                            <td align="right" valign="baseline" class="normal"><? echo number_format($record["preis"], 2, $go_info["localisation"]["dec_point"], $go_info["localisation"]["thousands_sep"]); ?> <? echo $go_info["localisation"]["currency"]; ?></td>
+                            <td align="right" valign="baseline" class="normal"><? echo number_format($record["preis"] * $record["anzahl"], 2, $go_info["localisation"]["dec_point"], $go_info["localisation"]["thousands_sep"]); ?> <? echo $go_info["localisation"]["currency"]; ?></td>
                           </tr>
                                                   <tr>
                             <td class="normal">&nbsp;</td>
@@ -169,7 +169,7 @@ $mwst_gesamt = 0;
                             <td colspan="5"><hr size="1" noshade></td>
                           </tr>
                           <tr align="right">
-                            <td colspan="5" class="normal_bold"><? echo $go_api->lng("Web gesamt")?>: <? echo sprintf("%01.2f", $web_gpreis)?> <? echo $go_api->lng("EURO")?></td>
+                            <td colspan="5" class="normal_bold"><? echo $go_api->lng("Web gesamt")?>: <? echo number_format($web_gpreis, 2, $go_info["localisation"]["dec_point"], $go_info["localisation"]["thousands_sep"]); ?> <? echo $go_info["localisation"]["currency"]; ?></td>
                           </tr>
                         </table></td>
                       </tr>
@@ -188,11 +188,11 @@ $mwst_gesamt = 0;
                       <tr>
                         <td>&nbsp;</td>
                         <td colspan="2" align="right" class="normal"><? echo $go_api->lng("enthaltene Mehrwertsteuer")?>:
-                         <? echo sprintf("%01.2f", $gpreis - $preis_netto)?> <? echo $go_api->lng("EURO")?></td>
+                         <? echo number_format($gpreis - $preis_netto, 2, $go_info["localisation"]["dec_point"], $go_info["localisation"]["thousands_sep"]); ?> <? echo $go_info["localisation"]["currency"]; ?></td>
                       </tr>
                       <tr>
                         <td>&nbsp;</td>
-                        <td colspan="2" align="right" class="t6b"><? echo $go_api->lng("Gesamtbetrag")?>: <? echo sprintf("%01.2f", $gpreis)?> <? echo $go_api->lng("EURO")?></td>
+                        <td colspan="2" align="right" class="t6b"><? echo $go_api->lng("Gesamtbetrag")?>: <? echo number_format($gpreis, 2, $go_info["localisation"]["dec_point"], $go_info["localisation"]["thousands_sep"]); ?> <? echo $go_info["localisation"]["currency"]; ?></td>
                       </tr>
                                           </table>
 </body>

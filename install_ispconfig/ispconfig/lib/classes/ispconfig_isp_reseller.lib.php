@@ -29,7 +29,6 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 if(CONFIG_LOADED != 1) die('Direct access not permitted.');
 
-
 class isp_reseller
 {
 
@@ -42,7 +41,6 @@ var $domain_doctype_id = 1015;
 var $dns_doctype_id = 1016;
 var $slave_dns_doctype_id = 1028;
 var $datenbank_doctype_id = 1029;
-var $list_doctype_id = 1033;
 var $vhost_conf;
 var $sendmail_cw;
 var $virtusertable;
@@ -77,12 +75,8 @@ function reseller_show($doc_id, $doctype_id) {
         $server_id = 1;
         $server = $go_api->db->queryOneRecord("SELECT * from isp_server where doc_id = '$server_id'");
         // Deaktiviere Frontpage
-
         if($server["server_enable_frontpage"] != 1) {
-            $doc->deck[1]->getElementByName("limit_frontpage")->visible = 0;
-        }
-        if($server["server_httpd_mod_perl"] != 1) {
-            $doc->deck[1]->getElementByName("limit_cgi_mod_perl")->visible = 0;
+                $doc->deck[1]->elements[19]->visible = 0;
         }
 
         // DNS-Reseller: "Sonstiges"-Tab verstecken (Begrüßungsemail für Kunden nicht nötig)
@@ -144,7 +138,7 @@ if($soacount["soa_count"] > 1) {
 }
 
 function reseller_update($doc_id, $doctype_id, $die_on_error = '1') {
-    global $go_api, $go_info;
+    global $go_api, $go_info, $old_form_data;
 
     // Resellerdaten auslesen
     $reseller = $go_api->db->queryOneRecord("select * from isp_nodes,isp_isp_reseller where isp_nodes.doc_id = isp_isp_reseller.doc_id and isp_nodes.doc_id = '$doc_id' and isp_nodes.doctype_id = '$doctype_id'");
@@ -164,53 +158,80 @@ function reseller_update($doc_id, $doctype_id, $die_on_error = '1') {
     $webanzahl = $webanzahl["anzahl"];
     if($reseller["limit_web"] >= 0){
       if($webanzahl > $reseller["limit_web"]){
-        $go_api->db->query("UPDATE isp_isp_reseller SET limit_web = '$webanzahl' WHERE doc_id = '$doc_id'");
+        //$go_api->db->query("UPDATE isp_isp_reseller SET limit_web = '$webanzahl' WHERE doc_id = '$doc_id'");
+        $go_api->db->query("UPDATE isp_isp_reseller SET limit_web = '".$old_form_data['limit_web']."' WHERE doc_id = '$doc_id'");
         $res_limit_errorMessage = $go_api->lng("error_anbieter_max_webs_ueberschritten");
       }
     }
 
     if(is_null($reseller["limit_disk"])) $reseller["limit_disk"] = 0;
     if($reseller["limit_disk"] >= 0){
-      $diskspace = $go_api->db->queryOneRecord("SELECT sum(isp_isp_web.web_speicher) as diskspace, sum(isp_isp_web.web_mailquota) as mailquota, sum(isp_isp_web.web_mysql_quota) as mysqlquota from isp_isp_web,isp_nodes where isp_isp_web.doc_id = isp_nodes.doc_id and  isp_nodes.groupid = '".$reseller["reseller_group"]."' and isp_nodes.doctype_id = ".$this->web_doctype_id);
-      $minspace  = $go_api->db->queryOneRecord("SELECT min(isp_isp_web.web_speicher) as diskspace, min(isp_isp_web.web_mailquota) as mailquota, min(isp_isp_web.web_mysql_quota) as mysqlquota from isp_isp_web,isp_nodes where isp_isp_web.doc_id = isp_nodes.doc_id and  isp_nodes.groupid = '".$reseller["reseller_group"]."' and isp_nodes.doctype_id = ".$this->web_doctype_id);
-      $diskspace = $diskspace["diskspace"] + $diskspace["mailquota"] + $diskspace["mysqlquota"];
-      $minspace  = min($diskspace["diskspace"], $diskspace["mailquota"], $diskspace["mysqlquota"]);
-      if($diskspace > $reseller["limit_disk"]){
-        $go_api->db->query("UPDATE isp_isp_reseller SET limit_disk = '$diskspace' WHERE doc_id = '$doc_id'");
+      if($go_api->db->queryOneRecord("SELECT isp_isp_web.web_speicher from isp_isp_web,isp_nodes where isp_isp_web.web_speicher = '-1' and isp_isp_web.doc_id = isp_nodes.doc_id and  isp_nodes.groupid = '".$reseller["reseller_group"]."' and isp_nodes.doctype_id = ".$this->web_doctype_id)){
+        $go_api->db->query("UPDATE isp_isp_reseller SET limit_disk = '".$old_form_data['limit_disk']."' WHERE doc_id = '$doc_id'");
         $res_limit_errorMessage .= $go_api->lng("error_anbieter_max_diskspace_ueberschritten");
-      } else if ($minspace < 0) {
-        $go_api->db->query("UPDATE isp_isp_reseller SET limit_disk = '-1' WHERE doc_id = '$doc_id'");
-        $res_limit_errorMessage .= $go_api->lng("error_anbieter_max_diskspace_ueberschritten");
+      } else {
+        $diskspace = $go_api->db->queryOneRecord("SELECT sum(isp_isp_web.web_speicher) as diskspace from isp_isp_web,isp_nodes where isp_isp_web.doc_id = isp_nodes.doc_id and  isp_nodes.groupid = '".$reseller["reseller_group"]."' and isp_nodes.doctype_id = ".$this->web_doctype_id);
+        $diskspace = $diskspace["diskspace"];
+        if($diskspace > $reseller["limit_disk"]){
+          //$go_api->db->query("UPDATE isp_isp_reseller SET limit_disk = '$diskspace' WHERE doc_id = '$doc_id'");
+          $go_api->db->query("UPDATE isp_isp_reseller SET limit_disk = '".$old_form_data['limit_disk']."' WHERE doc_id = '$doc_id'");
+          $res_limit_errorMessage .= $go_api->lng("error_anbieter_max_diskspace_ueberschritten");
+        }
+        unset($diskspace);
       }
-      unset($diskspace);
-      unset($minspace);
     }
 
-    // TODO: Die folgenden Checks prüfen teilweise nur das tatsächlich Eingerichtete,
-    //       nicht aber die an Webs vergebenen Limits.
-    //       Dadurch können Reseller-Limits kleiner gesetzt werden als dessen Web-Limits.
-    //       => Limits der Webs überprüfen anstatt der tatsächlich angelegten Elemente
+    if(is_null($reseller["limit_traffic"])) $reseller["limit_traffic"] = 0;
+    if($reseller["limit_traffic"] >= 0){
+      if($go_api->db->queryOneRecord("SELECT isp_isp_web.doc_id from isp_isp_web,isp_nodes where isp_isp_web.web_traffic = '-1' and isp_isp_web.doc_id = isp_nodes.doc_id and  isp_nodes.groupid = '".$reseller["reseller_group"]."' and isp_nodes.doctype_id = ".$this->web_doctype_id)){
+        $go_api->db->query("UPDATE isp_isp_reseller SET limit_traffic = '".$old_form_data['limit_traffic']."' WHERE doc_id = '$doc_id'");
+        $res_limit_errorMessage .= $go_api->lng("error_anbieter_max_traffic_ueberschritten");
+      } else {
+        $traffic = $go_api->db->queryOneRecord("SELECT sum(isp_isp_web.web_traffic) as traffic from isp_isp_web,isp_nodes where isp_isp_web.doc_id = isp_nodes.doc_id and  isp_nodes.groupid = '".$reseller["reseller_group"]."' and isp_nodes.doctype_id = ".$this->web_doctype_id);
+        $traffic = $traffic["traffic"];
+        if($traffic > $reseller["limit_traffic"]){
+          $go_api->db->query("UPDATE isp_isp_reseller SET limit_traffic = '".$old_form_data['limit_traffic']."' WHERE doc_id = '$doc_id'");
+          $res_limit_errorMessage .= $go_api->lng("error_anbieter_max_traffic_ueberschritten");
+        }
+        unset($traffic);
+      }
+    }
 
     if(is_null($reseller["limit_user"])) $reseller["limit_user"] = 0;
     if($reseller["limit_user"] >= 0){
-      $useranzahl = $go_api->db->queryOneRecord("SELECT COUNT(isp_isp_user.doc_id) AS anzahl FROM isp_nodes, isp_isp_user WHERE isp_nodes.groupid = '".$reseller["reseller_group"]."' AND isp_nodes.doctype_id = '".$this->user_doctype_id."' AND isp_nodes.doc_id = isp_isp_user.doc_id");
-      $useranzahl = $useranzahl["anzahl"];
-      if($useranzahl > $reseller["limit_user"]){
-        $go_api->db->query("UPDATE isp_isp_reseller SET limit_user = '$useranzahl' WHERE doc_id = '$doc_id'");
+      if($go_api->db->queryOneRecord("SELECT isp_isp_web.doc_id from isp_isp_web,isp_nodes where isp_isp_web.web_userlimit = '-1' and isp_isp_web.doc_id = isp_nodes.doc_id and  isp_nodes.groupid = '".$reseller["reseller_group"]."' and isp_nodes.doctype_id = ".$this->web_doctype_id)){
+        $go_api->db->query("UPDATE isp_isp_reseller SET limit_user = '".$old_form_data['limit_user']."' WHERE doc_id = '$doc_id'");
         $res_limit_errorMessage .= $go_api->lng("error_anbieter_max_user_ueberschritten");
+      } else {
+        //$useranzahl = $go_api->db->queryOneRecord("SELECT COUNT(isp_isp_user.doc_id) AS anzahl FROM isp_nodes, isp_isp_user WHERE isp_nodes.groupid = '".$reseller["reseller_group"]."' AND isp_nodes.doctype_id = '".$this->user_doctype_id."' AND isp_nodes.doc_id = isp_isp_user.doc_id");
+        $useranzahl = $go_api->db->queryOneRecord("SELECT sum(isp_isp_web.web_userlimit) as anzahl from isp_isp_web,isp_nodes where isp_isp_web.doc_id = isp_nodes.doc_id and  isp_nodes.groupid = '".$reseller["reseller_group"]."' and isp_nodes.doctype_id = ".$this->web_doctype_id);
+        $useranzahl = $useranzahl["anzahl"];
+        if($useranzahl > $reseller["limit_user"]){
+          //$go_api->db->query("UPDATE isp_isp_reseller SET limit_user = '$useranzahl' WHERE doc_id = '$doc_id'");
+          $go_api->db->query("UPDATE isp_isp_reseller SET limit_user = '".$old_form_data['limit_user']."' WHERE doc_id = '$doc_id'");
+          $res_limit_errorMessage .= $go_api->lng("error_anbieter_max_user_ueberschritten");
+        }
+        unset($useranzahl);
       }
-      unset($useranzahl);
     }
 
     if(is_null($reseller["limit_domain"])) $reseller["limit_domain"] = 0;
     if($reseller["limit_domain"] >= 0){
-      $domainanzahl = $go_api->db->queryOneRecord("SELECT COUNT(isp_isp_domain.doc_id) AS anzahl FROM isp_nodes, isp_isp_domain WHERE isp_nodes.groupid = '".$reseller["reseller_group"]."' AND isp_nodes.doctype_id = '".$this->domain_doctype_id."' AND isp_nodes.doc_id = isp_isp_domain.doc_id");
-      $domainanzahl = $domainanzahl["anzahl"] + $webanzahl;
-      if($domainanzahl > $reseller["limit_domain"]){
-        $go_api->db->query("UPDATE isp_isp_reseller SET limit_domain = '$domainanzahl' WHERE doc_id = '$doc_id'");
+      if($go_api->db->queryOneRecord("SELECT isp_isp_web.doc_id from isp_isp_web,isp_nodes where isp_isp_web.web_domainlimit = '-1' and isp_isp_web.doc_id = isp_nodes.doc_id and  isp_nodes.groupid = '".$reseller["reseller_group"]."' and isp_nodes.doctype_id = ".$this->web_doctype_id)){
+        $go_api->db->query("UPDATE isp_isp_reseller SET limit_domain = '".$old_form_data['limit_domain']."' WHERE doc_id = '$doc_id'");
         $res_limit_errorMessage .= $go_api->lng("error_anbieter_max_domain_ueberschritten");
+      } else {
+        //$domainanzahl = $go_api->db->queryOneRecord("SELECT COUNT(isp_isp_domain.doc_id) AS anzahl FROM isp_nodes, isp_isp_domain WHERE isp_nodes.groupid = '".$reseller["reseller_group"]."' AND isp_nodes.doctype_id = '".$this->domain_doctype_id."' AND isp_nodes.doc_id = isp_isp_domain.doc_id");
+        $domainanzahl = $go_api->db->queryOneRecord("SELECT sum(isp_isp_web.web_domainlimit) as anzahl from isp_isp_web,isp_nodes where isp_isp_web.doc_id = isp_nodes.doc_id and  isp_nodes.groupid = '".$reseller["reseller_group"]."' and isp_nodes.doctype_id = ".$this->web_doctype_id);
+        //$domainanzahl = $domainanzahl["anzahl"] + $webanzahl;
+        $domainanzahl = $domainanzahl["anzahl"];
+        if($domainanzahl > $reseller["limit_domain"]){
+          //$go_api->db->query("UPDATE isp_isp_reseller SET limit_domain = '$domainanzahl' WHERE doc_id = '$doc_id'");
+          $go_api->db->query("UPDATE isp_isp_reseller SET limit_domain = '".$old_form_data['limit_domain']."' WHERE doc_id = '$doc_id'");
+          $res_limit_errorMessage .= $go_api->lng("error_anbieter_max_domain_ueberschritten");
+        }
+        unset($domainanzahl);
       }
-      unset($domainanzahl);
     }
 
     unset($webanzahl);
@@ -271,21 +292,11 @@ function reseller_update($doc_id, $doctype_id, $die_on_error = '1') {
     }
 
     if(!$reseller["limit_cgi"]){
-      $webanzahl = $go_api->db->queryOneRecord("SELECT COUNT(isp_isp_web.doc_id) AS anzahl FROM isp_nodes, isp_isp_web WHERE isp_nodes.groupid = '".$reseller["reseller_group"]."' AND isp_nodes.doctype_id = '".$this->web_doctype_id."' AND isp_nodes.doc_id = isp_isp_web.doc_id AND isp_isp_web.web_cgi = '1' AND isp_isp_web.web_cgi_mod_perl = '0'");
+      $webanzahl = $go_api->db->queryOneRecord("SELECT COUNT(isp_isp_web.doc_id) AS anzahl FROM isp_nodes, isp_isp_web WHERE isp_nodes.groupid = '".$reseller["reseller_group"]."' AND isp_nodes.doctype_id = '".$this->web_doctype_id."' AND isp_nodes.doc_id = isp_isp_web.doc_id AND isp_isp_web.web_cgi = '1'");
       $webanzahl = $webanzahl["anzahl"];
       if($webanzahl > 0){
         $go_api->db->query("UPDATE isp_isp_reseller SET limit_cgi = '1' WHERE doc_id = '$doc_id'");
         $res_limit_errorMessage .= $go_api->lng("error_anbieter_cgi_aktiv");
-      }
-      unset($webanzahl);
-    }
-
-    if (!$reseller["limit_cgi_mod_perl"] && $server["server_httpd_mod_perl"] == 1) {
-      $webanzahl = $go_api->db->queryOneRecord("SELECT COUNT(isp_isp_web.doc_id) AS anzahl FROM isp_nodes, isp_isp_web WHERE isp_nodes.groupid = '".$reseller["reseller_group"]."' AND isp_nodes.doctype_id = '".$this->web_doctype_id."' AND isp_nodes.doc_id = isp_isp_web.doc_id AND isp_isp_web.web_cgi = '1' AND isp_isp_web.web_cgi_mod_perl = '1'");
-      $webanzahl = $webanzahl["anzahl"];
-      if($webanzahl > 0){
-        $go_api->db->query("UPDATE isp_isp_reseller SET limit_cgi_mod_perl = '1' WHERE doc_id = '$doc_id'");
-        $res_limit_errorMessage .= $go_api->lng("error_anbieter_cgi_mod_perl_aktiv");
       }
       unset($webanzahl);
     }
@@ -306,6 +317,16 @@ function reseller_update($doc_id, $doctype_id, $die_on_error = '1') {
       if($webanzahl > 0){
         $go_api->db->query("UPDATE isp_isp_reseller SET limit_php = '1' WHERE doc_id = '$doc_id'");
         $res_limit_errorMessage .= $go_api->lng("error_anbieter_php_aktiv");
+      }
+      unset($webanzahl);
+    }
+
+    if(!$reseller["limit_ruby"]){
+      $webanzahl = $go_api->db->queryOneRecord("SELECT COUNT(isp_isp_web.doc_id) AS anzahl FROM isp_nodes, isp_isp_web WHERE isp_nodes.groupid = '".$reseller["reseller_group"]."' AND isp_nodes.doctype_id = '".$this->web_doctype_id."' AND isp_nodes.doc_id = isp_isp_web.doc_id AND isp_isp_web.web_ruby = '1'");
+      $webanzahl = $webanzahl["anzahl"];
+      if($webanzahl > 0){
+        $go_api->db->query("UPDATE isp_isp_reseller SET limit_ruby = '1' WHERE doc_id = '$doc_id'");
+        $res_limit_errorMessage .= $go_api->lng("error_anbieter_ruby_aktiv");
       }
       unset($webanzahl);
     }
@@ -355,7 +376,8 @@ function reseller_update($doc_id, $doctype_id, $die_on_error = '1') {
     }
 
     if(!$reseller["limit_mysql"]){
-      $datenbankanzahl = $go_api->db->queryOneRecord("SELECT COUNT(isp_isp_datenbank.doc_id) AS anzahl FROM isp_nodes, isp_isp_datenbank WHERE isp_nodes.groupid = '".$reseller["reseller_group"]."' AND isp_nodes.doctype_id = '".$this->datenbank_doctype_id."' AND isp_nodes.doc_id = isp_isp_datenbank.doc_id");
+      //$datenbankanzahl = $go_api->db->queryOneRecord("SELECT COUNT(isp_isp_datenbank.doc_id) AS anzahl FROM isp_nodes, isp_isp_datenbank WHERE isp_nodes.groupid = '".$reseller["reseller_group"]."' AND isp_nodes.doctype_id = '".$this->datenbank_doctype_id."' AND isp_nodes.doc_id = isp_isp_datenbank.doc_id");
+      $datenbankanzahl = $go_api->db->queryOneRecord("SELECT COUNT(isp_isp_web.doc_id) AS anzahl FROM isp_nodes, isp_isp_web WHERE isp_nodes.groupid = '".$reseller["reseller_group"]."' AND isp_nodes.doctype_id = '".$this->web_doctype_id."' AND isp_nodes.doc_id = isp_isp_web.doc_id AND isp_isp_web.web_mysql = '1'");
       $datenbankanzahl = $datenbankanzahl["anzahl"];
       if($datenbankanzahl > 0){
         $go_api->db->query("UPDATE isp_isp_reseller SET limit_mysql = '1' WHERE doc_id = '$doc_id'");
@@ -366,34 +388,15 @@ function reseller_update($doc_id, $doctype_id, $die_on_error = '1') {
 
     if(is_null($reseller["limit_mysql_anzahl_dbs"])) $reseller["limit_mysql_anzahl_dbs"] = 0;
     if($reseller["limit_mysql_anzahl_dbs"] >= 0){
-      $datenbankanzahl = $go_api->db->queryOneRecord("SELECT COUNT(isp_isp_datenbank.doc_id) AS anzahl FROM isp_nodes, isp_isp_datenbank WHERE isp_nodes.groupid = '".$reseller["reseller_group"]."' AND isp_nodes.doctype_id = '".$this->datenbank_doctype_id."' AND isp_nodes.doc_id = isp_isp_datenbank.doc_id");
+      //$datenbankanzahl = $go_api->db->queryOneRecord("SELECT COUNT(isp_isp_datenbank.doc_id) AS anzahl FROM isp_nodes, isp_isp_datenbank WHERE isp_nodes.groupid = '".$reseller["reseller_group"]."' AND isp_nodes.doctype_id = '".$this->datenbank_doctype_id."' AND isp_nodes.doc_id = isp_isp_datenbank.doc_id");
+      $datenbankanzahl = $go_api->db->queryOneRecord("SELECT sum(isp_isp_web.web_mysql_anzahl_dbs) as anzahl from isp_isp_web,isp_nodes where isp_isp_web.doc_id = isp_nodes.doc_id and  isp_nodes.groupid = '".$reseller["reseller_group"]."' and isp_nodes.doctype_id = ".$this->web_doctype_id);
       $datenbankanzahl = $datenbankanzahl["anzahl"];
       if($datenbankanzahl > $reseller["limit_mysql_anzahl_dbs"]){
-        $go_api->db->query("UPDATE isp_isp_reseller SET limit_mysql_anzahl_dbs = '$datenbankanzahl' WHERE doc_id = '$doc_id'");
+        //$go_api->db->query("UPDATE isp_isp_reseller SET limit_mysql_anzahl_dbs = '$datenbankanzahl' WHERE doc_id = '$doc_id'");
+        $go_api->db->query("UPDATE isp_isp_reseller SET limit_mysql_anzahl_dbs = '".$old_form_data['limit_mysql_anzahl_dbs']."' WHERE doc_id = '$doc_id'");
         $res_limit_errorMessage .= $go_api->lng("error_anbieter_max_datenbank_ueberschritten");
       }
       unset($datenbankanzahl);
-    }
-    
-    if(!$reseller["limit_list"]){
-      $listenanzahl = $go_api->db->queryOneRecord("SELECT COUNT(isp_isp_list.doc_id) AS anzahl FROM isp_nodes, isp_isp_list WHERE isp_nodes.groupid = '".$reseller["reseller_group"]."' AND isp_nodes.doctype_id = '".$this->list_doctype_id."' AND isp_nodes.doc_id = isp_isp_list.doc_id");
-      $listenanzahl = $listenanzahl["anzahl"];
-      if($listenanzahl > 0){
-        $go_api->db->query("UPDATE isp_isp_reseller SET limit_list = '1' WHERE doc_id = '$doc_id'");
-        $res_limit_errorMessage .= $go_api->lng("error_anbieter_list_aktiv");
-      }
-      unset($listenanzahl);
-    }
-
-    if(is_null($reseller["limit_listlimit"])) $reseller["limit_listlimit"] = 0;
-    if($reseller["limit_listlimit"] >= 0){
-      $listenanzahl = $go_api->db->queryOneRecord("SELECT COUNT(isp_isp_list.doc_id) AS anzahl FROM isp_nodes, isp_isp_list WHERE isp_nodes.groupid = '".$reseller["reseller_group"]."' AND isp_nodes.doctype_id = '".$this->list_doctype_id."' AND isp_nodes.doc_id = isp_isp_list.doc_id");
-      $listenanzahl = $listenanzahl["anzahl"];
-      if($listenanzahl > $reseller["limit_listlimit"]){
-        $go_api->db->query("UPDATE isp_isp_reseller SET limit_listlimit = '$listenanzahl' WHERE doc_id = '$doc_id'");
-        $res_limit_errorMessage .= $go_api->lng("error_anbieter_max_list_ueberschritten");
-      }
-      unset($listenanzahl);
     }
 
     if(!$reseller["limit_ssl"]){
@@ -453,7 +456,7 @@ function reseller_update($doc_id, $doctype_id, $die_on_error = '1') {
           $manual_lng = $manual_lng["language"];
         }
 
-               if($reseller["email"] != "" && eregi("^[a-z0-9,!#\$%&'\*\+/=\?\^_`\{\|}~-]+(\.[a-z0-9,!#\$%&'\*\+/=\?\^_`\{\|}~-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*\.([a-z]{2,})$", $reseller["email"]) && $absender_email != "" && eregi("^[a-z0-9,!#\$%&'\*\+/=\?\^_`\{\|}~-]+(\.[a-z0-9,!#\$%&'\*\+/=\?\^_`\{\|}~-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*\.([a-z]{2,})$", $absender_email) && $absender_name != "" && $subject != "" && $message != ""){
+        if($reseller["email"] != "" && eregi("^[a-z0-9,!#\$%&'\*\+/=\?\^_`\{\|}~-]+(\.[a-z0-9,!#\$%&'\*\+/=\?\^_`\{\|}~-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*\.([a-z]{2,})$", $reseller["email"]) && $absender_email != "" && eregi("^[a-z0-9,!#\$%&'\*\+/=\?\^_`\{\|}~-]+(\.[a-z0-9,!#\$%&'\*\+/=\?\^_`\{\|}~-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*\.([a-z]{2,})$", $absender_email) && $absender_name != "" && $subject != "" && $message != ""){
 
           $message = str_replace("\r\n", "\n", $message);
           $message = str_replace("%%%USER%%%", $reseller["reseller_user"], $message);
@@ -603,7 +606,7 @@ function reseller_delete($doc_id, $doctype_id, $action, $die_on_error = '1') {
     // beim löschen
     if($action == 'do') {
     $anbieter = $go_api->db->queryOneRecord("SELECT * FROM isp_isp_reseller where doc_id = $doc_id");
-
+//print_r($anbieter);
     $groupid = $anbieter["reseller_group"];
 
     if($groupid != 0) {

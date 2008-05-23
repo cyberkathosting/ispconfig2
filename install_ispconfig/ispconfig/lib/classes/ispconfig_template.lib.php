@@ -1,10 +1,10 @@
 <?
 
-if(CONFIG_LOADED != 1) die('Direct access not permitted.');
-
 /*
         CVS Revision. 1.1.0
 */
+
+if(CONFIG_LOADED != 1) die('Direct access not permitted.');
 
 class FastTemplate {
 
@@ -46,7 +46,7 @@ class FastTemplate {
         {
                 global $php_errormsg, $go_info;
 
-                $this->set_root($go_info["server"]["server_root"] . $go_info["server"]["dir_trenner"] ."web".$go_info["server"]["dir_trenner"]."templates");
+                $this->set_root(SERVER_ROOT . DIR_TRENNER ."web".DIR_TRENNER."templates");
 
                 if(!empty($pathToTemplates))
                 {
@@ -506,11 +506,7 @@ class FastTemplate {
         {
                 while ( list ($FileTag,$FileName) = each ($fileList) )
                 {
-                        if(is_file($this->ROOT.'/customized_templates/'.$FileName)){
-                        $this->FILELIST["$FileTag"] = '/customized_templates/'.$FileName;
-                        } else {
-                          $this->FILELIST["$FileTag"] = $FileName;
-                        }
+                        $this->FILELIST["$FileTag"] = $FileName;
                 }
                 return true;
         }

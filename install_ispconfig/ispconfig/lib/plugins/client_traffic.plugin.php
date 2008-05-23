@@ -38,7 +38,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  # Datum:
  #
  #############################################################
- 
+
  if(CONFIG_LOADED != 1) die('Direct access not permitted.');
 
 class client_traffic_plugin {
@@ -94,7 +94,7 @@ class client_traffic_plugin {
     } else {
       $color = '';
     }
-    
+
     $html_out .= '<tr>
        <td width="20%" bgcolor="#FFFFFF"><font face="Verdana, Arial, Helvetica, sans-serif" size="2"'.$color.'>'.$monat.':</font></td>
        <td width="20%" bgcolor="#FFFFFF" align="right"><font face="Verdana, Arial, Helvetica, sans-serif" size="2"'.$color.'>'.$monat_traffic_web.'</font></td>

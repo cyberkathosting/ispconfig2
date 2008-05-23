@@ -5,82 +5,82 @@
 *********************************/
 
 //////////////// Server Status ////////////////
-$wb["Arbeitsspeicher"]		= "Memorie";
-$wb["CPU"]          		= "Procesor";
-$wb["Dienste"]      		= "Servicii";
-$wb["Server Online seit"]	= "Server pornit de";
-$wb["User Online"]      	= "Utilizatori conectati";
-$wb["System Load 1 Minute"] 	= "Incarcare sistem la 1 minut";
-$wb["System Load 5 Minuten"] 	= "Incarcare sistem la 5 minute";
-$wb["System Load 15 Minuten"] 	= "Incarcare sistem la 15 minute";
+$wb["Arbeitsspeicher"]                = "Memorie";
+$wb["CPU"]                          = "Procesor";
+$wb["Dienste"]                      = "Servicii";
+$wb["Server Online seit"]        = "Server pornit de";
+$wb["User Online"]              = "Utilizatori conectati";
+$wb["System Load 1 Minute"]         = "Incarcare sistem la 1 minut";
+$wb["System Load 5 Minuten"]         = "Incarcare sistem la 5 minute";
+$wb["System Load 15 Minuten"]         = "Incarcare sistem la 15 minute";
 //////////////// Server Status Ende //////////
 
 ///////////////// Administration ////////////////
-$wb["ISPConfig Datenbank"]    	= "Baza de date ISPConfig";
-$wb["Backup erstellen"]       	= "Date Backup";
-$wb["Datenbank Check"]        	= "Verifica baza de date";
-$wb["Datenbank Optimieren"]   	= "Optimizeaza baza de date";
-$wb["Datenbank Reparieren"]   	= "Repara baza de date";
-$wb["Eigenschaften"] 		= "Setari";
-$wb["Server Name"]  		= "Nume server";
-$wb["Netzmaske"]    		= "Netmask";
-$wb["Sprache"]      		= "Limba";
-$wb["IP Liste"]     		= "Lista IP-uri";
-$wb["hinweis_ip_liste"] 	= "<b>Indiciu:</b> Se pune doar un ip pe linie.";
-$wb["Pfad"]         		= "Cale";
-$wb["Programm"]     		= "Program";
-$wb["Reparatur"]    		= "Repara";
-$wb["Optimiere"]    		= "Optimizeaza";
-$wb["Pfad httpd.conf"]    	= "Calea spre httpd.conf";
-$wb["MTA Typ"]    		= "Tip MTA";
-$wb["Virtuser Datei"]    	= "Fisier Virtuser";
-$wb["FTP Programm"]    		= "Program FTP";
-$wb["FTP conf. Datei"]    	= "Fisier configurare FTP";
-$wb["Userid von"]    		= "Userid de la";
-$wb["Groupid von"]   		= "Groupid de la";
+$wb["ISPConfig Datenbank"]            = "Baza de date ISPConfig";
+$wb["Backup erstellen"]               = "Date Backup";
+$wb["Datenbank Check"]                = "Verifica baza de date";
+$wb["Datenbank Optimieren"]           = "Optimizeaza baza de date";
+$wb["Datenbank Reparieren"]           = "Repara baza de date";
+$wb["Eigenschaften"]                 = "Setari";
+$wb["Server Name"]                  = "Nume server";
+$wb["Netzmaske"]                    = "Netmask";
+$wb["Sprache"]                      = "Limba";
+$wb["IP Liste"]                     = "Lista IP-uri";
+$wb["hinweis_ip_liste"]         = "<b>Indiciu:</b> Se pune doar un ip pe linie.";
+$wb["Pfad"]                         = "Cale";
+$wb["Programm"]                     = "Program";
+$wb["Reparatur"]                    = "Repara";
+$wb["Optimiere"]                    = "Optimizeaza";
+$wb["Pfad httpd.conf"]            = "Calea spre httpd.conf";
+$wb["MTA Typ"]                    = "Tip MTA";
+$wb["Virtuser Datei"]            = "Fisier Virtuser";
+$wb["FTP Programm"]                    = "Program FTP";
+$wb["FTP conf. Datei"]            = "Fisier configurare FTP";
+$wb["Userid von"]                    = "Userid de la";
+$wb["Groupid von"]                   = "Groupid de la";
 
-$wb["Backup von Tabelle"] 	= "Tabel Backup";
-$wb["Optimiere"] 		= "Optimizeaza";
-$wb["Reparatur"] 		= "Repara";
-$wb["oder"] 			= "sau";
-$wb["Installation starten"] 	= "Instaleaza";
+$wb["Backup von Tabelle"]         = "Tabel Backup";
+$wb["Optimiere"]                 = "Optimizeaza";
+$wb["Reparatur"]                 = "Repara";
+$wb["oder"]                         = "sau";
+$wb["Installation starten"]         = "Instaleaza";
 
-$wb["Deutsch"] 			= "Germana";
-$wb["Englisch"] 		= "Engleza";
-$wb["Datei"] 			= "Fisier";
+$wb["Deutsch"]                         = "Germana";
+$wb["Englisch"]                 = "Engleza";
+$wb["Datei"]                         = "Fisier";
 
 //////////////// Administration Ende ///////////
 
 //////////////// Firewall, Monitor + Dienste  ////////////////
 
-$wb["Überwachung"] 		= "Monitorizare";
-$wb["Firewall"] 		= "Firewall";
-$wb["Web-Server"] 		= "Server Web";
-$wb["FTP-Server"] 		= "Server FTP";
-$wb["SMTP-Server"] 		= "Server SMTP";
-$wb["DNS-Server"] 		= "Server DNS";
-$wb["mySQL-Server"] 		= "Server mySQL";
-$wb["An"] 			= "Pornit";
-$wb["Aus"] 			= "Oprit";
-$wb["neu Starten"] 		= "Restart";
-$wb["Neu"] 			= "Adauga";
-$wb["Aktionen"] 		= "Actiuni";
-$wb["Dienst"] 			= "Servicii";
-$wb["Hostname"] 		= "Nume Host";
-$wb["Port"] 			= "Port";
-$wb["Typ"] 			= "Tip";
-$wb["TCP"] 			= "TCP";
-$wb["UDP"] 			= "UDP";
+$wb["Überwachung"]                 = "Monitorizare";
+$wb["Firewall"]                 = "Firewall";
+$wb["Web-Server"]                 = "Server Web";
+$wb["FTP-Server"]                 = "Server FTP";
+$wb["SMTP-Server"]                 = "Server SMTP";
+$wb["DNS-Server"]                 = "Server DNS";
+$wb["mySQL-Server"]                 = "Server mySQL";
+$wb["An"]                         = "Pornit";
+$wb["Aus"]                         = "Oprit";
+$wb["neu Starten"]                 = "Restart";
+$wb["Neu"]                         = "Adauga";
+$wb["Aktionen"]                 = "Actiuni";
+$wb["Dienst"]                         = "Servicii";
+$wb["Hostname"]                 = "Nume Host";
+$wb["Port"]                         = "Port";
+$wb["Typ"]                         = "Tip";
+$wb["TCP"]                         = "TCP";
+$wb["UDP"]                         = "UDP";
 $wb["Der Dienst-Typ wird nur bei sonstigen-Diensten ausgewertet."] = "The type of service will only be analyzed in case of other services.";
-$wb["Sonstige"] 		= "Altele";
-$wb["Ja"] 			= "Da";
-$wb["Nein"] 			= "Nu";
-$wb["Offline"] 			= "Neconectat";
-$wb["ISP Dienste"] 		= "Servicii ISP";
-$wb["ISP Überwachung"] 		= "Monitorizare ISP";
-$wb["ISP Firewall"] 		= "Firewall ISP";
-$wb["Name"] 			= "Nume";
-$wb["Aktiv"] 			= "Activ";
+$wb["Sonstige"]                 = "Altele";
+$wb["Ja"]                         = "Da";
+$wb["Nein"]                         = "Nu";
+$wb["Offline"]                         = "Neconectat";
+$wb["ISP Dienste"]                 = "Servicii ISP";
+$wb["ISP Überwachung"]                 = "Monitorizare ISP";
+$wb["ISP Firewall"]                 = "Firewall ISP";
+$wb["Name"]                         = "Nume";
+$wb["Aktiv"]                         = "Activ";
 $wb["Firewall Regel"] = "Reguli Firewall";
 $wb["Dieser Port kann nicht geändert werden."] = "Acest port nu poate fi modificat.<br>";
 $wb["Dieser Port kann nicht deaktiviert werden."] = "Acest port nu poate fi dezactivat.<br>";
@@ -472,12 +472,12 @@ $wb["txt_res_traffic_notification_email_variables"] = '<table border="0" cellpad
         <tr>
           <td class="normal">%%%FIRST_NAME%%%</td>
           <td class="normal">
-	    Numele distribuitorului</td>
+            Numele distribuitorului</td>
         </tr>
         <tr>
           <td class="normal">%%%LAST_NAME%%%</td>
           <td class="normal">
-    	    Prenumele distribuitorului</td>
+                Prenumele distribuitorului</td>
         </tr>
         <tr>
           <td class="normal">%%%MONTH%%%</td>

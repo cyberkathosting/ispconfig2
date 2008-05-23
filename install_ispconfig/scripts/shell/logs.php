@@ -42,7 +42,7 @@ $access_log = $server["server_path_httpd_log"] . "_" . date("Y_m_d",time() - 432
 
 //echo "opening: $access_log\n";
 
-if(!is_file($access_log)) die();
+if(!$mod->file->is_file_lfs($access_log)) die();
 $webroot = stripslashes($server["server_path_httpd_root"]);
 
 function getmicrotime(){
@@ -66,7 +66,7 @@ $tag = date("d", (time() - 43200));
 $monat = date("m", (time() - 43200));
 $jahr = date("Y", (time() - 43200));
 
-if(is_file($access_log)) {
+if($mod->file->is_file_lfs($access_log)) {
         $traffic = array();
         $fd = fopen($access_log, "r");
         while(!feof($fd)){

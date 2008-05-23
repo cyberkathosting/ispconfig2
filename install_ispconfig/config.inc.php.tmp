@@ -70,7 +70,6 @@ define("INCLUDE_ROOT",SERVER_ROOT.DIR_TRENNER."lib");
 define("CLASSES_ROOT",INCLUDE_ROOT.DIR_TRENNER."classes");
 define("DB_TYPE","mysql");
 
-
 if(isset($_SERVER['HTTP_HOST'])){
   $go_info["server"]["server_url"] = '{PROTOCOL}'.$_SERVER['HTTP_HOST'];
 } else {
@@ -81,7 +80,7 @@ $go_info["server"]["classes_root"] = $go_info["server"]["include_root"] . $go_in
 $go_info["server"]["temp_dir"] = $go_info["server"]["server_root"] . $go_info["server"]["dir_trenner"] ."temp";
 $go_info["server"]["files_dir"] = $go_info["server"]["server_root"] . $go_info["server"]["dir_trenner"] ."files";
 $go_info["server"]["backup_dir"] = $go_info["server"]["server_root"] . $go_info["server"]["dir_trenner"] ."backup";
-$go_info["server"]["version"] = "2.3.4";
+$go_info["server"]["version"] = "2.2.23";
 $go_info["server"]["os"] = "linux";
 $go_info["server"]["ort"] = "local";
 $go_info["server"]["banner"] = "0";
@@ -101,20 +100,13 @@ $go_info["server"]["postfix_config"] = {POSTFIX_CONFIG}; // 1 = SENDMAIL-STYLE, 
 $go_info["server"]["smtp_restart"] = {SMTP_RESTART}; // 1 = stop/start, 2 = restart
 $go_info["server"]["network_config"] = {NETWORK_CONFIG}; // 0 = none, 1 = automatic
 $go_info["server"]["sudo_du_enabled"] = {SUDO_DU_ENABLED}; // enable sudo for gathering website file usage
-$go_info["server"]["apache2_php"] = '{APACHE2_PHP}'; // one string of one or more comma seperated options: 'filter' = set PHP filters, 'addtype' = Set PHP addtype, 'both' = Set Filter + Addtype, 'engine' = Use "php_admin_flag engine on/off", suphp = SuPHP wrapper enabled, 'addhandler' = Set PHP AddHandler (nescessary for SuSE 10.2)
+$go_info["server"]["apache2_php"] = '{APACHE2_PHP}'; // 'filter' = set PHP filters, 'addtype' = Set PHP addtype or 'both' = Set Filter + Addtype, suphp = SuPHP wrapper enabled, 'addhandler' = Set PHP AddHandler (nescessary for SuSE 10.2)
 $go_info["server"]["password_hash"] = '{PASSWORD_HASH}'; // 'crypt' = crypt; 'md5' = crypt-md5
 $go_info["server"]["do_automated_backups"] = {DO_AUTOMATED_BACKUPS}; // 0 = no, 1 = yes; PLEASE NOTE: automated backups might fill up your HDD fast!
 $go_info["server"]["ssh_chroot"] = {SSH_CHROOT};
 $go_info["server"]["httpd_check"] = {HTTPD_CHECK};
 $go_info["server"]["salutatory_email_charset"] = '{SALUTATORY_EMAIL_CHARSET}'; // possible values are iso-8859-1, iso-8859-2, ..., us-ascii, koi8-r (Russian), ...; if no charset is specified, unknown-8bit is assumed.
-$go_info["server"]["mysql_quota_privs"] = '{MYSQL_QUOTA_PRIVS}';
-
-$go_info["server"]["mailman"]["default_mailman_domain"] = "lists.example.com";
-$go_info["server"]["mailman"]["new_list_path"] = "/usr/lib/mailman/bin/newlist";
-$go_info["server"]["mailman"]["config_list_path"] = "/usr/lib/mailman/bin/config_list";
-
-$go_info["server"]["webdav"] = 0;
-
+$go_info["server"]["webdav"] = {WEBDAV};
 
 /**********************************************
 * Tools Settings
@@ -154,6 +146,14 @@ $go_info["server"]["log_device"] = "FILE"; // FILE, SYSTEM, MAIL
 **********************************************/
 
 $go_info["demo"]["web_path"] = "";
+
+/**********************************************
+* Localisation Settings
+**********************************************/
+
+$go_info["localisation"]["dec_point"] = "{DEC_POINT}";
+$go_info["localisation"]["thousands_sep"] = "{THOUSANDS_SEP}";
+$go_info["localisation"]["currency"] = "{CURRENCY}";
 
 define("CONFIG_LOADED",1);
 

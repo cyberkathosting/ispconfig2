@@ -29,7 +29,6 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 if(CONFIG_LOADED != 1) die('Direct access not permitted.');
 
-
 class isp_dns
 {
 
@@ -168,7 +167,7 @@ global $go_api, $go_info;
 
           $a_record = $go_api->db->queryOneRecord("SELECT * FROM dns_a WHERE doc_id = '".$dep_row["child_doc_id"]."'");
           // checke ob A-Record schon existiert
-                    $sql = "SELECT dns_a.doc_id FROM dns_dep, dns_a where dns_a.doc_id = dns_dep.child_doc_id and dns_dep.child_doctype_id = '1018' and dns_dep.parent_doc_id = $doc_id and dns_dep.parent_doctype_id = '1016' and dns_a.host = '".$a_record["host"]."' and dns_a.ip_adresse = '".$a_record["ip_adresse"]."' and dns_a.doc_id != '".$dep_row["child_doc_id"]."'";
+          $sql = "SELECT dns_a.doc_id FROM dns_dep, dns_a where dns_a.doc_id = dns_dep.child_doc_id and dns_dep.child_doctype_id = '1018' and dns_dep.parent_doc_id = $doc_id and dns_dep.parent_doctype_id = '1016' and dns_a.host = '".$a_record["host"]."' and dns_a.ip_adresse = '".$a_record["ip_adresse"]."' and dns_a.doc_id != '".$dep_row["child_doc_id"]."'";
 
           $tmp = $go_api->db->queryOneRecord($sql);
           if($tmp["doc_id"] > 0) {
@@ -540,7 +539,7 @@ function soa_update($doc_id, $doctype_id, $die_on_error = '1') {
 
           $a_record = $go_api->db->queryOneRecord("SELECT * FROM dns_a WHERE doc_id = '".$dep_row["child_doc_id"]."'");
           // checke ob A-Record schon existiert
-                    $sql = "SELECT dns_a.doc_id FROM dns_dep, dns_a where dns_a.doc_id = dns_dep.child_doc_id and dns_dep.child_doctype_id = '1018' and dns_dep.parent_doc_id = $doc_id and dns_dep.parent_doctype_id = '1016' and dns_a.host = '".$a_record["host"]."' and dns_a.ip_adresse = '".$a_record["ip_adresse"]."' and dns_a.doc_id != '".$dep_row["child_doc_id"]."'";
+          $sql = "SELECT dns_a.doc_id FROM dns_dep, dns_a where dns_a.doc_id = dns_dep.child_doc_id and dns_dep.child_doctype_id = '1018' and dns_dep.parent_doc_id = $doc_id and dns_dep.parent_doctype_id = '1016' and dns_a.host = '".$a_record["host"]."' and dns_a.ip_adresse = '".$a_record["ip_adresse"]."' and dns_a.doc_id != '".$dep_row["child_doc_id"]."'";
 
           $tmp = $go_api->db->queryOneRecord($sql);
           if($tmp["doc_id"] > 0) {
@@ -613,6 +612,7 @@ function soa_update($doc_id, $doctype_id, $die_on_error = '1') {
 
     }
 
+
         // Check if the domain is valid
         $soa = $go_api->db->queryOneRecord("select * from dns_nodes,dns_isp_dns where dns_isp_dns.doc_id = '$doc_id' and dns_nodes.doc_id = dns_isp_dns.doc_id and dns_nodes.doctype_id = $doctype_id");
         if (!preg_match("/^([a-z0-9\-]+\.)+[a-z]{2,6}$/ix", $soa["dns_soa"])) {
@@ -626,7 +626,7 @@ function soa_update($doc_id, $doctype_id, $die_on_error = '1') {
         }
 
         // Check if the adminmail is valid
-        if ($soa["dns_adminmail"] != '' && !preg_match("/^([a-z0-9\-\@]+\.)+[a-z]{2,6}$/ix", $soa["dns_adminmail"])) {
+        if ($soa["dns_adminmail"] != '' && $soa["dns_adminmail"] != 'root@localhost' && !preg_match("/^([a-z0-9\-\@]+\.)+[a-z]{2,6}$/ix", $soa["dns_adminmail"])) {
                 $old_dns_adminmail = addslashes($old_form_data["dns_adminmail"]);
                 $go_api->db->query("UPDATE dns_isp_dns SET dns_adminmail = '$old_dns_adminmail' where doc_id = '$doc_id'");
         if($die_on_error){

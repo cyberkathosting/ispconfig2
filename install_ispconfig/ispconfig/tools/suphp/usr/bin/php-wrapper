@@ -1,0 +1,14 @@
+#!/bin/sh
+PATH="/sbin:/usr/sbin:/usr/local/sbin:/root/bin:/usr/local/bin:/bin:/usr/bin:/usr/X11R6/bin:/usr/local/libexec"
+
+BASEDIR=`dirname ${DOCUMENT_ROOT}`
+TMPDIR=${BASEDIR}/phptmp
+SESSDIR=${TMPDIR}
+
+if [ X"${php_safe_mode}" != X"On" ]; then
+SAFE_MODE="Off"
+else
+SAFE_MODE="On"
+fi
+
+exec php-cgi -d open_basedir=${BASEDIR} -d upload_tmp_dir=${TMPDIR} -d session.save_path=${SESSDIR} -d safe_mode=${SAFE_MODE}

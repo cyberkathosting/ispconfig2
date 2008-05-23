@@ -125,7 +125,7 @@ function unix_nl($input){
 }
 
 function remove_blank_lines($input, $file = 1){
-  //Leerzeilen lï¿½schen
+  //Leerzeilen löschen
   if($file){
     $content = unix_nl(rf($input));
   } else {
@@ -337,7 +337,7 @@ $sql_file = "db_ispconfig.sql";
 $pfad = "/home/admispconfig";
 
 $mysql = rf("mysql_config");
-list($db_server,$db_user,$db_password,$new_db,$ip,$server_host,$server_domain,$procmail,$lang,$install_art,$server_ispconfigprotocol,$dist_mailman) = explode("\n",$mysql);
+list($db_server,$db_user,$db_password,$new_db,$ip,$server_host,$server_domain,$procmail,$lang,$install_art,$server_ispconfigprotocol) = explode("\n",$mysql);
 $server_ispconfigprotocol = strtolower(trim($server_ispconfigprotocol));
 
 $conf = rf("/root/ispconfig/dist.info");
@@ -472,31 +472,6 @@ function addgroup($group, $gid, $members = ''){
       caselog("pwd_mkdb $shadow_datei &> /dev/null", $FILE, __LINE__);
     }
     return true;
-  }
-}
-
-function add_user_to_group($group, $user = 'admispconfig'){
-  global $dist_group, $dist_shadow, $dist_group;
-  $group_file = rf($dist_group);
-  $group_file_lines = explode("\n", $group_file);
-  foreach($group_file_lines as $group_file_line){
-    list($group_name,$group_x,$group_id,$group_users) = explode(":",$group_file_line);
-    if($group_name == $group){
-      $group_users = explode(",", str_replace(" ", "", $group_users));
-      if(!in_array($user, $group_users)){
-        $group_users[] = $user;
-      }
-      $group_users = implode(",", $group_users);
-      if(substr($group_users,0,1) == ",") $group_users = substr($group_users,1);
-      $group_file_line = $group_name.":".$group_x.":".$group_id.":".$group_users;
-    }
-    $new_group_file[] = $group_file_line;
-  }
-  $new_group_file = implode("\n", $new_group_file);
-  wf($dist_group, $new_group_file);
-  remove_blank_lines($dist_group);
-  if($dist_shadow != "/etc/shadow"){
-    caselog("pwd_mkdb ".$dist_shadow." &> /dev/null", $FILE, __LINE__);
   }
 }
 
@@ -651,11 +626,9 @@ if(!is_user("admispconfig")) phpcaselog(adduser("admispconfig", $admispconfig_ui
 // Add a user with uid 20000 as last user in the ISPConfig user range
 $ispconfigend_uid = $ispconfigend_gid = find_uid_gid(20000, 30000);
 if(!is_group("ispconfigend")) caselog("groupadd -g $ispconfigend_gid ispconfigend", $FILE, __LINE__);
-if(!is_user("ispconfigend")) caselog("useradd -u $ispconfigend_uid -s /sbin/nologin ispconfigend -g ispconfigend", $FILE, __LINE__);
+if(!is_user("ispconfigend")) caselog("useradd -u $ispconfigend_uid -s `which nologin` ispconfigend -g ispconfigend", $FILE, __LINE__);
 
-if($dist_mailman){
-  if(is_group("list")) phpcaselog(add_user_to_group("list", "admispconfig"), 'added admispconfig to group list', $FILE, __LINE__);
-}
+
 
 /////////// Symlink von /var/spool/mail auf /var/mail ////////////
 if(is_dir("/var/mail") && !file_exists("/var/spool/mail")){
@@ -689,23 +662,18 @@ if($install_art == "install"){
   $smtp_restart = '1';
   $network_config = '0';
   $sudo_du_enabled = '0';
-  $apache2_php = 'filter,addtype,engine';
-  $password_hash = 'md5';
+  $apache2_php = 'both';
+  $password_hash = 'crypt';
   $do_automated_backups = '0';
   $ssh_chroot = '0';
   $httpd_check = '1';
   $salutatory_email_charset = 'iso-8859-1';
-  $mysql_quota_privs = 'Insert,Create';
+  $conf_webdav = '0';
+  $dec_point = ',';
+  $thousands_sep = '.';
+  $currency = 'EUR';
 } else {
   include("config.inc.php");
-
-  //Check if mysql works
-    $return = `mysql -V`;
-    if( FALSE === strpos($return, 'mysql  Ver') ) {
-            error('UPDATE - myslq does not work: '.$return);
-    }
-    unset($return);
-
   $postfix_config = (isset($go_info["server"]["postfix_config"]) ? $go_info["server"]["postfix_config"] : '1');
   $smtp_restart = (isset($go_info["server"]["smtp_restart"]) ? $go_info["server"]["smtp_restart"] : '1');
   $network_config = (isset($go_info["server"]["network_config"]) ? ($go_info["server"]["network_config"] == false ? '0' : '1') : '0');
@@ -716,7 +684,10 @@ if($install_art == "install"){
   $ssh_chroot = (isset($go_info["server"]["ssh_chroot"]) ? ($go_info["server"]["ssh_chroot"] == false ? '0' : '1') : '0');
   $httpd_check = (isset($go_info["server"]["httpd_check"]) ? ($go_info["server"]["httpd_check"] == false ? '0' : '1') : '1');
   $salutatory_email_charset = (isset($go_info["server"]["salutatory_email_charset"]) ? $go_info["server"]["salutatory_email_charset"] : 'iso-8859-1');
-  $mysql_quota_privs = (isset($go_info["server"]["mysql_quota_privs"]) ? $go_info["server"]["mysql_quota_privs"] : 'Insert,Create');
+  $conf_webdav = (isset($go_info["server"]["conf_webdav"]) ? ($go_info["server"]["conf_webdav"] == false ? '0' : '1') : '0');
+  $dec_point = (isset($go_info["localisation"]["dec_point"]) ? $go_info["localisation"]["dec_point"] : ',');
+  $thousands_sep = (isset($go_info["localisation"]["thousands_sep"]) ? $go_info["localisation"]["thousands_sep"] : '.');
+  $currency = (isset($go_info["localisation"]["currency"]) ? $go_info["localisation"]["currency"] : 'EUR');
   $old_version = str_pad(str_replace(".", "", $go_info["server"]["version"]), 4, "0", STR_PAD_RIGHT);
   $server_url = $go_info["server"]["server_url"];
   $server_ispconfigprotocol = parse_url($server_url);
@@ -732,11 +703,7 @@ if($install_art == "install"){
   ilog("Connected successfully to db ".$new_db);
   mysql_select_db($new_db, $link);
   ///////////// admispconfig zum Mitglied aller Webgruppen machen /////////
-  //$conn = mysql_query("SELECT * FROM isp_isp_web");
-  if( FALSE === ($conn = @mysql_query("SELECT * FROM isp_isp_web") ) ) {
-             error('UPDATE - MySQL-Error on Line: '.__LINE__.' : '.mysql_error($link));
-  }
-
+  $conn = mysql_query("SELECT * FROM isp_isp_web");
   while($row = mysql_fetch_array($conn)){
     $web_groups[] = "web".$row["doc_id"];
   }
@@ -761,10 +728,7 @@ if($install_art == "install"){
     remove_blank_lines($dist_group);
   }
   //////////// admispconfig zum Mitglied aller Webgruppen machen ENDE ////////
-  //$conn = mysql_query("SELECT * FROM isp_server WHERE doc_id = '1'");
-  if( FALSE === ($conn = mysql_query("SELECT * FROM isp_server WHERE doc_id = '1'") ) ) {
-             error('UPDATE - MySQL-Error on Line: '.__LINE__.' : '.mysql_error($link));
-  }
+  $conn = mysql_query("SELECT * FROM isp_server WHERE doc_id = '1'");
   if($row = mysql_fetch_array($conn)){
     $ip = $row["server_ip"];
     $server_host = $row["server_host"];
@@ -822,8 +786,7 @@ if($install_art == "install"){
 
   if(empty($db_password)){
     caselog("mysqldump -h $db_server -u $db_user -c -t --add-drop-table --add-locks --all --quick --lock-tables $new_db > existing_db.sql", $FILE, __LINE__, "dumped old db to file existing_db.sql","could not dump old db to file existing_db.sql");
-  }
-  else {
+  } else {
     caselog("mysqldump -h $db_server -u $db_user -p$db_password -c -t --add-drop-table --add-locks --all --quick --lock-tables $new_db > existing_db.sql", $FILE, __LINE__,"dumped old db to file existing_db.sql","could not dump old db to file existing_db.sql");
   }
   exec("chmod 600 existing_db.sql");
@@ -854,119 +817,76 @@ if($install_art == "install"){
     unset($tables);
     caselog("mysql -f -s -h $db_server -u $db_user -p$db_password $new_db < existing_db.sql &> /dev/null", $FILE, __LINE__,"imported existing_db.sql","could not import existing_db.sql");
   }
-  //////////// Nachtrï¿½ge in neuer DB machen /////////////
-  //$conn = mysql_query("SELECT * FROM sys_user WHERE doc_id > 1");
-  if( FALSE === ($conn = mysql_query("SELECT * FROM sys_user WHERE doc_id > 1") ) ) {
-             ilog('UPDATE - MySQL-Error on Line: '.__LINE__.' : '.mysql_error($link));
-  }
-  else {
-       while($row = mysql_fetch_array($conn)){
-             mysql_query("INSERT INTO sys_nodes (userid,groupid,type,doctype_id,status,modul,doc_id) VALUES ('1','0','a','1','1','sys','".$row["doc_id"]."')");
-       }
+  //////////// Nachträge in neuer DB machen /////////////
+  $conn = mysql_query("SELECT * FROM sys_user WHERE doc_id > 1");
+  while($row = mysql_fetch_array($conn)){
+    mysql_query("INSERT INTO sys_nodes (userid,groupid,type,doctype_id,status,modul,doc_id) VALUES ('1','0','a','1','1','sys','".$row["doc_id"]."')");
   }
 
-  //$conn = mysql_query("SELECT * FROM isp_firewall WHERE doc_id > 10");
-  if( FALSE === ($conn = mysql_query("SELECT * FROM isp_firewall WHERE doc_id > 10") ) ) {
-             ilog('UPDATE - MySQL-Error on Line: '.__LINE__.' : '.mysql_error($link));
-  }
-  else {
-       while($row = mysql_fetch_array($conn)){
-         $result = mysql_query("SELECT * FROM sys_nodes WHERE userid = '1' AND groupid = '0' AND type = 'a' AND doctype_id = '1025' AND status = '1' AND doc_id = '".$row["doc_id"]."'");
-         $num_rows = @mysql_num_rows($result);
-         if(!$num_rows){
-           mysql_query("INSERT INTO sys_nodes (userid,groupid,type,doctype_id,status,modul,doc_id) VALUES ('1','0','a','1025','1','','".$row["doc_id"]."')");
-           mysql_query("INSERT INTO sys_dep (userid,groupid,parent_doc_id,parent_doctype_id,parent_tree_id,child_doc_id,child_doctype_id,child_tree_id,status) VALUES ('1','0','1','1023','15','".$row["doc_id"]."','1025','".mysql_insert_id()."','1')");
-         }
-       }
+  $conn = mysql_query("SELECT * FROM isp_firewall WHERE doc_id > 10");
+  while($row = mysql_fetch_array($conn)){
+    $result = mysql_query("SELECT * FROM sys_nodes WHERE userid = '1' AND groupid = '0' AND type = 'a' AND doctype_id = '1025' AND status = '1' AND doc_id = '".$row["doc_id"]."'");
+    $num_rows = @mysql_num_rows($result);
+    if(!$num_rows){
+      mysql_query("INSERT INTO sys_nodes (userid,groupid,type,doctype_id,status,modul,doc_id) VALUES ('1','0','a','1025','1','','".$row["doc_id"]."')");
+      mysql_query("INSERT INTO sys_dep (userid,groupid,parent_doc_id,parent_doctype_id,parent_tree_id,child_doc_id,child_doctype_id,child_tree_id,status) VALUES ('1','0','1','1023','15','".$row["doc_id"]."','1025','".mysql_insert_id()."','1')");
+    }
   }
 
-  //$conn = mysql_query("SELECT * FROM isp_monitor");
-  if( FALSE === ($conn = mysql_query("SELECT * FROM isp_firewall WHERE doc_id > 10") ) ) {
-             ilog('UPDATE - MySQL-Error on Line: '.__LINE__.' : '.mysql_error($link));
-  }
-  else {
-       while($row = mysql_fetch_array($conn)){
-         mysql_query("UPDATE isp_monitor SET status = 'u' WHERE doc_id = '".$row["doc_id"]."'");
-         $result = mysql_query("SELECT * FROM sys_nodes WHERE userid = '1' AND groupid = '0' AND type = 'a' AND doctype_id = '1024' AND status = '1' AND doc_id = '".$row["doc_id"]."'");
-         $num_rows = @mysql_num_rows($result);
-         if(!$num_rows){
-           mysql_query("INSERT INTO sys_nodes (userid,groupid,type,doctype_id,status,modul,doc_id) VALUES ('1','0','a','1024','1','','".$row["doc_id"]."')");
-           mysql_query("INSERT INTO sys_dep (userid,groupid,parent_doc_id,parent_doctype_id,parent_tree_id,child_doc_id,child_doctype_id,child_tree_id,status) VALUES ('1','0','1','1023','15','".$row["doc_id"]."','1024','".mysql_insert_id()."','1')");
-         }
-       }
+  $conn = mysql_query("SELECT * FROM isp_monitor");
+  while($row = mysql_fetch_array($conn)){
+    mysql_query("UPDATE isp_monitor SET status = 'u' WHERE doc_id = '".$row["doc_id"]."'");
+    $result = mysql_query("SELECT * FROM sys_nodes WHERE userid = '1' AND groupid = '0' AND type = 'a' AND doctype_id = '1024' AND status = '1' AND doc_id = '".$row["doc_id"]."'");
+    $num_rows = @mysql_num_rows($result);
+    if(!$num_rows){
+      mysql_query("INSERT INTO sys_nodes (userid,groupid,type,doctype_id,status,modul,doc_id) VALUES ('1','0','a','1024','1','','".$row["doc_id"]."')");
+      mysql_query("INSERT INTO sys_dep (userid,groupid,parent_doc_id,parent_doctype_id,parent_tree_id,child_doc_id,child_doctype_id,child_tree_id,status) VALUES ('1','0','1','1023','15','".$row["doc_id"]."','1024','".mysql_insert_id()."','1')");
+    }
   }
 
-  if( FALSE === mysql_query("UPDATE sys_user SET modules = CONCAT(modules, ',isp_file') WHERE modules NOT LIKE '%isp_file%'") ) {
-             ilog('UPDATE - MySQL-Error on Line: '.__LINE__.' : '.mysql_error($link));
-  }
-  if( FALSE === mysql_query("UPDATE sys_user SET modules = CONCAT(modules, ',isp_fakt') WHERE doc_id = '1' AND modules NOT LIKE '%isp_fakt%'") ) {
-             ilog('UPDATE - MySQL-Error on Line: '.__LINE__.' : '.mysql_error($link));
-  }
-  if( FALSE === mysql_query("UPDATE sys_user SET modules = CONCAT(modules, ',help') WHERE modules NOT LIKE '%help%'") ) {
-             ilog('UPDATE - MySQL-Error on Line: '.__LINE__.' : '.mysql_error($link));
-  }
-  if( FALSE === mysql_query("UPDATE isp_isp_web SET optionen_directory_index = 'index.html\nindex.htm\nindex.php\nindex.php5\nindex.php4\nindex.php3\nindex.shtml\nindex.cgi\nindex.pl\nindex.jsp\nDefault.htm\ndefault.htm' WHERE optionen_directory_index IS NULL") ) {
-             ilog('UPDATE - MySQL-Error on Line: '.__LINE__.' : '.mysql_error($link));
-  }
-  if( FALSE === mysql_query("UPDATE isp_server SET server_ftp_typ = 'proftpd' WHERE server_ftp_typ = 'proftp'") ) {
-             ilog('UPDATE - MySQL-Error on Line: '.__LINE__.' : '.mysql_error($link));
-  }
-  if( FALSE === mysql_query("UPDATE isp_server SET server_ftp_typ = 'vsftpd' WHERE server_ftp_typ = 'vsftp'") ) {
-             ilog('UPDATE - MySQL-Error on Line: '.__LINE__.' : '.mysql_error($link));
-  }
-
-  //$conn = mysql_query("SELECT * FROM isp_traffic");
-  if( FALSE === ($conn = mysql_query("SELECT * FROM isp_firewall WHERE doc_id > 10") ) ) {
-             ilog('UPDATE - MySQL-Error on Line: '.__LINE__.' : '.mysql_error($link));
-  }
-  else {
-       while($row = mysql_fetch_array($conn)){
-         if(empty($row["datum"])){
-           list($traffic_monat, $traffic_jahr) = explode("/", $row["monat"]);
-           if(substr($traffic_monat,0,1) == "0") $traffic_monat = substr($traffic_monat,1,1);
-           $traffic_datum = mktime(0,0,0,1,$traffic_monat,$traffic_jahr);
-           mysql_query("UPDATE isp_traffic SET datum = '$traffic_datum' WHERE doc_id = '".$row["doc_id"]."'");
-         }
-       }
+  mysql_query("UPDATE sys_user SET modules = CONCAT(modules, ',isp_file') WHERE modules NOT LIKE '%isp_file%'");
+  mysql_query("UPDATE sys_user SET modules = CONCAT(modules, ',isp_fakt') WHERE doc_id = '1' AND modules NOT LIKE '%isp_fakt%'");
+  mysql_query("UPDATE sys_user SET modules = CONCAT(modules, ',help') WHERE modules NOT LIKE '%help%'");
+  mysql_query("UPDATE isp_isp_web SET optionen_directory_index = 'index.html\nindex.htm\nindex.php\nindex.php5\nindex.php4\nindex.php3\nindex.shtml\nindex.cgi\nindex.pl\nindex.jsp\nDefault.htm\ndefault.htm' WHERE optionen_directory_index IS NULL");
+  mysql_query("UPDATE isp_server SET server_ftp_typ = 'proftpd' WHERE server_ftp_typ = 'proftp'");
+  mysql_query("UPDATE isp_server SET server_ftp_typ = 'vsftpd' WHERE server_ftp_typ = 'vsftp'");
+  $conn = mysql_query("SELECT * FROM isp_traffic");
+  while($row = mysql_fetch_array($conn)){
+    if(empty($row["datum"])){
+      list($traffic_monat, $traffic_jahr) = explode("/", $row["monat"]);
+      if(substr($traffic_monat,0,1) == "0") $traffic_monat = substr($traffic_monat,1,1);
+      $traffic_datum = mktime(0,0,0,1,$traffic_monat,$traffic_jahr);
+      mysql_query("UPDATE isp_traffic SET datum = '$traffic_datum' WHERE doc_id = '".$row["doc_id"]."'");
+    }
   }
 
   if($old_version < 1200){
     // Anlegen der Faktura Records
     $sql = "SELECT * FROM isp_nodes, isp_isp_web WHERE isp_nodes.doc_id = isp_isp_web.doc_id AND isp_nodes.doctype_id = isp_isp_web.doctype_id";
+    $conn = mysql_query($sql);
 
-    if( FALSE === ($conn = mysql_query($sql) ) ) {
-            ilog('UPDATE - MySQL-Error on Line: '.__LINE__.' : '.mysql_error($link));
+    while($web = mysql_fetch_array($conn)){
+
+        $web_id = $web["doc_id"];
+        $beschreibung = $web["web_host"].".".$web["web_domain"];
+
+        // Web Record hinzufügen
+        $sql = "INSERT INTO isp_fakt_record (web_id,doc_id,doctype_id,typ,notiz) VALUES ('$web_id','$web_id','1013','Web','$beschreibung')";
+        mysql_query($sql);
+        // Traffic Record hinzufügen
+        $sql = "INSERT INTO isp_fakt_record (web_id,typ,notiz) VALUES ('$web_id','Traffic','$beschreibung')";
+        mysql_query($sql);
+
+        // User zu Web holen
+        $sql = "SELECT * FROM isp_dep, isp_isp_user WHERE isp_dep.parent_doc_id = $web_id AND isp_dep.parent_doctype_id = 1013 AND isp_dep.child_doc_id = isp_isp_user.doc_id AND isp_dep.child_doctype_id = isp_isp_user.doctype_id";
+        $conn2 = mysql_query($sql);
+        while($user = mysql_fetch_array($conn2)) {
+                $beschreibung = $user["user_username"];
+                $doc_id = $user["doc_id"];
+                $sql = "INSERT INTO isp_fakt_record (web_id,doc_id,doctype_id,typ,notiz) VALUES ('$web_id','$doc_id','1014','Email','$beschreibung')";
+                mysql_query($sql);
+        }
     }
-    else {
-
-              while($web = mysql_fetch_array($conn)){
-
-                  $web_id = $web["doc_id"];
-                  $beschreibung = $web["web_host"].".".$web["web_domain"];
-
-                  // Web Record hinzufï¿½gen
-                           $sql = "INSERT INTO isp_fakt_record (web_id,doc_id,doctype_id,typ,notiz) VALUES ('$web_id','$web_id','1013','Web','$beschreibung')";
-                  mysql_query($sql);
-                  // Traffic Record hinzufï¿½gen
-                  $sql = "INSERT INTO isp_fakt_record (web_id,typ,notiz) VALUES ('$web_id','Traffic','$beschreibung')";
-                  mysql_query($sql);
-
-                  // User zu Web holen
-                  $sql = "SELECT * FROM isp_dep, isp_isp_user WHERE isp_dep.parent_doc_id = $web_id AND isp_dep.parent_doctype_id = 1013 AND isp_dep.child_doc_id = isp_isp_user.doc_id AND isp_dep.child_doctype_id = isp_isp_user.doctype_id";
-
-                  if( FALSE === ($conn2 = mysql_query($sql)) ) {
-                             ilog('UPDATE - MySQL-Error on Line: '.__LINE__.' : '.mysql_error($link));
-                  }
-                  else {
-                             while($user = mysql_fetch_array($conn2)) {
-                                     $beschreibung = $user["user_username"];
-                                     $doc_id = $user["doc_id"];
-                                     $sql = "INSERT INTO isp_fakt_record (web_id,doc_id,doctype_id,typ,notiz) VALUES ('$web_id','$doc_id','1014','Email','$beschreibung')";
-                                     mysql_query($sql);
-                             }
-                  }
-              }
-            }
   }
   /*
   if($old_version < 2000){
@@ -976,7 +896,7 @@ if($install_art == "install"){
     }
   }
   */
-  //////////// Nachtrï¿½ge in neuer DB machen ENDE /////////////
+  //////////// Nachträge in neuer DB machen ENDE /////////////
   caselog("rm -f $sql_file", $FILE, __LINE__,"deleted $sql_file","could not delete $sql_file");
   caselog("rm -f existing_db.sql", $FILE, __LINE__,"deleted existing_db.sql","could not delete existing_db.sql");
 }
@@ -1078,6 +998,15 @@ if(!is_dir($pfad)) mkdir($pfad, octdec($directory_mode));
 $conf = rf("mailstats/.forward");
 $conf = str_replace("{PROCMAIL}", $procmail, $conf);
 wf($pfad."/.forward", $conf);
+
+if(is_file('/etc/suphp.conf')) exec("mv /etc/suphp.conf /etc/suphp.conf_".$datum);
+$conf = rf("suphp.conf");
+$conf = str_replace("{APACHE_USER}", $dist_http_user, $conf);
+wf("/etc/suphp.conf", $conf);
+if(is_file('/etc/suphp/suphp.conf')){
+  exec("mv /etc/suphp/suphp.conf /etc/suphp/suphp.conf_".$datum);
+  symlink('/etc/suphp.conf', '/etc/suphp/suphp.conf');
+}
 
 exec("cp -f mailstats/.procmailrc $pfad");
 mkdirs($pfad."/mailstats");
@@ -1227,7 +1156,7 @@ if($install_art == "install"){
     if(!is_link($dist_runlevel)) $dist_runlevel = realpath($dist_runlevel);
     if(!is_link($dist_smrsh)) $dist_smrsh = realpath($dist_smrsh);
 
-    mysql_query("INSERT INTO isp_server (doc_id, doctype_id, server_host, server_domain, server_ip, server_netzmaske, server_sprache, server_db_type, server_db_user, server_db_passwort, server_path_httpd_conf, server_path_httpd_root, server_httpd_user, server_httpd_group, server_path_frontpage, server_path_httpd_error, server_name, server_mta, server_sendmail_virtuser_datei, server_sendmail_cw, server_ftp_typ, server_proftpd_conf_datei, server_proftpd_log, server_bind_user, server_bind_group, server_bind_named_conf, server_bind_zonefile_dir, userid_von, groupid_von, passwd_datei, group_datei, server_ipliste, shadow_datei, server_bind_ns1_default, server_bind_ns2_default, server_path_httpd_log, server_soap_ip, server_soap_port, server_soap_encoding, server_admin_email, server_enable_frontpage, server_bind_standard_mx, server_bind_adminmail_default, server_mail_log_save, server_ftp_log_save, server_httpd_suexec, dist, dist_init_scripts, dist_runlevel, dist_smrsh, dist_shells, dist_bind_init_script, dist_bind_pidfile, dist_bind_hintfile, dist_bind_localfile, dist_cron_daemon, dist_cron_tab, dist_mysql_group, dist_httpd_daemon, dist_pop3, dist_pop3_version, dist_ftp_version, dist_httpd_conf, dist_mail_log, server_mail_check_mx) VALUES (1, 1010, '$server_host', '$server_domain', '$ip', '255.255.255.0', 'de', 'mysql', '', '', '$httpd_conf_dir', '$dist_path_httpd_root', '$dist_http_user', '$dist_http_group', '/usr/local/frontpage/version5.0/bin/owsadm.exe', '".$dist_path_httpd_root."/error', 'Server 1', '$dist_mail', '$dist_mail_virtusertable', '$dist_mail_local_host_names', '$dist_ftp', '$dist_ftp_conf', '$dist_ftp_log', '$dist_bind_user', '$dist_bind_group', '$dist_bind_conf', '$dist_bind_dir', '10000', '10000', '$dist_passwd', '$dist_group', '$server_ip_liste', '$dist_shadow', '$server_name', '$server_name', '/var/log/httpd/ispconfig_access_log', '', '', '', 'root@localhost', '0', '0', 'root@localhost', '0', '0', '0', '$dist', '$dist_init_scripts', '$dist_runlevel', '$dist_smrsh', '$dist_shells', '$dist_bind_init_script', '$dist_bind_pidfile', '$dist_bind_hintfile', '$dist_bind_localfile', '$dist_cron_daemon', '$dist_cron_tab', '$dist_mysql_group', '$dist_httpd_daemon', '$dist_pop3', '$dist_pop3_version', '$dist_ftp_version', '$httpd_conf', '$dist_mail_log', '0')");
+    mysql_query("INSERT INTO isp_server (doc_id, doctype_id, server_host, server_domain, server_ip, server_netzmaske, server_sprache, server_db_type, server_db_user, server_db_passwort, server_path_httpd_conf, server_path_httpd_root, server_httpd_user, server_httpd_group, server_path_frontpage, server_path_httpd_error, server_name, server_mta, server_sendmail_virtuser_datei, server_sendmail_cw, server_ftp_typ, server_proftpd_conf_datei, server_proftpd_log, server_bind_user, server_bind_group, server_bind_named_conf, server_bind_zonefile_dir, userid_von, groupid_von, passwd_datei, group_datei, server_ipliste, shadow_datei, server_bind_ns1_default, server_bind_ns2_default, server_path_httpd_log, server_soap_ip, server_soap_port, server_soap_encoding, server_admin_email, server_enable_frontpage, server_bind_standard_mx, server_bind_adminmail_default, server_mail_log_save, server_ftp_log_save, server_httpd_suexec, dist, dist_init_scripts, dist_runlevel, dist_smrsh, dist_shells, dist_bind_init_script, dist_bind_pidfile, dist_bind_hintfile, dist_bind_localfile, dist_cron_daemon, dist_cron_tab, dist_mysql_group, dist_httpd_daemon, dist_pop3, dist_pop3_version, dist_ftp_version, dist_httpd_conf, dist_mail_log) VALUES (1, 1010, '$server_host', '$server_domain', '$ip', '255.255.255.0', 'de', 'mysql', '', '', '$httpd_conf_dir', '$dist_path_httpd_root', '$dist_http_user', '$dist_http_group', '/usr/local/frontpage/version5.0/bin/owsadm.exe', '".$dist_path_httpd_root."/error', 'Server 1', '$dist_mail', '$dist_mail_virtusertable', '$dist_mail_local_host_names', '$dist_ftp', '$dist_ftp_conf', '$dist_ftp_log', '$dist_bind_user', '$dist_bind_group', '$dist_bind_conf', '$dist_bind_dir', '10000', '10000', '$dist_passwd', '$dist_group', '$server_ip_liste', '$dist_shadow', '$server_name', '$server_name', '/var/log/httpd/ispconfig_access_log', '', '', '', 'root@localhost', '0', '0', 'root@localhost', '0', '0', '0', '$dist', '$dist_init_scripts', '$dist_runlevel', '$dist_smrsh', '$dist_shells', '$dist_bind_init_script', '$dist_bind_pidfile', '$dist_bind_hintfile', '$dist_bind_localfile', '$dist_cron_daemon', '$dist_cron_tab', '$dist_mysql_group', '$dist_httpd_daemon', '$dist_pop3', '$dist_pop3_version', '$dist_ftp_version', '$httpd_conf', '$dist_mail_log')");
 
 
   } else {
@@ -1267,7 +1196,10 @@ $conf = str_replace("{DO_AUTOMATED_BACKUPS}", $do_automated_backups, $conf);
 $conf = str_replace("{SSH_CHROOT}", $ssh_chroot, $conf);
 $conf = str_replace("{HTTPD_CHECK}", $httpd_check, $conf);
 $conf = str_replace("{SALUTATORY_EMAIL_CHARSET}", $salutatory_email_charset, $conf);
-$conf = str_replace("{MYSQL_QUOTA_PRIVS}", $mysql_quota_privs, $conf);
+$conf = str_replace("{WEBDAV}", $conf_webdav, $conf);
+$conf = str_replace("{DEC_POINT}", $dec_point, $conf);
+$conf = str_replace("{THOUSANDS_SEP}", $thousands_sep, $conf);
+$conf = str_replace("{CURRENCY}", $currency, $conf);
 if($install_art == "upgrade"){
   if($old_version < 2000){
     $conf = str_replace('$go_info["theme"]["page"]["nav_color"] = "025CCA";', '$go_info["theme"]["page"]["nav_color"] = "E0E0E0";', $conf);
@@ -1276,17 +1208,6 @@ if($install_art == "upgrade"){
 wf($conf_datei, $conf);
 caselog("chmod 600 $conf_datei", $FILE, __LINE__);
 caselog("chown admispconfig:admispconfig $conf_datei", $FILE, __LINE__);
-
-$mailman_vhost_entry = "";
-
-if($dist_mailman){
-        $mailman_vhost_entry = "### Mailman Section ###
-ScriptAlias /mailman/ /usr/lib/cgi-bin/mailman/
-ScriptAlias /cgi-bin/mailman/ /usr/lib/cgi-bin/mailman/
-Alias /images/mailman/ /usr/share/images/mailman/
-### End of Mailman Section ###";
-
-}
 
 if($install_art == "install"){
   $vhost = "
@@ -1306,7 +1227,7 @@ LogFormat \"%v||||%b||||%h %l %u %t \\\"%r\\\" %>s %b \\\"%{Referer}i\\\" \\\"%{
 CustomLog \"|/root/ispconfig/cronolog --symlink=/var/log/httpd/ispconfig_access_log /var/log/httpd/ispconfig_access_log_%Y_%m_%d\" combined_ispconfig
 
 <Directory ".$dist_path_httpd_root."/*/web>
-    Options +Includes -Indexes -ExecCGI
+    Options +Includes -Indexes
     AllowOverride None
     AllowOverride Indexes AuthConfig Limit FileInfo
     Order allow,deny
@@ -1317,7 +1238,7 @@ CustomLog \"|/root/ispconfig/cronolog --symlink=/var/log/httpd/ispconfig_access_
 </Directory>
 
 <Directory ".$dist_path_httpd_root."/*/user/*/web>
-    Options +Includes -Indexes -ExecCGI
+    Options +Includes -Indexes
     AllowOverride None
     AllowOverride Indexes AuthConfig Limit FileInfo
     Order allow,deny
@@ -1339,12 +1260,6 @@ CustomLog \"|/root/ispconfig/cronolog --symlink=/var/log/httpd/ispconfig_access_
 </Directory>
 
 Include ".$httpd_conf_dir."/vhosts/Vhosts_ispconfig.conf
-
-### AWStats Section ###
-Alias /icon \"/home/admispconfig/ispconfig/tools/awstats/wwwroot/icon/\"
-### End of AWStats Section ###
-
-".$mailman_vhost_entry."
 
 ";
 
@@ -1395,17 +1310,17 @@ $cron_tsl_file = "/home/fcronisp";
 if(is_file($cron_tsl_file)) unlink($cron_tsl_file);
     exec("$dist_cron_tab -l > $cron_tsl_file");
     exec("chmod 777 $cron_tsl_file");
-$cron_job_tsl = array('30 00 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/logs.php &> /dev/null','59 23 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/ftp_logs.php &> /dev/null','59 23 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/mail_logs.php &> /dev/null','59 23 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/cleanup.php &> /dev/null','0 4 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/webalizer.php &> /dev/null','0 4 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/awstats.php &> /dev/null','0,30 * * * * /root/ispconfig/php/php  /root/ispconfig/scripts/shell/check_services.php &> /dev/null','15 3,15 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/quota_msg.php &> /dev/null','40 00 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/traffic.php &> /dev/null','05 02 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/backup.php &> /dev/null','*/5 * * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/mysql_quota.php &> /dev/null', '0 10 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/check_mx.php');
+$cron_job_tsl = array('30 00 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/logs.php &> /dev/null','59 23 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/ftp_logs.php &> /dev/null','59 23 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/mail_logs.php &> /dev/null','59 23 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/cleanup.php &> /dev/null','0 4 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/webalizer.php &> /dev/null','0,30 * * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/check_services.php &> /dev/null','15 3,15 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/quota_msg.php &> /dev/null','40 00 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/traffic.php &> /dev/null','05 02 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/backup.php &> /dev/null');
 foreach($cron_job_tsl as $cron_tsl){
     aftsl($cron_tsl_file, "\n".$cron_tsl."\n");
   }
   exec("$dist_cron_tab $cron_tsl_file");
   if(is_file($cron_tsl_file)) unlink($cron_tsl_file);
 }
-else{
+else {
   exec("crontab -u root -l > crontab.txt");
   $existing_cron_jobs = rf('crontab.txt');
-  $cron_jobs = array('30 00 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/logs.php &> /dev/null','59 23 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/ftp_logs.php &> /dev/null','59 23 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/mail_logs.php &> /dev/null','59 23 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/cleanup.php &> /dev/null','0 4 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/webalizer.php &> /dev/null','0 4 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/awstats.php &> /dev/null','0,30 * * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/check_services.php &> /dev/null','15 3,15 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/quota_msg.php &> /dev/null','40 00 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/traffic.php &> /dev/null','05 02 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/backup.php &> /dev/null','*/5 * * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/mysql_quota.php &> /dev/null','0 10 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/check_mx.php');
+  $cron_jobs = array('30 00 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/logs.php &> /dev/null','59 23 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/ftp_logs.php &> /dev/null','59 23 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/mail_logs.php &> /dev/null','59 23 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/cleanup.php &> /dev/null','0 4 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/webalizer.php &> /dev/null','0,30 * * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/check_services.php &> /dev/null','15 3,15 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/quota_msg.php &> /dev/null','40 00 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/traffic.php &> /dev/null','05 02 * * * /root/ispconfig/php/php /root/ispconfig/scripts/shell/backup.php &> /dev/null');
   foreach($cron_jobs as $cron_job){
     if(!strstr($existing_cron_jobs, $cron_job)){
       af('crontab.txt', "\n".$cron_job."\n");
@@ -1460,69 +1375,6 @@ if($dist_mail == "postfix"){
     wf($pf_main_cf, str_replace("virtual_alias_maps", "#virtual_alias_maps", rf($pf_main_cf)));
     ilog("commented out virtual_alias_maps entry in $pf_main_cf");
   }
-        if($dist_mailman) {
-                $dist_mail_transport_table = "/etc/postfix/transport";
-                $pf_master_cf = "/etc/postfix/master.cf";
-                $dist_relay_hostname_table = "/etc/postfix/relay-host-names";
-
-                //// Transport Maps ////
-                if(strstr($postfix_main_cf, "transport_maps = hash:$dist_mail_transport_table")){
-                        ilog("transport table entry already in $pf_main_cf");
-                } else {
-                        wf($pf_main_cf, str_replace("transport_maps", "#transport_maps", rf($pf_main_cf)));
-                        af($pf_main_cf, "\ntransport_maps = hash:$dist_mail_transport_table\n");
-                        ilog("created transport table entry in $pf_main_cf");
-                        if(!is_file($dist_mail_transport_table)) phpcaselog(touch($dist_mail_transport_table), "create ".$dist_mail_transport_table, $FILE, __LINE__);
-                        caselog("postmap $dist_mail_transport_table", $FILE, __LINE__);
-                }
-
-                //// Relay Hostnames Maps ////
-                if(strstr($postfix_main_cf, "relay_domains = hash:$dist_relay_hostname_table")){
-                        ilog("Relay Hostnames entry already in $pf_main_cf");
-                } else {
-                        wf($pf_main_cf, str_replace("relay_domains", "#relay_domains", rf($pf_main_cf)));
-                        af($pf_main_cf, "\nrelay_domains = hash:$dist_relay_hostname_table\n");
-                        ilog("created Relay Hostnames entry in $pf_main_cf");
-                        if(!is_file($dist_relay_hostname_table)) phpcaselog(touch($dist_relay_hostname_table), "create ".$dist_relay_hostname_table, $FILE, __LINE__);
-                        caselog("postmap $dist_relay_hostname_table", $FILE, __LINE__);
-                }
-
-                //// Mailman destination recipient limit ////
-                if(strstr($postfix_main_cf, "mailman_destination_recipient_limit = 1")){
-                        ilog("Mailman destination recipient limit entry already in $pf_main_cf");
-                } else {
-                        wf($pf_main_cf, str_replace("mailman_destination_recipient_limit", "#mailman_destination_recipient_limit", rf($pf_main_cf)));
-                        af($pf_main_cf, "\nmailman_destination_recipient_limit = 1\n");
-                        ilog("Mailman destination recipient limit entry in $pf_main_cf");
-                }
-
-                //// Master.cf ////
-                $pf_master_cf = "/etc/postfix/master.cf";
-                caselog("cp -f $pf_master_cf $pf_master_cf.orig", $FILE, __LINE__);
-                $postfix_master_cf = no_comments($pf_master_cf);
-                $mailman_master_cf_line = 'mailman   unix  -       n       n       -       -       pipe flags=FR user=list argv=/var/lib/mailman/bin/postfix-to-mailman.py ${nexthop} ${user}';
-
-                if(strstr($postfix_master_cf, $mailman_master_cf_line)){
-                        ilog("transport table entry already in $pf_master_cf");
-                } else {
-                        wf($pf_master_cf, str_replace("mailman", "#mailman", rf($pf_master_cf)));
-                        af($pf_master_cf, "\n$mailman_master_cf_line\n");
-                        ilog("created mailman entry in $pf_master_cf");
-                }
-
-                //// mm_cfg.py ////
-                $mm_cfg = "/etc/mailman/mm_cfg.py";
-                caselog("cp -f $mm_cfg $mm_cfg.orig", $FILE, __LINE__);
-                $mailman_mm_cfg = no_comments($mm_cfg);
-
-                if(strstr($mailman_mm_cfg, "MTA=None")){
-                        ilog("MTA=None entry already in $mm_cfg");
-                } else {
-                        wf($mm_cfg, str_replace("MTA", "#MTA", rf($mm_cfg)));
-                        af($mm_cfg, "\nMTA=None\n");
-                        ilog("created MTA=None entry in $mm_cfg");
-                }
-        }
 }
 /////////////// POSTFIX ENDE //////////////////
 
@@ -1601,18 +1453,11 @@ exec("chown admispconfig:admispconfig ".$go_info["server"]["log_file"]);
 exec("chmod 644 ".$go_info["server"]["log_file"]);
 //////////// LOG-FILE ANLEGEN ENDE ////////////////
 
+
 ///////////////// CREATE CHROOT SSH ENV //////////////////
 exec("chmod +x /root/ispconfig/scripts/shell/create_chroot_env.sh");
 
-///////////////// CREATE CHROOT SSH ENV ENDE //////////////////
-
-//////////////// CREATE AWStats DIR //////////////////
-if($install_art == "install"){
-        exec("mkdir /etc/awstats");
-        exec("cp -f compile_aps/awstats.shared.conf /etc/awstats/awstats.shared.conf");
-        exec("chmod 644 /etc/awstats/awstats.shared.conf");
-}
-///////////////// CREATE AWStats DIR ENDE //////////////////
+///////////////// CREATE CHROOT SSH ENV //////////////////
 
 exec("pwconv &> /dev/null");
 exec("grpconv &> /dev/null");

@@ -99,19 +99,10 @@ exec("$zip -j $tgz_name $tmp_dir/*");
 
 if($transfer == "download") {
 
-        /*
-		header("Content-Type: application/octet-stream");
-		header("Content-Disposition: attachment; filename=\"$backup_file_name\"");
-		*/
-	
+        // setze Header
+        header("Content-Type: application/octet-stream");
+        header("Content-Disposition: attachment; filename=\"$backup_file_name\"");
 		header("Pragma: public");
-		header("Expires: 0");
-		header("Cache-Control: must-revalidate, post-check=0, pre-check=0");
-		header("Cache-Control: private",false);
-		header("Content-Type: application/octet-stream");
-		header("Content-Disposition: attachment; filename=\"".$backup_file_name."\";");
-		header("Content-Transfer-Encoding: binary");
-		header("Content-Length: ".filesize($tgz_name));
 
         // gebe Daten aus
         echo file_get_contents($tgz_name);

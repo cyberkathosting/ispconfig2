@@ -27,6 +27,8 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 */
 
+if(CONFIG_LOADED != 1) die('Direct access not permitted.');
+
 if (!defined('vlibIniClassLoaded')) {
     define('vlibIniClassLoaded', 1);
 

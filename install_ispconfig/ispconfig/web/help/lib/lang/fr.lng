@@ -63,4 +63,5 @@ $wb["Davon"] = "De";
 $wb["Ihre antwort"] = "Votre réponse";
 $wb["Antworten"] = "Répondre";
 $wb["Schließen"] = "Fermer";
+$wb["Dutch"]         = "Dutch";
 ?>

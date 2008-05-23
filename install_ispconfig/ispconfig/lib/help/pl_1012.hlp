@@ -4,6 +4,7 @@
 * ISPConfig Help File
 * Version 1.2
 * Syntax: $hlp["FieldName"] = "HelpText";
+* autor: Leszek Taczkowski leszek.t@simplusnet.pl
 ************************************************/
 
 $hlp["kunde_anrede"] = "Proszê pod±æ adres klienta.";

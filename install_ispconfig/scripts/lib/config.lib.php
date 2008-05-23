@@ -27,8 +27,6 @@ NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
 EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-if(CONFIG_LOADED != 1) die('Direct access not permitted.');
-
 class isp_web
 {
 
@@ -47,7 +45,6 @@ var $firewall_doctype_id = 1025;
 var $slave_doctype_id = 1028;
 var $datenbank_doctype_id = 1029;
 var $spf_record_doctype_id = 1031;
-var $list_doctype_id = 1033;
 var $vhost_conf;
 var $ftp_conf;
 var $apache_user;
@@ -64,127 +61,6 @@ function isp_web() {
   }
   $this->apache_user = $this->apache_user();
 }
-
-function TYPO3_install() {
-  include("/home/admispconfig/ispconfig/lib/config.inc.php");
-  $go_info["isp"]["httpd"]["use_old_conf_on_errors"] = 1; // if httpd syntax check gives back errors, use old, working configuration
-
-//////////////// DO NOT EDIT BELOW !!! //////////////////
-  $go_info["isp"]["server_root"] = "/root/ispconfig";
-  $go_info["isp"]["include_root"] = $go_info["isp"]["server_root"] . $go_info["server"]["dir_trenner"] ."scripts".$go_info["server"]["dir_trenner"]."lib";
-  $go_info["isp"]["classes_root"] = $go_info["isp"]["include_root"] . $go_info["server"]["dir_trenner"] ."classes";
-  $go_info["isp"]["server_id"] = 1;
-
-/**************************************
-* Server Einstellungen
-* V1.0 ISPConfig SERVER Modules
-***************************************/
-  $link = @mysql_connect($go_info["server"]["db_host"], $go_info["server"]["db_user"], $go_info["server"]["db_password"])
-  or die("Could not connect to MySQL server!");
-  mysql_select_db($go_info["server"]["db_name"]);
-  $server_params = mysql_query("SELECT * FROM isp_isp_web_package WHERE pending = 1");
-
-  $res = mysql_fetch_array($server_params);
-  if (!is_array($res)) exit;
-  $result = mysql_query("SELECT * from isp_server");
-  $server = mysql_fetch_assoc ( $result );
-  $httpd_root = $server["server_path_httpd_root"];
-  $typo3_path = $server["typo3_script_repository"];
-  unset($server);
-
-
-// clear database
-  $typo3db = @mysql_connect($res['arg1'], $res['arg2'], $res['arg3'])
-  or die("Could not connect to TYPO3 MySQL server!");
-  mysql_select_db($res['arg4']);
-  $sql = "SHOW TABLES";
-  $result = mysql_query($sql);
-
-  if (!$result) {
-    echo "DB Error, could not list tables\n";
-    echo 'MySQL Error: ' . mysql_error();
-    exit;
-  }
-  while ($row = mysql_fetch_row($result)) {
-//  echo "Table: {$row[0]}\n";
-    $table[] = $row[0];
-  }
-  foreach ($table as $t) {
-    $sql = "drop table ".$t;
-    mysql_query($sql);
-  }
-// clear directory
-  $webpath = $httpd_root.'/web'.$res['arg7'].'/web/';
-
-  if ($handle = opendir($webpath)) {
-//    echo "Directory handle: $handle\n";
-//    echo "Files:\n";
-    while (false !== ($file = readdir($handle))) {
-    //  echo "$file\n";
-      $files[] = $file;
-    }
-    foreach ($files as $f) {
-      if (($f != ".") and ($f != "..") and ($f != "error") and ($f != "stats")) {
-//        echo "File: $f\n";
-        shell_exec('rm -rf '.$webpath.$f);
-      }
-    }
-  }
-
-// load new database content
-  $dbfile = $typo3_path.$res['arg8'].'/mysql.dump';
-  if (is_file($dbfile)) {
-    $output = shell_exec('mysql -u'.$res['arg2'].' -p'.$res['arg3'].' '.$res['arg4'].' < '.$dbfile.'');
-    //echo "<pre>$output</pre>";
-  }
-// copy directory content
-  $TYPO3dir = $typo3_path.$res['arg8'].'/dummy/';
-  if (is_dir($TYPO3dir)) {
-    shell_exec('cp -a '.$TYPO3dir.'* '.$webpath);
-  }
-// copy TYPO3 source
-  $TYPO3src = $typo3_path.$res['arg8'].'/typo3_src-'.$res['arg8'].'/';
-  if (is_dir($TYPO3src)) {
-    shell_exec('cp -a '.$TYPO3src.' '.$webpath);
-  }
-// Set ownership and permissions
-  shell_exec('chown -R www-data.web'.$res['arg7'].' '.$webpath);
-
-// set install password
-  $localconf = fopen($webpath.'typo3conf/localconf.php', 'r+');
-  fseek($localconf, -2, SEEK_END);
-  fwrite($localconf, '$TYPO3_CONF_VARS[\'BE\'][\'installToolPassword\'] = \''.md5($res['arg5']).'\';
-');
-  fwrite($localconf, '$TYPO3_CONF_VARS[\'SYS\'][\'encryptionKey\'] = \''.md5(uniqid(rand(),true)).'\';
-');
-  fwrite($localconf, '$typo_db_username = \''.$res['arg2'].'\';  //  Modified or inserted by TYPO3 Install Tool.
-');
-  fwrite($localconf, '$typo_db_password = \''.$res['arg3'].'\';  //  Modified or inserted by TYPO3 Install Tool.
-');
-  fwrite($localconf, '$typo_db_host = \''.$res['arg1'].'\';  //  Modified or inserted by TYPO3 Install Tool.
-');
-  fwrite($localconf, '$typo_db = \''.$res['arg4'].'\';  //  Modified or inserted by TYPO3 Install Tool.
-');
-  fwrite($localconf, '
-?>');
-  fclose($localconf);
-
-// set admin password
-  $typo3db = @mysql_connect($res['arg1'], $res['arg2'], $res['arg3'])
-  or die("Could not connect to TYPO3 MySQL server!");
-  mysql_select_db($res['arg4']);
-  $sql = 'update be_users set password=\''.md5($res['arg6']).'\' where uid=1;';
-  mysql_query($sql);
-
-// set pending = 0, because we are finished
-  $link = @mysql_connect($go_info["server"]["db_host"], $go_info["server"]["db_user"], $go_info["server"]["db_password"])
-  or die("Could not connect to MySQL server!");
-  mysql_select_db($go_info["server"]["db_name"]);
-
-  $sql = 'update isp_isp_web_package set pending = 0 where doc_id = '.$res['doc_id'].';';
-  mysql_query($sql);
-}
-
 
 function web_insert($doc_id, $doctype_id, $server_id) {
   global $go_info, $mod;
@@ -725,7 +601,7 @@ function user_insert($doc_id, $doctype_id) {
   if($user["user_shell"] && $web["web_shell"]){
     $shell = "/bin/bash"; //Shell u. FTP
   } else {
-    if($web["web_ftp"] && $user["user_ftp"]){
+    if($web["web_ftp"]){
       $shell = "/bin/false"; //nur FTP
     } else {
       $shell = "/dev/null"; //weder Shell noch FTP
@@ -834,9 +710,6 @@ function user_insert($doc_id, $doctype_id) {
       $mod->log->caselog("chown $user_username:mail /var/spool/mail/$user_username &> /dev/null", $this->FILE, __LINE__);
       $mod->log->caselog("chmod 600 /var/spool/mail/$user_username", $this->FILE, __LINE__);
     }
-  } else if ($mod->system->server_conf["use_maildir"] == 2) {
-    // Cyrus IMAP, Mailbox anlegen
-    $mod->cyrus_imap->add($user["user_username"], $user["user_mailquota"]);
   }
 
   // Diskquota setzen
@@ -921,7 +794,7 @@ function user_update($doc_id, $doctype_id) {
   if($user["user_shell"] && $web["web_shell"]){
     $shell = "/bin/bash"; //Shell u. FTP
   } else {
-    if($web["web_ftp"] && $user["user_ftp"]){
+    if($web["web_ftp"]){
       $shell = "/bin/false"; //nur FTP
     } else {
       $shell = "/dev/null"; //weder Shell noch FTP
@@ -967,11 +840,7 @@ function user_update($doc_id, $doctype_id) {
       $mod->log->caselog("chown $user_username:mail /var/spool/mail/$user_username &> /dev/null", $this->FILE, __LINE__);
       $mod->log->caselog("chmod 600 /var/spool/mail/$user_username", $this->FILE, __LINE__);
     }
-  } else if ($mod->system->server_conf["use_maildir"] == 2) {
-    // Cyrus IMAP, Mailbox-Quota anpassen
-    $mod->cyrus_imap->update($user["user_username"], $user["user_mailquota"]);
   }
-  exec("whoami >> /root/tempout");
 
   // Gehört User einem Reseller oder dem admin?
   if($reseller = $mod->db->queryOneRecord("SELECT isp_isp_reseller.user_standard_index FROM isp_nodes, isp_isp_reseller WHERE isp_nodes.doc_id = $doc_id AND isp_nodes.doctype_id = '".$doctype_id."' AND isp_nodes.groupid = isp_isp_reseller.reseller_group")){
@@ -1147,17 +1016,6 @@ function user_delete($doc_id, $doctype_id) {
   $mod->db->query("update isp_isp_user SET status = '' where doc_id = '$doc_id'");
   $mod->system->data["isp_isp_user"][$doc_id]["status"] = '';
 }
-
-        function list_delete($doc_id, $doctype_id) {
-                global $mod;
-
-                $list = $mod->system->data["isp_isp_list"][$doc_id];
-
-                  if(empty($list)) $mod->log->ext_log("query result empty", 2, $this->FILE, __LINE__);
-
-                $mod->db->query("update isp_isp_list SET status = '' where doc_id = '$doc_id'");
-                $mod->system->data["isp_isp_list"][$doc_id]["status"] = '';
-        }
 
 /////////////////////////////////////////////////////////////////////////////
 // Helper Functions
@@ -1338,17 +1196,17 @@ function make_docroot($doc_id,$hostname,$domainname,$web_quota,$update) {
   if(is_file($crt_file)) exec("chmod 644 $crt_file");
 
   $root_gruppe = $mod->system->root_group();
-  exec("chmod 1400 $web_path/user/.no_delete");
+  exec("chmod 400 $web_path/user/.no_delete");
   exec("chown root:$root_gruppe $web_path/user/.no_delete");
-  exec("chmod 1400 $web_path/log/.no_delete");
+  exec("chmod 400 $web_path/log/.no_delete");
   exec("chown root:$root_gruppe $web_path/log/.no_delete");
-  exec("chmod 1400 $web_path/cgi-bin/.no_delete");
+  exec("chmod 400 $web_path/cgi-bin/.no_delete");
   exec("chown root:$root_gruppe $web_path/cgi-bin/.no_delete");
-  exec("chmod 1400 $web_path/ssl/.no_delete");
+  exec("chmod 400 $web_path/ssl/.no_delete");
   exec("chown root:$root_gruppe $web_path/ssl/.no_delete");
-  exec("chmod 1400 $web_path/phptmp/.no_delete");
+  exec("chmod 400 $web_path/phptmp/.no_delete");
   exec("chown root:$root_gruppe $web_path/phptmp/.no_delete");
-  exec("chmod 1400 $web_path/web/error/.no_delete");
+  exec("chmod 400 $web_path/web/error/.no_delete");
   exec("chown root:$root_gruppe $web_path/web/error/.no_delete");
 
   ////////////// Standard CGIs ////////////////////
@@ -1432,7 +1290,7 @@ function make_vhost($server_id) {
   $ips = $mod->system->data["isp_server_ip"];
 
   foreach($ips as $ip){
-    // $ip_test = $mod->db->queryAllRecords("SELECT * FROM isp_isp_web,isp_nodes WHERE isp_isp_web.web_ip = '".$ip["server_ip"]."' AND isp_isp_web.server_id = '$server_id' AND isp_nodes.doc_id = isp_isp_web.doc_id AND isp_nodes.doctype_id = '".$this->web_doctype_id."' AND isp_nodes.status = '1'");
+    //$ip_test = $mod->db->queryAllRecords("SELECT * FROM isp_isp_web,isp_nodes WHERE isp_isp_web.web_ip = '".$ip["server_ip"]."' AND isp_isp_web.server_id = '$server_id' AND isp_nodes.doc_id = isp_isp_web.doc_id AND isp_nodes.doctype_id = '".$this->web_doctype_id."' AND isp_nodes.status = '1'");
         $ip_test = 1;
 
       //NameVirtualHost schreiben
@@ -1552,47 +1410,28 @@ Group web".$web["doc_id"];
     }
 
     $cgi = "";
-    if ($web["web_cgi"] == 1) {
-        //$cgi = "ScriptAlias  /cgi-bin/ ".$mod->system->server_conf["server_path_httpd_root"]."/"."web".$web["doc_id"]."/"."cgi-bin/";
-        $cgi = "Alias  /cgi-bin/ ".$mod->system->server_conf["server_path_httpd_root"]."/"."web".$web["doc_id"]."/"."cgi-bin/
+    if($web["web_cgi"] == 1) $cgi = "Alias  /cgi-bin/ ".$mod->system->server_conf["server_path_httpd_root"]."/"."web".$web["doc_id"]."/"."cgi-bin/
 AddHandler cgi-script .cgi
 AddHandler cgi-script .pl";
-
-        if ($web["web_cgi_mod_perl"] == 1 && $server["server_httpd_mod_perl"] == 1) {
-            $cgi .= "\nPerlOptions +Enable";
-            $cgi_handler = "\tSetHandler perl-script
-\tPerlResponseHandler ModPerl::Registry
-\tPerlOptions +ParseHeaders";
-        } else {
-            $cgi_handler = "\tSetHandler cgi-script";
-        }
-
-        $cgi .= "\n<Location /cgi-bin>\n$cgi_handler\n</Location>";
-    }
+    /*
+    if($web["web_cgi"] == 1) $cgi = "ScriptAlias  /cgi-bin/ ".$mod->system->server_conf["server_path_httpd_root"]."/"."web".$web["doc_id"]."/"."cgi-bin/
+AddHandler cgi-script .cgi
+AddHandler cgi-script .pl";
+    */
 
     if($web["web_php"]){
       if($apache_version == 1){
         $php = "AddType application/x-httpd-php .php .php3 .php4 .php5";
       }
       if($apache_version == 2){
-                $a2php = $go_info["server"]["apache2_php"];
-                if (!is_array($a2php)) {
-                        $a2php = explode(',', $a2php);
-                }
                   $php = '';
-                if (array_search('engine',$a2php) !== false) {
-                        $php .= "php_admin_flag engine on\n";
-                }
-                if ((array_search('addtype',$a2php) !== false) ||
-                    (array_search('both',$a2php) !== false) ||
-                    (array_search('suphp',$a2php) !== false)) {
+                if($go_info["server"]["apache2_php"] == 'addtype' or $go_info["server"]["apache2_php"] == 'both' or $go_info["server"]["apache2_php"] == 'suphp') {
                         $php .= "AddType application/x-httpd-php .php .php3 .php4 .php5\n";
                 }
-                                if ((array_search('addhandler',$a2php) !== false)) {
+                                if ($go_info["server"]["apache2_php"] == 'addhandler') {
                         $php .= "AddHandler application/x-httpd-php .php .php3 .php4 .php5\n";
                 }
-                if ((array_search('filter',$a2php) !== false) ||
-                    (array_search('both',$a2php) !== false)) {
+                if($go_info["server"]["apache2_php"] == 'filter' or $go_info["server"]["apache2_php"] == 'both') {
             $php .= "<Files *.php>
     SetOutputFilter PHP
     SetInputFilter PHP
@@ -1611,20 +1450,21 @@ AddHandler cgi-script .pl";
 </Files>";
                 }
       }
-
-          if(array_search('suphp',$a2php) !== false){
-                  $php .= "suPHP_Engine on\n";
-                  $php .= "suPHP_UserGroup ".$webadmin." web".$web["doc_id"]."\n";
-                  $php .= "AddHandler x-httpd-php .php .php3 .php4 .php5\n";
-                  $php .= "suPHP_AddHandler x-httpd-php\n";
+          if($go_info["server"]["apache2_php"] == 'suphp'){
+                  $php .= "<Directory ".$document_root.">\n";
+                  $php .= "  suPHP_Engine on\n";
+                  $php .= "  suPHP_UserGroup ".$webadmin." web".$web["doc_id"]."\n";
+                  $php .= "  AddHandler x-httpd-php .php .php3 .php4 .php5\n";
+                  $php .= "  suPHP_AddHandler x-httpd-php\n";
                   if($web["web_php_safe_mode"]){
-                    $php .= "SetEnv php_safe_mode On\n";
+                    $php .= "  SetEnv php_safe_mode On\n";
                   } else {
-                    $php .= "SetEnv php_safe_mode Off\n";
+                    $php .= "  SetEnv php_safe_mode Off\n";
                   }
+                  $php .= "</Directory>\n";
           }
 
-          if(array_search('suphp',$a2php) !== false) {
+          if($go_info["server"]["apache2_php"] != 'suphp') {
               if($web["web_php_safe_mode"]){
                 $php .= "\nphp_admin_flag safe_mode On
 php_admin_value open_basedir ".$mod->system->server_conf["server_path_httpd_root"]."/"."web".$web["doc_id"]."/
@@ -1637,15 +1477,25 @@ php_admin_value session.save_path ".$mod->system->server_conf["server_path_httpd
         }
     } else {
       $php = "";
-      if($apache_version == 2){
-        $a2php = $go_info["server"]["apache2_php"];
-        if (!is_array($a2php)) {
-          $a2php = explode(',', $a2php);
-        }
-        if (array_search('engine',$a2php) !== false) {
-          $php .= "php_admin_flag engine off\n";
-        }
-      }
+    }
+
+    $ruby = '';
+    if($web["web_ruby"]){
+      $ruby = '<IfModule mod_ruby.c>
+  <Directory '.$document_root.'>
+    Options +ExecCGI
+  </Directory>
+  RubyRequire apache/ruby-run
+  #RubySafeLevel 0
+  <Files *.rb>
+    SetHandler ruby-object
+    RubyHandler Apache::RubyRun.instance
+  </Files>
+  <Files *.rbx>
+    SetHandler ruby-object
+    RubyHandler Apache::RubyRun.instance
+  </Files>
+</IfModule>';
     }
 
     if($web["web_ssi"]){
@@ -1684,16 +1534,6 @@ AddType image/vnd.wap.wbmp .wbmp";
    if($apache_version == 2){
      $error_alias = "Alias /error/ \"".$document_root."/error/\"";
    }
-
-  ////////////// Web Statistics ////////////////////
-  $stats_alias = "";
-
-   if($web["web_stats"] == "awstats"){
-     $stats_alias = "Alias /stats \"".$document_root."/awstats\"";
-   } elseif ($web["web_stats"] == "webalizer") {
-     $stats_alias = "Alias /stats \"".$document_root."/webalizer\"";
-   }
-  ////////////// END of Web Statistics ////////////////////
 
   ////////////// Error Pages ////////////////////
    if($web["web_individual_error_pages"]){
@@ -1752,12 +1592,12 @@ DocumentRoot ".$document_root."
 ".$cgi."
 ErrorLog ".$mod->system->server_conf["server_path_httpd_root"]."/web".$web["doc_id"]."/log/error.log
 ".$php."
+".$ruby."
 ".$ssi."
 ".$wap."
 SSLEngine on
 SSLCertificateFile ".$mod->system->server_conf["server_path_httpd_root"]."/web".$web["doc_id"]."/ssl/".$web["web_host"].".".$web["web_domain"].".crt
 SSLCertificateKeyFile ".$mod->system->server_conf["server_path_httpd_root"]."/web".$web["doc_id"]."/ssl/".$web["web_host"].".".$web["web_domain"].".key
-".$stats_alias."
 ".$error_alias."
 ".$error."
 AliasMatch ^/~([^/]+)(/(.*))? ".$mod->system->server_conf["server_path_httpd_root"]."/web".$web["doc_id"]."/user/$1/web/$3
@@ -1788,9 +1628,9 @@ clearstatcache();
                         WEB_ERROR_LOG => $mod->system->server_conf["server_path_httpd_root"]."/web".$web["doc_id"]."/log/error.log",
                         SERVERADMIN => "webmaster@".$web["web_domain"],
                         PHP => $php,
+                        RUBY => $ruby,
                         SSI => $ssi,
                         WAP => $wap,
-                        STATSALIAS => $stats_alias,
                         ERRORALIAS => $error_alias,
                         ERROR => $error,
                         WEB => "web".$web["doc_id"],
@@ -1812,6 +1652,7 @@ clearstatcache();
                         WEB_ERROR_LOG => "",
                         SERVERADMIN => "",
                         PHP => "",
+                        RUBY => "",
                         SSI => "",
                         WAP => "",
                         ERRORALIAS => "",
@@ -1882,6 +1723,13 @@ clearstatcache();
 $webdav .= "
 </VirtualHost>";
 }
+  if(!empty($webs)){
+  $vhost_text = $mod->tpl->fetch();
+  // ICI Add Webdav to vhost
+  if ($go_info["server"]["webdav"] == 1) $vhost_text .= $webdav;
+  } else {
+  $vhost_text = "";
+  }
 
   if(!empty($webs)){
   $vhost_text = $mod->tpl->fetch();
@@ -2138,7 +1986,11 @@ DocumentRoot /home
   $mod->file->af($this->vhost_conf, $test_vhost);
 
   if($go_info["server"]["httpd_check"] == 1) {
-    $httpd_syntax_check = $mod->log->caselog("httpd -t &> /dev/null", $this->FILE, __LINE__);
+    if(is_file('/etc/apache2/envvars')){
+      $httpd_syntax_check = $mod->log->caselog(". /etc/apache2/envvars && httpd -t &> /dev/null", $this->FILE, __LINE__);
+    } else {
+      $httpd_syntax_check = $mod->log->caselog("httpd -t &> /dev/null", $this->FILE, __LINE__);
+    }
   } else {
     // return always 0 = check OK
     $httpd_syntax_check = 0;
@@ -2668,7 +2520,11 @@ function apache_restart(){
   $dist_httpd_conf_dir = $mod->system->server_conf["server_path_httpd_conf"];
 
   if($go_info["server"]["httpd_check"] == 1) {
-    $ret_val = $mod->log->caselog("httpd -t  &> /dev/null", $this->FILE, __LINE__);
+    if(is_file('/etc/apache2/envvars')){
+      $ret_val = $mod->log->caselog(". /etc/apache2/envvars && httpd -t  &> /dev/null", $this->FILE, __LINE__);
+    } else {
+      $ret_val = $mod->log->caselog("httpd -t  &> /dev/null", $this->FILE, __LINE__);
+    }
   } else {
     // return always 0 = check OK
     $ret_val = 0;
@@ -2696,7 +2552,11 @@ function apache_reload(){
   $dist_httpd_conf_dir = $mod->system->server_conf["server_path_httpd_conf"];
 
   if($go_info["server"]["httpd_check"] == 1) {
-    $ret_val = $mod->log->caselog("httpd -t  &> /dev/null", $this->FILE, __LINE__);
+    if(is_file('/etc/apache2/envvars')){
+      $ret_val = $mod->log->caselog(". /etc/apache2/envvars && httpd -t  &> /dev/null", $this->FILE, __LINE__);
+    } else {
+      $ret_val = $mod->log->caselog("httpd -t  &> /dev/null", $this->FILE, __LINE__);
+    }
   } else {
     // return always 0 = check OK
     $ret_val = 0;
@@ -2784,23 +2644,7 @@ function web_user_clean(){
           }
           $mod->system->deluser($item["name"]);
           $mod->db->query("DELETE FROM del_status WHERE id = '".$item["id"]."'");
-
-          if ($mod->system->server_conf["use_maildir"] == 2) {
-            // Cyrus IMAP, Mailbox lï¿½schen
-            $mod->cyrus_imap->del($item["name"]);
-          }
-
-          $mod->etc->delete_user_config_dir($item["name"]);
       break;
-      case 1033:
-              // Liste Lï¿½schen
-              $rmlist_path = "/usr/lib/mailman/bin/rmlist";
-
-              $list_name = $item["name"];
-
-                // Liste lï¿½schen
-                $mod->log->caselog("$rmlist_path $list_name", $this->FILE, __LINE__);
-                $mod->db->query("DELETE FROM del_status WHERE id = '".$item["id"]."'");
       }
     }
   }

@@ -3,27 +3,27 @@
 Copyright (c) 2005, projektfarm Gmbh, Till Brehm, Falko Timme
 All rights reserved.
 
-Redistribution and use in source and binary forms, with or without modification, 
+Redistribution and use in source and binary forms, with or without modification,
 are permitted provided that the following conditions are met:
 
-    * Redistributions of source code must retain the above copyright notice, 
+    * Redistributions of source code must retain the above copyright notice,
       this list of conditions and the following disclaimer.
-    * Redistributions in binary form must reproduce the above copyright notice, 
-      this list of conditions and the following disclaimer in the documentation 
+    * Redistributions in binary form must reproduce the above copyright notice,
+      this list of conditions and the following disclaimer in the documentation
       and/or other materials provided with the distribution.
-    * Neither the name of ISPConfig nor the names of its contributors 
-      may be used to endorse or promote products derived from this software without 
+    * Neither the name of ISPConfig nor the names of its contributors
+      may be used to endorse or promote products derived from this software without
       specific prior written permission.
 
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
-ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED 
-WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. 
-IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, 
-INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, 
-BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, 
-DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY 
-OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING 
-NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, 
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT,
+INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY
+OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
 EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 include("../../lib/config.inc.php");
@@ -280,7 +280,7 @@ menuDaten.neu(new VerzEintrag('Tickets','root','<? echo $go_api->lng("Unterstütz
 // Support Ticket System
 <?
 if($usertype != 'admin') {
-	echo "menuDaten.neu(new LinkEintrag('Tickets','".$go_api->lng("Neue Karte")."','isp_support/new.php?$session','seiteFrame','form_green.gif','".$go_api->lng("Neue Karte")."','n','$id&amp;$session'));";
+        echo "menuDaten.neu(new LinkEintrag('Tickets','".$go_api->lng("Neue Karte")."','isp_support/new.php?$session','seiteFrame','form_green.gif','".$go_api->lng("Neue Karte")."','n','$id&amp;$session'));";
 }
 ?>
 menuDaten.neu(new LinkEintrag('Tickets','<? echo $go_api->lng("Geöffnete Karten")?>','isp_support/open.php?<?echo $session?>','seiteFrame','vzauf-0.gif','<? echo $go_api->lng("Geöffnete Karten")?>','n','<?echo "$id&amp;$session"?>'));
@@ -428,6 +428,12 @@ echo "menuDaten.neu(new VerzEintrag('fr','root','".$go_api->lng("Französische").
 if($usertype == 'admin') echo "menuDaten.neu(new LinkEintrag('fr','".$go_api->lng("Admin Handbuch")."','documents/fr/admin.pdf','_blank','doc.gif','','','$id&amp;$session'));\n";
 if($usertype == 'reseller') echo "menuDaten.neu(new LinkEintrag('fr','".$go_api->lng("Reseller Handbuch")."','documents/fr/reseller.pdf','_blank','doc.gif','','','$id&amp;$session'));\n";
 if($usertype == 'client') echo "menuDaten.neu(new LinkEintrag('fr','".$go_api->lng("Kunden Handbuch")."','documents/fr/client.pdf','_blank','doc.gif','','','$id&amp;$session'));\n";
+
+echo "menuDaten.neu(new VerzEintrag('nl','root','".$go_api->lng("Dutch")."','','',''));\n";
+
+if($usertype == 'admin') echo "menuDaten.neu(new LinkEintrag('nl','".$go_api->lng("Admin Handbuch")."','documents/nl/admin.pdf','_blank','doc.gif','','','$id&amp;$session'));\n";
+if($usertype == 'reseller') echo "menuDaten.neu(new LinkEintrag('nl','".$go_api->lng("Reseller Handbuch")."','documents/nl/reseller.pdf','_blank','doc.gif','','','$id&amp;$session'));\n";
+if($usertype == 'client') echo "menuDaten.neu(new LinkEintrag('nl','".$go_api->lng("Kunden Handbuch")."','documents/nl/client.pdf','_blank','doc.gif','','','$id&amp;$session'));\n";
 
 if(@is_file("isp_support/nav.php")) include("isp_support/nav.php");
 

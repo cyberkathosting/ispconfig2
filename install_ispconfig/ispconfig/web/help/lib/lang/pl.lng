@@ -4,18 +4,18 @@
 * Version 1.0
 *
 * Tlumaczenie wersji polskiej
-* Patryk Marek --- http://kbn.pl --- info@kbn.pl
-* Wersja 1.0.2
-* Ostatnie zmiany 2005.09.12
+* Leszek Taczkowski
+* Wersja 1.0.0
+* Ostatnie zmiany 19.12.2006
 *********************************/
 
-$wb["Anbieter"]     = "Reseller";
+$wb["Anbieter"]     = "Sprzedawca";
 $wb["Web"]          = "WWW";
 $wb["Admin Handbuch"] = "Podrêcznik Administratora";
-$wb["Reseller Handbuch"] = "Podrêcznik Resellera";
+$wb["Reseller Handbuch"] = "Podrêcznik Sprzedawcy";
 $wb["Kunden Handbuch"] = "Podrêcznik Klienta";
-$wb["Deutsch"]          = "German";
-$wb["Englisch"]          = "English";
+$wb["Deutsch"]          = "Niemieckie";
+$wb["Englisch"]          = "Angielskie";
 $wb["Projektfarm Support"]          = "Wsparcie techniczne firmy Projektfarm";
 $wb["Online Hilfe"] = "Pomoc Online";
 $wb["ISP Server Status"] = 'Status serwera ISP';
@@ -34,16 +34,16 @@ $wb["System Load 15 Minuten"] = "Obci±¿enie systemu w okresie 15-minutowym";
 //////////////// Server Status Ende //////////
 
 $wb["Willkommen"] = "Witamy";
-$wb["willkommen_kunde"] = "Serdecznie witamy w ISPConfig,
-tu mozesz administrowac strona internetowa. Je¿eli masz pytania albo problemy,
-prosze skontaktuj sie z administratorem serwera albo odnie¶ siê do instrukcji klienta ISPConfig.";
+$wb["willkommen_kunde"] = "Witamy serdecznie w ISPConfig,
+tu mo¿esz administrowaæ stron± internetow±. Je¿eli masz pytania albo problemy,
+proszê skontaktuj siê z administratorem serwera albo odnie¶ siê do instrukcji klienta ISPConfig.";
 
 // NEW 2.0.8 ///////////////////////////////////
-$wb["Französische"]     = "Francuski";
+$wb["Französische"]     = "Francuskie";
 // Support Tickets System
 $wb["Unterstützungskarten"] = "Karty pomocy technicznej";
 $wb["Geöffnete Karten"] = "Otwarte karty";
-$wb["Geschlossene Karten"] = "Zamkniete karty";
+$wb["Geschlossene Karten"] = "Zamkniête karty";
 $wb["Neue Karte"] = "Nowe karty";
 $wb["Betreff"] = "Temat";
 $wb["Priorität"] = "Priorytet";
@@ -54,11 +54,12 @@ $wb["Ihre frage"] = "Twoje pytanie";
 $wb["Senden"] = "Wys³anie";
 $wb["Fehler während der schaffung der karte"] = "B³ad podczas tworzenia biletu";
 $wb["Neue unterstützungskarte, die auf antwort wartet"] = "Nowy bilet wsparcia czekajacy na odpowiedz";
-$wb["Sie erhielten eine antwort"] = "Otrzymales odpowiedz";
-$wb["geantwortet zu ihnen"] = "odpowiedzial dla Ciebie";
+$wb["Sie erhielten eine antwort"] = "Otrzyma³e¶ odpowied¼";
+$wb["geantwortet zu ihnen"] = "odpowiedzia³ dla Ciebie";
 $wb["Datum"] = "Data";
 $wb["Davon"] = "Od";
 $wb["Ihre antwort"] = "Twoja odpowiedz";
-$wb["Antworten"] = "Odpowiedz";
+$wb["Antworten"] = "Odpowied¼";
 $wb["Schließen"] = "Zamykanie";
+$wb["Dutch"]         = "Dutch";
 ?>

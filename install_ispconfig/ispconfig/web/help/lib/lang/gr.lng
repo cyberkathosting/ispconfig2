@@ -61,4 +61,5 @@ $wb["Davon"] = "Από";
 $wb["Ihre antwort"] = "Η απάντησή σας";
 $wb["Antworten"] = "Απάντηση";
 $wb["Schlieίen"] = "Έξοδος";
+$wb["Dutch"]         = "Dutch";
 ?>

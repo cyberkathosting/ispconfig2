@@ -4,9 +4,9 @@
 * Version 1.0
 *
 * Tlumaczenie wersji polskiej
-* Patryk Marek --- http://kbn.pl --- info@kbn.pl
-* Wersja 1.0.2
-* Ostatnie zmiany 2005.09.12
+* Leszek Taczkowski
+* Wersja 1.0.0
+* Ostatnie zmiany 19.12.2006
 *********************************/
 
 //////////////// DNS Manager ////////////////
@@ -16,14 +16,14 @@ $wb["Priorität"]   = "Priorytet";
 $wb["DNS Eintrag"]  = "Wpis do DNS";
 $wb["Ordner neu"]   = "Sortuj w/g";
 $wb["Suchen"]       = "Szukaj";
-$wb["DNS-Manager"]       = "Manager DNS";
+$wb["DNS-Manager"]       = "Menad¿er DNS";
 $wb["Domain (SOA)"]         = "Domena (SOA)";
 $wb["Email Admin"]         = "Adres E-mail Administratora";
 $wb["Nameserver 1"]         = "Serwer nazw 1";
 $wb["Nameserver 2"]         = "Serwer nazw 2";
-$wb["Refresh"]         = "Refresh";
-$wb["Retry"]         = "Retry";
-$wb["Expire"]         = "Expire";
+$wb["Refresh"]         = "Od¶wie¿";
+$wb["Retry"]         = "Ponów";
+$wb["Expire"]         = "Wa¿no¶æ";
 $wb["TTL"]         = "TTL";
 $wb["Record"]         = "Rekord";
 $wb["Record"]         = "Rekordów";
@@ -75,12 +75,12 @@ $wb["unlimitiert"]  = "nielimitowana";
 $wb["Anbieter"]     = "Sprzedawca";
 $wb["DNS-Domains angelegt"] = 'Wpisy DNS utworzone ';
 $wb["von"] = "wy³±czone";
-$wb["Maximale Anzahl an DNS-Einträgen erreicht."] = "Maxymalna liczba stref dla tego konta zosta³a przekroczona.<br>";
+$wb["Maximale Anzahl an DNS-Einträgen erreicht."] = "Maksymalna liczba stref dla tego konta zosta³a przekroczona.<br>";
 $wb["error_no_zones_allowed"] = "Tworzenie stref dla tego konta jest niedozwolone.<br>";
 $wb["error_no_dns_anbieter"] = "Tworzenie wpisów DNS dla tego konta jest niedozwolone.<br>";
-$wb["error_max_slave_dns_anbieter"] = "Maxymalna liczba stref podrzednych (slave zone) zostala przekroczona.<br>";
-$wb["weiter_link"] = "<br><br> <a href='../../isp_dns/frame_start.php?s=$s'>Mas &gt;&gt;</a>";
-$wb["error_a_record_exists"] = "Jest ju¿ zapisany rekord A dla tego hosta w tej strefie.<br>";
+$wb["error_max_slave_dns_anbieter"] = "Maksymalna liczba stref podrzêdnych (slave zone) zosta³a przekroczona.<br>";
+$wb["weiter_link"] = "<br><br> <a href='../../isp_dns/frame_start.php?s=$s'>Dalej &gt;&gt;</a>";
+$wb["error_a_record_exists"] = "Dla tego hosta w tej strefie jest ju¿ zapisany rekord A .<br>";
 $wb["error_cname_record_exists"] = "Jest ju¿ zapisany rekord CNAME dla tego hosta w tej strefie.<br>";
 $wb["error_mx_record_exists"] = "Ten sam lub podobny rekord MX ju¿ istnieje w tej strefie.<br>";
 $wb["error_spf_record_exists"] = "Rekord SPF ju¿ istnieje w tej strefie.<br>";
@@ -92,13 +92,13 @@ $wb["mx"] = "Czy emaile s± wys³ane<br>&nbsp;&nbsp;od MX rekordu?";
 $wb["ptr"] = "Czy emaile s± wys³ane<br>&nbsp;&nbsp;od wszystkich serwerów<br>&nbsp;&nbsp;tej domeny?";
 $wb["a_break"] = "Czy emaile s± wys³ane<br>&nbsp;&nbsp;od innego rekordu A";
 $wb["mx_break"] = "Czy emaile s± wys³ane<br>&nbsp;&nbsp;od innego rekordu MX?";
-$wb["ip4_break"] = "Czy emaile s± wys³ane<br>&nbsp;&nbsp;od innego adreesu IP?";
+$wb["ip4_break"] = "Czy emaile s± wys³ane<br>&nbsp;&nbsp;od innego adresu IP?";
 $wb["include_break"] = "Odziedziczyæ zapis SPF<br>&nbsp;&nbsp;z tej strefy?";
 $wb["all_"] = "Zapisz powy¿sze wpisy<br>&nbsp;&nbsp;do³±cz wszystkie hosty<br>&nbsp;&nbsp;mo¿esz wys³aæ email<br>&nbsp;&nbsp;dla tej domeny?";
 
 $wb["Catalog_Name"] = "Nazwa";
-$wb["Feld"] = "Field";
-$wb["Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 -"] = "Only the following signs are allowed: a-z A-Z 0-9 -<br>";
-$wb["Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 - ."] = "Only the following signs are allowed: a-z A-Z 0-9 - .<br>";
+$wb["Feld"] = "Pole";
+$wb["Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 -"] = "Tylko nastêpuj±ce znaki s± dozwolone: a-z A-Z 0-9 -<br>";
+$wb["Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 - ."] = "Tylko nastêpuj±ce znaki s± dozwolone: a-z A-Z 0-9 - .<br>";
 
 ?>

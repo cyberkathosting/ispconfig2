@@ -73,7 +73,7 @@ $action = 'update';
 if($action == "update") {
     // Doctype holen
     if(isset($doctype_id)){
-    if(!$doc = $go_api->doc->doctype_get($doctype_id)) $go_api->errorMessage("Der angeforderte Dokumententyp existiert nicht");
+    if(!$doc = $go_api->doc->doctype_get($doctype_id)) $go_api->errorMessage("The requested Document type does not exist.");
 
     // Check ob er diesen Doctype überhaupt anzeigen darf
     if(!$go_api->groups->in_group($go_info["user"]["userid"],$doc->groupid) and $doc->groupid != 0 and $doc->groupid != "") $go_api->errorMessage("Sie haben nicht die erforderlichen Rechte, um diesen Dokumententyp zu bearbeiten");
@@ -697,10 +697,10 @@ while (list($key, $val) = each($doc->deck))
         } else {
         $value = $element_val->value;
         }
-        		// TB 13.06.2007
-    		if (get_magic_quotes_gpc()) {
-            	$value = stripslashes($value);
-    		}
+		// TB 13.06.2007
+		if (get_magic_quotes_gpc()) {
+        	$value = stripslashes($value);
+		}
 
         // Switch durch Datentypen
         $mode = 'r';

@@ -27,9 +27,9 @@ NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
 EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-if(CONFIG_LOADED != 1) die('Direct access not permitted.');
-
 // Implements Message Catalog like utility to PHP
+
+if(CONFIG_LOADED != 1) die('Direct access not permitted.');
 
 class msgcat {
   

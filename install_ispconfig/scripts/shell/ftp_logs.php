@@ -31,6 +31,7 @@ $FILE = "/root/ispconfig/scripts/shell/ftp_logs.php";
 $monat = date("m/Y");
 $monat_kurz = date("M");
 $jahr = date("Y");
+$tag = date("j");
 $datum = date("d-m-y_H-i-s");
 $current_time = time();
 $web_doctype_id = 1013;
@@ -44,7 +45,7 @@ $dist_ftp_version = $mod->system->server_conf["dist_ftp_version"];
 $dist_init_scripts = $mod->system->server_conf["dist_init_scripts"];
 
 $ftp_log = $server["server_proftpd_log"];
-if(!is_file($ftp_log)) die();
+if(!$mod->file->is_file_lfs($ftp_log)) die();
 $path_httpd_root = stripslashes($server["server_path_httpd_root"]);
 $dienst = $mod->db->queryOneRecord("SELECT * FROM isp_dienste");
 
@@ -55,6 +56,8 @@ if($dienst["dienst_ftp_status"] == "on"){
     $mod->system->daemon_init($dist_ftp_version, "stop");
   }
 }
+
+/*
 $mod->log->caselog("cp -f $ftp_log $ftp_log.$datum", $FILE, __LINE__);
 if($server["server_ftp_log_save"]){
   $mod->log->caselog("touch $ftp_log.ispconfigsave", $FILE, __LINE__);
@@ -64,6 +67,14 @@ if($server["server_ftp_log_save"]){
 $fp = fopen($ftp_log, "w");
 fwrite($fp, "");
 fclose($fp);
+*/
+
+exec("grep -iw \"".$monat_kurz.str_pad($tag,3,' ',STR_PAD_LEFT)."\" ".$ftp_log.".0 > ".$ftp_log.".".$datum);
+exec("grep -iw \"".$monat_kurz.str_pad($tag,3,' ',STR_PAD_LEFT)."\" ".$ftp_log." >> ".$ftp_log.".".$datum);
+if($server["server_ftp_log_save"]){
+  $mod->log->caselog("touch $ftp_log.ispconfigsave", $FILE, __LINE__);
+  $mod->log->caselog("cat $ftp_log.$datum >> $ftp_log.ispconfigsave", $FILE, __LINE__);
+}
 
 if($dienst["dienst_ftp_status"] == "on"){
   if($dist_ftp_version == "standalone"){

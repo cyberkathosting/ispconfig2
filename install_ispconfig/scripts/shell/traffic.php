@@ -40,6 +40,7 @@ $isp_web = new isp_web;
 $server_id = $mod->system->server_id;
 
 $server = $mod->system->server_conf;
+
 $webroot = stripslashes($server["server_path_httpd_root"]);
 
 $month = date("m/Y");
@@ -59,7 +60,6 @@ if(date("m/Y", (time() - 86400)) != $month){
     }
   }
 }
-
 
 // Webseiten mit Übertraffic feststellen und geeignete Aktion einleiten
 if($webs = $mod->db->queryAllRecords("SELECT isp_traffic.web_id, isp_traffic.bytes_web, isp_traffic.bytes_ftp, isp_traffic.bytes_mail, isp_isp_web.web_traffic, isp_isp_web.web_traffic_ueberschreitung, isp_isp_web.web_host, isp_isp_web.web_domain, isp_isp_web.web_traffic_status FROM isp_traffic, isp_isp_web, isp_nodes WHERE isp_traffic.monat = '".$month."' AND isp_traffic.web_id = isp_isp_web.doc_id AND isp_nodes.doctype_id = isp_isp_web.doctype_id AND isp_nodes.doc_id = isp_isp_web.doc_id AND isp_nodes.status = 1 AND isp_isp_web.web_traffic_ueberschreitung != '3' AND isp_isp_web.web_traffic >= 0")){

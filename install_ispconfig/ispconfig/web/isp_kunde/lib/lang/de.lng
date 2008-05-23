@@ -47,8 +47,6 @@ $wb["SSL"]        = "SSL";
 $wb["Shell Zugriff"]      = "Shell Zugriff";
 $wb["Zugang"]       = "Zugang";  // Zugriff u. Zugang zusammenfassen!/nur einen Begriff nehmen!
 $wb["CGI Scripte"]      = "CGI Scripte";
-$wb["CGI Modus"]      = "CGI Modus";
-$wb["CGI mod_perl"]      = "CGI mod_perl";
 $wb["Bundesland"]   = "Bundesland";
 $wb["Abteilung"]    = "Abteilung";
 $wb["Gültigkeit"]  = "Gültigkeit";
@@ -235,7 +233,6 @@ $wb["deaktiviert"] = 'deaktiviert';
 $wb["ISP User"] = 'ISP User';
 $wb["WebSpeicher MB"] = 'WebSpeicher MB';
 $wb["MailSpeicher MB"] = 'MailSpeicher MB';
-$wb["Max. MailSpeicher MB"] = 'Max. MailSpeicher MB';
 $wb["Administrator"] = 'Administrator';
 $wb["Erweiterte Einstellungen"] = 'Erweiterte Einstellungen';
 $wb["Email Alias"] = 'Email-Alias';
@@ -379,7 +376,6 @@ $wb["error_anbieter_max_slavedns_ueberschritten"] = "Der Anbieter hat schon mehr
 $wb["error_anbieter_httpd_include_aktiv"] = "HTTPD-Includes werden auf einigen Webs des Resellers verwendet. Dieses Feature kann nicht deaktiviert werden.<br>";
 $wb["error_anbieter_shell_access_aktiv"] = "Shell-Zugang wird auf einigen Webs des Resellers verwendet. Dieses Feature kann nicht deaktiviert werden.<br>";
 $wb["error_anbieter_cgi_aktiv"] = "CGI wird auf einigen Webs des Resellers verwendet. Dieses Feature kann nicht deaktiviert werden.<br>";
-$wb["error_anbieter_cgi_mod_perl_aktiv"] = "CGI mod_perl wird auf einigen Webs des Resellers verwendet. Dieses Feature kann nicht deaktiviert werden.<br>";
 $wb["error_anbieter_standard_cgi_aktiv"] = "Standard-CGIs werden auf einigen Webs des Resellers verwendet. Dieses Feature kann nicht deaktiviert werden.<br>";
 $wb["error_anbieter_php_aktiv"] = "PHP wird auf einigen Webs des Resellers verwendet. Dieses Feature kann nicht deaktiviert werden.<br>";
 $wb["error_anbieter_ssi_aktiv"] = "SSI wird auf einigen Webs des Resellers verwendet. Dieses Feature kann nicht deaktiviert werden.<br>";
@@ -415,7 +411,6 @@ $wb["error_web_no_database_decrease_1"] = "Dieses Web besitzt schon ";
 $wb["error_web_no_database_decrease_2"] = " Datenbank(en). Sie können die Datenbankanzahl nicht verringern.<br>";
 $wb["error_web_no_shell_access"] = "Sie können diesem Web keinen Shell-Zugang zuordnen.<br>";
 $wb["error_web_no_cgi"] = "Sie können diesem Web keine CGI-Funktionalität zuordnen.<br>";
-$wb["error_web_no_cgi_mod_perl"] = "Sie können diesem Web keine CGI-Funktionalität mit mod_perl zuordnen.<br>";
 $wb["error_web_no_standard_cgi"] = "Sie können diesem Web keine Standard-CGI-Skripte zuordnen.<br>";
 $wb["error_web_no_php"] = "Sie können diesem Web keine PHP-Funktionalität zuordnen.<br>";
 $wb["error_web_no_ssi"] = "Sie können diesem Web keine SSI-Funktionalität zuordnen.<br>";
@@ -451,11 +446,6 @@ $wb["aktiv"] = "Aktiv";
 $wb["gesperrt"] = "Gesperrt";
 
 $wb["Catalog_Name"] = "Name";
-
-$wb["Nicht scannen"] = "Nicht scannen";
-$wb["MX prüfen"] = "MX prüfen";
-$wb["Cyrus-Administrator"] = "Cyrus-Administrator";
-$wb["Passwort Cyrus-Admin"] = "Passwort Cyrus-Admin";
 $wb["error_domain_delete_client"] = "Sie können diese Domain nicht löschen.";
 
 ?>

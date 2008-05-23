@@ -61,6 +61,17 @@ then
   fi
 fi
 
+NEEDED_SPACE=524288 # 512MB
+AVAILABLE_SPACE_CUR_DIR=`df -k . | tail -n1 | rev | awk '{print $3}' | rev`
+AVAILABLE_SPACE_ROOT_DIR=`df -k /root | tail -n1 | rev | awk '{print $3}' | rev`
+
+if [ "$AVAILABLE_SPACE_CUR_DIR" -lt "$NEEDED_SPACE" ]; then
+  error "Sie benötigen mind. 512MB Platz im jetzigen Verzeichnis, um ISPConfig zu installieren! / You need at least 512MB of disk space in the current directory to install ISPConfig!"
+fi
+if [ "$AVAILABLE_SPACE_ROOT_DIR" -lt "$NEEDED_SPACE" ]; then
+  error "Sie benötigen mind. 512MB Platz im /root-Verzeichnis, um ISPConfig zu installieren! / You need at least 512MB of disk space in the /root directory to install ISPConfig!"
+fi
+
 . dist.info.tmp
 
 ############# INSTALLATIONSART #################
@@ -83,21 +94,21 @@ fi
 ############# SPRACHE ####################
   PS3='Ihre Wahl: / Your Choice: / Votre Choix:' # Sets the prompt string.
 
-  echo 'Wählen Sie Ihre Sprache (deutsch/englisch/spanisch/französisch/italienisch/niederländisch/polnisch/schwedisch/serbian): / Please choose your language (German/English/Spanish/French/Italian/Dutch/Polish/Swedish/Serbian):  / Merci de choisir votre langue (Allemand/Anglais/Espagnol/Français/Italien/Néerlandais/Polonais/Suédois/Serbian):'
+  echo 'Wählen Sie Ihre Sprache (deutsch/englisch/spanisch/französisch/italienisch/niederländisch/polnisch/schwedisch): / Please choose your language (German/English/Spanish/French/Italian/Dutch/Polish/Swedish):  / Merci de choisir votre langue (Allemand/Anglais/Espagnol/Français/Italien/Néerlandais/Polonais/Suédois):'
 
-  select lang in "de" "en" "es" "fr" "it" "nl" "pl" "se" "sr"
+  select lang in "de" "en" "es" "fr" "it" "nl" "pl" "se"
   do
     echo
     break  # if no 'break' here, keeps looping forever.
   done
 
-  while [ "$lang" != "de" -a "$lang" != "en" -a "$lang" != "es" -a "$lang" != "fr" -a "$lang" != "it" -a "$lang" != "nl" -a "$lang" != "pl" -a "$lang" != "se" -a "$lang" != "sr" ]
+  while [ "$lang" != "de" -a "$lang" != "en" -a "$lang" != "es" -a "$lang" != "fr" -a "$lang" != "it" -a "$lang" != "nl" -a "$lang" != "pl" -a "$lang" != "se" ]
 do
     PS3='Ihre Wahl: / Your Choice: / Votre choix:' # Sets the prompt string.
 
-  echo 'Wählen Sie Ihre Sprache (deutsch/englisch/französisch/italienisch/spanisch/serbiche): / Please choose your language (German/English/French/Italian/Spanish/Serbian):  / Merci de choisir votre langue (Allemand/Anglais/Français/Italien/Espagnol/Serbian):'
+  echo 'Wählen Sie Ihre Sprache (deutsch/englisch/französisch/italienisch/spanisch): / Please choose your language (German/English/French/Italian/Spanish):  / Merci de choisir votre langue (Allemand/Anglais/Français/Italien/Espagnol):'
 
-  select lang in "de" "en" "es" "fr" "it" "nl" "pl" "se" "sr"
+  select lang in "de" "en" "es" "fr" "it" "nl" "pl" "se"
   do
     echo
     break  # if no 'break' here, keeps looping forever.
@@ -160,7 +171,6 @@ if [ "$lang" == "de" ]; then
   q_ende3=" und loggen sich ein:"
   q_ende4="Benutzername: admin"
   q_ende5="Passwort: admin"
-  q_mailman="Möchten Sie Mailman zusammen mit ISPConfig benutzen? [y/n]"
 
 else
 
@@ -218,7 +228,6 @@ else
     q_ende3=" and log in:"
     q_ende4="Username: admin"
     q_ende5="Password: admin"
-    q_mailman="Do you want to use Mailman together with ISPConfig? [y/n]"
 
  else
 
@@ -276,123 +285,62 @@ else
       q_ende3=" and log in:"
       q_ende4="Username: admin"
       q_ende5="Password: admin"
-      q_mailman="Do you want to use Mailman together with ISPConfig? [y/n]"
-
-else
-
-      if [ "$lang" == "sr" ]; then
-        q_hinweis="Tokom instalacije sistema , neke sistemske datoteke su zamenjene tamo gde su pravljena podešavanja. Ovo može dovesti do gubitka upisa u httpd.conf, named.conf kao i u Sendmail konfiguraciji."
-        q_hinweis_akzeptieren="Da li želite da nastavite sa instalacijom? [y/n]"
-        q_lizenz="Please read through the licence carefully:"
-        q_lizenz_akzeptieren="Da li prihvatate licencu? [y/n]"
-        q_install_mode="Odaberite mod instalacije. U expertskom modu treba da odgovorite na neka dodatna pitanjas. U standardnom modu uobièajene vrednosti su predpostavljene za ta pitanja."
-        q_select="Molim odaberite: "
-        q_wahl="Vaš izbor: "
-        q_anderer="drugo"
-        q_korrekt="Da li je ovo taèno? [y/n]"
-        q_mta_check="Provera za MTA..."
-        q_mta_pruefung1="ISPConfig je pronašao sledeæe MTA:"
-        q_wahl_mta="Odaberite vaš MTA: "
-        q_error1="Vaša konfiguracija sistema nije kompatibilna sa ISPConfig! Instalacijska rutina se zaustavlja ovde!"
-        q_procmail_check="Provera paketa procmail..."
-        q_quota_check="Provera paketa quota..."
-        q_ftp_check="Provera da li je FTP server instaliran..."
-        q_ftp_pruefung1="ISPConfig je pronašao sledeæi FTP server:"
-        q_wahl_ftp="Odaberite vaš FTP server: "
-        q_mysql_check="Provera paketa MySQL..."
-        q_pop3_check="Provera da li je POP3 server instaliran..."
-        q_pop3_pruefung1="ISPConfig je pronašao sledeæi POP3 server:"
-        q_wahl_pop3="Odaberite vaš POP3 server: "
-        q_openssl_check="Provera paketa openssl..."
-        q_bind_check="Provera paketa bind..."
-        q_iptables_check="Provera programa iptables/ipchains/ipfw..."
-        q_httpd_check="Provera programa httpd..."
-        q_httpd_syntax_check="Provera sintakse httpd.conf..."
-        q_httpd_syntax_check_not_ok="Sintaksa vašeg httpd.conf nije ispravna! Molim ispravite grešku. Instalaciona rutina staje ovde!"
-        q_httpd_syntax_check_ok="Sintaksa je ispravna!"
-        q_check_ende="Nejmanje jedan od potrebnih paketa nedostaje!"
-        q_mysql_running_check="MySQL ne radi! Molim ponovo pokrenite vašu MySQL bazu podataka i pokrenite ponovo ISPConfig instalaciju."
-        q_mysql_sock_check="Ne mogu pronaæi mysql.sock! Instalaciona rutina se zaustavlja ovde!"
-        q_php_check="PHP binarna datoteka koja dolazi sa ISPConfig ne radi dobro na vašem sistemu! Instalaciona rutina se zaustavlja ovde!"
-        q_prepare_files="Priprema datoteka. Molim saèekajte trenutak..."
-        q_voraussetzungen="Svi uslovi su ispunjeni."
-        q_mysql_server="Molim unesite vaš MySQL server:"
-        q_mysql_server_check="MySQL server koji ste naveli nemože biti dosegnut!"
-        q_mysql_user="Molim unesite vašeg MySQL korisnika:"
-        q_mysql_passwort="Molim unesite vašu MySQL lozinku:"
-        q_mysql_connection_check="Unešena MySQL lozinka je pogrešna!"
-        q_mysql_database="Molim unesite naziv za ISPConfig bazu podataka (npr. db_ispconfig):"
-        q_ip_address="Molim unesite IP adresu ISPConfig prezentacije (e.g. 192.168.0.1):"
-        q_ip_check="IP adresa koju ste naveli nije dostupna!"
-        q_host="Molim unesite ime hosta (npr. www):"
-        q_domain="Molim unesite domen (npr. xyz.de):"
-        q_ispconfigprotocol="Molim odaberite protokol (http ili https (SSL enkripcija)) za pristup ISPConfig sistemu:"
-        q_url_check="URL nije dostupna!"
-        q_restart="Ponovno pokretanje nekih servisa..."
-        q_ende="Èestitke! Vaš ISPConfig sistem je sada instaliran. Ako treba da instalirate kvote, molim preduzmite korake opisane u uputstvu za instalaciju. Inaèe vaš sistem je sada dostupan bez ponovnog pokretanja sistema."
-        q_ende2="Usmerite vaš internet pretraživaè ka "
-        q_ende3=" i prijavite se:"
-        q_ende4="Korisnièko ime: admin"
-        q_ende5="Lozinka: admin"
-        q_mailman="Do you want to use Mailman together with ISPConfig? [y/n]"
 
     else
 
-        q_hinweis="With the system installation, some system files are replaced where adjustments were made. This can lead to loss of entries in httpd.conf, named.conf as well as in the Sendmail configuration."
-        q_hinweis_akzeptieren="Do you want to continue with the installation? [y/n]"
-        q_lizenz="Please read through the licence carefully:"
-        q_lizenz_akzeptieren="Do you accept the licence? [y/n]"
-        q_install_mode="Please select the installation mode. In expert mode you have to answer some additional questions. In standard mode standard values are assumed for these questions."
-        q_select="Please select: "
-        q_wahl="Your Choice: "
-        q_anderer="other"
-        q_korrekt="Is this correct? [y/n]"
-        q_mta_check="Checking for MTA..."
-        q_mta_pruefung1="ISPConfig found the following MTA:"
-        q_wahl_mta="Please select your MTA: "
-        q_error1="Your system configuration is not compatible with ISPConfig! The installation routine stops here!"
-        q_procmail_check="Checking for package procmail..."
-        q_quota_check="Checking for package quota..."
-        q_ftp_check="Checking if an FTP server is installed..."
-        q_ftp_pruefung1="ISPConfig found the following FTP server:"
-        q_wahl_ftp="Please select your FTP server: "
-        q_mysql_check="Checking for package MySQL..."
-        q_pop3_check="Checking if a POP3 server is installed..."
-        q_pop3_pruefung1="ISPConfig found the following POP3 server:"
-        q_wahl_pop3="Please select your POP3 server: "
-        q_openssl_check="Checking for package openssl..."
-        q_bind_check="Checking for package bind..."
-        q_iptables_check="Checking for program iptables/ipchains/ipfw..."
-        q_httpd_check="Checking for program httpd..."
-        q_httpd_syntax_check="Checking the syntax of the httpd.conf..."
-        q_httpd_syntax_check_not_ok="The syntax of your httpd.conf is not ok! Please correct the error. The installation routine stops here!"
-        q_httpd_syntax_check_ok="The syntax is ok!"
-        q_check_ende="At least one of the required packages is missing!"
-        q_mysql_running_check="MySQL is not running! Please start your MySQL database and run the ISPConfig setup again."
-        q_mysql_sock_check="Could not find mysql.sock! The installation routine stops here!"
-        q_php_check="The PHP binary coming with ISPConfig does not work properly on your system! The installation routine stops here!"
-        q_prepare_files="Preparing files. Please wait a moment..."
-        q_voraussetzungen="All prerequisites are fulfilled."
-        q_mysql_server="Please enter your MySQL server:"
-        q_mysql_server_check="The MySQL server you specified cannot be reached!"
-        q_mysql_user="Please enter your MySQL user:"
-        q_mysql_passwort="Please enter your MySQL password:"
-        q_mysql_connection_check="The provided MySQL password is wrong!"
-        q_mysql_database="Please enter a name for the ISPConfig database (e.g. db_ispconfig):"
-        q_ip_address="Please enter the IP address of the ISPConfig web (e.g. 192.168.0.1):"
-        q_ip_check="The IP address you provided is not reachable!"
-        q_host="Please enter the host name (e.g. www):"
-        q_domain="Please enter the domain (e.g. xyz.de):"
-        q_ispconfigprotocol="Please select the protocol (http or https (SSL encryption)) to use to access the ISPConfig system:"
-        q_url_check="The URL is not reachable!"
-        q_restart="Restarting some services..."
-        q_ende="Congratulations! Your ISPConfig system is now installed. If you had to install quota, please take the steps described in the installation manual. Otherwise your system is now available without reboot."
-        q_ende2="Please direct your browser to "
-        q_ende3=" and log in:"
-        q_ende4="Username: admin"
-        q_ende5="Password: admin"
-        q_mailman="Do you want to use Mailman together with ISPConfig? [y/n]"
-      fi
+      q_hinweis="With the system installation, some system files are replaced where adjustments were made. This can lead to loss of entries in httpd.conf, named.conf as well as in the Sendmail configuration."
+      q_hinweis_akzeptieren="Do you want to continue with the installation? [y/n]"
+      q_lizenz="Please read through the licence carefully:"
+      q_lizenz_akzeptieren="Do you accept the licence? [y/n]"
+      q_install_mode="Please select the installation mode. In expert mode you have to answer some additional questions. In standard mode standard values are assumed for these questions."
+      q_select="Please select: "
+      q_wahl="Your Choice: "
+      q_anderer="other"
+      q_korrekt="Is this correct? [y/n]"
+      q_mta_check="Checking for MTA..."
+      q_mta_pruefung1="ISPConfig found the following MTA:"
+      q_wahl_mta="Please select your MTA: "
+      q_error1="Your system configuration is not compatible with ISPConfig! The installation routine stops here!"
+      q_procmail_check="Checking for package procmail..."
+      q_quota_check="Checking for package quota..."
+      q_ftp_check="Checking if an FTP server is installed..."
+      q_ftp_pruefung1="ISPConfig found the following FTP server:"
+      q_wahl_ftp="Please select your FTP server: "
+      q_mysql_check="Checking for package MySQL..."
+      q_pop3_check="Checking if a POP3 server is installed..."
+      q_pop3_pruefung1="ISPConfig found the following POP3 server:"
+      q_wahl_pop3="Please select your POP3 server: "
+      q_openssl_check="Checking for package openssl..."
+      q_bind_check="Checking for package bind..."
+      q_iptables_check="Checking for program iptables/ipchains/ipfw..."
+      q_httpd_check="Checking for program httpd..."
+      q_httpd_syntax_check="Checking the syntax of the httpd.conf..."
+      q_httpd_syntax_check_not_ok="The syntax of your httpd.conf is not ok! Please correct the error. The installation routine stops here!"
+      q_httpd_syntax_check_ok="The syntax is ok!"
+      q_check_ende="At least one of the required packages is missing!"
+      q_mysql_running_check="MySQL is not running! Please start your MySQL database and run the ISPConfig setup again."
+      q_mysql_sock_check="Could not find mysql.sock! The installation routine stops here!"
+      q_php_check="The PHP binary coming with ISPConfig does not work properly on your system! The installation routine stops here!"
+      q_prepare_files="Preparing files. Please wait a moment..."
+      q_voraussetzungen="All prerequisites are fulfilled."
+      q_mysql_server="Please enter your MySQL server:"
+      q_mysql_server_check="The MySQL server you specified cannot be reached!"
+      q_mysql_user="Please enter your MySQL user:"
+      q_mysql_passwort="Please enter your MySQL password:"
+      q_mysql_connection_check="The provided MySQL password is wrong!"
+      q_mysql_database="Please enter a name for the ISPConfig database (e.g. db_ispconfig):"
+      q_ip_address="Please enter the IP address of the ISPConfig web (e.g. 192.168.0.1):"
+      q_ip_check="The IP address you provided is not reachable!"
+      q_host="Please enter the host name (e.g. www):"
+      q_domain="Please enter the domain (e.g. xyz.de):"
+      q_ispconfigprotocol="Please select the protocol (http or https (SSL encryption)) to use to access the ISPConfig system:"
+      q_url_check="The URL is not reachable!"
+      q_restart="Restarting some services..."
+      q_ende="Congratulations! Your ISPConfig system is now installed. If you had to install quota, please take the steps described in the installation manual. Otherwise your system is now available without reboot."
+      q_ende2="Please direct your browser to "
+      q_ende3=" and log in:"
+      q_ende4="Username: admin"
+      q_ende5="Password: admin"
     fi
   fi
 fi
@@ -755,7 +703,11 @@ if [ "$install_art" == "install" ]; then  ## install_art == install
 fi  ## install_art == install
 
   echo $q_httpd_syntax_check
-  httpd -t
+  if [ -f /etc/apache2/envvars ]; then
+    . /etc/apache2/envvars && httpd -t
+  else
+    httpd -t
+  fi
   if [ $? != 0 ]; then
     error "$q_httpd_syntax_check_not_ok";
   fi
@@ -765,28 +717,6 @@ fi  ## install_art == install
   if [ "$install_art" == "install" ]; then
     verify $dist mod/httpd/httpd $install_mode
   fi
-
-  ################ MAILMAN ##################
-  if [ "$install_art" == "install" ]; then
-    echo
-    echo -n $q_mailman
-    read mailman
-    echo
-
-    while [ "$mailman" == "" ]
-    do
-      echo -n $q_mailman
-      read mailman
-      echo
-    done
-
-    if [ "$mailman" != "y" ]; then
-      dist_mailman="0"
-    else
-      dist_mailman="1"
-    fi
-  fi
-  ################# MAAILMAN ENDE #############
 
   echo
   echo "########## gcc ##########"
@@ -829,17 +759,6 @@ fi  ## install_art == install
     error "g++ not found!";
   else
     log "g++ found: `which g++`"
-    echo OK
-  fi
-
-  echo
-  echo "########## xml2-dev ##########"
-  echo
-  which xml2-config
-  if [ $? != 0 ]; then
-    error "xml2-dev (xml2-config) not found!";
-  else
-    log "xml2-dev found: `which xml2-config`"
     echo OK
   fi
 
@@ -942,7 +861,6 @@ fi  ## install_art == install
   chmod 700 compile
   if [ "$install_art" == "upgrade" ]; then
     mkdir -p /root/ispconfig/httpd/conf &> /dev/null
-    mkdir -p /root/ispconfig/httpd/conf
     cp -pfr ../ssl.* /root/ispconfig/httpd/conf/
   fi
   ./compile || (cd `pwd`/../.. && rm -fr install_ispconfig && exit 1)
@@ -1178,7 +1096,6 @@ fi  ## install_art == install
   echo $lang
   echo $install_art
   echo $server_ispconfigprotocol
-  echo $dist_mailman
   } > mysql_config
   httpd -V > httpd
   awk -F"\"" '$1==" -D HTTPD_ROOT="{print $2}'  httpd > httpd2
@@ -1198,7 +1115,14 @@ fi  ## install_art == install
   . /root/ispconfig/dist.info
   rm -f mysql_config
 
-  chmod 755 /home/admispconfig/ispconfig/tools/suphp/usr/bin/php5-wrapper
+  chmod 755 /home/admispconfig/ispconfig/tools/suphp/usr/bin/php-wrapper
+
+  # Restore custom templates
+  mkdir -p /root/ispconfig/isp/conf/customized_templates &> /dev/null
+  if [ "$install_art" == "upgrade" ]; then
+    cp -pf customized_templates/* /root/ispconfig/isp/conf/customized_templates/ &> /dev/null
+    rm -fr customized_templates/ &> /dev/null
+  fi
 
   ########## sysconfig schreiben #############
   uname -a > /home/admispconfig/ispconfig/sysconf.txt

@@ -10,6 +10,8 @@
 //
 // $Id: error.php,v 1.1 2003/07/08 12:32:06 platinum Exp $
 
+if(CONFIG_LOADED != 1) die('Direct access not permitted.');
+
 define('FATAL', E_USER_ERROR);
 define('WARNING', E_USER_WARNING);
 define('NOTICE', E_USER_NOTICE);

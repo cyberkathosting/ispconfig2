@@ -27,8 +27,6 @@ NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
 EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-if(CONFIG_LOADED != 1) die('Direct access not permitted.');
-
 class file{
 
 function rf($file){
@@ -72,6 +70,11 @@ function af($file, $content){
     fclose($fp);
     return true;
   }
+}
+
+function is_file_lfs($path){
+    exec('[ -f "'.$path.'" ]', $tmp, $ret);
+    return $ret == 0;
 }
 
 function no_comments($file, $comment = '#'){

@@ -24,6 +24,7 @@ $hlp["web_speicher"] = "Størrelse af disk plads for web. F.eks. 2 står for 2 MB 
 $hlp["web_traffic"] = "Angiv hvor meget trafik der er inkluderet i denne web pakke (f.eks. 2000 MB).";
 $hlp["web_cgi"] = "Aktivere CGI for denne web.";
 $hlp["web_php"] = "Aktivere PHP for denne web.";
+$hlp["web_ruby"] = "Aktivere Ruby for denne web.";
 $hlp["web_ssi"] = "Aktivere SSI for denne web.";
 $hlp["web_ftp"] = "Aktivere FTP adgang for denne web.";
 $hlp["web_frontpage"] = "Aktivere Frontpage Extensions for denne web.";

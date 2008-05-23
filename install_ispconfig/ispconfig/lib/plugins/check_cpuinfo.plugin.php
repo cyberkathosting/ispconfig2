@@ -38,7 +38,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  #
  #############################################################
  
- if(CONFIG_LOADED != 1) die('Direct access not permitted.');
+if(CONFIG_LOADED != 1) die('Direct access not permitted.');
 
 class check_cpuinfo_plugin {
 

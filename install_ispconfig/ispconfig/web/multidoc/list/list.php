@@ -43,6 +43,7 @@ $doctype_id = intval($_REQUEST["doctype_id"]);
 $listtype_id = intval($_REQUEST["listtype_id"]);
 $gid = intval($_REQUEST["gid"]);
 $userid = intval($_REQUEST["userid"]);
+$form = $_REQUEST["form"];
 
 if(!empty($listtype_id)){
 $liste = $go_api->listadmin->listtype_get($listtype_id);

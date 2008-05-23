@@ -272,7 +272,7 @@ menuDaten.neu(new LinkEintrag('all','<? echo $go_api->lng("Sprache ändern")?>','
 <?
 // Modul Tools einbinden
 while (list($key, $val) = each($go_info["session"]["modules"])){
-    $inhalt = SERVER_ROOT . DIR_TRENNER . "web" . DIR_TRENNER .$val["path"] . DIR_TRENNER.'lib'.DIR_TRENNER.'tools.inc.php';
+    $inhalt = SERVER_ROOT . DIR_TRENNER . "web" . DIR_TRENNER .$val["path"] .DIR_TRENNER.'lib'.DIR_TRENNER.'tools.inc.php';
 
     if(@is_file($inhalt)) {
         include($inhalt);
@@ -284,8 +284,8 @@ $start = "tools";
 $handle = @opendir($start);
 while ($file = @readdir ($handle)) {
     if ($file != "." && $file != "..") {
-        if(@is_dir($start.$go_info["server"]["dir_trenner"].$file)) {
-            $inh = $start.$go_info["server"]["dir_trenner"].$file.$go_info["server"]["dir_trenner"]."nav.inc.php";
+        if(@is_dir($start.DIR_TRENNER.$file)) {
+            $inh = $start.DIR_TRENNER.$file.DIR_TRENNER."nav.inc.php";
             if(is_file($inh)) {
             include($inh);
             }

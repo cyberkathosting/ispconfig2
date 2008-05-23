@@ -1,4 +1,4 @@
-<? 
+<?
 
 /**********************************************
 * ISPConfig Help File
@@ -12,6 +12,7 @@ $hlp["web_speicher"] = "Grösse des Speicherplatzes des Web. 2 steht z.B. für 2 M
 $hlp["web_traffic"] = "Die Zahl gibt an, wie viel Taffic bei diesem Web inklusive ist (z.B. 2000 MB inkl.).";
 $hlp["web_cgi"] = "Durch das Häkchen ist das Ausführen von CGI-Scripts im Web möglich.";
 $hlp["web_php"] = "Durch das Häkchen ist das Ausführen von PHP im Web möglich.";
+$hlp["web_ruby"] = "Durch das Häkchen ist das Ausführen von Ruby im Web möglich.";
 $hlp["web_ssi"] = "Durch das Häkchen ist das Ausführen von SSI im Web möglich.";
 $hlp["web_ftp"] = "Durch das Häkchen wird der FTP-Zugang aktiviert.";
 $hlp["web_frontpage"] = "Durch das Häkchen werden die Frontpage-Extensions aktiviert.";
@@ -45,8 +46,6 @@ $hlp["web_php_safe_mode"] = "Wenn PHP für dieses Web aktiviert ist, wird es im S
 $hlp["web_wap"] = "Hier können Sie die Unterstützung des Servers für .wml-Dateien aktivieren. .wml-Dateien können von WAP-Handies interpretiert werden.";
 $hlp["web_standard_cgi"] = "Geben Sie hier an, ob die auf dem Server hinterlegten Standard-CGI-Skripte für dieses Web zur Verfügung stehen sollen.";
 $hlp["web_mysql_anzahl_dbs"] = "Geben Sie hier die Anzahl an Datenbanken an, die diesem Web max. zur Verfügung stehen.";
-$hlp["web_mysql_quota"] = "Geben Sie hier den Speicherplatz an, der den Datenbanken in diesem Web max. zur Verfügung steht.";
-$hlp["web_mailquota"] = "Geben Sie hier den Speicherplatz an, der diesem Web max. für E-Mails zur Verfügung steht.";
 $hlp["web_individual_error_pages"] = "Wenn dieses Feld aktiviert ist, können Sie im \"Optionen\"-Tab individuelle Fehler-Seiten definieren.";
 $hlp["error_400"] = "Geben Sie hier den HTML-Code für die Fehler-Seite 400 (\"Ungültige Syntax\") an. Wenn Sie das Feld leer lassen, wird die Standard-Fehler-Seite verwendet.";
 $hlp["error_401"] = "Geben Sie hier den HTML-Code für die Fehler-Seite 401 (\"Autorisierung erforderlich\") an. Wenn Sie das Feld leer lassen, wird die Standard-Fehler-Seite verwendet.";

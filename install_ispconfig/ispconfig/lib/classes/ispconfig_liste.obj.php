@@ -29,7 +29,6 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 if(CONFIG_LOADED != 1) die('Direct access not permitted.');
 
-
 class liste
 {
 var $userid;

@@ -29,8 +29,6 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 include("../../../lib/config.inc.php");
 include("../../../lib/session.inc.php");
 
-$tid = intval($tid);
-
 $go_api->content->define( array(    main    => "main.htm",
                                             table   => "hilfe_view_ticket.htm",
                                             stylesheet => "style.css"));

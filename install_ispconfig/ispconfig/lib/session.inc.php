@@ -1,4 +1,5 @@
 <?
+
 /*
 Copyright (c) 2005, projektfarm Gmbh, Till Brehm, Falko Timme
 All rights reserved.
@@ -29,9 +30,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 if(CONFIG_LOADED != 1) die('Direct access not permitted.');
 
-if(isset($_REQUEST["go_info"])) die('Variable not allowed as REQUEST parameter!');
-if(!defined('SERVER_ROOT')) die('Include file is missing. Please run the setup script as described in the installation manual.');
-
+if(isset($_REQUEST["go_info"])) die('Variable not accepted.');
 
 if($set_header == 1) {
     header("Expires: Mon, 26 Jul 1997 05:00:00 GMT");             // Date in the past
@@ -91,7 +90,7 @@ class go_api
         if($this->_language_inc != 1) {
             // lade globales und modul Wordbook
             @include_once(INCLUDE_ROOT . DIR_TRENNER."lang".DIR_TRENNER.$this->language.".lng");
-            @include_once(SERVER_ROOT . DIR_TRENNER  ."web".DIR_TRENNER. $go_info["modul"]["path"] .  DIR_TRENNER ."lib" . DIR_TRENNER . "lang" . DIR_TRENNER . $this->language.".lng");
+            @include_once(SERVER_ROOT . DIR_TRENNER  ."web".DIR_TRENNER. $go_info["modul"]["path"] . DIR_TRENNER ."lib" . DIR_TRENNER . "lang" . DIR_TRENNER . $this->language.".lng");
             $this->_wb = $wb;
             $this->_language_inc = 1;
         }
@@ -102,6 +101,7 @@ class go_api
             $text = '[['.$text.']]';
         }
         */
+		
 
         if(!empty($this->_wb[$text])) {
             $text = $this->_wb[$text];
@@ -210,6 +210,8 @@ if ($go_api->auth->status != "ok")
 
 $s = $go_api->session->start();
 
+$go_info["server"]["dir_trenner"] = '/';
+
 /**********************************************************/
 /* Füllen des info arrays, wenn neue Session              */
 /**********************************************************/
@@ -237,7 +239,7 @@ $go_api->bookmark = new bookmark;
 /**********************************************************/
 
 //if(@is_file($go_info["server"]["server_root"] . $go_info["server"]["dir_trenner"]  ."web".$go_info["server"]["dir_trenner"]. $go_info["modul"]["path"] .  $go_info["server"]["dir_trenner"] ."lib" . $go_info["server"]["dir_trenner"] . "module.inc.php")) {
-    include(SERVER_ROOT . DIR_TRENNER  ."web".DIR_TRENNER. $go_info["modul"]["path"] .  DIR_TRENNER ."lib" . DIR_TRENNER . "module.inc.php");
+    include(SERVER_ROOT . DIR_TRENNER  ."web".DIR_TRENNER. $go_info["modul"]["path"] . DIR_TRENNER ."lib" . DIR_TRENNER . "module.inc.php");
 //}
 
 /**********************************************************/

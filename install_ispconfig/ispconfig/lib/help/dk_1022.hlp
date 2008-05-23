@@ -29,6 +29,7 @@ $hlp["limit_slave_dns"] = "Angiv maximum antal af domæner som forhandleren må op
 
 $hlp["limit_cgi"] = "Angive om forhandleren kan give adgang til CGI funktioner for websider under sin konto.";
 $hlp["limit_php"] = "Angive om forhandleren kan give adgang til PHP funktioner for websider under sin konto.";
+$hlp["limit_ruby"] = "Angive om forhandleren kan give adgang til Ruby funktioner for websider under sin konto.";
 $hlp["limit_ssi"] = "Angive om forhandleren kan give adgang til SSI funktioner for websider under sin konto.";
 $hlp["limit_ftp"] = "Angive om forhandleren kan give adgang til FTP funktioner for websider under sin konto.";
 $hlp["limit_frontpage"] = "Angive om forhandleren kan give adgang til Frontpage funktioner for websider under sin konto.";

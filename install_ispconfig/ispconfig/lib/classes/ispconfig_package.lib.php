@@ -29,7 +29,6 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 if(CONFIG_LOADED != 1) die('Direct access not permitted.');
 
-
 class package
 {
 var $inst;
@@ -69,7 +68,7 @@ global $go_api, $go_info;
     //$p_app = str_replace("\\","/",$inst_path);
     $install = str_replace("{src}", $inst_path, $install);
     $install = str_replace("{app}", SERVER_ROOT, $install);
-    $install = str_replace("{ispconfig_db}", $go_info["server"]["db_name"], $install);
+    $install = str_replace("{ispconfig_db}", DB_NAME, $install);
 
 
     list($info, $setup, $dirs, $files, $sql, $run, $uninstallrun, $installdelete) = explode("[", $install);

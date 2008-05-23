@@ -29,7 +29,7 @@
 
 PATH="/home/admispconfig/ispconfig/tools/clamav/bin:/sbin:/usr/sbin:/usr/local/sbin:/root/bin:/usr/local/bin:/bin:/usr/bin:/usr/X11R6/bin:/usr/local/libexec"
 
-OPENSSL=openssl-0.9.8g
+OPENSSL=openssl-0.9.7m
 APACHE=apache_1.3.41
 MOD_SSL=mod_ssl-2.8.31-1.3.41
 PHP=php-5.2.6
@@ -40,7 +40,6 @@ SPAMASSASSIN=Mail-SpamAssassin-3.2.4
 CRONOLOG=cronolog-1.6.2
 ZIP=zip-2.3
 UNZIP=unzip-5.52
-AWSTATS=awstats-6.7
 
 APPLICATION_NAME=ispconfig
 INSTALL_ROOT=/root/${APPLICATION_NAME}
@@ -97,7 +96,6 @@ error ()
   rm -fr ${CRONOLOG}
   rm -fr ${ZIP}
   rm -fr ${UNZIP}
-  rm -fr ${AWSTATS}
   exit 1
 }
 
@@ -112,7 +110,6 @@ tar xvfz ${UUDEVIEW}.tar.gz || error "Could not unpack uudeview"
 tar xvfz ${CRONOLOG}.tar.gz || error "Could not unpack cronolog"
 tar xvfz ${ZIP}.tar.gz || error "Could not unpack zip"
 tar xvfz ${UNZIP}.tar.gz || error "Could not unpack unzip"
-tar xvfz ${AWSTATS}.tar.gz || error "Could not unpack AWStats"
 
 cd ${OPENSSL}
 ./config --prefix=${INSTALL_ROOT}/openssl || error "Could not configure OpenSSL"
@@ -124,12 +121,12 @@ cd ../${MOD_SSL}
 cd ../${APACHE}
 make || error "Could not make Apache"
 if [ "$install_art" == "install" ]; then
-  make certificate TYPE=custom  || error "Could not make certificate for Apache"
+  make certificate TYPE=custom || error "Could not make certificate for Apache"
 fi
 make install || error "Could not install Apache"
 
 cd ../${PHP}
-./configure --with-apxs=${INSTALL_ROOT}/httpd/bin/apxs --enable-track-vars --enable-sockets --enable-mbstring=all --with-config-file-path=${INSTALL_ROOT}/php --enable-ftp --prefix=${INSTALL_ROOT}/php ${WITH_OPENSSL} ${WITH_MYSQL} ${WITH_ZLIB_DIR} --without-pear || error "Could not configure PHP"
+./configure --with-apxs=${INSTALL_ROOT}/httpd/bin/apxs --enable-track-vars --enable-sockets --enable-mbstring=all --with-config-file-path=${INSTALL_ROOT}/php --enable-ftp --prefix=${INSTALL_ROOT}/php ${WITH_OPENSSL} ${WITH_MYSQL} --disable-libxml --disable-dom --disable-xml ${WITH_ZLIB_DIR} --disable-xmlreader --disable-xmlwriter --disable-simplexml --without-pear || error "Could not configure PHP"
 make || error "Could not make PHP"
 make install || error "Could not install PHP"
 ln -s ${INSTALL_ROOT}/php/bin/php ${INSTALL_ROOT}/php/php
@@ -238,12 +235,6 @@ cd ${COMPILE_DIR}
 cd ${UNZIP}
 make -f unix/Makefile generic || error "Could not make unzip"
 mv unzip ${COMPILE_DIR}/../binaries/unzip || error "Could not copy unzip"
-cd ${COMPILE_DIR}
-
-cp -fr ${AWSTATS} /home/adm${APPLICATION_NAME}/${APPLICATION_NAME}/tools/ || error "Could not copy AWStats"
-chmod 755 /home/adm${APPLICATION_NAME}/${APPLICATION_NAME}/tools/${AWSTATS} || error "Could not chmod AWStats"
-rm -f /home/adm${APPLICATION_NAME}/${APPLICATION_NAME}/tools/awstats
-ln -s /home/adm${APPLICATION_NAME}/${APPLICATION_NAME}/tools/${AWSTATS} /home/adm${APPLICATION_NAME}/${APPLICATION_NAME}/tools/awstats  || error "Could not Symlink AWStats"
 cd ${COMPILE_DIR}
 
 exit 0

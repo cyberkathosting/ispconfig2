@@ -34,22 +34,14 @@ if [ ! -f /bin/bash ] && [ -f  /usr/local/bin/bash ]; then
   ln -s /usr/local/bin/bash /bin/bash
 fi
 
-if [ ! -f /bin/false ] && [ -f  /sbin/nologin ]; then
+if [ ! -f /bin/false ] && [ `which nologin` ]; then
   if [ -e /bin/false ]; then
     mv -f /bin/false /bin/false_orig
   fi
-  ln -s /sbin/nologin /bin/false
+  ln -s `which nologin` /bin/false
 fi
 
 chmod 700 setup1
-
-#Changed to save a log with all output in a log
-#makes sense in case of missing perlomodules etc, where the output overloads
-#the normal screenbuffer and you won't see anything.
-if [ -f /usr/bin/tee ]; then
-  ./setup1 | /usr/bin/tee /var/log/ispconfig_tee.log
-else
-  ./setup1
-fi
+./setup1
 
 exit 0;

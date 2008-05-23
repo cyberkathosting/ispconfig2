@@ -398,6 +398,7 @@ $wb["System Load 15 Minuten"] = "System Load 15 Minutter";
 $wb["Es konnte ein Dokument nicht wiederhergestellt werden, da sich das Eltern-Dokument noch im Papierkorb befindet.\n"] = "Objektet kan ikke gendannes så længe det forgående objekt findes i papirkurven.";
 $wb["error_anbieter_max_webs_ueberschritten"] = "Forhandleren har allerede flere websider end du ønsker at tilskrive forhandleren.<br>";
 $wb["error_anbieter_max_diskspace_ueberschritten"] = "Forhandleren bruger allerede mere diskplads end du ønsker at tilskrive forhandleren.<br>";
+$wb["error_anbieter_max_traffic_ueberschritten"] = "The reseller already uses more traffic than you want to assign to him.<br>";
 $wb["error_anbieter_max_user_ueberschritten"] = "Forhandleren har allerede flere brugere end du ønsker at tilskrive forhandleren.<br>";
 $wb["error_anbieter_max_domain_ueberschritten"] = "Forhandleren har allerede flere domæner end du ønsker at tilskrive forhandleren.<br>";
 $wb["error_anbieter_dnsmanager_aktiv"] = "Forhandleren har allerede nogle DNS Records. DNS Manager kan ikke deaktiveres.<br>";
@@ -408,6 +409,7 @@ $wb["error_anbieter_shell_access_aktiv"] = "Shell Adgang er allerede i brug på n
 $wb["error_anbieter_cgi_aktiv"] = "CGI er allerede i brug på nogle af forhandlerens websider. Denne mulighed kan ikke deaktiveres.<br>";
 $wb["error_anbieter_standard_cgi_aktiv"] = "Standard CGIs er allerede i brug på nogle af forhandlerens websider. Denne mulighed kan ikke deaktiveres.<br>";
 $wb["error_anbieter_php_aktiv"] = "PHP er allerede i brug på nogle af forhandlerens websider. Denne mulighed kan ikke deaktiveres.<br>";
+$wb["error_anbieter_ruby_aktiv"] = "Ruby er allerede i brug på nogle af forhandlerens websider. Denne mulighed kan ikke deaktiveres.<br>";
 $wb["error_anbieter_ssi_aktiv"] = "SSI er allerede i brug på nogle af forhandlerens websider. Denne mulighed kan ikke deaktiveres.<br>";
 $wb["error_anbieter_ftp_aktiv"] = "FTP er allerede i brug på nogle af forhandlerens websider. Denne mulighed kan ikke deaktiveres.<br>";
 $wb["error_anbieter_anonftp_aktiv"] = "Anonymous FTP er allerede i brug på nogle af forhandlerens websider. Denne mulighed kan ikke deaktiveres.<br>";
@@ -443,6 +445,7 @@ $wb["error_web_no_shell_access"] = "Du kan ikke tilføje shell access til denne w
 $wb["error_web_no_cgi"] = "Du kan ikke tilføje CGI funktioner til denne webside.<br>";
 $wb["error_web_no_standard_cgi"] = "Du kan ikke tilføje Standard CGIs til denne webside.<br>";
 $wb["error_web_no_php"] = "Du kan ikke tilføje PHP funktioner til denne webside.<br>";
+$wb["error_web_no_ruby"] = "Du kan ikke tilføje Ruby funktioner til denne webside.<br>";
 $wb["error_web_no_ssi"] = "Du kan ikke tilføje SSI funktioner til denne webside.<br>";
 $wb["error_web_no_ftp"] = "Du kan ikke tilføje FTP funktioner til denne webside.<br>";
 $wb["error_web_no_mysql"] = "Du kan ikke tilføje MySQL databases til denne webside.<br>";
@@ -569,6 +572,6 @@ $wb["Webalizer Stats"] = 'Webalizer-<br>&nbsp;Statistiken';
 $wb["Use Uribl"] = 'Brug <a href="http://www.uribl.com/about.shtml" target="_blank" style="font-family:Arial,Verdana">URIBL</a>';
 $wb["Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 -"] = "Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 -<br>";
 $wb["Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 - ."] = "Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 - .<br>";
-
+$wb["txt_system_currently_updated_no_recycle_bin"] = "The system is currently updating the configuration files.";
 
 ?>

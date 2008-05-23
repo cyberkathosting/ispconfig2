@@ -66,8 +66,7 @@ $httpd_root = $server["server_path_httpd_root"];
 unset($server);
 
 // erstelle temp verzeichnis
-//$tmp_dir = $go_info["server"]["temp_dir"].$go_info["server"]["dir_trenner"].md5(uniqid (""));
-$tmp_dir = "/home/admispconfig/ispconfig/temp/".md5(uniqid (""));
+$tmp_dir = $go_info["server"]["temp_dir"].$go_info["server"]["dir_trenner"].md5(uniqid (""));
 mkdir( $tmp_dir, 0700) or $go_api->errorMessage($go_api->lng("tmp_dir_error"));
 
 $zip = $go_info["tools"]["zip"];
@@ -85,7 +84,7 @@ function make_backup($web_id) {
         // überprüfe Rechte
         if($web["userid"] = $go_info["user"]["userid"] or $go_api->groups->in_group($go_info["user"]["userid"],$web["groupid"])) {
 
-                // erstelle ewb tar.gz
+                // erstelle web tar.gz
                 if($daten_web == 1) {
                         $web_pfad = $httpd_root ."/web".$web_id."/web";
                         exec("cd $web_pfad; $zip -y $tmp_dir/web".$web_id."_web.zip .* -r *");

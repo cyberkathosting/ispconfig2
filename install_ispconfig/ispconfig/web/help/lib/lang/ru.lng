@@ -61,4 +61,5 @@ $wb["Davon"] = "ïÔ";
 $wb["Ihre antwort"] = "÷ÁÛ ÏÔ×ÅÔ";
 $wb["Antworten"] = "ïÔ×ÅÔÉÔØ";
 $wb["Schließen"] = "úÁËÒÙÔØ";
+$wb["Dutch"]         = "Dutch";
 ?>

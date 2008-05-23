@@ -1,4 +1,4 @@
-<? if($go_api->auth->check_admin(0,1)) {
+<?
 /*
 Copyright (c) 2005, projektfarm Gmbh, Till Brehm, Falko Timme
 All rights reserved.
@@ -32,4 +32,4 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 //menuDaten.neu(new VerzEintrag('scan','root','<? echo $go_api->lng("Update Manager")?>','','',''));
 menuDaten.neu(new LinkEintrag('root','<? echo $go_api->lng("Portscanner")?>','tools/portscan/index.php?<? echo $session?>','seiteFrame','doc.gif','Portscanner','n','<? echo "1&amp;$session"?>'));
 
-<?}?>
+<??>

@@ -1,0 +1,11 @@
+<?
+
+/**********************************************
+* ISPCofig Help File
+* Version 1.2
+* Syntax: $hlp["FieldName"] = "HelpText";
+************************************************/
+
+$hlp["dienst_port"] = "Tragen Sie einen einzelnen Port ein (z.B. 2000), oder benutzen Sie einen Doppelpunkt, um eine Port-Range anzugeben (z.B. 2000:2100).";
+
+?>

@@ -12,6 +12,7 @@ $hlp["web_speicher"] = "Storlek på tillåtet utrymme för webbplatsen. Exempelvis,
 $hlp["web_traffic"] = "Specificerar hur mycket trafik som är inkluderat för denna webbplats (ex. 2000 MB).";
 $hlp["web_cgi"] = "Aktiverar CGI för denna webbplats.";
 $hlp["web_php"] = "Aktiverar PHP för denna webbplats.";
+$hlp["web_ruby"] = "Aktiverar Ruby för denna webbplats.";
 $hlp["web_ssi"] = "Aktiverar SSI för denna webbplats.";
 $hlp["web_ftp"] = "Aktiverar FTP åtkomst för denna webbplats.";
 $hlp["web_frontpage"] = "Aktiverar Frontpage Extensions för denna webbplats.";

@@ -1,4 +1,5 @@
 <?
+
 /*
 Copyright (c) 2005, projektfarm Gmbh, Till Brehm, Falko Timme
 All rights reserved.
@@ -28,9 +29,6 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
 if(CONFIG_LOADED != 1) die('Direct access not permitted.');
-
-if(isset($_REQUEST["go_info"])) die('Variable not allowed as REQUEST parameter!');
-if(!defined('SERVER_ROOT')) die('Include file is missing. Please run the setup script as described in the installation manual.');
 
 
 ######################################################

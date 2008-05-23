@@ -35,6 +35,10 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 ***************************/
 set_time_limit(0);
 
+//** 1 = Debugging enabled, 0 = Debugging disabled -----------------
+$webalizer_debug = 1;
+// -----------------------------------------------------------------
+
 include("/root/ispconfig/scripts/lib/config.inc.php");
 include("/root/ispconfig/scripts/lib/server.inc.php");
 $server_id = $mod->system->server_id;
@@ -78,9 +82,9 @@ while ($dir = @readdir ($handle)) {
 
             $webname = $dir;
             $web_doc_id = str_replace("web", "", $webname);
-            if($web_data = $mod->db->queryOneRecord("SELECT * FROM isp_isp_web WHERE doc_id = '$web_doc_id' AND web_stats = 'webalizer'")){
+            if($web_data = $mod->db->queryOneRecord("SELECT * FROM isp_isp_web WHERE doc_id = '$web_doc_id' AND webalizer_stats = '1'")){
               $web_path = $web_home . "/$webname/web";
-              $stats_path = $web_path . "/webalizer";
+              $stats_path = $web_path . "/stats";
               $logfile = $web_home . "/$webname/log/web.log";
               $web_user = fileowner($web_path);
               $web_group = filegroup($web_path);
@@ -94,7 +98,7 @@ while ($dir = @readdir ($handle)) {
               }
 
 
-              // Experimentell: erstelle .htaccess Dateien mit Zugangsberechtigung fï¿½r Gruppe des Webs
+              // Experimentell: erstelle .htaccess Dateien mit Zugangsberechtigung für Gruppe des Webs
               if(!@is_dir($stats_path."/.htaccess")) {
 
                   $ht_file = "AuthType Basic
@@ -134,7 +138,7 @@ require valid-user
 
 
               // Starte Webalizer
-              if(@is_file($logfile)) {
+              if(@$mod->file->is_file_lfs($logfile)) {
                   if(!empty($web_data["web_host"])){
                     $web_real_name = $web_data["web_host"].".".$web_data["web_domain"];
                   } else {
@@ -155,13 +159,16 @@ echo $message;
 }
 
 ////////////// LOGSIZE //////////////////
+
 function dir_size($dir) {
+  global $mod;
   $totalsize=0;
   if ($dirstream = @opendir($dir)) {
     while (false !== ($filename = readdir($dirstream))) {
       if ($filename!="." && $filename!=".."){
-        if (is_file($dir."/".$filename) && !is_link($dir."/".$filename)){
-          $totalsize+=filesize($dir."/".$filename);
+        if ($mod->file->is_file_lfs($dir."/".$filename) && !is_link($dir."/".$filename)){
+          $totalsize += exec('wc -c '.$dir.'/'.$filename.' | cut -f1 -d " "');
+          //$totalsize+=filesize($dir."/".$filename);
         }
         if (is_dir($dir."/".$filename)) $totalsize+=dir_size($dir."/".$filename);
       }
@@ -169,16 +176,18 @@ function dir_size($dir) {
   }
   closedir($dirstream);
   clearstatcache();
-  return $totalsize;
+  return (float)$totalsize;
 }
 
 function dir_array($dir){
+  global $mod;
   $directory_array = array();
   if ($dirstream = @opendir($dir)) {
     while (false !== ($filename = readdir($dirstream))) {
-      if ($filename!="." && $filename!=".."){
-        if (is_file($dir."/".$filename) && !is_link($dir."/".$filename)){
-          $directory_array[$dir."/".$filename] = filemtime($dir."/".$filename);
+      if ($filename!="." && $filename!=".." && $filename!=".no_delete"){
+        if ($mod->file->is_file_lfs($dir."/".$filename) && !is_link($dir."/".$filename)){
+          //$directory_array[$dir."/".$filename] = filemtime($dir."/".$filename);
+          $directory_array[$dir."/".$filename] = exec('stat -c %Y '.$dir.'/'.$filename);
         }
         if (is_dir($dir."/".$filename)) $directory_array = array_merge($directory_array, dir_array($dir."/".$filename));
       }
@@ -192,17 +201,21 @@ function dir_array($dir){
 $webs = $mod->db->queryAllRecords("SELECT * FROM isp_isp_web");
 if(!empty($webs)){
   foreach($webs as $web){
+    if($webalizer_debug == 1) echo "Domain: $web[web_domain]\n";
     $log_dir = $path_httpd_root."/web".$web["doc_id"]."/log";
     if(is_dir($log_dir)){
+          if($webalizer_debug == 1) echo "Log Dir: $log_dir\n";
       $max_directory_size = str_replace(",", ".", trim($web["optionen_logsize"]));
       if(strstr($max_directory_size, '%')){
         if($web["web_speicher"] == -1){
           $log_check = false;
+                  if($webalizer_debug == 1) echo "We do not check the logsize as Quota is set to unlimited.\n";
         } else {
           $parts = explode('%', $max_directory_size);
           if(is_numeric(trim($parts[0])) && trim($parts[0]) >= 0){
             $max_directory_size = str_replace(",", ".", $web["web_speicher"]) * 1048576 * floatval($max_directory_size) / 100;
             $log_check = true;
+                        if($webalizer_debug == 1) echo "Max Log size: $max_directory_size\n";
           } else {
             $log_check = false;
           }
@@ -212,11 +225,14 @@ if(!empty($webs)){
         if(is_numeric($max_directory_size) && $max_directory_size >= 0){
           $max_directory_size = $max_directory_size * 1048576;
           $log_check = true;
+                  if($webalizer_debug == 1) echo "Max Log size: $max_directory_size\n";
         } else {
           $log_check = false;
         }
       }
       $directory_size = dir_size($log_dir);
+      $max_directory_size = (float)$max_directory_size;
+      if($webalizer_debug == 1) echo "Current Log size: $directory_size\n";
 
       if($log_check){
         while($directory_size >= $max_directory_size){
@@ -225,7 +241,8 @@ if(!empty($webs)){
             asort($files);
             $files = array_slice ($files, 0, 1);
             foreach($files as $key => $val){
-              if(is_file($key)) unlink($key);
+              if($mod->file->is_file_lfs($key)) unlink($key);
+                          if($webalizer_debug == 1) echo "Deleting logfile $key\n";
             }
           } else {
             break;

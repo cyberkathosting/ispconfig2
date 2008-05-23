@@ -29,7 +29,6 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 if(CONFIG_LOADED != 1) die('Direct access not permitted.');
 
-
 class isp_user
 {
 
@@ -39,7 +38,6 @@ var $directory_mode = "0770";
 var $web_doctype_id = 1013;
 var $user_doctype_id = 1014;
 var $domain_doctype_id = 1015;
-var $list_doctype_id = 1033;
 var $vhost_conf;
 var $sendmail_cw;
 var $virtusertable;
@@ -67,7 +65,7 @@ function user_show($doc_id, $doctype_id) {
         global $go_api, $go_info, $doc, $tablevalues, $next_tree_id;
 
         //
-        if($this->server_conf["use_maildir"] == 1) $doc->deck[0]->getElementByName("user_mailquota")->visible = 0;
+        if($this->server_conf["use_maildir"] == 1) $doc->deck[0]->elements[8]->visible = 0;
 
         // Hole Web
         $web = $go_api->db->queryOneRecord("SELECT * from isp_isp_web, isp_nodes where
@@ -76,7 +74,7 @@ function user_show($doc_id, $doctype_id) {
      isp_nodes.tree_id = $next_tree_id");
 
          // Wenn Shellzugriff im Web deaktiviert ist
-         if($web["web_shell"] != '1') $doc->deck[0]->getElementByName("user_shell")->visible = 0;
+         if($web["web_shell"] != '1') $doc->deck[0]->elements[11]->visible = 0;
 
          // Spamfilter Settings deaktivieren
          if($this->server_conf["spamfilter_enable"] != 1) $doc->deck[2]->visible = 0;
@@ -87,17 +85,13 @@ function user_show($doc_id, $doctype_id) {
                  $user = $go_api->db->queryOneRecord("select * from isp_isp_user where doc_id = '$doc_id'");
                  // Autoresponder ausblenden, wenn Emailweiterleitung angekreuzt
                  if($user["user_emailweiterleitung"] != '' and $user["user_emailweiterleitung_local_copy"] != 1) {
-                         $doc->deck[1]->getElementByName("user_mailscan")->visible = 0;
-                        $doc->deck[1]->getElementByName("t2")->visible = 0;
-                        $doc->deck[1]->getElementByName("user_autoresponder")->visible = 0;
+                         $doc->deck[1]->elements[9]->visible = 0;
+                        $doc->deck[1]->elements[10]->visible = 0;
+                        $doc->deck[1]->elements[11]->visible = 0;
                  }
-                 $doc->deck[2]->getElementByName("spam_strategy")->values["accept"] = $go_api->lng("txt_accept");
-                 $doc->deck[2]->getElementByName("spam_strategy")->values["discard"] = $go_api->lng("txt_discard");
+                 $doc->deck[2]->elements[2]->values["accept"] = $go_api->lng("txt_accept");
+                 $doc->deck[2]->elements[2]->values["discard"] = $go_api->lng("txt_discard");
         }
-
-                // Deactivate user_ftp field, when FTP is not enabled for the website
-                 if($web["web_ftp"] != '1') $doc->deck[0]->getElementByName('user_ftp')->visible = 0;
-
 
 }
 
@@ -143,7 +137,6 @@ global $go_api, $go_info,$s;
 
      $userlimit = $web["web_userlimit"];
      $quotalimit = $web["web_speicher"];
-     $mailquotalimit = $web["web_mailquota"];
      $web_doc_id = $web["doc_id"];
      $web_doctype_id = $web["doctype_id"];
      //unset($web);
@@ -165,23 +158,9 @@ global $go_api, $go_info,$s;
 
      // wenn Quotalimits gesetzt sind
      if($quotalimit >= 0) {
-        if($user["user_speicher"] > $quotalimit) {
+        if($user["user_speicher"] > $quotalimit || $user["user_speicher"] == -1) {
         $status = "DELETE";
         $errorMessage .= $go_api->lng("error_max_space_web");
-        }
-     }
-
-     // wenn Mail-Quota-Limit gesetzt ist
-     if($mailquotalimit >= 0) {
-        $mailquotaused = $go_api->db->queryOneRecord("SELECT sum(user_mailquota) as mailquota from isp_isp_user, isp_dep where
-        isp_isp_user.doc_id = isp_dep.child_doc_id and isp_isp_user.doctype_id = isp_dep.child_doctype_id and
-        isp_dep.parent_doctype_id = $web_doctype_id and isp_dep.parent_doc_id = $web_doc_id and isp_dep.child_doctype_id = $doctype_id");
-
-        $mailquotalimit -= $mailquotaused["mailquota"] - $user["user_mailquota"];
-
-        if (($user["user_mailquota"] > $mailquotalimit) || $user["user_mailquota"] < 0) {
-          $status = "DELETE";
-          $errorMessage .= $go_api->lng("error_max_mailquota_web");
         }
      }
 
@@ -236,15 +215,7 @@ global $go_api, $go_info,$s;
                 isp_dep.child_doctype_id = $doctype_id and isp_isp_user.user_email = '".$user["user_email"]."'";
          $tmp = $go_api->db->queryOneRecord($sql);
 
-         $list_doctype_id = $this->list_doctype_id;
-
-         $sql2 = "SELECT count(*) AS anzahl FROM isp_isp_list, isp_dep where
-        isp_isp_list.doc_id = isp_dep.child_doc_id and isp_isp_list.doctype_id = isp_dep.child_doctype_id and
-        isp_dep.parent_doctype_id = $web_doctype_id and isp_dep.parent_doc_id = $web_doc_id and
-                isp_dep.child_doctype_id = $list_doctype_id and isp_isp_list.list_alias = '".$user["user_email"]."'";
-         $tmp2 = $go_api->db->queryOneRecord($sql2);
-
-        if($tmp["anzahl"] > 1 OR $tmp2["anzahl"] != 0) {
+        if($tmp["anzahl"] > 1) {
                 $status = "DELETE";
         $errorMessage .= $go_api->lng("error_email_exist");
         }
@@ -404,32 +375,14 @@ global $go_api, $go_info,$s,$HTTP_POST_VARS,$old_form_data;
 
      // wenn Quotalimits gesetzt sind
      $quotalimit = $web["web_speicher"];
-     if($quotalimit >= 0) {
-        if($user["user_speicher"] > $quotalimit) {
-          $go_api->db->query("UPDATE isp_isp_user SET user_speicher = '".$web["web_speicher"]."' where doc_id = $doc_id");
+     if($quotalimit > 0) {
+        if($user["user_speicher"] > $quotalimit || $user["user_speicher"] == -1) {
+          //$go_api->db->query("UPDATE isp_isp_user SET user_speicher = '".$web["web_speicher"]."' where doc_id = $doc_id");
+          $go_api->db->query("UPDATE isp_isp_user SET user_speicher = '".$old_form_data["user_speicher"]."' where doc_id = $doc_id");
           if($die_on_error){
             $go_api->errorMessage($go_api->lng("error_max_space_web").$go_api->lng("weiter_link"));
           } else {
             return $go_api->lng("error_max_space_web");
-          }
-        }
-     }
-
-     // wenn Mail-Quota-Limit gesetzt ist
-     $mailquotalimit = $web["web_mailquota"];
-     if($mailquotalimit >= 0) {
-        $mailquotaused = $go_api->db->queryOneRecord("SELECT sum(user_mailquota) as mailquota from isp_isp_user, isp_dep where
-        isp_isp_user.doc_id = isp_dep.child_doc_id and isp_isp_user.doctype_id = isp_dep.child_doctype_id and
-        isp_dep.parent_doctype_id = $web_doctype_id and isp_dep.parent_doc_id = $web_doc_id and isp_dep.child_doctype_id = $doctype_id");
-
-        $mailquotalimit -= $mailquotaused["mailquota"] - $user["user_mailquota"];
-
-        if (($user["user_mailquota"] > $mailquotalimit) || $user["user_mailquota"] < 0) {
-          $go_api->db->query("UPDATE isp_isp_user SET user_mailquota = '".$mailquotalimit."' where doc_id = $doc_id");
-          if($die_on_error){
-            $go_api->errorMessage($go_api->lng("error_max_mailquota_web").$go_api->lng("weiter_link"));
-          } else {
-            return $go_api->lng("error_max_mailquota_web");
           }
         }
      }

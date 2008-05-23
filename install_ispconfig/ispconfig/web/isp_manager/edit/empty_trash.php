@@ -110,3 +110,4 @@ if($go_api->auth->check_write($groupid)) {
 header("Location: ../../index.php?$session");
 exit;
 ?>
+

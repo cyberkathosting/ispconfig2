@@ -30,38 +30,22 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 if(isset($_REQUEST["go_info"])) die('Variable not allowed as REQUEST parameter!');
 if(!defined('SERVER_ROOT')) die('Include file is missing. Please run the setup script as described in the installation manual.');
 
+
 $dbclass = CLASSES_ROOT . DIR_TRENNER ."ispconfig_db_".DB_TYPE.".lib.php";
 
 include_once($dbclass);
 $dbname = 'db_'.DB_TYPE;
 $db = new $dbname;
 
-$username = addslashes($username);
-$passwort = addslashes($passwort);
-
-if (empty($username) or empty($passwort))
-{
-  header("Location: ../login.php?err=103");
-  exit; 
-}
-
-$sql = sprintf('SELECT COUNT(id) as anzahl from sys_login WHERE ip = "%s" AND logintime >= (UNIX_TIMESTAMP() - 1800) AND status = "failure"', addslashes($_SERVER['REMOTE_ADDR']));
-$res = $db->queryOneRecord($sql);
-if ($res['anzahl'] >= 6)
-{
-  header("Location: ../login.php?err=105");
-  exit;  
-}
+$username = addslashes(substr($username,0,255));
+$passwort = addslashes(substr($passwort,0,255));
 
 $laston = date("y-m-d H:i:s");
 //$conn = mysql_query("SELECT * FROM sys_user where username = '$username'");
-$sql = "SELECT * FROM sys_user WHERE username = '{$username}' AND (passwort = md5('{$passwort}') OR passwort = PASSWORD('{$passwort}'))";
+$sql = "SELECT * FROM sys_user WHERE username = '".$username."' AND (passwort = md5('".$passwort."') OR passwort = PASSWORD('".$passwort."'))";
 //die($sql);
-
-if ($row = $db->queryOneRecord($sql) and $passwort != "")
-{
-  if ($row["doc_id"] != 0 and $row["gueltig"] == "1")
-  {
+if ($passwort != "" && $row = $db->queryOneRecord($sql)){
+  if ($row["doc_id"] != 0 and $row["gueltig"] == "1"){
     $username = stripslashes($username);
     $passwort = stripslashes($passwort);
     include("../../lib/session.inc.php");
@@ -69,26 +53,12 @@ if ($row = $db->queryOneRecord($sql) and $passwort != "")
     $date = date("l, d-M-y H:i:s", ($time));
     header("Set-Cookie: sessionispconfig=$s; expires=0 GMT; path=/;");
     echo("<head><meta http-equiv='refresh' content='0;URL=trylogin.php?s=$s&v=$version'></head>");
-    
-    // Logging of the Login-Attempt (success)
-    $db->query(sprintf('INSERT INTO sys_login (username, ip, logintime, status) VALUES("%s", "%s", %d, "%s")', $username, addslashes($_SERVER['REMOTE_ADDR']), time(), 'success'));
 
-    $db->query('DELETE FROM sys_login WHERE logintime < (UNIX_TIMESTAMP() - 7*24*3600)');
-  } 
-  else 
-  {
-    // Logging of the Login-Attempt (failure)
-    $db->query(sprintf('INSERT INTO sys_login (username, ip, logintime, status) VALUES("%s", "%s", %d, "%s")', $username, $_SERVER['REMOTE_ADDR'], time(), 'failure'));
-
+  } else {
     header("Location: ../login.php?err=102");
     exit;
   }
-}
-else
-{
-  // Logging of the Login-Attempt (failure)
-  $db->query(sprintf('INSERT INTO sys_login (username, ip, logintime, status) VALUES("%s", "%s", %d, "%s")', $username, $_SERVER['REMOTE_ADDR'], time(), 'failure'));
-
+} else {
   header("Location: ../login.php?err=101");
   exit;
 }

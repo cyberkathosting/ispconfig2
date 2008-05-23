@@ -29,7 +29,6 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 if(CONFIG_LOADED != 1) die('Direct access not permitted.');
 
-
 class docadmin
 {
 
@@ -84,17 +83,9 @@ function doctype_add($form, $groupid = 0)
                                           doctype_modul => $doc->modul,
                                           doctype_name => $doc->name,
                                           doctype_title => $doc->title,
-                                          doctype_def => '',
+                                          doctype_def => $doc_serialized,
                                           doctype_tree => $doc->tree));
     $doctype_id = $go_api->db->insertID();
-	
-	// Saving doctype to file
-	$filename = SERVER_ROOT.DIR_TRENNER.'lib'.DIR_TRENNER.'doctypes'.DIR_TRENNER.'doctype_'.$doctype_id.'.dtd';
-	$handle = fopen($filename, "w");
-	fwrite($handle, $doc_serialized);
-	fclose($handle);
-	
-	
     // erstellen der Feld Tabelle
 
     $columns[] = array(action =>   'add',
@@ -187,16 +178,10 @@ function doctype_update($doctype_id, $form, $groupid = 0)
                                           doctype_modul => $doc->modul,
                                           doctype_name => $doc->name,
                                           doctype_title => $doc->title,
-                                          doctype_def => '',
+                                          doctype_def => $doc_serialized,
                                           doctype_tree => $doc->tree), "doctype_id = '$doctype_id'");
 
-    // Saving doctype to file
-	$filename = SERVER_ROOT.DIR_TRENNER.'lib'.DIR_TRENNER.'doctypes'.DIR_TRENNER.'doctype_'.$doctype_id.'.dtd';
-	$handle = fopen($filename, "w");
-	fwrite($handle, $doc_serialized);
-	fclose($handle);
-	
-	if($go_api->db->errorMessage != "") $go_api->errorMessage($go_api->db->errorMessage);
+    if($go_api->db->errorMessage != "") $go_api->errorMessage($go_api->db->errorMessage);
     return $doctype_id;
     }
 
@@ -210,18 +195,8 @@ function doctype_get($doctype_id)
     {
     global $go_api, $go_info;
 
-    // $row = $go_api->db->queryOneRecord("SELECT * from doctype where doctype_id = '$doctype_id'");
-    // return unserialize($row["doctype_def"]);
-	
-	// Loading the doctype definition from file
-	$filename = SERVER_ROOT.DIR_TRENNER.'lib'.DIR_TRENNER.'doctypes'.DIR_TRENNER.'doctype_'.$doctype_id.'.dtd';
-	if(is_file("$filename")) {
-		$serialized_doctype = file_get_contents($filename);
-	} else {
-		die("Doctype $doctype_id does not exist.");
-	}
-	
-    return unserialize($serialized_doctype);
+    $row = $go_api->db->queryOneRecord("SELECT * from doctype where doctype_id = '$doctype_id'");
+    return unserialize($row["doctype_def"]);
 
     }
 
@@ -239,10 +214,8 @@ function deck_add($doctype_id, $form)
     $doc->deck[$deck_id]->perm_write = $form["perm_write"];
     // $doc->deck[]->title = $form["deck_title"];
     $fields = array( doctype_def => serialize($doc));
-	/*
     $go_api->db->update("doctype",$fields,"doctype_id = '$doctype_id'");
     if($go_api->db->errorMessage != "") $go_api->errorMessage($go_api->db->errorMessage);
-	*/
     }
 
 function deck_update($doctype_id, $deck_id, $form)
@@ -254,9 +227,8 @@ function deck_update($doctype_id, $deck_id, $form)
     $doc->deck[$deck_id]->perm_read = $form["perm_read"];
     $doc->deck[$deck_id]->perm_write = $form["perm_write"];
     $fields = array( doctype_def => serialize($doc));
-    //$go_api->db->update("doctype",$fields,"doctype_id = '$doctype_id'");
-    //if($go_api->db->errorMessage != "") $go_api->errorMessage($go_api->db->errorMessage);
-	$this->save_doctype_to_file($doctype_id,serialize($doc));
+    $go_api->db->update("doctype",$fields,"doctype_id = '$doctype_id'");
+    if($go_api->db->errorMessage != "") $go_api->errorMessage($go_api->db->errorMessage);
     return $doctype_id;
     }
 
@@ -271,8 +243,7 @@ function deck_delete($doctype_id, $deck_id)
             // $this->debug($doc);
             // die();
             $fields = array( doctype_def => serialize($doc));
-            //$go_api->db->update("doctype",$fields,"doctype_id = '$doctype_id'");
-			$this->save_doctype_to_file($doctype_id,serialize($doc));
+            $go_api->db->update("doctype",$fields,"doctype_id = '$doctype_id'");
         }
     }
 
@@ -291,8 +262,7 @@ function deck_flip($doctype_id, $deck_id)
         $doc->deck[$n] = $deck1;
         $doc->deck[$deck_id] = $deck2;
         $fields = array( doctype_def => serialize($doc));
-        //$go_api->db->update("doctype",$fields,"doctype_id = '$doctype_id'");
-		$this->save_doctype_to_file($doctype_id,serialize($doc));
+        $go_api->db->update("doctype",$fields,"doctype_id = '$doctype_id'");
     }
         }
 
@@ -654,9 +624,8 @@ function element_add($doctype_id, $deck_id, $form)
     if($go_api->db->errorMessage != "") $go_api->errorMessage($go_api->db->errorMessage);
     // Document Type updaten
     $fields = array( doctype_def => serialize($doc));
-    // $go_api->db->update("doctype",$fields,"doctype_id = '$doctype_id'");
-    // if($go_api->db->errorMessage != "") $go_api->errorMessage($go_api->db->errorMessage);
-	$this->save_doctype_to_file($doctype_id,serialize($doc));
+    $go_api->db->update("doctype",$fields,"doctype_id = '$doctype_id'");
+    if($go_api->db->errorMessage != "") $go_api->errorMessage($go_api->db->errorMessage);
     }
 
 function element_update($doctype_id, $deck_id, $element_id, $form)
@@ -1038,9 +1007,8 @@ function element_update($doctype_id, $deck_id, $element_id, $form)
     if($go_api->db->errorMessage != "") $go_api->errorMessage($go_api->db->errorMessage);
     // Document Type updaten
     $fields = array( doctype_def => serialize($doc));
-    //$go_api->db->update("doctype",$fields,"doctype_id = '$doctype_id'");
-    //if($go_api->db->errorMessage != "") $go_api->errorMessage($go_api->db->errorMessage);
-	$this->save_doctype_to_file($doctype_id,serialize($doc));
+    $go_api->db->update("doctype",$fields,"doctype_id = '$doctype_id'");
+    if($go_api->db->errorMessage != "") $go_api->errorMessage($go_api->db->errorMessage);
     }
 
 function element_delete($doctype_id, $deck_id, $element_id)
@@ -1057,8 +1025,7 @@ function element_delete($doctype_id, $deck_id, $element_id)
             // variable elements löschen, wenn array leer
             if(count($doc->deck[$deck_id]->elements) == 0) unset($doc->deck[$deck_id]->elements);
             $fields = array( doctype_def => serialize($doc));
-            //$go_api->db->update("doctype",$fields,"doctype_id = '$doctype_id'");
-			$this->save_doctype_to_file($doctype_id,serialize($doc));
+            $go_api->db->update("doctype",$fields,"doctype_id = '$doctype_id'");
         }
     }
 
@@ -1077,8 +1044,7 @@ function element_flip($doctype_id, $deck_id, $element_id)
         $doc->deck[$deck_id]->elements[$n] = $element1;
         $doc->deck[$deck_id]->elements[$element_id] = $element2;
         $fields = array( doctype_def => serialize($doc));
-        //$go_api->db->update("doctype",$fields,"doctype_id = '$doctype_id'");
-		$this->save_doctype_to_file($doctype_id,serialize($doc));
+        $go_api->db->update("doctype",$fields,"doctype_id = '$doctype_id'");
     }
 }
 
@@ -1111,13 +1077,6 @@ function utime ()
                 $sec = (double)$time[1];
                 return $sec + $usec;
     }
-	
-function save_doctype_to_file($doctype_id,$doctype_string) {
-	$filename = SERVER_ROOT.DIR_TRENNER.'lib'.DIR_TRENNER.'doctypes'.DIR_TRENNER.'doctype_'.$doctype_id.'.dtd';
-	$handle = fopen($filename, "w");
-	fwrite($handle, $doctype_string);
-	fclose($handle);
-}
 
 }
 ?>

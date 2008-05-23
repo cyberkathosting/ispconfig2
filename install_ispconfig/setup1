@@ -50,7 +50,13 @@ then
   fi
 fi
 
-log "installation directory: `pwd`"
+CURDIR=`pwd`
+
+if [ `echo $CURDIR | grep "/root/ispconfig"` ] || [ `echo $CURDIR | grep "/home/admispconfig"` ]; then
+  error "Sie können ISPConfig nicht von /root/ispconfig oder /home/admispconfig aus installieren! Bitte versuchen Sie es von einem anderen Verzeichnis aus (z.B. /tmp). / You cannot install ISPConfig from /root/ispconfig or /home/admispconfig! Please try again from another directory (e.g. /tmp)."
+fi
+
+log "installation directory: $CURDIR"
 
 if [ -f /etc/release ] && [ ! -h  /etc/release ]; then
    version=`cat /etc/release | grep -i release | cut -f5 -d' '`

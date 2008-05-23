@@ -52,7 +52,7 @@ $ordner = INCLUDE_ROOT . DIR_TRENNER."lang";
 $handle = @opendir($ordner);
 while ($file = @readdir ($handle)) {
     if ($file != "." && $file != "..") {
-        if(@is_file($ordner.$go_info["server"]["dir_trenner"].$file)) {
+        if(@is_file($ordner.DIR_TRENNER.$file)) {
                         $path_parts = pathinfo($ordner.$go_info["server"]["dir_trenner"].$file);
                         if($path_parts["extension"] == 'lng') {
                                 $language = substr($path_parts["basename"],0,2);

@@ -29,7 +29,6 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 if(CONFIG_LOADED != 1) die('Direct access not permitted.');
 
-
 class isp_domain
 {
 
@@ -57,7 +56,6 @@ $this->user_von = $server_conf["userid_von"];
 $this->group_von = $server_conf["groupid_von"];
 $this->virtusertable = $server_conf["server_sendmail_virtuser_datei"];
 $this->sendmail_cw = $server_conf["server_sendmail_cw"];
-$this->server_conf = $server_conf;
 }
 
 
@@ -103,8 +101,8 @@ global $go_api, $go_info;
     $web = $go_api->db->queryOneRecord($sql);
     $go_api->db->query("UPDATE isp_isp_domain SET domain_ip = '".$web["web_ip"]."' where doc_id = $doc_id");
     $domain["domain_ip"] = $web["web_ip"];
-
-    // Web Status auf update setzen
+	
+	// Web Status auf update setzen
     $web_doc_id = $web["doc_id"];
     $go_api->db->query("UPDATE isp_isp_web SET status = 'u' where status != 'n' and doc_id = '$web_doc_id'");
 
@@ -188,26 +186,6 @@ global $go_api, $go_info;
         $errorMessage .= $go_api->lng("err_0001");
     }
     unset($haupt_domain);
-
-
-    // Check if the local host is the MX
-        if($this->server_conf["server_mail_check_mx"] == 1) {
-            if (!empty($domain["domain_host"])) {
-                $host = $domain["domain_host"] . ".";
-            }
-            getmxrr($host . $domain["domain_domain"], $mx_list);
-
-            $mx_found = false;
-            foreach ($mx_list as $mx) {
-                if (ip2long(gethostbyname($mx)) == ip2long($domain["domain_ip"])) {
-                    $mx_found = true;
-                }
-            }
-
-            if (!$mx_found) {
-                $go_api->db->query("UPDATE isp_isp_domain SET domain_local_mailserver = '' WHERE doc_id = '$doc_id'");
-            }
-        }
 	
 	// Check domain against regex
 	$tmp_fqdn = ($domain["domain_host"] != '' && $domain["domain_host"] != '*')?$domain["domain_host"].'.'.$domain["domain_domain"]:$domain["domain_domain"];
@@ -215,6 +193,7 @@ global $go_api, $go_info;
 		$status = "DELETE";
         $errorMessage .= $go_api->lng("Invalid domain name").': "'.$tmp_fqdn.'"';
 	}
+
 
     if($status == "DELETE") {
         // Eintrag löschen
@@ -262,7 +241,7 @@ global $go_api, $go_info,$s,$old_form_data;
 	}
 	
 	
-    // Remove http:// and https:// and spaces from domains and hosts
+	// Remove http:// and https:// and spaces from domains and hosts
     if($tmp_domains = $go_api->db->queryAllRecords("SELECT * FROM isp_isp_domain WHERE domain_host LIKE 'http://%' OR domain_host LIKE 'https://%' OR domain_host LIKE ' %' OR domain_host LIKE '% ' OR domain_domain LIKE 'http://%' OR domain_domain LIKE 'https://%' OR domain_domain LIKE ' %' OR domain_domain LIKE '% '")){
       foreach($tmp_domains as $tmp_domain){
         $tmp_domain['domain_host'] = str_replace('http://', '', $tmp_domain['domain_host']);
@@ -288,7 +267,7 @@ global $go_api, $go_info,$s,$old_form_data;
       }
       unset($tmp_webs);
     }
-    
+
     $go_api->db->query("UPDATE isp_isp_domain SET status = 'u' where status != 'n' and doc_id = '$doc_id'");
     //$domain = $go_api->db->queryOneRecord("select * from isp_isp_domain where doc_id = '$doc_id'");
     // IP Adresse der Domain vom Web holen
@@ -296,6 +275,7 @@ global $go_api, $go_info,$s,$old_form_data;
     //$web = $go_api->db->queryOneRecord($sql);
     //$go_api->db->query("UPDATE isp_isp_domain SET domain_ip = '".$web["web_ip"]."' where doc_id = $doc_id");
     $domain = $go_api->db->queryOneRecord("select * from isp_isp_domain where doc_id = '$doc_id'");
+	
 
     // IP Adresse der Domain vom Web holen
     $sql = "SELECT * from isp_dep,isp_isp_web where isp_dep.parent_doc_id = isp_isp_web.doc_id and isp_dep.parent_doctype_id = ".$this->web_doctype_id." and isp_dep.child_doc_id = $doc_id and isp_dep.child_doctype_id = $doctype_id";
@@ -336,32 +316,12 @@ global $go_api, $go_info,$s,$old_form_data;
                 }
 
         }
-
-
-    // Check ob lokaler Host als MX eingetragen ist
-        if($this->server_conf["server_mail_check_mx"] == 1) {
-            if (!empty($domain["domain_host"])) {
-                $host = $domain["domain_host"] . ".";
-            }
-            getmxrr($host . $domain["domain_domain"], $mx_list);
-
-            $mx_found = false;
-            foreach ($mx_list as $mx) {
-                if (ip2long(gethostbyname($mx)) == ip2long($domain["domain_ip"])) {
-                    $mx_found = true;
-                }
-            }
-
-            if (!$mx_found) {
-                $go_api->db->query("UPDATE isp_isp_domain SET domain_local_mailserver = '' WHERE doc_id = '$doc_id'");
-            }
-        }
 	
 	// Check domain against regex
 	$tmp_fqdn = ($domain["domain_host"] != '' && $domain["domain_host"] != '*')?$domain["domain_host"].'.'.$domain["domain_domain"]:$domain["domain_domain"];
 	if(!preg_match("/^([a-z0-9\-]+\.)+[a-z]{2,6}$/ix", $tmp_fqdn)) {
 		$old_domain = addslashes($old_form_data["domain_domain"]);
-		$old_host = addslashes($old_form_data["domain_host"]);
+        $old_host = addslashes($old_form_data["domain_host"]);
         $go_api->db->query("UPDATE isp_isp_domain SET domain_domain = '$old_domain', domain_host = '$old_host' WHERE doc_id = $doc_id");
 		$status = 'NOTIFY';
         $errorMessage .= $go_api->lng("Invalid domain name").': "'.$tmp_fqdn.'"';
@@ -384,14 +344,14 @@ global $go_api, $go_info,$s,$old_form_data;
     $go_api->db->query("UPDATE isp_isp_web SET status = 'u' where status != 'n' and doc_id = '$web_doc_id'");
 
     // Server benachrichtigen
-        $go_api->uses("isp");
-        $server_id = 1;
-        $go_api->isp->signal_server($server_id,'update');
+    $go_api->uses("isp");
+    $server_id = 1;
+    $go_api->isp->signal_server($server_id,'update');
 
-        $this->faktura_update($doc_id,$web["doc_id"],$domain["domain_host"].".".$domain["domain_domain"]);
+    $this->faktura_update($doc_id,$web["doc_id"],$domain["domain_host"].".".$domain["domain_domain"]);
 
-        // ISPConfig Rechte in nodes Table checken
-        $go_api->isp->check_perms($doc_id, $doctype_id);
+    // ISPConfig Rechte in nodes Table checken
+    $go_api->isp->check_perms($doc_id, $doctype_id);
 	
 	///////////////////////////////////
     // NOTIFY Error Handler
@@ -628,18 +588,11 @@ function _insert_dns($doc_id,$doctype_id,$domain,$web) {
         } else {
           $mailserver = trim($server["server_host"]).'.'.trim($server["server_domain"]);
         }
-		
+
                 // Check, ob es den MX nicht schon gibt
                 $sql_test = "SELECT * FROM dns_dep, dns_mx WHERE dns_dep.child_doc_id = dns_mx.doc_id AND dns_dep.child_doctype_id = dns_mx.doctype_id and dns_dep.parent_doc_id = $dns_record[doc_id] and host = '$host' and mailserver = '$mailserver'";
 
-
-
-
-
                 $exist_spf_record = $go_api->db->queryOneRecord("SELECT * from dns_dep, dns_spf where dns_dep.child_doc_id = dns_spf.doc_id and dns_dep.child_doctype_id = $spf_record_doctype_id and dns_dep.parent_doc_id = $dns_record[doc_id] and dns_spf.host = ''");
-
-
-
 
                 if(!$go_api->db->queryOneRecord($sql_test)) {
                 //$ip_adresse = $domain["domain_ip"];

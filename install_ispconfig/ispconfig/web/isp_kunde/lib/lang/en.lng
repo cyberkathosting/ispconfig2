@@ -47,8 +47,6 @@ $wb["SSL"]        = "SSL";
 $wb["Shell Zugriff"]      = "Shell Access";
 $wb["Zugang"]       = "Access";  // Zugriff u. Zugang zusammenfassen!/nur einen Begriff nehmen!
 $wb["CGI Scripte"]      = "CGI Scripts";
-$wb["CGI Modus"]      = "CGI Mode";
-$wb["CGI mod_perl"]      = "CGI mod_perl";
 $wb["Bundesland"]   = "County";
 $wb["Abteilung"]    = "Department";
 $wb["Gültigkeit (Tage)"]  = "Validity (days)";
@@ -193,8 +191,8 @@ $wb["Willkommen"] = "Welcome";
 
 
 // Regex Fehlermeldungen
-$wb["Es sind nur folgende Zeichen erlaubt: a-z A-Z 0-9 -"] = "Only the following sign are allowed: a-z A-Z 0-9 -<br>";
-$wb["Es sind nur folgende Zeichen erlaubt: a-z A-Z 0-9 - ."] = "Only the following sign are allowed: a-z A-Z 0-9 - .<br>";
+$wb["Es sind nur folgende Zeichen erlaubt: a-z A-Z 0-9 -"] = "Only the following signs are allowed: a-z A-Z 0-9 -<br>";
+$wb["Es sind nur folgende Zeichen erlaubt: a-z A-Z 0-9 - ."] = "Only the following signs are allowed: a-z A-Z 0-9 - .<br>";
 $wb["Der Username muss aus min. 4, max 25 Buchstaben oder Zahlen bestehen, wobei er mit einem Buchstaben beginnen muss."] = "The user name has to contain a minimum of 4 and a maximum of 26 letters or figures and has to begin with a letter.<br>";
 $wb['Der Username muss aus min. 4, max 32 Buchstaben oder Zahlen bestehen, wobei er mit einem Buchstaben beginnen muss.'] = 'The user name has to contain a minimum of 4 and a maximum of 32 letters or figures and has to begin with a letter.<br>';
 
@@ -241,7 +239,6 @@ $wb["deaktiviert"] = 'inactive';
 $wb["ISP User"] = 'ISP User';
 $wb["WebSpeicher MB"] = 'WebSpace MB';
 $wb["MailSpeicher MB"] = 'MailSpace MB';
-$wb["Max. MailSpeicher MB"] = 'Max. MailSpace MB';
 $wb["Administrator"] = 'Administrator';
 $wb["Erweiterte Einstellungen"] = 'Advanced Settings';
 $wb["email_weiterleitung_txt"] = '<b>Hint:</b> one email per line.';
@@ -399,7 +396,6 @@ $wb["error_anbieter_max_slavedns_ueberschritten"] = "The reseller already has mo
 $wb["error_anbieter_httpd_include_aktiv"] = "HTTPD Includes are already in use on some of the reseller's websites. This feature cannot be deactivated.<br>";
 $wb["error_anbieter_shell_access_aktiv"] = "Shell Access already in use on some of the reseller's websites. This feature cannot be deactivated.<br>";
 $wb["error_anbieter_cgi_aktiv"] = "CGI is already in use on some of the reseller's websites. This feature cannot be deactivated.<br>";
-$wb["error_anbieter_cgi_mod_perl_aktiv"] = "CGI mod_perl is already in use on some of the reseller's websites. This feature cannot be deactivated.<br>";
 $wb["error_anbieter_standard_cgi_aktiv"] = "Standard CGIs are already in use on some of the reseller's websites. This feature cannot be deactivated.<br>";
 $wb["error_anbieter_php_aktiv"] = "PHP is already in use on some of the reseller's websites. This feature cannot be deactivated.<br>";
 $wb["error_anbieter_ssi_aktiv"] = "SSI is already in use on some of the reseller's websites. This feature cannot be deactivated.<br>";
@@ -435,7 +431,6 @@ $wb["error_web_no_database_decrease_1"] = "This website already has ";
 $wb["error_web_no_database_decrease_2"] = " database(s). You cannot decrease the number of databases.<br>";
 $wb["error_web_no_shell_access"] = "You cannot assign shell access to this website.<br>";
 $wb["error_web_no_cgi"] = "You cannot assign CGI functionality to this website.<br>";
-$wb["error_web_no_cgi_mod_perl"] = "You cannot assign CGI mod_perl functionality to this website.<br>";
 $wb["error_web_no_standard_cgi"] = "You cannot assign Standard CGIs to this website.<br>";
 $wb["error_web_no_php"] = "You cannot assign PHP functionality to this website.<br>";
 $wb["error_web_no_ssi"] = "You cannot assign SSI functionality to this website.<br>";
@@ -461,7 +456,6 @@ $wb["Nein"] = "No";
 $wb["Ja"] = "Yes";
 $wb["Web"] = "Site";
 $wb["Domain"] = "Domain";
-$wb["Unbegrenzt"] = "Unlimited";
 $wb["Traffic-Überschreitung"] = "Traffic Exceedance";
 $wb["sperren"] = "Suspend";
 $wb["benachrichtigen"] = "Notify";
@@ -470,12 +464,101 @@ $wb["Website-Status"] = "Website Status";
 $wb["aktiv"] = "Active";
 $wb["gesperrt"] = "Suspended";
 
-$wb["Catalog_Name"] = "Name";
+$wb["txt_traffic_suspension_email_desc"] = "<b>Web Site Suspension Notification (Traffic Exceedance)</b>";
+$wb["txt_traffic_suspension_sender_email"] = "Sender's Email";
+$wb["txt_traffic_suspension_sender_name"] = "Name of Sender";
+$wb["txt_traffic_suspension_email_bcc"] = "BCC Recipient";
+$wb["txt_traffic_suspension_email_subject"] = "Subject";
+$wb["txt_traffic_suspension_email_message"] = "Message";
+$wb["txt_traffic_suspension_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Include the following variables in your text:</b></td></tr>
+        <tr>
+          <td class="normal">%%%FIRST_NAME%%%</td>
+          <td class="normal">
+            Client\'s First Name</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%LAST_NAME%%%</td>
+          <td class="normal">
+            Client\'s Last Name</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%WEBSITE%%%</td>
+          <td class="normal">
+            Client\'s Web Site</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%MONTH%%%</td>
+          <td class="normal">
+            Month of Traffic Exceedance</td>
+        </tr>
+        <tr>
+          <td class="normal" valign="top">%%%INCLUDED_TRAFFIC%%%</td>
+          <td class="normal">
+            Traffic included in Web Site Package</td>
+        </tr>
+        <tr>
+          <td class="normal" valign="top">%%%TOTAL_TRAFFIC%%%</td>
+          <td class="normal">
+            Total Traffic in Month of Exceedance</td>
+        </tr>
+        </table>';
 
-$wb["Nicht scannen"] = "Don't scan";
-$wb["MX prüfen"] = "Check MX";
-$wb["Cyrus-Administrator"] = "Cyrus Admin";
-$wb["Passwort Cyrus-Admin"] = "Cyrus Admin Password";
+$wb["txt_traffic_notification_email_desc"] = "<b>Traffic Exceedance Notification</b>";
+$wb["txt_traffic_notification_sender_email"] = "Sender's Email";
+$wb["txt_traffic_notification_sender_name"] = "Name of Sender";
+$wb["txt_traffic_notification_email_bcc"] = "BCC Recipient";
+$wb["txt_traffic_notification_email_subject"] = "Subject";
+$wb["txt_traffic_notification_email_message"] = "Message";
+$wb["txt_traffic_notification_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Include the following variables in your text:</b></td></tr>
+        <tr>
+          <td class="normal">%%%FIRST_NAME%%%</td>
+          <td class="normal">
+            Client\'s First Name</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%LAST_NAME%%%</td>
+          <td class="normal">
+            Client\'s Last Name</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%WEBSITE%%%</td>
+          <td class="normal">
+            Client\'s Web Site</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%MONTH%%%</td>
+          <td class="normal">
+            Month of Traffic Exceedance</td>
+        </tr>
+        <tr>
+          <td class="normal" valign="top">%%%INCLUDED_TRAFFIC%%%</td>
+          <td class="normal">
+            Traffic included in Web Site Package</td>
+        </tr>
+        <tr>
+          <td class="normal" valign="top">%%%TOTAL_TRAFFIC%%%</td>
+          <td class="normal">
+            Total Traffic in Month of Exceedance</td>
+        </tr>
+        </table>';
+
+
+$wb["Catalog_Name"] = "Name";
+$wb["Spam Whitelist"] = 'Spam Whitelist';
+$wb["Spam Blacklist"] = 'Spam Blacklist';
+$wb["spam_whitelist_txt"] = '<b>Hint:</b> One entry per line. Valid entries are, for example, friend@somewhere.com, *@isp.com, or *.domain.net.';
+$wb["spam_blacklist_txt"] = '<b>Hint:</b> One entry per line. Valid entries are, for example, friend@somewhere.com, *@isp.com, or *.domain.net.';
+$wb["Webalizer Stats"] = 'Webalizer<br>&nbsp;Statistics';
+$wb["Use Uribl"] = 'Use <a href="http://www.uribl.com/about.shtml" target="_blank" style="font-family:Arial,Verdana">URIBL</a>';
+$wb["Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 -"] = "Only the following signs are allowed: a-z A-Z 0-9 -<br>";
+$wb["Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 - ."] = "Only the following signs are allowed: a-z A-Z 0-9 - .<br>";
 $wb["error_domain_delete_client"] = "You cannot delete this domain.";
+
 
 ?>

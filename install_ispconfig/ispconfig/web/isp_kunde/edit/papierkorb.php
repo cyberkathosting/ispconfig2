@@ -150,11 +150,6 @@ if($row["doctype_id"] == 1029) {
     $title = "<b>".$go_api->lng("Datenbank").":</b> ".$title;
 }
 
-//Mailing List
-if($row["doctype_id"] == 1033) {
-    $sub_row = $go_api->db->queryOneRecord("SELECT * FROM isp_isp_list where doc_id = ".$row["doc_id"]);
-    $title = "<b>".$go_api->lng("Mailing_list").":</b> ".$sub_row["list_name"];
-}
 
 ////////////////////////////////////////////
 

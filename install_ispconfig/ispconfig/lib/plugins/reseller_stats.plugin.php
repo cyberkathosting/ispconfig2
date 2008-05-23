@@ -64,7 +64,7 @@ class reseller_stats_plugin {
 
      // Diskspace
      if($reseller["limit_disk"] != 0){
-          $diskspace = $go_api->db->queryOneRecord("SELECT sum(isp_isp_web.web_speicher) as diskspace from isp_isp_web,isp_nodes where isp_isp_web.doc_id = isp_nodes.doc_id and  isp_nodes.groupid = '".$reseller_group."' and isp_nodes.doctype_id = 1013");
+     $diskspace = $go_api->db->queryOneRecord("SELECT sum(isp_isp_web.web_speicher) as diskspace from isp_isp_web,isp_nodes where isp_isp_web.doc_id = isp_nodes.doc_id and  isp_nodes.groupid = '".$reseller_group."' and isp_nodes.doctype_id = 1013");
      $minspace  = $go_api->db->queryOneRecord("SELECT min(isp_isp_web.web_speicher) as diskspace from isp_isp_web,isp_nodes where isp_isp_web.doc_id = isp_nodes.doc_id and  isp_nodes.groupid = '".$reseller_group."' and isp_nodes.doctype_id = 1013");
     $diskspace = intval($diskspace["diskspace"]);
     $disklimit = $reseller["limit_disk"];
@@ -137,7 +137,7 @@ class reseller_stats_plugin {
        <td width="50%" bgcolor="#FFFFFF"><font face="Verdana, Arial, Helvetica, sans-serif" size="2">'.$go_api->lng("Datenbanken angelegt").':</font></td>
        <td width="50%" bgcolor="#FFFFFF" align="right"><font face="Verdana, Arial, Helvetica, sans-serif" size="2">'.$datenbankanzahl["anzahl"].' '.$go_api->lng("von").' '.$datenbanklimit.'</font></td>
      </tr>';
-      }
+       }
      }
 
 
