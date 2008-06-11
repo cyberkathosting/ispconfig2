@@ -107,6 +107,7 @@ $go_info["server"]["ssh_chroot"] = {SSH_CHROOT};
 $go_info["server"]["httpd_check"] = {HTTPD_CHECK};
 $go_info["server"]["salutatory_email_charset"] = '{SALUTATORY_EMAIL_CHARSET}'; // possible values are iso-8859-1, iso-8859-2, ..., us-ascii, koi8-r (Russian), ...; if no charset is specified, unknown-8bit is assumed.
 $go_info["server"]["webdav"] = {WEBDAV};
+$go_info["server"]["force_user_quota"] = 0;
 
 /**********************************************
 * Tools Settings
