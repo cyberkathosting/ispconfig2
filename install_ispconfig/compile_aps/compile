@@ -73,6 +73,13 @@ else
   WITH_ZLIB_DIR=""
 fi
 
+which xml2-config
+if [ $? != 0 ]; then
+  WITH_XML="--disable-libxml --disable-dom --disable-xml --disable-xmlreader --disable-xmlwriter --disable-simplexml"
+else
+  WITH_XML=""
+fi
+
 error ()
 {
   echo "ERROR: $1"
@@ -126,7 +133,7 @@ fi
 make install || error "Could not install Apache"
 
 cd ../${PHP}
-./configure --with-apxs=${INSTALL_ROOT}/httpd/bin/apxs --enable-track-vars --enable-sockets --enable-mbstring=all --with-config-file-path=${INSTALL_ROOT}/php --enable-ftp --prefix=${INSTALL_ROOT}/php ${WITH_OPENSSL} ${WITH_MYSQL} --disable-libxml --disable-dom --disable-xml ${WITH_ZLIB_DIR} --disable-xmlreader --disable-xmlwriter --disable-simplexml --without-pear || error "Could not configure PHP"
+./configure --with-apxs=${INSTALL_ROOT}/httpd/bin/apxs --enable-track-vars --enable-sockets --enable-mbstring=all --with-config-file-path=${INSTALL_ROOT}/php --enable-ftp --prefix=${INSTALL_ROOT}/php ${WITH_OPENSSL} ${WITH_MYSQL} ${WITH_XML} ${WITH_ZLIB_DIR} --without-pear || error "Could not configure PHP"
 make || error "Could not make PHP"
 make install || error "Could not install PHP"
 ln -s ${INSTALL_ROOT}/php/bin/php ${INSTALL_ROOT}/php/php
