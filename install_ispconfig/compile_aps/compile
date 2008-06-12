@@ -33,7 +33,7 @@ OPENSSL=openssl-0.9.7m
 APACHE=apache_1.3.41
 MOD_SSL=mod_ssl-2.8.31-1.3.41
 PHP=php-5.2.6
-CLAMAV=clamav-0.93
+CLAMAV=clamav-0.93.1
 CLAMASSASSIN=clamassassin-1.2.4
 UUDEVIEW=uudeview-0.5.20
 SPAMASSASSIN=Mail-SpamAssassin-3.2.5
@@ -71,6 +71,13 @@ else
   WITH_OPENSSL="--with-openssl=${INSTALL_ROOT}/openssl"
   WITH_MYSQL="--with-mysql=/usr"
   WITH_ZLIB_DIR=""
+fi
+
+which xml2-config
+if [ $? != 0 ]; then
+  WITH_XML="--disable-libxml --disable-dom --disable-xml --disable-xmlreader --disable-xmlwriter --disable-simplexml"
+else
+  WITH_XML=""
 fi
 
 error ()
@@ -126,7 +133,7 @@ fi
 make install || error "Could not install Apache"
 
 cd ../${PHP}
-./configure --with-apxs=${INSTALL_ROOT}/httpd/bin/apxs --enable-track-vars --enable-sockets --enable-mbstring=all --with-config-file-path=${INSTALL_ROOT}/php --enable-ftp --prefix=${INSTALL_ROOT}/php ${WITH_OPENSSL} ${WITH_MYSQL} --disable-libxml --disable-dom --disable-xml ${WITH_ZLIB_DIR} --disable-xmlreader --disable-xmlwriter --disable-simplexml --without-pear || error "Could not configure PHP"
+./configure --with-apxs=${INSTALL_ROOT}/httpd/bin/apxs --enable-track-vars --enable-sockets --enable-mbstring=all --with-config-file-path=${INSTALL_ROOT}/php --enable-ftp --prefix=${INSTALL_ROOT}/php ${WITH_OPENSSL} ${WITH_MYSQL} ${WITH_XML} ${WITH_ZLIB_DIR} --without-pear || error "Could not configure PHP"
 make || error "Could not make PHP"
 make install || error "Could not install PHP"
 ln -s ${INSTALL_ROOT}/php/bin/php ${INSTALL_ROOT}/php/php
