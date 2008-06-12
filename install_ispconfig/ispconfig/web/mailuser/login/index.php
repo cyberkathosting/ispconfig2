@@ -38,6 +38,8 @@ if(count($_POST) > 1) {
                 $username         = $_POST["username"];
                 $passwort         = $_POST["passwort"];
 				
+				$orig_username = $username;
+				
 				// Dovecot @ username hack
 				if(stristr($username, '@')) {
 					list ($loginusername, $logindomain) = split('[/@-]', $username);
@@ -66,7 +68,7 @@ if(count($_POST) > 1) {
                         if($res == '') {
 
                                 // versuche Login
-                                $res = $app->pop3->Login($username,$passwort,0);
+                                $res = $app->pop3->Login($orig_username,$passwort,0);
                                 if($res == '') {
 
                                         // Login war erfolgreich

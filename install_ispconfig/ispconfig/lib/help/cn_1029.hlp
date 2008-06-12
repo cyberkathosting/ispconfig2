@@ -1,0 +1,13 @@
+<?
+
+/**********************************************
+* ISPConfig Help File
+* Version 1.2
+* Syntax: $hlp["FieldName"] = "HelpText";
+* Chinese Vesion:   Mike.G <ghw@5anet.com>
+************************************************/
+
+$hlp["db_passwort"] = "请输入MySQL数据库存取帐号的密码。";
+$hlp["remote_access"] = "允许是否远程存取MySQL数据库。";
+
+?>

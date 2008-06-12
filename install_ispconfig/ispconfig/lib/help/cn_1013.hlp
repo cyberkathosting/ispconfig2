@@ -1,0 +1,59 @@
+<?
+
+/**********************************************
+* ISPConfig Help File
+* Version 1.2
+* Syntax: $hlp["FieldName"] = "HelpText";
+* Chinese Version:  Mike.G  <ghw@5anet.com>
+************************************************/
+
+$hlp["web_host"] = "网站主机名, 例如： www, bbs等";
+$hlp["web_domain"] = "网站域名，例如： sohu.com";
+$hlp["web_speicher"] = "网站空间的大小。例如： 2 表示 2MB 的磁盘空间，以MB为计算单位。";
+$hlp["web_traffic"] = "网站访问流量限制，以MB为计算单位（例如：2000MB， 即2个G）。";
+$hlp["web_cgi"] = "激活网站支持CGI。";
+$hlp["web_php"] = "激活网站支持PHP脚本。";
+$hlp["web_ruby"] = "激活网站支持Ruby脚本。";
+$hlp["web_ssi"] = "激活网站支持SSI。";
+$hlp["web_ftp"] = "激活FTP功能：可以使用FTP服务上传和下载文件。";
+$hlp["web_frontpage"] = "激活网站支持FrontPage扩展。";
+$hlp["web_mysql"] = "激活MySQL数据库支持。";
+$hlp["web_shell"] = "激活Shell存取功能, 即可以使用ssh远程登录管理。";
+$hlp["web_ssl"] = "激活网站支持SSL，即HTTPS支持，主要针对于电子商务等。";
+$hlp["ssl_request"] = "您可以发送文本框里的内容到CA公司以便生成用于正式业务所需要的SSL证书文件。";
+$hlp["ssl_cert"] = "您可以拷贝正式的SSL证书内容到文本框内。";
+$hlp["web_ip"] = "请为网站选择一个IP地址。";
+$hlp["optionen_mysql_user"] = "请输入存取MySQL数据库的用户名。";
+$hlp["optionen_mysql_passwort"] = "请为存取MySQL数据库的用户设置一个密码。";
+$hlp["web_dns"] = "勾选复选框为网站建立一个DNS A记录。";
+$hlp["web_userlimit"] = "为该网站设置可建立的用户数。";
+$hlp["web_domainlimit"] = "为该网站设置可建立的域名书。";
+$hlp["ssl_state"] = "请输入您的国家/省份。";
+$hlp["ssl_locality"] = "请输入您居住的城市。";
+$hlp["ssl_organization"] = "请输入您公司/组织名字。";
+$hlp["ssl_organization_unit"] = "请输入您的部门名字。";
+$hlp["ssl_country"] = "请选择您居住的国家。";
+$hlp["web_dns_mx"] = "勾选复选框为网站建立一个DNS MX 记录。";
+$hlp["ssl_days"] = "请输入SSL证书的有效期(以天为单位)。";
+$hlp["web_httpd_include"] = "可以输入Apache指令，用于控制apache的行为。";
+$hlp["web_anonftp"] = "允许匿名访问网站。注意：每一个独立的IP只能有一个匿名帐户。";
+$hlp["web_anonftplimit"] = "请输入匿名FTP帐户的空间大小限制（单位：MB）。";
+$hlp["optionen_frontpage_passwort"] = "请指定FrontPage扩展密码。";
+$hlp["optionen_mysql_remote_access"] = "允许远程存取MySQL数据库。";
+$hlp["optionen_local_mailserver"] = "如果选择\"外部邮件服务器\",则不会加入本地MTA条目。";
+$hlp["web_faktura"] = "激活/禁止 网站ISP-Billing模块。";
+$hlp["optionen_logsize"] = "设置网站Apache日志文件上限。 合法值包括绝对数值(以MB为单位)和网站空间百分比(%数值)。";
+$hlp["web_php_safe_mode"] = "设置PHP运行在安全模式下，本功能依赖PHP功能是否已经被设置。";
+$hlp["web_wap"] = "激活网站支持.wml。 wml文件主要用户手机浏览。";
+$hlp["web_standard_cgi"] = "激活网站标准CGI的支持。";
+$hlp["web_mysql_anzahl_dbs"] = "设置网站最多支持的MySQL数据库数量， -1为不限制。";
+$hlp["web_individual_error_pages"] = "勾选复选框，用于自定义出错页面信息。";
+$hlp["error_400"] = "请定义400错误信息，如果为空则使用标准的错误页面。";
+$hlp["error_401"] = "请定义401错误信息，如果为空则使用标准的错误页面。";
+$hlp["error_403"] = "请定义403错误信息，如果为空则使用标准的错误页面。";
+$hlp["error_404"] = "请定义404错误信息，如果为空则使用标准的错误页面。";
+$hlp["error_405"] = "请定义405错误信息，如果为空则使用标准的错误页面。";
+$hlp["error_500"] = "请定义500错误信息，如果为空则使用标准的错误页面。";
+$hlp["error_503"] = "请定义503错误信息，如果为空则使用标准的错误页面。";
+
+?>

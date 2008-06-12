@@ -1,0 +1,14 @@
+<?
+
+/**********************************************
+* ISPCofig Help File
+* Version 1.2
+* Syntax: $hlp["FieldName"] = "HelpText";
+* Chinese Version:  Mike.G  <ghw@5anet.com>
+************************************************/
+
+$hlp["dienst_name"] = "被监控的服务名称。";
+$hlp["dienst_port"] = "服务端口，例如：WEB服务的端口是80。";
+$hlp["dienst_host"] = "被监控的服务ip地址或者是主机名。";
+$hlp["dienst_typ"] = "被监控的服务类信。系统只支持TCP－和UDP－协议的服务类型。";
+?>

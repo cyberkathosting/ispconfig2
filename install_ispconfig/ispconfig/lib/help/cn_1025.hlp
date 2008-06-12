@@ -1,0 +1,13 @@
+<?
+
+/**********************************************
+* ISPCofig Help File
+* Version 1.2
+* Syntax: $hlp["FieldName"] = "HelpText";
+* Chinese Version:  Mike.G  <ghw@5anet.com>
+************************************************/
+
+$hlp["dienst_port"] = "输入一个端口号(例如:2000)，或者给出一个端口范围(例如： 2000:2100)。";
+
+
+?>

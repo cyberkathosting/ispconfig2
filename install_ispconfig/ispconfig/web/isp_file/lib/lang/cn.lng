@@ -1,0 +1,56 @@
+<?
+/********************************
+* ISPConfig Dictionary File
+* Version 1.0
+* Chinese Version:  Mike.G <ghw@5anet.com>
+*********************************/
+
+$wb["Datei Upload"] = '文件上传';
+$wb["Ordner neu"] = '新文件夹';
+$wb["Web Auswahl"] = '网站选择';
+$wb["Web ausw鋒len"] = '选择网站';
+$wb["Auswahl"] = '选定';
+$wb["WEB FTP"] = 'WEB FTP';
+$wb["Hilfe"] = '帮助';
+$wb["Name"] = '名称';
+$wb["Gr鰏se"] = '大小';
+$wb["Datum"] = '日期';
+$wb["Eigent黰er"] = '所有者';
+$wb["Alle"] = '所有';
+$wb["Lesen"] = '阅读';
+$wb["Schreiben"] = '写入';
+$wb["Ausf黨ren"] = '执行';
+$wb["Verzeichnisschutz"] = '目录保护';
+$wb["Verzeichnis sch黷zen"] = '保护目录';
+$wb[".htaccess User"] = '.htaccess用户';
+$wb[".htaccess User黚ersicht"] = '覆盖.htaccess用户';
+$wb["Bearbeiten"] = '编辑';
+$wb["Hinzuf黦en"] = '新增';
+$wb["Parameter黚ergabe unvollst鋘dig"] = "参数不完全";
+$wb["Ung黮tiges Format der web_id."] = "非法的web_id格式";
+$wb["Ung黮tige web_id."] = "非法web_id";
+$wb["Konnte server_path_httpd_root nicht ermitteln."] = "未确定变量server_path_httpd_root.";
+$wb["Das Verzeichnis existiert nicht oder Sie haben nicht die notwendigen Berechtigungen."] = "目录不存在或者你没有权限访问。";
+$wb["Der Pfad enth鋖t ung黮tige Zeichen."] = "路径中包含非法字符。";
+$wb["Diese Funktion ist im Demo-Modus deaktiviert"] = "该功能在demo模式下不能运行。";
+$wb["ist ein Link."] = "链接";
+$wb["existiert nicht."] = "不存在。"; // Es geht um: /home/file.htm existiert nicht.
+$wb["konnte nicht gel鰏cht werden."] = "不能删除。";
+$wb["Das Verschieben der Datei ist fehlgeschlagen."] = "移动文件失败。";
+$wb["konnte nicht gel鰏cht werden. Das Verzeichnis muss leer sein und Sie m黶sen Schreibrechte besitzen."] = "不能被删除，目录必须为空并且有可写权限。";
+$wb["Das Verschieben des Verzeichnisses ist fehlgeschlagen."] = "移动目录失败。";
+$wb["Es wurde keine Datei zum Upload ausgew鋒lt."] = "没有选定要上传的文件。";
+$wb["Die Datei existiert bereits in diesem Verzeichnis."] = "同名文件已存在。";
+$wb["M鰃licher Dateiupload Angriff."] = "隐藏的文件上传攻击。";
+$wb["Ordner"] = "文件夹";
+
+$wb["chmod failed."] = "改变权限失败";
+$wb["FTP: Failed to open"] = "FTP: 打开失败 ";
+$wb["Failed to open"] = "打开失败 ";
+$wb["Could not connect to"] = "不能连接 ";
+$wb["Could not connect as user"] = "不能连接";
+$wb["Next >>"] = "<br><br>下一步 >>";
+
+$wb["Catalog_Name"] = "名称";
+
+?>

@@ -1,0 +1,49 @@
+<?
+
+/**********************************************
+* ISPConfig Help File
+* Version 1.2
+* Syntax: $hlp["FieldName"] = "HelpText";
+* Chinese Version:  Mike.G  <ghw@5anet.com>
+************************************************/
+
+$hlp["limit_user"] = "设置经销商可以创建的最大用户个数。";
+$hlp["limit_disk"] = "设置经销商最大可以使用的磁盘配额(单位：MB）。";
+$hlp["limit_web"] = "设置经销商最大可以创建的网站个数。";
+$hlp["limit_domain"] = "设置经销商最大可以创建的域名数。";
+$hlp["limit_http_include"] = "设置经销商是否可以自己添加Apache附件指令。";
+$hlp["limit_dns_manager"] = "设置经销商是否可以创建DNS记录(A, MX, ...)。";
+$hlp["limit_domain_dns"] = "设置经销商最大可以在主域名服务器上建立的域名数。";
+$hlp["limit_slave_dns"] = "设置经销商最大可以在第二个域名服务器上建立的域名数。";
+
+$hlp["limit_cgi"] = "设置经销商是否可以为网站启用CGI功能。";
+$hlp["limit_php"] = "设置经销商是否可以为网站启用PHP功能。";
+$hlp["limit_ruby"] = "设置经销商是否可以为网站启用Ruby功能。";
+$hlp["limit_ssi"] = "设置经销商是否可以为网站启用SSI功能。";
+$hlp["limit_ftp"] = "设置经销商是否可以为网站启用FTP功能。";
+$hlp["limit_frontpage"] = "设置经销商是否可以为网站启用FrongPage扩展功能。";
+$hlp["limit_mysql"] = "设置经销商是否可以启用MySQL数据库支持。";
+$hlp["limit_shell_access"] = "设置经销商是否可以启用shell支持。";
+$hlp["limit_ssl"] = "设置经销商是否可以为网站启用SSL支持，注意：每个ip地址只能有一个网站支持SSL。";
+$hlp["limit_httpd_include"] = "设置经销商是否可以为网站启用自定义Apache附加指令支持(.htaccess)。";
+$hlp["limit_anonftp"] = "设置经销商是否可以为网站启用匿名FTP服务，注意：每一个IP地址只能有一个匿名FTP帐号支持。";
+$hlp["limit_wap"] = "设置经销商是否可以为网站启用WAP支持。";
+$hlp["limit_standard_cgis"] = "设置经销商是否可以为网站启用标准CGI支持。";
+$hlp["limit_mysql_anzahl_dbs"] = "设置经销商最大可以创建的MySQL数据库个数。";
+$hlp["limit_error_pages"] = "设置经销商是否可以自定义出错页面。";
+
+$hlp["firma"] = "请输入经销商公司名。";
+$hlp["vorname"] = "请输入经销商联系人姓氏。";
+$hlp["name"] = "请输入经销商联系人名字。";
+$hlp["strasse"] = "请输入经销商联系地址。";
+$hlp["plz"] = "请输入经销商居住城市邮政编码。";
+$hlp["ort"] = "请输入经销商居住城市。";
+$hlp["land"] = "请输入经销商居住国家。";
+$hlp["telefon"] = "请输入经销商联系电话。";
+$hlp["fax"] = "请输入经销商传真号码。";
+$hlp["email"] = "请输入经销商联系电子邮件。";
+$hlp["internet"] = "请输入经销商网站地址。";
+$hlp["reseller_user"] = "请输入经销商管理员帐号，注意：这个帐号是用来给经销商登录使用的。";
+$hlp["reseller_passwort"] = "请输入经销商管理员帐号密码。";
+$hlp["anrede"] = "请输入经销商联系地址。";
+?>

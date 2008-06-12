@@ -1,0 +1,66 @@
+<?
+/********************************
+* ISPConfig Dictionary File
+* Version 1.0
+* Chinse Version: Mike.G <ghw@5anet.com>
+*********************************/
+
+$wb["Anbieter"]     = "经销商";
+$wb["Web"]          = "网站";
+$wb["Admin Handbuch"] = "管理员手册";
+$wb["Reseller Handbuch"] = "经销商手册";
+$wb["Kunden Handbuch"] = "客户手册";
+$wb["Deutsch"]          = "德语";
+$wb["Englisch"]         = "英语";
+$wb["Projektfarm Support"]          = "Projektfarm支持";
+$wb["Online Hilfe"] = "在线帮助";
+
+$wb["willkommen_kunde"] = "欢迎来到ISPConfig!
+它可以让你更容易的管理您的网站。如果你有任何问题，
+请联系你的系统管理员或者是参考ISPConfig客户手册。";
+$wb["Willkommen"] = "欢迎";
+
+//////////////// Server Status ////////////////
+$wb["Arbeitsspeicher"]          = "主内存";
+$wb["CPU"]          = "CPU";
+$wb["Dienste"]      = "服务";
+$wb["Server Online seit"]          = "在线服务";
+$wb["User Online"]      = "在线用户";
+$wb["System Load 1 Minute"] = "系统负载(1分钟内)";
+$wb["System Load 5 Minuten"] = "系统负载(5分钟内)";
+$wb["System Load 15 Minuten"] = "系统负载(15分钟内)";
+//////////////// Server Status Ende //////////
+
+$wb["Webs angelegt"] = "网站数";
+$wb["User angelegt"] = "用户数";
+$wb["Domains angelegt"] = "域名数";
+$wb["unlimitiert"]  = "无限制";
+$wb["Anbieter"]     = "经销商";
+$wb["DNS-Domains angelegt"] = '域名创建成功！';
+$wb["von"] = "属于";
+
+// NEW 2.0.8 ///////////////////////////////////
+$wb["Französische"]     = "法语";
+// Support Tickets System
+$wb["Unterstützungskarten"] = "Tickets支持";
+$wb["Geöffnete Karten"] = "打开Tickets";
+$wb["Geschlossene Karten"] = "关闭Tickets";
+$wb["Neue Karte"] = "新Ticket";
+$wb["Betreff"] = "主题";
+$wb["Priorität"] = "优先级";
+$wb["Niedrig"] = "低";
+$wb["Mittel"] = "中等";
+$wb["Hoch"] = "高";
+$wb["Ihre frage"] = "问题描述";
+$wb["Senden"] = "发送";
+$wb["Fehler während der schaffung der karte"] = "创建ticket出错";
+$wb["Neue unterstützungskarte, die auf antwort wartet"] = "新ticket已发送，我们会尽快回复您";
+$wb["Sie erhielten eine antwort"] = "接到ticket回复";
+$wb["geantwortet zu ihnen"] = "回复";
+$wb["Datum"] = "日期";
+$wb["Davon"] = "发件人";
+$wb["Ihre antwort"] = "回复";
+$wb["Antworten"] = "答复";
+$wb["Schließen"] = "关闭";
+$wb["Dutch"]         = "荷兰语";
+?>

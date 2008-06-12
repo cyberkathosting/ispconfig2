@@ -1,0 +1,98 @@
+<?
+/********************************
+* ISPConfig Dictionary File
+* Version 1.0
+* Chinese Version:  Mike.G <ghw@5anet.com>
+*********************************/
+
+//////////////// DNS Manager ////////////////
+$wb["Optionen"]     = "选项";
+$wb["Ziel"]         = "目标";
+$wb["Priorität"]   = "优先级";
+$wb["DNS Eintrag"]  = "DNS管理";
+$wb["Ordner neu"]   = "新文件夹";
+$wb["Suchen"]       = "搜索";
+$wb["DNS-Manager"]       = "DNS管理面板";
+$wb["Domain (SOA)"]         = "域名(SOA)";
+$wb["Email Admin"]         = "管理员邮件";
+$wb["Nameserver 1"]         = "域名服务器1";
+$wb["Nameserver 2"]         = "域名服务器2";
+$wb["Refresh"]         = "刷新";
+$wb["Retry"]         = "重试";
+$wb["Expire"]         = "过期";
+$wb["TTL"]         = "TTL";
+$wb["Record"]         = "记录";
+$wb["Record"]         = "记录";
+$wb["Mailserver"]         = "邮件服务器";
+
+$wb["Dokument"] = "文档";
+$wb["neues Dokument anlegen"] = "新文档";
+
+$wb["error_soa_exists_1"] = "您已经创建了一个新域名SOA记录。 ";
+$wb["error_soa_exists_2"] = ".<br>";
+//////////////// DNS Manager Ende ///////////
+
+$wb["IP-Adresse ungültig."] = "不合法的IP地址.";
+$wb["Records"] = '记录';
+$wb["ziel"] = '目标';
+$wb["Neu"] = '新建';
+
+// NEW 1.3 //////////////////////////////////////
+
+$wb["Master neu"] = '新主DNS服务器';
+$wb["Slave neu"] = '新辅DNS服务器';
+$wb["Slave Zone"] = 'Slave Zone';
+$wb["domain"] = '域名';
+$wb["DNS-Master IP"] = '主DNS服务器IP';
+$wb["Name"] = '名称';
+$wb["Masters"] = '主要';
+$wb["Slaves"] = '辅助';
+$wb["SUCHE"] = '搜索';
+
+
+
+//////////////// Server Status ////////////////
+$wb["Arbeitsspeicher"]          = "主内存";
+$wb["CPU"]          = "CPU";
+$wb["Dienste"]      = "服务";
+$wb["Server Online seit"]          = "在线服务";
+$wb["User Online"]      = "在线用户";
+$wb["System Load 1 Minute"] = "系统负载(1分钟内)";
+$wb["System Load 5 Minuten"] = "系统负载(5分钟内)";
+$wb["System Load 15 Minuten"] = "系统负载(15分钟内)";
+//////////////// Server Status Ende //////////
+
+$wb["Webs angelegt"] = "站点数";
+$wb["User angelegt"] = "用户数";
+$wb["Domains angelegt"] = "域名数";
+$wb["unlimitiert"]  = "无限制";
+$wb["Anbieter"]     = "经销商";
+$wb["DNS-Domains angelegt"] = '域名已创建';
+$wb["von"] = "属于";
+$wb["Maximale Anzahl an DNS-Einträgen erreicht."] = "帐号能创建的zone记录已达最大值。<br>";
+$wb["error_no_zones_allowed"] = "无权限创建DNS zone记录。<br>";
+$wb["error_no_dns_anbieter"] = "无权限创建DNS记录。<br>";
+$wb["error_max_slave_dns_anbieter"] = "帐号能创建的辅zones记录已达到最大值。<br>";
+$wb["weiter_link"] = "<br><br> <a href='../../isp_dns/frame_start.php?s=$s'>下一步 &gt;&gt;</a>";
+$wb["error_a_record_exists"] = "A记录已存在。<br>";
+$wb["error_cname_record_exists"] = "CNAME记录已存在。<br>";
+$wb["error_mx_record_exists"] = "MX记录已存在。<br>";
+$wb["error_spf_record_exists"] = "SPF记录已经存在。<br>";
+
+$wb["ja"] = "是";
+$wb["nein"] = "否";
+$wb["a"] = "允许从A记录发送邮件？";
+$wb["mx"] = "允许从MX记录发送邮件？";
+$wb["ptr"] = "允许从本域名所有服务发送邮件？";
+$wb["a_break"] = "允许从其他A记录发送邮件？";
+$wb["mx_break"] = "允许从其他MX记录发送邮件？";
+$wb["ip4_break"] = "允许从其他ip地址发送邮件？";
+$wb["include_break"] = "从本域名记录集成SPF记录么？?";
+$wb["all_"] = "上述所有条目<br>&nbsp;&nbsp;所包含的所有主机<br>&nbsp;&nbsp;允许从该域名发送邮件？";
+
+$wb["Catalog_Name"] = "名称";
+$wb["Feld"] = "字段";
+$wb["Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 -"] = "只允许包括如下字符: a-z A-Z 0-9 -<br>";
+$wb["Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 - ."] = "只允许包括如下字符: a-z A-Z 0-9 - .<br>"; 
+
+?>

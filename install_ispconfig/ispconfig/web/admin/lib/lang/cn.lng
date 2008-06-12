@@ -1,0 +1,504 @@
+<?
+/********************************
+* ISPConfig Dictionary File
+* Version 1.0
+* Chinese Version: Mike.G <ghw@5anet.com>
+*********************************/
+
+//////////////// Server Status ////////////////
+$wb["Arbeitsspeicher"]          = "主内存";
+$wb["CPU"]          = "CPU";
+$wb["Dienste"]      = "服务";
+$wb["Server Online seit"]          = "在线服务器";
+$wb["User Online"]      = "在线用户";
+$wb["System Load 1 Minute"] = "系统负载(1分钟内)";
+$wb["System Load 5 Minuten"] = "系统负载(5分钟内)";
+$wb["System Load 15 Minuten"] = "系统负载(15分钟内)";
+//////////////// Server Status Ende //////////
+
+///////////////// Administration ////////////////
+$wb["ISPConfig Datenbank"]    = "ISPConfig数据库";
+$wb["Backup erstellen"]       = "数据备份";
+$wb["Datenbank Check"]        = "检测数据库";
+$wb["Datenbank Optimieren"]   = "优化数据库";
+$wb["Datenbank Reparieren"]   = "修复数据库";
+$wb["Eigenschaften"] = "设置";
+$wb["Server Name"]  = "服务名称";
+$wb["Netzmaske"]    = "网络掩码";
+$wb["Sprache"]      = "语言";
+$wb["IP Liste"]     = "IP列表";
+$wb["hinweis_ip_liste"] = "<b>提示:</b>每行一个ip地址";
+$wb["Pfad"]         = "路径";
+$wb["Programm"]     = "程序名";
+$wb["Reparatur"]    = "修复";
+$wb["Optimiere"]    = "优化";
+$wb["Pfad httpd.conf"]    = "httpd.conf路径";
+$wb["MTA Typ"]    = "MTA Type";
+$wb["Virtuser Datei"]    = "虚拟用户文件";
+$wb["FTP Programm"]    = "FTP服务器";
+$wb["FTP conf. Datei"]    = "FTP配置文件";
+$wb["Userid von"]    = "用户ID设置";
+$wb["Groupid von"]    = "组ID设置";
+
+$wb["Backup von Tabelle"] = "备份数据库表";
+$wb["Optimiere"] = "优化";
+$wb["Reparatur"] = "修复";
+$wb["oder"] = "或者";
+$wb["Installation starten"] = "安装";
+
+$wb["Deutsch"] = "德语";
+$wb["Englisch"] = "英语";
+$wb["Datei"] = "文件";
+
+//////////////// Administration Ende ///////////
+
+//////////////// Firewall, Monitor + Dienste  ////////////////
+
+$wb["躡erwachung"] = "监控";
+$wb["Firewall"] = "防火墙";
+$wb["Web-Server"] = "Web服务器";
+$wb["FTP-Server"] = "FTP服务器";
+$wb["SMTP-Server"] = "SMTP服务器";
+$wb["DNS-Server"] = "DNS服务器";
+$wb["mySQL-Server"] = "mySQL服务器";
+$wb["An"] = "开启";
+$wb["Aus"] = "关闭";
+$wb["neu Starten"] = "重启";
+$wb["Neu"] = "增加";
+$wb["Aktionen"] = "动作";
+$wb["Dienst"] = "服务";
+$wb["Hostname"] = "主机名";
+$wb["Port"] = "端口";
+$wb["Typ"] = "类型";
+$wb["TCP"] = "TCP";
+$wb["UDP"] = "UDP";
+$wb["Der Dienst-Typ wird nur bei sonstigen-Diensten ausgewertet."] = "The type of service will only be analyzed in case of other services.";
+$wb["Sonstige"] = "其他";
+$wb["Ja"] = "是";
+$wb["Nein"] = "否";
+$wb["Offline"] = "离线";
+$wb["ISP Dienste"] = "ISP服务";
+$wb["ISP 躡erwachung"] = "ISP监控";
+$wb["ISP Firewall"] = "ISP防火墙";
+$wb["Name"] = "名称";
+$wb["Aktiv"] = "激活";
+$wb["Firewall Regel"] = "防火墙规则";
+$wb["Dieser Port kann nicht ge鋘dert werden."] = "端口不允许更改。<br>";
+$wb["Dieser Port kann nicht deaktiviert werden."] = "不能释放端口。<br>";
+
+//////////////// Firewall ENDE ////////////////
+
+//////////////// LNG 1.1.12 BEGIN /////////////
+
+$wb["ISP Server"] = 'ISP服务器';
+$wb["Admin Email"] = '管理邮件';
+$wb["EMail"] = '邮件';
+$wb["Funktionen"] = '功能';
+$wb["httpd User"] = 'httpd用户';
+$wb["httpd Group"] = 'httpd组';
+$wb["Document Root"] = '文档根目录';
+$wb["Frontpage Pfad"] = 'Frontpage路径';
+$wb["access Log"] = 'access(存取)日志';
+$wb["Sendmail"] = 'Sendmail';
+$wb["Sendmail CW"] = 'Sendmail CW';
+$wb["Log speichern"] = '保存日志';
+$wb["BIND User"] = 'BIND用户';
+$wb["BIND Group"] = 'BIND组';
+$wb["Zonefiles Dir."] = 'Zone文件目录';
+$wb["Default Ns1"] = 'Default Ns1';
+$wb["Default Ns2"] = 'Default Ns2';
+$wb["Standard MX"] = 'Default MX';
+$wb["Frontpage Extensions"] = 'Frontpage扩展';
+$wb["User Prefix"] = 'User前缀';
+$wb["Anbieter Nr. von"] = '经销商ID范围';
+$wb["Kunden Nr. von"] = '客户ID范围';
+$wb["SOAP Server IP"] = 'SOAP服务器';
+$wb["SOAP Server Port"] = 'SOAP服务端口';
+$wb["Web-FTP"] = 'Web-FTP';
+$wb["ISP Faktura"] = 'ISP清单';
+$wb["Modul Manager"] = '模块管理面板';
+$wb["Hinzuf黦en"] = '新增';
+$wb["Alle anzeigen"] = '显示所有';
+$wb["Update Manager"] = '更新管理面板';
+$wb["Update"] = '更新';
+$wb["System Config"] = '系统配置';
+$wb["Bearbeiten"] = '编辑';
+$wb["Importieren"] = '导入';
+$wb["Exportieren"] = '到处';
+$wb["Allgemein"] = '通用设置';
+$wb["ISP-Manager"] = 'ISP管理面板';
+$wb["Faktura"] = '发票';
+$wb["躡ernehmen"] = '保存';
+$wb["Webserver"] = 'Web服务器';
+$wb["Bind DNS"] = 'Bind DNS';
+$wb["Mailserver"] = 'Mailserver';
+$wb["POP3-Server"] = 'POP3 Server';
+$wb["nein"] = '否';
+$wb["ja"] = '是';
+$wb["ISP Server Status"] = 'ISP服务器状态';
+$wb["System-Datenbank"] = '系统数据库';
+$wb["Verzeichnis"] = '文件夹';
+$wb["Backup starten"] = '备份';
+
+// NEW 1.1.12a //////////////////////////////
+
+$wb["Es wurde kein Web ausgew鋒lt."] = "没有选中网站。";
+$wb["Backup-Funktionen im Demo-Modus nicht verf黦bar."] = "在测试环境中不能使用备份功能。";
+$wb["Backup Status"] = "备份状态";
+$wb["Der Name des FTP-Servers <br>enth鋖t ung黮tige Zeichen."] = "FTP服务器名称包含不合法字符。";
+$wb["Sie haben keinen FTP Benutzernamen angegeben."] = "没有设定FTP服务器帐号。";
+$wb["Ftp-Verbindung nicht hergestellt!"] = "FTP连接失败!";
+$wb["Verbindung mit:"] = "连接到:";
+$wb["als Benutzer:"] = "用户:";
+$wb["nicht m鰃lich."] = "拒绝存取";
+$wb["Konnte nicht in Verzeichnis:"] = "改变目录:";
+$wb["wechseln."] = "失败.";
+$wb["Wechsel in Verzeichnis:"] = "改变目录:";
+$wb["Ftp upload war fehlerhaft!"] = "FTP上传失败!";
+$wb["Upload erfolgreich."] = "上传成功";
+$wb["FTP-Upload Status"] = "FTP上传状态";
+$wb["Backup-Methode nicht unterst黷zt."] = "不支持该备份方式！";
+$wb["Rechnung Nr. von"] = "发票号. from";
+
+//////////////// LNG 1.1.12 ENDE ///////////////
+
+// NEW 1.3 /////////////////////////////////////
+
+$wb["Remoting"] = '远程';
+$wb["User"] = '用户';
+$wb["Conf. Dir."] = '配置目录';
+$wb["Suexec"] = 'Suexec';
+$wb["Postfix"] = 'Postfix';
+$wb["Mail Log"] = '邮件日志';
+$wb["Maildir"] = 'Maildir';
+$wb["Antivir Mailadmin"] = 'Antivirus-Admin';
+$wb["aktiv"] = "激活";
+$wb["inaktiv"] = "禁止";
+$wb["weiter_link"] = "<br><br> <a href='../../isp_manager/frame_start.php?s=$s'>下一步 &gt;&gt;</a>";
+$wb["txt_client_salutatory_email_desc"] = "<b>客户邮件</b>";
+$wb["txt_client_salutatory_email_sender_email"] = "发件人邮件";
+$wb["txt_client_salutatory_email_sender_name"] = "发件人";
+$wb["txt_client_salutatory_email_bcc"] = "抄送";
+$wb["txt_client_salutatory_email_subject"] = "主题";
+$wb["txt_client_salutatory_email_message"] = "正文";
+$wb["txt_client_salutatory_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>可以在正文中使用如下标记:</b></td></tr>
+        <tr>
+          <td class="normal">%%%USER%%%</td>
+          <td class="normal">
+            客户用户名</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%PASSWORD%%%</td>
+          <td class="normal">
+            客户帐号密码</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%FIRST_NAME%%%</td>
+          <td class="normal">
+            客户姓氏</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%LAST_NAME%%%</td>
+          <td class="normal">
+            客户名称</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%COMPANY%%%</td>
+          <td class="normal">
+            客户公司名</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%EMAIL%%%</td>
+          <td class="normal">
+            客户邮件地址</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%CP%%%</td>
+          <td class="normal">
+            ISPConfig登录URL</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%MANUAL%%%</td>
+          <td class="normal">
+            ISPConfig客户手册</td>
+        </tr>
+        </table>';
+
+$wb["txt_res_salutatory_email_desc"] = "<b>经销商联系邮件</b>";
+$wb["txt_res_salutatory_email_sender_email"] = "发件人邮件地址";
+$wb["txt_res_salutatory_email_sender_name"] = "发件人";
+$wb["txt_res_salutatory_email_bcc"] = "抄送";
+$wb["txt_res_salutatory_email_subject"] = "主题";
+$wb["txt_res_salutatory_email_message"] = "正文";
+$wb["txt_res_salutatory_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>可以在正文中使用如下标记:</b></td></tr>
+        <tr>
+          <td class="normal">%%%USER%%%</td>
+          <td class="normal">
+            经销商用户名</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%PASSWORD%%%</td>
+          <td class="normal">
+            经销商帐户密码</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%FIRST_NAME%%%</td>
+          <td class="normal">
+            经销商联系人姓氏</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%LAST_NAME%%%</td>
+          <td class="normal">
+            经销商联系人名称</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%COMPANY%%%</td>
+          <td class="normal">
+            经销商公司名称</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%EMAIL%%%</td>
+          <td class="normal">
+            经销商邮件地址</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%CP%%%</td>
+          <td class="normal">
+            ISPConfig登录URL</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%MANUAL%%%</td>
+          <td class="normal">
+            ISPConfig经销商手册</td>
+        </tr>
+        </table>';
+$wb["txt_standard_index"] = "Standard Index<br>&nbsp;&nbsp;Page";
+$wb["txt_standard_index_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>可以在正文中使用如下标记:</b></td></tr>
+        <tr>
+          <td class="normal">%%%FQDN%%%</td>
+          <td class="normal">
+            网站地址(i.e. www.5anet.com)</td>
+        </tr>
+    </table>';
+$wb["txt_user_standard_index"] = "用户名格式<br>&nbsp;&nbsp;Index Page";
+$wb["txt_user_standard_index_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>可以在正文中使用如下标记:</b></td></tr>
+        <tr>
+          <td class="normal">%%%USER%%%</td>
+          <td class="normal">
+            用户名</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%FQDN%%%</td>
+          <td class="normal">
+            网站地址(i.e. www.5anet.com)</td>
+        </tr>
+        </table>';
+
+//////////////// Remoting //////////////////////
+$wb["Hinzuf黦en"] = "新增";
+$wb["Berechtigungen"] = "权限";
+$wb["Speichern"] = "保存";
+$wb["L鰏chen"] = "删除";
+$wb["Abbrechen"] = "取消";
+$wb["IP-Adresse"] = "IP地址";
+$wb["DNS-Query"] = "查询主DNS记录";
+$wb["DNS-Insert"] = "创建主DNS记录";
+$wb["DNS-Update"] = "编辑主DNS记录";
+$wb["DNS-Delete"] = "删除主DNS记录";
+$wb["slave_query"] = "查询辅DNS记录";
+$wb["slave_insert"] = "创建辅DNS记录";
+$wb["slave_update"] = "编辑辅DNS记录";
+$wb["slave_delete"] = "删除辅DNS记录";
+$wb["reseller_query"] = "查询经销商";
+$wb["reseller_insert"] = "创建经销商";
+$wb["reseller_update"] = "编辑经销商";
+$wb["reseller_delete"] = "删除经销商";
+$wb["kunde_query"] = "查询客户";
+$wb["kunde_insert"] = "创建客户";
+$wb["kunde_update"] = "编辑客户";
+$wb["kunde_delete"] = "删除客户";
+$wb["web_query"] = "查询网站";
+$wb["web_insert"] = "创建网站";
+$wb["web_update"] = "编辑网站";
+$wb["web_delete"] = "删除网站";
+$wb["txt_primary_dns_records"] = "主DNS记录";
+$wb["txt_secondary_dns_records"] = "辅DNS记录";
+$wb["txt_anbieter"] = "经销商";
+$wb["txt_kunden"] = "客户";
+$wb["txt_webs"] = "网站";
+
+$wb["txt_traffic_suspension_email_desc"] = "<b>网站暂停通知 (流量超出)</b>";
+$wb["txt_traffic_suspension_sender_email"] = "发件人邮箱";
+$wb["txt_traffic_suspension_sender_name"] = "发件人";
+$wb["txt_traffic_suspension_email_bcc"] = "抄送";
+$wb["txt_traffic_suspension_email_subject"] = "主题";
+$wb["txt_traffic_suspension_email_message"] = "正文";
+$wb["txt_traffic_suspension_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>可以在正文中使用如下标记:</b></td></tr>
+        <tr>
+          <td class="normal">%%%FIRST_NAME%%%</td>
+          <td class="normal">
+            客户姓氏</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%LAST_NAME%%%</td>
+          <td class="normal">
+            客户名称</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%WEBSITE%%%</td>
+          <td class="normal">
+            客户网站</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%MONTH%%%</td>
+          <td class="normal">
+            流量超出月份</td>
+        </tr>
+        <tr>
+          <td class="normal" valign="top">%%%INCLUDED_TRAFFIC%%%</td>
+          <td class="normal">
+            客户购买主机服务的流量限制</td>
+        </tr>
+        <tr>
+          <td class="normal" valign="top">%%%TOTAL_TRAFFIC%%%</td>
+          <td class="normal">
+            超出月当月总流量</td>
+        </tr>
+        </table>';
+
+$wb["txt_traffic_notification_email_desc"] = "<b>流量超出通知</b>";
+$wb["txt_traffic_notification_sender_email"] = "发件人邮件";
+$wb["txt_traffic_notification_sender_name"] = "发件人";
+$wb["txt_traffic_notification_email_bcc"] = "抄送";
+$wb["txt_traffic_notification_email_subject"] = "主题";
+$wb["txt_traffic_notification_email_message"] = "正文";
+$wb["txt_traffic_notification_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>可以在正文中使用如下标记:</b></td></tr>
+        <tr>
+          <td class="normal">%%%FIRST_NAME%%%</td>
+          <td class="normal">
+            客户姓氏</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%LAST_NAME%%%</td>
+          <td class="normal">
+            客户名称</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%WEBSITE%%%</td>
+          <td class="normal">
+            客户网站</td>
+            </tr>
+        <tr>
+          <td class="normal">%%%MONTH%%%</td>
+          <td class="normal">
+            流量超出月份</td>
+        </tr>
+        <tr>
+          <td class="normal" valign="top">%%%INCLUDED_TRAFFIC%%%</td>
+          <td class="normal">
+            客户购买主机服务的流量限制</td>
+        </tr>
+        <tr>
+          <td class="normal" valign="top">%%%TOTAL_TRAFFIC%%%</td>
+          <td class="normal">
+            超出月当月总流量</td>
+        </tr>
+        </table>';
+
+$wb["txt_res_traffic_suspension_email_desc"] = "<b>经销商暂停通知 (流量超出)</b>";
+$wb["txt_res_traffic_suspension_sender_email"] = "发件人邮件";
+$wb["txt_res_traffic_suspension_sender_name"] = "发件人";
+$wb["txt_res_traffic_suspension_email_bcc"] = "抄送";
+$wb["txt_res_traffic_suspension_email_subject"] = "主题";
+$wb["txt_res_traffic_suspension_email_message"] = "正文";
+$wb["txt_res_traffic_suspension_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>可以在正文中使用如下标记:</b></td></tr>
+        <tr>
+          <td class="normal">%%%FIRST_NAME%%%</td>
+          <td class="normal">
+            经销商联系人姓氏</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%LAST_NAME%%%</td>
+          <td class="normal">
+            经销商联系人名称</td>
+            </tr>
+        <tr>
+          <td class="normal">%%%MONTH%%%</td>
+          <td class="normal">
+            流量超出月份</td>
+        </tr>
+        <tr>
+          <td class="normal" valign="top">%%%INCLUDED_TRAFFIC%%%</td>
+          <td class="normal">
+            经销商购买主机服务的流量限制</td>
+        </tr>
+        <tr>
+          <td class="normal" valign="top">%%%TOTAL_TRAFFIC%%%</td>
+          <td class="normal">
+            超出月当月总流量</td>
+        </tr>
+        </table>';
+
+$wb["txt_res_traffic_notification_email_desc"] = "<b>经销商流量超出通知</b>";
+$wb["txt_res_traffic_notification_sender_email"] = "发件人邮件";
+$wb["txt_res_traffic_notification_sender_name"] = "发件人";
+$wb["txt_res_traffic_notification_email_bcc"] = "抄送";
+$wb["txt_res_traffic_notification_email_subject"] = "主题";
+$wb["txt_res_traffic_notification_email_message"] = "正文";
+$wb["txt_res_traffic_notification_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>可以在正文中使用如下标记:</b></td></tr>
+        <tr>
+          <td class="normal">%%%FIRST_NAME%%%</td>
+          <td class="normal">
+            经销商联系人姓氏</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%LAST_NAME%%%</td>
+          <td class="normal">
+            经销商联系人名称</td>
+            </tr>
+        <tr>
+          <td class="normal">%%%MONTH%%%</td>
+          <td class="normal">
+            流量超出月份</td>
+        </tr>
+        <tr>
+          <td class="normal" valign="top">%%%INCLUDED_TRAFFIC%%%</td>
+          <td class="normal">
+            经销商购买主机服务的流量限制</td>
+        </tr>
+        <tr>
+          <td class="normal" valign="top">%%%TOTAL_TRAFFIC%%%</td>
+          <td class="normal">
+            超出月当月总流量</td>
+        </tr>
+        </table>';
+
+$wb["txt_global_stats"] = "<b>全局网站Webalizer统计登录</b>";
+$wb["txt_global_stats_user"] = "全局统计用户帐号";
+$wb["txt_global_stats_password"] = "密码";
+
+?>

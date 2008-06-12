@@ -1,0 +1,112 @@
+<?
+/********************************
+* ISPConfig Dictionary File
+* Version 1.0
+* Chinese Translate: Mike.G <ghw@5anet.com>
+*********************************/
+
+/////////////// Allgemein - general (kommt in mehreren Modulen vor) /////////
+$wb["login_begruessung"]     = "登录:";
+$wb["Username"]     = "用户名";
+$wb["Passwort"]     = "密码";
+$wb["Login"]       = "登录";
+$wb["Administration"]  = "管理面板";
+$wb["ISP Manager"]  = "ISP管理面板";
+$wb["DNS Manager"]  = "DNS管理面板";
+$wb["Tools"]        = "工具集";
+$wb["Logout"]       = "登出";
+$wb["Status"]       = "状态";
+$wb["neu"]          = "新建";
+$wb["Hinweis"]      = "参考";
+$wb["Web"]          = "网站";
+$wb["Email"]        = "电子邮件";
+$wb["FTP"]          = "FTP";
+$wb["DNS"]          = "DNS";
+$wb["Sonstiges"]    = "其他";
+$wb["Datei"]        = "文件";
+$wb["von"]          = "from"; // besser 'ab'?
+$wb["error_headline"] = "有错误发生:";
+$wb["Gruppe"]       = "组";
+$wb["Titel"]        = "标题";
+$wb["Server"]       = "服务";
+$wb["Host"]         = "主机名";
+$wb["Domain"]       = "域名";
+$wb["IP Adresse"]   = "IP地址";
+$wb["Ordner"]       = "文件夹";
+$wb["Dokument"]     = "文档";
+$wb["Dokument suchen"] = "文档搜索";
+$wb["Suchmaske"]    = "Search terms";
+$wb["Ausgabeformat"] = "输出格式";
+$wb["Standard"]     = "标准";
+$wb["Eintr鋑e"]    = "入口";
+$wb["Papierkorb leeren"] = "晴空回收站";
+$wb["Stammordner"]  = "Master Zone";
+$wb["keine Gruppe"] = "不存在的组";
+$wb["neues Dokument anlegen"] = "新文档已经被创建";
+$wb["auf"]   = "展开";
+$wb["zu"]    = "叠起";
+$wb["in_ordner"]    = "文件夹";
+$wb["Papierkorb"]   = "回收站";
+$wb["Wiederherstellen"]    = "恢复";
+$wb["Papierkorb: Eintr鋑e"]   = "回收站: 内容";
+$wb["Speichern"]    = "保存";
+$wb["L鰏chen"]    = "删除";
+$wb["Abbrechen"]    = "取消";
+$wb["Suchen"]    = "搜索";
+
+$wb["Herr"] = "先生";
+$wb["Frau"] = "女士";
+
+$wb["Es ist folgender Fehler aufgetreten:"] = "有错误发生:";
+
+$wb["Web-FTP"] = 'Web-FTP';
+$wb["ISP Faktura"] = 'ISP发票';
+
+$wb["Verzeichnis 鰂fnen"] = "打开";
+$wb["Verzeichnis schliessen"] = "关闭";
+$wb["Hilfe"] = '帮助';
+$wb["Online Hilfe"] = '在线手册';
+$wb["schliessen"] = '关闭';
+
+$wb["PAPIERKORB_HINWEIS"] = "<b>注意:</b> 不能清空回收站！部分文件还正在使用中。";
+
+
+// Multidoc  Allgemein ////////////////////////////////
+
+$wb["title_required"] = "标题不能为空！请输入一个合法的标题。";
+$wb["error_keine_rechte"] = "您没有权限存取该功能,请联系管理员。";
+$wb["error_doctype_nicht_vorhanden"] = "文档类型不存在！";
+$wb["error_doctype_rechte"] = "你没有权限编辑该文档类型, 请联系管理员。";
+$wb["Formular Designer"] = "表单设计器";
+$wb["Geben Sie einen Wert in das Feld"] = "值不能为空，请输入合法的值。";
+$wb["jscript_ein"] = " ";
+
+
+////////////// Allgemein Ende ///////////////////
+
+$wb["Es konnte ein Dokument nicht wiederhergestellt werden, da sich das Eltern-Dokument noch im Papierkorb befindet.\n"] = "不能恢复该对象，因为其父对象被放入了回收站。请先恢复父对象。";
+
+$wb["DNS-Domains angelegt"] = '成功创建Master Zones';
+$wb["Benutzter Diskspace"] = "磁盘使用量";
+$wb["Slave Zones angelegt"] = "成功创建Slave Zones";
+$wb["Datenbanken angelegt"] = "成功创建数据库";
+
+$wb["txt_confirm_delete"] = "您确认删除该对象？";
+
+$wb["txt_object_currently_updated"] = "当前所做改变未保存，该项目被其他程序更新，请稍后再试。<br><br> <a href='../frame_start.php?s=$s'>下一步 &gt;&gt;</a>";
+$wb["txt_system_currently_updated_no_recycle_bin"] = "系统正在更新，不能访问回收站，请稍后再试。<br><br> <a href='../frame_start.php?s=$s'>下一步 &gt;&gt;</a>";
+
+$wb['no_permission_to_change_data'] = "<b> 错误: 您没有权限改变这些数据。</b><p>
+                <br>
+                由于如下这些原因产生了错误，请仔细检查：<br>
+                1. 您正在使用系统的测试模式？<br>
+                    - 请使用您的用户名和密码重新登录。<br>&nbsp;<br>
+                2. 您想改变一个您没有权限存取的数据。<br>
+                    - 请联系管理员。<br>&nbsp;<br>
+                <center><a href=\"" . $go_info["server"]["server_url"] . "/index.php?s=$s\">下一步 &gt;&gt;</a></center>";
+
+$wb["Weiter"] = "下一步";
+$wb["Zur點k"] = "上一步";
+
+
+?>

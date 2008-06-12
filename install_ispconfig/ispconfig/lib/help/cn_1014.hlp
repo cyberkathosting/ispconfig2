@@ -1,0 +1,27 @@
+<?
+
+/**********************************************
+* ISPConfig Help File
+* Version 1.2
+* Syntax: $hlp["FieldName"] = "HelpText";
+* Chinese Version:  Mike.G  <ghw@5anet.com>
+************************************************/
+
+$hlp["user_username"] = "请指定一个用户名，合法的用户名包括26个字母，特殊字符(%, @...), 但是最长不能超过26个字符。";
+$hlp["user_passwort"] = "请指定用户密码，合法的密码包括26个字母，特殊字符(%, @...), 空白等。";
+$hlp["user_speicher"] = "请输入用户存储空间大小。";
+$hlp["user_admin"] = "将该用户配置为网站的管理员帐号，注意：每个网站只能有一个管理员帐号。";
+$hlp["user_shell"] = "为用户启用shell功能，方便用户远程登录系统和管理系统。";
+$hlp["user_emailalias"] = "输入多个邮件别名，每个别名邮件都将收到邮件。注意：只需要输入\"@\"之前的所有字符串，例如：邮件：ghw@5anet.com, 只需要输入ghw。";
+$hlp["user_name"] = "请输入用户的真是姓名。";
+$hlp["user_autoresponder"] = "为用户邮箱启动自动回复功能。";
+$hlp["user_autoresponder_text"] = "请为自动回复设置回复消息。";
+$hlp["user_mailquota"] = "请指定用户邮箱的磁盘配额：邮箱的大小限制。";
+$hlp["user_catchallemail"] = "勾选复选框，会使得所有无法投递的本站邮件全部转到本邮箱。注意：一个网站只能设置一个邮件地址接受这个选项。";
+$hlp["user_mailscan"] = "激活邮箱病毒扫描功能。可疑扩展名附件将被自动改名，防止用户双击运行一些可疑附件。";";";";
+$hlp["user_spamfilter"] = "激活邮箱垃圾邮件过滤功能。";
+$hlp["user_emailweiterleitung_local_copy"] = "勾选本地备份，所有收到的邮件将被自动备份，知道转发到其他的邮箱。";
+$hlp["user_email"] = "请指定邮件地址（注意：只需要填写\"@\"之前的部分）可以输入任意常的字符，特殊字符(%, @...), 空格等。";
+$hlp["user_emailweiterleitung"] = "请输入转发邮件地址。";
+
+?>

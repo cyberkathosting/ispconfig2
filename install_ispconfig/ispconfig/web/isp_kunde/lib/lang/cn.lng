@@ -1,0 +1,567 @@
+<?
+/********************************
+* ISPConfig Dictionary File
+* Version 1.0
+* Chinese Version:  Mike.G <ghw@5anet.com>
+*********************************/
+
+
+///////////////// ISP Manager //////////////////
+$wb["Anbieter"]     = "经销商";
+$wb["Kunde"]        = "客户";
+$wb["Suchen"]       = "搜索";
+$wb["Stammdaten"]   = "主要数据";
+$wb["Limits"]       = "限制";
+$wb["Zugangsdaten"] = "登录数据";
+$wb["Statistik"]    = "统计";
+$wb["Firma"]        = "公司";
+$wb["Anrede"]       = "标题";
+$wb["Vorname"]      = "姓氏";
+$wb["Name"]         = "名称";
+$wb["Strasse"]      = "街道";
+$wb["PLZ"]          = "邮编";
+$wb["Ort"]          = "市";
+$wb["Land"]         = "国家";
+$wb["Telefon"]      = "电话";
+$wb["Fax"]          = "传真";
+$wb["Internet"]     = "网站";
+$wb["謋fnen"]      = "打开";
+$wb["Benutzername"] = "用户名"; // besser: vielleicht nur Variable $wb["username"] benutzen?
+$wb["zugangsdaten_anbieter_einleitung"] = "请给经销商设置一个管理员帐号和密码。";
+$wb["zugangsdaten_kunde_einleitung"] = "请给客户设置一个管理员帐号和密码<br>，用于管理客户网站。<br>";
+$wb["Web Verwaltung"] = "网站管理";
+$wb["Rechnung"]      = "帐单";
+$wb["Rechnungsanschrift:"] = "帐单地址:<br>";
+$wb["Intervall"]    = "区";
+$wb["Preis"]        = "价格";
+$wb["Zahlungsart"]  = "支付方法";
+$wb["Basis"]        = "基准";
+$wb["Create DNS"]   = "创建DNS";
+$wb["Speicher MB"]     = "空间MB";
+$wb["Max. User"]        = "用户最大数";
+$wb["Max. Domain"]        = "域名最大数";
+$wb["PHP Scripte"]        = "PHP脚本";
+$wb["SSI"]        = "SSI";
+$wb["FTP Zugang"]        = "FTP存取";
+$wb["MySQL"]        = "MySQL";
+$wb["SSL"]        = "SSL";
+$wb["Shell Zugriff"]      = "Shell存取";
+$wb["Zugang"]       = "存取";  // Zugriff u. Zugang zusammenfassen!/nur einen Begriff nehmen!
+$wb["CGI Scripte"]      = "CGI脚本";
+$wb["Bundesland"]   = "省";
+$wb["Abteilung"]    = "部门";
+$wb["G黮tigkeit (Tage)"]  = "有效期 (天)";
+$wb["SSL Key"]          = "SSL键";
+$wb["SSL Zertifikat"]   = "SSL证书";
+$wb["Aktion"]       = "动作";
+$wb["Zertifikat erzeugen"] = "创建证书";
+$wb["Zertifikat speichern"] = "保存证书";
+$wb["Zertifikat l鰏chen"] = "删除证书";
+$wb["Speicherplatz gesamt"] = "磁盘空间";
+$wb["unlimitiert"]  = "无限制";
+$wb["verbraucht"]   = "已使用";
+$wb["Traffic黚ersicht"] = "流量查看";
+$wb["Monat"]        = "月";
+$wb["Traffic"]      = "流量";
+$wb["traffic_letzte_4"] = "最近四年网站流量";
+$wb["Jahr"]         = "年";
+$wb["MySQL User"]        = "MySQL用户";
+$wb["MySQL Passwort"]    = "MySQL密码";
+
+// Erg鋘zungen /////////////////////////////////
+$wb["Anbieter neu"] = "新经销商";
+$wb["Kunde neu"]    = "新客户";
+$wb["Web neu"]      = "新网站";
+$wb["Ordner neu"]   = "新文件夹";
+$wb["Suchen"]       = "搜索";
+$wb["ISP Anbieter"] = "ISP经销商";
+$wb["Webs"] = "网站";
+$wb["User"] = "用户";
+$wb["Domains"] = "域名";
+$wb["Zahlung"] = "支付";
+$wb["ISP Kunde"] = "ISP客户";
+$wb["ISP Web"] = "ISP网站";
+$wb["Kunden"] = "客户";
+$wb["Dokument suchen"] = "文档搜索";
+
+$wb["User & Email"] = "用户 & 邮件";
+$wb["Co-Domains"] = "Co-Domains";
+$wb["SSL"] = "SSL";
+$wb["Optionen"] = "选项";
+
+$wb["Webs angelegt"] = "已有网站";
+$wb["User angelegt"] = "已有用户";
+$wb["Domains angelegt"] = "已有域名";
+$wb["rechnungsanschrift"] = "发票地址:<br> ";
+
+$wb["neues Web anlegen"] = "新网站";
+$wb["weiter"] = "下一个";
+$wb["SUCHE"] = "搜索";
+
+$wb["msg_beta"] = "";
+$wb["title_isp_beta"] = "";
+$wb["msg_kein_win"] = "该软件不适合windows系列操作系统。";
+
+// Error Codes ispconfig_isp_datenbank.lib.php
+$wb["error_db_nicht_erlaubt"] = "该网站不允许有MySQL数据库支持。<br>";
+$wb["error_db_leeres_passwort"] = "请设置密码！<br>";
+$wb["error_db_exist_1"] = "命名数据库";
+$wb["error_db_exist_2"] = "已存在<br>";
+$wb["error_db_user_exist_1"] = "数据库用户";
+$wb["error_db_user_exist_2"] = "已存在。<br>";
+$wb["error_max_db_web"] = "已达到网站支持最大数据库数。<br>";
+$wb["error_max_db_anbieter"] = "已达到该主机支持最大数据库数。<br>";
+
+// Error Codes ispconfig_isp_domain.lib.php
+$wb["error_web_doppelt"] = "名称";
+$wb["error_max_domain_web"] = "已达到该网站支持最大域名数。<br>";
+$wb["error_max_domain_anbieter"] = "已达到该主机支持的最大域名数。<br><br>";
+$wb["angelegt"] = " 意被另一个域名或者是网站使用。<br>";
+$wb["error_domain_forward"] = "域名转发包含一个非法的字符。<br>";
+
+// Error Codes ispconfig_isp_kunde.lib.php
+$wb["error_user_exist_1"] = "ISPConfig用户";
+$wb["error_user_exist_2"] = "已存在。<br>";
+$wb["error_max_user_licence"] = "已达到该ISPConfig 许可证支持的最大ispconfig用户数。<br>";
+
+
+// Error Codes ispconfig_isp_reseller.lib.php
+$wb["error_reseller_title"] = "经销商已存在。<br>";
+$wb["error_reseller_group_not_found"] = "经销商组不存在。<br>";
+$wb["error_anbieter_no_delete"] = "<b>删除经销商失败。</b><br>&nbsp;<br>必须删除所有经销商名下所有网站和客户才能删除经销商，并且必须清空回收站。<br>";
+$wb["error_anbieter_no_restore"] = "恢复经销商失败。<br>";
+
+// Error Codes ispconfig_isp_user.lib.php
+$wb["error_sysuser_exist_1"] = "用户名";
+$wb["error_sysuser_exist_2"] = "已存在。<br>";
+$wb["error_max_user_web"] = "网站用户数已达到最大值。<br>";
+$wb["error_max_space_web"] = "网站空间使用已大最大值。<br>";
+$wb["error_max_user_anbieter"] = "经销商最大用户数已达到最大值。<br>";
+$wb["error_sysuser_exist"] = "已存在的用户名。<br>";
+$wb["error_admin_exist"] = "网站管理员已存在。<br>";
+$wb["error_admin_exist_long"] = "网站管理员已存在，必须先移去管理员权限，才能赋予该用户管理员权限。<br>";
+
+// Error Codes ispconfig_isp_user.lib.php
+$wb["error_max_web_anbieter"] = "经销商最大网站数已达最大值。<br>";
+$wb["error_web_ssl_exist"] = "该IP地址SSL证书已存在。<br>";
+
+// Plugins
+$wb["CPU Auslastung 1 Minute"] = "CPU使用量(1分钟内)";
+$wb["CPU Auslastung 5 Minuten"] = "CPU使用量(5分钟内)";
+$wb["CPU Auslastung 15 Minuten"] = "CPU使用量(15分钟内)";
+$wb["Server Online seit"] = "在线服务";
+$wb["User Online"] = "在线用户";
+$wb["error_web_id"] = "该插件需要一个合法的web ID.";
+$wb["von"] = "属于";
+$wb["Gesamt"] = "全部";
+$wb["Traffic in den letzten 4 Jahren"] = "过去四年的流量";
+
+$wb["Backup von Tabelle"] = "备份表";
+$wb["Optimiere"] = "优化";
+$wb["Reparatur"] = "修复";
+$wb["oder"] = "或者";
+$wb["Installation starten"] = "安装";
+
+$wb["Monatlich"] = "按月";
+$wb["Quartal"] = "季度";
+$wb["Halbj鋒rlich"] = "半年";
+$wb["J鋒rlich"] = "年";
+$wb["Sonstige"] = "其他";
+
+$wb["bei Erhalt"] = "收件";
+$wb["Netto 7 Tage"] = "net 7 days";
+$wb["Netto 15 Tage"] = "net 15 days";
+$wb["Netto 30 Tage"] = "net 30 days";
+$wb["Sonstige"] = "其他";
+$wb["Neu"] = "新建";
+$wb["Postfach MB"] = "邮箱大小 MB";
+
+$wb["email_alias_txt"] = "<b>提示:</b> 每行一个别名。";
+$wb["Weiterleitung"] = "转发";
+$wb["Nachricht"] = "正文";
+$wb["Kein Kunde vorhanden"] = "没有合法的客户。<br>";
+$wb["Dieses Web k鰊nen Sie nicht l鰏chen."] = "网站不能被删除。<br>";
+$wb["Ausgabeformat"] = "列表格式";
+$wb["Bearbeiten"] = "编辑";
+$wb["L鰏chen"] = "删除";
+
+$wb["willkommen_kunde"] = "欢迎来到ISPConfig!
+    您可以管理你的网站。如果你有任何问题，
+    请联系您的系统管理员或者参考客户手册。";
+$wb["Willkommen"] = "欢迎";
+
+
+// Regex Fehlermeldungen
+$wb["Es sind nur folgende Zeichen erlaubt: a-z A-Z 0-9 -"] = "合法字符包括如下系列字符: a-z A-Z 0-9 -<br>";
+$wb["Es sind nur folgende Zeichen erlaubt: a-z A-Z 0-9 - ."] = "合法字符包括如下系列字符: a-z A-Z 0-9 - .<br>";
+$wb["Der Username muss aus min. 4, max 25 Buchstaben oder Zahlen bestehen, wobei er mit einem Buchstaben beginnen muss."] = "用户名最小长度为4个字符，最大为25个字符，必须以字母开头。<br>";
+$wb['Der Username muss aus min. 4, max 32 Buchstaben oder Zahlen bestehen, wobei er mit einem Buchstaben beginnen muss.'] = '用户名最小长度为4个字符，最大为3个位字符，必须以字母开头。<br>';
+
+$wb["error_reseller_licence"] = "您的ISPConfig许可证不允许您添加经销商。<br>";
+$wb["error_reseller_licence_nodelete"] = "不能删除该经销商。<br>";
+
+$wb["error_kunde_licence"] = "您的ISPConfig许可证不允许您添加客户。<br>";
+$wb["error_kunde_licence_nodelete"] = "不能删除客户。<br>";
+
+$wb["mysqldb_nicht_vorhanden"] = "MySQL数据库不存在。 <br>请输入密码创建新数据库。<br>";
+$wb["mysql_nicht_aktiv"] = "该网站选项不支持MySQL数据库。<br>";
+$wb["Datenbank Name"] = "数据库名";
+$wb["Speicher belegt"] = "数据库大小";
+
+$wb["Kein Web angelegt"] = "网站没有被创建。";
+$wb["Real Name"] = "真实名字";
+$wb["Feld"] = "字段";
+$wb["httpd_inc_txt"] = "Apache指令<br>&nbsp; (可选)";
+$wb["Kopie speichern"] = "保留范本";
+
+$wb["err_0001"] = "该域名属于其他客户。";
+
+$wb["MySQL Remote Access"] = "允许远程存取MySQL";
+$wb["lokaler mailserver"] = "本地邮件服务器";
+$wb["externer mailserver"] = "外部邮件服务器";
+
+$wb["Log-Gr鰏se"] = "日志大小";
+$wb["Frontpage Passwort"] = "Frontpage密码";
+
+// NEW 1.1.12 ///////////////////////////////////
+
+$wb["Anbieternummer"] = '经销商号';
+$wb["Domain DNS"] = '主要的Zones (DNS)';
+$wb["HTTPD Includes"] = 'HTTPD包含';
+$wb["DNS-Manager"] = 'DNS管理面板';
+$wb["DNS-Domains angelegt"] = '已创建主Zones记录';
+$wb["Kundennummer"] = '客户号';
+$wb["Anonymous FTP"] = '匿名FTP';
+$wb["Anon. FTP MB"] = 'Anon. FTP MB';
+$wb["Faktura"] = '发票';
+$wb["Mailserver"] = '邮件服务器';
+$wb["aktiviert"] = '激活';
+$wb["deaktiviert"] = '禁止';
+$wb["ISP User"] = 'ISP用户';
+$wb["WebSpeicher MB"] = '网站空间MB';
+$wb["MailSpeicher MB"] = '邮件空间MB';
+$wb["Administrator"] = '系统管理员';
+$wb["Erweiterte Einstellungen"] = '高级设置';
+$wb["email_weiterleitung_txt"] = '<b>提示:</b>每行一个邮件地址。';
+$wb["Email Alias"] = '邮件别名';
+$wb["catchAll-Email"] = '包含所有邮件';
+$wb["MailScan"] = '邮件扫描';
+$wb["Spam-Filter"] = 'Spam过滤器';
+$wb["Autoresponder"] = '自动回复';
+$wb["ISP Domain"] = 'ISP域名';
+$wb["Create DNS MX"] = '创建DNS MX记录';
+$wb["Admin"] = '管理';
+$wb["CatchAll"] = '包括所有';
+$wb["Bitte Artikel ausw鋒len"] = "选择项目";
+$wb["Letzte Abrechnung"] = "最后一张发票";
+$wb["Artikel hinzuf黦en"] = "新建项目";
+$wb["Wird automatisch vergeben."] = '自动分配';
+$wb["Email Adresse"] = "邮件地址";
+
+// new 1.2 ////////////////////////////////////////
+$wb["error_email_exist"] = "重复的邮件地址。<br>";
+$wb["error_realname"] = "只能包含如下字符: a-z A-Z 0-9 - _ .<br>";
+$wb["Die Emailadresse muss aus min. 1, max 60 Buchstaben oder Zahlen bestehen."] = "邮件地址必须包含1到60个字母或者是数字。<br>";
+
+// new 1.3 ////////////////////////////////////////
+$wb["Bundesland"] = "省";
+$wb["Spamfilter & Antivirus"] = 'Spamfilter & Antivirus';
+$wb["Spamfilter"] = 'Spamfilter';
+$wb["Antivirus"] = 'Antivirus';
+$wb["accept"] = '接受';
+$wb["discard"] = '移除';
+$wb["Spam Strategie"] = 'Spam策略';
+$wb["Spam Hits"] = 'Spam提示';
+$wb["Rewrite Subject"] = '重写对象';
+$wb["Betreff"] = '主题';
+$wb["SUCHE"] = '搜索';
+$wb["IP"] = 'IP';
+$wb["Standard CGIs"] = '标准CGIs';
+$wb["PHP Safe Mode"] = 'PHP安全模式';
+$wb["WAP"] = 'WAP';
+$wb["Individuelle Fehler-Seiten"] = '自定义出错页面';
+$wb["Anzahl Datenbanken"] = '数据库个数';
+$wb["Fehler 400<br>(Ung黮tige Syntax)"] = "400 错误<br>(非法语法)";
+$wb["Fehler 401<br>(Autorisierung<br>erforderlich)"] = "401 错误<br>(验证失败)";
+$wb["Fehler 403<br>(Verboten)"] = "403 错误<br>(禁止访问)";
+$wb["Fehler 404<br>(Datei nicht<br>gefunden)"] = "404 错误<br>(文件不存在)";
+$wb["Fehler 405<br>(Methode nicht<br>erlaubt)"] = "405 错误<br>(不允许存取方法)";
+$wb["Fehler 500<br>(Interner<br>Server-Fehler)"] = "500 错误<br>(服务器内部错误)";
+$wb["Fehler 503<br>(Service ist z.Zt.<br>黚erlastet)"] = "503 错误<br>(服务不可用)";
+$wb["Datenbanken"] = "数据库";
+$wb["Datenbank"] = "数据库";
+$wb["Datenbankname"] = "数据库名";
+$wb["Datenbankuser"] = "数据库用户";
+$wb["weiter_link"] = "<br><br> <a href='../../isp_manager/frame_start.php?s=$s'>下一步 &gt;&gt;</a>";
+$wb["Slave Zones"] = 'Slave Zones (DNS)';
+$wb["txt_client_salutatory_email_desc"] = "<b>欢迎客户加入邮件</b>";
+$wb["txt_client_salutatory_email_sender_email"] = "发件人";
+$wb["txt_client_salutatory_email_sender_name"] = "昵称";
+$wb["txt_client_salutatory_email_bcc"] = "抄送";
+$wb["txt_client_salutatory_email_subject"] = "主题";
+$wb["txt_client_salutatory_email_message"] = "正文";
+$wb["txt_client_salutatory_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>可以包含如下合法标签:</b></td></tr>
+        <tr>
+          <td class="normal">%%%USER%%%</td>
+          <td class="normal">
+            客户用户名</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%PASSWORD%%%</td>
+          <td class="normal">
+            客户帐号密码</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%FIRST_NAME%%%</td>
+          <td class="normal">
+            客户姓氏</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%LAST_NAME%%%</td>
+          <td class="normal">
+            客户名称</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%COMPANY%%%</td>
+          <td class="normal">
+            客户公司名</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%EMAIL%%%</td>
+          <td class="normal">
+            客户邮件地址</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%CP%%%</td>
+          <td class="normal">
+            ISPConfig登录URL</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%MANUAL%%%</td>
+          <td class="normal">
+            ISPConfig客户手册</td>
+        </tr>
+        </table>';
+$wb["txt_standard_index"] = "标准首页文件<br>&nbsp;&nbsp;Page";
+$wb["txt_standard_index_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>可以包含如下合法标签:</b></td></tr>
+        <tr>
+          <td class="normal">%%%FQDN%%%</td>
+          <td class="normal">
+            网站全名(例如：www.5anet.com)</td>
+        </tr>
+    </table>';
+$wb["txt_user_standard_index"] = "标准用户<br>&nbsp;&nbsp;Index Page";
+$wb["txt_user_standard_index_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>可以包含如下合法标签:</b></td></tr>
+        <tr>
+          <td class="normal">%%%USER%%%</td>
+          <td class="normal">
+            用户名称</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%FQDN%%%</td>
+          <td class="normal">
+            网站全名(例如：www.5anet.com)</td>
+        </tr>
+        </table>';
+
+//////////////// ISP Manager Ende /////////////
+
+//////////////// Server Status ////////////////
+$wb["Arbeitsspeicher"]          = "主内存";
+$wb["CPU"]          = "CPU";
+$wb["Dienste"]      = "服务";
+$wb["Server Online seit"]          = "在线服务器";
+$wb["User Online"]      = "在线用户";
+$wb["System Load 1 Minute"] = "系统负载(1分钟内)";
+$wb["System Load 5 Minuten"] = "系统负载(5分钟内)";
+$wb["System Load 15 Minuten"] = "系统负载(15分钟内)";
+//////////////// Server Status Ende //////////
+
+$wb["Es konnte ein Dokument nicht wiederhergestellt werden, da sich das Eltern-Dokument noch im Papierkorb befindet.\n"] = "由于父对象被放入回收站，因此不能回复该对象。";
+$wb["error_anbieter_max_webs_ueberschritten"] = "经销商已有网站数量大于您设置的个数。<br>";
+$wb["error_anbieter_max_diskspace_ueberschritten"] = "经销商已使用的磁盘数量大于您设置的大小。<br>";
+$wb["error_anbieter_max_user_ueberschritten"] = " 经销商已有用户数量大于您设置的个数。<br>";
+$wb["error_anbieter_max_domain_ueberschritten"] = "经销商已有的域名数量大于您设置的个数。<br>";
+$wb["error_anbieter_dnsmanager_aktiv"] = "经销商已经创建了DNS记录，不能禁止DNS管理面板功能。<br>";
+$wb["error_anbieter_max_dns_ueberschritten"] = "经销商已有的主DNS记录大于您设置的数量。<br>";
+$wb["error_anbieter_max_slavedns_ueberschritten"] = "经销商已有的辅DNS记录大于您设置的数量。<br>";
+$wb["error_anbieter_httpd_include_aktiv"] = "HTTPD包含已在经销商部分网站中使用，不能禁止该功能。<br>";
+$wb["error_anbieter_shell_access_aktiv"] = "Shell登录已在经销商部分网站中使用，不能禁止该功能。<br>";
+$wb["error_anbieter_cgi_aktiv"] = "CGI已在经销商部分网站中使用，不能禁止该功能。<br>";
+$wb["error_anbieter_standard_cgi_aktiv"] = "标准CGIs已在经销商部分网站中使用，不能禁止该功能。<br>";
+$wb["error_anbieter_php_aktiv"] = "PHP支持已在经销商部分网站中使用，不能禁止该功能。<br>";
+$wb["error_anbieter_ruby_aktiv"] = "Ruby支持已在经销商部分网站中使用，不能禁止该功能。<br>";
+$wb["error_anbieter_ssi_aktiv"] = "SSI支持已在经销商部分网站中使用，不能禁止该功能。<br>";
+$wb["error_anbieter_ftp_aktiv"] = "FTP支持已在经销商部分网站中使用，不能禁止该功能。<br>";
+$wb["error_anbieter_anonftp_aktiv"] = "匿名FTP支持已在经销商部分网站中使用，不能禁止该功能。<br>";
+$wb["error_anbieter_frontpage_aktiv"] = "FrontPage扩展支持已在经销商部分网站中使用，不能禁止该功能。<br>";
+$wb["error_anbieter_datenbank_aktiv"] = "MySQL数据库支持已在经销商部分网站中使用，不能禁止该功能。<br>";
+$wb["error_anbieter_max_datenbank_ueberschritten"] = "经销商已创建的数据库数大于您设置的数量。<br>";
+$wb["error_anbieter_ssl_aktiv"] = "SSL支持已在经销商部分网站中使用，不能禁止该功能。<br>";
+$wb["error_anbieter_wap_aktiv"] = "WAP支持已在经销商部分网站中使用，不能禁止该功能。<br>";
+$wb["error_anbieter_error_pages_aktiv"] = "自定义错误页面已在经销商部分网站中使用，不能禁止该功能。<br>";
+$wb["error_web_no_unlimited_diskspace_1"] = "不能对该网站设置无限制空间使用， 该网站最大能使用的磁盘空间是 ";
+$wb["error_web_no_unlimited_diskspace_2"] = " MB.<br>";
+$wb["error_web_no_diskspace_free_1"] = "您已设置";
+$wb["error_web_no_diskspace_free_2"] = " MB空间大小。<br>";
+$wb["error_web_no_unlimited_users_1"] = "不能对该网站设置无限制用户数，该网站支持最大用户数是 ";
+$wb["error_web_no_unlimited_users_2"] = ".<br>";
+$wb["error_web_no_users_free_1"] = "您已设置";
+$wb["error_web_no_users_free_2"] = " 个用户支持。<br>";
+$wb["error_web_no_unlimited_domains_1"] = "不能对网站设置无限制域名数， 该网站支持最大域名数是 ";
+$wb["error_web_no_unlimited_domains_2"] = ".<br>";
+$wb["error_web_no_domains_free_1"] = "您已设置 ";
+$wb["error_web_no_domains_free_2"] = " 个域名支持<br>";
+$wb["error_web_no_user_decrease_1"] = "网站已具有 ";
+$wb["error_web_no_user_decrease_2"] = " 用户。不能将用户数设置为0<br>";
+$wb["error_web_no_domain_decrease_1"] = "网站已具有 ";
+$wb["error_web_no_domain_decrease_2"] = " 域名。不能将域名数设置为0。<br>";
+
+$wb["Benutzter Diskspace"] = "已使用的磁盘空间";
+$wb["Slave Zones angelegt"] = "已创建辅Zones";
+$wb["Datenbanken angelegt"] = "已创建数据库";
+$wb["error_web_no_database_decrease_1"] = "网站已具有 ";
+$wb["error_web_no_database_decrease_2"] = " 数据库。不能将数据库数设置为0<br>";
+$wb["error_web_no_shell_access"] = "不能设置该网站支持Shell登录。<br>";
+$wb["error_web_no_cgi"] = "不能设置该网站支持CGI。<br>";
+$wb["error_web_no_standard_cgi"] = "不能设置该网站支持标准CGIs。<br>";
+$wb["error_web_no_php"] = "不能设置该网站支持PHP脚本。<br>";
+$wb["error_web_no_ruby"] = "不能设置该网站支持Ruby。<br>";
+$wb["error_web_no_ssi"] = "不能设置该网站支持SSI。<br>";
+$wb["error_web_no_ftp"] = "不能设置该网站支持FTP上传。<br>";
+$wb["error_web_no_mysql"] = "不能设置该网站支持MySQL数据库。<br>";
+$wb["error_web_no_databases_free_1"] = "您已设置 ";
+$wb["error_web_no_databases_free_2"] = " 个数据库支持。<br>";
+$wb["error_web_no_ssl"] = "不能设置该网站支持SSL。<br>";
+$wb["error_web_no_anonftp"] = "不能设置该网站支持匿名FTP。<br>";
+$wb["error_web_no_wap"] = "不能设置该网站支持WAP。<br>";
+$wb["error_web_no_individual_error_pages"] = "不能设置该网站支持自定义出错页面。<br>";
+$wb["error_web_no_httpd_include"] = "不能设置该网站支持HTTPD包含。<br>";
+$wb["error_web_no_frontpage"] = "不能设置该网站支持FrongPage扩展。<br>";
+$wb["Web Vorlage"] = "主机方案";
+$wb["ISP Web-Vorlage"] = "ISP主机方案";
+$wb["Keine Vorlage verwenden"] = "单独设置";
+$wb["Keine Vorlage vorhanden"] = "没有可用的主机方案";
+$wb["txt_accept"] = "接受";
+$wb["txt_discard"] = "移除";
+$wb["Eigenschaften"] = "属性";
+$wb["ISP Datenbank"] = "ISP数据库";
+$wb["Nein"] = "否";
+$wb["Ja"] = "是";
+$wb["Web"] = "站点";
+$wb["Domain"] = "域名";
+$wb["Traffic-躡erschreitung"] = "流量超出";
+$wb["sperren"] = "暂停";
+$wb["benachrichtigen"] = "通知";
+$wb["keine Aktion"] = "无动作";
+$wb["Website-Status"] = "网站状态";
+$wb["aktiv"] = "激活";
+$wb["gesperrt"] = "暂停";
+
+$wb["txt_traffic_suspension_email_desc"] = "<b>网站暂停通知(流量超出)</b>";
+$wb["txt_traffic_suspension_sender_email"] = "发件人";
+$wb["txt_traffic_suspension_sender_name"] = "昵称";
+$wb["txt_traffic_suspension_email_bcc"] = "抄送";
+$wb["txt_traffic_suspension_email_subject"] = "主题";
+$wb["txt_traffic_suspension_email_message"] = "正文";
+$wb["txt_traffic_suspension_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>可以包含下列合法标签:</b></td></tr>
+        <tr>
+          <td class="normal">%%%FIRST_NAME%%%</td>
+          <td class="normal">
+            客户姓氏</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%LAST_NAME%%%</td>
+          <td class="normal">
+            客户名称</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%WEBSITE%%%</td>
+          <td class="normal">
+            客户网站</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%MONTH%%%</td>
+          <td class="normal">
+            流量超出月份</td>
+        </tr>
+        <tr>
+          <td class="normal" valign="top">%%%INCLUDED_TRAFFIC%%%</td>
+          <td class="normal">
+            流量限制大小</td>
+        </tr>
+        <tr>
+          <td class="normal" valign="top">%%%TOTAL_TRAFFIC%%%</td>
+          <td class="normal">
+            当月总流量</td>
+        </tr>
+        </table>';
+
+$wb["txt_traffic_notification_email_desc"] = "<b>流量超出通知</b>";
+$wb["txt_traffic_notification_sender_email"] = "发件人";
+$wb["txt_traffic_notification_sender_name"] = "昵称";
+$wb["txt_traffic_notification_email_bcc"] = "抄送";
+$wb["txt_traffic_notification_email_subject"] = "主题";
+$wb["txt_traffic_notification_email_message"] = "正文";
+$wb["txt_traffic_notification_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>可以包含下列合法标签:</b></td></tr>
+        <tr>
+          <td class="normal">%%%FIRST_NAME%%%</td>
+          <td class="normal">
+            客户姓氏</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%LAST_NAME%%%</td>
+          <td class="normal">
+            客户名称</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%WEBSITE%%%</td>
+          <td class="normal">
+            客户网站</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%MONTH%%%</td>
+          <td class="normal">
+            流量超出月份</td>
+        </tr>
+        <tr>
+          <td class="normal" valign="top">%%%INCLUDED_TRAFFIC%%%</td>
+          <td class="normal">
+            流量大小限制</td>
+        </tr>
+        <tr>
+          <td class="normal" valign="top">%%%TOTAL_TRAFFIC%%%</td>
+          <td class="normal">
+            当月总流量</td>
+        </tr>
+        </table>';
+
+
+$wb["Catalog_Name"] = "名称";
+$wb["Spam Whitelist"] = 'Spam白名单';
+$wb["Spam Blacklist"] = 'Spam黑名单';
+$wb["spam_whitelist_txt"] = '<b>提示:</b> 每行一个输入, 合法的输入类似：friend@somewhere.com, *@isp.com, or *.domain.net.';
+$wb["spam_blacklist_txt"] = '<b>提示:</b> 每行一个输入, 合法的输入类似：friend@somewhere.com, *@isp.com, or *.domain.net.';
+$wb["Webalizer Stats"] = 'Webalizer<br>&nbsp;统计';
+$wb["Use Uribl"] = 'Use <a href="http://www.uribl.com/about.shtml" target="_blank" style="font-family:Arial,Verdana">URIBL</a>';
+$wb["Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 -"] = "合法字符包括如下字符: a-z A-Z 0-9 -<br>";
+$wb["Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 - ."] = "合法字符包括如下字符: a-z A-Z 0-9 - .<br>";
+$wb["error_domain_delete_client"] = "该域名不能被删除。";
+
+
+?>

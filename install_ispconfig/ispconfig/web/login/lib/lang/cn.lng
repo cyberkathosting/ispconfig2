@@ -1,0 +1,26 @@
+<?
+/********************************
+* ISPConfig Dictionary File
+* Version 1.0
+* Chinese Version:  Mike.G <ghw@5anet.com>
+*********************************/
+
+// License Manager
+$wb["Es wurde keine g&uuml;ltige Lizenzdatei gefunden."] = "没有合法的许可证";
+$wb["Hier k&ouml;nnen Sie ihre Lizenzdatei einspielen."] = "从这里上传您的许可证文件。";
+$wb["Username"] = "用户名";
+$wb["Passwort"] = "用户密码";
+$wb["Lizenzdatei"] = "许可证文件";
+$wb["Weiter"] = "下一步";
+$wb["Die Lizenzdatei wurde eingespielt.<br>Sie k&ouml;nnen sich jetzt einloggen."] = "许可证文件上传成功。<br> 请登录";
+$wb["Ihre Nutzersitzung wurde beendet."] = "Session已经过期";
+$wb["Hier k鰊nen Sie sich neu einloggen"] = "点击这里重新登录";
+
+$wb["FEHLER 101: Username oder Passwort Falsch."] = "错误 101: 错误的用户名或者是密码。";
+$wb["FEHLER 102: Account inaktiv."] = "错误 102: 帐号被禁用";
+$wb["FEHLER 103: Es wurde kein Username oder Passwort angegeben."] = "错误 103: 请输入用户名或者密码";
+$wb["FEHLER 104: Die Nutzersession wurde beendet."] = "错误 104: Session已过期";
+$wb["<br>&nbsp;<br>Hier k鰊nen Sie sich erneut einloggen:"] = "<br>&nbsp;<br>从这里重新登录:";
+$wb["Hier k鰊nen Sie sich einloggen:"] = "从这里登录:";
+
+?>

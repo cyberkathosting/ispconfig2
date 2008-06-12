@@ -1,0 +1,20 @@
+<?
+
+/**********************************************
+* ISPConfig Help File
+* Version 1.2
+* Syntax: $hlp["FieldName"] = "HelpText";
+* Chinese Version:  Mike.G  <ghw@5anet.com>
+************************************************/
+
+$hlp["dns_soa"] = "请输入域名(出去主机部分，例如：www.5anet.com， 只需要输入5anet.com)";
+$hlp["dns_refresh"] = "DNS更新时间(单位：秒)";
+$hlp["dns_retry"] = "DNS重试时间（单位：秒)。";
+$hlp["dns_expire"] = "DNS过期时间(单位：秒)。";
+$hlp["dns_ttl"] = "DNS TTL时间(单位：秒)。";
+$hlp["dns_ns1"] = "请指定主要的名称(域名：nameserver)服务器。";
+$hlp["dns_ns2"] = "请指定第二个名称(域名: nameserver)服务器。";
+$hlp["dns_adminmail"] = "请输入zone管理员邮件地址。";
+$hlp["server_id"] = "请选择一个服务器。";
+$hlp["dns_soa_ip"] = "请输入域名SOA IP地址。";
+?>

@@ -1,0 +1,23 @@
+<?
+
+/**********************************************
+* ISPConfig Help File
+* Version 1.2
+* Syntax: $hlp["FieldName"] = "HelpText";
+* Chinese Version:  Mike.G <ghw@5naet.com>
+************************************************/
+
+$hlp["artikelnummer"] = "请输入产品项目ID，［0－9］。";
+$hlp["artikeltyp"] = "请从列表中选择一个项目类型。";
+$hlp["artikelbezeichnung"] = "请定义项目名称。";
+$hlp["verrechnung"] = "请指定项目的帐单期(单位：月), 例如：1 即一个月，6即六个月， 0 即只送一次帐单。";
+$hlp["artikeleinheit"] = "请从列表中选择衡量项目的单位。";
+$hlp["artikelpreis"] = "请定义每个单位项目的价格。";
+$hlp["abpackung"] = "定义每个打包服务包含多少个单位项目。";
+$hlp["beschreibung"] = "项目描述。";
+$hlp["artikelgroup"] = "请设置经销商可用的项目。";
+$hlp["weitere_artikeleinheit"] = "超过流量计算单位。";
+$hlp["weitere_abpackung"] = "超过流量数(需要支付，单位是MB or GB)。";
+$hlp["weitere_artikelpreis"] = "超过流量计算价格。";
+$hlp["steuersatz"] = "请指定税率(例如： 16%)。";
+?>

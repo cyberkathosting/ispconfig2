@@ -1,0 +1,89 @@
+<?
+/********************************
+* ISPConfig Dictionary File
+* Version 1.0
+* Chinese Version:  Mike.G  <ghw@5anet.com>
+*********************************/
+
+$wb["ISP Faktura"] = 'ISP发票';
+$wb["Web-FTP"] = 'Web-FTP';
+$wb["Domains"] = '域名';
+$wb["Service"] = '服务';
+$wb["Webs"] = '网站';
+$wb["Traffic"] = '流量';
+$wb["Email-Adressen"] = '邮件地址';
+$wb["Artikel"] = '项目';
+$wb["admin"] = '管理';
+$wb["Artikel f黵"] = '项目';
+$wb["Dienstleistung"] = '服务';
+$wb["Hardware"] = '硬件';
+$wb["Software"] = '软件';
+$wb["Typ"] = '类型';
+$wb["Artikel Nr."] = '项目号';
+$wb["Bezeichnung"] = '名称';
+$wb["Beschreibung"] = '描述';
+$wb["St點k"] = '部分';
+$wb["MB"] = 'MB';
+$wb["GB"] = 'GB';
+$wb["Stunde"] = '小时';
+$wb["Einheit"] = '单位';
+$wb["Menge"] = '数量';
+$wb["Preis"] = '价格';
+$wb["Verrechnung"] = '帐单期';
+$wb["Artikel neu"] = '新项目';
+$wb["Ordner neu"] = '新文件夹';
+$wb["Abrechnen"] = '新单据';
+$wb["Artikel neu"] = '新项目';
+$wb["Ordner neu"] = '新文件夹';
+$wb["Produkte"] = '产品';
+$wb["Abrechnen"] = '新单据';
+$wb["Rechnungen"] = '单据';
+$wb["Kunden"] = '客户';
+$wb["Anbieter"] = '经销商';
+$wb["Keine Artikel zum Abrechnen gefunden."] = '为单据创建一个不存在的字段';
+$wb["Abrechnung"] = '单据';
+$wb["Name"] = '名称';
+$wb["IP-Traffic"] = 'IP流量';
+$wb["Steuersatz"] = '税率';
+$wb["Bei 躡erschreitung:"] = '超出数:';
+$wb["Diese Angaben sind nur f黵 Artikel vom Typ: Traffic g黮tig!"] = '输入仅仅是多流量字段有效。';
+$wb["Rechnungen Kunden"] = '客户单据';
+$wb["Firma"] = '公司';
+$wb["Vorname"] = '姓氏';
+$wb["Strasse"] = '街道';
+$wb["PLZ"] = '邮编';
+$wb["Ort"] = '市';
+$wb["Land"] = '国家';
+$wb["Steuernr."] = '税号';
+$wb["Rechnung"] = '发票';
+$wb["Datum"] = '日期';
+$wb["Rechnung Nr."] = '发票号';
+$wb["Anzahl"] = '数量';
+$wb["Art. Nr."] = '字段号';
+$wb["Gesamt"] = '总计';
+$wb["EURO"] = 'EURO';
+$wb["Web gesamt"] = '网站总计';
+$wb["enthaltene Mehrwertsteuer"] = '包含增值税';
+$wb["Gesamtbetrag"] = 'Total';
+$wb["Rechnungen Anbieter"] = '经销商发票';
+$wb["Kunde"] = '客户';
+$wb["Rg. Nr."] = '发票号';
+$wb["OK"] = 'OK';
+$wb["Weiter"] = "下一步";
+$wb["Summe Anbieter"] = "经销商总计";
+$wb["Summe Web"] = "网站总计";
+$wb["Summe Kunde"] = "客户总计";
+$wb["Abrechnung abgeschlossen."] = "单据已创建。";
+
+//////////////// Server Status ////////////////
+$wb["Arbeitsspeicher"]          = "主内存";
+$wb["CPU"]          = "CPU";
+$wb["Dienste"]      = "服务";
+$wb["Server Online seit"]          = "在线服务";
+$wb["User Online"]      = "在线用户";
+$wb["System Load 1 Minute"] = "系统负载(1分钟内)";
+$wb["System Load 5 Minuten"] = "系统负载(5分钟内)";
+$wb["System Load 15 Minuten"] = "系统负载(15分钟内)";
+//////////////// Server Status Ende //////////
+
+?>

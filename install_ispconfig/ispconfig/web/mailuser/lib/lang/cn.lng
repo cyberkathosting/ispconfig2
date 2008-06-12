@@ -1,0 +1,49 @@
+<?php
+// Chinese Version: Mike.G <ghw@5anet.com>
+
+$wb["txt_login_desc"] = "从这里登录更新您的邮件配置。";
+$wb["txt_error"] = "错误";
+$wb["txt_email_username"] = "邮件用户名";
+$wb["txt_password"] = "密码";
+$wb["txt_login"] = "登录";
+$wb["txt_autoresponder"] = "自动回复";
+$wb["txt_nachricht"] = "正文";
+$wb["txt_speichern"] = "保存";
+$wb["txt_abbrechen"] = "终止";
+$wb["txt_email_account"] = "邮件帐号";
+$wb["txt_user_und_email"] = "用户 &amp; 邮件";
+$wb["txt_spamfilter"] = "Spamfilter";
+$wb["txt_logout"] = "注销";
+$wb["txt_mailscan"] = "Mail扫描";
+$wb["txt_antivirus"] = "Antivirus";
+$wb["txt_spam_strategie"] = "Spam策略";
+$wb["txt_spam_hits"] = "Spam提示";
+$wb["txt_rewrite_subject"] = "重写对象";
+$wb["txt_betreff"] = "主题";
+$wb["txt_name"] = "名称";
+$wb["txt_email_adresse"] = "邮件地址";
+$wb["txt_username"] = "用户名";
+$wb["txt_web_speicher"] = "网站磁盘配额";
+$wb["txt_mail_speicher"] = "邮件磁盘配额";
+$wb["txt_email_passwort_leer"] = "用户名或者密码为空！";
+$wb["txt_user_unbekannt"] = "未知用户.";
+$wb["txt_access_forbidden"] = "存取拒绝!";
+$wb["txt_yes"] = "是";
+$wb["txt_no"] = "否";
+$wb["txt_unlimited"] = "无限制";
+$wb["txt_welcome"] = "欢迎...";
+$wb["txt_error_spam_hits_format"] = "值<i>".$wb["txt_spam_hits"]."</i> 必须符合如下格式:";
+$wb["txt_accept"] = "接受";
+$wb["txt_discard"] = "移除";
+$wb["txt_language"] = "语言";
+$wb["txt_no_mailuser_login"] = "登录已被禁止。";
+$wb["txt_forwarder"] = "转发";
+$wb["txt_forwarder_desc"] = "<b>提示:</b>每行一个邮件地址。";
+$wb["txt_spam_whitelist"] = 'Spam白名单';
+$wb["txt_spam_blacklist"] = 'Spam黑名单';
+$wb["txt_hint_spam_whitelist"] = '<b>提示:</b> 每行一个输入, 合法的输入类似：friend@somewhere.com, *@isp.com, or *.domain.net.";
+$wb["txt_hint_spam_blacklist"] = '<b>提示:</b> 每行一个输入, 合法的输入类似：friend@somewhere.com, *@isp.com, or *.domain.net.";
+$wb["txt_uribl"] = 'Use <a href="http://www.uribl.com/about.shtml" target="_blank">URIBL</a>';
+$wb["txt_keep_local_copy"] = '保留备份';
+
+?
