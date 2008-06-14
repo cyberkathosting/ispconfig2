@@ -59,7 +59,7 @@ $wb["Web-Server"] = "Web server";
 $wb["FTP-Server"] = "FTP server";
 $wb["SMTP-Server"] = "SMTP server";
 $wb["DNS-Server"] = "DNS server";
-$wb["mySQL-Server"] = "mySQL server";
+$wb["mySQL-Server"] = "MySQL server";
 $wb["An"] = "Aan";
 $wb["Aus"] = "Uit";
 $wb["neu Starten"] = "Herstarten";
@@ -431,7 +431,7 @@ $wb["txt_res_traffic_suspension_email_message"] = "Bericht";
 $wb["txt_res_traffic_suspension_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
 <tr>
     <td valign="top" colspan="2" class="normal">
-      <b>Include the following variables in your text:</b></td></tr>
+      <b>Gebruik de volgende variabelen in uw tekst:</b></td></tr>
         <tr>
           <td class="normal">%%%FIRST_NAME%%%</td>
           <td class="normal">
@@ -495,9 +495,5 @@ $wb["txt_res_traffic_notification_email_variables"] = '<table border="0" cellpad
             Totaal aan dataverkeer in betreffende maand</td>
         </tr>
         </table>';
-
-$wb["txt_global_stats"] = "<b>Global Webalizer Website Statistics Login</b>";
-$wb["txt_global_stats_user"] = "Global Statistics User";
-$wb["txt_global_stats_password"] = "Password";
-
+		
 ?>
