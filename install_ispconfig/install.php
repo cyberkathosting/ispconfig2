@@ -1060,7 +1060,7 @@ if($dist_ftp == "proftpd"){
   if(!strstr($proftp,$default_root)) fwrite($fp,$default_root."\n");
   fclose($fp);
   if(!strstr($proftp,"Include /etc/proftpd_ispconfig.conf")){
-    af($dist_ftp_conf, "\nInclude /etc/proftpd_ispconfig.conf");
+    af($dist_ftp_conf, "\nInclude /etc/proftpd_ispconfig.conf\n");
   }
   if(!is_file("/etc/proftpd_ispconfig.conf")) phpcaselog(touch("/etc/proftpd_ispconfig.conf"), 'create /etc/proftpd_ispconfig.conf', $FILE, __LINE__);
 }
