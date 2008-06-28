@@ -214,6 +214,10 @@ dist_ftp_conf:/etc/vsftpd.conf:Config-File:read::suse103
 dist_ftp_version:xinetd:Server-Version:select:standalone|inetd|xinetd:suse103
 dist_ftp_log:/var/log/vsftpd.log:Log-File:read::suse103
 
+dist_ftp_conf:/etc/vsftpd.conf:Config-File:read::suse110
+dist_ftp_version:xinetd:Server-Version:select:standalone|inetd|xinetd:suse110
+dist_ftp_log:/var/log/vsftpd.log:Log-File:read::suse110
+
 dist_ftp_conf:/etc/vsftpd.conf:Config-File:read::debian30
 dist_ftp_version:inetd:Server-Version:select:standalone|inetd|xinetd:debian30
 dist_ftp_log:/var/log/vsftpd.log:Log-File:read::debian30
