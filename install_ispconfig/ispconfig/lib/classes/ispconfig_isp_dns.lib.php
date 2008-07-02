@@ -229,7 +229,9 @@ global $go_api, $go_info;
 
           $mx_record = $go_api->db->queryOneRecord("SELECT * FROM dns_mx WHERE doc_id = '".$dep_row["child_doc_id"]."'");
           // checke ob MX-Record schon existiert
-          $sql = "SELECT dns_mx.doc_id FROM dns_dep, dns_mx where dns_mx.doc_id = dns_dep.child_doc_id and dns_dep.child_doctype_id = '1020' and dns_dep.parent_doc_id = $doc_id and dns_dep.parent_doctype_id = '1016' and dns_mx.host = '".$mx_record["host"]."' AND (dns_mx.mailserver = '".$mx_record["mailserver"]."' OR dns_mx.prioritaet = '".$mx_record["prioritaet"]."') and dns_mx.doc_id != '".$dep_row["child_doc_id"]."'";
+          //$sql = "SELECT dns_mx.doc_id FROM dns_dep, dns_mx where dns_mx.doc_id = dns_dep.child_doc_id and dns_dep.child_doctype_id = '1020' and dns_dep.parent_doc_id = $doc_id and dns_dep.parent_doctype_id = '1016' and dns_mx.host = '".$mx_record["host"]."' AND (dns_mx.mailserver = '".$mx_record["mailserver"]."' OR dns_mx.prioritaet = '".$mx_record["prioritaet"]."') and dns_mx.doc_id != '".$dep_row["child_doc_id"]."'";
+
+          $sql = "SELECT dns_mx.doc_id FROM dns_dep, dns_mx where dns_mx.doc_id = dns_dep.child_doc_id and dns_dep.child_doctype_id = '1020' and dns_dep.parent_doc_id = $doc_id and dns_dep.parent_doctype_id = '1016' and dns_mx.host = '".$mx_record["host"]."' AND dns_mx.mailserver = '".$mx_record["mailserver"]."' and dns_mx.doc_id != '".$dep_row["child_doc_id"]."'";
 
           $tmp = $go_api->db->queryOneRecord($sql);
           if($tmp["doc_id"] > 0) {
@@ -585,7 +587,9 @@ function soa_update($doc_id, $doctype_id, $die_on_error = '1') {
 
           $mx_record = $go_api->db->queryOneRecord("SELECT * FROM dns_mx WHERE doc_id = '".$dep_row["child_doc_id"]."'");
           // checke ob MX-Record schon existiert
-          $sql = "SELECT dns_mx.doc_id FROM dns_dep, dns_mx where dns_mx.doc_id = dns_dep.child_doc_id and dns_dep.child_doctype_id = '1020' and dns_dep.parent_doc_id = $doc_id and dns_dep.parent_doctype_id = '1016' and dns_mx.host = '".$mx_record["host"]."' AND (dns_mx.mailserver = '".$mx_record["mailserver"]."' OR dns_mx.prioritaet = '".$mx_record["prioritaet"]."') and dns_mx.doc_id != '".$dep_row["child_doc_id"]."'";
+          //$sql = "SELECT dns_mx.doc_id FROM dns_dep, dns_mx where dns_mx.doc_id = dns_dep.child_doc_id and dns_dep.child_doctype_id = '1020' and dns_dep.parent_doc_id = $doc_id and dns_dep.parent_doctype_id = '1016' and dns_mx.host = '".$mx_record["host"]."' AND (dns_mx.mailserver = '".$mx_record["mailserver"]."' OR dns_mx.prioritaet = '".$mx_record["prioritaet"]."') and dns_mx.doc_id != '".$dep_row["child_doc_id"]."'";
+
+          $sql = "SELECT dns_mx.doc_id FROM dns_dep, dns_mx where dns_mx.doc_id = dns_dep.child_doc_id and dns_dep.child_doctype_id = '1020' and dns_dep.parent_doc_id = $doc_id and dns_dep.parent_doctype_id = '1016' and dns_mx.host = '".$mx_record["host"]."' AND dns_mx.mailserver = '".$mx_record["mailserver"]."' and dns_mx.doc_id != '".$dep_row["child_doc_id"]."'";
 
           $tmp = $go_api->db->queryOneRecord($sql);
           if($tmp["doc_id"] > 0) {
