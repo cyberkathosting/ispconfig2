@@ -63,6 +63,7 @@ $wb["verbraucht"]   = "folosit";
 $wb["Trafficübersicht"] = "Sumar Trafic";
 $wb["Monat"]        = "Luna";
 $wb["Traffic"]      = "Trafic";
+$wb["Traffic MB"]      = "Trafic MB";
 $wb["traffic_letzte_4"] = "Trafic in ultimii 4 ani";
 $wb["Jahr"]         = "An";
 $wb["MySQL User"]        = "Utilizator MySQL";

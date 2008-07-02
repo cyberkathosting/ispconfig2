@@ -62,6 +62,7 @@ $wb["verbraucht"]   = "Förbrukad";
 $wb["Trafficübersicht"] = "Trafik översikt";
 $wb["Monat"]        = "Månad";
 $wb["Traffic"]      = "Trafik";
+$wb["Traffic MB"]      = "Trafik MB";
 $wb["traffic_letzte_4"] = "Trafik under de senaste 4 åren";
 $wb["Jahr"]         = "År";
 $wb["mySQL User"]        = "MySQL Användarnamn";
