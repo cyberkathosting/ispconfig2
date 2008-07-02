@@ -1301,6 +1301,11 @@ function make_vhost($server_id) {
   ServerName localhost
   ServerAdmin root@localhost
   DocumentRoot /var/www/sharedip
+  <IfModule mod_rewrite.c>
+    RewriteEngine on
+    RewriteCond %{REQUEST_METHOD} ^(TRACE|TRACK)
+    RewriteRule .* - [F]
+  </IfModule>
 </VirtualHost>"));
       } else {
         $mod->tpl->assign( array(SERVERIP => ""));
@@ -1605,6 +1610,11 @@ AliasMatch ^/users/([^/]+)(/(.*))? ".$mod->system->server_conf["server_path_http
 ".str_replace("\nRewriteRule   ^/(.*)$  http://".$servername.$domain["domain_weiterleitung"]."$1  [R]", "\nRewriteRule   ^/(.*)$  https://".$servername.$domain["domain_weiterleitung"]."$1  [R]", $rewrite_rule)."
 ".$frontpage."
 SetEnvIf User-Agent \".*MSIE.*\" nokeepalive ssl-unclean-shutdown downgrade-1.0 force-response-1.0
+<IfModule mod_rewrite.c>
+  RewriteEngine on
+  RewriteCond %{REQUEST_METHOD} ^(TRACE|TRACK)
+  RewriteRule .* - [F]
+</IfModule>
 </VirtualHost>
 </IfModule>";
 

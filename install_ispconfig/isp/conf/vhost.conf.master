@@ -39,6 +39,11 @@ AliasMatch ^/~([^/]+)(/(.*))? {HTTPD_ROOT}/{WEB}/user/$1/web/$3
 AliasMatch ^/users/([^/]+)(/(.*))? {HTTPD_ROOT}/{WEB}/user/$1/web/$3
 {REWRITE_RULE}
 {FRONTPAGE}
+<IfModule mod_rewrite.c>
+  RewriteEngine on
+  RewriteCond %{REQUEST_METHOD} ^(TRACE|TRACK)
+  RewriteRule .* - [F]
+</IfModule>
 </VirtualHost>
 #
 {SSL}
