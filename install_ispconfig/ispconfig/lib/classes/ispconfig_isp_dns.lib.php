@@ -78,13 +78,14 @@ global $go_api, $go_info;
       unset($tmp_as);
     }
 
-    if($tmp_cnames = $go_api->db->queryAllRecords("SELECT * FROM dns_cname WHERE host LIKE 'http://%' OR host LIKE 'https://%' OR host LIKE ' %' OR host LIKE '% ' OR ziel LIKE 'http://%' OR ziel LIKE 'https://%' OR ziel LIKE ' %' OR ziel LIKE '% '")){
+    if($tmp_cnames = $go_api->db->queryAllRecords("SELECT * FROM dns_cname WHERE host LIKE 'http://%' OR host LIKE 'https://%' OR host LIKE ' %' OR host LIKE '% ' OR ziel LIKE 'http://%' OR ziel LIKE 'https://%' OR ziel LIKE ' %' OR ziel LIKE '% ' OR ziel LIKE '%.'")){
       foreach($tmp_cnames as $tmp_cname){
         $tmp_cname['host'] = str_replace('http://', '', $tmp_cname['host']);
         $tmp_cname['host'] = str_replace('https://', '', $tmp_cname['host']);
         $tmp_cname['host'] = trim($tmp_cname['host']);
         $tmp_cname['ziel'] = str_replace('http://', '', $tmp_cname['ziel']);
         $tmp_cname['ziel'] = str_replace('https://', '', $tmp_cname['ziel']);
+        if(substr($tmp_cname['ziel'],-1) == '.') $tmp_cname['ziel'] = substr($tmp_cname['ziel'],0,-1);
         $tmp_cname['ziel'] = trim($tmp_cname['ziel']);
         $go_api->db->query("UPDATE dns_cname SET host = '".$tmp_cname['host']."', ziel = '".$tmp_cname['ziel']."' WHERE doc_id = ".$tmp_cname['doc_id']);
       }
@@ -456,13 +457,14 @@ function soa_update($doc_id, $doctype_id, $die_on_error = '1') {
       unset($tmp_as);
     }
 
-    if($tmp_cnames = $go_api->db->queryAllRecords("SELECT * FROM dns_cname WHERE host LIKE 'http://%' OR host LIKE 'https://%' OR host LIKE ' %' OR host LIKE '% ' OR ziel LIKE 'http://%' OR ziel LIKE 'https://%' OR ziel LIKE ' %' OR ziel LIKE '% '")){
+    if($tmp_cnames = $go_api->db->queryAllRecords("SELECT * FROM dns_cname WHERE host LIKE 'http://%' OR host LIKE 'https://%' OR host LIKE ' %' OR host LIKE '% ' OR ziel LIKE 'http://%' OR ziel LIKE 'https://%' OR ziel LIKE ' %' OR ziel LIKE '% ' OR ziel LIKE '%.'")){
       foreach($tmp_cnames as $tmp_cname){
         $tmp_cname['host'] = str_replace('http://', '', $tmp_cname['host']);
         $tmp_cname['host'] = str_replace('https://', '', $tmp_cname['host']);
         $tmp_cname['host'] = trim($tmp_cname['host']);
         $tmp_cname['ziel'] = str_replace('http://', '', $tmp_cname['ziel']);
         $tmp_cname['ziel'] = str_replace('https://', '', $tmp_cname['ziel']);
+        if(substr($tmp_cname['ziel'],-1) == '.') $tmp_cname['ziel'] = substr($tmp_cname['ziel'],0,-1);
         $tmp_cname['ziel'] = trim($tmp_cname['ziel']);
         $go_api->db->query("UPDATE dns_cname SET host = '".$tmp_cname['host']."', ziel = '".$tmp_cname['ziel']."' WHERE doc_id = ".$tmp_cname['doc_id']);
       }
