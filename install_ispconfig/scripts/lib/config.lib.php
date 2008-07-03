@@ -1503,6 +1503,21 @@ php_admin_value session.save_path ".$mod->system->server_conf["server_path_httpd
 </IfModule>';
     }
 
+    $python = '';
+    if($web["web_python"]){
+      $python = '<IfModule mod_python.c>
+ <Directory '.$document_root.'>
+   Options Indexes FollowSymLinks MultiViews
+   AllowOverride None
+   Order allow,deny
+   allow from all
+   AddHandler mod_python .py
+   PythonHandler mod_python.publisher
+   PythonDebug On
+ </Directory>
+</IfModule>';
+    }
+
     if($web["web_ssi"]){
       if($apache_version == 1){
         $ssi = "AddType text/html .shtml
@@ -1598,6 +1613,7 @@ DocumentRoot ".$document_root."
 ErrorLog ".$mod->system->server_conf["server_path_httpd_root"]."/web".$web["doc_id"]."/log/error.log
 ".$php."
 ".$ruby."
+".$python."
 ".$ssi."
 ".$wap."
 SSLEngine on
@@ -1639,6 +1655,7 @@ clearstatcache();
                         SERVERADMIN => "webmaster@".$web["web_domain"],
                         PHP => $php,
                         RUBY => $ruby,
+                        PYTHON => $python,
                         SSI => $ssi,
                         WAP => $wap,
                         ERRORALIAS => $error_alias,
@@ -1663,6 +1680,7 @@ clearstatcache();
                         SERVERADMIN => "",
                         PHP => "",
                         RUBY => "",
+                        PYTHON => "",
                         SSI => "",
                         WAP => "",
                         ERRORALIAS => "",

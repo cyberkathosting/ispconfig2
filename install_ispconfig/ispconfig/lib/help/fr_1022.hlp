@@ -18,6 +18,7 @@ $hlp["limit_slave_dns"] = "Spécifie le nombre maximal de domaines pour lequels l
 $hlp["limit_cgi"] = "Spécifie si le revendeur est autorisé à assigner la fonction CGI aux sites web de son compte.";
 $hlp["limit_php"] = "Spécifie si le revendeur est autorisé à assigner la fonction PHP aux sites web de son compte.";
 $hlp["limit_ruby"] = "Spécifie si le revendeur est autorisé à assigner la fonction Ruby aux sites web de son compte.";
+$hlp["limit_python"] = "Spécifie si le revendeur est autorisé à assigner la fonction Python aux sites web de son compte.";
 $hlp["limit_ssi"] = "Spécifie si le revendeur est autorisé à assigner la fonction SSI aux sites web de son compte.";
 $hlp["limit_ftp"] = "Spécifie si le revendeur est autorisé à assigner la fonction FTP aux sites web de son compte.";
 $hlp["limit_frontpage"] = "Spécifie si le revendeur est autorisé à assigner la fonction Frontpage aux sites web de son compte.";

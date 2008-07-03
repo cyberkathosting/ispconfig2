@@ -14,6 +14,7 @@ $hlp["web_traffic"] = "Proszê sprecyzowaæ ile transferu jest przeznaczone na str
 $hlp["web_cgi"] = "W³±czamy obs³ugê skryptów CGI.";
 $hlp["web_php"] = "W³±czamy obs³ugê skryptów PHP.";
 $hlp["web_ruby"] = "W³±czamy obs³ugê skryptów Ruby.";
+$hlp["web_python"] = "W³±czamy obs³ugê skryptów Python.";
 $hlp["web_ssi"] = "W³±czamy obs³ugê SSI.";
 $hlp["web_ftp"] = "W³±czamy dostêp do FTP dla tej strony .";
 $hlp["web_frontpage"] = "W³±czamy obs³ugê rozszerzeñ Frontpage.";

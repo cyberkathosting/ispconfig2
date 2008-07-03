@@ -12,6 +12,7 @@ $hlp["web_traffic"] = "Specifie combien de bande passante (trafic) est autorisé 
 $hlp["web_cgi"] = "Active CGI pour ce site.";
 $hlp["web_php"] = "Active PHP pour ce site.";
 $hlp["web_ruby"] = "Active Ruby pour ce site.";
+$hlp["web_python"] = "Active Python pour ce site.";
 $hlp["web_ssi"] = "Active SSI pour ce site.";
 $hlp["web_ftp"] = "Active l'accès FTP pour ce site.";
 $hlp["web_frontpage"] = "Active les Extensions  Frontpage pour ce site.";

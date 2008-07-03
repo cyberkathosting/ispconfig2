@@ -13,6 +13,7 @@ $hlp["web_traffic"] = "Specifies how much free traffic is included in this web (
 $hlp["web_cgi"] = "Activates CGI for this web.";
 $hlp["web_php"] = "Activates PHP for this web.";
 $hlp["web_ruby"] = "Activates Ruby for this web.";
+$hlp["web_python"] = "Activates Python for this web.";
 $hlp["web_ssi"] = "Activates SSI for this web.";
 $hlp["web_ftp"] = "Activates FTP access for this web.";
 $hlp["web_frontpage"] = "Activates Frontpage Extensions for this web.";

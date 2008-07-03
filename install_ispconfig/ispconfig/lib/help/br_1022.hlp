@@ -19,6 +19,7 @@ $hlp["limit_slave_dns"] = "Por favor especifique o número máximo de domínios que
 $hlp["limit_cgi"] = "Por favor especifique se será permitido ao revendedor, disponibilizar a funcionalidade CGI a seus websites.";
 $hlp["limit_php"] = "Por favor especifique se será permitido ao revendedor, disponibilizar a funcionalidade PHP a seus websites.";
 $hlp["limit_ruby"] = "Por favor especifique se será permitido ao revendedor, disponibilizar a funcionalidade Ruby a seus websites.";
+$hlp["limit_python"] = "Por favor especifique se será permitido ao revendedor, disponibilizar a funcionalidade Python a seus websites."; 
 $hlp["limit_ssi"] = "Por favor especifique se será permitido ao revendedor, disponibilizar a funcionalidade SSI a seus websites.";
 $hlp["limit_ftp"] = "Por favor especifique se será permitido ao revendedor, disponibilizar a funcionalidade FTP a seus websites.";
 $hlp["limit_frontpage"] = "Por favor especifique se será permitido ao revendedor, disponibilizar a funcionalidade FrontPage a seus websites.";

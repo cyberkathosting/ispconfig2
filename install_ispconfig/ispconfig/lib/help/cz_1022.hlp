@@ -18,6 +18,7 @@ $hlp["limit_slave_dns"] = "Prosím urèete maximální mnozství domén, pro které mù¾
 $hlp["limit_cgi"] = "Prosím urèete zda má prodejce mít mo¾nost pøiøadit CGI pro weby v rámci svého úètu.";
 $hlp["limit_php"] = "Prosím urèete zda má prodejce mít mo¾nost pøiøadit PHP pro weby v rámci svého úètu.";
 $hlp["limit_ruby"] = "Prosím urèete zda má prodejce mít mo¾nost pøiøadit Ruby pro weby v rámci svého úètu.";
+$hlp["limit_python"] = "Prosím urèete zda má prodejce mít mo¾nost pøiøadit Python pro weby v rámci svého úètu.";
 $hlp["limit_ssi"] = "Prosím urèete zda má prodejce mít mo¾nost pøiøadit SSI pro weby v rámci svého úètu.";
 $hlp["limit_ftp"] = "Prosím urèete zda má prodejce mít mo¾nost pøiøadit FTP pro weby v rámci svého úètu.";
 $hlp["limit_frontpage"] = "Prosím urèete zda má prodejce mít mo¾nost pøiøadit Frontpage roz¹íøení pro weby v rámci svého úètu.";
