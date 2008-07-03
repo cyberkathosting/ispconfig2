@@ -877,6 +877,7 @@ CREATE TABLE `isp_isp_reseller` (
   `limit_traffic` varchar(255) default '-1',
   `limit_traffic_ueberschreitung` varchar(255) default '1',
   `limit_ruby` char(1) default '1',
+  `limit_python` char(1) default '1',
   PRIMARY KEY  (`doc_id`),
   KEY `doctype_id` (`doctype_id`)
 ) TYPE=MyISAM;
@@ -1000,6 +1001,7 @@ CREATE TABLE `isp_isp_web` (
   `web_traffic_status` varchar(255) default NULL,
   `webalizer_stats` char(1) default '1',
   `web_ruby` char(1) default NULL,
+  `web_python` char(1) default NULL,
   PRIMARY KEY  (`doc_id`),
   KEY `doctype_id` (`doctype_id`)
 ) TYPE=MyISAM;
@@ -1041,9 +1043,11 @@ CREATE TABLE `isp_isp_web_template` (
   `web_traffic` varchar(255) default NULL,
   `web_traffic_ueberschreitung` varchar(255) default NULL,
   `web_ruby` char(1) default NULL,
+  `web_python` char(1) default NULL,
   PRIMARY KEY  (`doc_id`),
   KEY `doctype_id` (`doctype_id`)
 ) TYPE=MyISAM;
+
 
 --
 -- Dumping data for table `isp_isp_web_template`
