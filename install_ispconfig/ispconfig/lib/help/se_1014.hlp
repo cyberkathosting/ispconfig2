@@ -11,6 +11,7 @@ $hlp["user_passwort"] = "Skriv in ett lösenord. Du kan slå in vilket lösenord so
 $hlp["user_speicher"] = "Slå in storlek på lagringsmängden för användaren.";
 $hlp["user_admin"] = "Gör denna användare till Administratör för denna webbplats. Endast en användare per webbplats kan vara Administratör.";
 $hlp["user_shell"] = "Ger användaren Skal access (ex.Bash).";
+$hlp["user_cron"] = "Allows the user to create Cron Jobs.";
 $hlp["user_emailalias"] = "Här kan du skriva in fler epost alias (ex. annan stavning) för att kunna ta emot epost för dessa alias. Slå endast in delen innan \"@\"!";
 $hlp["user_name"] = "Skriv in användarens riktiga namn.";
 $hlp["user_autoresponder"] = "Aktiverar funktionen epost autosvar för användarens epost lådor.";

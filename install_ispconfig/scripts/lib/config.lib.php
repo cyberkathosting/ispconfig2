@@ -45,6 +45,7 @@ var $firewall_doctype_id = 1025;
 var $slave_doctype_id = 1028;
 var $datenbank_doctype_id = 1029;
 var $spf_record_doctype_id = 1031;
+var $cron_doctype_id = 1032;
 var $vhost_conf;
 var $ftp_conf;
 var $apache_user;
@@ -914,10 +915,11 @@ function user_update($doc_id, $doctype_id) {
     }
   }
 
-  // Mailquota, Autoresponder etc. einrichten
+  // Mailquota, Autoresponder, Cron Jobs etc. einrichten
   $mod->procmail->make_forward($doc_id);
   $mod->procmail->make_procmailrc($doc_id);
   $mod->procmail->make_recipes($doc_id);
+  $mod->cron->make_cron($doc_id);
 
   // Spamassassin directory anlegen
   if(!is_dir($web_path."/user/".$user_username."/.spamassassin")) {

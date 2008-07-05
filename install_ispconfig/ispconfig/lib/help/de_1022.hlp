@@ -19,6 +19,7 @@ $hlp["limit_cgi"] = "Bitte geben Sie an, ob der Reseller den ihm zugeordneten We
 $hlp["limit_php"] = "Bitte geben Sie an, ob der Reseller den ihm zugeordneten Websites PHP-Funktionalität zuweisen darf.";
 $hlp["limit_ruby"] = "Bitte geben Sie an, ob der Reseller den ihm zugeordneten Websites Ruby-Funktionalität zuweisen darf.";
 $hlp["limit_python"] = "Bitte geben Sie an, ob der Reseller den ihm zugeordneten Websites Python-Funktionalität zuweisen darf.";
+$hlp["limit_cron"] = "Bitte geben Sie an, ob der Reseller den ihm zugeordneten Websites Cron Jobs zuweisen darf.";
 $hlp["limit_ssi"] = "Bitte geben Sie an, ob der Reseller den ihm zugeordneten Websites SSI-Funktionalität zuweisen darf.";
 $hlp["limit_ftp"] = "Bitte geben Sie an, ob der Reseller den ihm zugeordneten Websites FTP-Funktionalität zuweisen darf.";
 $hlp["limit_frontpage"] = "Bitte geben Sie an, ob der Reseller den ihm zugeordneten Websites Frontpage-Funktionalität zuweisen darf.";

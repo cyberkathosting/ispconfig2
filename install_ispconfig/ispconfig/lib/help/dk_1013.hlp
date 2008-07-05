@@ -26,6 +26,7 @@ $hlp["web_cgi"] = "Aktivere CGI for denne web.";
 $hlp["web_php"] = "Aktivere PHP for denne web.";
 $hlp["web_ruby"] = "Aktivere Ruby for denne web.";
 $hlp["web_python"] = "Aktivere Python for denne web.";
+$hlp["web_cron"] = "Aktivere Cron Jobs for denne web.";
 $hlp["web_ssi"] = "Aktivere SSI for denne web.";
 $hlp["web_ftp"] = "Aktivere FTP adgang for denne web.";
 $hlp["web_frontpage"] = "Aktivere Frontpage Extensions for denne web.";

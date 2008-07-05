@@ -558,4 +558,8 @@ $wb["txt_traffic_notification_email_variables"] = '<table border="0" cellpadding
 
 $wb["Catalog_Name"] = "Nume";
 
+$wb["Cron Jobs"]      = "Cron Jobs";
+$wb["error_anbieter_cron_aktiv"] = "Cron Jobs-urile sunt deja in uz pe unele pagini WEB ale distribuitorului.Aceasta facilitate nu poate fi dezactivata.<br>";
+$wb["error_web_no_cron"] = "Nu puteti da drepturi Cron Jobs pentru acest domeniu.<br>";
+$wb["error_cron_nicht_erlaubt"] = "The creation of Cron Jobs is not allowed for this user.<br>";
 ?>

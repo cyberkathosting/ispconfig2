@@ -559,4 +559,9 @@ $wb["Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 -"] = "Sólo están perm
 $wb["Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 - ."] = "Sólo están permitidos los siguientes caracteres: a-z A-Z 0-9 - .<br>";
 $wb["txt_system_currently_updated_no_recycle_bin"] = "El sistema está actualizando los archivos de configuración en este momento.";
 
+$wb["Cron Jobs"]      = "Cron Jobs";
+$wb["error_anbieter_cron_aktiv"] = "Cron Jobs ya está en uso en alguno de los sitios web del revendedor. Esta característica no puede ser desactivada.<br>";
+$wb["error_web_no_cron"] = "No puede asignar la funcionalidad Cron Jobs a este sitio web.<br>";
+$wb["error_cron_nicht_erlaubt"] = "The creation of Cron Jobs is not allowed for this user.<br>";
+
 ?>

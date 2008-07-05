@@ -583,4 +583,8 @@ $wb["Use Uribl"] = 'Use <a href="http://www.uribl.com/about.shtml" target="_blan
 $wb["Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 -"] = "Uitsluitende de volgende tekens zijn toegestaan: a-z A-Z 0-9 -<br>";
 $wb["Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 - ."] = "Uitsluitende de volgende tekens zijn toegestaan: a-z A-Z 0-9 - .<br>";
 
+$wb["Cron Jobs"]      = "Cron Jobs";
+$wb["error_anbieter_cron_aktiv"] = "Cron Jobs is reeds in gebruik op sommige websites van de reseller. Deze optie kan niet worden gedeactiveerd.<br>";
+$wb["error_web_no_cron"] = "U kunt geen Cron Jobs functionaliteit toekennen aan deze website.<br>";
+$wb["error_cron_nicht_erlaubt"] = "The creation of Cron Jobs is not allowed for this user.<br>";
 ?>

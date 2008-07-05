@@ -14,6 +14,7 @@ $hlp["web_cgi"] = "Aktivovat CGI pro tento web.";
 $hlp["web_php"] = "Aktivovat PHP pro tento web.";
 $hlp["web_ruby"] = "Aktivovat Ruby pro tento web.";
 $hlp["web_python"] = "Aktivovat Python pro tento web.";
+$hlp["web_cron"] = "Aktivovat Cron Jobs pro tento web.";
 $hlp["web_ssi"] = "Aktivovat SSI pro tento web.";
 $hlp["web_ftp"] = "Aktivovat FTP pøístup pro tento web.";
 $hlp["web_frontpage"] = "Aktivovat Frontpage roz¹íøení pro tento web.";

@@ -566,5 +566,9 @@ $wb["Use Uribl"] = 'Χρήση <a href="http://www.uribl.com/about.shtml" target="_bl
 $wb["Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 -"] = "Επιτρέπονται μόνο οι ακόλουθοι χαρακτήρες: a-z A-Z 0-9 -<br>";
 $wb["Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 - ."] = "Επιτρέπονται μόνο οι ακόλουθοι χαρακτήρες: a-z A-Z 0-9 - .<br>";
 
+$wb["Cron Jobs"]      = "Cron Jobs";
+$wb["error_anbieter_cron_aktiv"] = "Η λειτουργία Cron Jobs χρησιμοποιείται ήδη σε δικτυακούς τόπους του μεταπωλητή. Αυτή η λειτουργία δε μπορεί να απενεργοποιηθεί.<br>";
+$wb["error_web_no_cron"] = "Δε μπορείτε να ορίσετε λειτουργία Cron Jobs σε αυτό το δικτυακό τόπο.<br>";
+$wb["error_cron_nicht_erlaubt"] = "The creation of Cron Jobs is not allowed for this user.<br>";
 
 ?>

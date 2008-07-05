@@ -14,6 +14,7 @@ $hlp["web_cgi"] = "Durch das Häkchen ist das Ausführen von CGI-Scripts im Web mö
 $hlp["web_php"] = "Durch das Häkchen ist das Ausführen von PHP im Web möglich.";
 $hlp["web_ruby"] = "Durch das Häkchen ist das Ausführen von Ruby im Web möglich.";
 $hlp["web_python"] = "Durch das Häkchen ist das Ausführen von Python im Web möglich.";
+$hlp["web_cron"] = "Durch das Häkchen ist das Ausführen von Cron Jobs möglich.";
 $hlp["web_ssi"] = "Durch das Häkchen ist das Ausführen von SSI im Web möglich.";
 $hlp["web_ftp"] = "Durch das Häkchen wird der FTP-Zugang aktiviert.";
 $hlp["web_frontpage"] = "Durch das Häkchen werden die Frontpage-Extensions aktiviert.";

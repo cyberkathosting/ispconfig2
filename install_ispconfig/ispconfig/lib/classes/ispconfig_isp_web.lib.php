@@ -151,6 +151,7 @@ function web_show($doc_id, $doctype_id) {
                   $doc->deck[0]->elements[24]->visible = 0;
                   $doc->deck[6]->elements[5]->visible = 0;
                 }
+                if($reseller["limit_cron"] != 1) $doc->deck[0]->elements[39]->visible = 0;
         }
 
         // überprüfe welche Funktionen aktiv sind
@@ -194,6 +195,7 @@ function web_show($doc_id, $doctype_id) {
                         $doc->deck[0]->elements[32]->value = $vorlage["web_individual_error_pages"];
                         $doc->deck[0]->elements[34]->value = $vorlage["web_mailuser_login"];
                         $doc->deck[0]->elements[36]->value = $vorlage["web_httpd_include"];
+                        $doc->deck[0]->elements[39]->value = $vorlage["web_cron"];
                 }
 
 
@@ -306,6 +308,7 @@ function web_insert($doc_id, $doctype_id, $die_on_error = '1') {
       if($reseller["limit_php"] != 1 && ($web["web_php"] == 1 || $web[" web_php_safe_mode"] == 1)) $limit_errors .= $go_api->lng("error_web_no_php");
       if($reseller["limit_ruby"] != 1 && $web["web_ruby"] == 1) $limit_errors .= $go_api->lng("error_web_no_ruby");
       if($reseller["limit_python"] != 1 && $web["web_python"] == 1) $limit_errors .= $go_api->lng("error_web_no_python");
+      if($reseller["limit_cron"] != 1 && $web["web_cron"] == 1) $limit_errors .= $go_api->lng("error_web_no_cron");
       if($reseller["limit_ssi"] != 1 && $web["web_ssi"] == 1) $limit_errors .= $go_api->lng("error_web_no_ssi");
       if($reseller["limit_ftp"] != 1 && $web["web_ftp"] == 1) $limit_errors .= $go_api->lng("error_web_no_ftp");
       if($reseller["limit_mysql"] != 1 && $web["web_mysql"] == 1) $limit_errors .= $go_api->lng("error_web_no_mysql");
@@ -694,6 +697,11 @@ global $go_api, $go_info, $old_form_data;
         $status = "NOTIFY";
         $go_api->db->query("UPDATE isp_isp_web SET web_python = '0' WHERE doc_id = '".$doc_id."'");
         $errorMessage .= $go_api->lng("error_web_no_python");
+      }
+      if($reseller["limit_cron"] != 1 && $web["web_cron"] == 1){
+        $status = "NOTIFY";
+        $go_api->db->query("UPDATE isp_isp_web SET web_cron = '0' WHERE doc_id = '".$doc_id."'");
+        $errorMessage .= $go_api->lng("error_web_no_cron");
       }
       if($reseller["limit_ssi"] != 1 && $web["web_ssi"] == 1){
         $status = "NOTIFY";
