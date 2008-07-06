@@ -443,6 +443,7 @@ function web_update($doc_id,$doctype_id,$server_id) {
     $users = $mod->db->queryAllRecords($sql);
     foreach($users as $user) {
         $mod->db->query("UPDATE isp_isp_user SET status = 'u' WHERE doc_id = ".$user["doc_id"]." AND status != 'd' AND status != 'n'");
+        if(!$web['web_cron']) $mod->db->query("UPDATE isp_isp_cron SET cron_active = 0, status = 'u' WHERE user_id = '".$user["doc_id"]."'");
     }
     unset($users);
 
@@ -732,6 +733,7 @@ function user_insert($doc_id, $doctype_id) {
   $mod->procmail->make_forward($doc_id);
   $mod->procmail->make_procmailrc($doc_id);
   $mod->procmail->make_recipes($doc_id);
+  $mod->cron->make_cron($doc_id);
 
   // Spamassassin directory anlegen
   if(!is_dir($web_path."/user/".$user_username."/.spamassassin")) {
@@ -1008,6 +1010,7 @@ function user_delete($doc_id, $doctype_id) {
   //User deaktivieren
   //$mod->log->caselog("userdel -r $user_username &> /dev/null", $this->FILE, __LINE__);
   //$mod->system->deluser($user_username);
+  $mod->cron->make_cron($doc_id);
   $mod->system->deactivateuser($user_username);
 
   // User-Mail-Datei löschen

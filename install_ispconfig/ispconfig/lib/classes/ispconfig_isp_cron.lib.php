@@ -110,7 +110,7 @@ global $go_api, $go_info,$s;
         $user_doc_id = $user["parent_doc_id"];
         $user_doctype_id = $user["parent_doctype_id"];
         $usernode = $go_api->db->queryOneRecord("SELECT * from isp_nodes where doc_id = $user_doc_id and doctype_id = $user_doctype_id");
-        $go_api->db->query("UPDATE isp_nodes SET groupid = ".$usernode["groupid"].", userid = ".$usernode["userid"].", title = 'Cron Job: ".$cron["cron_name"]."' where doc_id = '$doc_id' and doctype_id = '$doctype_id'");
+        $go_api->db->query("UPDATE isp_nodes SET groupid = ".$usernode["groupid"].", userid = ".$usernode["userid"].", title = '".$cron["cron_name"]."' where doc_id = '$doc_id' and doctype_id = '$doctype_id'");
         $go_api->db->query("UPDATE isp_isp_user SET status = 'u' where status != 'n' and status != 'd' and doc_id = '$user_doc_id'");
 
     }
@@ -145,7 +145,7 @@ global $go_api, $go_info,$s,$HTTP_POST_VARS;
     $user_doc_id = $user["parent_doc_id"];
     $user_doctype_id = $user["parent_doctype_id"];
     $usernode = $go_api->db->queryOneRecord("SELECT * from isp_nodes where doc_id = $user_doc_id and doctype_id = $user_doctype_id");
-    $go_api->db->query("UPDATE isp_nodes SET groupid = ".$usernode["groupid"].", userid = ".$usernode["userid"].", title = 'Cron Job: ".$cron["cron_name"]."' where doc_id = '$doc_id' and doctype_id = '$doctype_id'");
+    $go_api->db->query("UPDATE isp_nodes SET groupid = ".$usernode["groupid"].", userid = ".$usernode["userid"].", title = '".$cron["cron_name"]."' where doc_id = '$doc_id' and doctype_id = '$doctype_id'");
 
     $go_api->db->query("UPDATE isp_isp_user SET status = 'u' where status != 'n' and status != 'd' and doc_id = '$user_doc_id'");
 

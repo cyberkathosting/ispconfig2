@@ -35,12 +35,12 @@ function make_cron($doc_id) {
   global $mod, $isp_web;
 
   if(!$cron = $mod->db->queryOneRecord("SELECT * FROM isp_isp_cron WHERE user_id = $doc_id AND status != ''")) return false;
-  if(!$user_crons = $mod->db->queryAllRecords("SELECT * FROM isp_isp_cron, isp_nodes WHERE isp_isp_cron.user_id = $doc_id AND isp_isp_cron.doc_id = isp_nodes.doc_id AND isp_nodes.doctype_id = '".$isp_web->cron_doctype_id."' AND isp_nodes.status = '1'")) return false;
+  if(!$user_crons = $mod->db->queryAllRecords("SELECT isp_isp_cron.doc_id, isp_isp_cron.cron_active, isp_isp_cron.cron_minutes, isp_isp_cron.cron_hours, isp_isp_cron.cron_days, isp_isp_cron.cron_months, isp_isp_cron.cron_weekdays, isp_isp_cron.cron_command, isp_nodes.status FROM isp_isp_cron, isp_nodes WHERE isp_isp_cron.user_id = $doc_id AND isp_isp_cron.doc_id = isp_nodes.doc_id AND isp_nodes.doctype_id = '".$isp_web->cron_doctype_id."'")) return false;
 
   $cron_jobs = array();
   $cron_jobs[] = '# CRON JOBS MANAGED BY ISPCONFIG. DO NOT EDIT BELOW!';
   foreach($user_crons as $user_cron){
-    if($user_cron['cron_active']){
+    if($user_cron['cron_active'] && $user_cron['status']){
       if(strpos($user_cron['cron_minutes'], '*') === true) $user_cron['cron_minutes'] = '*';
       if(strpos($user_cron['cron_hours'], '*') === true) $user_cron['cron_hours'] = '*';
       if(strpos($user_cron['cron_days'], '*') === true) $user_cron['cron_days'] = '*';
@@ -53,13 +53,6 @@ function make_cron($doc_id) {
 
   $user = $mod->system->data["isp_isp_user"][$doc_id];
   $sql = "SELECT * FROM isp_dep WHERE child_doc_id = '$doc_id' AND child_doctype_id = '".$isp_web->user_doctype_id."'";
-
-  // doc_id des Webs bestimmen
-  $web_dep = $mod->db->queryOneRecord($sql);
-  $web_doc_id = $web_dep["parent_doc_id"];
-  $web_path = $mod->system->server_conf["server_path_httpd_root"]."/web".$web_doc_id;
-  $user_web = $mod->system->data["isp_isp_web"][$web_doc_id];
-  $domain = $user_web["web_domain"];
 
   $user_username = $user["user_username"];
 

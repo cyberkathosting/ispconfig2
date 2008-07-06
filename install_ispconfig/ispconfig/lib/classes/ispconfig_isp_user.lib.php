@@ -83,7 +83,10 @@ function user_show($doc_id, $doctype_id) {
 
          // Wenn Shellzugriff im Web deaktiviert ist
          if($web["web_shell"] != '1') $doc->deck[0]->elements[11]->visible = 0;
-         if($web["web_cron"] != '1') $doc->deck[0]->elements[12]->visible = 0;
+         if($web["web_cron"] != '1'){
+           $doc->deck[0]->elements[12]->visible = 0;
+           $doc->deck[3]->visible = 0;
+         }
 
          // Spamfilter Settings deaktivieren
          if($this->server_conf["spamfilter_enable"] != 1) $doc->deck[2]->visible = 0;
@@ -262,6 +265,9 @@ global $go_api, $go_info,$s;
             $status = "DELETE";
             $errorMessage .= $go_api->lng("error_admin_exist");
      }
+
+     // wenn keine Cron Jobs erlaubt, Cron Jobs deaktivieren
+     if(!$user['user_cron']) $go_api->db->query("UPDATE isp_isp_cron SET cron_active = 0, status = 'u' WHERE user_id = '$doc_id'");
 
 
     if($status == "DELETE") {
@@ -501,6 +507,9 @@ global $go_api, $go_info,$s,$HTTP_POST_VARS,$old_form_data;
                 $emailweiterleitung = @implode($tmp_new,"\r\n");
                 $go_api->db->query("UPDATE isp_isp_user SET user_emailweiterleitung = '$emailweiterleitung' where doc_id = $doc_id");
         }
+
+        // wenn keine Cron Jobs erlaubt, Cron Jobs deaktivieren
+     if(!$user['user_cron']) $go_api->db->query("UPDATE isp_isp_cron SET cron_active = 0, status = 'u' WHERE user_id = '$doc_id'");
 
         ////////////////////////////////////////////////////////
             // Server benachrichtigen

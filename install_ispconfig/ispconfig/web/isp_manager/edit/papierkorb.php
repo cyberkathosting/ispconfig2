@@ -149,6 +149,11 @@ if($row["doctype_id"] == 1029) {
     $title = "<b>".$go_api->lng("Datenbank").":</b> ".$title;
 }
 
+//Cron Job
+if($row["doctype_id"] == 1032) {
+    $title = "<b>".$go_api->lng("Cron Job").":</b> ".$title;
+}
+
 
 ////////////////////////////////////////////
 
