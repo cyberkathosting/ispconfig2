@@ -35,7 +35,7 @@ function make_cron($doc_id) {
   global $mod, $isp_web;
 
   if(!$cron = $mod->db->queryOneRecord("SELECT * FROM isp_isp_cron WHERE user_id = $doc_id AND status != ''")) return false;
-  if(!$user_crons = $mod->db->queryAllRecords("SELECT isp_isp_cron.doc_id, isp_isp_cron.cron_active, isp_isp_cron.cron_minutes, isp_isp_cron.cron_hours, isp_isp_cron.cron_days, isp_isp_cron.cron_months, isp_isp_cron.cron_weekdays, isp_isp_cron.cron_command, isp_nodes.status FROM isp_isp_cron, isp_nodes WHERE isp_isp_cron.user_id = $doc_id AND isp_isp_cron.doc_id = isp_nodes.doc_id AND isp_nodes.doctype_id = '".$isp_web->cron_doctype_id."'")) return false;
+  if(!$user_crons = $mod->db->queryAllRecords("SELECT isp_isp_cron.doc_id, isp_isp_cron.cron_active, isp_isp_cron.cron_minutes, isp_isp_cron.cron_hours, isp_isp_cron.cron_days, isp_isp_cron.cron_months, isp_isp_cron.cron_weekdays, isp_isp_cron.cron_command, isp_isp_cron.cron_name, isp_nodes.status FROM isp_isp_cron, isp_nodes WHERE isp_isp_cron.user_id = $doc_id AND isp_isp_cron.doc_id = isp_nodes.doc_id AND isp_nodes.doctype_id = '".$isp_web->cron_doctype_id."'")) return false;
 
   $cron_jobs = array();
   $cron_jobs[] = '# CRON JOBS MANAGED BY ISPCONFIG. DO NOT EDIT BELOW!';
@@ -46,7 +46,7 @@ function make_cron($doc_id) {
       if(strpos($user_cron['cron_days'], '*') === true) $user_cron['cron_days'] = '*';
       if(strpos($user_cron['cron_months'], '*') === true) $user_cron['cron_months'] = '*';
       if(strpos($user_cron['cron_weekdays'], '*') === true) $user_cron['cron_weekdays'] = '*';
-      $cron_jobs[] = '#'.$user_cron['doc_id'];
+      $cron_jobs[] = '#'.$user_cron['doc_id'].' '.$user_cron['cron_name'];
       $cron_jobs[] = $user_cron['cron_minutes'].' '.$user_cron['cron_hours'].' '.$user_cron['cron_days'].' '.$user_cron['cron_months'].' '.$user_cron['cron_weekdays'].' '.$user_cron['cron_command'];
     }
   }
@@ -56,7 +56,7 @@ function make_cron($doc_id) {
 
   $user_username = $user["user_username"];
 
-  exec("crontab -u $user_username -l > crontab_$user_username.txt");
+  exec("crontab -u $user_username -l > crontab_".$user_username.".txt");
   list($existing_cron_jobs,) = split('# CRON JOBS MANAGED BY ISPCONFIG. DO NOT EDIT BELOW!', $mod->file->rf('crontab_'.$user_username.'.txt'));
   $mod->file->wf('crontab_'.$user_username.'.txt', $existing_cron_jobs);
   //$existing_cron_jobs = $mod->file->rf('crontab_'.$user_username.'.txt');
@@ -68,7 +68,7 @@ function make_cron($doc_id) {
   $mod->file->wf('crontab_'.$user_username.'.txt', trim($mod->file->rf('crontab_'.$user_username.'.txt')));
   $mod->file->remove_blank_lines('crontab_'.$user_username.'.txt');
   $mod->file->af('crontab_'.$user_username.'.txt', "\n");
-  exec("crontab -u $user_username crontab_$user_username.txt &> /dev/null");
+  exec("crontab -u ".$user_username." crontab_".$user_username.".txt &> /dev/null");
   unlink('crontab_'.$user_username.'.txt');
 
   $mod->db->query("UPDATE isp_isp_cron SET status = '' WHERE user_id = '".$doc_id."'");
