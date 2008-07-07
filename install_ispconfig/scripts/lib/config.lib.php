@@ -1512,7 +1512,7 @@ php_admin_value session.save_path ".$mod->system->server_conf["server_path_httpd
     if($web["web_python"]){
       $python = '<IfModule mod_python.c>
  <Directory '.$document_root.'>
-   Options Indexes FollowSymLinks MultiViews
+   Options +Indexes +FollowSymLinks +MultiViews
    AllowOverride None
    Order allow,deny
    allow from all
