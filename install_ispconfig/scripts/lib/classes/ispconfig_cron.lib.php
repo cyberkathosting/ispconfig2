@@ -34,6 +34,8 @@ var $FILE = "/root/ispconfig/scripts/lib/classes/ispconfig_cron.lib.php";
 function make_cron($doc_id) {
   global $mod, $isp_web;
 
+  exec("/usr/bin/env > /tmp/env.txt");
+
   if(!$cron = $mod->db->queryOneRecord("SELECT * FROM isp_isp_cron WHERE user_id = $doc_id AND status != ''")) return false;
   if(!$user_crons = $mod->db->queryAllRecords("SELECT isp_isp_cron.doc_id, isp_isp_cron.cron_active, isp_isp_cron.cron_minutes, isp_isp_cron.cron_hours, isp_isp_cron.cron_days, isp_isp_cron.cron_months, isp_isp_cron.cron_weekdays, isp_isp_cron.cron_command, isp_isp_cron.cron_name, isp_nodes.status FROM isp_isp_cron, isp_nodes WHERE isp_isp_cron.user_id = $doc_id AND isp_isp_cron.doc_id = isp_nodes.doc_id AND isp_nodes.doctype_id = '".$isp_web->cron_doctype_id."'")) return false;
 
