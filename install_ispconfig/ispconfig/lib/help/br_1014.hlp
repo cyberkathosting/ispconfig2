@@ -12,6 +12,7 @@ $hlp["user_passwort"] = "Por favor especifique uma senha. Você pode especificar 
 $hlp["user_speicher"] = "Por favor entre com o espaço em disco permitido para o usuário.";
 $hlp["user_admin"] = "Faz do usuário, administrador para este site. Somente 1 usuário por site pode ser administrador.";
 $hlp["user_shell"] = "Habilita acesso ao shell para o usuário.";
+$hlp["user_cron"] = "Allows the user to create Cron Jobs.";
 $hlp["user_emailalias"] = "Aqui você pode entrar com diferentes apelidos para o e-mail. Entre somente com a parte antes do  \"@\"!";
 $hlp["user_name"] = "Por favor entre com o nome completo do usuário.";
 $hlp["user_autoresponder"] = "Ativa a auto-resposta para o e-mail do usuário.";

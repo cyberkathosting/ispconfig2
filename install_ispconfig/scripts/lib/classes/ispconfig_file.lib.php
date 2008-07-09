@@ -107,7 +107,7 @@ function manual_entries($file, $separator = '#### MAKE MANUAL ENTRIES BELOW THIS
   if(is_file($file)){
     $content = $this->rf($file);
     $parts = explode($separator, $content);
-    $manual = "\n".trim($parts[1]);
+    $manual = "\n".trim($parts[1])."\n\n";
     return $manual;
   } else {
     return "";

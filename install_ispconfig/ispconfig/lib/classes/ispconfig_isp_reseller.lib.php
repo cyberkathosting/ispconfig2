@@ -76,7 +76,7 @@ function reseller_show($doc_id, $doctype_id) {
         $server = $go_api->db->queryOneRecord("SELECT * from isp_server where doc_id = '$server_id'");
         // Deaktiviere Frontpage
         if($server["server_enable_frontpage"] != 1) {
-                $doc->deck[1]->elements[19]->visible = 0;
+                $doc->deck[1]->elements[20]->visible = 0;
         }
 
         // DNS-Reseller: "Sonstiges"-Tab verstecken (Begrüßungsemail für Kunden nicht nötig)
@@ -327,6 +327,26 @@ function reseller_update($doc_id, $doctype_id, $die_on_error = '1') {
       if($webanzahl > 0){
         $go_api->db->query("UPDATE isp_isp_reseller SET limit_ruby = '1' WHERE doc_id = '$doc_id'");
         $res_limit_errorMessage .= $go_api->lng("error_anbieter_ruby_aktiv");
+      }
+      unset($webanzahl);
+    }
+
+    if(!$reseller["limit_python"]){
+      $webanzahl = $go_api->db->queryOneRecord("SELECT COUNT(isp_isp_web.doc_id) AS anzahl FROM isp_nodes, isp_isp_web WHERE isp_nodes.groupid = '".$reseller["reseller_group"]."' AND isp_nodes.doctype_id = '".$this->web_doctype_id."' AND isp_nodes.doc_id = isp_isp_web.doc_id AND isp_isp_web.web_python = '1'");
+      $webanzahl = $webanzahl["anzahl"];
+      if($webanzahl > 0){
+        $go_api->db->query("UPDATE isp_isp_reseller SET limit_python = '1' WHERE doc_id = '$doc_id'");
+        $res_limit_errorMessage .= $go_api->lng("error_anbieter_python_aktiv");
+      }
+      unset($webanzahl);
+    }
+
+    if(!$reseller["limit_cron"]){
+      $webanzahl = $go_api->db->queryOneRecord("SELECT COUNT(isp_isp_web.doc_id) AS anzahl FROM isp_nodes, isp_isp_web WHERE isp_nodes.groupid = '".$reseller["reseller_group"]."' AND isp_nodes.doctype_id = '".$this->web_doctype_id."' AND isp_nodes.doc_id = isp_isp_web.doc_id AND isp_isp_web.web_cron = '1'");
+      $webanzahl = $webanzahl["anzahl"];
+      if($webanzahl > 0){
+        $go_api->db->query("UPDATE isp_isp_reseller SET limit_cron = '1' WHERE doc_id = '$doc_id'");
+        $res_limit_errorMessage .= $go_api->lng("error_anbieter_cron_aktiv");
       }
       unset($webanzahl);
     }

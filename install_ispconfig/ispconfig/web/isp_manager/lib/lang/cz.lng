@@ -62,6 +62,7 @@ $wb["verbraucht"]   = "Pou¾ito";
 $wb["Trafficübersicht"] = "Pøehled pøenosu dat";
 $wb["Monat"]        = "Mìsíc";
 $wb["Traffic"]      = "Pøenos dat";
+$wb["Traffic MB"]      = "Pøenos dat MB";
 $wb["traffic_letzte_4"] = "Pøenos dat za poslední 4 roky";
 $wb["Jahr"]         = "Rok";
 $wb["MySQL User"]        = "U¾ivatelské jméno k MySQL databázi";
@@ -268,6 +269,7 @@ $wb["Spam-Filter"] = 'Spam filtr';
 $wb["Autoresponder"] = 'Automatická odpovìï';
 $wb["ISP Domain"] = 'ISP doména';
 $wb["Create DNS MX"] = 'Vytvoøit DNS MX';
+$wb["Create DNS-MX"] = 'Vytvoøit DNS MX';
 $wb["Admin"] = 'Admin';
 $wb["CatchAll"] = 'Emailový ko¹';
 $wb["Bitte Artikel auswählen"] = "Vybrat polo¾ku";
@@ -419,6 +421,7 @@ $wb["error_anbieter_cgi_aktiv"] = "CGI je ji¾ vyu¾íváno v nìkterém webu prodejce
 $wb["error_anbieter_standard_cgi_aktiv"] = "Standardní CGI je ji¾ vyu¾íváno v nìkterém webu prodejce. Tato mo¾nost nemù¾e být deaktivována.<br>";
 $wb["error_anbieter_php_aktiv"] = "PHP je ji¾ vyu¾íváno v nìkterém webu prodejce. Tato mo¾nost nemù¾e být deaktivována.<br>";
 $wb["error_anbieter_ruby_aktiv"] = "Ruby je ji¾ vyu¾íváno v nìkterém webu prodejce. Tato mo¾nost nemù¾e být deaktivována.<br>";
+$wb["error_anbieter_python_aktiv"] = "Python je ji¾ vyu¾íváno v nìkterém webu prodejce. Tato mo¾nost nemù¾e být deaktivována.<br>";
 $wb["error_anbieter_ssi_aktiv"] = "SSI je ji¾ vyu¾íváno v nìkterém webu prodejce. Tato mo¾nost nemù¾e být deaktivována.<br>";
 $wb["error_anbieter_ftp_aktiv"] = "FTP je ji¾ vyu¾íváno v nìkterém webu prodejce. Tato mo¾nost nemù¾e být deaktivována.<br>";
 $wb["error_anbieter_anonftp_aktiv"] = "Anonymní FTP je ji¾ vyu¾íváno v nìkterém webu prodejce. Tato mo¾nost nemù¾e být deaktivována.<br>";
@@ -455,6 +458,7 @@ $wb["error_web_no_cgi"] = "Nemù¾ete pøiøadit CGI funkce k tomuto webu.<br>";
 $wb["error_web_no_standard_cgi"] = "Nemù¾ete pøiøadit standardní CGI k tomuto webu.<br>";
 $wb["error_web_no_php"] = "Nemù¾ete pøiøadit PHP funkce k tomuto webu.<br>";
 $wb["error_web_no_ruby"] = "Nemù¾ete pøiøadit Ruby funkce k tomuto webu.<br>";
+$wb["error_web_no_python"] = "Nemù¾ete pøiøadit Python funkce k tomuto webu.<br>";
 $wb["error_web_no_ssi"] = "Nemù¾ete pøiøadit SSI funkce k tomuto webu.<br>";
 $wb["error_web_no_ftp"] = "Nemù¾ete pøiøadit FTP funkce k tomuto webu.<br>";
 $wb["error_web_no_mysql"] = "Nemù¾ete pøiøadit MySQL databáze k tomuto webu.<br>";
@@ -581,5 +585,10 @@ $wb["Use Uribl"] = 'Pou¾ívat <a href="http://www.uribl.com/about.shtml" target="
 $wb["Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 -"] = "Jsou povoleny pouze následující znaky: a-z A-Z 0-9 -<br>";
 $wb["Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 - ."] = "Jsou povoleny pouze následující znaky: a-z A-Z 0-9 - .<br>";
 $wb["txt_system_currently_updated_no_recycle_bin"] = "Systém právì aktualizuje konfiguraèní soubory.";
+
+$wb["Cron Jobs"]      = "Cron Jobs";
+$wb["error_anbieter_cron_aktiv"] = "Cron Jobs je ji¾ vyu¾íváno v nìkterém webu prodejce. Tato mo¾nost nemù¾e být deaktivována.<br>";
+$wb["error_web_no_cron"] = "Nemù¾ete pøiøadit Cron Jobs funkce k tomuto webu.<br>";
+$wb["error_cron_nicht_erlaubt"] = "The creation of Cron Jobs is not allowed for this user.<br>";
 
 ?>

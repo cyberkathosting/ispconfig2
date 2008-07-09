@@ -63,6 +63,7 @@ $wb["verbraucht"]   = "usado";
 $wb["Trafficübersicht"] = "Resumo do tráfego";
 $wb["Monat"]        = "Mês";
 $wb["Traffic"]      = "Trágefo";
+$wb["Traffic MB"]      = "Trágefo MB";
 $wb["traffic_letzte_4"] = "Tráfego nos últimos 4 anos";
 $wb["Jahr"]         = "Ano";
 $wb["MySQL User"]        = "Nome de usuário MySQL";
@@ -250,6 +251,7 @@ $wb["Spam-Filter"] = 'Filtro de Spam';
 $wb["Autoresponder"] = 'Auto-resposta';
 $wb["ISP Domain"] = 'Domínio';
 $wb["Create DNS MX"] = 'Criar DNS MX';
+$wb["Create DNS-MX"] = 'Criar DNS MX';
 $wb["Admin"] = 'Admin';
 $wb["CatchAll"] = 'CatchAll';
 $wb["Bitte Artikel auswählen"] = "Selecionar item";
@@ -401,6 +403,7 @@ $wb["error_anbieter_cgi_aktiv"] = "CGI is already in use on some of the reseller
 $wb["error_anbieter_standard_cgi_aktiv"] = "Standard CGIs are already in use on some of the reseller's websites. This feature cannot be deactivated.<br>";
 $wb["error_anbieter_php_aktiv"] = "PHP is already in use on some of the reseller's websites. This feature cannot be deactivated.<br>";
 $wb["error_anbieter_ruby_aktiv"] = "Ruby is already in use on some of the reseller's websites. This feature cannot be deactivated.<br>";
+$wb["error_anbieter_python_aktiv"] = "Python is already in use on some of the reseller's websites. This feature cannot be deactivated.<br>";
 $wb["error_anbieter_ssi_aktiv"] = "SSI is already in use on some of the reseller's websites. This feature cannot be deactivated.<br>";
 $wb["error_anbieter_ftp_aktiv"] = "FTP is already in use on some of the reseller's websites. This feature cannot be deactivated.<br>";
 $wb["error_anbieter_anonftp_aktiv"] = "Anonymous FTP is already in use on some of the reseller's websites. This feature cannot be deactivated.<br>";
@@ -437,6 +440,7 @@ $wb["error_web_no_cgi"] = "Você não pode atribuir a funcionalidade CGI para este
 $wb["error_web_no_standard_cgi"] = "Você não pode atribuir CGI Padrão para este website.<br>";
 $wb["error_web_no_php"] = "Você não pode atribuir a funcionalidade PHP para este website.<br>";
 $wb["error_web_no_ruby"] = "Você não pode atribuir a funcionalidade Ruby para este website.<br>";
+$wb["error_web_no_python"] = "Você não pode atribuir a funcionalidade Python para este website.<br>";
 $wb["error_web_no_ssi"] = "Você não pode atribuir a funcionalidade SSI para este website.<br>";
 $wb["error_web_no_ftp"] = "Você não pode atribuir a funcionalidade FTP para este website.<br>";
 $wb["error_web_no_mysql"] = "Você não pode atribuir banco de dados MySQL databases para este website.<br>";
@@ -563,5 +567,10 @@ $wb["Use Uribl"] = 'Utilizar <a href="http://www.uribl.com/about.shtml" target="
 $wb["Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 -"] = "Somente os seguintes caracteres são permitidos: a-z A-Z 0-9 -<br>";
 $wb["Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 - ."] = "Somente os seguintes caracteres são permitidos: a-z A-Z 0-9 - .<br>";
 $wb["txt_system_currently_updated_no_recycle_bin"] = "The system is currently updating the configuration files.";
+
+$wb["Cron Jobs"]      = "Cron Jobs";
+$wb["error_anbieter_cron_aktiv"] = "Cron jobs are already in use on some of the reseller's websites. This feature cannot be deactivated.<br>";
+$wb["error_web_no_cron"] = "You cannot assign cron jobs to this website.<br>";
+$wb["error_cron_nicht_erlaubt"] = "The creation of Cron Jobs is not allowed for this user.<br>";
 
 ?>

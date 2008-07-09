@@ -120,6 +120,8 @@ dist_path_httpd_root:/srv/www:Web-Root:read::suse102
 
 dist_path_httpd_root:/srv/www:Web-Root:read::suse103
 
+dist_path_httpd_root:/srv/www:Web-Root:read::suse110
+
 dist_path_httpd_root:/var/www:Web-Root:read::debian30
 
 dist_path_httpd_root:/var/www:Web-Root:read::debian31

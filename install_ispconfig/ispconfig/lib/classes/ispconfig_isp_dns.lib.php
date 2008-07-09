@@ -78,13 +78,14 @@ global $go_api, $go_info;
       unset($tmp_as);
     }
 
-    if($tmp_cnames = $go_api->db->queryAllRecords("SELECT * FROM dns_cname WHERE host LIKE 'http://%' OR host LIKE 'https://%' OR host LIKE ' %' OR host LIKE '% ' OR ziel LIKE 'http://%' OR ziel LIKE 'https://%' OR ziel LIKE ' %' OR ziel LIKE '% '")){
+    if($tmp_cnames = $go_api->db->queryAllRecords("SELECT * FROM dns_cname WHERE host LIKE 'http://%' OR host LIKE 'https://%' OR host LIKE ' %' OR host LIKE '% ' OR ziel LIKE 'http://%' OR ziel LIKE 'https://%' OR ziel LIKE ' %' OR ziel LIKE '% ' OR ziel LIKE '%.'")){
       foreach($tmp_cnames as $tmp_cname){
         $tmp_cname['host'] = str_replace('http://', '', $tmp_cname['host']);
         $tmp_cname['host'] = str_replace('https://', '', $tmp_cname['host']);
         $tmp_cname['host'] = trim($tmp_cname['host']);
         $tmp_cname['ziel'] = str_replace('http://', '', $tmp_cname['ziel']);
         $tmp_cname['ziel'] = str_replace('https://', '', $tmp_cname['ziel']);
+        if(substr($tmp_cname['ziel'],-1) == '.') $tmp_cname['ziel'] = substr($tmp_cname['ziel'],0,-1);
         $tmp_cname['ziel'] = trim($tmp_cname['ziel']);
         $go_api->db->query("UPDATE dns_cname SET host = '".$tmp_cname['host']."', ziel = '".$tmp_cname['ziel']."' WHERE doc_id = ".$tmp_cname['doc_id']);
       }
@@ -229,7 +230,9 @@ global $go_api, $go_info;
 
           $mx_record = $go_api->db->queryOneRecord("SELECT * FROM dns_mx WHERE doc_id = '".$dep_row["child_doc_id"]."'");
           // checke ob MX-Record schon existiert
-          $sql = "SELECT dns_mx.doc_id FROM dns_dep, dns_mx where dns_mx.doc_id = dns_dep.child_doc_id and dns_dep.child_doctype_id = '1020' and dns_dep.parent_doc_id = $doc_id and dns_dep.parent_doctype_id = '1016' and dns_mx.host = '".$mx_record["host"]."' AND (dns_mx.mailserver = '".$mx_record["mailserver"]."' OR dns_mx.prioritaet = '".$mx_record["prioritaet"]."') and dns_mx.doc_id != '".$dep_row["child_doc_id"]."'";
+          //$sql = "SELECT dns_mx.doc_id FROM dns_dep, dns_mx where dns_mx.doc_id = dns_dep.child_doc_id and dns_dep.child_doctype_id = '1020' and dns_dep.parent_doc_id = $doc_id and dns_dep.parent_doctype_id = '1016' and dns_mx.host = '".$mx_record["host"]."' AND (dns_mx.mailserver = '".$mx_record["mailserver"]."' OR dns_mx.prioritaet = '".$mx_record["prioritaet"]."') and dns_mx.doc_id != '".$dep_row["child_doc_id"]."'";
+
+          $sql = "SELECT dns_mx.doc_id FROM dns_dep, dns_mx where dns_mx.doc_id = dns_dep.child_doc_id and dns_dep.child_doctype_id = '1020' and dns_dep.parent_doc_id = $doc_id and dns_dep.parent_doctype_id = '1016' and dns_mx.host = '".$mx_record["host"]."' AND dns_mx.mailserver = '".$mx_record["mailserver"]."' and dns_mx.doc_id != '".$dep_row["child_doc_id"]."'";
 
           $tmp = $go_api->db->queryOneRecord($sql);
           if($tmp["doc_id"] > 0) {
@@ -454,13 +457,14 @@ function soa_update($doc_id, $doctype_id, $die_on_error = '1') {
       unset($tmp_as);
     }
 
-    if($tmp_cnames = $go_api->db->queryAllRecords("SELECT * FROM dns_cname WHERE host LIKE 'http://%' OR host LIKE 'https://%' OR host LIKE ' %' OR host LIKE '% ' OR ziel LIKE 'http://%' OR ziel LIKE 'https://%' OR ziel LIKE ' %' OR ziel LIKE '% '")){
+    if($tmp_cnames = $go_api->db->queryAllRecords("SELECT * FROM dns_cname WHERE host LIKE 'http://%' OR host LIKE 'https://%' OR host LIKE ' %' OR host LIKE '% ' OR ziel LIKE 'http://%' OR ziel LIKE 'https://%' OR ziel LIKE ' %' OR ziel LIKE '% ' OR ziel LIKE '%.'")){
       foreach($tmp_cnames as $tmp_cname){
         $tmp_cname['host'] = str_replace('http://', '', $tmp_cname['host']);
         $tmp_cname['host'] = str_replace('https://', '', $tmp_cname['host']);
         $tmp_cname['host'] = trim($tmp_cname['host']);
         $tmp_cname['ziel'] = str_replace('http://', '', $tmp_cname['ziel']);
         $tmp_cname['ziel'] = str_replace('https://', '', $tmp_cname['ziel']);
+        if(substr($tmp_cname['ziel'],-1) == '.') $tmp_cname['ziel'] = substr($tmp_cname['ziel'],0,-1);
         $tmp_cname['ziel'] = trim($tmp_cname['ziel']);
         $go_api->db->query("UPDATE dns_cname SET host = '".$tmp_cname['host']."', ziel = '".$tmp_cname['ziel']."' WHERE doc_id = ".$tmp_cname['doc_id']);
       }
@@ -585,7 +589,9 @@ function soa_update($doc_id, $doctype_id, $die_on_error = '1') {
 
           $mx_record = $go_api->db->queryOneRecord("SELECT * FROM dns_mx WHERE doc_id = '".$dep_row["child_doc_id"]."'");
           // checke ob MX-Record schon existiert
-          $sql = "SELECT dns_mx.doc_id FROM dns_dep, dns_mx where dns_mx.doc_id = dns_dep.child_doc_id and dns_dep.child_doctype_id = '1020' and dns_dep.parent_doc_id = $doc_id and dns_dep.parent_doctype_id = '1016' and dns_mx.host = '".$mx_record["host"]."' AND (dns_mx.mailserver = '".$mx_record["mailserver"]."' OR dns_mx.prioritaet = '".$mx_record["prioritaet"]."') and dns_mx.doc_id != '".$dep_row["child_doc_id"]."'";
+          //$sql = "SELECT dns_mx.doc_id FROM dns_dep, dns_mx where dns_mx.doc_id = dns_dep.child_doc_id and dns_dep.child_doctype_id = '1020' and dns_dep.parent_doc_id = $doc_id and dns_dep.parent_doctype_id = '1016' and dns_mx.host = '".$mx_record["host"]."' AND (dns_mx.mailserver = '".$mx_record["mailserver"]."' OR dns_mx.prioritaet = '".$mx_record["prioritaet"]."') and dns_mx.doc_id != '".$dep_row["child_doc_id"]."'";
+
+          $sql = "SELECT dns_mx.doc_id FROM dns_dep, dns_mx where dns_mx.doc_id = dns_dep.child_doc_id and dns_dep.child_doctype_id = '1020' and dns_dep.parent_doc_id = $doc_id and dns_dep.parent_doctype_id = '1016' and dns_mx.host = '".$mx_record["host"]."' AND dns_mx.mailserver = '".$mx_record["mailserver"]."' and dns_mx.doc_id != '".$dep_row["child_doc_id"]."'";
 
           $tmp = $go_api->db->queryOneRecord($sql);
           if($tmp["doc_id"] > 0) {

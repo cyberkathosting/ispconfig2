@@ -11,6 +11,7 @@ $hlp["user_passwort"] = "Please specify a password. You can enter any password a
 $hlp["user_speicher"] = "Please enter the storage space for the user.";
 $hlp["user_admin"] = "Makes the user the administrator for this web. Only one user per web can be an administrator.";
 $hlp["user_shell"] = "Enables shell access for the user.";
+$hlp["user_cron"] = "Allows the user to create Cron Jobs.";
 $hlp["user_emailalias"] = "Here you can enter further email aliases (e.g. different spellings) in order to be able to receive emails for those aliases. Enter only the part in front of \"@\"!";
 $hlp["user_name"] = "Please enter the real name of the user.";
 $hlp["user_autoresponder"] = "Activates the email autoresponder for the email boxes of the user.";

@@ -88,9 +88,9 @@ function web_show($doc_id, $doctype_id) {
         // Website-Status nur anzeigen, wenn Website gesperrt ist
         $web = $go_api->db->queryOneRecord("SELECT isp_isp_web.web_traffic_status FROM isp_nodes,isp_isp_web WHERE isp_nodes.doc_id = '$doc_id' AND isp_nodes.doctype_id = '$doctype_id' AND isp_isp_web.doc_id = '$doc_id'");
         if($web['web_traffic_status'] == 2){
-          $doc->deck[0]->elements[36]->visible = 1;
+          $doc->deck[0]->elements[37]->visible = 1;
         } else {
-          $doc->deck[0]->elements[36]->visible = 0;
+          $doc->deck[0]->elements[37]->visible = 0;
         }
 
         // Individuelle Fehler-Seiten unsichtbar schalten, wenn nicht aktiviert
@@ -109,9 +109,7 @@ function web_show($doc_id, $doctype_id) {
         // Reseller Limits
 
         // If the logged in user is a reseller
-        if($reseller = $go_api->db->queryOneRecord("SELECT * from isp_isp_reseller where reseller_userid = ".$go_info["user"]["userid"])) {
-
-
+        if($reseller = $go_api->db->queryOneRecord("SELECT * from isp_isp_reseller where reseller_userid = ".$go_info["user"]["userid"])) {   
 
                 // deaktiviere Shell Access, wenn bei Resellern inaktiv
                 if($reseller["limit_shell_access"] != 1) $doc->deck[0]->elements[14]->visible = 0;
@@ -130,26 +128,28 @@ function web_show($doc_id, $doctype_id) {
                 if($go_info["server"]["apache2_php"] == 'suphp') $doc->deck[0]->elements[18]->visible = 0;
 
                 if($reseller["limit_ruby"] != 1) $doc->deck[0]->elements[20]->visible = 0;
-                if($reseller["limit_ssi"] != 1) $doc->deck[0]->elements[21]->visible = 0;
-                if($reseller["limit_ftp"] != 1) $doc->deck[0]->elements[22]->visible = 0;
+                if($reseller["limit_python"] != 1) $doc->deck[0]->elements[21]->visible = 0;
+                if($reseller["limit_ssi"] != 1) $doc->deck[0]->elements[22]->visible = 0;
+                if($reseller["limit_ftp"] != 1) $doc->deck[0]->elements[23]->visible = 0;
                 if($reseller["limit_mysql"] != 1){
-                  $doc->deck[0]->elements[24]->visible = 0;
                   $doc->deck[0]->elements[25]->visible = 0;
+                  $doc->deck[0]->elements[26]->visible = 0;
                 }
-                if($reseller["limit_ssl"] != 1) $doc->deck[0]->elements[26]->visible = 0;
-                if($reseller["limit_anonftp"] != 1) $doc->deck[0]->elements[27]->visible = 0;
+                if($reseller["limit_ssl"] != 1) $doc->deck[0]->elements[27]->visible = 0;
                 if($reseller["limit_anonftp"] != 1) $doc->deck[0]->elements[28]->visible = 0;
-                if($reseller["limit_wap"] != 1) $doc->deck[0]->elements[30]->visible = 0;
-                if($reseller["limit_error_pages"] != 1) $doc->deck[0]->elements[31]->visible = 0;
+                if($reseller["limit_anonftp"] != 1) $doc->deck[0]->elements[29]->visible = 0;
+                if($reseller["limit_wap"] != 1) $doc->deck[0]->elements[31]->visible = 0;
+                if($reseller["limit_error_pages"] != 1) $doc->deck[0]->elements[32]->visible = 0;
                 if($reseller["limit_httpd_include"] != 1){
-                  $doc->deck[0]->elements[34]->visible = 0;
                   $doc->deck[0]->elements[35]->visible = 0;
+                  $doc->deck[0]->elements[36]->visible = 0;
                 }
 
                 if($reseller["limit_frontpage"] != 1) {
-                  $doc->deck[0]->elements[23]->visible = 0;
+                  $doc->deck[0]->elements[24]->visible = 0;
                   $doc->deck[6]->elements[5]->visible = 0;
                 }
+                if($reseller["limit_cron"] != 1) $doc->deck[0]->elements[39]->visible = 0;
         }
 
         // überprüfe welche Funktionen aktiv sind
@@ -158,7 +158,7 @@ function web_show($doc_id, $doctype_id) {
         $server = $go_api->db->queryOneRecord("SELECT * from isp_server where doc_id = '$server_id'");
         // Deaktiviere Frontpage
         if($server["server_enable_frontpage"] != 1) {
-                $doc->deck[0]->elements[23]->visible = 0;
+                $doc->deck[0]->elements[24]->visible = 0;
                 $doc->deck[6]->elements[5]->visible = 0;
         }
 
@@ -180,18 +180,20 @@ function web_show($doc_id, $doctype_id) {
                         $doc->deck[0]->elements[17]->value = $vorlage["web_php"];
                         $doc->deck[0]->elements[18]->value = $vorlage["web_php_safe_mode"];
                         $doc->deck[0]->elements[20]->value = $vorlage["web_ruby"];
-                        $doc->deck[0]->elements[21]->value = $vorlage["web_ssi"];
-                        $doc->deck[0]->elements[22]->value = $vorlage["web_ftp"];
-                        $doc->deck[0]->elements[23]->value = $vorlage["web_frontpage"];
-                        $doc->deck[0]->elements[24]->value = $vorlage["web_mysql"];
-                        $doc->deck[0]->elements[25]->value = $vorlage["web_mysql_anzahl_dbs"];
-                        $doc->deck[0]->elements[26]->value = $vorlage["web_ssl"];
-                        $doc->deck[0]->elements[27]->value = $vorlage["web_anonftp"];
-                        $doc->deck[0]->elements[28]->value = $vorlage["web_anonftplimit"];
-                        $doc->deck[0]->elements[30]->value = $vorlage["web_wap"];
-                        $doc->deck[0]->elements[31]->value = $vorlage["web_individual_error_pages"];
-                        $doc->deck[0]->elements[33]->value = $vorlage["web_mailuser_login"];
-                        $doc->deck[0]->elements[35]->value = $vorlage["web_httpd_include"];
+                        $doc->deck[0]->elements[21]->value = $vorlage["web_python"];
+                        $doc->deck[0]->elements[22]->value = $vorlage["web_ssi"];
+                        $doc->deck[0]->elements[23]->value = $vorlage["web_ftp"];
+                        $doc->deck[0]->elements[24]->value = $vorlage["web_frontpage"];
+                        $doc->deck[0]->elements[25]->value = $vorlage["web_mysql"];
+                        $doc->deck[0]->elements[26]->value = $vorlage["web_mysql_anzahl_dbs"];
+                        $doc->deck[0]->elements[27]->value = $vorlage["web_ssl"];
+                        $doc->deck[0]->elements[28]->value = $vorlage["web_anonftp"];
+                        $doc->deck[0]->elements[29]->value = $vorlage["web_anonftplimit"];
+                        $doc->deck[0]->elements[31]->value = $vorlage["web_wap"];
+                        $doc->deck[0]->elements[32]->value = $vorlage["web_individual_error_pages"];
+                        $doc->deck[0]->elements[34]->value = $vorlage["web_mailuser_login"];
+                        $doc->deck[0]->elements[36]->value = $vorlage["web_httpd_include"];
+                        $doc->deck[0]->elements[39]->value = $vorlage["web_cron"];
                 }
 
 
@@ -303,6 +305,8 @@ function web_insert($doc_id, $doctype_id, $die_on_error = '1') {
       if(($reseller["limit_standard_cgis"] != 1 || $reseller["limit_cgi"] != 1) && $web["web_standard_cgi"] == 1) $limit_errors .= $go_api->lng("error_web_no_standard_cgi");
       if($reseller["limit_php"] != 1 && ($web["web_php"] == 1 || $web[" web_php_safe_mode"] == 1)) $limit_errors .= $go_api->lng("error_web_no_php");
       if($reseller["limit_ruby"] != 1 && $web["web_ruby"] == 1) $limit_errors .= $go_api->lng("error_web_no_ruby");
+      if($reseller["limit_python"] != 1 && $web["web_python"] == 1) $limit_errors .= $go_api->lng("error_web_no_python");
+      if($reseller["limit_cron"] != 1 && $web["web_cron"] == 1) $limit_errors .= $go_api->lng("error_web_no_cron");
       if($reseller["limit_ssi"] != 1 && $web["web_ssi"] == 1) $limit_errors .= $go_api->lng("error_web_no_ssi");
       if($reseller["limit_ftp"] != 1 && $web["web_ftp"] == 1) $limit_errors .= $go_api->lng("error_web_no_ftp");
       if($reseller["limit_mysql"] != 1 && $web["web_mysql"] == 1) $limit_errors .= $go_api->lng("error_web_no_mysql");
@@ -686,6 +690,16 @@ global $go_api, $go_info, $old_form_data;
         $status = "NOTIFY";
         $go_api->db->query("UPDATE isp_isp_web SET web_ruby = '0' WHERE doc_id = '".$doc_id."'");
         $errorMessage .= $go_api->lng("error_web_no_ruby");
+      }
+      if($reseller["limit_python"] != 1 && $web["web_python"] == 1){
+        $status = "NOTIFY";
+        $go_api->db->query("UPDATE isp_isp_web SET web_python = '0' WHERE doc_id = '".$doc_id."'");
+        $errorMessage .= $go_api->lng("error_web_no_python");
+      }
+      if($reseller["limit_cron"] != 1 && $web["web_cron"] == 1){
+        $status = "NOTIFY";
+        $go_api->db->query("UPDATE isp_isp_web SET web_cron = '0' WHERE doc_id = '".$doc_id."'");
+        $errorMessage .= $go_api->lng("error_web_no_cron");
       }
       if($reseller["limit_ssi"] != 1 && $web["web_ssi"] == 1){
         $status = "NOTIFY";

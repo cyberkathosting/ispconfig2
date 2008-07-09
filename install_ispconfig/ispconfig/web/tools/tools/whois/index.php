@@ -60,19 +60,24 @@ if (isset($submit)) {
 switch ($endfix) {
         case '.de':
         case '.se':
+        case '.biz':
         case '.nl':
-	     $result=whois_cli($domain);
+             $result=whois_cli($domain);
              break;
         case '.com':
         case '.net':
         case '.org':
-				 $WhoIsServer="whois.crsnic.net";
-				 $result=whois_php ($WhoIsServer,$domain);
-		 		 break;
+                                 $WhoIsServer="whois.crsnic.net";
+                                 $result=whois_php ($WhoIsServer,$domain);
+                                  break;
         case '.lu':
-	        $WhoIsServer="whois.restena.lu";
-			  $result=whois_php ($WhoIsServer,$domain);
-		     break;
+                $WhoIsServer="whois.restena.lu";
+                          $result=whois_php ($WhoIsServer,$domain);
+                     break;
+        case '.info':
+                $WhoIsServer="whois.afilias.net";
+                                 $result=whois_php ($WhoIsServer,$domain);
+                                  break;
         case '.fr':
         case '.be':
         case '.at':
@@ -87,66 +92,66 @@ switch ($endfix) {
         case '.sk':
         case '.lt':
         case '.hu':
-	        $WhoIsServer="whois.ripe.net"; //$WhoIsServer zuweisen
-		     $result=whois_php ($WhoIsServer,$domain);
-		     break;
+                $WhoIsServer="whois.ripe.net"; //$WhoIsServer zuweisen
+                     $result=whois_php ($WhoIsServer,$domain);
+                     break;
         case '.ac':
-	        $WhoIsServer="whois.nic.ac"; //$WhoIsServer zuweisen
-		     $result=whois_php ($WhoIsServer,$domain);
-		     break;
+                $WhoIsServer="whois.nic.ac"; //$WhoIsServer zuweisen
+                     $result=whois_php ($WhoIsServer,$domain);
+                     break;
         case '.eu.org':
-	        $WhoIsServer="whois.eu.org"; //$WhoIsServer zuweisen
-			  $result=whois_php ($WhoIsServer,$domain);
-		     break;
+                $WhoIsServer="whois.eu.org"; //$WhoIsServer zuweisen
+                          $result=whois_php ($WhoIsServer,$domain);
+                     break;
         case '.pl':
-	        $WhoIsServer="dns.pl"; //$WhoIsServer zuweisen
-			  $result=whois_php ($WhoIsServer,$domain);
-			  break;   
+                $WhoIsServer="dns.pl"; //$WhoIsServer zuweisen
+                          $result=whois_php ($WhoIsServer,$domain);
+                          break;
          case '.co.za':
-			  $result=whois_http_get ("http://co.za/cgi-bin/whois.sh?Domain=".$domain."&Enter=Enter");
-			  //Clean up of html to remove submit form  			  
-  			  if (stristr($result,"No Matches")) {
-					$result="Domain not found.";  			  
-  			  }
-			  break;
+                          $result=whois_http_get ("http://co.za/cgi-bin/whois.sh?Domain=".$domain."&Enter=Enter");
+                          //Clean up of html to remove submit form
+                            if (stristr($result,"No Matches")) {
+                                        $result="Domain not found.";
+                            }
+                          break;
          case '.org.za':
-		          $post = "domain=".$domain."&format=full";
-			  $result=whois_http_post ("www.org.za/cgi-bin/rwhois",$post);
-				//Clean up of html response to remove submit form  			  
-  			  if (stristr($result,"Domain not registered")) {
-					$result="Domain not registered";  			  
-  			  }
-  			  else{
-					/*
-					$doc = new DomDocument();
-					$doc->loadHTML($result);
-					$nodes=$doc->getElementsByTagName("pre");
-					$result=$nodes->item(0)->textContent;
-					*/
-					eregi('<pre>(.*)</pre>',$result,$matches);
-					$result = $matches[1];
-  			  }
-			  break;
+                          $post = "domain=".$domain."&format=full";
+                          $result=whois_http_post ("www.org.za/cgi-bin/rwhois",$post);
+                                //Clean up of html response to remove submit form
+                            if (stristr($result,"Domain not registered")) {
+                                        $result="Domain not registered";
+                            }
+                            else{
+                                        /*
+                                        $doc = new DomDocument();
+                                        $doc->loadHTML($result);
+                                        $nodes=$doc->getElementsByTagName("pre");
+                                        $result=$nodes->item(0)->textContent;
+                                        */
+                                        eregi('<pre>(.*)</pre>',$result,$matches);
+                                        $result = $matches[1];
+                            }
+                          break;
          default:echo("Error!\n");break;
         }
 }
 
 function whois_php($WhoIsServer,$queryDomain){
         if($fp = @fsockopen ("$WhoIsServer", 43, $errnr, $errstr)) {
-        	$record="";
-					set_socket_blocking($fp, 0);
- 					fputs($fp, "$queryDomain\n");
-        		while (!feof($fp)) {
+                $record="";
+                                        set_socket_blocking($fp, 0);
+                                         fputs($fp, "$queryDomain\n");
+                        while (!feof($fp)) {
                        $record .= fgets($fp, 2048);
-						}	 
-					fclose($fp);
-				}
-	return $record;
+                                                }
+                                        fclose($fp);
+                                }
+        return $record;
 }
 
 function whois_cli($queryDomain){
         $WhoIsServer = '-';
-	$record ="No Results";
+        $record ="No Results";
         $regex = '/^[a-zA-Z0-9\-\.]{0,63}$/';
         if(preg_match($regex,$queryDomain)) {
                 $queryDomain = escapeshellcmd($queryDomain);
@@ -160,33 +165,33 @@ function whois_cli($queryDomain){
 }
 
 function whois_http_get($WhoIsServerURL){
-  			$record="No Results";
-			/*
-         	$cUrl = curl_init($WhoIsServerURL);
-			curl_setopt($cUrl, CURLOPT_TIMEOUT, 180);
-			curl_setopt($cUrl, CURLOPT_HEADER, 0);
-			curl_setopt($cUrl, CURLOPT_RETURNTRANSFER, 1);
-			$record = trim(curl_exec($cUrl));
-			curl_close($cUrl);
-			*/
-			$record = GetPage($WhoIsServerURL);
-			return $record;
+                          $record="No Results";
+                        /*
+                 $cUrl = curl_init($WhoIsServerURL);
+                        curl_setopt($cUrl, CURLOPT_TIMEOUT, 180);
+                        curl_setopt($cUrl, CURLOPT_HEADER, 0);
+                        curl_setopt($cUrl, CURLOPT_RETURNTRANSFER, 1);
+                        $record = trim(curl_exec($cUrl));
+                        curl_close($cUrl);
+                        */
+                        $record = GetPage($WhoIsServerURL);
+                        return $record;
 }
 
 function whois_http_post($WhoIsServerURL,$post){
-  			$record="No Results";
-			/*
-         	$cUrl = curl_init($WhoIsServerURL);
-			curl_setopt($cUrl, CURLOPT_TIMEOUT, 180);
-			curl_setopt($cUrl, CURLOPT_HEADER, 0);
-			curl_setopt($cUrl, CURLOPT_RETURNTRANSFER, 1);
-	      	curl_setopt($cUrl, CURLOPT_POST, 1);
-         	curl_setopt($cUrl, CURLOPT_POSTFIELDS, $post);
-       		$record = trim(curl_exec($cUrl));
-			curl_close($cUrl);
-			*/
-			$record = PostPage($WhoIsServerURL,$post);
-			return $record;
+                          $record="No Results";
+                        /*
+                 $cUrl = curl_init($WhoIsServerURL);
+                        curl_setopt($cUrl, CURLOPT_TIMEOUT, 180);
+                        curl_setopt($cUrl, CURLOPT_HEADER, 0);
+                        curl_setopt($cUrl, CURLOPT_RETURNTRANSFER, 1);
+                      curl_setopt($cUrl, CURLOPT_POST, 1);
+                 curl_setopt($cUrl, CURLOPT_POSTFIELDS, $post);
+                       $record = trim(curl_exec($cUrl));
+                        curl_close($cUrl);
+                        */
+                        $record = PostPage($WhoIsServerURL,$post);
+                        return $record;
 }
 
 function PostPage($host,$query,$others=''){
@@ -211,13 +216,13 @@ function PostPage($host,$query,$others=''){
 }
 
 function GetPage ($WhoIsServerURL) {
-	$handle = fopen($WhoIsServerURL, "rb");
-	$contents = '';
-	while (!feof($handle)) {
-  		$contents .= fread($handle, 8192);
-	}
-	fclose($handle);
-	return $contents;
+        $handle = fopen($WhoIsServerURL, "rb");
+        $contents = '';
+        while (!feof($handle)) {
+                  $contents .= fread($handle, 8192);
+        }
+        fclose($handle);
+        return $contents;
 }
 
 $result .= "<table border='0' width='100%' align='center'><tr><td><PRE>$result</pre></td></tr></table>";
@@ -225,36 +230,38 @@ $html_pre = '&nbsp;<br><form name="form1" method="post" action="">
               <table width="100%" border="0" cellspacing="0" cellpadding="0">
                 <tr>
                   <td align="center" class="t2">www.
-						   <input type="text" name="domainname" size="17">&nbsp;&nbsp;&nbsp;
-						   <select name="endfix" size="1" style="font-family: Verdana; font-size: 10pt; color: #4E566B; font-weight: bold">
-								        
-								        
-								        <option name="com" value=".com">.com
-								        <option name="net" value=".net">.net
-								        <option name="org" value=".org">.org
-								        <option name="ac" value=".ac">.ac
-								        <option name="at" value=".at">.at
-								        <option name="be" value=".be">.be
-								        <option name="ch" value=".ch">.ch
-								        <option name="cz" value=".cz">.cz
-										<option name="de" value=".de">.de
-								        <option name="dk" value=".dk">.dk
-								        <option name="eu.org" value=".eu.org">.eu.org
-								        <option name="fr" value=".fr">.fr
-										<option name="hu" value=".hu">.hu
-								        <option name="it" value=".it">.it
-								        <option name="is" value=".is">.is
-								        <option name="li" value=".li">.li
-								        <option name="lt" value=".lt">.lt
-								        <option name="lu" value=".lu">.lu
-										<option name="nl" value=".nl">.nl
-								        <option name="no" value=".no">.no
-										<option name="pl" value=".pl">.pl
-								        <option name="sk" value=".sk">.sk
-								        <option name="se" value=".se">.se
-								        <option name="co.za" value=".co.za">.co.za
-								        <option name="org.za" value=".org.za">.org.za
-							</select>&nbsp;
+                                                   <input type="text" name="domainname" size="17" value="'.$domainname.'">&nbsp;&nbsp;&nbsp;
+                                                   <select name="endfix" size="1" style="font-family: Verdana; font-size: 10pt; color: #4E566B; font-weight: bold">
+
+
+                                                                        <option name="com" value=".com">.com
+                                                                        <option name="net" value=".net">.net
+                                                                        <option name="org" value=".org">.org
+                                                                        <option name="biz" value=".biz">.biz
+                                                                        <option name="info" value=".info">.info
+                                                                        <option name="ac" value=".ac">.ac
+                                                                        <option name="at" value=".at">.at
+                                                                        <option name="be" value=".be">.be
+                                                                        <option name="ch" value=".ch">.ch
+                                                                        <option name="cz" value=".cz">.cz
+                                                                        <option name="de" value=".de">.de
+                                                                        <option name="dk" value=".dk">.dk
+                                                                        <option name="eu.org" value=".eu.org">.eu.org
+                                                                        <option name="fr" value=".fr">.fr
+                                                                        <option name="hu" value=".hu">.hu
+                                                                        <option name="it" value=".it">.it
+                                                                        <option name="is" value=".is">.is
+                                                                        <option name="li" value=".li">.li
+                                                                        <option name="lt" value=".lt">.lt
+                                                                        <option name="lu" value=".lu">.lu
+                                                                        <option name="nl" value=".nl">.nl
+                                                                        <option name="no" value=".no">.no
+                                                                        <option name="pl" value=".pl">.pl
+                                                                        <option name="sk" value=".sk">.sk
+                                                                        <option name="se" value=".se">.se
+                                                                        <option name="co.za" value=".co.za">.co.za
+                                                                        <option name="org.za" value=".org.za">.org.za
+                                                        </select>&nbsp;
                     <input type="submit" name="submit" value="Search &gt;&gt;" class="button"> </td>
                 </tr>
               </table>
@@ -267,4 +274,3 @@ $go_api->content->parse(MAIN, array("table","main"));
 $go_api->content->FastPrint();
 exit;
 ?>
-

@@ -10,6 +10,7 @@ $hlp["user_passwort"] = "Vul een wachtwoord in.";
 $hlp["user_speicher"] = "Vul de ruimte voor de gebruiker in.";
 $hlp["user_admin"] = "Maakt deze gebruiker administrator van deze website. Er kan maar 1 gebruiker per website administrator zijn!";
 $hlp["user_shell"] = "Geef gebruiker secure shell toegang.";
+$hlp["user_cron"] = "Allows the user to create Cron Jobs.";
 $hlp["user_emailalias"] = "Hier kunt u email aliases aanmaken (bijv. verschillende spellings van namen). Vul 1 alias voor de \"@\"!";
 $hlp["user_name"] = "Vul de echte naam van de gebruiker in.";
 $hlp["user_autoresponder"] = "Activeert de email auto-beantwoorder voor deze gebruiker.";

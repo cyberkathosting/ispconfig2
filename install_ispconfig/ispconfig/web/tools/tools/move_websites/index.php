@@ -210,7 +210,7 @@ if($_POST['web_doc_id'] > 0 && $_POST['old_customer_doc_id'] > 0 && $_POST['new_
 
 } else {
   // select websites that are currently not in the recycle bin
-  $websites = $go_api->db->queryAllRecords("SELECT * FROM isp_isp_web, isp_nodes WHERE isp_nodes.doc_id = isp_isp_web.doc_id AND isp_nodes.doctype_id = isp_isp_web.doctype_id AND isp_nodes.status = '1' AND isp_isp_web.status = ''");
+  $websites = $go_api->db->queryAllRecords("SELECT * FROM isp_isp_web, isp_nodes WHERE isp_nodes.doc_id = isp_isp_web.doc_id AND isp_nodes.doctype_id = isp_isp_web.doctype_id AND isp_nodes.status = '1' AND isp_isp_web.status = '' ORDER BY isp_isp_web.web_domain");
 
   if($_POST['web_doc_id'] > 0){
     $customer = $go_api->db->queryOneRecord("SELECT * FROM isp_isp_kunde, isp_dep WHERE isp_dep.parent_doc_id = isp_isp_kunde.doc_id AND isp_dep.child_doc_id = ".$_POST['web_doc_id']." AND isp_dep.child_doctype_id = 1013 AND isp_dep.parent_doctype_id = 1012");
@@ -218,7 +218,7 @@ if($_POST['web_doc_id'] > 0 && $_POST['old_customer_doc_id'] > 0 && $_POST['new_
              <tr><td align="center" class="t2"><b>'.$go_api->lng('txt_move_website_from').':</b> '.$customer['kunde_vorname'].' '.$customer['kunde_name'].($customer['kunde_firma'] != '' ? " (".$customer['kunde_firma'].")": "").'<input type="hidden" name="old_customer_doc_id" value="'.$customer['doc_id'].'"></input></td></tr>';
 
     // select possible new customers (must not be in recycle bin)
-    $all_customers = $go_api->db->queryAllRecords("SELECT * FROM isp_isp_kunde, isp_nodes WHERE isp_isp_kunde.doc_id != ".$customer['doc_id']." AND isp_nodes.doc_id = isp_isp_kunde.doc_id AND isp_nodes.doctype_id = isp_isp_kunde.doctype_id AND isp_nodes.status = '1'");
+    $all_customers = $go_api->db->queryAllRecords("SELECT * FROM isp_isp_kunde, isp_nodes WHERE isp_isp_kunde.doc_id != ".$customer['doc_id']." AND isp_nodes.doc_id = isp_isp_kunde.doc_id AND isp_nodes.doctype_id = isp_isp_kunde.doctype_id AND isp_nodes.status = '1' ORDER BY isp_isp_kunde.kunde_firma");
     $to = '<tr><td align="center" class="t2">&nbsp;</td></tr>
            <tr><td align="center" class="t2"><b>'.$go_api->lng('txt_move_website_to').':</b> <select name="new_customer_doc_id"><option value=""></option>';
     if(is_array($all_customers) && !empty($all_customers)){

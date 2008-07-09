@@ -45,6 +45,7 @@ var $firewall_doctype_id = 1025;
 var $slave_doctype_id = 1028;
 var $datenbank_doctype_id = 1029;
 var $spf_record_doctype_id = 1031;
+var $cron_doctype_id = 1032;
 var $vhost_conf;
 var $ftp_conf;
 var $apache_user;
@@ -442,6 +443,7 @@ function web_update($doc_id,$doctype_id,$server_id) {
     $users = $mod->db->queryAllRecords($sql);
     foreach($users as $user) {
         $mod->db->query("UPDATE isp_isp_user SET status = 'u' WHERE doc_id = ".$user["doc_id"]." AND status != 'd' AND status != 'n'");
+        if(!$web['web_cron']) $mod->db->query("UPDATE isp_isp_cron SET cron_active = 0, status = 'u' WHERE user_id = '".$user["doc_id"]."'");
     }
     unset($users);
 
@@ -731,6 +733,7 @@ function user_insert($doc_id, $doctype_id) {
   $mod->procmail->make_forward($doc_id);
   $mod->procmail->make_procmailrc($doc_id);
   $mod->procmail->make_recipes($doc_id);
+  $mod->cron->make_cron($doc_id);
 
   // Spamassassin directory anlegen
   if(!is_dir($web_path."/user/".$user_username."/.spamassassin")) {
@@ -914,10 +917,11 @@ function user_update($doc_id, $doctype_id) {
     }
   }
 
-  // Mailquota, Autoresponder etc. einrichten
+  // Mailquota, Autoresponder, Cron Jobs etc. einrichten
   $mod->procmail->make_forward($doc_id);
   $mod->procmail->make_procmailrc($doc_id);
   $mod->procmail->make_recipes($doc_id);
+  $mod->cron->make_cron($doc_id);
 
   // Spamassassin directory anlegen
   if(!is_dir($web_path."/user/".$user_username."/.spamassassin")) {
@@ -1006,6 +1010,7 @@ function user_delete($doc_id, $doctype_id) {
   //User deaktivieren
   //$mod->log->caselog("userdel -r $user_username &> /dev/null", $this->FILE, __LINE__);
   //$mod->system->deluser($user_username);
+  $mod->cron->make_cron($doc_id);
   $mod->system->deactivateuser($user_username);
 
   // User-Mail-Datei löschen
@@ -1301,6 +1306,11 @@ function make_vhost($server_id) {
   ServerName localhost
   ServerAdmin root@localhost
   DocumentRoot /var/www/sharedip
+  <IfModule mod_rewrite.c>
+    RewriteEngine on
+    RewriteCond %{REQUEST_METHOD} ^(TRACE|TRACK)
+    RewriteRule .* - [F]
+  </IfModule>
 </VirtualHost>"));
       } else {
         $mod->tpl->assign( array(SERVERIP => ""));
@@ -1498,6 +1508,21 @@ php_admin_value session.save_path ".$mod->system->server_conf["server_path_httpd
 </IfModule>';
     }
 
+    $python = '';
+    if($web["web_python"]){
+      $python = '<IfModule mod_python.c>
+ <Directory '.$document_root.'>
+   Options +Indexes +FollowSymLinks +MultiViews
+   AllowOverride None
+   Order allow,deny
+   allow from all
+   AddHandler mod_python .py
+   PythonHandler mod_python.publisher
+   PythonDebug On
+ </Directory>
+</IfModule>';
+    }
+
     if($web["web_ssi"]){
       if($apache_version == 1){
         $ssi = "AddType text/html .shtml
@@ -1593,6 +1618,7 @@ DocumentRoot ".$document_root."
 ErrorLog ".$mod->system->server_conf["server_path_httpd_root"]."/web".$web["doc_id"]."/log/error.log
 ".$php."
 ".$ruby."
+".$python."
 ".$ssi."
 ".$wap."
 SSLEngine on
@@ -1605,6 +1631,11 @@ AliasMatch ^/users/([^/]+)(/(.*))? ".$mod->system->server_conf["server_path_http
 ".str_replace("\nRewriteRule   ^/(.*)$  http://".$servername.$domain["domain_weiterleitung"]."$1  [R]", "\nRewriteRule   ^/(.*)$  https://".$servername.$domain["domain_weiterleitung"]."$1  [R]", $rewrite_rule)."
 ".$frontpage."
 SetEnvIf User-Agent \".*MSIE.*\" nokeepalive ssl-unclean-shutdown downgrade-1.0 force-response-1.0
+<IfModule mod_rewrite.c>
+  RewriteEngine on
+  RewriteCond %{REQUEST_METHOD} ^(TRACE|TRACK)
+  RewriteRule .* - [F]
+</IfModule>
 </VirtualHost>
 </IfModule>";
 
@@ -1629,6 +1660,7 @@ clearstatcache();
                         SERVERADMIN => "webmaster@".$web["web_domain"],
                         PHP => $php,
                         RUBY => $ruby,
+                        PYTHON => $python,
                         SSI => $ssi,
                         WAP => $wap,
                         ERRORALIAS => $error_alias,
@@ -1653,6 +1685,7 @@ clearstatcache();
                         SERVERADMIN => "",
                         PHP => "",
                         RUBY => "",
+                        PYTHON => "",
                         SSI => "",
                         WAP => "",
                         ERRORALIAS => "",

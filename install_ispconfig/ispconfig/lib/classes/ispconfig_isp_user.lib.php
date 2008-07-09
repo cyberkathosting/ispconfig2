@@ -64,6 +64,14 @@ function isp_user() {
 function user_show($doc_id, $doctype_id) {
         global $go_api, $go_info, $doc, $tablevalues, $next_tree_id;
 
+        if(!$next_tree_id){
+          $tree = $go_api->db->queryOneRecord("SELECT parent_tree_id FROM isp_dep WHERE child_doc_id = $doc_id AND child_doctype_id = $doctype_id AND parent_doctype_id = ".$this->web_doctype_id);
+          $next_tree_id = $tree["parent_tree_id"];
+          unset($tree);
+        }
+
+        if($tablevalues["user_cron"] == 0) $doc->deck[3]->visible = 0;
+
         //
         if($this->server_conf["use_maildir"] == 1) $doc->deck[0]->elements[8]->visible = 0;
 
@@ -75,6 +83,10 @@ function user_show($doc_id, $doctype_id) {
 
          // Wenn Shellzugriff im Web deaktiviert ist
          if($web["web_shell"] != '1') $doc->deck[0]->elements[11]->visible = 0;
+         if($web["web_cron"] != '1'){
+           $doc->deck[0]->elements[12]->visible = 0;
+           $doc->deck[3]->visible = 0;
+         }
 
          // Spamfilter Settings deaktivieren
          if($this->server_conf["spamfilter_enable"] != 1) $doc->deck[2]->visible = 0;
@@ -253,6 +265,9 @@ global $go_api, $go_info,$s;
             $status = "DELETE";
             $errorMessage .= $go_api->lng("error_admin_exist");
      }
+
+     // wenn keine Cron Jobs erlaubt, Cron Jobs deaktivieren
+     if(!$user['user_cron']) $go_api->db->query("UPDATE isp_isp_cron SET cron_active = 0, status = 'u' WHERE user_id = '$doc_id'");
 
 
     if($status == "DELETE") {
@@ -492,6 +507,9 @@ global $go_api, $go_info,$s,$HTTP_POST_VARS,$old_form_data;
                 $emailweiterleitung = @implode($tmp_new,"\r\n");
                 $go_api->db->query("UPDATE isp_isp_user SET user_emailweiterleitung = '$emailweiterleitung' where doc_id = $doc_id");
         }
+
+        // wenn keine Cron Jobs erlaubt, Cron Jobs deaktivieren
+     if(!$user['user_cron']) $go_api->db->query("UPDATE isp_isp_cron SET cron_active = 0, status = 'u' WHERE user_id = '$doc_id'");
 
         ////////////////////////////////////////////////////////
             // Server benachrichtigen

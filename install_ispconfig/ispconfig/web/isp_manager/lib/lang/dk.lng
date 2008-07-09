@@ -73,6 +73,7 @@ $wb["verbraucht"]   = "brugt";
 $wb["Trafficübersicht"] = "Trafikoversigt";
 $wb["Monat"]        = "Måned";
 $wb["Traffic"]      = "Trafik";
+$wb["Traffic MB"]      = "Trafik MB";
 $wb["traffic_letzte_4"] = "Trafik de sidste 4 år";
 $wb["Jahr"]         = "År";
 $wb["MySQL User"]        = "MySQL Brugernavn";
@@ -259,6 +260,7 @@ $wb["Spam-Filter"] = 'Spam Filter';
 $wb["Autoresponder"] = 'Autoresponder';
 $wb["ISP Domain"] = 'ISP Domæne';
 $wb["Create DNS MX"] = 'Opret DNS MX';
+$wb["Create DNS-MX"] = 'Opret DNS MX';
 $wb["Admin"] = 'Admin';
 $wb["CatchAll"] = 'FangAlle';
 $wb["Bitte Artikel auswählen"] = "Vælg Artikel";
@@ -410,6 +412,7 @@ $wb["error_anbieter_cgi_aktiv"] = "CGI er allerede i brug på nogle af forhandler
 $wb["error_anbieter_standard_cgi_aktiv"] = "Standard CGIs er allerede i brug på nogle af forhandlerens websider. Denne mulighed kan ikke deaktiveres.<br>";
 $wb["error_anbieter_php_aktiv"] = "PHP er allerede i brug på nogle af forhandlerens websider. Denne mulighed kan ikke deaktiveres.<br>";
 $wb["error_anbieter_ruby_aktiv"] = "Ruby er allerede i brug på nogle af forhandlerens websider. Denne mulighed kan ikke deaktiveres.<br>";
+$wb["error_anbieter_python_aktiv"] = "Python er allerede i brug på nogle af forhandlerens websider. Denne mulighed kan ikke deaktiveres.<br>";
 $wb["error_anbieter_ssi_aktiv"] = "SSI er allerede i brug på nogle af forhandlerens websider. Denne mulighed kan ikke deaktiveres.<br>";
 $wb["error_anbieter_ftp_aktiv"] = "FTP er allerede i brug på nogle af forhandlerens websider. Denne mulighed kan ikke deaktiveres.<br>";
 $wb["error_anbieter_anonftp_aktiv"] = "Anonymous FTP er allerede i brug på nogle af forhandlerens websider. Denne mulighed kan ikke deaktiveres.<br>";
@@ -446,6 +449,7 @@ $wb["error_web_no_cgi"] = "Du kan ikke tilføje CGI funktioner til denne webside.
 $wb["error_web_no_standard_cgi"] = "Du kan ikke tilføje Standard CGIs til denne webside.<br>";
 $wb["error_web_no_php"] = "Du kan ikke tilføje PHP funktioner til denne webside.<br>";
 $wb["error_web_no_ruby"] = "Du kan ikke tilføje Ruby funktioner til denne webside.<br>";
+$wb["error_web_no_python"] = "Du kan ikke tilføje Python funktioner til denne webside.<br>";
 $wb["error_web_no_ssi"] = "Du kan ikke tilføje SSI funktioner til denne webside.<br>";
 $wb["error_web_no_ftp"] = "Du kan ikke tilføje FTP funktioner til denne webside.<br>";
 $wb["error_web_no_mysql"] = "Du kan ikke tilføje MySQL databases til denne webside.<br>";
@@ -573,5 +577,10 @@ $wb["Use Uribl"] = 'Brug <a href="http://www.uribl.com/about.shtml" target="_bla
 $wb["Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 -"] = "Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 -<br>";
 $wb["Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 - ."] = "Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 - .<br>";
 $wb["txt_system_currently_updated_no_recycle_bin"] = "The system is currently updating the configuration files.";
+
+$wb["Cron Jobs"]      = "Cron Jobs";
+$wb["error_anbieter_cron_aktiv"] = "Cron Jobs er allerede i brug på nogle af forhandlerens websider. Denne mulighed kan ikke deaktiveres.<br>";
+$wb["error_web_no_cron"] = "Du kan ikke tilføje Cron Jobs funktioner til denne webside.<br>";
+$wb["error_cron_nicht_erlaubt"] = "The creation of Cron Jobs is not allowed for this user.<br>";
 
 ?>

@@ -63,6 +63,7 @@ $wb["verbraucht"]   = "folosit";
 $wb["Trafficübersicht"] = "Sumar Trafic";
 $wb["Monat"]        = "Luna";
 $wb["Traffic"]      = "Trafic";
+$wb["Traffic MB"]      = "Trafic MB";
 $wb["traffic_letzte_4"] = "Trafic in ultimii 4 ani";
 $wb["Jahr"]         = "An";
 $wb["MySQL User"]        = "Utilizator MySQL";
@@ -401,6 +402,7 @@ $wb["error_anbieter_cgi_aktiv"] = "CGI-urile sunt deja in uz pe unele pagini WEB
 $wb["error_anbieter_standard_cgi_aktiv"] = "CGI-urile standard sunt deja in uz pe unele pagini WEB ale distribuitorului.Aceasta facilitate nu poate fi dezactivata.<br>";
 $wb["error_anbieter_php_aktiv"] = "PHP-urile sunt deja in uz pe unele pagini WEB ale distribuitorului.Aceasta facilitate nu poate fi dezactivata.<br>";
 $wb["error_anbieter_ruby_aktiv"] = "Ruby-urile sunt deja in uz pe unele pagini WEB ale distribuitorului.Aceasta facilitate nu poate fi dezactivata.<br>";
+$wb["error_anbieter_python_aktiv"] = "Python-urile sunt deja in uz pe unele pagini WEB ale distribuitorului.Aceasta facilitate nu poate fi dezactivata.<br>";
 $wb["error_anbieter_ssi_aktiv"] = "SSI-urile sunt deja in uz pe unele pagini WEB ale distribuitorului.Aceasta facilitate nu poate fi dezactivata.<br>";
 $wb["error_anbieter_ftp_aktiv"] = "FTP-ul este deja in uz pe unele pagini WEB ale distribuitorului.Aceasta facilitate nu poate fi dezactivata.<br>";
 $wb["error_anbieter_anonftp_aktiv"] = "FTP-ul anonim sunt deja in uz pe unele pagini WEB ale distribuitorului.Aceasta facilitate nu poate fi dezactivata.<br>";
@@ -437,6 +439,7 @@ $wb["error_web_no_cgi"] = "Nu puteti da drepturi CGI pentru acest domeniu.<br>";
 $wb["error_web_no_standard_cgi"] = "Nu puteti da drepturi Standard CGI pentru acest domeniu.<br>";
 $wb["error_web_no_php"] = "Nu puteti da drepturi PHP pentru acest domeniu.<br>";
 $wb["error_web_no_ruby"] = "Nu puteti da drepturi Ruby pentru acest domeniu.<br>";
+$wb["error_web_no_python"] = "Nu puteti da drepturi Python pentru acest domeniu.<br>";
 $wb["error_web_no_ssi"] = "Nu puteti da drepturi SSI pentru acest domeniu.<br>";
 $wb["error_web_no_ftp"] = "Nu puteti da drepturi FTP pentru acest domeniu.<br>";
 $wb["error_web_no_mysql"] = "Nu puteti da drepturi MySQL pentru acest domeniu.<br>";
@@ -555,4 +558,8 @@ $wb["txt_traffic_notification_email_variables"] = '<table border="0" cellpadding
 
 $wb["Catalog_Name"] = "Nume";
 
+$wb["Cron Jobs"]      = "Cron Jobs";
+$wb["error_anbieter_cron_aktiv"] = "Cron Jobs-urile sunt deja in uz pe unele pagini WEB ale distribuitorului.Aceasta facilitate nu poate fi dezactivata.<br>";
+$wb["error_web_no_cron"] = "Nu puteti da drepturi Cron Jobs pentru acest domeniu.<br>";
+$wb["error_cron_nicht_erlaubt"] = "The creation of Cron Jobs is not allowed for this user.<br>";
 ?>
