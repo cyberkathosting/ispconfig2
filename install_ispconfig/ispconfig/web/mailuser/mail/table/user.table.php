@@ -69,7 +69,7 @@ $table['user_emailalias'] = array(         'datatype'                 => "VARCHA
 
 $table['user_name'] = array(         'datatype'                 => "VARCHAR",
                                                                           'formtype'                 => "TEXT",
-                                                                          'regex'                        => "/^[0-9a-zA-Z_\-\.]{0,255}$/",
+                                                                          'regex'                        => "/^[0-9a-zA-Z_\-\.\s]{0,255}$/",
                                                                           'errmsg'                => "Name contains invalid charcters.",
                                                                           'value'                 => "");
 
