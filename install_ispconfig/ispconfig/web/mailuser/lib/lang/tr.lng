@@ -1,6 +1,6 @@
 <?php
 
-$wb["txt_login_desc"] = "Bu bölümden eposta uyarlamalarý yapabilirsiniz";
+$wb["txt_login_desc"] = "Bu bölümden eposta uyarlamalarý yapabilirsiniz.";
 $wb["txt_error"] = "Hata";
 $wb["txt_email_username"] = "Eposta Kullanýcýsý";
 $wb["txt_password"] = "Þifre";
@@ -14,7 +14,7 @@ $wb["txt_user_und_email"] = "Kullanýcý ve Eposta";
 $wb["txt_spamfilter"] = "Spam Filtersi";
 $wb["txt_logout"] = "Çýkýþ";
 $wb["txt_mailscan"] = "Eposta Tarama";
-$wb["txt_antivirus"] = "Anti-virüs";
+$wb["txt_antivirus"] = "Anti-Virüs";
 $wb["txt_spam_strategie"] = "Spam Taktiði";
 $wb["txt_spam_hits"] = "Spam Uyarýlarý";
 $wb["txt_rewrite_subject"] = "Yanýt Konusu";
@@ -25,7 +25,7 @@ $wb["txt_username"] = "Kullanýcý Adý";
 $wb["txt_web_speicher"] = "Web Kotasý";
 $wb["txt_mail_speicher"] = "Eposta Kotasý";
 $wb["txt_email_passwort_leer"] = "Eposta kullanýcýsý ya da þifresi boþ býrakýlmýþtýr!";
-$wb["txt_user_unbekannt"] = "Bilinmedik kullanýcý.";
+$wb["txt_user_unbekannt"] = "Bu kullanýcý sistemde kayýtlý deðildir!";
 $wb["txt_access_forbidden"] = "Giriþ yetkisine sahip deðilsiniz!";
 $wb["txt_yes"] = "Evet";
 $wb["txt_no"] = "Hayýr";
