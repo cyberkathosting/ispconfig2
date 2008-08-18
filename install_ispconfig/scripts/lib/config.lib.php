@@ -1513,7 +1513,7 @@ php_admin_value session.save_path ".$mod->system->server_conf["server_path_httpd
       $python = '<IfModule mod_python.c>
  <Directory '.$document_root.'>
    Options +Indexes +FollowSymLinks +MultiViews
-   AllowOverride None
+   AllowOverride Indexes AuthConfig Limit FileInfo
    Order allow,deny
    allow from all
    AddHandler mod_python .py
