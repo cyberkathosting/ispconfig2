@@ -107,7 +107,8 @@ $go_info["server"]["ssh_chroot"] = {SSH_CHROOT};
 $go_info["server"]["httpd_check"] = {HTTPD_CHECK};
 $go_info["server"]["salutatory_email_charset"] = '{SALUTATORY_EMAIL_CHARSET}'; // possible values are iso-8859-1, iso-8859-2, ..., us-ascii, koi8-r (Russian), ...; if no charset is specified, unknown-8bit is assumed.
 $go_info["server"]["webdav"] = {WEBDAV};
-$go_info["server"]["force_user_quota"] = 0;
+$go_info["server"]["force_user_quota"] = {FORCE_USER_QUOTA};
+$go_info["server"]["redirect_after_logout"] = '{REDIRECT_AFTER_LOGOUT}'; // URL to redirect to after logout from ISPConfig; leave empty for default location
 
 /**********************************************
 * Tools Settings
