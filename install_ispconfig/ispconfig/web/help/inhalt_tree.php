@@ -469,7 +469,7 @@ MenuSchriftGroesse = '1';                   // die Schriftgröße - nicht zu groß 
 
 </head>
 
-    <frameset cols="*,5" onload="start();allesaufzu(1)" onresize="neumalen()" framespacing="0" border="0" frameborder="0">
+    <frameset cols="*,5" onload="start();allesaufzu(1)" framespacing="0" border="0" frameborder="0">
       <frame name="menuFrame" scrolling="auto" src="vorladen.php?<?echo $session?>" marginwidth="10" marginheight="10" target="_self">
       <frame name="sFrame" src="placeholder.php?<?echo $session?>" scrolling="no" target="_self" marginwidth="22" marginheight="26" noresize>
       </frameset>

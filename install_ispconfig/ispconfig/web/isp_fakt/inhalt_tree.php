@@ -38,7 +38,7 @@ function maleMenu() {
         ausgabeFrame.write("<HTML>\n<HEAD>\n\n");
         ausgabeFrame.write("<STYLE>\n<!--\nA {text-decoration: none}\nA {color: " + linkFarbe + "}\nA:hover {color: " + aLinkFarbe + "}\nBODY{ scrollbar-arrow-color: white\;\nscrollbar-base-color: <?echo $session_nav_hcolour?>   }\n-->\n</STYLE>\n");
         <?if( @is_file("tree.css")) { ?> ausgabeFrame.write("<link href='tree.css' rel='stylesheet' type='text/css'>"); <? } ?>
-		ausgabeFrame.write("</HEAD>\n<BODY BGCOLOR=\"" + hintergrundFarbe + "\" BACKGROUND=\"" + hintergrundBild + "\" LINK=\"" + linkFarbe + "\" ALINK=\"" + aLinkFarbe + "\" VLINK=\"" + bLinkFarbe + "\" topmargin=\"10\" leftmargin=\"10\">\n");
+                ausgabeFrame.write("</HEAD>\n<BODY BGCOLOR=\"" + hintergrundFarbe + "\" BACKGROUND=\"" + hintergrundBild + "\" LINK=\"" + linkFarbe + "\" ALINK=\"" + aLinkFarbe + "\" VLINK=\"" + bLinkFarbe + "\" topmargin=\"10\" leftmargin=\"10\">\n");
         ausgabeFrame.write("<FONT FACE=\"" + MenuSchrift + "\" SIZE=" + MenuSchriftGroesse + " COLOR=\"" + textFarbe + "\">\n");
         ausgabeFrame.write(prefixHTML);
         if (MenuFett == "1") {
@@ -257,12 +257,12 @@ if($mygroups = $go_api->db->queryAllRecords("select * from user_groups, groups w
     foreach($mygroups as $row) {
         $groupid = $row["groupid"];
         $name = $row["name"];
-		// Nur admingruppe auswählen
+                // Nur admingruppe auswählen
         if($groupid == 1) {
-		echo "menuDaten.neu(new VerzEintrag('group$groupid','root','".$go_api->lng("Produkte")."','vzzu-0.gif','vzauf-0.gif',''));\n";
+                echo "menuDaten.neu(new VerzEintrag('group$groupid','root','".$go_api->lng("Produkte")."','vzzu-0.gif','vzauf-0.gif',''));\n";
         $groups[] = $groupid;
         }
-	}
+        }
 }
 unset($mygroups);
 
@@ -360,7 +360,7 @@ echo "menuDaten.neu(new LinkEintrag('rechnungen','".$go_api->lng("Anbieter")."',
 // Bestimme Groupid
 $group_open_folder = '';
 if($mygroups = $go_api->groups->myGroups()) {
-   $groupid = key($mygroups);   
+   $groupid = key($mygroups);
    $group_open_folder = "aufzuVerz('group$groupid',1)";
 }
 
@@ -396,7 +396,7 @@ MenuSchriftGroesse = '1';                   // die Schriftgröße - nicht zu groß 
 
 </head>
 
-    <frameset cols="*,5" onload="start();<? echo $group_open_folder?>" onresize="neumalen()" framespacing="0" border="0" frameborder="0">
+    <frameset cols="*,5" onload="start();<? echo $group_open_folder?>" framespacing="0" border="0" frameborder="0">
       <frame name="menuFrame" scrolling="auto" src="vorladen.php?<? echo $session?>" marginwidth="10" marginheight="10" target="_self">
       <frame name="sFrame" src="placeholder.php?<? echo $session?>" scrolling="no" target="_self" marginwidth="22" marginheight="26" noresize>
       </frameset>

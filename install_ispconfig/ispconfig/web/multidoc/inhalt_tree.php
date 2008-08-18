@@ -24,92 +24,92 @@ e-mail: js-menue@rheinbreitbach.net    web: http://Rheinbreitbach.net/js-menue
 <!-- start() - JAVASCRIPT-FUNKTION - diese Funktion wird beim Laden der HTML-Datei aufgerufen und ruft ihrerseits die Funktionen zum Laden der Menüdaten sowie zum Erstellen des Menüs und zum Erstellen des Frames 'klappFrame' auf. -->
 
 function start() {
-	ladeDaten();
-	maleMenu()}
+        ladeDaten();
+        maleMenu()}
 
 <!-- maleMenu() - JAVASCRIPT-FUNKTION - diese Funktion erstellt die Menüstruktur, beginnend mit dem Hauptverzeichnis und dann den darin enthaltenen Unterverzeichnissen. -->
 
 function maleMenu() {
-	var menuFrame = self.frames["menuFrame"];
-	ausgabeFrame = menuFrame.window.document;
-	ausgabeFrame.open("text/html");
-	<!-- Bitte die folgende Zeile als Copyright-Hinweis nicht loeschen //-->
-	ausgabeFrame.write("<HTML>\n<HEAD>\n\n");
-	ausgabeFrame.write("<STYLE>\n<!--\nA {text-decoration: none}\nA {color: " + linkFarbe + "}\nA:hover {color: " + aLinkFarbe + "}\nBODY{ scrollbar-arrow-color: white\;\nscrollbar-base-color: <?echo $session_nav_hcolour?>   }\n-->\n</STYLE>\n");
-	ausgabeFrame.write("</HEAD>\n<BODY BGCOLOR=\"" + hintergrundFarbe + "\" BACKGROUND=\"" + hintergrundBild + "\" LINK=\"" + linkFarbe + "\" ALINK=\"" + aLinkFarbe + "\" VLINK=\"" + bLinkFarbe + "\" topmargin=\"10\" leftmargin=\"10\">\n");
-	ausgabeFrame.write("<FONT FACE=\"" + MenuSchrift + "\" SIZE=" + MenuSchriftGroesse + " COLOR=\"" + textFarbe + "\">\n");
-	ausgabeFrame.write(prefixHTML);
-	if (MenuFett == "1") {
-		ausgabeFrame.write("<NOBR><b>\n")}
-	else {ausgabeFrame.write("<NOBR>\n")}
-	if (menuDaten[1].ziel == "") {
-		var zielFrame = standardZielFrame}
-	else {var zielFrame = menuDaten[1].ziel}
-	if (menuDaten[1].icon == "") {
-		var bildBezeichnung = standardBildURL + 'globus-' + hintergrundStil + '.gif'}
-	else {bildBezeichnung = standardBildURL + menuDaten[1].icon}
-	ausgabeFrame.write("<A HREF=\"" + menuDaten[1].url + "\" TARGET=\"" + zielFrame + "\" onMouseOver=\"window.status='" + menuDaten[1].rootstat + "'; return true\"><IMG SRC=\"" + bildBezeichnung + "\" WIDTH=16 HEIGHT=16 ALIGN=TOP BORDER=0 ALT=\"" + menuDaten[1].rootstat + "\">&nbsp;<B>" + menuDaten[1].text + "</B></A> &nbsp;<a href=\"javascript:parent.allesaufzu(1)\">[ auf</a> &nbsp; <a href=\"javascript:parent.allesaufzu(0)\">zu ]</a><BR>\n");
-	maleVerz("root","");
-	if (MenuFett == "1") {
-		ausgabeFrame.write("</b></NOBR>\n")}
-	else {ausgabeFrame.write("</NOBR>\n")}
-	ausgabeFrame.write(suffixHTML + "\n</FONT>\n</BODY>\n</HTML>");
-	ausgabeFrame.close();
-	window.status="myBookmark.de" }
+        var menuFrame = self.frames["menuFrame"];
+        ausgabeFrame = menuFrame.window.document;
+        ausgabeFrame.open("text/html");
+        <!-- Bitte die folgende Zeile als Copyright-Hinweis nicht loeschen //-->
+        ausgabeFrame.write("<HTML>\n<HEAD>\n\n");
+        ausgabeFrame.write("<STYLE>\n<!--\nA {text-decoration: none}\nA {color: " + linkFarbe + "}\nA:hover {color: " + aLinkFarbe + "}\nBODY{ scrollbar-arrow-color: white\;\nscrollbar-base-color: <?echo $session_nav_hcolour?>   }\n-->\n</STYLE>\n");
+        ausgabeFrame.write("</HEAD>\n<BODY BGCOLOR=\"" + hintergrundFarbe + "\" BACKGROUND=\"" + hintergrundBild + "\" LINK=\"" + linkFarbe + "\" ALINK=\"" + aLinkFarbe + "\" VLINK=\"" + bLinkFarbe + "\" topmargin=\"10\" leftmargin=\"10\">\n");
+        ausgabeFrame.write("<FONT FACE=\"" + MenuSchrift + "\" SIZE=" + MenuSchriftGroesse + " COLOR=\"" + textFarbe + "\">\n");
+        ausgabeFrame.write(prefixHTML);
+        if (MenuFett == "1") {
+                ausgabeFrame.write("<NOBR><b>\n")}
+        else {ausgabeFrame.write("<NOBR>\n")}
+        if (menuDaten[1].ziel == "") {
+                var zielFrame = standardZielFrame}
+        else {var zielFrame = menuDaten[1].ziel}
+        if (menuDaten[1].icon == "") {
+                var bildBezeichnung = standardBildURL + 'globus-' + hintergrundStil + '.gif'}
+        else {bildBezeichnung = standardBildURL + menuDaten[1].icon}
+        ausgabeFrame.write("<A HREF=\"" + menuDaten[1].url + "\" TARGET=\"" + zielFrame + "\" onMouseOver=\"window.status='" + menuDaten[1].rootstat + "'; return true\"><IMG SRC=\"" + bildBezeichnung + "\" WIDTH=16 HEIGHT=16 ALIGN=TOP BORDER=0 ALT=\"" + menuDaten[1].rootstat + "\">&nbsp;<B>" + menuDaten[1].text + "</B></A> &nbsp;<a href=\"javascript:parent.allesaufzu(1)\">[ auf</a> &nbsp; <a href=\"javascript:parent.allesaufzu(0)\">zu ]</a><BR>\n");
+        maleVerz("root","");
+        if (MenuFett == "1") {
+                ausgabeFrame.write("</b></NOBR>\n")}
+        else {ausgabeFrame.write("</NOBR>\n")}
+        ausgabeFrame.write(suffixHTML + "\n</FONT>\n</BODY>\n</HTML>");
+        ausgabeFrame.close();
+        window.status="myBookmark.de" }
 
 <!-- maleVerz() - JAVASCRIPT-FUNKTION - Diese Funktion wird von der Funktion 'maleMenu()' aufgerufen, um alle sichtbaren Einträge im Verzeichnis zu erstellen. -->
 
 function maleVerz(startEintrag,zweigEintrag) {
-	VerzAuf = 'Verzeichnis &ouml;ffnen'
-	VerzZu = 'Verzeichnis schlie&szlig;en'
-	var nachfolger = sucheNachfolgerVon(startEintrag);
-	var aktuellerIndex = 1;
-	while (aktuellerIndex <= nachfolger.laenge) {
-		ausgabeFrame.write(zweigEintrag);
-		if (nachfolger[aktuellerIndex].typ == 'link') {
-			if (nachfolger[aktuellerIndex].icon == "") {var bildBezeichnung = standardBildURL + standardLinkBild}
-			else {var bildBezeichnung = standardBildURL + nachfolger[aktuellerIndex].icon}
-			if (nachfolger[aktuellerIndex].ziel == "") {var zielFrame = standardZielFrame}
-			else {var zielFrame = nachfolger[aktuellerIndex].ziel}
-			if (aktuellerIndex != nachfolger.laenge) {
-				if (nachfolger[aktuellerIndex].icon == "leer.gif") {
-				ausgabeFrame.write("<IMG SRC=\"" + standardBildURL + "stamm-" + hintergrundStil + ".gif\" WIDTH=19 HEIGHT=16 ALIGN=TOP>")}
-				else {ausgabeFrame.write("<IMG SRC=\"" + standardBildURL + "zw" + hintergrundStil + ".gif\" WIDTH=19 HEIGHT=16 ALIGN=TOP>")}}
-			else {
-				if (nachfolger[aktuellerIndex].icon == "leer.gif") {
-				ausgabeFrame.write("<IMG SRC=\"" + standardBildURL + "end" + hintergrundStil + ".gif\" WIDTH=19 HEIGHT=16 ALIGN=TOP>")}
-				else {ausgabeFrame.write("<IMG SRC=\"" + standardBildURL + "zwe" + hintergrundStil + ".gif\" WIDTH=19 HEIGHT=16 ALIGN=TOP>")}}
-			if (nachfolger[aktuellerIndex].linkstat == "") {
-				var linkstat = nachfolger[aktuellerIndex].url}
-			else {var linkstat = nachfolger[aktuellerIndex].linkstat}
-			
-			<!-- In der folgenden Zeile werden die Bilder gesetzt -->
-			
-			ausgabeFrame.write("<A HREF=\"" + nachfolger[aktuellerIndex].url + "\" TARGET=\"" + zielFrame + "\" onMouseOver=\"window.status='" + linkstat + "'; return true\"><IMG SRC=\"" + bildBezeichnung + "\" WIDTH=16 HEIGHT=16 ALIGN=TOP BORDER=0 ALT=\"" + linkstat + "\">&nbsp;</A><A HREF=\"" + nachfolger[aktuellerIndex].url + "\" TARGET=\"" + zielFrame + "\" onMouseOver=\"window.status='" + linkstat + "'; return true\">&nbsp;" + nachfolger[aktuellerIndex].text + "</A><BR>\n")}
-		else {var neuerZweig = zweigEintrag;
-			if (nachfolger[aktuellerIndex].iconZu == "") {
-				var iconZu = "vzzu-" + hintergrundStil + ".gif"}
-			else {var iconZu = nachfolger[aktuellerIndex].iconZu}
-			if (nachfolger[aktuellerIndex].iconOffen == "") {
-				var iconOffen = "vzauf-" + hintergrundStil + ".gif"}
-			else {var iconOffen = nachfolger[aktuellerIndex].iconOffen}
-			if (aktuellerIndex != nachfolger.laenge) {
-				if (nachfolger[aktuellerIndex].offen == 0) {
-					ausgabeFrame.write("<A HREF=\"javascript:parent.aufzuVerz('" + nachfolger[aktuellerIndex].name + "',1)\" onMouseOver=\"window.status='" + VerzAuf + "'; return true\"><IMG SRC=\"" + standardBildURL + "zwauf-" + hintergrundStil + ".gif\" WIDTH=19 HEIGHT=16 ALT=\"" + VerzAuf + "\" ALIGN=TOP BORDER=0>")
-					ausgabeFrame.write("<IMG SRC=\"" + standardBildURL + iconZu + "\" WIDTH=16 HEIGHT=16 ALT=\"" + VerzAuf + "\" ALIGN=TOP BORDER=0>&nbsp;</A><A HREF=\"edit/node.php?id=" + nachfolger[aktuellerIndex].name + "&amp;<?echo $session?>\" TARGET=\"seiteFrame\" onMouseOver=\"window.status='Ordner Bearbeiten'; return true\"><IMG SRC=\"<?echo "../" . $session_design_path . "/icons/"?>ini.gif\" WIDTH=16 HEIGHT=16 ALIGN=TOP BORDER=0 ALT=\"Ordner Bearbeiten\">&nbsp;</A>&nbsp;<A HREF=\"javascript:parent.aufzuVerz('" + nachfolger[aktuellerIndex].name + "',1)\" onMouseOver=\"window.status='" + VerzAuf + "'; return true\">&nbsp;" + nachfolger[aktuellerIndex].text + "</A><BR>\n")}
-				else {ausgabeFrame.write("<A HREF=\"javascript:parent.aufzuVerz('" + nachfolger[aktuellerIndex].name + "',0)\" onMouseOver=\"window.status='" + VerzZu + "'; return true\"><IMG SRC=\"" + standardBildURL + "zwzu-" + hintergrundStil + ".gif\" WIDTH=19 HEIGHT=16 ALT=\"" + VerzZu + "\" ALIGN=TOP BORDER=0>");
-					ausgabeFrame.write("<IMG SRC=\"" + standardBildURL + iconOffen + "\" WIDTH=16 HEIGHT=16 ALT=\"" + VerzZu + "\" ALIGN=TOP BORDER=0>&nbsp;</A><A HREF=\"edit/node.php?id=" + nachfolger[aktuellerIndex].name + "&amp;<?echo $session?>\" TARGET=\"seiteFrame\" onMouseOver=\"window.status='Ordner Bearbeiten'; return true\"><IMG SRC=\"<?echo "../" . $session_design_path . "/icons/"?>/ini.gif\" WIDTH=16 HEIGHT=16 ALIGN=TOP BORDER=0 ALT=\"Ordner Bearbeiten\">&nbsp;</A>&nbsp;<A HREF=\"javascript:parent.aufzuVerz('" + nachfolger[aktuellerIndex].name + "',0)\" onMouseOver=\"window.status='" + VerzZu + "'; return true\">&nbsp;" + nachfolger[aktuellerIndex].text + "</A><BR>\n");
-					neuerZweig = neuerZweig + "<IMG SRC=\"" + standardBildURL + "stamm-" + hintergrundStil + ".gif\" WIDTH=19 HEIGHT=16 ALIGN=TOP>";
-					maleVerz(nachfolger[aktuellerIndex].name,neuerZweig)}}
-			else {
-				if (nachfolger[aktuellerIndex].offen == 0) {
-					ausgabeFrame.write("<A HREF=\"javascript:parent.aufzuVerz('" + nachfolger[aktuellerIndex].name + "',1)\" onMouseOver=\"window.status='" + VerzAuf + "'; return true\"><IMG SRC=\"" + standardBildURL + "zwauf-e" + hintergrundStil + ".gif\" WIDTH=19 HEIGHT=16 ALT=\"" + VerzAuf + "\" ALIGN=TOP BORDER=0>")
-					ausgabeFrame.write("<IMG SRC=\"" + standardBildURL + iconZu + "\" WIDTH=16 HEIGHT=16 ALT=\"" + VerzAuf + "\" ALIGN=TOP BORDER=0>&nbsp;</A><A HREF=\"edit/node.php?id=" + nachfolger[aktuellerIndex].name + "&amp;<?echo $session?>\" TARGET=\"seiteFrame\" onMouseOver=\"window.status='Ordner Bearbeiten'; return true\"><IMG SRC=\"<?echo "../" . $session_design_path . "/icons/"?>/ini.gif\" WIDTH=16 HEIGHT=16 ALIGN=TOP BORDER=0 ALT=\"Ordner Bearbeiten\">&nbsp;</A>&nbsp;<A HREF=\"javascript:parent.aufzuVerz('" + nachfolger[aktuellerIndex].name + "',1)\" onMouseOver=\"window.status='" + VerzAuf + "'; return true\">&nbsp;" + nachfolger[aktuellerIndex].text + "</A><BR>\n")}
-				else {ausgabeFrame.write("<A HREF=\"javascript:parent.aufzuVerz('" + nachfolger[aktuellerIndex].name + "',0)\" onMouseOver=\"window.status='" + VerzZu + "'; return true\"><IMG SRC=\"" + standardBildURL + "zwzu-e" + hintergrundStil + ".gif\" WIDTH=19 HEIGHT=16 ALT=\"" + VerzZu + "\" ALIGN=TOP BORDER=0>");
-					ausgabeFrame.write("<IMG SRC=\"" + standardBildURL + iconOffen + "\" WIDTH=16 HEIGHT=16 ALT=\"" + VerzZu + "\" ALIGN=TOP BORDER=0>&nbsp;</A><A HREF=\"edit/node.php?id=" + nachfolger[aktuellerIndex].name + "&amp;<?echo $session?>\" TARGET=\"seiteFrame\" onMouseOver=\"window.status='Ordner Bearbeiten'; return true\"><IMG SRC=\"<?echo "../" . $session_design_path . "/icons/"?>/ini.gif\" WIDTH=16 HEIGHT=16 ALIGN=TOP BORDER=0 ALT=\"Ordner Bearbeiten\">&nbsp;</A>&nbsp;<A HREF=\"javascript:parent.aufzuVerz('" + nachfolger[aktuellerIndex].name + "',0)\" onMouseOver=\"window.status='" + VerzZu + "'; return true\">&nbsp;" + nachfolger[aktuellerIndex].text + "</A><BR>\n");
-					neuerZweig = neuerZweig + "<IMG SRC=\"" + standardBildURL + "leer.gif\" WIDTH=19 HEIGHT=16 ALIGN=TOP>";
-					maleVerz(nachfolger[aktuellerIndex].name,neuerZweig)}}}
-		aktuellerIndex++;}}
+        VerzAuf = 'Verzeichnis &ouml;ffnen'
+        VerzZu = 'Verzeichnis schlie&szlig;en'
+        var nachfolger = sucheNachfolgerVon(startEintrag);
+        var aktuellerIndex = 1;
+        while (aktuellerIndex <= nachfolger.laenge) {
+                ausgabeFrame.write(zweigEintrag);
+                if (nachfolger[aktuellerIndex].typ == 'link') {
+                        if (nachfolger[aktuellerIndex].icon == "") {var bildBezeichnung = standardBildURL + standardLinkBild}
+                        else {var bildBezeichnung = standardBildURL + nachfolger[aktuellerIndex].icon}
+                        if (nachfolger[aktuellerIndex].ziel == "") {var zielFrame = standardZielFrame}
+                        else {var zielFrame = nachfolger[aktuellerIndex].ziel}
+                        if (aktuellerIndex != nachfolger.laenge) {
+                                if (nachfolger[aktuellerIndex].icon == "leer.gif") {
+                                ausgabeFrame.write("<IMG SRC=\"" + standardBildURL + "stamm-" + hintergrundStil + ".gif\" WIDTH=19 HEIGHT=16 ALIGN=TOP>")}
+                                else {ausgabeFrame.write("<IMG SRC=\"" + standardBildURL + "zw" + hintergrundStil + ".gif\" WIDTH=19 HEIGHT=16 ALIGN=TOP>")}}
+                        else {
+                                if (nachfolger[aktuellerIndex].icon == "leer.gif") {
+                                ausgabeFrame.write("<IMG SRC=\"" + standardBildURL + "end" + hintergrundStil + ".gif\" WIDTH=19 HEIGHT=16 ALIGN=TOP>")}
+                                else {ausgabeFrame.write("<IMG SRC=\"" + standardBildURL + "zwe" + hintergrundStil + ".gif\" WIDTH=19 HEIGHT=16 ALIGN=TOP>")}}
+                        if (nachfolger[aktuellerIndex].linkstat == "") {
+                                var linkstat = nachfolger[aktuellerIndex].url}
+                        else {var linkstat = nachfolger[aktuellerIndex].linkstat}
+
+                        <!-- In der folgenden Zeile werden die Bilder gesetzt -->
+
+                        ausgabeFrame.write("<A HREF=\"" + nachfolger[aktuellerIndex].url + "\" TARGET=\"" + zielFrame + "\" onMouseOver=\"window.status='" + linkstat + "'; return true\"><IMG SRC=\"" + bildBezeichnung + "\" WIDTH=16 HEIGHT=16 ALIGN=TOP BORDER=0 ALT=\"" + linkstat + "\">&nbsp;</A><A HREF=\"" + nachfolger[aktuellerIndex].url + "\" TARGET=\"" + zielFrame + "\" onMouseOver=\"window.status='" + linkstat + "'; return true\">&nbsp;" + nachfolger[aktuellerIndex].text + "</A><BR>\n")}
+                else {var neuerZweig = zweigEintrag;
+                        if (nachfolger[aktuellerIndex].iconZu == "") {
+                                var iconZu = "vzzu-" + hintergrundStil + ".gif"}
+                        else {var iconZu = nachfolger[aktuellerIndex].iconZu}
+                        if (nachfolger[aktuellerIndex].iconOffen == "") {
+                                var iconOffen = "vzauf-" + hintergrundStil + ".gif"}
+                        else {var iconOffen = nachfolger[aktuellerIndex].iconOffen}
+                        if (aktuellerIndex != nachfolger.laenge) {
+                                if (nachfolger[aktuellerIndex].offen == 0) {
+                                        ausgabeFrame.write("<A HREF=\"javascript:parent.aufzuVerz('" + nachfolger[aktuellerIndex].name + "',1)\" onMouseOver=\"window.status='" + VerzAuf + "'; return true\"><IMG SRC=\"" + standardBildURL + "zwauf-" + hintergrundStil + ".gif\" WIDTH=19 HEIGHT=16 ALT=\"" + VerzAuf + "\" ALIGN=TOP BORDER=0>")
+                                        ausgabeFrame.write("<IMG SRC=\"" + standardBildURL + iconZu + "\" WIDTH=16 HEIGHT=16 ALT=\"" + VerzAuf + "\" ALIGN=TOP BORDER=0>&nbsp;</A><A HREF=\"edit/node.php?id=" + nachfolger[aktuellerIndex].name + "&amp;<?echo $session?>\" TARGET=\"seiteFrame\" onMouseOver=\"window.status='Ordner Bearbeiten'; return true\"><IMG SRC=\"<?echo "../" . $session_design_path . "/icons/"?>ini.gif\" WIDTH=16 HEIGHT=16 ALIGN=TOP BORDER=0 ALT=\"Ordner Bearbeiten\">&nbsp;</A>&nbsp;<A HREF=\"javascript:parent.aufzuVerz('" + nachfolger[aktuellerIndex].name + "',1)\" onMouseOver=\"window.status='" + VerzAuf + "'; return true\">&nbsp;" + nachfolger[aktuellerIndex].text + "</A><BR>\n")}
+                                else {ausgabeFrame.write("<A HREF=\"javascript:parent.aufzuVerz('" + nachfolger[aktuellerIndex].name + "',0)\" onMouseOver=\"window.status='" + VerzZu + "'; return true\"><IMG SRC=\"" + standardBildURL + "zwzu-" + hintergrundStil + ".gif\" WIDTH=19 HEIGHT=16 ALT=\"" + VerzZu + "\" ALIGN=TOP BORDER=0>");
+                                        ausgabeFrame.write("<IMG SRC=\"" + standardBildURL + iconOffen + "\" WIDTH=16 HEIGHT=16 ALT=\"" + VerzZu + "\" ALIGN=TOP BORDER=0>&nbsp;</A><A HREF=\"edit/node.php?id=" + nachfolger[aktuellerIndex].name + "&amp;<?echo $session?>\" TARGET=\"seiteFrame\" onMouseOver=\"window.status='Ordner Bearbeiten'; return true\"><IMG SRC=\"<?echo "../" . $session_design_path . "/icons/"?>/ini.gif\" WIDTH=16 HEIGHT=16 ALIGN=TOP BORDER=0 ALT=\"Ordner Bearbeiten\">&nbsp;</A>&nbsp;<A HREF=\"javascript:parent.aufzuVerz('" + nachfolger[aktuellerIndex].name + "',0)\" onMouseOver=\"window.status='" + VerzZu + "'; return true\">&nbsp;" + nachfolger[aktuellerIndex].text + "</A><BR>\n");
+                                        neuerZweig = neuerZweig + "<IMG SRC=\"" + standardBildURL + "stamm-" + hintergrundStil + ".gif\" WIDTH=19 HEIGHT=16 ALIGN=TOP>";
+                                        maleVerz(nachfolger[aktuellerIndex].name,neuerZweig)}}
+                        else {
+                                if (nachfolger[aktuellerIndex].offen == 0) {
+                                        ausgabeFrame.write("<A HREF=\"javascript:parent.aufzuVerz('" + nachfolger[aktuellerIndex].name + "',1)\" onMouseOver=\"window.status='" + VerzAuf + "'; return true\"><IMG SRC=\"" + standardBildURL + "zwauf-e" + hintergrundStil + ".gif\" WIDTH=19 HEIGHT=16 ALT=\"" + VerzAuf + "\" ALIGN=TOP BORDER=0>")
+                                        ausgabeFrame.write("<IMG SRC=\"" + standardBildURL + iconZu + "\" WIDTH=16 HEIGHT=16 ALT=\"" + VerzAuf + "\" ALIGN=TOP BORDER=0>&nbsp;</A><A HREF=\"edit/node.php?id=" + nachfolger[aktuellerIndex].name + "&amp;<?echo $session?>\" TARGET=\"seiteFrame\" onMouseOver=\"window.status='Ordner Bearbeiten'; return true\"><IMG SRC=\"<?echo "../" . $session_design_path . "/icons/"?>/ini.gif\" WIDTH=16 HEIGHT=16 ALIGN=TOP BORDER=0 ALT=\"Ordner Bearbeiten\">&nbsp;</A>&nbsp;<A HREF=\"javascript:parent.aufzuVerz('" + nachfolger[aktuellerIndex].name + "',1)\" onMouseOver=\"window.status='" + VerzAuf + "'; return true\">&nbsp;" + nachfolger[aktuellerIndex].text + "</A><BR>\n")}
+                                else {ausgabeFrame.write("<A HREF=\"javascript:parent.aufzuVerz('" + nachfolger[aktuellerIndex].name + "',0)\" onMouseOver=\"window.status='" + VerzZu + "'; return true\"><IMG SRC=\"" + standardBildURL + "zwzu-e" + hintergrundStil + ".gif\" WIDTH=19 HEIGHT=16 ALT=\"" + VerzZu + "\" ALIGN=TOP BORDER=0>");
+                                        ausgabeFrame.write("<IMG SRC=\"" + standardBildURL + iconOffen + "\" WIDTH=16 HEIGHT=16 ALT=\"" + VerzZu + "\" ALIGN=TOP BORDER=0>&nbsp;</A><A HREF=\"edit/node.php?id=" + nachfolger[aktuellerIndex].name + "&amp;<?echo $session?>\" TARGET=\"seiteFrame\" onMouseOver=\"window.status='Ordner Bearbeiten'; return true\"><IMG SRC=\"<?echo "../" . $session_design_path . "/icons/"?>/ini.gif\" WIDTH=16 HEIGHT=16 ALIGN=TOP BORDER=0 ALT=\"Ordner Bearbeiten\">&nbsp;</A>&nbsp;<A HREF=\"javascript:parent.aufzuVerz('" + nachfolger[aktuellerIndex].name + "',0)\" onMouseOver=\"window.status='" + VerzZu + "'; return true\">&nbsp;" + nachfolger[aktuellerIndex].text + "</A><BR>\n");
+                                        neuerZweig = neuerZweig + "<IMG SRC=\"" + standardBildURL + "leer.gif\" WIDTH=19 HEIGHT=16 ALIGN=TOP>";
+                                        maleVerz(nachfolger[aktuellerIndex].name,neuerZweig)}}}
+                aktuellerIndex++;}}
 
 
 <!-- neumalen() - JAVASCRIPT-FUNKTION - diese Funktion wird in der Frameset-Definition bei Änderung der Fenstergröße aufgerufen (nur Netscape) und lädt das Menü neu -->
@@ -120,99 +120,99 @@ function neumalen() {
 <!-- aufzuVerz() - JAVASCRIPT-FUNKTION - diese Funktion öffnet bzw. schließt ein Verzeichnis. -->
 
 function aufzuVerz(name,status) {
-	var eintragsIndex = indexVonEintrag(name);
-	menuDaten[eintragsIndex].offen = status;
-	timeOutname = setTimeout("maleMenu()",100);
-	if ((status == 1) && (menuDaten[eintragsIndex].url != '')) {frames["seiteFrame"].location.href=menuDaten[eintragsIndex].url}}
+        var eintragsIndex = indexVonEintrag(name);
+        menuDaten[eintragsIndex].offen = status;
+        timeOutname = setTimeout("maleMenu()",100);
+        if ((status == 1) && (menuDaten[eintragsIndex].url != '')) {frames["seiteFrame"].location.href=menuDaten[eintragsIndex].url}}
 
 <!-- allesaufzu() - JAVASCRIPT-FUNKTION - diese Funktion öffnet/schließt alle Verzeichnisse. -->
 
 function allesaufzu(was) {
-	var aktuellerIndex = 1;
-	while (aktuellerIndex <= menuDaten.laenge) {
-		{menuDaten[aktuellerIndex].offen = was}
-		aktuellerIndex++}
- 	maleMenu()}
+        var aktuellerIndex = 1;
+        while (aktuellerIndex <= menuDaten.laenge) {
+                {menuDaten[aktuellerIndex].offen = was}
+                aktuellerIndex++}
+         maleMenu()}
 
 <!-- indexVonEintrag() - JAVASCRIPT-FUNKTION - sucht einen Eintrag in 'menuDaten' anhand eines Namens -->
 
 function indexVonEintrag(name) {
-	var aktuellerIndex = 1;
-	while (aktuellerIndex <= menuDaten.laenge) {
-		if ((menuDaten[aktuellerIndex].typ == 'root') || (menuDaten[aktuellerIndex].typ == 'verzeichnis')) {
-			if (menuDaten[aktuellerIndex].name == name) {
-				return aktuellerIndex}}
-		aktuellerIndex++}
-	return -1}
+        var aktuellerIndex = 1;
+        while (aktuellerIndex <= menuDaten.laenge) {
+                if ((menuDaten[aktuellerIndex].typ == 'root') || (menuDaten[aktuellerIndex].typ == 'verzeichnis')) {
+                        if (menuDaten[aktuellerIndex].name == name) {
+                                return aktuellerIndex}}
+                aktuellerIndex++}
+        return -1}
 
 <!-- sucheNachfolgerVon() - JAVASCRIPT-FUNKTION - erzeugt eine Sammlung aller Einträge, die unmittelbar unter dem aktuellen Eintrag liegen -->
 
 function sucheNachfolgerVon(eintrag) {
-	var nachfolger = new Sammlung();
-	var aktuellerIndex = 1;
-	while (aktuellerIndex <= menuDaten.laenge) {
-		if ((menuDaten[aktuellerIndex].typ == 'verzeichnis') || (menuDaten[aktuellerIndex].typ == 'link')) {
-			if (menuDaten[aktuellerIndex].vorfahr == eintrag) {
-				nachfolger.neu(menuDaten[aktuellerIndex])}}
-		aktuellerIndex++}
-	return nachfolger}
+        var nachfolger = new Sammlung();
+        var aktuellerIndex = 1;
+        while (aktuellerIndex <= menuDaten.laenge) {
+                if ((menuDaten[aktuellerIndex].typ == 'verzeichnis') || (menuDaten[aktuellerIndex].typ == 'link')) {
+                        if (menuDaten[aktuellerIndex].vorfahr == eintrag) {
+                                nachfolger.neu(menuDaten[aktuellerIndex])}}
+                aktuellerIndex++}
+        return nachfolger}
 
 <!-- Sammlung() - OBJEKT - ein dynamisches Objekt, welches Daten speichert, ähnlich einem Array. -->
 
 function Sammlung() {
-	this.laenge = 0;
-	this.neu = neu;
-	return this}
+        this.laenge = 0;
+        this.neu = neu;
+        return this}
 
 <!-- neu() - METHODE des Objekts Sammlung - fügt dem Objekt Sammlung neue Daten(sätze) hinzu. -->
 
 function neu(object) {
-	this.laenge++;
-	this[this.laenge] = object}
+        this.laenge++;
+        this[this.laenge] = object}
 
 <!-- HauptverzeichnisEintrag() - OBJEKT - steht für den Hauptverzeichnis-Eintrag im Menü. -->
 
 function HauptverzeichnisEintrag(name,text,url,ziel,icon,rootstat) {
-	this.name = name;
-	this.text = text;
-	this.url = url;
-	this.ziel = ziel;
-	this.icon = icon;
-	this.typ = 'root';
-	this.rootstat = rootstat;
-	return this}
+        this.name = name;
+        this.text = text;
+        this.url = url;
+        this.ziel = ziel;
+        this.icon = icon;
+        this.typ = 'root';
+        this.rootstat = rootstat;
+        return this}
 
 <!-- VerzEintrag() - OBJEKT - steht für einen Verzeichnis-Eintrag im Menü. -->
 
 function VerzEintrag(name,vorfahr,text,iconZu,iconOffen,url) {
-	this.name = name;
-	this.vorfahr = vorfahr;
-	this.text = text;
-	this.iconZu = iconZu;
-	this.iconOffen = iconOffen;
-	this.typ = 'verzeichnis';
-	this.offen = 0;
-	this.url = url;
-	return this}
+        this.name = name;
+        this.vorfahr = vorfahr;
+        this.text = text;
+        this.iconZu = iconZu;
+        this.iconOffen = iconOffen;
+        this.typ = 'verzeichnis';
+        this.offen = 0;
+        this.url = url;
+        return this}
 
 <!-- LinkEintrag() - OBJEKT - steht für einen Link-Eintrag im Menü. -->
 
 function LinkEintrag(vorfahr,text,url,ziel,icon,linkstat,art,name) {
-	this.vorfahr = vorfahr;
-	this.text = text;
-	this.url = url;
-	this.ziel = ziel;
-	this.icon = icon;
-	this.typ = 'link';
-	this.art = art;
-	this.name = name;
-	this.linkstat = linkstat;
-	return this}
+        this.vorfahr = vorfahr;
+        this.text = text;
+        this.url = url;
+        this.ziel = ziel;
+        this.icon = icon;
+        this.typ = 'link';
+        this.art = art;
+        this.name = name;
+        this.linkstat = linkstat;
+        return this}
 
 <!-- ladeDaten() - JAVASCRIPT-FUNKTION - die in diesem Bereich vorhandenen benutzerdefinierten Daten und Variablen werden mit dieser Funktion eingelesen. -->
 
 function ladeDaten() {
-	menuDaten = new Sammlung();
+        menuDaten = new Sammlung();
 
 <!--
 // Menü-Struktur-Definitionen: hier wird die Menü-Struktur definiert
@@ -246,7 +246,7 @@ menuDaten.neu(new HauptverzeichnisEintrag('root','Archiv','frame_start.php?<? ec
 
 /*
 if ($news == "y"):?>
-menuDaten.neu(new VerzEintrag('news','root','aktuelle News','newsgrup.gif','newsgrup.gif',''));	
+menuDaten.neu(new VerzEintrag('news','root','aktuelle News','newsgrup.gif','newsgrup.gif',''));
 menuDaten.neu(new LinkEintrag('news','Top News','news/topnews.php?<?echo $session?>','seiteFrame','','Top News','n','<?echo "1&amp;$session"?>'));
 menuDaten.neu(new LinkEintrag('news','Wirtschaft','news/wirtschaft.php?<?echo $session?>','seiteFrame','','Wirtschaft','n','<?echo "1&amp;$session"?>'));
 menuDaten.neu(new LinkEintrag('news','Finanzen','news/finanzen.php?<?echo $session?>','seiteFrame','','Finanzen','n','<?echo "1&amp;$session"?>'));
@@ -281,7 +281,7 @@ if($mygroups = $go_api->db->queryAllRecords("select * from user_groups, groups w
         $name = $row["name"];
         echo "menuDaten.neu(new VerzEintrag('group$groupid','grp_root','$name','group.gif','group.gif',''));\n";
         $groups[] = $groupid;
-	}
+        }
 }
 unset($mygroups);
 
@@ -314,7 +314,7 @@ foreach($groups as $gid) {
     /*******************************************
     * Bookmark Einträge erzeugen
     *******************************************/
-    
+
     //Ordner Einträge
     while($DB2 = mysql_fetch_array($conn2)):
         $id = $DB2["tree_id"];
@@ -325,12 +325,12 @@ foreach($groups as $gid) {
             echo "menuDaten.neu(new VerzEintrag('$id','$ordner','$btext','','',''));\n";
         }
     endwhile;
-    
+
     // Papierkorb einfügen
     if ($gid == 0) {
     echo "menuDaten.neu(new LinkEintrag('root','Papierkorb','edit/papierkorb.php?gid=$gid&amp;$session','seiteFrame','papierkorb.gif','Papierkorb','i','$session'));\n";
     } else {
-    echo "menuDaten.neu(new LinkEintrag('group$gid','Papierkorb','edit/papierkorb.php?gid=$gid&amp;$session','seiteFrame','papierkorb.gif','Papierkorb','i','$session'));\n";        
+    echo "menuDaten.neu(new LinkEintrag('group$gid','Papierkorb','edit/papierkorb.php?gid=$gid&amp;$session','seiteFrame','papierkorb.gif','Papierkorb','i','$session'));\n";
     }
 
     // Item Einträge
@@ -341,14 +341,14 @@ foreach($groups as $gid) {
         $link = addslashes($DB["content"]);
         $art = $DB["type"];
         $groupid = $DB["groupid"];
-        
+
         if($DB["icon"] != "") {
         $icon = $DB["icon"];
         } else {
         $icon = "doc.gif";
         }
-        
-        
+
+
         if ($art == "i" and $groupid == $gid):
            echo "menuDaten.neu(new LinkEintrag('$ordner','$btext','edit/edit.php?tree_id=$id&amp;$session','seiteFrame','$icon','','$art','$id&amp;$session'));\n";
         elseif ($art == "e" and $groupid == $gid):
@@ -378,8 +378,8 @@ MenuSchriftGroesse = '1';                   // die Schriftgröße - nicht zu groß 
 
 <!-- Zusätzlicher HTML-Code: -->
 
-	prefixHTML = "";
-	suffixHTML = "";
+        prefixHTML = "";
+        suffixHTML = "";
 }
 //-->
 </script>
@@ -391,7 +391,7 @@ MenuSchriftGroesse = '1';                   // die Schriftgröße - nicht zu groß 
 
 </head>
 
-    <frameset cols="*,5" onload="start()" onresize="neumalen()" framespacing="0" border="0" frameborder="0">
+    <frameset cols="*,5" onload="start()" framespacing="0" border="0" frameborder="0">
       <frame name="menuFrame" scrolling="auto" src="vorladen.php?<? echo $session?>" marginwidth="10" marginheight="10" target="_self">
       <frame name="sFrame" src="placeholder.php?<? echo $session?>" scrolling="no" target="_self" marginwidth="22" marginheight="26" noresize>
       </frameset>
@@ -403,6 +403,6 @@ MenuSchriftGroesse = '1';                   // die Schriftgröße - nicht zu groß 
 
       </body>
       </noframes>
-    
+
 
 </html>
