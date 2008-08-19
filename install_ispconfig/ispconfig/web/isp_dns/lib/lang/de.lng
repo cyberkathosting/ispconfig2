@@ -77,4 +77,10 @@ $wb["Feld"] = "Feld";
 $wb["Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 -"] = "Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 -<br>";
 $wb["Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 - ."] = "Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 - .<br>";
 
+$wb["PTR neu"] = 'PTR neu';
+$wb["PTR Record"] = 'PTR Eintrag';
+$wb["IP Address"] = 'IP-Adresse';
+$wb["Hostname"] = 'Hostname';
+$wb["DNS-Eintrag"] = 'DNS-Eintrag';
+
 ?>

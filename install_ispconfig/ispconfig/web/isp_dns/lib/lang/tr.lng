@@ -784,7 +784,7 @@ $wb["all_"] = "Üstteki kayýtlar<br>&nbsp;&nbsp;tüm saðlayýcýlar için geçerli ols
 $wb["Catalog_Name"] = "Ýsim";
 $wb["Feld"] = "Alan";
 $wb["Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 -"] = "Lütfen geçerli karakterler girerek tekrar deneyiniz.<br>";
-$wb["Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 - ."] = "Lütfen geçerli karakterler girerek tekrar deneyiniz.<br>"; 
+$wb["Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 - ."] = "Lütfen geçerli karakterler girerek tekrar deneyiniz.<br>";
 
 $wb["Anbieter"]     = "Satýcý";
 $wb["Web"]          = "Web";
@@ -1420,5 +1420,11 @@ $wb["txt_sys_error"] = "Sistem bir hata ile karþýlaþtý ya da bu sayfayý görme ve
 $wb["Item"] = "Ýtem";
 $wb["Data"] = "Veriler";
 $wb["Company"] = "Þirket";
+
+$wb["PTR neu"] = 'New PTR';
+$wb["PTR Record"] = 'PTR Record';
+$wb["IP Address"] = 'IP Address';
+$wb["Hostname"] = 'Hostname';
+$wb["DNS-Eintrag"] = 'DNS Record';
 
 ?>

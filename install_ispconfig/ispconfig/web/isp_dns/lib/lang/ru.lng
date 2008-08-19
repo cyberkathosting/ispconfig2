@@ -92,6 +92,12 @@ $wb["all_"] = "Содержат ли вышеуказанные записи<br>&nbsp;&nbsp;имена всех хостов
 $wb["Catalog_Name"] = "Название";
 $wb["Feld"] = "Поле";
 $wb["Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 -"] = "Разрешены только следующие символы: a-z A-Z 0-9 -<br>";
-$wb["Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 - ."] = "Разрешены только следующие символы: a-z A-Z 0-9 - .<br>"; 
+$wb["Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 - ."] = "Разрешены только следующие символы: a-z A-Z 0-9 - .<br>";
+
+$wb["PTR neu"] = 'New PTR';
+$wb["PTR Record"] = 'PTR Record';
+$wb["IP Address"] = 'IP Address';
+$wb["Hostname"] = 'Hostname';
+$wb["DNS-Eintrag"] = 'DNS Record';
 
 ?>

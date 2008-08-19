@@ -121,7 +121,7 @@ $icon = $row["icon"];
 }
 
 if($row["type"] == 'i') {
-    $title = "<b>DNS-Eintrag</b>: ".$row["title"];
+    $title = "<b>".$go_api->lng("DNS-Eintrag")."</b>: ".$row["title"];
 } else {
     $title = $row["title"];
 }
@@ -166,6 +166,10 @@ if($row["doctype_id"] == 1031) {
     unset($sub_row2);
 }
 
+// PTR Record
+if($row["doctype_id"] == 1033) {
+  $title = "<b>".$go_api->lng("PTR Record")."</b>: ".$row["title"];
+}
 
 ////////////////////////////////////////////
 

@@ -91,4 +91,10 @@ $wb["all_"] = "Inregistrarile de mai sus<br>&nbsp;&nbsp;contin toate hosturile<b
 
 $wb["Catalog_Name"] = "Nume";
 
+$wb["PTR neu"] = 'New PTR';
+$wb["PTR Record"] = 'PTR Record';
+$wb["IP Address"] = 'IP Address';
+$wb["Hostname"] = 'Hostname';
+$wb["DNS-Eintrag"] = 'DNS Record';
+
 ?>
