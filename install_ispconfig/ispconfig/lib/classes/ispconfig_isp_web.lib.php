@@ -109,7 +109,7 @@ function web_show($doc_id, $doctype_id) {
         // Reseller Limits
 
         // If the logged in user is a reseller
-        if($reseller = $go_api->db->queryOneRecord("SELECT * from isp_isp_reseller where reseller_userid = ".$go_info["user"]["userid"])) {   
+        if($reseller = $go_api->db->queryOneRecord("SELECT * from isp_isp_reseller where reseller_userid = ".$go_info["user"]["userid"])) {
 
                 // deaktiviere Shell Access, wenn bei Resellern inaktiv
                 if($reseller["limit_shell_access"] != 1) $doc->deck[0]->elements[14]->visible = 0;
@@ -452,7 +452,7 @@ function web_insert($doc_id, $doctype_id, $die_on_error = '1') {
     ///////////////////////////////////////////////////////
 
     if($web["web_shell"] == 1 and $web["web_ftp"] != 1) {
-        $this->_insert_dns($doc_id,$doctype_id,$web);
+        //$this->_insert_dns($doc_id,$doctype_id,$web);
         $go_api->db->query("UPDATE isp_isp_web SET web_ftp = '1' where doc_id = $doc_id");
     }
 
@@ -885,7 +885,7 @@ global $go_api, $go_info, $old_form_data;
     ///////////////////////////////////////////////////////
 
     if($web["web_shell"] == 1 and $web["web_ftp"] != 1) {
-        $this->_insert_dns($doc_id,$doctype_id,$web);
+        //$this->_insert_dns($doc_id,$doctype_id,$web);
         $go_api->db->query("UPDATE isp_isp_web SET web_ftp = '1' where doc_id = $doc_id");
     }
 
@@ -1046,6 +1046,7 @@ function _insert_dns($doc_id,$doctype_id,$web) {
 
     $dns_doctype_id = 1016;
     $a_record_doctype_id = 1018;
+    $cname_record_doctype_id = 1019;
     $mx_record_doctype_id = 1020;
     $spf_record_doctype_id = 1031;
 
@@ -1104,8 +1105,12 @@ function _insert_dns($doc_id,$doctype_id,$web) {
 
       if($web["web_host"] != "" and !$go_api->db->queryOneRecord($query_sql)) {
         // überprüfe, on a-record schon existiert
-        $exist_a_record = $go_api->db->queryOneRecord("SELECT * from dns_dep, dns_a where dns_dep.child_doc_id = dns_a.doc_id and dns_dep.child_doctype_id = $a_record_doctype_id and dns_a.host = '".$web["host"]."' and dns_dep.parent_tree_id = '$ptid'");
-        if(!is_array($exist_a_record)) {
+        $exist_a_record = $go_api->db->queryOneRecord("SELECT * from dns_dep, dns_a where dns_dep.child_doc_id = dns_a.doc_id and dns_dep.child_doctype_id = $a_record_doctype_id and dns_a.host = '".$web["web_host"]."' and dns_dep.parent_tree_id = '$ptid'");
+
+        // überprüfe, on cname-record schon existiert
+        $exist_cname_record = $go_api->db->queryOneRecord("SELECT * from dns_dep, dns_cname where dns_dep.child_doc_id = dns_cname.doc_id and dns_dep.child_doctype_id = $cname_record_doctype_id and dns_cname.host = '".$web["web_host"]."' and dns_dep.parent_tree_id = '$ptid'");
+
+        if(!is_array($exist_a_record) && !is_array($exist_cname_record)) {
 
           $host = trim($web["web_host"]);
           $ip_adresse = $web["web_ip"];
