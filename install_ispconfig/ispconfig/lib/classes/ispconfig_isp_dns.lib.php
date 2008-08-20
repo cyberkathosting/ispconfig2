@@ -291,8 +291,21 @@ global $go_api, $go_info;
         }
         }
 
+        // Standard Nameserver Setzen
+        $server = $go_api->db->queryOneRecord("SELECT * from isp_server where doc_id = ".$soa["server_id"]);
+        if($server["server_bind_ns1_default"] != '' and $aufruf == 'soa') {
+                if(trim($soa["dns_ns1"]) == "") $go_api->db->query("UPDATE dns_isp_dns SET dns_ns1 = '".$server["server_bind_ns1_default"]."' where doc_id = '$doc_id'");
+        }
+        if($server["server_bind_ns2_default"] != '' and $aufruf == 'soa') {
+                if(trim($soa["dns_ns2"]) == "") $go_api->db->query("UPDATE dns_isp_dns SET dns_ns2 = '".$server["server_bind_ns2_default"]."' where doc_id = '$doc_id'");
+        }
+        if($server["server_bind_adminmail_default"] != '' and $aufruf == 'soa') {
+                if(trim($soa["dns_adminmail"]) == "") $go_api->db->query("UPDATE dns_isp_dns SET dns_adminmail = '".$server["server_bind_adminmail_default"]."' where doc_id = '$doc_id'");
+        }
+
+        if(trim($soa["dns_adminmail"]) == '') $soa["dns_adminmail"] = $server["server_bind_adminmail_default"];
         // Check if the adminmail is valid
-        if ($soa["dns_adminmail"] != '' && !preg_match("/^([a-z0-9\-\@]+\.)+[a-z]{2,6}$/ix", $soa["dns_adminmail"])) {
+        if ($soa["dns_adminmail"] != '' && $soa["dns_adminmail"] != 'root@localhost' && !preg_match("/^([a-z0-9\-\@]+\.)+[a-z]{2,6}$/ix", $soa["dns_adminmail"])) {
                 $go_api->db->query("DELETE from dns_isp_dns where doc_id = '$doc_id'");
         $go_api->db->query("DELETE from dns_nodes where doc_id = '$doc_id' and doctype_id = '$doctype_id'");
 
@@ -353,14 +366,6 @@ case 1031: // SPF-Records
                                 }
                         }
                 }
-        }
-
-        // Standard Nameserver Setzen
-        $server = $go_api->db->queryOneRecord("SELECT * from isp_server where doc_id = ".$soa["server_id"]);
-        if($server["server_bind_ns1_default"] != '' and $aufruf == 'soa') {
-                if($soa["dns_ns1"] == "") $go_api->db->query("UPDATE dns_isp_dns SET dns_ns1 = '".$server["server_bind_ns1_default"]."' where doc_id = '$doc_id'");
-                if($soa["dns_ns2"] == "") $go_api->db->query("UPDATE dns_isp_dns SET dns_ns2 = '".$server["server_bind_ns2_default"]."' where doc_id = '$doc_id'");
-                if($soa["dns_adminmail"] == "") $go_api->db->query("UPDATE dns_isp_dns SET dns_adminmail = '".$server["server_bind_adminmail_default"]."' where doc_id = '$doc_id'");
         }
 
 

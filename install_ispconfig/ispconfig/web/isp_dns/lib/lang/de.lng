@@ -83,4 +83,7 @@ $wb["IP Address"] = 'IP-Adresse';
 $wb["Hostname"] = 'Hostname';
 $wb["DNS-Eintrag"] = 'DNS-Eintrag';
 
+$wb["Invalid domain name"] = "Ungültiger Domain-Name";
+$wb["Invalid hostname"] = "Ungültiger Hostname";
+
 ?>
