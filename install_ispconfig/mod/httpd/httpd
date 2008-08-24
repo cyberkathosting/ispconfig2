@@ -52,6 +52,8 @@ dist_path_httpd_root:/var/www:Web-Root:read::mdr20080
 
 dist_path_httpd_root:/var/www:Web-Root:read::mdr20081
 
+dist_path_httpd_root:/var/www:Web-Root:read::mdr20090
+
 dist_path_httpd_root:/var/www:Web-Root:read::centos41
 
 dist_path_httpd_root:/var/www:Web-Root:read::centos42
