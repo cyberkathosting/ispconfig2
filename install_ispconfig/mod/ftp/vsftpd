@@ -170,6 +170,10 @@ dist_ftp_conf:/etc/vsftpd/vsftpd.conf:Config-File:read::fedora90
 dist_ftp_version:standalone:Server-Version:select:standalone|inetd|xinetd:fedora90
 dist_ftp_log:/var/log/vsftpd.log:Log-File:read::fedora90
 
+dist_ftp_conf:/etc/vsftpd/vsftpd.conf:Config-File:read::fedora100
+dist_ftp_version:standalone:Server-Version:select:standalone|inetd|xinetd:fedora100
+dist_ftp_log:/var/log/vsftpd.log:Log-File:read::fedora100
+
 dist_ftp_conf:/etc/vsftpd.conf:Config-File:read::suse72
 dist_ftp_version:inetd:Server-Version:select:standalone|inetd|xinetd:suse72
 dist_ftp_log:/var/log/vsftpd.log:Log-File:read::suse72
