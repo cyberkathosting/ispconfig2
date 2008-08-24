@@ -246,6 +246,10 @@ dist_ftp_conf:/etc/vsftpd.conf:Config-File:read::debian40
 dist_ftp_version:inetd:Server-Version:select:standalone|inetd|xinetd:debian40
 dist_ftp_log:/var/log/vsftpd.log:Log-File:read::debian40
 
+dist_ftp_conf:/etc/vsftpd.conf:Config-File:read::debian50
+dist_ftp_version:inetd:Server-Version:select:standalone|inetd|xinetd:debian50
+dist_ftp_log:/var/log/vsftpd.log:Log-File:read::debian50
+
 dist_ftp_conf:/etc/vsftpd.conf:Config-File:read::debiantesting/unstable0
 dist_ftp_version:inetd:Server-Version:select:standalone|inetd|xinetd:debiantesting/unstable0
 dist_ftp_log:/var/log/vsftpd.log:Log-File:read::debiantesting/unstable0

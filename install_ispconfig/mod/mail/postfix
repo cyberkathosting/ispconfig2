@@ -246,6 +246,10 @@ dist_mail_log:/var/log/mail.log:Log-File:read::debian40
 dist_mail_virtusertable:/etc/postfix/virtusertable:Virtusertable-File:read::debian40
 dist_mail_local_host_names:/etc/postfix/local-host-names:Local-Host-Names-File:read::debian40
 
+dist_mail_log:/var/log/mail.log:Log-File:read::debian50
+dist_mail_virtusertable:/etc/postfix/virtusertable:Virtusertable-File:read::debian50
+dist_mail_local_host_names:/etc/postfix/local-host-names:Local-Host-Names-File:read::debian50
+
 dist_mail_log:/var/log/mail.log:Log-File:read::debiantesting/unstable0
 dist_mail_virtusertable:/etc/postfix/virtusertable:Virtusertable-File:read::debiantesting/unstable0
 dist_mail_local_host_names:/etc/postfix/local-host-names:Local-Host-Names-File:read::debiantesting/unstable0
