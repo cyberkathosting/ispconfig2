@@ -230,6 +230,10 @@ dist_ftp_conf:/etc/proftpd.conf:Config-File:read::suse110
 dist_ftp_version:standalone:Server-Version:exit::suse110
 dist_ftp_log:/var/log/xferlog:Log-File:read::suse110
 
+dist_ftp_conf:/etc/proftpd.conf:Config-File:read::suse111
+dist_ftp_version:standalone:Server-Version:exit::suse111
+dist_ftp_log:/var/log/xferlog:Log-File:read::suse111
+
 dist_ftp_conf:/etc/proftpd.conf:Config-File:read::debian30
 dist_ftp_version:standalone:Server-Version:exit::debian30
 dist_ftp_log:/var/log/xferlog:Log-File:read::debian30
