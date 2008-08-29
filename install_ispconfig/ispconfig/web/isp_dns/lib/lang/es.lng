@@ -104,7 +104,7 @@ $wb["PTR Record"] = 'PTR Record';
 $wb["IP Address"] = 'IP Address';
 $wb["Hostname"] = 'Hostname';
 $wb["DNS-Eintrag"] = 'DNS Record';
-<p>$wb["Invalid domain name"] = "Invalid domain name";
-$wb["Invalid hostname"] = "Invalid hostname";</p>
+$wb["Invalid domain name"] = "Invalid domain name";
+$wb["Invalid hostname"] = "Invalid hostname";
 
 ?>
