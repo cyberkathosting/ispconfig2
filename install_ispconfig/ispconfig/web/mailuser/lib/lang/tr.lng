@@ -4,8 +4,6 @@ $wb["txt_login_desc"] = "Bu bölümden eposta uyarlamalarý yapabilirsiniz.";
 $wb["txt_error"] = "Hata";
 $wb["txt_email_username"] = "Eposta Kullanýcýsý";
 $wb["txt_password"] = "Þifre";
-$wb["txt_password_confirm"] = "Confirm Password";
-$wb["txt_error_passwords_do_not_match"] = "The passwords do not match!";
 $wb["txt_login"] = "Giriþ";
 $wb["txt_autoresponder"] = "Otomatik Cevaplama";
 $wb["txt_nachricht"] = "Mesaj";
@@ -46,5 +44,6 @@ $wb["txt_hint_spam_whitelist"] = '<b>Uyarý:</b> Her satýra bir eposta gelmek zor
 $wb["txt_hint_spam_blacklist"] = '<b>Uyarý:</b> Her satýra bir eposta gelmek zorundadýr. Mesela: friend@somewhere.com, *@isp.com, or *.domain.net.';
 $wb["txt_uribl"] = '<a href="http://www.uribl.com/about.shtml" target="_blank">URIBL</a>';
 $wb["txt_keep_local_copy"] = 'Kopyasýný Koru';
+$wb["txt_password_confirm"] = "Þifre Tekrarý";
 
 ?>

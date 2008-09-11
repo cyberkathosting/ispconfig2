@@ -383,7 +383,7 @@ $wb["Spam Whitelist"] = 'Spam Beyaz Listesi';
 $wb["Spam Blacklist"] = 'Spam Kara Listesi';
 $wb["spam_whitelist_txt"] = '<b>Uyarý:</b> Her satýra bir giriþ yapýlmak zorundadýr. Örneðin: friend@somewhere.com, *@isp.com, or *.domain.net...';
 $wb["spam_blacklist_txt"] = '<b>Uyarý:</b> Her satýra bir giriþ yapýlmak zorundadýr. Örneðin: friend@somewhere.com, *@isp.com, or *.domain.net...';
-$wb["Webalizer Stats"] = 'Webalizer<br>&nbsp;Statistics';
+$wb["Webalizer Stats"] = 'Ýstatistikler';
 $wb["Use Uribl"] = '<a href="http://www.uribl.com/about.shtml" target="_blank" style="font-family:Arial,Verdana">URIBL</a>';
 $wb["Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 -"] = "Lütfen doðru karakterler kullanarak tekrar deneyiniz.<br>";
 $wb["Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 - ."] = "Lütfen doðru karakterler kullanarak tekrar deneyiniz.<br>";
