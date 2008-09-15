@@ -106,6 +106,10 @@ dist_ftp_conf:/etc/proftpd.conf:Config-File:read::centos46
 dist_ftp_version:standalone:Server-Version:exit::centos46
 dist_ftp_log:/var/log/xferlog:Log-File:read::centos46
 
+dist_ftp_conf:/etc/proftpd.conf:Config-File:read::centos47
+dist_ftp_version:standalone:Server-Version:exit::centos47
+dist_ftp_log:/var/log/xferlog:Log-File:read::centos47
+
 dist_ftp_conf:/etc/proftpd.conf:Config-File:read::centos50
 dist_ftp_version:standalone:Server-Version:exit::centos50
 dist_ftp_log:/var/log/xferlog:Log-File:read::centos50
