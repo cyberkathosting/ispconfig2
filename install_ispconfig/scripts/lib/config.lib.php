@@ -1424,7 +1424,7 @@ Group web".$web["doc_id"];
     foreach($serveralias_arr as $s_alias){
       if(trim($s_alias) != "ServerAlias" && substr(trim($s_alias),0,11) == "ServerAlias") $serveralias .= trim($s_alias)."\n";
     }
-    //if(trim($serveralias) == "ServerAlias") $serveralias = "";
+    
     if($rewrite_rule == "RewriteEngine on"){
       $rewrite_rule = "";
     } else {

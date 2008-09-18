@@ -37,14 +37,15 @@ if(count($_POST) > 1) {
 
                 $username         = $_POST["username"];
                 $passwort         = $_POST["passwort"];
-				
-				$orig_username = $username;
-				
-				// Dovecot @ username hack
-				if(stristr($username, '@')) {
-					list ($loginusername, $logindomain) = split('[/@-]', $username);
-					$username = "${logindomain}_$loginusername";
-				}
+
+                                $orig_username = $username;
+
+                                // Dovecot @ username hack
+                                if(stristr($username, '@')) {
+                                        //list ($loginusername, $logindomain) = split('[/@-]', $username);
+                                        list ($loginusername, $logindomain) = split('@', $username);
+                                        $username = "${logindomain}_$loginusername";
+                                }
 
                 // Checke, ob es den User in ISPConfig DB gibt
                 $user = $app->db->queryOneRecord("SELECT * FROM isp_isp_user WHERE user_username = '".addslashes($username)."'");
@@ -58,10 +59,10 @@ if(count($_POST) > 1) {
                   if($login_allowed == 1){
                         // for DEBUG Only
                         if($go_info["server"]["mode"] == 'demo') {
-							$app->pop3->hostname = "ispconfig.org";
-						} else {
-							$app->pop3->hostname = "localhost";
-						}
+                                                        $app->pop3->hostname = "ispconfig.org";
+                                                } else {
+                                                        $app->pop3->hostname = "localhost";
+                                                }
 
                         // Öffne Pop3 Verbindung
                         $res = $app->pop3->Open();
