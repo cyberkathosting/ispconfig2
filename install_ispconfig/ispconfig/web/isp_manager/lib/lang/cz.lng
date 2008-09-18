@@ -590,5 +590,6 @@ $wb["Cron Jobs"]      = "Cron Jobs";
 $wb["error_anbieter_cron_aktiv"] = "Cron Jobs je ji¾ vyu¾íváno v nìkterém webu prodejce. Tato mo¾nost nemù¾e být deaktivována.<br>";
 $wb["error_web_no_cron"] = "Nemù¾ete pøiøadit Cron Jobs funkce k tomuto webu.<br>";
 $wb["error_cron_nicht_erlaubt"] = "The creation of Cron Jobs is not allowed for this user.<br>";
+$wb["error_catchall_exists"] = "There is already a catchAll account for this web site.<br>";
 
 ?>
