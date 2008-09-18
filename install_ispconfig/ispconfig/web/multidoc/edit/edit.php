@@ -697,10 +697,10 @@ while (list($key, $val) = each($doc->deck))
         } else {
         $value = $element_val->value;
         }
-		// TB 13.06.2007
-		if (get_magic_quotes_gpc()) {
-        	$value = stripslashes($value);
-		}
+                // TB 13.06.2007
+                if (get_magic_quotes_gpc()) {
+                $value = stripslashes($value);
+                }
 
         // Switch durch Datentypen
         $mode = 'r';
