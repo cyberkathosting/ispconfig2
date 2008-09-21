@@ -135,7 +135,7 @@ if [ "$install_art" == "install" ]; then
 fi
 make install || error "Could not install Apache"
 
-cd ${LIBMCRYPT}
+cd ../${LIBMCRYPT}
 ./configure --prefix=${INSTALL_ROOT}/libmcrypt
 make
 make install
