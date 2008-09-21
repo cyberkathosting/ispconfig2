@@ -165,6 +165,16 @@ cp -f apachectl ${INSTALL_ROOT}/httpd/bin/apachectl
 chmod 755 ${INSTALL_ROOT}/httpd/bin/apachectl
 chown root:root ${INSTALL_ROOT}/httpd/bin/apachectl
 
+###### Prüfen, ob PHP korrekt funktioniert ######
+${INSTALL_ROOT}/php/bin/php -n -q ../check.php
+if [ ! -f php_check ]; then
+  if [ "$install_art" == "upgrade" ]; then
+    `echo $dist_init_scripts`/ispconfig_server restart &> /dev/null
+  fi
+  error "$q_php_check";
+fi
+###### Prüfen, ob PHP korrekt funktioniert ENDE ######
+
 mv -f ${INSTALL_ROOT} ${INSTALL_ROOT_TMP}
 cd /root
 tar -pczf ${COMPILE_DIR}/../binaries/aps.tar.gz ${APPLICATION_NAME}_tmp || error "Could not create aps.tar.gz"
