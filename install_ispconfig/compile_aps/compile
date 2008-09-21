@@ -40,6 +40,7 @@ SPAMASSASSIN=Mail-SpamAssassin-3.2.5
 CRONOLOG=cronolog-1.6.2
 ZIP=zip-2.3
 UNZIP=unzip-5.52
+LIBMCRYPT=libmcrypt-2.5.8
 
 APPLICATION_NAME=ispconfig
 INSTALL_ROOT=/root/${APPLICATION_NAME}
@@ -103,6 +104,7 @@ error ()
   rm -fr ${CRONOLOG}
   rm -fr ${ZIP}
   rm -fr ${UNZIP}
+  rm -fr ${LIBMCRYPT}
   exit 1
 }
 
@@ -117,6 +119,7 @@ tar xvfz ${UUDEVIEW}.tar.gz || error "Could not unpack uudeview"
 tar xvfz ${CRONOLOG}.tar.gz || error "Could not unpack cronolog"
 tar xvfz ${ZIP}.tar.gz || error "Could not unpack zip"
 tar xvfz ${UNZIP}.tar.gz || error "Could not unpack unzip"
+tar xvfz ${LIBMCRYPT}.tar.gz || error "Could not unpack libmcrypt"
 
 cd ${OPENSSL}
 ./config --prefix=${INSTALL_ROOT}/openssl || error "Could not configure OpenSSL"
@@ -132,8 +135,13 @@ if [ "$install_art" == "install" ]; then
 fi
 make install || error "Could not install Apache"
 
+cd ${LIBMCRYPT}
+./configure --prefix=${INSTALL_ROOT}/libmcrypt
+make
+make install
+
 cd ../${PHP}
-./configure --with-apxs=${INSTALL_ROOT}/httpd/bin/apxs --enable-track-vars --enable-sockets --enable-mbstring=all --with-config-file-path=${INSTALL_ROOT}/php --enable-ftp --prefix=${INSTALL_ROOT}/php ${WITH_OPENSSL} ${WITH_MYSQL} ${WITH_XML} ${WITH_ZLIB_DIR} --without-pear || error "Could not configure PHP"
+./configure --with-apxs=${INSTALL_ROOT}/httpd/bin/apxs --enable-track-vars --enable-sockets --enable-mbstring=all --with-config-file-path=${INSTALL_ROOT}/php --enable-ftp --prefix=${INSTALL_ROOT}/php ${WITH_OPENSSL} ${WITH_MYSQL} ${WITH_XML} ${WITH_ZLIB_DIR} --without-pear --with-mcrypt=${INSTALL_ROOT}/libmcrypt || error "Could not configure PHP"
 make || error "Could not make PHP"
 make install || error "Could not install PHP"
 ln -s ${INSTALL_ROOT}/php/bin/php ${INSTALL_ROOT}/php/php
