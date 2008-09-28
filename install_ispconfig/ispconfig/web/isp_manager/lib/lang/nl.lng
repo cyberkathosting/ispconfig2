@@ -586,7 +586,7 @@ $wb["Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 - ."] = "Uitsluitende 
 $wb["Cron Jobs"]      = "Cron Jobs";
 $wb["error_anbieter_cron_aktiv"] = "Cron Jobs is reeds in gebruik op sommige websites van de reseller. Deze optie kan niet worden gedeactiveerd.<br>";
 $wb["error_web_no_cron"] = "U kunt geen Cron Jobs functionaliteit toekennen aan deze website.<br>";
-$wb["error_cron_nicht_erlaubt"] = "The creation of Cron Jobs is not allowed for this user.<br>";
-$wb["error_catchall_exists"] = "There is already a catchAll account for this web site.<br>";
+$wb["error_cron_nicht_erlaubt"] = "Het aanmaken van cron jobs is voor deze gebruiker niet toegestaan.<br>";
+$wb["error_catchall_exists"] = "Er bestaat reeds een catchall account voor deze website.<br>";
 
 ?>
