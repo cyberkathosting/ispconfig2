@@ -669,6 +669,9 @@ if($install_art == "install"){
   $httpd_check = '1';
   $salutatory_email_charset = 'iso-8859-1';
   $conf_webdav = '0';
+  $conf_force_user_quota = '0';
+  $conf_redirect_after_logout = '';
+  $conf_redirect_mailuser_after_logout = '';
   $dec_point = ',';
   $thousands_sep = '.';
   $currency = 'EUR';
@@ -685,6 +688,9 @@ if($install_art == "install"){
   $httpd_check = (isset($go_info["server"]["httpd_check"]) ? ($go_info["server"]["httpd_check"] == false ? '0' : '1') : '1');
   $salutatory_email_charset = (isset($go_info["server"]["salutatory_email_charset"]) ? $go_info["server"]["salutatory_email_charset"] : 'iso-8859-1');
   $conf_webdav = (isset($go_info["server"]["conf_webdav"]) ? ($go_info["server"]["conf_webdav"] == false ? '0' : '1') : '0');
+  $conf_force_user_quota = (isset($go_info["server"]["force_user_quota"]) ? ($go_info["server"]["force_user_quota"] == false ? '0' : '1') : '0');
+  $conf_redirect_after_logout = (isset($go_info["server"]["redirect_after_logout"]) ? $go_info["server"]["redirect_after_logout"] : '');
+  $conf_redirect_mailuser_after_logout = (isset($go_info["server"]["redirect_mailuser_after_logout"]) ? $go_info["server"]["redirect_mailuser_after_logout"] : '');
   $dec_point = (isset($go_info["localisation"]["dec_point"]) ? $go_info["localisation"]["dec_point"] : ',');
   $thousands_sep = (isset($go_info["localisation"]["thousands_sep"]) ? $go_info["localisation"]["thousands_sep"] : '.');
   $currency = (isset($go_info["localisation"]["currency"]) ? $go_info["localisation"]["currency"] : 'EUR');
@@ -795,7 +801,7 @@ if($install_art == "install"){
   caselog("cp -f existing_db.sql /tmp/existing_db_".date("m_d_Y__H_i_s", $current_date).".sql", $FILE, __LINE__,"copied existing_db.sql to /tmp/existing_db_".date("m_d_Y__H_i_s", $current_date).".sql","could not copy existing_db.sql to /tmp/existing_db_".date("m_d_Y__H_i_s", $current_date).".sql");
 
   @mysql_query("DROP DATABASE ".$new_db);
-  @mysql_query("CREATE DATABASE ".$new_db);
+  @mysql_query("CREATE DATABASE ".$new_db." /*!40100 DEFAULT CHARACTER SET latin1 */");
   mysql_select_db($new_db, $link);
   exec("chmod 444 $sql_file");
   if(empty($db_password)){
@@ -1121,7 +1127,7 @@ if($install_art == "install"){
     $i++;
   }
   if(!$new_db_exists){
-    mysql_query("CREATE DATABASE ".$new_db);
+    mysql_query("CREATE DATABASE ".$new_db." /*!40100 DEFAULT CHARACTER SET latin1 */");
     mysql_select_db($new_db, $link);
     exec("chmod 444 $sql_file");
     if(empty($db_password)){
@@ -1197,6 +1203,9 @@ $conf = str_replace("{SSH_CHROOT}", $ssh_chroot, $conf);
 $conf = str_replace("{HTTPD_CHECK}", $httpd_check, $conf);
 $conf = str_replace("{SALUTATORY_EMAIL_CHARSET}", $salutatory_email_charset, $conf);
 $conf = str_replace("{WEBDAV}", $conf_webdav, $conf);
+$conf = str_replace("{FORCE_USER_QUOTA}", $conf_force_user_quota, $conf);
+$conf = str_replace("{REDIRECT_AFTER_LOGOUT}", $conf_redirect_after_logout, $conf);
+$conf = str_replace("{REDIRECT_MAILUSER_AFTER_LOGOUT}", $conf_redirect_mailuser_after_logout, $conf);
 $conf = str_replace("{DEC_POINT}", $dec_point, $conf);
 $conf = str_replace("{THOUSANDS_SEP}", $thousands_sep, $conf);
 $conf = str_replace("{CURRENCY}", $currency, $conf);

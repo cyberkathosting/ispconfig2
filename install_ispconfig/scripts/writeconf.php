@@ -208,7 +208,7 @@ if($dienst["dienst_www_status"] == "on"){
   if($vhostcompare1 != $vhostcompare2){
 
     //if($sslcompare1 != $sslcompare2 || $web_update_ssl_action != 0){
-	if($web_update_ssl_action > 0){
+        if($web_update_ssl_action > 0){
       $isp_web->apache_restart();
       unset($web_update_ssl_action);
     } else {
@@ -235,7 +235,10 @@ if(!empty($dns_write)){
 }
 
 $slave_dnss = $mod->db->queryAllRecords("SELECT dns_secondary.* FROM dns_nodes,dns_secondary WHERE dns_nodes.doc_id = dns_secondary.doc_id AND dns_nodes.doctype_id = '".$isp_web->slave_doctype_id."' AND dns_secondary.status != ''");
-if(!empty($dns_write) || !empty($slave_dnss)){
+
+$ptr_dnss = $mod->db->queryAllRecords("SELECT dns_ptr.* FROM dns_nodes,dns_ptr WHERE dns_nodes.doc_id = dns_ptr.doc_id AND dns_nodes.doctype_id = '".$isp_web->ptr_doctype_id."' AND dns_ptr.status != ''");
+
+if(!empty($dns_write) || !empty($slave_dnss) || !empty($ptr_dnss)){
   $bind_restart += $mod->dns->make_named($mod->system->server_id);
 
   $bind_restart += $mod->dns->make_reverse_zonefile($mod->system->server_id);

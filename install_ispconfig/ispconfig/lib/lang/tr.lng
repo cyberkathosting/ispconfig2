@@ -1,0 +1,1447 @@
+<?
+/********************************
+* ISPConfig Dil Dosyasý
+* Cevirmen: Mustafa Baþaran
+*********************************/
+
+$wb["Arbeitsspeicher"]          = "RAM";
+$wb["CPU"]          = "CPU";
+$wb["Dienste"]      = "Hizmetler";
+$wb["Server Online seit"]          = "Sunucu Çalýþma Zamaný";
+$wb["User Online"]      = "Çevrimiçi Kullanýcýlar";
+$wb["System Load 1 Minute"] = "Son 1 Dakikadaki";
+$wb["System Load 5 Minuten"] = "Son 5 Dakikadaki";
+$wb["System Load 15 Minuten"] = "Son 15 Dakikadaki";
+
+$wb["login_begruessung"]     = "Giriþ:";
+$wb["Username"]     = "Kullanýcý Adý";
+$wb["Passwort"]     = "Þifre";
+$wb["Login"]       = "Giriþ";
+$wb["Administration"]  = "Yönetim";
+$wb["ISP Manager"]  = "ISP Yönetimi";
+$wb["DNS Manager"]  = "DNS Yönetimi";
+$wb["Tools"]        = "Araçlar";
+$wb["Logout"]       = "Çýkýþ";
+$wb["Status"]       = "Durum";
+$wb["neu"]          = "Yeni";
+$wb["Hinweis"]      = "Kaynak";
+$wb["Web"]          = "Web";
+$wb["Email"]        = "Eposta";
+$wb["FTP"]          = "FTP";
+$wb["DNS"]          = "DNS";
+$wb["Sonstiges"]    = "Diðer";
+$wb["Datei"]        = "Dosya";
+$wb["von"]          = " "; // besser 'ab'?
+$wb["error_headline"] = "Hata Ýle Karþýlaþýlmýþtýr!";
+$wb["Gruppe"]       = "Grup";
+$wb["Titel"]        = "Baþlýk";
+$wb["Server"]       = "Sunucu";
+$wb["Host"]         = "Saðlayýcý";
+$wb["Domain"]       = "Alan Adý";
+$wb["IP Adresse"]   = "IP Adresi";
+$wb["Ordner"]       = "Klasör";
+$wb["Dokument"]     = "Döküman";
+$wb["Dokument suchen"] = "Döküman Arama";
+$wb["Suchmaske"]    = "Arama";
+$wb["Ausgabeformat"] = "Gösterim Biçimi";
+$wb["Standard"]     = "Standart";
+$wb["Einträge"]    = "Kayýtlar";
+$wb["Papierkorb leeren"] = "Çöp Klasörünü Boþalt";
+$wb["Stammordner"]  = "DNS Bölgesi";
+$wb["keine Gruppe"] = "Grup Yok";
+$wb["neues Dokument anlegen"] = "Yeni Döküman Yaratýldý";
+$wb["auf"]   = "Geniþlet";
+$wb["zu"]    = "Daralt";
+$wb["in_ordner"]    = "Hangi Klasörde";
+$wb["Papierkorb"]   = "Çöp Kutusu";
+$wb["Wiederherstellen"]    = "Yükle";
+$wb["Papierkorb: Einträge"]   = "Çöp Klasörü: ";
+$wb["Speichern"]    = "Kayýt";
+$wb["Löschen"]    = "Sil";
+$wb["Abbrechen"]    = "Ýptal";
+$wb["Suchen"]    = "Arama";
+
+$wb["Herr"] = "Bay";
+$wb["Frau"] = "Bayan";
+
+$wb["Es ist folgender Fehler aufgetreten:"] = "Hata Ýle Karþýlaþýlmýþtýr!";
+
+$wb["Web-FTP"] = 'Web-FTP';
+$wb["ISP Faktura"] = 'ISP Fatura';
+
+$wb["Verzeichnis öffnen"] = "Aç";
+$wb["Verzeichnis schliessen"] = "Kapat";
+$wb["Hilfe"] = 'Yardým';
+$wb["Online Hilfe"] = 'Çevrimiçi Yardým';
+$wb["schliessen"] = 'Kapat';
+
+$wb["PAPIERKORB_HINWEIS"] = "<b>Not:</b> Çöp klasöründeki veriler silindikten sonra sistem sunucularý güncellenmektedir. Yeniden çöp klasörünü görmeniz için bir süre beklemeniz gerekmektedir.";
+
+$wb["Weiter"] = "Ýleri";
+$wb["Zurück"] = "Geri";
+
+$wb["Web-Manager"] = "Web-Yönetimi";
+$wb["Web-FTP"] = "Web-FTP";
+$wb["Navigation"] = "Web-Yönetimi";
+$wb["Webs"] = "Web Siteleri";
+
+$wb["txt_system_currently_updated_no_recycle_bin"] = "Sistem güncellenmektedir. Lütfen sonra deneyiniz.";
+$wb["Willkommen"] = "Hoþ Geldiniz...";
+$wb["willkommen_kunde"] = "ISPConfig paneline hoþ geldiniz. Bu panel üzerinden web sitenizi yönetebilirsiniz. Eposta, FTP, veritabaný... hesaplarý yaratabilir ve araçlardan bunlarý kullanabilirsiniz.";
+
+$wb["Anbieter"]     = "Satýcý";
+$wb["Kunde"]        = "Müþteri";
+$wb["Suchen"]       = "Arama";
+$wb["Stammdaten"]   = "Temel Veri";
+$wb["Limits"]       = "Limitler";
+$wb["Zugangsdaten"] = "Giriþ Verisi";
+$wb["Statistik"]    = "Ýstatistikler";
+$wb["Firma"]        = "Þirket";
+$wb["Anrede"]       = "Baþlýk";
+$wb["Vorname"]      = "Ad";
+$wb["Name"]         = "Soyad";
+$wb["Strasse"]      = "Cadde";
+$wb["PLZ"]          = "Posta Kodu";
+$wb["Ort"]          = "Þehir";
+$wb["Land"]         = "Ülke";
+$wb["Telefon"]      = "Telefon";
+$wb["Fax"]          = "Faks";
+$wb["Internet"]     = "Web Adresi";
+$wb["Öffnen"]      = "Aç";
+$wb["Benutzername"] = "Kullanýcý Adý"; // besser: vielleicht nur Variable $wb["username"] benutzen?
+$wb["zugangsdaten_anbieter_einleitung"] = "Satýcý için kullanýcý adý ve þifre belirleyin.";
+$wb["zugangsdaten_kunde_einleitung"] = "Müþteri için kullanýcý adý ve þifre belirleyin.<br> ";
+$wb["Web Verwaltung"] = "Site Yönetimi";
+$wb["Rechnung"]      = "Fatura";
+$wb["Rechnungsanschrift:"] = "Fatura Adresi:<br>";
+$wb["Intervall"]    = "Süre";
+$wb["Preis"]        = "Ödeme";
+$wb["Zahlungsart"]  = "Payment";
+$wb["Basis"]        = "Temel";
+$wb["Create DNS"]   = "DNS Yaratýmý";
+$wb["Speicher MB"]     = "Disk Kullanýmý (MB)";
+$wb["Max. User"]        = "Maksimum Kullanýcý";
+$wb["Max. Domain"]        = "Maksimum Alan Adý";
+$wb["PHP Scripte"]        = "PHP";
+$wb["SSI"]        = "SSI";
+$wb["FTP Zugang"]        = "FTP";
+$wb["MySQL"]        = "MySQL";
+$wb["SSL"]        = "SSL";
+$wb["Shell Zugriff"]      = "Eriþim";
+$wb["Zugang"]       = "Eriþim";  // Zugriff u. Zugang zusammenfassen!/nur einen Begriff nehmen!
+$wb["CGI Scripte"]      = "CGI";
+$wb["Bundesland"]   = "Ülke";
+$wb["Abteilung"]    = "Þube";
+$wb["Gültigkeit (Tage)"]  = "Geçerlilik (Gün)";
+$wb["SSL Key"]          = "SSL Þifresi";
+$wb["SSL Zertifikat"]   = "SSL Sertifikasý";
+$wb["Aktion"]       = "Uygulama";
+$wb["Zertifikat erzeugen"] = "Yarat";
+$wb["Zertifikat speichern"] = "Kaydet";
+$wb["Zertifikat löschen"] = "Sil";
+$wb["Speicherplatz gesamt"] = "Maksimum Disk Alaný";
+$wb["unlimitiert"]  = "Sýnýrsýz";
+$wb["verbraucht"]   = "Kullanýlan";
+$wb["Trafficübersicht"] = "Trafik Kullanýmý";
+$wb["Monat"]        = "Ay";
+$wb["Traffic"]      = "Trafik";
+$wb["Traffic MB"]      = "Trafik (MB)";
+$wb["traffic_letzte_4"] = "Son 4 Yýl Ýçersindeki Kullanýmlar";
+$wb["Jahr"]         = "Yýl";
+$wb["MySQL User"]        = "MySQL Kullanýcý Adý";
+$wb["MySQL Passwort"]    = "MySQL Þifresi";
+
+$wb["Anbieter neu"] = "Yeni Satýcý";
+$wb["Kunde neu"]    = "Yeni Müþteri";
+$wb["Web neu"]      = "Yeni Web Sitesi";
+$wb["Ordner neu"]   = "Yeni Klasör";
+$wb["Suchen"]       = "Arama";
+$wb["ISP Anbieter"] = "ISP Satýcý";
+$wb["Webs"] = "Siteler";
+$wb["User"] = "Kullanýcý";
+$wb["Domains"] = "Alan Adlarý";
+$wb["Zahlung"] = "Payment";
+$wb["ISP Kunde"] = "ISP Müþteri";
+$wb["ISP Web"] = "ISP Web Site";
+$wb["Kunden"] = "Müþteriler";
+$wb["Dokument suchen"] = "Döküman Arama";
+
+$wb["User & Email"] = "Kullanýcýlar";
+$wb["Co-Domains"] = "Alan Adlarý";
+$wb["SSL"] = "SSL";
+$wb["Optionen"] = "Ayarlar";
+
+$wb["Webs angelegt"] = "Web Site Kullanýmý";
+$wb["User angelegt"] = "Kullanýcý Kullanýmý";
+$wb["Domains angelegt"] = "Alan Adý Kullanýmý";
+$wb["rechnungsanschrift"] = "Fatura Adresi:<br> ";
+
+$wb["neues Web anlegen"] = "Yeni Site";
+$wb["weiter"] = "Ýleri";
+$wb["SUCHE"] = "Arama";
+
+$wb["error_db_nicht_erlaubt"] = "Bu web sitesi için veritabaný yaratma yetkisi verilmemiþtir.<br>";
+$wb["error_db_leeres_passwort"] = "Lütfen bir þifre belirleyiniz!<br>";
+$wb["error_db_exist_1"] = " ";
+$wb["error_db_exist_2"] = "veritabaný sistemde zaten mevcut.<br>";
+$wb["error_db_user_exist_1"] = " ";
+$wb["error_db_user_exist_2"] = "veritabaný kullanýcýsý sistemde zaten mevcut.<br>";
+$wb["error_max_db_web"] = "Maksimum veritabaný kullanýmý bu web sitesi için dolmuþtur.<br>";
+$wb["error_max_db_anbieter"] = "Maksimum veritabaný kullanýmý bu web sitesi için dolmuþtur. Saðlayýcýnýz daha fazla veritabaný yetkisine sahip deðildir.<br>";
+
+$wb["error_web_doppelt"] = " ";
+$wb["error_max_domain_web"] = "Alan adý kullanma yetkiniz dolmuþtur.<br>";
+$wb["error_max_domain_anbieter"] = "Alan adý kullanma yetkiniz dolmuþtur. Saðlayýcýnýz daha fazla alan adý ekleyememektedir.<br>";
+$wb["angelegt"] = " alan adý daha önce sistemimize kaydedilmiþtir.<br>";
+$wb["error_domain_forward"] = "Alan adý yönlendirme için yapýlan kayýt geçersiz karakterler içermektedir. Lütfen yaptýðýnýz kaydý kontrol ederek tekrar deneyiniz.<br>";
+
+$wb["error_user_exist_1"] = " ";
+$wb["error_user_exist_2"] = " Bu kullanýcý adý sistemimize daha önce kaydedilmiþtir. Ekleme ya da deðiþtirme yetkisine sahip deðilsiniz.<br>";
+$wb["error_max_user_licence"] = "Daha fazla kullanýcý ekleyemezsiniz. Lisansýnýz buna müsade etmemektedir.<br>";
+
+$wb["error_reseller_title"] = "Satýcý baþlýðý sisteme daha önce kaydedilmiþtir.<br>";
+$wb["error_reseller_group_not_found"] = "Satýcý grubu bulunamýyor.<br>";
+$wb["error_anbieter_no_delete"] = "<b>Satýcý silinememektedir.</b><br>Satýcýyý silmeniz için öncelikle satýcýnýn verilerini (müþteriler, web siteleri...) silmeniz gerekmektedir.";
+$wb["error_anbieter_no_restore"] = "Satýcý geri yüklenememektedir.<br>";
+
+$wb["error_sysuser_exist_1"] = " ";
+$wb["error_sysuser_exist_2"] = "kullanýcýsý sisteme daha önce kaydedilmiþtir.<br>";
+$wb["error_max_user_web"] = "Maksimum kullanýcý sýnýrýnýz dolmuþtur.<br>";
+$wb["error_max_space_web"] = "Seçtiðiniz disk alaný sýnýrý mevcut limitinize uymamaktadýr.<br>";
+$wb["error_max_user_anbieter"] = "Satýcýnýn kullanýcý yaratma limiti dolmuþtur.<br>";
+$wb["error_sysuser_exist"] = "Bu kullanýcý adý kullanýlmaktadýr.<br>";
+$wb["error_admin_exist"] = "Bu kullanýcý sistem yöneticisi tarafýndan kaldýrýlmýþtýr.<br>";
+$wb["error_admin_exist_long"] = "Bu kullanýcý sistem yöneticisi tarafýndan kaldýrýlmýþtýr.<br>";
+
+$wb["error_max_web_anbieter"] = "Web sitesi yaratma limitiniz dolmuþtur.<br>";
+$wb["error_web_ssl_exist"] = "SSL sertifikasý kullanmýþ olduðunuz IP adresine daha önce atanmýþtýr.<br>";
+
+$wb["CPU Auslastung 1 Minute"] = "1 Dakikadýr CPU Kullanýmý";
+$wb["CPU Auslastung 5 Minuten"] = "5 Dakikadýr CPU Kullanýmý";
+$wb["CPU Auslastung 15 Minuten"] = "15 Dakikadýr CPU Kullanýmý";
+$wb["Server Online seit"] = "Sunucu Çalýþma Süresi";
+$wb["User Online"] = "Çevrimiçi Kullanýcýlar";
+$wb["error_web_id"] = "Bu eklenti için geçerli bir kullanýcý numarasý gerekmektedir.";
+$wb["von"] = ":";
+$wb["Gesamt"] = "Tümü";
+$wb["Traffic in den letzten 4 Jahren"] = "Son 4 Yýldaki Ýstatistikler";
+
+$wb["Backup von Tabelle"] = "Tabloyu Yedekle";
+$wb["Optimiere"] = "Uyarla";
+$wb["Reparatur"] = "Gözden Geçir";
+$wb["oder"] = "ya da";
+$wb["Installation starten"] = "Yükle";
+
+$wb["Monatlich"] = "Aylýk";
+$wb["Quartal"] = "Çeyrek Yýllýk";
+$wb["Halbjährlich"] = "Yarý Yýllýk";
+$wb["Jährlich"] = "Yýllýk";
+$wb["Sonstige"] = "Diðer";
+
+$wb["bei Erhalt"] = "Makbuzda";
+$wb["Netto 7 Tage"] = "7 Gündeki";
+$wb["Netto 15 Tage"] = "15 Gündeki";
+$wb["Netto 30 Tage"] = "30 Gündeki";
+$wb["Sonstige"] = "Diðer";
+$wb["Neu"] = "Yeni";
+$wb["Postfach MB"] = "Eposta Kutusu (MB)";
+
+$wb["email_alias_txt"] = "<b>Uyarý:</b> Her satýra bir giriþ kaydetmeniz gerekmektedir.";
+$wb["Weiterleitung"] = "Aktar";
+$wb["Nachricht"] = "Mesaj";
+$wb["Kein Kunde vorhanden"] = "Hiç müþteri etkin deðil.<br>";
+$wb["Dieses Web können Sie nicht löschen."] = "Bu web sitesi silinememektedir.<br>";
+$wb["Ausgabeformat"] = "Liste Biçimi";
+$wb["Bearbeiten"] = "Düzenle";
+$wb["Löschen"] = "Sil";
+
+$wb["Es sind nur folgende Zeichen erlaubt: a-z A-Z 0-9 -"] = "Lütfen geçerli karakterlerle tekrar deneyiniz.<br>";
+$wb["Es sind nur folgende Zeichen erlaubt: a-z A-Z 0-9 - ."] = "Lütfen geçerli karakterlerle tekrar deneyiniz.<br>";
+$wb["Der Username muss aus min. 4, max 25 Buchstaben oder Zahlen bestehen, wobei er mit einem Buchstaben beginnen muss."] = "Kullanýcý adý 4 ile 25 karakter arasýnda olmak zorundadýr.<br>";
+$wb['Der Username muss aus min. 4, max 32 Buchstaben oder Zahlen bestehen, wobei er mit einem Buchstaben beginnen muss.'] = 'Kullanýcý adý 4 ile 32 karakter arasýnda olmak zorundadýr.<br>';
+
+$wb["error_reseller_licence"] = "ISPConfig lisansýnýzýn yetersizliði nedeniyle daha fazla satýcý ekleyemezsiniz.<br>";
+$wb["error_reseller_licence_nodelete"] = "Bu satýcý silinemez.<br>";
+
+$wb["error_kunde_licence"] = "ISPConfig lisansýnýzýn yetersizliði nedeniyle daha fazla müþteri ekleyemezsiniz.<br>";
+$wb["error_kunde_licence_nodelete"] = "Bu müþteri silinemez.<br>";
+
+$wb["mysqldb_nicht_vorhanden"] = "MySQL veritabaný yaratmak için geçerli bir þifre girmek zorundasýnýz.<br>";
+$wb["mysql_nicht_aktiv"] = "Bu site için MySQL veritabaný yaratma yetkisine sahip deðilsiniz.<br>";
+$wb["Datenbank Name"] = "Veritabaný Adý";
+$wb["Speicher belegt"] = "Veritabaný Büyüklüðü";
+
+$wb["Kein Web angelegt"] = "Web sitesi oluþturulamadý.";
+$wb["Real Name"] = "Gerçek Ýsim";
+$wb["Feld"] = "Alan";
+$wb["httpd_inc_txt"] = "Web Sunucusu (Apache)<br>Direktifleri<br>(Kullanýlmayabilir)";
+$wb["Kopie speichern"] = "Kopyasýný Muhafaza Et";
+
+$wb["err_0001"] = "Bu alan adý baþka müþterinin kullanýmýndadýr.";
+
+$wb["MySQL Remote Access"] = "MySQL Uzaktan Eriþim";
+$wb["lokaler mailserver"] = "Yerel Eposta Sunucusu";
+$wb["externer mailserver"] = "Dýþardan Eposta Sunucusu";
+
+$wb["Log-Grösse"] = "Kayýt Ebatý";
+$wb["Frontpage Passwort"] = "Frontpage Þifresi";
+
+$wb["Anbieternummer"] = 'Satýcý No';
+$wb["Domain DNS"] = 'DNS Bölgeleri';
+$wb["HTTPD Includes"] = 'Web Sunucusu Direktifleri';
+$wb["DNS-Manager"] = 'DNS Yönetimi';
+$wb["DNS-Domains angelegt"] = 'Yaratýlan DNS Bölgeleri';
+$wb["Kundennummer"] = 'Müþteri No';
+$wb["Anonymous FTP"] = 'Açýk FTP';
+$wb["Anon. FTP MB"] = 'Açýk FTP (MB)';
+$wb["Faktura"] = 'Fatura';
+$wb["Mailserver"] = 'E-posta Sunucusu';
+$wb["aktiviert"] = 'Aktif';
+$wb["deaktiviert"] = 'Deaktif';
+$wb["ISP User"] = 'ISP Kullanýcýsý';
+$wb["WebSpeicher MB"] = 'Disk Alaný (MB)';
+$wb["MailSpeicher MB"] = 'Eposta Kutusu (MB)';
+$wb["Administrator"] = 'Yönetici';
+$wb["Erweiterte Einstellungen"] = 'Geliþmiþ Ayarlar';
+$wb["email_weiterleitung_txt"] = '<b>Uyarý:</b> Her satýra bir eposta gelmek zorundadýr.';
+$wb["Email Alias"] = 'Email Atamalarý';
+$wb["catchAll-Email"] = 'Tümünü Yakalama';
+$wb["MailScan"] = 'Eposta Tarayýcý';
+$wb["Spam-Filter"] = 'Spam Filtresi';
+$wb["Autoresponder"] = 'Otomatik Yanýtlama';
+$wb["ISP Domain"] = 'ISP Alan Adý';
+$wb["Create DNS MX"] = 'DNS MX Kaydý Yaratýmý';
+$wb["Admin"] = 'Yönetici';
+$wb["CatchAll"] = 'Tümünü Yakala';
+$wb["Bitte Artikel auswählen"] = "Ýþaretli Ýtem";
+$wb["Letzte Abrechnung"] = "Fatura Tarihi";
+$wb["Artikel hinzufügen"] = "Ýtem Ekle";
+$wb["Wird automatisch vergeben."] = 'Otomatik tahsis edilmiþtir.';
+$wb["Email Adresse"] = "Eposta Adresi";
+
+$wb["error_email_exist"] = "Eposta adresi daha önce kaydedilmiþtir.<br>";
+$wb["error_realname"] = "Lütfen doðru karakterler kullanarak tekrar deneyiniz.<br>";
+$wb["Die Emailadresse muss aus min. 1, max 60 Buchstaben oder Zahlen bestehen."] = "Eposta adresinizi maksimum 60 karakterden oluþacak þekilde giriniz.<br>";
+
+$wb["Bundesland"] = "Semt";
+$wb["Spamfilter & Antivirus"] = 'Spam Filtresi ve Anti-Virüs';
+$wb["Spamfilter"] = 'Spam Filresi';
+$wb["Antivirus"] = 'Anti-Virüs';
+$wb["accept"] = 'Kabul';
+$wb["discard"] = 'Ýptal';
+$wb["Spam Strategie"] = 'Spam Taktiði';
+$wb["Spam Hits"] = 'Spam Uyarýsý';
+$wb["Rewrite Subject"] = 'Yanýt Konusu';
+$wb["Betreff"] = 'Konu';
+$wb["SUCHE"] = 'Arama';
+$wb["IP"] = 'IP';
+$wb["Standard CGIs"] = 'Standart CGI';
+$wb["PHP Safe Mode"] = 'PHP Güvenli Modu';
+$wb["WAP"] = 'WAP';
+$wb["Individuelle Fehler-Seiten"] = 'Deðiþtirilebilir Hata Sayfalarý';
+$wb["Anzahl Datenbanken"] = 'Veritabaný Sayýsý';
+$wb["Fehler 400<br>(Ungültige Syntax)"] = "400 HATASI<br>(Geçersiz Dizim)";
+$wb["Fehler 401<br>(Autorisierung<br>erforderlich)"] = "401 HATASI<br>(Sayfaya<br>Giremezsiniz)";
+$wb["Fehler 403<br>(Verboten)"] = "403 HATASI<br>(Görüntülenemez)";
+$wb["Fehler 404<br>(Datei nicht<br>gefunden)"] = "404 HATASI<br>(Dosya Bulunamadý)";
+$wb["Fehler 405<br>(Methode nicht<br>erlaubt)"] = "405 HATASI<br>(Kabul Edilemez<br>Metod)";
+$wb["Fehler 500<br>(Interner<br>Server-Fehler)"] = "500 HATASI<br>(Sunucu<br>Hatasý)";
+$wb["Fehler 503<br>(Service ist z.Zt.<br>überlastet)"] = "503 HATASI<br>(Hizmet<br>Kullanýlamýyor)";
+$wb["Datenbanken"] = "Veritabanlarý";
+$wb["Datenbank"] = "Veritabaný";
+$wb["Datenbankname"] = "Veritabaný Adý";
+$wb["Datenbankuser"] = "Veritabaný Kullanýcýsý";
+$wb["weiter_link"] = "<br><br> <a href='../../isp_manager/frame_start.php?s=$s'>Ýleri &gt;&gt;</a>";
+$wb["Slave Zones"] = 'Ýkincil DNS';
+$wb["Ruby"] = 'RUBY';
+$wb["Python"] = 'PYTHON';
+$wb["Space MB"] = 'Disk Alaný (MB)';
+$wb["Traffic-Überschreitung"] = 'Trafik Aþýmý';
+$wb["Mailuser Login"] = 'Eposta Kullanýcýsý Giriþi';
+$wb["Web Vorlage"] = "Web Site Planý";
+$wb["ISP Web-Vorlage"] = "ISP Saðlayýcý Planlarý";
+$wb["Keine Vorlage verwenden"] = "Boþ Ayarlama Sayfasý";
+$wb["Keine Vorlage vorhanden"] = "Hiç Saðlayýcý Planý Bulunmuyor";
+$wb["txt_accept"] = "Kabul";
+$wb["txt_discard"] = "Ýptal";
+$wb["Eigenschaften"] = "Özellikler";
+$wb["ISP Datenbank"] = "ISP Veritabaný";
+$wb["Nein"] = "Hayýr";
+$wb["Ja"] = "Evet";
+$wb["Web"] = "Site";
+$wb["Domain"] = "Alan Adý";
+$wb["Traffic-Überschreitung"] = "Trafik Aþýmý";
+$wb["sperren"] = "Durdur";
+$wb["benachrichtigen"] = "Uyar";
+$wb["keine Aktion"] = "Eylem Yok";
+$wb["Website-Status"] = "Web Site Durumu";
+$wb["aktiv"] = "Aktif";
+$wb["gesperrt"] = "Durdurulmuþ";
+
+$wb["Catalog_Name"] = "Ýsim";
+$wb["Spam Whitelist"] = 'Spam Beyaz Listesi';
+$wb["Spam Blacklist"] = 'Spam Kara Listesi';
+$wb["spam_whitelist_txt"] = '<b>Uyarý:</b> Her satýra bir giriþ yapýlmak zorundadýr. Örneðin: friend@somewhere.com, *@isp.com, or *.domain.net...';
+$wb["spam_blacklist_txt"] = '<b>Uyarý:</b> Her satýra bir giriþ yapýlmak zorundadýr. Örneðin: friend@somewhere.com, *@isp.com, or *.domain.net...';
+$wb["Webalizer Stats"] = 'Ýstatistikler';
+$wb["Use Uribl"] = '<a href="http://www.uribl.com/about.shtml" target="_blank" style="font-family:Arial,Verdana">URIBL</a>';
+$wb["Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 -"] = "Lütfen doðru karakterler kullanarak tekrar deneyiniz.<br>";
+$wb["Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 - ."] = "Lütfen doðru karakterler kullanarak tekrar deneyiniz.<br>";
+$wb["txt_system_currently_updated_no_recycle_bin"] = "Sistem þu anda sunucu uyarlama dosyalarýný güncellemektedir.";
+
+$wb["Cron Jobs"]      = "Görevler";
+$wb["error_anbieter_cron_aktiv"] = "Zamanlanmýþ görevler kullanýlmaktadýr. Bu öðeyi pasifleþtiremezsiniz.<br>";
+$wb["error_web_no_cron"] = "Bu web sitesi için zamanlanmýþ görevler hakký kullanamazsýnýz.<br>";
+$wb["error_cron_nicht_erlaubt"] = "Bu web sitesi için zamanlanmýþ görevler yetkisi bulunamamaktadýr.<br>";
+$wb["error_domain_delete_client"] = "Bu alan adý silinemez.";
+
+$wb["Tools & Optionen"] = "Araçlar ve Ayarlar";
+$wb["Passwort ändern"] = "Þifre Deðiþtir";
+$wb["Allgemein"]    = "Genel";
+$wb["Passwort alt"] = "Eski Þifre";
+$wb["Passwort neu"] = "Yeni Þifre";
+$wb["Passwort wiederholen"] = "Yeni Þifre (Tekrar)";
+$wb["Adresse ändern"] = "Adres Deðiþtir";
+
+$wb["passwort_gespeichert"] = "Þifre güncellenmiþtir.";
+$wb["passwort_uebereinstimmung"] = "Yeni girilen þifre ve tekrarý uyumsuzdur. Lütfen tekrar deneyiniz.";
+$wb["passwort_alt"] = "Girmiþ olduðunuz eski þifreniz geçersizdir. Lütfen eski þifrenizi kontrol ederek tekrar deneyiniz.";
+
+$wb["Backup Manager"] = 'Yedek Yöneticisi';
+$wb["Backup"] = 'Yedek';
+$wb["Restore"] = 'Geri Yükleme';
+$wb["Daten Export"] = 'Veri Gönderimi';
+$wb["Update Manager"] = 'Güncelleme Yöneticisi';
+$wb["Portscanner"] = 'Port Tarayýcý';
+$wb["Whois"] = 'Kimlik';
+$wb["Download"] = 'Ýndir';
+$wb["FTP-Server"] = 'FTP Sunucusu';
+$wb["Verzeichnis"] = 'Klasör';
+$wb["Web Daten"] = 'Web Verisi';
+$wb["User Daten"] = 'Kullanýcý Verisi';
+$wb["Log Daten"] = 'Kayýt Verisi';
+$wb["mySQL Datenbank (wenn vorhanden)"] = 'Veritaban(lar)ý Verisi';
+$wb["Backup starten"] = 'Yedeklemeyi Baþlat';
+$wb["Kein Web vorhanden."] = 'Hiç web sitesi bulunmuyor.';
+$wb["Web-Backup"] = 'Web Site Yedekleme';
+$wb["Kunden-Stammaten"] = 'Müþteri Verisi';
+$wb["Format Einstellungen"] = 'Biçim Belirleyici';
+$wb["Trennzeichen"] = 'Ayýrýcý';
+$wb["Eingeschlossen mit"] = 'Tarafýndan Kapatýlmýþtýr:';
+$wb["Daten für folgende Anbieter exportieren"] = 'Veri Gönderimi';
+$wb["Export starten"] = 'Gönderimi Baþlat';
+$wb["Anbieter-Stammdaten"] = 'Satýcý Verisi';
+$wb["Export"] = 'Gönder';
+$wb["Von"] = 'Baþlangýç';
+$wb["Bis"] = 'Bitiþ';
+$wb["Local Portscanner"] = 'Yerel Port Tarayýcý';
+
+$wb["Es wurde kein Web ausgewählt."] = "Web sitesi belirlenmedi.";
+$wb["Backup-Funktionen im Demo-Modus nicht verfügbar."] = "Yedekleme deneme modunda çalýþmamaktadýr.";
+$wb["Backup Status"] = "Yedekleme Durumu";
+$wb["Der Name des FTP-Servers <br>enthält ungültige Zeichen."] = "FTP sunucusu geçersiz karakter(ler) içeriyor.";
+$wb["Sie haben keinen FTP Benutzernamen angegeben."] = "FTP kullanýcý adý ayarlanmamýþtýr. Lütfen formu tam doldurarak tekrar deneyiniz.";
+$wb["Ftp-Verbindung nicht hergestellt!"] = "FTP sunucusuna baðlanýlamadý!";
+$wb["Verbindung mit:"] = "Baðlantý:";
+$wb["als Benutzer:"] = "Kullanýcý:";
+$wb["nicht möglich."] = " ";
+$wb["Konnte nicht in Verzeichnis:"] = "Klasör Deðiþimi:";
+$wb["wechseln."] = "Baþarýsýzdýr.";
+$wb["Wechsel in Verzeichnis:"] = "Klasör Deðiþimi:";
+$wb["Ftp upload war fehlerhaft!"] = "FTP yüklemesi Baþarýsýz!";
+$wb["Upload erfolgreich."] = "Yükleme Baþarýlý.";
+$wb["FTP-Upload Status"] = "FTP Yükleme Durumu";
+$wb["Backup-Methode nicht unterstützt."] = "Yedekleme Kullanýlmýyor.";
+$wb["Sprache ändern"] = "Dil Deðiþtir";
+$wb["Sprache (ISO)"] = "Dil (ISO)";
+$wb["Software Version"] = "Yazýlým Versiyonu";
+
+$wb["Hinzufügen"] = "Ekle";
+$wb["Berechtigungen"] = "Yetkiler";
+$wb["Speichern"] = "Kaydet";
+$wb["Löschen"] = "Sil";
+$wb["Abbrechen"] = "Ýptal";
+$wb["IP-Adresse"] = "IP Adresi";
+$wb["DNS-Query"] = "DNS Kayýtlarý Sorgusu";
+$wb["DNS-Insert"] = "DNS Kayýtlarý Yaratýmý";
+$wb["DNS-Update"] = "DNS Kayýtlarý Düzenleme";
+$wb["DNS-Delete"] = "DNS Kayýtlarý Silimi";
+$wb["slave_query"] = "Ýkincil DNS Kayýtlarý Sorgusu";
+$wb["slave_insert"] = "Ýkincil DNS Kayýtlarý Yaratýmý";
+$wb["slave_update"] = "Ýkincil DNS Kayýtlarý Düzenlemeleri";
+$wb["slave_delete"] = "Ýkincil DNS Kayýtlarý Silimi";
+$wb["reseller_query"] = "Satýcý Sorgusu";
+$wb["reseller_insert"] = "Satýcý Yaratýmý";
+$wb["reseller_update"] = "Satýcý Düzenleme";
+$wb["reseller_delete"] = "Satýcý Silimi";
+$wb["kunde_query"] = "Müþteri Sorgusu";
+$wb["kunde_insert"] = "Müþteri Yratýmý";
+$wb["kunde_update"] = "Müþteri Düzenleme";
+$wb["kunde_delete"] = "Müþteri Silimi";
+$wb["web_query"] = "Web Sitesi Sorgusu";
+$wb["web_insert"] = "Web Sitesi Yaratýmý";
+$wb["web_update"] = "Web Sitesi Düzenleme";
+$wb["web_delete"] = "Web Sitesi Silimi";
+$wb["txt_primary_dns_records"] = "DNS Kayýtlarý";
+$wb["txt_secondary_dns_records"] = "Ýkincil DNS Kayýtlarý";
+$wb["txt_anbieter"] = "Satýcý";
+$wb["txt_kunden"] = "Müþteriler";
+$wb["txt_webs"] = "Web Siteleri";
+
+$wb["txt_move_websites"] = "Web Sitesi Taþýma";
+$wb["txt_website_deleted_no_move"] = "Bu web sitesi silinmiþtir ve taþýnamamaktadýr.<br>";
+$wb["txt_customer_deleted_no_move"] = "Bu müþteri silinmiþtir ve web sitesi taþýnamamaktadýr.<br>";
+$wb["txt_website_moved"] = "Web sitesi belirtilen müþteriye taþýnmýþtýr.<br>";
+$wb["txt_move_website_from"] = "Þimdiki Yer";
+$wb["txt_move_website_to"] = "Taþýnacak Yer";
+$wb["txt_move_website_website"] = "Web Sitesi";
+$wb["txt_move_website_submit"] = "Onayla";
+$wb["no_permission_to_change_data"] = "Bu sayfayý görüntüleme yetkisine sahip deðilsiniz.";
+
+$wb["weiter_link"] = "<br><br> <a href='../../../isp_manager/frame_start.php?s=$s'>Ýleri &gt;&gt;</a>";
+$wb["error_mv_diskspace"] = "Bu web sitesinin disk kullanýmý ile satýcýnýn limiti uyumsuzdur.<br>";
+$wb["error_mv_users"] = "Bu web sitesinin kullanýcý kullanýmý ile satýcýnýn limiti uyumsuzdur.<br>";
+$wb["error_mv_domains"] = "Bu web sitesinin alan adý kullanýmý ile satýcýnýn limiti uyumsuzdur.<br>";
+$wb["error_mv_websites"] = "Satýcýnýn web sitesi kullaným limiti dolmuþtur.<br>";
+$wb["error_mv_traffic"] = "Bu web sitesinin trafik kullanýmý ile satýcýnýn limiti uyumsuzdur.<br>";
+$wb["error_mv_no_shell"] = "Bu web sitesinin eriþim kullanýmý ile satýcýnýn limiti uyumsuzdur.<br>";
+$wb["error_mv_no_cgi"] = "Bu web sitesinin CGI kullanýmý ile satýcýnýn limiti uyumsuzdur.<br>";
+$wb["error_mv_no_standard_cgis"] = "Bu web sitesinin standart CGI kullanýmý ile satýcýnýn limiti uyumsuzdur.<br>";
+$wb["error_mv_no_php"] = "Bu web sitesinin PHP kullanýmý ile satýcýnýn limiti uyumsuzdur.<br>";
+$wb["error_mv_no_ruby"] = "Bu web sitesinin RUBY kullanýmý ile satýcýnýn limiti uyumsuzdur.<br>";
+$wb["error_mv_no_ssi"] = "Bu web sitesinin SSI kullanýmý ile satýcýnýn limiti uyumsuzdur.<br>";
+$wb["error_mv_no_ftp"] = "Bu web sitesinin FTP kullanýmý ile satýcýnýn limiti uyumsuzdur.<br>";
+$wb["error_mv_no_mysql"] = "Bu web sitesinin MySQL kullanýmý ile satýcýnýn limiti uyumsuzdur.<br>";
+$wb["error_mv_mysql"] = "Bu web sitesinin MySQL veritabaný kullanýmý ile satýcýnýn limiti uyumsuzdur.<br>";
+$wb["error_mv_no_ssl"] = "Bu web sitesinin SSL kullanýmý ile satýcýnýn limiti uyumsuzdur.<br>";
+$wb["error_mv_no_anonftp"] = "Bu web sitesinin açýk FTP kullanýmý ile satýcýnýn limiti uyumsuzdur.<br>";
+$wb["error_mv_no_wap"] = "Bu web sitesinin WAP kullanýmý ile satýcýnýn limiti uyumsuzdur.<br>";
+$wb["error_mv_no_individual_error_pages"] = "Bu web sitesinin deðiþtirilebilir hata sayfalarý kullanýmý ile satýcýnýn limiti uyumsuzdur.<br>";
+$wb["error_mv_no_apache_directives"] = "Bu web sitesinin web sunucusu (Apache) direktifleri kullanýmý ile satýcýnýn limiti uyumsuzdur.<br>";
+$wb["error_mv_no_frontpage"] = "Bu web sitesinin Frontpage kullanýmý ile satýcýnýn limiti uyumsuzdur.<br>";
+
+$wb["Web(s)"] = "Web Site(ler)";
+$wb["Export function disabled"] = "Veri Gönderimi Kullanýlmýyor";
+$wb["Remoting"] = "Uzaktan Baðlantý";
+$wb["Remoting User"] = "Uzaktan Baðlantý Kullanýcýlarý";
+$wb["User"] = "Kullanýcý";
+$wb["Mail User"] = "Eposta Kullanýcýsý";
+$wb["WebSpace MB"] = "Web Alaný (MB)";
+$wb["Mail"] = "Eposta";
+$wb["Shell Access"] = "Eriþim";
+$wb["Master Data"] = "Temel Veri";
+$wb["Uname"] = "Ýsim";
+$wb["Password"] = "Þifre";
+$wb["Remote Access"] = "Uzaktan Eriþim";
+
+$wb["Description"] = "Açýklama";
+$wb["Active"] = "Aktiflik";
+$wb["Command"] = "Komut";
+$wb["Minutes"] = "Dakikalar";
+$wb["Hours"] = "Saatler";
+$wb["Days"] = "Günler";
+$wb["Months"] = "Aylar";
+$wb["Weekdays"] = "Haftanýn Günleri";
+$wb["all"] = "Tümü";
+$wb["Cron"] = "Görev";
+$wb["Properties"] = "Özellikler";
+$wb["January"] = "Ocak";
+$wb["February"] = "Þubat";
+$wb["March"] = "Mart";
+$wb["April"] = "Nisan";
+$wb["May"] = "Mayýs";
+$wb["June"] = "Haziran";
+$wb["July"] = "Temmuz";
+$wb["August"] = "Aðustos";
+$wb["September"] = "Eylül";
+$wb["October"] = "Ekim";
+$wb["November"] = "Kasým";
+$wb["December"] = "Aralýk";
+$wb["Monday"] = "Pazartesi";
+$wb["Tuesday"] = "Salý";
+$wb["Wednesday"] = "Çarþamba";
+$wb["Thursday"] = "Perþembe";
+$wb["Friday"] = "Cuma";
+$wb["Saturday"] = "Cumartesi";
+$wb["Sunday"] = "Pazar";
+$wb["DirectoryIndex"] = "Ýndeks Sayfalarý";
+$wb["Statistics"] = "Ýstatistikler";
+$wb["Server Status"] = "Sunucu Durumu";
+$wb["IP Address"] = "IP Adresi";
+$wb["Priority"] = "Öncelik";
+$wb["Hostname"] = "Saðlayýcý";
+$wb["Benutzter Diskspace"] = "Disk Kullanýmý";
+$wb["Standard"] = "Standart";
+$wb["Client"] = "Müþteri";
+$wb["First Name"] = "Ad";
+$wb["Surname"] = "Soyad";
+$wb["Login"] = "Giriþ";
+$wb["Reseller"] = "Satýcý";
+$wb["Hostingplan"] = "Saðlayýcý Planý";
+$wb["ISPConfig Support"] = "ISPConfig Desteði";
+$wb["Option"] = "Ayarlar";
+$wb["Welcome Mail"] = "Hoþ Geldin Epostasý";
+$wb["Standard Index"] = "Standart Dizin";
+$wb["SSL Request"] = "SSL Talebi";
+
+$wb["Username"] = "Kullanýcý Adý";
+$wb["Passwort"] = "Þifre";
+$wb["Weiter"] = "Ýleri";
+$wb["Ihre Nutzersitzung wurde beendet."] = "Sistemde kalýþ süreniz dolmuþtur. Lütfen tekrar giriþ yapýnýz.";
+$wb["Hier können Sie sich neu einloggen"] = "Bu bölümden sisteme giriþ yapabilirsiniz.";
+
+$wb["FEHLER 101: Username oder Passwort Falsch."] = "HATA 101: Yanlýþ kullanýcý adý ya da þifre giriþi yaptýnýz.";
+$wb["FEHLER 102: Account inaktiv."] = "HATA 102: Kullanýcý aktif deðildir.";
+$wb["FEHLER 103: Es wurde kein Username oder Passwort angegeben."] = "HATA 103: Kullanýcý adý ve þifre girilmemiþtir.";
+$wb["FEHLER 104: Die Nutzersession wurde beendet."] = "HATA 104: Sezon sona ermiþtir.";
+$wb["<br>&nbsp;<br>Hier können Sie sich erneut einloggen:"] = "<br>&nbsp;<br>Bu bölümden sisteme giriþ yapabilirsiniz.";
+$wb["Hier können Sie sich einloggen:"] = "Bu bölümden giriþ yapabilirsiniz.";
+
+$wb["Datei Upload"] = 'Dosya Yükleme';
+$wb["Ordner neu"] = 'Yeni Klasör';
+$wb["Web Auswahl"] = 'Web Seçimi';
+$wb["Web auswählen"] = 'Seçilen Web';
+$wb["Auswahl"] = 'Seçim';
+$wb["WEB FTP"] = 'Web-FTP';
+$wb["Hilfe"] = 'Yardým';
+$wb["Grösse"] = 'Ebat';
+$wb["Datum"] = 'Tarih';
+$wb["Eigentümer"] = 'Sahip';
+$wb["Alle"] = 'Tümü';
+$wb["Lesen"] = 'Okunur';
+$wb["Schreiben"] = 'Yazýlýr';
+$wb["Ausführen"] = 'Düzenlenir';
+$wb["Verzeichnisschutz"] = 'Klasör Korumusý';
+$wb["Verzeichnis schützen"] = 'Koruma Kaydet';
+$wb[".htaccess User"] = '.htaccess Kullanýcýsý';
+$wb[".htaccess Userübersicht"] = '.htaccess Kullanýcýlarý';
+$wb["Bearbeiten"] = 'Düzenle';
+$wb["Hinzufügen"] = 'Ekle';
+$wb["Parameterübergabe unvollständig"] = "Tamamlanamadý";
+$wb["Ungültiges Format der web_id."] = "Web site numarasý geçersiz biçimdedir.";
+$wb["Ungültige web_id."] = "Geçersiz web site numarasý.";
+$wb["Konnte server_path_httpd_root nicht ermitteln."] = "Web sitesi dizini kararlaþtýrýlamamýþtýr.";
+$wb["Das Verzeichnis existiert nicht oder Sie haben nicht die notwendigen Berechtigungen."] = "Bu klasör mevcut deðil ya da sizin yetkiniz bu klasörde hakim deðilidir.";
+$wb["Der Pfad enthält ungültige Zeichen."] = "Geçersiz Dizin";
+$wb["Diese Funktion ist im Demo-Modus deaktiviert"] = "Deneme modunda bu özelliði kullanamazsýnýz.";
+$wb["ist ein Link."] = "bir linktir.";
+$wb["existiert nicht."] = "mevcut deðildir."; // Es geht um: /home/file.htm existiert nicht.
+$wb["konnte nicht gelöscht werden."] = "silinememektedir.";
+$wb["Das Verschieben der Datei ist fehlgeschlagen."] = "Dosya taþýma hatasý ile karþýlaþýlmýþtýr.";
+$wb["konnte nicht gelöscht werden. Das Verzeichnis muss leer sein und Sie müssen Schreibrechte besitzen."] = "silinememiþtir. Klasör yazýlabilir ve boþ olmak zorundadýr.";
+$wb["Das Verschieben des Verzeichnisses ist fehlgeschlagen."] = "Klasör taþýma hatasý ile karþýlaþýlmýþtýr.";
+$wb["Es wurde keine Datei zum Upload ausgewählt."] = "Yükleme için bir dosya seçmeniz gerekiyor.";
+$wb["Die Datei existiert bereits in diesem Verzeichnis."] = "Bu dosya zaten yükleme yaptýðýnýz klasörde mevcut.";
+$wb["Möglicher Dateiupload Angriff."] = "Dosya yükleme ataðý.";
+$wb["Ordner"] = "Klasör";
+
+$wb["chmod failed."] = "Chmod Hatasý";
+$wb["FTP: Failed to open"] = "HATA - Açýlamayan Öðe: ";
+$wb["Failed to open"] = "Açýlamayan Öðe: ";
+$wb["Could not connect to"] = "Baðlanýlamayan Öðe: ";
+$wb["Could not connect as user"] = "Baðlanýlamaya Kullanýcý: ";
+$wb["Next >>"] = "<br><br>Ýleri >>";
+
+$wb["Catalog_Name"] = "Katalog Ýsmi";
+
+$wb["ISP Faktura"] = 'ISP Fatura';
+$wb["Web-FTP"] = 'Web-FTP';
+$wb["Domains"] = 'Alan Adlarý';
+$wb["Domain"] = 'Alan Adý';
+$wb["Service"] = 'Hizmet';
+$wb["Webs"] = 'Web Siteleri';
+$wb["Traffic"] = 'Trafik';
+$wb["Email-Adressen"] = 'Eposta Adresleri';
+$wb["Artikel"] = 'Ýtemler';
+$wb["admin"] = 'Yönetim';
+$wb["Artikel für"] = 'Ýtem: ';
+$wb["Dienstleistung"] = 'Hizmet';
+$wb["Hardware"] = 'Donaným';
+$wb["Software"] = 'Yazýlým';
+$wb["Typ"] = 'Tip';
+$wb["Artikel Nr."] = 'Ýtem No';
+$wb["Bezeichnung"] = 'Ýsim';
+$wb["Beschreibung"] = 'Açýklama';
+$wb["Stück"] = 'Süre';
+$wb["MB"] = 'MB';
+$wb["GB"] = 'GB';
+$wb["Stunde"] = 'Saat';
+$wb["Einheit"] = 'Tür';
+$wb["Menge"] = 'Miktar';
+$wb["Preis"] = 'Fiyat';
+$wb["Verrechnung"] = 'Ödeme Periyodu';
+$wb["Artikel neu"] = 'Yeni Ýtem';
+$wb["Ordner neu"] = 'Yeni Klasör';
+$wb["Abrechnen"] = 'Fatura Oluþtur';
+$wb["Artikel neu"] = 'Yeni Ýtem';
+$wb["Ordner neu"] = 'Yeni Klasör';
+$wb["Produkte"] = 'Ürünler';
+$wb["Rechnungen"] = 'Faturalar';
+$wb["Kunden"] = 'Müþteriler';
+$wb["Anbieter"] = 'Satýcý';
+$wb["Keine Artikel zum Abrechnen gefunden."] = 'Ýtem eklenmediði için oluþturulabilecek fatura yoktur.';
+$wb["Abrechnung"] = 'Fatura';
+$wb["IP-Traffic"] = 'IP Trafik';
+$wb["Steuersatz"] = 'Oylama';
+$wb["Bei Überschreitung:"] = 'Geçerlilik:';
+$wb["Diese Angaben sind nur für Artikel vom Typ: Traffic gültig!"] = 'Bu bölümdeki itemler sadece trafik kullanýmý için geçerlidir!';
+$wb["Rechnungen Kunden"] = 'Müþteri Faturalarý';
+$wb["Firma"] = 'Þirket';
+$wb["Vorname"] = 'Ad';
+$wb["Strasse"] = 'Cadde';
+$wb["PLZ"] = 'Posta Kodu';
+$wb["Ort"] = 'Þehir';
+$wb["Land"] = 'Ülke';
+$wb["Steuernr."] = 'No';
+$wb["Rechnung"] = 'Fatura';
+$wb["Datum"] = 'Tarih';
+$wb["Rechnung Nr."] = 'Fatura No';
+$wb["Anzahl"] = 'Miktar';
+$wb["Art. Nr."] = 'Ýtem No';
+$wb["Gesamt"] = 'Toplam';
+$wb["EURO"] = 'EURO';
+$wb["Web gesamt"] = 'Web Toplamý';
+$wb["enthaltene Mehrwertsteuer"] = 'Ýçerik';
+$wb["Gesamtbetrag"] = 'Toplam';
+$wb["Rechnungen Anbieter"] = 'Satýcý Faturalarý';
+$wb["Kunde"] = 'Müþteri';
+$wb["Rg. Nr."] = 'Fatura No';
+$wb["OK"] = 'TAMAM';
+$wb["Weiter"] = "Ýleri";
+$wb["Summe Anbieter"] = "Satýcý Toplamý";
+$wb["Summe Web"] = "Web Toplamý";
+$wb["Summe Kunde"] = "Müþteri Toplamý";
+$wb["Abrechnung abgeschlossen."] = "Fatura oluþturulmuþtur.";
+$wb["Item No"] = 'Ýtem No';
+$wb["Item Name"] = 'Ýtem Adý';
+$wb["Invoice"] = 'Fatura';
+$wb["Item for"] = 'Ýtem Yetkisi';
+$wb["Type"] = 'Tür';
+$wb["Artide"] = 'Fatura';
+
+$wb["Optionen"]     = "Ayarlar";
+$wb["Ziel"]         = "Hedef";
+$wb["Priorität"]   = "Öncelik";
+$wb["DNS Eintrag"]  = "DNS Kaydý";
+$wb["Ordner neu"]   = "Yeni Klasör";
+$wb["Suchen"]       = "Arama";
+$wb["DNS-Manager"]       = "DNS Yönetimi";
+$wb["Domain (SOA)"]         = "Alan Adý";
+$wb["Email Admin"]         = "Yönetici Eposta";
+$wb["Nameserver 1"]         = "NS 1";
+$wb["Nameserver 2"]         = "NS 2";
+$wb["Refresh"]         = "Yenileme";
+$wb["Retry"]         = "Tekrarlama";
+$wb["Expire"]         = "Süreklilik";
+$wb["TTL"]         = "TTL";
+$wb["Record"]         = "Kayýt";
+$wb["Record"]         = "Kayýtlar";
+$wb["Mailserver"]         = "Eposta Sunucusu (MX)";
+
+$wb["Dokument"] = "Döküman";
+$wb["neues Dokument anlegen"] = "Yeni Döküman";
+
+$wb["error_soa_exists_1"] = " ";
+$wb["error_soa_exists_2"] = " alan adý ile daha önce DNS bölgesine kayýt yapýlmýþtýr.<br>";
+
+$wb["IP-Adresse ungültig."] = "IP adresi geçerli deðildir.";
+$wb["Records"] = 'Kayýtlar';
+$wb["ziel"] = 'Hedef';
+$wb["Neu"] = 'Yeni';
+
+$wb["Master neu"] = 'Yeni DNS Bölgesi';
+$wb["Slave neu"] = 'Yeni Ýkincil DNS Bölgesi';
+$wb["Slave Zone"] = 'Ýkincil DNS Bölgesi';
+$wb["domain"] = 'Alan Adý';
+$wb["DNS-Master IP"] = 'DNS IP';
+$wb["Masters"] = 'DNS Bölgeleri';
+$wb["Slaves"] = 'Ýkincil DNS Bölgeleri';
+$wb["SUCHE"] = 'Arama';
+
+$wb["DNS-Domains angelegt"] = 'DNS Kullanýmý';
+$wb["von"] = ":";
+$wb["Maximale Anzahl an DNS-Einträgen erreicht."] = "Oluþturabileceðiniz maksimum DNS bölgesi sayýsý dolmuþtur.<br>";
+$wb["error_no_zones_allowed"] = "DNS bölgesi oluþturma yetkiniz yoktur.<br>";
+$wb["error_no_dns_anbieter"] = "DNS bölgesi oluþturma yetkiniz yoktur.<br>";
+$wb["error_max_slave_dns_anbieter"] = "Oluþturabileceðiniz maksimum ikincil DNS bölgesi sayýsý dolmuþtur.<br>";
+$wb["weiter_link"] = "<br><br> <a href='../../isp_dns/frame_start.php?s=$s'>Ýleri &gt;&gt;</a>";
+$wb["error_a_record_exists"] = "Mevcut A kaydý bulunmaktadýr.<br>";
+$wb["error_cname_record_exists"] = "Mevcut CNAME kaydý bulunmaktadýr.<br>";
+$wb["error_mx_record_exists"] = "Mevcut MX kaydý bulunmaktadýr.<br>";
+$wb["error_spf_record_exists"] = "Mevcut SPF kaydý bulunmaktadýr.<br>";
+
+$wb["ja"] = "Evet";
+$wb["nein"] = "Hayýr";
+$wb["a"] = "A kaydýndan<br>&nbsp;&nbsp;eposta gönderilsin mi";
+$wb["mx"] = "MX kaydýndan<br>&nbsp;&nbsp;eposta gönderilsin mi";
+$wb["ptr"] = "Eposta gönderimi<br>&nbsp;&nbsp;tüm sunucular için<br>&nbsp;&nbsp;geçerli olsun mu";
+$wb["a_break"] = "Eposta gönderimi<br>&nbsp;&nbsp;A kaydýndan olsun mu";
+$wb["mx_break"] = "Eposta gönderimi<br>&nbsp;&nbsp;MX kaydýndan olsun mu";
+$wb["ip4_break"] = "Eposta gönderimi<br>&nbsp;&nbsp;diðer IP adreslerinden olsun mu";
+$wb["include_break"] = "SPF kaydý<br>&nbsp;&nbsp;bu bölgeden olsun mu";
+$wb["all_"] = "Üstteki kayýtlar<br>&nbsp;&nbsp;tüm saðlayýcýlar için geçerli olsun mu";
+
+$wb["Catalog_Name"] = "Ýsim";
+$wb["Feld"] = "Alan";
+$wb["Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 -"] = "Lütfen geçerli karakterler girerek tekrar deneyiniz.<br>";
+$wb["Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 - ."] = "Lütfen geçerli karakterler girerek tekrar deneyiniz.<br>"; 
+
+$wb["Anbieter"]     = "Satýcý";
+$wb["Web"]          = "Web";
+$wb["Admin Handbuch"] = "Yönetici Kýlavuzu";
+$wb["Reseller Handbuch"] = "Satýcý Kýlavuzu";
+$wb["Kunden Handbuch"] = "Müþteri Kýlavuzu";
+$wb["Deutsch"]          = "Almanca";
+$wb["Englisch"]         = "Ýngilizce";
+$wb["Projektfarm Support"]          = "Destek";
+$wb["Online Hilfe"] = "Çevrimiçi Destek";
+
+$wb["Französische"]     = "Fransýzca";
+$wb["Unterstützungskarten"] = "Destek Biletleri";
+$wb["Geöffnete Karten"] = "Açýlmýþ Biletler";
+$wb["Geschlossene Karten"] = "Kapatýlmýþ Biletler";
+$wb["Neue Karte"] = "Yeni Bilet";
+$wb["Betreff"] = "Konu";
+$wb["Priorität"] = "Öncelik";
+$wb["Niedrig"] = "Düþük";
+$wb["Mittel"] = "Orta";
+$wb["Hoch"] = "Yüksek";
+$wb["Ihre frage"] = "Sorunuz";
+$wb["Senden"] = "Gönder";
+$wb["Fehler während der schaffung der karte"] = "Bilet yaratýlmasý sýrasýnda bir hata meydana gelmiþtir.";
+$wb["Neue unterstützungskarte, die auf antwort wartet"] = "Yeni destek bileti yanit beklemektedir.";
+$wb["Sie erhielten eine antwort"] = "Size Destek Biletinden Yanit";
+$wb["geantwortet zu ihnen"] = " kullanicisinden size yanit gelmistir.";
+$wb["Datum"] = "Tarih";
+$wb["Davon"] = "Tarafýndan";
+$wb["Ihre antwort"] = "Cevabýnýz";
+$wb["Antworten"] = "Yanýtla";
+$wb["Schließen"] = "Kapat";
+$wb["Dutch"]         = "Hollandaca";
+
+$wb["ISPConfig Datenbank"]    = "ISPConfig Veritabaný";
+$wb["Backup erstellen"]       = "Veriyi Yedekle";
+$wb["Datenbank Check"]        = "Veriyi Kontrol Et";
+$wb["Datenbank Optimieren"]   = "Veriyi Uyarla";
+$wb["Datenbank Reparieren"]   = "Veriyi Gözden Geçir";
+$wb["Eigenschaften"] = "Ayarlar";
+$wb["Server Name"]  = "Sunucu Adý";
+$wb["Netzmaske"]    = "Net Maskesi";
+$wb["Sprache"]      = "Dil";
+$wb["IP Liste"]     = "IP Listesi";
+$wb["hinweis_ip_liste"] = "<b>Uyarý:</b> Her satýra bir tane IP adresi yazmanýz gerekmektedir.";
+$wb["Pfad"]         = "Yol";
+$wb["Programm"]     = "Program";
+$wb["Reparatur"]    = "Gözden Geçir";
+$wb["Optimiere"]    = "Uyarla";
+$wb["Pfad httpd.conf"]    = "httpd.conf";
+$wb["MTA Typ"]    = "MTA Tipi";
+$wb["Virtuser Datei"]    = "Sanal Kullanýcý Dosyasý";
+$wb["FTP Programm"]    = "FTP Programý";
+$wb["FTP conf. Datei"]    = "FTP Uyarlama Dosyasý";
+$wb["Userid von"]    = "Kullanýcý No. Baþlangýcý";
+$wb["Groupid von"]    = "Grop No. Baþlangýcý";
+
+$wb["Backup von Tabelle"] = "Tablo Yedekle";
+$wb["Optimiere"] = "Uyarla";
+$wb["Reparatur"] = "Gözden Geçir";
+$wb["oder"] = "ya da";
+$wb["Installation starten"] = "Yükle";
+
+$wb["Deutsch"] = "Almanca";
+$wb["Englisch"] = "Ýngilizce";
+$wb["Datei"] = "Dosya";
+
+$wb["Überwachung"] = "Gösterim";
+$wb["Firewall"] = "Güvenlik Duvarý";
+$wb["Web-Server"] = "Web Sunucusu";
+$wb["FTP-Server"] = "FTP Sunucusu";
+$wb["SMTP-Server"] = "SMTP Sunucusu";
+$wb["DNS-Server"] = "DNS Sunucusu";
+$wb["mySQL-Server"] = "MySQL Sunucusu";
+$wb["An"] = "Açýk";
+$wb["Aus"] = "Kapalý";
+$wb["neu Starten"] = "Yeniden Baþlat";
+$wb["Neu"] = "Ekle";
+$wb["Aktionen"] = "Eylemler";
+$wb["Dienst"] = "Hizmet";
+$wb["Hostname"] = "Saðlayýcý";
+$wb["Port"] = "Port";
+$wb["Typ"] = "Tip";
+$wb["TCP"] = "TCP";
+$wb["UDP"] = "UDP";
+$wb["Der Dienst-Typ wird nur bei sonstigen-Diensten ausgewertet."] = "Sadece hizmet tipi analiz edilmektedir.";
+$wb["Sonstige"] = "Diðer";
+$wb["Ja"] = "Evet";
+$wb["Nein"] = "Hayýr";
+$wb["Offline"] = "Çevrimdýþý";
+$wb["ISP Dienste"] = "ISP Hizmetleri";
+$wb["ISP Überwachung"] = "ISP Gösterimi";
+$wb["ISP Firewall"] = "ISP Güvenlik Duvarý";
+$wb["Aktiv"] = "Aktif";
+$wb["Firewall Regel"] = "Güvenlik Duvarý Talimatý";
+$wb["Dieser Port kann nicht geändert werden."] = "Bu port deðiþtirilemez.<br>";
+$wb["Dieser Port kann nicht deaktiviert werden."] = "Bu port deaktif yapýlamaz.<br>";
+
+$wb["ISP Server"] = 'ISP Sunucu';
+$wb["Admin Email"] = 'Yönetici Eposta';
+$wb["EMail"] = 'Eposta';
+$wb["Funktionen"] = 'Fonksiyonlar';
+$wb["httpd User"] = 'httpd Kullanýcýsý';
+$wb["httpd Group"] = 'httpd Grubu';
+$wb["Document Root"] = 'Döküman Dizini';
+$wb["Frontpage Pfad"] = 'Frontpage Dizini';
+$wb["access Log"] = 'Kullaným Kayýtlarý';
+$wb["Sendmail"] = 'E-posta Gönderimi';
+$wb["Sendmail CW"] = 'Gönderim Dosyasý';
+$wb["Log speichern"] = 'Kayýtlarý Kaydet';
+$wb["BIND User"] = 'BIND Kullanýcýsý';
+$wb["BIND Group"] = 'BIND Grubu';
+$wb["Zonefiles Dir."] = 'Bölge Dizini';
+$wb["Default Ns1"] = 'NS1';
+$wb["Default Ns2"] = 'NS2';
+$wb["Standard MX"] = 'MX';
+$wb["Frontpage Extensions"] = 'Frontpage Eklentileri';
+$wb["User Prefix"] = 'Kullanýcý Ön Eki';
+$wb["Anbieter Nr. von"] = 'Satýcý No. Baþlangýcý';
+$wb["Kunden Nr. von"] = 'Müþteri No. Baþlangýcý';
+$wb["SOAP Server IP"] = 'SOAP Sunucu IP';
+$wb["SOAP Server Port"] = 'SOAP Sunucu Portu';
+$wb["Web-FTP"] = 'Web-FTP';
+$wb["ISP Faktura"] = 'ISP Fatura';
+$wb["Modul Manager"] = 'Modul Yöneticisi';
+$wb["Hinzufügen"] = 'Ekle';
+$wb["Alle anzeigen"] = 'Tümünü Göster';
+$wb["Update Manager"] = 'Güncelleme Yöneticisi';
+$wb["Update"] = 'Güncelle';
+$wb["System Config"] = 'Sistem Uyarlamasý';
+$wb["Bearbeiten"] = 'Düzenle';
+$wb["Importieren"] = 'Al';
+$wb["Exportieren"] = 'Ver';
+$wb["Allgemein"] = 'Genel';
+$wb["ISP-Manager"] = 'ISP Yönetimi';
+$wb["Faktura"] = 'Fatura';
+$wb["Übernehmen"] = 'Kaydet';
+$wb["Webserver"] = 'Web Sunucusu';
+$wb["Bind DNS"] = 'DNS Sunucusu';
+$wb["Mailserver"] = 'Eposta Sunucusu';
+$wb["POP3-Server"] = 'POP3 Sunucusu';
+$wb["nein"] = 'Hayýr';
+$wb["ja"] = 'Evet';
+$wb["ISP Server Status"] = 'ISP Sunucu Durumu';
+$wb["System-Datenbank"] = 'Sistem Veritabaný';
+$wb["Verzeichnis"] = 'Klasör';
+$wb["Backup starten"] = 'Yedekleme';
+
+$wb["Es wurde kein Web ausgewählt."] = "Web sitesi belirtilmemiþtir.";
+$wb["Backup-Funktionen im Demo-Modus nicht verfügbar."] = "Deneme modunda bu uygulamayý çalýþtýramazsýnýz.";
+$wb["Backup Status"] = "Yedekleme Durumu";
+$wb["Der Name des FTP-Servers <br>enthält ungültige Zeichen."] = "FTP sunucusu geçersiz karakterler içermektedir.";
+$wb["Sie haben keinen FTP Benutzernamen angegeben."] = "FTP kullanýcýsý girilmemiþtir.";
+$wb["Ftp-Verbindung nicht hergestellt!"] = "FTP sunucusuna baðlanma hatasý ile karþýlaþýldý!";
+$wb["Verbindung mit:"] = "Baðlantý:";
+$wb["als Benutzer:"] = "Kullanýcý:";
+$wb["nicht möglich."] = " ";
+$wb["Konnte nicht in Verzeichnis:"] = "Klasör Deðiþimi:";
+$wb["wechseln."] = " ";
+$wb["Wechsel in Verzeichnis:"] = "Klasör Deðiþimi:";
+$wb["Ftp upload war fehlerhaft!"] = "FTP yükleme hatasý ile karþýlaþýlmýþtýr!";
+$wb["Upload erfolgreich."] = "Yükleme Baþarýlý.";
+$wb["FTP-Upload Status"] = "FTP Yükleme Durumu";
+$wb["Backup-Methode nicht unterstützt."] = "Yedekleme Etkin Deðildir.";
+$wb["Rechnung Nr. von"] = "Fatura No. Baþlangýcý";
+
+$wb["Remoting"] = 'Uzaktan Baðlantý';
+$wb["User"] = 'Kullanýcý';
+$wb["Conf. Dir."] = 'Uyarlama Dizini';
+$wb["Suexec"] = 'Suexec';
+$wb["Postfix"] = 'Postfix';
+$wb["Mail Log"] = 'Eposta Kullaným Kayýtlarý';
+$wb["Maildir"] = 'Eposta Dizini';
+$wb["Antivir Mailadmin"] = 'Anti-virüs Yöneticisi';
+$wb["aktiv"] = "Aktif";
+$wb["inaktiv"] = "Deaktif";
+$wb["weiter_link"] = "<br><br> <a href='../../isp_manager/frame_start.php?s=$s'>Ýleri &gt;&gt;</a>";
+$wb["txt_client_salutatory_email_desc"] = "<b>Satýcýya Hoþ Geldin Mesajý</b>";
+$wb["txt_client_salutatory_email_sender_email"] = "Gönderen Eposta";
+$wb["txt_client_salutatory_email_sender_name"] = "Gönderen Adý";
+$wb["txt_client_salutatory_email_bcc"] = "BCC";
+$wb["txt_client_salutatory_email_subject"] = "Konu";
+$wb["txt_client_salutatory_email_message"] = "Mesaj";
+$wb["txt_client_salutatory_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Tanýmlamalar aþaðýda belirtildiði gibidir:</b></td></tr>
+        <tr>
+          <td class="normal">%%%USER%%%</td>
+          <td class="normal">
+            Kullanýcý Adý</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%PASSWORD%%%</td>
+          <td class="normal">
+            Þifre</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%FIRST_NAME%%%</td>
+          <td class="normal">
+            Ad</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%LAST_NAME%%%</td>
+          <td class="normal">
+            Soyad</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%COMPANY%%%</td>
+          <td class="normal">
+            Þirket</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%EMAIL%%%</td>
+          <td class="normal">
+            Eposta</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%CP%%%</td>
+          <td class="normal">
+            Giriþ Sayfasý</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%MANUAL%%%</td>
+          <td class="normal">
+            Müþteri Kullaným Kýlavuzu</td>
+        </tr>
+        </table>';
+
+$wb["txt_res_salutatory_email_desc"] = "<b>Satýcýya Hoþgeldin Mesajý</b>";
+$wb["txt_res_salutatory_email_sender_email"] = "Gönderen Eposta";
+$wb["txt_res_salutatory_email_sender_name"] = "Gönderen Adý";
+$wb["txt_res_salutatory_email_bcc"] = "BCC";
+$wb["txt_res_salutatory_email_subject"] = "Konu";
+$wb["txt_res_salutatory_email_message"] = "Mesaj";
+$wb["txt_res_salutatory_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Tanýmlamalar aþaðýda belirtildiði gibidir:</b></td></tr>
+        <tr>
+          <td class="normal">%%%USER%%%</td>
+          <td class="normal">
+            Kullanýcý Adý</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%PASSWORD%%%</td>
+          <td class="normal">
+            Þifre</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%FIRST_NAME%%%</td>
+          <td class="normal">
+            Ad</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%LAST_NAME%%%</td>
+          <td class="normal">
+            Soyad</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%COMPANY%%%</td>
+          <td class="normal">
+            Þirket</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%EMAIL%%%</td>
+          <td class="normal">
+            Eposta</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%CP%%%</td>
+          <td class="normal">
+            Giriþ Sayfasý</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%MANUAL%%%</td>
+          <td class="normal">
+            Satýcý Kullaným Kýlavuzu</td>
+        </tr>
+        </table>';
+$wb["txt_standard_index"] = "Standart Dizin<br>&nbsp;&nbsp;Sayfasý";
+$wb["txt_standard_index_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Tanýmlamalar aþaðýda belirtildiði gibidir:</b></td></tr>
+        <tr>
+          <td class="normal">%%%FQDN%%%</td>
+          <td class="normal">
+            Alan Adý</td>
+        </tr>
+    </table>';
+$wb["txt_user_standard_index"] = "Standart Kullanýcý<br>&nbsp;&nbsp;Dizin Sayfasý";
+$wb["txt_user_standard_index_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Tanýmlamalar aþaðýda belirtildiði gibidir:</b></td></tr>
+        <tr>
+          <td class="normal">%%%USER%%%</td>
+          <td class="normal">
+            Kullanýcý Adý</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%FQDN%%%</td>
+          <td class="normal">
+            Alan Adý</td>
+        </tr>
+        </table>';
+
+$wb["txt_traffic_suspension_email_desc"] = "<b>Web Sitesi Durdurma Uyarýsý (Trafik Aþýmý)</b>";
+$wb["txt_traffic_suspension_sender_email"] = "Gönderen Eposta";
+$wb["txt_traffic_suspension_sender_name"] = "Gönderen Adý";
+$wb["txt_traffic_suspension_email_bcc"] = "BCC";
+$wb["txt_traffic_suspension_email_subject"] = "Konu";
+$wb["txt_traffic_suspension_email_message"] = "Mesaj";
+$wb["txt_traffic_suspension_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Tanýmlamalar aþaðýda belirtildiði gibidir:</b></td></tr>
+        <tr>
+          <td class="normal">%%%FIRST_NAME%%%</td>
+          <td class="normal">
+            Ad</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%LAST_NAME%%%</td>
+          <td class="normal">
+            Soyad</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%WEBSITE%%%</td>
+          <td class="normal">
+            Web Sitesi</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%MONTH%%%</td>
+          <td class="normal">
+            Ay</td>
+        </tr>
+        <tr>
+          <td class="normal" valign="top">%%%INCLUDED_TRAFFIC%%%</td>
+          <td class="normal">
+            Trafik Limiti</td>
+        </tr>
+        <tr>
+          <td class="normal" valign="top">%%%TOTAL_TRAFFIC%%%</td>
+          <td class="normal">
+            Kullanýlan Trafik</td>
+        </tr>
+        </table>';
+
+$wb["txt_traffic_notification_email_desc"] = "<b>Trafik Aþýmý Uyarýsý</b>";
+$wb["txt_traffic_notification_sender_email"] = "Gönderen Eposta";
+$wb["txt_traffic_notification_sender_name"] = "Gönderen Adý";
+$wb["txt_traffic_notification_email_bcc"] = "BCC";
+$wb["txt_traffic_notification_email_subject"] = "Konu";
+$wb["txt_traffic_notification_email_message"] = "Mesaj";
+$wb["txt_traffic_notification_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Tanýmlamalar aþaðýda belirtildiði gibidir:</b></td></tr>
+        <tr>
+          <td class="normal">%%%FIRST_NAME%%%</td>
+          <td class="normal">
+            Ad</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%LAST_NAME%%%</td>
+          <td class="normal">
+            Soyad</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%WEBSITE%%%</td>
+          <td class="normal">
+            Web Sitesi</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%MONTH%%%</td>
+          <td class="normal">
+            Ay</td>
+        </tr>
+        <tr>
+          <td class="normal" valign="top">%%%INCLUDED_TRAFFIC%%%</td>
+          <td class="normal">
+            Trafik Limiti</td>
+        </tr>
+        <tr>
+          <td class="normal" valign="top">%%%TOTAL_TRAFFIC%%%</td>
+          <td class="normal">
+            Kullanýlan Trafik</td>
+        </tr>
+        </table>';
+
+$wb["txt_res_traffic_suspension_email_desc"] = "<b>Satýcý Durdurma Uyarýsý (Trafik Aþýmý)</b>";
+$wb["txt_res_traffic_suspension_sender_email"] = "Gönderen Eposta";
+$wb["txt_res_traffic_suspension_sender_name"] = "Gönderen Adý";
+$wb["txt_res_traffic_suspension_email_bcc"] = "BCC";
+$wb["txt_res_traffic_suspension_email_subject"] = "Konu";
+$wb["txt_res_traffic_suspension_email_message"] = "Mesaj";
+$wb["txt_res_traffic_suspension_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Tanýmlamalar aþaðýda belirtildiði gibidir:</b></td></tr>
+        <tr>
+          <td class="normal">%%%FIRST_NAME%%%</td>
+          <td class="normal">
+            Ad</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%LAST_NAME%%%</td>
+          <td class="normal">
+            Soyad</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%MONTH%%%</td>
+          <td class="normal">
+            Ay</td>
+        </tr>
+        <tr>
+          <td class="normal" valign="top">%%%INCLUDED_TRAFFIC%%%</td>
+          <td class="normal">
+            Trafik Limiti</td>
+        </tr>
+        <tr>
+          <td class="normal" valign="top">%%%TOTAL_TRAFFIC%%%</td>
+          <td class="normal">
+            Kullanýlan Trafik</td>
+        </tr>
+        </table>';
+
+$wb["txt_res_traffic_notification_email_desc"] = "<b>Satýcý Trafik Aþýmý Uyarýsý</b>";
+$wb["txt_res_traffic_notification_sender_email"] = "Gönderen Eposta";
+$wb["txt_res_traffic_notification_sender_name"] = "Gönderen Adý";
+$wb["txt_res_traffic_notification_email_bcc"] = "BCC";
+$wb["txt_res_traffic_notification_email_subject"] = "Konu";
+$wb["txt_res_traffic_notification_email_message"] = "Mesaj";
+$wb["txt_res_traffic_notification_email_variables"] = '<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+    <td valign="top" colspan="2" class="normal">
+      <b>Tanýmlamalar aþaðýda belirtildiði gibidir:</b></td></tr>
+        <tr>
+          <td class="normal">%%%FIRST_NAME%%%</td>
+          <td class="normal">
+            Ad</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%LAST_NAME%%%</td>
+          <td class="normal">
+            Soyad</td>
+        </tr>
+        <tr>
+          <td class="normal">%%%MONTH%%%</td>
+          <td class="normal">
+            Ay</td>
+        </tr>
+        <tr>
+          <td class="normal" valign="top">%%%INCLUDED_TRAFFIC%%%</td>
+          <td class="normal">
+            Trafik Limiti</td>
+        </tr>
+        <tr>
+          <td class="normal" valign="top">%%%TOTAL_TRAFFIC%%%</td>
+          <td class="normal">
+            Kullanýlan Trafik</td>
+        </tr>
+        </table>';
+
+$wb["txt_global_stats"] = "<b>Genel Web Sitesi Ýstatistikleri Giriþi</b>";
+$wb["txt_global_stats_user"] = "Ýstatistik Kullanýcýsý";
+$wb["txt_global_stats_password"] = "Þifre";
+
+$wb["Client Email"] = "Müþteriye Hoþ Geldin Mesajý";
+$wb["Standard-Index-Seite"] = "Standart Dizin Sayfalarý";
+$wb["title_required"] = "Lütfen baþlýk bölümünü doldurunuz";
+$wb["Geben Sie einen Wert in das Feld"] = "Lütfen ";
+$wb["jscript_ein"] = " bölümünü doldurunuz";
+$wb["Wrong terms, please check and try again with maximum 30 characters..."] = "Yanlýþ terimler kullandýnýz. Lütfen en çok 30 karakter kullanarak tekrar deneyiniz.";
+$wb["Invalid domain name"] = "Geçersiz Alan Adý";
+$wb["Form Designer"] = "Form Mühendisi";
+$wb["Add Form"] = "Form Ekle";
+$wb["Edit Form"] = "Form Düzenle";
+$wb["Import Form"] = "Form Al";
+$wb["Export Form"] = "Form Ver";
+$wb["txt_confirm_delete"] = "Veri silinmek üzeredir. Onaylýyor musunuz?";
+$wb["DNS-Eintrag"] = "DNS Kaydý";
+$wb["A Record"] = "A Kaydý";
+$wb["CName Record"] = "CNAME Kaydý";
+$wb["MX Record"] = "MX Kaydý";
+$wb["SPF Record"] = "SPF Kaydý";
+$wb["txt_login"] = "Giriþ";
+
+$wb["Database"] = "Veritabaný";
+$wb["Installation"] = "Yükleme";
+$wb["Installation OK"] = "Yükleme Baþarýlý";
+$wb["Cannot delete direktory"] = "Silinemeyen Klasör";
+$wb["CNAME Record"] = "CNAME Kaydý";
+$wb["ISP Aktionen"] = "ISP Uygulamalarý";
+$wb["ISP Cron"] = "ISP Görevleri";
+$wb["Info"] = "Bilgi";
+$wb["Slave Zones angelegt"] = "Ýkincil DNS Kullanýmý";
+$wb["Updates"] = "Güncellemeler";
+$wb["file_open_error"] = "Dosya alma hatasý ile karþýlaþýlmýþtýr.";
+$wb["file_copy_error"] = "Dosya kopyalama hatasý ile karþýlaþýlmýþtýr.";
+$wb["Datenbanken angelegt"] = "Veritabaný Kullanýmý";
+$wb["error_doctype_rechte"] = "Bu bölüm sistem yöneticisi tarafýndan kullanýma kapatýlmýþtýr. Sorularýnýz için lütfen sistem yöneticisi ile temasa geçiniz.";
+$wb["You can not restore this item."] = "Bu öðeyi tek baþýna geri yükleyemezsiniz. Öncelikle öðenin baðlý olduðu sýnýfa ait veriyi geri yüklemeniz gerekmektedir.";
+
+$wb["Online Help"] = "Çevrimiçi Yardým";
+$wb["Action"] = "Aktivite";
+$wb["Title"] = "Baþlýk";
+$wb["Cause"] = "Neden";
+$wb["Zeit"] = "Zaman";
+$wb["onUserSave"] = "Kullanýcý Kaydý";
+$wb["onWebSave"] = "Web Kaydý";
+$wb["onClientSave"] = "Müþteri Kaydý";
+$wb["onResellerSave"] = "Satýcý Kaydý";
+$wb["onServerSave"] = "Sunucu Kaydý";
+$wb["onActionSave"] = "Aktivite Kaydý";
+$wb["Time (00:00)"] = "Zaman (00:00)";
+$wb["Intervall (Minute)"] = "Mesefa (Dakika)";
+$wb["Path"] = "Dizin";
+$wb["Settings"] = "Ayarlar";
+$wb["Physisch"] = "Fiziksel";
+$wb["Virtuell"] = "Sanal";
+$wb["News"] = "Haberler";
+$wb["Newstext"] = "Haber Yazýsý";
+$wb["Sichtbar"] = "Görünüþ";
+$wb["Nachname"] = "Soyad";
+$wb["Alter"] = "Yaþ";
+$wb["Empfohlen durch"] = "Tavsite Eden";
+$wb["Passwortsatz"] = "Þifre";
+$wb["Design"] = "Tasarým";
+$wb["Farbe 1"] = "Renk 1";
+$wb["Farbe 2"] = "Renk 2";
+$wb["User Manager"] = "Kullanýcý Yönetimi";
+$wb["Bookmark"] = "Ýþaret Kaðýdý";
+$wb["Account aktiv"] = "Hesap Aktif";
+$wb["Email (prefix)"] = "Eposta (Ön Eki)";
+$wb["Rechte"] = "Muhafaza";
+$wb["Module"] = "Modül";
+$wb["Messenger"] = "Mesajlaþtýrýcý";
+$wb["IPR Manager"] = "IPR Yönetimi";
+$wb["Adresse"] = "Adres";
+$wb["Postfach"] = "Posta Kutusu";
+$wb["Bookmarks Sortiert"] = "Kaðýt Diziliþi";
+$wb["Sortiert"] = "Diziliþ";
+$wb["Sitename"] = "Site Adý";
+$wb["Startseite"] = "Ana Sayfa";
+$wb["Postfach (KB)"] = "Posta Kutusu (KB)";
+$wb["Lesen & Schreiben"] = "Okunur ve Yazýlýr";
+
+$wb["error_anbieter_max_webs_ueberschritten"] = "Satýcý belirtilen limitten fazla web sitesi kullanmaktadýr.<br>";
+$wb["error_anbieter_max_diskspace_ueberschritten"] = "Satýcý belirtilen limitten fazla disk alaný kullanmaktadýr.<br>";
+$wb["error_anbieter_max_traffic_ueberschritten"] = "Satýcý belirtilen limitten fazla trafik kullanmaktadýr.<br>";
+$wb["error_anbieter_max_user_ueberschritten"] = "Satýcý belirtilen limitten fazla kullanýya sahiptir.<br>";
+$wb["error_anbieter_max_domain_ueberschritten"] = "Satýcý belirtilen limitten fazla alan adý kullanmaktadýr.<br>";
+$wb["error_anbieter_dnsmanager_aktiv"] = "Satýcý DNS kayýtlarýna sahiptir. DNS yönetimi kaldýrýlamaz.<br>";
+$wb["error_anbieter_max_dns_ueberschritten"] = "Satýcý belirtilen limitten fazla DNS kaydýna sahiptir.<br>";
+$wb["error_anbieter_max_slavedns_ueberschritten"] = "Satýcý belirtilen limitten fazla ikincil DNS kaydýna sahiptir.<br>";
+$wb["error_anbieter_httpd_include_aktiv"] = "Satýcý web sunucusu (Apache) direktiflerini kullanmaktadýr. Web sitesi direktifleri kaldýrýlamaz.<br>";
+$wb["error_anbieter_shell_access_aktiv"] = "Satýcý eriþim kullanmaktadýr. Eriþim özelliði kaldýrýlamaz.<br>";
+$wb["error_anbieter_cgi_aktiv"] = "Satýcý CGI kullanmaktadýr. CGI özelliði kaldýrýlamaz.<br>";
+$wb["error_anbieter_standard_cgi_aktiv"] = "Satýcý standart CGI kullanmaktadýr. Standart CGI özelliði kaldýrýlamaz.<br>";
+$wb["error_anbieter_php_aktiv"] = "Satýcý PHP kullanmaktadýr. PHP özelliði kaldýrýlamaz.<br>";
+$wb["error_anbieter_ruby_aktiv"] = "Satýcý RUBY kullanmaktadýr.RUBY özelliði kaldýrýlamaz.<br>";
+$wb["error_anbieter_python_aktiv"] = "Satýcý PYTHON kullanmaktadýr. PYTHON özelliði kaldýrýlamaz.<br>";
+$wb["error_anbieter_ssi_aktiv"] = "Satýcý SSI kullanmaktadýr. SSI özelliði kaldýrýlamaz.<br>";
+$wb["error_anbieter_ftp_aktiv"] = "Satýcý FTP kullanmaktadýr. FTP özelliði kaldýrýlamaz.<br>";
+$wb["error_anbieter_anonftp_aktiv"] = "Satýcý açýk FTP kullanmaktadýr. Açýk FTP özelliði kaldýrýlamaz.<br>";
+$wb["error_anbieter_frontpage_aktiv"] = "Satýcý Frontpage kullanmaktadýr. Frontpage özelliði kaldýrýlamaz.<br>";
+$wb["error_anbieter_datenbank_aktiv"] = "Satýcý MySQL kullanmaktadýr. MySQL özelliði kaldýrýlamaz.<br>";
+$wb["error_anbieter_max_datenbank_ueberschritten"] = "Satýcý belirtilen limitten fazla MySQL veritabaný kullanmaktadýr.<br>";
+$wb["error_anbieter_ssl_aktiv"] = "Satýcý SSL kullanmaktadýr. SSL özelliði kaldýrýlamaz.<br>";
+$wb["error_anbieter_wap_aktiv"] = "Satýcý WAP kullanmaktadýr. WAP özelliði kaldýrýlamaz.<br>";
+$wb["error_anbieter_error_pages_aktiv"] = "Satýcý deðiþtirilebilir hata sayfalarýný kullanmaktadýr. Deðiþtirilebilir hata sayfalarý özelliði kaldýrýlamaz.<br>";
+$wb["error_web_no_unlimited_diskspace_1"] = "Bu web sitesi için sýnýrsýz web alaný kullanamazsýnýz. Kullanabileceðiniz maksimum web alaný ";
+$wb["error_web_no_unlimited_diskspace_2"] = " MB kadardýr.<br>";
+$wb["error_web_no_diskspace_free_1"] = "Bu web sitesi için ";
+$wb["error_web_no_diskspace_free_2"] = " MB kadar web alanýnýz kalmýþtýr.<br>";
+$wb["error_web_no_unlimited_users_1"] = "Bu web sitesi için sýnýrsýz kullanýcý kullanamazsýnýz. Kullanabileceðiniz maksimum kullanýcý ";
+$wb["error_web_no_unlimited_users_2"] = " kadardýr.<br>";
+$wb["error_web_no_users_free_1"] = "Bu web sitesi için ";
+$wb["error_web_no_users_free_2"] = " kadar kullanýcý limitiniz kalmýþtýr.<br>";
+$wb["error_web_no_unlimited_domains_1"] = "Bu web sitesi için sýnýrsýz alan adý kullanamazsýnýz. Kullanabileceðiniz maksimum alan adý ";
+$wb["error_web_no_unlimited_domains_2"] = " kadardýr.<br>";
+$wb["error_web_no_domains_free_1"] = "Bu web sitesi için ";
+$wb["error_web_no_domains_free_2"] = " kadar alan adý limitiniz kalmýþtýr.<br>";
+$wb["error_web_no_user_decrease_1"] = "Bu web sitesi";
+$wb["error_web_no_user_decrease_2"] = " kadar kullanýcýya sahiptir. Bu sayýyý azaltamazsýnýz.<br>";
+$wb["error_web_no_domain_decrease_1"] = "Bu web sitesi ";
+$wb["error_web_no_domain_decrease_2"] = " kadar alan adýna sahiptir. Bu sayýyý azaltamazsýnýz.<br>";
+
+$wb["Installed Forms"] = "Yüklenmiþ Formlar";
+$wb["Services"] = "Hizmetler";
+
+$wb["error_web_no_database_decrease_1"] = "Bu web sitesi ";
+$wb["error_web_no_database_decrease_2"] = " kadar veritabanýna sahiptir. Bu sayýyý azaltamazsýnýz.<br>";
+$wb["error_web_no_shell_access"] = "Bu web sitesine eriþim hakký veremezsiniz.<br>";
+$wb["error_web_no_cgi"] = "Bu web sitesine CGI hakký veremezsiniz.<br>";
+$wb["error_web_no_standard_cgi"] = "Bu web sitesine standart CGI hakký veremezsiniz.<br>";
+$wb["error_web_no_php"] = "Bu web sitesine PHP hakký veremezsiniz.<br>";
+$wb["error_web_no_ruby"] = "Bu web sitesine RUBY hakký veremezsiniz.<br>";
+$wb["error_web_no_python"] = "Bu web sitesine PYTHON hakký veremezsiniz.<br>";
+$wb["error_web_no_ssi"] = "Bu web sitesine SSI hakký veremezsiniz.<br>";
+$wb["error_web_no_ftp"] = "Bu web sitesine FTP hakký veremezsiniz.<br>";
+$wb["error_web_no_mysql"] = "Bu web sitesine MySQL hakký veremezsiniz.<br>";
+$wb["error_web_no_databases_free_1"] = "Bu web sitesi için ";
+$wb["error_web_no_databases_free_2"] = " kadar veritabaný limitiniz kalmýþtýr.<br>";
+$wb["error_web_no_ssl"] = "Bu web sitesine SSL hakký veremezsiniz.<br>";
+$wb["error_web_no_anonftp"] = "Bu web sitesine açýk FTP hakký veremezsiniz.<br>";
+$wb["error_web_no_wap"] = "Bu web sitesine WAP hakký veremezsiniz.<br>";
+$wb["error_web_no_individual_error_pages"] = "Bu web sitesine deðiþtirilebilir hata sayfalarý hakký veremezsiniz.<br>";
+$wb["error_web_no_httpd_include"] = "Bu web sitesine web sunucusu (Apache) direktifleri hakký veremezsiniz.<br>";
+$wb["error_web_no_frontpage"] = "Bu web sitesine Frontpage hakký veremezsiniz.<br>";
+
+$wb["Wrong terms, please check and try again with maximum 30 characters... For example: www."] = "Yanlýþ karakterler kullandýnýz. Lütfen giriþinizi kontrol edin ve maksimum 30 karakter olacak þekilde tekrar deneyiniz. Örnek: www.<br>";
+$wb["Wrong terms, please check and try again with only numbers... For example: 127.0.0.1."] = "Yanlýþ karakterler kullandýnýz. Lütfen giriþinizi kontrol edin ve sadece numara olacak þekilde tekrar deneyiniz. Örnek: 127.0.0.1.<br>";
+$wb["Wrong terms, please check and try again... For example: yoursite.com."] = "Yanlýþ karakterler kullandýnýz. Örnek: yoursite.com.<br>";
+$wb["Wrong terms, please check and try again... For example: your@yoursite.com."] = "Yanlýþ karakterler kullandýnýz. Örnek: your@yoursite.com.<br>";
+$wb["Wrong terms, please check and try again... For example: ns1.yoursite.com."] = "Yanlýþ karakterler kullandýnýz. Örnek: ns1.yoursite.com.<br>";
+$wb["Wrong terms, please check and try again... For example: ns2.yoursite.com."] = "Yanlýþ karakterler kullandýnýz. Örnek: ns2.yoursite.com.<br>";
+$wb["Wrong terms, please check and try again with only numbers... For example: 28800."] = "Yanlýþ karakterler kullandýnýz. Lütfen giriþinizi kontrol edin ve sadece numara olacak þekilde tekrar deneyiniz. Örneðin: 28800.<br>";
+$wb["Wrong terms, please check and try again with only numbers... For example: 7200."] = "Yanlýþ karakterler kullandýnýz. Lütfen giriþinizi kontrol edin ve sadece numara olacak þekilde tekrar deneyiniz. Örneðin: 7200.<br>";
+$wb["Wrong terms, please check and try again with only numbers... For example: 604800."] = "Yanlýþ karakterler kullandýnýz. Lütfen giriþinizi kontrol edin ve sadece numara olacak þekilde tekrar deneyiniz. Örneðin: 604800.<br>";
+$wb["Wrong terms, please check and try again with only numbers... For example: 86400."] = "Yanlýþ karakterler kullandýnýz. Lütfen giriþinizi kontrol edin ve sadece numara olacak þekilde tekrar deneyiniz. Örneðin: 86400.<br>";
+$wb["Wrong terms, please check and try again... For example: mail.yoursite.com."] = "Yanlýþ karakterler kullandýnýz. Örnek: mail.yoursite.com.<br>";
+$wb["Wrong terms, please check and try again with only numbers or -1 for unlimited..."] = "Yanlýþ karakterler kullandýnýz. Lütfen giriþinizi kontrol edin ve sadece numara olacak þekilde (-1 sýnýrsýz) tekrar deneyiniz.<br>";
+$wb["Wrong terms, please check and try again with maximum 30 characters..."] = "Yanlýþ karakterler kullandýnýz. Lütfen giriþinizi kontrol edin ve maksimum 30 karakter olacak þekilde tekrar deneyiniz.<br>";
+$wb["Wrong terms, please check and try again with maximum 10 characters..."] = "Yanlýþ karakterler kullandýnýz. Lütfen giriþinizi kontrol edin ve maksimum 10 karakter olacak þekilde tekrar deneyiniz.<br>";
+$wb["Wrong terms, please check and try again with maximum 20 characters..."] = "Yanlýþ karakterler kullandýnýz. Lütfen giriþinizi kontrol edin ve maksimum 20 karakter olacak þekilde tekrar deneyiniz.<br>";
+$wb["Wrong terms, please check and try again with minimum 5 maximum 10 characters..."] = "Yanlýþ karakterler kullandýnýz. Lütfen giriþinizi kontrol edin ve minimum 5 maksimum 10 karakter olacak þekilde tekrar deneyiniz.<br>";
+$wb["txt_sys_error"] = "Sistem bir hata ile karþýlaþtý ya da bu sayfayý görme ve veriyi düzenleme hakkýnýz bulunmamaktadýr. Lütfen sorularýnýz için satýcýnýz ya da sistem yöneticisi ile temasa geçiniz.";
+$wb["Wrong terms, please check and try again with maximum 10 characters... For example: www."] = "Yanlýþ karakterler kullandýnýz. Lütfen giriþinizi kontrol edin ve maksimum 10 karakter olacak þekilde tekrar deneyiniz. Örnek: www.<br>";
+
+$wb["Item"] = "Ýtem";
+$wb["Data"] = "Veriler";
+$wb["Company"] = "Þirket";
+$wb["Edit"] = "Düzenle";
+$wb["Delete"] = "Sil";
+$wb["Cancel"] = "Ýptal";
+$wb["User Group"] = "Kullanýcý Grubu";
+$wb["Add"] = "Ekle";
+$wb["Upload"] = "Yükle";
+$wb["URL"] = "Link";
+$wb["MD5"] = "MD5";
+
+$wb["Mail User Description"] = "Bu bölümden eposta kullanýcý adý ve þifresiyle giriþ yaparak mesaj kutunuzun özelliklerini deðiþtirebilirsiniz.<br>";
+$wb["phpMyAdmin Description"] = "Bu bölümden veritabaný kullanýcý adý ve þifresiyle giriþ yaparak veritabanýnýzý yönetebilirsiniz.<br>";
+$wb["net2ftp Description"] = "Bu bölümden web sitesi kullanýcý adý ve þifresiyle giriþ yaparak sitenizin dizinini yönetebilirsiniz. Web-FTP ile klasör eriþimleri ile basit dosya ve klasör yükleme iþlemi yapabilirken, net2ftp ile arþiv dosyalarýný kullanarak çoklu dosyalarý kolayca web dizinine yükleyebilirsiniz.<br>";
+$wb["RoundCube Webmail Description"] = "Bu bölümden eposta kullanýcý adý ve þifresiyle giriþ yaparak size gelen mesajlarý görebilir ve mesaj gönderebilirsiniz.<br>";
+
+$wb["Client Master Data"] = "Müþteri Temel Verisi";
+$wb["Separator"] = "Ayýraç";
+$wb["Enclosed by"] = "Kapanýþ";
+$wb["Export data for the following resellers"] = "Alýnacak Veri(ler)";
+$wb["Start Export"] = "Alýmý Baþlat";
+$wb["Format Settings"] = "Biçim Ayarlarý";
+$wb["Invalid hostname"] = "Geçersiz Saðlayýcý Adý";
+$wb["Create DNS-MX"] = "MX Yaratýmý";
+
+?>

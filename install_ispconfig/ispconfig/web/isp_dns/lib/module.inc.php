@@ -14,13 +14,18 @@ $go_info["modul"]["menu"][1] = array(   icon => "icon_dnsslave_neu.gif",
                                         link => "new/dns_slave.php",
                                         perms => "rw");
 
+$go_info["modul"]["menu"][2] = array(   icon => "icon_dnsptr_neu.gif",
+                                        title => "PTR neu",
+                                        link => "new/dns_ptr.php",
+                                        perms => "rw");
+
 /*
 $go_info["modul"]["menu"][1] = array(   icon => "nav_neu.gif",
                                         title => "bearbeiten",
                                         link => "admin/doctype_list.php",
                                         perms => "rw");
 */
-$go_info["modul"]["menu"][2] = array(   icon => "icon_ordner_neu.gif",
+$go_info["modul"]["menu"][3] = array(   icon => "icon_ordner_neu.gif",
                                         title => "Ordner neu",
                                         link => "../multidoc/edit/node.php",
                                         perms => "rw");
@@ -29,14 +34,14 @@ $go_info["modul"]["menu"][2] = array(   icon => "nav_gruppen.gif",
                                         title => "Gruppe neu",
                                         link => "../messenger/groups/group_edit.php",
                                         perms => "rw");
-*/                                   
+*/
 
-$go_info["modul"]["menu"][3] = array(   icon => "icon_suchen.gif",
+$go_info["modul"]["menu"][4] = array(   icon => "icon_suchen.gif",
                                         title => "Suchen",
                                         link => "search/index.php",
                                         perms => "rw");
 
-                                                                               
+
 $go_info["modul"]["element_types"] = array( deck => "Ebene",
                                             shortText => "kleines Textfeld",
                                             longText => "grosses Textfeld",

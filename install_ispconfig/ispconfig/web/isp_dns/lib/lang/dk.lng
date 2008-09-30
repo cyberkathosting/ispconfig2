@@ -103,4 +103,13 @@ $wb["all_"] = "Indeholder ovenstående valg<br>&nbsp;&nbsp;alle hosts med tillade
 
 $wb["Catalog_Name"] = "Navn";
 
+$wb["PTR neu"] = 'New PTR';
+$wb["PTR Record"] = 'PTR Record';
+$wb["IP Address"] = 'IP Address';
+$wb["Hostname"] = 'Hostname';
+$wb["DNS-Eintrag"] = 'DNS Record';
+
+$wb["Invalid domain name"] = "Invalid domain name";
+$wb["Invalid hostname"] = "Invalid hostname";
+
 ?>

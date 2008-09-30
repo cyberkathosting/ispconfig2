@@ -166,6 +166,16 @@ function slave_insert($doc_id, $doctype_id, $die_on_error = '1') {
                 }
                 unset($tmp_rec);
 
+    if (!preg_match("/^([a-z0-9\-]+\.)+[a-z]{2,6}$/ix", $slave["domain"])) {
+      $go_api->db->query("DELETE from dns_secondary where doc_id = '$doc_id'");
+      $go_api->db->query("DELETE from dns_nodes where doc_id = '$doc_id' and doctype_id = '$doctype_id'");
+      if($die_on_error){
+        $go_api->errorMessage($go_api->lng("Invalid domain name").': '.$slave["domain"].$go_api->lng("weiter_link"));
+      } else {
+        return $go_api->lng("Invalid domain name").': '.$slave["domain"];
+      }
+    }
+
         if($status == "DELETE") {
         // Eintrag löschen
           $go_api->db->query("DELETE from dns_secondary where doc_id = '$doc_id'");
@@ -188,7 +198,7 @@ function slave_insert($doc_id, $doctype_id, $die_on_error = '1') {
 }
 
 function slave_update($doc_id, $doctype_id, $die_on_error = '1') {
-    global $go_api, $go_info;
+    global $go_api, $go_info, $old_form_data;
 
     // Remove http:// and https:// and spaces from domains and hosts
     if($tmp_as = $go_api->db->queryAllRecords("SELECT * FROM dns_a WHERE host LIKE 'http://%' OR host LIKE 'https://%' OR host LIKE ' %' OR host LIKE '% ' OR ip_adresse LIKE 'http://%' OR ip_adresse LIKE 'https://%' OR ip_adresse LIKE ' %' OR ip_adresse LIKE '% '")){
@@ -270,6 +280,17 @@ function slave_update($doc_id, $doctype_id, $die_on_error = '1') {
         $go_api->db->query("UPDATE dns_spf SET host = '".$tmp_spf['host']."' WHERE doc_id = ".$tmp_spf['doc_id']);
       }
       unset($tmp_spfs);
+    }
+
+    $slave = $go_api->db->queryOneRecord("select * from dns_nodes,dns_secondary where dns_secondary.doc_id = '$doc_id' and dns_nodes.doc_id = dns_secondary.doc_id and dns_nodes.doctype_id = $doctype_id");
+    if (!preg_match("/^([a-z0-9\-]+\.)+[a-z]{2,6}$/ix", $slave["domain"])) {
+      $old_dns_slave = addslashes($old_form_data["domain"]);
+      $go_api->db->query("UPDATE dns_secondary SET domain = '$old_dns_slave' where doc_id = '$doc_id'");
+      if($die_on_error){
+        $go_api->errorMessage($go_api->lng("Invalid domain name").': '.$slave["domain"].$go_api->lng("weiter_link"));
+      } else {
+        return $go_api->lng("Invalid domain name").': '.$slave["domain"];
+      }
     }
 
 

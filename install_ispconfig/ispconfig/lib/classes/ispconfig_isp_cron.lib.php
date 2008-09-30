@@ -81,7 +81,14 @@ global $go_api, $go_info,$s;
 
      $user_doc_id = $user["doc_id"];
      $user_doctype_id = $user["doctype_id"];
+
      //unset($user);
+
+     $web = $go_api->db->queryOneRecord("SELECT * from isp_isp_web, isp_dep where
+     isp_isp_web.doc_id = isp_dep.parent_doc_id and
+     isp_isp_web.doctype_id = isp_dep.parent_doctype_id and
+     isp_dep.child_doctype_id = ".$user["doctype_id"]." and isp_dep.child_doc_id = ".$user["doc_id"]);
+     $webnode = $go_api->db->queryOneRecord("SELECT * from isp_nodes where doc_id = ".$web["parent_doc_id"]." and doctype_id = ".$web["parent_doctype_id"]);
 
      // sind für diesen User überhaupt Cron Jobs zugelassen?
      if(!$user["user_cron"]){
@@ -110,7 +117,7 @@ global $go_api, $go_info,$s;
         $user_doc_id = $user["parent_doc_id"];
         $user_doctype_id = $user["parent_doctype_id"];
         $usernode = $go_api->db->queryOneRecord("SELECT * from isp_nodes where doc_id = $user_doc_id and doctype_id = $user_doctype_id");
-        $go_api->db->query("UPDATE isp_nodes SET groupid = ".$usernode["groupid"].", userid = ".$usernode["userid"].", title = '".$cron["cron_name"]."' where doc_id = '$doc_id' and doctype_id = '$doctype_id'");
+        $go_api->db->query("UPDATE isp_nodes SET groupid = ".$webnode["groupid"].", userid = ".$usernode["userid"].", title = '".$cron["cron_name"]."' where doc_id = '$doc_id' and doctype_id = '$doctype_id'");
         $go_api->db->query("UPDATE isp_isp_user SET status = 'u' where status != 'n' and status != 'd' and doc_id = '$user_doc_id'");
 
     }
@@ -139,13 +146,19 @@ global $go_api, $go_info,$s,$HTTP_POST_VARS;
      isp_isp_user.doctype_id = isp_dep.parent_doctype_id and
      isp_dep.child_doctype_id = $doctype_id and isp_dep.child_doc_id = $doc_id");
 
+     $web = $go_api->db->queryOneRecord("SELECT * from isp_isp_web, isp_dep where
+     isp_isp_web.doc_id = isp_dep.parent_doc_id and
+     isp_isp_web.doctype_id = isp_dep.parent_doctype_id and
+     isp_dep.child_doctype_id = ".$user["doctype_id"]." and isp_dep.child_doc_id = ".$user["doc_id"]);
+     $webnode = $go_api->db->queryOneRecord("SELECT * from isp_nodes where doc_id = ".$web["parent_doc_id"]." and doctype_id = ".$web["parent_doctype_id"]);
+
      $go_api->db->query("UPDATE isp_isp_cron SET status = 'u' where status != 'n' and doc_id = '$doc_id'");
 
     //User und Groupid auf die Werte des Web setzen
     $user_doc_id = $user["parent_doc_id"];
     $user_doctype_id = $user["parent_doctype_id"];
     $usernode = $go_api->db->queryOneRecord("SELECT * from isp_nodes where doc_id = $user_doc_id and doctype_id = $user_doctype_id");
-    $go_api->db->query("UPDATE isp_nodes SET groupid = ".$usernode["groupid"].", userid = ".$usernode["userid"].", title = '".$cron["cron_name"]."' where doc_id = '$doc_id' and doctype_id = '$doctype_id'");
+    $go_api->db->query("UPDATE isp_nodes SET groupid = ".$webnode["groupid"].", userid = ".$usernode["userid"].", title = '".$cron["cron_name"]."' where doc_id = '$doc_id' and doctype_id = '$doctype_id'");
 
     $go_api->db->query("UPDATE isp_isp_user SET status = 'u' where status != 'n' and status != 'd' and doc_id = '$user_doc_id'");
 

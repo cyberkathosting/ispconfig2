@@ -5,6 +5,12 @@
     <td height="42">&nbsp;</td>
     <td colspan="2">&nbsp;</td>
   </tr>
+  <tmpl_if name="error">
+  <tr>
+    <td height="42">&nbsp;</td>
+    <td colspan="2" class="TxtForm"><tmpl_var name="error"></td>
+  </tr>
+  </tmpl_if>
   <tr>
     <td width="50">&nbsp;</td>
     <td width="120" class="TxtForm"><strong><tmpl_var name='txt_name'>:</strong></td>
@@ -24,6 +30,11 @@
     <td>&nbsp;</td>
     <td class="TxtForm"><strong><tmpl_var name='txt_password'>:</strong></td>
     <td class="TxtForm"><input type="password" name="user_passwort" maxlength="30"></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td class="TxtForm"><strong><tmpl_var name='txt_password_confirm'>:</strong></td>
+    <td class="TxtForm"><input type="password" name="user_passwort_confirm" maxlength="30"></td>
   </tr>
   <tr>
     <td>&nbsp;</td>

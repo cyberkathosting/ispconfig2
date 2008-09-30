@@ -73,6 +73,7 @@ if [ "$AVAILABLE_SPACE_ROOT_DIR" -lt "$NEEDED_SPACE" ]; then
 fi
 
 . dist.info.tmp
+export $dist_init_scripts
 
 ############# INSTALLATIONSART #################
   if [ "$install_art" == "upgrade" ]; then
@@ -150,7 +151,7 @@ if [ "$lang" == "de" ]; then
   q_check_ende="Sie muessen einige Pakete nachinstallieren!"
   q_mysql_running_check="MySQL laeuft nicht! Bitte starten Sie die MySQL-Datenbank und rufen Sie dann das ISPConfig-Setup erneut auf."
   q_mysql_sock_check="Konnte mysql.sock nicht finden! Die Installation bricht hier ab!"
-  q_php_check="Das mitgelieferte PHP-Binary funktioniert auf Ihrem System nicht! Die Installation bricht hier ab!"
+  export q_php_check="Das mitgelieferte PHP-Binary funktioniert auf Ihrem System nicht! Die Installation bricht hier ab!"
   q_prepare_files="Dateien werden vorbereitet. Bitte warten Sie einen Moment..."
   q_voraussetzungen="Alle Voraussetzungen erfuellt."
   q_mysql_server="Wie heisst der MySQL-Server?"
@@ -207,7 +208,7 @@ else
     q_check_ende="Au moins un des paquets requis est manquant!"
     q_mysql_running_check="MySQL ne fonctionne pas ! Merci de demarrer MySQL et de relancer l'installation d'ISPConfig."
     q_mysql_sock_check="Impossible de trouver mysql.sock! La routine d'installation s'arrete ici!"
-    q_php_check="L'executable PHP fournis avec ISPConfig ne fonctionne pas correctement avec votre systeme! La routine d'installation s'arrete ici!"
+    export q_php_check="L'executable PHP fournis avec ISPConfig ne fonctionne pas correctement avec votre systeme! La routine d'installation s'arrete ici!"
     q_prepare_files="Preparation des fichiers. Merci de patienter quelques instants..."
     q_voraussetzungen="Tous les pre-requis sont valides."
     q_mysql_server="Entrez le nom d'hote de votre serveur MySQL:"
@@ -264,7 +265,7 @@ else
       q_check_ende="Det saknas minst ett paket utav de som är obligatoriska!"
       q_mysql_running_check="MySQL är inte uppstartad! Vänligen starta din MySQL databas och kör ISPConfig installationen igen."
       q_mysql_sock_check="Kunde inte hitta mysql.sock! Installationen avslutas här!"
-      q_php_check="Den binära PHP som kommer med ISPConfig fungerar inte korrekt på ditt system! Installationen avslutas här!"
+      export q_php_check="Den binära PHP som kommer med ISPConfig fungerar inte korrekt på ditt system! Installationen avslutas här!"
       q_prepare_files="Förbereder filer. Vänta ett ögonblick..."
       q_voraussetzungen="Alla förberedelser är klara."
       q_mysql_server="Skriv in din MySQL server:"
@@ -320,7 +321,7 @@ else
       q_check_ende="At least one of the required packages is missing!"
       q_mysql_running_check="MySQL is not running! Please start your MySQL database and run the ISPConfig setup again."
       q_mysql_sock_check="Could not find mysql.sock! The installation routine stops here!"
-      q_php_check="The PHP binary coming with ISPConfig does not work properly on your system! The installation routine stops here!"
+      export q_php_check="The PHP binary coming with ISPConfig does not work properly on your system! The installation routine stops here!"
       q_prepare_files="Preparing files. Please wait a moment..."
       q_voraussetzungen="All prerequisites are fulfilled."
       q_mysql_server="Please enter your MySQL server:"
@@ -883,16 +884,6 @@ fi  ## install_art == install
   mv -f clamav ispconfig/tools/clamav
   tar xfz aps.tar.gz
   caselog "unpacked ISPConfig system" "could not unpack ISPConfig system"
-
-  ###### Prüfen, ob PHP korrekt funktioniert ######
-  ispconfig_tmp/php/bin/php -n -q check.php
-  if [ ! -f php_check ]; then
-    if [ "$install_art" == "upgrade" ]; then
-      `echo $dist_init_scripts`/ispconfig_server restart &> /dev/null
-    fi
-    error "$q_php_check";
-  fi
-  ###### Prüfen, ob PHP korrekt funktioniert ENDE ######
 
   mv -f ispconfig_tmp /root/ispconfig
   caselog "moved directory ispconfig_tmp to /root/ispconfig" "could not move directory ispconfig_tmp to /root/ispconfig"

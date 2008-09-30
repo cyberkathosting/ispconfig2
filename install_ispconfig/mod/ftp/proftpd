@@ -78,6 +78,10 @@ dist_ftp_conf:/etc/proftpd.conf:Config-File:read::mdr20081
 dist_ftp_version:standalone:Server-Version:exit::mdr20081
 dist_ftp_log:/var/log/xferlog:Log-File:read::mdr20081
 
+dist_ftp_conf:/etc/proftpd.conf:Config-File:read::mdr20090
+dist_ftp_version:standalone:Server-Version:exit::mdr20090
+dist_ftp_log:/var/log/xferlog:Log-File:read::mdr20090
+
 dist_ftp_conf:/etc/proftpd.conf:Config-File:read::centos41
 dist_ftp_version:standalone:Server-Version:exit::centos41
 dist_ftp_log:/var/log/xferlog:Log-File:read::centos41
@@ -102,6 +106,10 @@ dist_ftp_conf:/etc/proftpd.conf:Config-File:read::centos46
 dist_ftp_version:standalone:Server-Version:exit::centos46
 dist_ftp_log:/var/log/xferlog:Log-File:read::centos46
 
+dist_ftp_conf:/etc/proftpd.conf:Config-File:read::centos47
+dist_ftp_version:standalone:Server-Version:exit::centos47
+dist_ftp_log:/var/log/xferlog:Log-File:read::centos47
+
 dist_ftp_conf:/etc/proftpd.conf:Config-File:read::centos50
 dist_ftp_version:standalone:Server-Version:exit::centos50
 dist_ftp_log:/var/log/xferlog:Log-File:read::centos50
@@ -113,6 +121,10 @@ dist_ftp_log:/var/log/xferlog:Log-File:read::centos51
 dist_ftp_conf:/etc/proftpd.conf:Config-File:read::centos52
 dist_ftp_version:standalone:Server-Version:exit::centos52
 dist_ftp_log:/var/log/xferlog:Log-File:read::centos52
+
+dist_ftp_conf:/etc/proftpd.conf:Config-File:read::centos53
+dist_ftp_version:standalone:Server-Version:exit::centos53
+dist_ftp_log:/var/log/xferlog:Log-File:read::centos53
 
 dist_ftp_conf:/etc/proftpd.conf:Config-File:read::rhat73
 dist_ftp_version:standalone:Server-Version:exit::rhat73
@@ -161,6 +173,10 @@ dist_ftp_log:/var/log/xferlog:Log-File:read::fedora80
 dist_ftp_conf:/etc/proftpd.conf:Config-File:read::fedora90
 dist_ftp_version:standalone:Server-Version:exit::fedora90
 dist_ftp_log:/var/log/xferlog:Log-File:read::fedora90
+
+dist_ftp_conf:/etc/proftpd.conf:Config-File:read::fedora100
+dist_ftp_version:standalone:Server-Version:exit::fedora100
+dist_ftp_log:/var/log/xferlog:Log-File:read::fedora100
 
 dist_ftp_conf:/etc/proftpd.conf:Config-File:read::suse72
 dist_ftp_version:standalone:Server-Version:exit::suse72
@@ -218,6 +234,10 @@ dist_ftp_conf:/etc/proftpd.conf:Config-File:read::suse110
 dist_ftp_version:standalone:Server-Version:exit::suse110
 dist_ftp_log:/var/log/xferlog:Log-File:read::suse110
 
+dist_ftp_conf:/etc/proftpd.conf:Config-File:read::suse111
+dist_ftp_version:standalone:Server-Version:exit::suse111
+dist_ftp_log:/var/log/xferlog:Log-File:read::suse111
+
 dist_ftp_conf:/etc/proftpd.conf:Config-File:read::debian30
 dist_ftp_version:standalone:Server-Version:exit::debian30
 dist_ftp_log:/var/log/xferlog:Log-File:read::debian30
@@ -229,6 +249,10 @@ dist_ftp_log:/var/log/xferlog:Log-File:read::debian31
 dist_ftp_conf:/etc/proftpd.conf:Config-File:read::debian40
 dist_ftp_version:standalone:Server-Version:exit::debian40
 dist_ftp_log:/var/log/xferlog:Log-File:read::debian40
+
+dist_ftp_conf:/etc/proftpd.conf:Config-File:read::debian50
+dist_ftp_version:standalone:Server-Version:exit::debian50
+dist_ftp_log:/var/log/xferlog:Log-File:read::debian50
 
 dist_ftp_conf:/etc/proftpd.conf:Config-File:read::debiantesting/unstable0
 dist_ftp_version:standalone:Server-Version:exit::debiantesting/unstable0

@@ -46,6 +46,7 @@ var $slave_doctype_id = 1028;
 var $datenbank_doctype_id = 1029;
 var $spf_record_doctype_id = 1031;
 var $cron_doctype_id = 1032;
+var $ptr_doctype_id = 1033;
 var $vhost_conf;
 var $ftp_conf;
 var $apache_user;
@@ -1383,6 +1384,7 @@ Group web".$web["doc_id"];
     $sql = "SELECT isp_dep.*, isp_isp_domain.* from isp_dep,isp_isp_domain,isp_nodes where isp_dep.child_doc_id = isp_isp_domain.doc_id and isp_dep.child_doctype_id ='".$this->domain_doctype_id."' and isp_dep.parent_doctype_id = '".$this->web_doctype_id."' and isp_dep.parent_doc_id = '".$web["doc_id"]."' and isp_isp_domain.status != 'd' AND isp_nodes.doc_id = isp_isp_domain.doc_id AND isp_nodes.doctype_id = isp_isp_domain.doctype_id AND isp_nodes.status = 1";
     $domains = $mod->db->queryAllRecords($sql);
 
+    $serveralias_arr = array();
     $serveralias = "ServerAlias ";
     $rewrite_rule = "RewriteEngine on";
     foreach($domains as $domain){
@@ -1390,6 +1392,11 @@ Group web".$web["doc_id"];
           $serveralias .= $domain["domain_domain"].' ';
         } else {
           $serveralias .= $domain["domain_host"] . "." . $domain["domain_domain"].' ';
+        }
+        // split ServerAlias into multiple lines, if necessary
+        if(strlen($serveralias) > 2000){
+          $serveralias_arr[] = $serveralias;
+          $serveralias = "ServerAlias ";
         }
         if(!empty($domain["domain_weiterleitung"])){
           if($domain["domain_host"] == "") {
@@ -1411,8 +1418,13 @@ Group web".$web["doc_id"];
           }
         }
     }
-    $serveralias = substr($serveralias,0,-1);
-    if($serveralias == "ServerAlias") $serveralias = "";
+    $serveralias_arr[] = $serveralias;
+    $serveralias = '';
+
+    foreach($serveralias_arr as $s_alias){
+      if(trim($s_alias) != "ServerAlias" && substr(trim($s_alias),0,11) == "ServerAlias") $serveralias .= trim($s_alias)."\n";
+    }
+    
     if($rewrite_rule == "RewriteEngine on"){
       $rewrite_rule = "";
     } else {
@@ -1513,7 +1525,7 @@ php_admin_value session.save_path ".$mod->system->server_conf["server_path_httpd
       $python = '<IfModule mod_python.c>
  <Directory '.$document_root.'>
    Options +Indexes +FollowSymLinks +MultiViews
-   AllowOverride None
+   AllowOverride Indexes AuthConfig Limit FileInfo
    Order allow,deny
    allow from all
    AddHandler mod_python .py

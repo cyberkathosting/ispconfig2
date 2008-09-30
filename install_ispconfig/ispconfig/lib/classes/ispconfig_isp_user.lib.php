@@ -380,7 +380,7 @@ global $go_api, $go_info,$s,$HTTP_POST_VARS,$old_form_data;
          $tmp = $go_api->db->queryOneRecord($sql);
 
         if($tmp["anzahl"] > 1) {
-                $go_api->db->query("UPDATE isp_isp_user SET user_email = '".$user['user_email'].$tmp["anzahl"]."' where doc_id = '$doc_id'");
+                $go_api->db->query("UPDATE isp_isp_user SET user_email = '".$old_form_data['user_email']."' where doc_id = '$doc_id'");
                 if($die_on_error){
                   $go_api->errorMessage($go_api->lng("error_email_exist").$go_api->lng("weiter_link"));
                 } else {
@@ -472,9 +472,16 @@ global $go_api, $go_info,$s,$HTTP_POST_VARS,$old_form_data;
 
         // vergleiche Alias
         foreach($emailalias_new as $mal) {
-            if(!in_array($mal,$alias)) $out_alias .= $mal ."\r\n";
-                        // Wenn email Adresse oder alias bereits bei anderem user existiert
-                        if(in_array($user_email,$alias)) $user_email = '';
+            if(!in_array($mal,$alias)){
+              $out_alias .= $mal ."\r\n";
+            } else {
+              $errorMessage .= $go_api->lng("error_email_exist");
+            }
+            // Wenn email Adresse oder alias bereits bei anderem user existiert
+            if(in_array($user_email,$alias)){
+              $user_email = '';
+              $errorMessage .= $go_api->lng("error_email_exist");
+            }
         }
 
         unset($myalias);
@@ -491,6 +498,7 @@ global $go_api, $go_info,$s,$HTTP_POST_VARS,$old_form_data;
 
      if($catchallcount["catchall_count"] > 1) {
             $go_api->db->query("UPDATE isp_isp_user SET user_catchallemail = '0' where doc_id = $doc_id");
+            $errorMessage .= $go_api->lng("error_catchall_exists");
      }
 
         ///////////////////////////////////////////////////////
@@ -524,6 +532,13 @@ global $go_api, $go_info,$s,$HTTP_POST_VARS,$old_form_data;
         // ISPConfig Rechte in nodes Table checken
         $go_api->isp->check_perms($doc_id, $doctype_id);
 
+        if($errorMessage != ''){
+          if($die_on_error){
+            $go_api->errorMessage($errorMessage.$go_api->lng("weiter_link"));
+          } else {
+            return $errorMessage;
+          }
+        }
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////

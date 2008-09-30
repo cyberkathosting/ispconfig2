@@ -99,4 +99,12 @@ $wb["Feld"] = "Campo";
 $wb["Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 -"] = "Sólo está permitido poner los siguientes signos: a-z A-Z 0-9 -<br>";
 $wb["Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 - ."] = "Sólo está permitido poner los siguientes signos: a-z A-Z 0-9 - .<br>";
 
+$wb["PTR neu"] = 'New PTR';
+$wb["PTR Record"] = 'PTR Record';
+$wb["IP Address"] = 'IP Address';
+$wb["Hostname"] = 'Hostname';
+$wb["DNS-Eintrag"] = 'DNS Record';
+$wb["Invalid domain name"] = "Invalid domain name";
+$wb["Invalid hostname"] = "Invalid hostname";
+
 ?>

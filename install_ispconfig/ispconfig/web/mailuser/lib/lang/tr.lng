@@ -1,0 +1,49 @@
+<?php
+
+$wb["txt_login_desc"] = "Bu bölümden eposta uyarlamalarý yapabilirsiniz.";
+$wb["txt_error"] = "Hata";
+$wb["txt_email_username"] = "Eposta Kullanýcýsý";
+$wb["txt_password"] = "Þifre";
+$wb["txt_login"] = "Giriþ";
+$wb["txt_autoresponder"] = "Otomatik Cevaplama";
+$wb["txt_nachricht"] = "Mesaj";
+$wb["txt_speichern"] = "Kaydet";
+$wb["txt_abbrechen"] = "Ýptal";
+$wb["txt_email_account"] = "Eposta Hesabý";
+$wb["txt_user_und_email"] = "Kullanýcý ve Eposta";
+$wb["txt_spamfilter"] = "Spam Filtersi";
+$wb["txt_logout"] = "Çýkýþ";
+$wb["txt_mailscan"] = "Eposta Tarama";
+$wb["txt_antivirus"] = "Anti-Virüs";
+$wb["txt_spam_strategie"] = "Spam Taktiði";
+$wb["txt_spam_hits"] = "Spam Uyarýlarý";
+$wb["txt_rewrite_subject"] = "Yanýt Konusu";
+$wb["txt_betreff"] = "Yanýt";
+$wb["txt_name"] = "Ýsim";
+$wb["txt_email_adresse"] = "Eposta Adresi";
+$wb["txt_username"] = "Kullanýcý Adý";
+$wb["txt_web_speicher"] = "Web Kotasý";
+$wb["txt_mail_speicher"] = "Eposta Kotasý";
+$wb["txt_email_passwort_leer"] = "Eposta kullanýcýsý ya da þifresi boþ býrakýlmýþtýr!";
+$wb["txt_user_unbekannt"] = "Bu kullanýcý sistemde kayýtlý deðildir!";
+$wb["txt_access_forbidden"] = "Giriþ yetkisine sahip deðilsiniz!";
+$wb["txt_yes"] = "Evet";
+$wb["txt_no"] = "Hayýr";
+$wb["txt_unlimited"] = "Sýnýrsýz";
+$wb["txt_welcome"] = "Hoþ Geldiniz...";
+$wb["txt_error_spam_hits_format"] = "Bu bölüm <i>".$wb["txt_spam_hits"]."</i> biçiminde olmak zorundadýr:";
+$wb["txt_accept"] = "Kabul";
+$wb["txt_discard"] = "Ýptal";
+$wb["txt_language"] = "Dil";
+$wb["txt_no_mailuser_login"] = "Bu web sitesi için giriþ izniniz bulunmamaktadýr.";
+$wb["txt_forwarder"] = "Aktarým";
+$wb["txt_forwarder_desc"] = "<b>Uyarý:</b> Her satýra bir eposta gelmek zorundadýr.";
+$wb["txt_spam_whitelist"] = 'Spam Beyaz Listesi';
+$wb["txt_spam_blacklist"] = 'Spam Kara Listesi';
+$wb["txt_hint_spam_whitelist"] = '<b>Uyarý:</b> Her satýra bir eposta gelmek zorundadýr. Mesela: friend@somewhere.com, *@isp.com, or *.domain.net.';
+$wb["txt_hint_spam_blacklist"] = '<b>Uyarý:</b> Her satýra bir eposta gelmek zorundadýr. Mesela: friend@somewhere.com, *@isp.com, or *.domain.net.';
+$wb["txt_uribl"] = '<a href="http://www.uribl.com/about.shtml" target="_blank">URIBL</a>';
+$wb["txt_keep_local_copy"] = 'Kopyasýný Koru';
+$wb["txt_password_confirm"] = "Þifre Tekrarý";
+
+?>

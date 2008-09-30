@@ -58,17 +58,10 @@ function make_named($server_id) {
 
   $mod->tpl->assign( array('BINDDIR' => $mod->system->server_conf["server_bind_zonefile_dir"]));
 
-  //$ips = $mod->system->data["isp_server_ip"];
-  $ips = $mod->db->queryAllRecords("SELECT dns_isp_dns.doc_id, dns_isp_dns.server_id, dns_isp_dns.dns_soa, dns_isp_dns.dns_soa_ip AS server_ip FROM dns_nodes, dns_isp_dns WHERE dns_isp_dns.server_id = '$server_id' AND dns_nodes.doc_id = dns_isp_dns.doc_id AND dns_nodes.doctype_id = '".$isp_web->dns_doctype_id."' AND dns_nodes.status = '1'");
+  $ptr_dnss = $mod->db->queryAllRecords("SELECT dns_ptr.* FROM dns_nodes,dns_ptr WHERE dns_nodes.doc_id = dns_ptr.doc_id AND dns_nodes.doctype_id = '".$isp_web->ptr_doctype_id."' AND dns_nodes.status = '1'");
 
-  $ips1 = $mod->db->queryAllRecords("SELECT dns_isp_dns.dns_soa_ip AS server_ip FROM dns_nodes, dns_isp_dns WHERE dns_isp_dns.server_id = '$server_id' AND dns_nodes.doc_id = dns_isp_dns.doc_id AND dns_nodes.doctype_id = '".$isp_web->dns_doctype_id."' AND dns_nodes.status = '1'");
-
-  $ips2 = $mod->db->queryAllRecords("SELECT dns_a.ip_adresse AS server_ip FROM dns_nodes, dns_a WHERE dns_nodes.doc_id = dns_a.doc_id AND dns_nodes.doctype_id = '".$isp_web->a_record_doctype_id."' AND dns_nodes.status = '1'");
-
-  $ips3 = array_merge($ips1, $ips2);
-
-  foreach($ips3 as $ip){
-    list($ip1,$ip2,$ip3,$ip4) = explode(".", $ip["server_ip"]);
+  foreach($ptr_dnss as $ip){
+    list($ip1,$ip2,$ip3,$ip4) = explode(".", $ip["ip_address"]);
     $ip_addresses[] = $ip3.".".$ip2.".".$ip1;
   }
 
@@ -86,8 +79,7 @@ function make_named($server_id) {
     $mod->tpl->clear_dynamic('named_reverse');
   }
 
-  //$dnss = $mod->db->queryAllRecords("select * from dns_nodes,dns_isp_dns WHERE dns_isp_dns.server_id = '$server_id' and dns_nodes.doc_id = dns_isp_dns.doc_id AND dns_nodes.doctype_id = '".$isp_web->dns_doctype_id."' AND dns_nodes.status = '1'");
-  $dnss = $ips;
+  $dnss = $mod->db->queryAllRecords("SELECT dns_isp_dns.doc_id, dns_isp_dns.server_id, dns_isp_dns.dns_soa, dns_isp_dns.dns_soa_ip AS server_ip FROM dns_nodes, dns_isp_dns WHERE dns_isp_dns.server_id = '$server_id' AND dns_nodes.doc_id = dns_isp_dns.doc_id AND dns_nodes.doctype_id = '".$isp_web->dns_doctype_id."' AND dns_nodes.status = '1'");
   foreach($dnss as $dns){
     $domain = trim($dns["dns_soa"]);
 
@@ -321,121 +313,81 @@ function make_reverse_zonefile($server_id) {
 
   $server = $mod->system->server_conf;
 
-  //$ips = $mod->db->queryAllRecords("SELECT dns_isp_dns.doc_id, dns_isp_dns.server_id, dns_isp_dns.dns_soa_ip AS server_ip FROM dns_nodes, dns_isp_dns WHERE dns_isp_dns.server_id = '$server_id' AND dns_nodes.doc_id = dns_isp_dns.doc_id AND dns_nodes.doctype_id = '".$isp_web->dns_doctype_id."' AND dns_nodes.status = '1'");
-
-  $ips1 = $mod->db->queryAllRecords("SELECT dns_isp_dns.dns_soa_ip AS server_ip FROM dns_nodes, dns_isp_dns WHERE dns_isp_dns.server_id = '$server_id' AND dns_nodes.doc_id = dns_isp_dns.doc_id AND dns_nodes.doctype_id = '".$isp_web->dns_doctype_id."' AND dns_nodes.status = '1'");
-
-  //$ips2 = $mod->db->queryAllRecords("SELECT dns_a.ip_adresse AS server_ip FROM dns_dep, dns_a WHERE dns_dep.child_doc_id = dns_a.doc_id AND dns_dep.child_doctype_id = '".$isp_web->a_record_doctype_id."'");
-
-  $ips2 = $mod->db->queryAllRecords("SELECT dns_a.ip_adresse AS server_ip FROM dns_nodes, dns_a WHERE dns_nodes.doc_id = dns_a.doc_id AND dns_nodes.doctype_id = '".$isp_web->a_record_doctype_id."' AND dns_nodes.status = '1'");
-
-  $ips = array_merge($ips1, $ips2);
-
-  foreach($ips as $ip){
-    if(trim($ip["server_ip"]) != ""){
-      list($ip1,$ip2,$ip3,$ip4) = explode(".", trim($ip["server_ip"]));
-      $ip_addresses[] = $ip1.".".$ip2.".".$ip3;
+  if($ptr_dnss = $mod->db->queryAllRecords("SELECT dns_ptr.* FROM dns_nodes,dns_ptr WHERE dns_nodes.doc_id = dns_ptr.doc_id AND dns_nodes.doctype_id = '".$isp_web->ptr_doctype_id."' AND dns_nodes.status = '1'")){
+    foreach($ptr_dnss as $ip){
+      if(trim($ip["ip_address"]) != ""){
+        list($ip1,$ip2,$ip3,$ip4) = explode(".", trim($ip["ip_address"]));
+        $ip_addresses[] = $ip1.".".$ip2.".".$ip3;
+      }
     }
-  }
-
-  $ip_addresses = array_unique($ip_addresses);
-
-  foreach($ip_addresses as $ip_address){
-
-    // Template Öffnen
-    $mod->tpl->clear_all();
-    $mod->tpl->define( array(table    => "reverse_zone.in-addr.arpa.master"));
-    $mod->tpl->define_dynamic( "reverse_records", "table" );
-
-    list($ip1,$ip2,$ip3) = explode(".", $ip_address);
-    $zone = $ip3.".".$ip2.".".$ip1;
-
-    $datei = $mod->system->server_conf["server_bind_zonefile_dir"]."/pri.".$zone.".in-addr.arpa";
-    if(is_file($datei)){
-      $serial = exec("grep -i serial $datei | cut -f1 -d';'");
-      $serial = trim($serial);
-      if(substr($serial,0,8) == date("Ymd")){
-        $new_serial = date("Ymd").str_pad((substr($serial,8) + 1), 2, "0", STR_PAD_LEFT);
+    $ip_addresses = array_unique($ip_addresses);
+    print_r($ip_addresses);
+    foreach($ip_addresses as $ip_address){
+      // Template Öffnen
+      $mod->tpl->clear_all();
+      $mod->tpl->define( array(table    => "reverse_zone.in-addr.arpa.master"));
+      $mod->tpl->define_dynamic( "reverse_records", "table" );
+      list($ip1,$ip2,$ip3) = explode(".", $ip_address);
+      $zone = $ip3.".".$ip2.".".$ip1;
+      $datei = $mod->system->server_conf["server_bind_zonefile_dir"]."/pri.".$zone.".in-addr.arpa";
+      if(is_file($datei)){
+        $serial = exec("grep -i serial $datei | cut -f1 -d';'");
+        $serial = trim($serial);
+        if(substr($serial,0,8) == date("Ymd")){
+          $new_serial = date("Ymd").str_pad((substr($serial,8) + 1), 2, "0", STR_PAD_LEFT);
+        } else {
+          $new_serial = date("Ymd")."01";
+        }
       } else {
         $new_serial = date("Ymd")."01";
       }
-    } else {
-      $new_serial = date("Ymd")."01";
-    }
-
-    // Variablen zuweisen
-    $mod->tpl->assign( array('SERVER_DOMAIN' => $server["server_domain"],
+      // Variablen zuweisen
+      $mod->tpl->assign( array('SERVER_DOMAIN' => $server["server_domain"],
                   'SERIAL' => $new_serial,
                   'SERVER_BIND_NS1_DEFAULT' => $server["server_bind_ns1_default"],
                   'SERVER_BIND_NS2_DEFAULT' => $server["server_bind_ns2_default"]));
 
-    $dnss = $mod->db->queryAllRecords("select * from dns_nodes,dns_isp_dns WHERE dns_isp_dns.server_id = '$server_id' and dns_nodes.doc_id = dns_isp_dns.doc_id AND dns_nodes.doctype_id = '".$isp_web->dns_doctype_id."' AND dns_nodes.status = '1' AND dns_isp_dns.dns_soa_ip LIKE '".$ip_address."%'");
-
-    $ptrs_already_assigned = array();
-
-    foreach($dnss as $dns){
-
-      if(!in_array($dns["dns_soa_ip"], $ptrs_already_assigned)){
-        $domain = $dns["dns_soa"];
-        list($ip1,$ip2,$ip3,$ip4) = explode(".", $dns["dns_soa_ip"]);
-        $ip_ende = $ip4;
-        // Variablen zuweisen
-        $mod->tpl->assign( array('DNS_SOA' => $domain,
-                                 'IP_ENDE' => $ip_ende));
-        $mod->tpl->parse('REVERSE_RECORDS',".reverse_records");
-        $ptrs_already_assigned[] = $dns["dns_soa_ip"];
-      }
-    }
-
-    /////////////////
-    // A Records
-    $a_records = $mod->db->queryAllRecords("SELECT * FROM dns_dep, dns_a, dns_nodes WHERE dns_dep.child_doc_id = dns_a.doc_id AND dns_dep.child_doctype_id = '".$isp_web->a_record_doctype_id."' AND dns_a.ip_adresse LIKE '".$ip_address."%' AND dns_nodes.doc_id = dns_a.doc_id AND dns_nodes.doctype_id = '".$isp_web->a_record_doctype_id."' AND dns_nodes.status = '1'");
-
-    if(!empty($a_records)){
-      foreach($a_records as $a_record){
-        if(!empty($a_record["host"])){
-          if(!in_array($a_record["ip_adresse"], $ptrs_already_assigned)){
-            $domain_with_host = $a_record["host"].".".$domain;
-            list($ip1,$ip2,$ip3,$ip4) = explode(".", $a_record["ip_adresse"]);
+      foreach($ptr_dnss as $ptr_dns){
+          $hostname = $ptr_dns["hostname"];
+          list($ip1,$ip2,$ip3,$ip4) = explode(".", $ptr_dns["ip_address"]);
+          if($ip3.".".$ip2.".".$ip1 == $zone){
             $ip_ende = $ip4;
             // Variablen zuweisen
-            $mod->tpl->assign( array( 'DNS_SOA' => $domain_with_host,
-                                      'IP_ENDE' => $ip_ende));
+            $mod->tpl->assign( array('DNS_SOA' => $hostname,
+                                     'IP_ENDE' => $ip_ende));
             $mod->tpl->parse('REVERSE_RECORDS',".reverse_records");
-            $ptrs_already_assigned[] = $a_record["ip_adresse"];
           }
+      }
+      $mod->tpl->parse('TABLE', table);
+
+      $named_text = $mod->tpl->fetch();
+      $named_text .= $mod->file->manual_entries($datei, ";;;; MAKE MANUAL ENTRIES BELOW THIS LINE! ;;;;");
+
+      if(!is_file($datei)) $mod->log->phpcaselog(touch($datei), "create ".$datei, $this->FILE, __LINE__);
+
+      $named_text_old = $mod->file->rf($datei);
+      clearstatcache();
+
+      $named_text_old_no_serial = shell_exec("echo '$named_text_old' | grep -v serial");
+      $named_text_no_serial = shell_exec("echo '$named_text' | grep -v serial");
+
+      if(md5($named_text_old_no_serial) != md5($named_text_no_serial)){
+        if($named_text_old != ""){
+          $mod->log->caselog("cp -fr $datei $datei~", $this->FILE, __LINE__);
+          $mod->system->chown($datei."~", $mod->system->server_conf["server_bind_user"], $mod->system->server_conf["server_bind_group"]);
         }
+        $mod->file->wf($datei, $named_text);
+        $bind_restart += 1;
       }
+
+      $mod->system->chown($datei, $mod->system->server_conf["server_bind_user"], $mod->system->server_conf["server_bind_group"]);
+
+      unset($named_text);
     }
-    /////////////////
-
-    if(empty($dnss)) $mod->tpl->clear_dynamic('reverse_records');
-    $mod->tpl->parse('TABLE', table);
-
-    $named_text = $mod->tpl->fetch();
-    $named_text .= $mod->file->manual_entries($datei, ";;;; MAKE MANUAL ENTRIES BELOW THIS LINE! ;;;;");
-
-    if(!is_file($datei)) $mod->log->phpcaselog(touch($datei), "create ".$datei, $this->FILE, __LINE__);
-
-    $named_text_old = $mod->file->rf($datei);
-    clearstatcache();
-
-    $named_text_old_no_serial = shell_exec("echo '$named_text_old' | grep -v serial");
-    $named_text_no_serial = shell_exec("echo '$named_text' | grep -v serial");
-
-    if(md5($named_text_old_no_serial) != md5($named_text_no_serial)){
-      if($named_text_old != ""){
-        $mod->log->caselog("cp -fr $datei $datei~", $this->FILE, __LINE__);
-        $mod->system->chown($datei."~", $mod->system->server_conf["server_bind_user"], $mod->system->server_conf["server_bind_group"]);
-      }
-      $mod->file->wf($datei, $named_text);
-      $bind_restart += 1;
-    }
-
-    $mod->system->chown($datei, $mod->system->server_conf["server_bind_user"], $mod->system->server_conf["server_bind_group"]);
-
-    unset($named_text);
   }
+
+  $mod->db->query("UPDATE dns_ptr SET status = ''");
+
   return $bind_restart;
 }
 

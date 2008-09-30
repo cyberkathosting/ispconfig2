@@ -80,7 +80,7 @@ $go_info["server"]["classes_root"] = $go_info["server"]["include_root"] . $go_in
 $go_info["server"]["temp_dir"] = $go_info["server"]["server_root"] . $go_info["server"]["dir_trenner"] ."temp";
 $go_info["server"]["files_dir"] = $go_info["server"]["server_root"] . $go_info["server"]["dir_trenner"] ."files";
 $go_info["server"]["backup_dir"] = $go_info["server"]["server_root"] . $go_info["server"]["dir_trenner"] ."backup";
-$go_info["server"]["version"] = "2.2.24";
+$go_info["server"]["version"] = "2.2.26";
 $go_info["server"]["os"] = "linux";
 $go_info["server"]["ort"] = "local";
 $go_info["server"]["banner"] = "0";
@@ -107,7 +107,9 @@ $go_info["server"]["ssh_chroot"] = {SSH_CHROOT};
 $go_info["server"]["httpd_check"] = {HTTPD_CHECK};
 $go_info["server"]["salutatory_email_charset"] = '{SALUTATORY_EMAIL_CHARSET}'; // possible values are iso-8859-1, iso-8859-2, ..., us-ascii, koi8-r (Russian), ...; if no charset is specified, unknown-8bit is assumed.
 $go_info["server"]["webdav"] = {WEBDAV};
-$go_info["server"]["force_user_quota"] = 0;
+$go_info["server"]["force_user_quota"] = {FORCE_USER_QUOTA};
+$go_info["server"]["redirect_after_logout"] = '{REDIRECT_AFTER_LOGOUT}'; // URL to redirect to after logout from ISPConfig; leave empty for default location
+$go_info["server"]["redirect_mailuser_after_logout"] = '{REDIRECT_MAILUSER_AFTER_LOGOUT}'; // URL to redirect to after logout from ISPConfig mailuser interface; leave empty for default location
 
 /**********************************************
 * Tools Settings
