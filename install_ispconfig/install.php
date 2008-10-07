@@ -662,8 +662,8 @@ if($install_art == "install"){
   $smtp_restart = '1';
   $network_config = '0';
   $sudo_du_enabled = '0';
-  $apache2_php = 'both';
-  $password_hash = 'crypt';
+  $apache2_php = 'addtype';
+  $password_hash = 'md5';
   $do_automated_backups = '0';
   $ssh_chroot = '0';
   $httpd_check = '1';
@@ -681,8 +681,8 @@ if($install_art == "install"){
   $smtp_restart = (isset($go_info["server"]["smtp_restart"]) ? $go_info["server"]["smtp_restart"] : '1');
   $network_config = (isset($go_info["server"]["network_config"]) ? ($go_info["server"]["network_config"] == false ? '0' : '1') : '0');
   $sudo_du_enabled = (isset($go_info["server"]["sudo_du_enabled"]) ? ($go_info["server"]["sudo_du_enabled"] == false ? '0' : '1') : '0');
-  $apache2_php = (isset($go_info["server"]["apache2_php"]) ? $go_info["server"]["apache2_php"] : 'both');
-  $password_hash = (isset($go_info["server"]["password_hash"]) ? $go_info["server"]["password_hash"] : 'crypt');
+  $apache2_php = (isset($go_info["server"]["apache2_php"]) ? $go_info["server"]["apache2_php"] : 'addtype');
+  $password_hash = (isset($go_info["server"]["password_hash"]) ? $go_info["server"]["password_hash"] : 'md5');
   $do_automated_backups = (isset($go_info["server"]["do_automated_backups"]) ? ($go_info["server"]["do_automated_backups"] == false ? '0' : '1') : '0');
   $ssh_chroot = (isset($go_info["server"]["ssh_chroot"]) ? ($go_info["server"]["ssh_chroot"] == false ? '0' : '1') : '0');
   $httpd_check = (isset($go_info["server"]["httpd_check"]) ? ($go_info["server"]["httpd_check"] == false ? '0' : '1') : '1');
