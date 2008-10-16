@@ -73,7 +73,7 @@ if [ "$AVAILABLE_SPACE_ROOT_DIR" -lt "$NEEDED_SPACE" ]; then
 fi
 
 . dist.info.tmp
-export $dist_init_scripts
+export dist_init_scripts=$dist_init_scripts
 
 ############# INSTALLATIONSART #################
   if [ "$install_art" == "upgrade" ]; then
