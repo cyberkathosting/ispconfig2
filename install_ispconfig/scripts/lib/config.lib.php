@@ -625,7 +625,7 @@ function user_insert($doc_id, $doctype_id) {
   $web_path = $mod->system->server_conf["server_path_httpd_root"]."/web".$web_doc_id;
   $gid_web = $mod->system->server_conf["groupid_von"] + $web_doc_id;
 
-  if($go_info["server"]["ssh_chroot"] == 1) {
+  if($go_info["server"]["ssh_chroot"] == 1 && $user["user_shell"] && $web["web_shell"]) {
           $chroot_addpath = "/./";
   } else {
           $chroot_addpath = "";
@@ -768,7 +768,7 @@ function user_insert($doc_id, $doctype_id) {
   $mod->db->query("DELETE FROM del_status WHERE doc_id = '".$doc_id."' AND doctype_id = '".$doctype_id."'");
 
   // Chroot enviroment erstellen
-  if($go_info["server"]["ssh_chroot"] == 1) {
+  if($go_info["server"]["ssh_chroot"] == 1 && $user["user_shell"] && $web["web_shell"]) {
           exec("/root/ispconfig/scripts/shell/create_chroot_env.sh $user_username");
   }
 
@@ -814,7 +814,7 @@ function user_update($doc_id, $doctype_id) {
   $web_path = $mod->system->server_conf["server_path_httpd_root"]."/web".$web_doc_id;
   $gid_web = $mod->system->server_conf["groupid_von"] + $web_doc_id;
 
-  if($go_info["server"]["ssh_chroot"] == 1) {
+  if($go_info["server"]["ssh_chroot"] == 1 && $user["user_shell"] && $web["web_shell"]) {
           $chroot_addpath = "/./";
   } else {
           $chroot_addpath = "";
@@ -943,7 +943,7 @@ function user_update($doc_id, $doctype_id) {
   $mod->system->data["isp_isp_user"][$doc_id]["status"] = '';
 
   // Chroot enviroment erstellen
-  if($go_info["server"]["ssh_chroot"] == 1) {
+  if($go_info["server"]["ssh_chroot"] == 1 && $user["user_shell"] && $web["web_shell"]) {
           exec("/root/ispconfig/scripts/shell/create_chroot_env.sh $user_username");
   }
 
