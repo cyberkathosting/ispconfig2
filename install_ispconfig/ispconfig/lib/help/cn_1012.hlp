@@ -7,11 +7,11 @@
 * Chinese Version : Mike.G  <ghw@5anet.com>
 ************************************************/
 
-$hlp["kunde_anrede"] = "请输入客户联系地址。";
+$hlp["kunde_anrede"] = "请输入客户联系地址1。";
 $hlp["kunde_firma"] = "请输入客户公司名字。";
 $hlp["kunde_vorname"] = "请输入客户姓氏。";
 $hlp["kunde_name"] = "请输入客户名字。";
-$hlp["kunde_strasse"] = "请输入客户联系地址。";
+$hlp["kunde_strasse"] = "请输入客户联系地址2。";
 $hlp["kunde_plz"] = "请输入客户邮政编码。";
 $hlp["kunde_ort"] = "请输入客户居住城市。";
 $hlp["kunde_land"] = "请输入客户居住国家。";
@@ -28,6 +28,6 @@ $hlp["rechnung_strasse"] = "请输入帐单接收人的地址。";
 $hlp["rechnung_plz"] = "请输入帐单接收人的邮政编码。";
 $hlp["rechnung_ort"] = "请输入帐单接收人的居住城市。";
 $hlp["rechnung_land"] = "请输入帐单接受人的居住国家。";
-$hlp["rechnung_intervall"] = "Please enter the billing periods for the items of the customer.";
-$hlp["rechnung_zahlungsbedingungen"] = "Please enter the payment conditions for the customer.";
+$hlp["rechnung_intervall"] = "请设定客户的帐单期";
+$hlp["rechnung_zahlungsbedingungen"] = "请设定客户的支付途径。";
 ?>
