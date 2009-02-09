@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>Welcome!</title>
+<title>欢迎!</title>
 </head>
 <body BGCOLOR="#FFFFFF" leftMargin=0 topMargin=0 rightMargin=0 marginheight="0" marginwidth="0">
 <center>
@@ -10,7 +10,7 @@
     <hr SIZE="1" COLOR="#FFFFFF">
     <table>
       <tr>
-        <td><font SIZE="3" COLOR="#FFFFFF" FACE="Helvetica, Arial"><b>Shared IP</b></font></td>
+        <td><font SIZE="3" COLOR="#FFFFFF" FACE="Helvetica, Arial"><b>共享IP</b></font></td>
       </tr>
     </table>
     <hr SIZE="1" COLOR="#FFFFFF">
@@ -21,8 +21,9 @@
     <br><br>
           <center>
               <p><font COLOR="#000000" SIZE="2" FACE="Helvetica, Arial"><br>
-          This IP address is shared. For access to the web site which you look for, enter its address instead of its IP.</font></p>
-              <p><font COLOR="#000000" SIZE="2" FACE="Helvetica, Arial">For questions or problems please contact the server administrator.</font></p>
+                本IP地址是共享IP，为了访问你试图访问的网站，请使用该网站的地址访问。
+          </font></p>
+              <p><font COLOR="#000000" SIZE="2" FACE="Helvetica, Arial">任何疑问请联系系统管理员。</font></p>
       </center>
       <hr SIZE="1" WIDTH="90%">
       <center>

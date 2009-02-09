@@ -1,6 +1,6 @@
 <HTML>
 <HEAD>
-<TITLE>Welcome!</TITLE>
+<TITLE>欢迎!</TITLE>
 </HEAD>
 <BODY BGCOLOR="#FFFFFF" leftMargin=0 topMargin=0 rightMargin=0 marginheight="0" marginwidth="0">
 <CENTER>
@@ -10,10 +10,10 @@
     <HR SIZE="1" COLOR="#FFFFFF">
     <TABLE>
       <TR>
-            <TD><FONT SIZE="3" COLOR="#FFFFFF" FACE="Helvetica, Arial"><B>Welcome
-              to
+            <TD><FONT SIZE="3" COLOR="#FFFFFF" FACE="Helvetica, Arial"><B>欢迎
+              来到
               <!--ADRESSE//-->
-              your website!
+               您的网站!
               <!--ADRESSE//-->
               </B></FONT></TD>
       </TR>
@@ -24,9 +24,8 @@
   <TR>
     <TD BGCOLOR="#FFFFFF">
     <BR><BR><CENTER>
-        <FONT COLOR="#000000" SIZE="2" FACE="Helvetica, Arial">This is the standard index of your website. You can easily delete it or replace it with another file. This is the index.html file
-        in the <B>web</B> directory.
-        <P>For questions or problems please contact the server administrator.</FONT> </CENTER>
+        <FONT COLOR="#000000" SIZE="2" FACE="Helvetica, Arial">这里是您网站的标准首页，您可以简单的删除它或者使用其他页面替换它。它位于您<b>web</b>文档目录中:index.html。
+        <P>任何疑问请联系系统管理员。</FONT> </CENTER>
           <BR>
 
         <HR SIZE="1" WIDTH="90%">
