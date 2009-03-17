@@ -35,15 +35,19 @@ class check_services {
     $server_name = trim(str_replace("\n", "", shell_exec("hostname")));
     $warning = "";
 
+    /*
     // Checke Webserver
     if(!$this->_check_tcp('localhost',80)) {
     $warning .= "Warning: service httpd not running (server: ".$server_name.")!\n\n";
     }
+    */
 
+    /*
     // Checke FTP-Server
     if(!$this->_check_ftp('localhost',21)) {
     $warning .= "Warning: service ftpd not running (server: ".$server_name.")!\n\n";
     }
+    */
 
     /*
     // Checke Telnet-Server
