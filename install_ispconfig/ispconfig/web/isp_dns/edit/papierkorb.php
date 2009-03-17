@@ -134,6 +134,13 @@ if($row["type"] == 'i') {
 if($row["doctype_id"] == 1018) {
     $sub_row = $go_api->db->queryOneRecord("SELECT * FROM dns_isp_dns, dns_dep where dns_dep.parent_doc_id = dns_isp_dns.doc_id and dns_dep.parent_doctype_id = 1016 and dns_dep.child_doctype_id = 1018 and dns_dep.child_doc_id = ".$row["doc_id"]);
     $sub_row2 = $go_api->db->queryOneRecord("SELECT * FROM dns_a where doc_id = ".$row["doc_id"]);
+    if(substr(trim($sub_row2["host"]),-1) == '.'){
+      if(substr(trim($sub_row2["host"]),-(strlen($sub_row["dns_soa"])+2)) == '.'.$sub_row["dns_soa"].'.'){
+        $sub_row2["host"] = substr(trim($sub_row2["host"]),0,-(strlen($sub_row["dns_soa"])+2));
+      } else {
+        $sub_row2["host"] = substr(trim($sub_row2["host"]),0,-1);
+      }
+    }
     $title = "<b>A Record:</b> ".$sub_row2["host"].($sub_row2["host"] == "" ? "" : ".").$sub_row["dns_soa"];
     unset($sub_row);
     unset($sub_row2);
@@ -143,6 +150,13 @@ if($row["doctype_id"] == 1018) {
 if($row["doctype_id"] == 1019) {
     $sub_row = $go_api->db->queryOneRecord("SELECT * FROM dns_isp_dns, dns_dep where dns_dep.parent_doc_id = dns_isp_dns.doc_id and dns_dep.parent_doctype_id = 1016 and dns_dep.child_doctype_id = 1019 and dns_dep.child_doc_id = ".$row["doc_id"]);
     $sub_row2 = $go_api->db->queryOneRecord("SELECT * FROM dns_cname where doc_id = ".$row["doc_id"]);
+    if(substr(trim($sub_row2["host"]),-1) == '.'){
+      if(substr(trim($sub_row2["host"]),-(strlen($sub_row["dns_soa"])+2)) == '.'.$sub_row["dns_soa"].'.'){
+        $sub_row2["host"] = substr(trim($sub_row2["host"]),0,-(strlen($sub_row["dns_soa"])+2));
+      } else {
+        $sub_row2["host"] = substr(trim($sub_row2["host"]),0,-1);
+      }
+    }
     $title = "<b>CName Record:</b> ".$sub_row2["host"].($sub_row2["host"] == "" ? "" : ".").$sub_row["dns_soa"];
     unset($sub_row);
     unset($sub_row2);
@@ -152,6 +166,13 @@ if($row["doctype_id"] == 1019) {
 if($row["doctype_id"] == 1020) {
     $sub_row = $go_api->db->queryOneRecord("SELECT * FROM dns_isp_dns, dns_dep where dns_dep.parent_doc_id = dns_isp_dns.doc_id and dns_dep.parent_doctype_id = 1016 and dns_dep.child_doctype_id = 1020 and dns_dep.child_doc_id = ".$row["doc_id"]);
     $sub_row2 = $go_api->db->queryOneRecord("SELECT * FROM dns_mx where doc_id = ".$row["doc_id"]);
+    if(substr(trim($sub_row2["host"]),-1) == '.'){
+      if(substr(trim($sub_row2["host"]),-(strlen($sub_row["dns_soa"])+2)) == '.'.$sub_row["dns_soa"].'.'){
+        $sub_row2["host"] = substr(trim($sub_row2["host"]),0,-(strlen($sub_row["dns_soa"])+2));
+      } else {
+        $sub_row2["host"] = substr(trim($sub_row2["host"]),0,-1);
+      }
+    }
     $title = "<b>MX Record:</b> ".$sub_row2["host"].($sub_row2["host"] == "" ? "" : ".").$sub_row["dns_soa"];
     unset($sub_row);
     unset($sub_row2);

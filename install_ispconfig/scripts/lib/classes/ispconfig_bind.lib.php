@@ -167,6 +167,10 @@ function make_zonefile($doc_id) {
    $new_serial = date("Ymd")."01";
   }
 
+  if(substr($dns["dns_soa"],-1) == '.') $dns["dns_soa"] = substr($dns["dns_soa"],0,-1);
+  if(substr($dns["dns_ns1"],-1) == '.') $dns["dns_ns1"] = substr($dns["dns_ns1"],0,-1);
+  if(substr($dns["dns_ns2"],-1) == '.') $dns["dns_ns2"] = substr($dns["dns_ns2"],0,-1);
+
   // Variablen zuweisen
   $mod->tpl->assign( array('DNS_SOA' => $dns["dns_soa"],
                       'DNS_ADMINMAIL' => str_replace("@", ".", $dns["dns_adminmail"]),
@@ -184,6 +188,13 @@ function make_zonefile($doc_id) {
   foreach($arecords as $arecord){
 
     if(trim($arecord["host"]) == '') $arecord["host"] = $dns["dns_soa"].'.';
+    if(substr(trim($arecord["host"]),-1) == '.'){
+      if(substr(trim($arecord["host"]),-(strlen($dns["dns_soa"])+2)) == '.'.$dns["dns_soa"].'.'){
+        $arecord["host"] = substr(trim($arecord["host"]),0,-(strlen($dns["dns_soa"])+2));
+      } else {
+        $arecord["host"] = substr(trim($arecord["host"]),0,-1);
+      }
+    }
     // Variablen zuweisen
     $mod->tpl->assign( array( 'A_HOST' => $arecord["host"],
                          'A_IP' => $arecord["ip_adresse"]));
@@ -196,6 +207,14 @@ function make_zonefile($doc_id) {
   $cnamerecords = $mod->db->queryAllRecords("select dns_cname.host, dns_cname.ziel from dns_dep, dns_cname, dns_nodes WHERE dns_dep.parent_doc_id = '$doc_id' AND dns_dep.parent_doctype_id = '".$isp_web->dns_doctype_id."' AND dns_dep.child_doctype_id = '".$isp_web->cname_record_doctype_id."' AND dns_cname.doc_id = dns_dep.child_doc_id and dns_nodes.type = 'a' and dns_nodes.doctype_id = '".$isp_web->cname_record_doctype_id."' and dns_nodes.status = '1' and dns_nodes.doc_id = dns_cname.doc_id");
 
   foreach($cnamerecords as $cnamerecord){
+    if(substr(trim($cnamerecord["host"]),-1) == '.'){
+      if(substr(trim($cnamerecord["host"]),-(strlen($dns["dns_soa"])+2)) == '.'.$dns["dns_soa"].'.'){
+        $cnamerecord["host"] = substr(trim($cnamerecord["host"]),0,-(strlen($dns["dns_soa"])+2));
+      } else {
+        $cnamerecord["host"] = substr(trim($cnamerecord["host"]),0,-1);
+      }
+    }
+    if(substr(trim($cnamerecord["ziel"]),-1) == '.') $cnamerecord["ziel"] = substr(trim($cnamerecord["ziel"]),0,-1);
 
     // Variablen zuweisen
     $mod->tpl->assign( array( 'CNAME_HOST' => $cnamerecord["host"],
@@ -209,7 +228,15 @@ function make_zonefile($doc_id) {
   $mxrecords = $mod->db->queryAllRecords("select dns_mx.host, dns_mx.prioritaet, dns_mx.mailserver from dns_dep, dns_mx, dns_nodes WHERE dns_dep.parent_doc_id = '$doc_id' AND dns_dep.parent_doctype_id = '".$isp_web->dns_doctype_id."' AND dns_dep.child_doctype_id = '".$isp_web->mx_record_doctype_id."' AND dns_mx.doc_id = dns_dep.child_doc_id and dns_nodes.type = 'a' and dns_nodes.doctype_id = '".$isp_web->mx_record_doctype_id."' and dns_nodes.status = '1' and dns_nodes.doc_id = dns_mx.doc_id");
 
   foreach($mxrecords as $mxrecord){
-
+    if(substr(trim($mxrecord["host"]),-1) == '.'){
+      if(substr(trim($mxrecord["host"]),-(strlen($dns["dns_soa"])+2)) == '.'.$dns["dns_soa"].'.'){
+        $mxrecord["host"] = substr(trim($mxrecord["host"]),0,-(strlen($dns["dns_soa"])+2));
+      } else {
+        $mxrecord["host"] = substr(trim($mxrecord["host"]),0,-1);
+      }
+    }
+    if(substr(trim($mxrecord["mailserver"]),-1) == '.') $mxrecord["mailserver"] = substr(trim($mxrecord["mailserver"]),0,-1);
+    if(!strpos(trim($mxrecord["mailserver"]),'.')) $mxrecord["mailserver"] = trim($mxrecord["mailserver"]).'.'.$dns["dns_soa"];
     // Variablen zuweisen
     $mod->tpl->assign( array( 'MX_HOST' => $mxrecord["host"],
                          'MX_PRIORITAET' => $mxrecord["prioritaet"],
