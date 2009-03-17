@@ -146,7 +146,7 @@ class renderer
                 $this->checkform .= "
                     if (document.forms[0].elements[".$this->element_jscript_nummer."].value == '')
                     {
-                        alert(\"".$go_api->lng("Geben Sie einen Wert in das Feld")." '".$element_val->title."' ".$go_api->lng("jscript_ein").".\");
+                        alert(\"".$go_api->lng("Geben Sie einen Wert in das Feld")." '".$go_api->lng($element_val->title)."' ".$go_api->lng("jscript_ein").".\");
                         document.forms[0].elements[".$this->element_jscript_nummer."].focus();
                         return (false);
                     }";
@@ -184,7 +184,7 @@ class renderer
             $this->checkform .= "
                 if (document.forms[0].elements[".$this->element_jscript_nummer."].value == '')
                 {
-                    alert(\"".$go_api->lng("Geben Sie einen Wert in das Feld")." '".$element_val->title."' ".$go_api->lng("jscript_ein").".\");
+                    alert(\"".$go_api->lng("Geben Sie einen Wert in das Feld")." '".$go_api->lng($element_val->title)."' ".$go_api->lng("jscript_ein").".\");
                     document.forms[0].elements[".$this->element_jscript_nummer."].focus();
                     return (false);
                 }";
@@ -387,7 +387,7 @@ class renderer
         $this->checkform .= "
             if (document.forms[0].elements[".$this->element_jscript_nummer."].value == '')
             {
-                alert(\"".$go_api->lng("Geben Sie einen Wert in das Feld")." '".$element_val->title."' ".$go_api->lng("jscript_ein").".\");
+                alert(\"".$go_api->lng("Geben Sie einen Wert in das Feld")." '".$go_api->lng($element_val->title)."' ".$go_api->lng("jscript_ein").".\");
                 document.forms[0].elements[".$this->element_jscript_nummer."].focus();
                 return (false);
             }";
@@ -420,7 +420,7 @@ class renderer
         $this->checkform .= "
             if (document.forms[0].elements[".$this->element_jscript_nummer."].value == '')
             {
-                alert(\"".$go_api->lng("Geben Sie einen Wert in das Feld")." '".$element_val->title."' ".$go_api->lng("jscript_ein").".\");
+                alert(\"".$go_api->lng("Geben Sie einen Wert in das Feld")." '".$go_api->lng($element_val->title)."' ".$go_api->lng("jscript_ein").".\");
                 document.forms[0].elements[".$this->element_jscript_nummer."].focus();
                 return (false);
             }";
@@ -450,7 +450,7 @@ class renderer
         $this->checkform .= "
             if (document.forms[0].elements[".$this->element_jscript_nummer."].value == '')
             {
-                alert(\"".$go_api->lng("Geben Sie einen Wert in das Feld")." '".$element_val->title."' ".$go_api->lng("jscript_ein").".\");
+                alert(\"".$go_api->lng("Geben Sie einen Wert in das Feld")." '".$go_api->lng($element_val->title)."' ".$go_api->lng("jscript_ein").".\");
                 document.forms[0].elements[".$this->element_jscript_nummer."].focus();
                 return (false);
             }";
@@ -773,7 +773,7 @@ class renderer
         $checkform .= "
             if (document.forms[0].elements[".$this->element_jscript_nummer."].value == '')
             {
-                alert(\"".$go_api->lng("Geben Sie einen Wert in das Feld")." '".$element_val->title."' ".$go_api->lng("jscript_ein").".\");
+                alert(\"".$go_api->lng("Geben Sie einen Wert in das Feld")." '".$go_api->lng($element_val->title)."' ".$go_api->lng("jscript_ein").".\");
                 document.forms[0].elements[".$this->element_jscript_nummer."].focus();
                 return (false);
             }";
