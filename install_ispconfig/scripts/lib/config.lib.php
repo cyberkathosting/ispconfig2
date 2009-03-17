@@ -1408,7 +1408,21 @@ Group web".$web["doc_id"];
           }
           $rewrite_rule .= "\nRewriteCond %{HTTP_HOST}   ^".$rewrite_cond_url." [NC]";
           if(substr($domain["domain_weiterleitung"],0,4) == "http" || substr($domain["domain_weiterleitung"],0,4) == "HTTP"){
-            $domain["domain_weiterleitung"] = strtolower($domain["domain_weiterleitung"]);
+
+            $domain_weiterleitung_url_parts = parse_url($domain["domain_weiterleitung"]);
+
+            $domain["domain_weiterleitung"] = strtolower($domain_weiterleitung_url_parts['scheme']).'://';
+            if($domain_weiterleitung_url_parts['user']){
+              $domain["domain_weiterleitung"] .= $domain_weiterleitung_url_parts['user'];
+              if($domain_weiterleitung_url_parts['pass']) $domain["domain_weiterleitung"] .= ':'.$domain_weiterleitung_url_parts['pass'];
+              $domain["domain_weiterleitung"] .= '@';
+            }
+            $domain["domain_weiterleitung"] .= strtolower($domain_weiterleitung_url_parts['host']);
+            if($domain_weiterleitung_url_parts['path']) $domain["domain_weiterleitung"] .= $domain_weiterleitung_url_parts['path'];
+            if($domain_weiterleitung_url_parts['query']) $domain["domain_weiterleitung"] .= '?'.$domain_weiterleitung_url_parts['query'];
+            if($domain_weiterleitung_url_parts['fragment']) $domain["domain_weiterleitung"] .= '#'.$domain_weiterleitung_url_parts['fragment'];
+
+            //$domain["domain_weiterleitung"] = strtolower($domain["domain_weiterleitung"]);
             if(substr($domain["domain_weiterleitung"],-1) == "/") $domain["domain_weiterleitung"] = substr($domain["domain_weiterleitung"],0,-1);
             $rewrite_rule .= "\nRewriteRule ^/(.*)         ".$domain["domain_weiterleitung"]."/$1 [L,R]";
           } else {
