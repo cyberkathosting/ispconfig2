@@ -394,6 +394,8 @@ $wb["error_anbieter_cron_aktiv"] = "Zamanlanmýþ görevler kullanýlmaktadýr. Bu öð
 $wb["error_web_no_cron"] = "Bu web sitesi için zamanlanmýþ görevler hakký kullanamazsýnýz.<br>";
 $wb["error_cron_nicht_erlaubt"] = "Bu web sitesi için zamanlanmýþ görevler yetkisi bulunamamaktadýr.<br>";
 $wb["error_domain_delete_client"] = "Bu alan adý silinemez.";
+$wb["error_web_no_webdav"] = "You cannot assign WebDAV to this website.<br>";
+$wb["error_anbieter_webdav_aktiv"] = "WebDAV is already in use on some of the reseller's websites. This feature cannot be deactivated.<br>"; 
 
 $wb["Tools & Optionen"] = "Araçlar ve Ayarlar";
 $wb["Passwort ändern"] = "Þifre Deðiþtir";

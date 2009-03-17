@@ -12,6 +12,7 @@ $hlp["user_speicher"] = "Bitte geben Sie hier den Speicherplatz für den User an.
 $hlp["user_admin"] = "Durch Auswahl dieses Feldes erteilen Sie dem User den Adminstatus. Max. ein User kann den Status Admin haben.";
 $hlp["user_shell"] = "Durch Auswahl dieses Feldes ermöglichen Sie dem User den Zugriff auf die Shell-Ebene.";
 $hlp["user_cron"] = "Durch Auswahl dieses Feldes ermöglichen Sie dem User das Anlegen von Cron Jobs.";
+$hlp["user_webdav"] = "Durch Auswahl dieses Feldes ermöglichen Sie dem User den Zugriff auf die Website per WebDAV.";
 $hlp["user_emailalias"] = "Hier können Sie weitere Email-Aliasse (veränderte Schreibweisen) angeben, um auch diese Mails abrufen zu können. Bitte geben Sie nur den Teil vor dem \"@\" ein!";
 $hlp["user_name"] = "Bitte geben Sie hier den richtigen Namen des Users ein.";
 $hlp["user_autoresponder"] = "Durch Auswahl dieses Feldes aktivieren Sie die automatische Beantwortung aller eingehenden Emails des Users.";

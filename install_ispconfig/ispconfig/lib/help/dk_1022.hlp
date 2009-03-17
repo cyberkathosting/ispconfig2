@@ -37,6 +37,7 @@ $hlp["limit_ftp"] = "Angive om forhandleren kan give adgang til FTP funktioner f
 $hlp["limit_frontpage"] = "Angive om forhandleren kan give adgang til Frontpage funktioner for websider under sin konto.";
 $hlp["limit_mysql"] = "Angive om forhandleren kan give adgang til MySQL databaser for websider under sin konto.";
 $hlp["limit_shell_access"] = "Angive om forhandleren kan give adgang til Shell konti under sin konto.";
+$hlp["limit_webdav"] = "Angive om forhandleren kan give adgang til WebDAV konti under sin konto.";
 $hlp["limit_ssl"] = "Angive om forhandleren kan give adgang til SSL funktioner for websider under sin konto. Bemærk: Du kan kun have en SSL webside pr. IP-adresse.";
 $hlp["limit_httpd_include"] = "Angive om forhandleren kan give adgang til yderligere Apache directives for websider under sin konto.";
 $hlp["limit_anonftp"] = "Angive om forhandleren kan give adgang til Anonymous FTP funktioner for websider under sin konto. Bemærk: Du kan kun have en Anonymous-FTP konto pr. IP-adresse.";

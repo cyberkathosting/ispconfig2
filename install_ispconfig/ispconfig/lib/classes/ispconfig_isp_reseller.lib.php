@@ -351,6 +351,16 @@ function reseller_update($doc_id, $doctype_id, $die_on_error = '1') {
       unset($webanzahl);
     }
 
+    if(!$reseller["limit_webdav"]){
+      $webanzahl = $go_api->db->queryOneRecord("SELECT COUNT(isp_isp_web.doc_id) AS anzahl FROM isp_nodes, isp_isp_web WHERE isp_nodes.groupid = '".$reseller["reseller_group"]."' AND isp_nodes.doctype_id = '".$this->web_doctype_id."' AND isp_nodes.doc_id = isp_isp_web.doc_id AND isp_isp_web.web_webdav = '1'");
+      $webanzahl = $webanzahl["anzahl"];
+      if($webanzahl > 0){
+        $go_api->db->query("UPDATE isp_isp_reseller SET limit_webdav = '1' WHERE doc_id = '$doc_id'");
+        $res_limit_errorMessage .= $go_api->lng("error_anbieter_webdav_aktiv");
+      }
+      unset($webanzahl);
+    }
+
     if(!$reseller["limit_ssi"]){
       $webanzahl = $go_api->db->queryOneRecord("SELECT COUNT(isp_isp_web.doc_id) AS anzahl FROM isp_nodes, isp_isp_web WHERE isp_nodes.groupid = '".$reseller["reseller_group"]."' AND isp_nodes.doctype_id = '".$this->web_doctype_id."' AND isp_nodes.doc_id = isp_isp_web.doc_id AND isp_isp_web.web_ssi = '1'");
       $webanzahl = $webanzahl["anzahl"];

@@ -25,6 +25,7 @@ $hlp["limit_ftp"] = "Spécifie si le revendeur est autorisé à assigner la fonctio
 $hlp["limit_frontpage"] = "Spécifie si le revendeur est autorisé à assigner la fonction Frontpage aux sites web de son compte.";
 $hlp["limit_mysql"] = "Spécifie si le revendeur est autorisé à assigner la fonction des bases de donnés MySQL aux sites web de son compte.";
 $hlp["limit_shell_access"] = "Spécifie si le revendeur est autorisé à assigner des comptes Shell aux sites web de son compte.";
+$hlp["limit_webdav"] = "Spécifie si le revendeur est autorisé à assigner des comptes WebDAV aux sites web de son compte.";  
 $hlp["limit_ssl"] = "Spécifie si le revendeur est autorisé à assigner la fonction SSL aux sites web de son compte. Note: Vous ne pouvez avoir qu'un seul site SSL par adresse IP.";
 $hlp["limit_httpd_include"] = "Spécifie si le revendeur est autorisé à assigner des directives Apache additionnelles aux sites web de son compte.";
 $hlp["limit_anonftp"] = "Spécifie si le revendeur est autorisé à assigner la fonction FTP Anonyme aux sites web de son compte. Note: Vous ne pouvez avoir qu'un seul compte FTP anonyme par adresse IP.";

@@ -14,6 +14,7 @@ $hlp["web_php"] = "Activeert PHP voor deze website.";
 $hlp["web_ruby"] = "Activeert Ruby voor deze website.";
 $hlp["web_python"] = "Activeert Python voor deze website.";
 $hlp["web_cron"] = "Activeert Cron Jobs voor deze website.";
+$hlp["web_webdav"] = "Activeert WebDAV voor deze website.";
 $hlp["web_ssi"] = "Activeert SSI voor deze website.";
 $hlp["web_ftp"] = "Activeert FTP toegang voor deze website.";
 $hlp["web_frontpage"] = "Activeert Frontpage Extensies voor deze website.";

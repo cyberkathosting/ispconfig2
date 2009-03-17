@@ -12,6 +12,7 @@ $hlp["user_speicher"] = "Prosím vlo¾te velikost diskového prostoru pro u¾ivatele
 $hlp["user_admin"] = "Oznaèí u¾ivatele jako administrátora tohoto webu. Pro ka¾dý web mù¾e být urèen pouze jeden administrátor.";
 $hlp["user_shell"] = "Povolí interaktivní pøístup (shell) pro u¾ivatele.";
 $hlp["user_cron"] = "Allows the user to create Cron Jobs.";
+$hlp["user_webdav"] = "Enables WebDAV access for the user.";
 $hlp["user_emailalias"] = "Zde mù¾ete definovat dal¹í emailové aliasy (napø. odli¹nou výslovnost) pro pøíjem emailu pro tyto aliasy. Vlo¾te pouze èást pøed \"@\"!";
 $hlp["user_name"] = "Prosím vlo¾te skuteèné jméno u¾ivatele.";
 $hlp["user_autoresponder"] = "Aktivuje automatickou odpovìï pro emailové schránky u¾ivatele.";

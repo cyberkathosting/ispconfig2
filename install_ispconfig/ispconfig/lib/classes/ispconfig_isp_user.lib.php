@@ -87,6 +87,7 @@ function user_show($doc_id, $doctype_id) {
            $doc->deck[0]->elements[12]->visible = 0;
            $doc->deck[3]->visible = 0;
          }
+         if($web["web_webdav"] != '1') $doc->deck[0]->elements[14]->visible = 0;
 
          // Spamfilter Settings deaktivieren
          if($this->server_conf["spamfilter_enable"] != 1) $doc->deck[2]->visible = 0;

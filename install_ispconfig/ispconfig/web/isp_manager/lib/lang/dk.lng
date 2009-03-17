@@ -583,5 +583,7 @@ $wb["error_anbieter_cron_aktiv"] = "Cron Jobs er allerede i brug på nogle af for
 $wb["error_web_no_cron"] = "Du kan ikke tilføje Cron Jobs funktioner til denne webside.<br>";
 $wb["error_cron_nicht_erlaubt"] = "The creation of Cron Jobs is not allowed for this user.<br>";
 $wb["error_catchall_exists"] = "There is already a catchAll account for this web site.<br>";
+$wb["error_web_no_webdav"] = "Du kan ikke tilføje WebDAV funktioner til denne webside.<br>";
+$wb["error_anbieter_webdav_aktiv"] = "WebDAV er allerede i brug på nogle af forhandlerens websider. Denne mulighed kan ikke deaktiveres.<br>"; 
 
 ?>

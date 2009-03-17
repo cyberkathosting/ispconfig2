@@ -16,6 +16,7 @@ $hlp["web_php"] = "W³±czamy obs³ugê skryptów PHP.";
 $hlp["web_ruby"] = "W³±czamy obs³ugê skryptów Ruby.";
 $hlp["web_python"] = "W³±czamy obs³ugê skryptów Python.";
 $hlp["web_cron"] = "W³±czamy obs³ugê Cron Jobs.";
+$hlp["web_webdav"] = "W³±czamy obs³ugê WebDAV.";
 $hlp["web_ssi"] = "W³±czamy obs³ugê SSI.";
 $hlp["web_ftp"] = "W³±czamy dostêp do FTP dla tej strony .";
 $hlp["web_frontpage"] = "W³±czamy obs³ugê rozszerzeñ Frontpage.";

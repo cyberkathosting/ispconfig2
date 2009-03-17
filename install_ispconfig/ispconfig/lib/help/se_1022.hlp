@@ -25,6 +25,7 @@ $hlp["limit_ftp"] = "Markera om återförsäljaren kan tilldela FTP funktion till d
 $hlp["limit_frontpage"] = "Markera om återförsäljaren kan tilldela Frontpage funktion till de webbplatser som finns på dennes konto.";
 $hlp["limit_mysql"] = "Markera om återförsäljaren kan tilldela Mysql databaser till de webbplatser som finns på dennes konto.";
 $hlp["limit_shell_access"] = "Markera om återförsäljaren kan tilldela Skal konto (ex. bash) till de webbplatser som finns på dennes konto.";
+$hlp["limit_webdav"] = "Please specify if the reseller is allowed to assign WebDAV accounts to the websites under his account.";
 $hlp["limit_ssl"] = "Markera om återförsäljaren kan tilldela SSL funktion till de webbplatser som finns på dennes konto. Notera detta: du kan endast ha en SSL webbplats per ipnummer.";
 $hlp["limit_httpd_include"] = "Markera om återförsäljaren kan tilldela Apache direktivs till de webbplatser som finns på dennes konto.";
 $hlp["limit_anonftp"] = "Markera om återförsäljaren kan tilldela Anonym ftp funktion till de webbplatser som finns på dennes konto. Notera detta: endast ett Anonymt ftp konto per ipadress.";

@@ -735,6 +735,7 @@ function user_insert($doc_id, $doctype_id) {
   $mod->procmail->make_procmailrc($doc_id);
   $mod->procmail->make_recipes($doc_id);
   $mod->cron->make_cron($doc_id);
+  $mod->webdav->make_passwd_dav($doc_id);
 
   // Spamassassin directory anlegen
   if(!is_dir($web_path."/user/".$user_username."/.spamassassin")) {
@@ -923,6 +924,7 @@ function user_update($doc_id, $doctype_id) {
   $mod->procmail->make_procmailrc($doc_id);
   $mod->procmail->make_recipes($doc_id);
   $mod->cron->make_cron($doc_id);
+  $mod->webdav->make_passwd_dav($doc_id);
 
   // Spamassassin directory anlegen
   if(!is_dir($web_path."/user/".$user_username."/.spamassassin")) {
@@ -1012,6 +1014,7 @@ function user_delete($doc_id, $doctype_id) {
   //$mod->log->caselog("userdel -r $user_username &> /dev/null", $this->FILE, __LINE__);
   //$mod->system->deluser($user_username);
   $mod->cron->make_cron($doc_id);
+  $mod->webdav->make_passwd_dav($doc_id);
   $mod->system->deactivateuser($user_username);
 
   // User-Mail-Datei löschen
@@ -1549,6 +1552,24 @@ php_admin_value session.save_path ".$mod->system->server_conf["server_path_httpd
 </IfModule>';
     }
 
+    $webdav = '';
+    if($web["web_webdav"]){
+      $webdav = '<IfModule mod_dav.c>
+       Alias /webdav '.$document_root.'
+
+        <Location /webdav>
+           DAV On
+           AuthType Basic
+           AuthName "webdav"
+           AuthUserFile '.$mod->system->server_conf["server_path_httpd_root"].'/'.'web'.$web["doc_id"].'/passwd.dav
+           Require valid-user
+       </Location>
+</IfModule>';
+      touch($mod->system->server_conf["server_path_httpd_root"].'/'.'web'.$web["doc_id"].'/passwd.dav');
+      exec('chown root:'.$this->apache_user.' '.$mod->system->server_conf["server_path_httpd_root"].'/'.'web'.$web["doc_id"].'/passwd.dav');
+      exec('chmod 640 '.$mod->system->server_conf["server_path_httpd_root"].'/'.'web'.$web["doc_id"].'/passwd.dav');
+    }
+
     if($web["web_ssi"]){
       if($apache_version == 1){
         $ssi = "AddType text/html .shtml
@@ -1662,6 +1683,7 @@ SetEnvIf User-Agent \".*MSIE.*\" nokeepalive ssl-unclean-shutdown downgrade-1.0 
   RewriteCond %{REQUEST_METHOD} ^(TRACE|TRACK)
   RewriteRule .* - [F]
 </IfModule>
+".$webdav."
 </VirtualHost>
 </IfModule>";
 
@@ -1687,6 +1709,7 @@ clearstatcache();
                         PHP => $php,
                         RUBY => $ruby,
                         PYTHON => $python,
+                        WEBDAV => $webdav,
                         SSI => $ssi,
                         WAP => $wap,
                         ERRORALIAS => $error_alias,
@@ -1998,21 +2021,26 @@ function make_cron($doc_id){
 
 function apache_user(){
   global $mod;
-  $httpd_conf = $mod->system->server_conf["dist_httpd_conf"];
-  $includes = $mod->file->find_includes($httpd_conf);
-  $anz_includes = sizeof($includes);
-  for($i=0;$i<$anz_includes;$i++){
-    $includes[$i] = $mod->file->unix_nl($mod->file->no_comments($includes[$i]));
-    if($line = $mod->system->grep($includes[$i], "User", "w")){
-      $lines = explode("\n", $line);
-      $line = $lines[0];
-      $line = trim($line);
-      while(strstr($line, "  ")){
-        $line = str_replace("  ", " ", $line);
+  if(is_file('/etc/apache2/envvars')){
+    $output = system('grep APACHE_RUN_USER /etc/apache2/envvars');
+    $apache_user = str_replace('export APACHE_RUN_USER=', '', $output);
+  } else {
+    $httpd_conf = $mod->system->server_conf["dist_httpd_conf"];
+    $includes = $mod->file->find_includes($httpd_conf);
+    $anz_includes = sizeof($includes);
+    for($i=0;$i<$anz_includes;$i++){
+      $includes[$i] = $mod->file->unix_nl($mod->file->no_comments($includes[$i]));
+      if($line = $mod->system->grep($includes[$i], "User", "w")){
+        $lines = explode("\n", $line);
+        $line = $lines[0];
+        $line = trim($line);
+        while(strstr($line, "  ")){
+          $line = str_replace("  ", " ", $line);
+        }
+        list($f1, $apache_user) = explode(" ", $line);
+        $apache_user = trim($apache_user);
+        $i = $anz_includes;
       }
-      list($f1, $apache_user) = explode(" ", $line);
-      $apache_user = trim($apache_user);
-      $i = $anz_includes;
     }
   }
   if(isset($apache_user) && $mod->system->is_user($apache_user)){

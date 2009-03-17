@@ -45,6 +45,7 @@ AliasMatch ^/users/([^/]+)(/(.*))? {HTTPD_ROOT}/{WEB}/user/$1/web/$3
   RewriteCond %{REQUEST_METHOD} ^(TRACE|TRACK)
   RewriteRule .* - [F]
 </IfModule>
+{WEBDAV}
 </VirtualHost>
 #
 {SSL}

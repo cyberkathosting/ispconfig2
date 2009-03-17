@@ -24,6 +24,7 @@ $hlp["user_speicher"] = "Indtast disk plads for brugeren.";
 $hlp["user_admin"] = "Gør denne bruger til administrator for denne web. Kun en bruger pr. web kan være administrator.";
 $hlp["user_shell"] = "Aktivere shell access for denne bruger.";
 $hlp["user_cron"] = "Allows the user to create Cron Jobs.";
+$hlp["user_webdav"] = "Enables WebDAV access for the user.";
 $hlp["user_emailalias"] = "Her kan du indtaste flere email aliaser (f.eks. forskellige stavemåder) for at modtage emails for disse aliaser. Indtast kun den del foran \"@\"!";
 $hlp["user_name"] = "Indtast brugerens rigtige navn.";
 $hlp["user_autoresponder"] = "Aktivere email autorespond for brugerens email boks.";

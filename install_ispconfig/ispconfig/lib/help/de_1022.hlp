@@ -25,6 +25,7 @@ $hlp["limit_ftp"] = "Bitte geben Sie an, ob der Reseller den ihm zugeordneten We
 $hlp["limit_frontpage"] = "Bitte geben Sie an, ob der Reseller den ihm zugeordneten Websites Frontpage-Funktionalität zuweisen darf.";
 $hlp["limit_mysql"] = "Bitte geben Sie an, ob der Reseller den ihm zugeordneten Websites MySQL-Datenbanken zuweisen darf.";
 $hlp["limit_shell_access"] = "Bitte geben Sie an, ob der Reseller den ihm zugeordneten Websites Shell-Zugänge zuweisen darf.";
+$hlp["limit_webdav"] = "Bitte geben Sie an, ob der Reseller den ihm zugeordneten Websites WebDAV-Zugänge zuweisen darf.";
 $hlp["limit_ssl"] = "Bitte geben Sie an, ob der Reseller den ihm zugeordneten Websites SSL-Funktionalität zuweisen darf. Bitte beachten Sie: pro IP-Adresse kann es nur eine SSL-Website geben.";
 $hlp["limit_httpd_include"] = "Bitte geben Sie an, ob der Reseller den ihm zugeordneten Websites zusätzliche Apache-Direktiven zuweisen darf.";
 $hlp["limit_anonftp"] = "Bitte geben Sie an, ob der Reseller den ihm zugeordneten Websites Anonymous-FTP-Funktionalität zuweisen darf. Bitte beachten Sie: pro IP-Adresse kann es nur einen Anonymous-FTP-Zugang geben.";

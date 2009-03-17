@@ -15,6 +15,7 @@ $hlp["web_php"] = "Aktiverar PHP för denna webbplats.";
 $hlp["web_ruby"] = "Aktiverar Ruby för denna webbplats.";
 $hlp["web_python"] = "Aktiverar Python för denna webbplats.";
 $hlp["web_cron"] = "Aktiverar Cron Jobs för denna webbplats.";
+$hlp["web_webdav"] = "Aktiverar WebDAV för denna webbplats.";
 $hlp["web_ssi"] = "Aktiverar SSI för denna webbplats.";
 $hlp["web_ftp"] = "Aktiverar FTP åtkomst för denna webbplats.";
 $hlp["web_frontpage"] = "Aktiverar Frontpage Extensions för denna webbplats.";

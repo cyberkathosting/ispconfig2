@@ -547,5 +547,7 @@ $wb["error_anbieter_cron_aktiv"] = "Cron Jobs werden auf einigen Webs des Resell
 $wb["error_web_no_cron"] = "Sie können diesem Web keine Cron Jobs zuordnen.<br>";
 $wb["error_cron_nicht_erlaubt"] = "Das Anlegen von Cron Jobs ist für diesen User nicht freigeschaltet.<br>";
 $wb["error_catchall_exists"] = "Es existiert schon ein catchAll-Account für diese Website.<br>";
+$wb["error_web_no_webdav"] = "Sie können diesem Web kein WebDAV zuordnen.<br>";
+$wb["error_anbieter_webdav_aktiv"] = "WebDAV wird auf einigen Webs des Resellers verwendet. Dieses Feature kann nicht deaktiviert werden.<br>";
 
 ?>
