@@ -86,6 +86,10 @@ dist_mail_log:/var/log/mail/info.log:Log-File:read::mdr20091
 dist_mail_virtusertable:/etc/postfix/virtusertable:Virtusertable-File:read::mdr20091
 dist_mail_local_host_names:/etc/postfix/local-host-names:Local-Host-Names-File:read::mdr20091
 
+dist_mail_log:/var/log/mail/info.log:Log-File:read::mdr20100
+dist_mail_virtusertable:/etc/postfix/virtusertable:Virtusertable-File:read::mdr20100
+dist_mail_local_host_names:/etc/postfix/local-host-names:Local-Host-Names-File:read::mdr20100
+
 dist_mail_log:/var/log/maillog:Log-File:read::centos41
 dist_mail_virtusertable:/etc/postfix/virtusertable:Virtusertable-File:read::centos41
 dist_mail_local_host_names:/etc/postfix/local-host-names:Local-Host-Names-File:read::centos41
@@ -129,6 +133,10 @@ dist_mail_local_host_names:/etc/postfix/local-host-names:Local-Host-Names-File:r
 dist_mail_log:/var/log/maillog:Log-File:read::centos53
 dist_mail_virtusertable:/etc/postfix/virtusertable:Virtusertable-File:read::centos53
 dist_mail_local_host_names:/etc/postfix/local-host-names:Local-Host-Names-File:read::centos53
+
+dist_mail_log:/var/log/maillog:Log-File:read::centos54
+dist_mail_virtusertable:/etc/postfix/virtusertable:Virtusertable-File:read::centos54
+dist_mail_local_host_names:/etc/postfix/local-host-names:Local-Host-Names-File:read::centos54
 
 dist_mail_log:/var/log/maillog:Log-File:read::rhat73
 dist_mail_virtusertable:/etc/postfix/virtusertable:Virtusertable-File:read::rhat73
@@ -185,6 +193,10 @@ dist_mail_local_host_names:/etc/postfix/local-host-names:Local-Host-Names-File:r
 dist_mail_log:/var/log/maillog:Log-File:read::fedora110
 dist_mail_virtusertable:/etc/postfix/virtusertable:Virtusertable-File:read::fedora110
 dist_mail_local_host_names:/etc/postfix/local-host-names:Local-Host-Names-File:read::fedora110
+
+dist_mail_log:/var/log/maillog:Log-File:read::fedora120
+dist_mail_virtusertable:/etc/postfix/virtusertable:Virtusertable-File:read::fedora120
+dist_mail_local_host_names:/etc/postfix/local-host-names:Local-Host-Names-File:read::fedora120
 
 dist_mail_log:/var/log/mail:Log-File:read::suse72
 dist_mail_virtusertable:/etc/postfix/virtusertable:Virtusertable-File:read::suse72
@@ -246,6 +258,10 @@ dist_mail_log:/var/log/mail:Log-File:read::suse111
 dist_mail_virtusertable:/etc/postfix/virtusertable:Virtusertable-File:read::suse111
 dist_mail_local_host_names:/etc/postfix/local-host-names:Local-Host-Names-File:read::suse111
 
+dist_mail_log:/var/log/mail:Log-File:read::suse112
+dist_mail_virtusertable:/etc/postfix/virtusertable:Virtusertable-File:read::suse112
+dist_mail_local_host_names:/etc/postfix/local-host-names:Local-Host-Names-File:read::suse112
+
 dist_mail_log:/var/log/mail.log:Log-File:read::debian30
 dist_mail_virtusertable:/etc/postfix/virtusertable:Virtusertable-File:read::debian30
 dist_mail_local_host_names:/etc/postfix/local-host-names:Local-Host-Names-File:read::debian30
@@ -261,6 +277,10 @@ dist_mail_local_host_names:/etc/postfix/local-host-names:Local-Host-Names-File:r
 dist_mail_log:/var/log/mail.log:Log-File:read::debian50
 dist_mail_virtusertable:/etc/postfix/virtusertable:Virtusertable-File:read::debian50
 dist_mail_local_host_names:/etc/postfix/local-host-names:Local-Host-Names-File:read::debian50
+
+dist_mail_log:/var/log/mail.log:Log-File:read::debian60
+dist_mail_virtusertable:/etc/postfix/virtusertable:Virtusertable-File:read::debian60
+dist_mail_local_host_names:/etc/postfix/local-host-names:Local-Host-Names-File:read::debian60
 
 dist_mail_log:/var/log/mail.log:Log-File:read::debiantesting/unstable0
 dist_mail_virtusertable:/etc/postfix/virtusertable:Virtusertable-File:read::debiantesting/unstable0
