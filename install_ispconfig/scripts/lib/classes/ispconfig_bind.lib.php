@@ -65,7 +65,7 @@ function make_named($server_id) {
     $ip_addresses[] = $ip3.".".$ip2.".".$ip1;
   }
 
-  $ip_addresses = array_unique($ip_addresses);
+  if(is_array($ip_addresses)) $ip_addresses = array_unique($ip_addresses);
 
   if(is_array($ip_addresses) && !empty($ip_addresses)){
     foreach($ip_addresses as $ip_address){
@@ -114,7 +114,7 @@ function make_named($server_id) {
   $mod->tpl->parse('TABLE', table);
 
   $named_text = trim($mod->tpl->fetch());
-  $named_text .= $mod->file->manual_entries($mod->system->server_conf["server_bind_named_conf"], "//// MAKE MANUAL ENTRIES BELOW THIS LINE! ////")."\n";
+  $named_text .= $mod->file->manual_entries($mod->system->server_conf["server_bind_named_conf"], "//// MAKE MANUAL ENTRIES BELOW THIS LINE! ////");
 
   if(!is_file($mod->system->server_conf["server_bind_named_conf"])) $mod->log->phpcaselog(touch($mod->system->server_conf["server_bind_named_conf"]), "create ".$mod->system->server_conf["server_bind_named_conf"], $this->FILE, __LINE__);
 
@@ -122,6 +122,7 @@ function make_named($server_id) {
     $mod->log->caselog("cp -fr ".$mod->system->server_conf["server_bind_named_conf"]." ".$mod->system->server_conf["server_bind_named_conf"]."~", $this->FILE, __LINE__);
     $mod->system->chown($mod->system->server_conf["server_bind_named_conf"]."~", $mod->system->server_conf["server_bind_user"], $mod->system->server_conf["server_bind_group"]);
     $mod->file->wf($mod->system->server_conf["server_bind_named_conf"], $named_text);
+    $mod->file->add_trailing_newline($mod->system->server_conf["server_bind_named_conf"]);
     $bind_restart = 1;
   }
 
@@ -298,7 +299,7 @@ function make_zonefile($doc_id) {
 
   $mod->tpl->parse('TABLE', table);
 
-  $zonefile_text = $mod->tpl->fetch();
+  $zonefile_text = rtrim($mod->tpl->fetch());
   $zonefile_text .= $mod->file->manual_entries($bind_file, ";;;; MAKE MANUAL ENTRIES BELOW THIS LINE! ;;;;");
 
   if(!is_file($bind_file)) $mod->log->phpcaselog(touch($bind_file), "create ".$bind_file, $this->FILE, __LINE__);
@@ -315,7 +316,7 @@ function make_zonefile($doc_id) {
       $mod->system->chown($bind_file."~", $mod->system->server_conf["server_bind_user"], $mod->system->server_conf["server_bind_group"]);
     }
     $mod->file->wf($bind_file, $zonefile_text);
-        $mod->file->add_trailing_newline($bind_file);
+    $mod->file->add_trailing_newline($bind_file);
     $bind_restart = 1;
   } else {
     $bind_restart = 0;
@@ -387,7 +388,7 @@ function make_reverse_zonefile($server_id) {
       }
       $mod->tpl->parse('TABLE', table);
 
-      $named_text = $mod->tpl->fetch();
+      $named_text = rtrim($mod->tpl->fetch());
       $named_text .= $mod->file->manual_entries($datei, ";;;; MAKE MANUAL ENTRIES BELOW THIS LINE! ;;;;");
 
       if(!is_file($datei)) $mod->log->phpcaselog(touch($datei), "create ".$datei, $this->FILE, __LINE__);
@@ -404,6 +405,7 @@ function make_reverse_zonefile($server_id) {
           $mod->system->chown($datei."~", $mod->system->server_conf["server_bind_user"], $mod->system->server_conf["server_bind_group"]);
         }
         $mod->file->wf($datei, $named_text);
+        $mod->file->add_trailing_newline($datei);
         $bind_restart += 1;
       }
 

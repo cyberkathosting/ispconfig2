@@ -85,7 +85,7 @@ function make_local_host_names() {
   }
 
   $mod->tpl->parse(TABLE, table);
-  $sendmail_text = $mod->tpl->fetch();
+  $sendmail_text = rtrim($mod->tpl->fetch());
 
   list($sendmail_header, $sendmail_main) = explode("##----##", $sendmail_text);
   $sendmail_array = explode("\n", $sendmail_main);
@@ -221,7 +221,7 @@ function make_virtusertable() {
 
   $mod->tpl->parse(TABLE, table);
   if(!empty($users) || !empty($nousers)){
-    $virtusertable_text = $mod->tpl->fetch();
+    $virtusertable_text = rtrim($mod->tpl->fetch());
 
     list($virtusertable_header, $virtusertable_main) = explode("##----##", $virtusertable_text);
     $virtusertable_array = explode("\n", $virtusertable_main);

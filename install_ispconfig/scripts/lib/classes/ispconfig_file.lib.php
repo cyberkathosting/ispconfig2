@@ -107,8 +107,9 @@ function manual_entries($file, $separator = '#### MAKE MANUAL ENTRIES BELOW THIS
   if(is_file($file)){
     $content = $this->rf($file);
     $parts = explode($separator, $content);
-    $manual = "\n".trim($parts[1])."\n\n";
-    return $manual;
+    //$manual = "\n".trim($parts[1])."\n\n";
+    //return $manual;
+    return $parts[1];
   } else {
     return "";
   }
@@ -145,7 +146,7 @@ function add_trailing_newline($input, $file = 1) {
   } else {
     $content = $input;
   }
-  $content .= "\n";
+  if(substr($content,-2) != "\n\n") $content .= "\n";
   if($file){
     $this->wf($input, $content);
   } else {
