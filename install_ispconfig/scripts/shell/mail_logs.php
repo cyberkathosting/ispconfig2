@@ -95,7 +95,12 @@ $web_id = $web["doc_id"];
 $gruppe = "web".$web_id;
 $domain_arr[] = $domain;
 
-exec("grep -iw ".$mod->system->server_conf["server_mta"]." $dist_mail_log.$datum | grep -iw from | grep -iw $domain | grep -iw $monat_kurz | cut -f2 -d, | cut -f2 -d= > $dist_mail_log.$vhost");
+$awk = system("which awk", $awk_retval);
+if($awk_retval === 0){
+  exec("grep -iw ".$mod->system->server_conf["server_mta"]." $dist_mail_log.$datum | grep -iw from | grep -iw $domain | grep -iw $monat_kurz | grep size= | awk -F', size=' '{print $2}' | cut -d\, -f1 > $dist_mail_log.$vhost");
+} else {
+  exec("grep -iw ".$mod->system->server_conf["server_mta"]." $dist_mail_log.$datum | grep -iw from | grep -iw $domain | grep -iw $monat_kurz | cut -f2 -d, | cut -f2 -d= > $dist_mail_log.$vhost");
+}
 
 $codomains = $mod->db->queryAllRecords("SELECT isp_isp_domain.domain_domain from isp_dep,isp_isp_domain where isp_dep.child_doc_id = isp_isp_domain.doc_id and isp_dep.child_doctype_id ='$domain_doctype_id' and isp_dep.parent_doctype_id = '$web_doctype_id' and isp_dep.parent_doc_id = '".$web["doc_id"]."' and isp_isp_domain.status != 'd'");
 
