@@ -1147,7 +1147,7 @@ function _insert_dns($doc_id,$doctype_id,$web) {
           $parent_tree_id = $dns_record["tree_id"];
           $child_tree_id = $a_tree_id;
 
-          $sql = "INSERT INTO dns_dep (userid,parent_doc_id,parent_doctype_id,parent_tree_id,child_doc_id,child_doctype_id,child_tree_id,status) VALUES ('$userid','$parent_doc_id','$parent_doctype_id','$parent_tree_id','$child_doc_id','$child_doctype_id','$child_tree_id','$status')";
+          $sql = "INSERT INTO dns_dep (userid,groupid,parent_doc_id,parent_doctype_id,parent_tree_id,child_doc_id,child_doctype_id,child_tree_id,status) VALUES ('$userid','$groupid','$parent_doc_id','$parent_doctype_id','$parent_tree_id','$child_doc_id','$child_doctype_id','$child_tree_id','$status')";
           $go_api->db->query($sql);
         }
       }
@@ -1164,7 +1164,8 @@ function _insert_dns($doc_id,$doctype_id,$web) {
       $host = $go_api->db->queryOneRecord("SELECT web_host FROM isp_isp_web WHERE doc_id = $doc_id");
       $host = trim($host['web_host']);
 
-     $exist_mx_record = $go_api->db->queryOneRecord("SELECT * from dns_dep, dns_mx where dns_dep.child_doc_id = dns_mx.doc_id and dns_dep.child_doctype_id = $mx_record_doctype_id and dns_mx.mailserver = '".$mailserver."' and dns_mx.host = '' and dns_dep.parent_tree_id = '$ptid'");
+     //$exist_mx_record = $go_api->db->queryOneRecord("SELECT * from dns_dep, dns_mx where dns_dep.child_doc_id = dns_mx.doc_id and dns_dep.child_doctype_id = $mx_record_doctype_id and dns_mx.mailserver = '".$mailserver."' and dns_mx.host = '' and dns_dep.parent_tree_id = '$ptid'");
+     $exist_mx_record = $go_api->db->queryOneRecord("SELECT * from dns_dep, dns_mx where dns_dep.child_doc_id = dns_mx.doc_id and dns_dep.child_doctype_id = $mx_record_doctype_id and dns_mx.host = '' and dns_dep.parent_tree_id = '$ptid'");
 
       if($web["web_dns_mx"]) {
 
@@ -1195,7 +1196,7 @@ function _insert_dns($doc_id,$doctype_id,$web) {
               $parent_tree_id = $dns_record["tree_id"];
               $child_tree_id = $mx_tree_id;
 
-              $sql = "INSERT INTO dns_dep (userid,parent_doc_id,parent_doctype_id,parent_tree_id,child_doc_id,child_doctype_id,child_tree_id,status) VALUES ('$userid','$parent_doc_id','$parent_doctype_id','$parent_tree_id','$child_doc_id','$child_doctype_id','$child_tree_id','$status')";
+              $sql = "INSERT INTO dns_dep (userid,groupid,parent_doc_id,parent_doctype_id,parent_tree_id,child_doc_id,child_doctype_id,child_tree_id,status) VALUES ('$userid','$groupid','$parent_doc_id','$parent_doctype_id','$parent_tree_id','$child_doc_id','$child_doctype_id','$child_tree_id','$status')";
               $go_api->db->query($sql);
          }
 
@@ -1230,7 +1231,7 @@ function _insert_dns($doc_id,$doctype_id,$web) {
            $parent_tree_id = $dns_record["tree_id"];
            $child_tree_id = $spf_tree_id;
 
-           $sql = "INSERT INTO dns_dep (userid,parent_doc_id,parent_doctype_id,parent_tree_id,child_doc_id,child_doctype_id,child_tree_id,status) VALUES ('$userid','$parent_doc_id','$parent_doctype_id','$parent_tree_id','$child_doc_id','$child_doctype_id','$child_tree_id','$status')";
+           $sql = "INSERT INTO dns_dep (userid,groupid,parent_doc_id,parent_doctype_id,parent_tree_id,child_doc_id,child_doctype_id,child_tree_id,status) VALUES ('$userid','$groupid','$parent_doc_id','$parent_doctype_id','$parent_tree_id','$child_doc_id','$child_doctype_id','$child_tree_id','$status')";
            $go_api->db->query($sql);
          }
        }
