@@ -1,0 +1,12 @@
+<?
+
+/**********************************************
+* ISPConfig Help File
+* Version 1.2
+* Syntax: $hlp["FieldName"] = "HelpText";
+************************************************/
+
+$hlp["host"] = 'Please fill in just the subdomain. Example: if you want to create the CNAME record "www.example.com", fill in just "www" (without quotation marks).';
+$hlp["ziel"] = 'Please fill in the <b>full hostname</b> of the target host. For example, if "www.example.com" should point to "sub.example.com", fill in "sub.example.com" (without quotation marks); if "www.example.com" should point to "sub.myotherdomain.com", fill in "sub.myotherdomain.com" (again without quotation marks).';
+
+?>

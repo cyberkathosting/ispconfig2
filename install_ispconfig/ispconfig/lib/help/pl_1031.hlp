@@ -1,0 +1,19 @@
+<?
+
+/**********************************************
+* ISPConfig Help File
+* Version 1.2
+* Syntax: $hlp["FieldName"] = "HelpText";
+************************************************/
+
+$hlp["host"] = 'Please fill in just the subdomain. Example: if you want to create an SPF record for "www.example.com" (if you have email addresses of the form user@<b>www</b>.example.com), fill in just "www" (without quotation marks). Normally, you create SPF records for "example.com" without any subdomain because your email addresses usually have the form user@example.com - in this case just leave the Hostname field empty.';
+$hlp["a"] = 'Select Yes if you want to send emails from the server to which the A record of the hostname points.';
+$hlp["mx"] = 'Select Yes if you want to send emails from the server(s) to which the MX record(s) of the hostname point(s).';
+$hlp["ptr"] = 'Select Yes if you want to approve any host whose name ends with the domain of the current zone (e.g. example.com). (Expensive, unreliable and not recommended)';
+$hlp["a_break"] = 'If mails are sent from any other A records, you can list them here, one A record per line (e.g. "subdomain.myotherdomain.com" (without quotation marks)).';
+$hlp["mx_break"] = 'This is similar to the previous A records field, except that it takes domain names instead of full hostnames (one by line, e.g. "myotherdomain.com" (without quotation marks)) and approves all the MX servers of these domains.';
+$hlp["ip4_break"] = 'This is similar to the previous two fields, except that it takes IP addresses (IPv4) (one by line, e.g. 123.123.123.123). IP networks can be entered using CIDR notation, e.g. "192.0.2.0/24" (without quotation marks).';
+$hlp["include_break"] = 'Could mail from this hostname originate through servers belonging to some other domain? If you send mail through your ISP\'s servers, and the ISP has published an SPF record, name the ISP here (one record per line, e.g. "myisp.com" (without quotation marks)).';
+$hlp["all_"] = 'Please select if the above lines describe all the hosts that send mail from this hostname.';
+
+?>

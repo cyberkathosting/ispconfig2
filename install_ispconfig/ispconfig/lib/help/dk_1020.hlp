@@ -1,0 +1,13 @@
+<?
+
+/**********************************************
+* ISPConfig Help File
+* Version 1.2
+* Syntax: $hlp["FieldName"] = "HelpText";
+************************************************/
+
+$hlp["host"] = 'Please fill in just the subdomain. Example: if you want to create an MX record for "www.example.com" (if you have email addresses of the form user@<b>www</b>.example.com), fill in just "www" (without quotation marks). Normally, you create MX records for "example.com" without any subdomain because your email addresses usually have the form user@example.com - in this case just leave the Hostname field empty.';
+$hlp["prioritaet"] = 'You can have multiple MX records. With the Priority field, you can specify which mailserver has the highest priority, i.e., which server the mails usually go to unless the server is down. A low number means a higher priority, e.g. 10 has a higher priority than 90.';
+$hlp["mailserver"] = 'Please fill in the <b>full hostname</b> of the mailserver. For example, if mails should go to "mail.example.com", fill in "mail.example.com" (without quotation marks); if mails should go to "mail.myotherdomain.com", fill in "mail.myotherdomain.com" (again without quotation marks).';
+
+?>

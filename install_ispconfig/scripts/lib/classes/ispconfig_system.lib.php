@@ -565,6 +565,7 @@ function remove_user_from_group($group, $user = 'admispconfig'){
     if($group_name == $group){
       if($group_users == '') return;
       $group_users = explode(",", str_replace(" ", "", $group_users));
+      if(!in_array($user, $group_users)) return;
       foreach($group_users as $key => $val){
         if($val == $user) unset($group_users[$key]);
       }

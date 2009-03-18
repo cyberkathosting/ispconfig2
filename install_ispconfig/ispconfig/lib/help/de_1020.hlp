@@ -1,0 +1,13 @@
+<?
+
+/**********************************************
+* ISPConfig Help File
+* Version 1.2
+* Syntax: $hlp["FieldName"] = "HelpText";
+************************************************/
+
+$hlp["host"] = 'Bitte fügen Sie nur die Subdomain ein. Beispiel: Wenn Sie einen MX-Record für "www.example.com" erstellen möchten (wenn Sie Email-Adressen der Form user@<b>www</b>.example.com haben), fügen Sie nur "www" (ohne Anführungszeichen) ein. Normalerweise erstellen Sie MX-Records für "example.com" (ohne Subdomain), weil Email-Adressen üblicherweise die Form user@example.com haben - in diesem Fall lassen Sie das Hostname-Feld einfach leer.';
+$hlp["prioritaet"] = 'Sie können mehrere MX-Records haben. Mit dem Priorität-Feld können Sie angeben, welcher Mailserver die höchste Priorität hat, d.h., zu welchem Mailserver die Emails geliefert werden (außer, der Mailserver ist grade down). Eine niedrige Nummer bedeutet eine höhere Priorität, d.h., 10 hat eine höhere Priorität als 90.';
+$hlp["mailserver"] = 'Bitte fügen Sie den <b>vollen Hostnamen</b> des Mailservers ein. Wenn Mails zu dem Server "mail.example.com" geliefert werden sollen, fügen Sie "mail.example.com" (ohne Anführungszeichen) ein; wenn Mails zu "mail.myotherdomain.com" geliefert werden sollen, fügen Sie "mail.myotherdomain.com" (wieder ohne Anführungszeichen) ein.';
+
+?>

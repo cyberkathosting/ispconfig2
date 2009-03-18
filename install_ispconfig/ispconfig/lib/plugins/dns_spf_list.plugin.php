@@ -38,7 +38,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  # Datum:
  #
  #############################################################
- 
+
  if(CONFIG_LOADED != 1) die('Direct access not permitted.');
 
 class dns_spf_list_plugin {
@@ -67,6 +67,14 @@ class dns_spf_list_plugin {
     foreach($spfs as $spf){
             $spf_id = $spf["child_doc_id"];
             $spf_data = $go_api->db->queryOneRecord("SELECT * FROM dns_spf WHERE doc_id = '$spf_id'");
+
+            if(substr(trim($spf_data["host"]),-1) == '.'){
+              if(substr(trim($spf_data["host"]),-(strlen($soa["dns_soa"])+2)) == '.'.$soa["dns_soa"].'.'){
+                $spf_data["host"] = substr(trim($spf_data["host"]),0,-(strlen($soa["dns_soa"])+2));
+              } else {
+                $spf_data["host"] = substr(trim($spf_data["host"]),0,-1);
+              }
+            }
 
                 $html_out .= '
         <tr>

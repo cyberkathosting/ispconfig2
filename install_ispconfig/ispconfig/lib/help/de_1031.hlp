@@ -1,0 +1,19 @@
+<?
+
+/**********************************************
+* ISPConfig Help File
+* Version 1.2
+* Syntax: $hlp["FieldName"] = "HelpText";
+************************************************/
+
+$hlp["host"] = 'Bitte fügen Sie nur die Subdomain ein. Beispiel: Wenn Sie einen SPF-Record für "www.example.com" erstellen möchten (wenn Sie Email-Adressen der Form user@<b>www</b>.example.com haben), fügen Sie nur "www" (ohne Anführungszeichen) ein. Normalerweise erstellen Sie SPF-Records für "example.com" (ohne Subdomain), weil Email-Adressen üblicherweise die Form user@example.com haben - in diesem Fall lassen Sie das Host-Feld einfach leer.';
+$hlp["a"] = 'Wählen Sie Ja, wenn Sie Emails von dem Server verschicken möchten, auf den der A-Record des Hostnamens verweist.';
+$hlp["mx"] = 'Wählen Sie Ja, wenn Sie Emails von dem Server verschicken möchten, auf den der MX-Record des Hostnamens verweist.';
+$hlp["ptr"] = 'Wählen Sie Ja, wenn Sie alle Hosts zulassen wollen, die mit der aktuellen Domain enden (e.g. example.com). (Teuer, unzuverlässig und nicht empfohlen)';
+$hlp["a_break"] = 'Wenn Emails von anderen A-Records verschickt werden, können Sie sie hier aufführen, ein A-Record pro Zeile (z.B. "subdomain.myotherdomain.com" (ohne Anführungszeichen)).';
+$hlp["mx_break"] = 'Ähnlich dem vorhergehenden Feld, außer daß hier Domains anstelle von ganzen Hostnamen eingetragen werden (eine pro Zeile, z.B. "myotherdomain.com" (ohne Anführungszeichen)); dadurch werden alle MX-Records der aufgeführten Domains zugelassen.';
+$hlp["ip4_break"] = 'Ähnlich den vorhergehenden zwei Feldern, außer daß hier IP-Adressen (IPv4) eingetragen werden (eine pro Zeile, e.g. 123.123.123.123). IP-Netzwerke können mit der CIDR-Notation eingetragen werden, z.B. "192.0.2.0/24" (ohne Anführungszeichen).';
+$hlp["include_break"] = 'Können Emails von diesem Hostnamen von Servern anderer Domains versendet werden? Falls Sie Emails durch den Server Ihres ISPs versenden und der ISP selber einen SPF-Record hat, führen Sie den ISP hier auf (ein Eintrag pro Zeile, z.B. "myisp.com" (ohne Anführungszeichen)).';
+$hlp["all_"] = 'Bitte wählen Sie, ob die vorhergehenden Angaben alle Hosts beschreiben, die Emails für diesen Hostnamen versenden.';
+
+?>

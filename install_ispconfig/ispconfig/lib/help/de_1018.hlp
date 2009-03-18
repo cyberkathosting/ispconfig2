@@ -1,0 +1,12 @@
+<?
+
+/**********************************************
+* ISPConfig Help File
+* Version 1.2
+* Syntax: $hlp["FieldName"] = "HelpText";
+************************************************/
+
+$hlp["host"] = 'Bitte fügen Sie bloß die Subdomain ein. Beispiel: wenn Sie den A-Record "www.example.com" erstellen möchten, fügen Sie in das Feld nur "www" (ohne Anführungszeichen) ein.';
+$hlp["ip_adresse"] = "Bitte fügen Sie die IP-Adresse (IPv4) ein, auf die der A-Record verweisen soll. Beispiel: 123.123.123.123";
+
+?>
