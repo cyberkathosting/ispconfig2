@@ -404,11 +404,14 @@ global $go_api, $go_info,$s,$HTTP_POST_VARS,$old_form_data;
      }
 
      // überprüfe email alias auf richtige Angaben
+     $user["user_emailalias"] = str_replace(",", "\r\n", $user["user_emailalias"]);
+     $user["user_emailalias"] = str_replace(";", "\r\n", $user["user_emailalias"]);
+     $user["user_emailalias"] = str_replace(" ", "\r\n", $user["user_emailalias"]);
      $emailalias = explode ("\r\n",$user["user_emailalias"]);
      $emailalias_new = '';
      foreach($emailalias as $em_ad) {
         $em_tmp = explode("@",$em_ad);
-        $tmpals = strtolower($em_tmp[0]);
+        $tmpals = trim(strtolower($em_tmp[0]));
         if(!empty($tmpals)) $emailalias_new[] = $tmpals;
      }
      //$go_api->db->query("UPDATE isp_isp_user SET user_emailalias = '$emailalias_new' where doc_id = $doc_id");
@@ -507,10 +510,14 @@ global $go_api, $go_info,$s,$HTTP_POST_VARS,$old_form_data;
         // Email-Weiterleitung entfernen
             ///////////////////////////////////////////////////////
 
+        $user["user_emailweiterleitung"] = str_replace(",", "\r\n", $user["user_emailweiterleitung"]);
+        $user["user_emailweiterleitung"] = str_replace(";", "\r\n", $user["user_emailweiterleitung"]);
+        $user["user_emailweiterleitung"] = str_replace(" ", "\r\n", $user["user_emailweiterleitung"]);
         $emailweiterleitung = explode ("\r\n",$user["user_emailweiterleitung"]);
         if(is_array($emailweiterleitung)) {
                 $emailweiterleitung = array_unique($emailweiterleitung);
                 foreach($emailweiterleitung as $val) {
+                        $val = trim($val);
                         if(!empty($val) and stristr($val,"@")) $tmp_new[] = $val;
                 }
                 $emailweiterleitung = @implode($tmp_new,"\r\n");
