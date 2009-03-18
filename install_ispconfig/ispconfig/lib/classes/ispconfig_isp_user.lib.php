@@ -521,7 +521,39 @@ global $go_api, $go_info,$s,$HTTP_POST_VARS,$old_form_data;
                         if(!empty($val) and stristr($val,"@")) $tmp_new[] = $val;
                 }
                 $emailweiterleitung = @implode($tmp_new,"\r\n");
+                unset($tmp_new);
                 $go_api->db->query("UPDATE isp_isp_user SET user_emailweiterleitung = '$emailweiterleitung' where doc_id = $doc_id");
+        }
+
+        // check format of whitelist and blacklist addresses
+        $user["spam_whitelist"] = str_replace(",", "\r\n", $user["spam_whitelist"]);
+        $user["spam_whitelist"] = str_replace(";", "\r\n", $user["spam_whitelist"]);
+        $user["spam_whitelist"] = str_replace(" ", "\r\n", $user["spam_whitelist"]);
+        $spam_whitelist = explode ("\r\n",$user["spam_whitelist"]);
+        if(is_array($spam_whitelist)) {
+                $spam_whitelist = array_unique($spam_whitelist);
+                foreach($spam_whitelist as $val) {
+                        $val = trim($val);
+                        if(!empty($val)) $tmp_new[] = $val;
+                }
+                $spam_whitelist = @implode($tmp_new,"\r\n");
+                unset($tmp_new);
+                $go_api->db->query("UPDATE isp_isp_user SET spam_whitelist = '$spam_whitelist' where doc_id = $doc_id");
+        }
+
+        $user["spam_blacklist"] = str_replace(",", "\r\n", $user["spam_blacklist"]);
+        $user["spam_blacklist"] = str_replace(";", "\r\n", $user["spam_blacklist"]);
+        $user["spam_blacklist"] = str_replace(" ", "\r\n", $user["spam_blacklist"]);
+        $spam_blacklist = explode ("\r\n",$user["spam_blacklist"]);
+        if(is_array($spam_blacklist)) {
+                $spam_blacklist = array_unique($spam_blacklist);
+                foreach($spam_blacklist as $val) {
+                        $val = trim($val);
+                        if(!empty($val)) $tmp_new[] = $val;
+                }
+                $spam_blacklist = @implode($tmp_new,"\r\n");
+                unset($tmp_new);
+                $go_api->db->query("UPDATE isp_isp_user SET spam_blacklist = '$spam_blacklist' where doc_id = $doc_id");
         }
 
         // wenn keine Cron Jobs erlaubt, Cron Jobs deaktivieren
