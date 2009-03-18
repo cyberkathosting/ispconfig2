@@ -41,6 +41,12 @@ function make_passwd_dav($doc_id) {
   $web_dep = $mod->db->queryOneRecord($sql);
   $web_doc_id = $web_dep["parent_doc_id"];
   $web_path = $mod->system->server_conf["server_path_httpd_root"]."/web".$web_doc_id;
+  $web = $mod->db->queryOneRecord("SELECT * FROM isp_isp_web WHERE doc_id = $web_doc_id");
+  if(!$web['web_webdav']){
+    $mod->file->wf($web_path.'/passwd.dav', '');
+    $mod->system->remove_user_from_group("web".$web_doc_id, $isp_web->apache_user);
+    return;
+  }
 
   // Template Öffnen
   $mod->tpl->clear_all();
@@ -52,11 +58,13 @@ function make_passwd_dav($doc_id) {
       $mod->tpl->assign( array( USER => $web_user['user_username'],
                                 PASSWORT => $mod->system->getpasswd($web_user['user_username'])));
       $mod->tpl->parse(USER_PASSWORD,".user_password");
+      $mod->system->add_user_to_group("web".$web_doc_id, $isp_web->apache_user);
     }
   } else {
     $mod->tpl->assign( array( USER => '',
                               PASSWORT => ''));
     $mod->tpl->parse(USER_PASSWORD,".user_password");
+    $mod->system->remove_user_from_group("web".$web_doc_id, $isp_web->apache_user);
   }
 
   $mod->tpl->parse(TABLE, table);

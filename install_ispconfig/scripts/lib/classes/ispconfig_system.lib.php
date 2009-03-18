@@ -556,6 +556,32 @@ function add_user_to_group($group, $user = 'admispconfig'){
   }
 }
 
+function remove_user_from_group($group, $user = 'admispconfig'){
+  global $mod;
+  $group_file = $mod->file->rf($this->server_conf["group_datei"]);
+  $group_file_lines = explode("\n", $group_file);
+  foreach($group_file_lines as $group_file_line){
+    list($group_name,$group_x,$group_id,$group_users) = explode(":",$group_file_line);
+    if($group_name == $group){
+      if($group_users == '') return;
+      $group_users = explode(",", str_replace(" ", "", $group_users));
+      foreach($group_users as $key => $val){
+        if($val == $user) unset($group_users[$key]);
+      }
+      $group_users = implode(",", $group_users);
+      if(substr($group_users,0,1) == ",") $group_users = substr($group_users,1);
+      $group_file_line = $group_name.":".$group_x.":".$group_id.":".$group_users;
+    }
+    $new_group_file[] = $group_file_line;
+  }
+  $new_group_file = implode("\n", $new_group_file);
+  $mod->file->wf($this->server_conf["group_datei"], $new_group_file);
+  $mod->file->remove_blank_lines($this->server_conf["group_datei"]);
+  if($this->server_conf["shadow_datei"] != "/etc/shadow"){
+    $mod->log->caselog("pwd_mkdb ".$this->server_conf["shadow_datei"]." &> /dev/null", $this->FILE, __LINE__);
+  }
+}
+
 function usermod($user, $groups){
   global $mod;
   if($this->is_user($user)){
