@@ -2383,10 +2383,10 @@ function dienste(){
     }
 
   if(strstr($dist, "freebsd")){
-    exec("netstat -ta | grep tcp | cut -f2 -d. | cut -f1 -d' '", $services);
+    exec("netstat -tl | grep tcp | cut -f2 -d. | cut -f1 -d' '", $services);
   } else {
-    exec("netstat -ta | grep tcp | cut -f2 -d: | cut -f1 -d' '", $services);
-    exec("netstat -ta | grep tcp6 | cut -f4 -d: | cut -f1 -d' '", $services2);
+    exec("netstat -tl | grep tcp | cut -f2 -d: | cut -f1 -d' '", $services);
+    exec("netstat -tl | grep tcp6 | cut -f4 -d: | cut -f1 -d' '", $services2);
   }
   $services = array_merge($services, $services2);
   $services = array_unique($services);
