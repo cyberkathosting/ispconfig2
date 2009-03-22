@@ -1421,6 +1421,7 @@ Group web".$web["doc_id"];
               $domain["domain_weiterleitung"] .= '@';
             }
             $domain["domain_weiterleitung"] .= strtolower($domain_weiterleitung_url_parts['host']);
+            if($domain_weiterleitung_url_parts['port']) $domain["domain_weiterleitung"] .= ':'.$domain_weiterleitung_url_parts['port'];
             if($domain_weiterleitung_url_parts['path']) $domain["domain_weiterleitung"] .= $domain_weiterleitung_url_parts['path'];
             if($domain_weiterleitung_url_parts['query']) $domain["domain_weiterleitung"] .= '?'.$domain_weiterleitung_url_parts['query'];
             if($domain_weiterleitung_url_parts['fragment']) $domain["domain_weiterleitung"] .= '#'.$domain_weiterleitung_url_parts['fragment'];
