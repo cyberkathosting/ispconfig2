@@ -2022,8 +2022,17 @@ function make_cron($doc_id){
 
 function apache_user(){
   global $mod;
+  $envvars_file = '/etc/apache2/envvars';
+  $envvars_contains_apache_user = false;
   if(is_file('/etc/apache2/envvars')){
-    $output = system('grep APACHE_RUN_USER /etc/apache2/envvars');
+    $envvars = $mod->file->no_comments($envvars_file);
+    if(strstr($envvars, 'APACHE_RUN_USER=')){
+      $envvars_contains_apache_user = true;
+    }
+  }
+
+  if($envvars_contains_apache_user){
+    $output = system('grep APACHE_RUN_USER '.$envvars_file);
     $apache_user = str_replace('export APACHE_RUN_USER=', '', $output);
   } else {
     $httpd_conf = $mod->system->server_conf["dist_httpd_conf"];
@@ -2047,7 +2056,7 @@ function apache_user(){
   if(isset($apache_user) && $mod->system->is_user($apache_user)){
     return $apache_user;
   } else {
-    return "root";
+    return $mod->system->server_conf['server_httpd_user'];
   }
 }
 
