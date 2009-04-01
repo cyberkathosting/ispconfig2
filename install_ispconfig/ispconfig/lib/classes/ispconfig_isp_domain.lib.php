@@ -90,7 +90,11 @@ global $go_api, $go_info;
     }
 
     $domain = $go_api->db->queryOneRecord("SELECT * from isp_nodes, isp_isp_domain where isp_nodes.doc_id = isp_isp_domain.doc_id and isp_nodes.doctype_id = '1015' and isp_isp_domain.doc_id = '$doc_id'");
-    $domaincount = $go_api->db->queryOneRecord("SELECT count(doc_id) as domain_count from isp_isp_domain where domain_host = '".$domain["domain_host"]."' and domain_domain = '".$domain["domain_domain"]."'");
+    if($domain["domain_host"] != ''){
+      $domaincount = $go_api->db->queryOneRecord("SELECT count(doc_id) as domain_count from isp_isp_domain where domain_host = '".$domain["domain_host"]."' and domain_domain = '".$domain["domain_domain"]."'");
+    } else {
+      $domaincount = $go_api->db->queryOneRecord("SELECT count(doc_id) as domain_count from isp_isp_domain where (domain_host = '".$domain["domain_host"]."' OR domain_host IS NULL) and domain_domain = '".$domain["domain_domain"]."'");
+    }
         if($domaincount["domain_count"] > 1 or $go_api->db->queryOneRecord("SELECT doc_id from isp_isp_web where web_host = '".$domain["domain_host"]."' and web_domain = '".$domain["domain_domain"]."'")) {
         $status = "DELETE";
         $errorMessage  = $go_api->lng("error_web_doppelt")." ".$domain["domain_host"].".".$domain["domain_domain"]." ".$go_api->lng("angelegt");
@@ -101,8 +105,8 @@ global $go_api, $go_info;
     $web = $go_api->db->queryOneRecord($sql);
     $go_api->db->query("UPDATE isp_isp_domain SET domain_ip = '".$web["web_ip"]."' where doc_id = $doc_id");
     $domain["domain_ip"] = $web["web_ip"];
-	
-	// Web Status auf update setzen
+
+        // Web Status auf update setzen
     $web_doc_id = $web["doc_id"];
     $go_api->db->query("UPDATE isp_isp_web SET status = 'u' where status != 'n' and doc_id = '$web_doc_id'");
 
@@ -186,13 +190,13 @@ global $go_api, $go_info;
         $errorMessage .= $go_api->lng("err_0001");
     }
     unset($haupt_domain);
-	
-	// Check domain against regex
-	$tmp_fqdn = ($domain["domain_host"] != '' && $domain["domain_host"] != '*')?$domain["domain_host"].'.'.$domain["domain_domain"]:$domain["domain_domain"];
-	if(!preg_match("/^([a-z0-9\-]+\.)+[a-z]{2,6}$/ix", $tmp_fqdn)) {
-		$status = "DELETE";
+
+        // Check domain against regex
+        $tmp_fqdn = ($domain["domain_host"] != '' && $domain["domain_host"] != '*')?$domain["domain_host"].'.'.$domain["domain_domain"]:$domain["domain_domain"];
+        if(!preg_match("/^([a-z0-9\-]+\.)+[a-z]{2,6}$/ix", $tmp_fqdn)) {
+                $status = "DELETE";
         $errorMessage .= $go_api->lng("Invalid domain name").': "'.$tmp_fqdn.'"';
-	}
+        }
 
 
     if($status == "DELETE") {
@@ -232,16 +236,16 @@ global $go_api, $go_info;
 function domain_update($doc_id, $doctype_id, $die_on_error = '1') {
 global $go_api, $go_info,$s,$old_form_data;
 
-    // If the currently logged in user is not admin or reseller, we will not allow 
-	// him to change the domain and hostname
-	$tmp_groups = $go_api->groups->myGroups();
-	if(!is_array($tmp_groups)) {
-		$sql = "UPDATE isp_isp_domain SET domain_host = '$old_form_data[domain_host]', domain_domain = '$old_form_data[domain_domain]' WHERE doc_id = '$doc_id'";
-		$go_api->db->query($sql);
-	}
-	
-	
-	// Remove http:// and https:// and spaces from domains and hosts
+    // If the currently logged in user is not admin or reseller, we will not allow
+        // him to change the domain and hostname
+        $tmp_groups = $go_api->groups->myGroups();
+        if(!is_array($tmp_groups)) {
+                $sql = "UPDATE isp_isp_domain SET domain_host = '$old_form_data[domain_host]', domain_domain = '$old_form_data[domain_domain]' WHERE doc_id = '$doc_id'";
+                $go_api->db->query($sql);
+        }
+
+
+        // Remove http:// and https:// and spaces from domains and hosts
     if($tmp_domains = $go_api->db->queryAllRecords("SELECT * FROM isp_isp_domain WHERE domain_host LIKE 'http://%' OR domain_host LIKE 'https://%' OR domain_host LIKE ' %' OR domain_host LIKE '% ' OR domain_domain LIKE 'http://%' OR domain_domain LIKE 'https://%' OR domain_domain LIKE ' %' OR domain_domain LIKE '% '")){
       foreach($tmp_domains as $tmp_domain){
         $tmp_domain['domain_host'] = str_replace('http://', '', $tmp_domain['domain_host']);
@@ -268,6 +272,18 @@ global $go_api, $go_info,$s,$old_form_data;
       unset($tmp_webs);
     }
 
+    $domain = $go_api->db->queryOneRecord("SELECT * from isp_nodes, isp_isp_domain where isp_nodes.doc_id = isp_isp_domain.doc_id and isp_nodes.doctype_id = '1015' and isp_isp_domain.doc_id = '$doc_id'");
+    if($domain["domain_host"] != ''){
+      $domaincount = $go_api->db->queryOneRecord("SELECT count(doc_id) as domain_count from isp_isp_domain where domain_host = '".$domain["domain_host"]."' and domain_domain = '".$domain["domain_domain"]."'");
+    } else {
+      $domaincount = $go_api->db->queryOneRecord("SELECT count(doc_id) as domain_count from isp_isp_domain where (domain_host = '".$domain["domain_host"]."' OR domain_host IS NULL) and domain_domain = '".$domain["domain_domain"]."'");
+    }
+    if($domaincount["domain_count"] > 1 or $go_api->db->queryOneRecord("SELECT doc_id from isp_isp_web where web_host = '".$domain["domain_host"]."' and web_domain = '".$domain["domain_domain"]."'")) {
+        $go_api->db->query("UPDATE isp_isp_domain SET domain_host = '".$old_form_data[domain_host]."', domain_domain = '".$old_form_data[domain_domain]."' WHERE doc_id = $doc_id");
+        $status = "NOTIFY";
+        $errorMessage  .= $go_api->lng("error_web_doppelt")." ".$domain["domain_host"].".".$domain["domain_domain"]." ".$go_api->lng("angelegt");
+    }
+
     $go_api->db->query("UPDATE isp_isp_domain SET status = 'u' where status != 'n' and doc_id = '$doc_id'");
     //$domain = $go_api->db->queryOneRecord("select * from isp_isp_domain where doc_id = '$doc_id'");
     // IP Adresse der Domain vom Web holen
@@ -275,7 +291,7 @@ global $go_api, $go_info,$s,$old_form_data;
     //$web = $go_api->db->queryOneRecord($sql);
     //$go_api->db->query("UPDATE isp_isp_domain SET domain_ip = '".$web["web_ip"]."' where doc_id = $doc_id");
     $domain = $go_api->db->queryOneRecord("select * from isp_isp_domain where doc_id = '$doc_id'");
-	
+
 
     // IP Adresse der Domain vom Web holen
     $sql = "SELECT * from isp_dep,isp_isp_web where isp_dep.parent_doc_id = isp_isp_web.doc_id and isp_dep.parent_doctype_id = ".$this->web_doctype_id." and isp_dep.child_doc_id = $doc_id and isp_dep.child_doctype_id = $doctype_id";
@@ -316,26 +332,26 @@ global $go_api, $go_info,$s,$old_form_data;
                 }
 
         }
-	
-	// Check domain against regex
-	$tmp_fqdn = ($domain["domain_host"] != '' && $domain["domain_host"] != '*')?$domain["domain_host"].'.'.$domain["domain_domain"]:$domain["domain_domain"];
-	if(!preg_match("/^([a-z0-9\-]+\.)+[a-z]{2,6}$/ix", $tmp_fqdn)) {
-		$old_domain = addslashes($old_form_data["domain_domain"]);
+
+        // Check domain against regex
+        $tmp_fqdn = ($domain["domain_host"] != '' && $domain["domain_host"] != '*')?$domain["domain_host"].'.'.$domain["domain_domain"]:$domain["domain_domain"];
+        if(!preg_match("/^([a-z0-9\-]+\.)+[a-z]{2,6}$/ix", $tmp_fqdn)) {
+                $old_domain = addslashes($old_form_data["domain_domain"]);
         $old_host = addslashes($old_form_data["domain_host"]);
         $go_api->db->query("UPDATE isp_isp_domain SET domain_domain = '$old_domain', domain_host = '$old_host' WHERE doc_id = $doc_id");
-		$status = 'NOTIFY';
+                $status = 'NOTIFY';
         $errorMessage .= $go_api->lng("Invalid domain name").': "'.$tmp_fqdn.'"';
-	}
-	
-	// Checke, wenn die Domain bereits existiert, es sich also faktisch um eine
+        }
+
+        // Checke, wenn die Domain bereits existiert, es sich also faktisch um eine
     // Sub-Domain handelt, ob der Eigentümer identisch des neuen Eintrages mit dem
     // Hauptdomain-eigentümer identisch ist.
-	$domain = $go_api->db->queryOneRecord("SELECT * from isp_nodes, isp_isp_domain where isp_nodes.doc_id = isp_isp_domain.doc_id and isp_nodes.doctype_id = '1015' and isp_isp_domain.doc_id = '$doc_id'");
+        $domain = $go_api->db->queryOneRecord("SELECT * from isp_nodes, isp_isp_domain where isp_nodes.doc_id = isp_isp_domain.doc_id and isp_nodes.doctype_id = '1015' and isp_isp_domain.doc_id = '$doc_id'");
     $haupt_domain = $go_api->db->queryOneRecord("SELECT * from isp_nodes, isp_isp_domain where isp_nodes.doc_id = isp_isp_domain.doc_id and isp_nodes.doctype_id = '1015' and isp_isp_domain.domain_domain = '".$domain["domain_domain"]."'");
-	if($old_form_data["domain_domain"] != $domain["domain_domain"] && $haupt_domain["userid"] != $domain["userid"]) {
-		$old_domain = addslashes($old_form_data["domain_domain"]);
+        if($old_form_data["domain_domain"] != $domain["domain_domain"] && $haupt_domain["userid"] != $domain["userid"]) {
+                $old_domain = addslashes($old_form_data["domain_domain"]);
         $go_api->db->query("UPDATE isp_isp_domain SET domain_domain = '$old_domain' WHERE doc_id = $doc_id");
-		$status = 'NOTIFY';
+                $status = 'NOTIFY';
         $errorMessage .= $go_api->lng("err_0001");
     }
     unset($haupt_domain);
@@ -352,8 +368,8 @@ global $go_api, $go_info,$s,$old_form_data;
 
     // ISPConfig Rechte in nodes Table checken
     $go_api->isp->check_perms($doc_id, $doctype_id);
-	
-	///////////////////////////////////
+
+        ///////////////////////////////////
     // NOTIFY Error Handler
     ///////////////////////////////////
 
@@ -371,14 +387,14 @@ global $go_api, $go_info,$s,$old_form_data;
 function domain_delete($doc_id, $doctype_id, $action, $die_on_error = '1') {
 global $go_api, $go_info;
 
-	// If the currently logged in user is not admin or reseller, we will not allow 
-	// him to delete this record
-	$tmp_groups = $go_api->groups->myGroups();
-	if(!is_array($tmp_groups)) {
-		$sql = "UPDATE isp_nodes SET status = 1 WHERE doc_id = '$doc_id' AND doctype_id = '$doctype_id'";
-		$go_api->db->query($sql);
-		$go_api->errorMessage($go_api->lng("error_domain_delete_client").$go_api->lng("weiter_link"));
-	}
+        // If the currently logged in user is not admin or reseller, we will not allow
+        // him to delete this record
+        $tmp_groups = $go_api->groups->myGroups();
+        if(!is_array($tmp_groups)) {
+                $sql = "UPDATE isp_nodes SET status = 1 WHERE doc_id = '$doc_id' AND doctype_id = '$doctype_id'";
+                $go_api->db->query($sql);
+                $go_api->errorMessage($go_api->lng("error_domain_delete_client").$go_api->lng("weiter_link"));
+        }
 
 ###########################
     $web = $go_api->db->queryOneRecord("SELECT * from isp_isp_web, isp_dep where
