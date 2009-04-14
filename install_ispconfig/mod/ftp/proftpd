@@ -278,6 +278,14 @@ dist_ftp_conf:/etc/proftpd.conf:Config-File:read::debian50
 dist_ftp_version:standalone:Server-Version:exit::debian50
 dist_ftp_log:/var/log/xferlog:Log-File:read::debian50
 
+dist_ftp_conf:/etc/proftpd.conf:Config-File:read::debian501
+dist_ftp_version:standalone:Server-Version:exit::debian501
+dist_ftp_log:/var/log/xferlog:Log-File:read::debian501
+
+dist_ftp_conf:/etc/proftpd.conf:Config-File:read::debian502
+dist_ftp_version:standalone:Server-Version:exit::debian502
+dist_ftp_log:/var/log/xferlog:Log-File:read::debian502
+
 dist_ftp_conf:/etc/proftpd.conf:Config-File:read::debian60
 dist_ftp_version:standalone:Server-Version:exit::debian60
 dist_ftp_log:/var/log/xferlog:Log-File:read::debian60
