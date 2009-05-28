@@ -84,7 +84,7 @@ while ($dir = @readdir ($handle)) {
             $web_doc_id = str_replace("web", "", $webname);
             if($web_data = $mod->db->queryOneRecord("SELECT * FROM isp_isp_web WHERE doc_id = '$web_doc_id' AND webalizer_stats = '1'")){
               $web_path = $web_home . "/$webname/web";
-              $stats_path = $web_path . "/stats";
+              $stats_path = $web_path . "/webalizer";
               $logfile = $web_home . "/$webname/log/web.log";
               $web_user = fileowner($web_path);
               $web_group = filegroup($web_path);

@@ -1607,6 +1607,16 @@ AddType image/vnd.wap.wbmp .wbmp";
    if($apache_version == 2){
      $error_alias = "Alias /error/ \"".$document_root."/error/\"";
    }
+  
+  ////////////// Web Statistics ////////////////////
+  $stats_alias = "";
+  
+   if($web["webalizer_stats"] == 2){
+     $stats_alias = "Alias /stats \"".$document_root."/awstats\"";
+   } elseif ($web["webalizer_stats"] == 1) {
+     $stats_alias = "Alias /stats \"".$document_root."/webalizer\"";
+   }
+  ////////////// END of Web Statistics ////////////////////
 
   ////////////// Error Pages ////////////////////
    if($web["web_individual_error_pages"]){
@@ -1672,6 +1682,7 @@ ErrorLog ".$mod->system->server_conf["server_path_httpd_root"]."/web".$web["doc_
 SSLEngine on
 SSLCertificateFile ".$mod->system->server_conf["server_path_httpd_root"]."/web".$web["doc_id"]."/ssl/".$web["web_host"].".".$web["web_domain"].".crt
 SSLCertificateKeyFile ".$mod->system->server_conf["server_path_httpd_root"]."/web".$web["doc_id"]."/ssl/".$web["web_host"].".".$web["web_domain"].".key
+".$stats_alias."
 ".$error_alias."
 ".$error."
 AliasMatch ^/~([^/]+)(/(.*))? ".$mod->system->server_conf["server_path_httpd_root"]."/web".$web["doc_id"]."/user/$1/web/$3
@@ -1713,6 +1724,7 @@ clearstatcache();
                         WEBDAV => $webdav,
                         SSI => $ssi,
                         WAP => $wap,
+						STATSALIAS => $stats_alias,
                         ERRORALIAS => $error_alias,
                         ERROR => $error,
                         WEB => "web".$web["doc_id"],

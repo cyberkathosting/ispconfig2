@@ -34,6 +34,7 @@ ErrorLog {WEB_ERROR_LOG}
 {PYTHON}
 {SSI}
 {WAP}
+{STATSALIAS}
 {ERRORALIAS}
 {ERROR}
 AliasMatch ^/~([^/]+)(/(.*))? {HTTPD_ROOT}/{WEB}/user/$1/web/$3
