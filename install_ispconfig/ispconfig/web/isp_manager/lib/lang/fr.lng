@@ -557,13 +557,13 @@ $wb["txt_traffic_notification_email_variables"] = '<table border="0" cellpadding
 $wb["Catalog_Name"] = "Nom";
 $wb["Spam Whitelist"] = 'Spam Whitelist';
 $wb["Spam Blacklist"] = 'Spam Blacklist';
-$wb["spam_whitelist_txt"] = '<b>Hint:</b> One entry per line. Valid entries are, for example, friend@somewhere.com, *@isp.com, or *.domain.net.';
-$wb["spam_blacklist_txt"] = '<b>Hint:</b> One entry per line. Valid entries are, for example, friend@somewhere.com, *@isp.com, or *.domain.net.';
-$wb["Webalizer Stats"] = 'Webalizer<br>&nbsp;Statistics';
-$wb["Use Uribl"] = 'Use <a href="http://www.uribl.com/about.shtml" target="_blank" style="font-family:Arial,Verdana">URIBL</a>';
-$wb["Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 -"] = "Only the following signs are allowed: a-z A-Z 0-9 -<br>";
-$wb["Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 - ."] = "Only the following signs are allowed: a-z A-Z 0-9 - .<br>";
-$wb["txt_system_currently_updated_no_recycle_bin"] = "The system is currently updating the configuration files.";
+$wb["spam_whitelist_txt"] = '<b>N.B. :</b> Une seule entrée par ligne. Les entrées valides sont, par exemple, friend@somewhere.com, *@isp.com, or *.domain.net.';
+$wb["spam_blacklist_txt"] = '<b>N.B. :</b> Une seule entrée par ligne. Les entrées valides sont, par exemple, friend@somewhere.com, *@isp.com, or *.domain.net.';
+$wb["Webalizer Stats"] = 'Statistiques<br>&nbsp;Webalizer';
+$wb["Use Uribl"] = 'Utiliser <a href="http://www.uribl.com/about.shtml" target="_blank" style="font-family:Arial,Verdana">URIBL</a>';
+$wb["Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 -"] = "Seuls les caractères suivants sont autorisés: a-z A-Z 0-9 -<br>";
+$wb["Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 - ."] = "Seuls les caractères suivants sont autorisés: a-z A-Z 0-9 - .<br>";
+$wb["txt_system_currently_updated_no_recycle_bin"] = "Le système est en train de mettre à jours les fichiers de configuration.";
 
 $wb["Cron Jobs"]      = "Cron Jobs";
 $wb["error_anbieter_cron_aktiv"] = "Cron Jobs est en service sur certains des sites Web du revendeur. Cette option ne peut être désactivée.<br>";
