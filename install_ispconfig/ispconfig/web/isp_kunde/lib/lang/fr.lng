@@ -466,6 +466,14 @@ $wb["aktiv"] = "Actif";
 $wb["gesperrt"] = "Suspendu";
 
 $wb["Catalog_Name"] = "Nom";
-$wb["error_domain_delete_client"] = "You cannot delete this domain.";
+$wb["Spam Whitelist"] = 'Spam Whitelist';
+$wb["Spam Blacklist"] = 'Spam Blacklist';
+$wb["spam_whitelist_txt"] = '<b>N.B. :</b> Une seule entrée par ligne. Les entrées valides sont, par exemple, friend@somewhere.com, *@isp.com, or *.domain.net.';
+$wb["spam_blacklist_txt"] = '<b>N.B. :</b> Une seule entrée par ligne. Les entrées valides sont, par exemple, friend@somewhere.com, *@isp.com, or *.domain.net.';
+$wb["Webalizer Stats"] = 'Statistiques<br>&nbsp;Webalizer';
+$wb["Use Uribl"] = 'Utiliser <a href="http://www.uribl.com/about.shtml" target="_blank" style="font-family:Arial,Verdana">URIBL</a>';
+$wb["Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 -"] = "Seuls les caractères suivants sont autorisés: a-z A-Z 0-9 -<br>";
+$wb["Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 - ."] = "Seuls les caractères suivants sont autorisés: a-z A-Z 0-9 - .<br>";
+$wb["error_domain_delete_client"] = "Vous ne pouvez pas effacer ce domaine.";
 
 ?>
