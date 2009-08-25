@@ -68,12 +68,12 @@ class check_webspace_plugin {
     }
     pclose($fd);
 
-    $meminfo = split("\n",$buffer);
+    $meminfo = explode("\n",$buffer);
 
     foreach($meminfo as $mline){
     if(trim($mline) != "" and $x < count($meminfo) - 2) {
 
-    $mpart = split($path_httpd_root."/web".$web_id,$mline);
+    $mpart = explode($path_httpd_root."/web".$web_id,$mline);
     $text = $mpart[1];
 
     $detail .= '<tr>
@@ -120,7 +120,7 @@ class check_webspace_plugin {
        <td width="30%" bgcolor="#FFFFFF" align="right"><font face="Verdana, Arial, Helvetica, sans-serif" size="2">'.$web_speicher.' MB</font></td>
      </tr>';
 
-     $mpart = split($path_httpd_root."/web".$web_id,$meminfo[$x - 2]);
+     $mpart = explode($path_httpd_root."/web".$web_id,$meminfo[$x - 2]);
          //stristr()die(print_r($mpart));
          if(stristr($mpart[0],"k")) {
                  $gesamt_groesse = sprintf("%01.2f", $mpart[0] + $db_size) . "k";

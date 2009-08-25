@@ -55,7 +55,7 @@ class check_disk_plugin {
         $buffer .= fgets($fd, 4096);
     }
 
-        $df_out = split("\n",$buffer);
+        $df_out = explode("\n",$buffer);
         $df_num = sizeof($df_out);
         for($i=0;$i<$df_num;$i++){
           if(ltrim($df_out[$i]) != $df_out[$i]){
@@ -99,7 +99,7 @@ class check_disk_plugin {
        <td width="30%" bgcolor="#FFFFFF"><center>'.strrev($uptime[3]).'</center></td>
      </tr>';
 
-     $ausl = split(":",strrev($uptime[2]));
+     $ausl = explode(":",strrev($uptime[2]));
      $ausl1 = $ausl[1];
 
 
