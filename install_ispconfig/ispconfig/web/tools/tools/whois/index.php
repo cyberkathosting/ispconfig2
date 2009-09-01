@@ -66,8 +66,11 @@ switch ($endfix) {
              break;
         case '.com':
         case '.net':
-        case '.org':
                                  $WhoIsServer="whois.crsnic.net";
+                                 $result=whois_php ($WhoIsServer,$domain);
+                                  break;
+        case '.org':
+                                 $WhoIsServer="whois.publicinterestregistry.net";
                                  $result=whois_php ($WhoIsServer,$domain);
                                   break;
         case '.lu':
@@ -139,7 +142,7 @@ switch ($endfix) {
 function whois_php($WhoIsServer,$queryDomain){
         if($fp = @fsockopen ("$WhoIsServer", 43, $errnr, $errstr)) {
                 $record="";
-                                        set_socket_blocking($fp, 0);
+                                        stream_set_blocking($fp, 0);
                                          fputs($fp, "$queryDomain\n");
                         while (!feof($fp)) {
                        $record .= fgets($fp, 2048);
