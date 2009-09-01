@@ -380,16 +380,16 @@ $wb["txt_kunden"] = "Klanten";
 $wb["txt_webs"] = "Websites";
 
 $wb["txt_move_websites"] = "Verplaats websites";
-$wb["txt_website_deleted_no_move"] = "Deze website is verwijderd en kan niet worden verplaatst.<br><br> <a href='../../frame_start.php?s=$s'>Next &gt;&gt;</a>";
-$wb["txt_customer_deleted_no_move"] = "Deze klant is verwijderd, de website kan niet worden verplaatst.<br><br> <a href='../../frame_start.php?s=$s'>Next &gt;&gt;</a>";
-$wb["txt_website_moved"] = "The website is verplaatst naar de door u gespecificeerde klant.<br><br> <a href='../../frame_start.php?s=$s'>Next &gt;&gt;</a>";
+$wb["txt_website_deleted_no_move"] = "Deze website is verwijderd en kan niet worden verplaatst.<br><br> <a href='../../frame_start.php?s=$s'>Meer &gt;&gt;</a>";
+$wb["txt_customer_deleted_no_move"] = "Deze klant is verwijderd, de website kan niet worden verplaatst.<br><br> <a href='../../frame_start.php?s=$s'>Meer &gt;&gt;</a>";
+$wb["txt_website_moved"] = "The website is verplaatst naar de door u gespecificeerde klant.<br><br> <a href='../../frame_start.php?s=$s'>Meer &gt;&gt;</a>";
 $wb["txt_move_website_from"] = "van";
 $wb["txt_move_website_to"] = "naar";
 $wb["txt_move_website_website"] = "Website";
 $wb["txt_move_website_submit"] = "Uitvoeren";
 $wb["no_permission_to_change_data"] = "Permission denied.";
 
-$wb["weiter_link"] = "<br><br> <a href='../../../isp_manager/frame_start.php?s=$s'>Next &gt;&gt;</a>";
+$wb["weiter_link"] = "<br><br> <a href='../../../isp_manager/frame_start.php?s=$s'>Meer &gt;&gt;</a>";
 $wb["error_mv_diskspace"] = "This web site's disk space is bigger than the disk space that is left for this reseller.";
 $wb["error_mv_users"] = "This web site's amount of users is bigger than the amount of users that is left for this reseller.";
 $wb["error_mv_domains"] = "This web site's amount of domains is bigger than the amount of domains that is left for this reseller.";
