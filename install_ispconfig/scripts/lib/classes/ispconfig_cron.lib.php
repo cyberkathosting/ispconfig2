@@ -41,11 +41,11 @@ function make_cron($doc_id) {
   $cron_jobs[] = '# CRON JOBS MANAGED BY ISPCONFIG. DO NOT EDIT BELOW!';
   foreach($user_crons as $user_cron){
     if($user_cron['cron_active'] && $user_cron['status']){
-      if(strpos($user_cron['cron_minutes'], '*') === true) $user_cron['cron_minutes'] = '*';
-      if(strpos($user_cron['cron_hours'], '*') === true) $user_cron['cron_hours'] = '*';
-      if(strpos($user_cron['cron_days'], '*') === true) $user_cron['cron_days'] = '*';
-      if(strpos($user_cron['cron_months'], '*') === true) $user_cron['cron_months'] = '*';
-      if(strpos($user_cron['cron_weekdays'], '*') === true) $user_cron['cron_weekdays'] = '*';
+      if(strpos($user_cron['cron_minutes'], '*') !== FALSE) $user_cron['cron_minutes'] = '*';
+      if(strpos($user_cron['cron_hours'], '*') !== FALSE) $user_cron['cron_hours'] = '*';
+      if(strpos($user_cron['cron_days'], '*') !== FALSE) $user_cron['cron_days'] = '*';
+      if(strpos($user_cron['cron_months'], '*') !== FALSE) $user_cron['cron_months'] = '*';
+      if(strpos($user_cron['cron_weekdays'], '*') !== FALSE) $user_cron['cron_weekdays'] = '*';
       $cron_jobs[] = '#'.$user_cron['doc_id'].' '.$user_cron['cron_name'];
       $cron_jobs[] = $user_cron['cron_minutes'].' '.$user_cron['cron_hours'].' '.$user_cron['cron_days'].' '.$user_cron['cron_months'].' '.$user_cron['cron_weekdays'].' '.$user_cron['cron_command'];
     }
