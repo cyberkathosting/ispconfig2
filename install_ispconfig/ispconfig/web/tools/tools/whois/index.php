@@ -61,6 +61,12 @@ switch ($endfix) {
         case '.de':
         case '.se':
         case '.biz':
+        case '.asn.au':
+        case '.com.au':
+        case '.net.au':
+        case '.id.au':
+        case '.org.au':
+        case '.gov.au':
         case '.nl':
              $result=whois_cli($domain);
              break;
@@ -107,6 +113,9 @@ switch ($endfix) {
                           $result=whois_php ($WhoIsServer,$domain);
                      break;
         case '.pl':
+        case '.com.pl':
+        case '.net.pl':
+        case '.org.pl':
                 $WhoIsServer="dns.pl"; //$WhoIsServer zuweisen
                           $result=whois_php ($WhoIsServer,$domain);
                           break;
@@ -244,6 +253,12 @@ $html_pre = '&nbsp;<br><form name="form1" method="post" action="">
                                                                         <option name="info" value=".info">.info
                                                                         <option name="ac" value=".ac">.ac
                                                                         <option name="at" value=".at">.at
+                                                                        <option name="asn.au" value=".asn.au">.asn.au
+                                                                        <option name="com.au" value=".com.au">.com.au
+                                                                        <option name="net.au" value=".net.au">.net.au
+                                                                        <option name="id.au" value=".id.au">.id.au
+                                                                        <option name="org.au" value=".org.au">.org.au
+                                                                        <option name="gov.au" value=".gov.au">.gov.au
                                                                         <option name="be" value=".be">.be
                                                                         <option name="ch" value=".ch">.ch
                                                                         <option name="cz" value=".cz">.cz
@@ -260,6 +275,9 @@ $html_pre = '&nbsp;<br><form name="form1" method="post" action="">
                                                                         <option name="nl" value=".nl">.nl
                                                                         <option name="no" value=".no">.no
                                                                         <option name="pl" value=".pl">.pl
+                                                                        <option name="com.pl" value=".com.pl">.com.pl
+                                                                        <option name="net.pl" value=".net.pl">.net.pl
+                                                                        <option name="org.pl" value=".org.pl">.org.pl
                                                                         <option name="sk" value=".sk">.sk
                                                                         <option name="se" value=".se">.se
                                                                         <option name="co.za" value=".co.za">.co.za
