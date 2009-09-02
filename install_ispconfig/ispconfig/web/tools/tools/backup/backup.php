@@ -58,7 +58,8 @@ if(!preg_match("/^[a-zA-Z0-9\-\.]{0,255}$/",$ftp_server)) $go_api->errorMessage(
 if(strlen($ftp_user) < 1 and $transfer == 'ftp') $go_api->errorMessage($go_api->lng("Sie haben keinen FTP Benutzernamen angegeben."));
 
 // Erstelle Namen für Backup Datei
-$backup_file_name = "backup_".date("Y_m_d",time()).".zip";
+//$backup_file_name = "backup_".date("Y_m_d",time()).".zip";
+$backup_file_name = exec("hostname") . "-backup_".date("Y_m_d",time()).".zip";
 
 // bestimme Web-Pfad
 $server = $go_api->db->queryOneRecord("SELECT * from isp_server");
@@ -154,7 +155,8 @@ if($transfer == "download") {
                 header("Content-Length: ".filesize($tgz_name));
 
         // gebe Daten aus
-        echo file_get_contents($tgz_name);
+        //echo file_get_contents($tgz_name);
+        readfile($tgz_name);
 
         // lösche temp Verzeichnis
         if($tmp_dir != "" and stristr($tmp_dir,"/home/admispconfig/ispconfig/temp") and !stristr($tmp_dir,"../")) exec("rm -rf $tmp_dir");

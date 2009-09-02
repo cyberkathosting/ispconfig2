@@ -65,7 +65,7 @@ function do_backup($web_id) {
         // Hole Web
         $web = $mod->db->queryOneRecord("SELECT * from isp_nodes, isp_isp_web where isp_nodes.doc_id = '$web_id' and isp_nodes.doctype_id = 1013 and isp_nodes.doc_id = isp_isp_web.doc_id");
 
-        // erstelle ewb tar.gz
+        // erstelle web tar.gz
         $web_pfad = $httpd_root ."/web".$web_id."/web";
         exec("cd $web_pfad; $zip -y $tmp_dir/web".$web_id."_web.zip .* -r *");
         $backup_txt .= "web,";
