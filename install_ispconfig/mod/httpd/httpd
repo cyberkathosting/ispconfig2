@@ -153,9 +153,7 @@ dist_path_httpd_root:/var/www:Web-Root:read::debian31
 dist_path_httpd_root:/var/www:Web-Root:read::debian40
 
 dist_path_httpd_root:/var/www:Web-Root:read::debian50
-
 dist_path_httpd_root:/var/www:Web-Root:read::debian501
-
 dist_path_httpd_root:/var/www:Web-Root:read::debian502
 
 dist_path_httpd_root:/var/www:Web-Root:read::debian60
