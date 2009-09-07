@@ -1473,9 +1473,12 @@ exec("chmod +x /root/ispconfig/scripts/shell/create_chroot_env.sh");
 ///////////////// CREATE CHROOT SSH ENV //////////////////
 
 //////////////// CREATE AWStats DIR //////////////////
-if($install_art == "install"){
+if(!is_dir("/etc/awstats")){
         exec("mkdir /etc/awstats");
         exec("cp -f compile_aps/awstats.shared.conf /etc/awstats/awstats.shared.conf");
+        exec("chmod 644 /etc/awstats/awstats.shared.conf");
+} else if(!file_exists("/etc/awstats/awstats.shared.conf")) {
+	exec("cp -f compile_aps/awstats.shared.conf /etc/awstats/awstats.shared.conf");
         exec("chmod 644 /etc/awstats/awstats.shared.conf");
 }
 ///////////////// CREATE AWStats DIR ENDE //////////////////
