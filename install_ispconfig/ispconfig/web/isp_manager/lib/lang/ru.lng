@@ -561,7 +561,7 @@ $wb["Spam Whitelist"] = 'Белый Спам-Список';
 $wb["Spam Blacklist"] = 'Черный Спам-Список';
 $wb["spam_whitelist_txt"] = '<b>Подсказка:</b> Одна запись на строчку. Правильными записями, например, являются friend@somewhere.com, *@isp.com, или *.domain.net.';
 $wb["spam_blacklist_txt"] = '<b>Подсказка:</b> Одна запись на строчку. Правильными записями, например, являются friend@somewhere.com, *@isp.com, или *.domain.net.';
-$wb["Webalizer Stats"] = 'Webalizer<br>&nbsp;Статистика';
+$wb["Webalizer Stats"] = 'Статистика';
 $wb["Use Uribl"] = 'Используйте <a href="http://www.uribl.com/about.shtml" target="_blank" style="font-family:Arial,Verdana">URIBL</a>';
 $wb["Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 -"] = "Разрешено использовать только следующие символы: a-z A-Z 0-9 -<br>";
 $wb["Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 - ."] = "Разрешено использовать только следующие символы: a-z A-Z 0-9 - .<br>";
