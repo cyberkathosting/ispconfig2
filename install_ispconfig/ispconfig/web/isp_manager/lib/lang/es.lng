@@ -553,7 +553,7 @@ $wb["Spam Whitelist"] = 'Lista blanca de Spam';
 $wb["Spam Blacklist"] = 'Lista negra de Spam';
 $wb["spam_whitelist_txt"] = '<b>Atención:</b> Una entrada por línea. Ejemplos de entradas válidas: fulanito@dominio.com, *@isp.com, o *.dominio.net.';
 $wb["spam_blacklist_txt"] = '<b>Atención:</b> Una entrada por línea. Ejemplos de entradas válidas: fulanito@dominio.com, *@isp.com, o *.dominio.net.';
-$wb["Webalizer Stats"] = 'Estadísticas Webalizer';
+$wb["Webalizer Stats"] = 'Estadísticas';
 $wb["Use Uribl"] = 'Utilizar <a href="http://www.uribl.com/about.shtml" target="_blank" style="font-family:Arial,Verdana">URIBL</a>';
 $wb["Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 -"] = "Sólo están permitidos los siguientes caracteres: a-z A-Z 0-9 -<br>";
 $wb["Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 - ."] = "Sólo están permitidos los siguientes caracteres: a-z A-Z 0-9 - .<br>";
