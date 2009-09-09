@@ -637,7 +637,7 @@ $wb["Spam Whitelist"] = 'Bia³a lista spamu';
 $wb["Spam Blacklist"] = 'Czarna lista spamu';
 $wb["spam_whitelist_txt"] = '<b>Podpowied¼:</b> Jeden wpis na jedn± liniê. Takimi wpisami s± np. przyjaciel@gdzies.pl, *@isp.pl, or *.domena.net.';
 $wb["spam_blacklist_txt"] = '<b>Podpowied¼:</b> Jeden wpis na jedn± liniê. Takimi wpisami s± np. przyjaciel@gdzies.pl, *@isp.pl, or *.domena.net.';
-$wb["Webalizer Stats"] = 'Statystyki<br>&nbsp;webalizer';
+$wb["Webalizer Stats"] = 'Statystyki';
 $wb["Use Uribl"] = 'U¿yj <a href="http://www.uribl.com/about.shtml" target="_blank" style="font-family:Arial,Verdana">URIBL</a>';
 $wb["Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 -"] = "Tylko nastêpuj±ce znaki s± dozwolone: a-z A-Z 0-9 -<br>";
 $wb["Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 - ."] = "Tylko nastêpuj±ce znaki s± dozwolone: a-z A-Z 0-9 - .<br>";
