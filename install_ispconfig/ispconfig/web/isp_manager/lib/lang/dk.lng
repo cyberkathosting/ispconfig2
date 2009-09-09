@@ -572,7 +572,7 @@ $wb["Spam Whitelist"] = 'Spam-Whitelist';
 $wb["Spam Blacklist"] = 'Spam-Blacklist';
 $wb["spam_whitelist_txt"] = '<b>Tip:</b> Ein Eintrag pro Zeile. Gültige Einträge sind z.B. friend@somewhere.com, *@isp.com oder *.domain.net.';
 $wb["spam_blacklist_txt"] = '<b>Tip:</b> Ein Eintrag pro Zeile. Gültige Einträge sind z.B. friend@somewhere.com, *@isp.com oder *.domain.net.';
-$wb["Webalizer Stats"] = 'Webalizer-<br>&nbsp;Statistiken';
+$wb["Webalizer Stats"] = 'Statistiken';
 $wb["Use Uribl"] = 'Brug <a href="http://www.uribl.com/about.shtml" target="_blank" style="font-family:Arial,Verdana">URIBL</a>';
 $wb["Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 -"] = "Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 -<br>";
 $wb["Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 - ."] = "Es sind nur folgende Zeichen zugelassen: a-z A-Z 0-9 - .<br>";
