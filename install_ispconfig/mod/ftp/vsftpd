@@ -290,6 +290,14 @@ dist_ftp_conf:/etc/vsftpd.conf:Config-File:read::debian502
 dist_ftp_version:inetd:Server-Version:select:standalone|inetd|xinetd:debian502
 dist_ftp_log:/var/log/vsftpd.log:Log-File:read::debian502
 
+dist_ftp_conf:/etc/vsftpd.conf:Config-File:read::debian503
+dist_ftp_version:inetd:Server-Version:select:standalone|inetd|xinetd:debian503
+dist_ftp_log:/var/log/vsftpd.log:Log-File:read::debian503
+
+dist_ftp_conf:/etc/vsftpd.conf:Config-File:read::debian504
+dist_ftp_version:inetd:Server-Version:select:standalone|inetd|xinetd:debian504
+dist_ftp_log:/var/log/vsftpd.log:Log-File:read::debian504
+
 dist_ftp_conf:/etc/vsftpd.conf:Config-File:read::debian60
 dist_ftp_version:inetd:Server-Version:select:standalone|inetd|xinetd:debian60
 dist_ftp_log:/var/log/vsftpd.log:Log-File:read::debian60

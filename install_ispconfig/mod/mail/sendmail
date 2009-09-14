@@ -290,6 +290,14 @@ dist_mail_log:/var/log/mail.log:Log-File:read::debian502
 dist_mail_virtusertable:/etc/mail/virtusertable:Virtusertable-File:read::debian502
 dist_mail_local_host_names:/etc/mail/local-host-names:Local-Host-Names-File:read::debian502
 
+dist_mail_log:/var/log/mail.log:Log-File:read::debian503
+dist_mail_virtusertable:/etc/mail/virtusertable:Virtusertable-File:read::debian503
+dist_mail_local_host_names:/etc/mail/local-host-names:Local-Host-Names-File:read::debian503
+
+dist_mail_log:/var/log/mail.log:Log-File:read::debian504
+dist_mail_virtusertable:/etc/mail/virtusertable:Virtusertable-File:read::debian504
+dist_mail_local_host_names:/etc/mail/local-host-names:Local-Host-Names-File:read::debian504
+
 dist_mail_log:/var/log/mail.log:Log-File:read::debian60
 dist_mail_virtusertable:/etc/mail/virtusertable:Virtusertable-File:read::debian60
 dist_mail_local_host_names:/etc/mail/local-host-names:Local-Host-Names-File:read::debian60
