@@ -43,8 +43,35 @@ if(count($_POST) > 1) {
                                 // Dovecot @ username hack
                                 if(stristr($username, '@')) {
                                         //list ($loginusername, $logindomain) = split('[/@-]', $username);
-                                        list ($loginusername, $logindomain) = split('@', $username);
-                                        $username = "${logindomain}_$loginusername";
+                                    list ($loginusername, $logindomain) = split('@', $username);
+                                    $username = "${logindomain}_$loginusername";
+									/* tmg 
+									 * that simple hack won't work for cases where the 
+									 *   the user_username is in the form webNN_user
+									 *   nor will it work for the case where the email
+									 *   adderss is in the form a.n.other@example.com 
+									 *   but the  user_username is example.com_another
+									 */
+
+									/*tmg 
+										First try to match user_username toteh domain
+											   and the user_email to the part before th @
+									*/
+                					$user = $app->db->queryOneRecord("SELECT * FROM 
+																			isp_isp_user 
+											WHERE user_username like '".
+																${logindomain}."%' ".
+												"and user_email = '". $loginusername."'");
+									/*tmg did we get a match */
+									if ( $user["user_username"] == "" ) { 
+										/*tmg  NO so try just the user_email */
+										$user = $app->db->queryOneRecord(
+												"SELECT * FROM isp_isp_user WHERE ".
+													"user_email = '".$loginusername."'");
+									}
+									/*tmg  Here I make the wild assumption the one of the 
+											queries worked  */
+									$username = $user["user_username"]; 
                                 }
 
                 // Checke, ob es den User in ISPConfig DB gibt
@@ -69,7 +96,8 @@ if(count($_POST) > 1) {
                         if($res == '') {
 
                                 // versuche Login
-                                $res = $app->pop3->Login($orig_username,$passwort,0);
+								/*tmg  Change to use the $username not the $orig_username */
+                                $res = $app->pop3->Login($username,$passwort,0);
                                 if($res == '') {
 
                                         // Login war erfolgreich
