@@ -310,6 +310,10 @@ dist_ftp_conf:/etc/vsftpd.conf:Config-File:read::debianlenny/sid0
 dist_ftp_version:inetd:Server-Version:select:standalone|inetd|xinetd:debianlenny/sid0
 dist_ftp_log:/var/log/vsftpd.log:Log-File:read::debianlenny/sid0
 
+dist_ftp_conf:/etc/vsftpd.conf:Config-File:read::debiansqueeze/sid0
+dist_ftp_version:inetd:Server-Version:select:standalone|inetd|xinetd:debiansqueeze/sid0
+dist_ftp_log:/var/log/vsftpd.log:Log-File:read::debiansqueeze/sid0
+
 dist_ftp_conf:/usr/local/etc/vsftpd.conf:Config-File:read::freebsd50
 dist_ftp_version:inetd:Server-Version:select:standalone|inetd|xinetd:freebsd50
 dist_ftp_log:/var/log/vsftpd.log:Log-File:read::freebsd50
