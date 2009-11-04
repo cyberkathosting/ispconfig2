@@ -84,6 +84,7 @@ while ($dir = @readdir ($handle)) {
             $web_doc_id = str_replace("web", "", $webname);
             if($web_data = $mod->db->queryOneRecord("SELECT * FROM isp_isp_web WHERE doc_id = '$web_doc_id' AND webalizer_stats = '1'")){
               $web_path = $web_home . "/$webname/web";
+              $old_stats_path = $web_path . "/stats";
               $stats_path = $web_path . "/webalizer";
               $logfile = $web_home . "/$webname/log/web.log";
               $web_user = fileowner($web_path);
@@ -91,10 +92,15 @@ while ($dir = @readdir ($handle)) {
 
               // erstelle Stats Verzeichnis, wenn nicht vorhanden
               if(!@is_dir($stats_path)) {
+                if(@is_dir($old_stats_path)){
+                  rename($old_stats_path, $stats_path);
+                  $message .= "Benenne Statistik Verzeichnis: $old_stats_path um in $stats_path\n";
+                } else {
                   mkdir($stats_path,0775);
                   chown($stats_path,$web_user);
                   chgrp($stats_path,$web_group);
                   $message .= "Erstelle Statistik Verzeichnis: $stats_path\n";
+                }
               }
 
 
