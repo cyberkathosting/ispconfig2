@@ -88,20 +88,22 @@ function make_backup($web_id) {
                 // erstelle web tar.gz
                 if($daten_web == 1) {
                         $web_pfad = $httpd_root ."/web".$web_id."/web";
-                        exec("cd $web_pfad; $zip -y $tmp_dir/web".$web_id."_web.zip .* -r *");
-            //echo "cd $web_pfad; $zip -ry $tmp_dir/web".$web_id."_web.zip *";
+                        //exec("cd $web_pfad; $zip -y $tmp_dir/web".$web_id."_web.zip .* -r *");
+						exec("cd $web_pfad && /usr/bin/find . -group web$web_id -print | zip -y $tmp_dir/web".$web_id."_web.zip -@");
                         $backup_txt .= "web,";
                 }
                 // erstelle user tar.gz
                 if($daten_user == 1) {
                         $user_pfad = $httpd_root."/web".$web_id."/user";
-                        exec("cd $user_pfad; $zip -y  $tmp_dir/web".$web_id."_user.zip .* -r *");
+                        // exec("cd $user_pfad; $zip -y  $tmp_dir/web".$web_id."_user.zip .* -r *");
+						exec("cd $user_pfad && /usr/bin/find . -group web$web_id -print | zip -y $tmp_dir/web".$web_id."_user.zip -@");
                         $backup_txt .= "user,";
                 }
                 // erstelle log tar.gz
                 if($daten_log == 1) {
                         $log_pfad = $httpd_root."/web".$web_id."/log";
-                        exec("cd $log_pfad; $zip -y  $tmp_dir/web".$web_id."_log.zip .* -r *");
+                        //exec("cd $log_pfad; $zip -y  $tmp_dir/web".$web_id."_log.zip .* -r *");
+						exec("cd $log_pfad && /usr/bin/find . -group web$web_id -print | zip -y $tmp_dir/web".$web_id."_user.zip -@");
                         $backup_txt .= "log,";
                 }
                 // erstelle mySQL tar.gz

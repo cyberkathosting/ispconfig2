@@ -64,20 +64,34 @@ function do_backup($web_id) {
 
         // Hole Web
         $web = $mod->db->queryOneRecord("SELECT * from isp_nodes, isp_isp_web where isp_nodes.doc_id = '$web_id' and isp_nodes.doctype_id = 1013 and isp_nodes.doc_id = isp_isp_web.doc_id");
+		
+		$sql = "SELECT * FROM isp_nodes, isp_dep, isp_isp_user WHERE isp_dep.parent_doc_id = '".$web_id."' AND isp_dep.parent_doctype_id = '1013' AND isp_dep.child_doc_id = isp_isp_user.doc_id AND isp_dep.child_doctype_id = '1014' AND isp_isp_user.user_admin = '1' AND isp_nodes.doc_id = isp_isp_user.doc_id AND isp_nodes.doctype_id = '1014' AND isp_nodes.status = '1'";
+      	$admin_user = $mod->db->queryOneRecord($sql);
 
+      	if(!empty($admin_user)){
+        	$webadmin = $admin_user["user_username"];
+      	} else {
+       		$webadmin = "nobody";
+      	}
+		
+		exec('chown '.$webadmin.' '.$tmp_dir);
+		
         // erstelle web tar.gz
         $web_pfad = $httpd_root ."/web".$web_id."/web";
-        exec("cd $web_pfad; $zip -y $tmp_dir/web".$web_id."_web.zip .* -r *");
-        $backup_txt .= "web,";
+        // exec("cd $web_pfad; sudo -u $webadmin $zip -y $tmp_dir/web".$web_id."_web.zip .* -r *");
+		exec("cd $web_pfad && sudo -u $webadmin find . -group web$web_id -print | zip -y $tmp_dir/web".$web_id."_web.zip -@");
+		$backup_txt .= "web,";
 
                 // erstelle user tar.gz
         $user_pfad = $httpd_root."/web".$web_id."/user";
-        exec("cd $user_pfad; $zip -y  $tmp_dir/web".$web_id."_user.zip .* -r *");
+        //exec("cd $user_pfad; sudo -u $webadmin $zip -y  $tmp_dir/web".$web_id."_user.zip .* -r *");
+		exec("cd $user_pfad && sudo -u $webadmin find . -group web$web_id -print | zip -y $tmp_dir/web".$web_id."_user.zip -@");
         $backup_txt .= "user,";
 
                 // erstelle log tar.gz
         $log_pfad = $httpd_root."/web".$web_id."/log";
-        exec("cd $log_pfad; $zip -y  $tmp_dir/web".$web_id."_log.zip .* -r *");
+        //exec("cd $log_pfad; sudo -u $webadmin $zip -y  $tmp_dir/web".$web_id."_log.zip .* -r *");
+		exec("cd $log_pfad && sudo -u $webadmin find . -group web$web_id -print | zip -y $tmp_dir/web".$web_id."_log.zip -@");
         $backup_txt .= "log,";
 
                 // erstelle mySQL tar.gz
