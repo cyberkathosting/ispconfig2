@@ -58,7 +58,8 @@ if(!preg_match("/^[a-zA-Z0-9\-\.]{0,255}$/",$ftp_server)) $go_api->errorMessage(
 if(strlen($ftp_user) < 1 and $transfer == 'ftp') $go_api->errorMessage($go_api->lng("Sie haben keinen FTP Benutzernamen angegeben."));
 
 // Erstelle Namen für Backup Datei
-$backup_file_name = "backup_".date("Y_m_d",time()).".zip";
+//$backup_file_name = "backup_".date("Y_m_d",time()).".zip";
+$backup_file_name = exec("hostname") . "-backup_".date("Y_m_d",time()).".zip";
 
 // bestimme Web-Pfad
 $server = $go_api->db->queryOneRecord("SELECT * from isp_server");
@@ -87,20 +88,22 @@ function make_backup($web_id) {
                 // erstelle web tar.gz
                 if($daten_web == 1) {
                         $web_pfad = $httpd_root ."/web".$web_id."/web";
-                        exec("cd $web_pfad; $zip -y $tmp_dir/web".$web_id."_web.zip .* -r *");
-            //echo "cd $web_pfad; $zip -ry $tmp_dir/web".$web_id."_web.zip *";
+                        //exec("cd $web_pfad; $zip -y $tmp_dir/web".$web_id."_web.zip .* -r *");
+						exec("cd $web_pfad && /usr/bin/find . -group web$web_id -print | zip -y $tmp_dir/web".$web_id."_web.zip -@");
                         $backup_txt .= "web,";
                 }
                 // erstelle user tar.gz
                 if($daten_user == 1) {
                         $user_pfad = $httpd_root."/web".$web_id."/user";
-                        exec("cd $user_pfad; $zip -y  $tmp_dir/web".$web_id."_user.zip .* -r *");
+                        // exec("cd $user_pfad; $zip -y  $tmp_dir/web".$web_id."_user.zip .* -r *");
+						exec("cd $user_pfad && /usr/bin/find . -group web$web_id -print | zip -y $tmp_dir/web".$web_id."_user.zip -@");
                         $backup_txt .= "user,";
                 }
                 // erstelle log tar.gz
                 if($daten_log == 1) {
                         $log_pfad = $httpd_root."/web".$web_id."/log";
-                        exec("cd $log_pfad; $zip -y  $tmp_dir/web".$web_id."_log.zip .* -r *");
+                        //exec("cd $log_pfad; $zip -y  $tmp_dir/web".$web_id."_log.zip .* -r *");
+						exec("cd $log_pfad && /usr/bin/find . -group web$web_id -print | zip -y $tmp_dir/web".$web_id."_user.zip -@");
                         $backup_txt .= "log,";
                 }
                 // erstelle mySQL tar.gz
@@ -154,7 +157,8 @@ if($transfer == "download") {
                 header("Content-Length: ".filesize($tgz_name));
 
         // gebe Daten aus
-        echo file_get_contents($tgz_name);
+        //echo file_get_contents($tgz_name);
+        readfile($tgz_name);
 
         // lösche temp Verzeichnis
         if($tmp_dir != "" and stristr($tmp_dir,"/home/admispconfig/ispconfig/temp") and !stristr($tmp_dir,"../")) exec("rm -rf $tmp_dir");
