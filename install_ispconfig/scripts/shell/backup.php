@@ -39,6 +39,11 @@ include("/root/ispconfig/scripts/lib/server.inc.php");
 
 if($go_info["server"]["do_automated_backups"] != 1) die();
 
+// Check if sudo installed
+exec('which sudo',$out);
+if(!stristr($out[0],'sudo')) die('Sudo must be installed to use this backup script.');
+
+
 // Erstelle Namen für Backup Datei
 $backup_file_name = "backup_".date("Y_m_d",time()).".zip";
 
@@ -82,13 +87,22 @@ function do_backup($web_id) {
 		exec("cd $web_pfad && sudo -u $webadmin find . -group web$web_id -print | zip -y $tmp_dir/web".$web_id."_web.zip -@");
 		$backup_txt .= "web,";
 
-                // erstelle user tar.gz
-        $user_pfad = $httpd_root."/web".$web_id."/user";
-        //exec("cd $user_pfad; sudo -u $webadmin $zip -y  $tmp_dir/web".$web_id."_user.zip .* -r *");
-		exec("cd $user_pfad && sudo -u $webadmin find . -group web$web_id -print | zip -y $tmp_dir/web".$web_id."_user.zip -@");
-        $backup_txt .= "user,";
-
-                // erstelle log tar.gz
+         // erstelle user tar.gz
+		$user_sql = "SELECT isp_isp_user.user_username FROM isp_dep,isp_isp_user WHERE isp_dep.parent_doc_id = $web_id and isp_dep.parent_doctype_id = 1013 and isp_dep.child_doc_id = isp_isp_user.doc_id and isp_dep.child_doctype_id = isp_isp_user.doctype_id";
+        $usernames = $mod->db->queryAllRecords($user_sql);
+		if(is_array($usernames)) {
+			foreach($usernames as $tmp) {
+				$u = $tmp['user_username'];
+				if($u != 'root' && $u != 'ispconfig' && $u != '') {
+					$user_pfad = $httpd_root."/web".$web_id."/user/".$u;
+					exec("cd $user_pfad && sudo -u $u find . -group web$web_id -print | zip -y $tmp_dir/web".$web_id."_user_".$u.".zip -@");
+				}
+			}
+		}
+		$backup_txt .= "user,";
+		
+		
+        // erstelle log tar.gz
         $log_pfad = $httpd_root."/web".$web_id."/log";
         //exec("cd $log_pfad; sudo -u $webadmin $zip -y  $tmp_dir/web".$web_id."_log.zip .* -r *");
 		exec("cd $log_pfad && sudo -u $webadmin find . -group web$web_id -print | zip -y $tmp_dir/web".$web_id."_log.zip -@");
