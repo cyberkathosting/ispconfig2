@@ -45,23 +45,23 @@ menuDaten.neu(new LinkEintrag('update','<? echo $go_api->lng("Update")?>','updat
 <!-- System Config //-->
 
 menuDaten.neu(new VerzEintrag('sysconf','root','<? echo $go_api->lng("System Config")?>','','',''));
-menuDaten.neu(new LinkEintrag('sysconf','<? echo $go_api->lng("Eigenschaften")?>','<?echo $go_info["server"]["server_url"]?>/multidoc/edit/edit.php?doc_id=1&doctype_id=1027&<?echo $session?>','seiteFrame','window_sidebar.gif','System Config','n','<?echo "1&amp;$session"?>'));
+menuDaten.neu(new LinkEintrag('sysconf','<? echo $go_api->lng("Eigenschaften")?>','/multidoc/edit/edit.php?doc_id=1&doctype_id=1027&<?echo $session?>','seiteFrame','window_sidebar.gif','System Config','n','<?echo "1&amp;$session"?>'));
 //menuDaten.neu(new LinkEintrag('news','<? echo $go_api->lng("Alle anzeigen")?>','news/news_list.php?<?echo $session?>','seiteFrame','newsgrup.gif','News anzeigen','n','<?echo "1&amp;$session"?>'));
 
 
 <!-- Form Designer //-->
 
 menuDaten.neu(new VerzEintrag('multidoc','root','Form Designer','','',''));
-menuDaten.neu(new LinkEintrag('multidoc','Add Form','<?echo $go_info["server"]["server_url"]?>/multidoc/admin/doctype_edit.php?<?echo $session?>','seiteFrame','form.gif','DocType Hinzufügen','n','<?echo "1&amp;$session"?>'));
-menuDaten.neu(new LinkEintrag('multidoc','Edit Form','<?echo $go_info["server"]["server_url"]?>/multidoc/admin/doctype_list.php?<?echo $session?>','seiteFrame','form.gif','DocType bearbeiten','n','<?echo "1&amp;$session"?>'));
-menuDaten.neu(new LinkEintrag('multidoc','Import Form','<?echo $go_info["server"]["server_url"]?>/multidoc/import/doctype.php?<?echo $session?>','seiteFrame','form.gif','DocType importieren','n','<?echo "1&amp;$session"?>'));
-menuDaten.neu(new LinkEintrag('multidoc','Export Form','<?echo $go_info["server"]["server_url"]?>/multidoc/export/index.php?<?echo $session?>','seiteFrame','form.gif','DocType exportieren','n','<?echo "1&amp;$session"?>'));
+menuDaten.neu(new LinkEintrag('multidoc','Add Form','/multidoc/admin/doctype_edit.php?<?echo $session?>','seiteFrame','form.gif','DocType Hinzufügen','n','<?echo "1&amp;$session"?>'));
+menuDaten.neu(new LinkEintrag('multidoc','Edit Form','/multidoc/admin/doctype_list.php?<?echo $session?>','seiteFrame','form.gif','DocType bearbeiten','n','<?echo "1&amp;$session"?>'));
+menuDaten.neu(new LinkEintrag('multidoc','Import Form','/multidoc/import/doctype.php?<?echo $session?>','seiteFrame','form.gif','DocType importieren','n','<?echo "1&amp;$session"?>'));
+menuDaten.neu(new LinkEintrag('multidoc','Export Form','/multidoc/export/index.php?<?echo $session?>','seiteFrame','form.gif','DocType exportieren','n','<?echo "1&amp;$session"?>'));
 
 <?
 
 /*
 <!--
-menuDaten.neu(new LinkEintrag('multidoc','Import Data','<?echo $go_info["server"]["server_url"]?>/multidoc/import/import.php?<?echo $session?>','seiteFrame','form.gif','DocType importieren','n','<?echo "1&amp;$session"?>'));
+menuDaten.neu(new LinkEintrag('multidoc','Import Data','/multidoc/import/import.php?<?echo $session?>','seiteFrame','form.gif','DocType importieren','n','<?echo "1&amp;$session"?>'));
 // -->
 
 */

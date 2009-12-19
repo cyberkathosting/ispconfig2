@@ -31,23 +31,23 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 <!-- Multidoc Management //-->
 
 menuDaten.neu(new VerzEintrag('multidoc','root','DocumentType Manager','','',''));
-menuDaten.neu(new LinkEintrag('multidoc','Hinzufügen','<?echo $go_info["server"]["server_url"]?>/multidoc/admin/doctype_edit.php?<?echo $session?>','seiteFrame','','DocType Hinzufügen','n','<?echo "1&amp;$session"?>'));
-menuDaten.neu(new LinkEintrag('multidoc','Bearbeiten','<?echo $go_info["server"]["server_url"]?>/multidoc/admin/doctype_list.php?<?echo $session?>','seiteFrame','','DocType bearbeiten','n','<?echo "1&amp;$session"?>'));
-menuDaten.neu(new LinkEintrag('multidoc','Importieren','<?echo $go_info["server"]["server_url"]?>/multidoc/import/doctype.php?<?echo $session?>','seiteFrame','','DocType importieren','n','<?echo "1&amp;$session"?>'));
-menuDaten.neu(new LinkEintrag('multidoc','Exportieren','<?echo $go_info["server"]["server_url"]?>/multidoc/export/index.php?<?echo $session?>','seiteFrame','','DocType exportieren','n','<?echo "1&amp;$session"?>'));
+menuDaten.neu(new LinkEintrag('multidoc','Hinzufügen','/multidoc/admin/doctype_edit.php?<?echo $session?>','seiteFrame','','DocType Hinzufügen','n','<?echo "1&amp;$session"?>'));
+menuDaten.neu(new LinkEintrag('multidoc','Bearbeiten','/multidoc/admin/doctype_list.php?<?echo $session?>','seiteFrame','','DocType bearbeiten','n','<?echo "1&amp;$session"?>'));
+menuDaten.neu(new LinkEintrag('multidoc','Importieren','/multidoc/import/doctype.php?<?echo $session?>','seiteFrame','','DocType importieren','n','<?echo "1&amp;$session"?>'));
+menuDaten.neu(new LinkEintrag('multidoc','Exportieren','/multidoc/export/index.php?<?echo $session?>','seiteFrame','','DocType exportieren','n','<?echo "1&amp;$session"?>'));
 
 
 <!-- Multidoc List Management //-->
 
 menuDaten.neu(new VerzEintrag('list','root','Listen Manager','','',''));
-menuDaten.neu(new LinkEintrag('list','Hinzufügen','<?echo $go_info["server"]["server_url"]?>/multidoc/listadmin/listtype_edit.php?<?echo $session?>','seiteFrame','doc.gif','ListType hinzufügen','n','<?echo "1&amp;$session"?>'));
-menuDaten.neu(new LinkEintrag('list','Bearbeiten','<?echo $go_info["server"]["server_url"]?>/multidoc/listadmin/listtype_list.php?<?echo $session?>','seiteFrame','doc.gif','ListType bearbeiten','n','<?echo "1&amp;$session"?>'));
-// menuDaten.neu(new LinkEintrag('multidoc','Importieren','<?echo $go_info["server"]["server_url"]?>/doc/import/listtype.php?<?echo $session?>','seiteFrame','doc.gif','DocType importieren','n','<?echo "1&amp;$session"?>'));
-// menuDaten.neu(new LinkEintrag('multidoc','Exportieren','<?echo $go_info["server"]["server_url"]?>/doc/export/index.php?<?echo $session?>','seiteFrame','','DocType exportieren','n','<?echo "1&amp;$session"?>'));
+menuDaten.neu(new LinkEintrag('list','Hinzufügen','/multidoc/listadmin/listtype_edit.php?<?echo $session?>','seiteFrame','doc.gif','ListType hinzufügen','n','<?echo "1&amp;$session"?>'));
+menuDaten.neu(new LinkEintrag('list','Bearbeiten','/multidoc/listadmin/listtype_list.php?<?echo $session?>','seiteFrame','doc.gif','ListType bearbeiten','n','<?echo "1&amp;$session"?>'));
+// menuDaten.neu(new LinkEintrag('multidoc','Importieren','/doc/import/listtype.php?<?echo $session?>','seiteFrame','doc.gif','DocType importieren','n','<?echo "1&amp;$session"?>'));
+// menuDaten.neu(new LinkEintrag('multidoc','Exportieren','/doc/export/index.php?<?echo $session?>','seiteFrame','','DocType exportieren','n','<?echo "1&amp;$session"?>'));
 
 
 
-menuDaten.neu(new LinkEintrag('list','Test','<?echo $go_info["server"]["server_url"]?>/multidoc/list/list.php?listtype_id=2&<?echo $session?>','seiteFrame','doc.gif','Liste testen','n','<?echo "1&amp;$session"?>'));
+menuDaten.neu(new LinkEintrag('list','Test','/multidoc/list/list.php?listtype_id=2&<?echo $session?>','seiteFrame','doc.gif','Liste testen','n','<?echo "1&amp;$session"?>'));
 
 <?
 ?>

@@ -32,9 +32,9 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 <!-- Multidoc Management //-->
 
 menuDaten.neu(new VerzEintrag('server','root','<? echo $go_api->lng("Server")?>','','',''));
-menuDaten.neu(new LinkEintrag('server','<? echo $go_api->lng("Eigenschaften")?>','<?echo $go_info["server"]["server_url"]?>/multidoc/edit/edit.php?doc_id=1&doctype_id=1010&<?echo $session?>','seiteFrame','preferences.gif','Eigenschaften','n','<?echo "1&amp;$session"?>'));
-menuDaten.neu(new LinkEintrag('server','<? echo $go_api->lng("Status")?>','<?echo $go_info["server"]["server_url"]?>/multidoc/edit/edit.php?doc_id=3&doctype_id=1021&<?echo $session?>','seiteFrame','shield_green.gif','Status','n','<?echo "1&amp;$session"?>'));
-menuDaten.neu(new LinkEintrag('server','<? echo $go_api->lng("Dienste")?>','<?echo $go_info["server"]["server_url"]?>/multidoc/edit/edit.php?doc_id=1&doctype_id=1023&<?echo $session?>','seiteFrame','server_to_client.gif','Dienste','n','<?echo "1&amp;$session"?>'));
+menuDaten.neu(new LinkEintrag('server','<? echo $go_api->lng("Eigenschaften")?>','/multidoc/edit/edit.php?doc_id=1&doctype_id=1010&<?echo $session?>','seiteFrame','preferences.gif','Eigenschaften','n','<?echo "1&amp;$session"?>'));
+menuDaten.neu(new LinkEintrag('server','<? echo $go_api->lng("Status")?>','/multidoc/edit/edit.php?doc_id=3&doctype_id=1021&<?echo $session?>','seiteFrame','shield_green.gif','Status','n','<?echo "1&amp;$session"?>'));
+menuDaten.neu(new LinkEintrag('server','<? echo $go_api->lng("Dienste")?>','/multidoc/edit/edit.php?doc_id=1&doctype_id=1023&<?echo $session?>','seiteFrame','server_to_client.gif','Dienste','n','<?echo "1&amp;$session"?>'));
 
 <?
 ?>
