@@ -33,8 +33,6 @@ $navigation = "../" . $session_design_path . "/nav.inc.php";?>
 
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=<?php echo $go_info["theme"]["charset"]; ?>">
-<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
-<meta name="ProgId" content="FrontPage.Editor.Document">
 <title>nav frame</title>
 
 <STYLE type='text/css'>

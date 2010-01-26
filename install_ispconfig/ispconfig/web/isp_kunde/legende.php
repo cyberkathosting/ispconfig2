@@ -34,8 +34,6 @@ $legende = "../" . $session_design_path . "/legende.inc.php";
 
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=<?php echo $go_info["theme"]["charset"]; ?>">
-<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
-<meta name="ProgId" content="FrontPage.Editor.Document">
 <title>Legende</title>
 <base target="_self">
 </head>

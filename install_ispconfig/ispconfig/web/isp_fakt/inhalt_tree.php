@@ -390,8 +390,6 @@ MenuSchriftGroesse = '1';                   // die Schriftgröße - nicht zu groß 
 </script>
 <noscript>
 <meta http-equiv="REFRESH" content="1; URL=nojsindx.htm">
-<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
-<meta name="ProgId" content="FrontPage.Editor.Document">
 </noscript>
 
 </head>
