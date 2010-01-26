@@ -50,6 +50,19 @@ caselog(){
   fi
 }
 
+check_app(){
+  for a in "$@"; do
+    local w=`which $a`
+    if [ $? != 0 -o "x$w" == "x" ]; then
+      error "$a not found!";
+    else
+      log "$a found: $w"
+      echo OK
+      break
+    fi
+  done
+}
+
 ID="id -u"
 MYUID=`$ID 2>/dev/null`
 
@@ -592,85 +605,37 @@ if [ "$install_art" == "install" ]; then  ## install_art == install
   echo "########## PROCMAIL ##########"
   echo
   echo $q_procmail_check
-  which procmail
-  if [ $? != 0 ]; then
-    error "procmail not found!";
-  else
-    log "procmail found: `which procmail`"
-    echo OK
-  fi
+  check_app procmail
 
   echo
   echo "########## QUOTA ##########"
   echo
   echo $q_quota_check
-  which quota
-  if [ $? != 0 ]; then
-    error "quota not found!";
-  else
-    log "quota found: `which quota`"
-    echo OK
-  fi
+  check_app quota
 
   echo
   echo "########## MYSQL SERVER ##########"
   echo
   echo $q_mysql_check
-  which mysql
-  if [ $? != 0 ]; then
-    error "mysql not found!";
-  else
-    log "mysql found: `which mysql`"
-    echo OK
-  fi
+  check_app mysql
 
   echo
   echo "########## OPENSSL ##########"
   echo
   echo $q_openssl_check
-  which openssl
-  if [ $? != 0 ]; then
-    error "openssl not found!";
-  else
-    log "openssl found: `which openssl`"
-    echo OK
-  fi
+  check_app openssl
 
   echo
   echo "########## DNS SERVER ##########"
   echo
   echo $q_bind_check
-  which named
-  if [ $? != 0 ]; then
-    error "named not found!";
-  else
-    log "named found: `which named`"
-    echo OK
-  fi
+  check_app named
 
   echo
   echo "########## IPTABLES/IPCHAINS/IPFW ##########"
   echo
   echo $q_iptables_check
-  which iptables
-  if [ $? != 0 ]; then
-    which ipchains
-    if [ $? != 0 ]; then
-      which ipfw
-      if [ $? != 0 ]; then
-        error "iptables/ipchains/ipfw not found!";
-      else
-        log "ipfw found: `which ipfw`"
-        echo OK
-      fi
-    else
-      log "ipchains found: `which ipchains`"
-      echo OK
-    fi
-  else
-    log "iptables found: `which iptables`"
-    echo OK
-  fi
+  check_app iptables ipchains ipfw
 
   echo
   echo "########## WEB SERVER ##########"
@@ -722,91 +687,53 @@ fi  ## install_art == install
   echo
   echo "########## gcc ##########"
   echo
-  which gcc
-  if [ $? != 0 ]; then
-    error "gcc not found!";
-  else
-    log "gcc found: `which gcc`"
-    echo OK
-  fi
+  check_app gcc
 
   echo
   echo "########## make ##########"
   echo
-  which make
-  if [ $? != 0 ]; then
-    error "make not found!";
-  else
-    log "make found: `which make`"
-    echo OK
-  fi
+  check_app make
 
   echo
   echo "########## lex ##########"
   echo
-  which lex
-  if [ $? != 0 ]; then
-    error "flex not found!";
-  else
-    log "flex found: `which lex`"
-    echo OK
-  fi
+  check_app lex
 
   echo
   echo "########## g++ ##########"
   echo
-  which g++
-  if [ $? != 0 ]; then
-    error "g++ not found!";
-  else
-    log "g++ found: `which g++`"
-    echo OK
-  fi
+  check_app g++
 
   echo
   echo "########## INSTALLATION ##########"
   echo
-  if [ -f /etc/my.cnf ]; then
-     mv -f /etc/my.cnf /etc/my.cnf_orig
-     grep -wv "skip-networking" /etc/my.cnf_orig > /etc/my.cnf
-     /etc/init.d/mysql restart &> /dev/null
-     /etc/init.d/mysqld restart &> /dev/null
-  fi
-  if [ -f /etc/mysql/my.cnf ]; then
-     mv -f /etc/mysql/my.cnf /etc/mysql/my.cnf_orig
-     grep -wv "skip-networking" /etc/mysql/my.cnf_orig > /etc/mysql/my.cnf
-     /etc/init.d/mysql restart &> /dev/null
-     /etc/init.d/mysqld restart &> /dev/null
-  fi
+  for d in /etc /etc/mysql; do
+    if [ -f $d/my.cnf ]; then
+      mv -f $d/my.cnf $d/my.cnf_orig
+      grep -wv "skip-networking" $d/my.cnf_orig > $d/my.cnf
+      if [ -x /etc/init.d/mysql ]; then
+	/etc/init.d/mysql restart > /dev/null
+      elif [ -x /etc/init.d/mysqld ]; then
+        /etc/init.d/mysqld restart > /dev/null
+      else 
+	error "MySQL Init script not found."
+      fi
+    fi
+  done
   netstat -ta | grep -i mysql > /dev/null
   if [ $? != 0 ]; then
     error "$q_mysql_running_check";
   else
-    if [ ! -S /var/lib/mysql/mysql.sock ] && [ ! -h  /var/lib/mysql/mysql.sock ] && [ -S  /tmp/mysql.sock ]; then
-       if [ ! -d /var/lib/mysql ]; then
-          mkdir -p /var/lib/mysql
-          caselog "directory /var/lib/mysql created" "directory /var/lib/mysql  could not be created!"
-       fi
-       ln -s /tmp/mysql.sock /var/lib/mysql/mysql.sock
-       caselog "symbolic link from /var/lib/mysql/mysql.sock to /tmp/mysql.sock created" "symbolic link from /var/lib/mysql/mysql.sock to /tmp/mysql.sock could not be created!"
-    fi
-    if [ ! -S /var/lib/mysql/mysql.sock ] && [ ! -h  /var/lib/mysql/mysql.sock ] && [ -S  /var/run/mysqld/mysqld.sock ]; then
-       if [ ! -d /var/lib/mysql ]; then
-          mkdir -p /var/lib/mysql
-          caselog "directory /var/lib/mysql created" "directory /var/lib/mysql  could not be created!"
-       fi
-       ln -s /var/run/mysqld/mysqld.sock /var/lib/mysql/mysql.sock
-       caselog "symbolic link from /var/lib/mysql/mysql.sock to /var/run/mysqld/mysqld.sock created" "symbolic link from /var/lib/mysql/mysql.sock to /var/run/mysqld/mysqld.sock could not be created!"
-    fi
-    if [ ! -S /var/lib/mysql/mysql.sock ] && [ ! -h  /var/lib/mysql/mysql.sock ] && [ -S  /var/run/mysql/mysql.sock ]; then
-       if [ ! -d /var/lib/mysql ]; then
-          mkdir -p /var/lib/mysql
-          caselog "directory /var/lib/mysql created" "directory /var/lib/mysql  could not be created!"
-       fi
-       ln -s /var/run/mysql/mysql.sock /var/lib/mysql/mysql.sock
-       caselog "symbolic link from /var/lib/mysql/mysql.sock to /var/run/mysql/mysql.sock created" "symbolic link from /var/lib/mysql/mysql.sock to /var/run/mysql/mysql.sock could not be created!"
-    fi
-    if [ ! -S /var/lib/mysql/mysql.sock ] && [ ! -h  /var/lib/mysql/mysql.sock ] && [ ! -S  /tmp/mysql.sock ] && [ ! -h  /tmp/mysql.sock ] && [ ! -S  /var/run/mysqld/mysqld.sock ] && [ ! -h  /var/run/mysqld/mysqld.sock ] && [ ! -S  /var/run/mysql/mysql.sock ] && [ ! -h  /var/run/mysql/mysql.sock ]; then
+    for d in /tmp /var/run/mysqld /var/run/mysql; do
+      if [ -S $d/mysql.sock ]; then
+        ln -s $d/mysql.sock /var/lib/mysql/mysql.sock
+        caselog "symbolic link from /var/lib/mysql/mysql.sock to $d/mysql.sock created" "symbolic link from /var/lib/mysql/mysql.sock to $d/mysql.sock could not be created!"
+      fi
+    done
+    if [ ! -S /var/lib/mysql/mysql.sock -a ! -h /var/lib/mysql/mysql.sock ] &&
+       [ ! -S /tmp/mysql.sock -a ! -h /tmp/mysql.sock ] &&
+       [ ! -S /var/run/mysqld/mysqld.sock -a ! -h /var/run/mysqld/mysqld.sock ] &&
+       [ ! -S /var/run/mysql/mysql.sock -a ! -h /var/run/mysql/mysql.sock ]; then
        error "$q_mysql_sock_check";
     fi
   fi
@@ -826,7 +753,7 @@ fi  ## install_art == install
   cat dist.info.ende >> dist.info
   rm -f dist.info.ende
   if [ "$install_art" == "upgrade" ] && [ -f  /root/ispconfig/dist.info ]; then
-    cat /root/ispconfig/dist.info | grep -wv dist_httpd_conf_dir | grep -wv dist_ip > dist.info
+    grep -wv dist_httpd_conf_dir /root/ispconfig/dist.info | grep -wv dist_ip > dist.info
   fi
   . dist.info
 
@@ -844,14 +771,14 @@ fi  ## install_art == install
     cp -pfr /root/ispconfig/httpd/conf/ssl.* ./
 
     # Save custom templates
-    mkdir -p /root/ispconfig/isp/conf/customized_templates &> /dev/null
-    cp -pfr /root/ispconfig/isp/conf/customized_templates ./ &> /dev/null
+    mkdir -p /root/ispconfig/isp/conf/customized_templates > /dev/null
+    cp -pfr /root/ispconfig/isp/conf/customized_templates ./ > /dev/null
 
-    tar -pczf root_ispconfig.tar.gz /root/ispconfig/ &> /dev/null
-    chmod 600 root_ispconfig.tar.gz &> /dev/null
+    tar -pczf root_ispconfig.tar.gz /root/ispconfig/ > /dev/null
+    chmod 600 root_ispconfig.tar.gz > /dev/null
     caselog "created backup of directory /root/ispconfig/" "could not create backup of directory /root/ispconfig/"
-    tar -pczf home_admispconfig.tar.gz /home/admispconfig/ &> /dev/null
-    chmod 600 home_admispconfig.tar.gz &> /dev/null
+    tar -pczf home_admispconfig.tar.gz /home/admispconfig/ > /dev/null
+    chmod 600 home_admispconfig.tar.gz > /dev/null
     caselog "created backup of directory /home/admispconfig/" "could not create backup of directory /home/admispconfig/"
 
     rm -fr /root/ispconfig
@@ -861,7 +788,7 @@ fi  ## install_art == install
   cd compile_aps/
   chmod 700 compile
   if [ "$install_art" == "upgrade" ]; then
-    mkdir -p /root/ispconfig/httpd/conf &> /dev/null
+    mkdir -p /root/ispconfig/httpd/conf > /dev/null
     cp -pfr ../ssl.* /root/ispconfig/httpd/conf/
   fi
   ./compile || (cd `pwd`/../.. && rm -fr install_ispconfig && exit 1)
@@ -900,7 +827,7 @@ fi  ## install_art == install
       echo -n $q_mysql_server
       read mysql_server
     done
-    ping -c3 `echo $mysql_server` &> /dev/null
+    ping -c3 `echo $mysql_server` > /dev/null
     while [ $? != 0 ]
     do
       echo "$q_mysql_server_check"
@@ -911,7 +838,7 @@ fi  ## install_art == install
         echo -n $q_mysql_server
         read mysql_server
       done
-      ping -c3 `echo $mysql_server` &> /dev/null
+      ping -c3 `echo $mysql_server` > /dev/null
     done
 
     echo OK
@@ -945,7 +872,7 @@ fi  ## install_art == install
         echo -n $q_mysql_server
         read mysql_server
       done
-      ping -c3 `echo $mysql_server` &> /dev/null
+      ping -c3 `echo $mysql_server` > /dev/null
       while [ $? != 0 ]
       do
         echo "$q_mysql_server_check"
@@ -956,7 +883,7 @@ fi  ## install_art == install
           echo -n $q_mysql_server
           read mysql_server
         done
-        ping -c3 `echo $mysql_server` &> /dev/null
+        ping -c3 `echo $mysql_server` > /dev/null
       done
 
       echo OK
@@ -999,7 +926,7 @@ fi  ## install_art == install
       read ip
     done
 
-    ping -c3 `echo $ip` &> /dev/null
+    ping -c3 `echo $ip` > /dev/null
     while [ $? != 0 ]
     do
       echo "$q_ip_check"
@@ -1010,7 +937,7 @@ fi  ## install_art == install
         echo -n $q_ip_address
         read ip
       done
-      ping -c3 `echo $ip` &> /dev/null
+      ping -c3 `echo $ip` > /dev/null
     done
 
     echo OK
@@ -1030,7 +957,7 @@ fi  ## install_art == install
     else
       ping=`echo $server_host`.`echo $server_domain`
     fi
-    ping -c3 `echo $ping` &> /dev/null
+    ping -c3 `echo $ping` > /dev/null
 
     while [ $? != 0 ]
     do
@@ -1050,7 +977,7 @@ fi  ## install_art == install
       else
         ping=`echo $server_host`.`echo $server_domain`
       fi
-      ping -c3 `echo $ping` &> /dev/null
+      ping -c3 `echo $ping` > /dev/null
     done
 
     echo OK
@@ -1091,7 +1018,7 @@ fi  ## install_art == install
   httpd -V > httpd
   awk -F"\"" '$1==" -D HTTPD_ROOT="{print $2}'  httpd > httpd2
   awk -F"\"" '$1==" -D SERVER_CONFIG_FILE="{print $2}'  httpd >> httpd2
-  which ip &> /dev/null
+  which ip > /dev/null
   if [ $? != 0 ]; then
     OS=`uname -s`
     if [ "$OS" == "FreeBSD" ]; then
@@ -1109,9 +1036,9 @@ fi  ## install_art == install
   chmod 755 /home/admispconfig/ispconfig/tools/suphp/usr/bin/php-wrapper
 
   # Restore custom templates
-  mkdir -p /root/ispconfig/isp/conf/customized_templates &> /dev/null
+  mkdir -p /root/ispconfig/isp/conf/customized_templates > /dev/null
   if [ "$install_art" == "upgrade" ]; then
-    cp -pf customized_templates/* /root/ispconfig/isp/conf/customized_templates/ &> /dev/null
+    cp -pf customized_templates/* /root/ispconfig/isp/conf/customized_templates/ > /dev/null
     rm -fr customized_templates/ &> /dev/null
   fi
 
