@@ -141,14 +141,41 @@ foreach($traffic as $virtual_host => $bytes) {
                         @symlink(get_filename($virtual_host),"$webroot/$virtual_host/log/web.log");
                 }
                 clearstatcache();
-                $web_owner = @fileowner($webroot."/".$virtual_host."/log");
-                exec("chown -R ".$web_owner.":web".$web_id." ".$webroot."/".$virtual_host."/log &> /dev/null");
+		if($go_info["server"]["perms_root"]["logs"]===true) {
+		  exec("chown -R root:root ".$webroot."/".$virtual_host."/log &> /dev/null");
+		} else {
+		  $web_owner = @fileowner($webroot."/".$virtual_host."/log");
+		  exec("chown -R ".$web_owner.":web".$web_id." ".$webroot."/".$virtual_host."/log &> /dev/null");
+		}
         }
 
 }
 
-// lösche 2 Tage altes access log
-@unlink($server["server_path_httpd_log"] . "_" . date("Y_m_d",time() - (43200 * 3)));
+// lösche alte access logs
+
+if (is_int($go_info["server"]["accesslog_purge_days"]) && $go_info["server"]["accesslog_purge_days"]>0) {
+  $purge = $go_info["server"]["accesslog_purge_days"];
+} else {
+  $purge = 2; // default value
+}
+$dir = dirname($server["server_path_httpd_log"]);
+if (is_dir($dir)) {
+  if ($dh = opendir($dir)) {
+    while (($file = readdir($dh)) !== false) {
+      if (preg_match('/^'.basename($dir).'_/', $file)) {
+	$files[] = $file;
+        $index[] = filemtime( $dir.'/'.$file );
+      }
+    }
+    closedir($dh);
+  }
+  asort($index);
+  foreach($index as $i => $t) {
+    if($t < time()-86400*$purge) {
+      @unlink($dir.'/'.$files[$i]);
+    }
+  }
+}
 
 $time_end = getmicrotime();
 $dauer = $time_end - $time_start;

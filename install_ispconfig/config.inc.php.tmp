@@ -114,7 +114,9 @@ $go_info["server"]["redirect_mailuser_after_logout"] = '{REDIRECT_MAILUSER_AFTER
 // allow for some stuff like stats and logs to belong to root, since it could be unfair to add this to user quota
 // set to true to enable
 $go_info["server"]["perms_root"]["stats"] = false;
-//$go_info["server"]["perms_root"]["logs"] = false; //soon
+$go_info["server"]["perms_root"]["logs"] = false;
+
+$go_info["server"]["accesslog_purge_days"] = 2; // the number of days to keep the system-wide httpd access logs (set to a positive integer)
 
 /**********************************************
 * Tools Settings
