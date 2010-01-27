@@ -39,6 +39,25 @@ include ("/root/ispconfig/scripts/lib/server.inc.php");
 $server_id = $mod->system->server_id;
 $server = $mod->system->server_conf;
 $path_httpd_root = stripslashes($server["server_path_httpd_root"]);
+$global_stats_user = trim($server['global_stats_user']);
+$global_stats_password = trim($server['global_stats_password']);
+if($global_stats_password != ''){
+        //calculate 2/8 random chars as salt for the crypt // by bjmg
+        if($go_info["server"]["password_hash"] == 'crypt') {
+            $salt="";
+            for ($n=0;$n<2;$n++) {
+                $salt.=chr(mt_rand(64,126));
+            }
+        } else {
+            $salt="$1$";
+            for ($n=0;$n<8;$n++) {
+                $salt.=chr(mt_rand(64,126));
+            }
+            $salt.="$";
+        }
+
+        $global_stats_password = crypt($global_stats_password, $salt);
+}
 
 exec("which perl", $perl_location, $verify);
 
@@ -111,8 +130,9 @@ require valid-user
                             }
                         } else
                         {
-                            $ht_file .= "admin:\$1\$TAVCXZlv\$NAjnpdNgAfPMNT4/A61Z.0\n";
+			  //$ht_file .= "admin:\$1\$TAVCXZlv\$NAjnpdNgAfPMNT4/A61Z.0\n";
                         }
+			if($global_stats_user != '' && $global_stats_password != '') $ht_file .= $global_stats_user.":".$global_stats_password."\n";
 
                         unset ($users);
                         $fp = fopen($web_home."/".$webname."/.htpasswd", "w");
@@ -251,7 +271,11 @@ h1, h2, p {text-align:center}
                         }
                     }
 
-                    exec("chown -R $web_user:$web_group $stats_path &> /dev/null");
+		    if($go_info["server"]["perms_root"]["stats"]===true) {
+		      exec("chown -R root:root $stats_path &> /dev/null");
+		    } else {
+		      exec("chown -R $web_user:$web_group $stats_path &> /dev/null");
+		    }
                 }
 
             }

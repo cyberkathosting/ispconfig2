@@ -36,7 +36,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 set_time_limit(0);
 
 //** 1 = Debugging enabled, 0 = Debugging disabled -----------------
-$webalizer_debug = 1;
+$webalizer_debug = 0;
 // -----------------------------------------------------------------
 
 include("/root/ispconfig/scripts/lib/config.inc.php");
@@ -153,7 +153,11 @@ require valid-user
                   $message .= exec("webalizer -n $web_real_name -s $web_real_name -r $web_real_name -q -T -o $stats_path -c /root/ispconfig/scripts/shell/webalizer.conf $logfile")."\n";
               }
 
-              exec("chown -R $web_user:$web_group $stats_path &> /dev/null");
+	      if($go_info["server"]["perms_root"]["stats"]===true) {
+                exec("chown -R root:root $stats_path &> /dev/null");
+	      } else {
+                exec("chown -R $web_user:$web_group $stats_path &> /dev/null");
+	      }
             }
 
         }

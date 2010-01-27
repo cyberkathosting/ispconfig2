@@ -111,6 +111,11 @@ $go_info["server"]["force_user_quota"] = {FORCE_USER_QUOTA};
 $go_info["server"]["redirect_after_logout"] = '{REDIRECT_AFTER_LOGOUT}'; // URL to redirect to after logout from ISPConfig; leave empty for default location
 $go_info["server"]["redirect_mailuser_after_logout"] = '{REDIRECT_MAILUSER_AFTER_LOGOUT}'; // URL to redirect to after logout from ISPConfig mailuser interface; leave empty for default location
 
+// allow for some stuff like stats and logs to belong to root, since it could be unfair to add this to user quota
+// set to true to enable
+$go_info["server"]["perms_root"]["stats"] = false;
+//$go_info["server"]["perms_root"]["logs"] = false; //soon
+
 /**********************************************
 * Tools Settings
 **********************************************/
