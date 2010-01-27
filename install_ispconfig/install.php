@@ -790,11 +790,7 @@ if($install_art == "install"){
   }
   unset($tables);
 
-  if(empty($db_password)){
-    caselog("mysqldump -h $db_server -u $db_user -c -t --add-drop-table --add-locks --all --quick --lock-tables $new_db > existing_db.sql", $FILE, __LINE__, "dumped old db to file existing_db.sql","could not dump old db to file existing_db.sql");
-  } else {
-    caselog("mysqldump -h $db_server -u $db_user -p$db_password -c -t --add-drop-table --add-locks --all --quick --lock-tables $new_db > existing_db.sql", $FILE, __LINE__,"dumped old db to file existing_db.sql","could not dump old db to file existing_db.sql");
-  }
+  caselog("mysqldump -h $db_server -u $db_user " . (empty($db_password) ? '' : "-p$db_password ") . "-c -t --add-drop-table --add-locks --all --quick --lock-tables $new_db > existing_db.sql", $FILE, __LINE__, "dumped old db to file existing_db.sql","could not dump old db to file existing_db.sql");
   exec("chmod 600 existing_db.sql");
   caselog("mv -f root_ispconfig.tar.gz /tmp/root_ispconfig_".date("m_d_Y__H_i_s", $current_date).".tar.gz", $FILE, __LINE__,"moved root_ispconfig.tar.gz to /tmp/root_ispconfig_".date("m_d_Y__H_i_s", $current_date).".tar.gz","could not move root_ispconfig.tar.gz to /tmp/root_ispconfig_".date("m_d_Y__H_i_s", $current_date).".tar.gz");
   caselog("mv -f home_admispconfig.tar.gz /tmp/home_admispconfig_".date("m_d_Y__H_i_s", $current_date).".tar.gz", $FILE, __LINE__,"moved home_admispconfig.tar.gz to /tmp/home_admispconfig_".date("m_d_Y__H_i_s", $current_date).".tar.gz","could not move home_admispconfig.tar.gz to /tmp/home_admispconfig_".date("m_d_Y__H_i_s", $current_date).".tar.gz");
@@ -804,25 +800,18 @@ if($install_art == "install"){
   @mysql_query("CREATE DATABASE ".$new_db." /*!40100 DEFAULT CHARACTER SET latin1 */");
   mysql_select_db($new_db, $link);
   exec("chmod 444 $sql_file");
-  if(empty($db_password)){
-    caselog("mysql -h $db_server -u $db_user $new_db < $sql_file &> /dev/null", $FILE, __LINE__,"read in $sql_file","could not read in $sql_file");
-    $tables = mysql_list_tables($new_db);
 
-    while(list($table_name) = mysql_fetch_array($tables)){
-      if(in_array($table_name, $old_tables_array) && $table_name != "doctype" && $table_name != "sys_dep" && $table_name != "sys_modules" && $table_name != "sys_nodes") mysql_query("DELETE FROM $table_name");
+  // install new database layout and import existing data
+  caselog("mysql -h $db_server -u $db_user " . (empty($db_password) ? '' : "-p$db_password ") . "$new_db < $sql_file &> /dev/null", $FILE, __LINE__,"imported $sql_file","could not import $sql_file");
+  $tables = mysql_list_tables($new_db);
+  while(list($table_name) = mysql_fetch_array($tables)){
+    if(in_array($table_name, $old_tables_array) && $table_name != "doctype" && $table_name != "sys_dep" && $table_name != "sys_modules" && $table_name != "sys_nodes") {
+      mysql_query("DELETE FROM $table_name");
     }
-    unset($tables);
-    caselog("mysql -f -s -h $db_server -u $db_user $new_db < existing_db.sql &> /dev/null", $FILE, __LINE__,"imported existing_db.sql","could not import existing_db.sql");
-  } else {
-    caselog("mysql -h $db_server -u $db_user -p$db_password $new_db < $sql_file &> /dev/null", $FILE, __LINE__,"read in $sql_file","could not read in $sql_file");
-    $tables = mysql_list_tables($new_db);
-
-    while (list($table_name) = mysql_fetch_array($tables)) {
-      if(in_array($table_name, $old_tables_array) && $table_name != "doctype" && $table_name != "sys_dep" && $table_name != "sys_modules" && $table_name != "sys_nodes") mysql_query("DELETE FROM $table_name");
-    }
-    unset($tables);
-    caselog("mysql -f -s -h $db_server -u $db_user -p$db_password $new_db < existing_db.sql &> /dev/null", $FILE, __LINE__,"imported existing_db.sql","could not import existing_db.sql");
   }
+  unset($tables);
+  caselog("mysql -f -s -h $db_server -u $db_user " . (empty($db_password) ? '' : "-p$db_password ") . "$new_db < existing_db.sql &> /dev/null", $FILE, __LINE__,"imported existing_db.sql","could not import existing_db.sql");
+
   //////////// Nachträge in neuer DB machen /////////////
   $conn = mysql_query("SELECT * FROM sys_user WHERE doc_id > 1");
   while($row = mysql_fetch_array($conn)){
@@ -905,7 +894,7 @@ if($install_art == "install"){
   //////////// Nachträge in neuer DB machen ENDE /////////////
   caselog("rm -f $sql_file", $FILE, __LINE__,"deleted $sql_file","could not delete $sql_file");
   caselog("rm -f existing_db.sql", $FILE, __LINE__,"deleted existing_db.sql","could not delete existing_db.sql");
-}
+} // end if ($install) else ...
 
 $httpd_configuration = rf("httpd2");
 
@@ -1130,11 +1119,7 @@ if($install_art == "install"){
     mysql_query("CREATE DATABASE ".$new_db." /*!40100 DEFAULT CHARACTER SET latin1 */");
     mysql_select_db($new_db, $link);
     exec("chmod 444 $sql_file");
-    if(empty($db_password)){
-      caselog("mysql -h $db_server -u $db_user $new_db < $sql_file", $FILE, __LINE__,"read in $sql_file","could not read in $sql_file");
-    } else {
-      caselog("mysql -h $db_server -u $db_user -p$db_password $new_db < $sql_file", $FILE, __LINE__,"read in $sql_file","could not read in $sql_file");
-    }
+    caselog("mysql -h $db_server -u $db_user " . (empty($db_password) ? '' : "-p$db_password ") . "$new_db < $sql_file", $FILE, __LINE__,"imported $sql_file","could not import $sql_file");
     caselog("rm -f $sql_file", $FILE, __LINE__);
 
     mysql_query("INSERT INTO isp_server_ip VALUES (1, 1, '$ip')");
