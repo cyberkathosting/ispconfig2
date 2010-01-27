@@ -724,10 +724,14 @@ fi  ## install_art == install
   if [ $? != 0 ]; then
     error "$q_mysql_running_check";
   else
-    for d in /tmp /var/run/mysqld /var/run/mysql; do
-      if [ -S $d/mysql.sock ]; then
-        ln -s $d/mysql.sock /var/lib/mysql/mysql.sock
-        caselog "symbolic link from /var/lib/mysql/mysql.sock to $d/mysql.sock created" "symbolic link from /var/lib/mysql/mysql.sock to $d/mysql.sock could not be created!"
+    for s in /tmp/mysql.sock /var/run/mysqld/mysqld.sock /var/run/mysql/mysql.sock; do
+      if [ -S $s ]; then
+        if [ ! -d /var/lib/mysql ]; then
+	  mkdir -p /var/lib/mysql
+	  caselog "directory /var/lib/mysql created" "directory /var/lib/mysql could not be created!"
+	fi
+        ln -s $s /var/lib/mysql/mysql.sock
+        caselog "symbolic link from /var/lib/mysql/mysql.sock to $s created" "symbolic link from /var/lib/mysql/mysql.sock to $s could not be created!"
       fi
     done
     if [ ! -S /var/lib/mysql/mysql.sock -a ! -h /var/lib/mysql/mysql.sock ] &&
