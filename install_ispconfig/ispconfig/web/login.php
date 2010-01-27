@@ -56,12 +56,13 @@ function lf(){document.loginForm.username.focus();}
   <tr>
     <td align="center" valign="middle"><table width="400" border="0" cellpadding="0" cellspacing="1" bgcolor="#CCCCCC">
       <tr>
-        <td><img src="<? $reseller = $_REQUEST["reseller"];
+        <td align="center"><img src="<? $reseller = $_REQUEST["reseller"];
                 if(!preg_match("/^[a-zA-Z0-9_\-]{0,50}$/",$reseller)) die("The 'reseller' variable contains invalid chars. Allowed: 'a-z A-Z 0-9 _ -'. Max. Length: 50 chars.");
                 $reseller = escapeshellcmd($reseller);
                 $reseller = str_replace("/","",$reseller);
                 $_SESSION["reseller_image_id"] = $reseller;
-                echo ($reseller != '' && @is_file('design/reseller_images/login_'.$reseller.'.png'))?'design/reseller_images/login_'.$reseller.'.png':'design/default/images/login_logo.png';?>" width="398" height="78"></td>
+                echo ($reseller != '' && @is_file('design/reseller_images/login_'.$reseller.'.png'))?'design/reseller_images/login_'.$reseller.'.png':'design/default/images/login_logo.png';?>" width="398" height="78">
+<br><font class="normal"><strong>ADMIN CONTROL PANEL</strong></font></td>
       </tr>
       <tr>
         <td bgcolor="#FFFFFF"><table width="100%" border="0" cellspacing="0" cellpadding="5">
@@ -100,7 +101,7 @@ function lf(){document.loginForm.username.focus();}
         </table></td>
       </tr>
     </table>
-      <p>&nbsp;</p></td>
+      <p><br><font class="normal"><a href="/mailuser/">User Control Panel</a></font></p></td>
   </tr>
 </table>
 </form>

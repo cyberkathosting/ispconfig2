@@ -33,101 +33,95 @@ $app->uses('tpl,pop3');
 $app->tpl->newTemplate("login.tpl.htm");
 
 if(count($_POST) > 1) {
-        if($_POST["username"] != '' and $_POST["passwort"] != '') {
-
-                $username         = $_POST["username"];
-                $passwort         = $_POST["passwort"];
-
-                                $orig_username = $username;
-
-                                // Dovecot @ username hack
-                                if(stristr($username, '@')) {
-                                        //list ($loginusername, $logindomain) = split('[/@-]', $username);
-                                    list ($loginusername, $logindomain) = split('@', $username);
-                                    $username = "${logindomain}_$loginusername";
-									/* tmg 
-									 * that simple hack won't work for cases where the 
-									 *   the user_username is in the form webNN_user
-									 *   nor will it work for the case where the email
-									 *   adderss is in the form a.n.other@example.com 
-									 *   but the  user_username is example.com_another
-									 */
-
-									/*tmg 
-										First try to match user_username toteh domain
-											   and the user_email to the part before th @
-									*/
-                					$user = $app->db->queryOneRecord("SELECT * FROM 
-																			isp_isp_user 
-											WHERE user_username like '".
-																${logindomain}."%' ".
-												"and user_email = '". $loginusername."'");
-									/*tmg did we get a match */
-									if ( $user["user_username"] == "" ) { 
-										/*tmg  NO so try just the user_email */
-										$user = $app->db->queryOneRecord(
-												"SELECT * FROM isp_isp_user WHERE ".
-													"user_email = '".$loginusername."'");
-									}
-									/*tmg  Here I make the wild assumption the one of the 
-											queries worked  */
-									$username = $user["user_username"]; 
-                                }
-
-                // Checke, ob es den User in ISPConfig DB gibt
-                $user = $app->db->queryOneRecord("SELECT * FROM isp_isp_user WHERE user_username = '".addslashes($username)."'");
-
-                if($user["doc_id"] > 0) {
-                  // Hole das Web des Users
-                  $web = $app->db->queryOneRecord("SELECT isp_isp_web.web_mailuser_login FROM isp_isp_web, isp_dep WHERE isp_isp_web.doc_id = isp_dep.parent_doc_id AND isp_isp_web.doctype_id = isp_dep.parent_doctype_id AND isp_dep.child_doctype_id = 1014 AND isp_dep.child_doc_id = ".$user["doc_id"]);
-                  $login_allowed = $web["web_mailuser_login"];
-                  unset($web);
-
-                  if($login_allowed == 1){
-                        // for DEBUG Only
-                        if($go_info["server"]["mode"] == 'demo') {
-                                                        $app->pop3->hostname = "ispconfig.org";
-                                                } else {
-                                                        $app->pop3->hostname = "localhost";
-                                                }
-
-                        // Öffne Pop3 Verbindung
-                        $res = $app->pop3->Open();
-                        if($res == '') {
-
-                                // versuche Login
-								/*tmg  Change to use the $username not the $orig_username */
-                                $res = $app->pop3->Login($username,$passwort,0);
-                                if($res == '') {
-
-                                        // Login war erfolgreich
-                                        $_SESSION["s"]["userid"] = $user["doc_id"];
-                                        $_SESSION["s"]["user"]   = $user;
-                                        $app->pop3->Close();
-                                        header("Location: ../mail/index.php");
-                                        exit;
-
-                                } else {
-                                        // Username oder PW falsch
-                                        $error = $res;
-                                        $app->pop3->Close();
-                                }
-                        } else {
-                                // kein pop3 Login möglich
-                                $error = $res;
-                                $app->pop3->Close();
-                        }
-                  } else {
-                    // Mailuser-Login für das Web nicht zugelassen
-                    $error = $app->lng("txt_no_mailuser_login");
-                  }
-                } else {
-                        // User unbekannt in DB
-                        $error = $app->lng("txt_user_unbekannt");
-                }
-        } else {
-                $error = $app->lng("txt_email_passwort_leer");
-        }
+  if($_POST["username"] != '' and $_POST["passwort"] != '') {
+    
+    $username         = $_POST["username"];
+    $passwort         = $_POST["passwort"];
+    
+    $orig_username = $username;
+    
+    // Dovecot @ username hack
+    if(stristr($username, '@')) {
+      //list ($loginusername, $logindomain) = split('[/@-]', $username);
+      list ($loginusername, $logindomain) = split('@', $username);
+      $username = "${logindomain}_$loginusername";
+      /* tmg 
+       * that simple hack won't work for cases where the 
+       *   the user_username is in the form webNN_user
+       *   nor will it work for the case where the email
+       *   adderss is in the form a.n.other@example.com 
+       *   but the  user_username is example.com_another
+       */
+      
+      /*tmg 
+       *First try to match user_username toteh domain
+       *and the user_email to the part before th @
+       */
+      $user = $app->db->queryOneRecord("SELECT * FROM isp_isp_user WHERE user_username LIKE '" . ${logindomain} . "%' AND user_email = '" . $loginusername . "'");
+      /*tmg did we get a match */
+      if ( $user["user_username"] == "" ) { 
+	/*tmg  NO so try just the user_email */
+	$user = $app->db->queryOneRecord("SELECT * FROM isp_isp_user WHERE ".
+					 "user_email = '".$loginusername."'");
+      }
+      /*tmg  Here I make the wild assumption the one of the queries worked  */
+      $username = $user["user_username"]; 
+    }
+    
+    // Checke, ob es den User in ISPConfig DB gibt
+    $user = $app->db->queryOneRecord("SELECT * FROM isp_isp_user WHERE user_username = '".addslashes($username)."'");
+    
+    if($user["doc_id"] > 0) {
+      // Hole das Web des Users
+      $web = $app->db->queryOneRecord("SELECT isp_isp_web.web_mailuser_login FROM isp_isp_web, isp_dep WHERE isp_isp_web.doc_id = isp_dep.parent_doc_id AND isp_isp_web.doctype_id = isp_dep.parent_doctype_id AND isp_dep.child_doctype_id = 1014 AND isp_dep.child_doc_id = ".$user["doc_id"]);
+      $login_allowed = $web["web_mailuser_login"];
+      unset($web);
+      
+      if($login_allowed == 1){
+	// for DEBUG Only
+	if($go_info["server"]["mode"] == 'demo') {
+	  $app->pop3->hostname = "ispconfig.org";
+	} else {
+	  $app->pop3->hostname = "localhost";
+	}
+	
+	// Öffne Pop3 Verbindung
+	$res = $app->pop3->Open();
+	if($res == '') {
+	  
+	  // versuche Login
+	  /*tmg  Change to use the $username not the $orig_username */
+	  $res = $app->pop3->Login($username,$passwort,0);
+	  if($res == '') {
+	    
+	    // Login war erfolgreich
+	    $_SESSION["s"]["userid"] = $user["doc_id"];
+	    $_SESSION["s"]["user"]   = $user;
+	    $app->pop3->Close();
+	    header("Location: ../mail/index.php");
+	    exit;
+	    
+	  } else {
+	    // Username oder PW falsch
+	    $error = $res;
+	    $app->pop3->Close();
+	  }
+	} else {
+	  // kein pop3 Login möglich
+	  $error = $res;
+	  $app->pop3->Close();
+	}
+      } else {
+	// Mailuser-Login für das Web nicht zugelassen
+	$error = $app->lng("txt_no_mailuser_login");
+      }
+    } else {
+      // User unbekannt in DB
+      $error = $app->lng("txt_user_unbekannt");
+    }
+  } else {
+    $error = $app->lng("txt_email_passwort_leer");
+  }
 }
 
 $app->tpl->setVar("error",$error);
