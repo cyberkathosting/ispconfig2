@@ -16,7 +16,7 @@
 -- Table structure for table `del_status`
 --
 
-CREATE TABLE `del_status` (
+CREATE TABLE `abc` (
   `id` int(11) NOT NULL auto_increment,
   `doc_id` int(11) NOT NULL default '0',
   `doctype_id` int(11) NOT NULL default '0',
@@ -25,9 +25,7 @@ CREATE TABLE `del_status` (
   `web_host` varchar(255) NOT NULL default '',
   `web_domain` varchar(255) NOT NULL default '',
   `status` char(1) NOT NULL default '',
-  PRIMARY KEY  (`id`),
-  UNIQUE KEY `id_2` (`id`),
-  KEY `id` (`id`)
+  PRIMARY KEY (`id`),
 ) TYPE=MyISAM;
 
 --
@@ -178,7 +176,6 @@ CREATE TABLE `dns_nodes` (
   `doc_id` bigint(21) NOT NULL default '0',
   `title` varchar(255) NOT NULL default '',
   PRIMARY KEY  (`tree_id`),
-  UNIQUE KEY `tree_id_2` (`tree_id`),
   KEY `tree_id` (`tree_id`,`userid`,`groupid`),
   KEY `doc_id` (`doc_id`)
 ) TYPE=MyISAM PACK_KEYS=1;
@@ -273,7 +270,6 @@ CREATE TABLE `doctype` (
   `doctype_def` text NOT NULL,
   `doctype_tree` tinyint(4) NOT NULL default '0',
   PRIMARY KEY  (`doctype_id`),
-  UNIQUE KEY `doctype_id_2` (`doctype_id`),
   KEY `doctype_id` (`doctype_id`,`userid`,`groupid`)
 ) TYPE=MyISAM PACK_KEYS=1;
 
@@ -327,7 +323,6 @@ CREATE TABLE `groups` (
   `groupstatus` tinyint(4) NOT NULL default '0',
   `beschreibung` text NOT NULL,
   PRIMARY KEY  (`groupid`),
-  UNIQUE KEY `groupid_2` (`groupid`),
   KEY `groupid` (`groupid`,`userid`)
 ) TYPE=MyISAM PACK_KEYS=1;
 
@@ -351,7 +346,6 @@ CREATE TABLE `help_documents` (
   `h_title` varchar(255) NOT NULL default '',
   `h_text` text NOT NULL,
   PRIMARY KEY  (`doc_id`),
-  UNIQUE KEY `doc_id_2` (`doc_id`),
   KEY `doc_id` (`doc_id`,`userid`,`groupid`)
 ) TYPE=MyISAM PACK_KEYS=1;
 
@@ -379,7 +373,6 @@ CREATE TABLE `help_nodes` (
   `doc_id` bigint(21) NOT NULL default '0',
   `title` varchar(255) NOT NULL default '',
   PRIMARY KEY  (`tree_id`),
-  UNIQUE KEY `tree_id_2` (`tree_id`),
   KEY `tree_id` (`tree_id`,`userid`,`groupid`),
   KEY `doc_id` (`doc_id`)
 ) TYPE=MyISAM PACK_KEYS=1;
@@ -456,7 +449,6 @@ CREATE TABLE `isp_dep` (
   `child_tree_id` int(11) NOT NULL default '0',
   `status` tinyint(4) NOT NULL default '1',
   PRIMARY KEY  (`dep_id`),
-  UNIQUE KEY `dep_id_2` (`dep_id`),
   KEY `dep_id` (`dep_id`,`userid`,`groupid`,`parent_doc_id`,`parent_doctype_id`),
   KEY `tree_id` (`parent_tree_id`,`child_doc_id`,`child_doctype_id`,`child_tree_id`)
 ) TYPE=MyISAM PACK_KEYS=1;
@@ -545,7 +537,6 @@ CREATE TABLE isp_fakt_dep (
   child_tree_id int(11) NOT NULL default '0',
   STATUS tinyint(4) NOT NULL default '1',
   PRIMARY KEY  (dep_id),
-  UNIQUE KEY dep_id_2 (dep_id),
   KEY dep_id (dep_id,userid,groupid,parent_doc_id,parent_doctype_id),
   KEY tree_id (parent_tree_id,child_doc_id,child_doctype_id,child_tree_id)
 ) TYPE=MyISAM PACK_KEYS=1;
@@ -573,7 +564,6 @@ CREATE TABLE isp_fakt_nodes (
   doc_id bigint(21) NOT NULL default '0',
   title varchar(255) NOT NULL default '',
   PRIMARY KEY  (tree_id),
-  UNIQUE KEY tree_id_2 (tree_id),
   KEY tree_id (tree_id,userid,groupid),
   KEY doc_id (doc_id)
 ) TYPE=MyISAM PACK_KEYS=1;
@@ -689,7 +679,6 @@ CREATE TABLE `isp_htaccess` (
   `web_doc_id` int(11) NOT NULL default '0',
   `status` char(1) NOT NULL default '',
   PRIMARY KEY  (`doc_id`),
-  UNIQUE KEY `doc_id` (`doc_id`),
   KEY `doc_id_2` (`doc_id`)
 ) TYPE=MyISAM;
 
@@ -1157,7 +1146,6 @@ CREATE TABLE `isp_nodes` (
   `doc_id` bigint(21) NOT NULL default '0',
   `title` varchar(255) NOT NULL default '',
   PRIMARY KEY  (`tree_id`),
-  UNIQUE KEY `tree_id_2` (`tree_id`),
   KEY `tree_id` (`tree_id`,`userid`,`groupid`),
   KEY `doc_id` (`doc_id`)
 ) TYPE=MyISAM PACK_KEYS=1;
@@ -1299,7 +1287,6 @@ CREATE TABLE `isp_server_ip` (
   `server_id` int(11) NOT NULL default '0',
   `server_ip` char(15) NOT NULL default '',
   PRIMARY KEY  (`doc_id`),
-  UNIQUE KEY `doc_id` (`doc_id`),
   KEY `server_id` (`server_id`,`server_ip`)
 ) TYPE=MyISAM;
 
@@ -1343,7 +1330,6 @@ CREATE TABLE `isp_traffic` (
   `bytes_ftp` bigint(20) NOT NULL default '0',
   `bytes_mail` bigint(20) NOT NULL default '0',
   PRIMARY KEY  (`doc_id`),
-  UNIQUE KEY `doc_id` (`doc_id`),
   KEY `doc_id_2` (`doc_id`)
 ) TYPE=MyISAM;
 
@@ -1390,7 +1376,6 @@ CREATE TABLE `listtype` (
   `listtype_def` text NOT NULL,
   `listtype_doctype_id` int(11) NOT NULL default '0',
   PRIMARY KEY  (`listtype_id`),
-  UNIQUE KEY `doctype_id_2` (`listtype_id`),
   KEY `doctype_id` (`listtype_id`,`userid`,`groupid`)
 ) TYPE=MyISAM PACK_KEYS=1;
 
@@ -1419,7 +1404,6 @@ CREATE TABLE `login` (
   `status` varchar(255) NOT NULL default '',
   `site` varchar(255) NOT NULL default '',
   PRIMARY KEY  (`login_id`),
-  UNIQUE KEY `login_id_2` (`login_id`),
   KEY `login_id` (`login_id`,`sessionid`),
   KEY `userid` (`userid`)
 ) TYPE=MyISAM PACK_KEYS=1;
@@ -1447,7 +1431,6 @@ CREATE TABLE `multidoc_dep` (
   `child_tree_id` int(11) NOT NULL default '0',
   `status` tinyint(4) NOT NULL default '1',
   PRIMARY KEY  (`dep_id`),
-  UNIQUE KEY `dep_id_2` (`dep_id`),
   KEY `dep_id` (`dep_id`,`userid`,`groupid`,`parent_doc_id`,`parent_doctype_id`),
   KEY `tree_id` (`parent_tree_id`,`child_doc_id`,`child_doctype_id`,`child_tree_id`)
 ) TYPE=MyISAM PACK_KEYS=1;
@@ -1476,7 +1459,6 @@ CREATE TABLE `multidoc_nodes` (
   `doc_id` bigint(21) NOT NULL default '0',
   `title` varchar(255) NOT NULL default '',
   PRIMARY KEY  (`tree_id`),
-  UNIQUE KEY `tree_id_2` (`tree_id`),
   KEY `tree_id` (`tree_id`,`userid`,`groupid`),
   KEY `doc_id` (`doc_id`)
 ) TYPE=MyISAM PACK_KEYS=1;
@@ -1563,7 +1545,6 @@ CREATE TABLE `sys_dep` (
   `child_tree_id` int(11) NOT NULL default '0',
   `status` tinyint(4) NOT NULL default '1',
   PRIMARY KEY  (`dep_id`),
-  UNIQUE KEY `dep_id_2` (`dep_id`),
   KEY `dep_id` (`dep_id`,`userid`,`groupid`,`parent_doc_id`,`parent_doctype_id`),
   KEY `tree_id` (`parent_tree_id`,`child_doc_id`,`child_doctype_id`,`child_tree_id`)
 ) TYPE=MyISAM PACK_KEYS=1;
@@ -1601,7 +1582,6 @@ CREATE TABLE `sys_modules` (
   `module_type` varchar(255) NOT NULL default '',
   `module_path` varchar(255) NOT NULL default '',
   PRIMARY KEY  (`doc_id`),
-  UNIQUE KEY `doc_id_2` (`doc_id`),
   KEY `doc_id` (`doc_id`,`userid`,`groupid`)
 ) TYPE=MyISAM PACK_KEYS=1;
 
@@ -1637,7 +1617,6 @@ CREATE TABLE `sys_news` (
   `newstext` text NOT NULL,
   `visible` tinyint(4) NOT NULL default '0',
   PRIMARY KEY  (`doc_id`),
-  UNIQUE KEY `doc_id_2` (`doc_id`),
   KEY `doc_id` (`doc_id`,`userid`,`groupid`)
 ) TYPE=MyISAM PACK_KEYS=1;
 
@@ -1665,7 +1644,6 @@ CREATE TABLE `sys_nodes` (
   `doc_id` bigint(21) NOT NULL default '0',
   `title` varchar(255) NOT NULL default '',
   PRIMARY KEY  (`tree_id`),
-  UNIQUE KEY `tree_id_2` (`tree_id`),
   KEY `tree_id` (`tree_id`,`userid`,`groupid`),
   KEY `doc_id` (`doc_id`)
 ) TYPE=MyISAM PACK_KEYS=1;
@@ -1752,7 +1730,6 @@ CREATE TABLE `sys_user` (
   `newsletter` smallint(6) default NULL,
   `userid` bigint(21) NOT NULL default '1',
   PRIMARY KEY  (`doc_id`),
-  UNIQUE KEY `doc_id_2` (`doc_id`),
   KEY `doc_id` (`doc_id`,`groupid`)
 ) TYPE=MyISAM PACK_KEYS=1;
 
@@ -1777,7 +1754,6 @@ CREATE TABLE `user_groups` (
   `username` varchar(255) NOT NULL default '',
   `online` tinyint(4) NOT NULL default '0',
   PRIMARY KEY  (`usergroupid`),
-  UNIQUE KEY `usergroupid_2` (`usergroupid`),
   KEY `usergroupid` (`usergroupid`,`groupid`,`userid`,`perms`),
   KEY `online` (`online`)
 ) TYPE=MyISAM PACK_KEYS=1;
