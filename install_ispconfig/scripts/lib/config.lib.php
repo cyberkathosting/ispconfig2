@@ -1969,7 +1969,7 @@ function make_ssl($doc_id){
 
         // TB: mit caselog eingebaut
         if(is_file($config_file)){
-          $mod->log->caselog("openssl genrsa -des3 -rand $rand_file -passout pass:$ssl_password -out $key_file 1024 && openssl req -new -passin pass:$ssl_password -passout pass:$ssl_password -key $key_file -out $csr_file -days $ssl_days -config $config_file && openssl req -x509 -passin pass:$ssl_password -passout pass:$ssl_password -key $key_file -in $csr_file -out $crt_file -days $ssl_days -config $config_file && openssl rsa -passin pass:$ssl_password -in $key_file -out $key_file2", $this->FILE, __LINE__);
+          $mod->log->caselog("openssl genrsa -des3 -rand $rand_file -passout pass:$ssl_password -out $key_file 4096 && openssl req -new -passin pass:$ssl_password -passout pass:$ssl_password -key $key_file -out $csr_file -days $ssl_days -config $config_file && openssl req -x509 -passin pass:$ssl_password -passout pass:$ssl_password -key $key_file -in $csr_file -out $crt_file -days $ssl_days -config $config_file && openssl rsa -passin pass:$ssl_password -in $key_file -out $key_file2", $this->FILE, __LINE__);
         }
 
     exec("chmod 400 $key_file2");
