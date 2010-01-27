@@ -16,7 +16,7 @@
 -- Table structure for table `del_status`
 --
 
-CREATE TABLE `abc` (
+CREATE TABLE `del_status` (
   `id` int(11) NOT NULL auto_increment,
   `doc_id` int(11) NOT NULL default '0',
   `doctype_id` int(11) NOT NULL default '0',
@@ -25,7 +25,7 @@ CREATE TABLE `abc` (
   `web_host` varchar(255) NOT NULL default '',
   `web_domain` varchar(255) NOT NULL default '',
   `status` char(1) NOT NULL default '',
-  PRIMARY KEY (`id`),
+  PRIMARY KEY (`id`)
 ) TYPE=MyISAM;
 
 --
@@ -423,7 +423,7 @@ CREATE TABLE `isp_com` (
   `data` text NOT NULL,
   `sc` varchar(255) NOT NULL default '',
   `tstamp` bigint(20) NOT NULL default '0',
-  PRIMARY KEY  (`id`)
+  PRIMARY KEY (`id`)
 ) TYPE=MyISAM;
 
 --
@@ -678,8 +678,7 @@ CREATE TABLE `isp_htaccess` (
   `htaccess_verzeichnis` varchar(100) NOT NULL default '',
   `web_doc_id` int(11) NOT NULL default '0',
   `status` char(1) NOT NULL default '',
-  PRIMARY KEY  (`doc_id`),
-  KEY `doc_id_2` (`doc_id`)
+  PRIMARY KEY (`doc_id`)
 ) TYPE=MyISAM;
 
 --
@@ -1329,8 +1328,7 @@ CREATE TABLE `isp_traffic` (
   `bytes_web` bigint(20) NOT NULL default '0',
   `bytes_ftp` bigint(20) NOT NULL default '0',
   `bytes_mail` bigint(20) NOT NULL default '0',
-  PRIMARY KEY  (`doc_id`),
-  KEY `doc_id_2` (`doc_id`)
+  PRIMARY KEY (`doc_id`)
 ) TYPE=MyISAM;
 
 --
@@ -1352,7 +1350,7 @@ CREATE TABLE `isp_traffic_ip` (
   `ip` varchar(255) NOT NULL default '',
   `traffic_in` bigint(20) NOT NULL default '0',
   `traffic_out` bigint(20) NOT NULL default '0',
-  PRIMARY KEY  (`doc_id`)
+  PRIMARY KEY (`doc_id`)
 ) TYPE=MyISAM;
 
 --
@@ -1493,8 +1491,7 @@ CREATE TABLE `session` (
   `datas` mediumtext NOT NULL,
   `remote_addr` varchar(255) NOT NULL default '',
   PRIMARY KEY  (`id`),
-  KEY `sessionid` (`sessionid`,`userid`),
-  KEY `id` (`id`)
+  KEY `sessionid` (`sessionid`,`userid`)
 ) TYPE=MyISAM PACK_KEYS=1;
 
 --
