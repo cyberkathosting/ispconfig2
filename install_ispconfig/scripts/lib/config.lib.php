@@ -2204,12 +2204,12 @@ function make_ftp($server_id){
               DenyAll
             </Limit>
           </Directory>
-          <Directory ".$document_root."/ftp/incoming>
+          <Directory ".$document_root."/ftp/incoming/*>
             Umask                       002
             <Limit STOR>
               AllowAll
             </Limit>
-            <Limit READ>
+            <Limit READ LIST>
               DenyAll
             </Limit>
           </Directory>
