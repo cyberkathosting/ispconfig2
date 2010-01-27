@@ -43,5 +43,3 @@ required_score                {HITS}
 # score UPPERCASE_25_50                0
 # score UPPERCASE_50_75                0
 # score UPPERCASE_75_100        0
-
-score           AWL  -100.0
