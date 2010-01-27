@@ -795,7 +795,12 @@ fi  ## install_art == install
     mkdir -p /root/ispconfig/httpd/conf > /dev/null
     cp -pfr ../ssl.* /root/ispconfig/httpd/conf/
   fi
-  ./compile || (cd `pwd`/../.. && rm -fr install_ispconfig && exit 1)
+  ./compile
+  if [ $? -ne 0 ]; then
+    cd `pwd`/../..
+    rm -fr install_ispconfig
+    exit 1
+  fi
   cd ..
 
   mv -f binaries/aps.tar.gz ./aps.tar.gz
