@@ -1203,6 +1203,10 @@ wf($conf_datei, $conf);
 caselog("chmod 600 $conf_datei", $FILE, __LINE__);
 caselog("chown admispconfig:admispconfig $conf_datei", $FILE, __LINE__);
 
+$awstats_httpd_alias = '### ISPC AWStats Section ###
+Alias /awstatsicons "/home/admispconfig/ispconfig/tools/awstats/wwwroot/icon/"
+### End of ISPC AWStats Section ###';
+
 if($install_art == "install"){
   $vhost = "
 <Directory /var/www/sharedip>
@@ -1255,10 +1259,7 @@ CustomLog \"|/root/ispconfig/cronolog --symlink=/var/log/httpd/ispconfig_access_
 
 Include ".$httpd_conf_dir."/vhosts/Vhosts_ispconfig.conf
 
-### AWStats Section ###
-Alias /icon \"/home/admispconfig/ispconfig/tools/awstats/wwwroot/icon/\"
-### End of AWStats Section ###
-
+".$awstats_httpd_alias."
 ";
 
   caselog("cp -f $httpd_conf $httpd_conf.orig", $FILE, __LINE__);
@@ -1291,6 +1292,25 @@ Alias /icon \"/home/admispconfig/ispconfig/tools/awstats/wwwroot/icon/\"
 if($install_art == "upgrade"){
   if($old_version < 2000){
     wf($httpd_conf, str_replace('CustomLog /var/log/httpd/ispconfig_access_log combined_ispconfig', 'CustomLog "|/root/ispconfig/cronolog --symlink=/var/log/httpd/ispconfig_access_log /var/log/httpd/ispconfig_access_log_%Y_%m_%d" combined_ispconfig', rf($httpd_conf)));
+  }
+  // awstats
+  if($old_version < 2233) { // < 2.2.33
+    $marker = "Include ".$httpd_conf_dir."/vhosts/Vhosts_ispconfig.conf";
+    wf($httpd_conf, str_replace($marker,
+				$marker."\n".$awstats_httpd_alias,
+				rf($httpd_conf)));
+  } else if ($old_version < 2236) { // 2.2.33 - 2.2.35
+    $c = substr_count(rf($httpd_conf), "Alias /icon /home/admispconfig/ispconfig/tools/awstats/wwwroot/icon/");
+    if ($c==0) { // we upgrade from an already broken upgraded version
+      $marker = "Include ".$httpd_conf_dir."/vhosts/Vhosts_ispconfig.conf";
+      wf($httpd_conf, str_replace($marker,
+				  $marker."\n".$awstats_httpd_alias,
+				  rf($httpd_conf)));
+    } else { // we upgrade from a fresh install
+      wf($httpd_conf, str_replace("Alias /icon /home/admispconfig/ispconfig/tools/awstats/wwwroot/icon/",
+				  "Alias /awstatsicons /home/admispconfig/ispconfig/tools/awstats/wwwroot/icon/",
+				  rf($httpd_conf)));
+    }
   }
 }
 

@@ -228,7 +228,7 @@ HostAliases=\"$host_alias\"";
 <html>
 <head>
 <title>AWStats - $web_real_name</title>
-<style>
+<style type=\"text/css\">
 h1, h2, p {text-align:center}
 </style>
 </head>
