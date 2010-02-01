@@ -184,7 +184,7 @@ if [ "$lang" == "de" ]; then
   q_ende2="Bitte gehen Sie mit Ihrem Browser auf "
   q_ende3=" und loggen sich ein:"
   q_ende4="Benutzername: admin"
-  q_ende5="Passwort: admin"
+  q_ende5="Passwort:"
 
 else
 
@@ -241,7 +241,7 @@ else
     q_ende2="Please direct your browser to "
     q_ende3=" and log in:"
     q_ende4="Username: admin"
-    q_ende5="Password: admin"
+    q_ende5="Password:"
 
  else
 
@@ -298,7 +298,7 @@ else
       q_ende2="Please direct your browser to "
       q_ende3=" and log in:"
       q_ende4="Username: admin"
-      q_ende5="Password: admin"
+      q_ende5="Password:"
 
     else
 
@@ -354,7 +354,7 @@ else
       q_ende2="Please direct your browser to "
       q_ende3=" and log in:"
       q_ende4="Username: admin"
-      q_ende5="Password: admin"
+      q_ende5="Password:"
     fi
   fi
 fi
@@ -836,7 +836,7 @@ fi  ## install_art == install
       echo -n $q_mysql_server
       read mysql_server
     done
-    ping -c3 `echo $mysql_server` > /dev/null
+    ping -c3 $mysql_server > /dev/null
     while [ $? != 0 ]
     do
       echo "$q_mysql_server_check"
@@ -847,7 +847,7 @@ fi  ## install_art == install
         echo -n $q_mysql_server
         read mysql_server
       done
-      ping -c3 `echo $mysql_server` > /dev/null
+      ping -c3 $mysql_server > /dev/null
     done
 
     echo OK
@@ -866,9 +866,9 @@ fi  ## install_art == install
     echo
 
     if [ "$mysql_passwort" == "" ]; then
-      mysql -h `echo $mysql_server` --exec=quit -u `echo $mysql_user`
+      mysql -h $mysql_server --exec=quit -u $mysql_user
     else
-      mysql -h `echo $mysql_server` --exec=quit -u `echo $mysql_user` -p`echo $mysql_passwort`
+      mysql -h $mysql_server --exec=quit -u $mysql_user -p$mysql_passwort
     fi
 
     while [ $? != 0 ]
@@ -881,7 +881,7 @@ fi  ## install_art == install
         echo -n $q_mysql_server
         read mysql_server
       done
-      ping -c3 `echo $mysql_server` > /dev/null
+      ping -c3 $mysql_server > /dev/null
       while [ $? != 0 ]
       do
         echo "$q_mysql_server_check"
@@ -892,7 +892,7 @@ fi  ## install_art == install
           echo -n $q_mysql_server
           read mysql_server
         done
-        ping -c3 `echo $mysql_server` > /dev/null
+        ping -c3 $mysql_server > /dev/null
       done
 
       echo OK
@@ -911,9 +911,9 @@ fi  ## install_art == install
       echo
 
       if [ "$mysql_passwort" == "" ]; then
-        mysql -h `echo $mysql_server` --exec=quit -u `echo $mysql_user`
+        mysql -h $mysql_server --exec=quit -u $mysql_user
       else
-        mysql -h `echo $mysql_server` --exec=quit -u `echo $mysql_user` -p`echo $mysql_passwort`
+        mysql -h $mysql_server --exec=quit -u $mysql_user -p$mysql_passwort
       fi
     done
 
@@ -935,7 +935,7 @@ fi  ## install_art == install
       read ip
     done
 
-    ping -c3 `echo $ip` > /dev/null
+    ping -c3 $ip > /dev/null
     while [ $? != 0 ]
     do
       echo "$q_ip_check"
@@ -946,7 +946,7 @@ fi  ## install_art == install
         echo -n $q_ip_address
         read ip
       done
-      ping -c3 `echo $ip` > /dev/null
+      ping -c3 $ip > /dev/null
     done
 
     echo OK
@@ -962,11 +962,11 @@ fi  ## install_art == install
     done
 
     if [ "$server_host" == "" ]; then
-      ping=`echo $server_domain`
+      ping=$server_domain
     else
-      ping=`echo $server_host`.`echo $server_domain`
+      ping=$server_host.$server_domain
     fi
-    ping -c3 `echo $ping` > /dev/null
+    ping -c3 $ping > /dev/null
 
     while [ $? != 0 ]
     do
@@ -982,11 +982,11 @@ fi  ## install_art == install
       done
 
       if [ "$server_host" == "" ]; then
-        ping=`echo $server_domain`
+        ping=$server_domain
       else
-        ping=`echo $server_host`.`echo $server_domain`
+        ping=$server_host.$server_domain
       fi
-      ping -c3 `echo $ping` > /dev/null
+      ping -c3 $ping > /dev/null
     done
 
     echo OK
@@ -1019,7 +1019,7 @@ fi  ## install_art == install
   echo $ip
   echo $server_host
   echo $server_domain
-  echo `which procmail`
+  which procmail
   echo $lang
   echo $install_art
   echo $server_ispconfigprotocol
@@ -1064,39 +1064,39 @@ fi  ## install_art == install
   fi
   caselog "httpd restart successful" "httpd did not restart!"
 
-  if [ -f `echo $dist_init_scripts`/`echo $dist_mail` ] && [ -x  `echo $dist_init_scripts`/`echo $dist_mail` ]; then
-    `echo $dist_init_scripts`/`echo $dist_mail` stop
-    `echo $dist_init_scripts`/`echo $dist_mail` start
+  if [ -f $dist_init_scripts/$dist_mail ] && [ -x $dist_init_scripts/$dist_mail ]; then
+    $dist_init_scripts/$dist_mail stop
+    $dist_init_scripts/$dist_mail start
     caselog $dist_mail" restart successful" $dist_mail" did not restart!"
   fi
-  if [ -f /etc/rc.d/`echo $dist_mail` ] && [ -x  /etc/rc.d/`echo $dist_mail` ]; then
-    /etc/rc.d/`echo $dist_mail` stop
-    /etc/rc.d/`echo $dist_mail` start
+  if [ -f /etc/rc.d/$dist_mail ] && [ -x /etc/rc.d/$dist_mail ]; then
+    /etc/rc.d/$dist_mail stop
+    /etc/rc.d/$dist_mail start
     caselog $dist_mail" restart successful" $dist_mail" did not restart!"
   fi
 
   ##############################################
-  if [ $dist_ftp_version == "standalone" ]; then
-    if [ -f `echo $dist_init_scripts`/`echo $dist_ftp` ] && [ -x  `echo $dist_init_scripts`/`echo $dist_ftp` ]; then
-      `echo $dist_init_scripts`/`echo $dist_ftp` restart
+  if [ "$dist_ftp_version" == "standalone" ]; then
+    if [ -f $dist_init_scripts/$dist_ftp ] && [ -x $dist_init_scripts/$dist_ftp ]; then
+      $dist_init_scripts/$dist_ftp restart
     fi
-    if [ -f /etc/rc.d/`echo $dist_ftp` ] && [ -x  /etc/rc.d/`echo $dist_ftp` ]; then
-      /etc/rc.d/`echo $dist_ftp` restart
+    if [ -f /etc/rc.d/$dist_ftp ] && [ -x /etc/rc.d/$dist_ftp ]; then
+      /etc/rc.d/$dist_ftp restart
     fi
   else
-    if [ -f `echo $dist_init_scripts`/`echo $dist_ftp_version` ] && [ -x  `echo $dist_init_scripts`/`echo $dist_ftp_version` ]; then
-      `echo $dist_init_scripts`/`echo $dist_ftp_version` restart &> /dev/null
+    if [ -f $dist_init_scripts/$dist_ftp_version ] && [ -x $dist_init_scripts/$dist_ftp_version ]; then
+      $dist_init_scripts/$dist_ftp_version restart &> /dev/null
     fi
-    if [ -f /etc/rc.d/`echo $dist_ftp_version` ] && [ -x  /etc/rc.d/`echo $dist_ftp_version` ]; then
-      /etc/rc.d/`echo $dist_ftp_version` restart
+    if [ -f /etc/rc.d/$dist_ftp_version ] && [ -x /etc/rc.d/$dist_ftp_version ]; then
+      /etc/rc.d/$dist_ftp_version restart
     fi
   fi
   ##############################################
 
   if [ "$install_art" == "upgrade" ]; then
-    `echo $dist_init_scripts`/ispconfig_server restart
+    $dist_init_scripts/ispconfig_server restart
   else
-    `echo $dist_init_scripts`/ispconfig_server start
+    $dist_init_scripts/ispconfig_server start
   fi
 
   echo $q_ende
@@ -1113,11 +1113,19 @@ fi  ## install_art == install
     else
       ISPCONFIGURL="${ISPCONFIGURL}${server_host}.${server_domain}:81"
     fi
+
+    if [ -c /dev/urandom -a -x `which tr` -a -x `which head` ]; then
+	randpass=`</dev/urandom tr -dc A-NP-Za-km-z0-9 | (head -c $1 &> /dev/null || head -c 8)`
+	echo "UPDATE sys_user SET passwort=MD5('$randpass') WHERE doc_id='1'" | mysql -h $mysql_server -u$mysql_user -p$mysql_passwort $mysql_db
+    else 
+	randpass=admin
+    fi
+
     echo $ISPCONFIGURL
     echo
     echo $q_ende3
     echo $q_ende4
-    echo $q_ende5
+    echo $q_ende5 $randpass
   fi
   echo
   rm -f /root/ispconfig/dist.info

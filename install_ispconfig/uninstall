@@ -223,4 +223,6 @@ foreach($results as $result){
   unset($arr);
 }
 //////////////////////////////////////////////////////
+
+echo "Done.\n"
 ?>
