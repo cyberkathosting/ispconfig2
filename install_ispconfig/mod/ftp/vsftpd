@@ -214,6 +214,10 @@ dist_ftp_conf:/etc/vsftpd/vsftpd.conf:Config-File:read::fedora120
 dist_ftp_version:standalone:Server-Version:select:standalone|inetd|xinetd:fedora120
 dist_ftp_log:/var/log/vsftpd.log:Log-File:read::fedora120
 
+dist_ftp_conf:/etc/vsftpd/vsftpd.conf:Config-File:read::fedora130
+dist_ftp_version:standalone:Server-Version:select:standalone|inetd|xinetd:fedora130
+dist_ftp_log:/var/log/vsftpd.log:Log-File:read::fedora130
+
 dist_ftp_conf:/etc/vsftpd.conf:Config-File:read::suse72
 dist_ftp_version:inetd:Server-Version:select:standalone|inetd|xinetd:suse72
 dist_ftp_log:/var/log/vsftpd.log:Log-File:read::suse72
@@ -277,6 +281,10 @@ dist_ftp_log:/var/log/vsftpd.log:Log-File:read::suse111
 dist_ftp_conf:/etc/vsftpd.conf:Config-File:read::suse112
 dist_ftp_version:xinetd:Server-Version:select:standalone|inetd|xinetd:suse112
 dist_ftp_log:/var/log/vsftpd.log:Log-File:read::suse112
+
+dist_ftp_conf:/etc/vsftpd.conf:Config-File:read::suse120
+dist_ftp_version:xinetd:Server-Version:select:standalone|inetd|xinetd:suse120
+dist_ftp_log:/var/log/vsftpd.log:Log-File:read::suse120
 
 dist_ftp_conf:/etc/vsftpd.conf:Config-File:read::debian30
 dist_ftp_version:inetd:Server-Version:select:standalone|inetd|xinetd:debian30

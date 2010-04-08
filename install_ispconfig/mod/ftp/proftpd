@@ -214,6 +214,10 @@ dist_ftp_conf:/etc/proftpd.conf:Config-File:read::fedora120
 dist_ftp_version:standalone:Server-Version:exit::fedora120
 dist_ftp_log:/var/log/xferlog:Log-File:read::fedora120
 
+dist_ftp_conf:/etc/proftpd.conf:Config-File:read::fedora130
+dist_ftp_version:standalone:Server-Version:exit::fedora130
+dist_ftp_log:/var/log/xferlog:Log-File:read::fedora130
+
 dist_ftp_conf:/etc/proftpd.conf:Config-File:read::suse72
 dist_ftp_version:standalone:Server-Version:exit::suse72
 dist_ftp_log:/var/log/xferlog:Log-File:read::suse72
@@ -277,6 +281,10 @@ dist_ftp_log:/var/log/xferlog:Log-File:read::suse111
 dist_ftp_conf:/etc/proftpd.conf:Config-File:read::suse112
 dist_ftp_version:standalone:Server-Version:exit::suse112
 dist_ftp_log:/var/log/xferlog:Log-File:read::suse112
+
+dist_ftp_conf:/etc/proftpd.conf:Config-File:read::suse120
+dist_ftp_version:standalone:Server-Version:exit::suse120
+dist_ftp_log:/var/log/xferlog:Log-File:read::suse120
 
 dist_ftp_conf:/etc/proftpd.conf:Config-File:read::debian30
 dist_ftp_version:standalone:Server-Version:exit::debian30
