@@ -60,6 +60,8 @@ dist_path_httpd_root:/var/www:Web-Root:read::mdr20100
 
 dist_path_httpd_root:/var/www:Web-Root:read::mdr20101
 
+dist_path_httpd_root:/var/www:Web-Root:read::mdr20110
+
 dist_path_httpd_root:/var/www:Web-Root:read::centos41
 
 dist_path_httpd_root:/var/www:Web-Root:read::centos42
@@ -89,6 +91,8 @@ dist_path_httpd_root:/var/www:Web-Root:read::centos53
 dist_path_httpd_root:/var/www:Web-Root:read::centos54
 
 dist_path_httpd_root:/var/www:Web-Root:read::centos55
+
+dist_path_httpd_root:/var/www:Web-Root:read::centos56
 
 dist_path_httpd_root:/var/www:Web-Root:read::rhat73
 
@@ -121,6 +125,8 @@ dist_path_httpd_root:/var/www:Web-Root:read::fedora110
 dist_path_httpd_root:/var/www:Web-Root:read::fedora120
 
 dist_path_httpd_root:/var/www:Web-Root:read::fedora130
+
+dist_path_httpd_root:/var/www:Web-Root:read::fedora140
 
 dist_path_httpd_root:/home/www:Web-Root:read::suse72
 
