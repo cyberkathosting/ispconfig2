@@ -134,6 +134,8 @@ log "selected language: "$lang
 if [ "$lang" == "de" ]; then
   q_hinweis="Bei der Installation auf Systemen, auf denen bereits Einstellungen vorgenommen wurden, werden einige System-Dateien ersetzt. Dies kann zum Verlust von Einträgen in httpd.conf, named.conf sowie in der Sendmail-Konfiguration führen."
   q_hinweis_akzeptieren="Wollen Sie mit der Installation fortfahren? [y/n]"
+  q_additional_perl_modules="Diese ISPConfig-Version kommt mit einer SpamAssassin-Version, die die folgenden beiden Perl-Module benötigt: NetAddr::IP und Archive::Tar. Falls Sie unsicher sind, ob diese beiden Module installiert sind, sollten Sie jetzt eine zweite Shell öffnen und sie installieren, weil andernfalls die ISPConfig-Installation/das ISPConfig-Update fehlschlagen wird! Die Module können wie folgt installiert werden:"
+  q_additional_perl_modules_akzeptieren="Sind Sie absolut sicher, daß die Perl-Module NetAddr::IP und Archive::Tar installiert sind? [y/n]"
   q_lizenz="Lesen Sie sich die Lizenz sorgfältig durch:"
   q_lizenz_akzeptieren="Akzeptieren Sie die Lizenz? [y/n]"
   q_install_mode="Bitte wählen Sie den Installationsmodus. Im Expertenmodus werden Ihnen zusätzliche Fragen gestellt. Im Standardmodus werden für diese Fragen Standardwerte angenommen."
@@ -191,6 +193,8 @@ else
   if [ "$lang" == "fr" ]; then
     q_hinweis="Avec ce systeme d'installation, certains fichiers systeme seront modifies et quelques ajustements seront realises. Cela veut dire que vous pouvez perdre des entrees dans httpd.conf, named.conf tout comme dans la configuration de Sendmail."
     q_hinweis_akzeptieren="Voulez vous continuer l'installation? [Oui=y/Non=n]"
+    q_additional_perl_modules="This version of ISPConfig comes with a SpamAssassin version that requires that the following two Perl modules are installed: NetAddr::IP and Archive::Tar. If you are unsure if these modules are installed, you should open a second shell now and install them, because otherwise the ISPConfig installation/update will fail! These modules can be installed as follows:"
+      q_additional_perl_modules_akzeptieren="Are you absolutely sure that the Perl modules NetAddr::IP and Archive::Tar are installed? [y/n]"
     q_lizenz="Merci de lire la license avec attention:"
     q_lizenz_akzeptieren="Acceptez vous la license ? [Oui=y/Non=n]"
     q_install_mode="Choississez le mode d'installation . En mode expert mode vous devez repondre a quelques questions additionnelles. En mode standard les valeurs par defaut sont appliquees."
@@ -248,6 +252,8 @@ else
     if [ "$lang" == "se" ]; then
       q_hinweis="I och med system installation, kommer en del system filer att bytas ut där justeringar görs. Detta kan leda till förlorade information i httpd.conf, named.conf och i Sendmail filerna."
       q_hinweis_akzeptieren="Vill du fortsätta med installationen? [y/n]"
+      q_additional_perl_modules="This version of ISPConfig comes with a SpamAssassin version that requires that the following two Perl modules are installed: NetAddr::IP and Archive::Tar. If you are unsure if these modules are installed, you should open a second shell now and install them, because otherwise the ISPConfig installation/update will fail! These modules can be installed as follows:"
+      q_additional_perl_modules_akzeptieren="Are you absolutely sure that the Perl modules NetAddr::IP and Archive::Tar are installed? [y/n]"
       q_lizenz="Läs noggrant igenom licens avtalet:"
       q_lizenz_akzeptieren="Accepterar du licens avtalet? [y/n]"
       q_install_mode="Var vänlig välj installations läge. I expert läget måste du svara på ett antal frågor. I standard läget kommer förinställda värden att användas på frågorna."
@@ -304,6 +310,8 @@ else
 
       q_hinweis="With the system installation, some system files are replaced where adjustments were made. This can lead to loss of entries in httpd.conf, named.conf as well as in the Sendmail configuration."
       q_hinweis_akzeptieren="Do you want to continue with the installation? [y/n]"
+      q_additional_perl_modules="This version of ISPConfig comes with a SpamAssassin version that requires that the following two Perl modules are installed: NetAddr::IP and Archive::Tar. If you are unsure if these modules are installed, you should open a second shell now and install them, because otherwise the ISPConfig installation/update will fail! These modules can be installed as follows:"
+      q_additional_perl_modules_akzeptieren="Are you absolutely sure that the Perl modules NetAddr::IP and Archive::Tar are installed? [y/n]"
       q_lizenz="Please read through the licence carefully:"
       q_lizenz_akzeptieren="Do you accept the licence? [y/n]"
       q_install_mode="Please select the installation mode. In expert mode you have to answer some additional questions. In standard mode standard values are assumed for these questions."
@@ -522,6 +530,49 @@ abfrage(){
 
 #################### SPRACHE ENDE ################
 
+#################### ADDITIONAL PERL MODULES ################
+echo $q_additional_perl_modules
+echo
+echo "Debian/Ubuntu: apt-get install libnetaddr-ip-perl libarchive-tar-perl"
+echo
+echo "Fedora: yum install perl-NetAddr-IP perl-Archive-Tar"
+echo
+echo "OpenSUSE: yast -i perl-NetAddr-IP perl-Archive-Tar"
+echo
+echo "Mandriva: urpmi perl-NetAddr-IP perl-Archive-Tar"
+echo
+echo "CentOS 5.x (x86_64): yum install perl-Archive-Tar"
+echo "                     rpm -ivh http://apt.sw.be/redhat/el5/en/x86_64/rpmforge/RPMS/perl-NetAddr-IP-4.027-1.el5.rf.x86_64.rpm"
+echo
+echo "CentOS 5.x (i386): yum install perl-Archive-Tar"
+echo "                   rpm -ivh http://apt.sw.be/redhat/el5/en/i386/rpmforge/RPMS/perl-NetAddr-IP-4.027-1.el5.rf.i386.rpm"
+echo
+echo "CentOS 4.x (x86_64): yum install perl-Archive-Tar"
+echo "                     rpm -ivh http://apt.sw.be/redhat/el4/en/x86_64/rpmforge/RPMS/perl-NetAddr-IP-4.027-1.el4.rf.x86_64.rpm"
+echo
+echo "CentOS 4.x (i386): yum install perl-Archive-Tar"
+echo "                   rpm -ivh http://apt.sw.be/redhat/el4/en/i386/rpmforge/RPMS/perl-NetAddr-IP-4.027-1.el4.rf.i386.rpm"
+echo
+
+
+  echo
+  echo -n $q_additional_perl_modules_akzeptieren
+  read additional_perl_modules
+  echo
+
+while [ "$additional_perl_modules" == "" ]
+do
+    echo -n $q_additional_perl_modules_akzeptieren
+    read additional_perl_modules
+    echo
+done
+
+if [ "$additional_perl_modules" != "y" ]; then
+  exit 1;
+fi
+log "additional Perl modules accepted"
+#################### ADDITIONAL PERL MODULES ENDE ################
+
   if [ "$install_art" == "install" ]; then
     echo $q_hinweis
     echo
@@ -712,11 +763,11 @@ fi  ## install_art == install
       mv -f $d/my.cnf $d/my.cnf_orig
       grep -wv "skip-networking" $d/my.cnf_orig > $d/my.cnf
       if [ -x /etc/init.d/mysql ]; then
-	/etc/init.d/mysql restart > /dev/null
+        /etc/init.d/mysql restart > /dev/null
       elif [ -x /etc/init.d/mysqld ]; then
         /etc/init.d/mysqld restart > /dev/null
-      else 
-	error "MySQL Init script not found."
+      else
+        error "MySQL Init script not found."
       fi
     fi
   done
@@ -727,9 +778,9 @@ fi  ## install_art == install
     for s in /tmp/mysql.sock /var/run/mysqld/mysqld.sock /var/run/mysql/mysql.sock; do
       if [ -S $s ]; then
         if [ ! -d /var/lib/mysql ]; then
-	  mkdir -p /var/lib/mysql
-	  caselog "directory /var/lib/mysql created" "directory /var/lib/mysql could not be created!"
-	fi
+          mkdir -p /var/lib/mysql
+          caselog "directory /var/lib/mysql created" "directory /var/lib/mysql could not be created!"
+        fi
         ln -s $s /var/lib/mysql/mysql.sock
         caselog "symbolic link from /var/lib/mysql/mysql.sock to $s created" "symbolic link from /var/lib/mysql/mysql.sock to $s could not be created!"
       fi
@@ -1115,10 +1166,10 @@ fi  ## install_art == install
     fi
 
     if [ -c /dev/urandom -a -x `which tr` -a -x `which head` ]; then
-	randpass=`</dev/urandom tr -dc A-NP-Za-km-z0-9 | (head -c $1 &> /dev/null || head -c 8)`
-	echo "UPDATE sys_user SET passwort=MD5('$randpass') WHERE doc_id='1'" | mysql -h $mysql_server -u$mysql_user -p$mysql_passwort $mysql_db
-    else 
-	randpass=admin
+        randpass=`</dev/urandom tr -dc A-NP-Za-km-z0-9 | (head -c $1 &> /dev/null || head -c 8)`
+        echo "UPDATE sys_user SET passwort=MD5('$randpass') WHERE doc_id='1'" | mysql -h $mysql_server -u$mysql_user -p$mysql_passwort $mysql_db
+    else
+        randpass=admin
     fi
 
     echo $ISPCONFIGURL
