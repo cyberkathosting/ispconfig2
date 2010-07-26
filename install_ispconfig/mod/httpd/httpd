@@ -160,6 +160,10 @@ dist_path_httpd_root:/srv/www:Web-Root:read::suse111
 
 dist_path_httpd_root:/srv/www:Web-Root:read::suse112
 
+dist_path_httpd_root:/srv/www:Web-Root:read::suse113
+
+dist_path_httpd_root:/srv/www:Web-Root:read::suse114
+
 dist_path_httpd_root:/srv/www:Web-Root:read::suse120
 
 dist_path_httpd_root:/var/www:Web-Root:read::debian30
@@ -173,6 +177,10 @@ dist_path_httpd_root:/var/www:Web-Root:read::debian501
 dist_path_httpd_root:/var/www:Web-Root:read::debian502
 dist_path_httpd_root:/var/www:Web-Root:read::debian503
 dist_path_httpd_root:/var/www:Web-Root:read::debian504
+dist_path_httpd_root:/var/www:Web-Root:read::debian505
+dist_path_httpd_root:/var/www:Web-Root:read::debian506
+dist_path_httpd_root:/var/www:Web-Root:read::debian507
+dist_path_httpd_root:/var/www:Web-Root:read::debian508
 
 dist_path_httpd_root:/var/www:Web-Root:read::debian60
 

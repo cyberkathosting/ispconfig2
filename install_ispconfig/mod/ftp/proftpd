@@ -294,6 +294,14 @@ dist_ftp_conf:/etc/proftpd.conf:Config-File:read::suse112
 dist_ftp_version:standalone:Server-Version:exit::suse112
 dist_ftp_log:/var/log/xferlog:Log-File:read::suse112
 
+dist_ftp_conf:/etc/proftpd.conf:Config-File:read::suse113
+dist_ftp_version:standalone:Server-Version:exit::suse113
+dist_ftp_log:/var/log/xferlog:Log-File:read::suse113
+
+dist_ftp_conf:/etc/proftpd.conf:Config-File:read::suse114
+dist_ftp_version:standalone:Server-Version:exit::suse114
+dist_ftp_log:/var/log/xferlog:Log-File:read::suse114
+
 dist_ftp_conf:/etc/proftpd.conf:Config-File:read::suse120
 dist_ftp_version:standalone:Server-Version:exit::suse120
 dist_ftp_log:/var/log/xferlog:Log-File:read::suse120
@@ -329,6 +337,22 @@ dist_ftp_log:/var/log/xferlog:Log-File:read::debian503
 dist_ftp_conf:/etc/proftpd/proftpd.conf:Config-File:read::debian504
 dist_ftp_version:standalone:Server-Version:exit::debian504
 dist_ftp_log:/var/log/xferlog:Log-File:read::debian504
+
+dist_ftp_conf:/etc/proftpd/proftpd.conf:Config-File:read::debian505
+dist_ftp_version:standalone:Server-Version:exit::debian505
+dist_ftp_log:/var/log/xferlog:Log-File:read::debian505
+
+dist_ftp_conf:/etc/proftpd/proftpd.conf:Config-File:read::debian506
+dist_ftp_version:standalone:Server-Version:exit::debian506
+dist_ftp_log:/var/log/xferlog:Log-File:read::debian506
+
+dist_ftp_conf:/etc/proftpd/proftpd.conf:Config-File:read::debian507
+dist_ftp_version:standalone:Server-Version:exit::debian507
+dist_ftp_log:/var/log/xferlog:Log-File:read::debian507
+
+dist_ftp_conf:/etc/proftpd/proftpd.conf:Config-File:read::debian508
+dist_ftp_version:standalone:Server-Version:exit::debian508
+dist_ftp_log:/var/log/xferlog:Log-File:read::debian508
 
 dist_ftp_conf:/etc/proftpd/proftpd.conf:Config-File:read::debian60
 dist_ftp_version:standalone:Server-Version:exit::debian60

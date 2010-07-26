@@ -294,6 +294,14 @@ dist_mail_log:/var/log/mail:Log-File:read::suse112
 dist_mail_virtusertable:/etc/postfix/virtusertable:Virtusertable-File:read::suse112
 dist_mail_local_host_names:/etc/postfix/local-host-names:Local-Host-Names-File:read::suse112
 
+dist_mail_log:/var/log/mail:Log-File:read::suse113
+dist_mail_virtusertable:/etc/postfix/virtusertable:Virtusertable-File:read::suse113
+dist_mail_local_host_names:/etc/postfix/local-host-names:Local-Host-Names-File:read::suse113
+
+dist_mail_log:/var/log/mail:Log-File:read::suse114
+dist_mail_virtusertable:/etc/postfix/virtusertable:Virtusertable-File:read::suse114
+dist_mail_local_host_names:/etc/postfix/local-host-names:Local-Host-Names-File:read::suse114
+
 dist_mail_log:/var/log/mail:Log-File:read::suse120
 dist_mail_virtusertable:/etc/postfix/virtusertable:Virtusertable-File:read::suse120
 dist_mail_local_host_names:/etc/postfix/local-host-names:Local-Host-Names-File:read::suse120
@@ -329,6 +337,22 @@ dist_mail_local_host_names:/etc/postfix/local-host-names:Local-Host-Names-File:r
 dist_mail_log:/var/log/mail.log:Log-File:read::debian504
 dist_mail_virtusertable:/etc/postfix/virtusertable:Virtusertable-File:read::debian504
 dist_mail_local_host_names:/etc/postfix/local-host-names:Local-Host-Names-File:read::debian504
+
+dist_mail_log:/var/log/mail.log:Log-File:read::debian505
+dist_mail_virtusertable:/etc/postfix/virtusertable:Virtusertable-File:read::debian505
+dist_mail_local_host_names:/etc/postfix/local-host-names:Local-Host-Names-File:read::debian505
+
+dist_mail_log:/var/log/mail.log:Log-File:read::debian506
+dist_mail_virtusertable:/etc/postfix/virtusertable:Virtusertable-File:read::debian506
+dist_mail_local_host_names:/etc/postfix/local-host-names:Local-Host-Names-File:read::debian506
+
+dist_mail_log:/var/log/mail.log:Log-File:read::debian507
+dist_mail_virtusertable:/etc/postfix/virtusertable:Virtusertable-File:read::debian507
+dist_mail_local_host_names:/etc/postfix/local-host-names:Local-Host-Names-File:read::debian507
+
+dist_mail_log:/var/log/mail.log:Log-File:read::debian508
+dist_mail_virtusertable:/etc/postfix/virtusertable:Virtusertable-File:read::debian508
+dist_mail_local_host_names:/etc/postfix/local-host-names:Local-Host-Names-File:read::debian508
 
 dist_mail_log:/var/log/mail.log:Log-File:read::debian60
 dist_mail_virtusertable:/etc/postfix/virtusertable:Virtusertable-File:read::debian60
