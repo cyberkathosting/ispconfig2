@@ -69,7 +69,7 @@ fwrite($fp, "");
 fclose($fp);
 */
 
-exec("grep -iw \"".$monat_kurz.str_pad($tag,3,' ',STR_PAD_LEFT)."\" ".$ftp_log.".0 > ".$ftp_log.".".$datum);
+if(is_file($ftp_log.".0")) exec("grep -iw \"".$monat_kurz.str_pad($tag,3,' ',STR_PAD_LEFT)."\" ".$ftp_log.".0 > ".$ftp_log.".".$datum);
 exec("grep -iw \"".$monat_kurz.str_pad($tag,3,' ',STR_PAD_LEFT)."\" ".$ftp_log." >> ".$ftp_log.".".$datum);
 if($server["server_ftp_log_save"]){
   $mod->log->caselog("touch $ftp_log.ispconfigsave", $FILE, __LINE__);
