@@ -65,7 +65,8 @@ function isp_cron() {
 function cron_show($doc_id, $doctype_id) {
         global $go_api, $go_info, $doc, $tablevalues, $next_tree_id;
 
-
+        $tablevalues["cron_name"] = htmlentities($tablevalues["cron_name"]);
+        $tablevalues["cron_command"] = htmlentities($tablevalues["cron_command"]);
 
 }
 
