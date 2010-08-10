@@ -105,7 +105,7 @@ while ($dir = @readdir ($handle)) {
 
 
               // Experimentell: erstelle .htaccess Dateien mit Zugangsberechtigung für Gruppe des Webs
-              if(!@is_dir($stats_path."/.htaccess")) {
+              if(!@is_file($stats_path."/.htaccess")) {
 
                   $ht_file = "AuthType Basic
 AuthName \"Members Only\"
@@ -119,7 +119,7 @@ require valid-user
                   chmod($stats_path."/.htaccess",0664);
               }
 
-              if(!@is_dir($web_home."/".$webname."/.htpasswd")) {
+              if(!@is_file($web_home."/".$webname."/.htpasswd")) {
 
                   exec("cat ".$mod->system->server_conf["passwd_datei"]." | grep ".$web_home."/".$webname."/ |cut -f1 -d:", $users);
                   exec("cat ".$mod->system->server_conf["passwd_datei"]." | grep ".$web_home."/".$webname.": |cut -f1 -d:", $users);
@@ -153,11 +153,11 @@ require valid-user
                   $message .= exec("webalizer -n $web_real_name -s $web_real_name -r $web_real_name -q -T -o $stats_path -c /root/ispconfig/scripts/shell/webalizer.conf $logfile")."\n";
               }
 
-	      if($go_info["server"]["perms_root"]["stats"]===true) {
+              if($go_info["server"]["perms_root"]["stats"]===true) {
                 exec("chown -R root:root $stats_path &> /dev/null");
-	      } else {
+              } else {
                 exec("chown -R $web_user:$web_group $stats_path &> /dev/null");
-	      }
+              }
             }
 
         }
