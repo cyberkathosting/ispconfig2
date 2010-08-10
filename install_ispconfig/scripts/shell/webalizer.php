@@ -86,7 +86,7 @@ while ($dir = @readdir ($handle)) {
               $web_path = $web_home . "/$webname/web";
               $old_stats_path = $web_path . "/stats";
               $stats_path = $web_path . "/webalizer";
-              $logfile = $web_home . "/$webname/log/web.log";
+              $logfile = realpath($web_home . "/$webname/log/web.log");
               $web_user = fileowner($web_path);
               $web_group = filegroup($web_path);
 
