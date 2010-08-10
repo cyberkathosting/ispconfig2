@@ -405,7 +405,7 @@ function web_insert($doc_id, $doctype_id, $die_on_error = '1') {
           $group_list = $go_api->groups->myGroups();
           if(is_array($group_list)) {
             $tmp_web = $go_api->db->queryOneRecord("select web_domain from isp_isp_web where doc_id = '$doc_id'");
-                  if(!preg_match("/^([a-z0-9\-]+\.)+[a-z]{2,6}$/ix", $tmp_web["web_domain"])) {
+                  if(!preg_match("/^([a-z0-9\-]+\.)+[a-z0-9\-]{2,8}$/ix", $tmp_web["web_domain"])) {
                   $go_api->db->query("DELETE from isp_isp_web where doc_id = '$doc_id'");
           $go_api->db->query("DELETE from isp_nodes where doc_id = '$doc_id' and doctype_id = '$doctype_id'");
                   $limit_errors = $go_api->lng("Invalid domain name").': "'.$tmp_web["web_domain"].'"';
@@ -815,7 +815,7 @@ global $go_api, $go_info, $old_form_data;
           if(!isset($go_api->groups)) $go_api->uses('groups');
           $group_list = $go_api->groups->myGroups();
           if(is_array($group_list)) {
-                  if(!preg_match("/^([a-z0-9\-]+\.)+[a-z]{2,6}$/ix", $web["web_domain"])) {
+                  if(!preg_match("/^([a-z0-9\-]+\.)+[a-z0-9\-]{2,8}$/ix", $web["web_domain"])) {
                   $errorMessage .= $go_api->lng("Invalid domain name").': "'.$web["web_domain"].'"';
                   $status = "NOTIFY";
                   $web["web_domain"] = $old_form_data["web_domain"];
