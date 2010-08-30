@@ -76,6 +76,8 @@ if($server["server_ftp_log_save"]){
   $mod->log->caselog("cat $ftp_log.$datum >> $ftp_log.ispconfigsave", $FILE, __LINE__);
 }
 
+sleep(10);
+
 if($dienst["dienst_ftp_status"] == "on"){
   if($dist_ftp_version == "standalone"){
     $mod->system->daemon_init($mod->system->server_conf["server_ftp_typ"], "start");
