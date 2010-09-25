@@ -234,15 +234,17 @@ global $go_api, $go_info;
 
 
 function domain_update($doc_id, $doctype_id, $die_on_error = '1') {
-global $go_api, $go_info,$s,$old_form_data;
+global $go_api, $go_info,$s,$old_form_data,$is_remoting_framerok;
 
     // If the currently logged in user is not admin or reseller, we will not allow
-        // him to change the domain and hostname
+    // him to change the domain and hostname
+    if(!$is_remoting_framerok) {
         $tmp_groups = $go_api->groups->myGroups();
         if(!is_array($tmp_groups)) {
                 $sql = "UPDATE isp_isp_domain SET domain_host = '$old_form_data[domain_host]', domain_domain = '$old_form_data[domain_domain]' WHERE doc_id = '$doc_id'";
                 $go_api->db->query($sql);
         }
+    }
 
 
         // Remove http:// and https:// and spaces from domains and hosts
@@ -385,15 +387,17 @@ global $go_api, $go_info,$s,$old_form_data;
 }
 
 function domain_delete($doc_id, $doctype_id, $action, $die_on_error = '1') {
-global $go_api, $go_info;
+global $go_api, $go_info,$is_remoting_framerok;
 
         // If the currently logged in user is not admin or reseller, we will not allow
         // him to delete this record
-        $tmp_groups = $go_api->groups->myGroups();
-        if(!is_array($tmp_groups)) {
+        if(!$is_remoting_framerok) {
+            $tmp_groups = $go_api->groups->myGroups();
+            if(!is_array($tmp_groups)) {
                 $sql = "UPDATE isp_nodes SET status = 1 WHERE doc_id = '$doc_id' AND doctype_id = '$doctype_id'";
                 $go_api->db->query($sql);
                 $go_api->errorMessage($go_api->lng("error_domain_delete_client").$go_api->lng("weiter_link"));
+            }
         }
 
 ###########################
