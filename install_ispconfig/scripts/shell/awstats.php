@@ -85,12 +85,12 @@ if ($verify == 0)
                 {
                     $web_path = $web_home."/$webname/web";
                     $stats_path = $web_path."/awstats";
-                    $logfile = $web_home."/$webname/log/web.log";
+                    $logfile = realpath($web_home."/$webname/log/web.log");
                     $web_user = fileowner($web_path);
                     $web_group = filegroup($web_path);
 
                     // erstelle awstats Verzeichnis, wenn nicht vorhanden
-                    if (!@is_dir($stats_path))
+                    if (!@is_file($stats_path))
                     {
                         mkdir($stats_path, 0775);
                         chown($stats_path, $web_user);
@@ -100,7 +100,7 @@ if ($verify == 0)
 
 
                     // Experimentell: erstelle .htaccess Dateien mit Zugangsberechtigung f�r Gruppe des Webs
-                    if (!@is_dir($stats_path."/.htaccess")AND!file_exists($stats_path."/.htaccess"))
+                    if (!@is_file($stats_path."/.htaccess")AND!file_exists($stats_path."/.htaccess"))
                     {
 
                         $ht_file = "AuthType Basic
@@ -115,7 +115,7 @@ require valid-user
                         chmod($stats_path."/.htaccess", 0664);
                     }
 
-                    if (!@is_dir($web_home."/".$webname."/.htpasswd"))
+                    if (!@is_file($web_home."/".$webname."/.htpasswd"))
                     {
 
                         exec("cat ".$mod->system->server_conf["passwd_datei"]." | grep ".$web_home."/".$webname."/ |cut -f1 -d:", $users);
