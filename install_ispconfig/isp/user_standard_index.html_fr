@@ -21,7 +21,7 @@
     <br><br>
 	  <center>
 	      <p><font COLOR="#000000" SIZE="2" FACE="Helvetica, Arial"><br>
-          Ceci est la page d'index standard de l'utilisateur <b>{USER_USERNAME}</b>. Cette page peut être effacée ou remplacée sans difficultés. Elle est générée par le fichier index.html dans le dossier <b>user/{USER_USERNAME}/web</b>.</font></p>
+          Ceci est la page d'index standard de l'utilisateur <b>{USER_USERNAME}</b>. Cette page peut être effacée ou remplacée sans difficulté. Elle est générée par le fichier index.html dans le dossier <b>user/{USER_USERNAME}/web</b>.</font></p>
 	      <p><font COLOR="#000000" SIZE="2" FACE="Helvetica, Arial">Pour tous problèmes ou questions, merci de contacter l'administrateur du serveur.</font></p>
       </center>
       <hr SIZE="1" WIDTH="90%">
