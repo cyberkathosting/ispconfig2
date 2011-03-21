@@ -98,6 +98,18 @@ dist_ftp_conf:/etc/vsftpd.conf:Config-File:read::mdr20110
 dist_ftp_version:xinetd:Server-Version:select:standalone|inetd|xinetd:mdr20110
 dist_ftp_log:/var/log/vsftpd.log:Log-File:read::mdr20110
 
+dist_ftp_conf:/etc/vsftpd.conf:Config-File:read::mdr20111
+dist_ftp_version:xinetd:Server-Version:select:standalone|inetd|xinetd:mdr20111
+dist_ftp_log:/var/log/vsftpd.log:Log-File:read::mdr20111
+
+dist_ftp_conf:/etc/vsftpd.conf:Config-File:read::mdr20120
+dist_ftp_version:xinetd:Server-Version:select:standalone|inetd|xinetd:mdr20120
+dist_ftp_log:/var/log/vsftpd.log:Log-File:read::mdr20120
+
+dist_ftp_conf:/etc/vsftpd.conf:Config-File:read::mdr20121
+dist_ftp_version:xinetd:Server-Version:select:standalone|inetd|xinetd:mdr20121
+dist_ftp_log:/var/log/vsftpd.log:Log-File:read::mdr20121
+
 dist_ftp_conf:/etc/vsftpd/vsftpd.conf:Config-File:read::centos41
 dist_ftp_version:standalone:Server-Version:select:standalone|inetd|xinetd:centos41
 dist_ftp_log:/var/log/vsftpd.log:Log-File:read::centos41
@@ -161,6 +173,18 @@ dist_ftp_log:/var/log/vsftpd.log:Log-File:read::centos55
 dist_ftp_conf:/etc/vsftpd/vsftpd.conf:Config-File:read::centos56
 dist_ftp_version:standalone:Server-Version:select:standalone|inetd|xinetd:centos56
 dist_ftp_log:/var/log/vsftpd.log:Log-File:read::centos56
+
+dist_ftp_conf:/etc/vsftpd/vsftpd.conf:Config-File:read::centos57
+dist_ftp_version:standalone:Server-Version:select:standalone|inetd|xinetd:centos57
+dist_ftp_log:/var/log/vsftpd.log:Log-File:read::centos57
+
+dist_ftp_conf:/etc/vsftpd/vsftpd.conf:Config-File:read::centos60
+dist_ftp_version:standalone:Server-Version:select:standalone|inetd|xinetd:centos60
+dist_ftp_log:/var/log/vsftpd.log:Log-File:read::centos60
+
+dist_ftp_conf:/etc/vsftpd/vsftpd.conf:Config-File:read::centos61
+dist_ftp_version:standalone:Server-Version:select:standalone|inetd|xinetd:centos61
+dist_ftp_log:/var/log/vsftpd.log:Log-File:read::centos61
 
 dist_ftp_conf:/etc/vsftpd.conf:Config-File:read::rhat73
 dist_ftp_version:xinetd:Server-Version:select:standalone|inetd|xinetd:rhat73
@@ -229,6 +253,18 @@ dist_ftp_log:/var/log/vsftpd.log:Log-File:read::fedora130
 dist_ftp_conf:/etc/vsftpd/vsftpd.conf:Config-File:read::fedora140
 dist_ftp_version:standalone:Server-Version:select:standalone|inetd|xinetd:fedora140
 dist_ftp_log:/var/log/vsftpd.log:Log-File:read::fedora140
+
+dist_ftp_conf:/etc/vsftpd/vsftpd.conf:Config-File:read::fedora150
+dist_ftp_version:standalone:Server-Version:select:standalone|inetd|xinetd:fedora150
+dist_ftp_log:/var/log/vsftpd.log:Log-File:read::fedora150
+
+dist_ftp_conf:/etc/vsftpd/vsftpd.conf:Config-File:read::fedora160
+dist_ftp_version:standalone:Server-Version:select:standalone|inetd|xinetd:fedora160
+dist_ftp_log:/var/log/vsftpd.log:Log-File:read::fedora160
+
+dist_ftp_conf:/etc/vsftpd/vsftpd.conf:Config-File:read::fedora170
+dist_ftp_version:standalone:Server-Version:select:standalone|inetd|xinetd:fedora170
+dist_ftp_log:/var/log/vsftpd.log:Log-File:read::fedora170
 
 dist_ftp_conf:/etc/vsftpd.conf:Config-File:read::suse72
 dist_ftp_version:inetd:Server-Version:select:standalone|inetd|xinetd:suse72
@@ -302,9 +338,17 @@ dist_ftp_conf:/etc/vsftpd.conf:Config-File:read::suse114
 dist_ftp_version:xinetd:Server-Version:select:standalone|inetd|xinetd:suse114
 dist_ftp_log:/var/log/vsftpd.log:Log-File:read::suse114
 
+dist_ftp_conf:/etc/vsftpd.conf:Config-File:read::suse115
+dist_ftp_version:xinetd:Server-Version:select:standalone|inetd|xinetd:suse115
+dist_ftp_log:/var/log/vsftpd.log:Log-File:read::suse115
+
 dist_ftp_conf:/etc/vsftpd.conf:Config-File:read::suse120
 dist_ftp_version:xinetd:Server-Version:select:standalone|inetd|xinetd:suse120
 dist_ftp_log:/var/log/vsftpd.log:Log-File:read::suse120
+
+dist_ftp_conf:/etc/vsftpd.conf:Config-File:read::suse121
+dist_ftp_version:xinetd:Server-Version:select:standalone|inetd|xinetd:suse121
+dist_ftp_log:/var/log/vsftpd.log:Log-File:read::suse121
 
 dist_ftp_conf:/etc/vsftpd.conf:Config-File:read::debian30
 dist_ftp_version:inetd:Server-Version:select:standalone|inetd|xinetd:debian30
@@ -357,6 +401,22 @@ dist_ftp_log:/var/log/vsftpd.log:Log-File:read::debian508
 dist_ftp_conf:/etc/vsftpd.conf:Config-File:read::debian60
 dist_ftp_version:inetd:Server-Version:select:standalone|inetd|xinetd:debian60
 dist_ftp_log:/var/log/vsftpd.log:Log-File:read::debian60
+
+dist_ftp_conf:/etc/vsftpd.conf:Config-File:read::debian601
+dist_ftp_version:inetd:Server-Version:select:standalone|inetd|xinetd:debian601
+dist_ftp_log:/var/log/vsftpd.log:Log-File:read::debian601
+
+dist_ftp_conf:/etc/vsftpd.conf:Config-File:read::debian602
+dist_ftp_version:inetd:Server-Version:select:standalone|inetd|xinetd:debian602
+dist_ftp_log:/var/log/vsftpd.log:Log-File:read::debian602
+
+dist_ftp_conf:/etc/vsftpd.conf:Config-File:read::debian603
+dist_ftp_version:inetd:Server-Version:select:standalone|inetd|xinetd:debian603
+dist_ftp_log:/var/log/vsftpd.log:Log-File:read::debian603
+
+dist_ftp_conf:/etc/vsftpd.conf:Config-File:read::debian604
+dist_ftp_version:inetd:Server-Version:select:standalone|inetd|xinetd:debian604
+dist_ftp_log:/var/log/vsftpd.log:Log-File:read::debian604
 
 dist_ftp_conf:/etc/vsftpd.conf:Config-File:read::debiantesting/unstable0
 dist_ftp_version:inetd:Server-Version:select:standalone|inetd|xinetd:debiantesting/unstable0
