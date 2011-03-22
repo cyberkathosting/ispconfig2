@@ -72,7 +72,7 @@ function ptr_insert($doc_id, $doctype_id, $die_on_error = '1') {
     }
 
     $ptr = $go_api->db->queryOneRecord("select * from dns_nodes,dns_ptr where dns_ptr.doc_id = '$doc_id' and dns_nodes.doc_id = dns_ptr.doc_id and dns_nodes.doctype_id = $doctype_id");
-    if (!preg_match("/^([a-z0-9\-]+\.)+[a-z]{2,6}$/ix", $ptr["hostname"])) {
+    if (!preg_match("/^([a-z0-9\-]+\.)+[a-z0-9\-]{2,8}$/ix", $ptr["hostname"])) {
         $go_api->db->query("DELETE from dns_ptr where doc_id = '$doc_id'");
         $go_api->db->query("DELETE from dns_nodes where doc_id = '$doc_id' and doctype_id = '$doctype_id'");
         if($die_on_error){
@@ -111,7 +111,7 @@ function ptr_update($doc_id, $doctype_id, $die_on_error = '1') {
     }
 
     $ptr = $go_api->db->queryOneRecord("select * from dns_nodes,dns_ptr where dns_ptr.doc_id = '$doc_id' and dns_nodes.doc_id = dns_ptr.doc_id and dns_nodes.doctype_id = $doctype_id");
-    if (!preg_match("/^([a-z0-9\-]+\.)+[a-z]{2,6}$/ix", $ptr["hostname"])) {
+    if (!preg_match("/^([a-z0-9\-]+\.)+[a-z0-9\-]{2,8}$/ix", $ptr["hostname"])) {
         $old_ptr_hostname = addslashes($old_form_data["hostname"]);
         $go_api->db->query("UPDATE dns_ptr SET hostname = '$old_ptr_hostname' where doc_id = '$doc_id'");
         if($die_on_error){

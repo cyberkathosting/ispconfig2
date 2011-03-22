@@ -281,7 +281,7 @@ global $go_api, $go_info;
     }
 
         // Check if the domain is valid
-        if (!preg_match("/^([a-z0-9\-]+\.)+[a-z]{2,6}$/ix", $soa["dns_soa"])) {
+        if (!preg_match("/^([a-z0-9\-]+\.)+[a-z0-9\-]{2,8}$/ix", $soa["dns_soa"])) {
                 $go_api->db->query("DELETE from dns_isp_dns where doc_id = '$doc_id'");
         $go_api->db->query("DELETE from dns_nodes where doc_id = '$doc_id' and doctype_id = '$doctype_id'");
         if($die_on_error){
@@ -305,7 +305,7 @@ global $go_api, $go_info;
 
         if(trim($soa["dns_adminmail"]) == '') $soa["dns_adminmail"] = $server["server_bind_adminmail_default"];
         // Check if the adminmail is valid
-        if ($soa["dns_adminmail"] != '' && $soa["dns_adminmail"] != 'root@localhost' && !preg_match("/^([a-z0-9\-\@]+\.)+[a-z]{2,6}$/ix", $soa["dns_adminmail"])) {
+        if ($soa["dns_adminmail"] != '' && $soa["dns_adminmail"] != 'root@localhost' && !preg_match("/^([a-z0-9\-\@]+\.)+[a-z0-9\-]{2,8}$/ix", $soa["dns_adminmail"])) {
                 $go_api->db->query("DELETE from dns_isp_dns where doc_id = '$doc_id'");
         $go_api->db->query("DELETE from dns_nodes where doc_id = '$doc_id' and doctype_id = '$doctype_id'");
 
@@ -366,24 +366,24 @@ case 1031: // SPF-Records
                                 }
                         }
                 }
-		
-		
-			// Check if a subdomain is owned by a different client
-			$tmp_soa = $go_api->db->queryOneRecord("select * from dns_nodes,dns_isp_dns where dns_isp_dns.doc_id = '$doc_id' and dns_nodes.doc_id = dns_isp_dns.doc_id and dns_nodes.doctype_id = $doctype_id");
-			$tmp_parts = explode('.',$tmp_soa['dns_soa']);
-			unset($tmp_parts[0]);
-			$tmp_soa_part = implode('.',$tmp_parts);
-			$tmp_rec = $go_api->db->queryOneRecord("SELECT count(doc_id) as anzahl FROM dns_isp_dns WHERE dns_soa = '".$tmp_soa_part."'");
-			if($tmp_rec['anzahl'] > 0) {
-				$go_api->db->query("DELETE from dns_isp_dns where doc_id = '$doc_id'");
+
+
+                        // Check if a subdomain is owned by a different client
+                        $tmp_soa = $go_api->db->queryOneRecord("select * from dns_nodes,dns_isp_dns where dns_isp_dns.doc_id = '$doc_id' and dns_nodes.doc_id = dns_isp_dns.doc_id and dns_nodes.doctype_id = $doctype_id");
+                        $tmp_parts = explode('.',$tmp_soa['dns_soa']);
+                        unset($tmp_parts[0]);
+                        $tmp_soa_part = implode('.',$tmp_parts);
+                        $tmp_rec = $go_api->db->queryOneRecord("SELECT count(doc_id) as anzahl FROM dns_isp_dns WHERE dns_soa = '".$tmp_soa_part."'");
+                        if($tmp_rec['anzahl'] > 0) {
+                                $go_api->db->query("DELETE from dns_isp_dns where doc_id = '$doc_id'");
                 $go_api->db->query("DELETE from dns_nodes where doc_id = '$doc_id' and doctype_id = '$doctype_id'");
                 if($die_on_error){
                   $go_api->errorMessage($go_api->lng("There is already a dns record for the zone:")." ".$tmp_soa_part.$go_api->lng("weiter_link"));
                 } else {
                   return $go_api->lng("There is already a dns record for the zone:")." ".$tmp_soa_part;
                 }
-			}
-		
+                        }
+
         }
 
 
@@ -552,7 +552,7 @@ function soa_update($doc_id, $doctype_id, $die_on_error = '1') {
     if($doctype_id == 1016) {
         $doc_id = $doc_id;
         $doctype_id = $doctype_id;
-		$aufruf = 'soa';
+                $aufruf = 'soa';
     } else {
         // Eltern Eintrag finden
         $sql = "SELECT * FROM dns_dep where child_doc_id = $doc_id and child_doctype_id = $doctype_id";
@@ -645,7 +645,7 @@ function soa_update($doc_id, $doctype_id, $die_on_error = '1') {
 
         // Check if the domain is valid
         $soa = $go_api->db->queryOneRecord("select * from dns_nodes,dns_isp_dns where dns_isp_dns.doc_id = '$doc_id' and dns_nodes.doc_id = dns_isp_dns.doc_id and dns_nodes.doctype_id = $doctype_id");
-        if (!preg_match("/^([a-z0-9\-]+\.)+[a-z]{2,6}$/ix", $soa["dns_soa"])) {
+        if (!preg_match("/^([a-z0-9\-]+\.)+[a-z0-9\-]{2,8}$/ix", $soa["dns_soa"])) {
                 $old_dns_soa = addslashes($old_form_data["dns_soa"]);
                 $go_api->db->query("UPDATE dns_isp_dns SET dns_soa = '$old_dns_soa' where doc_id = '$doc_id'");
         if($die_on_error){
@@ -656,7 +656,7 @@ function soa_update($doc_id, $doctype_id, $die_on_error = '1') {
         }
 
         // Check if the adminmail is valid
-        if ($soa["dns_adminmail"] != '' && $soa["dns_adminmail"] != 'root@localhost' && !preg_match("/^([a-z0-9\-\@]+\.)+[a-z]{2,6}$/ix", $soa["dns_adminmail"])) {
+        if ($soa["dns_adminmail"] != '' && $soa["dns_adminmail"] != 'root@localhost' && !preg_match("/^([a-z0-9\-\@]+\.)+[a-z0-9\-]{2,8}$/ix", $soa["dns_adminmail"])) {
                 $old_dns_adminmail = addslashes($old_form_data["dns_adminmail"]);
                 $go_api->db->query("UPDATE dns_isp_dns SET dns_adminmail = '$old_dns_adminmail' where doc_id = '$doc_id'");
         if($die_on_error){
@@ -679,26 +679,26 @@ function soa_update($doc_id, $doctype_id, $die_on_error = '1') {
 
     // Wenn es nicht der Admin selbst ist
         if($soa["groupid"] > 1 and $aufruf == 'soa') {
-			// Check if a subdomain is owned by a different client
-			$tmp_soa = $go_api->db->queryOneRecord("select * from dns_nodes,dns_isp_dns where dns_isp_dns.doc_id = '$doc_id' and dns_nodes.doc_id = dns_isp_dns.doc_id and dns_nodes.doctype_id = $doctype_id");
-			$tmp_parts = explode('.',$tmp_soa['dns_soa']);
-			unset($tmp_parts[0]);
-			$tmp_soa_part = implode('.',$tmp_parts);
-			$tmp_rec = $go_api->db->queryOneRecord("SELECT count(doc_id) as anzahl FROM dns_isp_dns WHERE dns_soa = '".$tmp_soa_part."'");
-			if($tmp_rec['anzahl'] > 0) {
-				$old_dns_soa = addslashes($old_form_data["dns_soa"]);
+                        // Check if a subdomain is owned by a different client
+                        $tmp_soa = $go_api->db->queryOneRecord("select * from dns_nodes,dns_isp_dns where dns_isp_dns.doc_id = '$doc_id' and dns_nodes.doc_id = dns_isp_dns.doc_id and dns_nodes.doctype_id = $doctype_id");
+                        $tmp_parts = explode('.',$tmp_soa['dns_soa']);
+                        unset($tmp_parts[0]);
+                        $tmp_soa_part = implode('.',$tmp_parts);
+                        $tmp_rec = $go_api->db->queryOneRecord("SELECT count(doc_id) as anzahl FROM dns_isp_dns WHERE dns_soa = '".$tmp_soa_part."'");
+                        if($tmp_rec['anzahl'] > 0) {
+                                $old_dns_soa = addslashes($old_form_data["dns_soa"]);
                 $go_api->db->query("UPDATE dns_isp_dns SET dns_soa = '$old_dns_soa' where doc_id = '$doc_id'");
                 if($die_on_error){
                   $go_api->errorMessage($go_api->lng("There is already a dns record for the zone:")." ".$tmp_soa_part.$go_api->lng("weiter_link"));
                 } else {
                   return $go_api->lng("There is already a dns record for the zone:")." ".$tmp_soa_part;
                 }
-			}
-		
+                        }
+
         }
-	
-	
-	$go_api->db->query("UPDATE dns_isp_dns SET status = 'u' where status != 'n' and doc_id = '$doc_id'");
+
+
+        $go_api->db->query("UPDATE dns_isp_dns SET status = 'u' where status != 'n' and doc_id = '$doc_id'");
 
     //$soa = $go_api->db->queryOneRecord("select * from dns_isp_dns where doc_id = '$doc_id'");
 

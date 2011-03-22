@@ -166,7 +166,7 @@ function slave_insert($doc_id, $doctype_id, $die_on_error = '1') {
                 }
                 unset($tmp_rec);
 
-    if (!preg_match("/^([a-z0-9\-]+\.)+[a-z]{2,6}$/ix", $slave["domain"])) {
+    if (!preg_match("/^([a-z0-9\-]+\.)+[a-z0-9\-]{2,8}$/ix", $slave["domain"])) {
       $go_api->db->query("DELETE from dns_secondary where doc_id = '$doc_id'");
       $go_api->db->query("DELETE from dns_nodes where doc_id = '$doc_id' and doctype_id = '$doctype_id'");
       if($die_on_error){
@@ -283,7 +283,7 @@ function slave_update($doc_id, $doctype_id, $die_on_error = '1') {
     }
 
     $slave = $go_api->db->queryOneRecord("select * from dns_nodes,dns_secondary where dns_secondary.doc_id = '$doc_id' and dns_nodes.doc_id = dns_secondary.doc_id and dns_nodes.doctype_id = $doctype_id");
-    if (!preg_match("/^([a-z0-9\-]+\.)+[a-z]{2,6}$/ix", $slave["domain"])) {
+    if (!preg_match("/^([a-z0-9\-]+\.)+[a-z0-9\-]{2,8}$/ix", $slave["domain"])) {
       $old_dns_slave = addslashes($old_form_data["domain"]);
       $go_api->db->query("UPDATE dns_secondary SET domain = '$old_dns_slave' where doc_id = '$doc_id'");
       if($die_on_error){
