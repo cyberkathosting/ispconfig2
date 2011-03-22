@@ -209,6 +209,11 @@ dist_path_httpd_root:/var/www:Web-Root:read::debian601
 dist_path_httpd_root:/var/www:Web-Root:read::debian602
 dist_path_httpd_root:/var/www:Web-Root:read::debian603
 dist_path_httpd_root:/var/www:Web-Root:read::debian604
+dist_path_httpd_root:/var/www:Web-Root:read::debian605
+dist_path_httpd_root:/var/www:Web-Root:read::debian606
+dist_path_httpd_root:/var/www:Web-Root:read::debian607
+dist_path_httpd_root:/var/www:Web-Root:read::debian608
+dist_path_httpd_root:/var/www:Web-Root:read::debian609
 
 dist_path_httpd_root:/var/www:Web-Root:read::debiantesting/unstable0
 

@@ -418,6 +418,26 @@ dist_ftp_conf:/etc/vsftpd.conf:Config-File:read::debian604
 dist_ftp_version:inetd:Server-Version:select:standalone|inetd|xinetd:debian604
 dist_ftp_log:/var/log/vsftpd.log:Log-File:read::debian604
 
+dist_ftp_conf:/etc/vsftpd.conf:Config-File:read::debian605
+dist_ftp_version:inetd:Server-Version:select:standalone|inetd|xinetd:debian605
+dist_ftp_log:/var/log/vsftpd.log:Log-File:read::debian605
+
+dist_ftp_conf:/etc/vsftpd.conf:Config-File:read::debian606
+dist_ftp_version:inetd:Server-Version:select:standalone|inetd|xinetd:debian606
+dist_ftp_log:/var/log/vsftpd.log:Log-File:read::debian606
+
+dist_ftp_conf:/etc/vsftpd.conf:Config-File:read::debian607
+dist_ftp_version:inetd:Server-Version:select:standalone|inetd|xinetd:debian607
+dist_ftp_log:/var/log/vsftpd.log:Log-File:read::debian607
+
+dist_ftp_conf:/etc/vsftpd.conf:Config-File:read::debian608
+dist_ftp_version:inetd:Server-Version:select:standalone|inetd|xinetd:debian608
+dist_ftp_log:/var/log/vsftpd.log:Log-File:read::debian608
+
+dist_ftp_conf:/etc/vsftpd.conf:Config-File:read::debian609
+dist_ftp_version:inetd:Server-Version:select:standalone|inetd|xinetd:debian609
+dist_ftp_log:/var/log/vsftpd.log:Log-File:read::debian609
+
 dist_ftp_conf:/etc/vsftpd.conf:Config-File:read::debiantesting/unstable0
 dist_ftp_version:inetd:Server-Version:select:standalone|inetd|xinetd:debiantesting/unstable0
 dist_ftp_log:/var/log/vsftpd.log:Log-File:read::debiantesting/unstable0
