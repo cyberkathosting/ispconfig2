@@ -157,7 +157,8 @@ require valid-user
                         // Experimentell: erstelle /etc/awstats/meindomain.config Datei
                         if (!@is_dir("/etc/awstats/awstats.".$web_real_name.".conf")AND!file_exists("/etc/awstats/awstats.".$web_real_name.".conf"))
                         {
-                            $lang = $mod->db->queryOneRecord("SELECT language FROM isp_nodes, sys_user WHERE isp_nodes.doctype_id = 1013 and isp_nodes.doc_id = $web_doc_id and sys_user.doc_id = isp_nodes.userid");
+                            @unlink("/etc/awstats/awstats.".$web_real_name.".conf");
+							$lang = $mod->db->queryOneRecord("SELECT language FROM isp_nodes, sys_user WHERE isp_nodes.doctype_id = 1013 and isp_nodes.doc_id = $web_doc_id and sys_user.doc_id = isp_nodes.userid");
 
                             $suported_lang = array ("al", "ba", "bg", "tw", "cn", "cz", "dk", "nl", "en", "et", "fi", "fr", "de", "gr", "he", "hu", "id", "it", "jp", "kr", "lv", "nn", "nb", "pl", "pt", "br", "ro", "ru", "sr", "sk", "es", "es_cat", "se", "tr", "ua", "wlk"); // For more info http://awstats.sourceforge.net/docs/awstats_config.html#Lang
 
