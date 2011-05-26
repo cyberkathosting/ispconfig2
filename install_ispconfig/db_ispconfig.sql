@@ -539,7 +539,7 @@ CREATE TABLE isp_fakt_dep (
   PRIMARY KEY  (dep_id),
   KEY dep_id (dep_id,userid,groupid,parent_doc_id,parent_doctype_id),
   KEY tree_id (parent_tree_id,child_doc_id,child_doctype_id,child_tree_id)
-) ENGGINE=MyISAM;
+) ENGINE=MyISAM;
 
 #
 # Daten für Tabelle `isp_fakt_dep`
