@@ -26,7 +26,7 @@ CREATE TABLE `del_status` (
   `web_domain` varchar(255) NOT NULL default '',
   `status` char(1) NOT NULL default '',
   PRIMARY KEY (`id`)
-) TYPE=MyISAM;
+) ENGINE=MyISAM;
 
 --
 -- Dumping data for table `del_status`
@@ -46,7 +46,7 @@ CREATE TABLE `dns_a` (
   `ip_adresse` varchar(255) default NULL,
   PRIMARY KEY  (`doc_id`),
   KEY `doctype_id` (`doctype_id`)
-) TYPE=MyISAM;
+) ENGINE=MyISAM;
 
 --
 -- Dumping data for table `dns_a`
@@ -66,7 +66,7 @@ CREATE TABLE `dns_cname` (
   `ziel` varchar(255) default NULL,
   PRIMARY KEY  (`doc_id`),
   KEY `doctype_id` (`doctype_id`)
-) TYPE=MyISAM;
+) ENGINE=MyISAM;
 
 --
 -- Dumping data for table `dns_cname`
@@ -100,7 +100,7 @@ CREATE TABLE `dns_dep` (
   KEY `child_doctype_id` (`child_doctype_id`),
   KEY `child_tree_id` (`child_tree_id`),
   KEY `status` (`status`)
-) TYPE=MyISAM PACK_KEYS=1;
+) ENGINE=MyISAM PACK_KEYS=1;
 
 --
 -- Dumping data for table `dns_dep`
@@ -129,7 +129,7 @@ CREATE TABLE `dns_isp_dns` (
   `dns_soa_ip` varchar(255) default NULL,
   PRIMARY KEY  (`doc_id`),
   KEY `doctype_id` (`doctype_id`)
-) TYPE=MyISAM;
+) ENGINE=MyISAM;
 
 --
 -- Dumping data for table `dns_isp_dns`
@@ -150,7 +150,7 @@ CREATE TABLE `dns_mx` (
   `mailserver` varchar(255) default NULL,
   PRIMARY KEY  (`doc_id`),
   KEY `doctype_id` (`doctype_id`)
-) TYPE=MyISAM;
+) ENGINE=MyISAM;
 
 --
 -- Dumping data for table `dns_mx`
@@ -178,7 +178,7 @@ CREATE TABLE `dns_nodes` (
   PRIMARY KEY  (`tree_id`),
   KEY `tree_id` (`tree_id`,`userid`,`groupid`),
   KEY `doc_id` (`doc_id`)
-) TYPE=MyISAM PACK_KEYS=1;
+) ENGINE=MyISAM PACK_KEYS=1;
 
 --
 -- Dumping data for table `dns_nodes`
@@ -199,7 +199,7 @@ CREATE TABLE `dns_ptr` (
   `status` char(1) NOT NULL,
   PRIMARY KEY  (`doc_id`),
   KEY `doctype_id` (`doctype_id`)
-) TYPE=MyISAM;
+) ENGINE=MyISAM;
 
 --
 -- Dumping data for table `dns_ptr`
@@ -220,7 +220,7 @@ CREATE TABLE `dns_secondary` (
   `status` char(1) NOT NULL default '',
   PRIMARY KEY  (`doc_id`),
   KEY `doctype_id` (`doctype_id`)
-) TYPE=MyISAM;
+) ENGINE=MyISAM;
 
 --
 -- Dumping data for table `dns_secondary`
@@ -247,7 +247,7 @@ CREATE TABLE `dns_spf` (
   `all_` varchar(255) default NULL,
   PRIMARY KEY  (`doc_id`),
   KEY `doctype_id` (`doctype_id`)
-) TYPE=MyISAM;
+) ENGINE=MyISAM;
 
 --
 -- Dumping data for table `dns_spf`
@@ -271,7 +271,7 @@ CREATE TABLE `doctype` (
   `doctype_tree` tinyint(4) NOT NULL default '0',
   PRIMARY KEY  (`doctype_id`),
   KEY `doctype_id` (`doctype_id`,`userid`,`groupid`)
-) TYPE=MyISAM PACK_KEYS=1;
+) ENGINE=MyISAM PACK_KEYS=1;
 
 --
 -- Dumping data for table `doctype`
@@ -324,7 +324,7 @@ CREATE TABLE `groups` (
   `beschreibung` text NOT NULL,
   PRIMARY KEY  (`groupid`),
   KEY `groupid` (`groupid`,`userid`)
-) TYPE=MyISAM PACK_KEYS=1;
+) ENGINE=MyISAM PACK_KEYS=1;
 
 --
 -- Dumping data for table `groups`
@@ -347,7 +347,7 @@ CREATE TABLE `help_documents` (
   `h_text` text NOT NULL,
   PRIMARY KEY  (`doc_id`),
   KEY `doc_id` (`doc_id`,`userid`,`groupid`)
-) TYPE=MyISAM PACK_KEYS=1;
+) ENGINE=MyISAM PACK_KEYS=1;
 
 --
 -- Dumping data for table `help_documents`
@@ -375,7 +375,7 @@ CREATE TABLE `help_nodes` (
   PRIMARY KEY  (`tree_id`),
   KEY `tree_id` (`tree_id`,`userid`,`groupid`),
   KEY `doc_id` (`doc_id`)
-) TYPE=MyISAM PACK_KEYS=1;
+) ENGINE=MyISAM PACK_KEYS=1;
 
 --
 -- Dumping data for table `help_nodes`
@@ -402,7 +402,7 @@ CREATE TABLE `help_tickets` (
   KEY `ticket_from` (`ticket_from`),
   KEY `ticket_to` (`ticket_to`),
   KEY `ticket_status` (`ticket_status`)
-) TYPE=MyISAM;
+) ENGINE=MyISAM;
 
 --
 -- Dumping data for table `help_tickets`
@@ -424,7 +424,7 @@ CREATE TABLE `isp_com` (
   `sc` varchar(255) NOT NULL default '',
   `tstamp` bigint(20) NOT NULL default '0',
   PRIMARY KEY (`id`)
-) TYPE=MyISAM;
+) ENGINE=MyISAM;
 
 --
 -- Dumping data for table `isp_com`
@@ -451,7 +451,7 @@ CREATE TABLE `isp_dep` (
   PRIMARY KEY  (`dep_id`),
   KEY `dep_id` (`dep_id`,`userid`,`groupid`,`parent_doc_id`,`parent_doctype_id`),
   KEY `tree_id` (`parent_tree_id`,`child_doc_id`,`child_doctype_id`,`child_tree_id`)
-) TYPE=MyISAM PACK_KEYS=1;
+) ENGINE=MyISAM PACK_KEYS=1;
 
 --
 -- Dumping data for table `isp_dep`
@@ -476,7 +476,7 @@ CREATE TABLE `isp_dienste` (
   `dienst_firewall_status` varchar(255) default NULL,
   PRIMARY KEY  (`doc_id`),
   KEY `doctype_id` (`doctype_id`)
-) TYPE=MyISAM;
+) ENGINE=MyISAM;
 
 --
 -- Dumping data for table `isp_dienste`
@@ -508,7 +508,7 @@ CREATE TABLE isp_fakt_artikel (
   weitere_artikelpreis double default NULL,
   PRIMARY KEY  (doc_id),
   KEY doctype_id (doctype_id)
-) TYPE=MyISAM;
+) ENGINE=MyISAM;
 
 #
 # Daten für Tabelle `isp_fakt_artikel`
@@ -539,7 +539,7 @@ CREATE TABLE isp_fakt_dep (
   PRIMARY KEY  (dep_id),
   KEY dep_id (dep_id,userid,groupid,parent_doc_id,parent_doctype_id),
   KEY tree_id (parent_tree_id,child_doc_id,child_doctype_id,child_tree_id)
-) TYPE=MyISAM PACK_KEYS=1;
+) ENGGINE=MyISAM PACK_KEYS=1;
 
 #
 # Daten für Tabelle `isp_fakt_dep`
@@ -566,7 +566,7 @@ CREATE TABLE isp_fakt_nodes (
   PRIMARY KEY  (tree_id),
   KEY tree_id (tree_id,userid,groupid),
   KEY doc_id (doc_id)
-) TYPE=MyISAM PACK_KEYS=1;
+) ENGINE=MyISAM PACK_KEYS=1;
 
 #
 # Daten für Tabelle `isp_fakt_nodes`
@@ -598,7 +598,7 @@ CREATE TABLE isp_fakt_rechnung (
   rechnung text NOT NULL,
   data text NOT NULL,
   PRIMARY KEY  (rechnung_id)
-) TYPE=MyISAM;
+) ENGINE=MyISAM;
 
 #
 # Daten für Tabelle `isp_fakt_rechnung`
@@ -625,7 +625,7 @@ CREATE TABLE isp_fakt_record (
   status tinyint(4) NOT NULL default '1',
   UNIQUE KEY record_id (record_id),
   KEY web_id (web_id,doc_id,doctype_id)
-) TYPE=MyISAM;
+) ENGINE=MyISAM;
 
 #
 # Daten für Tabelle `isp_fakt_record`
@@ -647,7 +647,7 @@ CREATE TABLE `isp_firewall` (
   `status` char(1) default NULL,
   PRIMARY KEY  (`doc_id`),
   KEY `doctype_id` (`doctype_id`)
-) TYPE=MyISAM;
+) ENGINE=MyISAM;
 
 --
 -- Dumping data for table `isp_firewall`
@@ -679,7 +679,7 @@ CREATE TABLE `isp_htaccess` (
   `web_doc_id` int(11) NOT NULL default '0',
   `status` char(1) NOT NULL default '',
   PRIMARY KEY (`doc_id`)
-) TYPE=MyISAM;
+) ENGINE=MyISAM;
 
 --
 -- Dumping data for table `isp_htaccess`
@@ -702,7 +702,7 @@ CREATE TABLE `isp_isp_actions` (
   `titel` varchar(255) default NULL,
   PRIMARY KEY  (`doc_id`),
   KEY `doctype_id` (`doctype_id`)
-) TYPE=MyISAM;
+) ENGINE=MyISAM;
 
 --
 -- Dumping data for table `isp_isp_actions`
@@ -720,7 +720,7 @@ CREATE TABLE `isp_isp_admin` (
   `doctype_id` bigint(20) NOT NULL default '1023',
   PRIMARY KEY  (`doc_id`),
   KEY `doctype_id` (`doctype_id`)
-) TYPE=MyISAM;
+) ENGINE=MyISAM;
 
 --
 -- Dumping data for table `isp_isp_admin`
@@ -748,7 +748,7 @@ CREATE TABLE `isp_isp_cron` (
   `user_id` varchar(255) default NULL,
   PRIMARY KEY  (`doc_id`),
   KEY `doctype_id` (`doctype_id`)
-) TYPE=MyISAM;
+) ENGINE=MyISAM;
 
 
 
@@ -769,7 +769,7 @@ CREATE TABLE `isp_isp_datenbank` (
   `remote_access` varchar(255) default NULL,
   PRIMARY KEY  (`doc_id`),
   KEY `doctype_id` (`doctype_id`)
-) TYPE=MyISAM;
+) ENGINE=MyISAM;
 
 --
 -- Dumping data for table `isp_isp_datenbank`
@@ -796,7 +796,7 @@ CREATE TABLE `isp_isp_domain` (
   `domain_local_mailserver` varchar(255) default '1',
   PRIMARY KEY  (`doc_id`),
   KEY `doctype_id` (`doctype_id`)
-) TYPE=MyISAM;
+) ENGINE=MyISAM;
 
 --
 -- Dumping data for table `isp_isp_domain`
@@ -840,7 +840,7 @@ CREATE TABLE `isp_isp_kunde` (
   `kunde_province` varchar(255) default NULL,
   PRIMARY KEY  (`doc_id`),
   KEY `doctype_id` (`doctype_id`)
-) TYPE=MyISAM;
+) ENGINE=MyISAM;
 
 --
 -- Dumping data for table `isp_isp_kunde`
@@ -919,7 +919,7 @@ CREATE TABLE `isp_isp_reseller` (
   `limit_webdav` char(1) default '0',
   PRIMARY KEY  (`doc_id`),
   KEY `doctype_id` (`doctype_id`)
-) TYPE=MyISAM;
+) ENGINE=MyISAM;
 
 
 --
@@ -966,7 +966,7 @@ CREATE TABLE `isp_isp_user` (
   `user_webdav` char(1) default NULL,
   PRIMARY KEY  (`doc_id`),
   KEY `doctype_id` (`doctype_id`)
-) TYPE=MyISAM;
+) ENGINE=MyISAM;
 
 --
 -- Dumping data for table `isp_isp_user`
@@ -1048,7 +1048,7 @@ CREATE TABLE `isp_isp_web` (
   `web_webdav` char(1) default NULL,
   PRIMARY KEY  (`doc_id`),
   KEY `doctype_id` (`doctype_id`)
-) TYPE=MyISAM;
+) ENGINE=MyISAM;
 
 --
 -- Dumping data for table `isp_isp_web`
@@ -1092,7 +1092,7 @@ CREATE TABLE `isp_isp_web_template` (
   `web_webdav` char(1) default NULL,
   PRIMARY KEY  (`doc_id`),
   KEY `doctype_id` (`doctype_id`)
-) TYPE=MyISAM;
+) ENGINE=MyISAM;
 
 
 --
@@ -1119,7 +1119,7 @@ CREATE TABLE `isp_monitor` (
   `dienst_name` varchar(255) default NULL,
   PRIMARY KEY  (`doc_id`),
   KEY `doctype_id` (`doctype_id`)
-) TYPE=MyISAM;
+) ENGINE=MyISAM;
 
 --
 -- Dumping data for table `isp_monitor`
@@ -1147,7 +1147,7 @@ CREATE TABLE `isp_nodes` (
   PRIMARY KEY  (`tree_id`),
   KEY `tree_id` (`tree_id`,`userid`,`groupid`),
   KEY `doc_id` (`doc_id`)
-) TYPE=MyISAM PACK_KEYS=1;
+) ENGINE=MyISAM PACK_KEYS=1;
 
 --
 -- Dumping data for table `isp_nodes`
@@ -1267,7 +1267,7 @@ CREATE TABLE `isp_server` (
   `global_stats_password` varchar(255) default NULL,
   PRIMARY KEY  (`doc_id`),
   KEY `doctype_id` (`doctype_id`)
-) TYPE=MyISAM;
+) ENGINE=MyISAM;
 
 
 --
@@ -1287,7 +1287,7 @@ CREATE TABLE `isp_server_ip` (
   `server_ip` char(15) NOT NULL default '',
   PRIMARY KEY  (`doc_id`),
   KEY `server_id` (`server_id`,`server_ip`)
-) TYPE=MyISAM;
+) ENGINE=MyISAM;
 
 --
 -- Dumping data for table `isp_server_ip`
@@ -1305,7 +1305,7 @@ CREATE TABLE `isp_serverstatus` (
   `doctype_id` bigint(20) NOT NULL default '1021',
   PRIMARY KEY  (`doc_id`),
   KEY `doctype_id` (`doctype_id`)
-) TYPE=MyISAM;
+) ENGINE=MyISAM;
 
 --
 -- Dumping data for table `isp_serverstatus`
@@ -1329,7 +1329,7 @@ CREATE TABLE `isp_traffic` (
   `bytes_ftp` bigint(20) NOT NULL default '0',
   `bytes_mail` bigint(20) NOT NULL default '0',
   PRIMARY KEY (`doc_id`)
-) TYPE=MyISAM;
+) ENGINE=MyISAM;
 
 --
 -- Dumping data for table `isp_traffic`
@@ -1351,7 +1351,7 @@ CREATE TABLE `isp_traffic_ip` (
   `traffic_in` bigint(20) NOT NULL default '0',
   `traffic_out` bigint(20) NOT NULL default '0',
   PRIMARY KEY (`doc_id`)
-) TYPE=MyISAM;
+) ENGINE=MyISAM;
 
 --
 -- Dumping data for table `isp_traffic_ip`
@@ -1375,7 +1375,7 @@ CREATE TABLE `listtype` (
   `listtype_doctype_id` int(11) NOT NULL default '0',
   PRIMARY KEY  (`listtype_id`),
   KEY `doctype_id` (`listtype_id`,`userid`,`groupid`)
-) TYPE=MyISAM PACK_KEYS=1;
+) ENGINE=MyISAM PACK_KEYS=1;
 
 --
 -- Dumping data for table `listtype`
@@ -1404,7 +1404,7 @@ CREATE TABLE `login` (
   PRIMARY KEY  (`login_id`),
   KEY `login_id` (`login_id`,`sessionid`),
   KEY `userid` (`userid`)
-) TYPE=MyISAM PACK_KEYS=1;
+) ENGINE=MyISAM PACK_KEYS=1;
 
 --
 -- Dumping data for table `login`
@@ -1431,7 +1431,7 @@ CREATE TABLE `multidoc_dep` (
   PRIMARY KEY  (`dep_id`),
   KEY `dep_id` (`dep_id`,`userid`,`groupid`,`parent_doc_id`,`parent_doctype_id`),
   KEY `tree_id` (`parent_tree_id`,`child_doc_id`,`child_doctype_id`,`child_tree_id`)
-) TYPE=MyISAM PACK_KEYS=1;
+) ENGINE=MyISAM PACK_KEYS=1;
 
 --
 -- Dumping data for table `multidoc_dep`
@@ -1459,7 +1459,7 @@ CREATE TABLE `multidoc_nodes` (
   PRIMARY KEY  (`tree_id`),
   KEY `tree_id` (`tree_id`,`userid`,`groupid`),
   KEY `doc_id` (`doc_id`)
-) TYPE=MyISAM PACK_KEYS=1;
+) ENGINE=MyISAM PACK_KEYS=1;
 
 --
 -- Dumping data for table `multidoc_nodes`
@@ -1492,7 +1492,7 @@ CREATE TABLE `session` (
   `remote_addr` varchar(255) NOT NULL default '',
   PRIMARY KEY  (`id`),
   KEY `sessionid` (`sessionid`,`userid`)
-) TYPE=MyISAM PACK_KEYS=1;
+) ENGINE=MyISAM PACK_KEYS=1;
 
 --
 -- Dumping data for table `session`
@@ -1516,7 +1516,7 @@ CREATE TABLE `sys_config` (
   `faktura_on` char(1) default '1',
   PRIMARY KEY  (`doc_id`),
   KEY `doctype_id` (`doctype_id`)
-) TYPE=MyISAM;
+) ENGINE=MyISAM;
 
 --
 -- Dumping data for table `sys_config`
@@ -1544,7 +1544,7 @@ CREATE TABLE `sys_dep` (
   PRIMARY KEY  (`dep_id`),
   KEY `dep_id` (`dep_id`,`userid`,`groupid`,`parent_doc_id`,`parent_doctype_id`),
   KEY `tree_id` (`parent_tree_id`,`child_doc_id`,`child_doctype_id`,`child_tree_id`)
-) TYPE=MyISAM PACK_KEYS=1;
+) ENGINE=MyISAM PACK_KEYS=1;
 
 --
 -- Dumping data for table `sys_dep`
@@ -1580,7 +1580,7 @@ CREATE TABLE `sys_modules` (
   `module_path` varchar(255) NOT NULL default '',
   PRIMARY KEY  (`doc_id`),
   KEY `doc_id` (`doc_id`,`userid`,`groupid`)
-) TYPE=MyISAM PACK_KEYS=1;
+) ENGINE=MyISAM PACK_KEYS=1;
 
 --
 -- Dumping data for table `sys_modules`
@@ -1615,7 +1615,7 @@ CREATE TABLE `sys_news` (
   `visible` tinyint(4) NOT NULL default '0',
   PRIMARY KEY  (`doc_id`),
   KEY `doc_id` (`doc_id`,`userid`,`groupid`)
-) TYPE=MyISAM PACK_KEYS=1;
+) ENGINE=MyISAM PACK_KEYS=1;
 
 --
 -- Dumping data for table `sys_news`
@@ -1643,7 +1643,7 @@ CREATE TABLE `sys_nodes` (
   PRIMARY KEY  (`tree_id`),
   KEY `tree_id` (`tree_id`,`userid`,`groupid`),
   KEY `doc_id` (`doc_id`)
-) TYPE=MyISAM PACK_KEYS=1;
+) ENGINE=MyISAM PACK_KEYS=1;
 
 --
 -- Dumping data for table `sys_nodes`
@@ -1728,7 +1728,7 @@ CREATE TABLE `sys_user` (
   `userid` bigint(21) NOT NULL default '1',
   PRIMARY KEY  (`doc_id`),
   KEY `doc_id` (`doc_id`,`groupid`)
-) TYPE=MyISAM PACK_KEYS=1;
+) ENGINE=MyISAM PACK_KEYS=1;
 
 --
 -- Dumping data for table `sys_user`
@@ -1753,7 +1753,7 @@ CREATE TABLE `user_groups` (
   PRIMARY KEY  (`usergroupid`),
   KEY `usergroupid` (`usergroupid`,`groupid`,`userid`,`perms`),
   KEY `online` (`online`)
-) TYPE=MyISAM PACK_KEYS=1;
+) ENGINE=MyISAM PACK_KEYS=1;
 
 --
 -- Dumping data for table `user_groups`
