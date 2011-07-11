@@ -166,6 +166,9 @@ if [ -f /etc/redhat-release ] && [ ! -h  /etc/redhat-release ]; then
    if [ -n '$version' ]; then
      version=`cat /etc/redhat-release | cut -f3 -d' '`
    fi
+   if [ -n '$version' ]; then
+     version=`cat /etc/redhat-release | cut -f4 -d' '`
+   fi
    echo $version | grep \\. &> /dev/null
    if [ $? != 0 ]; then
      version=`echo $version.0`
