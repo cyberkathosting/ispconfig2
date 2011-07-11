@@ -166,9 +166,6 @@ if [ -f /etc/redhat-release ] && [ ! -h  /etc/redhat-release ]; then
    if [ -n '$version' ]; then
      version=`cat /etc/redhat-release | cut -f3 -d' '`
    fi
-   if [ -n '$version' ]; then
-     version=`cat /etc/redhat-release | cut -f4 -d' '`
-   fi
    echo $version | grep \\. &> /dev/null
    if [ $? != 0 ]; then
      version=`echo $version.0`
@@ -194,13 +191,7 @@ if [ -f /etc/redhat-release ] && [ ! -h  /etc/redhat-release ]; then
    rm -f dist.info.ende
 fi
 if [ -f /etc/centos-release ] && [ ! -h  /etc/centos-release ]; then
-   version=`cat /etc/centos-release | cut -f5 -d' '`
-   if [ -n '$version' ]; then
-     version=`cat /etc/centos-release | cut -f3 -d' '`
-   fi
-   if [ -n '$version' ]; then
-     version=`cat /etc/centos-release | cut -f4 -d' '`
-   fi
+   version=`cat /etc/centos-release | cut -f4 -d' '`
    echo $version | grep \\. &> /dev/null
    if [ $? != 0 ]; then
      version=`echo $version.0`
