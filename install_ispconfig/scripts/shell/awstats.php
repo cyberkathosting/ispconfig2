@@ -115,8 +115,8 @@ require valid-user
                         chmod($stats_path."/.htaccess", 0664);
                     }
 
-                    if (!@is_file($web_home."/".$webname."/.htpasswd"))
-                    {
+                    //if (!@is_file($web_home."/".$webname."/.htpasswd"))
+                    //{
 
                         exec("cat ".$mod->system->server_conf["passwd_datei"]." | grep ".$web_home."/".$webname."/ |cut -f1 -d:", $users);
                         exec("cat ".$mod->system->server_conf["passwd_datei"]." | grep ".$web_home."/".$webname.": |cut -f1 -d:", $users);
@@ -132,7 +132,7 @@ require valid-user
                         {
 			  //$ht_file .= "admin:\$1\$TAVCXZlv\$NAjnpdNgAfPMNT4/A61Z.0\n";
                         }
-			if($global_stats_user != '' && $global_stats_password != '') $ht_file .= $global_stats_user.":".$global_stats_password."\n";
+						if($global_stats_user != '' && $global_stats_password != '') $ht_file .= $global_stats_user.":".$global_stats_password."\n";
 
                         unset ($users);
                         $fp = fopen($web_home."/".$webname."/.htpasswd", "w");
@@ -140,7 +140,7 @@ require valid-user
                         fclose($fp);
                         chmod($web_home."/".$webname."/.htpasswd", 0664);
                         exec("chown :".$webname." ".$web_home."/".$webname."/.htpasswd");
-                    }
+                    //}
 
                     if (! empty($web_data["web_host"]))
                     {

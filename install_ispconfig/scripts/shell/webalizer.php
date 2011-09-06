@@ -119,7 +119,7 @@ require valid-user
                   chmod($stats_path."/.htaccess",0664);
               }
 
-              if(!@is_file($web_home."/".$webname."/.htpasswd")) {
+              //if(!@is_file($web_home."/".$webname."/.htpasswd")) {
 
                   exec("cat ".$mod->system->server_conf["passwd_datei"]." | grep ".$web_home."/".$webname."/ |cut -f1 -d:", $users);
                   exec("cat ".$mod->system->server_conf["passwd_datei"]." | grep ".$web_home."/".$webname.": |cut -f1 -d:", $users);
@@ -140,7 +140,7 @@ require valid-user
                   fclose($fp);
                   chmod($web_home."/".$webname."/.htpasswd",0664);
                   exec("chown :".$webname." ".$web_home."/".$webname."/.htpasswd");
-              }
+              //}
 
 
               // Starte Webalizer
