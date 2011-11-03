@@ -450,6 +450,10 @@ dist_ftp_conf:/etc/proftpd.conf:Config-File:read::debiansqueeze/sid0
 dist_ftp_version:standalone:Server-Version:exit::debiansqueeze/sid0
 dist_ftp_log:/var/log/xferlog:Log-File:read::debiansqueeze/sid0
 
+dist_ftp_conf:/etc/proftpd.conf:Config-File:read::debianwheezy/sid0
+dist_ftp_version:standalone:Server-Version:exit::debianwheezy/sid0
+dist_ftp_log:/var/log/xferlog:Log-File:read::debianwheezy/sid0
+
 dist_ftp_conf:/usr/local/etc/proftpd.conf:Config-File:read::freebsd50
 dist_ftp_version:standalone:Server-Version:exit::freebsd50
 dist_ftp_log:/var/log/xferlog:Log-File:read::freebsd50
