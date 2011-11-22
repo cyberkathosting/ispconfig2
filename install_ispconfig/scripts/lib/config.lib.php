@@ -2720,6 +2720,7 @@ function web_user_clean(){
       switch ($item["doctype_id"]) {
       case 1013:
           //Verzeichnisse löschen
+		  if(trim($item["web_domain"]) != '') {
           $web_path = $item["pfad"];
           if($item["web_host"] == ""){
             $web_path_realname = $mod->system->server_conf["server_path_httpd_root"] ."/". $item["web_domain"];
@@ -2745,16 +2746,19 @@ function web_user_clean(){
 
             $mod->system->delgroup("web".$item['doc_id']);
           }
+		  }
 
           $mod->db->query("DELETE FROM del_status WHERE id = '".$item["id"]."'");
       break;
       case 1014:
+		if(trim($item["pfad"]) != '') {
           //User-Verzeichnis löschen
           if(is_dir($item["pfad"])){
             $mod->log->caselog("rm -fr ".$item["pfad"], $this->FILE, __LINE__);
           }
           $mod->system->deluser($item["name"]);
           $mod->db->query("DELETE FROM del_status WHERE id = '".$item["id"]."'");
+		}
       break;
       }
     }
