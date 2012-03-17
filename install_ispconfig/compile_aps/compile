@@ -269,6 +269,8 @@ cp -fr ${AWSTATS} /home/adm${APPLICATION_NAME}/${APPLICATION_NAME}/tools/ || err
 chmod 755 /home/adm${APPLICATION_NAME}/${APPLICATION_NAME}/tools/${AWSTATS} || error "Could not chmod AWStats"
 rm -f /home/adm${APPLICATION_NAME}/${APPLICATION_NAME}/tools/awstats
 ln -s /home/adm${APPLICATION_NAME}/${APPLICATION_NAME}/tools/${AWSTATS} /home/adm${APPLICATION_NAME}/${APPLICATION_NAME}/tools/awstats  || error "Could not Symlink AWStats"
+cd /home/adm${APPLICATION_NAME}/${APPLICATION_NAME}/tools/
+patch -p0 < ${COMPILE_DIR}/awstats_7.0_bug_3303027.patch
 cd ${COMPILE_DIR}
 
 exit 0
