@@ -85,12 +85,12 @@ if ($verify == 0)
                 {
                     $web_path = $web_home."/$webname/web";
                     $stats_path = $web_path."/awstats";
-                    $logfile = realpath($web_home."/$webname/log/web.log");
+                    $logfile = realpath($web_home."/$webname/") . "log/web.log";
                     $web_user = fileowner($web_path);
                     $web_group = filegroup($web_path);
 
                     // erstelle awstats Verzeichnis, wenn nicht vorhanden
-                    if (!@is_file($stats_path))
+                    if (!@is_dir($stats_path))
                     {
                         mkdir($stats_path, 0775);
                         chown($stats_path, $web_user);
@@ -155,10 +155,9 @@ require valid-user
                     {
 
                         // Experimentell: erstelle /etc/awstats/meindomain.config Datei
-                        if (!@is_dir("/etc/awstats/awstats.".$web_real_name.".conf")AND!file_exists("/etc/awstats/awstats.".$web_real_name.".conf"))
+                        if (!file_exists("/etc/awstats/awstats.".$web_real_name.".conf"))
                         {
-                            @unlink("/etc/awstats/awstats.".$web_real_name.".conf");
-							$lang = $mod->db->queryOneRecord("SELECT language FROM isp_nodes, sys_user WHERE isp_nodes.doctype_id = 1013 and isp_nodes.doc_id = $web_doc_id and sys_user.doc_id = isp_nodes.userid");
+                            $lang = $mod->db->queryOneRecord("SELECT language FROM isp_nodes, sys_user WHERE isp_nodes.doctype_id = 1013 and isp_nodes.doc_id = $web_doc_id and sys_user.doc_id = isp_nodes.userid");
 
                             $suported_lang = array ("al", "ba", "bg", "tw", "cn", "cz", "dk", "nl", "en", "et", "fi", "fr", "de", "gr", "he", "hu", "id", "it", "jp", "kr", "lv", "nn", "nb", "pl", "pt", "br", "ro", "ru", "sr", "sk", "es", "es_cat", "se", "tr", "ua", "wlk"); // For more info http://awstats.sourceforge.net/docs/awstats_config.html#Lang
 
@@ -223,7 +222,7 @@ HostAliases=\"$host_alias\"";
                         $message .= exec("perl /home/admispconfig/ispconfig/tools/awstats/tools/awstats_buildstaticpages.pl -year=$year -month=$month -update -config=$web_real_name -awstatsprog=/home/admispconfig/ispconfig/tools/awstats/wwwroot/cgi-bin/awstats.pl -builddate=$year-$month -dir=$stats_path")."\n";
 
                         // Experimentell: erstelle eine index.html Datei
-                        if (!@is_dir("$stats_path/index.html"))
+                        if (!is_file("$stats_path/index.html") || (!preg_match("/awstats.$web_real_name.$year-$month.html/",file_get_contents("$stats_path/index.html"))))
                         {
                             $index_file = "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0 Transitional//EN\">
 <html>
