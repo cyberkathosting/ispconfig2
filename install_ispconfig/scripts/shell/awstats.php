@@ -85,7 +85,7 @@ if ($verify == 0)
                 {
                     $web_path = $web_home."/$webname/web";
                     $stats_path = $web_path."/awstats";
-                    $logfile = realpath($web_home."/$webname/") . "log/web.log";
+                    $logfile = realpath($web_home."/$webname") . "/log/web.log";
                     $web_user = fileowner($web_path);
                     $web_group = filegroup($web_path);
 
